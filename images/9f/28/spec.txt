@@ -1,0 +1,6 @@
+Design a circuit that combines sign manipulation and encoding for input vectors. The module takes a sign bit and a 4-bit encoded vector (enc_vec) and computes a modified 4-bit vector (a_sign) by performing an XOR operation between the sign and each bit of another 4-bit input vector (a_vec). It then performs a bitwise AND operation between the modified vector and the encoding vector to produce another 4-bit vector (a_enc). The output (pp_i) indicates whether any bit in a_enc is high, effectively functioning as a conditional flag based on the processed input values.
+module top_module(
+    input sign,
+    input [3:0] enc_vec,
+    input [3:0] a_vec,
+    output pp_i);

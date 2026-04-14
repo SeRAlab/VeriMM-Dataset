@@ -1,0 +1,48 @@
+
+
+You are tasked with designing a module that takes two inputs A and B_N, and outputs X. The module should implement the logical OR operation between A and the negated B_N. The module should also have the following inputs and outputs:
+
+- VPWR: Positive power supply voltage
+- VGND: Ground voltage
+- VPB: Positive voltage for input signals
+- VNB: Negative voltage for input signals
+
+Implement the module using the following code snippet as a reference:
+
+```
+module sky130_fd_sc_lp__or2b_2 (
+    X   ,
+    A   ,
+    B_N ,
+    VPWR,
+    VGND,
+    VPB ,
+    VNB
+);
+
+    output X   ;
+    input  A   ;
+    input  B_N ;
+    input  VPWR;
+    input  VGND;
+    input  VPB ;
+    input  VNB ;
+    sky130_fd_sc_lp__or2b base (
+        .X(X),
+        .A(A),
+        .B_N(B_N),
+        .VPWR(VPWR),
+        .VGND(VGND),
+        .VPB(VPB),
+        .VNB(VNB)
+    );
+
+endmodule
+```
+
+Your task is to complete the module by implementing the logical OR operation between A and the negated B_N. Ensure that the module meets the following requirements:
+
+- The module should be synthesizable
+- The module should be technology independent
+- The module should be able to handle different voltage levels for VPWR, VGND, VPB, and VNB
+

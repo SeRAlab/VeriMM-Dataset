@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform bitwise manipulation and conditional logic on a 2-bit input signal, `rx_pair`, to generate two distinct 2-bit output signals, `path_0_bmc` and `path_1_bmc`. The primary function of this module to apply a specific set of bitwise operations, including XOR (`^`) and AND (`&`), to the input bits under different conditions and then combine the results to form the output signals. This module could be part of a larger digital signal processing system where conditional bit manipulation is required for data encoding, decoding, or correction purposes.
+
+Module name:  
+	bmc101
+
+Input ports:
+	rx_pair [1:0]: A 2bit input signal. This signal is the primary data input to the module, where each bit is subject to separate manipulation processes to contribute to the module's output.
+Output ports:
+	path_0_bmc [1:0]: A 2bit output signal resulting from a specific set of operations applied to rx_pair. This output represents one possible manipulation path based on the module's logic.
+	path_1_bmc [1:0]: Another 2bit output signal, which is derived from a different set of operations on rx_pair compared to path_0_bmc. This output signifies an alternative manipulation path.
+
+
+Implementation:
+The RTL module bmc101 is designed to process a 2-bit input signal rx_pair and generate two 2-bit output signals, path_0_bmc and path_1_bmc, through a series of bitwise operations. The module does not contain any sequential logic elements (like flip-flops or latches) and operates purely on combinational logic. This means that the outputs of the module are directly determined by the current inputs without any dependency on previous input states.
+The core functionality of the module is built around bitwise XOR (^) and AND (&) operations. The XOR operation is used to invert specific bits of the rx_pair input based on predefined constants (1'b0 and 1'b1), creating intermediate signals (tmp00, tmp01, tmp10, tmp11). These intermediate signals are then combined using both AND and XOR operations to produce the final outputs path_0_bmc and path_1_bmc.
+The logical operations can be summarized as follows:
+XOR with 1'b0: This operation leaves the bit unchanged (since XORing with 0 has no effect).
+XOR with 1'b1: This operation inverts the bit (since XORing with 1 flips the bit).
+By applying these operations selectively to the bits of rx_pair, the module effectively manipulates the input signal in a specific manner to generate the outputs.
+
+Give me the complete code.
+

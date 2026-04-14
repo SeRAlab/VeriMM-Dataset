@@ -1,0 +1,34 @@
+Please act as a professional verilog designer.
+
+Design a 32-bit register file with 2 read ports and 1 write port. The register file should have 32 registers. Each read port should output the value of the selected register based on the read address. The write port should write a value to the selected register based on the write address and the write enable signal.
+
+Module name:
+    reg_file_32x32
+
+Input ports:
+    clk: Clock signal.
+    we: Write enable signal.
+    wr_addr: 5-bit write address.
+    wr_data: 32-bit write data.
+    rd_addr1: 5-bit read address for read port 1.
+    rd_addr2: 5-bit read address for read port 2.
+
+Output ports:
+    rd_data1: 32-bit read data for read port 1.
+    rd_data2: 32-bit read data for read port 2.
+
+Implementation:
+The module uses a 2-dimensional array to represent the 32 registers. The always block is triggered by the clock signal. If the write enable signal is high, the write data is written to the register at the write address on the rising edge of the clock. The read data is continuously assigned based on the read addresses.
+
+Give me the complete code.
+
+module reg_file_32x32(
+    input wire clk,
+    input wire we,
+    input wire [4:0] wr_addr,
+    input wire [31:0] wr_data,
+    input wire [4:0] rd_addr1,
+    input wire [4:0] rd_addr2,
+    output reg [31:0] rd_data1,
+    output reg [31:0] rd_data2
+    );

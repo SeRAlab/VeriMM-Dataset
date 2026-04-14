@@ -1,0 +1,6 @@
+Design a circuit that splits a 16-bit input into two 8-bit outputs based on a selection mechanism. The module utilizes a 16-to-256 decoder to expand the input into a wider signal space, from which a multiplexer is configured to direct one of the decoded outputs to the high output (`out_hi`) and the inverse to the low output (`out_lo`). The selection for the multiplexer is determined by the most significant bit of the input, enabling the circuit to efficiently manage the separation of half-words.
+module top_module(
+    input wire [15:0] in,
+    output wire [7:0] out_hi,
+    output wire [7:0] out_lo
+);

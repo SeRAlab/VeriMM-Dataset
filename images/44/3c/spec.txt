@@ -1,0 +1,6 @@
+Design a sequential circuit that computes the cumulative sum of a 14-bit input, producing a 23-bit output. On the rising edge of the clock, if the reset signal is asserted, both the internal sum register and the output are cleared to zero. If the clock enable (ce) is asserted, the circuit adds the incoming value to the cumulative sum, and the updated sum is then assigned to the output. This module effectively functions as an accumulator.
+module top_module(
+    input clk, ce, rst,
+    input [13:0] in,
+    output reg [22:0] out
+);

@@ -1,0 +1,11 @@
+Design a write-back unit for a processor that selects data to be written back to a register. It outputs the write data as either the ALU result or the data from memory, depending on a control signal that indicates the source. When the control signal for loading a register is active, it enables the write operation with the appropriate register address being provided.
+module top_module(
+    input [15:0]  m_alu_result,
+    input [15:0]  m_dm_dout,
+    input [2:0]   m_reg_waddr,
+    input         cu_reg_data_loc,
+    input         cu_reg_load,
+    output [15:0] wb_reg_wdata,
+    output        wb_reg_wea,
+    output [2:0]  wb_reg_waddr
+);

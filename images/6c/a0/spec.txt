@@ -1,0 +1,7 @@
+Design a logic circuit that functions as a register write address generator. It takes a two-bit input `RegDst` to determine the source of the write address: if `RegDst` is `00`, it outputs the value of `rt_D`; if `RegDst` is `01`, it outputs `rd_D`; if `RegDst` is anything else, it defaults to the constant value `31`.
+module top_module(
+	input[1:0] RegDst,
+	input[4:0] rt_D,
+    input[4:0] rd_D,
+    output[4:0] WAG
+	);

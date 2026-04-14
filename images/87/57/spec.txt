@@ -1,0 +1,10 @@
+Design a circuit that operates based on a start signal to process an 8-bit input, `val_V`, and outputs an 8-bit result on `ap_return`. The module continuously asserts `ap_done` and `ap_ready` when `ap_start` is high, and it remains idle at all times since `ap_idle` is always set to high. The output is determined by the first bit of `val_V`, which influences whether the output is the negation of `val_V` or the original value, with an additional constant assignment to ensure proper data propagation. Overall, this module effectively functions as a combinational processing unit that can conditionally output either the negated input or the input itself based on the state of the first bit of `val_V`.
+module top_module(
+        ap_start,
+        ap_done,
+        ap_idle,
+        ap_ready,
+        val_V,
+        mode,
+        ap_return
+);

@@ -1,0 +1,6 @@
+Design a multiplexer for selecting the destination register in an instruction execution pipeline. The module takes a 21-bit input instruction and a control signal (RegDst_EX). It outputs a 5-bit chosen register index: when RegDst_EX is 1, it selects bits 15 to 11 (indicating an R-type instruction), and when RegDst_EX is 0, it selects bits 20 to 16 (indicating an I-type instruction).
+module top_module(
+		 input [20:0] Instruction_EX,
+		 input RegDst_EX,
+		 output [4:0] Write_Register_EX
+		 );

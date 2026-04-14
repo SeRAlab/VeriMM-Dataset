@@ -1,0 +1,8 @@
+Design a 4-bit shift register with reset and load capabilities. On a rising edge of the clock, if the asynchronous reset signal is activated, the output `q` is set to zero. If the load signal is high, the module loads the 4-bit input `data` into the output `q`. If the enable signal (`ena`) is high and neither `areset` nor `load` is active, the current value in `q` is shifted to the right by one bit, effectively discarding the least significant bit.
+module top_module(
+	input clk,
+	input areset,
+	input load,
+	input ena,
+	input [3:0] data,
+	output reg [3:0] q);

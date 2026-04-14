@@ -1,0 +1,7 @@
+Design a four-bit barrel shifter that shifts the input bits based on a two-bit control signal. The control signal determines the direction and type of shift: no shift for 00, logical shift left by one for 01, logical shift right by one for 10, and logical shift right by two for 11. The output is updated on the positive edge of the clock, allowing for synchronous operation. This module enables efficient data manipulation within digital circuits where variable bit alignment is required.
+module top_module(
+    input [3:0] in,
+    input [1:0] ctrl,
+    input clk,            // Added input for clk
+    output reg [3:0] out
+);

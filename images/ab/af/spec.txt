@@ -1,0 +1,8 @@
+Design a 4-input Least Recently Used (LRU) arbiter that grants access among up to four requestors based on their usage history. The arbiter outputs a 2-bit grant vector that indicates which requestor is granted access. The arbiter operates based on a request vector, where each bit corresponds to a request from a specific input. It also includes enable and reset signals; when reset, the arbiter initializes its state and grant vector to zero. The state transitions depend on the request vector and the current LRU state, ensuring that the most recently accessed requestor is prioritized for future grants.
+module top_module(
+    output reg [1:0] grant_vector,
+    input [3:0] req_vector,
+    input enable,
+    input clk,
+    input reset
+);

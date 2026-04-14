@@ -1,0 +1,4 @@
+Design a 5-bit addressable memory module that allows writing and reading single-bit data. The module utilizes a clock signal (CLK1) to enable synchronous write operations dictated by the A1EN signal, which writes A1DATA to the memory location specified by A1ADDR. Additionally, it outputs the value stored at the address indicated by B1ADDR through the B1DATA signal. The design includes setup timing constraints for the input signals relative to the clock edge for reliable operation.
+module top_module(input [4:0] A1ADDR, input A1DATA, A1EN,
+    (* clkbuf_sink *) input CLK1,
+    input [4:0] B1ADDR, output B1DATA);

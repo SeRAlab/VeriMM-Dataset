@@ -1,0 +1,8 @@
+Design a 32-bit binary counter that increments its value on every rising edge of the clock signal when the enable input is asserted. The counter can be reset to zero when the reset input is active. It counts up to a specified maximum determined by the width input, which dictates the maximum count value as \(2^{\text{width}} - 1\), after which it wraps around back to zero. This counter can be used in various applications where counting up to a specific limit is required, such as in timers or frequency dividers.
+module top_module(
+    input clk,
+    input rst,
+    input en,
+    input [31:0] width,
+    output reg [31:0] count
+);

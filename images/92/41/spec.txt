@@ -1,0 +1,6 @@
+Design a pipeline register with a configurable number of input and output signals, along with a specified depth. This module captures incoming data on each clock edge and shifts it through a series of flip-flops, effectively allowing for the storage and delayed output of signals. When provided with `n` input signals and `m` output signals, it leverages the `d` depth parameter to determine how many clock cycles the data will be delayed before being available at the output, thus facilitating data processing in a sequential manner commonly used in digital circuit design, particularly in synchronous systems.
+module top_module(
+  input clk,                 // added clock input
+  input [n-1:0] in,
+  output [m-1:0] out
+);

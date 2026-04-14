@@ -1,0 +1,8 @@
+Design a shift register comparator circuit that captures a 4-bit input data on the rising edge of a clock signal and shifts it through a register. The circuit uses a synchronous reset to initialize the register to zero when activated. The output, `shift_out`, provides the current state of the shift register, while the `out` signal indicates whether the shifted version of the register contents matches the original input data. The comparison between the shifted data and the input is performed using XOR and AND logic, setting `out` high if they are equal.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] data,
+  output reg out,
+  output reg [3:0] shift_out
+);

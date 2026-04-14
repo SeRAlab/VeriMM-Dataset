@@ -1,0 +1,6 @@
+Design a circuit that decodes an interrupt vector and offset into an interrupt number for a system. It takes a 6-bit interrupt vector and a 17-bit interrupt offset as inputs. If a specific compilation flag is set, it calculates the interrupt number by subtracting a defined base address from the offset and then right-shifting the result, effectively scaling it down. If the flag is not set, it simply concatenates two zeros to the interrupt vector to form an 8-bit interrupt number. This functionality is essential for managing interrupt requests in a hardware system.
+module top_module(
+    input      [  5 : 0 ] irqVector,  //current interrupt vector number
+    input      [ 17 : 1 ] irqOffset,  //current interrupt offset number
+    output     [  7 : 0 ] irqNumber   //current interrupt number
+);

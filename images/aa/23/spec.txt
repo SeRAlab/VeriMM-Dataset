@@ -1,0 +1,7 @@
+Design a stall signal generator for an instruction pipeline. The module analyzes two 32-bit instruction inputs to determine if the first instruction (instr1) is dependent on the second instruction (instr2) based on specific opcode values and register dependencies. If a dependency is detected and instr1 is valid, the stall output is asserted to prevent the pipeline from proceeding, effectively managing hazards in the execution flow. This ensures proper synchronization and prevents incorrect execution due to data hazards.
+module top_module(
+    input [31:0] instr2,
+    input [31:0] instr1,
+	 input [0:0] instr1_validity,
+    output reg [0:0] stall
+    );

@@ -1,0 +1,15 @@
+Design a transmission module that utilizes a ring buffer for queuing 24-bit data packets. It interfaces with an external system, accepting data through a specified address and writing it to the buffer when a relevant command is detected. The module features acknowledgment signaling for data popping from the buffer, ensuring that data can be read out conditionally based on the presence of queued data. It also includes functionality to output the size of the queue and allows data retrieval from the ring buffer by using specific address formats. The design effectively manages data flow between the transmitter and external components, providing robust buffering and control in a transactional environment.
+module top_module(
+    input wire clk,
+    input wire rst,
+
+    // dmix interface
+    output wire [23:0] tx_data_o,
+    input wire tx_pop_i,
+    output wire tx_ack_o,
+
+    // To nkmm R bus
+    input wire [31:0] data_i,
+    output wire [31:0] data_o,
+    input wire [31:0] addr_i,
+    input wire we_i);

@@ -1,0 +1,8 @@
+Design a 4-bit binary counter with a synchronous load feature. The counter increments on each positive edge of the clock unless a control signal (ctrl) is high, in which case it loads a specified 4-bit value (load_data) and resets the flag. When the counter reaches its maximum value (15 or 4'b1111), it wraps around to zero and sets the flag to indicate this overflow. The flag is cleared unless an overflow occurs.
+module top_module(
+  input clk,
+  input ctrl,
+  input [3:0] load_data,
+  output reg [3:0] count,
+  output reg flag
+);

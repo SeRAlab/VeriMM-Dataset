@@ -1,0 +1,6 @@
+Design a 32-bit sign extension circuit for an 8-bit input. The module takes an 8-bit input `data_out` and conditions the upper 24 bits of the 32-bit output `extended` based on the value of the most significant bit (MSB) of `data_out` and the `notXor` signal. If the MSB is set (i.e., `data_out[7]` is 1) and `notXor` is also 1, the upper 24 bits are set to all 1s, indicating a sign extension for negative numbers; otherwise, they are set to zeros. The lower 8 bits of the output directly reflect the input's bits.
+module top_module(
+	input [7:0] data_out,
+	input notXor,
+	output [31:0] extended
+);

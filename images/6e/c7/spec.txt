@@ -1,0 +1,11 @@
+Design a 32-bit Arithmetic and Logic Unit (ALU) that performs a variety of operations based on a 4-bit select input. The operations include addition, subtraction, bitwise AND, OR, XOR, signed and unsigned comparisons, as well as various shift operations (logical and arithmetic). The ALU also includes status output signals: a signed overflow flag (v), a zero flag (z) indicating if the result is zero, a sign flag (s) reflecting the sign of the output, and a carry-out (c) for addition and subtraction operations. The design allows for comprehensive arithmetic and logical manipulation of two 32-bit input values, x and y.
+module top_module(
+    input [3:0] sel,
+    input [31:0] x,
+    input [31:0] y,
+    output reg [31:0] o,
+    output reg v,
+    output reg z,
+    output reg s,
+    output reg c
+);

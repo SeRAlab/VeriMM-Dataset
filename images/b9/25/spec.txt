@@ -1,0 +1,10 @@
+Design a simple calculator module that performs basic arithmetic operations (addition, subtraction, multiplication, and division) on two signed 8-bit inputs, A and B, based on a 2-bit operation selector (op). The module outputs a signed 16-bit result along with a valid signal indicating the completion of the operation. The calculations are triggered by a clock signal, and the module incorporates a reset functionality to initialize the result and valid signal to zero.
+module top_module(
+    input clk,
+    input reset,
+    input signed [7:0] A,
+    input signed [7:0] B,
+    input [1:0] op,
+    output reg signed [15:0] result, // Change output to reg
+    output valid
+);

@@ -1,0 +1,6 @@
+Design a main control decoder for a microprocessor, which interprets a 6-bit opcode input to generate control signals that direct the operation of an Arithmetic Logic Unit (ALU) and memory operations. These control signals include `RegWrite`, `RegDst`, `ALUSrc`, `Branch`, `MemWrite`, `MemtoReg`, and `ALUOp`, determining how data is read from and written to registers and memory based on the specific type of instruction, like R-type, load (LW), store (SW), and branch instructions. The decoder efficiently facilitates instruction execution by producing different control signals according to the provided opcode values.
+module top_module(
+	input [5:0] op,
+	output reg [1:0] ALUOp,
+	output reg	MemtoReg, MemWrite, Branch, ALUSrc, RegDst, RegWrite
+);

@@ -1,0 +1,8 @@
+Design a signed 8-bit Booth multiplier that performs multiplication of two signed 8-bit inputs (a and b) and outputs a signed 16-bit product (p). The multiplier operates synchronously with a clock signal and includes a reset input to initialize internal registers. It leverages a state machine to manage the multiplication process, utilizing Booth's algorithm which effectively handles the addition and subtraction of shifted values based on the sign of the current bit in the multiplier. The module also ensures correct handling of negative inputs by adjusting the partial product accordingly.
+module top_module(
+    input clk,
+    input rst,
+    input signed [7:0] a,
+    input signed [7:0] b,
+    output reg signed [15:0] p
+);

@@ -1,0 +1,8 @@
+Design a simple linear-feedback shift register (LFSR) based random number generator. The module takes a clock signal, a reset signal, and an enable signal as inputs. Upon reset, it initializes the internal state with a predefined value. When enabled, it computes the next state by applying a series of bitwise exclusive OR operations on the current state, while also generating a signed 32-bit output by multiplying the next state by 4. If not enabled, the output is set to zero.
+module top_module(
+  input clk,
+  input rst,
+  input enable,
+
+  output reg signed [31:0] out_data
+);

@@ -1,0 +1,17 @@
+Design a module that detects edges in horizontal sync (hs), vertical sync (vs), and a specific threshold (th) signal based on clock inputs. The module uses registers to store the current and previous states of the input signals, allowing it to generate rising and falling edge indicators for each signal. The outputs `vs_rise`, `vs_fall`, `hs_rise`, `hs_fall`, `th_rise`, and `th_fall` provide precise identification of signal transitions, which can be utilized for timing analysis or synchronization tasks in digital video processing applications.
+module top_module(
+	input					clk,
+	input					rst_n,
+	
+	input                   i_hs,    
+	input                   i_vs,    
+	input                   i_de,    
+	input					th_flag,
+	
+	output	wire			vs_fall,
+	output	wire			vs_rise,
+	output	wire			hs_fall,
+	output	wire			hs_rise,
+	output	wire			th_fall,
+	output	wire			th_rise
+);

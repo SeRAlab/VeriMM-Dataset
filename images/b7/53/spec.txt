@@ -1,0 +1,7 @@
+Design a circuit that computes the one's complement of a 4-bit binary input. The module takes a 4-bit input and, upon receiving a clock pulse, outputs the complement of that input while also providing an asynchronous reset feature to set the output to zero. The transformation is achieved using an XOR operation with a constant value of 4'b1111, ensuring that each bit in the input is inverted. The resultant 4-bit one's complement output is then registered and updated on each rising edge of the clock when the reset is inactive.
+module top_module(
+   input      clk,      // clock
+   input      reset_n,  // asynchronous reset 
+   input  [3:0] input_binary, // 4-bit binary input
+   output [3:0] output_ones_comp // 4-bit one's complement output
+   );

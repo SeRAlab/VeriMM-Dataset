@@ -1,0 +1,20 @@
+Please act as a professional Verilog designer.
+
+Design a Verilog module for a 32-bit bidirectional shift register with a synchronous reset. The shift register can shift left or right based on a control signal and resets to 0 when the reset signal is active.
+
+Module name:
+    shift_register_32bit
+
+Input ports:
+    clk: Chip clock signal.
+    reset: Synchronous reset signal.
+    shift_left: Control signal to shift left.
+    shift_right: Control signal to shift right.
+    data_in: Input data signal with a data width of 32 bits.
+
+Output ports:
+    data_out: Output data signal with a data width of 32 bits.
+
+Implementation:
+Register operation:
+On every positive edge of the clock signal (clk), the shift register (data_out) shifts left if the shift_left signal is active, shifts right if the shift_right signal is active, and retains its value if neither control signal is active. If the reset signal (reset) is active, the register resets to 0.

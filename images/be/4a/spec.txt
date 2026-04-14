@@ -1,0 +1,8 @@
+Design a 4-bit synchronous counter with overflow detection. This counter increments its output on each clock cycle while allowing for a reset to initialize the counter to zero. When the counter reaches its maximum value of 15 (4'hF), it resets to zero and asserts an overflow signal to indicate that a wrap-around has occurred. The design effectively serves applications requiring count tracking with overflow notifications.
+module top_module(
+    input  wire        clk,
+    input  wire        reset,
+    input  wire [3:0]  in,
+    output reg  [3:0]  out,
+    output reg         overflow
+);

@@ -1,0 +1,16 @@
+Design a dual-port SRAM interface that selectively outputs signals based on two input source enables. When either enable_1 or enable_2 is active, the corresponding write enable (wea), data input (data_in), and address signals are passed through to the output. If both enables are inactive, the outputs will default to low values, ensuring safe operation. This module effectively multiplexes access to a shared memory resource, allowing for conditional read/write operations based on external control signals.
+module top_module(
+	input 					enable_1,
+	input 					wea_1,
+	input 			[15:0]	data_in_1,
+	input 			[15:0]	address_1,
+	input 					enable_2,
+	input 					wea_2,
+	input 			[15:0]	data_in_2,
+	input 			[15:0]	address_2,
+
+	output 	wire			enable,
+	output 	wire 			wea,
+	output 	wire 	[15:0]	data_in,
+	output 	wire 	[15:0]	address
+    );

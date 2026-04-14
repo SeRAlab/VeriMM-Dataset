@@ -1,0 +1,9 @@
+Design a module that combines the functionality of a register and a counter while producing an XOR output. The module takes a 4-bit input for loading into a register and has controls for loading the register and enabling a 4-bit counter. On each clock edge, if enabled, the counter increments. The combined 8-bit data from the register and counter is XORed with the binary value '11111111' to form the final 8-bit output. The operation resets the register and counter to zero when the reset signal is asserted.
+module top_module(
+    input clk, 
+    input reset,
+    input [3:0] reg_data_in,
+    input reg_load,
+    input counter_enable,
+    output [7:0] output_data
+);

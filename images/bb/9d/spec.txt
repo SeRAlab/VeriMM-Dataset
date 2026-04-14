@@ -1,0 +1,7 @@
+Design a synchronous 8-bit counter that increments its value on each clock cycle when enabled, and resets to zero when the reset input is asserted. The counter utilizes two internal registers to hold intermediate count values, thus allowing for a pipelined counting operation. When the enable signal is active, the counter retrieves the current count value, stores it in the first register, and then passes that value to the second register, which is used for the incrementation logic. The output count is updated on each clock edge under the enable condition.
+module top_module(
+    input clk,
+    input reset,
+    input enable,
+    output reg [7:0] count
+);

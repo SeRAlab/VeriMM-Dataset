@@ -1,0 +1,16 @@
+Design a datapath unit that computes the greatest common divisor (GCD) of two 6-bit inputs, xin and yin. The module includes load signals (`xld`, `yld`, and `gld`) to control when inputs are loaded into internal registers xreg and yreg, as well as a register for the GCD, greg. The selection lines (`xselect` and `yselect`) determine the source of the inputs used for computation, either from the original inputs or from the results of previous calculations (differences). The output flags indicate the equality, less-than condition between the two registers, and whether either register contains a zero. The GCD is updated based on the loaded values, and various condition flags enable external logic to monitor the computation's status.
+module top_module(
+	input clock,
+	input clear,
+	input [5:0] xin,
+	input [5:0] yin,
+	input xld,
+	input yld,
+	input gld,
+	input xselect,
+	input yselect,
+	output eqflag,
+	output ltflag,
+	output onezeroflag,
+	output [5:0] gcd
+	);

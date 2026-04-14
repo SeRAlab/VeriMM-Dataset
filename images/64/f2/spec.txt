@@ -1,0 +1,10 @@
+Design a simple arithmetic calculator that performs addition and subtraction of two signed 4-bit integers, `a` and `b`. The operation is selected by a 2-bit input `op`, where `op=00` indicates addition and `op=01` indicates subtraction. The module includes overflow detection for both operations, setting the `overflow` output high if the result exceeds the representable range of a signed 4-bit integer. The results of the computation are stored in a 4-bit output `result`, and both outputs are updated on the rising edge of the clock unless the reset signal is asserted, in which case both outputs are cleared.
+module top_module(
+    input clk,
+    input rst,
+    input [1:0] op,
+    input signed [3:0] a,
+    input signed [3:0] b,
+    output reg signed [3:0] result,
+    output reg overflow
+);

@@ -1,0 +1,18 @@
+Implement the Verilog module based on the following description.
+Module Q implements the boolean function v = (j ^ k).
+
+// Module R can be described by the following simulation waveform: 
+
+If j = 1, k = 1, then v = 0.
+If j = 0, k = 1, then v = 1.
+If j = 0, k = 0, then v = 0.
+If j = 1, k = 0, then v = 1.
+
+// Now consider a top-level that uses two Q submodules and one R submodule. The first input of all three submodules is connected to input 'f', and the second input of all three submodules is connected to 'g'. The output of the first Q submodule is connected to a two-input XOR gate with the output of the R submodule. The second Q submodule's output is connected to an AND gate with the XOR gate's output. The final output 'v' is the result of this AND gate.
+
+// Implement this circuit in Verilog.
+
+module top_module(
+    input f,
+    input g,
+    output v);

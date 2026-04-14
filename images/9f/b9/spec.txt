@@ -1,0 +1,22 @@
+Please act as a professional Verilog designer.
+
+Implement a module for a 2-to-4 binary decoder with an enable signal. The module should decode a 2-bit binary input into one of four outputs, and only activate the output if the enable signal is high.
+
+Module name:  
+    bin_decoder               
+Input ports:
+	bin_in[1:0]: 2-bit binary input.
+	enable: Enable signal.
+Output ports:
+	out[3:0]: 4-bit output where only one bit is high based on the binary input when enable is high.
+
+Implementation:
+Use combinational logic to decode the binary input to a one-hot output. If enable is low, all outputs should be low.
+
+Give me the complete code.
+
+module bin_decoder(
+    input       [1:0]   bin_in      ,
+    input               enable      ,
+    output  reg [3:0]   out
+);

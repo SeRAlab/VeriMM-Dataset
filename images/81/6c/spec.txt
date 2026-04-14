@@ -1,0 +1,11 @@
+Design a length counter for an audio processing unit that tracks the length of a sequence and controls an enable signal. The module takes inputs for clock, reset, enable, halt, a length pulse, and the desired length value. It initializes the length as zero on reset. When enabled, it sets the length to predefined values based on the input selection and counts down on each length pulse, allowing for decrements unless halted or if the current length is zero. The output enable signal indicates whether counting is active, reflecting whether the length counter has reached zero.
+module top_module(
+  input  wire       clk_in,           
+  input  wire       rst_in,           
+  input  wire       en_in,            
+  input  wire       halt_in,          
+  input  wire       length_pulse_in,  
+  input  wire [4:0] length_in,        
+  input  wire       length_wr_in,     
+  output wire       en_out            
+);

@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+
+Implement a module for an 8-bit register with enable and asynchronous clear. The register stores the value from the data input (d) on the rising edge of the clock if the enable signal is high. If the clear signal is low, the register clears to 0.
+
+Module name:
+    register
+
+Input ports:
+    clk: Clock signal for synchronous operations.
+    clr_n: Clear signal. Defined as 0 for clear and 1 for clear signal inactive.
+    en: Enable signal. When high, the register stores the input data on each clock cycle.
+    d: 8-bit data input for storing in the register.
+
+Output ports:
+    q: 8-bit output representing the current contents of the register.
+
+Give me the complete code.
+
+module register(
+    input clk,
+    input clr_n,
+    input en,
+    input [7:0] d,
+    output [7:0] q
+);

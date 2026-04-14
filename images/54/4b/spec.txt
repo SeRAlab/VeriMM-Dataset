@@ -1,0 +1,9 @@
+Design a UART receiver module that processes incoming serial data from an RX pin. It operates in four states: IDLE, START, DATA, and STOP. The module detects the start bit, collects 8 data bits when in the DATA state, and finally checks for a stop bit to signal the completion of data reception. A signal, `rx_done`, indicates when data reception is complete, and the received byte is output on `d_out`. The design also incorporates a reset functionality and a clock signal, with timing managed via a sample tick input to ensure synchronization throughout the process.
+module top_module(
+	input rx,					
+	input s_tick,				
+	input reset,
+	input clock,				
+	output reg rx_done,		
+	output reg [7:0] d_out	
+);

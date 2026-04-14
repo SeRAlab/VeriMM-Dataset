@@ -1,0 +1,14 @@
+Implement a Verilog module based on the following description.
+Create a FSM with the following states and outputs:
+1. state X (Y = 1).
+2. state Y (Y = 0).
+3. state Z (Y = 1).
+4. state W (Y = 0).
+
+State transitions:
+1. From state X: If x = 1, transition to state Y. If x = 0, transition to state Z.
+2. From state Y: If x = 1, transition to state W. If x = 0, transition to state X.
+3. From state Z: If x = 1, transition to state X. If x = 0, transition to state W.
+4. From state W: If x = 1, transition to state Z. If x = 0, transition to state Y.
+
+Use two flip-flops with state codes s[1:0] = 00, 01, 10, 11 for states X, Y, Z, W, respectively. Implement just the next-state logic for s[1] in Verilog. The output Y is s[1].

@@ -1,0 +1,9 @@
+Design a synchronous adder-subtractor circuit that performs both addition and subtraction of two signed 16-bit inputs (a and b). On each rising edge of the clock, if a reset signal is asserted, the outputs (sum and diff) are set to zero. Otherwise, the module calculates the sum of the inputs (a + b) and assigns it to a 17-bit output. For the difference, the circuit checks which input is greater and computes the absolute difference accordingly, ensuring that the output is always a signed 16-bit value.
+module top_module(
+   input clk,
+   input reset,
+   input signed [15:0] a,
+   input signed [15:0] b,
+   output reg signed [16:0] sum,
+   output reg signed [15:0] diff
+   );

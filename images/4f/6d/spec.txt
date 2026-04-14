@@ -1,0 +1,7 @@
+Design a Pulse Width Modulation (PWM) generator. The circuit uses an 8-bit counter clocked by the input signal 'clk'. The output signal 'out' is HIGH whenever the counter value is less than the value specified by the 'duty' input, effectively controlling the duty cycle of the PWM signal. When the counter reaches its maximum value (255) or if the 'reset_n' signal is LOW, the counter resets to zero. This design enables adjustable duty cycle modulation based on the 8-bit 'duty' input.
+module top_module(
+	input  wire clk,
+	input  wire reset_n,
+	input  wire [7:0] duty,
+	output wire out
+);

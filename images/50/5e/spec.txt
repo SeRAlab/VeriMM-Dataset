@@ -1,0 +1,9 @@
+The MEMWB module is designed to act as a pipeline register in a processor's memory-writeback stage, facilitating data transfer between stages of instruction execution. It captures and stores the write-back information on the rising edge of the clock, including two bits of write-back control signals (WB_2), the data read from memory (dm_read), the result of an arithmetic operation (aluresult), and the destination register identifier (Regd). After the clock edge, these values are made available on the output ports: WB, DmRead, Aluresult, and RegD, enabling subsequent stages to utilize the processed data and control signals effectively for register writing and further computation.
+module top_module( input clk,
+              input [1:0]WB_2,
+              input [31:0]dm_read,aluresult,
+              input [4:0] Regd,
+              output[31:0]DmRead,Aluresult,
+              output[4:0] RegD,
+              output [1:0]WB
+);

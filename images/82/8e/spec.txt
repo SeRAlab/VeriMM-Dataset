@@ -1,0 +1,8 @@
+Design a 4-bit bus control module that selectively routes input signals based on forcing and releasing conditions. The module takes a 4-bit input, along with additional 4-bit inputs for specifying forced bits and values, and for releasing specific bits. When force_bits is not zero, it allows the force_values to override the corresponding input bits based on the bits specified by force_bits. Conversely, when release_bits is specified, it resets the forced bits to their original input states. The output bus reflects these control conditions, combining the influence of the input bits, forced values, and release conditions in real-time.
+module top_module(
+    input [3:0] in,
+    input [3:0] force_bits,
+    input [3:0] force_values,
+    input [3:0] release_bits,
+    output reg [3:0] bus // Changed output to reg
+);

@@ -1,0 +1,10 @@
+Design a two-stage synchronous FIFO (First In, First Out) synchronizer module for converting asynchronous input signals into synchronous output signals. The module uses two flip-flops to sample the asynchronous data input on the positive edge of a designated clock signal. The first stage captures the input data, while the second stage generates the synchronous output, with provisions for an external reset and clock enable functionality. This design ensures reliable data transfer between components operating on different clock domains, thereby mitigating the risks associated with metastability.
+module top_module(
+  // internal signals
+  rst_i,
+  clk_i,
+  stage1_rst_i,
+  stage1_clk_en_i,
+  async_dat_i,
+  sync_dat_o
+);

@@ -1,0 +1,9 @@
+Develop a module that performs a dual function: it implements a custom XOR operation using basic gates and also concatenates two 8-bit inputs into a 16-bit output. The module outputs a signal, `out`, which depends on the concatenated value; if the concatenated value is greater than or equal to 128 (0x80), `out` reflects the result of the XOR operation; otherwise, it directly outputs the least significant byte of the concatenated input. Additionally, it produces a 16-bit output that combines the two 8-bit inputs, `in_hi` and `in_lo`.
+module top_module(
+    input wire a, 
+    input wire b,
+    output reg out,
+    input wire [7:0] in_hi,
+    input wire [7:0] in_lo,
+    output wire [15:0] out_concat
+);

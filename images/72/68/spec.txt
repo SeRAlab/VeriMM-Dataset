@@ -1,0 +1,8 @@
+Design a 4-bit wide, 4-address RAM module that operates with a clock signal. The module has 4 memory locations, each capable of storing 4 bits. It supports write operations controlled by a write enable signal (WRE), which, when asserted, stores the input data (DI) into the corresponding bit of each memory location based on the address input (AD) at the rising edge of the clock. The output (DO) provides the concatenated data from all four memory locations on the falling edge of the clock. Initial values for the memory locations can be set through parameters upon instantiation.
+module top_module(
+    input [3:0] DI,
+    input [3:0] AD,
+    input CLK,
+    input WRE,
+    output reg [3:0] DO
+);

@@ -1,0 +1,8 @@
+Design a control logic module that processes an 8-bit input based on an enable signal. When the enable input (Ein) is LOW, the module outputs LOW for Eout and GS, and sets Number to zero. When Ein is HIGH, if the input is zero, Eout is set to HIGH and GS to LOW, with Number remaining zero. If the input is non-zero, GS is set to HIGH and Eout is LOW, with the Number output indicating the position of the highest set bit in the Input (from bit 7 down to bit 1). If no bits are set, Number is also set to zero.
+module top_module(
+    input [7:0] Input,
+    input Ein,
+    output reg Eout,
+    output reg GS,
+    output reg [2:0] Number
+    );

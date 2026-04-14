@@ -1,0 +1,12 @@
+Design a 8-entry, 16-bit wide register file that supports read and write operations. It has three input ports for controlling write operations, including a clock signal, a reset signal, and write enable signal, along with destination and data inputs. Upon activation of the write enable signal, it stores the provided data in the specified register. The module also has multiple read ports that allow outputting the data from two registers simultaneously based on their respective addresses. The entire register file can be reset, clearing all register values to zero.
+module top_module(
+  input         clk,
+  input         rst,
+  input         rg_wrt_enable,
+  input [2:0]   rg_wrt_dest,
+  input[15:0]   rg_wrt_data,
+  input [2:0]   rg_rd_addr1,
+  output [15:0] rg_rd_data1,
+  input [2:0]   rg_rd_addr2,
+  output [15:0] rg_rd_data2
+);

@@ -1,0 +1,9 @@
+Design a circuit that selectively outputs a manipulated version of two 3-bit input vectors and computes an even parity bit. The module includes a 2-to-1 multiplexer to choose between `in_vec1` and `in_vec2` based on `sel_b2`. It incorporates a shift register to store and reverse the selected input vector's bits on the rising edge of `sel_b1`. The output vector is formed by appending a parity bit, which indicates whether there’s an even number of 1s among the bits of the shifted input; this is calculated using XOR operations across the reversed input vector. The module also provides an overall even parity output, allowing for straightforward integration into larger digital systems requiring parity checks.
+module top_module(
+    input [2:0] in_vec1,
+    input [2:0] in_vec2,
+    input sel_b1,
+    input sel_b2,
+    output [2:0] out_vec,
+    output even_parity
+);

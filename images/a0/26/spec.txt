@@ -1,0 +1,7 @@
+Design a pipelined barrel shifter that processes a 32-bit input value based on a 5-bit shift amount. The circuit performs left and right shifting operations on the input data in a sequential manner, utilizing four pipeline stages to achieve efficient data manipulation based on a clock signal. When the most significant bit of the shift amount is set, the output will be the result of successively right-shifting the input value through the stages; otherwise, it computes a left shift. This design is particularly useful for applications requiring high-speed data alignment or manipulation tasks within a digital processing system.
+module top_module(
+    input clk,
+    input [31:0] data_in,
+    input [4:0] shift_amt,
+    output reg [31:0] data_out
+);

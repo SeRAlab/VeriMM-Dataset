@@ -1,0 +1,8 @@
+Design a border detection circuit for a 1024x768 pixel display. The module checks for specific conditions at the edges of the display based on the `xstart`, `xend`, and `realy` inputs. The output `q` is asserted when either the top or bottom edges are reached (i.e., `realy` equals 0 or 767), or when a scan runs vertically along the left (`xstart` = 0) or right (`xend` = 1023) borders while `realy` is between these limits. This module is likely intended for use in an application that processes image data by detecting border conditions for scanning operations.
+module top_module(
+    input clk,
+    input xstart,
+    input xend,
+    input [9:0] realy,
+    output q
+);

@@ -1,0 +1,16 @@
+Design a JTAG interface module that handles input signals such as TMS, TCK, and TDI, while providing TDO and additional control signals to facilitate communication with external devices. The module includes registers to latch the input signals on the rising edge of TCK, and it provides tap outputs for test data and control signals based on the JTAG protocol, ensuring compliance with the specified LPM type "arriaiigz_jtag". This design enables operations like shifting, updating, and state management in a test access port (TAP) interface, allowing for efficient debugging and testing of integrated circuits.
+module top_module(
+    input tms, 
+    input tck,
+    input tdi, 
+    input ntrst,
+    output tdo,
+    output tmsutap,
+    output tckutap,
+    output tdiutap,
+    output shiftuser,
+    output clkdruser,
+    output updateuser,
+    output runidleuser,
+    output usr1user
+);

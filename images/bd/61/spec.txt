@@ -1,0 +1,12 @@
+Design a data write-back module that selectively outputs data based on read and write control signals. When the read signal is asserted, the module outputs data from RAM; when the write signal is asserted, it outputs data from the ALU. If neither control signal is active, it outputs the data from the specified register. This module effectively routes the appropriate 8-bit data to the output based on operation status.
+module top_module(
+
+input wire iRead,
+input wire iWrite,
+input wire[7:0]iDataRAM,
+
+input wire[7:0]iDataALU,
+input wire [7:0]iRegister,
+output wire [7:0]oRegister
+
+) ;

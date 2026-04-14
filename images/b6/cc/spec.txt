@@ -1,0 +1,6 @@
+Develop a 4-to-2 priority encoder with a pipelined design. The module takes a 4-bit input and outputs a 2-bit position indicating the highest priority active input. It operates in two stages: the first stage captures the lower two bits of the input, while the second stage captures the upper two bits. Based on the encoded inputs, it sets the output position accordingly, with priority given to higher input bits.
+module top_module(
+    input clk,            // Added clk input
+    input [3:0] in,
+    output reg [1:0] pos
+);

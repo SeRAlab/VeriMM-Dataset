@@ -1,0 +1,7 @@
+Design a counter that increments based on the clock signal `clk_div` while monitoring the state of `c_state`. Upon receiving a reset signal (`rst`), the count is reset to zero. The counter operates differently depending on the value of `c_state`: for states 0 and 3, it counts up to 4 before resetting to zero, while for all other states, it only counts up to 1 before resetting. The output count is a 5-bit register.
+module top_module(
+    input clk_div,
+    input rst,
+    input [2:0] c_state,
+    output reg [4:0] count
+    );

@@ -1,0 +1,31 @@
+Please act as a professional verilog designer.
+
+Design a 2-to-4 decoder with enable. The module should take a 2-bit binary input and a single enable input and generate a 4-bit output. When the enable input is low, all output bits should be 0. When the enable input is high, the output should correspond to the binary input.
+
+Module name:  
+    decoder_2to4  
+
+Input ports:
+    en: Enable signal.
+    binary_in: 2-bit binary input.
+
+Output ports:
+    dec_out: 4-bit decoded output.
+
+Implementation:
+The dec_out output should be generated as follows:
+- If en is 0, dec_out should be 4'b0000.
+- If en is 1:
+  - If binary_in is 2'b00, dec_out should be 4'b0001.
+  - If binary_in is 2'b01, dec_out should be 4'b0010.
+  - If binary_in is 2'b10, dec_out should be 4'b0100.
+  - If binary_in is 2'b11, dec_out should be 4'b1000.
+
+Give me the complete code.
+
+module decoder_2to4(
+	input 		en,
+	input	[1:0] binary_in,
+ 
+	output reg [3:0] dec_out
+);

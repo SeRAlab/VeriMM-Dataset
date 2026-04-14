@@ -1,0 +1,8 @@
+The module implements a 100-bit wide Carry-Lookahead Adder combined with a 4-to-1 multiplexer. The multiplexer selects one of the three 100-bit input data segments from a larger 300-bit input based on a 2-bit selector and outputs it for further processing. The selected data, along with two additional 100-bit inputs, is used as operands in a carry-lookahead adder, which performs efficient addition while also managing an input carry signal. The final output includes a 100-bit sum and a carry-out signal, ensuring the ability to handle arithmetic operations on large binary numbers while providing quick access to selected data segments.
+module top_module( 
+    input [99:0] a, b,
+    input cin,
+    input [299:0] data_in,
+    input [1:0] select,
+    output cout,
+    output [199:0] sum );

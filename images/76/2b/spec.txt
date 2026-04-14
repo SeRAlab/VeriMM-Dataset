@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit binary multiplier using the shift-and-add method. The module should take two 4-bit operands as inputs and output an 8-bit result. The multiplier should be synchronous with the clock signal and include a reset signal to initialize the module.
+
+Module name:  
+    binary_multiplier 
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: The reset signal to initialize or reset the module.
+    multiplicand: 4-bit input representing the first operand.
+    multiplier: 4-bit input representing the second operand.
+Output ports:
+    product: 8-bit output containing the result of the multiplication.
+
+Implementation:
+
+Operation Start:
+On reset, initialize the product register and intermediate registers.
+On each clock cycle, perform the shift-and-add multiplication algorithm:
+If the least significant bit of the multiplier is 1, add the multiplicand to the product register.
+Shift the multiplicand left by one bit.
+Shift the multiplier right by one bit.
+
+Result:
+The final product will be available in the product register after 4 clock cycles.
+
+Give me the complete code.

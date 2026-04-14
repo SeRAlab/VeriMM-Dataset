@@ -1,0 +1,10 @@
+Design a program counter (PC) module for a CPU that manages the instruction flow based on clock cycles and control signals. Upon a reset signal, the output PC initializes to a fixed start address (0x80000000) and is disabled from counting if the control enable (ce) signal is low. In normal operation, the PC increments by 4 on each clock cycle unless a stall condition is asserted. If the branch enable signal is active, the PC is updated to the specified branch target address, allowing for conditional branching in the instruction execution flow. Additionally, the module incorporates stall handling, ensuring that it can pause updates to the instruction address as required.
+module top_module(
+    input clk,
+    input rst,
+    input [5:0]stall,
+    input branch_en_i,
+    input [31:0]branch_target_addr_i,
+    output reg [31:0]pc,
+    output reg ce
+);

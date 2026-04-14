@@ -1,0 +1,7 @@
+Design a clock gating circuit with a D flip-flop enable mechanism. The module generates a gated clock signal (ENCLK) that allows the clock to pass through only when the transparent enable (TE) or the enable (EN) input signals are active, effectively controlling the clock signal based on these conditions. If neither enable is active, the gated clock signal is set to LOW, thereby reducing unnecessary power consumption when the circuit is not in use.
+module top_module(
+  input CLK, // clock signal
+  input EN, // enable signal
+  input TE, // transparent enable signal
+  output reg ENCLK // gated clock signal
+);

@@ -1,0 +1,15 @@
+Design a register file module that contains 32 registers, capable of reading and writing data based on control signals. On the rising edge of a clock signal, it can write data to a specified register if enabled by the regWrite signal. It also features an asynchronous reset to initialize all registers to zero. The module allows for reading data from two registers, specified by readReg1 and readReg2, and outputs their values. Additionally, it includes a switch mechanism to control which part of the program counter or registers’ data is displayed on an output LED indicator, making it versatile for status monitoring or debugging purposes.
+module top_module(
+    input clock_in,
+    input [25:21] readReg1,
+    input [20:16] readReg2,
+    input [4:0] writeReg,
+    input [31:0] writeData,
+    input regWrite,
+    input rst,
+    input [31:0] PC,
+    input [1:0] switch,
+    output reg [31:0] readData1,
+    output reg [31:0] readData2,
+    output reg [7:0] led
+);

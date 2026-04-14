@@ -1,0 +1,19 @@
+Design a 64-bit wide AXI register module that captures and holds data from an AXI input interface on the rising edge of the clock. Upon reset, the register and output signals are initialized to zero. When valid input data is present, the received data and its associated control signals (e.g., keep, last, and user) are stored and propagated to the output interface. The module also provides a ready signal for flow control, indicating compatibility with the downstream AXI component. This design facilitates data transfer between modules in a synchronous AXI system.
+module top_module(
+    input clk,
+    input rst,
+    // AXI input
+    input [63:0] input_axis_tdata,
+    input [7:0] input_axis_tkeep,
+    input input_axis_tvalid,
+    output input_axis_tready,
+    input input_axis_tlast,
+    input input_axis_tuser,
+    // AXI output
+    output reg [63:0] output_axis_tdata,
+    output reg [7:0] output_axis_tkeep,
+    output reg output_axis_tvalid,
+    input output_axis_tready,
+    output reg output_axis_tlast,
+    output reg output_axis_tuser
+);

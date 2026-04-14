@@ -1,0 +1,23 @@
+Please act as a professional Verilog designer.
+
+Implement an 8-bit shift register with a parallel load and a serial input. The shift register should shift its contents left on each positive clock edge. If the load signal is high, the shift register should load the input data immediately, regardless of the clock signal.
+
+Module name:
+    shift_register
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    load: Load control signal. Defined as 1 for loading data and 0 for shifting data.
+    parallel_in: 8-bit input data for parallel loading.
+    serial_in: Serial input data for shifting.
+
+Output ports:
+    data_out: Output 8-bit shift register value.
+
+Implementation:
+Shift Register Logic:
+The module includes an 8-bit register, data_out, to store the current shift register value.
+On the positive edge of the clock signal (clk), the module updates the shift register value. If the load signal (load) is high, the shift register value is set to the parallel input data (parallel_in). Otherwise, the shift register shifts left and the serial input data (serial_in) is shifted into the least significant bit.
+
+Give me the complete code.

@@ -1,0 +1,16 @@
+
+Design a simple Kalman filter module in Verilog that fuses position and velocity measurements from a sensor. The filter will use a set of matrices for state prediction and measurement update. The input to the module will be the position measurement (z), velocity measurement (v), and the time step (dt). The output will be the estimated position and velocity (x_est and v_est). The Kalman filter equations used are:
+1. Prediction: 
+   - x_pred = A * x + B * u
+   - P_pred = A * P * A' + Q
+2. Update:
+   - K = P_pred * H' * (H * P_pred * H' + R)^-1
+   - x_est = x_pred + K * (z - H * x_pred)
+   - P_est = (I - K * H) * P_pred
+Where:
+- A is the state transition matrix
+- B is the control input matrix
+- H is the measurement matrix
+- Q is the process noise covariance
+- R is the measurement noise covariance
+- I is the identity matrix

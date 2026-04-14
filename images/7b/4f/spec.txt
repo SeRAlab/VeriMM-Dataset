@@ -1,0 +1,12 @@
+Design a register module that captures and holds instruction and program counter data. On the rising edge of the clock, if the reset signal is active, the outputs (IR_D, pc_D, and pc8_D) are cleared to zero. If the D_En signal is high, the module does not perform any operation. Otherwise, it updates IR_D, pc_D, and pc8_D with the current values of the input signals IR, pc, and pc8, respectively. This module serves as a storage element in a pipelined processor architecture, facilitating data forwarding in the decode stage.
+module top_module(
+	input clk,
+	input reset,					
+	input D_En,							
+	input [31:0] IR,
+	input [31:0] pc,
+	input [31:0] pc8,
+	output reg [31:0] IR_D,
+	output reg [31:0] pc_D,
+	output reg [31:0] pc8_D
+    );

@@ -1,0 +1,8 @@
+Design a module that checks branching conditions based on the given inputs. The module takes a 2-bit branch type indication (Br_type) and two 32-bit values (val1 and Src2_Val) to determine if a branch should be taken. Specifically, it outputs a signal (Br_taken) that is set to HIGH if Br_type is 11, or if Br_type is 01 and val1 is zero, or if Br_type is 10 and val1 does not equal Src2_Val. If Br_type is 00, it will always output a LOW. This functionality can be utilized in a processor's control unit to facilitate branching decisions during instruction execution.
+module top_module(
+	input [1:0] Br_type,
+	input [31:0] val1,
+	input [31:0] Src2_Val,
+
+	output reg Br_taken
+	);

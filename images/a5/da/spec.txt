@@ -1,0 +1,18 @@
+Design a 3-register file that supports reading and writing 32-bit data. The module has a write enable signal; when asserted, it allows data to be written to the specified register address. The output presents the contents of a register selected by the read address input. The module updates its internal state on the rising edge of the clock, functioning as a fundamental building block for storing data in a digital system.
+module top_module(
+  //------------------------------
+  // Top level control signals
+  //------------------------------
+  input wire clk,
+  //------------------------------
+  // Input data
+  //------------------------------
+  input  wire [2:0]       rd_at,
+  input  wire [2:0]       wr_at,
+  input  wire             wr_en,
+  input  wire [31:0]      din,
+  //------------------------------
+  // Output data
+  //------------------------------
+  output wire [31:0]      dout
+);

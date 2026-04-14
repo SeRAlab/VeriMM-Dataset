@@ -1,0 +1,12 @@
+module top_module(
+input	A,
+input	B,
+input	cin,
+output	S,
+output	cout
+);wire	AB;
+assign	AB=A&B;
+wire	AxorB;
+assign	AxorB=A^B;
+assign	S=AxorB^cin;
+assign	cout=AB|(AxorB&cin);endmodule

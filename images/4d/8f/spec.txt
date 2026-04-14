@@ -1,0 +1,9 @@
+Design a basic arithmetic calculator that performs operations on two 8-bit input values based on a 2-bit control signal. The module can add, subtract, multiply, or divide the two inputs, producing an 8-bit result. The computation occurs on the rising edge of the clock, with a reset functionality that clears the result to zero. The operations correspond to different control signal values: `00` for addition, `01` for subtraction, `10` for multiplication, and `11` for division.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] data_in1,
+    input [7:0] data_in2,
+    input [1:0] ctrl,
+    output reg [7:0] result
+);

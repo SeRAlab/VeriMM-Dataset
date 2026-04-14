@@ -1,0 +1,7 @@
+Design a PWM (Pulse Width Modulation) generator circuit that produces a pulse-width modulated output signal, pwm_out, based on a specified duty cycle and period. The duty cycle is defined as a percentage (0-100) and determines the ratio of the ON time to the total period duration. The generator utilizes a clock input to keep track of time, counting up to the specified period, and it adjusts the output signal's high duration according to the duty cycle input. The module includes counters for the current time position within the period and to manage the high duration of the output, ultimately allowing for adjustable control over the PWM output for applications such as motor control or signal modulation.
+module top_module(
+    input clk,
+    input [6:0] duty_cycle, // 7-bit input for duty cycle percentage (0-100)
+    input [15:0] period, // 16-bit input for period in clock cycles
+    output reg pwm_out
+);

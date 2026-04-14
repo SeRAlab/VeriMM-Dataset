@@ -1,0 +1,9 @@
+The module is designed to evaluate memory management unit (MMU) flags and generate interrupt requests (IRQs) based on the current memory access mode and paging status. It receives inputs that indicate whether paging is enabled, whether the access is in kernel mode, and a set of MMU flags that represent different fault conditions. Based on these inputs, the module checks for specific fault conditions such as page faults and invalid instructions, producing three distinct IRQ outputs (oIRQ40, oIRQ41, oIRQ42) that signify various states of memory access security and potential exceptions. The design effectively implements a fault-checking mechanism for memory access, crucial for managing interrupts in a virtual memory environment.
+module top_module(
+    input wire iPAGING_ENA,
+    input wire iKERNEL_ACCESS,
+    input wire [13:0] iMMU_FLAGS,
+    output wire [2:0] oIRQ40,
+    output wire [2:0] oIRQ41,
+    output wire [2:0] oIRQ42
+);

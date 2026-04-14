@@ -1,0 +1,8 @@
+Design a signal conditioning module that synchronizes an input signal with a clock and cleans it from noise. The module outputs a conditioned version of the input signal, while also detecting and signaling rising and falling edges. It uses a two-stage processing approach: first, synchronizing the input with the clock to eliminate metastability issues, and second, cleaning and preprocessing the signal to identify transitions. The module outputs three signals: `conditioned` for the cleaned input, `rising` for detecting rising edges, and `falling` for detecting falling edges, making it suitable for reliable interfacing in digital circuits.
+module top_module(
+  input clk,
+  input pin,
+  output reg conditioned,
+  output reg rising,
+  output reg falling
+);

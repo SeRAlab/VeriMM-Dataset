@@ -1,0 +1,9 @@
+Design a simple arithmetic and logic unit (ALU) that can perform a variety of operations on two 32-bit input operands, srcA and srcB, based on a 4-bit operation code (oper). The ALU supports addition, logical OR, logical AND, left shift, right shift, greater-than comparison, subtraction, logical NOT, and greater-than-or-equal comparison. The result of the selected operation is continuously updated and output as a 32-bit value. Additionally, the module outputs a signal indicating if the result is zero.
+module top_module(
+    input  [31:0] srcA,
+    input  [31:0] srcB,
+    input  [ 3:0] oper,
+    input  [ 4:0] shift,
+    output        sign,
+    output reg [31:0] result
+);

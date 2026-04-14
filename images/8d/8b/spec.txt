@@ -1,0 +1,7 @@
+Design a 32-bit arithmetic module that performs both subtraction and multiplication. The module takes two 32-bit inputs, A and B. It calculates the difference D by adding A to the two's complement of B, effectively performing A - B. Simultaneously, it computes the product P by performing a shift-and-add multiplication algorithm, where each bit of B determines whether a left-shifted version of A is added to an accumulating product. The outputs are a 32-bit difference D and a 64-bit product P, facilitating basic arithmetic operations in a single module.
+module top_module(
+    input [31:0] A,
+    input [31:0] B,
+    output reg [31:0] D,
+    output reg [63:0] P
+);

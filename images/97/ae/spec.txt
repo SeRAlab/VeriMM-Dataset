@@ -1,0 +1,6 @@
+Design a circuit for data manipulation that processes a 4-bit input based on a 2-bit control signal. The module has four functionalities: when `ctrl` is 00, it outputs the bitwise NOT of `in_data`; when `ctrl` is 01, it outputs the two's complement of `in_data`; when `ctrl` is 10, it performs a left shift on `in_data` by one position; and when `ctrl` is 11, it performs a right shift on `in_data` by one position, discarding the least significant bit. A default case outputs a zero vector.
+module top_module(
+  input [3:0] in_data,
+  input [1:0] ctrl,
+  output reg [3:0] out_data
+);

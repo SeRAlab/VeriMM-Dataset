@@ -1,0 +1,11 @@
+Design a digital circuit that provides multiple output functionalities based on input signals and clock events. The module detects edges on input signal 'a' and uses this to control the final output. It computes logical operations (AND, OR, and NOR) on a 5-bit input 'in', producing respective outputs. Additionally, it integrates a 2-to-4 decoder that responds to edge transitions of 'a', wherein the final output is set to HIGH when an edge is detected and the decoder's output is either 2 or 3. The circuit also incorporates a reset mechanism to initialize states on a negative reset signal.
+module top_module(
+    input clk,
+    input rst_n,
+    input a,
+    input [4:0] in,
+    output out_and,
+    output out_or,
+    output out_nor,
+    output reg final_output // Change to reg as it's assigned in an always block
+);

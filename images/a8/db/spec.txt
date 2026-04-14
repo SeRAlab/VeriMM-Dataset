@@ -1,0 +1,9 @@
+Design a 4-bit shift register with the ability to load data or perform shift operations. The module has inputs for 4-bit data (D), a load control signal (LOAD), a shift left control signal (SHL), and a shift right control signal (SHR). When LOAD is asserted, the register captures the input data. When SHL is asserted, the contents of the register are shifted left, with a zero being introduced on the least significant bit position. Conversely, when SHR is asserted, the contents are shifted right, with a zero being introduced on the most significant bit position. The output reflects the current value of the register on each clock cycle.
+module top_module(
+    input [3:0] D,
+    input SHL,
+    input SHR,
+    input LOAD,
+    input clk, // Added clk input
+    output reg [3:0] Q
+);

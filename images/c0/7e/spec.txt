@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+    
+Implement a module primarily functions as a configurable storage element or a flip-flop with scan capabilities. Its core objectives include:
+
+Storing a bit of data (`d`) on the rising edge of a clock signal (`ck`).
+Allowing for the data to be conditionally overwritten based on a scan enable signal (`se`).
+Providing both normal and scan-mode data outputs (`q` and `so` respectively) which are essential for testability in complex integrated circuits.
+Incorporating an asynchronous reset functionality that is active-low (`r_l`), ensuring the ability to reset the stored value under specific conditions.
+
+This module plays a crucial role in digital systems, especially in contexts requiring high testability and reliability, such as in the design of Application-Specific Integrated Circuits (ASICs) and Field-Programmable Gate Arrays (FPGAs).
+
+Module name:  
+	zsoffr_prim
+
+Input ports:
+	ck (input): The clock signal input. It is a digital signal that triggers the storage and updating of the data bit on its positive edge.
+	d (input): The primary data input. This is the bit that is intended to be stored in the flipflop under normal operation.
+	se (input): Scan enable input. A digital signal that, when high, enables the scan operation mode, allowing sd to overwrite d.
+	sd (input): Scan data input. This bit is stored in the flipflop instead of d when scan mode is enabled (se is high).
+	r_l (input): Asynchronous reset input, activelow. When low, it forces the stored data to a known state, regardless of other inputs.
+Output ports:
+	q (output): The primary data output. Reflects the current state or the bit stored in the flipflop.
+	so (output): The scan output. Mirrors the q output and is primarily used for daisychaining flipflops in scan chains for test purposes.
+
+
+Implementation:
+The zsoffr_prim module is a digital logic component designed to perform specific data manipulation and control functions based on its input signals. It integrates both combinational and sequential logic elements to achieve its intended operation. The core functionality of this module revolves around the manipulation and conditional forwarding of data signals, alongside the provision for scan-based testing and asynchronous reset capabilities.
+
+Give me the complete code.
+

@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a Microprogrammed Control (MPC) unit for a variant of the 65C02 microprocessor. The primary objective of this module to manage the microprocessor's control flow, including instruction fetching, decoding, and the execution of micro-operations. It plays a crucial role in sequencing operations and generating control signals based on the current instruction and state of the microprocessor. This module is integral to the broader system context as it directly influences the processor's ability to execute instructions efficiently and correctly.
+
+Module name:  
+	M65C02_MPCv4
+
+Input ports:
+	Rst (input): A reset signal that initializes the module's internal state.
+	Clk (input): The clock signal that synchronizes the module's operations.
+	Wait (input): A signal indicating that the module should pause its operation, typically used for wait states during memory access.
+	I (input, [3:0]): The current instruction code being executed.
+	T (input, [3:0]): A signal representing the current state or phase of instruction execution.
+	MW (input, [2:0]): Memory write data used in certain operations.
+	BA (input, [(pAddrWidth1):0]): The base address for memory operations.
+Output ports:
+	MC (output, reg [2:0]): The microoperation control signal generated based on the current state and instruction.
+	Via (output, [1:0]): A control signal indicating specific branching or vectoring operations.
+	MA (output, [(pAddrWidth1):0]): The memory address generated for the current operation.
+
+
+Implementation:
+The RTL module presented, named M65C02_MPCv4, is designed to function as a microprogram control unit for a processor, likely inspired by or related to the MOS Technology 6502 microprocessor or its variants. The module's primary role is to manage the processor's control flow, including instruction fetching, decoding, and the execution of micro-operations. The design employs both combinational and sequential logic to achieve its objectives, with a focus on instruction sequencing, branching, and micro-operation control.
+
+Give me the complete code.
+

@@ -1,0 +1,9 @@
+Design a 32-bit arithmetic unit that performs addition and subtraction based on a 2-bit control signal (aluc). The module takes two 32-bit inputs, `a` and `b`, and outputs the result in `data_out`. It distinguishes between four operations: addition (`aluc = 00`), signed addition with carry (`aluc = 10`), subtraction (`aluc = 01`), and signed subtraction with carry (`aluc = 11`). The module also produces flags for carry, negative, zero, and overflow. The zero flag is asserted when the result is zero, the carry flag indicates an overflow from the highest bit, the negative flag shows the sign of the result, and the overflow flag indicates signed overflow during operations.
+module top_module(
+  input         [31:0]  a,
+  input         [31:0]  b,
+  input         [1:0]   aluc,
+  output reg    [31:0]  data_out,
+  output reg            carry, negative, 
+  output                zero, overflow
+  );

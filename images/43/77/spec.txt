@@ -1,0 +1,9 @@
+Design a signed arithmetic unit that performs either addition or multiplication of two 8-bit signed inputs, `a` and `b`, based on a selection signal, `sel`. On each positive edge of the clock, if the reset signal is activated, both the product and sum registers are cleared to zero. If not resetting, the unit calculates the sum of `a` and `b` when `sel` is high and stores it in a sum register; otherwise, it computes the product of `a` and `b` for the product register. The final output, `out`, will then present either the computed sum or product based on the value of `sel`, allowing for versatile arithmetic operations in a digital system.
+module top_module(
+    input signed [7:0] a,
+    input signed [7:0] b,
+    input sel,
+    input reset,
+    input clk,
+    output signed [15:0] out
+);

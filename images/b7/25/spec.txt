@@ -1,0 +1,8 @@
+Design a combinational logic module that produces a 3-bit output based on the states of two 1-bit inputs, `a` and `b`, and the values of two 2-bit inputs, `c` and `d`. If `a` is high, the output will concatenate `c` with `b`. If `b` is high and `a` is low, the output will concatenate the constant `2'b1` with the 2-bit value from `d`. If both `a` and `b` are low, the output will concatenate the least significant bit of `d` with two zeros.
+module top_module(
+  input a,
+  input b,
+  input [1:0] c,
+  input [1:0] d,
+  output reg [2:0] out
+);

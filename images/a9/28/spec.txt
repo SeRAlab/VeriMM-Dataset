@@ -1,0 +1,9 @@
+Design a 12-bit up counter with load functionality. The counter increments its value on each positive clock edge when the clk_en signal is active. It can be reset to zero when the rst signal is asserted. Additionally, if the load_en signal is activated, the counter's value is set to an external 12-bit input L, allowing for preloading of the counter value.
+module top_module(
+	input wire clk,    
+	input wire clk_en, 
+	input wire rst,
+	input wire load_en,
+	input wire  [11:0] L,
+	output reg	[11:0] Q
+);

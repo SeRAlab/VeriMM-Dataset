@@ -1,0 +1,9 @@
+Design a circuit that performs 4-bit addition using two 4-bit adders while allowing for the selection of outputs through a multiplexer. The module adds inputs `a` and `b` in both adder instances, with a synchronous reset capability to clear the adder outputs. The results can be selected via a 2-bit `select` signal, enabling the circuit to output either the first or second adder's result, or the same output from a fifth-bit extended functional addition. The design serves as a versatile adder system that provides a choice of outputs based on control signals, supporting efficient data path choices in a digital circuit.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] a,
+    input [3:0] b,
+    input select,
+    output reg [4:0] sum // Changed from wire to reg
+);

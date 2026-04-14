@@ -1,0 +1,32 @@
+Please act as a professional Verilog designer.
+
+Implement a module for a 8-bit shift register. The module should shift its content left or right based on the `shift_dir` signal on each positive edge of `clk`. The `shift_in` signal provides the data to be shifted in. The register should reset to 0 when `rst` is asserted.
+
+Module name:
+    shift_register
+
+Input ports:
+    clk: Clock signal.
+    rst: Reset signal (active high).
+    shift_dir: Control signal for shifting direction (1 for left, 0 for right).
+    shift_in: Data to be shifted in.
+
+Output ports:
+    shift_out: 8-bit output representing the current value of the shift register.
+
+Implementation:
+Declare the module `shift_register` with input and output ports as specified in the ports statement.
+Declare an 8-bit register `shift_reg` to keep track of the current value of the shift register.
+Inside an always block, sensitive to the positive edge of the `clk` signal, implement the logic for shifting.
+If `rst` is asserted, reset the `shift_reg` register to 0.
+On each positive edge of the clock, shift the `shift_reg` register left or right based on the value of `shift_dir` and shift in the data from `shift_in`.
+
+Give me the complete code.
+
+module shift_register(
+    input clk,
+    input rst,
+    input shift_dir,
+    input shift_in,
+    output reg [7:0] shift_out
+);

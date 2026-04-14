@@ -1,0 +1,14 @@
+Design a clock management module that processes two clock inputs, `clk1` and `clk2`, based on their corresponding enable signals `en1` and `en2`. The module generates gated clock outputs `clk1_g` and `clk2_g`, which are active only when their respective enable signals are high. Additionally, it manages active-low reset signals `rst_n1` and `rst_n2`, registering their values for output. The module also provides a divided version of `clk1`, `clk1_div`, which toggles its state on the rising edge of `clk1` unless `rst_n1` is asserted low. This functionality can be particularly useful for managing clock signals in synchronous digital systems where clock gating and division are necessary for power management and signal conditioning.
+module top_module(
+    input       clk1,
+    input       clk2,
+    input       rst_n1,
+    input       rst_n2,
+    input       en1,
+    input       en2,
+    output      clk1_g,
+    output      clk2_g,
+    output reg  rst_n_reg1,
+    output reg  rst_n_reg2,
+    output      clk1_div
+);

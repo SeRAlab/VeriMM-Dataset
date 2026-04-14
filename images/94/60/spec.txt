@@ -1,0 +1,9 @@
+Design a dual-function 8-bit shift register. It has the capability to load an 8-bit input data when the load enable (LD_EN) signal is high, and shift its contents to the right when the shift enable (SH_EN) signal is high, preserving the most significant bit (MSB). The register's current content is available on the parallel output (PAR_OUT), while the least significant bit (LSB) is provided as the serial output (SER_OUT).
+module top_module(
+    input clk,
+    input SH_EN,
+    input LD_EN,
+    input [7:0] DATA_IN,
+    output [7:0] SER_OUT,
+    output [7:0] PAR_OUT
+);

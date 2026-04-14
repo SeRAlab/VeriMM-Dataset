@@ -1,0 +1,9 @@
+Design a 4-bit binary adder with a carry output. The module takes two 4-bit inputs, in1 and in2, along with a carry-in bit (cin). On each rising edge of the clock, if the reset signal is active, it initializes the output (out) and carry-out (cout) to zero. Otherwise, it computes the sum of in1, in2, and cin, updating the output register. If the resulting sum exceeds the maximum value for 4 bits (fifteen), it sets the carry-out flag to indicate an overflow; otherwise, it clears the carry-out flag.
+module top_module(
+   input wire clk,
+   input wire reset,
+   input wire [3:0] in1,
+   input wire [3:0] in2,
+   input wire cin,
+   output reg [3:0] out,
+   output reg cout);

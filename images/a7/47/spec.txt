@@ -1,0 +1,6 @@
+The provided Verilog code describes an Analog-to-Digital Converter (ADC) utilizing a successive approximation technique. It takes a single-bit analog input and converts it into an n-bit digital output, enabling the representation of analog signals in a digital format. The design includes a clock divider to create an appropriate sampling frequency, and it employs a series of comparative operations against a dynamic threshold to iteratively determine the digital code. The module updates the digital output after completing n cycles of approximation, making it suitable for systems that require precise digital representations of varying analog signals.
+module top_module(
+  input analog_in,
+  input clk,           // added missing clock input
+  output reg [n-1:0] digital_out
+);

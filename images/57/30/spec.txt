@@ -1,0 +1,11 @@
+Design a module that performs dual functionalities: it incorporates a 256-to-1 multiplexer and a 100-bit rotator. The multiplexer, controlled by an 8-bit select signal, outputs one of the 256 input bits based on the selection. The rotator operates synchronously with a clock, allowing a 100-bit input to be loaded and then rotated left or right based on a 2-bit enable signal. The final output is a 2-bit register that accumulates the sum of the multiplexer output and the rotated data. This design is suitable for applications requiring data selection, rotational manipulation, and accumulation in digital circuits.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input [255:0] in, // 256-bit input for the multiplexer
+    input [7:0] sel,  // 8-bit select signal for the multiplexer
+    input load,        // Load signal for the rotator
+    input [1:0] ena,   // 2-bit enable signal for the rotator
+    input [99:0] data, // 100-bit input data for the rotator
+    output reg [1:0] q // 2-bit output from the functional module
+);

@@ -1,0 +1,9 @@
+Design a digital system that processes a 32-bit input signal to detect transitions from high to low for each bit, while also implementing a 3-bit shift register. The module captures the state of the input on each clock cycle and identifies transitions, storing the results in a transition variable. Additionally, it uses a 3-bit shift register to sequentially store and update a value based on an input control signal, d, while allowing for synchronous reset functionality. The final output is generated through an XOR operation on the transition signals, which provides a single output that indicates whether any transitions have occurred among the 32 input bits.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] in,
+    input d,
+    output [2:0] q,
+    output final_output
+);

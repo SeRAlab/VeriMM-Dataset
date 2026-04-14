@@ -1,0 +1,13 @@
+Design a multi-threaded register file that supports simultaneous read and write operations for up to 128 32-bit registers. The module has two read ports and one write port, capable of handling different threads identified by a 2-bit thread input. When reading, it selects output data based on the specified register address and thread, returning data while providing the ability to read from a special zero register when a zero address is specified. On the positive edge of the clock, the module updates the register file with new data from the write port if the write enable signal is asserted, and it accommodates writing to different register banks based on the thread identifier. This design is essential for architectures that require context switching and thread management, such as in modern CPUs or FPGAs.
+module top_module(input clk,
+    input [1:0] io_rs1_thread,
+    input [4:0] io_rs1_addr,
+    output[31:0] io_rs1_data,
+    input [1:0] io_rs2_thread,
+    input [4:0] io_rs2_addr,
+    output[31:0] io_rs2_data,
+    input [1:0] io_rd_thread,
+    input [4:0] io_rd_addr,
+    input [31:0] io_rd_data,
+    input  io_rd_enable
+);

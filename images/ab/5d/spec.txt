@@ -1,0 +1,10 @@
+Design a module that aligns a 64-bit instruction based on the least significant bits of a 64-bit program counter (PC) input. The module takes two 64-bit inputs: the PC and the instruction. It generates an aligned instruction output and a 4-bit mask that indicates which bytes of the instruction are valid after alignment. The alignment is determined by the last three bits of the PC, allowing for four different 4-byte alignments, ensuring that the resulting instruction can be correctly interpreted based on its position in memory.
+module top_module(
+
+	input [63:0] ic_iq_pc,
+	input [63:0] ic_iq_instr,
+
+	output [63:0] align_instr,
+	output [3:0] align_instr_mask
+
+);

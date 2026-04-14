@@ -1,0 +1,6 @@
+Design a simple calculator module that performs basic arithmetic operations based on a 32-bit input signal. It extracts two 8-bit operands and a 4-bit operator from the input data, and upon receiving a trigger signal, it executes the corresponding arithmetic operation, including addition, subtraction, multiplication, and division. The result is clamped to prevent overflow or underflow by restricting it within the signed 32-bit integer range. The module effectively utilizes combinational logic for operand extraction and sequential logic for operation execution, making it suitable for basic arithmetic processing tasks.
+module top_module(
+    input [31:0] data,
+    input trigger,
+    output reg [31:0] result
+);

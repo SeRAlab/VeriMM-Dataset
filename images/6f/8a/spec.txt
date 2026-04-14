@@ -1,0 +1,11 @@
+Design a PCI Express (PCIe) SerDes (Serializer/Deserializer) interface module that facilitates high-speed data transmission and reception. The module takes a reference clock and reset signal, and manages the transmission of 32-bit parallel data, signaling when data is valid and ready for transmission. It employs a SerDes core instance to handle the serialization and deserialization process, processing incoming data and detecting errors during reception. The circuit also handles the state of the `tx_ready` signal based on the validity of the transmit data and manages incoming received data and potential errors through control signals, providing an integrated solution for high-speed serial communication in PCIe applications.
+module top_module(
+  input ref_clk,
+  input reset,
+  input [31:0] tx_data,
+  input tx_valid,
+  output reg tx_ready,
+  input rx_valid,
+  output reg [31:0] rx_data,
+  output reg rx_error
+);

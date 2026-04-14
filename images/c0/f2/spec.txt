@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a multiplexer (mux) with a specific purpose in the context of scan-based testing or scan chain implementation within digital integrated circuits (ICs). Its primary role to select between functional data inputs and scan data inputs based on the mode of operation the IC is currently in—normal functional operation or test (scan) mode.
+
+In a broader system context, this module facilitates the integration of scan-based testing methodologies into the design, enabling easier detection and diagnosis of faults. It is a critical component in ensuring the testability and maintainability of complex digital systems, particularly in the realms of ASIC and FPGA design, where reliability and fault coverage are paramount.
+
+Module name:  
+	omsp_scan_mux
+
+Input ports:
+	data_in_scan: A singlebit input that carries the scan data intended for testing purposes. When the IC is in scan mode, this data is selected and propagated through the data_out port.
+	data_in_func: A singlebit input that carries the functional data for normal operation of the IC. This data is selected and output through data_out when the IC is not in scan mode.
+	scan_mode: A singlebit input that determines the mode of operation. When high (1), the IC is considered to be in scan mode, and data_in_scan is selected. When low (0), the IC is in normal functional mode, and data_in_func is selected.
+Output ports:
+	data_out: This is the output port of the module. It is a singlebit output that carries the selected data based on the scan_mode input. The data type is binary (0 or 1), and it serves as either the functional data or the scan data to be used by subsequent stages of the circuit depending on the mode of operation.
+
+
+Implementation:
+The omsp_scan_mux module is a simple yet versatile digital logic component designed to select between two input signals based on a control signal. This module embodies the essence of a multiplexer (mux) in digital design, specifically tailored for scenarios where a system may need to switch between functional and scan modes. The primary logic implemented within this module is purely combinational, as it does not involve any storage elements or clocked sequential logic. The decision-making process is instantaneous and directly dependent on the current values of the input signals.
+The core functionality is encapsulated within a single line of Verilog code:
+verilog
+assign data_out = scan_mode ? data_in_scan : data_in_func;
+
+This line represents a conditional expression, often referred to as a ternary operator in various programming languages. The operation can be interpreted as follows: if scan_mode is true (logic high), then data_out will be assigned the value of data_in_scan; otherwise, data_out will take the value of data_in_func. This simple yet effective logic allows for dynamic switching between two operational modes without the need for complex control structures or additional logic gates.
+
+Give me the complete code.
+

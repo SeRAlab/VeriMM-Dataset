@@ -1,0 +1,9 @@
+Design a binary-to-BCD (Binary-Coded Decimal) converter module that takes a 12-bit binary input and converts it into four separate 4-bit BCD outputs representing the thousands, hundreds, tens, and ones places. The conversion process operates on the rising edge of a clock signal and resets to zero if the reset signal is active. The module utilizes a shift-and-add-3 algorithm to ensure that each 4-bit BCD digit is adjusted correctly when it exceeds the BCD representation limit of 9. The outputs update accordingly by shifting in the bits from the binary input while providing concurrent decimal values in the respective output wires.
+module top_module( 
+							clk,
+							bin_bcd,
+							rst,
+							tho,
+							hun,
+							ten,
+							one);

@@ -1,0 +1,6 @@
+Design a module that functions as a combinational arithmetic and encoding unit. It takes a 4-bit `control_signals` input to determine its operation. Depending on the specified control signals, the module can perform addition (adding a fixed incremental value to `input_data`) or act as a priority encoder (generating a 3-bit output based on the highest active bit in `input_data`). The results from either the adder or encoder are then routed to a 4-bit `output_data`. The module efficiently consolidates these functionalities, ensuring the output corresponds to the selected operation based on the control signals.
+module top_module(
+  input [3:0] control_signals,
+  input [3:0] input_data,
+  output reg [3:0] output_data
+);

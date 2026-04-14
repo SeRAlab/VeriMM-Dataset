@@ -1,0 +1,14 @@
+Design a multi-input multiplexer with additional functionality for decoding specific selections. The module takes an 8-bit selection input to choose one of several 8-bit wide data sources, including status signals and registers. Depending on the value of the selection input, it outputs predefined values or the contents of specified registers or input signals. The outputs include control signals (listo, listo_lee, listo_escribe) as well as data from various keys and registers (tecla, tecla2, tecla3, RG1, RG2, RG3), enabling the circuit to route appropriate data based on the selection. The default output is set to zero if an unexpected selection is encountered.
+module top_module(
+input wire [7:0]seleccion,
+input wire [7:0]tecla,
+input wire [7:0] tecla2,
+input wire [7:0] tecla3,
+input wire [7:0]RG1,
+input wire [7:0]RG2,
+input wire [7:0]RG3,
+input wire listo,
+input wire listo_lee,
+input wire listo_escribe,
+output reg [7:0]salida_mux_deco
+    );

@@ -1,0 +1,9 @@
+Design a circuit that functions as a 4-bit counter and a 3-bit shift register, controlled by a clock and a reset signal. Upon receiving a reset signal, both the counter and the shift register are initialized to zero. On each rising edge of the clock, if the select input is high, the counter increments by one while the shift register retains its value. Conversely, if the select input is low, the counter remains unchanged, and the shift register performs a left shift operation, inserting the input data bit at the least significant position. The circuit outputs the current values of both the counter and the shift register.
+module top_module(
+    input clk,
+    input reset,
+    input data,
+    input select,
+    output reg [3:0] counter_out,
+    output reg [2:0] shift_register_out
+);

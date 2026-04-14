@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+
+Design a 4-bit binary up/down counter with synchronous reset and direction control signals. The counter should increment its value on the rising edge of the clock when the direction signal is high, and decrement its value when the direction signal is low. When the reset signal is active, the counter should be reset to 0.
+
+Module name:
+    updown_counter_4bit
+
+Input ports:
+    clk: Clock signal.
+    rst: Reset signal.
+    dir: Direction control signal.
+
+Output ports:
+    count: 4-bit counter value.
+
+Implementation:
+The module uses an always block triggered by the clock and reset signals. If the reset signal is active, the counter is reset to 0. If the direction signal is high and the reset signal is not active, the counter increments its value on the rising edge of the clock. If the direction signal is low and the reset signal is not active, the counter decrements its value on the rising edge of the clock.
+
+Give me the complete code.
+
+module updown_counter_4bit(
+    input wire clk,
+    input wire rst,
+    input wire dir,
+    output reg [3:0] count
+    );

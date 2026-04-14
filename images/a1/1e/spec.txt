@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+
+Implement a D flip-flop with an asynchronous reset. The flip-flop should capture the value of the D input on the positive edge of the clock signal and output it on the Q output. If the reset signal is active (reset = 1), the Q output should be set to 0 immediately, regardless of the clock signal.
+
+Module name:  
+    DFF               
+Input ports:
+	clk: Clock signal used for synchronous operation.
+	reset: Active-high asynchronous reset signal.
+	D: Data input signal.
+
+Output ports:
+    Q: Output signal representing the captured data value.
+
+Implementation:
+The module uses a register `Q` to store the captured data value.
+The always block triggers on the positive edge of the clock signal or the positive edge of the reset signal (posedge clk or posedge reset).
+If the reset signal is active (reset = 1), the `Q` register is set to 0.
+If the reset signal is not active, the `Q` register captures the value of the D input on the positive edge of the clock signal.
+
+Give me the complete code.
+
+module DFF (
+	input clk,
+	input reset,
+	input D,
+	output reg Q
+);

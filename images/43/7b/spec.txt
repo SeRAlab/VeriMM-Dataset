@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+
+Implement a module to achieve parallel input data accumulation output, input is 4-bit data. The valid_in will be set to 1 before the first data comes in. Whenever the module receives 8 input data, the data_out outputs the sum of 8 received data and sets the valid_out to be 1 (will last only 1 cycle).
+
+Module name:  
+    par_accu               
+Input ports:
+	clk: Clock input for synchronization.
+	rst_n: Active-low reset signal.
+	data_in[3:0]: 4-bit input data for addition.
+	valid_in: Input signal indicating readiness for new data.   
+Output ports:
+    valid_out: Output signal indicating when 8 input data accumulation is reached.
+	data_out[7:0]: 8-bit output data representing the accumulated sum.
+
+Implementation:
+When valid_in is 1, data_in is a valid input. Accumulate eight valid input data_in values and calculate the output data_out by adding these eight values together. 
+There is no output when there are fewer than eight data_in inputs in the interim. Along with the output data_out, a cycle of valid_out=1 will appear as a signal. 
+The valid_out signal is set to 1 when the data_out outputs 8 received data accumulation results. Otherwise, it is set to 0.
+
+Give me the complete code.

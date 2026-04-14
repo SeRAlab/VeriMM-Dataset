@@ -1,0 +1,33 @@
+Please act as a professional Verilog designer.
+
+Implement a 3-bit binary counter with a synchronous load and count enable. The counter should load the parallel data when the load signal is high. Otherwise, it should increment its value by 1 on each rising edge of the clock signal when the enable signal is high. The counter value should be reset to 0 when the reset signal is high.
+
+Module name:  
+    counter_3bit               
+Input ports:
+	clk: Clock signal used for synchronous operation.
+	rst: Active-high synchronous reset signal.
+	load: Load signal for parallel data input.
+	enable: Count enable signal.
+	parallel_data: 3-bit parallel data input.
+
+Output ports:
+    count: 3-bit output representing the counter value.
+
+Implementation:
+Counter Logic:
+The always block triggers on the positive edge of the clock signal (posedge clk).
+If the reset signal (rst) is active, the counter value is set to 0.
+If the load signal (load) is active, the parallel data (parallel_data) is loaded into the counter.
+If the enable signal (enable) is active, the counter increments its value by 1.
+
+Give me the complete code.
+
+module counter_3bit (
+	input clk,
+	input rst,
+	input load,
+	input enable,
+	input [2:0] parallel_data,
+	output reg [2:0] count
+);

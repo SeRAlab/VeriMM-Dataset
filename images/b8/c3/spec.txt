@@ -1,0 +1,7 @@
+Design a clock gating module that produces a gated clock output (GCLK) based on a chip enable (SCE) and gate signal (GATE). When the GATE signal is active and SCE is asserted, the module allows the clock input (CLK) to pass through; otherwise, it suppresses the clock signal to save power or prevent clocking during idle states. This module utilizes a negative latch to control the flow of the clock signal, ensuring that GCLK is only active when both the SCE and GATE conditions are met.
+module top_module(
+    GCLK,
+    SCE,
+    GATE,
+    CLK
+);

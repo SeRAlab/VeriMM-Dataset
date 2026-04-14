@@ -1,0 +1,11 @@
+The design implements a clock generator and counter module that adjusts the speed of its output based on select input conditions. It employs a multiplexer to switch between different clock speed configurations, producing adjustable timing signals defined by the parameters cambi0 and cambi1 depending on whether real-speed or UART speed is selected. The ym_pm output signal toggles based on specific counting thresholds, controlling the timing and synchronization of processes in relation to the provided clock. Additionally, it includes a counter (pm_counter) that increments upon receiving an interrupt signal (irq_n), with the ability to reset the counter through an external signal. This module serves as an essential timing control for systems requiring variable clock management and precise counting mechanisms.
+module top_module(
+    input             clk,
+    input             rst,
+    input             real_speed,
+    input             rst_counter,
+    input             irq_n,
+    input             uart_speed,
+    output reg        ym_pm,
+    output reg [31:0] pm_counter
+);

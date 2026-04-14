@@ -1,0 +1,13 @@
+Design a module for data alignment and error detection in a JESD (JESD204) interface. The module receives incoming frame data along with start-of-frame (SOF), end-of-frame (EOF), and frame error signals. It checks for error conditions by evaluating the relationship between SOF, EOF, and frame error signals, generating an error output when conditions are invalid. The module processes the frame data based on specified SOF values to align the data correctly: when SOF matches one of the defined patterns, it outputs the data with potential modification; otherwise, it signals an error and outputs a predefined failure value. This design ensures proper data alignment and error reporting for efficient data transmission in JESD applications.
+module top_module(
+  // jesd interface
+  rx_clk,
+  rx_sof,
+  rx_eof,
+  rx_ferr,
+  rx_fdata,
+
+  // aligned data
+  rx_err,
+  rx_data
+);

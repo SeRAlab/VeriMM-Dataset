@@ -1,0 +1,10 @@
+Design a module that functions as an 8-bit linear feedback shift register (LFSR) capable of generating pseudo-random sequences. The module is clocked and controlled by input signals: it resets to a predefined seed value, allows loading of external 8-bit data, enables or disables operation, and can pause the LFSR's feedback operations. When enabled and not paused, the LFSR updates its state based on feedback from its own bits, producing a new state on each clock cycle. The current state of the LFSR is output as an 8-bit data signal.
+module top_module(
+  input clk,
+  input reset_n,
+  input enable,
+  input pause,
+  input load,
+  input [7:0] ldata,
+  output reg [7:0] data
+);

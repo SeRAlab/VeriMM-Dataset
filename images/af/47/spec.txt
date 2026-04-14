@@ -1,0 +1,8 @@
+Design an up-down counter with a 3-bit output and a carry-out signal. The counter increments when the up_down input is high and decrements when it is low. Upon reaching the maximum value of 7 (111 in binary), it wraps around to 0 and sets the carry_out signal to high. Conversely, when decrementing, if it reaches 0 (000 in binary), it wraps around to 7 and also sets carry_out high. A reset input initializes the counter to 0 and clears the carry_out signal.
+module top_module(
+  input clk,
+  input reset,
+  input up_down,
+  output reg [2:0] q,
+  output reg carry_out
+);

@@ -1,0 +1,8 @@
+Design a 4-bit binary counter with asynchronous reset and enable functionality. The counter increments on each positive edge of the clock when the enable signal is active. If the counter reaches its maximum value (15 or 1111 in binary), it rolls over to 0 and asserts an overflow signal. The counter can be reset to 0 by asserting the reset_b signal low, which also clears the overflow indication.
+module top_module(
+    input wire clk,
+    input wire reset_b,
+    input wire enable,
+    output reg [3:0] count,
+    output reg overflow
+);

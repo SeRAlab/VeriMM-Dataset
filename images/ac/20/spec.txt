@@ -1,0 +1,11 @@
+Design a synchronous FIFO (First-In-First-Out) buffer circuit that facilitates data storage and retrieval. It accepts a 32-bit input data (`wr_data`) for writing, regulated by a write enable signal (`wr_en`), and outputs a 32-bit data (`rd_data`) for reading, controlled by a read enable signal (`rd_en`). The module has flags to indicate when the buffer is full or empty, and it ensures that the read and write pointers wrap around after reaching the defined depth. The system incorporates reset functionality to initialize the pointers and status flags. This design serves to temporarily hold data between different processes or components in digital systems, allowing for smooth data flow and synchronization.
+module top_module(
+    input clk,
+    input rst,
+    input wr_en,
+    input rd_en,
+    input [31:0] wr_data,
+    output reg [31:0] rd_data,  // Changed to reg as it is driven in an always block
+    output full,
+    output empty
+);

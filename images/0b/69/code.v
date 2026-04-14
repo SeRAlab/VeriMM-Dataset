@@ -1,0 +1,13 @@
+module clock_gated_ff (
+    input wire clk,
+    input wire enable,
+    input wire d,
+    output reg q
+);
+    always @(posedge clk) begin
+        if (enable) begin
+            q <= d;
+        end
+        // If enable is low, q retains its previous value
+    end
+endmodule

@@ -1,0 +1,8 @@
+Design a module that acts as a simple memory interface with two 8-bit memory locations. It takes a 2-bit address input to select which memory location to write data into from an 8-bit input port. On the positive edge of a clock signal, if not in reset, it can output a 32-bit read data that combines the selected memory content with zero padding. The module also includes a reset mechanism that initializes all memory locations and output data to zero when activated. The read data is updated with a clock enable signal to control the data flow.
+module top_module(
+  input [1:0] address,
+  input clk,
+  input [7:0] in_port,
+  input reset_n,
+  output reg [31:0] readdata
+);

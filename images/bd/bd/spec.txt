@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+
+Implement a debounce circuit for a push button. The debounce circuit should filter out noise and ensure a clean signal for further processing.
+
+Module name:  
+    debounce 
+
+Parameter:
+DEBOUNCE_TIME = 100_000  // Number of clock cycles for debounce
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high reset signal. Defined as 1 for reset and 0 for normal operation.
+    button_in: 1-bit input signal representing the raw button press.
+
+Output ports:
+    button_out: 1-bit debounced output signal.
+
+Implementation:
+The debounce circuit uses a counter to filter out noise from the button press. The counter increments if the button state is stable for DEBOUNCE_TIME clock cycles and then updates the button_out signal.
+
+Give me the complete code.

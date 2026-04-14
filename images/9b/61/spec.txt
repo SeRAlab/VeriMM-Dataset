@@ -1,0 +1,11 @@
+Design a sequential circuit that operates with two 8-bit input data streams (d1 and d2) under the control of a clock and a reset signal. The circuit contains two registers that store the input values, with each being reset to zero on a reset signal. The module computes the sum of the two stored values and the bitwise complement of that sum. It features a multiplexing structure that allows selection between various operational outputs based on a given select signal, specifically providing the option to output either the sum, the complement of the sum, or to perform internal multiplexing to select between these two results. The outputs include the selected multiplexed result (q), the sum (out_sum), and the complement of the sum (out_comp).
+module top_module( 
+    input clk, 
+    input reset,
+    input select, 
+    input [7:0] d1, 
+    input [7:0] d2, 
+    output [7:0] q,
+    output [7:0] out_sum,
+    output [7:0] out_comp 
+);

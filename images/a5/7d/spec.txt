@@ -1,0 +1,7 @@
+Design a simple encryption system that processes a 4-bit input data through a sequence of operations to produce an encrypted output. On each clock cycle, when not in reset, the system adds a fixed 4-bit key (1010) to the input data using a ripple carry adder, then shifts the resulting sum left by one bit. The shifted data is then registered as the output encrypted_data. The system is initialized to zero on reset, ensuring that all operational registers are cleared.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] data_in,
+  output reg [3:0] encrypted_data
+);

@@ -1,0 +1,26 @@
+module top_module(clk, rst, ex_freeze, a, b, fpu_op, result, done, flagforw, flag_we, sig_fp, except_started, fpcsr_we, fpcsr, spr_cs, spr_write, spr_addr, spr_dat_i, spr_dat_o);input [31:0] a;
+  input [31:0] b;
+  input clk;
+  output done;
+  input ex_freeze;
+  input except_started;
+  output flag_we;
+  output flagforw;
+  output [11:0] fpcsr;
+  input fpcsr_we;
+  input [7:0] fpu_op;
+  output [31:0] result;
+  input rst;
+  output sig_fp;
+  input [31:0] spr_addr;
+  input spr_cs;
+  input [31:0] spr_dat_i;
+  output [31:0] spr_dat_o;
+  input spr_write;
+  assign done = 1'b1;
+  assign flag_we = 1'b0;
+  assign flagforw = 1'b0;
+  assign fpcsr = 12'b000000000000;
+  assign result = 0;
+  assign sig_fp = 1'b0;
+  assign spr_dat_o = 0;endmodule

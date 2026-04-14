@@ -1,0 +1,8 @@
+Design a synchronous circuit that functions as a 4-bit counter and computes the sum of a 4-bit input value and the previous value of a second 4-bit input. On a positive clock edge, the counter increments, rolling over to zero upon reaching its maximum value (15). The circuit incorporates an asynchronous active-high reset to initialize the counter and input registers to zero. The output includes the current count and the computed sum, which is the result of adding the first input to the last stable value of the second input before the most recent clock cycle.
+module top_module(
+    input clk,
+    input reset,      // Asynchronous active-high reset
+    input [3:0] input1,
+    input [3:0] input2,
+    output reg [3:0] sum,
+    output reg [3:0] counter_out);

@@ -1,0 +1,9 @@
+Design a circuit that integrates both a demultiplexer and a multiplexer functionality. The module utilizes a 16-bit input to control a demultiplexer, which maps the upper nibble of the input to 256 different 4-bit outputs stored in a 256-bit register, while also providing two 4-bit outputs through a multiplexer that selects between the upper and lower nibbles based on a selection signal. When the selection signal is less than 128, the demultiplexed output is generated; otherwise, the output comes from the multiplexer's selected path. This design allows for dynamic routing of data based on input conditions.
+module top_module( 
+    input wire clk,
+    input wire reset,
+    input wire [15:0] in,
+    input wire select,
+    output wire [3:0] out_hi,
+    output wire [3:0] out_lo,
+    output wire [1023:0] out_demux );

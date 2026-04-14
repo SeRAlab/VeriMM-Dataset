@@ -1,0 +1,6 @@
+Design a frequency counter module that measures the frequency of an input signal with respect to a specified clock frequency. The module counts the number of signal transitions within a defined measurement window determined by the clock cycles, allowing for an averaging effect to mitigate measurement errors. It computes the frequency in hundreds of Hz, outputs the result as a 14-bit value, and includes mechanisms to reset the counters and manage potential overflow conditions in the signal counting process. The design ensures that the counting begins only after a designated number of clock edges have been registered, optimizing accuracy and reliability in frequency measurement.
+module top_module(
+    input clk,
+    input sig,
+    output reg [13:0] f
+);

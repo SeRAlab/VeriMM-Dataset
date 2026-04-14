@@ -1,0 +1,6 @@
+Design a circuit that implements an 8-bit Linear Feedback Shift Register (LFSR) for generating pseudo-random byte sequences. On a rising clock edge, if the reset signal is asserted, the register initializes to a specific predefined value (8'b10101101). Otherwise, the circuit shifts the register contents while calculating new bits based on a feedback function derived from specific bits of the register using XOR operations. The output is the current state of the register, which serves as the generated random byte.
+module top_module(
+	input clk,
+	input rst,
+	output[7:0] random_byte
+);

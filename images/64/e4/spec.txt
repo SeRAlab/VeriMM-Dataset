@@ -1,0 +1,7 @@
+Design a touch sensor interface that detects touch input based on either a capacitance or resistance measurement mode. When the `trigger` signal is activated, the module evaluates the `sensor` input using either a capacitance function or a resistance function, depending on the selected `mode`. If the measured value exceeds a defined capacitance threshold in capacitance mode, or falls below a resistance threshold in resistance mode, it sets the `touch` output high. This allows for adaptable touch sensing based on signal characteristics.
+module top_module(
+  input trigger,
+  input mode,
+  input [7:0] sensor,
+  output touch
+);

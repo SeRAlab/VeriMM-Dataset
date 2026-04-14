@@ -1,0 +1,7 @@
+Design a 4-bit shift register capable of both parallel loading and shifting. When the `shift_parallel` signal is asserted, the register shifts its contents left by one bit and fills the least significant bit with a zero. If `shift_parallel` is not asserted, the register loads the 4-bit input `parallel_in` directly into its output.
+module top_module(
+    input clk,
+    input shift_parallel,
+    input [3:0] parallel_in,
+    output reg [3:0] out
+);

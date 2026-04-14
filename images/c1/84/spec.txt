@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as an adjustable modulus counter with a programmable time delay on its output signal. Its primary role within a broader system could be to generate periodic signals with specific timing characteristics, serve as a timing element in digital designs, or provide synchronization signals for other components. The module introduces a delay to its output toggle, allowing for precise timing adjustments in applications where the timing of signal transitions is critical.
+
+Module name:  
+	arm_m_cntr
+
+Input ports:
+	clk (input): The clock input signal. This signal drives the operation of the counter, with counting events triggered on specific clock edges.
+	reset (input): The reset input signal. When asserted, it initializes the counter and related internal states, preparing the module for a fresh counting cycle.
+	initial_value ([31:0] input): A 32bit input specifying the initial value of the counter. This feature is declared but not implemented in the current design.
+	modulus ([31:0] input): A 32bit input defining the modulus value for the counter. When the count reaches this value, it resets, allowing for adjustable periodicity.
+	time_delay ([31:0] input): A 32bit input specifying the delay in time units before the output signal cout reflects changes. This allows for precise control over signal timing.
+Output ports:
+	cout (output): The output signal of the module. It toggles state based on the count reaching the modulus value, with a programmable delay applied to transitions.
+
+
+Implementation:
+The arm_m_cntr module is designed to function as a configurable, modular counter with a delay-controlled output toggle feature. It operates based on the input clock (clk), reset signal (reset), initial value (initial_value), modulus value (modulus), and a specified time delay (time_delay). The primary output of this module is cout, which is a delayed, toggled signal based on the counter reaching its modulus value.
+
+Give me the complete code.
+

@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+    
+Implement a module to generate two sets of 64-bit constants (`rc1` and `rc2`) based on a 12-bit input (`i`). These constants are likely used in cryptographic algorithms or other specialized computational functions where specific bit patterns derived from a smaller set of input bits are required. The module's primary function to map subsets of the input bits to specific bits in the 64-bit output constants according to predefined logic rules. This functionality is crucial in systems where deterministic yet seemingly random constants are needed for operations such as encryption, hashing, or pseudo-random number generation.
+
+Module name:  
+	rconst2in1
+
+Input ports:
+	i [11:0]: A 12bit input vector. This input serves as the basis for generating the 64bit constants rc1 and rc2. Each bit in this vector influences specific bits in the output constants according to the logic defined within the module.
+Output ports:
+	rc1 [63:0]: A 64bit output constant. Specific bits of rc1 are set based on the logic operations (OR) applied to selected bits of the input vector i. Not all bits in rc1 are defined, implying that some bits remain at their initialized value of 0.
+	rc2 [63:0]: Another 64bit output constant generated similarly to rc1 but follows a different set of logic rules for determining which bits are set. As with rc1, not all bits in rc2 are explicitly defined, leaving some bits at 0.
+
+
+Implementation:
+The provided RTL module, named rconst2in1, is designed to generate two 64-bit output vectors (rc1 and rc2) based on a 12-bit input vector (i). The module is purely combinational, as evidenced by the absence of clocked sequential elements (e.g., flip-flops or latches) and the use of always @ (i) blocks, which indicate that the output is recalculated every time the input changes.
+The logic within each always block is straightforward, setting specific bits of the 64-bit outputs (rc1 and rc2) based on the logical OR of selected bits from the 12-bit input. This is a form of combinational logic where the output at any given moment is a direct function of the input at that same moment, without any memory of past inputs.
+For rc1:
+  The module initializes rc1 to 0, then selectively sets bits 0, 1, 3, 7, 15, 31, and 63 based on the OR of various combinations of the input bits. For example, rc1[0] is set if any of the input bits 0, 2, 3, 5, 6, 7, 10, or 11 are set.
+  This pattern suggests that rc1 is designed to encode specific combinations of the input bits into a sparse 64-bit representation, where each bit in rc1 represents a unique combination of input conditions.
+For rc2:
+  Similarly, rc2 is initialized to 0 and then selectively sets bits 0, 1, 3, 7, 15, 31, and 63 based on different combinations of the input bits compared to rc1. For instance, rc2[0] is set if any of the input bits 2, 3, 6, or 7 are set.
+  The logic for rc2 suggests a different encoding of the input bits into another 64-bit representation, where each bit in rc2 represents another set of unique combinations of input conditions.
+
+Give me the complete code.
+

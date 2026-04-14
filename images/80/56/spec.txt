@@ -1,0 +1,7 @@
+Design a 4-to-16 decoder with enable functionality. The module takes two 2-bit inputs, A and B, and a single enable signal, EN. On the rising edge of the clock, if EN is asserted, the outputs Y indicate which of the 16 output lines should be activated based on the combination of inputs A and B, where each combination activates one low output bit while the others remain high. If EN is not asserted, all output lines remain high.
+module top_module(
+    input [1:0] A, B,
+    input EN,
+    input clk,            // Added clk as an input
+    output reg [15:0] Y
+);

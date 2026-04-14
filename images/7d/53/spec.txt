@@ -1,0 +1,9 @@
+Design a circuit for an 8-bit adder/subtractor. The module takes a control input `do_sub` to determine the operation: if `do_sub` is 1, it performs subtraction (a - b), otherwise, it performs addition (a + b). The circuit also generates a carry flag to indicate if an overflow occurred during the addition or if a borrow is required during subtraction, and an overflow flag to signal if the result exceeds the representation limits for signed 8-bit numbers.
+module top_module(
+  input do_sub,
+  input [7:0] a,
+  input [7:0] b,
+  output reg [7:0] out,
+  output reg carry_flag,
+  output reg overflow_flag
+);

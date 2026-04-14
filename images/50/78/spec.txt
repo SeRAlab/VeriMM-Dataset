@@ -1,0 +1,10 @@
+Design a data reception module that processes incoming data based on specific frame structures. The module operates with three states: IDLE, HEADER, and DATA_OUT. In the IDLE state, it waits for a specific header byte (0xF5) to transition to the HEADER state. In the HEADER state, it checks for another specific byte (0x1D) to transition to the DATA_OUT state or remains in HEADER upon detecting 0xF5. Once in the DATA_OUT state, it validates the received data by outputting it and incrementing a counter until a maximum count of 28 is reached, after which it returns to the IDLE state. The output signals indicate when valid data is available for further processing.
+module top_module(
+		input	CLKDIV, 
+		input	RST,
+		input [7:0]	DATA_IN,
+
+
+		output reg	data_valid,
+		output reg [7:0]	data_out
+   );

@@ -1,0 +1,10 @@
+Design a simple arithmetic calculator module capable of performing addition and subtraction on two 8-bit operands. The operation is determined by the `add` input signal; when high, the module adds `operand_a` and `operand_b`, otherwise, it subtracts them. The result is stored in an 8-bit register and indicated as ready with a `done` signal after each computation. The module also includes synchronous reset functionality to clear the result and done signal.
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] operand_a,
+    input [7:0] operand_b,
+    input add,
+    output reg [7:0] result,
+    output reg done
+);

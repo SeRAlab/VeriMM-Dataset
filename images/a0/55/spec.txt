@@ -1,0 +1,21 @@
+Implement a pipeline stage in a CPU architecture, specifically the EX_MEM register, which captures control signals and data from the execution stage to prepare for the memory stage. This module synchronizes the output signals related to register writing, memory operations, ALU results, and the destination register address on the rising edge of the clock, while also allowing asynchronous reset functionality. When the reset signal is low, it holds the input values for various control signals and data, passing them to the output for the next stage in the pipeline.
+module top_module(
+    clk_i,
+    rst_i,
+
+    RegWrite_i,
+    MemtoReg_i,
+    MemRead_i,
+    MemWrite_i,
+    ALUout_i,
+    rs2_data_i,
+    rd_addr_i,
+
+    RegWrite_o,
+    MemtoReg_o,
+    MemRead_o,
+    MemWrite_o,
+    ALUout_o,
+    rs2_data_o,
+    rd_addr_o
+);

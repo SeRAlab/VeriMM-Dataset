@@ -1,0 +1,12 @@
+Design a vending machine controller that accepts coin inputs (quarters, dimes, and nickels) and dispenses specific candies (Skittles, M&Ms, or Reese's) when at least 50 cents has been inserted. The machine starts from a reset state where no money is counted and no candy has been dispensed. For every coin inserted, the total money is updated, and upon reaching or exceeding 50 cents, the controller dispenses the first undispensed candy while deducting the cost. After all selected candies have been dispensed, it provides change and resets the transaction.
+module top_module(
+    input clk,
+    input rst,
+    input quarter,
+    input dime,
+    input nickel,
+    output reg skittles_dispense,
+    output reg mms_dispense,
+    output reg reeses_dispense,
+    output reg change
+);

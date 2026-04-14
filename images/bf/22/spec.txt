@@ -1,0 +1,15 @@
+Develop a load-write module that captures and stores specific data from a CPU interface based on rising clock edges or a reset signal. The module has inputs for clock, reset, write enable, address, and write data. It registers a 32-bit packet header, a 16-bit flag set, a 24-bit length set, and a single-bit scramble flag when appropriate write operations are detected at specific addresses (200 to 203). Upon activation of the reset signal, all outputs are initialized to zero, ensuring the module can start in a known state. The design serves as a control interface to manage packet data configurations for a communication system.
+module top_module(
+	input clk,
+	input pRST,
+	input cpu_wr_n,
+	input [8:0] cpu_addr,
+	input [31:0] cpu_wdata,
+	
+	output reg [31:0] packet_head,
+	output reg [15:0] flag_set,
+	output reg [23:0] length_set,
+	output reg scramble,
+		
+	output reg error
+	);

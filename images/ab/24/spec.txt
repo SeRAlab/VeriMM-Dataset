@@ -1,0 +1,9 @@
+Design a D-type flip-flop with asynchronous reset and set functionality. The module captures the value of input D on the rising edge of the CLK signal. It provides two additional control inputs: RESET, which sets the output Q to LOW and Q_N to HIGH, and SET, which sets Q to HIGH and Q_N to LOW. When neither RESET nor SET is activated, the flip-flop behaves normally, outputting the value of D and its inverted value at Q_N. This design allows for flexible control of the flip-flop state while maintaining synchronization with the clock signal.
+module top_module(
+    input D,
+    input CLK,
+    input SET,
+    input RESET,
+    output Q,
+    output Q_N
+);

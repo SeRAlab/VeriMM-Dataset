@@ -1,0 +1,8 @@
+Design a synchronous FIFO (First-In-First-Out) memory buffer with an 8-bit wide data path capable of storing up to 16 entries. The module utilizes input signals for a clock, reset (active low), read, and write operations to manage data flow. When writing, it allows data to be stored at the designated head position unless the buffer is full, while reading retrieves data from the tail position if the buffer is not empty. The module also tracks the current count of elements in the buffer and indicates when it is empty or full, providing essential control signals for memory management.
+module top_module(
+  input clk, rst_n, fifo_rd, fifo_wr,
+  input [7:0] data_in,
+  output reg [7:0] data_out, // Change to reg since it will be assigned in an always block
+  output reg empty, full,    // Change to reg since they are assigned in an always block
+  output reg [3:0] count
+);

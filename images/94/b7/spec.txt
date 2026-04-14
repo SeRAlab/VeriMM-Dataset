@@ -1,0 +1,7 @@
+Design a 16-bit signed multiplier that takes two signed 16-bit inputs, M and N, and produces a signed 32-bit output P. Upon each positive clock edge, the module captures the values of M and N into registers. It then computes the product of these two registered inputs and stores the result in another register. The final output P reflects this computed product, thus effectively implementing a synchronous multiplication operation for signed integers.
+module top_module(
+    input signed [15:0] M,
+    input signed [15:0] N,
+    input clk,                   // Added clk input
+    output reg signed [31:0] P
+);

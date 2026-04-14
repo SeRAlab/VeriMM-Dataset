@@ -1,0 +1,12 @@
+Design a register file that supports a set of 32 registers, where each register is 32 bits wide. The module reads two register addresses (rna, rnb) to output the contents of the specified registers (qa and qb), outputting zero if the address is zero. It enables writing data (datain) to a specified register (wn) when the write enable signal (wreg) is active, provided the write address is not zero. The register file is clocked and can be reset, clearing all registers back to zero on a negative reset signal.
+module top_module(
+    input [4:0] rna,
+    input [4:0] rnb,
+    input [4:0] wn,
+    input [31:0] datain,
+    input clk,
+    input wreg,
+	 input reset,
+    output [31:0] qa,
+    output [31:0] qb
+    );

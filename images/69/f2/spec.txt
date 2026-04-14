@@ -1,0 +1,9 @@
+Design a dual-function module that operates as both an 8-bit register and a 4-bit counter, controlled by an enable signal. When reset is activated, the register initializes to a predefined value (0x34), and the counter resets to zero. On each clock cycle, if the enable signal is high, the counter increments; if it is low, the register captures the 8-bit input data. The output `q` provides either the current count or the register value based on the enable signal, while the `out_final` output concatenates both the register and counter values into a single 12-bit output for further processing.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input enable, // clock enable input to choose between register and counter
+    input [7:0] d, // 8-bit input for the register
+    output [7:0] q, // 8-bit output from the active module
+    output [11:0] out_final // 12-bit output from the functional module
+);

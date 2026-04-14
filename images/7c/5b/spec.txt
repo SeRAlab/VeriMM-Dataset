@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+
+Design an 8-bit register module that captures and holds its input data on the positive edge of the clock signal. The register should also have an asynchronous active-low reset signal, which clears the register to zero.
+
+Module name:  
+    data_register
+                 
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    data_in: 8-bit input data to be captured by the register.
+
+Output ports:
+    data_out: 8-bit output signal representing the captured register value.
+
+Implementation:
+The module includes an 8-bit register named data_out.
+The data_out register is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the data_out register is cleared to 8'b00000000.
+On each positive edge of the clock signal, the register captures and holds the input data_in value.
+
+Give me the complete code.
+
+module data_register(
+  input clk,
+  input rst_n,
+  input [7:0] data_in,
+  output reg [7:0] data_out
+);

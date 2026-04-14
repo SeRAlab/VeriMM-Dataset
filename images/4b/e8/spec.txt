@@ -1,0 +1,25 @@
+Design a set of general-purpose registers that allow for simultaneous reading and writing of 32-bit data. The module has two read ports and one write port, controlled by a write enable signal. On each positive edge of the clock, it outputs data from the specified index for readData1 and, depending on the writeEnable2 signal, either reads from the valueArray for readData2 or writes new data to the specified index in the array while also updating readData2. This structure effectively serves as a register file for use in digital designs, such as processors or other computational units, facilitating data storage and retrieval.
+module top_module(
+
+		
+		input clock,
+		
+		
+		input[4:0] index1,
+		
+		
+		output reg[31:0] readData1,
+		
+		
+		input[4:0] index2,
+		
+		
+		output reg[31:0] readData2,
+
+		
+		input[31:0] writeData2,
+		
+		
+		input writeEnable2
+		
+	);

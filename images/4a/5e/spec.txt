@@ -1,0 +1,15 @@
+Design a buffer circuit that inverts and outputs requests and atom signals for two different sources (spc0 and spc1) along with a grant signal. The module takes in active-low request and atom signals from two sources and produces corresponding active-high signals by negating the inputs, ensuring proper signal levels for downstream processing. This facilitates communication in a system where signal states need to be inverted for compatibility with other components.
+module top_module(
+   // Outputs
+   output [4:0] pcx_spc0_grant_bufp0_pa,
+   output [4:0] spc0_pcx_req_bufp0_pq, 
+   output spc0_pcx_atom_bufp0_pq, 
+   output [4:0] spc1_pcx_req_bufp0_pq, 
+   output spc1_pcx_atom_bufp0_pq, 
+   // Inputs
+   input [4:0] spc0_pcx_req_bufpt_pq_l, 
+   input spc0_pcx_atom_bufpt_pq_l, 
+   input [4:0] spc1_pcx_req_bufpt_pq_l, 
+   input spc1_pcx_atom_bufpt_pq_l, 
+   input [4:0] pcx_spc0_grant_bufp1_pa_l
+);

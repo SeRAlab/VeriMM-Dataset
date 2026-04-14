@@ -1,0 +1,6 @@
+Design a module that processes a 32-bit input into five 8-bit outputs while determining the length of non-zero values. It takes a 32-bit input, splits it into five 7-bit segments, checks for the presence of non-zero values in each segment, and then assigns flags alongside each segment to indicate validity. The output includes four signals indicating the presence of non-zero values, and a calculated length based on the highest segment containing non-zero data, effectively compressing the information and allowing for efficient data packaging.
+module top_module(
+  input [31:0] i,
+  output reg [7:0] o0, o1, o2, o3, o4,
+  output reg [2:0] len
+);

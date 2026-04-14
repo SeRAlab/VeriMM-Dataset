@@ -1,0 +1,9 @@
+Design a 7-bit shift register that operates with clock and enable signals. It shifts its stored data to the right on each positive edge of the clock if enabled, and its input is provided by the 7-bit `DATA_IN`. The output `DATA_OUT` reflects the current state of the shifted data, while `ENCLK` indicates the status of the least significant bit of the output. The presence of two latches suggests that the design also incorporates a form of temporary storage or synchronization mechanism for the shifting operation.
+module top_module(
+  input CLK,
+  input EN,
+  input TE,
+  input [6:0] DATA_IN,
+  output reg [6:0] DATA_OUT,
+  output ENCLK
+);

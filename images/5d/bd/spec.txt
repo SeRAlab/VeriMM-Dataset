@@ -1,0 +1,9 @@
+Design a digital circuit that functions as a conditional comparator. Based on the values of the select inputs (select0 and select1), the circuit determines the output result, which is a 1-bit value derived from combinations of the inputs z, v, and n. Specifically, when both select0 and select1 are high, the output corresponds to the logical OR of z and the XOR of n and v. If only select1 is high and select0 is low, the output is simply the XOR of n and v. When select1 is low, the result depends on select0 being high (output z) or low (outputting a constant low). This implementation facilitates multi-conditional logic decision-making based on the input signals.
+module top_module(
+    input select0,
+    input select1,
+    input z,
+    input v,
+    input n,
+    output reg [15:0] result
+  );

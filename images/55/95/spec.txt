@@ -1,0 +1,9 @@
+Design a synchronous circuit featuring an 8-bit shift register and a 4-bit binary counter, both resettable via an active-high reset signal. The shift register, initialized to a specific value, captures a new input bit on each clock cycle while shifting in the least significant bit, and its current state is outputted as `q`. The 4-bit counter increments on each clock edge when not reset and outputs its value as `add_out`. The circuit further combines the shift register's content with the counter's output through a 4-bit addition to generate a final output called `final_out`, which is updated on each clock cycle.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input [7:0] d,    // 8-bit input for the shift register
+    output [7:0] q,   // 8-bit output from the shift register
+    output [3:0] add_out, // 4-bit output from the adder
+    output reg [7:0] final_out // Changed to reg to make it a valid l-value
+);

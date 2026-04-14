@@ -1,0 +1,10 @@
+Design a circuit that controls an 8-bit LED array based on rotary input and clock signals. The module increments the LED value by one when the rotary input is set to '01', wrapping around to '00' upon reaching maximum brightness (all LEDs on). Conversely, when the rotary input is '10', the LED value decrements by one, wrapping around to maximum brightness when reaching '00'. The circuit also features a reset functionality, which sets all LEDs to low state when activated.
+module top_module(
+   input clock0,
+   input clock180,
+   input reset,
+
+   input [1:0] rotary,
+
+   output reg [7:0] leds
+);

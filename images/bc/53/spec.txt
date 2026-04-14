@@ -1,0 +1,9 @@
+Design a clock-gating mechanism with a D flip-flop and enable control. The module takes a clock signal (CLK), an enable signal (EN), and a test enable signal (TE), along with a 32-bit input data signal (data_in). When both EN and TE are asserted, the clock (CLK) is passed to the internal enable clock signal (ENCLK), which triggers the capture of data_in into the flip-flop, and the stored data is output on data_out. If either EN or TE are not asserted, ENCLK is disabled, preventing any data capture and effectively gating the clock to save power.
+module top_module(
+  input CLK, 
+  input EN, 
+  input TE, 
+  input [31:0] data_in, 
+  output reg ENCLK, 
+  output reg [31:0] data_out
+);

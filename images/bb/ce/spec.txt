@@ -1,0 +1,11 @@
+Design a forwarding unit for a pipelined processor to handle hazards. This module determines the appropriate forwarding values for two sources, ForwardA and ForwardB, based on whether specific register write operations are occurring in the EX/MEM and MEM/WB stages. It checks if the register to be written back is the same as the registers being read in the ID stage and adjusts the forwarding signals accordingly to prevent data hazards, ensuring correct data flow through the pipeline.
+module top_module(
+  EX_MEM_RegWrite,
+  MEM_WB_RegWrite,
+  EX_MEM_RegisterRd,
+  MEM_WB_RegisterRd,
+  ID_EX_RegisterRs,
+  ID_Ex_RegisterRt,
+  ForwardA,
+  ForwardB
+);

@@ -1,0 +1,8 @@
+Design a thermal management system that controls a fan's PWM output based on temperature input. The module adjusts the PWM signal to regulate the fan speed within a specified range depending on the temperature, ensuring the fan operates minimally at lower temperatures while ramping up to a maximum duty cycle during higher temperatures. It also monitors for over-temperature conditions, signaling when the input temperature exceeds specified thresholds and maintaining an over-temperature alert for a defined duration. The functionality is governed by a clock signal and a reset input, addressing both normal operation and safety measures for overheating scenarios.
+module top_module(
+  input clk,
+  input rst,
+  input temp_in,
+  output reg fan_pwm,
+  output reg overtemp
+);

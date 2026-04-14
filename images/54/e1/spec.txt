@@ -1,0 +1,8 @@
+Design a 4-bit left shift register with asynchronous active-low reset functionality. When activated by the reset signal, it resets the output to zero. If the load signal is high, it loads the provided 4-bit data input into the register. Upon receiving a rising clock edge and when the enable signal is active, it performs a left shift operation, effectively shifting the current data to the left by one bit and filling the least significant bit with zero.
+module top_module(
+    input clk,
+    input areset_n,  // async active-low reset to zero
+    input load,
+    input ena,
+    input [3:0] data,
+    output reg [3:0] q);

@@ -1,0 +1,9 @@
+The design is a dual-edge-triggered adder that computes the sum of two 8-bit inputs, `in1` and `in2`, and outputs the result based on a select signal. Upon receiving a reset signal, the internal registers (dff1 and dff2) are cleared to zero. The adder alternates between two registers (dff1 and dff2) to store the computed sum across successive clock cycles, allowing for pipelined accumulation of results. The output can be selected from either register, enabling flexibility in multi-cycle operations. Overall, this module supports robust and sequential data processing with dual-stage storage for addition operations in a clocked environment.
+module top_module(
+    input clk,
+    input [7:0] in1,
+    input [7:0] in2,
+    input reset,
+    input select,
+    output [7:0] out
+);

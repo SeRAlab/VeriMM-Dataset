@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+
+Implement the design of a 32-bit shift register with parallel load capability.
+
+Module name:  
+    shift_register_32bit 
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Reset signal. Defined as 1 for reset and 0 for normal operation.
+    load: Load signal. When high, parallel load is enabled.
+    data_in: 32-bit input data for parallel load.
+    shift_in: Serial input data for shift operation.
+
+Output ports:
+    data_out: Current 32-bit data in the shift register.
+
+Parameter:
+    width = 32
+
+Implementation:
+Shift register operation:
+On the positive edge of the clock signal (clk), if reset (rst) is high, the shift register is set to 0.
+If reset (rst) is low, the shift register is updated based on the load signal.
+If load = 1, the shift register is loaded with data_in.
+If load = 0, the shift register shifts left and the MSB is loaded with shift_in.
+
+Give me the complete code.

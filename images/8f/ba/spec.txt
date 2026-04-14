@@ -1,0 +1,10 @@
+Design a module that implements a public key adder for 256-bit width inputs. It takes two 256-bit inputs, rx_x and rx_y, and on the rising edge of the clock (clk), calculates their sum while considering any carry generated from previous additions. The results are outputted as tx_x for the sum and tx_y for the carry, while a done signal indicates the completion of the operation. The module also includes a reset feature to clear the internal sum and carry registers.
+module top_module(
+    input clk,
+    input reset,
+    input [255:0] rx_x,
+    input [255:0] rx_y,
+    output reg done,
+    output reg [255:0] tx_x, // Changed from wire to reg
+    output reg [255:0] tx_y   // Changed from wire to reg
+);

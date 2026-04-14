@@ -1,0 +1,5 @@
+Design a simple SATA controller state machine that transitions between four states: IDLE, ACTIVE, SUSPEND, and ERROR based on a 2-bit input signal. The state transitions are defined as follows: 
+- From IDLE, if input is 00, stay in IDLE; if 01, move to ACTIVE; if 10, move to SUSPEND; if 11, move to ERROR. 
+- From ACTIVE, input 00 goes to IDLE; 01 stays in ACTIVE; 10 goes to SUSPEND; 11 goes to ERROR. 
+- From SUSPEND, input 00 goes to IDLE; 01 goes to ACTIVE; 10 stays in SUSPEND; 11 goes to ERROR.
+- From ERROR, input 00 goes to IDLE; 01 goes to ACTIVE; 10 goes to SUSPEND; 11 stays in ERROR.

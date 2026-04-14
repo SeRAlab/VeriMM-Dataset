@@ -1,0 +1,8 @@
+Design a circuit that formats an 8-bit input data signal into a 10-bit output signal for digital communication. The module outputs a clock signal that is the inverse of the system clock and appends two zero bits to the lower part of the 10-bit data output, effectively creating a 10-bit signal where the upper 8 bits correspond to the input data, while the two least significant bits are always zero. This design can be used in applications requiring data transmission with a specific format or protocol.
+module top_module(
+    input                   sys_clk     ,
+    input                   sys_rst_n   ,
+    input           [7:0]   da_data     ,
+    output                  da_clk_10b2 ,
+    output          [9:0]   da_out_10b2
+    );

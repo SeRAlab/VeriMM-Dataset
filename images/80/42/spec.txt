@@ -1,0 +1,9 @@
+Design a single-port RAM module with a configurable data width of 8 bits and a depth of 256 memory locations. The module features two control signals: `write_en` for enabling write operations and `read_en` for enabling read operations, both synchronized to the rising edge of the clock. When `write_en` is asserted, data from `data_in` is stored at the specified `address` in memory. Conversely, when `read_en` is asserted, data from the specified `address` is output on `data_out`. This design provides functionality for both reading from and writing to memory, suitable for various digital applications requiring temporary data storage.
+module top_module(
+  input clk,
+  input write_en,
+  input read_en,
+  input [log2(depth)-1:0] address,
+  input [data_width-1:0] data_in,
+  output reg [data_width-1:0] data_out
+);

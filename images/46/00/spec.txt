@@ -1,0 +1,11 @@
+Design a conditional jump control logic module for a processor that determines if a jump should occur based on several flags. The module evaluates the jump conditions for zero (is_jz), not zero (is_jnz), less than (is_jl), greater than (is_jg), and an unconditional jump (is_jump) based on input signals for current zero status (is_zero) and sign status (is_sign). If any of the conditions are satisfied, it sets the output signal should_jump to high, enabling the processor to proceed with the jump operation.
+module top_module(
+    input is_jz,
+    input is_jnz,
+    input is_jl,
+    input is_jg,
+    input is_jump,
+    input is_zero,
+    input is_sign,
+    output reg should_jump
+    );

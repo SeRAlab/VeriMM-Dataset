@@ -1,0 +1,8 @@
+Design a 16-bit Arithmetic Logic Unit (ALU) that performs various operations based on input control signals. The ALU takes two 16-bit inputs, Ra and Rb, along with a 6-bit instruction register (IR) and a 2-bit ALU control signal. Depending on the value of the control signal, the ALU can output Ra directly, compute the sum of Ra and a modified Rb based on the IR value, perform a bitwise AND operation between Ra and the modified Rb, or output the bitwise negation of Ra. The ALU is capable of handling both register and immediate values as inputs.
+module top_module(
+    input [15:0] Ra,
+    input [15:0] Rb,
+    input [5:0] IR,
+    input [1:0] aluControl,
+    output [15:0] aluOut
+    );

@@ -1,0 +1,9 @@
+Design a clock generation module that outputs a modified clock signal (clk_out1) at a frequency determined by the FREQ_MULT parameter, which is set to divide the input clock (clk_in1) rate. It includes a locking mechanism that monitors synchronization with the input clock, asserting a "locked" signal when stable for a specified number of cycles defined by LOCK_CYCLES. The module toggles the output clock on each cycle of the input clock while also managing internal counters to establish stability before indicating that the output clock is locked.
+module top_module(
+  // Clock out ports
+  output reg clk_out1,
+  // Status and control signals
+  output reg locked,
+  // Clock in ports
+  input clk_in1
+);

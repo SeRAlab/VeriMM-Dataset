@@ -1,0 +1,8 @@
+Implement a signed barrel shifter capable of left or right shifting a 4-bit signed input. The module takes a clock signal and a reset signal, where it outputs a shifted version of the input based on a 2-bit shift amount. Specifically, it performs a left shift by the specified amount and, depending on the shift direction indicated by the bits of the shift amount, can also apply a right shift or propagate the sign bit for signed arithmetic. The design effectively enables efficient bit manipulation with minimal delay by utilizing register stages for intermediate results.
+module top_module(
+    input clk,
+    input rst,
+    input signed [3:0] data_in,
+    input [1:0] shift_amount,
+    output reg signed [3:0] data_out
+);

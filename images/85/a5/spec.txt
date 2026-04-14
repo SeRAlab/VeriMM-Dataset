@@ -1,0 +1,7 @@
+Design a gated capacitor circuit that controls the charging and discharging of a capacitor represented by the output `vcap`. The circuit engages charging when the `ld` signal is high, which causes `vcap` to charge to a maximum count, after which it switches to discharging mode. The discharging occurs at a slower rate until `vcap` reaches zero, at which point both charging and discharging operations stop. The process is synchronized with a clock signal (`clk`) and can be reset asynchronously using the `rst` signal, which clears all internal states and sets the output `vcap` to zero.
+module top_module(
+   inout ld,
+   input clk,
+   input rst,
+   output reg vcap
+);

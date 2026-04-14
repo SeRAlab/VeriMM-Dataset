@@ -1,0 +1,14 @@
+Design a single general-purpose register (GPR) file with 32 registers, each 32 bits wide, used to store and retrieve data in a synchronous circuit. The module supports three read addresses and one write data input, allowing data to be written to a specified register when enabled. On a rising clock edge or reset, it initializes all registers to zero, while ensuring that the zero register always outputs a value of zero regardless of its state. Additional read operations provide the contents of the registers specified by the input addresses, omitting output from the zero register when requested.
+module top_module(
+    rst,
+    clk,
+    i_adr1,
+    i_adr2,
+    i_adr3,
+    i_wreg,
+    i_wdata,
+    i_wen,
+    o_op1,
+    o_op2,
+    o_op3
+);

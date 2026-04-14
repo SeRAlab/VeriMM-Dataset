@@ -1,0 +1,7 @@
+Design a circuit that combines a 4-way minimum finder with a 32-bit arithmetic unit. It receives four 8-bit inputs to determine the minimum value among them, and two 32-bit inputs for addition and subtraction operations. Based on the select input (`sub`), it outputs either the sum of the minimum value and the two 32-bit numbers or the difference of the minimum value and the second number. The module effectively integrates both minimum finding and arithmetic operations into a single output.
+module top_module(
+    input [7:0] a, b, c, d, // Input ports for the 4-way minimum circuit
+    input [31:0] num1, num2, // Input ports for the 32-bit adder/subtractor
+    input sub, // Select input for addition/subtraction
+    output [31:0] result // Output port for the final sum
+);

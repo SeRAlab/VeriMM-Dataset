@@ -1,0 +1,1 @@
+module top_module( output o, input [1:0] in ,input s);assign o = s ? in[1]:in[0];endmodule

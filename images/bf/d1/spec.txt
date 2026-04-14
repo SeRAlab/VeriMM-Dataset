@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module to simulate a simple memory interface with parameterizable address and data widths. It features two separate interfaces: a primary interface and an auxiliary "x-prefixed" interface. The primary function of this module to provide read and write access to an internal memory array (`lram`) through these interfaces. The module allows for initialization of the memory with random values at the start of the simulation, demonstrating a basic example of memory initialization and dual-port memory access in a digital system. This module could be used in a larger system as a simple storage element or as a part of a more complex memory management unit.
+
+Module name:  
+	fasm_tparam
+
+Input ports:
+	dat_i [DW1:0]: Data input for the primary interface. This is the data to be written into the memory array at the address specified by adr_i.
+	adr_i [AW1:0]: Address input for the primary interface. Specifies the memory location to be accessed.
+	wre_i: Write enable for the primary interface. When high, the data on dat_i is written to the address specified by adr_i.
+	stb_i: Strobe input for the primary interface. This could be used to indicate a valid transaction, though its specific function is not implemented in the module.
+	rst_i: Reset input for the primary interface. Not used in the current implementation.
+	clk_i: Clock input for the primary interface. Not used in the current implementation.
+	xdat_i [DW1:0]: Data input for the auxiliary interface. Similar to dat_i but for the auxiliary interface.
+	xadr_i [AW1:0]: Address input for the auxiliary interface. Specifies the memory location for the auxiliary interface.
+	xwre_i: Write enable for the auxiliary interface. Enables writing of xdat_i to the address specified by xadr_i.
+	xstb_i: Strobe input for the auxiliary interface. Its function is not implemented in the module.
+	xrst_i: Reset input for the auxiliary interface. Not used in the current implementation.
+	xclk_i: Clock input for the auxiliary interface. Used to clock the write operation for the auxiliary interface.
+Output ports:
+	xdat_o [DW1:0]: Data output for the auxiliary interface. Currently, it is hardwired to output undefined values (X), indicating that the read functionality for the auxiliary interface is not implemented.
+
+
+Implementation:
+The Verilog module fasm_tparam is designed to simulate a simple memory interface with parameterizable address and data widths, allowing for flexibility in memory size and data granularity. The module interfaces with two separate sets of signals, one prefixed with x (e.g., xdat_i, xadr_i, etc.) and the other without (e.g., dat_i, adr_i, etc.), each set intended for potentially different operational contexts or domains, though the module itself treats these sets in a somewhat asymmetric manner.
+
+Give me the complete code.
+

@@ -1,0 +1,9 @@
+Design a circuit that performs basic arithmetic operations based on a control signal. This module takes two 8-bit inputs, `a` and `b`, and, upon a rising clock edge, outputs their sum if the control signal (`ctrl`) is 0, or their difference if `ctrl` is 1. Additionally, the output resets to zero upon a negative edge of the reset signal (`rst`). This module effectively functions as an arithmetic unit capable of addition and subtraction, suitable for integration into larger digital systems.
+module top_module(
+    input [7:0] a,
+    input [7:0] b,
+    input ctrl,
+    input rst,
+    input clk,           // Added clock input
+    output reg [7:0] out
+);

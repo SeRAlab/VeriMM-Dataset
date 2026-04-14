@@ -1,0 +1,7 @@
+Design a 32-bit ALU that performs specific operations based on a 3-bit selector input. The ALU accepts a 32-bit input data and, depending on the value of the selector, produces different outputs: it can output the original input data, zero-extend the lower 16 bits, sign-extend to the upper 16 bits, or shift the data left while preserving the sign bit. Each operation is gated by the corresponding combination of the selector bits, allowing for versatile data manipulation as per the selected operation while leaving the output high-impedance for other cases.
+module top_module(
+    input [31:0]iData,
+    input [2:0]sel,
+    
+    output [31:0]oData
+    );

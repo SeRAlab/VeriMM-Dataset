@@ -1,0 +1,6 @@
+Design a loopback interface that synchronizes the transmission and reception of signals. The module uses a reference clock to output the received signal `txp` to `rxp` after three cycles of synchronization, effectively timing the loopback. Additionally, it incorporates a reconfiguration clock that toggles every 20 time units, allowing for control signal adjustments within the module's operation. The `clk_tmp` clock toggles every 4 time units, which is further modulated by a counter that operates based on the reference clock to manage signal timing and switching within the loopback operation.
+module top_module(
+  input ref_clk,
+  input txp,
+  output reg rxp
+);

@@ -1,0 +1,10 @@
+Design a D flip-flop with control signals and asynchronous reset and set functionality. The module captures the input data (D) on the rising edge of the clock (CLK) when the control signal (CTRL) is active. It includes an active-low asynchronous reset (RESET_B) that sets the output (Q) to LOW and its complement (Q_N) to HIGH, and an active-low asynchronous set (SET_B) that sets Q to HIGH and Q_N to LOW. If CTRL is inactive, the flip-flop output follows D. If neither reset nor set is activated, the output is set to LOW by default.
+module top_module(
+  input D,
+  input SET_B,
+  input RESET_B,
+  input CTRL,
+  input CLK,
+  output reg Q,
+  output reg Q_N
+);

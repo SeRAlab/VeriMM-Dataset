@@ -1,0 +1,10 @@
+Design a 12-entry FIFO (First In, First Out) memory buffer that stores 64-bit data words. The module features write and read enable signals (wr_en and rd_en), a clock input (clk), and a reset input (rst) to control operation. The FIFO signals its status through output flags indicating if it is empty or full, alongside providing an output data line (dout) that retrieves the data from the front of the queue. The design encapsulates write and read pointers to manage data insertion and extraction while ensuring proper handling of buffer underflow and overflow conditions. Additionally, the module signals busy status during write reset operations.
+module top_module(wr_rst_busy,
+    dout,
+    empty,
+    full,
+    rd_en,
+    wr_en,
+    clk,
+    din,
+    rst);

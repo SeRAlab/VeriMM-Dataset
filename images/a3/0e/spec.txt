@@ -1,0 +1,9 @@
+Design a 4-bit shift register with synchronous loading and reset capabilities. On a rising edge of the clock, if the reset (rst) signal is asserted, the output (q) is set to zero. If the load (ld) signal is asserted, the register loads the input serial in (si) into its output. Otherwise, it shifts the current contents of the register left by one bit, inserting the incoming serial bit (si) at the least significant bit position. The most significant bit of the register is outputted as the serial out (so).
+module top_module(
+    input clk,
+    input rst,
+    input ld,
+    input si,
+    output so,
+    output reg [3:0] q
+);

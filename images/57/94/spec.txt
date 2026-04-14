@@ -1,0 +1,15 @@
+Design a control module for a light system that interfaces with a register through a bus. It accepts an address and chip select signals to determine when to read or write data. When the reset signal is low, the internal data storage is cleared; otherwise, it captures the lower two bits of the `writedata` input upon a write operation at address 0. The module features a data output port for direct access to the internal state and a read data output that generates a zero-extended version of the data output, ensuring that the relevant information can be accessed by external components.
+module top_module(
+                           
+                            address,
+                            chipselect,
+                            clk,
+                            reset_n,
+                            write_n,
+                            writedata,
+
+                           
+                            out_port,
+                            readdata
+                         )
+;

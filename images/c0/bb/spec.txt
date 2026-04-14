@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform multiplication operations on two 32-bit input operands. It is a fundamental arithmetic unit that can be utilized within a larger digital system, such as a microprocessor or a digital signal processor (DSP), to execute multiplication instructions. The module supports parameterized functionality through `AEMB_MUL`, allowing for potential configuration or feature scaling. The primary function of this module to compute the product of two input operands and provide the result as an output after a delay, simulating a pipelined multiplication operation.
+
+Module name:  
+	aeMB2_mult
+
+Input ports:
+	opa_of (32bit): The first operand for the multiplication operation.
+	opb_of (32bit): The second operand for the multiplication operation.
+	opc_of (6bit): Although not directly used in the multiplication operation within the provided code, it suggests potential for future enhancements or configuration purposes.
+	gclk (1bit): The global clock input, which synchronizes the operations within the module.
+	grst (1bit): The global reset input, which initializes the internal registers to a known state.
+	dena (1bit): The data enable signal, which controls the execution of the multiplication operation.
+	gpha (1bit): Although present, it is not utilized in the current implementation, indicating a placeholder for future functionality or phasebased operation control.
+Output ports:
+	mul_mx (32bit): The output port providing the result of the multiplication operation. The output is selected based on the parameter AEMB_MUL.
+
+
+Implementation:
+The aeMB2_mult module is designed to perform multiplication operations on two 32-bit input operands (opa_of and opb_of) and produce a 32-bit output (mul_mx). The module operates synchronously with respect to a global clock signal (gclk) and incorporates a global reset (grst), a data enable signal (dena), and a phase signal (gpha), although the gpha signal is not utilized in the current implementation. The module's behavior is parameterized by AEMB_MUL, which influences the output selection.
+
+Give me the complete code.
+

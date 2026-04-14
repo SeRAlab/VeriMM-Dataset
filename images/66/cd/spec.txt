@@ -1,0 +1,7 @@
+Design a clock divider circuit that generates a lower frequency output clock signal (clk_out) based on an input clock signal (clk_in). The module utilizes an 8-bit wide counter to count clock cycles and toggles the output clock when the counter reaches the specified divider value, which is provided as an 8-bit input. The circuit can be reset asynchronously using the reset input (rst_n). The output clock signal toggles its state, effectively reducing the frequency of the input clock by the specified divider value.
+module top_module(
+  input clk_in,
+  input rst_n,
+  input [7:0] divider,
+  output reg clk_out
+);

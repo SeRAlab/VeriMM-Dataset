@@ -1,0 +1,7 @@
+Design a circuit that functions as a shift register combined with a selectable output mechanism. On each negative edge of the clock, it shifts its internal 8-bit register (q_int) left by one bit and inputs the least significant bit from the provided 8-bit data signal (d). The selection signal (sel) controls whether a counter for the output order increments or decrements, modifying how the final output (q) presents the shifted data: if the most significant bit of a 4-bit counter (dff_sel) is high, the output will present the upper half followed by the lower half of the register; otherwise, the reverse order is implemented.
+module top_module(
+    input clk,
+    input [7:0] d,
+    input sel,
+    output [7:0] q
+);

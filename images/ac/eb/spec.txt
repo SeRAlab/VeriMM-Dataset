@@ -1,0 +1,10 @@
+Design a dual-port synchronous RAM module with a capacity of 512 words, each 16 bits wide. The module operates on the rising edge of the clock signal, allowing writes when the write enable (`wren`) signal is active. The `byteena_a` input determines which byte of the 16-bit data input is affected during a write operation, enabling selective writing to either the lower or upper byte of the addressed memory location. The `rdaddress` input is used to read data from the specified address, and the output (`q`) reflects the combined data from both bytes of the addressed memory location, facilitating parallel access to two separate memory banks.
+module top_module(
+  input  wire           clock,
+  input  wire [  9-1:0] wraddress,
+  input  wire           wren,
+  input  wire [  2-1:0] byteena_a,
+  input  wire [ 16-1:0] data,
+  input  wire [  9-1:0] rdaddress,
+  output reg  [ 16-1:0] q
+);

@@ -1,0 +1,7 @@
+Design a module for an ALU control unit that generates a 4-bit control signal (`alu_control_sig`) based on the operation mode provided by `alu_op` and additional function indicators from `func_op`. The control logic reacts to the rising edge of the clock and interprets different combinations of `alu_op` and relevant bits from `func_op` to produce specific ALU operation signals, including addition, subtraction, AND, OR, and others. This allows for flexible ALU behavior in response to varying execution contexts, facilitating multiple arithmetic and logical operations in a digital system.
+module top_module(
+    input clk,
+    input [1:0] alu_op,
+    input [5:0] func_op,
+    output reg [3:0] alu_control_sig
+    );

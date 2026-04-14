@@ -1,0 +1,7 @@
+Design a byte splitter circuit that takes a 16-bit input and outputs two 8-bit signals: a high byte and a low byte. The high byte is created from the upper 8 bits (bits 8 to 15) of the input, while the low byte is formed from the lower 8 bits (bits 0 to 7), with positions of the bytes shifted so that the bits form a barrel shift. Based on the select signal, the outputs are inverted such that when select is high, the high byte output is the complement of the shifted high byte, and the low byte output is the complement of the shifted low byte; when select is low, the outputs are swapped and also inverted.
+module top_module(
+    input wire [15:0] in,
+    input wire select,
+    output wire [7:0] out_hi,
+    output wire [7:0] out_lo
+);

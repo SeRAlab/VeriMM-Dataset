@@ -1,0 +1,9 @@
+Design a 16-bit shift register with loading and shifting capabilities. When the LOAD signal is asserted, the input data is loaded into the first register, and the subsequent registers are populated with the contents of the preceding registers. If the SHIFT signal is activated, the content of the registers is shifted toward the first register, introducing either a '0' or '1' bit at the least significant position depending on the mode: a '0' for mode=0 and a '1' for mode=1. The output is provided from the last register in the chain, allowing for flexible data storage and shifting operations.
+module top_module(
+    input CLK,
+    input SHIFT,
+    input LOAD,
+    input [15:0] DATA_IN,
+    input mode,
+    output reg [15:0] DATA_OUT
+);

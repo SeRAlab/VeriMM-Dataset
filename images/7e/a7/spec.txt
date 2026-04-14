@@ -1,0 +1,8 @@
+Design a finite state machine (FSM) that detects a specific 32-bit byte sequence (0x12345678) in a stream of incoming 8-bit data. The FSM operates in four states and shifts the input data into a 32-bit register while checking for the sequence match. Upon detection, it sets the `detected` output high and updates the `index` output to reflect which state matched the sequence. The FSM resets its state and outputs on a reset signal and cycles through states to continually search for the next occurrence of the sequence in the incoming data stream.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data,
+  output reg detected,
+  output reg [1:0] index
+);

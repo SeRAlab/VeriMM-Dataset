@@ -1,0 +1,7 @@
+Design a circuit that implements a 256-bit shift register combined with an 8-to-1 multiplexer. The shift register captures input data and shifts it left on each clock cycle while allowing a reset to clear its contents. The first three bits of the shift register serve as select lines for the multiplexer, which chooses one of eight 8-bit segments from a 256-bit input. The output of the multiplexer is bitwise ANDed with the least significant 8 bits of the shift register to produce an 8-bit output. This design enables dynamic selection of segments of input data based on the state of the shift register while preserving selected bitwise interactions.
+module top_module(
+    input clk,
+    input reset,
+    input [255:0] in, // 256-bit input for the shift register
+    output [7:0] q // 8-bit output from the functional module
+);

@@ -1,0 +1,13 @@
+Design a circuit that implements a 100-bit rotating register and a 3-bit vector output. The register can load an initial 100-bit data input on a rising clock edge, and it rotates its contents left or right based on a 2-bit enable signal (`ena`), with `ena` being `01` for right rotation and `10` for left rotation. Additionally, the circuit generates three separate output bits from a 3-bit input vector, which can be used for further processing. The final output, a 100-bit value `q`, results from performing a bitwise OR operation between the rotated register data and a concatenated version of the extracted vector bits.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    input wire [2:0] vec,
+    output wire [2:0] outv,
+    output wire o2,
+    output wire o1,
+    output wire o0,
+    output reg [99:0] q
+);

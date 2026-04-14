@@ -1,0 +1,7 @@
+Design a 4-bit barrel shifter capable of shifting input data either left or right based on the direction signal (dir) and the amount determined by shift_amt. The module outputs the shifted value, maintaining the width of the input while facilitating circular shifts. For shift_amt = 00, the output is equal to the input; for shift_amt = 01 or 10, the output shifts either left or right by one position; and for shift_amt = 11, it performs a right circular shift by one bit.
+module top_module(
+    input [3:0] in,
+    input [1:0] shift_amt,
+    input dir,
+    output reg [3:0] out
+);

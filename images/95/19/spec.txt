@@ -1,0 +1,7 @@
+Design a write-back unit for a processor that selectively outputs data based on a control signal. The module takes in a control signal (`MEMtoReg`), a 32-bit load data from memory (`load_data`), and a 32-bit ALU result (`ALU_result`). When `MEMtoReg` is asserted (set to 1), the module outputs the load data; otherwise, it outputs the ALU result. This functionality is essential for determining what data should be written back to the register file in a processor architecture.
+module top_module(
+    input wire MEMtoReg,
+    input wire[31:0] load_data,
+    input wire[31:0] ALU_result,
+    output wire[31:0] write_data
+);

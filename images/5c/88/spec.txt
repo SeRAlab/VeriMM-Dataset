@@ -1,0 +1,7 @@
+Design a synchronous 32-bit wide FIFO (First-In, First-Out) buffer with a maximum depth of 64 entries. The module includes control inputs for clock, reset, enable, write, and read functionalities. On the rising edge of the clock, if enabled, the module can write data to the buffer when the FIFO is not full and can read data from the buffer when it is not empty. It uses separate head and tail pointers to manage the data flow, and produces output signals to indicate when the FIFO is full or empty. The reset input clears the FIFO pointers, initializing the buffer for new data operations.
+module top_module(
+  input clk, reset, en, wr, rd,
+  input [31:0] din,
+  output reg [31:0] dout, // Changed output to reg to allow assignment in always block
+  output full, empty
+);

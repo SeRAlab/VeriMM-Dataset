@@ -1,0 +1,14 @@
+Implement a forwarding unit for a processor’s pipeline to manage data hazards. It takes multiple inputs representing source and destination register indices from the instruction set, as well as control signals indicating whether data should be forwarded from memory writes back to the registers. Based on the forwarding enable signal and specific conditions regarding the relationships between source and destination registers, it generates control signals for multiplexers that determine which register value to forward to subsequent instructions, thereby optimizing instruction throughput and maintaining data integrity during execution.
+module top_module(
+        input [4:0] src1,
+        input [4:0] src2,
+        input [4:0] dest,
+        input [4:0] mem_dest,
+        input [4:0] write_back_dest,
+        input mem_wb,
+        input write_back_wb,
+        input forward_enable,
+        output [1:0] to_val1_mux,
+        output [1:0] to_val2_mux,
+        output [1:0] to_src2_mux
+    );

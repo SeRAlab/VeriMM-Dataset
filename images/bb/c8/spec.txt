@@ -1,0 +1,11 @@
+Design a circuit that interfaces with four CAN bus channels (A, B, C, D) to manage communication lines. Specifically, when any of the input transmission lines (CAN_A_TX, CAN_B_TX, CAN_C_TX, CAN_D_TX) is LOW, the reception line for CAN_A_RX will output a LOW signal. Conversely, if all transmission lines are HIGH, CAN_A_RX outputs a HIGH signal, which is subsequently mirrored to the reception lines of CAN_B_RX, CAN_C_RX, and CAN_D_RX. This module effectively allows multiple receivers to share the same reception line based on a logic threshold determined by the status of the transmitting lines.
+module top_module(
+			input wire CAN_A_TX,
+			output wire CAN_A_RX,
+			input wire CAN_B_TX,
+			output wire CAN_B_RX,
+			input wire CAN_C_TX,
+			output wire CAN_C_RX,
+			input wire CAN_D_TX,
+			output wire CAN_D_RX
+		);

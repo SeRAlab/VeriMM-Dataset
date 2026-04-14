@@ -1,0 +1,9 @@
+Design a synchronous calculator module that performs basic arithmetic operations on two 16-bit operands. The module takes a clock signal and a reset input; upon a clock edge, if the reset is active, it initializes the result to zero. If not in reset, it executes an arithmetic operation determined by a 4-bit operation code: addition, subtraction, multiplication, or division, producing a 16-bit result output based on the provided operands.
+module top_module(
+    input clk,
+    input rst,
+    input [15:0] operand1,
+    input [15:0] operand2,
+    input [3:0] operation,
+    output reg [15:0] result
+);

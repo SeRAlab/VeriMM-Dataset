@@ -1,0 +1,9 @@
+Design a module that incorporates a Johnson counter and a combinational circuit. The Johnson counter, driven by a clock and reset signal, generates a sequence based on the inverted value of its most significant bit. Additionally, the module implements a 50-input NAND and NOR logic function, with outputs indicating the respective logical operations of the input signals. Finally, it computes an XNOR function of the Johnson counter's MSB and the results from the NAND and NOR operations, providing a complex combinatory output based on sequential and parallel logic.
+module top_module(
+  input                clk,              // Clock input for Johnson counter
+  input                reset,            // Synchronous active-high reset input for Johnson counter
+  input [49:0]         in,               // 50-inputs for the combinational circuit
+  output reg           out_nand,         // Output of 50-input NAND gate in combinational circuit
+  output reg           out_nor,          // Output of 50-input NOR gate in combinational circuit
+  output reg           out_xnor          // Output of functional module
+);

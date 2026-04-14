@@ -1,0 +1,8 @@
+Design a 2-to-1 multiplexer with additional input selection. This module chooses between three different 32-bit inputs (ALUO_W, RD_W, and PC8_W) based on the 2-bit select signal (sel). Specifically, when sel = 00, it outputs ALUO_W; when sel = 01, it outputs RD_W; when sel = 10, it outputs PC8_W; and for any other value of sel, it outputs zero. This allows for flexible data routing depending on the context of the select signal.
+module top_module(
+	input[1:0] sel,
+	input[31:0] ALUO_W,
+	input[31:0] RD_W,
+	input[31:0] PC8_W,
+	output[31:0] datao
+    );

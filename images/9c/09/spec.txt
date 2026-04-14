@@ -1,0 +1,8 @@
+Design a binary counter that increments its value on each rising edge of the clock (CLK). When the reset (RST) signal is asserted, the counter resets to zero and the DONE flag is cleared. The counter continues to increment until it reaches a specified maximum value (MAX_VAL), at which point the DONE output is set high to indicate completion. This module effectively serves as a simple counting mechanism with the ability to reset and signal when a predefined count is achieved.
+module top_module(
+    input wire CLK,
+    input wire RST,
+    input wire [31:0] MAX_VAL,
+    output reg [31:0] COUNT,
+    output reg DONE
+);

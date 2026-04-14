@@ -1,0 +1,7 @@
+Design a PWM (Pulse Width Modulation) controller for LED brightness adjustment. The module takes a clock signal, a reset signal, and an 8-bit brightness value as inputs. It generates a 1-bit output, `led_out`, that modulates its state based on the brightness level. The controller uses an 18-bit counter to create a timing reference, resetting after reaching 999 counts. The `led_out` signal is set HIGH as long as the current counter value is less than the specified brightness, effectively controlling the LED's brightness based on the provided input. On reset, the counter and threshold are initialized to zero, ensuring the output starts in a known state.
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] brightness,
+    output reg led_out
+);

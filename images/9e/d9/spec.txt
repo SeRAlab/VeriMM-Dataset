@@ -1,0 +1,12 @@
+Design a synchronous dual-clock FIFO (First-In-First-Out) memory buffer with a data width of 31 bits and a depth of 16 entries. The module supports write and read operations controlled by separate clock signals, `wr_clk` for writing and `rd_clk` for reading. It features input signals for data writing (`din`), write enable (`wr_en`), read enable (`rd_en`), and a reset signal (`rst`). The FIFO maintains pointers for both write and read operations, indicating the current positions in the memory buffer. It generates output signals indicating when the buffer is full or empty, facilitating flow control in data handling.
+module top_module(
+  input rst,
+  input wr_clk,
+  input rd_clk,
+  input [30:0] din,
+  input wr_en,
+  input rd_en,
+  output reg [30:0] dout,  // Changed to reg
+  output full,
+  output empty
+);

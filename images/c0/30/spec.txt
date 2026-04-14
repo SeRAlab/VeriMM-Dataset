@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module implements a basic First-In-First-Out (FIFO) memory queue with parameterizable address width (`AW`) and data width (`DW`). The FIFO to store and retrieve data elements in a sequential order, ensuring that the first element written into the FIFO is the first one read out (FIFO principle). This module is equipped with control signals to manage data flow, including signals for reading from and writing to the FIFO, as well as flags indicating the FIFO's full and empty status. It is intended for use in systems requiring temporary storage and orderly data transfer between different components or processes, such as in data buffering, pipeline stages, or communication interfaces.
+
+Module name:  
+	oc_fifo_basic
+
+Input ports:
+	rst_i: Reset input (active high). When asserted, it initializes the FIFO's read and write pointers and status flags.
+	clk_i: Clock input. The FIFO operations are synchronized to the rising edge of this clock.
+	take: Read enable signal. When asserted and the FIFO is not empty, it allows data to be read from the FIFO.
+	give: Write enable signal. When asserted and the FIFO is not full, it allows data to be written into the FIFO.
+	give_di: Data input ([DW1:0]). This is the data to be written into the FIFO when give is asserted.
+Output ports:
+	have: Data available flag. Asserted when the FIFO contains at least one data element, indicating that a read operation can be performed.
+	take_do: Data output ([DW1:0]). This is the data read from the FIFO when take is asserted.
+	need: Write enable flag. Asserted when the FIFO has space for at least one more data element, indicating that a write operation can be performed.
+
+
+Implementation:
+The RTL module presented, oc_fifo_basic, implements a basic First-In-First-Out (FIFO) memory buffer with parameterizable address width (AW) and data width (DW). The FIFO is designed to operate in a synchronous digital system, evidenced by its clock (clk_i) and reset (rst_i) inputs. The module supports basic FIFO operations: data enqueue (give with give_di as data input) and data dequeue (take with take_do as data output). The FIFO uses a simple but effective mechanism to manage its state, including full and empty status indications, which are crucial for its interaction with other system components.
+
+Give me the complete code.
+

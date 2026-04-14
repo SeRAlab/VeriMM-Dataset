@@ -1,0 +1,17 @@
+Implement the Verilog module based on the following description.
+This is a sequential circuit. The circuit consists of combinational logic and a seven-bit binary counter that counts down from a preset value. The output of the counter should be observable through the output count.
+
+Time 0ns: clk = 0, reset = 0, preset = 1000000, count = xxx.
+Time 5ns: clk = 1, reset = 0, preset = 1000000, count = xxx.
+Time 10ns: clk = 0, reset = 1, preset = 1000000, count = xxx.
+Time 15ns: clk = 1, reset = 1, preset = 1000000, count = 1000000.
+Time 20ns: clk = 0, reset = 0, preset = 1000000, count = 1000000.
+Time 25ns: clk = 1, reset = 0, preset = 1000000, count = 0111111.
+Time 30ns: clk = 0, reset = 0, preset = 1000000, count = 0111111.
+Time 35ns: clk = 1, reset = 0, preset = 1000000, count = 0111110.
+
+module down_preset_counter (
+	input clk,
+	input reset,
+	input [6:0] preset,
+	output reg [6:0] count);

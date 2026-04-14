@@ -1,0 +1,3 @@
+module top_module(input a, output b, output c);assign b = a;
+assign c = ~a;
+endmodule

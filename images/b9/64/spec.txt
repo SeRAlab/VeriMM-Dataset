@@ -1,0 +1,7 @@
+Design a 64-bit Johnson counter with a selectable shift register functionality. When the `select` input is high, the circuit operates as a Johnson counter, shifting through a predefined sequence of bit patterns based on the 4-bit `counter` state. The output `Q` reflects the current state of the `shift_reg`. When `select` is low, the circuit shifts the bits in `shift_reg` to the right, maintaining a 64-bit shift operation. The module also includes an asynchronous active-low reset (`rst_n`), which initializes all registers to zero.
+module top_module(
+  input                clk,
+  input                rst_n,
+  input                select,
+  output reg  [63:0]   Q
+);

@@ -1,0 +1,12 @@
+Design a 512-byte memory module with read and write capabilities. This module features an 8-bit wide data bus for input and output, and utilizes two separate addresses for reading (rdaddr) and writing (wraddr). On the rising edge of the clock, if the read enable (re) signal is active, it outputs the data corresponding to the given read address from the memory array. Similarly, if the write enable (we) signal is active, it stores the input data (datain) at the specified write address.
+module top_module(
+	input  wire clk,
+
+	input  wire re,
+	input  wire [8:0] rdaddr,
+	output reg  [7:0] dataout,
+
+	input  wire we,
+	input  wire [8:0] wraddr,
+	input  wire [7:0] datain
+);

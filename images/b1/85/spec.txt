@@ -1,0 +1,10 @@
+Design a FIFO (First-In, First-Out) buffer with a configurable data width and address depth. The module facilitates writing data on a rising edge of the write clock (wr_clk) when the write enable signal (WEBWE) is high, and it reads data on a rising edge of the read clock (rd_clk) when the output signal (Q) indicates that the buffers to be read are not empty. The FIFO uses separate pointers for read and write operations to manage data flow, maintaining an internal memory array for storage. The logic also supports tracking the count of written and read elements to ensure proper data management and avoid overflows or underflows.
+module top_module(dout,
+   rd_clk,
+   wr_clk,
+   tmp_ram_rd_en,
+   WEBWE,
+   Q,
+   count_d1_reg,
+   count_d2_reg,
+   din);

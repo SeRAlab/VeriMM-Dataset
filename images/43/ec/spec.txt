@@ -1,0 +1,20 @@
+Design a module that manages the conditional output of four sets of 8-bit data and their validity status based on a single input signal, IDL. When IDL is LOW, all output data and validity signals are set to zero, effectively disabling the outputs. When IDL is HIGH, the module forwards the incoming data and validity signals (from data_in0 to data_in3 and valid0 to valid3) to the corresponding outputs (L1_in0 to L1_in3 and L1_valid0 to L1_valid3), acting as a data pass-through or forwarding mechanism based on the state of IDL.
+module top_module(	
+				input 		 IDL,
+				input [7:0] 	 data_in0,
+				input 		 valid0,
+				input [7:0] 	 data_in1,
+				input 		 valid1,
+				input [7:0] 	 data_in2,
+				input 		 valid2,
+				input [7:0] 	 data_in3,
+				input 		 valid3,
+				output reg [7:0] L1_in0,
+				output reg 	 L1_valid0,
+				output reg [7:0] L1_in1,
+				output reg 	 L1_valid1,
+				output reg [7:0] L1_in2,
+				output reg 	 L1_valid2,
+				output reg [7:0] L1_in3,
+				output reg 	 L1_valid3
+				);

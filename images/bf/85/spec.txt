@@ -1,0 +1,8 @@
+Design a clock divider module that generates three different clock outputs from a single input clock. The output `oCLOCK_b` is derived from the 14th bit of a 25-bit counter, producing a clock signal with a frequency divided by 16, `oCLOCK_wd` utilizes the 10th bit for a frequency divided by 1024, and `oCLOCK_30` provides a 1Hz clock output from the least significant bit of the counter, effectively creating three specific clock signals while being reset by an active-low reset signal.
+module top_module(
+	input		iCLK,
+	input		iReset_n,
+	output		oCLOCK_b,
+	output		oCLOCK_wd,
+	output		oCLOCK_30
+	);

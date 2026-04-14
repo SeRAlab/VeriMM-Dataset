@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+
+Implement a 8-bit Up/Down Counter with enable. The counter counts up when the mode signal is 1, and counts down when the mode signal is 0. The counter should only count when the enable signal is active.
+
+Module name:
+    up_down_counter
+
+Input ports:
+    clk: Clock signal.
+    rst: Synchronous reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    enable: Enable signal. Defined as 1 for counting and 0 for holding the current count.
+    mode: Mode signal. Defined as 1 for counting up and 0 for counting down.
+
+Output ports:
+    count: 8-bit output representing the current value of the counter.
+
+Implementation:
+The module implements an 8-bit up/down counter using a register and an always block. On the positive edge of the clock, the module updates the register.
+If the reset signal (rst) is high, the register (count) is set to 0. If the enable signal is high and the mode signal is high, the register (count) increments by 1. If the enable signal is high and the mode signal is low, the register (count) decrements by 1.
+
+Give me the complete code.

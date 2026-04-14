@@ -1,0 +1,8 @@
+Design a pulse generator that produces a pulse output for a specified duration. Upon receiving a start signal, the module initializes a countdown from the provided duration value and maintains the output pulse high until the countdown reaches zero. The pulse generation can be reset asynchronously when the reset input is activated. The pulse output remains active as long as the countdown is in progress, and it is set low once the countdown completes. This module effectively implements a timing control function suitable for various applications requiring timed signal generation.
+module top_module(
+    input i_clk,
+    input i_reset,
+    input i_start,
+    input [7:0] i_duration,
+    output reg o_pulse
+);

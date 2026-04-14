@@ -1,0 +1,9 @@
+Design a simple 8-bit wide FIFO (First-In-First-Out) memory buffer with a depth of 16. The module allows writing data on the rising edge of a clock signal when the write enable signal (we) is active, and the buffer is not full. When data is written, it is stored in memory, and the head pointer is incremented. The output is read when the read enable signal (re) is activated, retrieving data from the tail of the queue. The FIFO will reset its state upon receiving an active reset signal (rst), clearing the head and tail pointers and the full flag. Additionally, it includes logic to determine when to assert the read enable signal based on the fullness of the buffer, allowing for proper data flow control.
+module top_module(
+    input clk,
+    input rst,
+    input we,
+    input [7:0] din,
+    output reg re,
+    output reg [7:0] dout
+);

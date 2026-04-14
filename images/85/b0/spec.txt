@@ -1,0 +1,8 @@
+Design a circuit that monitors a 3-bit input signal, RX_CLK_COR_CNT, to detect when it matches a specified channel bond load code (3'b101). It maintains a register to track the previous clock count and sets a load complete flag whenever the current count matches the load code. Upon detecting a rising edge (when the current count exceeds the previous count), it outputs the load complete flag as CHANNEL_BOND_LOAD. The operation is synchronized to the USER_CLK to ensure proper timing.
+module top_module(
+
+    RX_CLK_COR_CNT,
+    CHANNEL_BOND_LOAD,
+    USER_CLK
+
+);

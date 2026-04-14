@@ -1,0 +1,13 @@
+Design a synchronous control interface that captures read and write enable signals from external inputs. The module produces a register enable signal that is asserted when either a read or write operation is requested and generates a dedicated write enable signal based on the processed inputs. It features a reset functionality to initialize the internal state, retaining the previous states of the read and write enable signals over three clock cycles to ensure debounced operation before asserting the control outputs. This design is ideal for managing communication between a JTAG interface and a core by synchronizing command signals.
+module top_module(
+
+input       rd_en,      
+input       wr_en,      
+
+
+input       rst_n,      
+input       clk,        
+
+output      reg_en,     
+output      reg_wr_en   
+);

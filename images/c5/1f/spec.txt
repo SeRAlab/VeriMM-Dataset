@@ -1,0 +1,16 @@
+
+
+You are tasked with designing a verilog module for a simple encryption algorithm. The module should take in a 16-bit data input and output a 16-bit encrypted data. The encryption algorithm is as follows:
+- Split the 16-bit input into two 8-bit parts, A and B.
+- Rotate A to the left by 2 bits.
+- Add B to the rotated A.
+- Take the 8 least significant bits of the result and append them to the 8 most significant bits of B to form the encrypted data output.
+
+The verilog module should have the following inputs and outputs:
+- `input aclk`: the clock signal
+- `input reset`: active high reset signal
+- `input [15:0] data_in`: the 16-bit data input
+- `output reg [15:0] data_out`: the 16-bit encrypted data output
+
+The module should operate on the rising edge of the clock signal and should only output valid data when `reset` is low. The `data_out` output should be updated on the same clock cycle that `data_in` is valid.
+

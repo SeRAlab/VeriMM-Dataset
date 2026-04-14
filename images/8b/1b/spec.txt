@@ -1,0 +1,8 @@
+Design a 5-stage shift register that captures and propagates an 8-bit input data value across its stages on the rising edge of the clock signal. The register can be reset asynchronously, initializing all stages to zero, and it only updates its contents when the enable signal is asserted. The output reflects the value stored in the last stage (reg_4), which means it outputs the data that has passed through four prior registers in the shift sequence, allowing for a delayed output of the input data.
+module top_module(
+  input clk,
+  input reset,
+  input enable,
+  input [7:0] data_in,
+  output [7:0] data_out
+);

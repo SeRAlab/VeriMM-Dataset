@@ -1,0 +1,7 @@
+Design a Binary-Coded Decimal (BCD) counter that increments its value on each clock cycle. Upon reset, the counter initializes to zero. The internal counts from 0 to 9 are used to increment a higher BCD count stored in a 3-bit register. The 4-bit current count is combined with the BCD count to produce a 16-bit output. The module also outputs a 3-bit enable signal derived from the BCD count. Each time the count reaches 10, it resets to 0 and increases the BCD count, ensuring proper BCD representation.
+module top_module(
+    input clk,
+    input reset,
+    output [3:1] ena,
+    output reg [15:0] q // Changed 'output [15:0] q' to 'output reg [15:0] q'
+);

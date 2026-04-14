@@ -1,0 +1,11 @@
+
+Design an interrupt controller that manages two types of interrupts: a high-priority interrupt (HPI) and a low-priority interrupt (LPI). The controller should have the following inputs and outputs:
+Inputs:
+- `hpi` (high-priority interrupt signal)
+- `lpi` (low-priority interrupt signal)
+- `ack` (acknowledge signal)
+Outputs:
+- `irq` (interrupt request signal, active high)
+- `irq_type` (2-bit signal indicating the type of interrupt: 00 for none, 01 for HPI, 10 for LPI)
+
+The irq should be set when either `hpi` or `lpi` is asserted. However, if both are asserted, HPI should take precedence. The `ack` signal should clear the `irq` and `irq_type` when asserted.

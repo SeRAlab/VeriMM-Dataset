@@ -1,0 +1,10 @@
+Design a 64-bit XGMII (10 Gigabit Media Independent Interface) encoder module that processes data and control signals. The module encodes incoming 64-bit transmit data (`xgmii_txd`) and 8-bit transmit control (`xgmii_txc`) based on a clock and reset signal. Upon reset, the outputs are initialized to zero, and during normal operation, the module concatenates selected bits from the transmit data and control signals to form the full encoded transmit data (`encoded_tx_data`) and a 2-bit header (`encoded_tx_hdr`). This design is essential for ensuring proper transmission of data in high-speed networking applications.
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] current_test,
+    input [63:0] xgmii_txd,
+    input [7:0] xgmii_txc,
+    output reg [63:0] encoded_tx_data,
+    output reg [1:0] encoded_tx_hdr
+);

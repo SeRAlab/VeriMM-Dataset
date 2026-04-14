@@ -1,0 +1,12 @@
+Design a module to split a packed input data signal into multiple outputs. The `util_bsplit` module takes an input data vector of width `(CH_CNT*CH_DW)` and divides it into `CH_CNT` separate output signals, each of width `CH_DW`. It also pads the remaining bits of the output with zeros, effectively utilizing a larger output signal width defined by the local parameter `CH_MCNT`. This module is intended for applications requiring data demultiplexing or distribution, facilitating the management of multiple channels of data from a single bus.
+module top_module(
+  input [(CH_CNT*CH_DW)-1:0] data,
+  output [CH_DW-1:0] split_data_0,
+  output [CH_DW-1:0] split_data_1,
+  output [CH_DW-1:0] split_data_2,
+  output [CH_DW-1:0] split_data_3,
+  output [CH_DW-1:0] split_data_4,
+  output [CH_DW-1:0] split_data_5,
+  output [CH_DW-1:0] split_data_6,
+  output [CH_DW-1:0] split_data_7
+);

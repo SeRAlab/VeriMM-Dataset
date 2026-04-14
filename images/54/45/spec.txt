@@ -1,0 +1,9 @@
+Design a synchronous block RAM (BRAM) module with configurable parameters for address width, data width, and memory size. The module features an enable (EN) signal to control read and write operations, a write enable (WE) signal to determine if data should be written to the specified address, and a clock (CLK) for synchronization. Data can be loaded from an optional binary or hexadecimal file during initialization. The module outputs read data (DO), which can be either directly from the RAM or pipelined to improve throughput, depending on the configuration.
+module top_module(
+  input CLK,
+  input EN,
+  input WE,
+  input [ADDR_WIDTH-1:0] ADDR,
+  input [DATA_WIDTH-1:0] DI,
+  output [DATA_WIDTH-1:0] DO
+);

@@ -1,0 +1,8 @@
+Design a circuit that implements a logic function with a sleep mode feature. The module produces an output X based on the combination of input A and a negated sleep signal (SLEEP). When SLEEP_B is low, SLEEP becomes high (indicating active mode), allowing A to determine the output X in conjunction with an AND operation that checks the power supply conditions (VPWR and ground VGND). The output X only activates when both the condition from A (or SLEEP) and the power condition (VPWR and not VGND) are satisfied, effectively allowing the module to enter a low-power state when SLEEP_B is high.
+module top_module(
+    X,
+    A,
+    SLEEP_B,
+    VPWR,
+    VGND
+);

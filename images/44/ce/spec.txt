@@ -1,0 +1,7 @@
+Design a 4-bit binary counter that increments its value on each rising edge of the clock signal. When the reset signal is activated, the counter is reset to zero and the output indicating that the counter has reached the value '9' is deactivated. The module also includes a flag, `reached_9`, that goes high when the counter value equals 9 (binary 1001) and resets to low for all other counts. This is intended for applications where tracking the count up to 9 is significant, potentially for digit display or counting events.
+module top_module(
+    input clk,
+    input reset,
+    output reg [3:0] counter_value,
+    output reg reached_9
+);

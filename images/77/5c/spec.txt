@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that counts consecutive occurrences of specific 4-bit input patterns. The FSM transitions through three states based on the input data: in state 0, it remains idle or detects the input pattern `0001` to move to state 1 and increment the count to 1; in state 1, it detects the pattern `0011` to transition to state 2 and increment the count to 2, or continues to recognize `0001` to remain in state 1, otherwise, it resets to state 0; finally, in state 2, any input resets the FSM back to state 0 and the count to 0. The output `count` indicates the number of consecutive valid patterns detected, up to a maximum of 2.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] data,
+  output reg [1:0] count
+);

@@ -1,0 +1,5 @@
+Design a circuit that converts a 7-bit one-hot encoded signal into a 13-bit one-hot output. The output, `regime_onehot`, is selectively influenced by two control signals, `inv_rails`, where `inv_rails[0]` enables specific bits of the `shift_onehot` signal to be included in the lower half of `regime_onehot`, while `inv_rails[1]` controls the inclusion of the entire `shift_onehot` signal in the upper half. This design implies the need for conditional logic to determine which parts of the one-hot encoding to activate based on the provided inputs.
+module top_module(
+  input [1:0] inv_rails,
+  input [6:0] shift_onehot,
+  output [13:1] regime_onehot);

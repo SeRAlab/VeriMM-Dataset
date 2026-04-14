@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+
+Implement a 16-bit parallel-in serial-out (PISO) shift register module with a synchronous reset and a shift enable signal. The shift register should have a parameter WIDTH, which is set to 16 by default but can be changed when instantiating the module.
+
+Module name:  
+    piso_shift_register 
+
+Parameter:
+WIDTH = 16
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high reset signal.
+    load: 1-bit signal to load the parallel data into the shift register.
+    shift: 1-bit signal to enable shifting.
+    parallel_in: WIDTH bit input signal [WIDTH-1:0] representing the parallel data to be loaded.
+Output ports:
+    serial_out: 1-bit output signal representing the serial output of the shift register.
+
+Implementation:
+On every rising edge of the clock, if the reset signal is asserted, reset the shift register to 0. If the load signal is asserted, load the parallel data into the shift register. If the shift signal is asserted, shift the data out serially.
+
+Give me the complete code.

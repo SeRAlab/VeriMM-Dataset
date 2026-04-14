@@ -1,0 +1,16 @@
+Design a clock-driven buffer module that captures and holds the values of multiple input signals on the rising edge of the clock. The module stores the 32-bit results from an ALU, instruction fetch sequence, and target address, along with various control signals related to branching, memory read/write operations, and register writing. This enables synchronization of data flow in a digital circuit, allowing it to maintain consistent states across clock cycles for further processing or execution in a larger system.
+module top_module(
+	input [31:0]Res_ALU,Fetch,target,
+	input [31:0]Write_Data,
+	input [31:0]contadorPc,
+	input zero_flag,
+	input[4:0]Write_Reg,
+	input Branch,MemRead,MemtoReg,MemWrite,RegWrite,ControlJump,
+	input clk,
+	output reg Sal_zf,
+	output reg[31:0]SRes_ALU, SFetch,Starget,
+	output reg[31:0]SalWD, 
+	output reg[4:0]Sal_WR,
+	output reg SBranch,SMemRead,SMemtoReg,SMemWrite,SRegWrite,SControlJump,
+	output reg[31:0]SContadorPc
+);

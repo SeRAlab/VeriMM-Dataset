@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+
+Create a 4-bit binary counter that increments on the rising edge of the clock signal clk and can be asynchronously reset using the reset signal rstn. The counter should roll over to 0 after reaching its maximum value of 15.
+
+Module name:
+    binary_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rstn: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+
+Output ports:
+    count: 4-bit output signal representing the current count value.
+
+Implementation:
+The module includes a 4-bit register, count, to store the current count value.
+On the positive edge of the clock signal (clk) or the falling edge of the reset signal (rstn), the module updates the register. If the reset signal (rstn) is low, indicating a reset condition, the register (count) is set to 0.
+If the reset signal (rstn) is high, the counter increments its value by 1. If the counter reaches its maximum value of 15, it rolls over to 0.
+
+Give me the complete code.

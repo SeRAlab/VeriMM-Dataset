@@ -1,0 +1,26 @@
+Please act as a professional Verilog designer.
+
+Design a 2-bit binary counter with an enable signal and an active-low synchronous reset.
+
+Module name:
+    binary_counter_2
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    enable: Signal to control the counting operation.
+    rst_n: Active-low synchronous reset signal to initialize the counter.
+Output port:
+    count: 2-bit register representing the current counter value.
+
+Implementation:
+On every rising edge of the clock signal (clk), if the enable signal is high, the counter value is incremented.
+If the reset signal (rst_n) is low, the counter value (count) is synchronously reset to 2'b00.
+
+Give me the complete code.
+
+module binary_counter_2(
+   input                clk,
+   input                enable,
+   input                rst_n,
+ 
+   output reg [1:0]     count
+);

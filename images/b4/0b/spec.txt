@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement a 32-bit register file with 16 registers. The module should have two read ports and one write port. The read and write operations are synchronous with the clock signal. The read and write addresses are 4 bits wide. There should be a reset signal to initialize all registers to 0.
+
+Module name:
+    regfile_32bit_16
+
+Input ports:
+    clk: Clock signal.
+    rst: Reset signal.
+    we: Write enable signal.
+    waddr: 4-bit write address.
+    raddr1: 4-bit read address for the first read port.
+    raddr2: 4-bit read address for the second read port.
+    wdata: 32-bit write data.
+
+Output ports:
+    rdata1: 32-bit data from the first read port.
+    rdata2: 32-bit data from the second read port.
+
+Implementation:
+Data bit control:
+On every positive edge of the clock signal (clk), the write operation is performed if the write enable (we) signal is active.
+If the reset signal (rst) is active, all registers are set to 0.
+The read operations are performed based on the read addresses (raddr1 and raddr2).
+
+Give me the complete code.

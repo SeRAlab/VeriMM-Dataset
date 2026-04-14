@@ -1,0 +1,9 @@
+Design a synchronous divide and remainder computation circuit that takes signed `dividend` and `divisor` inputs and produces the quotient and remainder as outputs. The module operates with specified bit widths for the dividend and divisor, and it incorporates reset functionality to ensure proper operation. Additionally, it includes a detection mechanism for division by zero, which is handled by an external signal from the division pipeline instance. This implementation is suitable for applications requiring arithmetic operations involving signed numbers with configurable precision.
+module top_module(
+    input clock,
+    input reset,
+    input signed [DIVIDEND_BIT_WIDTH-1:0] dividend,
+    input signed [DIVISOR_BIT_WIDTH-1:0] divisor,
+    output reg signed [DIVIDEND_BIT_WIDTH-1:0] quot_out,
+    output reg signed [DIVIDEND_BIT_WIDTH-1:0] rem_out
+);

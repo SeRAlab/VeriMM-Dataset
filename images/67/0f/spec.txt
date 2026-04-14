@@ -1,0 +1,11 @@
+Design a state machine for an I2C communication protocol. This module manages the communication sequence, transitioning between four states: IDLE, START_CONDITION, ADDRESS_TRANSMIT, and DATA_TRANSMIT. It monitors the SDA and SCL lines to initiate communication and transmit an 8-bit address followed by 8-bit data. The module checks for acknowledgment after each transmission to ensure successful communication, outputting an ACK signal when the acknowledgment is received and an ERROR signal for any transmission failures. This design facilitates I2C transactions, enabling interaction with I2C-compatible devices.
+module top_module(
+  input SDA,
+  input SCL,
+  input START,
+  input STOP,
+  input [7:0] ADDR,
+  input [7:0] DATA,
+  output reg ACK,
+  output reg ERROR
+);

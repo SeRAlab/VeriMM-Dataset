@@ -1,0 +1,8 @@
+Design a 24-hour digital clock counter. The module takes a clock signal (clk_i) and an active-low reset signal (rst_n) as inputs, and it outputs two 4-bit values representing the hour in a *hour1* (tens place) and *hour0* (units place). The counter increments the hour count in a valid range from 00 to 23 and signals a new day with the output *day_en* when the hour resets back to 00 after reaching 23. When the hour0 reaches 9, the hour1 increments by 1, and the hour0 resets to 0. Upon reset, the hours and the day enable are set to their initial values of 0. The design ensures proper counting and transition between days in a 24-hour format.
+module top_module(
+    clk_i,
+	 rst_n,
+	 hour1,
+	 hour0,
+	 day_en
+	 );

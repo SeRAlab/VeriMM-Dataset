@@ -1,0 +1,12 @@
+Design a positive edge-triggered D flip-flop with asynchronous reset functionality. The flip-flop captures the input value (D) on the rising edge of the clock (CLK) when the enable signal (DE) is active. Additionally, it includes an asynchronous reset feature that sets the output (Q) to LOW and the inverted output (Q_N) to HIGH when the ground (VGND) is LOW or the power (VPWR) is HIGH, regardless of the clock state. The module also manages power and ground connections with VPWR, VGND, VPB, and VNB.
+module top_module(
+    input wire D,
+    input wire DE,
+    input wire VPWR,
+    input wire VGND,
+    input wire VPB,
+    input wire VNB,
+    input wire CLK,
+    output reg Q,
+    output reg Q_N
+);

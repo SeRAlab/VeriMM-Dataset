@@ -1,0 +1,9 @@
+Design a synchronous circuit that performs a 2-bit equality comparison between two inputs, `a` and `b`. On each rising edge of the clock, if the enable signal (`ce`) is asserted, the inputs are latched into registers and the output (`op`) is updated to indicate whether `a` equals `b` (outputting a HIGH signal if they are equal and LOW otherwise). Additionally, if the clear signal (`clr`) is activated, the registers are reset to zero, ensuring that the operational state can be controlled effectively.
+module top_module(
+  input [1:0] a,
+  input [1:0] b,
+  output [0:0] op,
+  input clk,
+  input ce,
+  input clr
+);

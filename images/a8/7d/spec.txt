@@ -1,0 +1,8 @@
+Design a circuit that detects rising and falling edges of an input signal 'a' with respect to a clock signal and an active-low reset. The module outputs two signals: 'rise' is asserted high when a rising edge is detected (transition from low to high), and 'down' is asserted high when a falling edge is detected (transition from high to low). The state machine transitions between three states: IDLE, RISING, and FALLING to manage the edge detection logic based on the current and previous values of 'a'.
+module top_module(
+  input               clk,
+  input               rst_n,
+  input               a,
+  output reg          rise,
+  output reg          down
+);

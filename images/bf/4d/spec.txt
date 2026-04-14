@@ -1,0 +1,18 @@
+Please act as a professional Verilog designer.
+
+Implement a 5-bit ring counter with a synchronous reset. The counter should circulate a single '1' among '0's on each positive clock edge. If the reset signal is high, the counter should reset to 5'b00001 on the next positive clock edge.
+
+Module name:
+    ring_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+
+Output ports:
+    count: Output 5-bit ring counter value.
+
+Implementation:
+Counter Logic:
+The module includes a 5-bit register, count, to store the current counter value.
+On the positive edge of the clock signal (clk) or the positive edge of the reset signal (rst), the module updates the counter value. If the reset signal (rst) is high, indicating a reset condition, the counter value is set to 5'b00001. Otherwise, the counter value is rotated left by 1.

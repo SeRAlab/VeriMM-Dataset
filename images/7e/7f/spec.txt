@@ -1,0 +1,8 @@
+Design a Fibonacci sequence generator that calculates the nth Fibonacci number based on an 8-bit input. The module takes a clock and a reset signal, with an output that is a 16-bit wide result. Upon receiving a reset, it initializes the result and registers; during each clock cycle, if the reset is not active, it updates the result according to the Fibonacci sequence logic. The output will indicate completion with a 'ready' signal once the specified Fibonacci number has been computed. The circuit maintains a count of iterations to determine when to stop the calculation.
+module top_module(
+    input clk,
+    input reset,
+    input [inBits-1:0] n,
+    output reg [outBits-1:0] result,
+    output reg ready
+);

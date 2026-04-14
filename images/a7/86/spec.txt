@@ -1,0 +1,14 @@
+Design a synchronous latch module that implements four different types of latches: a D latch, a JK latch, a T latch, and an SR latch. The D latch captures the input data on the rising edge of the clock. The JK latch toggles its output based on the values of input J and K; it toggles when J is high and K is low and holds its state when J is low and K is high. The T latch toggles its state whenever the toggle input (t) is high on the clock edge. Lastly, the SR latch sets the output high if the set input (s) is high, resets it to low if the reset input (r) is high, and otherwise retains its previous state. Each latch type produces distinct output signals, facilitating the storage and control of binary states based on various input conditions.
+module top_module(
+  input [n-1:0] d,
+  input [n-1:0] J,
+  input [n-1:0] K,
+  input [n-1:0] t,
+  input [n-1:0] s,
+  input [n-1:0] r,
+  input clk,
+  output reg [m-1:0] q_D,
+  output reg [m-1:0] q_JK,
+  output reg [m-1:0] q_T,
+  output reg [m-1:0] q_SR
+);

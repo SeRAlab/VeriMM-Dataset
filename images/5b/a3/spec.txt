@@ -1,0 +1,18 @@
+Please act as a professional Verilog designer.
+
+Implement a module that acts as a 4-bit shift register with both serial input and output capabilities. The register shifts right on each clock cycle, taking the serial input from the left, and the shifted-out bit is provided as the serial output.
+
+Module name: 
+    shift_register
+Input ports:
+    clk: Clock signal
+    rst_n: Reset signal (active low)
+    serial_in: Serial input bit
+Output ports:
+    serial_out: Serial output bit
+    parallel_out: 4-bit parallel output representing the current state of the register
+
+Implementation:
+If the reset signal is active (!rst_n), the 4-bit register is reset to 0. On each clock cycle, the register shifts right by one bit. The leftmost bit of the register is filled with the serial input bit, and the rightmost bit of the register is provided as the serial output. The current state of the register is also provided as the 4-bit parallel output.
+
+Give me the complete code.

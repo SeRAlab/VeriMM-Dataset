@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a shift register with a length defined by the parameter `length`, which is set to 640 by default. This module to capture and serially shift pixel data (`pix_in`) input with each clock cycle when the `datavalid` signal is high. It outputs the two most recently captured pixel values (`pix_out1` and `pix_out2`) at every clock cycle. This module can be utilized in image processing or video processing applications where there is a need to access the current and previous pixel values simultaneously for operations such as filtering, edge detection, or any other algorithm that requires accessing adjacent pixels in a row.
+
+Module name:  
+	row_buf
+
+Input ports:
+	clk (input): The clock signal that drives the shifting operation within the module. It is a singlebit signal.
+	datavalid (input): A singlebit signal that indicates when the pix_in data is valid and should be shifted into the register. When datavalid is high, pix_in is considered valid, and the shifting operation occurs.
+	pix_in (input): The singlebit input pixel data to be shifted into the register. This represents the least significant bit of the shift register.
+Output ports:
+	pix_out1 (output): The singlebit output representing the most recent pixel data that was shifted into the register. This is the most significant bit of the shift register.
+	pix_out2 (output): The singlebit output representing the second most recent pixel data that was shifted into the register. This is the second most significant bit of the shift register.
+
+
+Implementation:
+The RTL module presented, named row_buf, is designed to function as a shift register with a length defined by the parameter length, which is set to 640 by default. This module is intended for use in image processing or video streaming applications, where it can serve as a row buffer, capturing pixel data serially and allowing access to the two most recently captured pixels. The module operates on the rising edge of a clock signal and shifts pixel data into the register only when a valid data signal is present.
+Sequential Logic:
+The core of this module is built around a shift register implemented using a register array R of size length. On each rising edge of the clock signal (clk), if the datavalid signal is asserted (indicating that the incoming pixel data pix_in is valid), the module shifts the contents of the register R to the right by one position. This is achieved by assigning the value of each bit in the register to the bit position immediately to its right (R[length-1:1] <= R[length-2:0]), and inserting the new pixel data pix_in into the leftmost position of the register (R[0] <= pix_in). This process effectively captures and stores a stream of pixel data in a serial manner.
+Combinational Logic:
+The module provides two outputs, pix_out1 and pix_out2, which are directly connected to the two rightmost bits of the register R. These outputs are assigned using combinational logic, with pix_out1 mapped to R[length-1] and pix_out2 mapped to R[length-2]. This allows the module to output the two most recently captured pixels at any given time, without the need for additional clock cycles to retrieve this data.
+
+Give me the complete code.
+

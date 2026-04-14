@@ -1,0 +1,11 @@
+Design a simple calculator module that performs basic arithmetic operations on two 8-bit inputs, `a` and `b`. The module computes the sum, difference, product, and quotient of the inputs, providing the results through corresponding output registers. Additionally, it has a `valid` output that indicates that new arithmetic results are available, which is set high on the rising edge of a clock signal. However, it's important to note that the `valid` output is initialized to low and remains low until the clock event triggers, meaning the valid signal might not accurately reflect the output's ready state in its current implementation.
+module top_module(
+  input [7:0] a,
+  input [7:0] b,
+  input clk,              // Added the clk input
+  output reg [7:0] sum,
+  output reg [7:0] diff,
+  output reg [7:0] prod,
+  output reg [7:0] quot,
+  output reg valid
+);

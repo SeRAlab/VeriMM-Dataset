@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+    
+Implement a module to serve as a configurable register block within a VGA (Video Graphics Array) controller system, specifically tailored for cursor control settings. Its primary functions include:
+
+Register Read/Write Operations: It allows for reading from and writing to a set of internal registers (`cregs`) through a simple bus interface. These registers can be used to store configuration settings such as cursor position, shape, or other related parameters.
+Cursor Data Output: It outputs a portion of the cursor configuration data (`cdat_o`) based on an external address input (`cadr_i`). This data can be used by other components within the VGA system to render the cursor on the display.
+
+The module plays a crucial role in enabling dynamic control over the cursor's appearance and behavior in a VGA display system, facilitating user interaction and enhancing the overall graphical interface.
+
+Module name:  
+	vga_cur_cregs
+
+Input ports:
+	clk_i: Clock input (positive edgetriggered) for synchronizing the module's operations.
+	rst_i: Synchronous reset input, active high. Resets the module's internal state.
+	arst_i: Asynchronous reset input, active high. Not used in the current implementation.
+	hsel_i: Select signal for initiating read/write operations on the internal registers.
+	hadr_i: 3bit address input for selecting which internal register to access during read/write operations.
+	hwe_i: Write enable signal, active high, controls whether the current operation is a read or write.
+	hdat_i: 32bit data input for writing to the selected internal register.
+	cadr_i: 4bit address input for selecting which portion of cursor data to output.
+Output ports:
+	hdat_o: 32bit data output that provides the contents of the internal register selected by hadr_i.
+	hack_o: Acknowledge signal indicating that a read or write operation has been completed.
+	cdat_o: 16bit cursor data output, providing either the upper or lower half of the selected internal register based on cadr_i.
+
+
+Implementation:
+The vga_cur_cregs module is designed to interface with a VGA (Video Graphics Array) controller, specifically managing cursor control registers. It is structured to handle read and write operations to these registers, facilitating the manipulation of cursor attributes in a VGA display system. The module operates under a synchronous design, with all operations triggered by the rising edge of the input clock signal (clk_i).
+
+Give me the complete code.
+

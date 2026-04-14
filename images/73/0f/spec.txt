@@ -1,0 +1,15 @@
+Design a digital module that incorporates a 4-bit shift register with asynchronous reset, a 4-to-1 multiplexer, and additional XOR logic. The shift register allows data to be loaded asynchronously from inputs `a`, `b`, `c`, and `d`, or to shift in the result from an XOR operation performed on these inputs. The multiplexer selects one of the input signals based on a 4-bit control signal `q`. The final output combines the selected multiplexer output with the XOR result. The entire module operates under a clock signal with the capability to reset and load data, enabling flexible data manipulation and processing in a sequence of operations.
+module top_module(
+    input clk,
+    input areset,  // async active-high reset to zero
+    input load,
+    input ena,
+    input a, 
+    input b,
+    input c,
+    input d,
+    output wire out_shift_register,
+    output wire out_multiplexer,
+    output reg [3:0] q,
+    output reg [3:0] final_output
+);

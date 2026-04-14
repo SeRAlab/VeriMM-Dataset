@@ -1,0 +1,7 @@
+Design a logic block that controls the increment of a FIFO (First In, First Out) write pointer based on the status of two free flags and a two-bit input count. The output, a four-bit increment value, is determined by a case statement that evaluates the combined state of the flags and input: if both flags are high, the increment is three; if the first flag is low but the second is high, the increment is one; if the second flag is low, the increment can either be one or two depending on the state of the first flag; for all other cases, the increment is set to zero.
+module top_module(
+  input ge2_free,
+  input ge3_free,
+  input [1:0] input_tm_cnt,
+  output reg [3:0] fifo_wrptr_inc
+);

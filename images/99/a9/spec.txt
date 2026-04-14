@@ -1,0 +1,24 @@
+Design a clock selector module that outputs a selected clock signal based on multiple input selection signals. The module accepts various clock frequencies as inputs and allows for the selection of one clock at a time, ranging from 1 Hz to 25 MHz, using corresponding selection inputs. When the reset signal is active, the output is set to LOW. Upon each positive edge of the clock, the module checks the selection inputs and assigns the output to the chosen clock frequency, providing a flexible way to switch between different clock sources based on external control.
+module top_module(
+    input wire clock,
+    input wire reset,
+    input wire sel_1hz,
+    input wire clock_1hz,
+    input wire sel_10hz,
+    input wire clock_10hz,
+    input wire sel_100hz,
+    input wire clock_100hz,
+    input wire sel_1khz,
+    input wire clock_1khz,
+    input wire sel_10khz,
+    input wire clock_10khz,
+    input wire sel_100khz,
+    input wire clock_100khz,
+    input wire sel_1mhz,
+    input wire clock_1mhz,
+    input wire sel_12mhz,
+    input wire clock_12mhz,
+    input wire sel_25mhz,
+    input wire clock_25mhz,
+    output reg clock_saida
+);

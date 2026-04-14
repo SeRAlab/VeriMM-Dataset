@@ -1,0 +1,11 @@
+Design a synchronous digital system that combines a counter and two XOR gates to control a tri-state output. The module includes a 4-bit counter that increments on each clock cycle, resetting to zero when the reset signal is active. The inputs ‘a’ and ‘b’ are used in the first XOR gate, and inputs ‘c’ and ‘d’ are processed by the second XOR gate. The outputs of these XOR gates determine the values that will be multiplied by the lower three bits of the counter's output. The final result drives a 3-bit tri-state buffer controlled by the ‘control’ signal, allowing selective output to the 3-bit register ‘q’. The design effectively manages both counting and controlled data output based on the provided inputs and control signal.
+module top_module( 
+    input clk, 
+    input reset,      // Synchronous active-high reset
+    input a,          // Input signal to the first XOR gate
+    input b,          // Input signal to the first XOR gate
+    input c,          // Input signal to the second XOR gate
+    input d,          // Input signal to the second XOR gate
+    input control,    // Control signal for the tri-state buffer
+    output reg [2:0] q // 3-bit output from the system
+);

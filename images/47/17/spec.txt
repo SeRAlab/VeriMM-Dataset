@@ -1,0 +1,10 @@
+Design a flip-flop with asynchronous reset, set, and enable functionality. This module captures the value of input D on the rising edge of CLK only when EN is active. If RESET is asserted, the output Q is driven LOW and QBAR HIGH; if SET is asserted, Q is driven HIGH and QBAR LOW, overriding the D input. This design allows for controlled data storage with the added flexibility of asynchronous control signals for immediate state changes.
+module top_module(
+    input D,
+    input CLK,
+    input RESET,
+    input SET,
+    input EN,
+    output reg Q,
+    output reg QBAR
+);

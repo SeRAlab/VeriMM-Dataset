@@ -1,0 +1,9 @@
+Design a circuit that implements a D flip-flop with a data enable (DE) control and support for power gating. The flip-flop captures the input data (D) on the rising edge of the clock (CLK) when DE is asserted; otherwise, it holds the previous state. The module features delayed versions of the input signals to ensure reliable operation, incorporating a 2-to-1 multiplexer to select between the delayed and unmodified data inputs based on the DE signal. Additionally, it includes logic for managing power supply (VPWR) to optimize energy use, with a notifier to handle asynchronous events.
+module top_module(
+    output Q,
+    input CLK,
+    input D,
+    input DE,
+    input notifier,
+    input VPWR
+);

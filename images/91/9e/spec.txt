@@ -1,0 +1,8 @@
+Design a PWM (Pulse Width Modulation) generator that produces a PWM output signal based on the selected 4-bit input from two multiplexed sources. The circuit utilizes a counter that increments on each clock cycle, resetting synchronously when triggered. It also determines the duty cycle of the PWM signal by comparing the counter value with a threshold derived from the selected input. When the counter is below the threshold value, the PWM output is high; otherwise, it is low. The module facilitates dynamic adjustment of the PWM duty cycle based on the selected input, either mux_in1 or mux_in2, through the select signal.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input [3:0] mux_in1, mux_in2, // 4-bit inputs for the multiplexer
+    input select, // Select input to choose between mux_in1 and mux_in2
+    output pwm // PWM output signal
+);

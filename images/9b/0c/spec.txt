@@ -1,0 +1,7 @@
+Implement a 4-bit sequence detector with a finite state machine (FSM) that recognizes a specific sequence of binary inputs. The module transitions between three states (IDLE, S1, S2) based on the input data, utilizing a shift register to track the incoming bits. When the sequence '101' is detected, the output 'match' is asserted high. The FSM resets to the IDLE state whenever the reset signal is activated, initiating the detection process afresh.
+module top_module(
+  input clk,
+  input reset,
+  input data,
+  output reg match
+);

@@ -1,0 +1,18 @@
+Design a channel remover module that routes data requests in a DMA interface. The module takes in a 128-bit data input alongside a valid signal from the source channel, and it outputs the same data and valid signal as it receives, effectively allowing for seamless data transfer between channels while maintaining control signaling integrity. The output is ready when the input is ready, promoting synchronization in the DMA transaction process.
+module top_module(
+
+	
+	input 	wire 					clk,
+	input 	wire 					reset,
+	
+	
+	output 	wire	[ 127 : 0 ]	aso_dma_req_data,
+	output	wire					aso_dma_req_valid,
+	input		wire					aso_dma_req_ready,
+
+	
+	input 	wire	[ 127 : 0 ]	asi_dma_req_data,
+	input		wire					asi_dma_req_channel,
+	input		wire					asi_dma_req_valid,
+	output	wire					asi_dma_req_ready
+);

@@ -1,0 +1,8 @@
+Design a digit display controller for a four-digit 7-segment display. The module takes a 16-bit input representing four 4-bit decimal digits and sequentially activates one of the four digits every 750 milliseconds based on the clock signal. It uses a reset signal to initialize the state, turning off all digits and segments when triggered. The segment outputs are determined by a case statement that maps each digit to the corresponding 7-segment configuration. The design manages the display cycle by maintaining a counter that cycles through the digits, ensuring that only one digit is active at a time while providing the correct segment activations for the displayed number.
+module top_module(
+    input clk, // clock signal
+    input reset, // reset signal
+    input [15:0] numbers, // input signal representing 4 4-bit numbers to display
+    output reg [3:0] digit_select, // active-low signals to select the digit to display
+    output reg [6:0] segments // active-low signals for each digit to control the segments of the 7-segment display
+);

@@ -1,0 +1,7 @@
+Create a temperature calculation module that generates a 32-bit output based on a 3-bit state input. When the state is either 1 or 2, the output is fixed to the value {8'h8, 24'h1}. For all other state values, the output is formed by concatenating a 12-bit constant (0x3F) with a 12-bit input value and an 8-bit zero, producing the format {12'h3F, value, 8'h0}. This module is designed for conditionally formatting temperature data based on the current operational state.
+module top_module(
+  input [2:0] state,
+  input [11:0] value,
+  input [4:0] index,
+  output reg [31:0] temp
+);

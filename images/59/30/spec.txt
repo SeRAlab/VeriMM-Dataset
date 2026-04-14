@@ -1,0 +1,6 @@
+Design a two-bit saturating counter that increments on a control signal, `op`. The counter has a 2-bit input, `count_i`, representing the current count value. When `op` is true (1), the counter increments according to the following state transitions: from 00 to 01, from 01 to 10, from 10 to 10 (saturates), and from 11 to 11 (saturates). If `op` is false (0), the counter resets to 00 from states 00 and 01, and decrements or maintains its state from states 10 and 11, ensuring that it does not go below 00 or above 11.
+module top_module(
+    input [1:0] count_i,
+    input op,
+    output reg [1:0] count  // Change 'wire' to 'reg'
+);

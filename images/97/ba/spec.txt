@@ -1,0 +1,12 @@
+Design a circuit that performs the following functions: It first compares two 4-bit inputs, `a` and `b`, to determine if they are equal. This result is combined with the outputs of a 3-to-4 line decoder, which is activated by the most significant bit of input `c` and the two most significant bits of `a`. The decoder generates four outputs (`w`, `x`, `y`, `z`) based on the binary decoding of its inputs. Finally, the overall output, `final_output`, is a logical OR of the equality check and the decoder outputs, providing a single signal indicating either equality or one of the decoder states.
+module top_module(
+    input clk,
+    input [3:0] a,
+    input [3:0] b,
+    input c,
+    output w,
+    output x,
+    output y,
+    output z,
+    output final_output
+);

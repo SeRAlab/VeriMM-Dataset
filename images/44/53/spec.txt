@@ -1,0 +1,11 @@
+Design an instruction decoder that extracts and interprets specific fields from a 16-bit instruction word. The module outputs a 7-bit opcode, two 3-bit source registers (source_a and source_b), and one destination register, in addition to three control signals (PL, JB, and BC). The control signals are generated based on the values of the most significant bits of the instruction, enabling specific operations in a processor architecture based on the decoded instruction format.
+module top_module(
+    output reg [6:0] opcode,
+    output reg [2:0] dest_reg,
+    output reg [2:0] src_reg_a,
+    output reg [2:0] src_reg_b,
+    output reg PL,
+    output reg JB,
+    output reg BC,
+    input [15:0] instruction
+    );

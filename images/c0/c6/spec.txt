@@ -1,0 +1,31 @@
+Please act as a professional verilog designer.
+    
+Implement a module to generate sequential control signals for managing the execution of machine cycles (M-cycles) and clock cycles (T-cycles) within a digital system, possibly a microprocessor or a microcontroller. Its primary functions include:
+
+Generating a sequence of machine cycle signals (M1 through M5) to control different phases of instruction execution or data transfer.
+Generating a sequence of timing signals (T1 through T6) to delineate the individual clock cycles within a machine cycle.
+Providing control over the sequencing through external inputs, allowing for the initiation of a new machine cycle, setting the first machine cycle explicitly, and handling system pauses or waits due to external conditions like I/O operations, wait states, or bus requests.
+Outputting an enable signal for timing control, indicating when the timing sequences are active and should be considered by the rest of the system.
+
+Module name:  
+	sequencer
+
+Input ports:
+	clk: Input wire. The system clock signal driving the sequencing logic.
+	nextM: Input wire. Signal to advance to the next machine cycle.
+	setM1: Input wire. Signal to explicitly set the sequence to the first machine cycle.
+	nreset: Input wire. Active low reset signal to initialize the sequencer.
+	hold_clk_iorq: Input wire. Signal to hold the clock due to an I/O request.
+	hold_clk_wait: Input wire. Signal to hold the clock due to a wait state.
+	hold_clk_busrq: Input wire. Signal to hold the clock due to a bus request.
+Output ports:
+	M1 to M5: Output wires/regs. Signals representing the current machine cycle in the sequence.
+	T1 to T6: Output wires/regs. Signals representing the current timing cycle within a machine cycle.
+	timings_en: Output wire. Enable signal for the timing sequence, active when timing sequences are operational.
+
+
+Implementation:
+The RTL module named sequencer is designed to manage sequences and timing within a digital system, likely intended for synchronization and control tasks. The module operates based on a clock signal (clk) and is sensitive to a negative reset signal (nreset). It features mechanisms to handle sequences (M1 to M5) and timing (T1 to T6), with additional controls for setting the initial state, pausing, and external conditions affecting timing.
+
+Give me the complete code.
+

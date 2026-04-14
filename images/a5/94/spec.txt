@@ -1,0 +1,19 @@
+Design a dual-output D latch with asynchronous reset functionality. The output Q reflects the input D on the negative edge of the GATE_N signal when RESET_B is high, while Q_N provides the inverted value of Q. When RESET_B is low, both outputs are asynchronously reset to 0 and 1, respectively, regardless of the input D. This design is suitable for retaining data states in various digital applications.
+module top_module(
+    //# {{data|Data Signals}}
+    input  D      ,
+    output Q      ,
+    output Q_N    ,
+
+    //# {{control|Control Signals}}
+    input  RESET_B,
+
+    //# {{clocks|Clocking}}
+    input  GATE_N ,
+
+    //# {{power|Power}}
+    input  VPB    ,
+    input  VPWR   ,
+    input  VGND   ,
+    input  VNB
+);

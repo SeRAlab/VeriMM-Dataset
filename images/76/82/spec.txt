@@ -1,0 +1,25 @@
+Please act as a professional Verilog designer.
+
+Implement a 3-bit ring counter.
+
+Module name:  
+    ring_counter               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the counter.
+Output port:
+    Q: 3-bit register representing the current value of the ring counter.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the counter value is updated.
+If the reset signal (rst_n) is low, the counter value (Q) is set to "001".
+Otherwise, the counter shifts left by 1 bit, and the most significant bit is fed back to the least significant bit.
+
+Give me the complete code.
+
+module ring_counter(
+   input                clk,
+   input                rst_n,
+ 
+   output reg [2:0]     Q
+);

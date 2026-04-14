@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+
+Implement an 8-bit Johnson counter with a reset signal. The counter should rotate a single '1' bit through the output, creating a repeating pattern of '10000000', '01000000', '00100000', etc. The counter should be synchronous with the clock signal and reset to '10000000' when the reset signal is high.
+
+Module name:
+   johnson_counter_8bit
+
+Input ports:
+   clk: Clock signal used for synchronous operation.
+   reset: Reset signal used to initialize the counter.
+
+Output ports:
+   q: 8-bit output representing the current state of the counter.
+
+Implementation:
+On the positive edge of the clock signal or the positive edge of the reset signal, the module updates the counter state.
+If the reset signal is high, the counter is set to '10000000'.
+Otherwise, the counter state is rotated left by one bit, with the leftmost bit being set to the complement of the rightmost bit.
+
+Give me the complete code.

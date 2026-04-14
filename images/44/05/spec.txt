@@ -1,0 +1,9 @@
+Design a sequencer that tracks the length of a particular sequence of valid input data. The module activates a counter that increments when the least significant bit of the input data is high (1) and resets when it's low (0). Upon receiving valid input, it continuously monitors and updates the maximum sequence length encountered, outputting this value when valid input is asserted. Additionally, it provides a ready signal that indicates the module is prepared to process input. The current sequence length and maximum sequence length are managed internally using 4-bit registers, while the output sequence length is conditional on the valid input signal.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] data_in,
+    input valid_in,
+    output reg ready_out,
+    output reg [3:0] seq_length_out
+);

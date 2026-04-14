@@ -1,0 +1,17 @@
+Implement the Verilog module based on the following description.
+Build a 16-bit bidirectional shift register with parallel load, enable, shift direction, and asynchronous reset.
+// (1) enable: Enables the register. Active high.
+// (2) load: Loads a specific value into the register. Active high.
+// (3) dir: Direction of shift. 1 for right, 0 for left.
+// (4) reset: Asynchronous reset of the register. Active high.
+// (5) clk: Clock signal.
+// (6) load_value: 16-bit value to load into the register.
+// (7) q: 16-bit output of the register.
+module top_module(
+	input clk,
+	input enable,
+	input load,
+	input dir,
+	input reset,
+	input [15:0] load_value,
+	output reg [15:0] q);

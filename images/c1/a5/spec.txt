@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+    
+Implement a module to serve as a counter and interrupt generator within a digital system, likely embedded within a larger SoC (System on Chip) or as part of a microcontroller subsystem. Its primary functions include:
+
+Counting: Incrementing a counter (`r_counter`) every clock cycle when enabled (`i_ce` is high).
+Interrupt Generation: Generating an interrupt signal (`o_int`) based on specific conditions related to the counter value and external inputs.
+Wishbone Bus Interface: Interacting with a Wishbone bus for data exchange, specifically reading a new counter value (`i_wb_data`) and acknowledging transactions (`o_wb_ack`).
+
+This module is crucial for timing and control operations, where generating interrupts at precise intervals or specific moments is necessary for the broader system's functionality.
+
+Module name:  
+	zipjiffies
+
+Input ports:
+	i_clk (input): The system clock signal. All synchronous operations are triggered on the rising edge of this clock.
+	i_ce (input): Clock enable signal. When high, it allows the counter to increment.
+	i_wb_cyc, i_wb_stb, i_wb_we (input): Control signals for the Wishbone bus interface. i_wb_cyc and i_wb_stb are used to indicate an active cycle and strobe signal, respectively, while i_wb_we indicates a write operation.
+	i_wb_data (input, [BW1:0]): Data input from the Wishbone bus, specifying a new value for the counter or interrupt generation condition.
+Output ports:
+	o_wb_ack (output, reg): Acknowledgment signal for the Wishbone bus, indicating that a data transaction has been completed.
+	o_wb_stall (output, wire): Stall signal for the Wishbone bus, indicating that the module is not ready for a transaction. This implementation always indicates readiness (tied to 0).
+	o_wb_data (output, wire, [BW1:0]): Data output to the Wishbone bus, reflecting the current value of the counter.
+	o_int (output, reg): Interrupt signal, generated under specific conditions related to the counter value and external inputs.
+
+
+Implementation:
+The Verilog module zipjiffies is designed to operate as a counter with interrupt generation capabilities, interfacing with a wishbone bus for data communication. The module's primary function is to increment a counter every clock cycle where the i_ce (clock enable) signal is high, and generate interrupts based on specific conditions related to the counter value and external inputs. The module also supports reading the current counter value and setting future interrupt trigger points via the wishbone bus interface.
+
+Give me the complete code.
+

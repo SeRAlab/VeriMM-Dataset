@@ -1,0 +1,10 @@
+Design a light control system that adjusts LED brightness based on ambient light levels and a specified brightness setting. The module takes a 12-bit input representing ambient light, a control signal to enable operation, and a 3-bit brightness level. It outputs a 12-bit PWM signal for light output, while regulating brightness through gradual dimming or brightening actions (controlled by `dim_up` and `dim_down` signals). The circuit utilizes a PWM approach with a defined period to modulate the light according to the current and target brightness levels, ensuring smooth transitions in lighting conditions. When disabled, the module resets the light output and internal states to prevent illumination.
+module top_module(
+  input [11:0] ambient_light,
+  input enable,
+  input [2:0] brightness_level,
+  input clk, // Added clk input
+  output [11:0] light_output,
+  output reg dim_up,
+  output reg dim_down
+);

@@ -1,0 +1,9 @@
+Design a basic arithmetic calculator module that performs operations based on a 2-bit operation selector. The module accepts two 8-bit inputs, `a` and `b`, and calculates their sum, difference, product, or quotient depending on the value of `op`. It handles arithmetic overflow for addition, detects division by zero, and resets the output to zero when a reset signal is activated. The result of the computation is stored in an 8-bit output, while an overflow flag indicates if any operation resulted in an overflow condition.
+module top_module(
+    input [1:0] op,
+    input [7:0] a,
+    input [7:0] b,
+    input reset,
+    output reg [7:0] result,
+    output reg overflow
+);

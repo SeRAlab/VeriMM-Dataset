@@ -1,0 +1,10 @@
+The purpose of this module is to implement a parity checker and priority encoder with corresponding LED indicators. It takes an 8-bit input and calculates the parity bit while tracking the highest priority signal from the input. The output is a 10-bit wide signal combining the priority encoding result and the computed parity. The module also generates three separate outputs for red, yellow, and green LEDs based on the parity check and priority encoding results: the red LED indicates even parity, the yellow LED signals any non-zero priority, and the green LED confirms odd parity. The entire logic operates synchronously with a clock, allowing for controlled state updates and reset functionality.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] in,
+    output reg [9:0] out,
+    output reg red,
+    output reg yellow,
+    output reg green
+);

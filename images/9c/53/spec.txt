@@ -1,0 +1,8 @@
+Design a 4-bit shift register capable of loading input data and performing left or right shifts. The module accepts a 4-bit input (`data_in`) to load data when the `load` signal is asserted. It can shift the current register value left by one bit, filling in with a zero on the least significant bit (LSB) when `shift_left` is asserted, or shift it right with a zero fill on the most significant bit (MSB) when `shift_right` is asserted. The current state of the register is output through `data_out`.
+module top_module(
+    input [3:0] data_in,
+    input load,
+    input shift_left,
+    input shift_right,
+    output [3:0] data_out
+);

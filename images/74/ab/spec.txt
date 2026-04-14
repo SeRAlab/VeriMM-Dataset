@@ -1,0 +1,22 @@
+Implement a Verilog module based on the following description.
+The following diagram is a Moore machine implementation of a parking gate controller. Implement in Verilog using one-hot encoding. Resets into state Closed and reset is asynchronous active-high.
+
+The state machine has the following states and their corresponding outputs: 
+1. state Closed (gate = 0).
+2. state Opening (gate = 0).
+3. state Opened (gate = 1).
+4. state Closing (gate = 0).
+
+State transitions:
+1. From state Closed: If sensor = 0, then transition to state Closed. If sensor = 1, then transition to state Opening.
+2. From state Opening: If fully_open = 0, then transition to state Opening. If fully_open = 1, then transition to state Opened.
+3. From state Opened: If sensor = 0, then transition to state Closing. If sensor = 1, then transition to state Opened.
+4. From state Closing: If fully_closed = 0, then transition to state Closing. If fully_closed = 1, then transition to state Closed.
+
+module top_module (
+        input clk,
+        input areset,
+        input sensor,
+        input fully_open,
+        input fully_closed,
+        output reg gate);

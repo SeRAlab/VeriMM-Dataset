@@ -1,0 +1,9 @@
+Design a synchronous system that combines a shift register and a decade counter. The module outputs a 4-bit value from the decade counter, which increments on each clock pulse unless paused or when a cumulative sum of the shift register input and the counter exceeds a threshold of 12. The shift register captures a 3-bit value from the input `d`, while the counter's behavior is controlled by a reset signal that initializes the system and additional control signals to pause and resume counting. This design effectively integrates counting and input shifting functionalities, suitable for scenarios requiring controlled counting based on external inputs.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input d,          // Input for the shift register
+    input pause,      // Input to pause the counter
+    input resume,     // Input to resume the counter
+    output reg [3:0] q    // Output from the decade counter
+);

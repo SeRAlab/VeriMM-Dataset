@@ -1,0 +1,2 @@
+Create a 16-bit bidirectional register with tri-state output control. The `oe` (output enable) signals determine whether the corresponding bit from `reg_val` should be driven onto the `tristate` bus or set to high impedance (`1'bz`). When a specific bit in `oe` is high (1), the associated value from `reg_val` is output, allowing external devices to read or write to this register; when it's low (0), the output is disabled, effectively disconnecting that bit from the bus.
+module top_module( inout wire [15:0] tristate,input wire [15:0] oe,input wire [15:0] reg_val );

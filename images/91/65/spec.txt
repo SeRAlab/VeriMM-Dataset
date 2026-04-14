@@ -1,0 +1,35 @@
+Please act as a professional verilog designer.
+
+Implement a module for a 8-bit shift register with parallel load, shift left, and synchronous clear. The shift register should load the input data when the load signal is high. It should shift left on each clock pulse when the shift signal is high. When the clear signal is high, the register should be set to 0.
+
+Module name:  
+    shift_register
+
+Input ports：
+    clk: Clock signal.
+    clr: Synchronous clear signal.
+    load: Parallel load signal.
+    shift: Shift left signal.
+    data_in: 8-bit input data.
+
+Output ports：
+    data_out: 8-bit shift register output.
+
+Implementation:
+Declare the module shift_register with input and output ports as specified in the ports statement.
+Declare a register data_out to hold the current value of the shift register.
+Inside an always block, sensitive to the positive edge of the clk signal, implement the logic for clearing, loading, and shifting.
+If the clear signal is high, set the data_out register to 0.
+If the load signal is high and the clear signal is low, load the input data into the data_out register.
+If the shift signal is high and both the clear and load signals are low, shift the data_out register left by 1 bit.
+
+Give me the complete code.
+
+module shift_register(
+    input clk,
+    input clr,
+    input load,
+    input shift,
+    input [7:0] data_in,
+    output reg [7:0] data_out
+);

@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module to serve as a generic, parameterizable register within a digital integrated circuit (IC) design. Its primary function to store a binary value of a specified width, which can be updated on the rising edge of a clock signal under certain conditions. The module supports parameterization for both the width of the data it stores (`WIDTH`) and its initial value upon reset (`INIT`). This flexibility allows the module to be easily adapted for various data storage requirements within a digital system, ranging from single-bit flags to multi-bit data words.
+
+The module plays a crucial role in digital systems, acting as a fundamental building block for creating more complex structures such as registers files, counters, and state machines. Its ability to hold and update data synchronously with a clock signal makes it essential for implementing temporal logic and stateful operations in synchronous digital circuits.
+
+Module name:  
+	Register
+
+Input ports:
+	clock (input): A singlebit input signal that triggers the update of the register's value on its rising edge. This signal is essential for synchronizing the register's operation with the rest of the digital system.
+	reset (input): A singlebit input signal used to asynchronously reset the register's value to its initial state (INIT). This allows the system to return to a known state upon startup or after an error condition.
+	enable (input): A singlebit input signal that controls whether the register's value should be updated on the rising edge of the clock. When high (1), the register is allowed to update its value; when low (0), the register retains its current value.
+	D (input): A multibit input signal with a width defined by the WIDTH parameter. This signal represents the new data to be stored in the register if the enable signal is high during the clock's rising edge.
+Output ports:
+	Q (output reg): A multibit output signal with a width defined by the WIDTH parameter. This signal holds the current value stored in the register. It is updated synchronously with the clock's rising edge, based on the logic defined in the module.
+
+
+Implementation:
+The RTL module presented is a parameterized register, designed to store and update data based on the input signals it receives. The module is constructed using both combinational and sequential logic elements, which work together to achieve its intended functionality. The core logic of the module revolves around the always @(posedge clock) block, which defines its behavior on the rising edge of the clock signal.
+
+Give me the complete code.
+

@@ -1,0 +1,7 @@
+Design a synchronous Random Access Memory (RAM) module with a configurable data width and depth. The module supports 256 words of data, each with a width of 8 bits. It allows data to be written to a specific memory address when the write_enable signal is high, and outputs the data stored at the given address. Upon a rising edge of the write_enable signal, the input data is written into the memory at the specified address, while the current contents of that address can be simultaneously read through the data_out output.
+module top_module(
+  input [ADDRESS_WIDTH-1:0] address,
+  input [data_width-1:0] data_in,
+  input write_enable,
+  output reg [data_width-1:0] data_out
+);

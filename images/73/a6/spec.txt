@@ -1,0 +1,7 @@
+Design a digital lock system that accepts a 4-digit input from a keypad and unlocks when the correct code, predefined as 1234, is entered. The lock utilizes an adder-subtractor to compare the input code to the correct code by subtracting the concatenated keypad input with a zero padding. The output of the adder-subtractor feeds into a priority encoder that determines if the lock should be unlocked, based on whether the subtraction results in zero, indicating a match with the correct code. The system includes a reset capability to lock the mechanism initially.
+module top_module(
+    input [3:0] keypad_in, // Input from the keypad, 4 digits
+    input clk,
+    input reset,
+    output reg unlocked // Output to control the lock's unlocking mechanism
+);

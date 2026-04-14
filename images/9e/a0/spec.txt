@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a module of a 4-bit Gray code counter. The counter should increment its value in Gray code sequence on each positive edge of the clock signal. If the reset signal is high, the counter should reset to 0.
+
+Module name:  
+    gray_counter  
+                 
+Input ports:
+    CLK: Clock input
+    RST: Active high reset signal
+
+Output ports:
+    Gray_out: 4-bit output representing the current count value in Gray code
+
+Implementation:
+The gray_counter module uses an always block to update the count value based on the clock signal and reset signal. The always block triggers on the positive edge of the clock signal (posedge CLK) or the positive edge of the reset signal (posedge RST). It checks if the reset signal is active (RST) and sets the count value (Gray_out) to 0. Otherwise, it increments the count value by converting the current binary count to Gray code.
+
+Give me the complete code.
+
+module gray_counter(CLK, RST, Gray_out);
+input CLK, RST;
+output [3:0] Gray_out;
+reg [3:0] Count;
+reg [3:0] Gray_out;

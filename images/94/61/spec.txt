@@ -1,0 +1,7 @@
+Design a round-robin arbiter that manages access to shared resources based on two input request lines. The module outputs a two-bit grant signal, indicating which request is being serviced. When both requests are high, the arbiter alternates between granting access to each request in a round-robin fashion, ensuring fair access. The system is synchronous and resets the state when the reset_n signal is low, initializing both the grant and counter to zero.
+module top_module(
+    output reg [1:0] grant,
+    input [1:0] request,
+    input clk,
+    input reset_n
+);

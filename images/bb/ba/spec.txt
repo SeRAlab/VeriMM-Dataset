@@ -1,0 +1,9 @@
+Design a circuit that implements a shift and rotate operation on a 100-bit wide input data. The module features a shift register that loads new data when the `load` signal is active; otherwise, it performs rotation based on the `ena` input, which selects among four different rotation configurations. Additionally, the module generates an output flag `out_if_else` that indicates whether the least significant bits of the input data are different. Finally, it outputs a 100-bit result `q` that is the bitwise XOR of the original data and the rotated data.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output reg [99:0] q,
+    output reg out_if_else
+);

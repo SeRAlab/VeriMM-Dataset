@@ -1,0 +1,9 @@
+Design a synchronous block RAM (Random Access Memory) module that supports read and write operations based on a clock signal. The module has a memory size of 1024 words, each 32 bits wide. When the chip enable (ce) input is asserted, a write operation occurs if the write enable (we) input is high, storing the 32-bit input data (d) at the specified address (addr). If we is low, it retrieves the data from the specified address and outputs it to (q). This design serves to provide a simple memory unit suitable for applications requiring temporary data storage and retrieval.
+module top_module(
+    input [9:0] addr,
+    input ce,
+    input [31:0] d,
+    input we,
+    input clk,
+    output reg [31:0] q
+);

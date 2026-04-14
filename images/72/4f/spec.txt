@@ -1,0 +1,8 @@
+Design a circuit that functions as a control unit for a data processing operation, where the output behavior depends on the specified operation mode and a two-bit shift region flag. When the operation is set to '0', the behavior varies based on the shift region, influencing the selection of a multiplexer (sel_mux_3) and optionally negating the input data. Conversely, when the operation is '1', the module modifies its output logic for the same shift region conditions, again controlling both the multiplexer selection and the inversion of the input data. This module enables conditional data manipulation based on operational control and input classification.
+module top_module(
+   input wire         data_i,
+   input wire         operation,
+   input wire [1:0]   shift_region_flag,
+   output reg         sel_mux_3,
+   output reg         data_out_CORDECO
+ );

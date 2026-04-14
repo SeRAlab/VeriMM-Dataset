@@ -1,0 +1,10 @@
+Design a 16-bit CRC (Cyclic Redundancy Check) updater circuit. The module takes an 8-bit input data stream, a clock signal, reset signals, and an enable signal to manage the CRC computation. Upon enabling with CRCEn, the circuit processes the input data on every clock cycle, updating the CRCResult based on the data bits and producing a ready signal to indicate when the CRC calculation is complete. The CRC is initialized to 0xFFFF on reset conditions and utilizes standard CRC polynomial logic for updating, ensuring reliable error detection capabilities in data communication systems.
+module top_module(
+    input rstCRC,
+    input CRCEn,
+    input [7:0] dataIn,
+    input clk,
+    input rst,
+    output reg [15:0] CRCResult,
+    output ready
+);

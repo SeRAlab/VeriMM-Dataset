@@ -1,0 +1,8 @@
+Design a pulse-width modulation (PWM) controller that generates a PWM signal based on the specified duty cycle and direction input. The module utilizes a clock and reset signal to control the timing of the PWM output. It accepts a 15-bit parameter input for the duty cycle, comparing this value against a predefined maximum to determine the PWM pulse width. The output includes a direction signal and an enable signal, which dictate the operational state of the PWM signal generation. The controller ensures that the PWM signal runs at the desired frequency, producing a high signal when the counter is less than the calculated value based on the duty cycle and enabling the output accordingly.
+module top_module(
+    input clk, rst,
+    input [14:0] para_in,
+    input dir_in,
+    output reg dir_out,
+    output reg en_out
+);

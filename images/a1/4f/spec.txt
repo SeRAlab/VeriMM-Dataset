@@ -1,0 +1,11 @@
+Design a peripheral device that operates as a simple register-based I/O interface. It utilizes a 2-bit address space and is controlled by chip select, clock, reset, and write signals. When chip select is active, the device allows writing to a register or reading from it, where write operations occur when the `write_n` signal is low at address `00`. The output port reflects the written data, while the read data output provides the current value of the register at the same address when read conditions are met. It is structured to reset its stored data upon a reset signal and can store up to 2 bits of data.
+module top_module(
+  input [1:0] address,
+  input chipselect,
+  input clk,
+  input reset_n,
+  input write_n,
+  input writedata,
+  output reg out_port,
+  output reg readdata
+);

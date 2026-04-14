@@ -1,0 +1,21 @@
+
+
+You have been tasked with designing a Verilog module to implement a simple memory interface. The module should have the following inputs and outputs:
+
+Inputs:
+- `clka`: a clock signal
+- `wea`: a write enable signal (1-bit)
+- `addra`: a 14-bit address signal
+- `dina`: a 12-bit data input signal
+
+Outputs:
+- `douta`: a 12-bit data output signal
+
+The module should behave as follows:
+- On the rising edge of `clka`, if `wea` is high, the data at `dina` should be written to the memory location specified by `addra`.
+- On the rising edge of `clka`, if `wea` is low, the data at the memory location specified by `addra` should be output on `douta`.
+
+Assume that the memory is byte-addressable and that each memory location can hold one byte of data. The memory should be initialized to all zeros at the start of simulation.
+
+Write a Verilog module that implements this memory interface. Your module should be no longer than 200 lines of code.
+

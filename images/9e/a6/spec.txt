@@ -1,0 +1,7 @@
+Design a module that captures and outputs different width signals with a specific functionality. The module takes various input signals, including a 5-bit input (i_w5), a 40-bit input (i_w40), and a 105-bit input (i_w104), directly routing them to corresponding output signals (o_w5, o_w40, o_w104). Additionally, it includes a register that samples the 5-bit input (i_w5) on every rising edge of the clock signal (clk), providing a delayed version of this input through the output signal (o_w5_d1r). This design could serve in applications requiring signal routing and temporary storage of signal states for synchronization with a clock.
+module top_module(
+   
+   o_w5, o_w5_d1r, o_w40, o_w104,
+   
+   clk, i_w5, i_w40, i_w104
+   );

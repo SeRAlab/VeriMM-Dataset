@@ -1,0 +1,10 @@
+Design a 4-bit arithmetic unit capable of performing addition or subtraction based on a control signal. The module takes two 4-bit inputs, A and B, and produces a 4-bit sum output (S) when the control signal (`ctrl`) is low, or a 4-bit difference output (D) when the control signal is high. It is synchronous to a clock and incorporates an active-low reset feature, initializing both outputs to zero when the reset is activated.
+module top_module(
+  input clk,
+  input resetn,
+  input [3:0] A,
+  input [3:0] B,
+  input ctrl,
+  output reg [3:0] S,
+  output reg [3:0] D
+);

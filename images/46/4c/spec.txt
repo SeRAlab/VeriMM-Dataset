@@ -1,0 +1,8 @@
+Create a finite impulse response (FIR) filter that processes a one-bit input signal to produce a filtered output signal. The module utilizes a shift register to store the previous samples of the input signal and applies a set of filter coefficients (taps) to these samples to compute the output. The filter operates on the rising edge of the clock and can be reset using the reset signal. If reset is activated, both the shift register and output are set to zero, ensuring clean initialization.
+module top_module(
+  input clk, // the clock signal
+  input rst, // the reset signal
+  input in, // the input signal
+  input [N-1:0] filter_taps, // array of filter coefficients
+  output reg out // the filtered output signal
+);

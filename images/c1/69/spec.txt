@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform serial transmission of data in accordance with the UART (Universal Asynchronous Receiver/Transmitter) protocol. Its primary functions include:
+
+Serializing Data: Converts 8-bit parallel data (`tx_in`) into a serial stream for transmission.
+Baud Rate Control: Utilizes a prescaler (`prescaler`) to adjust the baud rate, ensuring compatibility with various communication speeds.
+Transmission Control: Manages the start and stop bits, data bits, and the idle state to conform to the UART transmission standards.
+Strobe Handling: Initiates data transmission upon receiving a strobe signal, allowing for controlled data transfer.
+Busy Indication: Signals when the module is actively transmitting data, preventing data corruption by indicating when it is safe to send the next byte.
+Prefetch Indication: Notifies the system when it is about to complete the current transmission, allowing for efficient data queuing and minimizing idle times between transmissions.
+
+Module name:  
+	uart_tx
+
+Input ports:
+	clk: Clock input (1bit). The primary clock signal driving the module's operation.
+	prescaler: Baud rate prescaler (8bit). Determines the baud rate for data transmission by scaling the clock.
+	tx_in: Data input (8bit). The parallel data to be serialized and transmitted.
+	strobe: Transmission strobe (1bit). A signal that triggers the start of data transmission.
+Output ports:
+	txd: Serial data output (1bit). The serialized data stream output.
+	busy: Transmission busy indicator (1bit). Signals when the module is actively transmitting data.
+	prefetch: Prefetch indicator (1bit). Signals when the module is ready to accept the next byte for transmission, indicating the end of the current transmission cycle.
+
+
+Implementation:
+The provided RTL module is designed to implement a UART transmitter (Universal Asynchronous Receiver/Transmitter). The UART protocol is a widely used serial communication protocol that enables asynchronous serial communication between devices. The module is designed to serialize 8-bit data (tx_in) and transmit it bit by bit through the txd output, following the UART frame format: start bit, data bits, and stop bit.
+
+Give me the complete code.
+

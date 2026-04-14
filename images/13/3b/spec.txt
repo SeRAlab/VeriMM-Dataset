@@ -1,0 +1,13 @@
+
+Create a Verilog module for a simplified sliding window protocol that manages the sending and receiving of data packets. The protocol should support a window size of 4 packets, with a sender and receiver that can acknowledge received packets. Implement the sender and receiver state machines with the following functionalities:
+1. The sender can send packets when it is within the window size.
+2. The sender can only send a packet when it receives an acknowledgment from the receiver for a previously sent packet.
+3. The receiver can acknowledge packets it receives and can also indicate when it is ready to accept new packets.
+The inputs to your module should include: 
+- `clk` (clock signal),
+- `reset` (active high reset),
+- `send` (control signal to send a packet),
+- `ack` (acknowledgment signal from the receiver).
+The output should include:
+- `data_out` (the packet being sent),
+- `ready` (indicates if the receiver can accept more packets).

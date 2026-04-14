@@ -1,0 +1,7 @@
+Design a 16-bit barrel shifter that can shift the input data A based on the control inputs. The module uses a 4-bit shift value to determine how many positions to shift the data B in either a logical or arithmetic manner. When the shift value is zero, the output directly reflects B. For non-zero shifts, the module performs a logical left shift when the most significant bit of shift is set and controls the output format based on the value of A's most significant bit for potential arithmetic shifting. The design effectively allows for both left and right shifting operations on a 16-bit input, enabling flexible data manipulation.
+module top_module(
+    input [15:0] A,
+    input [15:0] B,
+    input [3:0] shift,
+    output reg [15:0] out
+);

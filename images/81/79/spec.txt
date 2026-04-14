@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+
+Implement a module for a simple shift register. The 4-bit input signal data_in is shifted into the register on each positive edge of clk. The shifted data is output through the 4-bit signal data_out. The shift register should reset to all zeros when the rst_n signal is low.
+
+Module name:  
+    shift_register
+
+Input ports：
+    clk: Clock signal.
+    rst_n: Reset signal (active low).
+    data_in: 4-bit input data.
+
+Output ports：
+    data_out: 4-bit output data representing the shifted data.
+
+Implementation:
+Declare the module shift_register with input and output ports as specified in the ports statement.
+Declare a register to store the current state of the shift register.
+Inside an always block, sensitive to the positive edge of the clk signal and the negative edge of the rst_n signal, implement the logic for shifting data and output generation.
+In the reset condition (~rst_n), set the shift register to all zeros. On each positive edge of clk, shift the input data into the register and update the output data accordingly.
+
+Give me the complete code.
+
+module shift_register(
+    input clk,
+    input rst_n,
+    input [3:0] data_in,
+    output reg [3:0] data_out
+);

@@ -1,0 +1,7 @@
+Design a 3-bit shift register with asynchronous D-type flip-flop behavior. The registered outputs are shifted on each positive edge of the clock; the shifting is controlled such that the first bit is loaded from the second bit, the second bit from the third bit, and the third bit is updated based on the XOR of the first and third bits. Additionally, an output signal `q` is generated using a NAND gate that outputs the logical AND of `d` and `clk`. This `q` value is combined with the shifting register's output using an OR gate, delineating a method to integrate direct input with shifted values, resulting in a dynamic output shared across both shifting and direct input mechanisms.
+module top_module(
+    input clk,
+    input d,
+    output reg [2:0] shift_register_out,
+    output reg q
+);

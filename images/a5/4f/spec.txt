@@ -1,0 +1,7 @@
+Design a dual-output circuit that selectively routes data based on a memory write enable signal. When Mem_write_enable is high, Mdata_out outputs the value of MDR_data, while BusData_out outputs zero. Conversely, when Mem_write_enable is low, BusData_out outputs the MDR_data, and Mdata_out outputs zero. This module effectively acts as a multiplexer to manage data flow between a memory data register and associated buses, facilitating controlled data writing and reading operations.
+module top_module(
+    input Mem_write_enable,
+    input [31:0] MDR_data,
+    output [31:0] BusData_out,
+    output [31:0] Mdata_out
+);

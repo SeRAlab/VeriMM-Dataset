@@ -1,0 +1,9 @@
+Design a register that stores an 8-bit value, with the ability to reset, write new data, or update from input conditionally. On a positive clock edge, if the reset signal is high, the register resets to 0. If write_enable is high, it captures the incoming in_data value. Additionally, if the write enable (wenb) is low, the register also updates with in_data, allowing for flexible data handling based on control signals.
+module top_module(
+    output reg [7:0] reg_0x53, 
+    input wire reset, 
+    input wire wenb, 
+    input wire [7:0] in_data, 
+    input wire clk,
+    input wire write_enable
+);

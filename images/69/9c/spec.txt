@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+
+Implement a 12-bit ring counter. The module operates on the rising edge of the clock signal "clk" and uses a synchronous design. The ring counter rotates its value to the left on each clock cycle, maintaining a single '1' in a sea of '0's.
+
+Module name:  
+    ring_counter_12bit
+
+Input ports:
+	clk: Clock signal.
+	rst_n: Reset signal (active low).
+
+Output ports:
+	ring_out: 12-bit ring counter output.
+
+Implementation:
+The module should rotate the register value to the left on each clock cycle. When the reset signal is asserted, the ring counter should reset to a value with a single '1' at the least significant bit position.
+
+Give me the complete code.
+
+module ring_counter_12bit(
+	input clk,
+	input rst_n,
+	output reg [11:0] ring_out
+);

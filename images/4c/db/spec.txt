@@ -1,0 +1,14 @@
+Design a 32-bit multiplier module that can also perform an accumulation operation based on control signals. The module takes two 32-bit inputs, `i_a_in` and `i_b_in`, and a 2-bit function selector `i_function` to dictate the operation mode (multiplication or accumulation). An execution signal, `i_execute`, triggers the multiplication process. When the enable signal is activated, it counts cycles and computes the product of the inputs on the first cycle. If the accumulate control is active on the fourth cycle after execution, it adds `i_a_in` to the existing product. The output includes the resulting product, flags indicating whether the output is zero or negative, and a done signal that always shows a completion state.
+module top_module(
+input                       i_clk,
+input                       i_rst,
+
+input       [31:0]          i_a_in,         
+input       [31:0]          i_b_in,         
+input       [1:0]           i_function,
+input                       i_execute,
+
+output      [31:0]          o_out,
+output      [1:0]           o_flags,        
+output                      o_done    
+);

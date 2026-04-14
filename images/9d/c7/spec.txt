@@ -1,0 +1,9 @@
+Implement a Verilog module with the following description. Assume signals are positive clock/clk edge triggered unless otherwise stated.
+You are given an 18-bit input vector p[17:0]. Perform the following operations:
+// (1) out_eq2: Each bit of this output vector should indicate whether the corresponding input bit is equal to its neighbor to the right. For example, out_eq2[16] should indicate if p[16] is equal to p[17]. Since p[17] has no neighbor to the right, we don't need to know out_eq2[17].
+// (2) out_nand2: Each bit of this output vector should indicate whether both the corresponding input bit and its neighbor to the left are not both '1'. For example, out_nand2[16] should indicate if p[16] and p[15] are not both 1. Since p[0] has no neighbor to the left, we don't need to know out_nand2[0].
+
+module top_module (
+	input [17:0] p,
+	output [16:0] out_eq2,
+	output [16:0] out_nand2);

@@ -1,0 +1,9 @@
+Design a synchronous register adder that combines data inputs based on a control signal. When the reset signal is activated, the output is set to zero. On the rising edge of the clock, if the control signal is high, the module computes the sum of the 4-bit `data_in` and `reg_in`, storing the result in `reg_out`. If the control signal is low, `reg_out` simply holds the value of `reg_in`. This module effectively serves as a simple arithmetic unit with the capability to update or maintain its stored value based on external inputs.
+module top_module(
+    input [3:0] data_in,
+    input [3:0] reg_in,
+    input ctrl,
+    input clk,
+    input reset,
+    output reg [3:0] reg_out
+);

@@ -1,0 +1,15 @@
+Design a circuit comprising two 8-bit registers and a multiplexer that selects between different inputs based on a 3-bit select signal. The registers are updated on the rising edge of a clock, with synchronous active-high reset functionality. When reset is asserted, both registers are initialized to a default value (8'h34). The multiplexer provides a selection mechanism to choose from the values stored in the registers or among six additional 8-bit input data lines (data0 to data5). The output reflects the value from the selected source based on the `sel` input. This design serves as a versatile data selection unit in digital systems, capable of managing multiple data streams with robust reset capabilities.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset 
+    input [7:0] d0, // 8-bit input for the first register 
+    input [7:0] d1, // 8-bit input for the second register 
+    input [2:0] sel, // Select input to choose between register 1, register 2, and multiplexer output 
+    input [7:0] data0, // 8-bit input for multiplexer 
+    input [7:0] data1, // 8-bit input for multiplexer 
+    input [7:0] data2, // 8-bit input for multiplexer 
+    input [7:0] data3, // 8-bit input for multiplexer 
+    input [7:0] data4, // 8-bit input for multiplexer 
+    input [7:0] data5, // 8-bit input for multiplexer 
+    output reg [7:0] q // Changed to reg type to enable procedural assignment 
+);

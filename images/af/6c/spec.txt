@@ -1,0 +1,7 @@
+Design a synchronous 32-bit wide RAM module with independent write and enable controls for each byte. The module supports 4-byte (32-bit) addressable memory and allows writing to specific bytes of a word based on the `web` (write enable byte) signals while reading the data at a given `addr` (address) when the corresponding `enb` (enable byte) signal is active. Upon the rising edge of the clock, if the enable signal for a byte is asserted, the module either updates that byte with new data if the write enable for that byte is also asserted or outputs the current data stored in that byte. The design supports read and write operations for each byte in a 32-bit word independently.
+module top_module(/*AUTOARG*/
+   // Outputs
+   dout,
+   // Inputs
+   clk, web, enb, addr, din
+   );

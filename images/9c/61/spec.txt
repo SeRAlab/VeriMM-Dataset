@@ -1,0 +1,11 @@
+Design a UART (Universal Asynchronous Receiver-Transmitter) transmitter module that facilitates serial communication. The module accepts an 8-bit data input (uart_dat_i) and initiates transmission when the write signal (uart_wr_i) is asserted. It generates a serial output (uart_tx) representing the data along with start and stop bits, while internally managing a bit counter (bitcount) and a shift register (shifter) for data transmission. The module also includes a clock divider that produces a serial clock (ser_clk) for timing the transmission, and an output (uart_busy) indicating whether the UART is currently busy sending data. This design is optimized for operation at a baud rate of 115200.
+module top_module(
+   
+   output wire uart_busy,   
+   output reg uart_tx,     
+   
+   input uart_wr_i,   
+   input [7:0]uart_dat_i,  
+   input sys_clk_i,   
+   input sys_rst_i    
+);

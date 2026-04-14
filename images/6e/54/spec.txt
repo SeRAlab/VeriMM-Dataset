@@ -1,0 +1,7 @@
+Design a synchronization circuit for a multi-bit signal. It takes multiple input bits and two control signals: a reset (active low) and a clock input. When the output clock is active, this module synchronizes the input data across two stages, effectively reducing the risk of metastability when the input and output clocks are asynchronous. If the asynchronous operation feature is disabled (ASYNC_CLK set to 0), the output directly reflects the input signal. The circuit is parameterizable for the number of bits to synchronize, making it suitable for various applications requiring reliable data transfer between different clock domains.
+module top_module(
+    input [NUM_OF_BITS-1:0] in,
+    input out_resetn,
+    input out_clk,
+    output [NUM_OF_BITS-1:0] out
+);

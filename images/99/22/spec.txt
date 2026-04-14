@@ -1,0 +1,12 @@
+Design a registered accumulator module that processes a stream of 8-bit input data, accumulating the values over three clock cycles before outputting the total as a 10-bit value. The module operates with a clock and active-low reset, and includes handshake signals: 'valid_a' indicates when valid input data is available, and 'ready_b' signals the readiness to receive output data. The processing occurs in four distinct stages, allowing the accumulation of input data in a sequential manner, with output validity asserted only after all accumulation is complete.
+module top_module(
+    input               clk         ,   
+    input               rst_n       ,
+    input       [7:0]   data_in     ,
+    input               valid_a     ,
+    input               ready_b     ,
+ 
+    output              ready_a     ,
+    output reg         valid_b     ,
+    output reg [9:0]   data_out
+);

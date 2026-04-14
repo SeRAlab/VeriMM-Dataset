@@ -1,0 +1,7 @@
+Design a dual-functionality RAM module with a 2-bit address and data input. On the rising edge of the clock, it can operate in two different modes based on the compilation flags. In TEST_1 mode, it simultaneously writes the data input to the specified address in the RAM and outputs the previously stored value from that address. In TEST_2 mode, it writes the data input to the specified address and outputs the value just written, thus acting as a simple RAM with read and write capabilities. The design allows for testing different behaviors through conditional compilation.
+module top_module(
+   input [1:0] adr,
+   input clk,
+   input [1:0] din,
+   output reg [1:0] q
+);

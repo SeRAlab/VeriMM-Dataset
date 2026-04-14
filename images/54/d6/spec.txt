@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a 2-bit binary synchronous resettable counter. The module performs a 2-bit counting operation starting from 0. On each rising edge of the clock, if the reset signal is high, the counter is reset to 0. Otherwise, the counter increments by 1. The count value is available on the output port.
+
+Module name:  
+    sync_reset_counter    
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    reset: Synchronous reset signal to reset the counter.
+
+Output ports:
+    count: Output signal representing the current count value.
+
+Implementation:
+The register is defined as reg [1:0] count and initialized to 0 using the initial statement. On each rising edge of the clock, if reset is high, the value of count is set to 0. Otherwise, the value of count is incremented by 1 using the + operator: count <= count + 1.
+
+Give me the complete code.
+
+module sync_reset_counter(clk, reset, count);  
+
+    input  clk;  
+    input  reset;  
+    output  [1:0] count;

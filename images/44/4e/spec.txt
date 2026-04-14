@@ -1,0 +1,9 @@
+Design a 32-bit Arithmetic Logic Unit (ALU) capable of executing a variety of operations based on a 4-bit operation code (op). It supports bitwise AND, OR, addition, subtraction, comparison, multiplication, and bit shifting (both logical left and right). The unit provides a zero flag output indicating if the result is zero, and it can output the primary result in the `y` register, as well as high and low parts of the product in `hi` and `lo` registers for multiplication operations. This ALU serves as a fundamental building block for performing arithmetic and logical operations in digital systems.
+module top_module(
+        input  wire [3:0]  op,
+        input  wire [31:0] a,
+        input  wire [31:0] b,
+        input  wire [4:0] shamt,
+        output wire        zero,
+        output reg  [31:0] y, hi, lo
+    );

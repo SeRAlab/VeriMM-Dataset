@@ -1,0 +1,11 @@
+Design a flit receiver module that captures and stores 144-bit data flits on a clock signal. When a reset is received or a signal indicating access completion (dc_done_access) occurs, the module clears its internal register (flits_reg) and sets a state signal (m_d_cstate) to low. Conversely, if a valid flit signal (v_m_flits_d) is detected during an active clock edge, the module updates flits_reg with the incoming data (m_flits_d) and sets the state signal to high. The module outputs the stored flits via the m_d_areg_flits signal, facilitating data transfer in systems such as network-on-chip architectures or communication interfaces.
+module top_module(
+    input clk,
+    input rst,
+    input dc_done_access,
+    input v_m_flits_d,
+    input [143:0] m_flits_d,
+    output reg [143:0] flits_reg,
+    output reg m_d_cstate,
+    output [143:0] m_d_areg_flits
+);

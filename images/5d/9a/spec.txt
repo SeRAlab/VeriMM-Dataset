@@ -1,0 +1,12 @@
+Design a synchronized data output circuit that generates a clock signal (tr_clk) and associated data (tr_data) based on two input clock signals (clk and clkx2) and a reset signal (jrst_n). The module operates by toggling a state variable (x1) on the rising edge of clk, and a second state variable (x2) on the rising edge of clkx2, creating a derived phase signal as their XOR. The output data is determined by the phase, selecting from a 36-bit input (tw), with the lower 18 bits provided when the phase is high and the upper 18 bits when low. This setup facilitates clock data recovery and prepares the data for further processing in a system-on-chip architecture, making it suitable for applications such as debugging or interfacing with external components.
+module top_module(
+    // inputs:
+    clk,
+    clkx2,
+    jrst_n,
+    tw,
+
+    // outputs:
+    tr_clk,
+    tr_data
+);

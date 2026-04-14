@@ -1,0 +1,3 @@
+module top_module(output s, 
+input p, 
+input q);assign s = ~(p) & q | p & ~(q);endmodule

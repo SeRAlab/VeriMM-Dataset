@@ -1,0 +1,17 @@
+Design a register stage for a pipelined CPU architecture that stores and manages the memory stage data. This module captures the program counter (PC), write-back enable signal (WB_en), memory read enable signal (MEM_R_EN), ALU result, memory read value, and destination register address on the rising edge of the clock. It also handles a reset condition to initialize all outputs to zero. This functionality ensures that critical data from the execution stage is properly latched for use in subsequent stages of instruction processing.
+module top_module(
+    input clk,
+    input rst,
+    input[31:0] PC_in,
+    input WB_en_in,
+    input MEM_R_EN_in,
+    input[31:0] ALU_result_in,
+    input[31:0] Mem_read_value_in,
+    input[4:0] Dest_in,
+    output reg [31:0] PC,
+    output reg WB_en,
+    output reg MEM_R_EN,
+    output reg[31:0] ALU_result,
+    output reg[31:0] Mem_read_value,
+    output reg[4:0] Dest
+  );

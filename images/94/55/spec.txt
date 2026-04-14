@@ -1,0 +1,6 @@
+Implement a circuit that decodes Modified Frequency Modulation (MFM) signals. It utilizes a finite state machine (FSM) to track the state transitions based on clock edges and input signals. The module outputs the current decoded bit and its validity based on the MFM edges detected. The current bit is updated during specific states, and it ensures the validity of the decoded bit based on the previous and current MFM input signals. This design is essential for interpreting MFM encoded data in applications such as data storage and magnetic media reading.
+module top_module(
+    input clk, rst, mfmIn, mfmEdge,
+    output reg currentRealBit,
+    output reg currentRealBitValid
+);

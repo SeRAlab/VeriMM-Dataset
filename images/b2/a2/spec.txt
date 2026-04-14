@@ -1,0 +1,9 @@
+Design a control logic circuit that determines a pre-load condition based on specific input signals. The module evaluates various conditions for jump operations in a control unit: a jump based on `B12` and `B11` values, a zero-flag jump that checks the least significant bit of a 16-bit input (W0to15), a non-equal jump that checks the most significant bit, and a carry jump that evaluates the carry flag. The output `pre_load` is asserted when input `B13` is high and any of the jump conditions are met, thereby facilitating conditional branching in a microprocessor or finite state machine implementation.
+module top_module(
+    input B13,
+    input B12,
+    input B11,
+    input CY,
+    input [15:0] W0to15,
+    output pre_load
+    );

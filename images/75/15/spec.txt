@@ -1,0 +1,9 @@
+Design a register file module that supports reading and writing operations for multiple registers. The module contains 16 registers, each 8 bits wide. It allows for writing data to a specified register when the write enable signal (wr_en) is high during the positive edge of the clock. The first two registers are always accessible for reading, with their contents output as rd_data1 and rd_data2 respectively. This module facilitates storage and retrieval of data in a synchronous manner, functioning primarily as a small RAM block for digital circuits.
+module top_module(
+  input clk,
+  input wr_en,
+  input [log2n-1:0] wr_addr,
+  input [m-1:0] wr_data,
+  output reg [m-1:0] rd_data1,
+  output reg [m-1:0] rd_data2
+);

@@ -1,0 +1,12 @@
+Design a synchronous FIFO (First-In-First-Out) buffer that allows for data storage and retrieval with a capacity of 128 words, each 32 bits wide. The module operates on a clock signal and includes reset functionality to initialize its state. It supports writing data when enabled and the buffer is not full, and reading data when enabled and the buffer is not empty. The module tracks the number of words used, and provides outputs to indicate whether the FIFO is empty or full. The FIFO's head and tail pointers manage the read and write operations, ensuring proper data flow and circular buffering.
+module top_module(
+    input clk,
+    input reset,
+    input write_en,
+    input [31:0] write_data,
+    input read_en,
+    output fifo_is_empty,
+    output fifo_is_full,
+    output reg [6:0] words_used,
+    output reg [31:0] read_data
+);

@@ -1,0 +1,18 @@
+Implement the Verilog module based on the following description.
+Consider the follow Moore machine with the diagram described below:
+
+The state machine has the following states and their corresponding outputs:
+1. state A (out = 1).
+2. state B (out = 1).
+
+State transitions:
+From state A: If in = 0, then transition to state B. If in = 1, then transition to state B.
+From state B: If in = 0, then transition to state B. If in = 1, then transition to state B.
+
+Write Verilog implementing this state machine. It should asynchronously reset into state B if reset if high.
+module top_module(
+    input clk,
+    input in,
+    input areset,
+    output reg out
+); 

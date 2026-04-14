@@ -1,0 +1,8 @@
+Design a 4-bit adder with overflow detection. When the enable signal (EN) is high, the adder computes the sum of inputs A and B, producing a 4-bit output C. If the sum exceeds the maximum value for a 4-bit number (15), an overflow (OV) flag is set to indicate this condition, and the output C is adjusted to fit within the 4-bit range by wrapping around. If EN is low, both the output C and the overflow flag OV are reset to zero.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input EN,
+    output reg [3:0] C,
+    output reg OV
+);

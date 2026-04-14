@@ -1,0 +1,9 @@
+Design a 2-digit counter capable of counting from 0 to 11 based on the given control signals. The module increments or decrements its count when enabled, allowing for upwards (enUP) or downwards (enDOWN) counting. The counter resets to zero when the reset signal is activated. The current count is represented in BCD format via two 4-bit outputs, digit1 and digit0, which collectively make up the 8-bit output data_MES. The counter is designed to output valid BCD values corresponding to the counts of 1 through 11, ensuring it properly wraps around when exceeding these bounds.
+module top_module(
+input wire clk,
+input wire reset,
+input wire [3:0] en_count,
+input wire enUP,
+input wire enDOWN,
+output wire [7:0] data_MES
+);

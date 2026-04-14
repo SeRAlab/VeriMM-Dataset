@@ -1,0 +1,7 @@
+Design a modulo-3 counter that increments a 4-bit `count` output on every clock pulse while providing a `mod3` output that toggles after every third clock cycle. The counter resets the `count`, `mod_cnt`, and `mod3` outputs when the `reset` input is asserted. The `mod_cnt` uses a 2-bit counter to achieve the toggling effect of the `mod3` output, indicating the completion of three cycles whenever it rolls over from `2'b10` back to `2'b00`.
+module top_module(
+  input clk,
+  input reset,
+  output reg [3:0] count,
+  output reg mod3
+);

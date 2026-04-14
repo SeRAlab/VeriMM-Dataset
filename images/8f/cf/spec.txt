@@ -1,0 +1,7 @@
+Design a simple calculator that performs arithmetic operations on two 8-bit inputs, `a` and `b`, depending on a 2-bit operation selector `op`. The calculator supports addition, subtraction, multiplication, and division, with the operation being executed when the `start` signal is asserted. The result is provided as a 16-bit output. Specifically, the operations are as follows: addition is the default operation, while subtraction, multiplication, and division are selected by the values of `op` (1, 2, and 3 respectively). The results are latched on the rising edge of the `start` signal.
+module top_module(
+    input [7:0] a, b,
+    input [1:0] op,
+    input start,
+    output reg [15:0] result
+);

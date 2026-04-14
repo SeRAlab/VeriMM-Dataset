@@ -1,0 +1,9 @@
+Design a shift register circuit capable of loading an 8-bit input and performing a left shift operation. The module features a clock input (CLK) and control signals for loading (LOAD) and shifting (SHIFT). When LOAD is activated, the register captures the 8-bit DATA_IN. If SHIFT is activated, the register shifts its contents left, inserting DATA_IN as the least significant bit. The module outputs the current register value as Q_OUT and its complement as Q_BAR_OUT.
+module top_module(
+    input CLK,
+    input LOAD,
+    input SHIFT,
+    input [7:0] DATA_IN,
+    output reg [7:0] Q_OUT,
+    output reg [7:0] Q_BAR_OUT
+);

@@ -1,0 +1,6 @@
+Design a circuit for an Automatic Gain Control (AGC) system that adjusts the output signal based on a desired input level. The module takes a 16-bit wide input signal and a 16-bit desired level as inputs, calculates a gain factor to amplify the input signal appropriately, and produces a 16-bit output signal. The gain factor is determined by shifting the desired level and scaling it relative to the input signal. If the computed temporary output exceeds the maximum allowable value (0xFFFF), the output is clamped to this maximum; otherwise, the upper 16 bits of the amplified signal are assigned as the output.
+module top_module(
+  input wire [15:0] input_signal,
+  input wire [15:0] desired_level,
+  output reg [15:0] output_signal // changed from wire to reg
+);

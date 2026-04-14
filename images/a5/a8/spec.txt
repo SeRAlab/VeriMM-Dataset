@@ -1,0 +1,7 @@
+Design a signed division circuit that computes the quotient and remainder of two 2-bit signed integers, the dividend and divisor. The module utilizes a state machine with three states: initialization, shifting, and subtraction to perform the division algorithm. The circuit prepares variables for the operation, shifts the dividend left, and conditionally subtracts the negative divisor from the upper part of the temporary dividend result to determine the quotient while accumulating any remainder. The output consists of the lower two bits of the quotient and remainder after processing.
+module top_module(
+    input signed [1:0] dividend,
+    input signed [1:0] divisor,
+    output reg signed [1:0] quotient,
+    output reg signed [1:0] remainder
+);

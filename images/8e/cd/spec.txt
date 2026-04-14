@@ -1,0 +1,11 @@
+Implement a writeback module for a register file in a processor architecture. It includes a 2-to-1 multiplexer to select between data from memory and the ALU based on the `memtoreg` control signal, outputting the selected data as `regfile_data`. Additionally, it features another multiplexer for selecting the register file address, using a fixed value (all ones) when `memtoreg` is high and passing through the input address when low. The module also directly passes the `regwrite_in` signal to `regwrite_out`, effectively managing the write-back phase of data into the register file.
+module top_module(
+    input [31:0] from_mem_data, 
+    input [31:0] from_alu_data, 
+    input [4:0] regfile_addr_in, 
+    input regwrite_in, 
+    input memtoreg, 
+    output regwrite_out, 
+    output [31:0] regfile_data, 
+    output [4:0] regfile_addr_out
+);

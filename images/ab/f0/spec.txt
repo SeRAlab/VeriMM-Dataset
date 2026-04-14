@@ -1,0 +1,6 @@
+Design a 4-bit Booth multiplier that computes the product of two 4-bit signed numbers A and B, yielding an 8-bit signed output P. The module implements the Booth's algorithm, which uses the concept of shifting and comparing bits of the multiplier (B) to progressively build the product. It handles the signed multiplication by considering both the multiplicand (A) and the adjusted multiplier (B, extended by one bit), utilizing left shifts and additions based on the current two least significant bits of B. The final result is stored in an 8-bit register, providing the computed product.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    output reg [7:0] P
+);

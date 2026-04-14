@@ -1,0 +1,9 @@
+Design a circuit that functions as a 4-bit counter with an 8-bit shift register and a 7-segment display output. The counter increments on each clock cycle, while the shift register inputs data from `data[7]` and shifts it left, effectively storing the latest data bit. The sum of the counter value and the lower 3 bits of the shift register indexes into a lookup table to generate the corresponding 7-segment display output. Upon reset, the counter and shift register are initialized to zero, allowing the module to be used in applications requiring sequential data manipulation and visual representation on a 7-segment display.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data,
+  output reg [3:0] counter,
+  output reg [7:0] shift_reg,
+  output reg [6:0] seven_seg
+);

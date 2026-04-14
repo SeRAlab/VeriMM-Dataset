@@ -1,0 +1,11 @@
+The Verilog module implements a simple memory-mapped I/O interface with edge detection functionality. It serves as an Avalon slave device that reads inputs from an external port while capturing rising edges. The module accepts a 2-bit address input to distinguish between two data sources: the input port and an edge capture register. On a write operation to the designated address, it captures the state of the input port if a rising edge is detected, indicating a state change. The output `readdata` holds the appropriate value based on the address provided and reflects either the current data input or the edge capture state. Overall, this module functions to interface with external signals and provide an edge detection mechanism in a system-on-chip design.
+module top_module(
+    input [1:0] address,
+    input chipselect,
+    input clk,
+    input in_port,
+    input reset_n,
+    input write_n,
+    input [31:0] writedata,
+    output [31:0] readdata
+);

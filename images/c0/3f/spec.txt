@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+    
+Implement a module to compute a 7-bit Cyclic Redundancy Check (CRC) value based on a serial input bit stream. CRC is a popular error-detecting code commonly used in digital networks and storage devices to detect accidental changes to raw data. The primary function of this module to generate a CRC value that can be used for error checking purposes. In a broader system context, this module could be part of a communication protocol, data storage system, or any application requiring data integrity verification.
+
+Module name:  
+	CRC_7
+
+Input ports:
+	BITVAL (input): A singlebit input (1'b0 or 1'b1) representing the current bit of the input data stream for which the CRC is being calculated.
+	Enable (input): A singlebit input that enables the CRC calculation when high (1'b1). When low (1'b0), the CRC calculation is paused, and the internal state is maintained.
+	CLK (input): The clock input signal. The rising edge of this signal triggers the processing of the current BITVAL and the update of the CRC value.
+	RST (input): The reset input signal. A high (1'b1) on this signal asynchronously resets the CRC value to 0.
+Output ports:
+	CRC (output [6:0]): A 7bit output representing the current CRC value. This value is updated with each clock cycle when the module is enabled.
+
+
+Implementation:
+The RTL module presented is designed to compute a 7-bit Cyclic Redundancy Check (CRC) based on the input bit stream. CRC is a popular error-detecting code commonly used in digital networks and storage devices to detect accidental changes to raw data. The specific polynomial and CRC size (7 bits in this case) determine the effectiveness and complexity of the CRC calculation. This module implements a shift register mechanism, which is a typical approach for hardware-based CRC calculations.
+Sequential Logic:
+The core of the module operates on the rising edge of a clock signal (CLK) and is also sensitive to a reset signal (RST). Upon a reset (RST being high), the 7-bit CRC register is cleared (set to 0). This ensures that the CRC calculation starts afresh with each reset, a necessary step for initiating or restarting the CRC computation for a new set of data.
+When not in reset, the module checks the Enable signal. If Enable is high, it proceeds with the CRC calculation for the current input bit (BITVAL). The calculation involves shifting the current contents of the CRC register and conditionally XORing specific bits with the input bit based on the CRC polynomial implemented. This shift-and-XOR operation is the essence of the CRC calculation, allowing the module to iteratively compute the CRC value as bits are processed.
+Combinational Logic:
+The module employs a wire named inv, which is the XOR of the input bit (BITVAL) and the most significant bit of the CRC register (CRC[6]). This inv signal plays a crucial role in determining the feedback value for the shift register based on the CRC polynomial's requirements. The feedback mechanism is essential for the CRC's error-detection capabilities, as it introduces redundancy in a way that errors can be detected based on the properties of the polynomial used.
+
+Give me the complete code.
+

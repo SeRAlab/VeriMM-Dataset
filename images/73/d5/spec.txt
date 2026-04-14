@@ -1,0 +1,5 @@
+Design a synchronous D flip-flop with asynchronous reset and set functionality. The flip-flop captures the input D on the rising edge of the clock (CLK) if the reset (RESET_B) is not asserted and the set (SET_B) is not asserted, with priority given to the asynchronous set and reset signals. When RESET_B is low, the output Q is forced to 0 regardless of the clock or D input. When SET_B is low, Q is forced to 1. The output Q_N provides the complement of Q. This design is suitable for applications requiring controlled state retention and quick resetting or setting of the flip-flop state.
+module top_module(
+    input D, CLK, RESET_B, SET_B,
+    output reg Q, output reg Q_N
+);

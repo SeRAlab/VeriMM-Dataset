@@ -1,0 +1,8 @@
+Design a circuit that processes a 7-bit input `a` and a most significant bit (MSB) indicator `a_msb` to generate a 15-bit output `b` and an MSB output `b_msb`. On each rising edge of the clock, the module increments a 15-bit register `b_reg`, adding either a zero-extended or a maximum value (255 extended) based on the state of `a_msb`, along with input `a`. The output `b` consists of the register's value concatenated with a control signal `c` that depends on the MSB and the least significant bit of `b`. The circuit effectively creates a counter that adjusts based on the input conditions, while also providing an indicator of the MSB of the output.
+module top_module(
+    input        clk,
+    input  [6:0] a,
+    input        a_msb,
+    output [14:0] b,
+    output       b_msb
+);

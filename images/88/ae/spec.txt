@@ -1,0 +1,8 @@
+Design a shift register with a three-bit wide data path that supports both parallel loading and shifting. The module takes a clock signal and a three-bit input `parallel_load`. When `control` is low, the register loads data from `parallel_load` on each clock edge, and shifting occurs in a way that moves data through three internal registers. If `control` is high, it still accepts `parallel_load` but processes the register data differently during the shifting operation. The `shift` signal determines whether to output the shifted value (combining bits from the internal registers) or maintain the current value in `reg1`. This module enables flexible data manipulation, suitable for applications needing both storage and shifting capabilities.
+module top_module(
+    input clk,
+    input [2:0] parallel_load,
+    input shift,
+    input control,
+    output reg [2:0] out
+);

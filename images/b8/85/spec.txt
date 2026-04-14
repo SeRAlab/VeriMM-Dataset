@@ -1,0 +1,11 @@
+Design a circuit that converts a 24-hour format time input (hours, minutes, seconds) into a 12-hour format time output. The module takes three 8-bit inputs representing hours, minutes, and seconds. It produces corresponding 8-bit outputs for hours, minutes, and seconds in 12-hour format, while also providing a PM indicator (PM_LED). The PM_LED is set when the hour input represents the PM period (between 12 PM and 11:59 PM), and it is cleared for the AM period. This effectively allows for proper representation and display of time in consumer electronics that require a 12-hour format.
+module top_module(
+
+input [7:0]hours_in,
+input [7:0]minutes_in,
+input [7:0]seconds_in,
+output reg[7:0]hours_out,
+output reg[7:0]minutes_out,
+output reg[7:0]seconds_out,
+output reg PM_LED
+    );

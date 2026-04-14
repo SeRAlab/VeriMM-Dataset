@@ -1,0 +1,8 @@
+Design a module that implements a configurable delay mechanism, capable of generating a delay of a specified duration in milliseconds. The module takes a clock input (CLK), a reset signal (RST), a 12-bit input (DELAY_MS) representing the desired delay, and a control signal (DELAY_EN) to enable the delay function. The output (DELAY_FIN) indicates completion of the delay when the specified time has elapsed. The module operates in three states: Idle, where it waits for the enable signal; Hold, during which it increments a millisecond counter based on clock cycles; and Done, signaling the delay's completion until the enable signal is disabled, resetting to Idle.
+module top_module(
+    CLK,
+    RST,
+    DELAY_MS,
+    DELAY_EN,
+    DELAY_FIN
+    );

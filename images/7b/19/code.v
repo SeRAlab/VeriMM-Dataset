@@ -1,0 +1,1 @@
+module top_module(input [15:0] in, input sig, output [15:0] out);assign out = sig == 1 ? ~in + 1 : in;endmodule

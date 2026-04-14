@@ -1,0 +1,8 @@
+Design a Wi-Fi transceiver module that processes input data for wireless communication. The module accepts an n-bit wide input data, synchronized to a clock signal, with options for reset and enable functionality. Upon enabling, the input data is sequentially handled through four stages: encoding, modulation, demodulation, and decoding, each triggered by the clock. The processed output, which is m-bits wide, is derived from the final decoding stage, allowing for transmission or further processing of the data in a wireless format.
+module top_module(
+  input [n-1:0] data_in,
+  input clk,
+  input reset,
+  input enable,
+  output [m-1:0] data_out
+);

@@ -1,0 +1,9 @@
+Design a synchronous circuit that produces an output signal based on a combination of input conditions. The module utilizes a clock (clk) and reset (rst) input to control its operation. Upon a rising clock edge, if the reset is asserted, the output is set to LOW. If the reset is not asserted and the enable signal is HIGH, the output is driven HIGH when the test expression (test_expr) evaluates to TRUE and the previous configuration is valid (prevConfigInvalid is FALSE); otherwise, the output is set to LOW. This functionality allows for conditional output control based on specific input states.
+module top_module(
+  input clk,
+  input rst,
+  input enable,
+  input test_expr,
+  input prevConfigInvalid,
+  output out
+);

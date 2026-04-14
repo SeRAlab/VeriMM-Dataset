@@ -1,0 +1,10 @@
+Design a circuit that performs rounding and saturation operations on a signed 16-bit input value. Upon a rising clock edge, if the reset signal is asserted, both output values are set to zero. Otherwise, the circuit checks the least significant bit of the input; if it is set, the input value is incremented by one for the rounded output. Additionally, the circuit implements saturation by clamping the input value to specified minimum and maximum thresholds, ensuring that the saturated output remains within the defined range.
+module top_module(
+  input clk,
+  input rst,
+  input signed [15:0] in_val,
+  input signed [15:0] min_val,
+  input signed [15:0] max_val,
+  output reg signed [15:0] out_round,
+  output reg signed [15:0] out_sat
+);

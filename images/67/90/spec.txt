@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that detects the specific 4-bit sequence "1101" from a stream of input data. The FSM consists of four states that correspond to the progression of the sequence: starting from an initial state (S0), it transitions through states S1 and S2 upon receiving the appropriate input bits. Upon reaching state S3, if the next input is a '1', the sequence is recognized, and the output signal `match` is set high. The state machine resets to S0 upon receiving a reset signal or if the input stream deviates from the expected sequence.
+module top_module(
+  input clk,
+  input reset,
+  input input_data,
+  output reg match
+);

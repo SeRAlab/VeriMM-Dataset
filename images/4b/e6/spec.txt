@@ -1,0 +1,12 @@
+Design a 32-bit wide, 16KB dual-port FIFO (First-In-First-Out) memory with separate read and write clocks. It includes asynchronous reset functionality, enabling the resetting of write and read addresses, as well as a count of the current number of stored elements. The FIFO supports write operations if the memory is not full and read operations if there are entries available. The system utilizes a simple linear addressing scheme for wrapping around the memory when reaching its depth limit, and it exposes signals to indicate whether the FIFO is full, and to manage read enable logic. The module is designed to facilitate smooth data flow between producer and consumer components in a digital system.
+module top_module(
+  input wr_clk,
+  input rd_clk,
+  input rst,
+  input rd_en,
+  input p_18_out,
+  output [31:0] Q,
+  output rst_full_ff_i,
+  output rst_full_gen_i,
+  output tmp_ram_rd_en
+);

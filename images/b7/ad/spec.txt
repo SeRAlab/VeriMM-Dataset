@@ -1,0 +1,15 @@
+Design a multi-functional module that includes an 8-bit register, a 4-bit counter, and a true dual-port RAM. The module features a synchronous active-high reset that initializes the register to a predefined value and resets the counter. It includes a selection input to choose the output between the register and the counter. The RAM operates with a write-enable and read-enable mechanism, allowing data to be written to or read from specified addresses. Additionally, the module computes a modified counter output by adding the lower 4 bits of the register to the current counter value. This design allows for versatile data handling in a digital system, supporting both storage and counting functionalities.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input [7:0] d,    // 8-bit input for the register
+    input select,     // Select input to choose between register and counter
+    input write_en,   // Write enable signal for the RAM
+    input [7:0] write_addr, // Write address for the RAM
+    input [3:0] write_data, // Write data for the RAM
+    input read_en,    // Read enable signal for the RAM
+    input [7:0] read_addr,  // Read address for the RAM
+    output reg [7:0] q,   // 8-bit output from the active module
+    output reg [3:0] counter_out, // Output from the counter module
+    output reg [3:0] ram_out // Output from the RAM module
+);

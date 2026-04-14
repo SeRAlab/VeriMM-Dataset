@@ -1,0 +1,21 @@
+Design a data processing module that facilitates the transfer of centroid and point data between two clock domains via handshaking signals. The module has inputs for various data fields such as centroid indices and point coordinates along with status flags indicating the completion of processing. On receiving valid input data when the output is ready, it sets the output validity and retains the incoming data fields until the next transfer occurs. The module also includes reset functionality to initialize its outputs and states to a known baseline, ensuring correct behavior upon system initialization.
+module top_module(input clk, input reset,
+    output reg io_in_ready, // Changed to reg
+    input  io_in_valid,
+    input  io_in_bits_centeroidsFinished,
+    input  io_in_bits_pointsFinished,
+    input [15:0] io_in_bits_centeroidIndex,
+    input [63:0] io_in_bits_point_x,
+    input [63:0] io_in_bits_point_y,
+    input [63:0] io_in_bits_point_z,
+    input [4:0] io_in_tag,
+    input  io_out_ready,
+    output reg io_out_valid, // Changed to reg
+    output reg io_out_bits_centeroidsFinished, // Changed to reg
+    output reg io_out_bits_pointsFinished, // Changed to reg
+    output reg [15:0] io_out_bits_centeroidIndex, // Changed to reg
+    output reg [63:0] io_out_bits_point_x, // Changed to reg
+    output reg [63:0] io_out_bits_point_y, // Changed to reg
+    output reg [63:0] io_out_bits_point_z, // Changed to reg
+    output reg [4:0] io_out_tag // Changed to reg
+  );

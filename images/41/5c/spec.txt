@@ -1,0 +1,9 @@
+Design a 11-bit wide synchronous D flip-flop module with asynchronous reset functionality. This module captures the input signal (io_in) on the rising edge of the clock when the enable signal (io_enable) is high; otherwise, it retains its previous state. Upon a reset signal, the flip-flop resets to a specified initial value (io_init). The output (io_out) reflects the current state of the flip-flop, allowing for both initial randomization or predetermined initialization based on the defined conditions.
+module top_module(
+  input         clock,
+  input         reset,
+  input  [10:0] io_in,
+  input  [10:0] io_init,
+  output [10:0] io_out,
+  input         io_enable
+);

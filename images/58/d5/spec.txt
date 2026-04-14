@@ -1,0 +1,7 @@
+Design a clock gating circuit that controls the propagation of the clock signal based on two enable signals, EN and TE. When EN is asserted (high), the output ENCLK is set to high on the rising edge of the CLK. If EN is not asserted, but TE is high, ENCLK is also set to high. If neither signal is active, ENCLK retains its previous state, effectively gating the clock signal based on the specified conditions. This design is useful for reducing dynamic power consumption in digital circuits by selectively enabling clock signals.
+module top_module(
+    input CLK,
+    input EN,
+    input TE,
+    output reg ENCLK
+);

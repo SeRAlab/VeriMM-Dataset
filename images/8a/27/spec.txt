@@ -1,0 +1,15 @@
+Design a pseudo-random entropy generator module that produces entropy data upon receiving an enable signal. This module outputs a fixed raw entropy value and manages the synchronization and acknowledgment of entropy data based on the state of the input `entropy_ack`. When enabled, it generates a predefined entropy data output during synchronization and maintains status registers for tracking its operational state. The module incorporates reset functionality, clearing all outputs to default values when the reset signal is low.
+module top_module(
+                      input wire           clk,
+                      input wire           reset_n,
+
+                      input wire           enable,
+
+                      output wire [31 : 0] raw_entropy,
+                      output wire [31 : 0] stats,
+
+                      output wire          enabled,
+                      output wire          entropy_syn,
+                      output wire [31 : 0] entropy_data,
+                      input wire           entropy_ack
+                     );

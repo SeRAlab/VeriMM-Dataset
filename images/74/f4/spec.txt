@@ -1,0 +1,7 @@
+Design a memory module with 384,000 8-bit data storage locations, supporting both read and write operations. When the write enable (we) signal is high, the module stores the input data (d) at the specified write address on the rising edge of the clock. Simultaneously, it outputs the data stored at the specified read address to the output (q). This module is intended for applications requiring large data storage with simultaneous read and write capabilities.
+module top_module(
+    output reg [7:0] q,
+    input [7:0] d,
+    input [18:0] write_address, read_address,
+    input we, clk
+);

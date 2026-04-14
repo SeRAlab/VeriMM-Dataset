@@ -1,0 +1,9 @@
+Design a 1D memory module that can store 16 entries of 32 bits each. It supports reading and writing operations synchronized to a clock signal. When the write enable signal is activated, the module stores the provided 32-bit input data at the specified write address. The module continuously outputs the data from the memory location corresponding to the read address, allowing for basic memory read and write functionality.
+module top_module(
+  input         clock,
+  input  [3:0]  io_w_addr,
+  input  [31:0] io_w_data,
+  input         io_w_en,
+  input  [3:0]  io_r_addr,
+  output [31:0] io_output_data
+);

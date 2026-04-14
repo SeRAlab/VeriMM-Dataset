@@ -1,0 +1,14 @@
+Design a 4-bit adder/subtractor combined with a 6-to-1 multiplexer, generating an 8-bit output. The module takes two 4-bit inputs for arithmetic operations, with a control signal to select between addition (control=0) and subtraction (control=1). Additionally, it allows the selection of one of six 4-bit data inputs through a selection input, providing flexibility in output. The resulting 8-bit output consists of the result from the adder/subtractor in the lower 4 bits and the multiplexed data in the upper 4 bits.
+module top_module(
+    input [3:0] in1, // First 4-bit input for the adder/subtractor
+    input [3:0] in2, // Second 4-bit input for the adder/subtractor
+    input control, // Control signal for the adder/subtractor (0 for addition, 1 for subtraction)
+    input [2:0] sel, // Select input for the multiplexer
+    input [3:0] data0, // 4-bit data inputs for the multiplexer
+    input [3:0] data1,
+    input [3:0] data2,
+    input [3:0] data3,
+    input [3:0] data4,
+    input [3:0] data5,
+    output reg [7:0] out // 8-bit output from the functional module
+);

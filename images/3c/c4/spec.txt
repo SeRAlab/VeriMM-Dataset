@@ -1,0 +1,6 @@
+Design a simple 2-bit branch predictor using a 2-bit saturating counter. The predictor should output whether the branch is predicted to be taken or not taken based on its current state. The state transitions are as follows:  
+- From state 00 (Strongly Not Taken) to 01 (Weakly Not Taken) on a Not Taken input, and to 10 (Weakly Taken) on a Taken input.  
+- From state 01 (Weakly Not Taken) to 00 on Not Taken and to 10 on Taken.  
+- From state 10 (Weakly Taken) to 01 on Not Taken and to 11 (Strongly Taken) on Taken.  
+- From state 11 (Strongly Taken) to 10 on Not Taken and remains in 11 on Taken.  
+The output should be 1 if the prediction is Taken (state 10 or 11) and 0 if Not Taken (state 00 or 01). The initial state should be 00.

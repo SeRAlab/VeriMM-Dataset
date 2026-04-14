@@ -1,0 +1,9 @@
+Design a synchronous circuit that performs addition and comparison on two 4-bit inputs. On each clock cycle, if reset is asserted, the outputs are initialized to zero. If reset is not asserted, the module calculates the sum of `input1` and `input2`, assigning it to the `sum` output. Additionally, it assesses the most significant two bits of the sum to determine a comparison result, signaling whether the sum is greater than, equal to, or less than the binary value '10' (2 in decimal) using a 2-bit output.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] input1,
+  input [3:0] input2,
+  output reg [3:0] sum, // Changed from wire to reg
+  output reg [1:0] comparison_result
+);

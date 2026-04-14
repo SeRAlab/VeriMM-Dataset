@@ -1,0 +1,8 @@
+Design a display control circuit that outputs a 3-bit RGB color code based on the current state and input conditions. It uses a state machine with a 2-bit state register and a 4-bit input to determine whether to display text (like score or game over) or a graph. The text is set to a predefined white color, while a blue color is used for the graph display. If none of the specified conditions are met, it defaults to a yellow background. The output color is updated synchronously with a clock signal, allowing for dynamic display changes based on game states.
+module top_module(
+    input clk,                   // Added clock input
+    input [1:0] state_reg,
+    input [3:0] text_on,
+    input graph_on,
+    output reg [2:0] rgb
+);

@@ -1,0 +1,8 @@
+Design a 16-bit binary up-counter with a reset and a maximum count feature. The counter increments on each rising edge of the clock signal, and it has a reset input that sets the count to zero when activated. When the counter reaches the specified maximum count, it resets to zero and asserts a flag signal to indicate that the maximum has been reached, otherwise, the flag remains low. This design is suitable for generating timed events or counting occurrences in a digital circuit.
+module top_module(
+  input clk,
+  input resetn,
+  input [15:0] max_count,
+  output reg [15:0] count,
+  output reg flag
+);

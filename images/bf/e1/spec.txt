@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+    
+Implement a module to manage interrupt signals within a digital system. Its primary functions include:
+
+Interrupt Detection: It monitors a set of input interrupt signals and identifies when any of these signals are asserted.
+Interrupt State Management: It maintains the current state of each interrupt signal, allowing for the detection and clearing of interrupts.
+Interrupt Enable Control: It allows selective enabling or disabling of interrupt signals, providing flexibility in handling interrupts.
+Global Interrupt Enable (GIE): It controls the overall ability of the system to respond to interrupts, acting as a master switch.
+Interrupt Aggregation: It aggregates multiple interrupt signals into a single output interrupt signal, simplifying the interrupt handling process for the processor.
+Status Reporting: It reports the current state of interrupts and the enable status of each to the processor, facilitating diagnostics and system management.
+
+This module plays a crucial role in the interrupt handling mechanism of a digital system, enabling efficient and flexible response to external and internal events.
+
+Module name:  
+	icontrol
+
+Input ports:
+	i_clk (input): The system clock signal. It synchronizes the module's operations.
+	i_reset (input): The system reset signal. It initializes the module's internal state.
+	i_wr (input): Write enable signal. It triggers updates to the module's internal registers based on the i_proc_bus data.
+	i_proc_bus ([31:0] input): Processor bus. It carries control information for enabling/disabling interrupts and the GIE flag, as well as data for clearing specific interrupts.
+	i_brd_ints ([IUSED1:0] input): Board interrupts. It represents the set of interrupt signals the module is monitoring.
+Output ports:
+	o_proc_bus ([31:0] output): Processor bus output. It reports the current interrupt enable status, the GIE flag, and the current state of all monitored interrupts.
+	o_interrupt (output): Aggregated interrupt signal. It indicates to the processor that at least one enabled interrupt has been triggered.
+
+
+Implementation:
+The Verilog module icontrol is designed to manage interrupt signals in a processing environment. It interfaces with a processor bus and external board interrupts, handling the enabling, disabling, and acknowledgment of interrupts based on the processor's commands and external interrupt signals. The module operates synchronously with a clock signal i_clk and can be reset through an i_reset signal. The core functionality revolves around managing interrupt states, enabling conditions, and generating an interrupt signal to the processor when conditions are met.
+
+Give me the complete code.
+

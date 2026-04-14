@@ -1,0 +1,9 @@
+Design a VGA control module that generates a 12-bit color output based on position and state inputs for a snake game. The output color, `vgaData`, changes according to the coordinates (`xPos` and `yPos`) of the food and the status of the snake (head, body, and wall). It highlights the food in red, provides a black background for empty spaces, sets wall sections to cyan, displays the snake's head in a light green, and renders the body in a yellow-green shade. This module effectively manages visual representation for the game graphics on a VGA display.
+module top_module(
+		input [9:0] xPos,
+		input [9:0] yPos,		
+		input [1:0] snake,
+		input [5:0] foodX,
+		input [5:0] foodY,		
+		output reg [11:0] vgaData
+    );

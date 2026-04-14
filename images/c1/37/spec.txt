@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to facilitate a basic data shifting operation, primarily used in applications requiring sequential data processing, such as image processing or digital filtering. Its primary function to update and maintain a window of four data points, which consist of two current and two previous pixel values. This functionality is crucial in scenarios where the relationship or difference between consecutive data points needs to be analyzed or processed, for instance, in edge detection algorithms in image processing or temporal data analysis in signal processing.
+
+Module name:  
+	window
+
+Input ports:
+	clk (input): This is the clock input, which synchronizes the data shifting operation. The type of this input is a singlebit signal.
+	datavalid (input): A singlebit signal that indicates when the data (pix_in_current and pix_in_previous) is valid and ready to be processed. The shifting operation occurs only when this signal is high.
+	pix_in_current (input): Represents the current pixel or data point being processed. This input is essential for realtime data processing applications.
+	pix_in_previous (input): Represents the previous pixel or data point immediately before the current one. This input is crucial for comparing or analyzing sequential data points.
+Output ports:
+	A, B, C, D (output reg): These are the four registers that hold the window of data points. A and C are one cycle behind B and D, respectively. After each clock cycle where datavalid is high, A takes the value of B, B takes the value of pix_in_previous, C takes the value of D, and D takes the value of pix_in_current. These outputs are essential for downstream processing or analysis.
+
+
+Implementation:
+The RTL module presented is designed to operate within a digital signal processing context, specifically tailored for image or video processing applications where the manipulation of pixel data is paramount. The module, named window, is structured to facilitate a sliding window operation, a common technique in image processing used for tasks such as filtering, edge detection, and more.
+
+Give me the complete code.
+

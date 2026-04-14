@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+
+Implement a module for a 4-bit up-down counter. The counter increments or decrements based on the dir signal on each positive edge of the clk signal. When the dir signal is 1, the counter increments; when the dir signal is 0, the counter decrements. The counter resets to 0 when the rst_n signal is low.
+
+Module name:  
+    up_down_counter
+
+Input ports：
+    clk: Clock signal.
+    rst_n: Reset signal (active low).
+    dir: Direction control signal (1 for up, 0 for down).
+
+Output ports：
+    count: 4-bit output signal representing the current count.
+
+Implementation:
+Declare the module up_down_counter with input and output ports as specified in the ports statement.
+Declare a 4-bit register to hold the current count.
+Inside an always block, sensitive to the positive edge of the clk signal and the negative edge of the rst_n signal, implement the logic for counting.
+In the reset condition (~rst_n), set the count register to 0. On each positive edge of the clk, increment or decrement the count register based on the dir signal.
+
+Give me the complete code.

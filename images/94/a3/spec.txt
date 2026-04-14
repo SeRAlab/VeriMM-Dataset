@@ -1,0 +1,16 @@
+Design a synchronous FIFO (First-In-First-Out) memory module that allows for data storage and retrieval between two clock domains (write and read). The module features a 64-bit data width and a depth of 512 entries, with control signals for write and read operations. It includes status outputs to indicate when the FIFO is full, almost full, empty, almost empty, and when it reaches a programmed full or empty state. The FIFO supports asynchronous reset functionality to initialize pointers, and it manages read and write pointers to ensure proper data handling across simultaneous operations.
+module top_module(
+    rst,
+    wr_clk,
+    rd_clk,
+    din,
+    wr_en,
+    rd_en,
+    dout,
+    full,
+    almost_full,
+    empty,
+    almost_empty,
+    prog_full,
+    prog_empty
+);

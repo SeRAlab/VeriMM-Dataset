@@ -1,0 +1,9 @@
+Design a 12-bit shift register with a synchronous reset and configurable shift direction. The module shifts data either left or right based on the `shift_dir` input, allowing new data to be loaded from `data_in`. Additionally, it calculates a bitwise OR of the two least significant bits from the last state of the shift register, outputting this result through `or_out`. When the reset signal is active low, both the shift register and the OR output are set to zero.
+module top_module(
+    input clk,
+    input reset,            // Synchronous reset (active low)
+    input shift_dir,        // Shift direction: 0 for left, 1 for right
+    input [3:0] data_in,
+    output reg [11:0] q,    // 12-bit shift register output
+    output reg [3:0] or_out // Bitwise OR output of last two D flip-flops
+);

@@ -1,0 +1,6 @@
+Design a 4-to-16 binary decoder. The module takes a 4-bit input (ABCD) and generates a 16-bit output where only one of the output lines is activated based on the binary value of the input. The output is inverted, meaning that when a specific combination of inputs is provided, the respective output line will produce a LOW signal, and all other outputs will be HIGH. The design utilizes two stages of signal processing: the first stage inverts the input bits and the second stage, although appearing redundant, prepares the outputs for final inversion before assignment. This structure effectively implements the decoding function while keeping the output active-low.
+module top_module(
+    input [3:0] ABCD,
+    input clk,              // Added clk as an input
+    output reg [15:0] out
+);

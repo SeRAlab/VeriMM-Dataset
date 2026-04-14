@@ -1,0 +1,8 @@
+Design a clock gating module that controls the output clock signal (ENCLK) based on an enable signal (EN) and an enable test signal (TE). When a reset (RST) is active, the output is set to LOW. On the rising edge of the clock (CLK), if the reset is not active, the output ENCLK follows the state of the EN signal only when the TE signal is asserted. This module is intended to effectively manage power consumption by gating the clock to certain portions of the circuit when not needed.
+module top_module(
+  input CLK,
+  input EN,
+  input TE,
+  input RST,
+  output reg ENCLK
+);

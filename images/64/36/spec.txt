@@ -1,0 +1,11 @@
+Develop a register writer module that manages the writing of data into registers based on control signals while handling input data and addresses. This module operates on the rising edge of a clock signal and incorporates a reset functionality. When the reset signal is not asserted, the module enables data transfer when certain control signals are active, corresponding to operations such as load, arithmetic, logic, and default behaviors. It outputs the current data and address inputs while generating an enable signal to control write operations to the registers, with provisions for both data and address handling.
+module top_module(
+    clk_in,
+    RST,
+    ctrl_in,
+    data,
+    addr,
+    data_out,
+    addr_out,
+    en_out
+);

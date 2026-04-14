@@ -1,0 +1,11 @@
+Design a FIFO (First-In-First-Out) buffer with a depth of 16 bytes, where data is written to and read from the buffer on rising clock edges, controlled by write and read enable signals. The buffer utilizes an 8-bit wide data path and maintains status flags for full and empty conditions. When the buffer is not full, incoming data can be written, updating the head pointer and the element count, while the tail pointer and count are updated upon reading data when the buffer is not empty. The system resets on a low signal to initialize the head, tail, and count to zero.
+module top_module(
+    input clk,
+    input rst_n,
+    input wr_en,
+    input rd_en,
+    input [7:0] data_in,
+    output reg [7:0] data_out,  // Change output to reg type
+    output empty,
+    output full
+);

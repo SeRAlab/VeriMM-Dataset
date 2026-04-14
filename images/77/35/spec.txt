@@ -1,0 +1,6 @@
+Design a finite state machine that simulates a discrete numerical integration process for a given set of differential equations. The module takes in clock and reset signals along with initial values for variables X, Y, and U, as well as a configurable parameter A and step size DX. Upon activation, it updates the values of X, Y, and U in a loop based on the equations involving these parameters until X reaches the limit specified by A. Once the condition is met, it outputs the final values of X, Y, and U, effectively processing the equations iteratively based on the input parameters.
+module top_module(
+    input clk, reset,
+    input [31:0] Xinport, Yinport, Uinport, Aport, DXport,
+    output reg [31:0] Xoutport, Youtport, Uoutport
+);

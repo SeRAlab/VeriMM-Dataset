@@ -1,0 +1,14 @@
+Design a reset management module that handles multiple reset signals for a digital system. It generates a master reset output and various reset signals based on the clock and an external reset condition. Upon receiving a reset signal, the module asserts all output resets to HIGH, indicating that the system requires a restart. After a reset condition is cleared, output signals are determined by the states of external and auxiliary reset inputs, debug signals, and a clock management lock signal, enabling proper initialization and state management for different components in the system.
+module top_module(
+  input clk, 
+  input reset, 
+  input ext_reset_in, 
+  input aux_reset_in, 
+  input debug_sys_rst, 
+  input dcm_locked, 
+  output reg mb_reset_out, 
+  output reg [0:0] bus_struct_reset_out, 
+  output reg [0:0] peripheral_reset_out, 
+  output reg [0:0] interconnect_aresetn_out, 
+  output reg [0:0] peripheral_aresetn_out
+);

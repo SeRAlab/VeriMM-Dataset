@@ -1,0 +1,17 @@
+Design a 32-entry, 32-bit register file that supports simultaneous reading and writing of registers. The module allows for one clock-synchronized write operation, controlled by the 'we' (write enable) signal to store 'wdata' at the address specified by 'waddr', while also providing the ability to read from two different registers simultaneously with separate read addresses 'raddr1' and 'raddr2', conditioned by the 're1' and 're2' (read enable) signals. The functionality includes a reset feature that initializes the first register to zero and returns read outputs to zero if reset is invoked or the read addresses are zero. This register file can be effectively utilized in a CPU architecture for register management.
+module top_module(
+	input wire clk,
+	input wire rst,
+	
+	input wire [4:0] waddr,
+	input wire [31:0] wdata,
+	input wire we,
+	
+	input wire [4:0] raddr1,
+	output reg [31:0] rdata1,
+	input wire re1,
+	
+	input wire [4:0] raddr2,
+	output reg [31:0] rdata2,
+	input wire re2
+    );

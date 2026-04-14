@@ -1,0 +1,7 @@
+Design a decoder that determines the legality of a given 32-bit instruction input. The module outputs a signal 'a' that reflects specific condition checks on the instruction bits, and a signal 'illegal_instr_o' that indicates whether the instruction is illegal based on two additional bit criteria. If the bits from positions [15:13] are low, it evaluates another section of the instruction; if any conditions for legality are unmet, it asserts the illegal instruction output.
+module top_module(
+               input wire [31:0] instr_i,
+               
+               output wire       a,
+               output wire       illegal_instr_o
+               );

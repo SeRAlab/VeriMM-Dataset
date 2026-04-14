@@ -1,0 +1,14 @@
+Design a module implementing a receiver for a data interface that processes incoming data and maintains a ring buffer for storage. The module receives 24-bit data input and manages acknowledgment signals to control data storage in a 64-entry ring buffer. It features a write enable control that modifies internal counters for unread data and data shifting based on address checks. The output provides either the current unread data count or shifts through the ring buffer based on the provided address range, allowing for effective data retrieval while handling reset and data acknowledgment states synchronously with a clock signal.
+module top_module(
+    input wire clk,
+    input wire rst,
+
+    
+    input wire [23:0] rx_data_i,
+    input wire rx_ack_i,
+
+    
+    input wire [31:0] data_i,
+    output wire [31:0] data_o,
+    input wire [31:0] addr_i,
+    input wire we_i);

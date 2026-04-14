@@ -1,0 +1,6 @@
+Design a circuit that functions as a conditional multiplexer for a 32-bit instruction bus. When the input signal `pfc_inst_nop_i` is LOW (0), the output `pm_inst_bus_o` passes the value of `pm_inst_bus_i`. Conversely, when `pfc_inst_nop_i` is HIGH (1), the output is set to a predefined 32-bit immediate value representing a NOP (No Operation) instruction.
+module top_module(
+input wire pfc_inst_nop_i,
+input wire [31:0] pm_inst_bus_i,
+output wire [31:0] pm_inst_bus_o
+);

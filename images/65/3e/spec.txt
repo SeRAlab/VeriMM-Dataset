@@ -1,0 +1,9 @@
+Design a simple 8-bit calculator that performs basic arithmetic operations. The module takes two 8-bit inputs (a and b) and a 2-bit operation selector (op) with four possible operations: addition, subtraction, multiplication, and division. The calculator can be reset using the rst signal and operates based on the clock input (clk). Upon each clock cycle, if reset is not activated, the module loads the input values, determines the operation to execute, and updates the result, which is output through register C. The functionality allows for dynamic computation of the specified operation, with the output reflecting the result of the computation.
+module top_module(
+    input           rst,        // reset signal
+    input           clk,        // clock signal
+    input   [7:0]   a,          // input value for register A
+    input   [7:0]   b,          // input value for register B
+    input   [1:0]   op,         // operation to be performed (00=addition, 01=subtraction, 10=multiplication, 11=division)
+    output  [7:0]   c           // output value for register C
+);

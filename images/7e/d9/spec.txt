@@ -1,0 +1,6 @@
+Design a PWM register that stores an 8-bit value. On the rising edge of the clock, if the `pwmldce` signal is asserted, the module loads the `wrtdata` input into the `pwmval` output register. This functionality allows for updating of the PWM value based on incoming data, suitable for controlling pulse-width modulation signals in various applications.
+module top_module(
+  output reg [7:0] pwmval,
+  input clk,
+  input pwmldce,
+  input [7:0] wrtdata);

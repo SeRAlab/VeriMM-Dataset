@@ -1,0 +1,8 @@
+Design a circuit that functions as a read data module with a 2-to-4 decoder. It takes a 2-bit address input to select which 4 bits from a 4-bit input port should be extended and written to a 32-bit output, `readdata`, upon each rising edge of the clock, provided that the reset signal is not asserted. The output is reset to zero when the reset signal is active low. The configuration allows for selective reading of the input bits based on the given address, effectively enabling a controlled data routing mechanism.
+module top_module(
+  input [1:0] address,
+  input clk,
+  input [3:0] in_port,
+  input reset_n,
+  output reg [31:0] readdata
+);

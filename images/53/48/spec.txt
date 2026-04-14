@@ -1,0 +1,12 @@
+Design a bypass control unit for a pipeline processor to manage data hazards by determining the source of operands for two registers (ForwardA and ForwardB). The module takes as inputs the register identifiers and write enable signals from different pipeline stages (EX/MEM and MEM/WB) to identify if the values of those registers should be forwarded to reduce latency. Depending on the comparisons, it outputs a 2-bit signal for each operand, indicating whether to use the value from the EX/MEM stage, the MEM/WB stage, or to use the original source, hence facilitating data forwarding in order to optimize instruction execution without stalling.
+module top_module(
+  input [4:0] ID_EX_Reg_RS,
+  input [4:0] ID_EX_Reg_RT,
+  input [4:0] EX_MEM_Reg_RD,
+  input EX_MEM_RegWre,
+  input [4:0] MEM_WB_Reg_RD,
+  input  MEM_WB_RegWre,
+  
+  output [1:0] ForwardA,
+  output [1:0] ForwardB
+  );

@@ -1,0 +1,21 @@
+Design a register-based control module for interfacing with a processor. The module features read and write operations for two specific registers, allowing for the configuration of an interrupt enable register (oci_ienable) and a single-step mode flag (oci_single_step_mode) during debugging. It responds to write requests when debug access is enabled, and outputs status flags based on the monitored signals. When queried, the module returns the appropriate register values based on the input address, enabling systems to control and monitor processor behavior efficiently.
+module top_module(
+    // inputs:
+    input [8:0] address,
+    input clk,
+    input debugaccess,
+    input monitor_error,
+    input monitor_go,
+    input monitor_ready,
+    input reset_n,
+    input write,
+    input [31:0] writedata,
+
+    // outputs:
+    output reg [31:0] oci_ienable,          // Changed to 'reg'
+    output reg [31:0] oci_reg_readdata,     // Changed to 'reg'
+    output reg oci_single_step_mode,         // Changed to 'reg'
+    output ocireg_ers,
+    output ocireg_mrs,
+    output take_action_ocireg
+);

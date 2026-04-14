@@ -1,0 +1,6 @@
+Design a state machine that controls the output of a signal, DO_CC, based on user inputs and clock cycles. The module initializes and resets its state when CHANNEL_UP is low, setting internal flags to indicate reset and operational states. When reset is deactivated and the system is not in the DO_CC state, it transitions to start operation based on the state of the reset signal. The output signal, DO_CC, is triggered high when the module is in the running state, indicating the commencement of a data stream. This design is essential for managing communications or data transfer protocols by controlling character transmission in response to specific conditions.
+module top_module(
+    input USER_CLK,
+    input CHANNEL_UP,
+    output reg DO_CC
+);

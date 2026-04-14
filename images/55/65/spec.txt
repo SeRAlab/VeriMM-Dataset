@@ -1,0 +1,7 @@
+Design a 4-to-2 priority encoder that detects the highest input bit set from a 4-bit input vector while also providing a synchronous reset functionality. When activated, the module sets its output 'pos' to indicate the position of the highest priority active input (with priority given to the highest bit), and in the absence of any active input, it defaults to output '00'. The module operates on the rising edge of the clock signal.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] in,
+  output reg [1:0] pos
+);

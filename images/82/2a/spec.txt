@@ -1,0 +1,8 @@
+Design a timer circuit that counts down from a user-defined value at a specified frequency. This module takes an input clock signal and enables control signals to reset or load a new count value. It features a 24-bit counter to manage timing intervals based on a configured clock frequency and a 16-bit register to hold the countdown value. Upon reaching zero, the countdown restarts if the enable signal is active. The output consistently reflects the current countdown value, allowing for synchronization and monitoring of elapsed time within defined intervals.
+module top_module(
+    input clk,
+    input en,
+    input wr_en,
+    input rst,
+    input [15:0] data_in,
+    output [15:0] data_out);

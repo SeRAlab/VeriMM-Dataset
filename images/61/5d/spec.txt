@@ -1,0 +1,10 @@
+Design a simple 8-bit calculator that performs addition or subtraction based on the operation selector (op). The module takes two 8-bit inputs, a and b, and produces an 8-bit output for the result as well as a valid signal indicating if the result fits within the 8-bit range (valid if no overflow occurs). On a clock edge, it calculates the result of a + b when op is 00, or a - b when op is 01, resetting the sum to zero on a negative reset signal.
+module top_module(
+  input clk,
+  input rst_n,
+  input [7:0] a,
+  input [7:0] b,
+  input [1:0] op,
+  output [7:0] result,
+  output valid
+);

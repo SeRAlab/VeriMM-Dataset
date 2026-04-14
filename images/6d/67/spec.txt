@@ -1,0 +1,14 @@
+Implement the Verilog module based on the following description.
+Create a 12-bit shift register with parallel load and serial shift functionality. The register shifts left when shift signal is high and loads parallel data when load signal is high.
+
+// Signals are defined as below:
+// (1) data: The parallel data input to the register.
+// (2) load: Loads the data into the register. Active high.
+// (3) shift: Shifts the register left. Active high.
+// (4) q: The current value of the register.
+module top_module(
+    input clk,
+    input load,
+    input shift,
+    input [11:0] data,
+    output reg [11:0] q);

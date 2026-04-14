@@ -1,0 +1,33 @@
+Please act as a professional Verilog designer.
+
+Design a module for a 4-bit binary counter. The counter increments by 1 on each positive edge of the clock signal (clk). The counter should have an asynchronous reset (rst_n, active low) which resets the counter value to 0. Additionally, there should be a load signal (load) and a 4-bit input (data_in) that allows the counter to be set to a specific value when load is active (1).
+
+Module name:
+    binary_counter
+
+Input ports:
+    clk: Clock signal.
+    rst_n: Reset signal (active low).
+    load: Load signal.
+    data_in: 4-bit data input.
+
+Output ports:
+    count: 4-bit counter output.
+
+Implementation:
+Declare the module binary_counter with input and output ports as specified in the ports statement.
+Declare a register count to store the current value of the counter.
+Inside an always block, sensitive to the positive edge of the clk signal and the negative edge of the rst_n signal, implement the logic for counter operation.
+In the reset condition (~rst_n), set the counter to 0.
+If the load signal is active, set the counter to the value of data_in.
+Otherwise, increment the counter by 1 on each positive edge of the clock signal.
+
+Give me the complete code.
+
+module binary_counter(
+    input clk,
+    input rst_n,
+    input load,
+    input [3:0] data_in,
+    output reg [3:0] count
+);

@@ -1,0 +1,11 @@
+Implement a FIFO (First-In-First-Out) memory buffer with an 8-bit data width and 16-depth storage capacity. The module includes clock and reset inputs to manage the writing and reading of data, controlled by write and read enable signals. When writing, the buffer writes data to the memory location specified by the write pointer, which increments with each write operation until it reaches full capacity. Conversely, reading the data advances the read pointer, providing the oldest data stored. The module also features flags indicating when the buffer is empty or full, ensuring proper data flow control and preventing overflow or underflow conditions.
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] din,
+    input wr_en,
+    input rd_en,
+    output reg empty,
+    output reg full,
+    output reg [7:0] dout
+);

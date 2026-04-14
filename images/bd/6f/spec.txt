@@ -1,0 +1,12 @@
+Design a circuit that functions as an adapter for a Super Nintendo (SNES) controller, enabling it to interface with a Game Boy system. The module employs a state machine to manage the reading of button inputs from the controller, transitioning between wait, latch, and read states based on clock edges. It captures the state of 16 buttons from the controller and outputs specific button data based on the selection input. The controller's latch and clock signals are controlled according to the state transitions, ensuring proper timing for data capture. The button selection mechanism allows for different sets of button data to be output, facilitating compatibility with the Game Boy's input requirements.
+module top_module(
+  input  wire        clock,
+  input  wire        reset,
+  // to gameboy
+  input  wire  [1:0] button_sel,
+  output wire  [3:0] button_data,
+  // to controller
+  input  wire        controller_data,
+  output wire        controller_latch,
+  output wire        controller_clock
+);

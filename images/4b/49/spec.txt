@@ -1,0 +1,9 @@
+Design a dual-port RAM module with a capacity of 512 words, each 16 bits wide. This memory allows for simultaneous reading and writing operations, controlled by external address inputs for read and write operations, and a write enable signal. When the write enable is asserted, data is written to the memory at the specified write address; meanwhile, the data at the read address can be accessed at any time, providing quick data retrieval. The module supports independent control of read and write operations through separate input addresses while utilizing a single clock signal for synchronization.
+module top_module(
+    input clock,
+    input [15:0] data,
+    input [8:0] rdaddress,
+    input [8:0] wraddress,
+    input wren,
+    output reg [15:0] q
+);

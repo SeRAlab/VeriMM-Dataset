@@ -1,0 +1,12 @@
+Design a FIFO (First-In, First-Out) buffer with a width of 4 bits and depth of 8 entries. It operates with a clock input, allowing data to be sequentially written and read based on control signals. The module includes logic for managing write and read pointers, a count of the stored entries, and flagging when the buffer is empty. When enabled, data from inputs is written into memory, and it can be read when requested, ensuring proper synchronization with the clock cycle. The outputs indicate the current data being read, a status signal reflecting whether the FIFO is empty, and a separate output for when no new writes are occurring.
+module top_module(
+    input s_axi_aclk,
+    input Rst0,
+    input E,
+    input [0:0]DIA,
+    input [3:0]D,
+    input fifo_tx_en,
+    output [3:0]Q,
+    output out,
+    output txfifo_empty
+);

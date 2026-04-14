@@ -1,0 +1,9 @@
+Design a circuit that implements a parallel CRC (Cyclic Redundancy Check) generator using the CCITT standard. This module takes an 8-bit input data stream and computes a 16-bit CRC value based on the input as well as a reset and initialization control signals. When enabled, it updates the CRC register on the rising edge of the clock, either resetting it to the initial value or calculating the next CRC value from the current data and the existing CRC register contents. The final CRC output reflects the calculated CRC for error detection in data transmissions.
+module top_module(
+clk     ,
+reset   ,
+enable  ,
+init    , 
+data_in , 
+crc_out
+);

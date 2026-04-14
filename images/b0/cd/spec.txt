@@ -1,0 +1,9 @@
+Design a D flip-flop with asynchronous reset and enable functionality. The circuit captures the input D on the rising edge of the clock (CLK) when the enable signal (EN) is asserted. If the reset (RESET) is activated (low), the output Q is set to low and Q_N to high, regardless of CLK or D. When EN is deasserted, the outputs retain their previous values. When both RESET is high and EN is asserted, the output Q follows the input D, while Q_N is the complement of Q.
+module top_module(
+    input CLK,
+    input D,
+    input RESET,
+    input EN,
+    output reg Q,   // Change to output reg
+    output reg Q_N  // Change to output reg
+);

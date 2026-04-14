@@ -1,0 +1,13 @@
+
+
+You are designing an ALU (Arithmetic Logic Unit) for a NIOS system. The module `nios_system_alu_carry_out` has four inputs: `address`, `clk`, `in_port`, and `reset_n`. It also has one output: `readdata`. The `address` input is a 2-bit address bus used to select the ALU operation. The `clk` input is the system clock. The `in_port` input is the data input to the ALU. The `reset_n` input is an active-low reset signal. The `readdata` output is the result of the ALU operation.
+
+The module has the following internal signals:
+- `clk_en`: a wire that is high when the clock is enabled
+- `data_in`: a wire that is connected to the `in_port` input
+- `read_mux_out`: a wire that is the output of a multiplexer that selects between the `data_in` input and a constant value of 0, depending on the value of `address`.
+
+The module has one register `readdata` that stores the output of the ALU operation. The `readdata` register is updated on every rising edge of the clock when `clk_en` is high. If `reset_n` is low, `readdata` is set to 0.
+
+Implement the `nios_system_alu_carry_out` module using Verilog.
+

@@ -1,0 +1,6 @@
+Design a clock phase shifter that modifies the phase of an input clock signal based on a signed shift amount. The module produces an output clock (`clk_out`) that is either delayed or advanced relative to the input clock (`clk_in`), depending on the value of `shift_amount`. When `shift_amount` is positive, it generates a delayed clock signal; when negative, it generates an advanced clock signal. The implementation uses a counter to appropriately time the delays and advances in clock phases.
+module top_module(
+  input clk_in,
+  input signed [31:0] shift_amount,
+  output clk_out
+);

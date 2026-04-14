@@ -1,0 +1,10 @@
+Design a decoder for a RISC-style instruction set that generates control signals based on a 7-bit opcode input. The module takes a 7-bit opcode and produces various control signals, including `regwriteD`, `branchD`, `alusrcD`, `reg_destD`, `memwriteD`, `memtoregD`, and a 2-bit `aluop`. Each opcode corresponds to a specific configuration of the control signals, which are stored in a control register. The module employs a combinational logic structure to map the opcode to the appropriate control signals, facilitating the execution of instructions by directing subsequent functional units in a processing pipeline.
+module top_module(
+   input[6:0]op,
+   output regwriteD,
+   output branchD,
+   output alusrcD,
+   output reg_destD,
+   output[1:0]aluop, 
+   output memwriteD,
+   output memtoregD);

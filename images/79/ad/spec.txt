@@ -1,0 +1,8 @@
+Design a pulse cleaner circuit that generates a clean output pulse based on a given input signal X and a clock signal. The circuit also incorporates a clear (clr) input to reset its internal states. On the rising edge of the clock or when cleared, the circuit captures the value of X in the first stage (A), latches it to the next stage (B), and then generates an inverted version of B in stage C. The final output Y is asserted when A, B, and C are all high, effectively filtering out noise or glitches in the input signal X, ensuring that Y only goes high under stable conditions.
+module top_module(
+
+    input X,
+    input clk,
+    input clr,
+    output Y
+    );

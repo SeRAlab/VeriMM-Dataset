@@ -1,0 +1,11 @@
+Design a circuit that counts the number of times an 8-bit input signal falls below a predefined threshold (127). The module includes edge detection for an external signal 'a' to indicate rising and falling edges. When the input 'num' is below the threshold, a pulse output is activated, transitioning through states to manage this pulse generation and maintain a count of crossings below the threshold. The circuit also incorporates reset functionality to initialize its states and outputs. This design serves as a threshold crossing detector combined with edge detection features in a state-driven manner, allowing for flexible monitoring of input conditions.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] num,
+    input a,
+    output reg pulse,
+    output reg [7:0] count,
+    output reg rise,
+    output reg down
+);

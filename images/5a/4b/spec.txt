@@ -1,0 +1,8 @@
+Design a module that computes \((b \times e) / 2^{23}\) with input values of `b` and `e`, both 23 bits wide. The output `q`, also 23 bits, is calculated by multiplying `b` with `e`, shifting the result right by a variable amount determined by the number of one bits in `e`. The module features synchronous reset functionality to initialize internal registers for the inputs and the result.
+module top_module(
+    input [22:0] b,
+    input [22:0] e,
+    input reset,
+    input clk,
+    output reg [22:0] q
+);

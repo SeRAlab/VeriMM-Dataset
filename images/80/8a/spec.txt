@@ -1,0 +1,13 @@
+Design a synchronous FIFO (First In, First Out) buffer with a configurable depth of 4 entries, which operates on a clock signal and a reset signal. The module allows for 69-bit input data (rcn_in) to be pushed into the buffer and output (rcn_out) data to be popped from the buffer. The design monitors buffer status through the 'full' and 'empty' output signals, indicating whether the FIFO is at capacity or has no available data, respectively. On a push, the data is stored at the current head position, while on a pop, data is retrieved from the current tail position. The head and tail pointers are wrapped around using modulo logic, allowing continuous operation within the specified depth.
+module top_module(
+    input rst,
+    input clk,
+
+    input [68:0] rcn_in,
+    input push,
+    output full,
+
+    output [68:0] rcn_out,
+    input pop,
+    output empty
+);

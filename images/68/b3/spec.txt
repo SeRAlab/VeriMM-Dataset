@@ -1,0 +1,12 @@
+Design a dual-function module that operates as both a counter and a shift register. It increments a 5-bit counter on the rising edge of the clock (drck1_i) when not in reset mode, producing a count value as output (tdo1_o). Simultaneously, if the select input (sel1_i) is activated and the shift control input (shift_i) is high, the module captures data from the serial input (tdi_i) into a shift register, updating the output with the shifted data instead of the counter value. This provides functionality for either counting or serial data input, depending on the mode selected.
+module top_module(
+  // Inputs
+  input drck1_i,
+  input reset_i,
+  input sel1_i,
+  input shift_i,
+  input tdi_i,
+
+  // Outputs
+  output reg [4:0] tdo1_o
+);

@@ -1,0 +1,7 @@
+Implement a signed multiplier module that multiplies two 24-bit signed integers, producing a 48-bit signed output. The module detects the sign of the inputs to correctly handle negative values, performs the multiplication, and manages overflow by adjusting the result accordingly. It checks the sign of the computed product and ensures proper representation in two's complement format, while also handling edge cases for underflow and overflow scenarios associated with signed arithmetic. The output, `res`, reflects the result of the signed multiplication operation upon each rising edge of the clock signal.
+module top_module(
+    input clk,
+    input signed [23:0] in1,
+    input signed [23:0] in2,
+    output reg signed [47:0] res // Changed to reg type to be assignable in always block
+);

@@ -1,0 +1,8 @@
+Design a 4-bit up/down counter that increments or decrements its count based on the control signal `up_down`. When `up_down` is high, the counter increases the count on each positive clock edge; when low, it decreases the count. Additionally, the counter can be reset to zero with an active-low reset signal (`rst_n`), and it can be loaded with a specific 4-bit value (`load_data`) if it is not zero, overriding the increment or decrement operation.
+module top_module(
+    input clk,
+    input rst_n,
+    input up_down,
+    input [3:0] load_data,
+    output reg [3:0] count
+);

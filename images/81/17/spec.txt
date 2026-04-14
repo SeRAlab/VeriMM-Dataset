@@ -1,0 +1,11 @@
+Design a serial-in, serial-out first-in, first-out (FIFO) buffer that supports storing and retrieving data in a sequential manner. The module features a configurable width and depth, allowing for multiple bits of data to be processed simultaneously. It includes control signals for reading and writing data while managing the states of "full" and "empty" using an internal pointer to track the number of items in the buffer. The output is driven by shifting the incoming serial data each clock cycle based on the provided write and read signals, ensuring that data integrity is maintained through reset and boundary conditions.
+module top_module(
+    clock,
+    reset,
+    data_in,
+    data_out,
+    write,
+    read,
+    full,
+    empty
+);

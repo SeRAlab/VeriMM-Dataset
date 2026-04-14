@@ -1,0 +1,20 @@
+Design a memory controller that interfaces between a CPU and external RAM. It manages read and write operations based on control signals, including enabling the RAM chip select and controlling the output enable and write enable signals. The controller supports 32-bit data transfers while splitting the data into low and high half-words for communication with the RAM. It includes cycle counting to correctly sequence the read/write operations, where the low byte is captured during one clock cycle and the high byte is consumed in the next, ensuring proper data alignment for memory access.
+module top_module(
+   clock,
+   reset_b,
+
+   // CPU Signals
+   ext_cs_b,
+   cpu_rnw,
+   cpu_clken,
+   cpu_addr,
+   cpu_dout,
+   ext_dout,
+
+   // Ram Signals
+   ram_cs_b,
+   ram_oe_b,
+   ram_we_b,
+   ram_data_out,
+   ram_addr
+   );

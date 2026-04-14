@@ -1,0 +1,5 @@
+Design a circuit that functions as a 16-to-4 encoder with select lines. The module takes a 16-bit input and uses four 4-to-16 decoders to generate outputs based on the specified selection criteria. Depending on the value of the `sel` signal, one of the four outputs (from the decoders) is assigned to the `out` register, effectively encoding the selected input bits into a 4-bit output. The `sel` signal is updated on the positive edge of a clock input, allowing for dynamic selection of which subset of the input is being processed at any given time.
+module top_module(
+    input [3:0] in,
+    output reg [3:0] out
+);

@@ -1,0 +1,30 @@
+Please act as a professional Verilog designer.
+
+Implement a 16-bit parallel to serial converter.
+
+Module name:  
+    parallel_to_serial               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the converter.
+    load: Signal to load the parallel data.
+    parallel_data: 16-bit parallel data to be converted into serial data.
+Output port:
+    serial_out: Serial data output.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the serial data is updated.
+If the reset signal (rst_n) is low, indicating a reset condition, the serial data (serial_out) is set to 0.
+If the load signal is high, the parallel data (parallel_data) is loaded into a shift register.
+Otherwise, the shift register shifts right by 1 bit and the least significant bit is output as serial data (serial_out).
+
+Give me the complete code.
+
+module parallel_to_serial(
+   input                clk ,
+   input                rst_n,
+   input                load,
+   input [15:0]         parallel_data,
+ 
+   output reg           serial_out
+);

@@ -1,0 +1,14 @@
+Design a logic circuit for handling interrupts in the MC6502 microprocessor. This module captures external interrupt signals (IRQ and NMI), latches their states, and generates appropriate control signals to facilitate the interrupt process. Upon detecting an IRQ or NMI signal, it sets specific output signals that instruct other components to read from specific memory addresses while also indicating to the register file to manage program counter settings. It ensures that these interrupts are processed once per occurrence by latching their states until the next reset occurs, allowing for orderly interrupt handling in the processor’s operation.
+module top_module(
+    input clk,
+    input rst_x,
+    input i_irq_x,
+    input i_nmi_x,
+    output reg [7:0] w_mc2il_data,
+    output reg [15:0] w_il2mc_addr,
+    output reg w_il2mc_read,
+    output reg [7:0] w_il2rf_data,
+    output reg w_il2rf_set_pcl,
+    output reg w_il2rf_set_pch,
+    output reg w_il2rf_pushed
+);

@@ -1,0 +1,10 @@
+Design a 16-depth FIFO (First-In, First-Out) memory buffer that operates on a 58-bit data width. The module features writing and reading capabilities controlled by `wr_en` and `rd_en` signals, respectively. The `wr_ptr` and `rd_ptr` pointers manage write and read operations cyclically. The design includes flags to indicate when the FIFO is empty or full, ensuring proper data handling by preventing overflows and underflows during operation. The clock signal synchronizes all actions, allowing for reliable data transfer in high-speed digital applications.
+module top_module(
+    input clk,
+    input [57:0] din,
+    input wr_en,
+    input rd_en,
+    output reg [57:0] dout,
+    output reg empty,
+    output reg full
+);

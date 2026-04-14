@@ -1,0 +1,16 @@
+Design a branch target buffer (BTB) module that manages the program counter (PC) updates during instruction execution in a pipelined processor. This module selects the next instruction address based on various inputs including branch and jump targets, a conditional program counter source signal, and a stall signal, while also handling reset conditions. It uses control signals to determine the source of the next PC value—be it from the BTB, the return address stack (RAS), or the incremented PC—ensuring that the processor can efficiently handle branching and jumping operations. The output includes the updated PC, a valid PC signal, and the incremented PC for linear instruction execution.
+module top_module(
+  input clk,
+  input rst,
+  input [31:0] btb_target,
+  input [31:0] ras_target,
+  input id_pc_src,
+  input stall,
+  input pc_go,
+  input [31:0] good_target,
+  input [1:0] btb_type,
+  input btb_v,
+  output [31:0] pc_out,
+  output v_pc_out,
+  output [31:0] pc_plus4
+);

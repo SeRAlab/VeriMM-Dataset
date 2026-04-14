@@ -1,0 +1,7 @@
+Design a transition detector that updates a 32-bit output register. On a clock's rising edge, the module captures the current input signal and holds it in a delayed register. If the reset signal is asserted, the output register is set to 1. If a falling edge is detected on the input signal (i.e., the previous signal was high and the current signal is low), the output register is updated to all ones (32'b11111111111111111111111111111111).
+module top_module(
+    input clk,
+    input reset,
+    input signal,
+    output reg [31:0] output_reg
+);

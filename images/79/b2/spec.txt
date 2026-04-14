@@ -1,0 +1,5 @@
+Design a circuit that splits a 16-bit input into two 8-bit outputs. The module takes a 16-bit input and generates two 8-bit outputs, `out_hi` and `out_lo`. The high byte of the output (`out_hi`) is determined by a 2-to-1 selection based on the two most significant bits of the input, while the low byte of the output (`out_lo`) is similarly selected using the next two bits. This results in the ability to selectively output high and low bytes from the input based on specified conditions, effectively enabling byte-level access to a 16-bit value.
+module top_module(
+    input wire [15:0] in,
+    output wire [7:0] out_hi,
+    output wire [7:0] out_lo );

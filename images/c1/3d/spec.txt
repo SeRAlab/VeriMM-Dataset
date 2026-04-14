@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module to manage the state transitions and control logic for the transmission process of an Ethernet frame. Its primary functions include handling inter-packet gap timing, preamble generation, data transmission, padding, frame check sequence (FCS) generation, collision detection and handling, backoff after collision, and deferment due to medium activity. This module plays a crucial role in ensuring that Ethernet frames are transmitted according to the IEEE 802.3 standards, thereby facilitating reliable data communication within a network.
+
+Module name:  
+	eth_txstatem
+
+Input ports:
+	MTxClk: The main transmission clock signal.
+	Reset: Asynchronous reset signal.
+	ExcessiveDefer, CarrierSense, TxStartFrm, TxEndFrm, TxUnderRun, Collision, UnderRun, StartTxDone, TooBig, NibCntEq7, NibCntEq15, MaxFrame, Pad, CrcEn, NibbleMinFl, RandomEq0, ColWindow, RetryMax, NoBckof, RandomEqByteCnt: Various control and status signals indicating the current state of the transmission process, collision detection, frame size, padding requirements, and retry conditions.
+	NibCnt: 7bit counter for nibble counting.
+	IPGT, IPGR1, IPGR2: Interpacket gap timing parameters.
+	FullD: Full duplex mode indicator.
+Output ports:
+	StateIdle, StateIPG, StatePreamble, StateData, StatePAD, StateFCS, StateJam, StateJam_q, StateBackOff, StateDefer: State indicators for the various stages of frame transmission.
+	StartFCS, StartJam, StartBackoff, StartDefer, DeferIndication, StartPreamble, StartData, StartIPG: Control signals to initiate transitions to respective states or operations.
+	StateData, StartData: 2bit signals indicating the current or starting state of data transmission.
+
+
+Implementation:
+The RTL module eth_txstatem is designed to manage the state transitions and control logic for an Ethernet transmitter state machine. It operates on the rising edge of the MTxClk clock signal and also responds to a synchronous Reset. The module's primary function is to navigate through various states of Ethernet frame transmission, including inter-packet gap (IPG) timing, preamble sending, data transmission, padding, frame check sequence (FCS) generation, handling collisions and under-runs, and implementing back-off algorithms in case of collisions.
+
+Give me the complete code.
+

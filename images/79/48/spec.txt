@@ -1,0 +1,7 @@
+Design a watchdog timer circuit that monitors a system's operational status. This module counts clock cycles until it reaches a specified timeout threshold, provided by an 8-bit input. If the counter exceeds the timeout value, the output signal `wdout` is asserted high, indicating a timeout event. The timer can be reset asynchronously with the `rst` signal, which clears the counter and the output. Additionally, the counter is reset to zero whenever a timeout occurs. This functionality is essential for ensuring that a system resets or takes corrective action if it becomes unresponsive.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] timeout,
+  output reg wdout
+);

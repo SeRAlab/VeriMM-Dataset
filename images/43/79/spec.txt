@@ -1,0 +1,7 @@
+Design a clock gating circuit that controls the propagation of a clock signal based on enable (EN) and test enable (TE) signals. When the main clock (CLK) is active and EN is high, the output signal ENCLK mirrors the CLK. If EN is low, ENCLK is driven LOW. Additionally, when the test enable signal (TE) is asserted, ENCLK reflects the state of EN, allowing the circuit to function in a test mode regardless of the main clock. This design effectively reduces power consumption by disabling the clock when not in use while providing test functionality.
+module top_module(
+  input CLK,
+  input EN,
+  input TE,
+  output reg ENCLK
+);

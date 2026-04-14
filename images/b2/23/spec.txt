@@ -1,0 +1,21 @@
+Please act as a professional Verilog designer.
+
+Implement a 32-bit register with an asynchronous reset signal. The register should load a new value from the input on the next positive clock edge. If the reset signal is high, the register should reset to 0 immediately.
+
+Module name:
+    register_with_async_reset
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Active-high asynchronous reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    data_in: 32-bit input data to be loaded into the register.
+
+Output ports:
+    data_out: Output 32-bit register value.
+
+Implementation:
+Register Logic:
+The module includes a 32-bit register, data_out, to store the current register value.
+On the positive edge of the clock signal (clk), the module loads the new value from data_in. If the reset signal (rst) is high, indicating a reset condition, the register value is immediately set to 32'b00000000000000000000000000000000.
+
+Give me the complete code.

@@ -1,0 +1,26 @@
+Please act as a professional Verilog designer.
+
+Implement a module for a 4-bit comparator. The comparator compares two 4-bit inputs and produces three output signals indicating whether one input is greater than, equal to, or less than the other.
+
+Module name:  
+    comparator
+
+Input ports:
+    A: 4-bit input
+    B: 4-bit input
+
+Output ports:
+    A_gt_B: Output signal indicating A > B
+    A_eq_B: Output signal indicating A == B
+    A_lt_B: Output signal indicating A < B
+
+Implementation:
+The comparator module uses an always block to compare the inputs and generate the output signals based on the comparison.
+The always block triggers whenever there is a change in the input signals. It compares the input values (A and B) and sets the appropriate output signals (A_gt_B, A_eq_B, A_lt_B) based on the comparison result.
+
+Give me the complete code.
+
+module comparator(A, B, A_gt_B, A_eq_B, A_lt_B);
+input [3:0] A, B;
+output A_gt_B, A_eq_B, A_lt_B;
+reg A_gt_B, A_eq_B, A_lt_B;

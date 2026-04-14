@@ -1,0 +1,13 @@
+Design a 2-entry dual-port FIFO (First-In, First-Out) memory queue. The module allows data to be written to and read from the memory while maintaining status flags for full and empty conditions, as well as indicators for "almost full" and "almost empty" states. The FIFO operates on a clock signal and can be reset asynchronously. Data can be written using the `wr` signal, and read with the `rd` signal, with write operations restricted when the queue is full and read operations restricted when it is empty.
+module top_module(
+    input clk,
+    input reset_n,
+    input wr,
+    input [7:0] wr_data,
+    input rd,
+    output reg [7:0] rd_data,
+    output empty,
+    output full,
+    output almost_empty,
+    output almost_full
+    );

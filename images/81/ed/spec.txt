@@ -1,0 +1,10 @@
+Design a synchronous random-access memory (RAM) module capable of reading and writing 32-bit data words. It features a 10-bit address input for selecting memory locations, a 4-bit byte enable input to control data access at the byte level, and separate read (rden) and write (wren) control signals. On the rising edge of the clock, if read is enabled and write is disabled, the module outputs the data from the specified memory location, masked by the byte enable signals. Conversely, if write is enabled and read is disabled, the module will store the incoming data into the memory location, selectively writing to the specified bytes based on the byte enable input.
+module top_module(
+    address,
+    byteena,
+    clock,
+    data,
+    rden,
+    wren,
+    q
+);

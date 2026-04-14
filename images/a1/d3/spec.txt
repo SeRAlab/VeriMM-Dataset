@@ -1,0 +1,5 @@
+Design a clock buffer driver that distributes a buffered version of an input clock signal to multiple outputs. This module takes a single clock input and replicates it across `n` outputs, where `n` is a configurable parameter, enabling consistent clock signal distribution to various parts of a circuit. The output clock signals are all driven by the stable, buffered version of the input clock, ensuring that they maintain the same frequency and phase as the original clock while providing improved signal integrity for driving downstream logic.
+module top_module(
+  input clk,
+  output [n-1:0] clk_out
+);

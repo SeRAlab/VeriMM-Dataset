@@ -1,0 +1,12 @@
+Design a memory mapping module that interfaces with a memory of size 1024. It receives input data to be written to this memory based on a write address (sWA) and is capable of reading data from a specified address (sRA). When valid input is received (in_valid), data is stored in memory at the next available write address, and the write address increments accordingly. The module also indicates an output status (sB) that signals an error condition if the specified read address is outside the memory bounds. Finally, if the read address is within the allowed range, it outputs the corresponding memory content; otherwise, it outputs zero.
+module top_module(
+    input clk,
+    input in_valid,
+    input out_ready,
+    input [N-1:0] in,
+    input [N-1:0] sRA,
+    input [N-1:0] sWA,
+    input [N-1:0] sW,
+    output [N-1:0] sR,
+    output [1:0] sB
+);

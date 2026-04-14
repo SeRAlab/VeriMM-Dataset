@@ -1,0 +1,9 @@
+Design a water level controller that manages the filling and draining of a water tank. The module monitors water levels based on input signals indicating water intake and drainage, represented as `water_in` and `water_out`. The `water_level` output, a three-bit value, indicates the current level of water in the tank, ranging from 0 (empty) to 4 (full). The controller increments the water level when water is being added (as long as it doesn’t exceed the maximum level) and decrements it when water is drained (unless the tank is empty). Additionally, the circuit provides two end signals: `water_in_end_sign` and `water_out_end_sign`, which indicate if the tank is full or empty, respectively. This module effectively ensures safe and controlled operation of the water level in the tank.
+module top_module(
+    input wire clk,
+    input wire water_in,
+    input wire water_out,
+    output reg [2:0] water_level,
+    output reg water_in_end_sign,
+    output reg water_out_end_sign
+);

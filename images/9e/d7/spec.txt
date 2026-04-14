@@ -1,0 +1,12 @@
+Design a 256-to-1 multiplexer with a pipelined structure, capable of selecting and outputting one of four 8-bit wide data streams based on a given select signal and enable inputs. The module accepts a 2048-bit input and uses an 8-bit selection signal to choose which subset of data to route to its outputs, while also incorporating a clock and reset functionality to manage state retention and ensure proper sequential operation. The outputs are determined based on the enable signals, which activate corresponding registers to latch the selected input values, allowing for effective data transfer in a timed, controlled manner, ideal for high-throughput applications.
+module top_module(
+    input [2047:0] in,
+    input [7:0] sel,
+    input clk,
+    input rst,
+    input [1:0] enable,
+    output [7:0] out1,
+    output [7:0] out2,
+    output [7:0] out3,
+    output [7:0] out4
+);

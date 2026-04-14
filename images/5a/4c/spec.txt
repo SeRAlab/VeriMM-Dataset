@@ -1,0 +1,8 @@
+Design a 4-bit shift register with asynchronous reset, load, and enable functionality. When the reset signal is active, all bits in the register are cleared to zero. If load is activated while enable is high, the input data is latched into the first register stage, while the subsequent stages are cleared. If load is activated but enable is low, the input data is latched only into the first stage. When load is not active and enable is high, the register shifts the output from one stage to the next, allowing for data propagation through the register while keeping the last stage cleared. The current output is taken from the first stage of the register.
+module top_module(
+    input clk,
+    input areset,  // async active-high reset to zero
+    input load,
+    input ena,
+    input [3:0] data,
+    output reg [3:0] q);

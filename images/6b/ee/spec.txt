@@ -1,0 +1,3 @@
+Design a color memory interface module that takes color depth and pixel color inputs to generate a memory output and select signal. The module uses the `color_depth_i` to determine the bit depth of the color, where a 2-bit input can indicate either 8-bit or 16-bit color representation. The `x_lsb_i` input specifies the least significant bits for aligning the color within the output. Based on these inputs, the module constructs a 32-bit `mem_o` output by appropriately zero-padding the color data, while the `sel_o` output is a 4-bit selection signal indicating the byte location in memory corresponding to the specified color depth and pixel alignment.
+module top_module(color_depth_i, color_i, x_lsb_i,
+                       mem_o, sel_o);

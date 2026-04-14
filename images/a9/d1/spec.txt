@@ -1,0 +1,10 @@
+Design a circuit to detect edges in an input signal and calculate the duration between a rising edge and the subsequent falling edge. The module operates as follows: when the mode is selected, it transitions into a state machine that initializes with idle state. Upon detecting a rising edge in the input signal, it records the time and moves to a falling edge detection state. When a falling edge is detected, it calculates the duration of the high pulse by subtracting the recorded start time from the current time, then it resets to the idle state. The module outputs flags for rising and falling edges and provides the duration of the high signal as a 32-bit value.
+module top_module(
+  input               clk,
+  input               reset,
+  input               signal,
+  input               mode_select,
+  output reg          rising_edge,
+  output reg          falling_edge,
+  output reg [31:0]   duration
+);

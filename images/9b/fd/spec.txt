@@ -1,0 +1,7 @@
+This design implements a 4-bit shift register with a load capability. When the LOAD signal is activated, the register captures the input DATA on the rising edge of the CLK and assigns its value to all four internal registers (reg1 to reg4). If LOAD is not active, the register shifts its stored values to the right on each clock cycle, propagating the value in reg1 to Q. Thus, the circuit allows loading a 4-bit value and subsequently enables the shifting of that value through the registers, effectively functioning as a simple shift register.
+module top_module(
+    input CLK,
+    input LOAD,
+    input [3:0] DATA,
+    output reg [3:0] Q
+);

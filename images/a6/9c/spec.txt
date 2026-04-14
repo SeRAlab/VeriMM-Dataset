@@ -1,0 +1,13 @@
+Design a simple computational functional unit (CFU) that processes commands on an input bus. This module accepts a valid command signal and two 32-bit inputs, performing a selection based on a 3-bit function identifier. When a command is valid, the unit is ready to send a response back, indicating success and outputting one of the two input values based on the least significant bit of the function identifier. If function ID bit 0 is set, it selects the second input; otherwise, it selects the first input. The module essentially acts as a conditional data router based on specified input signals.
+module top_module(
+  input               io_bus_cmd_valid,
+  output              io_bus_cmd_ready,
+  input      [2:0]    io_bus_cmd_payload_function_id,
+  input      [31:0]   io_bus_cmd_payload_inputs_0,
+  input      [31:0]   io_bus_cmd_payload_inputs_1,
+  output              io_bus_rsp_valid,
+  input               io_bus_rsp_ready,
+  output              io_bus_rsp_payload_response_ok,
+  output     [31:0]   io_bus_rsp_payload_outputs_0,
+  input               clk
+);

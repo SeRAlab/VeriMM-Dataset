@@ -1,0 +1,9 @@
+Design a status LED driver that interfaces with a bus system. It receives a clock signal and reset input, while allowing bidirectional data communication through an 8-bit data bus. The module assigns values to the lower four bits of an 8-bit output register (StatusLED) when the appropriate address is accessed, and updates the higher four bits (StatusLED[4] to StatusLED[7]) based on sequential addresses. This module acts as a controller that allows external components to set the status of individual LEDs via write operations to predefined memory-mapped register addresses.
+module top_module(
+    input RESET,
+    input CLK,
+    inout [7:0] BUS_DATA,
+    input [7:0] BUS_ADDR,
+    input BUS_WE,
+    output reg [7:0] StatusLED
+    );

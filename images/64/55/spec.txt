@@ -1,0 +1,9 @@
+Design a program counter (PC) module that updates its output address based on clock signals and control inputs. Upon receiving a reset signal (RST), it initializes the program counter to a specified start address. If the program counter enable (PCEN) signal is active, the counter increments by 4 to point to the next instruction address in a typical RISC architecture. The PCSrc signal allows for conditional branching, where the counter can accept a new input address (inPC) instead of incrementing. Thus, the module effectively manages the control flow in a synchronous system, facilitating both sequential and conditional instruction execution.
+module top_module(
+    input CLK,
+    input RST,
+    input PCEN,
+    input PCSrc,
+    input [31:0]inPC,
+    output reg [31:0]outPC
+    );

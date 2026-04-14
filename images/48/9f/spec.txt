@@ -1,0 +1,7 @@
+Create a sequential logic module that generates an 8-bit output signal. On the positive edge of the clock, if the reset signal is active, the output is set to zero. Otherwise, the module concatenates four leading zero bits with a 4-bit input parameter to produce the 8-bit output signal. This effectively allows the 4-bit input to be represented as the lower half of the output, while the upper half is always zero.
+module top_module(
+    input clk,
+    input rst,
+    input [3:0] parameterIn,
+    output reg [7:0] outputSignal
+);

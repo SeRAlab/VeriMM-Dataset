@@ -1,0 +1,8 @@
+Design a data pass-through circuit that transfers a 16-bit wide input signal to an output when a clock edge occurs, provided the clock enable (ce) signal is active and the clear (clr) signal is not asserted. If the clock enable is inactive, the module retains the current output value. When the clear signal is asserted, the output is reset to zero. This design effectively functions as a register with additional control features for enabling data transfer and resetting the value.
+module top_module(
+  input [(16 - 1):0] input_port,
+  output reg [(16 - 1):0] output_port,
+  input clk,
+  input ce,
+  input clr
+);

@@ -1,0 +1,7 @@
+Design a Phase-Locked Loop (PLL) circuit that generates a stabilized output clock signal (clk_out) based on an input clock signal (clk_in) and a frequency divider value (freq_div). The module includes a reset signal (rst) to initialize the internal states. The PLL utilizes a counter to track timing and determines when to toggle the output clock based on the divider value. It employs a locking mechanism to ensure the output clock is synchronized with the input clock and that frequency adjustments are performed accurately. When locked, the circuit will produce an output clock with a frequency derived from the input clock divided by the specified frequency division value, enabling effective frequency synthesis for various applications.
+module top_module(
+    input wire clk_in,
+    input wire rst,
+    input wire [31:0] freq_div,
+    output reg clk_out  // Change from wire to reg
+);

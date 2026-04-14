@@ -1,0 +1,10 @@
+Design a synchronous circuit that functions as a state machine to buffer two input signals, A and B. The module includes a clock (CLK), an enable (EN), and a clear (CLR) signal. Upon a positive edge of CLK, if CLR is activated, the outputs X and Y, as well as internal buffers, are reset to LOW. When the enable (EN) signal is asserted, the module operates in three states: in state 0, it captures the values of A and B; in state 1, it maintains the buffered values; and in state 2, it returns to state 0, repeating the process. The outputs X and Y reflect the buffer values of A and B, enabling controlled signal storage and retrieval in a sequential manner.
+module top_module(
+    input A,
+    input B,
+    input CLK,
+    input EN,
+    input CLR,
+    output reg X,
+    output reg Y
+);

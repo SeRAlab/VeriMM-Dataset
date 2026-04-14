@@ -1,0 +1,6 @@
+Design a block RAM that supports read and write operations for 12-bit wide data words. The module uses a clock signal (clka) to synchronize memory access, where on each positive clock edge, if the write enable (wea) is active, it stores the 12-bit input (dina) at the specified address (addra) in the memory array. Simultaneously, it outputs the data stored at that address (douta), allowing for both reading and writing of pixel data in a double-buffering scheme for images or graphics processing.
+module top_module(output reg [11:0] douta,  // Change douta to output reg
+    input clka,
+    input [10:0] addra,
+    input [11:0] dina,
+    input [0:0] wea);

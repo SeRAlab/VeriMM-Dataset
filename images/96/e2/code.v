@@ -1,0 +1,21 @@
+module top_module(flush_except, flush_branch, flushpipe,if_stall, lsu_stall, multicycle_cnt, asyn_stall,pc_freeze, if_freeze, id_freeze, ex_freeze, wb_freeze);input if_stall; 
+ input lsu_stall; 
+ input asyn_stall; 
+ input [1:0] multicycle_cnt; 
+ output pc_freeze; 
+ output if_freeze; 
+ output id_freeze; 
+ output ex_freeze; 
+ output wb_freeze; 
+ input flush_except; 
+ input flush_branch; 
+ output flushpipe; 
+ wire multicycle_stall; 
+ assign flushpipe = flush_except | flush_branch; 
+ assign pc_freeze = flushpipe; 
+ assign multicycle_stall = |multicycle_cnt; 
+ assign if_freeze = if_stall | id_freeze; 
+ assign id_freeze = ex_freeze; 
+ assign ex_freeze = wb_freeze | asyn_stall; 
+ assign wb_freeze = lsu_stall | multicycle_stall; 
+ endmodule

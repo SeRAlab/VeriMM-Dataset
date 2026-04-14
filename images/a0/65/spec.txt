@@ -1,0 +1,7 @@
+Design a programmable current source or sink module that outputs a signed 32-bit current (I) based on the input voltage (V) and set current (Iset). When the enable signal is activated, the module will output the positive value of Iset if it is greater than zero; otherwise, it will output the negative value of Iset. If the enable signal is inactive, the output current will be set to zero. This module is useful for applications requiring controlled current sourcing or sinking based on a specified setpoint.
+module top_module(
+  input V,
+  input signed [31:0] Iset,
+  input enable,
+  output reg signed [31:0] I
+);

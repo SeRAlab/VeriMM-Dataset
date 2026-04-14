@@ -1,0 +1,22 @@
+Please act as a professional Verilog designer.
+
+Implement a synchronous FIFO with parameterized width and depth (parameter WIDTH = 8, parameter DEPTH = 16). The FIFO should use a single clock domain for both read and write operations. The module should include logic for managing read and write pointers, empty and full flags, and provide synchronous read and write operations. 
+
+Module name:  
+    sync_fifo  
+
+Input ports:
+	clk: Clock signal used for synchronous read and write operations.
+	rstn: Reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+	winc: Write increment signal. Used to trigger write operations.
+	rinc: Read increment signal. Used to trigger read operations.
+	wdata: Write data input. The width [WIDTH-1:0] is configurable and represents the data to be written into the FIFO.
+
+Output ports:
+	wfull: Write full signal. Indicates if the FIFO is full and cannot accept further write operations.
+	rempty: Read empty signal. Indicates if the FIFO is empty and cannot provide any data for read operations.
+	rdata: Read data output. The width [WIDTH-1:0] is configurable and represents the data read from the FIFO.
+
+Parameter:
+	WIDTH = 8
+	DEPTH = 16

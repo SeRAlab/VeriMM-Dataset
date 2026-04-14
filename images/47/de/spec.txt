@@ -1,0 +1,10 @@
+Design a PWM (Pulse Width Modulation) generator that modulates the output signal, `o_pwm`, based on configurable timing parameters. The module accepts a clock signal (`clk`), a write enable signal (`wr_n`), an address input (`addr`), and a 20-bit data input (`i_data`). It uses this data to set the period and duty cycle of the PWM waveform. When `wr_n` is low, the input data is written either to `period` or `duty` based on the value of `addr`. The `o_pwm` signal is asserted high or low depending on whether the internal counter is less than the duty cycle value, effectively generating a PWM signal with the specified characteristics.
+module top_module(
+
+        clk,     
+		   addr,    
+        wr_n,    
+       
+        i_data,  
+        o_pwm    
+       );

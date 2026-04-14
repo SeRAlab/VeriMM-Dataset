@@ -1,0 +1,9 @@
+Design a motion controller for a ZigZagAlien that operates based on external movement conditions. The module takes inputs for clock, reset, enable, and movement permissions (canLeft and canRight) to dictate the alien's motion state. It utilizes a finite state machine with four states: NO_MOTION, RIGHT, DOWN, and LEFT. The output, represented in a three-bit format, indicates the direction of movement based on the current state, allowing for controlled and constrained directional shifts as long as movement can occur to the right, left, or downward.
+module top_module(
+    input clk,
+    input reset,
+    input enable,
+    input canLeft,
+    input canRight,
+    output reg[2:0] Motion
+    );

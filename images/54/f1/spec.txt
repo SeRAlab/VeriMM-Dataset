@@ -1,0 +1,10 @@
+Design a synchronous circuit that operates based on a clock and reset signal to perform two primary functions: a counting operation and a multiplicative operation. The module features a 16-bit wide counter that increments on every clock cycle when the select signal is low, and a shift-and-add multiplier that computes the product of two 16-bit inputs when the select signal is high. Upon activation of the reset signal, both the counter and product registers are initialized to zero. The overall design integrates a registered output for both the counter and the computed product, enabling efficient handling of both sequential counting and arithmetic operations in a single module.
+module top_module(
+    input clk,
+    input rst,
+    input select,
+    input [15:0] in0,
+    input [15:0] in1,
+    output reg [15:0] count,
+    output reg [15:0] product
+);

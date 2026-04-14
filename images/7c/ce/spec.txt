@@ -1,0 +1,15 @@
+Design a control unit that manages four output signals based on the state of incoming data flits. It resets all output signals to LOW on the rising edge of the clock if the reset signal is activated. Otherwise, it assigns values from four 144-bit input flits to the corresponding output control signals. Additionally, it generates acknowledgment outputs (ack0 and ack1) indicating whether data is present on flitl0 and flitl1, respectively, by asserting HIGH when the inputs are non-zero.
+module top_module(
+  input clk,
+  input rst,
+  input [143:0] flit0c,
+  input [143:0] flit1c,
+  input [143:0] flitl0,
+  input [143:0] flitl1,
+  output reg port0_co,
+  output reg port1_co,
+  output reg portl0_co,
+  output reg portl1_co,
+  output reg ack0,
+  output reg ack1
+);

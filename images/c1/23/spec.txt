@@ -1,0 +1,31 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform a specific logical operation on its input signals and produce a single output signal. This module implements a combinational logic function that is essentially a negated AND operation, incorporating two control inputs. It to evaluate the logical conditions based on its inputs and generate an output that can be used for further processing or control within a larger digital system. The module can serve as a basic building block in digital circuits where conditional logic is required, such as in decision-making circuits, control path logic, or any application necessitating a dynamic response based on multiple input conditions.
+
+Module name:  
+	bw_u1_zhoai211_1x
+
+Input ports:
+	a: A digital input signal. It is one of the primary signals involved in the logical operation performed by the module.
+	b: Another digital input signal. Along with a, it forms the primary pair of signals that are evaluated by the module's logic.
+	c1: A control input signal. It influences the outcome of the logical operation by potentially altering the logical path depending on its state.
+	c2: Similar to c1, this is also a control input signal that plays a role in determining the logical operation's outcome.
+Output ports:
+	z: This is the single output port of the module. It is a digital signal (binary, either 0 or 1) that represents the result of the module's logical operation. The output is determined by the specific combination of the input signals.
+
+
+Implementation:
+The RTL module bw_u1_zhoai211_1x is designed to implement a specific combinational logic function using basic logical operations. This module does not contain any sequential logic elements (like flip-flops or latches), meaning its output is purely a function of its current inputs, with no dependency on previous input states. The logic implemented can be dissected as follows:
+Inputs: The module has four inputs, namely a, b, c1, and c2.
+Output: There is a single output z.
+The core logic operation performed by the module can be described by the following steps:
+1. OR Operation on Control Inputs: The first operation is an OR gate applied to inputs c1 and c2. This operation determines if at least one of the control inputs is active (logical high). The result of this operation dictates whether the subsequent AND operation will have any effect on the output.
+2. AND Operation: The result of the OR operation is then ANDed with both a and b inputs. This step combines the effect of the control inputs with the primary inputs a and b. For the output of this AND operation to be high, both a and b must be high, and at least one of the c1 or c2 inputs must also be high.
+3. Inversion: Finally, the output of the AND operation is inverted. This means the output z will be high only when the AND operation results in a low value, which occurs when either both a and b are not high or when both control inputs c1 and c2 are low.
+The logical expression derived from the above operations can be summarized as:
+\[ z = 
+eg((c1 + c2) \cdot a \cdot b) \]
+This logic essentially implements a controlled inverter, where the inversion of the ANDed result of a and b is conditional upon the activation of either or both control signals c1 and c2.
+
+Give me the complete code.
+

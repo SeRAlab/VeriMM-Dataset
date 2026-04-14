@@ -1,0 +1,14 @@
+Design a memory interface module that handles both instruction and data operations with specific read and write capabilities. The module accepts a reset signal, a clock signal, and inputs for instruction and data addresses alongside control signals to enable instruction input (ie) and data output (de). It uses a 32-bit wide memory space and allows for storing and retrieving data based on control signals. When reset, the module initializes instruction data to zero and loads the data from an 8-bit switch input. The output selection provides either the fetched instruction or the output data depending on the control signals, while data reading and writing operations are managed according to specified address selections and instruction types using a case statement for handling write operations.
+module top_module(
+    input rst,
+    input clk,
+    input ie,
+    input de,
+    input [31:0] iaddr,
+    input [31:0] daddr,
+    input [1:0] drw,
+    input [31:0] din,
+    input [7:0] switches,
+    output [31:0] iout,
+    output [31:0] dout
+);

@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a module for a 4-bit synchronous up/down counter with an enable signal. The counter should increment when the enable signal is high and the direction signal is high. It should decrement when the enable signal is high and the direction signal is low. The counter should reset to 0 when the rst_n signal is active low.
+
+Module name:  
+    up_down_counter
+
+Input ports：
+    clk: Clock signal.
+    rst_n: Reset signal (active low).
+    enable: Enable signal.
+    direction: Direction signal (1 for up, 0 for down).
+
+Output ports：
+    count: 4-bit output signal representing the current count value.
+
+Implementation:
+Declare the module up_down_counter with input and output ports as specified in the ports statement.
+Declare a 4-bit register to keep track of the current count value.
+Inside an always block, sensitive to the positive edge of the clk signal and the negative edge of the rst_n signal, implement the logic for counting and resetting.
+In the reset condition (~rst_n), set the count register to 0. 
+If the enable signal is high, increment the count register if the direction signal is high or decrement the count register if the direction signal is low.
+
+Give me the complete code.

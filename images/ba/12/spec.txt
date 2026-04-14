@@ -1,0 +1,10 @@
+Design a dual-edge-triggered flip-flop that operates on both rising and falling clock edges. On the rising edge of the clock, when the enable (CE) signal is asserted, it sets the output Q to low if reset (R) is active, to high if set (S) is active, or captures the value of input D2 otherwise. On the falling edge of the clock, if the enable (CE) is still active, it captures the value of input D1 and updates the output Q accordingly. This module is suitable for scenarios requiring synchronized data capture on both clock edges.
+module top_module(
+  input  C,
+  input  CE,
+  input  R,
+  input  S,
+  input  D1,
+  input  D2,
+  output reg Q  // Changed from output to output reg
+);

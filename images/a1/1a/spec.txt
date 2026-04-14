@@ -1,0 +1,16 @@
+Design a synchronous 16-entry FIFO (First In, First Out) memory buffer with separate read and write control, utilizing shared clock signals for both operations. The module features a 32-bit data input and output, allowing data to be written while counting the number of entries, ensuring that it does not exceed its maximum capacity (full) or become empty during read operations. It incorporates reset functionality to initialize all pointers and counters, and provides status outputs for empty and full conditions, along with programmable thresholds for early warnings on low and high storage levels. The design is suitable for applications requiring buffering between data producers and consumers.
+module top_module(
+    input wr_clk,
+    input wr_en,
+    input [31:0] din,
+    input rst,
+    output rd_clk,
+    output reg rd_en,
+    output reg [31:0] dout,  // Changed from wire to reg
+    output empty,
+    output full,
+    output [4:0] wr_data_count,
+    output [4:0] rd_data_count,
+    output prog_empty,
+    output prog_full
+);

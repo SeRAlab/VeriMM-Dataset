@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that controls a start and enable signal based on a counter. The counter increments on each rising edge of the clock and is reset to zero when the reset signal is active. The state transitions defined by the counter values dictate the output signals: when the counter is at 0, both 'start' and 'enable' are asserted; at counter value 1, 'start' is deasserted while 'enable' remains asserted; at counter value 9, both signals are deasserted. For all other counter values, 'start' is kept low and 'enable' is asserted. This design implies the module initiates a process at the start and runs until a specific condition (count of 9) is reached, at which point it disables the process.
+module top_module(
+	input clock,
+	input reset,
+	output reg start,
+	output reg enable
+	);

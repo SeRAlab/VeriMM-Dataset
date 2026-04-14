@@ -1,0 +1,9 @@
+Design a 2-bit up/down counter with an overflow indicator. The counter increments when the `up_down` signal is high and decrements when it is low, provided that the `enable` signal is active. Upon reaching its maximum value of 3 (binary 11) during incrementing, it rolls over to 0 and sets the overflow flag. Conversely, when decrementing and reaching 0, it wraps around to 3, also setting the overflow flag. The counter resets to 0 when the `reset` signal is deasserted.
+module top_module(
+    input clk,
+    input reset,
+    input enable,
+    input up_down,
+    output reg [1:0] count,
+    output reg overflow
+);

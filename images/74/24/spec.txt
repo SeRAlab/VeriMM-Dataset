@@ -1,0 +1,9 @@
+Design a simple digital calculator capable of performing basic arithmetic operations. The module takes a clock signal for synchronization, a reset signal to initialize the output, and a 2-bit operation selector to choose between addition and subtraction. It accepts two 8-bit operands and outputs the result of the selected operation, storing intermediate results in a temporary register. The calculator responds to the rising edge of the clock, resetting to zero when the reset signal is activated.
+module top_module(
+    input clk,
+    input reset,
+    input [1:0] operation,
+    input [7:0] operand1,
+    input [7:0] operand2,
+    output [7:0] result
+);

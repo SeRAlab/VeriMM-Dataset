@@ -1,0 +1,9 @@
+Design a 32-bit by 32-bit multiplier using Booth's multiplication algorithm that produces a 64-bit signed result. The module takes two 32-bit inputs, Data_A_i and Data_B_i, and computes the product by first splitting these inputs into two 16-bit chunks, calculating partial products for combinations of these chunks, and then summing the partial products to produce the final output. The result is updated on the rising edge of the clock signal when a load signal is asserted, and it resets to zero when the reset signal is activated.
+module top_module(
+    input wire clk,
+    input wire rst,
+    input wire load_i,
+    input wire [31:0] Data_A_i,
+    input wire [31:0] Data_B_i,
+    output wire [63:0] sgf_result_o
+);

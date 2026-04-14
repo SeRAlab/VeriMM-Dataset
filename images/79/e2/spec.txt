@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+
+Implement a module for serial-to-parallel conversion, where every four serial input bits are converted to a single 4-bit parallel output. The output signal valid_out is set to 1 to indicate the availability of valid parallel output. When valid_out = 1, the parallel data is output.
+
+Module name:  
+    serial2parallel     
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst_n: Reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    din: Serial data input.
+
+Output ports:
+    valid_out: Valid signal indicating the availability of parallel output.
+    dout: 4-bit parallel output representing the converted data.
+
+Implementation:
+On each clock cycle, the module shifts the serial input (din) into a shift register (data). When the counter (cnt) reaches 3, indicating that four bits have been received, the module sets the valid signal (valid) to 1, outputs the parallel data, and resets the counter (cnt) to 0. Otherwise, the module increments the counter (cnt) by 1 and sets the valid signal (valid) to 0.
+
+Give me the complete code.
+
+module serial2parallel(
+    input clk,
+    input rst_n,
+    input din,
+    output valid_out,
+    output [3:0] dout
+);

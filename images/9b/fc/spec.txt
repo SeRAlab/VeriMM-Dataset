@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+
+Implement an 8-bit shift register with parallel load capability.
+
+Module name:
+    shift_register_8
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the shift register.
+    load: Load signal to load data into the shift register.
+    data_in: 8-bit input data to be loaded into the shift register.
+Output port:
+    Q: 8-bit register representing the current value of the shift register.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the shift register value is updated.
+If the reset signal (rst_n) is low, the shift register value (Q) is set to 00000000.
+If the load signal (load) is high, the shift register value (Q) is set to data_in.
+Otherwise, the shift register shifts right by one bit on each clock cycle.
+
+Give me the complete code.

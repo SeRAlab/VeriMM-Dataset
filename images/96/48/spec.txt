@@ -1,0 +1,20 @@
+Design a memory interface module that processes write operations for a register file, featuring synchronous reset functionality. When the reset signal is low, the module clears all output registers to zero. Otherwise, it captures the input values for write address, register indication, and data (both for general and high/low parts) from the incoming signals. The module outputs these values, allowing for controlled writing to specific registers based on the inputs.
+module top_module(
+    input rst_,
+
+    input [4:0] mem_i_waddr,
+    input mem_i_wreg,
+    input [31:0] mem_i_wdata,
+
+    input mem_i_we_hilo,
+    input [31:0] mem_i_wdata_hi,
+    input [31:0] mem_i_wdata_lo,
+
+    output reg mem_o_wreg,
+    output reg [4:0] mem_o_waddr,
+    output reg [31:0] mem_o_wdata,
+
+    output reg mem_o_we_hilo,
+    output reg [31:0] mem_o_wdata_hi,
+    output reg [31:0] mem_o_wdata_lo
+);

@@ -1,0 +1,31 @@
+Please act as a professional Verilog designer.
+
+Design a 4-bit shift register with the ability to shift left or right. The shift register should have a control signal to determine the direction of the shift. When the direction signal is 0, the register shifts left; when the direction signal is 1, the register shifts right. The shift register should also have a parallel load feature to load data into the register.
+
+Module name:  
+    shift_register               
+Input ports:
+    clk: Clock signal for synchronous operation.
+    rst: Reset signal to reset the register.
+    load: Load signal to parallel load data into the register.
+    dir: Direction signal for shifting (0 for left, 1 for right).
+    data_in: 4-bit input data for parallel loading.
+    shift_in: Serial input data for shifting.
+
+Output ports:
+    data_out: 4-bit output representing the current state of the register.
+
+Implementation:
+The module includes a 4-bit register, data_out. The register shifts left or right based on the dir signal on the positive edge of the clock signal (posedge clk). If the load signal is high, the register is loaded with data_in. If the reset signal is high, the register is reset to zero.
+
+Give me the complete code.
+
+module shift_register (
+    input clk,
+    input rst,
+    input load,
+    input dir,
+    input [3:0] data_in,
+    input shift_in,
+    output reg [3:0] data_out
+);

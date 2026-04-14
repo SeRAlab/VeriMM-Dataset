@@ -1,0 +1,7 @@
+Design a servo control module that produces a pulse-width modulation (PWM) signal to control servo motors. The module accepts an 8-bit control input which determines the duty cycle of the PWM output. Operating with a 50 MHz clock, it increments a counter and resets it to 0 when it reaches a specific threshold derived from the desired PWM frequency. The duty cycle is set to a default value of 50% initially and is updated based on the control input, which allows for precise position control of the servo.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] ctrl_in,
+  output [7:0] servo_out
+);

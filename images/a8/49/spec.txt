@@ -1,0 +1,6 @@
+Design a Phase-Locked Loop (PLL) frequency synthesizer that generates an output clock signal based on a reference clock input. The module utilizes a phase accumulator to control phase increments determined by a multiplication factor (N) and a division factor (M). On the rising edge of the reference clock, the phase accumulator updates its value, and when a specific threshold is reached, it increments a divider counter. The output clock is produced by multiplying the reference clock frequency by the set multiplication factor (N) and dividing by the division factor (M). Additionally, when the control signal is activated, it resets the phase increment and divider counter, allowing for dynamic frequency adjustments.
+module top_module(
+  input ref_clk,
+  input ctrl,
+  output out_clk
+);

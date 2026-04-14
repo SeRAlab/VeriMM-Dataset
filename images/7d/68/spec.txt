@@ -1,0 +1,11 @@
+Design a module that implements a simple control mechanism for initiating a calculation of the discriminant in a parameterized computation. The module takes an input signal (`ap_start`) to control the processing state. When `ap_start` is high, it indicates that processing has begun, thereby setting the output `jet_d_V_ap_vld` to valid (high). The outputs `ap_done`, `ap_idle`, and `ap_ready` reflect the status of the computation, where `ap_done` equals `ap_start`, `ap_idle` remains constantly high, and `ap_ready` mirrors the `ap_start` signal. Additionally, the output `jet_d_V` is statically set to 1. This design effectively manages the readiness and validation of an operation associated with the calculation of jet parameters in a data processing pipeline.
+module top_module(
+        ap_start,
+        ap_done,
+        ap_idle,
+        ap_ready,
+        jet_tk13DIP_V,
+        jet_muPt_V,
+        jet_d_V,
+        jet_d_V_ap_vld
+);

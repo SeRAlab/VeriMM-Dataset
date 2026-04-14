@@ -1,0 +1,7 @@
+
+Design an interrupt controller in Verilog that can handle multiple interrupt requests from peripheral devices. The controller should have the following specifications:
+1. It should take multiple interrupt signals as input (let's say 4 signals: `irq0`, `irq1`, `irq2`, `irq3`).
+2. It should have a single output signal `irq_out` which indicates the highest priority interrupt.
+3. The controller should include an `ack` signal that, when asserted, will acknowledge the interrupt request and clear the corresponding interrupt signal.
+4. The priority of the interrupts is as follows: `irq3` > `irq2` > `irq1` > `irq0`.
+5. The output `irq_out` should only be asserted when an interrupt signal is active.

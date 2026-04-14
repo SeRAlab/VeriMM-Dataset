@@ -1,0 +1,27 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit binary counter with synchronous load capability. The counter increments its value by 1 on each rising edge of the clock. If the load signal is high, the counter is loaded with the value provided at the data input.
+
+Module name:
+    binary_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    load: Load signal for synchronous loading.
+    data: 4-bit input value to be loaded into the counter.
+
+Output ports:
+    count: 4-bit output representing the current count value.
+
+Implementation:
+The counter is defined as reg [3:0] count and initialized to 0 using the initial statement. The count is incremented by 1 on each rising edge of the clock: count <= count + 1.
+If the load signal is high, the counter is loaded with the value of data: if (load) count <= data.
+
+Give me the complete code.
+
+module binary_counter(clk, load, data, count);
+
+    input clk;
+    input load;
+    input [3:0] data;
+    output [3:0] count;

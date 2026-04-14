@@ -1,0 +1,9 @@
+Design a 3-bit up/down counter that can be loaded with an external 3-bit value. The counter increments its value on each clock pulse when the up_down input is high and decrements when it is low. If the rst input is activated, the counter resets to zero, and if the load input is asserted, the counter takes the value from data_in instead of incrementing or decrementing. The output reflects the current count value, which is maintained in a register.
+module top_module(
+    input clk,
+    input rst,
+    input load,
+    input up_down,
+    input [2:0] data_in,
+    output reg [2:0] count
+);

@@ -1,0 +1,9 @@
+Design a D-type flip-flop with asynchronous set and clock enable functionalities. The output (Q) is driven by the input data (D) on the rising edge of the clock (CLK) when not in sleep mode (SLEEP_B). If the asynchronous set (SET) is activated, the output is immediately set to high, and a notifier signal (NOTIFIER) is triggered. The flip-flop is held in a low-power state when SLEEP_B is deactivated, ensuring the output retains its state without changing. This module effectively combines data storage with control signals for enhanced operational flexibility in synchronous digital designs.
+module top_module(
+  output reg Q,
+  input D,
+  input CLK,
+  input SET,
+  input SLEEP_B,
+  output reg NOTIFIER
+);

@@ -1,0 +1,10 @@
+Design a synchronous register-based addition module that performs either signed or unsigned addition of two 30-bit signed inputs, `a` and `b`, based on a 2-bit mode input. It features asynchronous reset functionality to initialize all stored values. The output includes a 30-bit `sum` result and a 4-bit `flags` indicator to signal any overflow or underflow conditions: the flags register indicates overflow for unsigned addition or both overflow and underflow for signed addition. This module allows for flexible arithmetic operations while ensuring proper handling of numerical limits.
+module top_module(
+  input clk, // clock signal
+  input reset, // asynchronous reset signal
+  input [1:0] mode, // 0 for unsigned, 1 for signed
+  input signed [29:0] a, // first 30-bit register
+  input signed [29:0] b, // second 30-bit register
+  output signed [29:0] sum, // 30-bit register containing the sum
+  output reg [3:0] flags // 4-bit signal indicating overflow/underflow
+);

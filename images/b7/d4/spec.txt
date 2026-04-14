@@ -1,0 +1,12 @@
+Design a 4-bit shift register with configurable loading and shifting capabilities. It supports a reset function, enabling the register to clear its contents, as well as a load function to input new data. The shift direction can be controlled via the shift_dir input, allowing for left or right shifting of the stored bits. Additionally, the module outputs signals indicating when the register is empty (all bits are 0) or full (all bits are 1), making it suitable for various applications in digital design requiring data storage and manipulation.
+module top_module(
+    input clk,
+    input rst,
+    input shift_dir,
+    input load,
+    input [3:0] data_in,
+    input enable,
+    output [3:0] data_out,
+    output empty,
+    output full
+);

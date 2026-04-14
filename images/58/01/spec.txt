@@ -1,0 +1,23 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit shift register that shifts left on each positive edge of the clock signal. The input data is shifted in from the right.
+
+Module name:
+    shift_register
+
+Input ports:
+    CLK: Clock signal
+    RST: Reset signal
+    DATA_IN: Data input
+
+Output ports:
+    Q: 4-bit output
+
+Implementation:
+On every positive edge of CLK or RST, if RST is active, Q is set to 4'b0000. Otherwise, the most significant bit is dropped, and DATA_IN is shifted into the least significant bit.
+
+Give me the complete code.
+
+module shift_register (CLK, RST, DATA_IN, Q);
+input CLK, RST, DATA_IN;
+output reg [3:0] Q;

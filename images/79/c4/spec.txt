@@ -1,0 +1,8 @@
+Design a data shifter module that performs right or left shifting of an 8-bit input based on a 2-bit control signal while supporting synchronous reset behaviour. On each clock cycle, if the reset is active low, the output is initialized to either all ones or all zeros based on a parameter. After reset, the module captures the input data, which can then be shifted either right or left according to the specified shift amount. The module's output is configurable across various shifting operations, making it versatile for different applications requiring data manipulation in a parallel data path.
+module top_module(
+    clk,
+    reset_n,
+    shift_by,
+    datain,
+    dataout
+);

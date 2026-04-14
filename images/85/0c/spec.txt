@@ -1,0 +1,12 @@
+Design a complex circuit that performs matrix multiplication for complex numbers. The module takes in two 3x3 matrices of complex numbers represented by their real and imaginary parts, processes them upon receiving a valid input signal, and outputs the resulting product matrices of complex numbers. The computation is carried out in a pipelined fashion, handling real and imaginary parts distinctly, and leveraging clock and reset controls to manage state. The output consists of two concatenated matrices for the real and imaginary parts of the result.
+module top_module(
+	input clk,
+	input rst_n,
+	input in_valid,
+	input[3*3*14-1:0] ar,
+	input[3*3*14-1:0] ai,
+	input[3*3*14-1:0] br,
+	input[3*3*14-1:0] bi,
+	output reg[3*3*14-1:0] Cr,
+	output reg[3*3*14-1:0] Ci
+);

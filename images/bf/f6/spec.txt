@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+    
+Implement a module to manage and format a stream of hexadecimal bits representing characters or data, ensuring that the output adheres to specific formatting rules. Its primary functions include:
+
+Line Length Management: It ensures that the length of the output lines does not exceed a predefined maximum (72 characters in this case), inserting newline characters as necessary.
+Busy Signal Management: It generates a busy signal based on the status of the transmission and reception processes, ensuring that data is only sent when the system is ready.
+Newline Character Handling: It intelligently manages newline characters in the input stream, ensuring that they are correctly placed in the output stream while adhering to the line length restrictions.
+
+This module plays a crucial role in systems where data formatting and transmission control are essential, such as in communication systems or text processing units.
+
+Module name:  
+	wbucompactlines
+
+Input ports:
+	i_clk: The input clock signal. Type: input. It synchronizes the operations of the module.
+	i_stb: Strobe/input valid signal. Type: input. Indicates when there is valid data on i_nl_hexbits.
+	i_nl_hexbits: The input data stream. Type: input [6:0]. Represents hexadecimal characters, with the MSB indicating a newline character.
+	i_bus_busy: Indicates if the bus is busy. Type: input. Used to control the flow of data.
+	i_tx_busy: Indicates if the transmission is busy. Type: input. Used to control the flow of data.
+Output ports:
+	o_stb: Output strobe signal. Type: output reg. Indicates when there is valid data on o_nl_hexbits.
+	o_nl_hexbits: The output data stream. Type: output reg [6:0]. Represents hexadecimal characters, with the MSB indicating a newline character.
+	o_busy: Indicates if the module is busy. Type: output wire. It is a combination of internal busy signals and the output strobe.
+
+
+Implementation:
+The Verilog module wbucompactlines is designed to process lines of hexadecimal bits, managing their transmission based on certain conditions such as bus and transmission (tx) busy states, and the length of the line being processed. The module operates on a clock (i_clk) and is sensitive to rising edges of this clock for its sequential logic operations.
+
+Give me the complete code.
+

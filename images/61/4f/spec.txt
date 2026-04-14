@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit binary to Gray code converter. The module converts a 4-bit binary input to its corresponding 4-bit Gray code output.
+
+Module name:
+    bin_to_gray
+
+Input ports:
+    bin: 4-bit binary input signal.
+
+Output ports:
+    gray: 4-bit Gray code output signal.
+
+Implementation:
+The output gray is defined as reg [3:0] gray. The value of gray is assigned based on the binary input using the formula for binary to Gray code conversion: gray[3] = bin[3], gray[2] = bin[3] ^ bin[2], gray[1] = bin[2] ^ bin[1], gray[0] = bin[1] ^ bin[0].
+
+Give me the complete code.
+
+module bin_to_gray(bin, gray);
+
+    input [3:0] bin;
+    output [3:0] gray;

@@ -1,0 +1,8 @@
+Design a shift register that can operate in two modes: loading new data or shifting existing data. Upon a clock edge, if the reset signal is low, the register outputs are cleared to zero. If reset is high and load is low, the module captures the input 'data' into an 8-bit register. If load is high, the register performs a shift operation, moving all bits to the left and rotating the most significant bit back to the least significant position. The output 'out' reflects the current value of the register.
+module top_module(
+  input clk,
+  input reset,
+  input load,
+  input [7:0] data,
+  output reg [7:0] out
+);

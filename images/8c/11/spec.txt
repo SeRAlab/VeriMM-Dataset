@@ -1,0 +1,16 @@
+Design a register transfer module for a pipelined processor's execution stage, specifically the EX/MEM stage. This module captures and holds control signals and results from the ALU and address computation during clock cycles. It takes various inputs, including control signals (`ctlwb_out` and `ctlm_out`), the result of the address calculation (`adder_out`), ALU zero detection (`aluzero`), the ALU result (`aluout`), data from registers (`readdat2`), and a multiplexed output (`muxout`). Upon each rising edge of the clock, it updates its output registers (`wb_ctlout`, `m_ctlout`, `add_result`, `zero`, `alu_result`, `rdata2out`, and `five_bit_muxout`) to facilitate the correct operation of subsequent stages in the processor pipeline.
+module top_module(input        clk,
+              input [1:0]  ctlwb_out, 
+              input [2:0]  ctlm_out,
+              input [31:0] adder_out,
+              input        aluzero,
+              input [31:0] aluout,
+              input [31:0] readdat2,
+              input [4:0]  muxout,
+              output reg [1:0]  wb_ctlout,
+              output reg [2:0]  m_ctlout,
+              output reg [31:0] add_result,
+              output reg        zero,
+              output reg [31:0] alu_result,
+              output reg [31:0] rdata2out,
+              output reg [4:0]  five_bit_muxout);

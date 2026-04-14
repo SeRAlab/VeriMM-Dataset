@@ -1,0 +1,15 @@
+Design a memory module that functions as a data memory for a processor. It utilizes a 128-word by 32-bit memory array (DM) to store data, managed with a clock signal. Upon a positive clock edge, if a write enable signal (XM_MemWrite) is activated, it writes the value from the input (XM_RT) to the memory address specified by the ALU output (ALUout). Additionally, on reset, the module initializes its outputs (MW_ALUout and MW_RD) to zero. When reading from memory through the memory-to-register signal (XM_MemToReg) and if enabled, the module retrieves data from memory into the output (MW_ALUout), and conditionally sets the register address (MW_RD) based on the bnoWB signal. If no read operation is pending, it simply passes the ALU output to MW_ALUout.
+module top_module(
+	clk,
+	rst,
+	ALUout,
+	XM_RD,
+	XM_MemToReg,
+	XM_RT,
+	XM_MemWrite,
+	bnoWB,
+	en,
+	
+	MW_ALUout,
+	MW_RD
+);

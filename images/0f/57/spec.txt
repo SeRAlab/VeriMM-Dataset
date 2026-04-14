@@ -1,0 +1,15 @@
+
+Design a 2-channel DMA (Direct Memory Access) controller that can manage two data transfers simultaneously. The DMA controller should have the following inputs and outputs:
+Inputs:
+- clk: Clock signal
+- reset: Reset signal
+- request1: Request signal for Channel 1
+- request2: Request signal for Channel 2
+- grant1: Grant signal for Channel 1
+- grant2: Grant signal for Channel 2
+
+Outputs:
+- active_channel: Indicates which channel is currently active (0 for Channel 1, 1 for Channel 2)
+- transfer_complete: Signal to indicate that the transfer has been completed for the active channel
+
+The controller should respond to requests and grant signals to switch between channels, ensuring that only one channel is active at any time. It should also respond to the reset signal to initialize the state of the controller.

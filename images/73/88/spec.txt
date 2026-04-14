@@ -1,0 +1,8 @@
+Design a 4-bit shift register with load and clear functionalities. When the clear signal is activated, the output is reset to zero. Upon receiving a clock pulse, if the load signal is asserted, the register takes in the 4-bit input data. If neither condition is met, it performs a circular left shift on the current output, shifting the bits to the left and wrapping the most significant bit back to the least significant position.
+module top_module(
+    input load,
+    input clear,
+    input clk,
+    input [3:0] data_in,
+    output reg [3:0] data_out
+);

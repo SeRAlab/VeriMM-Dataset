@@ -1,0 +1,8 @@
+Design a module that incorporates a synchronous resettable multiplication and shift register functionality. The module takes a 12-bit input for multiplication, which it multiplies by a constant factor of 5. Based on a select signal, it either outputs the lower 8 bits of the multiplication result into an 8-bit shift register or resets the register. The shift register itself allows for bit shifting; when selected, it shifts its current value left by one bit, inserting the least significant bit from the multiplication output. The output of the module reflects the current state of the shift register, with the capability of resetting to zero on an active-high reset signal.
+module top_module(
+  input clk,
+  input reset, // Synchronous active-high reset
+  input [11:0] d, // 12-bit input for multiplication
+  input select, // Select input to choose between multiplication and shift register
+  output reg [7:0] q // 8-bit output from the shift register
+);

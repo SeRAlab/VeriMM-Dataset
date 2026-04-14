@@ -1,0 +1,11 @@
+Design a programmable 7-bit wide flip-flop (FF) circuit with dual input functionality. The module accepts two sets of data inputs, `io_input_0_data` and `io_input_1_data`, along with their respective enable signals, `io_input_0_enable` and `io_input_1_enable`. The flip-flop can be reset globally with the `reset` signal or individually for `io_input_0` using `io_input_0_reset`. When enabled, the appropriate input data will be latched on the rising edge of the clock. The output, `io_output_data`, continuously reflects the current state of the flip-flop. The design also includes random initialization for the stored data at simulation start.
+module top_module(
+  input        clock,
+  input        reset,
+  input  [6:0] io_input_0_data,
+  input        io_input_0_enable,
+  input        io_input_0_reset,
+  input  [6:0] io_input_1_data,
+  input        io_input_1_enable,
+  output [6:0] io_output_data
+);

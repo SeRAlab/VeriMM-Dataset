@@ -1,0 +1,10 @@
+Design a digital calculator module that performs basic arithmetic operations based on a 2-bit operation selection input (`op`). The module takes two 4-bit inputs (`num1` and `num2`) and produces a 4-bit output (`result`) corresponding to the operation specified by `op`: addition, subtraction, multiplication, or division. Additionally, the module monitors for overflow conditions, setting an overflow flag if the result exceeds the maximum representable value for 4 bits. The design operates combinatorially and updates the result and overflow status based on the input values and selected operation.
+module top_module(
+    input clk,
+    input rst,
+    input [1:0] op,
+    input [3:0] num1,
+    input [3:0] num2,
+    output reg [3:0] result,
+    output reg overflow
+);

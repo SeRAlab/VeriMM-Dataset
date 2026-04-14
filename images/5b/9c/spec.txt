@@ -1,0 +1,7 @@
+Design a state-driven flag generator that utilizes a clock signal to control the activation of three output flags (flag_U, flag_V, and flag_W). Initially, flag_U is set when the clock signal transitions and the state is 0. The module maintains a 9-bit counter that increments on each clock cycle, and it activates flag_V and flag_W when specific counter values are reached. Once the counter reaches the value 9'b101101000, the state changes to 1, preventing further action until a reset occurs, thereby ensuring a one-time activation of the flags based on the defined counter thresholds.
+module top_module(
+	input clk,
+	output reg flag_U,
+	output reg flag_V,
+	output reg flag_W
+	);

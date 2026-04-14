@@ -1,0 +1,9 @@
+Design a 4-bit arithmetic unit that can perform different operations based on a 2-bit selection signal. When `sel` is `00`, the unit computes the sum of two 4-bit inputs A and B with an optional carry-in (Cin). When `sel` is `01`, it performs the subtraction of B from A, also considering the carry-in. For `sel` set to `10`, it outputs the bitwise AND of A and B. The module also includes a carry-out signal (Cout) that indicates the occurrence of a carry in the addition operation.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [1:0] sel,
+    input Cin,
+    output [3:0] S,
+    output Cout
+);

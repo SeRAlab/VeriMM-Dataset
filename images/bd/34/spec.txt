@@ -1,0 +1,9 @@
+Design a motor control circuit that utilizes pulse-width modulation (PWM) to manage the speed and direction of a motor. The module takes a clock signal, direction input, and an 8-bit duty cycle value to determine the PWM output. A counter increments on each clock cycle, allowing the circuit to define the PWM signal based on the duty cycle. Depending on the direction input, it selectively enables one of the two outputs for an H-bridge driver, controlling the motor's movement: when the direction is high, the first output is activated with the PWM signal, while the second output remains low, and vice versa when the direction is low.
+module top_module(
+  input clk,
+  input dir,
+  input [7:0] pwm,
+  input [7:0] duty_cycle,
+  output h_bridge_out1,
+  output h_bridge_out2
+);

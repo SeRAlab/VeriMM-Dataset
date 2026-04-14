@@ -1,0 +1,10 @@
+Design a basic arithmetic calculator module that performs four operations: addition, subtraction, multiplication, and division on two 32-bit inputs a and b, controlled by a 2-bit operation selector. The calculator operates on a rising clock edge, with an active reset to initialize the state and outputs. The result of the operation is stored in a 32-bit output, and a valid flag indicates when the output is ready after each operation cycle. The state machine transitions through each operation sequentially and resets to the initial state after completing the division.
+module top_module(
+    input clk,
+    input rst,
+    input [1:0] op,
+    input [31:0] a,
+    input [31:0] b,
+    output reg [31:0] result,
+    output reg valid
+);

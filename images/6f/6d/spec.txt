@@ -1,0 +1,12 @@
+The design implements a versatile digital circuit that combines an up-down counter, Booth's multiplication algorithm, and an arithmetic operation based on selectable inputs. The up-down counter increments or decrements a 4-bit count value based on the UD input and clock signals, while a Booth's multiplier computes the product of two signed 4-bit inputs (A and B). The output of the product's higher bits is assigned to a register C. Additionally, the circuit outputs either the current count or the multiplicand based on the SEL signal through an output Q. Finally, a summation of the selected value (Q) and the product's high bits (C) is calculated and stored in a register for further use. This design efficiently merges counting, multiplicative operations, and arithmetic manipulations into a single functional unit.
+module top_module(
+    input UD,
+    input CLK,
+    input RST,
+    input LD,
+    input SEL,
+    input signed [3:0] A,
+    input signed [3:0] B,
+    output reg signed [3:0] C,
+    output reg [3:0] Q
+);

@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+
+Implement an 8-bit Universal Shift Register with synchronous reset.
+
+Module name:  
+    USR_8               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high reset signal to initialize the register.
+    SI_L: Serial input for left shift.
+    SI_R: Serial input for right shift.
+    PI: 8-bit parallel input.
+    load: Signal to load the parallel input into the register.
+    shift: Signal to enable shifting (1 for shift, 0 for no shift).
+    dir: Direction control signal (1 for left shift, 0 for right shift).
+Output ports:
+    Q: 8-bit parallel output representing the current value of the register.
+
+Implementation:
+On every rising edge of the clock signal (clk), the register value is updated.
+If the reset signal (rst) is high, the register value is set to 0.
+If the load signal is high, the parallel input (PI) is loaded into the register.
+If the shift signal is high and the direction control signal (dir) is high, the register value is shifted to the left by one position, and the input bit (SI_L) is added to the least significant bit position.
+If the shift signal is high and the direction control signal (dir) is low, the register value is shifted to the right by one position, and the input bit (SI_R) is added to the most significant bit position.
+
+Give me the complete code.

@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+
+Design a 4-bit shift register that shifts its contents to the left by one position on each rising edge of the clock signal (clk) when the enable signal (en) is high. If the reset signal (rst_n) is low, the shift register should reset to 0. The input signal (din) is shifted into the least significant bit.
+
+Module name:
+    shift_register
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst_n: Reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    en: Enable signal for the shift operation.
+    din: Data input to be shifted into the register.
+
+Output ports:
+    q: 4-bit output representing the contents of the shift register.
+
+Give me the complete code.
+
+module shift_register(
+    input clk,
+    input rst_n,
+    input en,
+    input din,
+    output [3:0] q
+);

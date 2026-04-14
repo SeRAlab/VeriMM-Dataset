@@ -1,0 +1,6 @@
+Design a 12-bit Linear Feedback Shift Register (LFSR) that generates pseudorandom sequences. The module allows for asynchronous loading of a seed value when the LOAD signal is asserted, initializing the register with the provided SEED, while on each clock cycle, it shifts the contents of the register to the right, introducing a new bit computed as the exclusive OR (XOR) of selected bits from the current state of the register. The output Q reflects the current state of the LFSR.
+module top_module(
+	input CLK, LOAD,
+	input [11:0] SEED,
+	output reg [11:0] Q
+	);

@@ -1,0 +1,7 @@
+Design a 32-bit shifter module that performs various shift operations on a given input. The module takes a 32-bit operand (op1), a 5-bit shift amount (shamt), and a 2-bit operation code to determine the type of shift. It supports left shift (sll) when operation=01, logical right shift (srl) when operation=10, and arithmetic right shift (sra) when operation=11, preserving the sign bit during the shift. The result of the shifting operation is output as a 32-bit signal (res). If the operation code is invalid, the result will be undefined.
+module top_module(
+        input   wire [31:0]   op1,
+        input   wire [4:0]    shamt,
+        input   wire [1:0]    operation,
+        output  wire [31:0]   res
+    );

@@ -1,0 +1,8 @@
+Design a signed 4-bit Booth multiplier module that computes the product of two signed 4-bit inputs, `a` and `b`, producing an 8-bit signed output, `c`. The internal multiplication process utilizes a combination of addition, bit-shifting, and conditional operations based on the least significant bit of the partial product to generate the correct product over a sequence of clock cycles. It includes a counter to track the number of iterations and a done signal to indicate completion of the multiplication operation. The module resets and initializes the accumulated product and state on a reset signal.
+module top_module(
+  input signed [3:0] a,
+  input signed [3:0] b,
+  input clk,
+  input reset,
+  output reg signed [7:0] c
+);

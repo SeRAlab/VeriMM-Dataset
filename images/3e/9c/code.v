@@ -1,0 +1,18 @@
+module sram_16bit (  
+    input wire clk,  
+    input wire write_enable,  
+    input wire read_enable,  
+    input wire [15:0] data_in,  
+    output reg [15:0] data_out  
+);  
+    reg [15:0] memory; // 16-bit SRAM cell  
+
+    always @(posedge clk) begin  
+        if (write_enable) begin  
+            memory <= data_in; // Write data to memory  
+        end  
+        if (read_enable) begin  
+            data_out <= memory; // Read data from memory  
+        end  
+    end  
+endmodule

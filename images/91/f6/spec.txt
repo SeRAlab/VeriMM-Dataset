@@ -1,0 +1,8 @@
+Design a 16-bit barrel shifter that performs various shift operations based on a 2-bit enable input. It has a clock and reset signal, where upon reset, the output is set to zero. The shifting operations include no operation, logical right shift, logical left shift, and arithmetic right/left shifts, allowing for flexible manipulation of the input data based on the state of the enable signals. The module operates synchronously on the rising edge of the clock.
+module top_module(
+  input clk,
+  input reset,
+  input [15:0] data,
+  input [1:0] ena,
+  output reg [15:0] q
+);

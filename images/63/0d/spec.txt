@@ -1,0 +1,19 @@
+Design a video Direct Memory Access (DMA) controller that facilitates communication between a video processing module and a master device. The controller processes read and write requests based on a 2-bit slave address input and manages data transfer via a 32-bit data bus. It utilizes a specific address translation mask to alter the slave's data when the least significant bit of the address is low, ensuring proper memory alignment during operations. It synchronizes all actions with a clock signal and handles reset conditions to clear all internal registers, maintaining state information for the operations of both slave and master transactions. The design features outputs for both read and write operations, enabling efficient data management in video applications.
+module top_module(
+    input clk,
+    input reset,
+    input [1:0] slave_address,
+    input [3:0] slave_byteenable,
+    input slave_read,
+    input slave_write,
+    input [31:0] slave_writedata,
+    input [31:0] master_readdata,
+    input master_waitrequest,
+    output [31:0] slave_readdata,
+    output slave_waitrequest,
+    output [1:0] master_address,
+    output [3:0] master_byteenable,
+    output master_read,
+    output master_write,
+    output [31:0] master_writedata
+);

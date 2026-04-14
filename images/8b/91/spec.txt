@@ -1,0 +1,10 @@
+Design a register file with eight 8-bit registers. The module allows for reading from two registers specified by 3-bit input addresses (addr1 and addr2) and provides their contents on the outputs data_out1 and data_out2. The module also supports writing 8-bit data (data_in) to a register addressed by addr1 when the write enable signal (write_en) is asserted. The write enable state is captured on the rising edge of a clock signal, ensuring synchronized write operations.
+module top_module(
+  input clk,
+  input [2:0] addr1,
+  input [2:0] addr2,
+  input [7:0] data_in,
+  input write_en,
+  output reg [7:0] data_out1,
+  output reg [7:0] data_out2
+);

@@ -1,0 +1,11 @@
+Design a circuit that acts as a versatile data processing unit with the ability to perform shifting, negation, and zeroing operations on an 8-bit input, RGA. The module implements selectable functionalities based on the combination of an 8-bit option input (OPT) and a 2-bit key input (KEY). When enabled (ENA), it can shift the input bits left or right and can also produce the negation of the input or output a constant zero, based on the specified input conditions. The final output, RGZ, is determined by the state of a single-bit RGB control signal that selects between the negated result, the zero output, or the shifted result.
+module top_module(
+    input CLK,
+    input RST,
+    input ENA,
+    input [7:0] RGA,
+    input [0:0] RGB,
+    input [7:0] OPT,
+    input [1:0] KEY,
+    output [7:0] RGZ
+);

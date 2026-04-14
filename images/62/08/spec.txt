@@ -1,0 +1,8 @@
+Design a finite state machine (FSM) that manages a three-state output based on two input signals (a and b) and a clock signal. The FSM transitions between states based on the conditions defined in a state transition logic, with state 0 outputting "001", state 1 outputting "010", and all other cases defaulting to "011". The state resets to 0 when the active-low reset signal (rst_n) is asserted. This module allows for responsive state management in digital logic applications, utilizing combinational and sequential logic to derive the next state and output based on input conditions and the current state.
+module top_module(
+    input wire a,
+    input wire b,
+    input wire clk,
+    output reg[2:0] dout,
+    input wire rst_n
+);

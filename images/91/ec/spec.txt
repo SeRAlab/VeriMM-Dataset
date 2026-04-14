@@ -1,0 +1,13 @@
+Design a FIFO (First-In, First-Out) buffer with asynchronous reset and clock control. This buffer allows for read and write operations on 64-bit wide data and can hold up to two entries. It provides status signals to indicate if the buffer is full, empty, almost full, or almost empty. The buffer toggles between two data entries when writing and reading, ensuring that data is read in the order it was written. The read and write operations can occur simultaneously, with the design ensuring proper handling of data entries and maintaining synchronization through clock signals.
+module top_module(
+  input clk,
+  input rd,
+  input reset_n,
+  input wr,
+  input [61:0] wr_data,
+  output reg almost_empty,
+  output reg almost_full,
+  output reg empty,
+  output reg full,
+  output reg [61:0] rd_data
+);

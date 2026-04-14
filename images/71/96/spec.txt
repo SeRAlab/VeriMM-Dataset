@@ -1,0 +1,9 @@
+Design a simple SRAM memory controller that allows data storage and retrieval. The module uses a 12-bit address to access a memory array of 16-bit words, supporting up to 4096 locations. On each clock cycle, if the reset signal is active, it outputs a zero. If the reset is not active and the write enable signal is asserted, it stores the input data at the specified address. If the write enable signal is not asserted, it outputs the data stored at that address, enabling a read operation.
+module top_module(
+    input clk,
+    input reset,
+    input [11:0] address,
+    input [15:0] data_in,
+    input write_en,
+    output reg [15:0] data_out
+);

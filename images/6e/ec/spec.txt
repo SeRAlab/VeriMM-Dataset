@@ -1,0 +1,9 @@
+Design a 4-bit Arithmetic Logic Unit (ALU) capable of performing various operations based on a 3-bit opcode. The ALU takes two 4-bit inputs, A and B, and can execute addition, subtraction, bitwise operations (AND, OR, XOR), left and right shifts, and a bitwise NOT operation. The results of these computations are registered in the output, and an additional output indicates whether the result is zero. The design utilizes combinatorial logic to determine the result based on the opcode and sequential logic to store the output and zero flag on the rising edge of a clock signal.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [2:0] opcode,
+    input clk,               // Added clk input
+    output reg [3:0] out,
+    output reg zero
+);

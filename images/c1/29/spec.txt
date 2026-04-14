@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+    
+Implement a module to serve as a High-Speed Serial Interface (HSSI) transmitter. Its primary functions include serializing input parallel data (`datain`) according to a specified channel width, generating a corresponding output clock signal (`clkout`), and transmitting the serialized data (`dataout`). This module plays a crucial role in systems requiring high-speed data transmission over serial communication links, effectively converting parallel input data into a serial format suitable for such applications.
+
+Module name:  
+	hssi_tx
+
+Input ports:
+	clk: Input clock signal. Type: input. This clock signal serves as the reference timing source for the module's operations, including data serialization and output clock generation.
+	datain: Parallel input data. Type: input [channel_width1:0]. This port receives the parallel data to be serialized and transmitted. The width of the data is determined by the channel_width parameter.
+	areset: Asynchronous reset signal. Type: input. When asserted (1'b1), this signal initializes the module, resetting internal states and outputs.
+Output ports:
+	dataout: Serialized output data. Type: output. This port outputs the serialized data stream generated from the input parallel data.
+	clkout: Output clock signal. Type: output. This signal provides a clock that is synchronized with the serialized data output, potentially serving as a transmission clock in a serial communication link.
+
+
+Implementation:
+The Verilog module hssi_tx is designed to perform serial data transmission with a specific focus on handling high-speed serial interface (HSSI) data. The module takes in parallel data, serializes it, and outputs it along with a clock signal. The design is parameterizable, allowing for flexibility in the width of the input data channel. The core functionality of the module is governed by both combinational and sequential logic elements, which are orchestrated to achieve the desired data serialization and clock management.
+Combinational Logic:
+Data and Clock Buffering: The module uses buf statements to create buffered versions of the clk and areset inputs, ensuring stable signal propagation within the module.
+Data Output and Clock Output Generation: The and gates at the end of the module ensure that the dataout and clkout signals are driven by dataout_tmp and clkout_tmp respectively, with a constant logic high (1'b1) as the other input to the and gate, effectively passing the values of dataout_tmp and clkout_tmp through to the outputs.
+Sequential Logic:
+Reset and Clock Edge Detection: The module's primary sequential logic is encapsulated within an always block that triggers on changes to clk_in or areset_in. This block handles the reset functionality, data serialization, and clock output generation based on the rising and falling edges of the clock.
+Reset Functionality: Upon an active high reset signal (areset_in), internal data and control signals are initialized to ensure a known starting state.
+Data Serialization and Clock Management: The module serializes the input data (datain) and manages the output clock (clkout) based on the internal counter fast_clk_count, which tracks the progression of clock cycles relative to the channel width. The serialization process involves shifting data within regdata and updating dataout_tmp on specific clock cycles, determined by fast_clk_count. The clock output is toggled to create a clock signal that is synchronized with the serialized data output.
+
+Give me the complete code.
+

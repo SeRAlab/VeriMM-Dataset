@@ -1,0 +1,10 @@
+Design a dual-function module that can operate as either a 4-bit Johnson counter or a shift register, selectable via an input. When the Johnson counter is active, it generates a unique pattern by shifting bits within a 6-bit register and outputting the upper 4 bits. Conversely, when the shift register is selected, it can load external data or shift its contents leftward based on control signals. The module features a synchronous reset for initialization and enables dynamic loading and shifting operations, making it versatile for various sequential logic applications.
+module top_module(
+    input clk,
+    input reset,    // Synchronous active-high reset
+    input load,
+    input ena,
+    input [3:0] data_in,
+    input select,   // Select input to choose between Johnson counter and shift register
+    output reg [3:0] q  // 4-bit output from the active module
+);

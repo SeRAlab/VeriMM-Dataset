@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module to synchronize the reset signal with the GMII (Gigabit Media Independent Interface) receive clock domain. Its primary function to ensure that the reset signal applied to components operating in the GMII RX clock domain is properly synchronized to prevent metastability issues that can arise when signals cross clock domains. This module plays a critical role in systems that interface with Ethernet PHYs, ensuring reliable operation by aligning the reset signal timing with the GMII RX clock domain.
+
+Module name:  
+	port_clocking
+
+Input ports:
+	clk: This input is not used in the current implementation of the module but typically represents the system clock. Its presence suggests potential future use or integration within a larger system clocking architecture.
+	reset: A synchronous reset signal, presumably aligned with the system clock (clk). This signal is intended to reset the internal state of components within the same clock domain as clk.
+	gmii_rx_clk: The clock signal for the GMII receive clock domain. This clock is used to synchronize the reset signal to the components operating in the GMII RX clock domain.
+Output ports:
+	gmii_rx_reset: The output reset signal synchronized to the gmii_rx_clk domain. This signal is used to reset components within the GMII RX clock domain, ensuring they operate correctly in synchronization with the GMII RX clock.
+
+
+Implementation:
+The port_clocking module is designed to manage the reset signal for a GMII (Gigabit Media Independent Interface) receiver clock domain, ensuring that the reset signal is properly synchronized to the GMII receiver clock (gmii_rx_clk). This module takes into account the challenges of crossing clock domains, specifically the need to mitigate the risk of metastability when a signal (in this case, reset) originating from one clock domain (e.g., a system clock clk) is received by another clock domain (the gmii_rx_clk).
+
+Give me the complete code.
+

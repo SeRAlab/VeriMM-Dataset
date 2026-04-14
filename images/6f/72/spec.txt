@@ -1,0 +1,5 @@
+Design a programmable interrupt controller (PIC) that manages inter-integrated circuit (I2C) communication and interrupt handling. The module features an asynchronous reset and operates based on a clock signal, maintaining several states while controlling the service and masking of interrupts. It includes inputs for acknowledging interrupts, writing data, and handling IRQ signals, and it outputs an interrupt request signal. The module utilizes a state machine to transition through different states based on the presence of interrupts and the data being processed, allowing it to read or configure interrupt masks and service requests while ensuring proper state management and data flow.
+module top_module(
+	input clk, input reset, input addr, input we_n,
+	input[7:0] idata, output reg[7:0] odata,
+	output intr, input inta_n, input[7:0] irq);

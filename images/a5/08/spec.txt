@@ -1,0 +1,6 @@
+Design a 32-to-1 multiplexer that selects one of 32 input buses, each 32 bits wide, based on a 5-bit address input. The module takes a flat input vector containing all the data and uses a generate block to extract and store the individual 32-bit inputs. The selected output is determined by the value of the address input, routing the appropriate 32-bit data to the output.
+module top_module(
+    output[31:0] out,
+    input[4:0] address,
+    input[32*32-1:0] input0
+);

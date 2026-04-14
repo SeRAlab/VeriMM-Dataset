@@ -1,0 +1,7 @@
+Design a single-port RAM module that allows for both reading and writing operations. The memory consists of 16 data words, each 8 bits wide. When the write_enable signal is active, the module writes the provided input data to the specified address. Conversely, when the write_enable signal is inactive, it outputs the data stored at the specified address. This module is intended for applications where simple memory storage and retrieval are required.
+module top_module(
+  input [depth-1:0] address,
+  input [data_width-1:0] data_in,
+  input write_en,
+  output reg [data_width-1:0] data_out
+);

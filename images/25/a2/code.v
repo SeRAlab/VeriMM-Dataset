@@ -1,0 +1,28 @@
+module encoder_16_to_4 (
+    input [15:0] in,
+    output reg [3:0] out
+);
+
+always @(*) begin
+    casez (in)
+        16'b1???????????????: out = 4'd0; // Input 0 active
+        16'b01??????????????: out = 4'd1; // Input 1 active
+        16'b001?????????????: out = 4'd2; // Input 2 active
+        16'b0001????????????: out = 4'd3; // Input 3 active
+        16'b00001??????????? : out = 4'd4; // Input 4 active
+        16'b000001?????????? : out = 4'd5; // Input 5 active
+        16'b0000001????????? : out = 4'd6; // Input 6 active
+        16'b00000001???????? : out = 4'd7; // Input 7 active
+        16'b000000001??????? : out = 4'd8; // Input 8 active
+        16'b0000000001?????? : out = 4'd9; // Input 9 active
+        16'b00000000001????? : out = 4'd10; // Input 10 active
+        16'b000000000001???? : out = 4'd11; // Input 11 active
+        16'b0000000000001??? : out = 4'd12; // Input 12 active
+        16'b00000000000001?? : out = 4'd13; // Input 13 active
+        16'b000000000000001? : out = 4'd14; // Input 14 active
+        16'b0000000000000001 : out = 4'd15; // Input 15 active
+        default: out = 4'd0; // No input active
+    endcase
+end
+
+endmodule

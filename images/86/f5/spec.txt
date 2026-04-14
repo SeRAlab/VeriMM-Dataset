@@ -1,0 +1,7 @@
+Design a circuit that converts a binary-coded decimal (BCD) value into an Excess-3 code representation. The module accepts a 5-digit BCD input and an operational mode, which determines whether to add 3 or 5 to each BCD digit during the conversion. The output is an 8-bit Excess-3 encoded value, constructed by processing each BCD digit sequentially through a defined state machine. The conversion is synchronized to the positive edge of a clock signal, ensuring proper timing for generating the final Excess-3 output after all digits are processed.
+module top_module(
+    input [3:0] bcd_digit,  // Changed input width to accommodate a single BCD digit
+    input mode,
+    input clk,
+    output reg [7:0] excess_3
+);

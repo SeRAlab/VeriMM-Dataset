@@ -1,0 +1,8 @@
+Design a flag monitor circuit that responds to a 4-bit flag input. Based on the individual bits of the flag, it generates corresponding 12-bit outputs for overflow, carry, zero, and negative conditions. Whenever a particular flag bit is set to 1, the appropriate output is set to 12'h0F0, indicating the presence of that condition; otherwise, the output is set to 12'h000, indicating its absence.
+module top_module(
+    input [3:0] flag,
+    output reg  [11:0] overflow,
+    output reg  [11:0] carry,
+    output reg  [11:0] zero,
+    output reg  [11:0] negative
+     );

@@ -1,0 +1,7 @@
+Design a module that processes an 8-bit input representing a PLL value to generate timer-related outputs. It computes a 6-bit 'low' output by adding the least significant bit of the input to the upper 6 bits, and a 'high' output that defaults to 1 if the upper 6 bits are zero; otherwise, it passes through the upper 6 bits unchanged. Additionally, it outputs a 'w_edge' signal that indicates a condition based on the value of the upper 6 bits, specifically providing a derived edge signal only when these bits are non-zero.
+module top_module(
+       input [7:0] pll_value,
+       output [5:0] high,
+       output [5:0] low,
+       output w_edge
+    );

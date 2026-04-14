@@ -1,0 +1,10 @@
+Design a dual input selector circuit (data routing) that outputs two 32-bit wide values, rdata_a and rdata_b. The output rdata_a is derived from either the memory write-back data (mem_wb_dout) or the execution stage data (ex_rdata_a), depending on the state of the control signal control_rdata_a. Similarly, rdata_b is selected based on control_rdata_b, switching between mem_wb_dout and ex_rdata_b. This module acts as a multiplexer for routing the inputs based on control signals, facilitating data flow in the processing stages of a CPU pipeline.
+module top_module(
+    input [31:0] ex_rdata_a,
+    input [31:0] ex_rdata_b,
+    input [31:0] mem_wb_dout,
+    input control_rdata_a,
+    input control_rdata_b,
+    output wire [31:0] rdata_a,
+    output wire [31:0] rdata_b
+);

@@ -1,0 +1,10 @@
+Design a circuit that performs an 8-bit binary addition of two input values, A and B, synchronized to the rising edge of a clock signal. The module outputs the sum as C, and it detects overflow conditions. If the resulting sum exceeds the maximum representable value for 8 bits (255), it sets an overflow flag and discards the most significant bit of the sum, effectively wrapping around to a 7-bit result. The output C will thus be an 8-bit wide representation of the sum, with an additional overflow signal indicating when an overflow has occurred.
+module top_module(
+  // inputs
+  input clk,
+  input [7:0] A,
+  input [7:0] B,
+  // outputs
+  output reg [7:0] C,
+  output reg overflow
+);

@@ -1,0 +1,9 @@
+Design a three-stage pipeline circuit that processes three 20-bit wide input signals (b, c, and d) through sequential stages, utilizing clocking and reset mechanisms. In the first stage, it captures inputs b and d into registers. The second stage captures input c while holding the results from the first stage. Finally, in the third stage, it combines the outputs from the previous stages, while also updating internal registers. The final output q is computed as the bitwise AND of the three input signals b, c, and d, providing a synchronized output based on the inputs received.
+module top_module(
+    input clk,
+    input reset,
+    input [19:0] b,
+    input [19:0] c,
+    input [19:0] d,
+    output reg [19:0] q
+);

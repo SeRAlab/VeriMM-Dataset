@@ -1,0 +1,9 @@
+Design a 4-bit shift register with an additional OR operation. The shift register captures and shifts input data 'd' on the negative edge of the clock while enabled, and it resets asynchronously when the reset signal is active. The module outputs the current content of the shift register through 'q' and computes the bitwise OR between the shift register value and input 'd', providing this result on 'or_output'. This design effectively combines storage and logical operations in a synchronous digital circuit.
+module top_module(
+    input clk,
+    input reset,            // Asynchronous reset
+    input [3:0] d,
+    input enable,
+    output [3:0] q,
+    output [3:0] or_output
+);

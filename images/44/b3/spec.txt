@@ -1,0 +1,9 @@
+Develop a dual-port RAM module that supports simultaneous read and write operations. It utilizes a 16-bit address space and stores 16-bit data words, with a clock signal to synchronize memory operations. When the write enable signal is asserted, data is written to the specified address on the rising edge of the clock. On the falling edge of the clock, if the read enable signal is active, it retrieves the data from the specified address and outputs it. This design allows for efficient data storage and access in applications requiring high-speed data manipulation.
+module top_module(
+  input clk,
+  input we,
+  input [15:0] addr,
+  input [15:0] data_in,
+  output [15:0] data_out,
+  input rd_en
+);

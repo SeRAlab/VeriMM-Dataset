@@ -1,0 +1,11 @@
+Design a versatile 8-bit Arithmetic Logic Unit (ALU) that performs various arithmetic and logical operations based on a 4-bit operation selector. It supports addition, subtraction, bitwise AND, OR, XOR, and various types of shifts (logical and arithmetic). The ALU produces a result output, and additionally indicates zero, negative, and overflow conditions. Specifically, the zero output is asserted when the result is zero, the negative output reflects the sign of the result, and the overflow output detects any overflow conditions during addition and subtraction operations.
+module top_module(
+    input [7:0] a,
+    input [7:0] b,
+    input [3:0] operation,
+    input [2:0] shift_amount,
+    output reg [7:0] result,
+    output reg zero,
+    output reg negative,
+    output reg overflow
+);

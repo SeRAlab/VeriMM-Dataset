@@ -1,0 +1,5 @@
+Design a timer module capable of counting down from a user-defined divisor and generating an interrupt when the countdown expires. The module accepts control inputs including a clock, a reset signal, and writes to specific addressable registers for configuring the timer's state and divisor value. The first register manages alarm enable and interrupt enable states, while the second holds the countdown divisor. The counter decrements each clock cycle until it reaches zero, at which point it sets an alarm flag and signals an interrupt if enabled. The module outputs the current state of the divisor, counter, and alarm status based on addressable access. It also provides a write-through signal and an interrupt request output to indicate when the timer has expired.
+module top_module(clk, reset,
+           en, wr, addr,
+           data_in, data_out,
+           wt, irq);

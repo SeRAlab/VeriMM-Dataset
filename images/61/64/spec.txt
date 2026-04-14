@@ -1,0 +1,13 @@
+Design a module for address decoding in an AHB (Advanced High-performance Bus) interface. The module takes a 32-bit address as input and generates three separate select signals: `hsel0`, `hsel1`, and `hsel2`. The `hsel0` output is active when the upper 4 bits of the address match `4'h0`, while `hsel1` is active when these bits are `4'h1`, `4'h2`, or `4'h3`. The `hsel2` output is asserted when neither `hsel0` nor `hsel1` is active, indicating that the address falls outside the defined ranges. Additionally, the module produces corresponding read acknowledgment signals (`hsel0_rd`, `hsel1_rd`, `hsel2_rd`), which are updated on the positive edge of the clock when the `ready` signal is asserted, allowing tracking of the last selected address space during active communication. This overall functionality facilitates routing data to different peripherals or memory blocks based on the received address.
+module top_module(
+	hclk,
+	hresetn,
+	addr,
+	ready,
+	hsel0,
+	hsel0_rd,
+	hsel1,
+	hsel1_rd,
+	hsel2,
+	hsel2_rd
+);

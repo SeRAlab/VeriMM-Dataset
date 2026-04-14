@@ -1,0 +1,11 @@
+Design a digital vending machine controller that manages product dispensing based on coin input. It accepts a 2-bit coin input, determines if sufficient funds have been inserted relative to a fixed product price, and dispenses a product if conditions are met. The module handles resetting the state, calculating excess money, returning change, and keeping track of stock, while also providing feedback such as "Sold Out!" when products are unavailable and displaying the number of products remaining. The system also maintains an ongoing tally of total money inserted and ensures that funds are either reset or accumulated each clock cycle.
+module top_module(
+  input clk,
+  input reset,
+  input [1:0] coin,
+  input dispense,
+  output reg product_dispensed,
+  output reg [3:0] excess_money,
+  output reg [3:0] display_message,
+  output reg [3:0] product_count
+);

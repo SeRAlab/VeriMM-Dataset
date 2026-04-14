@@ -1,0 +1,7 @@
+Design a 4-bit shift register that captures a 4-bit input data value and shifts its contents on the rising edge of a shift signal. When the shift signal is active (high), the register shifts its contents to the right, with the most significant bit being replaced by the new data input, while the least significant bit is output as serial_out. If the shift signal is not active, the register loads the input data but still outputs the current least significant bit as serial_out.
+module top_module(
+    input [3:0] data,
+    input shift,
+    output reg serial_out,
+    output reg [3:0] q
+);

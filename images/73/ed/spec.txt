@@ -1,0 +1,8 @@
+Implement a circuit that performs an arithmetic operation based on the `ADDSUB` control signal. The module takes a 27-bit input `D_DATA` and either adds or subtracts it from another 27-bit input `PREADD_AB`, depending on the value of `ADDSUB`. If `INMODE2` is high, it uses the value of `D_DATA`; if low, it employs zero. The result of the operation is outputted as `AD`.
+module top_module(
+  input ADDSUB,
+  input [26:0] D_DATA,
+  input INMODE2,
+  input [26:0] PREADD_AB,
+  output [26:0] AD
+);

@@ -1,0 +1,11 @@
+Design a digital circuit that samples an input signal (CAN) based on a global clock (GCLK) with a reset (RES) capability. The module operates in synchronization with the clock, capturing the state of the CAN line at specified intervals determined by the parameter SP. The output signal (dout) reflects the state of CAN when the sampling period reaches SP. It also generates a 'countman' signal (cntmn) indicating a change in input and provides a 'cntmn_ready' signal to denote readiness to process a new sample. Additionally, a synchronization signal (sync) is generated when the counting reaches either a reset condition or a defined quanta, allowing proper signal alignment and state management in systems interfacing with the sampled data.
+module top_module(
+    input wire GCLK,    
+    input wire RES,     
+    inout wire CAN,     
+    input wire din,     
+    output reg dout,    
+    output reg cntmn,   
+    output reg cntmn_ready, 
+    output reg sync     
+    );

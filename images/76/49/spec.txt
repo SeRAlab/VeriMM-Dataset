@@ -1,0 +1,10 @@
+Design a controller for an LCD display that interprets control signals and manages the transmission of commands and data. The module takes a 16-bit data input and a 3-bit control signal to determine operations like clearing the display or setting the cursor position. It uses a finite state machine to handle different states including IDLE, SEND_CMD, SEND_DATA, and WAIT, while generating appropriate control signals for read/write operations, character selection, and resetting. The outputs include the address for the LCD, read/write control signal, register select signal, and reset signal for interfacing with the LCD display.
+module top_module(
+  input [15:0] data,
+  input [2:0] ctrl,
+  input en,
+  output [6:0] addr,
+  output rw,
+  output rs,
+  output rst
+);

@@ -1,0 +1,7 @@
+Design a UART demultiplexer that receives serial data over the UART_RX line, processes it according to a defined protocol, and outputs an 8-bit data and address, along with a write signal and a checksum error indication. The module uses state-based logic to manage the reception and validation of incoming data packets, which consist of address, data, and a checksum, while also implementing a reset functionality to initialize the system. The checksum is computed during data reception, and if it does not match the expected value at the end of the data transfer, a checksum error flag is asserted, ensuring data integrity.
+module top_module(
+  input clk,
+  input UART_RX,
+  output reg [7:0] data,
+  output reg insend
+);

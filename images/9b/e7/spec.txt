@@ -1,0 +1,7 @@
+Design a module that performs Clarke transformation on two input phase currents. It takes two signed 18-bit inputs representing phase currents and outputs two signed 18-bit values, alpha_current and beta_current. The alpha_current is derived by shifting the first phase current right by 2 bits and sign-extending it. The beta_current is calculated by multiplying the first phase current by a gain factor (37837) and the second phase current by a larger gain factor (75674), then combining both results before truncating to obtain the final 18-bit output. This circuitry is typically used in control systems for converting currents into a two-axis representation, essential for applications such as motor control and digital signal processing.
+module top_module(
+           phase_currents_0,
+           phase_currents_1,
+           alpha_current,
+           beta_current
+          );

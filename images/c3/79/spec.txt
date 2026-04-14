@@ -1,0 +1,21 @@
+Please act as a professional Verilog designer. Your task is to create a Verilog module that implements a light control block for ambient light sensing and dimming.
+The module should have the following inputs and outputs:
+
+Inputs: 
+- ambient light sensor (als): a 12-bit signal that represents the ambient light level
+- desired light level (dll): a 12-bit signal that represents the desired light level
+- enable signal (en): a single bit signal that enables the module
+
+Outputs:
+- dimming signal (dim): a 8-bit signal that controls the brightness of the light
+
+The module should implement the following functionality:
+- When the enable signal is high, the module should compare the ambient light level to the desired light level to determine the dimming level.
+- The dimming level should be calculated as follows:
+  - If the ambient light level is less than or equal to the desired light level, the dimming level should be set to 0.
+  - Otherwise, the dimming level should be calculated as (ambient light level - desired light level) / 16.
+- The dimming level should be clamped to the range of 0 to 255.
+- When the enable signal is low, the dimming level should be set to 0.
+
+To implement the light control block, you should use Verilog code to define the calculations for the dimming level based on the input signals. 
+You should also define the enable signal and use it to control the output of the dimming signal.

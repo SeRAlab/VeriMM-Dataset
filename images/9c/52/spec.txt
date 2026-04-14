@@ -1,0 +1,10 @@
+Design a UART receiver module that captures incoming serial data. It utilizes a baud rate divider for synchronization and operates on the clock's positive edge. When the reset signal is low, it initializes the received data to zero. Upon receiving a character (indicated by the rx_char_ready signal), it captures the incoming data from the rxd input and stores it in an 8-bit register. The stored data is then made available as the output source_rxd.
+module top_module(
+  input [15:0] baud_divisor,
+  input clk,
+  input clk_en,
+  input reset_n,
+  input rx_char_ready,
+  input rxd,
+  output source_rxd
+);

@@ -1,0 +1,7 @@
+Design a negative-edge triggered D flip-flop with an asynchronous active-high reset. When the reset signal is asserted, the output q is immediately set to LOW regardless of the clock state. On the falling edge of the clock, if the reset is not active, the output q captures the value of the input d.
+module top_module(
+    input clk,
+    input reset,
+    input d,
+    output reg q  // Changed to output reg to fix redeclaration issue
+);

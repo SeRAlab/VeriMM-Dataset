@@ -1,0 +1,9 @@
+Design a pipelined arithmetic unit capable of performing either addition or subtraction on 4-bit inputs based on a mode signal. When mode is 0, the module computes the sum of two 4-bit inputs, while mode 1 triggers a subtraction operation. The design includes logic for detecting overflow conditions for both operations and registers the results in a two-stage pipeline architecture to enhance performance. The final output reflects the calculated result based on the selected mode, ensuring that the output is synchronized with the clock.
+module top_module(
+    input [3:0] a,
+    input [3:0] b,
+    input mode,
+    input clk,               // Added clk as an input
+    output reg [3:0] out,
+    output reg overflow
+);

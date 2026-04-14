@@ -1,0 +1,19 @@
+Implement the Verilog module based on the following description.
+We want to create a module that:
+
+// (1) receives a 4-bit binary number,
+// (2) checks if the number is greater than 6,
+// (3) counts the number of 1s in the binary number,
+// (4) outputs a flag if the number is a multiple of 5,
+// (5) provides a reset mechanism to reset all outputs.
+
+// The input binary number is available on the input signal 'binary_num'. The output 'is_gt6' should be set to 1 if the number is greater than 6 and 0 otherwise. The number of 1s in the binary number should be output on 'count_ones[2:0]'. The multiple of 5 flag should be set on 'is_multiple_of_5' if the number is a multiple of 5. The reset signal is active high synchronous.
+
+module top_module(
+    input wire clk,
+    input wire reset,
+    input wire [3:0] binary_num,
+    output reg is_gt6,
+    output reg [2:0] count_ones,
+    output reg is_multiple_of_5
+);

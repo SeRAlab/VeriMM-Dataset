@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement a module for a 2-to-1 multiplexer. The multiplexer selects one of the two 8-bit input data lines based on the value of the select signal sel. If sel is 0, input data_in0 is selected, otherwise input data_in1 is selected.
+
+Module name:  
+    mux_2to1      
+
+Input ports:
+    data_in0: 8-bit input data line 0.
+    data_in1: 8-bit input data line 1.
+    sel: Select signal.
+
+Output ports:
+    data_out: 8-bit output data.
+
+Implementation:
+The mux_2to1 module selects one of the two 8-bit input data lines based on the value of the select signal sel. If sel is 0, data_in0 is selected and assigned to data_out. If sel is 1, data_in1 is selected and assigned to data_out. The output data is updated whenever any of the input data or the select signal changes.
+
+Give me the complete code.
+
+module mux_2to1(
+    input [7:0] data_in0,
+    input [7:0] data_in1,
+    input sel,
+    
+    output reg [7:0] data_out
+);

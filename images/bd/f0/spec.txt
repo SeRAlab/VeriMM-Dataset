@@ -1,0 +1,9 @@
+Design a key listener circuit that monitors a 4-key input. On each clock cycle, the module detects whether a key is newly pressed, held down, or released. The key_pressed output indicates which keys are currently being pressed for the first time, the key_held output indicates which keys are currently held down, and the key_released output indicates which keys have just been released after being held. A reset signal initializes the outputs to zero. The design effectively captures the state changes of the key inputs in relation to the clock signal.
+module top_module(
+	input clk,
+	input resetn,
+	input [3:0] KEY,
+	output reg [3:0] key_pressed,
+	output reg [3:0] key_held,
+	output reg [3:0] key_released
+);

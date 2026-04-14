@@ -1,0 +1,6 @@
+Design a control unit for an Arithmetic Logic Unit (ALU) that generates a 4-bit ALU operation code (ALU_Ctrl_o) based on a 4-bit instruction (instr) and a 2-bit ALU operation mode (ALUOp). The module decodes the function specified by the lower three bits of the instruction (funct3) and selects the appropriate ALU operation based on the value of ALUOp and a specific bit of the instruction. This functionality allows the ALU to perform various arithmetic and logic operations as specified by the input signals, effectively controlling the operation of the ALU depending on the instruction provided.
+module top_module(
+	input		[4-1:0]	instr,
+	input		[2-1:0]	ALUOp,
+	output wire	[4-1:0] ALU_Ctrl_o
+	);

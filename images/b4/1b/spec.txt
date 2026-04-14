@@ -1,0 +1,7 @@
+Design an 8-bit binary adder with overflow detection. This module takes two 8-bit inputs (a and b), calculates their sum (s) as a 9-bit output (to accommodate potential overflow), and determines if an overflow has occurred. The overflow output indicates whether the sign of the result differs from the sign of the inputs when both inputs have the same sign. The adder utilizes a generate block to calculate the carry bits based on the propagate and generate signals, implementing a carry look-ahead strategy for efficient summation.
+module top_module(
+    input [7:0] a,
+    input [7:0] b,
+    output [8:0] s,
+    output overflow
+);

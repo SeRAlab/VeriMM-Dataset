@@ -1,0 +1,6 @@
+Design a digit multiplexing LED driver for a 7-segment display. The module takes a clock signal, a 32-bit input value, and an 8-bit enable signal to selectively display digits on the 7-segment displays. It cycles through each of the 8 digits, enabling one at a time based on the enable signals, and outputs the corresponding segments' control signals. The displayed digits are determined by extracting 4 bits from the input value, which are then translated into segment activation patterns for the 7-segment displays. This setup allows for the dynamic representation of up to 8 distinct values in a time-multiplexed fashion.
+module top_module(input clk,
+                 input [31:0] value,
+                 input [7:0] enable,
+                 output reg [7:0] SSEG_CA,
+                 output reg [7:0] SSEG_AN);

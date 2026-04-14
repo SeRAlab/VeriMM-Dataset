@@ -1,0 +1,12 @@
+Design a UART (Universal Asynchronous Receiver-Transmitter) transmitter module that serially transmits an 8-bit data packet. When the write input is active and the module is not busy, it loads the data into a shift register and initiates transmission. The module shifts out one bit at a time on the uart_tx output, while managing a bit count to track the number of bits transmitted. The uart_busy output indicates whether a transmission is in progress, and uart_rts (Request to Send) signals when the UART is ready to send data. The system also features a reset input to initialize the module’s registers.
+module top_module(
+   
+   output uart_busy,   
+   output uart_tx,     
+	output uart_rts,
+   
+   input uart_wr_i,          
+   input [7:0] uart_dat_i,   
+	input ser_clk,					
+   input sys_rst_i           
+);

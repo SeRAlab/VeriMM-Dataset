@@ -1,0 +1,10 @@
+Design a Wi-Fi transceiver module that handles input data transmission and reception. The module takes a 32-bit data input and a 100-bit received packet to transmit. It processes the input data to create a transmission packet that includes the data, its bitwise complement, and a XOR check for integrity, while also setting a busy flag during transmission. On receiving data, it verifies the correctness of the data using a checksum before outputting the valid received data. The design includes control logic to manage data buffering and transmission states based on an input clock and reset signal.
+module top_module(
+  input clk,
+  input reset,
+  input [31:0] data_in,
+  input [99:0] rx_packet,
+  output reg [31:0] data_out,  // changed wire to reg
+  output [99:0] tx_packet,
+  output tx_busy
+);

@@ -1,0 +1,12 @@
+Design a configuration register module that interfaces with a processor. This module captures input data on a write enable signal (upws) when enabled (upen) and retains the current value otherwise. It resets to a defined default value (RST_VAL) when the reset signal (rst_n) is inactive. The output cfg_out continuously reflects the internal register value, while the output updo provides the current register value conditionally based on the upen signal. The upack signal indicates active communication, being asserted when the module is enabled and a write or read signal is active.
+module top_module(
+     clk,
+     rst_n,
+     upen,
+     upws,
+     uprs,
+     updi,
+     updo,
+     upack,
+     cfg_out
+     );

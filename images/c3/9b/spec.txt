@@ -1,0 +1,22 @@
+
+
+You are tasked with designing a Verilog module that implements a basic arithmetic logic unit (ALU) for a microprocessor. The ALU should be able to perform the following operations: addition, subtraction, bitwise AND, bitwise OR, bitwise XOR, and logical shift left. The ALU should take two 32-bit inputs (A and B) and a 5-bit control signal (CTRL) as inputs, and output a 32-bit result (RES).
+
+The CTRL signal should be decoded as follows:
+- CTRL = 00000: addition (A + B)
+- CTRL = 00001: subtraction (A - B)
+- CTRL = 00010: bitwise AND (A & B)
+- CTRL = 00011: bitwise OR (A | B)
+- CTRL = 00100: bitwise XOR (A ^ B)
+- CTRL = 00101: logical shift left (A << B)
+
+The module should have the following interface:
+- input clk: the clock signal
+- input rst: the reset signal
+- input [31:0] A: the first input value
+- input [31:0] B: the second input value
+- input [4:0] CTRL: the control signal
+- output reg [31:0] RES: the result value
+
+You should implement the ALU using behavioral Verilog code.
+

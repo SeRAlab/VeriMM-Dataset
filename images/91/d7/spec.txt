@@ -1,0 +1,5 @@
+Design a 32-bit multiplier module that supports both signed and unsigned multiplication, controlled by an enable signal, `multE`. The module takes two 32-bit inputs, `a` and `b`, and outputs a 64-bit product `s`. It includes a mechanism to stall the operation until the multiplication is complete, indicated by the `mult_stall` output. The multiplication operation is triggered on the rising edge of the clock when `multE` is asserted and the module is not currently busy. The module implements a basic bit-shifting multiplication algorithm, where it accumulates the product in a temporary register, handling signedness by appropriately sign-extending the 32-bit inputs. It indicates when the multiplication process is in progress and manages the internal state to ensure synchronization with the clock.
+module top_module(input clk, multE, is_signed,
+                  input [31:0] a, b,
+                  output mult_stall,
+                  output reg [63:0] s);

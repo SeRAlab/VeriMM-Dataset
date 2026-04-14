@@ -1,0 +1,11 @@
+Implement the Verilog module based on the following description.
+The following is the state transition table for a simple up-down counter with two states. Use the following state encoding: UP=1'b0, DOWN=1'b1. Implement only the state transition logic and output logic (the combinational logic portion) for this counter. Given the current state (state), compute the next_state based on the state transition table.
+
+The counter has the following states and their corresponding transitions:
+1. state UP: If in = 0, then transition to DOWN. If in = 1, remain in UP.
+2. state DOWN: If in = 0, remain in DOWN. If in = 1, transition to UP.
+
+module up_down_counter (
+  input in,
+  input state,
+  output reg next_state);

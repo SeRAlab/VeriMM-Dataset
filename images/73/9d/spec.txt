@@ -1,0 +1,6 @@
+Design a watchdog timer circuit that monitors the operation of a system based on a clock signal. The module counts clock cycles and generates a watchdog signal that remains HIGH while the count is below a specified timeout value, 't'. If the reset signal is asserted, the counter and watchdog signal are both reset to zero. Once the count reaches or exceeds the timeout value, the watchdog signal goes LOW, indicating a timeout condition. This circuit is essential for ensuring timely resets in systems to prevent hang states or failures.
+module top_module(
+  input clk, // clock signal
+  input rst, // reset signal
+  output reg wd // watchdog signal
+);

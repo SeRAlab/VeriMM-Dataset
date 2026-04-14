@@ -1,0 +1,11 @@
+Design a branch control unit that determines whether to take a branch in a processor based on two 32-bit input data values and a 3-bit function code (funct3). The output, jmpb, indicates the result of comparison operations executed on the input values in accordance with the specified funct3 code. The logic covers equality checks, less-than, greater-than, and is used for conditional branching decision-making: it generates a high output when the branch condition is satisfied and a low output otherwise.
+module top_module(
+	
+	input [31:0]	data_rs1	,
+	input [31:0]	data_rs2	,
+
+	input [2:0]		funct3		,
+
+	output	reg		jmpb
+
+);

@@ -1,0 +1,9 @@
+Design a circuit that implements a cyclic redundancy check (CRC) computation with a 68-bit input. The module accepts a clock signal, a reset signal, a 68-bit CRC value, and a 7-bit amount input. Upon receiving a clock edge, the module either resets its output registers, `left` and `right`, to zero or performs a series of bitwise operations to update these registers based on the current state and input values. The operation incorporates shifting and XORing of bits, likely to provide a transformed CRC output while maintaining some of the original bits' characteristics.
+module top_module(
+  input clk,
+  input rst,
+  input [67:0] crc,
+  input [6:0] amt,
+  output reg [67:0] left,
+  output reg [67:0] right
+);

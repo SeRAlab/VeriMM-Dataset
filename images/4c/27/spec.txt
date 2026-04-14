@@ -1,0 +1,16 @@
+Implement the Verilog module based on the following description.
+This is a sequential circuit. The circuit consists of combinational logic and a five-bit binary counter with synchronous reset. The output of the counter should be observable through the output count.
+
+Time 0ns: clk = 0, reset = 0, count = xxx.
+Time 5ns: clk = 1, reset = 0, count = xxx.
+Time 10ns: clk = 0, reset = 1, count = xxx.
+Time 15ns: clk = 1, reset = 1, count = 00000.
+Time 20ns: clk = 0, reset = 0, count = 00000.
+Time 25ns: clk = 1, reset = 0, count = 00001.
+Time 30ns: clk = 0, reset = 0, count = 00001.
+Time 35ns: clk = 1, reset = 0, count = 00010.
+
+module sync_reset_counter (
+	input clk,
+	input reset,
+	output reg [4:0] count);

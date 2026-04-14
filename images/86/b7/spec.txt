@@ -1,0 +1,13 @@
+Design a circuit that functions as a synchronous D flip-flop with an additional feature of a selectable data input. The module allows for either a direct data input (D) or a secondary data input (SCD) to be chosen based on the state of the SCE signal. On each positive edge of the CLK signal, the selected input is captured and stored in the flip-flop, producing an output Q. The complement of the stored output is simultaneously provided as Q_N. Additionally, the circuit includes power and ground connections for proper operation.
+module top_module(
+    input  D   ,
+    output reg Q   ,  // Changed to reg for sequential logic
+    output Q_N ,
+    input  SCD ,
+    input  SCE ,
+    input  CLK ,
+    input  VPB ,
+    input  VPWR,
+    input  VGND,
+    input  VNB
+);

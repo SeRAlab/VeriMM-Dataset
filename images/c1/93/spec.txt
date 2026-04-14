@@ -1,0 +1,45 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform address checking for Ethernet frames received by a network device. Its primary functions include:
+
+Broadcast Address Checking: Determines if an incoming Ethernet frame is a broadcast frame and whether it should be accepted or rejected based on the broadcast address checking configuration.
+Multicast Address Checking: Checks if the frame is a multicast frame and validates it against a set of hashed multicast addresses to decide if it should be processed.
+Unicast Address Checking: Compares the destination MAC address of the incoming frame against the device's MAC address to determine if the frame is intended for this device.
+Address Miss Handling: Identifies frames that do not match any of the device's addresses (unicast, multicast, or broadcast) and handles them according to the configured rules, potentially marking them as address misses.
+RxAbort Signal Generation: Generates a signal to abort the reception of the current frame based on specific conditions related to address checking.
+Pass-All Mode: Optionally allows all frames to be passed through regardless of their destination address, useful for promiscuous mode or debugging.
+
+This module plays a critical role in filtering Ethernet frames at the MAC layer, ensuring that only relevant frames are passed up the protocol stack for further processing.
+
+Module name:  
+	eth_rxaddrcheck
+
+Input ports:
+	MRxClk: The receive clock signal for the module.
+	Reset: A signal to reset the module.
+	RxData: The 8bit data from the received Ethernet frame.
+	Broadcast: A signal indicating if the current frame is a broadcast frame.
+	r_Bro: Configuration bit to enable/disable broadcast frame reception.
+	r_Pro: Configuration bit to enable/disable promiscuous mode.
+	ByteCntEqX: Signals (where X = 0, 2, 3, 4, 5, 6, 7) indicating the byte count equals X, used for timing the address checking process.
+	HASH0, HASH1: 32bit hash tables used for multicast address filtering.
+	CrcHash: A 6bit hash value derived from the CRC of the incoming frame's destination address.
+	CrcHashGood: A signal indicating the CRC hash calculation was successful.
+	Multicast: A signal indicating if the current frame is a multicast frame.
+	MAC: The 48bit MAC address of the device.
+	StateData: A 2bit signal representing the current state of the data reception process.
+	RxEndFrm: A signal indicating the end of the frame reception.
+	PassAll: A signal to enable/disable passall mode.
+	ControlFrmAddressOK: A signal indicating if control frame addresses are okay.
+Output ports:
+	RxAbort: A signal to abort the reception of the current frame.
+	AddressMiss: A signal indicating that the received frame's address does not match any known addresses and is considered a miss.
+
+
+Implementation:
+The RTL module eth_rxaddrcheck is designed to perform address checking for Ethernet frames. It operates on the principle of identifying whether an incoming Ethernet frame is directed to the MAC (Media Access Control) address of the receiver, is a broadcast message, or is a multicast message that the receiver is interested in. The module also incorporates logic to handle special cases such as promiscuous mode and control frame address validation. The core functionality is implemented through a combination of sequential and combinational logic, described below:
+Sequential Logic: The module uses edge-triggered flip-flops that update their state with the rising edge of the MRxClk clock or when a reset (Reset) signal is asserted. This sequential logic is primarily used for determining the validity of the received frame's address (UnicastOK, MulticastOK), handling abort conditions (RxAbort), and identifying address misses (AddressMiss). The sequential blocks are sensitive to the Reset signal to ensure proper initialization and to handle any required state reset.
+Combinational Logic: The module employs combinational logic to derive intermediate signals such as BroadcastOK, RxAddressInvalid, and HashBit. These signals are used to evaluate conditions instantaneously based on the current inputs and the state of the sequential elements. For example, BroadcastOK is determined by checking if the frame is a broadcast and if broadcast reception is enabled. The HashBit signal is derived from a hash table lookup using part of the CRC hash of the frame's destination address, facilitating multicast address filtering.
+
+Give me the complete code.
+

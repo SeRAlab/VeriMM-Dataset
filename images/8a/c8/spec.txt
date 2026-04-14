@@ -1,0 +1,17 @@
+Please act as a professional verilog designer.
+
+Implement a module of a 3-bit gray code counter. The counting starts when the enable signal is high. The counter increments on every positive edge of the clock signal and resets to 0 when the reset signal (rst) is active.
+
+Module name:  
+    gray_counter_3               
+Input ports:
+    rst: Reset signal (active high)
+    clk: Clock signal
+    enable: Signal to enable counting
+Output ports:
+    gray_count: 3-bit output representing the current gray code count value
+
+Implementation:
+If the reset signal is active (rst), the counter is reset to 0 by assigning the value 3'b000 to the output register (gray_count). If the enable signal is high, the counter increments on each positive clock edge. The count is converted to gray code using the formula gray_count = count ^ (count >> 1). If the enable signal is low, the counter will stop, and the output register (gray_count) remains unchanged.
+
+Give me the complete code.

@@ -1,0 +1,9 @@
+Design a dual-port register bank that allows for simultaneous read and write operations on 32 registers, each 32-bit wide. The module utilizes a synchronous RAM component to store data, where the write operation is controlled by the `wren` signal and directed to the `wraddress` register. The output `q` provides the data read from the register specified by `rdaddress`, enabling efficient data management in applications where multiple data paths are necessary, such as in CPU register files.
+module top_module(
+  input clock,
+  input [31:0] data,
+  input [4:0] rdaddress,
+  input [4:0] wraddress,
+  input wren,
+  output reg [31:0] q
+);

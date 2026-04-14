@@ -1,0 +1,8 @@
+Design a simple RFID communication module utilizing amplitude shift keying (ASK) for modulation. The transmitter block, enabled by `tx_en`, sends data by toggling the amplitude based on the least significant bit of `tx_data`. If `tx_data[0]` is high, a high amplitude signal is generated; otherwise, a low amplitude is used to indicate no transmission. On the receiving end, when `rx_en` is activated, the receiver detects the transmitted amplitude: if a high amplitude is detected, it outputs an 8-bit signal of all ones; if a low amplitude is detected, it retrieves and outputs the original transmit data. The module effectively facilitates basic wireless data transmission and reception.
+module top_module(
+  input clk,
+  input [7:0] tx_data,
+  input tx_en,
+  input rx_en,
+  output [7:0] rx_data
+);

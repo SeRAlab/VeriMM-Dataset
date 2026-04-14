@@ -1,0 +1,11 @@
+Construct a 32-entry register file that allows for read and write operations. The module has two read address inputs (ra1 and ra2) to output the contents of the specified registers (rd1 and rd2). It also takes a write address (wa), a data input (wd), and a write enable signal (we) that controls writing to the register at the specified address on the rising edge of the clock (c). When write enable is asserted, data is written to the designated register, otherwise, the contents remain unchanged.
+module top_module(
+    input [4:0] ra1,
+    input [4:0] ra2,
+    input [4:0] wa,
+    input [31:0] wd,
+    input we,
+    input c,
+    output [31:0] rd1,
+    output [31:0] rd2
+    );

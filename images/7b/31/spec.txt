@@ -1,0 +1,13 @@
+Design a 4-bit digital circuit that performs operations on two 4-bit inputs, `a` and `b`. The circuit has select controls (`c1`, `c2`, `c3`) to determine the next state of two registers, `ra` and `rb`. When `c1` is high, `ra` is loaded with `a`, and when `c2` is high, `ra` decreases by `rb`. Similarly, `rb` can be loaded with `b` when `c1` is high or decreased by `ra` when `c3` is high. The module also includes comparison outputs: `f` indicates if `ra` is greater than `rb`, and `g` signifies equality. The output `q` presents the value of `ra` if it is equal to `rb`; otherwise, it outputs zero. The circuit is sensitive to a clock signal for state changes and includes a reset functionality to initialize both registers to zero.
+module top_module(input wire [3:0]  a,
+	     input wire [3:0]  b,
+	     input wire        c1,
+	     input wire        c2,
+	     input wire        c3,
+	     
+	     output wire [3:0] q,
+	     output wire       f,
+	     output wire       g,
+	     
+	     input wire        clk,
+	     input wire        rst);

@@ -1,0 +1,8 @@
+Design a 16-bit shift register that shifts its stored data to the left on each positive edge of the clock when enabled, while allowing for reset functionality. When the `rst` signal is high, the register resets to zero. The least significant bit (LSB) of the `data_in` input is shifted into the LSB of the shift register during the shift operation. The current value of the shift register is continuously output through `data_out`.
+module top_module(
+    input clk,
+    input rst,
+    input ena,
+    input [15:0] data_in,
+    output reg [15:0] data_out
+);

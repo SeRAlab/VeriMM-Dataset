@@ -1,0 +1,29 @@
+Please act as a professional Verilog designer.
+
+Implement a 6-bit parallel-in serial-out (PISO) shift register with a synchronous load and reset. The shift register loads a 6-bit parallel input on a load signal and shifts its bits to the right on the rising edge of the clock signal. When the reset signal is high, the shift register resets its value to zero on the next clock edge.
+
+Module name:  
+    piso_shift_register_6bit   
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    load: Load signal for parallel input. Defined as 1 for loading and 0 for shifting.
+    parallel_in: 6-bit parallel input data.
+
+Output ports:
+    serial_out: Serial output bit representing the least significant bit of the register.
+
+Implementation:
+The output register is triggered on the positive edge of the clock signal (posedge clk). On reset, indicated by rst, the output register is cleared to 0. When load is high, the output register loads the parallel input data; when load is low, the output register shifts its bits to the right.
+
+Give me the complete code.
+
+module piso_shift_register_6bit(
+    input clk,
+    input rst,
+    input load,
+    input [5:0] parallel_in,
+
+    output reg serial_out
+);

@@ -1,0 +1,6 @@
+Design a key scanning control circuit using a finite state machine (FSM) that manages the state transitions based on clock, reset, and operational inputs. The module maintains a three-bit wide state register to track the current state and generates a timer signal to facilitate timing operations. It transitions from an idle state to processing states for loading or shifting operations upon receiving a start signal while also controlling a timer based on a defined divider parameter. The circuit resets appropriately and ensures that operations execute at correct intervals dictated by the timer, enabling efficient control of key scanning functionality in a larger system.
+module top_module(
+  input clk, rst, start, load, shift,
+  output reg [2:0] currentState,
+  output reg startTimer
+);

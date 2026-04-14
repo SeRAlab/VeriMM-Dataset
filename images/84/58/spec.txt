@@ -1,0 +1,18 @@
+Design a 32-bit counter that increments or decrements based on control signals. The counter resets to zero when the count switch (count_sw) is activated. It decrements the count when the threshold switch (thresh_sw) is active, and increments normally otherwise. The module also provides multiple status outputs: it indicates whether the count is zero or at its maximum value, and it compares the current count against a programmable threshold to generate various comparison results (greater than, less than, etc.), both in unsigned and signed contexts.
+module top_module(
+  input clk,
+  input thresh_sw,
+  input count_sw,
+  input [31:0] threshold,
+  output reg [31:0] count,
+  output reg zero,
+  output reg max,
+  output reg gtu,
+  output reg gts,
+  output reg ltu,
+  output reg lts,
+  output reg geu,
+  output reg ges,
+  output reg leu,
+  output reg les
+);

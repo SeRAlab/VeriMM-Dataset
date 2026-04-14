@@ -1,0 +1,18 @@
+Design a circuit that implements a clamping mechanism for two 11-bit input signals, `x` and `y`, based on active clamp signals `clamp_x` and `clamp_y`. The module checks if the values of `x` and `y` are outside specified limits as defined by masking inputs `clamp_mask_x` and `clamp_mask_y`. When the inputs exceed these limits, the corresponding clamp signal will activate, allowing the circuit to conditionally output modified 8-bit versions of the inputs (`new_x` and `new_y`). The outputs can either be bit-masked versions of the original inputs, specific preset values from the bitmasks, or zeroed, contingent on the state of the clamp signals and the input conditions. This design effectively implements a bounded value output mechanism for the signals, ensuring they remain within defined constraints.
+module top_module(
+	input		de_clk,		
+	input		clamp_x,	
+	input		clamp_y,	
+	input	[10:0]	x,		
+	input	[10:0]	y,		
+	input	[10:0]	clamp_mask_x,	
+	input	[10:0]	clamp_mask_y,	
+	input	[8:0]	bitmask_x,	
+	input	[8:0]	bitmask_y,	
+
+	output reg		clamp,		
+	output reg	[8:0]	new_x,		
+	output reg	[8:0]	new_y,		
+	output reg	[8:0]	new_x_d,	
+	output reg	[8:0]	new_y_d		
+	);

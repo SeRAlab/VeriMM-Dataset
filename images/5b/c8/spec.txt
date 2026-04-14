@@ -1,0 +1,5 @@
+Design a module that processes a 28-bit input `z` and a 6-bit input `a_e` to produce a 16-bit output `output_z`. The module implements specific conditions: if the highest bit of `a_e` is 1 and the lower 5 bits equal 15, it sets the output to zero. If the highest bit of `a_e` is 0 and the lower 5 bits exceed 15, it sets the output to all ones (16'hFFFF). In all other cases, it left-shifts the input `z` by 12 bits and extracts the upper 16 bits to generate the output.
+module top_module(
+  input [27:0] z,
+  input [5:0] a_e,
+  output [15:0] output_z);

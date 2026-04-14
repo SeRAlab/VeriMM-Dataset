@@ -1,0 +1,5 @@
+Design a synchronous LED controller with pattern generation. The circuit utilizes a clock and a synchronous active-high reset to manage outputs. It maintains two counters: a synchronization counter cycles every 10 clock cycles, while an asynchronous counter completes a cycle every 16 clock cycles. A pattern counter cycles through four distinct patterns every 10 cycles, controlling the LED output based on the current pattern and the value of the sync counter. The resulting LED behavior alternates based on predefined patterns, providing varied light patterns at specified intervals, culminating in a controlled blinking sequence.
+module top_module(
+    input clk,
+    input reset,          // Synchronous active-high reset
+    output reg led);

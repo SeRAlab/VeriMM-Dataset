@@ -1,0 +1,7 @@
+Design a button matrix decoder that takes a 4-bit input representing the status of four buttons and outputs a 4-bit signal indicating which button is pressed. The module operates on the rising edge of a clock signal or when a reset is asserted, initializing the output to zero. Each specific button press corresponds to unique 4-bit output values: pressing button 1 outputs 0001, button 2 outputs 0010, button 3 outputs 0100, and button 4 outputs 1000. If none of the buttons are pressed, the output remains 0000.
+module top_module(
+    input         clk,
+    input         rst,
+    input  [3:0]  btn,
+    output reg [3:0] out
+  );

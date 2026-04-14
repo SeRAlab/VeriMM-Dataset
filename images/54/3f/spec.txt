@@ -1,0 +1,17 @@
+Design a data processing module that functions as a data formatter or translator in a high-speed data interface. It accepts a 32-bit input data stream and replaces any occurrence of the value '0x00000000' with '0x000f003', while passing all other input data unchanged. The module also propagates user signals, keep bytes, and validity/last flags directly to the output. Additionally, it manages handshake signals through the oTREADY output, allowing for synchronization with an external receiving entity. The design includes clock and reset inputs for controlling state transitions, ensuring reliable operation within a digital system.
+module top_module(
+    input [31:0]  iTDATA,
+    input         iTUSER,
+    input [3:0]   iTKEEP,
+    input         iTVALID,
+    input         iTLAST,
+    output        oTREADY,
+    output [31:0] oTDATA,
+    output        oTUSER,
+    output [3:0]  oTKEEP,
+    output        oTVALID,
+    output        oTLAST,
+    input         iTREADY,
+    input clk,
+    input rst
+    );

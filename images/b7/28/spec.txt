@@ -1,0 +1,8 @@
+Design a LIFO (Last In, First Out) memory module that stores 8-bit wide data entries up to a depth of 16. The module has a clock input for synchronous operation and can be reset, which clears the pointer to the start of the memory. When the write enable (we) signal is active, it allows data input (din) to be stored at the current pointer location, which is then incremented. The output (dout) continuously reflects the most recently written data, providing access to the last item stored in the memory. If the module is reset, the output is set to high-impedance, indicating an undefined state.
+module top_module(
+  input clk,
+  input [7:0] din,
+  input we,
+  input rst,
+  output reg [7:0] dout // Changed 'output' to 'output reg' to allow assignment in always block
+);

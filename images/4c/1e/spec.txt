@@ -1,0 +1,11 @@
+Design a synchronous FIFO (First In, First Out) memory buffer with configurable data width and depth. The module supports simultaneous read and write operations controlled by enable signals. It flags when the buffer is empty or full and resets its pointers and count on a reset signal. When writing, data is stored in memory and the write pointer is incremented, wrapping around upon reaching the maximum depth. Similarly, when reading, data is outputted and the read pointer updates, maintaining the correct order of data retrieval.
+module top_module(
+    clk,
+    rst,
+    wr_en,
+    wr_data,
+    rd_en,
+    rd_data,
+    empty,
+    full
+);

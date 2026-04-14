@@ -1,0 +1,8 @@
+Design a 4-bit Arithmetic Logic Unit (ALU) that performs various operations based on a 3-bit operation code (OP). The ALU can execute addition, subtraction, bitwise AND, bitwise OR, bitwise XOR, and an arithmetic left shift on two 4-bit inputs (A and B). The output of the selected operation is stored in a result register, which updates on the positive edge of a clock signal. The module includes a default case that resets the output to zero when an unrecognized operation code is encountered.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [2:0] OP,
+    input clk, // Added clk as an input
+    output reg [3:0] result
+);

@@ -1,0 +1,12 @@
+Design a circuit that functions as a memory interface for a set of LED drivers, capable of performing both read and write operations to a memory array based on specific input conditions. It utilizes a parameterized memory of width 32 bits and supports varying input sizes for write operations, allowing for single, double, or quad word updates, depending on the received 'size' signal. The module outputs the current state of the lighting as indicated by 'hold' during read operations and maintains synchronization with a clock signal. The functionality is governed by the 'enable' signal, and the entire state can be reset using the 'reset' signal.
+module top_module(
+	dout,
+	din,
+	address,
+	size,
+	read_write,
+	enable,
+	lighting,
+	reset,
+	clk
+);

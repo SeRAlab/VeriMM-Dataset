@@ -1,0 +1,5 @@
+Design a module featuring multiple flip-flops with different reset and preset behaviors. The first flip-flop, Qsimple, captures the value of input D on the rising edge of the clock. The second flip-flop, Qasyncrst, asynchronously resets to LOW when the reset signal (rst) is HIGH, otherwise it follows D on the clock edge. The third flip-flop, Qasyncpst, also has asynchronous control, resetting to LOW with rst and setting to HIGH when the preset signal (pst) is HIGH; otherwise, it tracks D on the clock edge. This module is useful for implementing sequential logic with mixed synchronous and asynchronous control.
+module top_module(
+	input D, clk, rst, pst,
+	output reg Qsimple, Qasyncrst, Qasyncpst
+	);

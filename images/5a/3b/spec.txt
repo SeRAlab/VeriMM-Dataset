@@ -1,0 +1,20 @@
+Design a 32-bit Arithmetic Logic Unit (ALU) capable of performing various arithmetic and logic operations. This module accepts two signed 32-bit inputs and a carry input to compute the sum, multiplication, and subtraction, with the sum output also providing a carry output. It further generates results for bitwise operations such as AND, OR, XOR, and NOT, alongside left and right shifts (both arithmetic and logical). Additionally, the ALU includes functionality for reversing the bits of the first input. Overall, this design serves as a versatile computational unit suitable for digital systems requiring arithmetic and logical functionalities.
+module top_module(
+   input signed [31:0] x,
+   input signed [31:0] y,
+
+   input carry,
+   
+   output wire [31:0] summ,
+   output wire ocarry,
+
+   output wire [31:0] mult_h,
+   output wire [31:0] mult_l,
+
+   output wire [31:0] zand, zor, zxor, znot,
+
+   output wire [31:0] sub, ashiftl, ashiftr,
+
+   output wire [31:0] lshiftl, lshiftr,
+   output wire [31:0] revers
+);

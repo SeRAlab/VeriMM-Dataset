@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement a 5-bit Ring Counter module that generates a sequence of 5-bit Ring counter values. The counter cycles through all possible 5-bit Ring counter states in a cyclic manner.
+
+Module name:
+    ring_counter
+                 
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+
+Output ports:
+    ring_code: 5-bit output signal representing the current Ring counter value.
+
+Implementation:
+The module includes a 5-bit register, ring_code, which represents the current Ring counter value.
+The ring_code register is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the ring_code register is set to 5'b00001.
+The ring_code is updated by shifting its bits to the left, and the leftmost bit is set to the rightmost bit before the shift.
+
+Give me the complete code.
+
+module ring_counter(
+  input clk,
+  input rst_n,
+  output reg [4:0] ring_code
+);

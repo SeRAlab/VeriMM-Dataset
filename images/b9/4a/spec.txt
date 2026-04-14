@@ -1,0 +1,6 @@
+Design a 16-bit edge detector that identifies rising edges on the least significant bit of a 16-bit input signal. On each positive clock edge, the module samples the input and stores previous values in registers to detect transitions. When a rising edge is detected (where the current input bit is 1 and the previous input was 0), it outputs the value of the preceding input state. This functionality is useful for detecting changes in signals, enabling systems to respond to events based on input transitions.
+module top_module(
+    input clk,
+    input [15:0] in,
+    output reg [15:0] anyedge
+);

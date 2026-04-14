@@ -1,0 +1,10 @@
+Design a digital signal processing (DSP) module that performs a signed multiplication of two inputs, `charge_in` (21 bits) and `signal_in` (15 bits), and features a delayed output mechanism controlled by various input signals. The module has a `delay_en` signal to enable or disable delayed processing based on the count specified by a counter `j` (up to 14). When enabled, it accumulates and processes intermediate multiplication results, shifting them through temporary registers before producing a 13-bit output (`DSPout`). It also manages a delay line for intermediate results based on the `store_strb` signal, allowing it to hold previous values for further calculations. The `bunch_strb` signal is utilized to reset the counter `j`. Overall, this module functions as a versatile DSP unit with capabilities for multiplication and pipelined storage of results for enhanced processing efficiency.
+module top_module(
+    input signed [20:0] charge_in,
+    input signed [14:0] signal_in,
+    input delay_en,
+    input clk,
+    input store_strb,
+    output reg [12:0] DSPout,
+    input bunch_strb
+);

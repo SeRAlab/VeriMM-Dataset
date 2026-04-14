@@ -1,0 +1,37 @@
+Please act as a professional Verilog designer. Your task is to create a Verilog module that implements clock gating cells. 
+A clock gating cell is a type of digital circuit that allows the clock signal to be selectively enabled or disabled. 
+This can be useful for reducing power consumption in a design, as well as for improving timing performance by reducing clock skew.
+
+Your module should have the following inputs and outputs:
+
+Inputs: 
+- clk: the clock signal to be gated
+- enable: the enable signal for the clock gating cell
+
+Outputs:
+- gated_clk: the gated clock signal
+
+Your module should implement the following functionality:
+
+- When the enable signal is high, the gated_clk signal should be the same as the clk signal.
+- When the enable signal is low, the gated_clk signal should be held low.
+
+To implement the clock gating cell, you should use Verilog code to define the gated_clk signal as a function of the clk and enable signals. 
+You should use an AND gate to combine the clk and enable signals, and then use an inverter to invert the result. 
+The output of the inverter will be the gated_clk signal.
+
+Here is an example implementation of the module:
+
+module clock_gating_cell (
+  input clk,
+  input enable,
+  output gated_clk
+);
+
+  assign gated_clk = ~clk & enable;
+
+endmodule
+
+In this example, the gated_clk signal is defined as the result of an AND gate between the inverted clk signal and the enable signal. 
+This means that when the enable signal is high, the gated_clk signal will be the same as the clk signal. 
+When the enable signal is low, the gated_clk signal will be held low.

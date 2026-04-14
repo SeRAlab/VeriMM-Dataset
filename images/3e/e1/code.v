@@ -1,0 +1,14 @@
+module ShiftRegister2Bit(  
+    input wire clk,  
+    input wire load,  
+    input wire [1:0] data,  
+    output reg [1:0] q  
+);  
+    always @(posedge clk) begin  
+        if (load) begin  
+            q <= data;  
+        end else begin  
+            q <= {1'b0, q[1:1]};  
+        end  
+    end  
+endmodule

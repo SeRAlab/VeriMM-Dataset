@@ -1,0 +1,33 @@
+Please act as a professional verilog designer.
+    
+Implement a module to simulate a dual-port RAM (Random Access Memory) with a storage capacity of 1024 locations, each storing a single bit. This module supports separate read and write operations on its two ports, allowing simultaneous access to different memory addresses. It is intended for use in systems requiring fast, concurrent access to memory from two different sources, such as in digital signal processing, multi-threaded processors, or any application necessitating dual access to a shared memory resource.
+
+Key functions include:
+Initialization: The memory is pre-initialized with a specific pattern defined by the `FILL` parameter.
+Read Operation: Each port can independently read from any memory location when enabled and instructed to read.
+Write Operation: The module supports writing to memory through the first port when enabled and not in read mode.
+
+Module name:  
+	RAM1Kx1
+
+Input ports:
+	CLK1, CLK2: Clock inputs for the two ports. These are the clock signals that synchronize read and write operations on their respective ports.
+	AB1, AB2: 10bit address buses for the two ports (AB1 for port 1, AB2 for port 2). They specify the memory location to be accessed.
+	CS1, CS2: Chip select signals for the two ports. They enable or disable operations on their respective ports. When CS is low, operations are disabled, and the data output is in high impedance state.
+	READ: Read enable signal for port 1. When high, it enables read operation; when low, it enables write operation if CS1 is also high.
+	DI1: Data input for port 1. This is the data bit to be written into the memory location specified by AB1 during a write operation.
+Output ports:
+	DO1, DO2: Data outputs for the two ports. They output the data bit stored at the memory location specified by their respective address buses during a read operation. If the corresponding CS signal is low, the output is in high impedance state (Z).
+
+
+Implementation:
+The RTL module presented is designed to function as a dual-port RAM with a storage capacity of 1K x 1 bit. This module is capable of handling two independent access ports (Port 1 and Port 2), each with its own set of controls and data paths. The module is implemented using Verilog, a hardware description language commonly used for describing electronic systems.
+Combinational Logic:
+Data Output (DO1, DO2): The module employs combinational logic to determine the output data for both ports. For Port 1, the output DO1 is determined by checking if the chip select (CS1) and read (READ) signals are active; if so, the data from the memory location addressed by AB1 is outputted. Otherwise, a high-impedance state (1'bZ) is outputted to indicate that the port is not driving the line. A similar logic applies to Port 2, with the output DO2 being driven by the memory content at address AB2 if CS2 is active, and a high-impedance state otherwise.
+Sequential Logic:
+Memory Write Operation: The module uses edge-triggered sequential logic for writing data into the memory. Specifically, on the rising edge of CLK1, if Port 1 is enabled for writing (indicated by CS1 being high and READ being low), the data bit DI1 is written into the memory location addressed by AB1. There is no write operation defined for Port 2 in this module, indicating that Port 2 is read-only.
+Memory Initialization:
+The memory is initialized in the initial block, where each bit of the memory is set based on the FILL parameter. This parameter is a 256-bit value, and the initialization logic uses a bit mask to determine whether each memory bit should be set to 1 or 0. This is done by checking if the corresponding bit in the FILL parameter is 1 (for the lower 256 addresses of the memory) and setting the memory bit accordingly.
+
+Give me the complete code.
+

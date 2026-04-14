@@ -1,0 +1,6 @@
+Design a Viterbi decoder for error correction in communication systems. This module takes a sequence of received signal bits and the current channel state as inputs, and it outputs a decoded message. It utilizes a trellis structure to compute path metrics through the Viterbi algorithm, systematically evaluating and selecting paths based on minimizing the accumulated path metric. The decoder iterates through the received bits to update these metrics, identifies the most reliable path, and subsequently traces back to extract the decoded message from the best path found, ensuring robust data recovery from potential transmission errors.
+module top_module(
+  input [n-1:0] received_signal,
+  input [k-1:0] channel_state,
+  output reg [m-1:0] decoded_message // changed to reg to assign values inside always block
+);

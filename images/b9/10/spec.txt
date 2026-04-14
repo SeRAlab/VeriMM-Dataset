@@ -1,0 +1,10 @@
+Design a wireless communication module that facilitates data transmission and reception. The module includes an 8-bit data input for transmission (tx_data) and control signals to enable the transmitter (tx_en) and receiver (rx_en). It outputs received data (rx_data) and indicates whether the transmitter is busy (tx_busy). The circuit features asynchronous reset functionality to ensure stable operation, initializing the transmitter's busy state upon reset. The implementation is expected to manage both the transmitting and receiving logic according to a specified wireless communication protocol.
+module top_module(
+  input clk,
+  input reset_n,
+  input [7:0] tx_data,
+  input tx_en,
+  input rx_en,
+  output reg [7:0] rx_data, // Changed to reg since it will be driven in an always block
+  output reg tx_busy        // Changed to reg to allow assignment in an always block
+);

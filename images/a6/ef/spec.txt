@@ -1,0 +1,11 @@
+Design a motor control unit that manages the operation of a motor using PWM for speed control and a stepper motor for precise positioning. The module generates a PWM output based on the provided duty cycle, allowing for variable speed control. Additionally, it determines the direction of the motor's drive using two directional inputs, controlling an H-bridge output signal accordingly. Furthermore, the module sequentially drives a stepper motor through a defined step sequence, producing output signals in a cyclic manner to control the steps of the motor effectively.
+module top_module(
+  input clk,
+  input [7:0] pwm_duty_cycle,
+  input dir1,
+  input dir2,
+  input [3:0] step_sequence,
+  output reg pwm_out,
+  output reg h_bridge_out,
+  output reg [3:0] step_out
+);

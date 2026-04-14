@@ -1,0 +1,7 @@
+Design a 4-bit barrel shifter capable of performing different types of shifts based on a 2-bit control signal. The module takes a 4-bit input and a 2-bit shift command, where '00' indicates a logical left shift, '01' indicates a logical right shift, '10' represents an arithmetic left shift, and '11' dictates an arithmetic right shift. The output reflects the shifted value, allowing for both directional and type-based manipulation of the input data. The design includes an intermediate stage to hold the shifted result before being updated on the clock's rising edge.
+module top_module(
+    input [3:0] in,
+    input [1:0] shift,
+    input clk,              // Add clk input
+    output reg [3:0] out
+);

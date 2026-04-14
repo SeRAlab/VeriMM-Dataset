@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+    
+Implement a module to serve as a debug register within a larger digital system. Its primary functions include storing and updating a data value based on external inputs, and providing this data value as an output for debugging or monitoring purposes. The module is parameterizable, allowing for flexibility in the width of the data it handles. It supports synchronous reset and write operations, making it suitable for use in synchronous digital circuits where precise control over data storage and retrieval is necessary.
+
+In the broader system context, this module could be used to hold configuration settings, store intermediate computation results, or keep track of system state information that is critical for debugging and verification processes.
+
+Module name:  
+	dbg_register
+
+Input ports:
+	DataIn [WIDTH1:0]: A parameterizable width input port that carries the data to be written into the register. The width of this port is determined by the WIDTH parameter.
+	Write: A singlebit input signal that, when asserted (1), enables the writing of the data present on the DataIn port into the register on the next positive edge of the clock.
+	Clk: The clock input signal. The register captures the input data or resets its content on the rising edge of this clock signal.
+	Reset: A synchronous reset input signal. When asserted (1), it causes the register to load the default value specified by the Default input on the next positive clock edge.
+	Default [WIDTH1:0]: A parameterizable width input that specifies the default value to be loaded into the register upon reset.
+Output ports:
+	DataOut [WIDTH1:0]: A parameterizable width output port that presents the current value stored in the register. The width of this port matches that of the DataIn and Default inputs.
+
+
+Implementation:
+The RTL module presented, named dbg_register, is designed to function as a configurable-width register with a default value capability and a write enable control. This module is primarily used in digital systems for debugging purposes or as a general-purpose register with initialization capabilities. The module's behavior is governed by both combinational and sequential logic elements, which are detailed below:
+Sequential Logic: The core functionality of the dbg_register module is built around sequential logic, specifically a clocked process that responds to the rising edge of the Clk signal. This design choice ensures that the register's value is updated synchronously with the system clock, providing a stable and predictable behavior that is essential for reliable digital system operation. The sequential logic is responsible for handling the register's value updates either with a new data input (DataIn) when the write enable (Write) is asserted or resetting the register to a default value (Default) upon activation of the reset signal (Reset).
+Combinational Logic: While the module's primary behavior is sequential, it also incorporates combinational logic to interpret the control signals (Write and Reset) and decide the register's next state. This logic is embedded within the clocked process, determining whether to load the Default value or the new DataIn based on the current state of the control signals. The combinational logic ensures that the correct data path is selected in response to the module's inputs, facilitating dynamic control over the register's content.
+
+Give me the complete code.
+

@@ -1,0 +1,7 @@
+Design a priority encoder and display driver for a 7-segment display. This module accepts a 4-bit binary input and identifies the highest-order active bit to drive a common anode display, while concurrently converting the binary input into Binary-Coded Decimal (BCD) format for seven-segment display output. The module outputs the appropriate segment signals to represent the BCD equivalent of the input on the display, and activates the decimal point when the input value is 8 or greater. The output pins indicate which segment of the display is active based on the BCD conversion and highlight the location of the highest active input bit.
+module top_module(
+    input [3:0] in,
+    output reg [6:0] seg,
+    output reg dp,
+    output reg [3:0] an
+);

@@ -1,0 +1,24 @@
+Design a control module that manages data requests from three different lists (A, B, and C) based on an input request signal. The module generates request signals for lists A and B while prioritizing list C when its request is active. It uses a registered selection mechanism to ensure that valid data is only acknowledged and output from one of the lists at a time, reflecting their respective validity and acknowledgment statuses. When ready, the module indicates which list's data is being processed, managing the requests to optimize access to the data available from each list and ensuring proper output validity.
+module top_module(
+    input clock,
+    input ready,
+
+	output reg  listA_req,
+    input       listA_ack,
+    input [7:0] listA_value,
+    input       listA_value_valid,
+
+	output reg  listB_req,
+    input       listB_ack,
+    input [7:0] listB_value,
+    input       listB_value_valid,
+
+    input       listC_req,
+    input [7:0] listC_value,
+    input       listC_value_valid,
+
+	input            req,
+	output reg       ack,
+	output reg [7:0] value,
+	output reg       value_valid
+    );

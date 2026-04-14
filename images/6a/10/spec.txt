@@ -1,0 +1,14 @@
+Implement a forwarding unit for a pipelined processor architecture to resolve data hazards. This module takes two register source inputs (rs1_idex and rs2_idex) along with the control signals indicating whether the corresponding register writes will occur in the memory-to-writeback (regwrite_memwb) and execute-to-memory (regwrite_exmem) stages. It outputs two signals, Forward_A and Forward_B, which determine the source of data to be forwarded to the execution stage for these registers. The unit prioritizes data from the EX/MEM stage over the MEM/WB stage and includes checks to avoid forwarding from the zero register. This helps optimize the data flow in the pipeline by ensuring that the most recent updates are used during execution, effectively preventing pipeline stalls due to data dependencies.
+module top_module(
+
+    input[4:0] rs1_idex,
+    input [4:0] rs2_idex,
+    input regwrite_memwb,
+    input regwrite_exmem,
+    input [4:0] rd_memwb,
+    input [4:0] rd_exmem,
+
+    output reg [1:0] Forward_A,
+    output reg [1:0] Forward_B
+
+);

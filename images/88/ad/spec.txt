@@ -1,0 +1,14 @@
+Develop a Verilog module that implements a 4-bit subtractor with borrow-in and borrow-out. The subtraction should take place at every positive edge of the clock.
+
+Time 0ns: clk = 0, a = 4'b0100, b = 4'b0010, borrow_in = 0, diff = 4'b0000, borrow_out = 0.
+Time 5ns: clk = 1, a = 4'b0100, b = 4'b0010, borrow_in = 0, diff = 4'b0010, borrow_out = 0.
+Time 10ns: clk = 0, a = 4'b0110, b = 4'b0101, borrow_in = 1, diff = 4'b0000, borrow_out = 1.
+Time 15ns: clk = 1, a = 4'b0110, b = 4'b0101, borrow_in = 1, diff = 4'b0000, borrow_out = 1.
+
+module binary_subtractor (
+	input clk,
+	input [3:0] a,
+	input [3:0] b,
+	input borrow_in,
+	output reg [3:0] diff,
+	output reg borrow_out);

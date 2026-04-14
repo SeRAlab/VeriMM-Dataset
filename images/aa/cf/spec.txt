@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+
+Design a Verilog module for a 4-bit shift register with parallel load capability. The shift register shifts left on each clock cycle when the enable signal is active. It also includes a reset signal to set the register to zero, and a load signal to load a 4-bit parallel data input.
+
+Module name:  
+    shift_reg  
+
+Input ports:
+    clk: Chip clock signal.
+    rst_n: Active-low reset signal. Defined as 0 for chip reset and 1 for reset signal inactive.
+    en: Enable signal for the shift register.
+    load: Load signal for parallel loading.
+    d: Parallel data input signal with a data width of 4 bits.
+
+Output ports:
+    q: Shift register output signal with a data width of 4 bits.
+
+Implementation:
+Shift register operation:
+On every positive edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the shift register (q) is updated.
+If the reset signal (rst_n) is low, indicating a reset condition, the shift register (q) is set to 0.
+If the load signal is active, the parallel data input (d) is loaded into the shift register.
+If the enable signal (en) is active, the shift register shifts left by one position.

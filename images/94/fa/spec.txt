@@ -1,0 +1,7 @@
+Design a synchronizer module that captures an asynchronous input signal and converts it to a synchronous output using a clock signal. This module has `n` input signals and `m` output signals, utilizing flip-flops to ensure that the input is sampled and latched on the rising edge of the clock. It also includes reset functionality to clear the internal state. The module effectively synchronizes `n` asynchronous inputs to a `clk`, providing `m` synchronized outputs for further processing in a digital design.
+module top_module(
+  input [n-1:0] in,
+  input clk,
+  input rst,
+  output reg [m-1:0] out // Change from wire to reg
+);

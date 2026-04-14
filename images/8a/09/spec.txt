@@ -1,0 +1,8 @@
+Design a programmable arithmetic calculator that performs addition, subtraction, multiplication, and division on two 8-bit inputs (a and b) based on a 2-bit operation selector (op). The calculator also includes overflow and underflow detection for addition and subtraction, signaling these conditions by outputting defined values (8'b11111111 for overflow and 8'b00000000 for underflow). In the case of division, it detects division by zero, also returning 8'b11111111 in that scenario. The operation is triggered on the rising edge of a clock signal (clk), and the result is provided as an 8-bit output (result).
+module top_module(
+  input [7:0] a,
+  input [7:0] b,
+  input [1:0] op,
+  input clk,
+  output reg [7:0] result
+);

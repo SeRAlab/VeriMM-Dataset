@@ -1,0 +1,7 @@
+Design a power management module that generates an output signal based on the status of the input signals. When the clock signal (CLK) rises, the module sets the internal register (pwrgood) to low if the input (UDP_IN) is asserted; otherwise, it outputs the value of the power supply input (VPWR). The output (UDP_OUT) reflects the state of the pwrgood register, effectively controlling the output power based on the input conditions, ensuring safe operation in scenarios where the input signal may indicate a fault condition.
+module top_module(
+    input  VPWR,
+    input  UDP_IN,
+    input  CLK,
+    output UDP_OUT
+);

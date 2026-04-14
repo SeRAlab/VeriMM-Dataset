@@ -1,0 +1,6 @@
+Design a register with a specified bit width that updates its stored value on the rising edge of the clock. When enabled by the `en_write` signal, it loads the input data, `data_in`, into the output `data_out`. If the `reset` signal is asserted, the output is set to a predetermined `RESET_VALUE`, which defaults to zero. This module serves as a basic storage element in digital circuits, commonly used in sequential logic designs.
+module top_module(
+input clk, reset, en_write,
+input[BIT_WIDTH - 1: 0] data_in,
+output reg signed [BIT_WIDTH - 1: 0] data_out
+);

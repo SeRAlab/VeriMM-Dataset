@@ -1,0 +1,8 @@
+Design a one-bit wide logical AND circuit that samples two input signals, d0 and d1, on the rising edge of a clock signal, clk, if the clock enable signal, ce, is active. The circuit outputs the result of the AND operation between the two sampled signals to the output y. Additionally, if the clear signal, clr, is asserted, the internal registers for d0 and d1 are reset to zero, ensuring the circuit can be initialized or reset as needed.
+module top_module(
+  input [(1 - 1):0] d0,
+  input [(1 - 1):0] d1,
+  output [(1 - 1):0] y,
+  input clk,
+  input ce,
+  input clr);

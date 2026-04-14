@@ -1,0 +1,17 @@
+Please act as a professional Verilog designer.
+
+Implement a module of an up/down counter. The counter should count up when the up_down input signal is high and count down when it is low. The counter should wrap around when it reaches its maximum value (8'd255) or minimum value (8'd0). The counter should be reset to 8'd128 when the reset signal (rst_n) is active.
+
+Module name:
+    up_down_counter               
+Input ports:
+    rst_n: Reset signal (active low)
+    clk: Clock signal
+    up_down: Signal to control count direction (1 for up, 0 for down)
+Output ports:
+    out: 8-bit output representing the current count value
+
+Implementation:
+If the reset signal is active (!rst_n), the counter is reset to 128 by assigning the value 8'd128 to the output register (out). If the up_down signal is 1, the counter increments. If the current count value (out) is equal to 8'd255 (maximum count value), the counter wraps around to 0. If the up_down signal is 0, the counter decrements. If the current count value (out) is equal to 8'd0 (minimum count value), the counter wraps around to 255.
+
+Give me the complete code.

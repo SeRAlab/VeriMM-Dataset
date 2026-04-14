@@ -1,0 +1,9 @@
+The provided Verilog code implements a synchronous 8-bit multiplier designed to multiply two 16-bit numbers composed of a low and high 8-bit multiplicand. The module operates in a state-machine manner, managing the multiplication process across different stages triggered by clock edges. Upon receiving a reset signal, it clears all internal registers. In the operation stages, it sequentially loads the inputs, processes the multiplication, and captures the partial results in both low and high product registers. Ultimately, it outputs the lower 8 bits and the higher bits of the resulting product, enabling the multiplication of two 16-bit numbers through a series of clock cycles.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] MULTIPLICAND_LOW,
+    input [7:0] MULTIPLICAND_HIGH,
+    output reg [7:0] PRODUCT_LOW,
+    output reg [7:0] PRODUCT_HIGH
+);

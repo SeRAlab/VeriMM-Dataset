@@ -1,0 +1,6 @@
+Design a Moore state machine with 3 states and 4 input signals, producing 2 output signals. The state machine transitions based on specific input conditions: it moves from state S0 to S1 if both in[0] and in[1] are high, from S1 to S2 if in[2] is high, and from S2 back to S0 if in[3] is high. Each state generates a distinct output: O0 in S0, O1 in S1, and O2 in S2. The state transitions and outputs are controlled in a synchronous manner with a clock signal, ensuring that the outputs reflect the current state of the machine.
+module top_module(
+  input [n-1:0] in,
+  input clk, // added clock input
+  output reg [m-1:0] out // changed to reg to allow assignment
+);

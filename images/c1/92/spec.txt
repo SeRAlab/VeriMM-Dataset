@@ -1,0 +1,35 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a parameterizable, edge-triggered D flip-flop with enable signal support. Its primary role to store and update digital data based on the clock signal's rising edge, contingent upon the state of the enable signal. This module is versatile in its application, serving as a fundamental building block in digital circuits for tasks such as data storage, synchronization, and state retention across clock cycles. It can be utilized in a wide array of digital systems, ranging from simple data buffers to complex state machines, where controlled data storage and retrieval are essential.
+
+Module name:  
+	dffe_ns
+
+Input ports:
+	din [SIZE1:0]: Data Input (Vector)
+	Type: Vector (Width defined by SIZE)
+	Direction: Input
+	Description: Represents the data to be stored in the flipflop. The width of this input is parameterizable, allowing for flexibility in the module's application across various data widths.
+	en: Enable Signal
+	Type: Single Bit
+	Direction: Input
+	Description: A control signal that determines whether the data input (din) should be latched into the flipflop on the next rising edge of the clock. When high (1), the data input is latched; when low (0), the flipflop retains its current state.
+	clk: Clock Signal
+	Type: Single Bit
+	Direction: Input
+	Description: The clock signal governs the timing of data latching. Data inputs are considered for latching only on the rising edge of this signal.
+Output ports:
+	q [SIZE1:0]: Data Output (Vector)
+	Type: Vector (Width defined by SIZE)
+	Direction: Output
+
+
+Implementation:
+The RTL module presented, named dffe_ns, is designed to implement a parameterizable, edge-triggered D flip-flop with enable signal functionality. This digital logic circuit is a fundamental building block in the design of sequential logic circuits, serving as a memory element that stores binary data. The module is parameterized with SIZE, allowing for the creation of a flip-flop that can store and output vectors of varying bit widths, making it versatile for different applications.
+Combinational Logic:
+The module employs combinational logic through the use of the enable signal (en). This signal dictates whether the data input (din) should be passed to the output (q) or not. When en is high (1), the data present at din is allowed to pass through to the output upon the next positive edge of the clock signal (clk). If en is low (0), the output q retains its previous state, effectively ignoring the data on din. This conditional behavior is implemented using a ternary operator in the always block, which selects between din and the current state of q based on the value of en.
+Sequential Logic:
+The sequential aspect of the module is realized through the sensitivity list of the always block, which is triggered on the positive edge of the clock signal (clk). This edge-triggered behavior ensures that changes to the output (q) occur synchronously with the clock, aligning the module's operation with the fundamental principles of synchronous digital design. The use of non-blocking assignments (<=) within the always block ensures proper simulation semantics and avoids race conditions, allowing for accurate modeling of sequential behavior.
+
+Give me the complete code.
+

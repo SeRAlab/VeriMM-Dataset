@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+    
+Implement a module to control a First-In-First-Out (FIFO) memory buffer. Its primary functions include managing read and write operations to the FIFO, handling synchronization across different clock domains (if enabled), and providing status signals such as full, almost full, empty, and almost empty conditions. This module is versatile and can be configured for various FIFO depths and operational modes, making it suitable for a wide range of applications in digital systems where data buffering and synchronization between producer and consumer entities are required.
+
+Module name:  
+	generic_fifo_ctrl
+
+Input ports:
+	wclk: Write clock input. Clock signal for write operations.
+	wrst_n: Write reset (active low). Asynchronous reset signal for the write domain.
+	wen: Write enable. Signal to enable write operations to the FIFO.
+	rclk: Read clock input. Clock signal for read operations.
+	rrst_n: Read reset (active low). Asynchronous reset signal for the read domain.
+	ren: Read enable. Signal to enable read operations from the FIFO.
+Output ports:
+	wfull: Write full. Indicates that the FIFO is full and cannot accept more data.
+	walmost_full: Write almost full. Indicates that the FIFO is close to being full.
+	mem_wen: Memory write enable. Controls the write enable signal of the underlying memory.
+	mem_waddr: Memory write address. Specifies the address in memory where data should be written.
+	rempty: Read empty. Indicates that the FIFO is empty and no data is available for reading.
+	ralmost_empty: Read almost empty. Indicates that the FIFO has few data items left.
+	mem_ren: Memory read enable. Controls the read enable signal of the underlying memory.
+	mem_raddr: Memory read address. Specifies the address in memory from which data should be read.
+
+
+Implementation:
+The RTL module presented is a generic FIFO (First-In-First-Out) controller designed to manage data flow between producer and consumer processes, potentially across different clock domains. This module is highly configurable, supporting parameterized FIFO depth, address width, and features such as early read and clock crossing handling. The core functionality revolves around managing read and write pointers, generating status signals (e.g., full, empty, almost full, almost empty), and handling the synchronization of these pointers across clock domains if required.
+
+Give me the complete code.
+

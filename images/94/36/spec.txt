@@ -1,0 +1,8 @@
+Design a synchronous circuit that identifies the maximum value from a 16-bit input and outputs both the maximum value and its corresponding index. Upon a reset, the module initializes the maximum value and index to zero. On each positive clock edge, it stores the input data into an array, scans through it to find the highest value, and updates the outputs with this maximum value and its index.
+module top_module(
+    input clk,
+    input rst_n,
+    input [15:0] data_in,
+    output reg [7:0] max_value,
+    output reg [7:0] max_index
+);

@@ -1,0 +1,35 @@
+Please act as a professional verilog designer.
+    
+Implement a module to interface with a bus system, specifically to introduce a configurable delay to transactions on the bus. It acts as a bridge between a master device and the bus, delaying the forwarding of bus cycle (`CYC`), strobe (`STB`), write enable (`WE`), address (`ADDR`), and data signals (`DATA`) from the master to the bus, and similarly delaying the acknowledgment (`ACK`), stall (`STALL`), data (`DATA`), and error signals (`ERR`) from the bus to the master. This module can be used to simulate bus latency, test the behavior of bus-connected devices under conditions of latency, or synchronize bus operations that require specific timing adjustments.
+
+Module name:  
+	busdelay
+
+Input ports:
+	i_clk: Clock input. The module operates on the rising edge of this clock signal.
+	i_wb_cyc: Input bus cycle signal indicating an active bus transaction.
+	i_wb_stb: Input strobe signal indicating a valid data transfer request.
+	i_wb_we: Input write enable signal indicating if the current transaction is a write (1) or read (0).
+	i_wb_addr [(AW1):0]: Input address bus for the current transaction.
+	i_wb_data [(DW1):0]: Input data bus for write transactions.
+	i_dly_ack: Input acknowledgment signal from the delayed entity.
+	i_dly_stall: Input stall signal indicating the delayed entity cannot currently accept more data.
+	i_dly_data [(DW1):0]: Input data bus from the delayed entity for read transactions.
+	i_dly_err: Input error signal indicating an error in the transaction with the delayed entity.
+Output ports:
+	o_wb_ack: Output acknowledgment signal to the master device.
+	o_wb_stall: Output stall signal indicating to the master device when it should pause transactions.
+	o_wb_data [(DW1):0]: Output data bus to the master device for read transactions.
+	o_wb_err: Output error signal indicating to the master device that an error occurred in the transaction.
+	o_dly_cyc: Output bus cycle signal delayed as per module configuration.
+	o_dly_stb: Output strobe signal delayed as per module configuration.
+	o_dly_we: Output write enable signal delayed as per module configuration.
+	o_dly_addr [(AW1):0]: Output address bus delayed as per module configuration.
+	o_dly_data [(DW1):0]: Output data bus for write transactions delayed as per module configuration.
+
+
+Implementation:
+The Verilog module busdelay is designed to interface with a Wishbone bus, introducing a configurable delay mechanism to the transactions. The module can operate in two modes depending on the DELAY_STALL parameter: with delay stall enabled (DELAY_STALL != 0) or without it (DELAY_STALL == 0). This parameterization allows for flexibility in how the module is deployed within different system architectures, catering to varying requirements for timing and data handling.
+
+Give me the complete code.
+

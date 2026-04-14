@@ -1,0 +1,5 @@
+Design a 5-bit Johnson counter. Upon each rising edge of the clock, the circuit shifts the current state of its output (johnson_out) through a series of four pipeline registers, while generating the next state by concatenating the inverted value of the most significant bit (MSB) with the least significant four bits. This operation produces a unique sequence of binary outputs, which cycles through all possible states of the 5-bit counter, indicative of a Johnson ring oscillator configuration.
+module top_module(
+    input clk,
+    output reg [4:0] johnson_out
+);

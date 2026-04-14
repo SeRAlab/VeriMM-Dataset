@@ -1,0 +1,7 @@
+Design a circuit that functions as a combination of a 3-to-4 decoder and a 256-to-1 multiplexer, culminating in a 4-bit output that is determined by the outputs of the decoder and selected portions of an input vector. The decoder interprets the binary inputs (a, b, c) to generate four specific control signals, while the multiplexer utilizes an 8-bit selection input (sel) to choose which 4 bits from the 1024-bit input vector are processed. The final output is computed by summing the decoder outputs with the selected bits from the multiplexer, delivering a 4-bit result.
+module top_module( 
+    input a,b,c, // Binary inputs for the decoder
+    input [1023:0] in, // 1024-bit input vector for the multiplexer
+    input [7:0] sel, // 8-bit selection input for the multiplexer
+    output [3:0] out // 4-bit final output from the functional module
+);

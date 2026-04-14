@@ -1,0 +1,8 @@
+Design a bus hold block that captures and retains the last input value on the output when not enabled. The module utilizes a clock signal for synchronous operation and includes an asynchronous reset functionality. When enabled, the input value is passed directly to the output; when disabled, the block holds and continues to output the last valid input value, allowing for data retention without continuous input. This design is useful in situations where data needs to be held stable in a digital system until an enabling signal is received.
+module top_module(
+  input clk,
+  input rst,
+  input en,
+  input in,
+  output reg out
+);

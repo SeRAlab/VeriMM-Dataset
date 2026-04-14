@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as an interface between a DEPP (Data Exchange Parallel Port) and a Wishbone bus, which is a popular bus architecture used in embedded systems for connecting different components. The primary function of this module to facilitate data transfers between a DEPP-compatible device and a system that utilizes the Wishbone bus protocol. It handles address and data transactions, read and write operations, and signal synchronization between the two interfaces. This module plays a crucial role in systems where integration with DEPP-based devices is required, enabling seamless communication and data exchange within a broader system context that employs the Wishbone bus standard.
+
+Module name:  
+	wbdeppsimple
+
+Input ports:
+	i_clk: Clock input (single bit). The primary clock signal that synchronizes the module's operations.
+	i_astb_n, i_dstb_n: Strobe inputs (single bit each, active low). These signals indicate when an address or data transaction is initiated, respectively.
+	i_write_n: Write enable input (single bit, active low). Determines whether the current operation is a write (low) or read (high).
+	i_depp: Data input from DEPP (8 bits). The data to be written to the Wishbone bus during write operations.
+	i_wb_ack: Acknowledge input from Wishbone (single bit). Indicates that the Wishbone bus has completed the current transaction.
+	i_wb_stall: Stall input from Wishbone (single bit). Indicates that the Wishbone bus is not ready to complete the current transaction.
+	i_wb_err: Error input from Wishbone (single bit). Signals an error in the current transaction on the Wishbone bus.
+	i_wb_data: Data input from Wishbone (32 bits). The data to be read from the Wishbone bus during read operations.
+	i_int: Interrupt input (single bit). An external signal that can trigger an interrupt within the module.
+Output ports:
+	o_depp: Data output to DEPP (8 bits, registered). The data read from the Wishbone bus during read operations.
+	o_wait: Wait output (single bit, wire). Indicates to the DEPP device that the module is not ready to complete the current transaction.
+	o_wb_cyc, o_wb_stb, o_wb_we: Control outputs to Wishbone (single bit each). These signals manage the Wishbone bus cycle, strobe, and write enable, respectively.
+	o_wb_addr: Address output to Wishbone (32 bits, registered). The address for the current Wishbone bus transaction.
+	o_wb_data: Data output to Wishbone (32 bits, registered). The data to be written to the Wishbone bus during write operations.
+
+
+Implementation:
+This RTL module is designed to interface with a Wishbone bus, a popular bus architecture for embedded systems. The module acts as a bridge between a DEPP (Data Exchange Parallel Port) interface and the Wishbone bus, facilitating data transfers between a DEPP-compatible device and a Wishbone-compatible system. The module's logic can be broken down into several key areas:
+
+Give me the complete code.
+

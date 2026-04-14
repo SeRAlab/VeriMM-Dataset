@@ -1,0 +1,9 @@
+Develop a synchronous random-access memory (RAM) module with an 8-bit address and data width. The module supports a write operation controlled by the write signal; when asserted, data is written to the specified memory address on the rising edge of the clock. Simultaneously, it continuously outputs the data stored at the accessed address and drives an output for LEDs, reflecting the contents of the memory at the highest address of 255 (8'b11111111).
+module top_module(
+    input clk,
+    input [7:0] addr,
+    input [7:0] data_in,
+    input write,
+    output reg [7:0] data_out,
+    output reg [7:0] led_out
+    );

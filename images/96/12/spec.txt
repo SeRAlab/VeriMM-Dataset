@@ -1,0 +1,13 @@
+Design a 64-bit wide profile counter module that incorporates both shifting and incrementing operations. The module features a clock, an active-low reset input, and enables an operation based on control signals for shifting and incrementing. When the reset signal is low, the counter initializes to zero. On the positive edge of the clock, if the shift control is active, the counter shifts in a 64-bit input while retaining the lower half of its current counter value. If the increment control is active and the enable signal is asserted, the module increases the counter by a specified 32-bit value, shifting the incremented value into the upper half of the counter. The lower 32 bits of the counter are outputted as `data_out`, while a right-shifted version of the full counter value concatenated with the `shift_in` input is provided as `shift_out`. This module can be used in applications requiring precise counting and data manipulation based on clock cycles.
+module top_module(
+  input clock,
+  input resetn,
+  input enable,
+
+  input shift,
+  input incr_cntl,
+  input [63:0] shift_in,
+  input [31:0] incr_val,
+  output reg [31:0] data_out,
+  output reg [63:0] shift_out
+);

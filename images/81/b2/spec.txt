@@ -1,0 +1,7 @@
+Design a binary storage element with a shift register functionality. On each positive edge of the clock, the module checks for a reset signal; if active, it initializes the shift register to a predefined value (binary 00110100). If not in reset, it shifts the current contents of the register left by one bit and inputs a new data bit `d` at the least significant bit position. The output `q` continuously reflects the current state of the shift register, providing an 8-bit wide storage that allows for serial input.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] d,
+    output reg [7:0] q
+);

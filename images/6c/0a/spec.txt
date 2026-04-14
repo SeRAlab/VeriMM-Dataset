@@ -1,0 +1,15 @@
+Design a basic register file with an arithmetic logic unit (ALU) that performs various operations on 32-bit wide registers. The module reads two registers specified by input addresses, performs an operation determined by a 3-bit ALU operation code (ALU_OP), and outputs the result to a 32-bit LED output. The operations include addition, subtraction, logical AND, logical OR, exclusive OR, and bit shifts. It also calculates overflow (OF) and zero flags (ZF) based on the results of the ALU operations. Additionally, the module can write the ALU result to a specified register if the write enable signal is active, while supporting asynchronous reset functionality to clear the LED output and register contents.
+module top_module(
+    input clk,
+    input [4:0] R_Addr_A,
+    input [4:0] R_Addr_B,
+    input [4:0] W_Addr,
+    input Reset,
+    input Write_Reg,
+    input [2:0] ALU_OP,
+    output reg [31:0] LED, // Changed from wire to reg
+    output [31:0] A,
+    output [31:0] B,
+    output OF,
+    output ZF
+);

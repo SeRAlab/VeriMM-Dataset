@@ -1,0 +1,10 @@
+Design a synchronous arithmetic calculator that performs basic signed operations (addition, subtraction, multiplication, and division) on two 8-bit signed inputs (a and b) based on a 3-bit operation selector (op). The module incorporates overflow detection for the addition, subtraction, and multiplication operations, setting an overflow flag (of) whenever an overflow condition exists. On a reset signal (rst), the result is cleared to zero, and the overflow flag is reset. The calculator outputs the result of the selected operation, ensuring proper handling of edge cases such as division by zero and specific situations that could lead to overflow in operations.
+module top_module(
+    input clk,
+    input rst,
+    input signed [7:0] a,
+    input signed [7:0] b,
+    input [2:0] op,
+    output reg signed [7:0] result,
+    output reg of
+);

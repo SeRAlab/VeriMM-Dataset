@@ -1,0 +1,7 @@
+Design a simple 64x8-bit synchronous RAM module with read and write capabilities. This module allows writing data to memory based on a specified address and an opcode that enables data storage, while also supporting data retrieval when read access is enabled. The RAM is resettable, clearing all memory values to zero upon a reset signal, and preloading a specific value into one memory location. The data-write operation is contingent on the write enable signal, and the data-read operation provides output based on the memory address and opcode provided, defaulting to zero if conditions are not met.
+module top_module(
+input [7:0]mem_addr,write_data_M,
+input clk,reset,write_en,read_en,
+input [2:0]opcode,
+output reg [7:0]read_data
+);

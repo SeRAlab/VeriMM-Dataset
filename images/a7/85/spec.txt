@@ -1,0 +1,8 @@
+Design a memory block with integrated Error-Correcting Code (ECC) functionality. The module accepts an 8-bit wide input data along with a write enable signal and a clock. When enabled, it stores the input data along with generated ECC bits for error detection and correction. Upon data retrieval, the module checks the stored data against the ECC bits to identify and correct any potential errors, outputting the corrected data and a signal indicating if an error was detected. This design enhances data integrity and reliability in memory applications.
+module top_module(
+  input [data_width-1:0] data_in,
+  input write_en,
+  input clk,
+  output reg [data_width-1:0] data_out,
+  output error
+);

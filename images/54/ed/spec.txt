@@ -1,0 +1,10 @@
+Design a module that combines a 4-bit shift register with a 3-to-8 line decoder, providing parallel loading and shifting capabilities. On each clock cycle, the register can either load new data or shift left while always resetting to zero when the reset signal is active. The output consists of an 8-bit value determined by the state of the shift register, utilizing the decoder to generate active-low signals based on the 3-bit input ABC. The resulting output data reflects the corresponding decoder's active signal or a zero output for specific shift register values, effectively serving as both a shift register and decoder in a single functional block.
+module top_module(
+    input clk,
+    input reset,
+    input parallel_load,
+    input shift,
+    input [3:0] input_data,
+    input [2:0] ABC,
+    output reg [7:0] output_data  // Changed from wire to reg
+);

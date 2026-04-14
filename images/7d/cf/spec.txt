@@ -1,0 +1,17 @@
+Implement a Verilog module based on the following description.
+The following diagram is a Moore machine implementation of an elevator door controller. Implement in Verilog using one-hot encoding. Resets into state Door_Closed and reset is asynchronous active-high.
+
+The state machine has the following states and their corresponding outputs:
+1. state Door_Closed (door_open = 0).
+2. state Door_Open (door_open = 1).
+
+State transitions:
+1. From state Door_Closed: If open_door = 1, then transition to state Door_Open. If open_door = 0, then transition to state Door_Closed.
+2. From state Door_Open: If close_door = 1, then transition to state Door_Closed. If close_door = 0, then transition to state Door_Open.
+
+module elevator_door_controller (
+        input clk,
+        input areset,
+        input open_door,
+        input close_door,
+        output reg door_open);

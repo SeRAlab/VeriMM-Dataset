@@ -1,0 +1,12 @@
+Design a coprocessor module that manages interrupt handling and state management for a microprocessor. The coprocessor interfaces with the main processor through a set of control signals and a 5-bit address space, allowing for reads and writes to its registers, which include the Exception Program Counter (EPC), Cause, and State. It captures interrupts and maintains a state to indicate if an interrupt is being processed or not. The module can update its registers based on incoming write commands and handles external interrupts by modifying the state and recording the cause. Additionally, it provides outputs for the current state and specific data from its registers, acting as a critical component for managing exception handling in a system.
+module top_module(
+    input clk,
+    input[4:0] C0adr,
+    input[31:0] C0Wdata,
+    input C0Write,
+    input[31:0] InteCause,
+    input Interrupt,
+    output InteAccept,
+    output[31:0] C0State,
+    output reg[31:0] C0Data
+);

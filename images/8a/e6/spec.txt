@@ -1,0 +1,10 @@
+Design a control module that operates with a 50 MHz clock signal for audio and video processing applications. Upon receiving a reset signal, the module initializes its outputs (spk, mic, video, sync) to LOW. It features an ear input that determines whether the speaker output (spk) or microphone output (mic) is active. When the ear input is HIGH, the speaker is activated, and the microphone is turned off, and vice versa. Additionally, the module toggles the video output at every clock cycle and generates a sync signal when the lower two bits of the clock cycle count reach 3 (binary 11), allowing synchronization of video processing tasks.
+module top_module(
+    input clk50mhz,
+    input reset,
+    input ear,
+    output reg spk,
+    output reg mic,
+    output reg video,
+    output reg sync
+);

@@ -1,0 +1,8 @@
+Develop a dual-port RAM memory system driven by a clock signal. This module allows for simultaneous read and write operations based on a 10-bit address input. When the write enable signal is asserted, it writes an 18-bit data input to the memory; otherwise, it outputs the data stored at the specified address. The module leverages a Xilinx RAMB18_TDP memory block for storage, enabling efficient data handling with separate read and write ports, and provides a mechanism to control access through an enabling signal.
+module top_module(
+    input clk,
+    input [9:0] addr,
+    input [17:0] data_in,
+    input write_en,
+    output reg [17:0] data_out
+);

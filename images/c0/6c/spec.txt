@@ -1,0 +1,34 @@
+Please act as a professional verilog designer.
+    
+Implement a module to interface and control various control pins between a CPU and its peripherals or memory. Its primary function to manage the directionality and state of several control signals based on the CPU's operational requirements and external inputs. This includes handling signals for read/write operations, memory requests, interrupt requests, and system reset, among others. The module plays a crucial role in synchronizing the CPU's operations with external devices, ensuring that data transfers, memory accesses, and interrupt handling are executed correctly.
+
+Module name:  
+	control_pins_n
+
+Input ports:
+	busack (wire): Indicates if the bus request (busrq) has been acknowledged.
+	CPUCLK (wire): The CPU clock signal.
+	pin_control_oe (wire): Output enable signal for certain control pins.
+	in_halt (wire): Indicates if the CPU is in a halt state.
+	pin_nWAIT (wire): Active low signal indicating if the CPU should wait for an operation to complete.
+	pin_nBUSRQ (wire): Active low signal for bus request.
+	pin_nINT (wire): Active low interrupt request signal.
+	pin_nNMI (wire): Active low nonmaskable interrupt signal.
+	pin_nRESET (wire): Active low reset signal.
+	nM1_out, nRFSH_out, nRD_out, nWR_out, nIORQ_out, nMREQ_out (wire): Control signals from the CPU indicating various states like memory request, I/O request, read, write, refresh cycle, and first machine cycle.
+Output ports:
+	nmi, busrq, clk, intr, mwait, reset_in (wire): Processed signals for nonmaskable interrupt, bus request, clock, interrupt request, memory wait, and reset, respectively.
+	pin_nM1, pin_nMREQ, pin_nIORQ, pin_nRD, pin_nWR, pin_nRFSH, pin_nHALT, pin_nBUSACK (wire): Control signals directed towards peripherals or memory, indicating the current operation or state of the CPU.
+
+
+Implementation:
+The RTL module named control_pins_n is designed to interface and control various signals between a CPU and its external environment, such as memory, I/O devices, and other peripherals. The module operates primarily on combinational logic, with no explicit sequential elements (like flip-flops or latches) defined within its scope. This means that the output signals are directly dependent on the current state of the input signals, without any inherent memory or state retention between clock cycles.
+The module's primary function is to translate and forward control signals, adapting between internal control logic and external pin states. This includes handling of bus request and acknowledgment signals, interrupt signals, memory and I/O request signals, and various control signals like read, write, refresh, and reset. The design leverages the assign statement extensively to create direct mappings or inversions of input signals to output signals, with some conditional logic for tristate control.
+Key aspects of the implementation logic include:
+Clock Forwarding: The module forwards the CPUCLK signal directly to the clk output, ensuring that external components can synchronize with the CPU clock.
+Tristate Control: For signals such as pin_nMREQ, pin_nIORQ, pin_nRD, and pin_nWR, the module uses the pin_control_oe (output enable) signal to determine if these should be driven to a specific logic level or left in a high-impedance (Z) state. This is crucial for bus operations where multiple devices may need to drive the bus lines at different times.
+Signal Inversion: Several input signals are inverted before being output, such as pin_nBUSRQ to busrq, in_halt to pin_nHALT, and others. This inversion might be necessary to match the active logic levels expected by external devices or the CPU.
+Direct Mapping: Some signals are directly mapped from input to output with the same logic level, such as nM1_out to pin_nM1 and nRFSH_out to pin_nRFSH, indicating a straightforward forwarding of these control signals without modification.
+
+Give me the complete code.
+

@@ -1,0 +1,7 @@
+
+Design a simple NVMe controller state machine in Verilog that manages basic commands. The controller can be in one of three states: IDLE, READ, or WRITE. The state transitions are as follows:
+- From IDLE, if a READ command (input signal `read_cmd` is high) is received, transition to READ state.
+- From IDLE, if a WRITE command (input signal `write_cmd` is high) is received, transition to WRITE state.
+- From READ state, after completing the read operation, transition back to IDLE.
+- From WRITE state, after completing the write operation, transition back to IDLE.
+The output signal `current_state` should indicate the current state of the controller (0 for IDLE, 1 for READ, 2 for WRITE).

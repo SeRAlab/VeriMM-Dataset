@@ -1,0 +1,9 @@
+Design a negative-edge-triggered D flip-flop with asynchronous set and reset functions. It samples the input D at the negative edge of the clock (CLK_N) and outputs the value at Q. If SET_B is low, it sets Q to high regardless of D, and if RESET_B is low, it sets Q to low, overriding D. The output Q_N provides the complement of the Q output.
+module top_module(
+    input D,
+    input CLK_N,
+    input SET_B,
+    input RESET_B,
+    output reg Q,  // Changed to 'output reg Q' to support procedural assignment
+    output Q_N
+);

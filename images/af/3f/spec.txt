@@ -1,0 +1,10 @@
+Design a 4-to-1 multiplexer that selects one of four 8-bit wide input ports (port0, port1, port2, port3) based on a 2-bit select input (sel). When sel is 00, the output (p) is assigned the value of port0; when sel is 01, it selects port1; when sel is 10, it outputs port2; and when sel is 11, it chooses port3. If the select input does not match any specified case, port0 is the default output.
+module top_module(
+    input wire [7:0]   port0, 
+    input wire [7:0]   port1, 
+    input wire [7:0]   port2, 
+    input wire [7:0]   port3, 
+
+    input wire [2-1:0] sel,
+    output reg [7:0]   p
+);

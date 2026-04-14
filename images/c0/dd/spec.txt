@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to select one of eight input clocks based on a 3-bit select signal and an enable signal. It outputs a single clock signal that is derived from the selected input clock. This module is crucial in systems requiring dynamic clock switching, such as power-saving modes, performance scaling, or handling multiple clock domains. The ability to switch between different clock sources on-the-fly allows for greater flexibility and efficiency in managing system resources and performance.
+
+Module name:  
+	clock_switch8_basic
+
+Input ports:
+	rst0_i to rst7_i: These are reset input signals corresponding to each of the eight clock inputs. They are used to reset the synchronization logic associated with each clock input. Data type: input.
+	clk0_i to clk7_i: These are the eight clock input signals from which one will be selected as the output clock. Data type: input.
+	enable: This signal enables the clock selection functionality. When not enabled, the module will not select any of the input clocks to output. Data type: input.
+	select: A 3bit input signal used to select one of the eight input clocks. The selection is based on the binary value of this signal (ranging from 0 to 7). Data type: input [2:0].
+Output ports:
+	clk_o: The output clock signal. This is the clock signal selected from one of the eight inputs based on the select signal and the enable condition. Data type: output.
+
+
+Implementation:
+The RTL module clock_switch8_basic is designed to select one of eight input clocks (clk0_i to clk7_i) based on a 3-bit select signal (select) and output the selected clock through clk_o. The module also incorporates enable functionality and reset signals for each clock input. The core logic of this module is built upon combinational and sequential logic constructs to achieve its functionality.
+
+Give me the complete code.
+

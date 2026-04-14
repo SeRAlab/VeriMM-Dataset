@@ -1,0 +1,16 @@
+Design a synchronous FIFO (First-In-First-Out) memory buffer capable of storing up to 64 eight-bit data words. The module provides inputs for writing data into the FIFO and reading data from it, with control signals for clearing the FIFO, managing read and write operations, and handling reset conditions. The FIFO is monitored for empty and full conditions, with outputs indicating the status of the FIFO, including whether it is empty or full and the number of used entries in the FIFO. The design ensures proper synchronization with a clock signal and allows for asynchronous reset functionality.
+module top_module(
+    // inputs:
+    clk,
+    fifo_clear,
+    fifo_rd,
+    rst_n,
+    t_dat,
+    wr_rfifo,
+
+    // outputs:
+    fifo_EF,
+    fifo_rdata,
+    rfifo_full,
+    rfifo_used
+);

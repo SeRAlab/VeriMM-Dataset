@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+
+Implement a 3-bit binary up/down counter. The counter should have an enable input, a direction input, and a synchronous reset input. When the enable input is high, the counter either increments or decrements based on the direction input on each positive edge of the clock. When the reset input is high, the counter resets to zero on the next clock cycle.
+
+Module name:  
+    up_down_counter
+
+Inputs:
+    clk: Clock signal.
+    enable: Enable signal.
+    dir: Direction signal (1 for up, 0 for down).
+    rst: Synchronous reset signal.
+
+Outputs:
+    count[2:0]: A 3-bit output representing the current count value.
+
+Registers and Wires:
+    count_reg: A 3-bit register holding the current count value.
+
+Implementation:
+The always block is triggered on the positive edge of the clock signal. Inside the block, the first condition checks if the reset signal is high. If it is, the count register is reset to zero. If the reset signal is not high, the next condition checks if the enable signal is high. If the enable signal is high, the count register is incremented or decremented based on the direction signal. The count output is then assigned the value of the count register.
+
+Give me the complete code.
+
+module up_down_counter
+    (
+        input clk,
+        input enable,
+        input dir,
+        input rst,
+        output reg [2:0] count
+    );

@@ -1,0 +1,2 @@
+Design a data source module that alternates between outputting either ADC data or a test incrementing value based on a test mode flag. When in normal operation, the module captures incoming 10-bit ADC data on the rising edge of the clock. In test mode, it outputs a 10-bit test value that increments with each clock cycle. The module resets the data outputs to zero when the nReset signal is active.
+module top_module(input nReset,input clock,input [9:0] adc_databus,input testModeFlag,output [9:0] dataOut);

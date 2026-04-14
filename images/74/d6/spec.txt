@@ -1,0 +1,4 @@
+Design a clock prescaler that divides the input clock frequency by a factor of 2^N (where N is a parameter set to 22). The module generates a clock output (`clk_out`) that transitions based on the most significant bit of a counter that increments on each rising edge of the input clock (`clk_in`), provided the enable signal (`ena`) is asserted. When `ena` is low, the counter resets to zero, effectively halting the clock output. This design is useful in scenarios where a lower frequency clock signal is needed from a higher frequency input.
+module top_module(input clk_in,
+                 input wire ena,
+                 output clk_out);

@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+    
+Implement a module to generate wait signals for memory access operations in a digital system, particularly for microprocessor interfacing. Its primary functions include:
+
+Generating a wait signal (`nWAIT_M1`) for the first machine cycle of any operation, indicating when the system should wait before proceeding.
+Generating a wait signal (`nWAIT_Mem`) for memory access operations, indicating when the system should pause to allow memory operations to complete.
+
+These functions are crucial in systems where the microprocessor and memory operate at different speeds, ensuring synchronization and preventing data corruption or loss.
+
+Module name:  
+	wait_state
+
+Input ports:
+	CLK: Input wire. This is the system clock signal that synchronizes the module's operations. All state changes occur on the rising edge of this clock.
+	nM1: Input wire. This signal indicates the first machine cycle of an operation. It is active low, meaning a low value indicates the first machine cycle.
+	nMREQ: Input wire. This signal indicates a memory request from the microprocessor. It is active low, meaning a low value signals a request to access memory.
+Output ports:
+	nWAIT_M1: Output wire. This is the wait signal for the first machine cycle. It is active low, indicating that the system should wait during the first machine cycle of an operation.
+	nWAIT_Mem: Output wire. This is the wait signal for memory access operations. It is active low, indicating that the system should pause to allow memory operations to complete.
+
+
+Implementation:
+The wait_state module is designed to generate wait signals for two different conditions, indicated by its outputs nWAIT_M1 and nWAIT_Mem. This module operates on the rising edge of a clock signal (CLK) and responds to the inputs nM1 and nMREQ, which are active-low signals. The module employs both combinational and sequential logic elements to achieve its functionality.
+
+Give me the complete code.
+

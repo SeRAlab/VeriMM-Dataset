@@ -1,0 +1,7 @@
+Design a circuit that detects the position of the most significant edge change in an 8-bit input signal. The circuit captures the current input value and compares it with its previous state to identify any changes. Upon detecting an edge, a priority encoder determines the highest significant bit position that has changed, and this position is stored and provided as a 3-bit output. The design incorporates edge detection with a reset functionality to initialize the registers upon a reset signal, ensuring robust operation in synchronous digital applications.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] in,
+    output reg [2:0] pos
+);

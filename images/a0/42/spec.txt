@@ -1,0 +1,8 @@
+Design a pulse counter circuit that detects rising edges on an input signal and generates a controlled pulse output based on a specified duration. The module takes a clock signal, an input signal, and a 16-bit duration value as inputs. Upon detecting a rising edge on the input, it initiates a pulse output that lasts for the specified duration, counting the number of active pulses. The output signal is asserted high for the duration and counts how many times it has triggered, with the count stored in a 32-bit register available at the output.
+module top_module(
+  input clk,
+  input in,
+  input [15:0] duration,
+  output reg out,
+  output reg [31:0] count
+);

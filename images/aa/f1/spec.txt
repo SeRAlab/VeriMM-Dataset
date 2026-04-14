@@ -1,0 +1,10 @@
+Design a circuit that implements a simple arithmetic unit capable of performing basic operations on two 8-bit inputs, `a` and `b`. The operation is determined by the 2-bit control input `ctrl`, allowing for addition, subtraction, multiplication, and division. The module outputs the result of the arithmetic operation on `result` and also indicates the validity of the output with the `valid` signal, which is active only when a division operation is successful (i.e., when `b` is not zero). The circuit resets its output on the rising edge of the clock signal (`clk`) when the reset (`rst`) is activated.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] a,
+  input [7:0] b,
+  input [1:0] ctrl,
+  output [7:0] result,
+  output valid
+);

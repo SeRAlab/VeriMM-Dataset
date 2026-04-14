@@ -1,0 +1,9 @@
+Design a UART (Universal Asynchronous Receiver-Transmitter) module for asynchronous serial communication. The module continuously monitors the RX line for incoming data, transitioning through several states: IDLE, START_BIT, DATA_BITS, and PARITY_BIT. In the IDLE state, it waits for a signal indicating the start of data transmission. Upon detecting a low signal, it shifts into the START_BIT state and subsequently captures the 8-bit data, while also checking for a parity bit. If the received parity matches the computed parity from the data bits, it sets the output valid signal, indicating that a valid byte has been received. The transmitted data is held for sending back through the TX line, maintaining the UART protocol standards.
+module top_module(
+    input clk,
+    input rx,
+    input [7:0] data_in,
+    output reg tx,      // Change to output reg
+    output reg [7:0] data_out, // Change to output reg
+    output reg rx_valid // Change to output reg
+);

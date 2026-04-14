@@ -1,0 +1,10 @@
+Design a 4-bit arithmetic unit capable of performing both addition and subtraction based on control signals. The module takes two 4-bit inputs (A and B) along with two control bits (C0 and C1) to determine the specific operation: add A and B, add A and B with a carry-in, subtract B from A, or subtract B from A with a borrow-in. The operation is clocked and can be reset to zero, with the result available as a 4-bit output.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] A,
+    input [3:0] B,
+    input C0,
+    input C1,
+    output reg [3:0] result
+);

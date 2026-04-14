@@ -1,0 +1,14 @@
+Design a module that generates a read request signal and controls an alpha value based on spatial coordinates. The module takes inputs for the position (top, left, x, y) and size (width, height) of a rectangular region, along with an input alpha value (i_alpha). When the coordinates (x, y) are within the defined rectangle, a read request (rdreq) is activated. On each clock cycle, if the read request was triggered in the previous cycle, the output alpha (o_alpha) is set to the input alpha; otherwise, it resets to zero. The module's functionality ensures that the output alpha is only updated when the read request condition is met.
+module top_module(
+	input rst_n,               
+	input clk,                 
+	input[11:0] top,           
+	input[11:0] left,          
+	input[11:0] width,         
+	input[11:0] height,        
+	input[11:0] x,             
+	input[11:0] y,             
+	input[7:0] i_alpha,        
+	output reg[7:0] o_alpha,   
+	output rdreq               
+);

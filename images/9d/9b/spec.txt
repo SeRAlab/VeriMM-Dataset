@@ -1,0 +1,8 @@
+Design a configurable binary counter that operates on a clock signal. The counter has a count enable feature, allowing it to increment or decrement based on a direction signal, with the ability to reset to a specified starting value. When the count enable (cen) is active, the counter increments (dir = 0) or decrements (dir = 1) on the rising edge of the clock. On receiving a reset signal (rst), the counter is initialized to a predefined starting value. The output reflects the current count value, configurable for n bits.
+module top_module(
+  input clk, // clock signal
+  input cen, // count enable signal (active high)
+  input dir, // direction signal (0 for count up, 1 for count down)
+  input rst, // reset signal (active high)
+  output reg [n-1:0] out // output signals
+);

@@ -1,0 +1,7 @@
+Design a debouncing circuit for a button input. The module generates a stable output signal by filtering out the noise typically produced when the button is pressed or released. It uses a finite-state machine approach with a shift register and two D flip-flops to track the button state over a set debounce time, defined by the parameter N. The output, DB_out, reflects the button status only after ensuring that the signal has remained stable for the specified time, thereby preventing erroneous multiple triggers from button bounces.
+module top_module(
+    input clk,
+    input n_reset,
+    input button_in,
+    output reg DB_out
+);

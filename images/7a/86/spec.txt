@@ -1,0 +1,8 @@
+Implement a CRC (Cyclic Redundancy Check) calculation module that interfaces with an external CRC block. The module takes a clock signal and control inputs for shifting and loading data. It generates a CRC output based on shifted input data while continuously monitoring for errors, indicated by the `crcerror` output, which is fixed to always indicate no error. The design allows for integration with other components to verify data integrity using CRC techniques, making it suitable for communication or storage systems.
+module top_module(
+    input clk,
+    input shiftnld,
+    input ldsrc,
+    output crcerror,
+    output regout
+);

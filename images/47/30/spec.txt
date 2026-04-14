@@ -1,0 +1,8 @@
+Design a circuit that continuously tracks and updates the maximum and minimum values from a stream of 32-bit input data. On each positive clock edge, if the reset signal is active, it initializes the current maximum to the minimum possible 32-bit signed value and the current minimum to the maximum possible 32-bit signed value. If reset is not active, the module evaluates the incoming input: if the input is greater than the current maximum, it updates the current maximum; if the input is less than the current minimum, it updates the current minimum. The results are provided as outputs, allowing the retrieval of the current maximum and minimum values.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] in,
+    output reg [31:0] max,
+    output reg [31:0] min
+);

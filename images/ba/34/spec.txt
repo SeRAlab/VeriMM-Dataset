@@ -1,0 +1,5 @@
+Create a FIFO (First-In, First-Out) buffer with 32-bit wide data inputs and outputs, capable of storing up to 8 KB of data. The module utilizes a synchronization clock for writing data, allowing the data to be buffered in an internal memory array while also providing read functionality through the same clock signal. Resetting the design clears the head, tail, and count pointers, effectively initializing the buffer. Upon writing, incoming data is stored at the head position, and the head pointer is updated cyclically to manage buffer space. Simultaneously, reading data transfers the value at the tail pointer to the output, incrementally updating it for sequential access. This design ensures proper data flow between producer and consumer circuits in synchronous operations.
+module top_module(D,
+    Q,
+    wr_clk,
+    wr_rst_reg_reg);

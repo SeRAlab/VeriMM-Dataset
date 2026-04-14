@@ -1,0 +1,9 @@
+Design a 3-bit binary up-counter with asynchronous reset and load capabilities. The counter increments its value on the rising edge of the clock when the enable signal is asserted. If the load signal is active, it loads a new value from the input data, `data_in`, instead of incrementing. Upon an active low reset (rst), the counter resets to zero. This module facilitates both counting and setting a specific value, making it suitable for applications requiring programmable counting sequences.
+module top_module(
+  input clk,
+  input rst,
+  input enable,
+  input load,
+  input [2:0] data_in,
+  output reg [2:0] count
+);

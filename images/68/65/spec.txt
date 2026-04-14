@@ -1,0 +1,8 @@
+Design a synchronous signal synchronization module that captures an asynchronous input signal and provides three outputs. The module samples the input signal on each rising edge of the clock, storing the last three samples in a shift register. The main output reflects the state of the signal one clock cycle prior to the current input (out), while additional outputs indicate the detection of rising and falling edges—rising output indicates a change from low to high, and falling output indicates a change from high to low. This functionality helps to prevent metastability issues when interfacing with asynchronous signals by providing stable synchronized outputs.
+module top_module(
+    input clk,      // clock
+    input in,       // input signal
+    output out,     // synchronized output signal
+    output falling, // synchronized falling edge output
+    output rising   // synchronized rising edge output
+);

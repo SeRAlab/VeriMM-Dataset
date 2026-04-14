@@ -1,0 +1,9 @@
+Design a D-type latch with an enable signal (GATE) that stores the state of input D when GATE transitions high. The latch supports notification and power management inputs, with VPWR setting the output Q to high and VGND setting it to low when appropriate. Initially, the output Q is in an undefined state, and it holds its value unless updated by the state of D on the rising edge of GATE, allowing the circuit to function reliably in various power conditions.
+module top_module(
+    input wire D,
+    input wire NOTIFIER,
+    input wire VPWR,
+    input wire VGND,
+    input wire GATE,
+    output reg Q
+);

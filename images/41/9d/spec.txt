@@ -1,0 +1,10 @@
+Design a clock generator module that produces four different output clock signals (clk_out1, clk_out2, clk_out3, and clk_out4) based on an input clock signal (clk_in). The module utilizes several counters to divide the input clock frequency for each output. Additionally, a stable signal, locked, indicates when the module has stabilized after reset. When reset (resetn) is deactivated, the counters increment and toggle the output clocks at defined intervals, while the locked signal is asserted after a specific count is reached, indicating readiness for operation.
+module top_module(
+  input clk_in,
+  input resetn,
+  output reg clk_out1,
+  output reg clk_out2,
+  output reg clk_out3,
+  output reg clk_out4,
+  output reg locked
+);

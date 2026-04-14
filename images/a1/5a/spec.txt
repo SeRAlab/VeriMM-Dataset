@@ -1,0 +1,9 @@
+Design a circuit that counts upward and downward based on external signals while being synchronized to two different clock domains. The module utilizes a reset signal to initialize the count and provides a count output updated on a secondary clock signal. Specifically, it increments the count when the 'countu' signal is high and decrements it when the 'countd' signal is high, with the current count being stored in an 8-bit register and output through 'nr_presses' on the rising edge of the 'clock180' signal.
+module top_module(
+    input clock0,
+    input clock180,
+    input reset,
+    input countu,
+    input countd,
+    output reg [7:0] nr_presses
+);

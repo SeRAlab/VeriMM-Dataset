@@ -1,0 +1,10 @@
+Develop a testbench for a flip-flop (FF) module that verifies its functionality with various input conditions. The testbench initializes the clock, reset, and input signals, then conducts a series of tests to confirm the behavior of the flip-flop under reset and enable conditions. Specifically, it checks that the output correctly reflects the initialization value upon reset, updates correctly during enable when provided with input data, and reverts to the initialization value during simultaneous reset signals. The tests also ensure the module behaves as expected when enable is disabled. The testbench will signal successes or failures of these conditions, ensuring reliable operation of the flip-flop design.
+module top_module(
+  input clock, 
+  input reset, 
+  input [31:0] io_input_data, 
+  input [31:0] io_input_init, 
+  input io_input_enable, 
+  input io_input_reset, 
+  output reg [31:0] io_output_data
+);

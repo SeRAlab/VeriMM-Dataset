@@ -1,0 +1,11 @@
+Design a 4-entry register file with 16-bit wide registers, controlled by a clock signal. It enables writing to one of the four registers specified by a 2-bit write address, provided that the write_enable signal is active. On each clock cycle, it outputs the contents of two registers selected by their respective 2-bit read addresses through read_data_1 and read_data_2 signals, facilitating simultaneous read operations while allowing for dynamic updates based on the write_enable condition.
+module top_module(
+    input clk,
+    input write_enable,
+    input [1:0] write_address,
+    input [15:0] write_data,
+    input [1:0] read_address_1,
+    input [1:0] read_address_2,
+    output reg [15:0] read_data_1,
+    output reg [15:0] read_data_2
+);

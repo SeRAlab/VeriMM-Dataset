@@ -1,0 +1,9 @@
+Design a shift register that supports both parallel loading and serial shifting. On the rising edge of the clock, if the parallel_load signal is active, the register is loaded with the 8-bit input data_in. If parallel_load is not active, the shift register shifts its contents either left or right based on the shift_dir input: when shift_dir is high, the bits are shifted left with the most significant bit wrapping around to the least significant bit position, and when shift_dir is low, the bits shift right with the least significant bit wrapping around to the most significant bit position. The contents of the shift register can be accessed through both serial_out and parallel_out outputs, which both reflect the current state of the register.
+module top_module(
+    input clk,
+    input shift_dir,
+    input parallel_load,
+    input [7:0] data_in,
+    output reg [7:0] serial_out,
+    output reg [7:0] parallel_out
+);

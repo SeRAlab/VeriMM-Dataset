@@ -1,0 +1,13 @@
+Design a circuit that functions as a single-bit latch control for a LL (Load Link) bit in the context of a pipeline processor. On the rising edge of the clock, if either the reset (rst) or flush signal is asserted, the LLbit is set to LOW (0). If the load link enable signal (llE) is asserted while the reset and flush are not active, the LLbit is set to HIGH (1). Otherwise, the LLbit retains its current value.
+module top_module(
+    input wire clk,
+    input wire rst,
+    
+    
+    input wire flush,
+
+    
+    input wire llE,
+   
+    output reg LLbit
+    );

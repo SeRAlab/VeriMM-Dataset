@@ -1,0 +1,7 @@
+Design a synchronizer circuit that synchronizes an asynchronous input signal, `in0`, to the clock signal, `ext_spi_clk`. It uses a flip-flop to register the value of `in0` on the rising edge of the clock, storing the synchronized value in `in0_sync`. Additionally, it implements a reset functionality: when `rd_rst_asreg_reg` is asserted high, the output `out` is driven LOW; otherwise, the output follows the synchronized input `in0_sync`. This design ensures reliable signal timing and resets within a system potentially using SPI communication.
+module top_module(
+    out,
+    rd_rst_asreg_reg,
+    in0,
+    ext_spi_clk
+);

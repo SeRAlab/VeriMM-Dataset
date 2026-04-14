@@ -1,0 +1,10 @@
+Design a module that performs conditional bitwise operations on an 8-bit input, based on a 2-bit key, while supporting reset and enable functionalities. When the enable signal (ENA) is asserted, the module captures the value of RGA into a register on the rising edge of the clock, and RGB into another register on the falling edge. The output RGZ is determined by the value of the KEY input: if KEY is '00', it outputs the bitwise AND of RGA and the captured RGB value; if '01', it outputs the bitwise OR; if '10', it outputs the bitwise XOR; and if '11', it outputs the bitwise NOT of RGA. The module can be reset to zero when the RST signal is low, ensuring that the registers are initialized to zero.
+module top_module(
+  input RST,
+  input CLK,
+  input ENA,
+  input [7:0] RGA,
+  input [7:0] RGB,
+  output [7:0] RGZ,
+  input [1:0] KEY
+);

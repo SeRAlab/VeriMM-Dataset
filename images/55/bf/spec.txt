@@ -1,0 +1,10 @@
+Design a state-controlled interface for writing to a dual-port RAM with separate control signals for low and high byte enables. The module utilizes a clock and an active-low reset to manage a simple state machine that toggles between two states based on the `tex_push_en` input. Depending on the current state (`cs`) and the `ram_sel` signal, it generates two output signals (`ram_wen_lo` and `ram_wen_hi`) to control write enables for low and high RAM sections, respectively. When the `tex_push_en` signal is asserted, it allows writing to the selected RAM section, effectively enabling selective byte write operations.
+module top_module(
+	input		mclock,		
+	input		rstn,
+	input		tex_push_en,	
+	input		ram_sel,	
+
+	output reg	ram_wen_lo,	
+	output reg	ram_wen_hi	
+	);

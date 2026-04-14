@@ -1,0 +1,5 @@
+Create an 8-bit shift register that can shift data left or right based on control signals. The register is clocked and resets to zero on the reset signal. When the shiftLeft signal is active, it shifts the contents of the register to the left, inserting the new shiftData on the least significant bit (LSB). Conversely, when the shiftRight signal is active, it shifts the contents to the right, inserting shiftData on the most significant bit (MSB). The current state of the register is output continuously.
+module top_module(
+   input         clock, reset, shiftLeft, shiftRight,
+   input [7:0]   shiftData,
+   output [7:0]  data);

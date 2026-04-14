@@ -1,0 +1,6 @@
+Design a bidirectional data transceiver module similar to the 74245 integrated circuit, which allows for the transmission of 8-bit data between two buses (a and b) based on control signals. The module features a "g" input to enable or disable the operation and a "dir" input to determine the direction of data flow—either from bus 'a' to bus 'b' or vice versa. When enabled and directed properly, the module captures the input from one bus and places it onto the other, while keeping the non-active bus in a high-impedance state to avoid conflicts.
+module top_module(
+    inout [7:0] a,
+    inout [7:0] b,
+    input g,
+    input dir);

@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform the MixColumns step in the AES (Advanced Encryption Standard) encryption process. This step is crucial for ensuring the diffusion of input data across the entire block, making the encryption robust against cryptanalysis. The module operates on a 128-bit block of data, transforming it according to the AES MixColumns operation, which involves matrix multiplication in the Galois Field (GF)(2^8).
+
+In a broader system context, this module would be integrated as part of an AES encryption engine, contributing to the cipher's overall security by mixing the data within each column of the state matrix. This operation is pivotal in achieving the avalanche effect desired in cryptographic algorithms, where a small change in the input leads to a significant and unpredictable change in the output.
+
+Module name:  
+	MixColumns
+
+Input ports:
+	clk (input): The clock signal. It is used to synchronize the operations of the module with the system clock.
+	reset (input): The reset signal. When asserted (active low), it initializes the module, clearing the output and setting valid_out to 0.
+	valid_in (input): A signal indicating when the input data (data_in) is valid and ready for processing.
+	data_in (input, [DATA_W1:0]): The 128bit input data block to be transformed by the MixColumns operation. DATA_W is a parameter set to 128 bits, matching the block size used in AES.
+Output ports:
+	valid_out (output, reg): A signal that indicates when the transformation is complete, and the output data (data_out) is valid.
+	data_out (output, reg, [DATA_W1:0]): The 128bit output data block resulting from the MixColumns transformation.
+
+
+Implementation:
+The MixColumns module is designed to perform the MixColumns step of the AES (Advanced Encryption Standard) algorithm, which is a crucial part of the AES cipher process. This step operates on the state matrix, treating each column as a four-term polynomial over the finite field GF(2^8) and multiplying it modulo \(x^4 + 1\) with a fixed polynomial \(c(x) = 03·x^3 + 01·x^2 + 01·x + 02\). The module is parameterized to handle a default data width of 128 bits, aligning with the standard AES block size.
+
+Give me the complete code.
+

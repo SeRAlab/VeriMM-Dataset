@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module to synchronize a single-bit input signal (`data_in`) from one clock domain to another, mitigating the risk of metastability that can occur when signals cross clock domains. This module is a fundamental building block in digital designs that involve multiple clock domains, ensuring reliable communication between these domains. The primary function of this module to capture the asynchronous input signal `data_in` and produce a synchronized output signal `data_out` that is stable and safe to use in the receiving clock domain. This process helps in preventing potential errors in the system caused by metastability, thus enhancing the overall system reliability.
+
+Module name:  
+	omsp_sync_cell
+
+Input ports:
+	clk (input): The clock input for the synchronization process. This is the clock signal of the destination domain where the data_in signal is being synchronized to.
+	data_in (input): The singlebit input signal that is to be synchronized to the destination clock domain. This signal originates from a different clock domain.
+	rst (input): The reset signal for the module. When asserted (1), it initializes the internal state of the module, setting the synchronization registers to 0.
+Output ports:
+	data_out (output): The singlebit output signal that has been synchronized to the clk domain. This signal is now safe to use within the destination clock domain, having been stabilized through the synchronization process.
+
+
+Implementation:
+The RTL module presented, named omsp_sync_cell, is designed to synchronize a single-bit input signal (data_in) to the clock domain of the clk signal. This is a common requirement in digital designs where signals cross clock domains, potentially leading to metastability issues if not handled correctly. The module outputs a synchronized version of the input signal through data_out. The synchronization is achieved using a two-stage shift register mechanism, which is a standard technique for mitigating the risk of metastability when transferring signals between different clock domains.
+
+Give me the complete code.
+

@@ -1,0 +1,8 @@
+Design a signal integration module that accumulates two 6-bit wide input signals, `x_os` and `y_os`, over a period of 3 clock cycles, producing 12-bit wide output signals `x_os_integ` and `y_os_integ`. The module operates on the rising edge of the clock, storing the previous values of the inputs and integrating these values into the outputs every third cycle. This integration is achieved by effectively extending the 6-bit inputs to 12 bits (sign-extended) before summation, allowing for broader value representation in the output.
+module top_module(
+  input clk,
+  input [5:0] x_os,
+  input [5:0] y_os,
+  output reg [11:0] x_os_integ,
+  output reg [11:0] y_os_integ
+);

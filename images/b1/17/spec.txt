@@ -1,0 +1,11 @@
+Design a memory address generator for a pixel-based system. The module produces a pixel address based on horizontal (`h_cnt`) and vertical (`v_cnt`) counters, while also managing a position register that can increment or decrement based on the `dir` signal, when enabled by `en`. The address calculation supports a pixel buffer size of 76800, and the position controls the current pixel row being accessed. Resetting the module initializes the position to zero, allowing for efficient scanning through pixel data based on the provided counters and control signals.
+module top_module(
+   input clk,
+   input rst,
+   input dir,
+   input en,
+   input [9:0] h_cnt,
+   input [9:0] v_cnt,
+   output [16:0] pixel_addr,
+   output [16:0] pixel_addr_red
+   );

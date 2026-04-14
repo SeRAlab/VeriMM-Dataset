@@ -1,0 +1,26 @@
+Please act as a professional Verilog designer.
+
+Implement an 8-bit up/down counter. The module increments or decrements the count based on the up_down control signal on each rising edge of the clock signal. The reset signal asynchronously resets the counter to 0 when asserted.
+
+Module name:  
+    up_down_counter_8bit    
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    reset: Asynchronous reset signal.
+    up_down: Control signal for up/down counting (1 for up, 0 for down).
+
+Output ports:
+    count: 8-bit output signal representing the current counter value.
+
+Implementation:
+The counter is defined as reg [7:0] count and initialized to 0 using the initial statement. The value of count is incremented by 1 if up_down is high and decremented by 1 if up_down is low on each rising edge of clk and reset to 0 when reset is high.
+
+Give me the complete code.
+
+module up_down_counter_8bit(clk, reset, up_down, count);
+
+    input  clk;  
+    input  reset;  
+    input  up_down;
+    output  [7:0] count;

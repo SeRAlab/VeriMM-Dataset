@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a simple, parameterizable memory block, designed to store and retrieve data based on provided addresses. It is equipped to handle write and read operations, making it a versatile component in a broader digital system, such as a processor or a custom digital logic circuit. The module's parameterizability allows for easy scaling, making it adaptable to various application requirements regarding address width (`AW`) and data width (`DW`).
+
+Module name:  
+	fasm_sparam
+
+Input ports:
+	dat_i [DW1:0]: Data input port. This port accepts data of width DW bits to be written into the memory.
+	adr_i [AW1:0]: Address input port. This port accepts an address of width AW bits, determining the location in memory where dat_i is to be written or from where data is to be read.
+	wre_i: Write enable input. A high signal on this port enables writing the data present on dat_i to the address specified by adr_i.
+	stb_i: Strobe input. While not explicitly used in the current implementation, this input is typically used to indicate a valid transaction.
+	clk_i: Clock input. The rising edge of this signal triggers the write operation.
+	rst_i: Reset input. Not used in the current implementation, but generally used for asynchronous or synchronous reset functionality.
+Output ports:
+	dat_o [DW1:0]: Data output port. This port outputs the data of width DW bits read from the memory location specified by adr_i.
+
+
+Implementation:
+The RTL module fasm_sparam is designed to simulate a simple synchronous memory block with parameterizable address and data widths. This module is capable of both writing to and reading from a memory array, with operations synchronized to the rising edge of a clock signal. The functionality of this module is governed by a mix of combinational and sequential logic, which is detailed below:
+Sequential Logic: The core of the module's sequential logic is encapsulated within the always @(posedge clk_i) block. This block is triggered on the rising edge of the clk_i clock signal. Within this block, a conditional write operation is performed based on the wre_i signal. If wre_i is asserted (1), the data present on dat_i is written to the location in the memory array lram specified by adr_i. The write operation is delayed by 1 time unit (#1) to simulate memory write delay. This sequential logic ensures that memory write operations are synchronized with the clock, preventing race conditions and ensuring data integrity.
+Combinational Logic: The module employs combinational logic to handle read operations from the memory array. The read operation is not explicitly gated by a clock edge or a read enable signal; instead, it is continuously available through the assign statement. The output dat_o is directly connected to the memory array lram indexed by adr_i, allowing for the immediate reflection of the data stored at the addressed location. This means that any change in the adr_i or update in the memory content at the addressed location will be instantaneously visible at dat_o.
+
+Give me the complete code.
+

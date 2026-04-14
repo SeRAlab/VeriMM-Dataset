@@ -1,0 +1,27 @@
+Implement a Verilog module with the following description: This is a hardware module.
+module top_module(
+	input sys_clk,
+	input sys_rst,
+
+	output busy,
+
+	input pipe_stb_i,
+	output pipe_ack_o,
+	input signed [11:0] x,
+	input signed [11:0] y,
+	input signed [17:0] tsx,
+	input signed [17:0] tsy,
+	input signed [17:0] tex,
+	input signed [17:0] tey,
+
+	output reg pipe_stb_o,
+	input pipe_ack_i,
+	output reg signed [11:0] x_f,
+	output reg signed [11:0] y_f,
+	output reg signed [17:0] tsx_f,
+	output reg signed [17:0] tsy_f,
+	output reg diff_x_positive,
+	output reg [16:0] diff_x,
+	output reg diff_y_positive,
+	output reg [16:0] diff_y
+);

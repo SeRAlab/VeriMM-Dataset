@@ -1,0 +1,6 @@
+Design a 32-bit register block that captures input values reg_out1 and reg_out2 on the rising edge of a clock signal (clk). The outputs reg_A and reg_B will output the values of reg_out1 and reg_out2, respectively, unless a reset signal (rst_n) is asserted low, in which case reg_A and reg_B will be set to an undefined state (x). This module serves as a basic register component in a digital circuit for storing two 32-bit values with synchronous operation and active-low reset functionality.
+module top_module(
+	input clk,rst_n,
+	input [31:0]reg_out1,reg_out2,
+	output reg [31:0]reg_A,reg_B
+   );

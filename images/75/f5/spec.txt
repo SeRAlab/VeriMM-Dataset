@@ -1,0 +1,7 @@
+Design a sequential circuit that processes a 4-bit input signal, `data_in`, based on a clock signal and an active-low reset. When the reset signal is asserted, it initializes the 2-bit output `data_out` to zero. On each rising edge of the clock, if the two most significant bits of `data_in` (bits 3 and 2) are greater than or equal to 2, it increments the least significant 2 bits of `data_in` (bits 1 and 0) by one and assigns the result to `data_out`. If the condition is not met, it simply assigns the least significant bits of `data_in` to `data_out`.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] data_in,
+    output reg [1:0] data_out
+);

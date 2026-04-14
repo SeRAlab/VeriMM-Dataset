@@ -1,0 +1,11 @@
+Design a circuit that encapsulates three primary functionalities: it features an 8-bit register with synchronous active-high reset, which initializes to 8'h34 or updates based on an input data signal; implements an XNOR gate using NAND gates to compute the logical XNOR of two input signals; and a comparison logic that determines if the current value of the register equals the output of the XNOR gate, producing a final output indicating equality. The outputs include the current value of the register, the result of the XNOR operation, and a final flag that is high if the register value matches the XNOR output.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input [7:0] d, // 8-bit input for the register
+    input a, // First input for the XNOR gate
+    input b, // Second input for the XNOR gate
+    output reg [7:0] reg_out, // 8-bit output from the register
+    output xnor_out, // Output from the XNOR gate
+    output final_out // Final output from the functional module
+);

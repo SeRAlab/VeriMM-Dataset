@@ -1,0 +1,8 @@
+Design a 4-bit LED counter that increments based on a clock signal and an enable input. The module resets both the count and the LED output when the reset signal is activated. The counter operates by counting up to a specified limit defined by the `count_to` input. Once the count reaches this limit, it resets to zero. The current count value is represented on four LEDs, providing a visual output of the counter's state. If the count exceeds the defined range, the LED output defaults to zero. This functionality allows for a simple visual representation of a counting mechanism.
+module top_module(
+    input clk,
+    input reset,
+    input enable,
+    input [7:0] count_to,
+    output reg [3:0] leds
+);

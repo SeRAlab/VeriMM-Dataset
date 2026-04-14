@@ -1,0 +1,9 @@
+The module implements a circuit that functions as a 64-bit wide output combinatorial logic unit. It takes four 16-bit input values (a, b, c, and d) and a select signal (sel), where it performs two different operations: it either sums and concatenates (a+b) and (c+d) into `cat1` or subtracts (a-b) and (c-d) into `cat2`. The output `res` is structured such that it consists of the 16-bit input `b`, followed by a 32-bit result from either `cat1` or `cat2` based on the value of `sel`, and ending with the 16-bit input `a`. This design facilitates flexible arithmetic operations and concatenation based on the select line, enabling a versatile output composition for various applications.
+module top_module(
+  input [15:0]  a,
+  input [15:0]  b,
+  input [15:0]  c,
+  input [15:0]  d,
+  input         sel,
+  output [63:0] res
+  );

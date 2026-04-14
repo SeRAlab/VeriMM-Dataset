@@ -1,0 +1,15 @@
+Design a control module for a memory management system that utilizes a clock-driven process to manage various settings and states. The module features input wires for controlling read/write operations and configurations, including a reset condition to initialize output states. It incorporates a page selection mechanism, allowing for updates to a 4-bit page indicator based on input data. Additionally, four lock and disable signals are manipulated based on the read/write operation and address line, ultimately facilitating access to specific memory pages while ensuring configurations for system boot and memory disabling are effectively controlled. The output includes a data bus for either transmitting the current configuration settings or the selected page number, depending on the operation mode.
+module top_module(
+    input wire clk,
+    input wire rst,
+    input wire AD,
+    input wire [7:0] DI,
+    output reg [7:0] DO,
+    input wire rw,
+    input wire cs,
+    output reg [3:0] page,
+    output reg rampage_lock,
+    output reg sysboot_lock,
+    output reg bram_disable,
+    output reg brom_disable
+);

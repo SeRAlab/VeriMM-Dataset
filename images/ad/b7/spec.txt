@@ -1,0 +1,15 @@
+Design a binary output module with a 2-bit shift register and scan chain functionality. The module captures input 'D' and the active-low 'RESET_B' signal on the rising edge of the clock when the scan chain enable 'SCE' is high. The captured values are stored in a scan chain, which then updates the shift register. The output 'Q' reflects the first bit of the shift register unless 'RESET_B' is low, in which case 'Q' outputs a low signal. This design is typically used for state retention and testing purposes in digital systems.
+module top_module(
+    input  D      ,
+    output reg Q  ,  // Changed from 'output' to 'output reg'
+    input  RESET_B,
+    input  SCD    ,
+    input  SCE    ,
+    input  CLK    ,
+    input  SLEEP_B,
+    input  KAPWR  ,
+    input  VPB    ,
+    input  VPWR   ,
+    input  VGND   ,
+    input  VNB
+);

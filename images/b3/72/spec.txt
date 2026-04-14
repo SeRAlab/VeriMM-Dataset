@@ -1,0 +1,12 @@
+Design a dual-input, edge-triggered latch circuit that holds a value based on the input data signal (D) and the reset signal (RESET_B). The latch operates in a manner similar to a master-slave configuration, where the outputs Q and Q_N represent the stored value and its inverse, respectively. When RESET_B is low, the latch resets, forcing Q to low and Q_N to high. The state of the latch is controlled by the data input D, which is sampled on the rising edge of the gate signal (GATE). This module is suitable for use in synchronous circuits requiring temporary data storage and state retention.
+module top_module(
+    input RESET_B,
+    input D,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB,
+    output Q,
+    output Q_N,
+    input GATE
+);

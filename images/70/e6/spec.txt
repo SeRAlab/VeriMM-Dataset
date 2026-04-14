@@ -1,0 +1,12 @@
+Design a circuit that functions as an accumulation module, which takes an 8-bit input and sums it over multiple clock cycles. When the `valid_a` input is high and the module is ready to receive data (`ready_b`), it accumulates the `data_in` value in a register and counts the number of valid inputs. Upon reaching 1000 inputs, it outputs the accumulated result as a 10-bit value (`data_out`) while asserting `valid_b` to indicate data availability. Additionally, the module indicates its readiness to receive more data through the `ready_a` output, which goes low when `valid_b` is high, signaling that the previous data has been processed. The circuit incorporates reset logic to initialize the registers and outputs.
+module top_module(
+    input               clk         ,   
+    input               rst_n       ,
+    input       [7:0]   data_in     ,
+    input               valid_a     ,
+    input               ready_b     ,
+ 
+    output              ready_a     ,
+    output  reg         valid_b     ,
+    output  reg [9:0]   data_out
+);

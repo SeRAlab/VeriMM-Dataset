@@ -1,0 +1,9 @@
+Design a versatile combinational logic unit that takes three inputs (A, B, and C) and performs a selected binary operation (AND, OR, XOR, XNOR) on two of these inputs based on a two-bit operation code (`op`). The choice of which two inputs to operate on is influenced by a select signal (`sel`). The module utilizes temporary wires to store the results of various logical operations, ensuring the final output (`Y`) reflects the chosen operation on the specified input pair. This design embodies a flexible multi-function logic gate compatible with a variety of digital applications.
+module top_module(
+    output reg Y,  // Change output Y to output reg to allow assignment in always block
+    input A,
+    input B,
+    input C,
+    input [1:0] op,
+    input sel
+);

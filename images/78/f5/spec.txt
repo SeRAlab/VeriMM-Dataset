@@ -1,0 +1,7 @@
+Design a 3-bit Moore state machine for detecting the specific sequence "10" followed by "1" in a continuous input data stream. The system transitions through three states, starting from state A, moving to state B upon detecting the "10" input, then transitioning to state C after reading "1". In state C, the module maintains its state while signaling a match output high, indicating the successful detection of the sequence. If the expected inputs are not detected, it resets to the initial state. The design ensures a synchronized response to the input data based on the clock signal and reset condition.
+module top_module(
+  input clk,
+  input reset,
+  input data,
+  output reg match
+);

@@ -1,0 +1,10 @@
+Design a delay module that introduces a programmable delay to the input signal A before propagating it to the output X. The delay is controlled by a 4-bit input delay value, which is constrained to a maximum value of 15 (4'b1111) to prevent exceeding the defined delay limit. The module also integrates power management inputs for proper operation. When the power is supplied (indicated by VPWR), the module captures the input A on the rising edge of VPWR and assigns it to output X after the specified delay time. This functionality allows for controlled timing adjustments in digital signal applications.
+module top_module(
+    input A,
+    input [3:0] delay,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB,
+    output reg X // Change to reg type since X will be driven in an always block
+);

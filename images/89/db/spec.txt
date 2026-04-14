@@ -1,0 +1,28 @@
+Implement the Verilog module based on the following description.
+Design a state machine with 1 input (in) and 1 output (out). The state machine has the following states and their corresponding outputs:
+1. state T (out=1).
+2. state U (out=0).
+3. state V (out=1).
+
+State transitions:
+1. From state T: If in = 0, then transition to state U. If in = 1, then transition to state V.
+2. From state U: If in = 0, then remain in state U. If in = 1, then transition to state T.
+3. From state V: If in = 0, then transition to state T. If in = 1, then remain in state V.
+
+At reset, the state machine starts in state "T". Derive next-state logic equations and output logic equations by inspection using the following one-hot encoding: (T, U, V) = (3'b001, 3'b010, 3'b100).
+
+Write code that generates the following equations:
+
+- T_next -- next-state logic for state T
+- U_next
+- V_next
+- out -- output logic
+
+module state_fsm_design(
+    input in,
+    input [2:0] state,    // 3-bit one-hot current state
+    output reg T_next,
+    output reg U_next,
+    output reg V_next,
+    output reg out
+);

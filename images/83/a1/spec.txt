@@ -1,0 +1,14 @@
+Design a dual-port RAM module that supports simultaneous read and write operations. The module features two independent address and data input channels (addr0, data0 for the first port and addr1, data1 for the second port) controlled by chip enable (ce0, ce1) and write enable (we0, we1) signals. On each clock cycle, if the corresponding chip enable signal is active, the module can either write incoming data to the specified address in memory or read the data stored at that address, providing simultaneous output for both ports (q0 and q1) as needed. The memory consists of 20 words, each 576 bits wide, allowing for substantial data storage.
+module top_module(
+    input clk,
+    input [4:0] addr0,
+    input [4:0] addr1,
+    input [575:0] data0,
+    input [575:0] data1,
+    input ce0,
+    input ce1,
+    input we0,
+    input we1,
+    output reg [575:0] q0,
+    output reg [575:0] q1
+);

@@ -1,0 +1,13 @@
+Design a register file with 32 general-purpose registers for a digital circuit. It supports write and read operations controlled by a clock signal. When the clock signal rises, if the write enable signal is active, the specified register is updated with new data. Two output ports provide access to the data from specified registers based on their addresses, returning zero if the address is zero (indicating a null register). This module serves as a fundamental building block for processors, enabling efficient data storage and retrieval.
+module top_module(
+           input I_clk,
+
+           input I_reg_we,
+           input [4:0] I_rs_addr,
+           input [4:0] I_rt_addr,
+           input [4:0] I_wb_addr,
+           input [31:0] I_wb_data,
+
+           output [31:0] O_rs_data,
+           output [31:0] O_rt_data
+       );

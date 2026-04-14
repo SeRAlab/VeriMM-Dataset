@@ -1,0 +1,10 @@
+Design a module for significand alignment used in floating-point arithmetic. The module takes two 28-bit significands, M1 and M2, an 8-bit right shift amount r, and a signal indicating which significand is greater. Based on the comparison, it aligns the selected significand (either M1 or M2) by right-shifting it and pads the other with zeros. It also provides the most significant 12 bits of the padding as GRS bits, which are used for round-off decisions in floating-point operations. This functionality is essential for ensuring proper alignment before performing operations on floating-point numbers.
+module top_module(
+    input wire [27:0] M1,
+    input wire [27:0] M2,
+    input wire [7:0]  r,
+	 input wire        Greater,
+    output reg [27:0] M1_norm,
+    output reg [27:0] M2_norm,
+    output reg [11:0] GRS_bits
+    );

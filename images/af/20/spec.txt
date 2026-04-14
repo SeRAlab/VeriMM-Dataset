@@ -1,0 +1,9 @@
+Design a module for the write stage of a processor that selects data to be written back to a register based on a selection signal. The module takes various inputs, including the program counter increment, condition flag, and results from memory and the ALU, to decide what data to write back. The selection is controlled by a 2-bit input signal, which determines whether the write data should come from the program counter, a condition signal, read data from memory, or the ALU result. The module also passes through a write register identifier and always outputs a low error signal.
+module top_module(
+	
+	RegWriteDataSel_In_FromMem, PCInc_In_FromMem, Condition_In_FromMem, ReadData_In_FromMem, ALUResult_In_FromMem,
+	WR_In_FromMem,
+	
+	
+	WR_Out_ToMem, WD_Out_ToMem, err
+);

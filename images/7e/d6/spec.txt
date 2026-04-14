@@ -1,0 +1,12 @@
+Design a header realigner circuit that processes incoming 2-bit data (`din`) at an 80 MHz clock rate (`clk80`). The module aligns data by detecting specific header patterns (11'b01111111110) within a 16-bit shift register (`s`). When a valid header is identified based on the patterns, the module toggles the `davail` output, indicating data availability, and outputs the relevant data bits through `dout`. Additionally, it has a reset input to clear the internal states and a `start` input to enable header detection. The output signal `header` indicates when a valid header has been detected during the processing.
+module top_module(
+	input clk80,
+	input reset,
+	
+	input [1:0]din,
+	output reg [3:0]dout,
+	output reg davail,
+
+	input start,
+	output reg header
+);

@@ -1,0 +1,12 @@
+Design a multi-stage 4-to-1 multiplexer with a two-stage selection process. The module takes four input signals (A, B, C, D), two select signals (SEL1, SEL2), and an enable signal (EN). It processes the inputs through three stages: the first selects which of the four inputs to pass forward based on the select signals, the second stage selects between the outputs from the first stage, and the third stage outputs the final selected signal. The output is updated on the rising edge of the clock when enabled.
+module top_module(
+    input A,
+    input B,
+    input C,
+    input D,
+    input SEL1,
+    input SEL2,
+    input EN,
+    input clk, // Added clk input here
+    output reg OUT
+);

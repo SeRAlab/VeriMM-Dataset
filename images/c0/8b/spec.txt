@@ -1,0 +1,38 @@
+Please act as a professional verilog designer.
+    
+Implement a module appears to be a critical component of a microprocessor or a digital signal processing system, likely designed for embedded applications. Its primary functions include:
+
+Interrupt Handling: It manages interrupts, determining when the system should respond to external or internal interrupt requests.
+Exception Handling: It detects and handles exceptions, such as illegal operations or specific conditions defined by `exc_ill`, `exc_dwb`, and `exc_iwb`.
+Clock and Reset Management: It generates internal clock (`gclk`) and reset signals (`grst`) based on the system clock (`sys_clk_i`) and reset input (`sys_rst_i`).
+Execution Control: It controls the execution flow within the system by enabling or disabling instruction execution (`iena`) and data execution (`dena`) based on various conditions, including feedback signals from different stages of the pipeline and system enable signal.
+Phase Management: It manages the phase (`gpha`) of operation, likely for synchronization or timing control within a pipeline or a multi-phase execution environment.
+
+Module name:  
+	aeMB2_pipe
+
+Input ports:
+	sys_clk_i: System clock input. Drives the module's internal logic and timing.
+	sys_rst_i: System reset input. Asynchronously resets the module's internal state.
+	sys_ena_i: System enable input. Controls the module's operation enabling/disabling it.
+	sys_int_i: System interrupt input. Indicates an external interrupt request.
+	bra_ex, dwb_fb, xwb_fb, ich_fb, fet_fb: Feedback signals from various stages of the execution pipeline, likely indicating the status or presence of certain conditions.
+	msr_ex: A multibit signal providing status or control information, possibly from a machine status register.
+	exc_dwb, exc_iwb, exc_ill: Signals indicating different types of exceptions.
+Output ports:
+	brk_if: A multibit output indicating break or interrupt flags, possibly controlling the flow of execution based on interrupts or exceptions.
+	gpha: Output indicating the current phase of operation.
+	gclk: The internal clock signal, derived from the system clock.
+	grst: The internal reset signal, logically negated from the reset input after a delay.
+	dena, iena: Control signals enabling data and instruction execution, respectively.
+
+
+Implementation:
+The aeMB2_pipe module is designed to operate within a digital system, likely as part of a processor's pipeline control mechanism. It interfaces with various signals that suggest its role in managing execution flow, handling exceptions, and coordinating the processor's operational phases. The module's logic can be dissected into several key areas:
+Clock and Reset Management: The module uses sys_clk_i as its primary clock signal (gclk) and generates a reset signal (grst) based on the external reset input (sys_rst_i) and an internal reset mechanism. The reset logic ensures that the module can be properly initialized or reset during operation.
+Execution Enable Logic: The iena and dena signals control whether the execution is enabled, depending on the feedback from instruction cache hit (ich_fb), data write-back (dwb_fb), and execution write-back (xwb_fb) stages, as well as the external enable signal (sys_ena_i). This suggests a mechanism for stalling or enabling the pipeline based on various conditions.
+Interrupt and Exception Handling: The module processes interrupt and exception signals (sys_int_i, exc_ill, exc_dwb, exc_iwb) and maintains an interrupt latency flag (int_lat). It generates break interface signals (brk_if) that likely indicate the need to divert execution flow in response to these events.
+Phase Alternation: The gpha signal alternates every clock cycle when execution is enabled or during reset, possibly indicating a mechanism for distinguishing between different phases of operation within a cycle.
+
+Give me the complete code.
+

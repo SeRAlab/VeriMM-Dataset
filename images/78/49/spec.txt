@@ -1,0 +1,8 @@
+Design a 32-bit Arithmetic Logic Unit (ALU) that performs addition and subtraction based on a control signal. The ALU takes two 32-bit input operands, `srca` and `srcb`, and a 2-bit control signal, `alucontrol`, to determine the operation. It can execute addition (with either standard or two's complement for subtraction) and bitwise logical operations, such as AND and OR. Additionally, it generates four flags: the negative (N) flag, zero (Z) flag, carry (C) flag, and overflow (V) flag, providing status information about the computation's outcome. The output is 32 bits wide and reflects the result of the selected operation, alongside the corresponding flags for further decision-making in a CPU architecture.
+module top_module(
+    input wire [31:0] srca, 
+    input wire [31:0] srcb, 
+    input wire [1:0] alucontrol, 
+    output reg [31:0] aluresult, 
+    output reg [3:0] aluflags
+);

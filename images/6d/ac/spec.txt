@@ -1,0 +1,8 @@
+Design a 4-bit pipelined counter with asynchronous reset and parallel load capabilities. The counter initializes to a default value of 8 (binary 1000) and can load a new value when the load signal is active. It features four pipeline stages where each stage can either update from the previous stage or load a new value, allowing for smooth state transitions. The counter increments its value on each clock cycle unless a new load is specified. The output reflects the current state of the counter, making it suitable for applications requiring synchronized counting with delayed outputs.
+module top_module(
+    input clk,
+    input reset,      // Asynchronous active-high reset
+    input load,       // Active-high parallel load input
+    input [3:0] load_value, // 4-bit load value
+    output [3:0] q
+);

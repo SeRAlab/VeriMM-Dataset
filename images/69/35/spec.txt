@@ -1,0 +1,8 @@
+Design a synchronous 8-bit arithmetic calculator capable of performing addition, subtraction, multiplication, and division based on a 2-bit operation selector. The module takes two 8-bit inputs, A and B, and produces a 16-bit result. The computation is triggered on the rising edge of the clock signal, ensuring that the output is updated correctly with the chosen operation, which includes zero-padding the inputs as necessary for arithmetic operations.
+module top_module(
+    input clk,
+    input [7:0] A,
+    input [7:0] B,
+    input [1:0] operation,
+    output reg [15:0] result
+);

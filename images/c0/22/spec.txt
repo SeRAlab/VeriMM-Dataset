@@ -1,0 +1,43 @@
+Please act as a professional verilog designer.
+    
+Implement a module acts as a bridge or master interface between a custom bus protocol and the Wishbone bus protocol, a popular standard for connecting different components in embedded systems. Its primary functions include:
+
+Address Translation: It translates address signals from the custom bus protocol to the Wishbone protocol.
+Data Transfer Management: Manages data transfers, including read and write operations, between the two bus protocols.
+Control Signal Management: Converts control signals between the custom bus protocol and the Wishbone protocol to ensure proper synchronization and operation of data transfers.
+Error Handling: Detects and signals error conditions during data transfers.
+
+This module plays a crucial role in systems where components designed to communicate over different bus protocols need to interact seamlessly.
+
+Module name:  
+	dragonball_wbmaster
+
+Input ports:
+	clk (input): The system clock signal.
+	reset_n (input): Active low reset signal.
+	a [adr_hi:1] (input): Address input from the custom bus protocol.
+	cs_n (input): Active low chip select signal from the custom bus protocol.
+	d [15:0] (inout): Bidirectional data bus.
+	lwe_n, uwe_n (input): Active low write enable signals for the lower and upper byte, respectively, from the custom bus protocol.
+	oe_n (input): Active low output enable signal from the custom bus protocol.
+	dat_i [15:0] (input): Input data from the Wishbone bus.
+	ack_i (input): Acknowledge signal from the Wishbone bus.
+	err_i (input): Error signal from the Wishbone bus.
+Output ports:
+	dtack_n (output): Active low data acknowledge signal to the custom bus protocol.
+	berr (output): Bus error signal.
+	clk_o (output): System clock output, passed through to the Wishbone bus.
+	rst_o (output): Reset signal output, passed through to the Wishbone bus.
+	cyc_o (output): Cycle signal for the Wishbone bus indicating an active transfer.
+	stb_o (output): Strobe signal for the Wishbone bus indicating data is valid.
+	adr_o [adr_hi:1] (output): Address output to the Wishbone bus.
+	sel_o [1:0] (output): Byte select signals for the Wishbone bus.
+	we_o (output): Write enable signal for the Wishbone bus.
+	dat_o [15:0] (output): Output data to the Wishbone bus.
+
+
+Implementation:
+The dragonball_wbmaster module serves as an interface between a custom bus protocol and a Wishbone bus protocol, facilitating communication and data transfer between the two. The module is designed to operate in a synchronous digital system, as indicated by the presence of a clock (clk) and a reset (reset_n) signal. The core functionality of this module revolves around translating control and data signals from the custom bus to the Wishbone bus protocol and vice versa, ensuring proper data handling and control flow.
+
+Give me the complete code.
+

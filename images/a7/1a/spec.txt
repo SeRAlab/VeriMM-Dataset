@@ -1,0 +1,32 @@
+Please act as a professional Verilog designer.
+
+Implement a module for a 4-bit up/down counter with an enable signal. The counter should increment or decrement its value based on the `up_down` signal on each positive edge of `clk` when `enable` is asserted. The counter should also reset to 0 when `rst` is asserted.
+
+Module name:
+    up_down_counter
+
+Input ports:
+    clk: Clock signal.
+    rst: Reset signal (active high).
+    enable: Enable signal for the counter.
+    up_down: Control signal for counting direction (1 for up, 0 for down).
+
+Output ports:
+    count: 4-bit output representing the current count value.
+
+Implementation:
+Declare the module `up_down_counter` with input and output ports as specified in the ports statement.
+Declare a 4-bit register `count` to keep track of the current count value.
+Inside an always block, sensitive to the positive edge of the `clk` signal, implement the logic for counting.
+If `rst` is asserted, reset the `count` register to 0.
+If `enable` is asserted, update the `count` register based on the value of `up_down`.
+
+Give me the complete code.
+
+module up_down_counter(
+    input clk,
+    input rst,
+    input enable,
+    input up_down,
+    output reg [3:0] count
+);

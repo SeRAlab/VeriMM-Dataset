@@ -1,0 +1,9 @@
+Design a display synchronization module that selects and outputs a 4-bit segment value (`Hex`) from a 16-bit input (`Hexs`) based on a 2-bit scan control signal (`Scan`). Additionally, it determines which of the four 7-segment displays to activate using the `AN` output, while controlling the decimal point (`p`) and the leading edge (`LE`) for each display segment. The selection logic ensures that only one display is active at a time, with the related point and lead indicators set appropriately for each active display.
+module top_module(input [15:0]Hexs,
+					input  [1:0] Scan,
+					input  [3:0] Point,
+					input  [3:0] Les,
+					output reg [3:0] Hex,
+					output reg p,LE,
+					output reg [3:0] AN
+    );

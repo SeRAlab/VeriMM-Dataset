@@ -1,0 +1,9 @@
+Design a 16x8 RAM module with read and write capabilities. The module uses a clock signal to synchronize operations; on the rising edge of the clock, if the write enable signal (wen) is active, it writes the 8-bit data (wdata) to the specified write address (waddr). Regardless of the write operation, it always outputs the data located at the read address (raddr) to the rdata output. This allows simultaneous reading and writing within a limited memory space of 16 locations, each capable of storing 8 bits.
+module top_module(
+  input clk,
+  input [3:0] waddr,
+  input [7:0] wdata,
+  input wen,
+  input [3:0] raddr,
+  output reg [7:0] rdata
+);

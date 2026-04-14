@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+
+Implement a 8-bit linear feedback shift register (LFSR) module that generates pseudorandom numbers.
+
+Module name:
+    lfsr_8bit
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+
+Output ports:
+    lfsr: 8-bit output representing the current state of the LFSR.
+
+Implementation:
+The module includes an 8-bit register, lfsr, which is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the lfsr register is initialized to a non-zero value.
+On every rising edge of the clock, the lfsr is shifted left by one bit, and the new bit is the XOR of certain bits of the current lfsr state.
+
+Give me the complete code.

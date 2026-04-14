@@ -1,0 +1,1 @@
+module top_module( input A, B, output Q);assign Q = A ^ B;endmodule

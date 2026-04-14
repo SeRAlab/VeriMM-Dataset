@@ -1,0 +1,14 @@
+Design a circuit that performs complex number multiplication. The module takes two complex numbers represented by their real (a_r, b_r) and imaginary (a_i, b_i) parts, along with a complex weight (w_r, w_i). It calculates the sum of the real parts and the sum of the imaginary parts to generate outputs (x_r, x_i). Additionally, it computes the products required for complex multiplication, involving temporary variables for intermediate results (temp_r, temp_i). The resulting real and imaginary parts of the product are stored in y_r and y_i, respectively, using a bit extraction method to manage overflow, thus enabling efficient complex arithmetic operations.
+module top_module(
+input [15:0] a_r,
+input [15:0] a_i,
+input [15:0] b_r,
+input [15:0] b_i,
+input [15:0] w_r,
+input [15:0] w_i,
+output [15:0] x_r,
+output [15:0] x_i,
+output [15:0] y_r,
+output [15:0] y_i,
+output [32:0] temp_r,
+output [32:0] temp_i);

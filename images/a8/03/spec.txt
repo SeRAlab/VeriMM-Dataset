@@ -1,0 +1,8 @@
+Design a D-type flip-flop with preset and clear functionalities. The module takes a data input (D), a clock input (C), a clear input (R), and a preset input (P). The flip-flop outputs (Q) the stored value of D upon the clock edge, but can be asynchronously set to a high state if P is asserted or cleared to a low state if R is asserted. The module leverages a sub-module for the flip-flop (dffsr), integrating both preset and clear features to control the output state effectively based on the condition of the control signals.
+module top_module(
+  input D,
+  input C,
+  input R,
+  input P,
+  output reg Q // Changed to 'reg' since Q will be assigned in an always block
+);

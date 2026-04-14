@@ -1,0 +1,9 @@
+Design a hardware module that performs a matrix multiplication followed by an accumulation (MAC operation) using a digital signal processing approach. The module takes two 8-bit signed inputs (in0 and in1), multiplies them to produce a product, and adds a 16-bit unsigned input (in2) to the result. The computation is synchronized with a clock signal and controlled by a chip enable (ce) signal, allowing for the pipelined storage of intermediate results. The final output is a 16-bit signed result of the addition operation.
+module top_module(
+    input clk,
+    input rst,
+    input ce,
+    input  [8 - 1:0] in0,
+    input  [8 - 1:0] in1,
+    input  [16 - 1:0] in2,
+    output [16 - 1:0]  dout);

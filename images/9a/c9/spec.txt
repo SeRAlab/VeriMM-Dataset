@@ -1,0 +1,8 @@
+Design a module for a configurable multiplier that supports different multiplication modes: unsigned, signed, and unsigned-signed multiplications. The module takes two n-bit wide inputs and produces a 2n-bit wide result, while also generating an overflow signal to indicate if the multiplication exceeds the representable range. It utilizes the Booth algorithm as its basis for handling the multiplication, ensuring that different input configurations are properly managed according to the specified mode.
+module top_module(
+  input [n-1:0] a,
+  input [n-1:0] b,
+  input [1:0] mode,
+  output [2*n-1:0] result,
+  output overflow
+);

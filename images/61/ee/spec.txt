@@ -1,0 +1,7 @@
+Design a Time-to-Digital Converter (TDC) that measures the time difference between two input pulse signals, pulse1 and pulse2. Upon detecting pulse1, the circuit starts a timer, which increments with each clock cycle. When pulse2 is detected, the TDC calculates the elapsed time since pulse1 was detected and outputs this value as an 8-bit measurement in tdc_out, scaled by the defined conversion time and sampling frequency. The design is intended for applications requiring precise timing measurements, such as in digital signal processing and high-speed event counting.
+module top_module(
+  input clk,        // Added the clk input signal
+  input pulse1,
+  input pulse2,
+  output reg [7:0] tdc_out
+);

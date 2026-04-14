@@ -1,0 +1,12 @@
+Design a circuit that implements a simple control and signaling mechanism for optical communication. It takes detection and loss-of-signal inputs and produces outputs for shutdown and transmission control. The module inverts the detection signal for output, directly passes the LOS signal, and allows an external shutdown signal to control the system. It incorporates a clock-driven process to toggle a transmission signal (tx) every 50 clock cycles, enabling a periodic signaling mechanism.
+module top_module(
+    input   detect,
+    input   los,
+    output  shutdown,
+    output  tx,
+    
+    input   clk,
+    output  o_detect,
+    output  o_los,
+    input   i_shutdown
+);

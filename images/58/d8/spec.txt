@@ -1,0 +1,8 @@
+Design a 4-bit barrel shifter that can perform both left and right shift operations based on a control input. The module has a load signal to initial load the data; on a clock edge, if load is active, it captures the input data into the result. If load is inactive, the module shifts the result based on the 2-bit shift control input: 00 means no shift, 01 shifts the result left by 1 bit with the MSB being filled by the original data's MSB, 10 shifts the result right by 1 bit with the LSB being filled by the original data's LSB, and 11 shifts the result right by 2 bits, filling the two LSBs with the original data's two LSBs.
+module top_module(
+    input clk,
+    input load,
+    input [3:0] data,
+    input [1:0] shift,
+    output reg [3:0] result
+);

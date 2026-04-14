@@ -1,0 +1,6 @@
+Design a traffic light controller that transitions through three states: Red (00), Green (10), and Yellow (01) in a timed sequence. Upon initialization, the controller starts in the Red state. The state transitions occur on the rising edge of the clock signal, with the Red state lasting for 10 clock cycles, the Green state for 5 cycles, and the Yellow state for 2 cycles. The system uses a counter to manage state duration and automatically returns to the Red state after completing the sequence. This design is intended for mimicking standard traffic light behavior in a controlled environment.
+module top_module(
+  input clk,
+  input [1:0] currentState,
+  output reg [1:0] nextState
+);

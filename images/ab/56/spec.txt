@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+
+Design an 8-bit register with synchronous reset and load signals. The register should load the input data on the rising edge of the clock when the load signal is high. When the reset signal is active, the register should be reset to 0 regardless of the load signal.
+
+Module name:
+    register_8bit
+
+Input ports:
+    clk: Clock signal.
+    rst: Reset signal.
+    load: Load signal.
+    data_in: 8-bit input data.
+
+Output ports:
+    data_out: 8-bit register value.
+
+Implementation:
+The module uses an always block triggered by the clock and reset signals. If the reset signal is active, the register is reset to 0. If the load signal is active and the reset signal is not active, the register loads the input data on the rising edge of the clock.
+
+Give me the complete code.
+
+module register_8bit(
+    input wire clk,
+    input wire rst,
+    input wire load,
+    input wire [7:0] data_in,
+    output reg [7:0] data_out
+    );

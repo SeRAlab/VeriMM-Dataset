@@ -1,0 +1,7 @@
+Design a synchronizer module that handles the transfer of digital data between two different clock domains, potentially operating asynchronously. The module can be configured for either asynchronous or synchronous clocking via a parameter. In asynchronous mode, it employs multiple flip-flops to mitigate metastability issues and ensure reliable data transfer, utilizing toggles to determine when to latch incoming data. In synchronous mode, the module directly assigns input data to output without additional synchronization, providing a simple pass-through mechanism. The output data is generated on a specified output clock, enabling safe interfacing in multi-clock systems.
+module top_module(
+  input in,
+  input out_clk,
+  input out_resetn,
+  output reg out
+);

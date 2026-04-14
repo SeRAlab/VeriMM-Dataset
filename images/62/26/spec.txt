@@ -1,0 +1,8 @@
+Design a dual-clock system that performs multiplication of two 9-bit inputs, A and B, using a configurable multiplier module. The output, Z, is an 18-bit result that is updated on the rising edge of two separate clocks, CLK1 and CLK2. Specifically, upon the rising edge of CLK1, the entire 18-bit output Z is updated, while on the rising edge of CLK2, only the lower 9 bits of Z are updated, allowing for selective output control.
+module top_module(
+    input  wire        CLK1,
+    input  wire        CLK2,
+    input  wire [ 8:0] A,
+    input  wire [ 8:0] B,
+    output reg [17:0] Z  // Changed to reg to match assignment
+);

@@ -1,0 +1,26 @@
+Design a GPIO (General Purpose Input/Output) interface module that operates over an AXI (Advanced eXtensible Interface) bus. The module allows for reading from and writing to a 20-bit wide GPIO port, managing data transfer through AXI signals. When a valid read request is received, it provides the current state of the GPIO inputs; conversely, when a valid write request is made, it updates the GPIO outputs based on the provided data and write strobes. The module also handles reset conditions, initializes internal registers for GPIO inputs and outputs, and incorporates necessary AXI handshake signals to ensure proper communication with a master device.
+module top_module(
+  input s_axi_aclk,
+  input s_axi_aresetn,
+  input [8:0]s_axi_awaddr,
+  input s_axi_awvalid,
+  output reg s_axi_awready,  // Changed to reg
+  input [31:0]s_axi_wdata,
+  input [3:0]s_axi_wstrb,
+  input s_axi_wvalid,
+  output reg s_axi_wready,    // Changed to reg
+  output reg [1:0]s_axi_bresp, // Changed to reg
+  output reg s_axi_bvalid,     // Changed to reg
+  input s_axi_bready,
+  input [8:0]s_axi_araddr,
+  input s_axi_arvalid,
+  output reg s_axi_arready,    // Changed to reg
+  output reg [31:0]s_axi_rdata, // Changed to reg
+  output reg [1:0]s_axi_rresp,  // Changed to reg
+  output reg s_axi_rvalid,      // Changed to reg
+  input s_axi_rready,
+  output ip2intc_irpt,
+  inout [19:0]gpio_io_i,
+  inout [19:0]gpio_io_o,
+  inout [19:0]gpio_io_t
+);

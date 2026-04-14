@@ -1,0 +1,8 @@
+Design a dual-mode register that operates in two different configurations based on a select input. In Mode 1, the module captures input data (d) with D flip-flops on the negative edge of the clock, resetting synchronously to zero when activated. In Mode 2, it functions using T flip-flops, where the output is determined by the XOR of the current state and input data, also resetting synchronously. The final output combines the results from both modes based on the select signal: if Mode 1 is chosen, it outputs the state of Mode 1; if Mode 2 is selected, it provides the sum of the outputs of both modes.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input [7:0] d,
+    input select,     // Select input to choose between modes
+    output [7:0] q
+);

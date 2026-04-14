@@ -1,0 +1,13 @@
+Implement the Verilog module based on the following description.
+Build a 4-bit register with synchronous active low reset signal and a shift left enable signal. When the shift left enable signal is high, the register shifts left by one bit.
+// (1) reset_n: Resets the register to 4'b0000 when low.
+// (2) shift_left_enable: Enables the shift left operation when high.
+// (3) data_in: The data to be shifted into the register.
+// (4) q: The current state of the register.
+
+module shift_left_register(
+    input clk,
+    input reset_n,
+    input shift_left_enable,
+    input data_in,
+    output reg [3:0] q);

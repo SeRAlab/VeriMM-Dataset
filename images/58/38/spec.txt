@@ -1,0 +1,7 @@
+Design a circuit that implements an 8-bit multiplexer controlled by a 4-bit Johnson counter. The multiplexer takes an 8-bit input and outputs either the current state of the Johnson counter or the provided input, depending on the counter's state. The Johnson counter generates a sequence in which it toggles between two select conditions: when it reaches an all-zero or all-one state, the multiplexer outputs the 8-bit input; otherwise, it outputs the Johnson counter value. The system incorporates asynchronous reset functionality and operates on the rising edge of a clock signal.
+module top_module(
+  input clk,         // Clock input
+  input rst_n,       // Asynchronous reset input
+  input [7:0] in,    // 8-bit input for the multiplexer
+  output reg [7:0] out   // 8-bit output from the multiplexer
+);

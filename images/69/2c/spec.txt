@@ -1,0 +1,11 @@
+Design a forwarding unit for a CPU pipeline that manages data hazards by selecting appropriate input signals for two multiplexer outputs, `mux3sel` and `mux4sel`. The module checks register source (`rs`) and target (`rt`) fields against the write-back register addresses (`wsex`, `wsmem`, `wswb`) and control signals (`weex`, `wemem`, `wewb`). Based on these comparisons and the enable signals (`re1`, `re2`), it determines which data path to forward, ensuring that the latest data values are used during execution without introducing stalls.
+module top_module(
+      input [31:0]F2Dir,
+      D2EXir,
+      EX2Mir,
+      M2WBir,
+      input [4:0]wsex,wsmem,wswb,rs,rt,
+      input weex,wemem,wewb,re1,re2,
+      output reg [1:0]mux3sel,mux4sel
+      
+  );

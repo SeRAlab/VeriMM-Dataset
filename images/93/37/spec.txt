@@ -1,0 +1,11 @@
+Implement the Verilog module based on the following description.
+You are given a 16-bit input vector data[15:0]. We want to determine some relationships between each bit and its neighbour:
+(1) result_and: Each bit of this output vector should indicate whether the corresponding input bit and its neighbour to the left are both '1'. For example, result_and[14] should indicate if data[14] and data[15] are both 1. Since data[15] has no neighbour to the left, the answer is obvious so we don't need to know result_and[15].
+(2) result_or: Each bit of this output vector should indicate whether any of the corresponding input bit and its neighbour to the right are '1'. For example, result_or[1] should indicate if either data[1] or data[0] are 1. Since data[0] has no neighbour to the right, the answer is obvious so we don't need to know result_or[0].
+(3) result_xor: Each bit of this output vector should indicate whether the corresponding input bit is different from its neighbour to the left. For example, result_xor[14] should indicate if data[14] is different from data[15]. For this part, treat the vector as wrapping around, so data[15]'s neighbour to the left is data[0].
+
+module bit_relationship (
+	input [15:0] data,
+	output [14:0] result_and,
+	output [15:1] result_or,
+	output [15:0] result_xor);

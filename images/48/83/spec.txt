@@ -1,0 +1,13 @@
+Design a control module for a robotic arm that manages the angles of six joints through PWM signals. The module takes a clock signal, a reset, a command input for angle adjustments, and the current angles of the joints. Upon reset, it initializes the joint angles to the provided current states. On each clock cycle, if the command input indicates a new angle (non-zero value), it updates the respective joint's angle. Finally, it generates PWM signals proportional to each joint's angle, scaled by a maximum duty cycle, allowing for precise control of the joints' movements.
+module top_module(
+    input clk,
+    input rst,
+    input [5:0] cmd,
+    input [5:0] current_angles,
+    output reg joint0_pwm,
+    output reg joint1_pwm,
+    output reg joint2_pwm,
+    output reg joint3_pwm,
+    output reg joint4_pwm,
+    output reg joint5_pwm
+);

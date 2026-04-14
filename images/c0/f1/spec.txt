@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+    
+Implement a module to generate a clock signal (`Mdc`) for Ethernet Media Independent Interface (MII) management, which is typically used for the configuration and management of Ethernet PHYs. The module takes an input clock (`Clk`) and divides it by a programmable factor (`Divider`) to produce the slower `Mdc` clock. This division factor can be dynamically adjusted to accommodate different PHYs or system requirements. Additionally, the module generates enable signals (`MdcEn` and `MdcEn_n`) that indicate the active edge of the `Mdc` clock, which can be used for timing management in the system that interfaces with the Ethernet PHY.
+
+Module name:  
+	eth_clockgen
+
+Input ports:
+	Clk: The primary input clock to the module. It is expected to be a continuous clock signal from which the Mdc clock is derived.
+	Reset: A synchronous reset signal. When asserted (1), it initializes the internal counters and the Mdc output to their default states.
+	Divider: An 8bit value that determines the division factor for the Mdc clock. The actual division factor is slightly adjusted within the module to ensure it is at least 2, as described in the internal workings.
+Output ports:
+	Mdc: The output clock signal derived from the input Clk by the specified division factor. This is the management clock for Ethernet MII.
+	MdcEn: An enable signal that goes high (1) on the active edge of Mdc when Mdc is low. This can be used to trigger actions on the rising edge of Mdc.
+	MdcEn_n: An enable signal that goes high (1) on the active edge of Mdc when Mdc is high. This is complementary to MdcEn and can be used to trigger actions on the falling edge of Mdc.
+
+
+Implementation:
+The RTL module presented, named eth_clockgen, is designed to generate a clock signal (Mdc) with a programmable division factor from an input clock (Clk). This module is particularly useful in Ethernet applications, where precise clock management is crucial for operations like MDIO (Management Data Input/Output) transactions. The module also provides enable signals (MdcEn and MdcEn_n) that indicate the active edge of the Mdc clock signal for synchronization purposes.
+
+Give me the complete code.
+

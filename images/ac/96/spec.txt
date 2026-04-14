@@ -1,0 +1,14 @@
+Design a FIFO (First-In-First-Out) buffer with a capacity of 16 entries, capable of storing 8-bit data. The module allows data to be pushed into the buffer when the push_valid signal is asserted, provided the buffer is not full, indicated by the push_ready output. Similarly, it enables data to be popped from the buffer when the pop_valid signal is asserted, if the buffer is not empty, indicated by the pop_ready output. The module features reset and flush functionalities to initialize or clear the buffer, respectively. It provides outputs for occupancy, indicating the current count of stored items, and availability, reflecting how many slots remain available for new entries. The operation is synchronized with a main clock signal, ensuring coordinated data handling.
+module top_module(
+  input         push_valid,
+  output        push_ready,
+  input  [7:0]  push_payload,
+  input         pop_valid,
+  output        pop_ready,
+  output reg [7:0] pop_payload, // Changed to reg type for proper assignment
+  input         flush,
+  output [4:0]  occupancy,
+  output [4:0]  availability,
+  input         mainClk,
+  input         systemReset
+);

@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform a 3-input NOR operation. This module takes three input signals and produces a single output signal that is the logical NOR of these inputs. In the broader system context, this module can be used as a basic logic gate within digital circuits, contributing to more complex logic functions, signal conditioning, or control logic by combining basic operations in various configurations.
+
+Module name:  
+	bw_u1_zhnor3_0p6x
+
+Input ports:
+	a, b, c: These are singlebit input ports (input data type) that represent the three operands for the NOR operation. Each of these inputs can either be in a logical high (1) or low (0) state. The significance of these inputs lies in their collective state, which directly influences the output of the module based on the NOR logic.
+Output ports:
+	z: This is a singlebit output port (output data type) that represents the result of the NOR operation performed on the inputs a, b, and c. The output z will be in a logical high state only when all three inputs are in a logical low state. Otherwise, z will be in a logical low state. This output is crucial for downstream logic or control circuits that rely on the NOR operation's outcome.
+
+
+Implementation:
+The RTL module presented, named bw_u1_zhnor3_0p6x, is a straightforward digital logic design implemented in Verilog, a hardware description language widely used in the field of digital IC (Integrated Circuit) design. This module encapsulates a simple combinational logic circuit without any sequential logic elements (like flip-flops or latches), meaning its output is solely dependent on its current inputs and not on any previous states or inputs.
+The core functionality of this module is defined by a single logic gate, specifically a NOR gate, which is a fundamental building block in digital electronics. The NOR gate is a universal gate, meaning it can be used to implement any Boolean function. The operation of a NOR gate is such that it outputs a logical '0' if any of its inputs are '1', and it outputs '1' only when all its inputs are '0'. The truth table below illustrates the behavior of a 3-input NOR gate, which is what is implemented in this module:
+| a | b | c | z |
+|---|---|---|---|
+| 0 | 0 | 0 | 1 |
+| 0 | 0 | 1 | 0 |
+| 0 | 1 | 0 | 0 |
+| 0 | 1 | 1 | 0 |
+| 1 | 0 | 0 | 0 |
+| 1 | 0 | 1 | 0 |
+| 1 | 1 | 0 | 0 |
+| 1 | 1 | 1 | 0 |
+The module takes three input signals (a, b, c) and produces one output signal (z). The NOR operation is succinctly described by the line nor (z, a, b, c); within the module. This line directly maps the inputs to the output through the NOR gate operation, making the module a pure combinational logic design with no internal state or memory.
+
+Give me the complete code.
+

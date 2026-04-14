@@ -1,0 +1,7 @@
+Design a clock generation circuit that outputs a derived clock signal (`clk_out`) and a reset signal (`reset_out`). The module takes in a system clock (`sys_clk`) and a reset signal (`sys_reset`). It uses a 4-bit counter that increments on each rising edge of `sys_clk`. When the counter reaches 9, it resets to 0, setting `reset_out` to LOW; otherwise, it remains HIGH. The least significant bit of the counter is used as the output clock (`clk_out`), providing a clock with a period that is ten times longer than the input clock.
+module top_module(
+    input sys_clk,
+    input sys_reset,
+    output reg clk_out,
+    output reg reset_out
+);

@@ -1,0 +1,9 @@
+Design a pipelined adder circuit that computes the sum of two one-bit inputs, A and B, along with a carry-in (C_in). The adder uses a two-stage pipeline to process the inputs, where the first stage calculates the initial sum and carry output from A and B, and the second stage incorporates the carry-in to produce the final sum and carry-out (C_out). The final output is updated on the rising edge of the clock signal, allowing for sequential data processing and improved throughput in a larger digital system.
+module top_module(
+  input A,
+  input B,
+  input C_in,
+  input clk,                  // Added clk input
+  output reg Sum,
+  output reg C_out
+);

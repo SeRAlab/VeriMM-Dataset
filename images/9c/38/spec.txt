@@ -1,0 +1,12 @@
+Design a basic input-output interface module that integrates a register for controlling LED outputs based on button presses and switch states. The module utilizes a K580VV55 chip for managing communication and data read/write operations. It features a counter-based addressing mechanism to manage different states effectively. Upon a button press, the current state of the LEDs is toggled, and the state of the switches is inverted. The design includes a reset functionality that initializes the address and controls the write-enable signal to the K580VV55 chip, interfacing external signals to internal registers as needed.
+module top_module(
+    input reset,
+    input clk_sys,
+    input [1:0] addr,
+    input we_n,
+    input [7:0] idata,
+    output [7:0] opa,
+    output [7:0] opb,
+    output [7:0] opc,
+    output [7:0] odata
+);

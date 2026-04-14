@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module to simulate a serial transmitter for UART (Universal Asynchronous Receiver/Transmitter) communication. Its primary function to serialize a predefined message and transmit it bit by bit over a single output line (`txd`). The module operates with a 16x oversampling rate (`baud16`), which is a common technique used to improve the reliability of baud rate detection on the receiver side. The module encapsulates the logic for initializing a message, serializing it, and managing the transmission process, including start and stop bits, as well as a simple parity bit for error checking.
+
+Module name:  
+	rtfSerialTxSim
+
+Input ports:
+	rst: A reset input (active high) that initializes the module's internal state, including the message buffer, counters, and output buffer.
+	baud16: A clock input that runs at 16 times the baud rate. This input is used to time the serialization and transmission of each bit.
+Output ports:
+	txd: The serial data output line. This line transmits the serialized message bit by bit, following UART communication standards.
+
+
+Implementation:
+The RTL module presented, rtfSerialTxSim, is designed to simulate a serial transmitter that sends a predefined message byte-by-byte over a serial line. The module is synchronized to a clock signal, baud16, which operates at 16 times the baud rate of the desired serial communication. This higher clock frequency allows for more precise control over the timing of the serial bits being transmitted.
+Sequential Logic:
+The module uses a positive edge-triggered always block to react to the rising edge of the baud16 clock signal. This block contains the main logic for transmitting serial data and managing the internal state of the module.
+Upon reset (rst asserted), the module initializes its internal counters, buffers, and the message array with predefined characters. The message to be transmitted is "Hi There ".
+The cnt counter is used to divide the baud16 clock down to the actual baud rate of the serial transmission. It increments on every clock cycle and resets after reaching 15, effectively generating a tick every 16 cycles of baud16.
+The bitcnt counter keeps track of which bit of the current byte (plus start and stop bits) is being transmitted. It resets after all bits of a byte have been transmitted.
+The buff register holds the current byte (including start and stop bits) being transmitted. The MSB of buff (buff[9]) is connected to the txd output, representing the serial line.
+The buf2 register is used to prepare the next byte to be transmitted while the current byte is still being sent.
+Combinational Logic:
+The module calculates the parity bit as the XOR of all bits in the current message byte and appends it to the message byte in buf2. This is a simple even parity scheme.
+The transmission format for each byte includes a start bit (0), the 8 data bits, the parity bit, and a stop bit (1). The start and stop bits ensure proper framing of the data bits for the receiver.
+
+Give me the complete code.
+

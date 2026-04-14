@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform a 2-to-1 multiplexer operation with an inversion at the output. It selects one of the two input signals based on the value of the select signal and then inverts the selected input before providing it as the output. This module can be utilized in digital circuits where conditional negation based on a select signal is required, such as in arithmetic units, control logic, or data path elements where inversion and selection are part of the operation, enhancing flexibility and reducing the need for separate inversion stages.
+
+Module name:  
+	bw_u1_zzmulppmuxi21_2x
+
+Input ports:
+	d0 (input): This is the first data input of the multiplexer. It is a singlebit signal that represents one of the potential inputs to be selected and subsequently inverted.
+	d1 (input): This is the second data input of the multiplexer. Similar to d0, it is a singlebit signal and serves as the alternative input to be selected and inverted.
+	s (input): This is the select signal for the multiplexer. It is a singlebit signal that determines which of the two data inputs (d0 or d1) is to be selected. If s is low (0), d0 is selected; if s is high (1), d1 is selected.
+Output ports:
+	z (output): This is the output of the module. It is a singlebit signal that presents the inverted version of the selected input. The inversion ensures that the output is the logical NOT of whichever input is selected by the s signal.
+
+
+Implementation:
+The RTL module bw_u1_zzmulppmuxi21_2x is designed to perform a simple 2-to-1 multiplexer operation with an inversion on its output. The module takes two input signals (d0 and d1), a select signal (s), and produces one output signal (z). The core functionality of this module is rooted in combinational logic, meaning its output is directly determined by its current inputs without any dependency on previous states or inputs (i.e., it does not incorporate sequential logic elements like flip-flops or latches).
+The operation of the module can be summarized as follows:
+If the select signal s is low (0), the output z is the inverted value of input d0.
+If the select signal s is high (1), the output z is the inverted value of input d1.
+This behavior is achieved through a simple conditional assignment using the ternary operator in Verilog (?:), which checks the value of the select signal s. The inversion is applied directly in the assignment to the output z, making the module efficiently combine the multiplexing and inversion operations in a single step.
+
+Give me the complete code.
+

@@ -1,0 +1,7 @@
+Design a multi-functional comparator module that can compare two n-bit signed binary numbers, where n is parameterized to 8. The module has a control signal that determines the type of comparison to perform: equality (ctrl = 00), greater than (ctrl = 01), or less than (ctrl = 10). It utilizes sign extension for properly handling negative values, ensuring accurate comparisons across both signed and unsigned representations. The output indicates the result of the comparison as a single bit.
+module top_module(
+  input [n-1:0] a,
+  input [n-1:0] b,
+  input [1:0] ctrl,
+  output reg out // Change output to reg to allow assignment in always block
+);

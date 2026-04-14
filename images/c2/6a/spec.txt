@@ -1,0 +1,23 @@
+
+
+You are tasked with designing a verilog module that implements a D flip-flop with set and reset inputs, and an asynchronous clear input. The module should have the following inputs and outputs:
+
+Inputs:
+- `clk` (1-bit): clock input
+- `d` (1-bit): data input
+- `set` (1-bit): set input
+- `reset` (1-bit): reset input
+- `clear` (1-bit): asynchronous clear input
+
+Outputs:
+- `q` (1-bit): output
+- `q_bar` (1-bit): complement output
+
+The flip-flop should operate as follows:
+- When the `clear` input is asserted, both `q` and `q_bar` should be set to 0, regardless of the values of the other inputs.
+- When the `set` input is asserted, both `q` and `q_bar` should be set to 1, regardless of the values of the other inputs.
+- When the `reset` input is asserted, both `q` and `q_bar` should be set to 0, regardless of the values of the other inputs.
+- At each rising edge of the `clk` input, the output `q` should be updated with the value of the `d` input, unless the `clear` input is asserted. The output `q_bar` should be the complement of `q`.
+
+Write a verilog module that implements this flip-flop.
+

@@ -1,0 +1,13 @@
+Design a Verilog module that implements a debounce circuit for a push button. The debounced signal should be high only when the button is pressed continuously for at least 3 clock cycles.
+
+Time 0ns: clk = 0, button = 0, debounced = 0.
+Time 5ns: clk = 1, button = 1, debounced = 0.
+Time 10ns: clk = 0, button = 1, debounced = 0.
+Time 15ns: clk = 1, button = 1, debounced = 1.
+Time 20ns: clk = 0, button = 1, debounced = 1.
+Time 25ns: clk = 1, button = 0, debounced = 0.
+
+module debounce (
+	input clk,
+	input button,
+	output reg debounced);

@@ -1,0 +1,11 @@
+Design a FIFO (First-In, First-Out) queue with an 8-element storage capacity, featuring inputs for enqueue and dequeue operations. The circuit operates on a clock signal and has a reset functionality to initialize the queue. It provides outputs to indicate whether the queue is full or empty, and it allows retrieval of data from the queue. Enqueueing stores data into the queue when it is not full, while dequeueing retrieves data from the queue when it is not empty, with the ability to wrap around the indices for both head and tail.
+module top_module(
+    input clk,
+    input reset,
+    input enq,
+    input deq,
+    input [7:0] data_in,  // Added data_in input here
+    output reg full,
+    output reg empty,
+    output reg [7:0] data_out
+);

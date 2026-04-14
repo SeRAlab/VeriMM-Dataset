@@ -1,0 +1,6 @@
+Design a circuit that counts the number of ones in a 4-bit input (`in`) on each rising edge of the clock (`clk`). The count is stored in a 3-bit output register (`count`), which increments by one for each high bit detected in the input. The circuit uses a temporary register (`prev_count`) to hold the previous count value before updating, ensuring proper synchronization with the clock. This module effectively functions as a one-hot counter for identifying the number of '1' bits in the given input data.
+module top_module(
+  input clk,
+  input [3:0] in,
+  output reg [2:0] count
+);

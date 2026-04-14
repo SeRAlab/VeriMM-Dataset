@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform various arithmetic and logical operations on two input operands, `x` and `y`, each of a configurable width defined by the parameter `ADDER_WIDTH`. The primary functions of this module include addition, bitwise AND, OR, and XOR operations. The module also supports conditional carry-in and carry-out operations, which are essential for chained arithmetic operations across multiple instances of the module or for operations requiring carry propagation. The inclusion of selection inputs (`ORsel` and `XORsel`) allows for dynamic control over the behavior of the module, enabling it to adapt to different operational requirements within a broader system context, such as a configurable arithmetic logic unit (ALU) within a microprocessor or digital signal processor (DSP).
+
+Module name:  
+	alu_adder
+
+Input ports:
+	x [ADDER_WIDTH  1 :0]: A binary input operand of width ADDER_WIDTH.
+	y [ADDER_WIDTH  1 :0]: Another binary input operand of the same width as x.
+	carry_in: A singlebit input representing the carryin value for addition operations. This is crucial for chained additions or arithmetic operations requiring carry propagation.
+	ORsel: A selection signal that, when asserted, influences the carry propagation logic in conjunction with the OR operation results.
+	XORsel: A selection signal that, when asserted, influences the result of the addition operation by conditionally incorporating the carry bit.
+Output ports:
+	xor_result [ADDER_WIDTH  1 :0]: The bitwise XOR result of x and y.
+	or_result [ADDER_WIDTH  1 :0]: The bitwise OR result of x and y.
+	and_result [ADDER_WIDTH  1 :0]: The bitwise AND result of x and y.
+	carry_out [ADDER_WIDTH :0]: The carryout bit(s) resulting from the addition operation. This output is one bit wider than the input operands to accommodate the potential overflow.
+	z [ADDER_WIDTH  1 :0]: The result of the addition operation or logical operations based on the XORsel and ORsel inputs.
+
+
+Implementation:
+The alu_adder module is designed to perform a variety of arithmetic and logical operations based on the inputs provided. It is parameterized with ADDER_WIDTH, allowing for flexibility in the bit-width of the operands. The core functionality includes addition, bitwise AND, OR, and XOR operations, with the addition operation capable of considering an input carry (carry_in). The module also supports selective output of XOR and OR results based on control signals (XORsel and ORsel).
+
+Give me the complete code.
+

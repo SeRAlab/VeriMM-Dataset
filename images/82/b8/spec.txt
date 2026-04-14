@@ -1,0 +1,6 @@
+Design a 2-to-3 priority encoder with an enable signal. When the enable signal is LOW, the output is set to zero. When enabled, it encodes the 2-bit input data (Data_i) into a 3-bit output (Data_o) based on the highest active input; specifically, it outputs a binary representation of the active input. For inputs 00, 01, and 10, it produces outputs 001, 010, and 100, respectively. If both inputs are HIGH (11), the output becomes zero, maintaining proper priority handling for the input signals.
+module top_module(
+   input wire       enable,
+   input wire [1:0] Data_i,
+   output reg [2:0] Data_o
+   );

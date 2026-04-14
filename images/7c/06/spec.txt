@@ -1,0 +1,22 @@
+Please act as a professional Verilog designer.
+
+Implement an 8-bit parallel load shift register with an asynchronous reset. The register should shift its contents to the left by one bit on each positive clock edge. If the load signal is high, the register should load a new value from the input. If the reset signal is high, the register should reset to 0 immediately, regardless of the clock signal.
+
+Module name:
+    parallel_load_shift_register
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    load: Load enable signal. Defined as 1 to load new data and 0 to shift data.
+    data_in: 8-bit input data to be loaded into the register.
+
+Output ports:
+    data_out: Output 8-bit register value.
+
+Implementation:
+Shift Register Logic:
+The module includes an 8-bit register, data_out, to store the current register value.
+On the positive edge of the clock signal (clk), the module shifts the register value to the left by one bit if the load signal is low, or loads the new value from data_in if the load signal is high. If the reset signal (rst) is high, indicating a reset condition, the register value is set to 8'b00000000 immediately.
+
+Give me the complete code.

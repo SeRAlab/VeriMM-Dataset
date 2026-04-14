@@ -1,0 +1,8 @@
+Design a clock shifting module that modifies a clock signal based on a desired shift value. The module inputs a locked status signal, a 32-bit desired shift value, a clock input, and a reset signal. When the reset is asserted, outputs are cleared. When the LOCKED signal is high, it calculates the clock period scaled down by a factor of 1000 and attempts to apply the desired shift in clock cycles. Based on the sign of the desired shift, it adjusts the clock signal appropriately, signaling failure in specific conditions such as an unsuccessful shift or an inappropriate resultant clock. This module is crucial for applications where precise clock phase adjustment is required.
+module top_module(
+    input LOCKED,
+    input [31:0] desired_shift_1000,
+    input clk,
+    input rst,
+    output reg fail
+);

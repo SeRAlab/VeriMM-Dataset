@@ -1,0 +1,7 @@
+Design a module that processes a 100-bit input to compute the maximum, minimum, and average values of the input data. The module utilizes a series of 50 two-input comparators to find the maximum and minimum values in pairs of inputs. Following this, it uses multiplexers to select the larger and smaller values determined by the comparisons. Finally, the module sums the selected values and calculates the average, outputting the results as 8-bit values for the maximum, minimum, and average. This design effectively aggregates and analyzes a dataset of 100 bits for basic statistical properties.
+module top_module(
+    input [99:0] in,
+    output [7:0] out_max,
+    output [7:0] out_min,
+    output [7:0] out_avg
+);

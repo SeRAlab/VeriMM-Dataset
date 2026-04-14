@@ -1,0 +1,5 @@
+Design a glitch filter circuit that removes short-duration spurious signals from the input. The module employs a shift register with a configurable delay line to hold the input signal, ensuring that only signals sustained for at least a specified duration (determined by the parameter `glitch_duration`) are passed to the output. When the input signal transitions from high to low while being held high for less than the glitch duration, the module outputs the last stable state; otherwise, it outputs the current input state, effectively filtering out glitches.
+module top_module(
+  input signal_in,
+  output signal_out
+);

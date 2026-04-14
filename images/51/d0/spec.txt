@@ -1,0 +1,8 @@
+Design a 4-bit calculator capable of performing addition, subtraction, multiplication, and division based on a 2-bit operation selector. The module takes two 4-bit inputs, A and B, and executes the operation specified by the OP input: '00' for addition, '01' for subtraction (using two's complement), '10' for multiplication, and '11' for division. The calculator outputs a 4-bit result R and a one-bit overflow (OF) indicator. Additionally, it handles the division by zero case by setting R to zero and OF to one when attempting to divide by zero.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [1:0] OP,
+    output reg [3:0] R,
+    output reg OF
+);

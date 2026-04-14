@@ -1,0 +1,10 @@
+Design a display controller that refreshes a seven-segment display in a cyclic manner. The module takes a clock input and four sets of 7-segment display data as inputs. It utilizes a state machine with four states to sequentially drive the display output and corresponding anode signals. The display updates every 250 clock cycles, showing DISPLAY1 during the second state, DISPLAY2 during the third state, and DISPLAY3 during the fourth state, while the anodes switch accordingly to activate the correct segment on the display. In the idle state, a default display pattern is shown.
+module top_module(
+    input clk,
+    input [6:0] DISPLAY1,
+    input [6:0] DISPLAY2,
+    input [6:0] DISPLAY3,
+    input [6:0] DISPLAY4,
+    output reg [6:0] DISPLAY,
+    output reg [3:0] ANODES
+);

@@ -1,0 +1,8 @@
+Design a 16-bit shift register that supports both parallel loading and serial shifting. On a reset signal, the register initializes to zero. When the parallel_load signal is active, the register captures the value of the serial_in input. If the parallel_load signal is inactive, the register performs a serial right shift, discarding the least significant bit and inserting a zero at the most significant position. The most significant bit of the register is output as serial_out, enabling serial data access from the register.
+module top_module(
+  input clk,
+  input resetn,
+  input parallel_load,
+  input serial_in,
+  output serial_out
+);

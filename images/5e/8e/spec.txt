@@ -1,0 +1,9 @@
+Design a 4-bit signed Booth multiplier that performs signed multiplication of two 4-bit inputs (multiplicand and multiplier) using the Booth's algorithm. The module has control logic to handle different states of the multiplication process, sign-extended product output, and a busy status flag to indicate when the multiplication operation is in progress. The state machine toggles between initialization, multiplicative operations based on the least significant bit of the multiplier, and shifts for iterative calculation until the multiplier is exhausted, resulting in an 8-bit signed product output.
+module top_module(
+    input signed [3:0] multiplicand,
+    input signed [3:0] multiplier_in, // Changed the input multiplier to multipler_in
+    input clock,
+    input start,
+    output reg signed [7:0] product,   // output product should be reg type
+    output busy
+);

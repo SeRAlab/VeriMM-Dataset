@@ -1,0 +1,5 @@
+Design a module that performs angle wrapping for a signed 32-bit input, effectively constraining the value within the range of [0, 2π). The module calculates the angle's equivalent within this range by assessing the input against the constant 2π, adding or subtracting 2π as necessary, and outputting the adjusted value. When the input angle is greater than or equal to 2π, it subtracts 2π; if the input angle is less than 0, it adds 2π to facilitate wrapping. The final output is a signed 32-bit value that ensures the angle remains within the desired bounds.
+module top_module(
+  input signed [31:0] x,
+  output signed [31:0] wrap
+);

@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform Decimal Adjust Accumulator (DAA) operation for binary-coded decimal (BCD) addition and subtraction operations. This operation is crucial in digital systems that perform arithmetic operations in decimal rather than binary, especially in financial and commercial applications where precise decimal calculations are required. The module adjusts the binary result of an addition or subtraction operation to the correct BCD result. It takes into account the carry and half-carry flags that might have been set during the previous operation, adjusting the accumulator value accordingly to ensure it represents a valid BCD number.
+
+Module name:  
+	daa
+
+Input ports:
+	flags [7:0]: An 8bit input representing various flags that influence the DAA operation. Specifically, flags[0] is used to determine the adjustment in certain conditions, flags[1] indicates whether an addition or subtraction operation was performed, and flags[4] is used to adjust the operation based on the halfcarry condition.
+	val [7:0]: An 8bit input value representing the accumulator's current value, which is to be adjusted by the DAA operation.
+Output ports:
+	adjust [7:0]: An 8bit output that provides the adjusted value after the DAA operation has been applied to the input val.
+	cdaa: A 1bit output flag that indicates whether a carry occurred during the DAA operation, affecting the next operation.
+	hdaa: A 1bit output flag that indicates whether a halfcarry occurred during the DAA operation, affecting the next operation.
+
+
+Implementation:
+The Verilog module named daa is designed to perform Decimal Adjust for Addition (DAA) operation, commonly used in arithmetic operations to adjust the binary result of an addition into a valid BCD (Binary-Coded Decimal) representation. This operation is particularly useful in systems where decimal arithmetic is performed, such as financial and commercial applications. The module takes an 8-bit input value (val) and flags, and outputs an 8-bit adjusted value (adjust) along with two flags (cdaa and hdaa) indicating carry and half-carry conditions, respectively.
+
+Give me the complete code.
+

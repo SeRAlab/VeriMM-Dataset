@@ -1,0 +1,9 @@
+Design a simple arithmetic calculator module that performs basic operations on two signed 8-bit integers, A and B. It supports addition, subtraction, multiplication, and integer division based on a 3-bit operation code (OP), triggered by a positive clock edge. The calculator resets its output (RES) to zero when the reset signal (RST) is asserted. The resulting output is a signed 16-bit value, allowing for overflow in operations like multiplication or addition.
+module top_module(
+  input signed [7:0] A,
+  input signed [7:0] B,
+  input [2:0] OP,
+  input CLK,
+  input RST,
+  output reg signed [15:0] RES
+);

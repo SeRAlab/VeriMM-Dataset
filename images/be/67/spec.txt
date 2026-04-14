@@ -1,0 +1,7 @@
+Design a logic circuit that increments a FIFO write pointer based on specific input conditions. The output `fifo_wrptr_inc` is determined by two input signals, `ge2_free` and `ge3_free`, and a 2-bit counter `input_tm_cnt`. If `ge3_free` is active and `input_tm_cnt` equals 3, increment the pointer by 3. If only `ge2_free` is active and `input_tm_cnt` is 2 or greater, increment by 2. If `input_tm_cnt` is at least 1, increment by 1. If none of these conditions are met, the pointer remains unchanged (0).
+module top_module(
+  input ge2_free,
+  input ge3_free,
+  input [1:0] input_tm_cnt,
+  output reg [3:0] fifo_wrptr_inc  // Changed to reg to allow assignment in always block
+);

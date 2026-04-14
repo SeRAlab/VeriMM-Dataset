@@ -1,0 +1,10 @@
+Design a simple calculator circuit capable of performing basic arithmetic operations: addition, subtraction, multiplication, and division on two 8-bit inputs, A and B. The module utilizes a clock signal for synchronization and a reset signal to initialize the state and outputs. It sequentially processes each operation based on an internal state machine, which transitions through states corresponding to each arithmetic operation, storing the result temporarily and indicating completion with a 'done' signal after each operation. The final result is available as an 8-bit output.
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] A,
+    input [7:0] B,
+    input [1:0] op,
+    output reg done,
+    output reg [7:0] result
+);

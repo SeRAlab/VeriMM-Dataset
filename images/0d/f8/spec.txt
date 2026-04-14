@@ -1,0 +1,12 @@
+Design a Verilog module that implements a simple Kalman filter for sensor fusion. The module should take in two sensor measurements along with their respective uncertainties and output a fused measurement along with the uncertainty. The Kalman filter equations can be defined as follows:
+
+1. Prediction Step:
+   - Predicted state estimate: x_k = x_{k-1} + u
+   - Predicted estimate covariance: P_k = P_{k-1} + Q
+
+2. Update Step:
+   - Kalman gain: K_k = P_k / (P_k + R)
+   - Updated state estimate: x_k = x_k + K_k * (z - x_k)
+   - Updated estimate covariance: P_k = (1 - K_k) * P_k
+
+You need to implement this in Verilog where the sensor measurements (z) and uncertainties (R) are provided as inputs, and the outputs are the fused state estimate and its uncertainty.

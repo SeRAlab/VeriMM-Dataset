@@ -1,0 +1,6 @@
+Design a 64-bit data shifter that performs left or right shifting based on a 4-bit control signal. The control signal determines the number of positions to shift, with values ranging from 0 to 7 indicating shifts of 1 to 4 bits left or right, respectively. When the control signal is 0, the module performs a left shift by one bit and fills the least significant bit with zero; when it is 1, it performs a right shift by one bit, filling the most significant bit with zero. The shifts increase in size up to four bits based on the control signal, and if the control signal exceeds the specified range, the output remains equal to the input.
+module top_module(
+    input [63:0] data_in,
+    input [3:0] control,
+    output reg [63:0] data_out // Changed wire to reg
+);

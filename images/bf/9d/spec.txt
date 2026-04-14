@@ -1,0 +1,10 @@
+Design a module that computes a 12-bit address based on horizontal and vertical pixel counts for a graphical display, while also considering boundary conditions. The module checks if the current pixel location, defined by `hcount` and `vcount`, lies outside a specified rectangular area determined by `x`, `y`, and configurable offsets (`xoffset`, `yoffset`). If the pixel is out-of-bounds or if a `blank` signal is active, the address is set to zero. Otherwise, it calculates the address as a linear index into a memory space, utilizing the horizontal and vertical counts adjusted by the offsets. Thus, the helper circuit functions as an address generator conditioned by display boundaries, which is especially useful in graphical applications.
+module top_module(
+    input clk,
+    input[10:0] hcount,
+    input[9:0] vcount,
+    input blank,
+    input[15:0] x,
+    input[15:0] y,
+    output reg[11:0] addr
+    );

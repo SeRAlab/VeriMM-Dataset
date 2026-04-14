@@ -1,0 +1,19 @@
+Design a chip interface that processes signals from various input sources to control outputs based on the state of a clock and enable signals. The module captures a latch input when clocking is enabled and manages output signals for two data lines (`dout_0` and `dout_1`). When the clock is active and the output enable (`oen`) is not asserted, it can drive the outputs high based on conditionally activated input data signals (`gold_din_0`, `gold_din_1`, `gate_din_0`, `gate_din_1`). Additionally, it links `pin_reg` to output control pins while maintaining global and operational statuses low unless the clock is enabled, facilitating interaction in a clock-driven design environment.
+module top_module(
+	input wire pin_reg,
+	input wire latch_in,
+	input wire clk_en,
+	input wire clk_in,
+	input wire clk_out,
+	input wire oen,
+	input wire gold_din_0,
+	input wire gold_din_1,
+	input wire gate_din_0,
+	input wire gate_din_1,
+	output reg gold_pin,
+	output reg gold_global,
+	output reg gate_pin,
+	output reg gate_global,
+	output reg dout_0,
+	output reg dout_1
+);

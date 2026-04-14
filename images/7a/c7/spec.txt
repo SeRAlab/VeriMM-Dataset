@@ -1,0 +1,6 @@
+Design a 16-bit pseudo-random counter with an additional control mechanism. The counter increments on each clock cycle, and its output is defined by a linear feedback shift register (LFSR) configuration that generates new bits based on the XOR of the current highest and lowest bits. A 4-bit temporary register, `temp`, counts clock cycles and resets back to 1 after reaching the value 8, thus controlling the rate of the counter update. When the reset signal is inactive (high), the counter maintains its output structure and behavior, otherwise, it initializes the output and the temporary register to zero.
+module top_module(
+  input                clk,
+  input                rst_n,
+  output reg  [15:0]   Q
+);

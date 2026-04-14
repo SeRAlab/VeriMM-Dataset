@@ -1,0 +1,13 @@
+Design a dual-port RAM module that supports simultaneous read and write operations. It has two independent address and data input/output ports, allowing one data input (data1) to be written to the memory location specified by addr1 while another input (data2) can be written to the location specified by addr2. Additionally, it allows data to be read from these addresses concurrently, providing the output data q1 from addr1 and q2 from addr2 based on the respective read enable signals (re1 and re2). The module utilizes parameters to configure the addressable memory size and data width.
+module top_module(
+  input [n-1:0] addr1,
+  input [n-1:0] addr2,
+  input [m-1:0] data1,
+  input [m-1:0] data2,
+  input we1,
+  input we2,
+  input re1,
+  input re2,
+  output reg [m-1:0] q1,
+  output reg [m-1:0] q2
+);

@@ -1,0 +1,9 @@
+Design a programmable shift register with capabilities for left and right shifting, as well as holding its current state. The module accepts a single bit of input data and uses control signals to determine the operation: when shift_left is activated, the register shifts its contents left and pads with a zero; when shift_right is activated, it shifts right and pads with a zero; if hold is asserted, the register retains its existing state. If neither shift operation nor hold is selected, the register captures the input data. The output provides the least significant bit (LSB) of the shift register.
+module top_module(
+  input clk,           // Added clock input
+  input data_in,
+  input shift_left,
+  input shift_right,
+  input hold,
+  output data_out
+);

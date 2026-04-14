@@ -1,0 +1,9 @@
+Design a binary-to-one-hot encoder that converts a 4-bit binary input (B) into a one-hot encoded output consisting of four output signals (O0, O1, O2, O3). Each output corresponds to a specific binary input: when B is 0001, O0 is high; when B is 0010, O1 is high; when B is 0100, O2 is high; and when B is 1000, O3 is high. If the input does not match any of the defined states (i.e., 0000 or values higher than 1000), all outputs are set low. The encoding is synchronized with each positive clock edge through a three-stage pipeline, ensuring stability in the output signals.
+module top_module(
+    input clk,               // Added clk input signal
+    input [3:0] B,
+    output reg O0,
+    output reg O1,
+    output reg O2,
+    output reg O3
+);

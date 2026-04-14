@@ -1,0 +1,9 @@
+Design a combined shift register and binary counter that operates on a clock signal. On each rising edge of the clock, if not in reset state, the module shifts in the least significant bit from the input data while accumulating a count of the number of set bits in the 8-bit input. The output includes the current state of the shift register, a 3-bit count of the number of '1's in the input, and a final output that performs a bitwise AND between the shift register contents and a mask derived from the count. This design is useful for applications requiring data storage and bit counting.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] d,
+    output [7:0] q_reg,
+    output [2:0] q_count,
+    output [7:0] final_output
+);

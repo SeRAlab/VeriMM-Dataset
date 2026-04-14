@@ -1,0 +1,9 @@
+Design a pin controller that manages the state of a 20-bit wide array of pins based on input signals. It operates on a clock signal, resetting the pin states to high-impedance when the reset signal is activated. The module differentiates between input and output pins using the pin_dir signal; if the direction is set to input (pin_dir = 0), the corresponding pin state is set to high-impedance, whereas if it is an output (pin_dir = 1), it directly takes the value from pin_state. The resulting pin states can be monitored or driven externally through the pin_state_out output.
+module top_module(
+    input clk,
+    input rst,
+    input [3:0] pin_name,
+    input pin_dir,
+    input pin_state,
+    output reg [19:0] pin_states
+);

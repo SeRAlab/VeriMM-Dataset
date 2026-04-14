@@ -1,0 +1,6 @@
+Design a 8-bit wide XOR shift register that operates on a clock signal. The module includes an 8-bit shift register that shifts its content left on every clock cycle, while also incorporating an input data signal (d) at the least significant bit position after every eighth clock cycle. A counter tracks the number of clock cycles to determine when to load the new data. Additionally, when the counter indicates the completion of a full cycle (when it equals 7), the output (q) is updated to be the result of the XOR operation between the current contents of the shift register and the input data. This enables selective manipulation and shifting of the register’s content, making it useful for digital signal processing tasks.
+module top_module(
+    input clk,
+    input [7:0] d,
+    output reg [7:0] q
+);

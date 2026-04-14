@@ -1,0 +1,7 @@
+Design a clock-enabled output control circuit that divides the input clock enable signal (`cein`) based on the specified `divisor` values. The module uses a 3-bit counter that increments with each rising edge of the clock when `cein` is active. The output signal (`ceout`) is determined through a multiplexer logic that selectively gates `cein` based on the lower bits of the counter, effectively toggling the output at varying frequencies depending on the `divisor`: when `divisor` is 0, output follows `cein`; for 1, it outputs every other pulse; for 2, every fourth; and for 3, every eighth pulse of `cein`.
+module top_module(
+    input clk,
+    input cein,
+    input [1:0] divisor,
+    output ceout
+);

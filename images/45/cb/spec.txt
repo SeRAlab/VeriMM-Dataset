@@ -1,0 +1,8 @@
+Design a 4-bit shift register that can either load new data or shift the existing data. When load_en is asserted, the register will capture the input data_in. When shift_en is asserted, the register will perform a logical left shift, inserting a zero into the least significant bit (LSB). The output data_out reflects the current contents of the register, and the empty signal indicates if the register is entirely cleared (i.e., all bits are zero).
+module top_module(
+    input [3:0] data_in,
+    input shift_en,
+    input load_en,
+    output [3:0] data_out,
+    output empty
+);

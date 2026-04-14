@@ -1,0 +1,12 @@
+Design a FIFO (First-In-First-Out) buffer with a depth of 256 slots for temporary data storage. The module includes control inputs for write (`wr`) and read (`rd`) operations, and it manages data using a clock signal (`clk`) and an active-low reset (`nrst`). The buffer can be reset and maintains status outputs for `empty` and `full` to indicate its current state. Data input (`din`) is written to the memory array upon a write operation, while data output (`dout`) is read from the array upon a read operation. The addresses for writing and reading are managed through pointers that increment on respective operations, ensuring data integrity within the FIFO structure.
+module top_module(
+        clk     , 
+        nrst    , 
+        reset   , 
+        din     , 
+        dout    , 
+        wr      , 
+        rd      , 
+        empty   , 
+        full
+        ) ;

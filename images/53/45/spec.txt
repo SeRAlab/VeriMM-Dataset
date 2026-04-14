@@ -1,0 +1,11 @@
+Develop a tri-state 8-bit data multiplexer that selects and outputs data from one of three sources: ROM, RAM, or ASIC, based on active low enable signals (rom_oe_n, ram_oe_n, asic_oe_n). When the corresponding enable signal is low, the module outputs the data from that source to the CPU; if all enable signals are high, it outputs a default value of 0xFF.
+module top_module(
+    input wire rom_oe_n,
+    input wire ram_oe_n,
+    input wire asic_oe_n,
+    input wire [7:0] data_from_rom,
+    input wire [7:0] data_from_ram,
+    input wire [7:0] data_from_asic,
+    input wire [15:0] cpuaddr,
+    output reg [7:0] data_to_cpu
+);

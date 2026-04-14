@@ -1,0 +1,10 @@
+Design a dual-edge triggered circuit that functions as a selectable output adder and register. It has inputs for a clock signal, data input, reset, and a selection signal, along with two 8-bit data inputs. When reset is active, two internal 8-bit registers store and propagate the data over clock cycles. On each rising edge of the clock, the circuit can either output the sum of the two 8-bit inputs or the value stored in the second register, depending on the state of the select signal. When reset is deactivated, the outputs and registers are cleared to zero.
+module top_module(
+    input clk,
+    input d,
+    input reset,
+    input select,
+    input [7:0] in1,
+    input [7:0] in2,
+    output reg [7:0] out  // Changed from wire to reg
+);

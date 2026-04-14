@@ -1,0 +1,7 @@
+Design a 4-bit sequence detector that identifies a specific bit pattern in a serial input data stream. The module transitions through four states—IDLE, S1, S2, and S3—while shifting the received data bits into a 4-bit shift register. Upon detecting the bit pattern '1100', it sets the output signal 'match' high. The operation is synchronized with a clock signal, and the state machine can be reset. The circuit effectively serves as a finite state machine (FSM) for sequence detection, allowing it to recognize a pre-defined sequence in real-time data input.
+module top_module(
+  input clk,
+  input reset,
+  input data,
+  output reg match
+);

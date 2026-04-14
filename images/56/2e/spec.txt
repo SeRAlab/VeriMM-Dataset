@@ -1,0 +1,7 @@
+Design a clock generator module that produces two complementary clock signals, c0 and c1, based on an input clock signal (inclk0) while also indicating a locked state. When the reset signal (areset) is asserted low, the output signals are initialized to a LOW state for c0 and a HIGH state for c1, and the locked signal is set to LOW. Once the module transitions into a locked state where both c0 and c1 are HIGH, it retains this state; otherwise, it toggles the outputs of c0 and c1, thereby ensuring they are always complementary while indicating whether the circuit is locked.
+module top_module(
+	areset,
+	inclk0,
+	c0,
+	c1,
+	locked);

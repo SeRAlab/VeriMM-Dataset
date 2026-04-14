@@ -1,0 +1,6 @@
+Develop a circuit that decodes a 10-bit input signal into various control signals for a processor or digital system. The module extracts specific bits from the input to generate outputs such as RegDst, ALUsrc, RegWrite, MemRead, MemWrite, MemToReg, Branch, and Jump, which are essential for controlling the operation of the datapath. Additionally, it provides a 2-bit output for size_in which may specify data size for operations. This module acts as a control signal extractor, facilitating the control logic within a larger system, such as a CPU or microcontroller.
+module top_module(
+	input [9:0] signals,
+	 output RegDst, ALUsrc, RegWrite, MemRead, MemWrite, MemToReg, Branch, Jump,
+	output [1:0] size_in
+);

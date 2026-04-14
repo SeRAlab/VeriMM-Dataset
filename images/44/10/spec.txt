@@ -1,0 +1,14 @@
+Design a combinational logic circuit that serves as a 2-input selector for four 8-bit outputs based on the inputs `i_op` and `i_wf_post_pre`. The module takes two 32-bit input vectors, `i_mk3to0` and `i_mk15to12`, and depending on the XOR result of `i_op` and `i_wf_post_pre`, it selectively outputs segments of these inputs. If the XOR result is LOW, it outputs the upper 8 bits from `i_mk15to12`; otherwise, it selects from `i_mk3to0`. The outputs are categorized into four distinct 8-bit output lanes: `o_wk3_7`, `o_wk2_6`, `o_wk1_5`, and `o_wk0_4`, effectively creating a channeling mechanism that allows the selective routing of data.
+module top_module(
+	i_op          , 
+
+	i_wf_post_pre ,
+	
+	i_mk3to0      ,
+	i_mk15to12    , 
+
+	o_wk3_7       ,  
+	o_wk2_6       ,   
+	o_wk1_5       ,  
+	o_wk0_4         
+);

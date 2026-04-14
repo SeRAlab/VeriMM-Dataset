@@ -1,0 +1,9 @@
+Design a memory arbiter block that manages memory access requests from multiple requestors. It operates with a specified number of requestors (n), prioritizing requests based on their arrival and granting memory access accordingly. The module includes a reset function to clear internal states and registers, uses a clock signal to synchronize operations, and indicates which requestor has been granted memory access through the `mem_req` output. Moreover, it checks for acknowledgments from the memory, updating its internal registers to reflect the status of granted requests and to ensure smooth memory operations across multiple requestors.
+module top_module(
+  input clk,
+  input rst,
+  input [n-1:0] req,
+  input [n-1:0] ack,
+  output [n-1:0] mem_req,
+  output [n-1:0] mem_ack
+);

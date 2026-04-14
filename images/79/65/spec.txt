@@ -1,0 +1,7 @@
+Design a control unit for a processor that interprets a 6-bit operation code (op) to generate appropriate control signals for an ALU and memory operations. The module outputs signals that determine the ALU operation (alu_op), register destination selection (regDst), ALU source selection (aluSrc), register write enable (regWrite), memory read (memRead), memory write (memWrite), and branch control (branch). These signals are derived from various logical combinations of the operation code bits, allowing the processor to execute operations such as arithmetic, memory access, and branching based on the given instruction type.
+module top_module(
+    input [5:0] op,
+    output [1:0] alu_op,
+    output regDst, aluSrc, memToReg, regWrite,
+    output memRead, memWrite, branch
+  );

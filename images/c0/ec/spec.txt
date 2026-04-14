@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module to simulate a single-port synchronous RAM with read-before-write capability. Its primary functions include reading from and writing to a block RAM (BRAM) based on the input address, data, and control signals. This module is crucial in systems requiring temporary storage of data during processing, such as in digital signal processing (DSP) systems, microcontrollers, or any application requiring fast, temporary data storage with immediate access.
+
+Module name:  
+	fasm_spsram_rbw
+
+Input ports:
+	dat_i [DW1:0]: Data input port. It is a DWbit wide bus that carries the data to be written into the RAM at the address specified by adr_i.
+	adr_i [AW1:0]: Address input port. It is an AWbit wide bus that specifies the address location in the RAM where data is to be read from or written to.
+	wre_i: Write enable input. A single bit signal that, when high (1), enables writing the data present on dat_i to the RAM at the address specified by adr_i.
+	stb_i: Strobe input. A single bit signal that enables the operation of the module when high (1). It acts as an enable signal for both read and write operations.
+	rst_i: Reset input. A single bit signal that, when high (1), can be used to reset the module's internal state. However, in this module, rst_i is listed but not used in the logic.
+	clk_i: Clock input. A single bit signal that provides the timing reference for all synchronous operations within the module.
+Output ports:
+	dat_o [DW1:0]: Data output port. It is a DWbit wide bus that carries the data read from the RAM at the address specified by adr_i during the last clock cycle.
+
+
+Implementation:
+The RTL module fasm_spsram_rbw is designed to simulate a simple port synchronous RAM with read-before-write (RBW) capability. This module is parameterized to allow flexibility in defining the address width (AW) and data width (DW), making it adaptable to various memory sizes and data types. The core functionality revolves around reading from and writing to a block RAM (BRAM) based on the input signals. The module operates synchronously with the positive edge of the clock signal (clk_i).
+
+Give me the complete code.
+

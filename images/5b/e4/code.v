@@ -1,0 +1,1 @@
+module top_module(output a, input x,y,z);assign a = (~(~x|~y) & ~(x&y)) | ~((y&z)|~x);endmodule

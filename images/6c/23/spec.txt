@@ -1,0 +1,13 @@
+Design a synchronized FIFO (First-In-First-Out) buffer that operates with an 8-bit data width and can hold up to 64 entries. The module includes inputs for clock, reset, clear, read, and write operations, along with a data input. The FIFO provides outputs to indicate whether it is empty or full, the data available for reading, and the number of used entries. On a write operation, data is stored sequentially unless the FIFO is full. Data can be read from the FIFO, decrementing the used count. The design also ensures safe FIFO operation with appropriate resetting, clearing, and status signals to manage the buffer effectively.
+module top_module(
+  input clk,
+  input fifo_clear,
+  input fifo_rd,
+  input rst_n,
+  input [7:0] t_dat,
+  input wr_rfifo,
+  output fifo_EF,
+  output [7:0] fifo_rdata,
+  output rfifo_full,
+  output [5:0] rfifo_used
+);

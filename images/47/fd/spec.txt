@@ -1,0 +1,13 @@
+Design a FIFO (First-In-First-Out) buffer controller that manages read operations and tracks the number of bytes available and used in the FIFO. The module features inputs for the clock, a read signal, and an active-low reset. It outputs flags indicating whether the FIFO is empty or full, along with the data being read (restricted to 8 bits) and the count of used storage space in the FIFO. The system maintains a counter to keep track of the number of bytes left in the FIFO, adjusting this count on read operations and when new data is added, while ensuring proper reset behavior to initialize the state of the FIFO.
+module top_module(
+    // inputs:
+    clk,
+    fifo_rd,
+    rst_n,
+
+    // outputs:
+    fifo_EF,
+    fifo_rdata,
+    rfifo_full,
+    rfifo_used
+);

@@ -1,0 +1,26 @@
+Please act as a professional Verilog designer. Your task is to create a Verilog module that implements a clock divider. A clock divider is a type of digital circuit that takes in an input clock signal and outputs a slower clock signal. The output clock signal is a fraction of the input clock signal, and the fraction is determined by a programmable value.
+
+Your module should have the following inputs and outputs:
+
+Inputs: 
+- clk_in: the input clock signal
+- rst_n: an active-low reset signal
+- divider: a programmable value that determines the output clock frequency
+
+Outputs: 
+- clk_out: the output clock signal
+
+Your module should also have the following parameters:
+
+- WIDTH: the width of the counter used to divide the clock signal
+- DIV_MAX: the maximum value of the divider parameter
+
+Your module should implement the following functionality:
+
+- The circuit should have a counter that counts up on each input clock cycle.
+- The counter should have a width of WIDTH, which determines the maximum value of the counter.
+- The counter should be reset to 0 when the rst_n signal is low.
+- The counter output should be compared to the divider parameter.
+- When the counter output is equal to the divider parameter, the output clock signal should toggle and the counter should be reset to 0.
+
+To implement the clock divider, you should use Verilog code to define the counter and the comparator. You should then use these to generate the output clock signal.

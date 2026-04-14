@@ -1,0 +1,9 @@
+Design a synchronous calculator module that performs arithmetic operations on two 8-bit inputs, A and B. The output, a 16-bit result, is determined by a 3-bit operation selector, `op`, which specifies the desired operation: addition, subtraction, multiplication, or division. The module supports an active-low reset that initializes the output to zero. Upon each clock edge, the output is updated according to the selected operation, enabling the realization of basic arithmetic functions in a digital circuit.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] A,
+  input [7:0] B,
+  input [2:0] op,
+  output reg [15:0] out
+);

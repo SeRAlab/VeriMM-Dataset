@@ -1,0 +1,21 @@
+
+You are tasked with designing a Verilog module for a D-latch with reset and enable. The module should have the following inputs and outputs:
+
+Inputs:
+- `CLK`: a clock signal
+- `D`: a data input signal
+- `RESET`: a synchronous reset signal
+- `EN`: an enable signal
+
+Outputs:
+- `Q`: a data output signal
+- `Q_N`: the complement of the data output signal
+
+The module should follow the following behavior:
+- When `RESET` is asserted, both `Q` and `Q_N` should be set to 0.
+- When `EN` is de-asserted, the output should hold its previous value.
+- When `EN` is asserted, the output should follow the input `D`.
+- The output should only change on the rising edge of the clock signal `CLK`.
+
+Write a Verilog module that implements this behavior within 200 lines of code.
+

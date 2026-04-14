@@ -1,0 +1,13 @@
+Design a module that facilitates input and output ID mapping for request and response signals in a synchronous system. The IdMapper module accepts a 4-bit ID input for requests and outputs a corresponding 5-bit ID by zero-padding the most significant bit. It always indicates that requests are ready to be processed and asserts that response IDs always match. The module forwards the lower 4 bits of the response ID back to the output, simplifying ID handling for both incoming requests and outgoing responses.
+module top_module(
+  input   clock,
+  input   reset,
+  input   io_req_valid,
+  output  io_req_ready,
+  input  [3:0] io_req_in_id,
+  output [4:0] io_req_out_id,
+  input   io_resp_valid,
+  output  io_resp_matches,
+  input  [4:0] io_resp_out_id,
+  output [3:0] io_resp_in_id
+);

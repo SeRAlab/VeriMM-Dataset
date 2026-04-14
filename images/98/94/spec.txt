@@ -1,0 +1,9 @@
+Design a Pulse Density Modulation (PDM) Digital-to-Analog Converter (DAC) that converts two signed 16-bit inputs, lin and rin, into PDM outputs, lpdm and rpdm. The circuit uses a clock signal for operations, where both input signals are processed by negating the most significant bit (MSB) through XOR with 16'h8000. It then accumulates the modified values in two separate 17-bit signed accumulators (lsdacc and rsdacc) to generate the PDM outputs. The highest bit of each accumulator determines the PDM output, enabling a representation of the input signal's density over time. The module includes reset functionality, allowing initialization when desired.
+module top_module(
+	
+	input clk,
+	input reset,
+	input load,
+	input signed [15:0] lin, rin,
+	output lpdm, rpdm
+);

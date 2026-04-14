@@ -1,0 +1,9 @@
+Design a control unit that manages the state of a graphical user interface (GUI) drawing operation. The module transitions between states based on input signals such as `enable_unit` and `reset_n`. In the `DRAW` state, it enables the unit, allows writing, and resets the datapath. The state machine starts in the `DISABLE` state and moves to `DRAW` when enabled, and it can be reset back to `DISABLE` based on the `reset_n` signal. Additionally, it outputs a color value that depends on the `clear` input, indicating whether to display a specific color based on the clear condition.
+module top_module(	input clear,
+			input clk, 
+			   input reset_n,
+			   input enable_unit,
+			   output reg enable, 
+			   output reg writeEn,
+			   output reg reset_datapath, 
+			   output [2:0] color);

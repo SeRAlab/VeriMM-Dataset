@@ -1,0 +1,8 @@
+Design a circuit that functions as an 8-bit shift register with load capability. On a rising edge of the clock, if the reset signal (RESET_N) is low, the register clears to zero. If LOAD is asserted, the shift register is loaded with the 8-bit input DATA_IN. Conversely, when neither of these conditions is met, the shift register performs a right shift operation, moving the bits and retaining the most significant bit as the least significant bit. The output Q represents the least significant bit of the shift register.
+module top_module(
+    input CLK,
+    input RESET_N,
+    input LOAD,
+    input [7:0] DATA_IN,
+    output reg Q
+);

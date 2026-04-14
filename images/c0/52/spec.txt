@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform a specific arithmetic operation on a 30-bit input signal. Its primary function to increment the lower portion (determined by the parameter `INC30_CENTER`) of the input signal by 1, and conditionally increment the upper portion if there is a carry from the lower portion. This module could be utilized within a larger digital system, such as a DMA (Direct Memory Access) controller, where incremental operations on addresses or data values are required. The module's operation is synchronous with the clock signal, ensuring its compatibility with synchronous digital systems.
+
+Module name:  
+	wb_dma_inc30r
+
+Input ports:
+	clk: A clock signal (input). This is a standard digital clock signal that synchronizes the module's operations. It is a singlebit signal.
+	in: A 30bit input signal (input). This signal represents the data to be incremented. The width of 30 bits allows for a wide range of values to be processed by the module.
+Output ports:
+	out: A 30bit output signal (output). This signal represents the result of the increment operation performed on the input signal. The output retains the same bitwidth as the input, ensuring consistency in data handling.
+
+
+Implementation:
+The wb_dma_inc30r module is designed to increment a 30-bit input signal (in) by a value of 1, with a particular focus on a segment of the input defined by the parameter INC30_CENTER. This module operates on the edge of a clock signal (clk), making it a synchronous design that relies on both sequential and combinational logic to achieve its functionality.
+
+Give me the complete code.
+

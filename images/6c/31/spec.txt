@@ -1,0 +1,6 @@
+Design a register-based circuit that manages an 8-bit output value, DAT, which is initialized to 0x80. The module responds to two input buttons, BTN_UP and BTN_DOWN, allowing the user to increment or decrement the DAT value by one, respectively, in response to clock edges when the clock enable (ce) signal is high. The operation is prevented from exceeding a maximum value of 0xFF and a minimum value of 0x01. Internal state registers (Q_UP and Q_DOWN) track the button press states, ensuring clean transitions and debouncing.
+module top_module(
+input BTN_UP, output reg [7:0] DAT=8'h80, 
+input BTN_DOWN,
+input clk,
+input ce);

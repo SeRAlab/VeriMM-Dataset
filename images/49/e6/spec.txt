@@ -1,0 +1,7 @@
+Develop a VGA pixel driver that outputs pixel data based on the horizontal sync signal and a double-speed clock. The module takes 24-bit pixel data and uses a boolean signal to switch between two pixel values. On the rising edge of the double-speed pixel clock, the module detects the transition of the horizontal sync signal to toggle between two sets of pixel outputs: it outputs the lower 12 bits when pixel_ab is high and the upper 12 bits when pixel_ab is low, effectively managing pixel data for display synchronization.
+module top_module(
+	input wire hsync,
+	input wire pixel_clk_2x, 
+	input wire [23:0] pixel_data,
+	output reg [11:0] vga_out
+    );

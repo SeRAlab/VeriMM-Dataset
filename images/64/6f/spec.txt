@@ -1,0 +1,23 @@
+Develop a dual PS/2 I/O adapter that facilitates communication with both a mouse and a keyboard. The module takes input signals for clock and data lines from the PS/2 devices and routes them to distinct output lines for two separate interfaces. Specifically, it receives clock and data inputs from the mouse and keyboard, passes them through to dedicated receive outputs, and sends inactive signals for transmit outputs while controlling their tri-state drivers based on corresponding clock inputs. This design allows for managing two PS/2 devices concurrently while maintaining signal integrity.
+module top_module(
+  ps2_clk_rx_1,     
+  ps2_clk_rx_2,     
+  ps2_clk_tx_1,     
+  ps2_clk_tx_2,     
+  ps2_d_rx_1,       
+  ps2_d_rx_2,       
+  ps2_d_tx_1,       
+  ps2_d_tx_2,       
+  ps2_mouse_clk_I,  
+  ps2_mouse_clk_O,  
+  ps2_mouse_clk_T,  
+  ps2_mouse_data_I, 
+  ps2_mouse_data_O, 
+  ps2_mouse_data_T, 
+  ps2_keyb_clk_I,   
+  ps2_keyb_clk_O,   
+  ps2_keyb_clk_T,   
+  ps2_keyb_data_I,  
+  ps2_keyb_data_O,  
+  ps2_keyb_data_T   
+  );

@@ -1,0 +1,12 @@
+Design a UART receiver module that processes incoming serial data over a single data line. It operates in a finite state machine manner through five distinct states: IDLE, START, DATA, PARITY, and STOP. Upon receiving a valid start signal, the module shifts in the received data, checks for parity and framing errors, and outputs the decoded 8-bit data alongside flags indicating data validity, parity errors, and framing errors. It contains reset functionality to initialize registers and error counters. The design appropriately handles UART communication protocols, ensuring data integrity and error detection.
+module top_module(
+    input clk,
+    input rst,
+    input rx,
+    input rx_valid,
+    input rx_error,
+    output reg [7:0] data,
+    output reg data_valid,
+    output reg parity_error,
+    output reg framing_error
+);

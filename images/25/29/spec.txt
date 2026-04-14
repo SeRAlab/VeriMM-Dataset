@@ -1,0 +1,14 @@
+
+You are to implement a simple Direct Memory Access (DMA) controller in Verilog. The DMA controller should be able to transfer data from a source memory address to a destination memory address. It will have the following inputs:
+- `clk`: Clock signal
+- `start`: Signal to start the DMA transfer
+- `src_addr`: Source memory address (8 bits)
+- `dst_addr`: Destination memory address (8 bits)
+- `data_in`: Data input from memory (8 bits)
+- `ack`: Acknowledge signal from the destination memory
+
+And the outputs:
+- `data_out`: Data output to the destination memory (8 bits)
+- `done`: Signal indicating the DMA transfer is complete
+
+The controller should transfer 8 bytes of data, incrementing the source and destination addresses after each byte is transferred. The `done` signal should be asserted after the last byte is transferred.

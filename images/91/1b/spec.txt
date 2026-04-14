@@ -1,0 +1,7 @@
+Design a circuit that performs bit shifting on an n-bit input signal based on control signals. This module features a left shift, a logical right shift, and an arithmetic right shift, selected by a two-bit control input. The left shift operation fills the rightmost bits with zeroes, while the logical right shift also fills with zeroes, whereas the arithmetic right shift retains the sign bit in the leftmost position for negative numbers. The output reflects the result of the specified shift operation by transferring the processed data from a register to the output.
+module top_module(
+  input [n-1:0] in,
+  input [1:0] ctrl,
+  input [n-1:0] shift_amt,
+  output reg [n-1:0] out
+);

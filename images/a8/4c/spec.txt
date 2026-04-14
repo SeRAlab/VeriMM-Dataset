@@ -1,0 +1,9 @@
+Design a signed 8-bit adder that computes the sum of two inputs, A and B. The module includes a reset functionality to clear the output and flags. Upon reset, the sum (S) and both overflow (OV) and underflow (UV) flags are set to zero. The adder detects overflow conditions when both inputs are positive and the result is negative, or both inputs are negative and the result is positive. It also identifies underflow conditions when one input is positive and the other is negative, resulting in an incorrect sign for the sum. The outputs reflect the sum and the status of the overflow and underflow flags.
+module top_module(
+    input signed [7:0] A,
+    input signed [7:0] B,
+    input RST,
+    output reg signed [7:0] S,
+    output reg OV, // overflow flag
+    output reg UV // underflow flag
+    );

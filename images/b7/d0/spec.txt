@@ -1,0 +1,12 @@
+Design a register module that captures a 32-bit instruction and a 32-bit program counter (PC) value on the rising edge of the clock, conditioned by reset and stop signals. When reset is not activated, and stop is deasserted, the module outputs the input instruction and PC values to its outputs; otherwise, it resets the outputs to zero. This module serves as a key component in a pipeline architecture, facilitating the storage and forwarding of instruction and PC data between stages.
+module top_module(
+	input [31:0] ins_in,
+	input [31:0] pc_in,
+	
+	input clk,
+	input reset,
+	input stop,
+	
+	output reg [31:0] ins_d,
+	output reg [31:0] pc_d
+    );

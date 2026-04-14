@@ -1,0 +1,7 @@
+Design a clock gating circuit that generates a gated clock signal (ENCLK) based on clock (CLK), enable (EN), and test enable (TE) signals. When both EN and TE are high, ENCLK is set to high on the rising edge of CLK; otherwise, it is driven low. This functionality helps to reduce power consumption by enabling the clock only when necessary.
+module top_module(
+    input CLK, // clock signal
+    input EN, // enable signal
+    input TE, // test enable signal
+    output reg ENCLK // gated clock signal
+);

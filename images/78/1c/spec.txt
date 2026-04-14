@@ -1,0 +1,7 @@
+Design a circuit that functions as an up/down counter and a shift register, with additional AND operation capabilities. The up/down counter increments or decrements its value based on the 'up' control signal and resets to zero when 'reset' is activated. The shift register can load an 8-bit input when 'LOAD' is asserted, otherwise, it shifts its contents left by one bit on each clock cycle, filling the least significant bit with zero. The module outputs the most significant bit of the AND operation between the counter and the shift register, as well as the entire result of the AND operation across all bits.
+module top_module(
+    input CLK, reset, up, LOAD,
+    input [7:0] DATA_IN,
+    output Q7,
+    output [7:0] Q
+);

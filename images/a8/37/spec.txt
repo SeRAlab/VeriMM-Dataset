@@ -1,0 +1,5 @@
+Develop a 20-bit sign extension module that converts a 20-bit immediate instruction into a 32-bit value. The most significant bit (bit 19) of the input is replicated 11 times to fill the higher bits of the output, while the original 20 bits are preserved in their positions, and a low bit (0) is added at the least significant position. This functionality is typically used in instruction sets where immediate values need to be expanded to match the data width of the processor.
+module top_module(
+        input   wire[19:0]  instr_imm_i,
+        output  wire[31:0]  sign_extnd_instr_imm_o
+    );

@@ -1,0 +1,9 @@
+Design a four-bit arithmetic and logical unit (ALU) capable of performing four distinct operations based on a two-bit selection input (Sel). The ALU performs addition, subtraction, bitwise AND, and bitwise OR operations on two four-bit inputs (A and B), with an optional carry-in (Cin) for addition and subtraction. The output includes a four-bit Sum and a carry-out (Cout) flag to indicate overflow for addition and subtraction, or to represent the result of logical operations. The module also includes a default case to handle invalid selection values by outputting zeros.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [3:0] Cin,
+    input [1:0] Sel,
+    output reg [3:0] Sum,
+    output reg Cout
+);

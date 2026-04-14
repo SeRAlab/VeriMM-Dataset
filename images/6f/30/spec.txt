@@ -1,0 +1,7 @@
+Design a combinational logic circuit that performs arithmetic operations based on a control signal. The circuit takes two 16-bit inputs, `i_selB` and `i_acc`, and outputs a 16-bit result, `o_2selA`. When the control signal `i_op` is high (1), the output is the sum of `i_selB` and `i_acc`. When `i_op` is low (0), the output is the difference of `i_acc` and `i_selB`. This effectively makes the module an arithmetic unit capable of performing either addition or subtraction based on the operation selector.
+module top_module(
+    output reg [15:0] o_2selA,
+    input [15:0] i_selB,
+    input [15:0] i_acc,
+    input i_op
+    );

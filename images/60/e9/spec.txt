@@ -1,0 +1,9 @@
+Design a circuit that functions as a 4-bit barrel shifter. The module allows input data to be loaded into a shift register on a rising clock edge when the load signal is active. It supports shifting the contents of the register either left or right based on the direction signal. Upon receiving a reset signal, it clears both the shift register and the output. The output reflects the current state of the shift register after each operation, enabling flexible data manipulation in digital systems.
+module top_module(
+    input clk,
+    input rst,
+    input load,
+    input direction,
+    input [3:0] data_in,
+    output reg [3:0] data_out
+);

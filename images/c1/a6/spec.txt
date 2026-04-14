@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform a specific transformation on a pair of binary inputs. Its primary function to apply bitwise operations on the input pair and generate two distinct paths of outputs based on these operations. The module can be seen as a basic digital signal processing block that might be used in larger systems for signal manipulation, error correction, or encoding/decoding purposes. The operations performed by the module suggest its potential use in systems where binary manipulation and conditional signal generation are required, possibly in communication systems or digital logic circuits where such transformations are a fundamental part of the system's functionality.
+
+Module name:  
+	bmc100
+
+Input ports:
+	rx_pair [1:0]: A 2bit input vector. This input represents the binary pair on which the module performs its operations. The significance of each bit in the pair is equal, and they are both subject to bitwise operations within the module.
+Output ports:
+	path_0_bmc [1:0]: A 2bit output vector representing the first path of transformation applied to the input pair. The transformation is a combination of bitwise XOR and AND operations, resulting in a specific pattern based on the input.
+	path_1_bmc [1:0]: A 2bit output vector representing the second path of transformation. This path uses a different initial condition for the XOR operation compared to path_0_bmc, leading to a different output pattern.
+
+
+Implementation:
+The bmc100 module is a purely combinational logic design that processes a 2-bit input signal rx_pair and generates two 2-bit output signals, path_0_bmc and path_1_bmc. The module does not contain any sequential elements (like flip-flops or latches), meaning its outputs are directly determined by its current inputs without any dependency on previous input states.
+The core functionality revolves around bitwise operations performed on the input signal rx_pair. Specifically, the module performs XOR operations with both 0 and 1 on each bit of rx_pair, generating four temporary signals (tmp00, tmp01, tmp10, tmp11). These temporary signals are then used to compute the module's outputs through a combination of AND and XOR operations.
+For path_0_bmc Output:
+  The first bit is the result of an AND operation between tmp00 and tmp01, which essentially checks if both bits of rx_pair are equal since XOR with 0 maintains the original value.
+  The second bit is the result of an XOR operation between tmp00 and tmp01, indicating if the bits of rx_pair are different.
+For path_1_bmc Output:
+  The first bit is the result of an AND operation between tmp10 and tmp11, which, due to XOR with 1 (inverting the bits), checks if both bits of rx_pair are different.
+  The second bit is the result of an XOR operation between tmp10 and tmp11, indicating if there's at least one '1' in the inverted rx_pair.
+This design cleverly uses bitwise operations to analyze and manipulate the input signal, providing insights into the relationship between the bits of rx_pair through its outputs.
+
+Give me the complete code.
+

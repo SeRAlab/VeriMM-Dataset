@@ -1,0 +1,6 @@
+Design a sequential logic circuit that generates a 128-bit output based on an 8-bit address input and a clock signal. On each positive edge of the clock, if the address is less than 128, the circuit outputs the address value followed by 120 zeros. If the address is 128 or greater, it performs a shift operation on the current output, effectively pushing the current data to the right and placing the lower bits of the address at the most significant end of the output. This design could be employed in applications requiring state retention or data buffering with a dynamic output shifting mechanism.
+module top_module(
+    input [7:0] address,
+    input clock,
+    output reg [127:0] q
+);

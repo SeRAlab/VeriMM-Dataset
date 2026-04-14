@@ -1,0 +1,12 @@
+Design a dual-port RAM module that allows simultaneous read and write operations on a 1024-word memory array, where each word is 32 bits wide. The module includes two independent ports: Port A (with write capability) and Port B (read-only). When enabled, Port A can write data to a specified address and also provide the data stored at that address, while Port B can read data from any specified address without writing. Both ports are clock-driven, ensuring synchronized operation during data access.
+module top_module(
+    input [AWIDTH-1:0] addr0,
+    input ce0,
+    input [DWIDTH-1:0] d0,
+    input we0,
+    output reg [DWIDTH-1:0] q0,
+    input [AWIDTH-1:0] addr1,
+    input ce1,
+    output reg [DWIDTH-1:0] q1,
+    input clk
+);

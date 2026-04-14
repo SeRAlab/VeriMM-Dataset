@@ -1,0 +1,6 @@
+Design a binary to decimal converter that accepts a 4-bit binary input and outputs a 3-bit decimal representation on the rising edge of the clock. The converter maps binary values from 0 to 7 directly to their decimal equivalents, and for binary values of 8 and 9, it wraps around to output equivalent decimal representations of 0 and 1, respectively. The output is updated conditionally based on the binary input values, ensuring that only specific values (0 and 8) trigger an update to the output register.
+module top_module(
+  input clk,
+  input [3:0] bin_num,
+  output reg [2:0] dec_num
+);

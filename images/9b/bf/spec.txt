@@ -1,0 +1,9 @@
+Design a circuit that performs bitwise operations on two 32-bit inputs, `a` and `b`, based on a 2-bit operation selector. The module supports logical AND, OR, XOR operations, and left shifting of `a` by a specified amount indicated by a 5-bit input. The architecture employs a pipelined design with three stages to register the input values and operation select before executing the desired bitwise operation in the final stage, thereby enhancing performance by allowing concurrent processing of inputs.
+module top_module(
+  input [31:0] a,
+  input [31:0] b,
+  input [1:0] operation_select,
+  input [4:0] shift_amount,
+  input clk,            // Add the clock input
+  output reg [31:0] result // Change to reg type since it is assigned in an always block
+);

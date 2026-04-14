@@ -1,0 +1,6 @@
+Design a simple pipelined arithmetic circuit that processes multiple operations in a synchronous manner. On each clock edge, it adds inputs `a` and `b` to produce `y1`, and subtracts inputs `c` and `d` to generate `y2`. In a subsequent clock cycle, it computes the sum of `y1` and `y2` to produce `y3`. Finally, it multiplies `y3` by the value of `d` stored from the previous clock cycle to produce the output `f`. This design effectively utilizes pipelining to achieve a higher throughput by allowing different stages of computation to occur concurrently.
+module top_module(
+    input                 clk,
+    input       [7:0]     a, b, c, d,
+    output reg  [7:0]     f
+);

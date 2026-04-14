@@ -1,0 +1,9 @@
+Design a 4-bit up/down counter with asynchronous reset and load functionality. The counter increments or decrements its value based on the 'direction' input: if 'direction' is high, the counter increments; if low, it decrements. It can be loaded with a new value from 'data_in' when 'load' is low, and it resets to zero when the 'reset' signal is low. The clock signal controls the counting operation on the rising edge.
+module top_module(
+    input clk,
+    input reset,
+    input load,
+    input direction,
+    input [3:0] data_in,
+    output reg [3:0] count
+);

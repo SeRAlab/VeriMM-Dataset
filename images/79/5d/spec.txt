@@ -1,0 +1,12 @@
+The module implements a circuit that determines if two input operands are either non-zero or denormalized based on their respective high, mid, and low segments. It takes six input signals, three representing the non-zero components and three representing the denormalized components across three bits. The output signals indicate whether at least one of the inputs is non-zero and if any of the inputs are denormalized. The logic combines the inputs using OR and AND gate functions, effectively summarizing the status of these operands for further processing in a floating-point unit.
+module top_module(
+	din2_din1_nz_hi,
+	din2_din1_denorm_hi,
+	din2_din1_nz_mid,
+	din2_din1_denorm_mid,
+	din2_din1_nz_lo,
+	din2_din1_denorm_lo,
+
+	din2_din1_nz,
+	din2_din1_denorm
+);

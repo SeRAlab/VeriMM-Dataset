@@ -1,0 +1,6 @@
+Design a 15-bit Linear Feedback Shift Register (LFSR) that generates a pseudo-random sequence of bits based on a clock signal. The circuit resets when the Reset signal is low, initializing the LFSR with a preset value. On each rising edge of the Clock, the LFSR updates its bits using a feedback mechanism from specific bits (bit 14 and bit 13) while shifting the other bits. Additionally, the module produces a HIGH output (Out) when the LFSR reaches a specific predefined state (15'b001000010001100), effectively functioning as a sequence generator with a detectable output condition.
+module top_module(
+input Clock,
+input Reset,
+output reg Out
+);

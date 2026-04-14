@@ -1,0 +1,12 @@
+Develop a branch predictor circuit that outputs a 2-bit prediction signal for program counter selection based on input parameters. The module evaluates the `brnch_pc_sel_from_bhndlr` to determine the number of active branch signals and modifies the prediction based on the `update_bpred` and `loop_start` signals. When `update_bpred` is active, if `loop_start` is asserted, it outputs a fixed prediction value. If there is only one active branch, it selects another specific prediction, otherwise it defaults to a different prediction. When not updating, it outputs a neutral prediction.
+module top_module(
+    input [3:0] brnch_pc_sel_from_bhndlr,
+    input update_bpred,
+    input loop_start,
+    input [15:0] pc,
+    input [15:0] pc_plus1,
+    input [15:0] pc_plus2,
+    input [15:0] pc_plus3,
+    output [1:0] pred_to_pcsel
+   
+    );

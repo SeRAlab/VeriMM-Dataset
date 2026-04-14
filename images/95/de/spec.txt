@@ -1,0 +1,7 @@
+Design a 4-bit up-counter with asynchronous reset and enable functionality. When the reset signal is asserted, the counter outputs reset to zero. If the enable signal is asserted while the counter is below 9, it increments the count value on each rising edge of the clock. If the counter reaches a value of 9 (1001 in binary) while enabled, it wraps around back to zero. The counter thus counts from 0 to 9 and can be controlled via the enable signal and reset functionality.
+module top_module(
+  input clk,
+  input reset,
+  input enable,
+  output reg [3:0] count
+);

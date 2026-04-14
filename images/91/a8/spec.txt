@@ -1,0 +1,7 @@
+Design a branch comparator module that compares two 32-bit data inputs. The module generates a two-bit comparison result based on the specified comparison logic defined by a 3-bit control input, func3. When func3 is either 6 or 7, the comparator outputs indicate whether the first input is not less than the second. For other cases, it checks if the inputs are equal or identifies if the first input is greater or less than the second, providing corresponding output results that signify equality, greater-than, or less-than in a signed context.
+module top_module(
+    input [31:0] data1_from_rf_i,
+    input [31:0] data2_from_rf_i,
+    output [1:0] cmp_result_from_branch_o,
+    input [2:0] func3
+    );

@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to simulate the behavior of a block RAM (BRAM) in a digital system. Its primary functions include storing and retrieving data based on the provided address. The module is capable of both writing data to a specified address when the write enable (`we`) signal is asserted and reading data from a specified address. This module is crucial in systems requiring temporary storage of data, such as processors, digital signal processing (DSP) systems, and various other applications where quick access to stored data is necessary.
+
+Module name:  
+	memory_bram
+
+Input ports:
+	clk (input): The clock signal input. It is essential for synchronizing the write and read operations of the memory.
+	we (input): Write enable signal. When asserted (1), it allows data to be written to the memory at the specified address. If deasserted (0), the module performs a read operation.
+	addr (input [3:0]): 4bit address input. Specifies the address location in the memory where data is to be written or from where data is to be read.
+	DIN (input [MEM_SIZE1:0]): Data input bus. The width of this bus is defined by the parameter MEM_SIZE, allowing for a flexible data width. This bus carries the data to be written into the memory.
+Output ports:
+	DOUT (output [MEM_SIZE1:0]): Data output bus. This bus carries the data read from the memory. The width of this bus matches that of DIN, defined by MEM_SIZE.
+
+
+Implementation:
+The RTL module presented is designed to simulate a simple memory block using Block RAM (BRAM) in a digital system, specifically tailored for FPGA or ASIC implementations. The module, named memory_bram, is structured to perform read and write operations based on the input signals it receives. The core functionality revolves around the handling of these operations within a synchronous design paradigm, dictated by the rising edge of the clock signal (clk).
+
+Give me the complete code.
+

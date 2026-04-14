@@ -1,0 +1,7 @@
+Design a clock selector circuit that manages the output clock signal, `clkout`, based on the request signals `req_clk1` and `req_clk2` from two input clocks, `clk1` and `clk2`. The circuit uses a `select` input to determine which clock signal is acknowledged (`ack_clk1` or `ack_clk2`). In addition, it features an active-low reset (`rst_n`) to initialize the selection states. The module keeps track of the clock selection status and updates the output clock accordingly, allowing for flexible switching between the two clock sources based on incoming requests and the select signal.
+module top_module(
+   
+   ack_clk1, ack_clk2, clkout,
+   
+   clk1, clk2, req_clk1, req_clk2, select, rst_n
+   );

@@ -1,0 +1,8 @@
+Design a pipeline circuit for rotating a 100-bit input data register using a shift register approach. The module includes a load control enabling initialization of the shift registers with input data, and a two-bit enable signal that determines the direction of the rotation. The output provides a rotated version of the data based on the current state of the enable signal: either outputting the contents of the first shift register untouched, or providing left or right rotations based on the enable signal values. This design is suitable for applications requiring data manipulation through rotation in a sequential manner.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output reg [99:0] q
+);

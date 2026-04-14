@@ -1,0 +1,6 @@
+Design a circuit that converts an asynchronous input signal into a synchronized output through a shift register. When the asynchronous input (Pinput) matches the specified INPUT_POLARITY, it resets the shift register to either all HIGHs or all LOWs depending on OUTPUT_POLARITY. On each clock cycle (clk), the most significant bit of the register is shifted out, and the least significant bit is filled with the negated OUTPUT_POLARITY. The output (Poutput) reflects the most significant bit of the shift register, effectively synchronizing the input signal with the clock while providing a controlled reset behavior.
+module top_module(
+	input clk,
+	input Pinput,
+	output Poutput
+);

@@ -1,0 +1,18 @@
+Design a control module for a switching operation that handles read and write commands. The module activates appropriate control signals based on a clock-driven state machine, responding to input signals SW_WR and SW_RD while also managing the start of write operations (start_WR) and read operations (start_RD). It outputs begin_work to indicate that a read/write process is underway, while nWRpRD specifies the operation type (read or write). Additionally, it captures the beginning and ending logical block addresses (begin_LBA and end_LBA) for the operation. The module resets its state when the nRST signal is low, ensuring proper initialization and control flow for data management.
+module top_module(
+	input clk,
+	input nRST,
+	input SW_WR,		
+	input SW_RD,		
+	input 	[47:0]	LBA_BEGIN,
+	input 	[47:0]	LBA_END,
+	input	[7:0]	test,
+	
+	output reg	begin_work,
+	output reg	nWRpRD,
+	output reg	start_WR,
+	output reg	start_RD,
+	output reg  [47:0]begin_LBA,
+	output reg  [47:0]end_LBA
+	
+	);

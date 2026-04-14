@@ -1,0 +1,6 @@
+Design a clock divider that generates a slower version of an input clock signal. The module takes an input clock (clk_in) and a reset signal, and it outputs a divided clock signal (clk_out). The division factor is specified by the parameter "divide_by". On each rising edge of clk_in, if reset is high, clk_out is set to low, and the counter is reset. Otherwise, the module increments a counter until it reaches the value of "divide_by - 1", at which point it toggles clk_out and resets the counter, effectively creating a clock output that runs at a frequency reduced by the specified division factor.
+module top_module(
+  input clk_in,
+  input reset,
+  output reg clk_out
+);

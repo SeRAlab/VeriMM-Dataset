@@ -1,0 +1,8 @@
+Design a circuit that acts as a three-way multiplexer using two 2-to-4 decoders and a binary output logic. The module accepts two 2-bit inputs, `in1` and `in2`, and a select signal. Based on the value of `select`, the output `out` will be driven by the results of the first decoder (when `select=0`), the second decoder (when `select=1`), or a specific binary output derived from the logical AND operations of `in1` and `in2` (when `select=2`). This allows for versatile output selection depending on the control signal.
+module top_module(
+    input clk,
+    input [1:0] in1,
+    input [1:0] in2,
+    input select,
+    output reg [3:0] out // Change wire to reg for procedural assignment
+);

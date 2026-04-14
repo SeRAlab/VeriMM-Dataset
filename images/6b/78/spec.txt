@@ -1,0 +1,6 @@
+Design a circuit for an 8-bit multiplier with a configurable barrel shifter. The module takes two 8-bit inputs, `in1` and `in2`, and a 3-bit `select` signal that determines how many positions `in2` is shifted. On the rising edge of the clock, the circuit computes the product of `in1` and the shifted version of `in2`, outputting the 16-bit result. If the reset (`rst`) signal is activated, the output is set to zero. This module effectively combines multiplication and shift operations, allowing dynamic adjustment of the multiplication factor based on the shift selection.
+module top_module(
+    input [7:0] in,
+    input [2:0] select,
+    output reg [7:0] shifted_out
+);

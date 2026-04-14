@@ -1,0 +1,12 @@
+
+Design a simplified version of the ChaCha20 stream cipher's quarter round operation in Verilog. The operation takes four 32-bit input words and produces four 32-bit output words. The output is computed as follows:
+
+1. Let a, b, c, d be the four 32-bit input words.
+2. Perform the following operations:
+   - a += b; d ^= a; d <<< 16;
+   - c += d; b ^= c; b <<< 12;
+   - a += b; d ^= a; d <<< 8;
+   - c += d; b ^= c; b <<< 7;
+3. The outputs should be the updated values of a, b, c, d.
+
+Implement this operation in a clocked module that takes the inputs and a clock signal, and outputs the results after one clock cycle.

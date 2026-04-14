@@ -1,0 +1,9 @@
+Design a versatile 8-bit shift register with dual functionality for loading and shifting data. It features a parallel input for loading a new 8-bit value when the load signal is asserted. Depending on the shift_dir control input, it can shift data either left or right, incorporating a serial input bit during the shift operation. The output provides the current state of the register, making it suitable for applications requiring data storage and manipulation, such as in communication systems or data processing circuits.
+module top_module(
+    input clk,
+    input load,
+    input shift_dir,
+    input [7:0] parallel_in,
+    input serial_in,
+    output [7:0] serial_out
+);

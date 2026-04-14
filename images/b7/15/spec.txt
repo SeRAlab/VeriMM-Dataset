@@ -1,0 +1,14 @@
+Design a data memory module that operates in synchronization with a clock signal, featuring a Read-Modify-Write architecture for memory operations. It includes inputs for controlling memory read and write actions along with branch control signals. The module manages a 64-bit wide memory array, allowing data to be written to or read from specified addresses. It outputs the current program counter and a signal for branching logic based on conditions derived from external inputs. When a read is initiated, the designated data is retrieved from memory and stored in an internal register. Correspondingly, during a negative clock edge, if a write operation is specified, the module updates the memory at the targeted address with the provided data while clearing the read data register.
+module top_module(
+input clk,
+input  m_branch,
+input  m_zero,
+input  [63:0] m_addr, 				
+input  m_memwr,
+input  m_memrd,
+input  [63:0] m_write_data, 			
+input  [11:0] m_pc_in,                         
+output [11:0] m_pc_out,
+output  m_pcsrc,
+output [63:0] m_read_data
+);

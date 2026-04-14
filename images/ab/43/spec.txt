@@ -1,0 +1,10 @@
+Design a round function for the GOST 89 block cipher algorithm, which processes two 32-bit input values (`n1` and `n2`) using a substitution box (`sbox`) and a round key. On each positive edge of the clock, the module computes a temporary value `t` by adding `n1` and `round_key`, applying a masking operation. This value is further used to index into the `sbox`, producing a transformed output based on the cipher's substitution logic. The module outputs `out1` as the unchanged value of `n2` and `out2` as the result of an XOR operation between `n1` and the transformed value `t`, thus completing one round of the encryption process.
+module top_module(
+  input              clk,
+  input      [511:0] sbox,
+  input      [31:0]  round_key,
+  input      [31:0]  n1,
+  input      [31:0]  n2,
+  output reg [31:0]  out1,
+  output reg [31:0]  out2
+);

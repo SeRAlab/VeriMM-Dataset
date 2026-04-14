@@ -1,0 +1,8 @@
+Design a sequential state machine that controls a 4-bit output state based on a combination of a clock signal, a reset input, and a mode selector. The state machine implements a counter that cycles through a predefined pattern on the rising edge of the input clock, incrementing a pattern register. Depending on the mode signal (M), it shifts the state either to the left or the right. Additionally, specific patterns in the pattern register correspond to different state assignments, resulting in various output states. The design includes an input for selecting the clock source and resets all counters and states when triggered, ensuring the system initializes correctly.
+module top_module(
+    input clk_src,
+    input reset,
+    input [4:0] clk_sel,
+    input M,
+    output reg [3:0] state
+    );

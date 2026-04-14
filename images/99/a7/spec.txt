@@ -1,0 +1,8 @@
+Design a 4-bit restoring divider circuit that computes the quotient and remainder of two 4-bit inputs: the dividend and the divisor. The module utilizes a shift-and-subtract method to perform the division operation. It shifts the remainder left, checks if it is greater than or equal to the divisor, and if so, subtracts the divisor from the remainder and sets the least significant bit of the quotient. This process is repeated for a fixed number of cycles, accumulating the final quotient and remainder results, which are subsequently output as 4-bit values.
+module top_module(
+    input [3:0] dividend,
+    input [3:0] divisor,
+    input clk,          // Added clk as an input to fix the error
+    output reg [3:0] quotient,
+    output reg [3:0] remainder
+);

@@ -1,0 +1,7 @@
+Design a pipelined dual-stage JK flip-flop circuit. This module utilizes two pipeline stages to process an input signal 'd' while incorporating active high set ('aset') and active low reset ('areset') functionalities. In the first stage, it computes intermediate signals 'j' and 'k' based on the input 'd' and the output of the second stage 'q2', followed by determining 'q1' using combinational logic. The second stage manages the output 'q2' based on the set/reset conditions and the intermediate result 'q1'. Finally, in the output stage, 'q' reflects the value of 'q2', effectively providing a clocked output that can be controlled by both preset and reset signals.
+module top_module(
+    input clk,    // Clocks are used in sequential circuits
+    input d,
+    input aset,
+    input areset,
+    output reg q );

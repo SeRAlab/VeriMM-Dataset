@@ -1,0 +1,10 @@
+Design a 2-to-1 multiplexer for program counter (PC) selection in a digital circuit. It selects between three potential PC values based on a two-bit input signal, `io_pc_sel`. When `io_pc_sel` is 00, it outputs the value `io_pc_4`. When `io_pc_sel` is 01, it selects the current program counter value `io_pc`. When `io_pc_sel` is 10, it chooses the branching address `io_jmp_br`. This functionality is essential for implementing control flow in a processor, allowing for jumps, branches, and the standard progression of the program counter.
+module top_module(
+  input   clock,
+  input   reset,
+  input  [31:0] io_pc_4,
+  input  [31:0] io_pc,
+  input  [31:0] io_jmp_br,
+  input  [1:0] io_pc_sel,
+  output [31:0] io_to_pc
+);

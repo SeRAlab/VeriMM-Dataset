@@ -1,0 +1,19 @@
+Please act as a professional Verilog designer. Your task is to create a Verilog module that implements a brown-out reset (BOR) circuit. 
+A BOR circuit is a type of digital circuit that monitors the power supply voltage and generates a reset signal when the voltage drops below a certain threshold. 
+This is important because when the power supply voltage drops below a certain level, the digital circuits may not operate correctly, and the BOR circuit helps to prevent this.
+Your module should have the following inputs and outputs:
+
+Inputs: 
+- Vin: the input voltage from the power supply
+- Vth: the threshold voltage for the brown-out reset circuit
+- clk: the clock signal
+- reset: the asynchronous reset signal (active low)
+
+Outputs: 
+- rst_out: the brown-out reset signal
+
+To implement the BOR circuit, you should use Verilog code to compare the input voltage (Vin) with the threshold voltage (Vth). 
+When the input voltage drops below the threshold voltage, the BOR circuit should generate a reset signal (rst_out) to reset the digital circuits.
+You should use a flip-flop to hold the reset signal until the input voltage rises above the threshold voltage again. 
+The clock signal (clk) should be used to synchronize the reset signal with the digital circuits.
+Finally, you should use the asynchronous reset signal (reset) to reset the flip-flop when the system is powered on.

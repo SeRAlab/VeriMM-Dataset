@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module to implement a dual-port RAM (Random Access Memory) with separate read and write capabilities for each port. This module allows for simultaneous read and/or write operations to occur from two different ports, making it highly suitable for applications requiring concurrent access to the memory, such as in digital signal processing, multi-threaded processors, or any system that benefits from parallel data access. The primary functions of this module include:
+
+Dual Independent Ports: Each port (A and B) can independently read from or write to the memory array. This feature enhances the module's versatility in various system architectures.
+Parameterized Data and Address Width: The module supports customization of data and address widths, allowing it to be easily adapted to different memory size requirements and data widths.
+Synchronous Operation: The module operates on the rising edge of a common clock signal, ensuring synchronized access to the memory array.
+
+Module name:  
+	ramDualPort
+
+Input ports:
+	dataA, dataB [(DATA_WIDTH1):0]: These are the input data buses for ports A and B, respectively. They carry the data to be written into the memory array during write operations. The width of these buses is determined by the DATA_WIDTH parameter.
+	addrA, addrB [(ADDRESS_WIDTH1):0]: These are the address buses for ports A and B, respectively. They specify the memory location to be accessed (read or write) during operations. The width of these buses is determined by the ADDRESS_WIDTH parameter.
+	weA, weB: Write enable signals for ports A and B, respectively. A high level on these signals enables writing the data present on the corresponding data bus into the memory location specified by the address bus.
+	clk: The clock input signal. It synchronizes the read and write operations of the module.
+Output ports:
+	qA, qB [(DATA_WIDTH1):0]: These are the output data buses for ports A and B, respectively. They carry the data read from the memory array during read operations. The width of these buses is determined by the DATA_WIDTH parameter.
+
+
+Implementation:
+The RTL module presented is a dual-port RAM (Random Access Memory) design, which is a critical component in digital systems for storing and retrieving data efficiently. This module is designed to allow simultaneous access to two different memory locations, enabling read and write operations to occur in parallel without conflict. The design is parameterized, allowing for flexibility in data and address sizes to accommodate various application requirements.
+
+Give me the complete code.
+

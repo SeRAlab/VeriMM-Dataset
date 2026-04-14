@@ -1,0 +1,8 @@
+Implement a data buffer that can store up to 8 eight-bit wide data entries. On each positive clock edge, if the input enable signal is active and there is available space in the buffer, the incoming data is written to the buffer at the current head position, and head is incremented. The output data comes from the buffer at the tail position, which is updated on each clock cycle, provided there is at least one item in the buffer. The enable output indicates whether additional data can be written into the buffer based on current occupancy. This effectively creates a FIFO (First In, First Out) memory structure for managing data.
+module top_module(
+    input wire [7:0] data_in,
+    input wire enable_in,
+    input wire clk,
+    output reg [7:0] data_out,
+    output reg enable_out
+);

@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+
+Implement a binary counter that counts from 0 to 15 and then resets to 0. The counter increments on each positive edge of the clock signal clk. It has an asynchronous active-low reset signal rst_n. When the reset signal rst_n is low, the counter is reset to 0.
+
+Module name:
+    binary_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+
+Output ports:
+    count: Output data signal of size 4 bits, representing the current count value.
+
+Implementation:
+Counter Register:
+The module includes a register, count_reg, to store the current count value.
+On the positive edge of the clock signal clk or the falling edge of the reset signal rst_n, the module updates the register. If the reset signal rst_n is low, indicating a reset condition, the register count_reg is set to 0. If the reset signal rst_n is high, the register count_reg is incremented by 1. If the count value reaches 15, it wraps around to 0.
+
+Give me the complete code.

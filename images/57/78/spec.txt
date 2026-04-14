@@ -1,0 +1,25 @@
+Please act as a professional Verilog designer.
+
+Design a 2-bit Gray code counter with a synchronous reset. The counter produces a Gray code sequence on the rising edge of the clock signal. When the reset signal is high, the counter resets its value to zero on the next clock edge.
+
+Module name:  
+    gray_code_counter_2bit   
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+
+Output ports:
+    gray_q: 2-bit output representing the current state of the counter in Gray code.
+
+Implementation:
+The output register is triggered on the positive edge of the clock signal (posedge clk). On reset, indicated by rst, the output register is cleared to 0. On each clock cycle, the output register increments in Gray code.
+
+Give me the complete code.
+
+module gray_code_counter_2bit(
+    input clk,
+    input rst,
+
+    output reg [1:0] gray_q
+);

@@ -1,0 +1,8 @@
+Design a pipeline register module that captures input data on the rising edge of the clock signal when enabled. The module features an asynchronous reset that clears the register output to zero. It has a parameterized width, allowing for flexibility in the number of bits processed, defaulting to 4 bits. The output reflects the current state of the register, which holds the most recent valid input when enabled and will reset to zero upon activation of the reset signal.
+module top_module(
+  input clk,
+  input rst,
+  input en,
+  input [n-1:0] in,
+  output [n-1:0] out
+);

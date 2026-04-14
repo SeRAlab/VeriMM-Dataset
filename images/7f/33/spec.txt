@@ -1,0 +1,7 @@
+Design a message storage system that accepts a 16-bit input message and a validity signal. When the input validity signal is high, it stores the input message and sets a stored validity flag. The output consists of the stored message and an output validity signal that indicates whether the stored message is valid, which is true only if the input is valid. This module functions as a simple message buffer, ensuring that valid messages can be retrieved later.
+module top_module(
+    input [15:0] inputMsg,
+    input inputValid,
+    output reg [15:0] outputMsg,  // Changed to 'reg'
+    output reg outputValid         // Changed to 'reg'
+);

@@ -1,0 +1,23 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit binary up-down counter with enable, up-down control, and reset signals.
+
+Module name:
+    up_down_counter 
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rstn: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    en: Enable signal to allow counting.
+    up_dn: Control signal to set the counting direction. Defined as 0 for down counting and 1 for up counting.
+
+Output ports:
+    count: 4-bit output signal representing the current count value.
+
+Implementation:
+- On the rising edge of the clock signal, if the reset signal is active (0), reset the count to 0.
+- If the enable signal (en) is active (1), update the count based on the up_dn signal.
+- If up_dn is 1, increment the count; if up_dn is 0, decrement the count.
+- Otherwise, retain the current count value.
+
+Give me the complete code.

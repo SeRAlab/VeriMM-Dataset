@@ -1,0 +1,9 @@
+Design a delay reset controller that manages the output signal based on input conditions and clock cycles. The module uses a clock signal (CLK_IN) to synchronize its operations. When a reset signal is asserted, the output is reset to zero. If enabled (indicated by enb_1_2000_0), the module directly assigns the input value (In) to the output (Out). Additionally, it incorporates a secondary reset (Reset_1) to clear the output to zero again. In the absence of reset conditions, the output is delayed by one clock cycle, meaning the current output becomes the delayed version of the previous output, facilitating data pipelining or synchronization in a timing-sensitive application.
+module top_module(
+    input CLK_IN,
+    input reset,
+    input enb_1_2000_0,
+    input Reset_1,
+    input signed [31:0] In,
+    output reg signed [31:0] Out
+);

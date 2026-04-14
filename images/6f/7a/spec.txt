@@ -1,0 +1,8 @@
+Implement an 8-bit digital-to-analog converter (DAC) with a simple counting functionality. The module utilizes a clock signal and a reset signal to control the output. Upon receiving a conversion signal (conv), it outputs the lower 8 bits of a counter value to dac_out and increments the counter. If the reset signal is activated, the DAC output and the counter are set to zero. This design allows for a controlled, incremental output change based on the clock, suitable for applications requiring analog signal generation from digital values.
+module top_module(
+    input [7:0] dac_in,
+    input clk,
+    input rst,
+    input conv,
+    output reg [7:0] dac_out
+);

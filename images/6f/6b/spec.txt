@@ -1,0 +1,6 @@
+Design a sensor interface module that captures and formats sensor data for output on an 8-bit wide data bus. Upon the rising edge of the clock signal, the module resets the sensor data to zero when the reset signal is low. When the reset is high, the module is intended to read and process the sensor data, which can vary based on the specific sensor used. The processed sensor data is then assigned to the output data bus for further use in a system.
+module top_module(
+  input clk,
+  input reset,
+  output [bus_width-1:0] data
+);

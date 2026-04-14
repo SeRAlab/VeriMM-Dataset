@@ -1,0 +1,7 @@
+Implement a Hamming code encoder and decoder system for error detection and correction in digital communication. The module takes input data bits and encodes them into a longer codeword with parity bits, using a specified parity check matrix. The encoded output is produced by combining the input data with computed parity bits. It also receives a potentially corrupted codeword and calculates a syndrome for error detection based on the same parity check matrix. If errors are detected, the code corrects the received codeword and extracts the original data bits as the output. This design effectively enhances data integrity by ensuring that single-bit errors can be identified and corrected.
+module top_module(
+  input [k-1:0] data_in,
+  input [n-1:0] received,
+  output [n-1:0] encoded,
+  output [k-1:0] data_out
+);

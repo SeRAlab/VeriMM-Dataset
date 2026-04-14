@@ -1,0 +1,10 @@
+Design a simple data pass-through module that connects two interfaces. The module takes an input signal `rx` and directly assigns it to the output `tx`, effectively creating a unidirectional channel. Additionally, it features a parallel connection where a 16-bit input vector `sw` is directly output to a 16-bit LED representation, enabling real-time status display of the input switches on an external LED array.
+module top_module(
+    input  wire clk,
+
+    input  wire rx,
+    output wire tx,
+
+	input  wire [15:0] sw,
+	output wire [15:0] led
+);

@@ -1,0 +1,11 @@
+Design a synchronous first-in, first-out (FIFO) memory module capable of storing and retrieving up to 16 elements of 32-bit data. The module features an asynchronous reset and utilizes two control signals: "push" for adding data and "pop" for removing data. It maintains read and write positions to efficiently manage data flow and updates the empty and full indicators based on the current count of stored elements. The module ensures synchronized data operations with a clock input, allowing for reliable data handling in digital systems.
+module top_module(
+    input i_clk, // Input clock
+    input i_reset, // Asynchronous reset
+    input i_push, // Push signal
+    input i_pop, // Pop signal
+    input [31:0] i_data, // Input data
+    output reg [31:0] o_data, // Output data
+    output reg o_empty, // Empty signal
+    output reg o_full // Full signal
+);

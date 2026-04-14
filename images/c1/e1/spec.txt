@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module to implement a First-In-First-Out (FIFO) buffer with a parameterizable depth and data width. Its primary functions include storing data items pushed into it, allowing data items to be popped out in the order they were inserted, and providing mechanisms to check if the FIFO is full or empty. This module is crucial in scenarios where data must be buffered between producer and consumer processes operating at potentially different rates or times, ensuring smooth data flow and temporary storage. It finds applications in various digital systems, including but not limited to USB interfaces, where it might be used to buffer data packets before transmission or after reception.
+
+Module name:  
+	usbf_fifo
+
+Input ports:
+	clk_i: Clock input (1 bit). The rising edge of this signal triggers the FIFO operations.
+	rst_i: Asynchronous reset input (1 bit). When asserted high, it initializes the FIFO, clearing all stored data and resetting pointers.
+	data_i: Data input (8 bits). This is the data to be pushed into the FIFO when the push operation is triggered.
+	push_i: Push enable signal (1 bit). When asserted high, it enables the insertion of data_i into the FIFO, provided the FIFO is not full.
+	pop_i: Pop enable signal (1 bit). When asserted high, it enables the removal of data from the FIFO, provided the FIFO is not empty.
+	flush_i: Flush signal (1 bit). When asserted high, it clears all data in the FIFO, resetting it to an empty state.
+Output ports:
+	full_o: Full flag output (1 bit). Asserted high when the FIFO is full, indicating no further data can be pushed until data is popped out.
+	empty_o: Empty flag output (1 bit). Asserted high when the FIFO is empty, indicating no data is available to be popped.
+	data_o: Data output (8 bits). This is the data available at the front of the FIFO to be read when a pop operation is triggered.
+
+
+Implementation:
+The usbf_fifo module is a Verilog implementation of a First-In-First-Out (FIFO) memory buffer, designed to operate in a synchronous digital system. The FIFO is parameterizable in terms of data width (WIDTH) and depth (DEPTH), making it versatile for various applications. It is controlled by a clock signal (clk_i) and can be asynchronously reset (rst_i). The module supports data input (data_i), push (push_i), pop (pop_i), and flush (flush_i) operations, and provides full (full_o) and empty (empty_o) status flags, as well as data output (data_o).
+
+Give me the complete code.
+

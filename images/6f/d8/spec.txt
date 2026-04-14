@@ -1,0 +1,9 @@
+Design a 4-bit binary counter with configurable counting direction and loading capability. The counter increments or decrements its value based on the up_down control input: when up_down is high, it counts up; when low, it counts down. It can be reset to zero asynchronously via the rst input or loaded with a new value from the data_in input when the load signal is asserted.
+module top_module(
+    input clk,
+    input rst,
+    input up_down,
+    input load,
+    input [3:0] data_in,
+    output reg [3:0] count
+);

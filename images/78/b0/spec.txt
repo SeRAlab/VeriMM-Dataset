@@ -1,0 +1,7 @@
+Design a 4-bit adder/subtractor with overflow detection and magnitude comparison capabilities. The module takes two 4-bit inputs, `in_0` and `in_1`, and a control signal `ctrl` to select between addition (when `ctrl` is 0) or subtraction (when `ctrl` is 1). It computes the absolute values of the inputs, performs the arithmetic operation using an instantiated adder/subtractor module, and determines the result while also checking for overflow conditions. Additionally, it compares the magnitudes of the absolute values to produce a signal indicating if `in_0` is greater than or equal to `in_1`.
+module top_module(
+    input [3:0] in_0,
+    input [4:0] in_1, // Adjusted to match the bit-width after concat with ctrl
+    input ctrl,
+    output reg [3:0] result
+);

@@ -1,0 +1,9 @@
+Design a synchronous 32-bit flip-flop with asynchronous reset and enable functionality. This module stores data from the `io_in` input when `io_enable` is high; otherwise, it retains its current value. On a rising edge of the clock signal, if `reset` is asserted, the flip-flop is initialized to the value present at `io_init`. The current state of the flip-flop is output through `io_out`. This design effectively serves as a register that can be conditioned to reset and preserve or update its value based on external control signals.
+module top_module(
+  input         clock,
+  input         reset,
+  input  [31:0] io_in,
+  input  [31:0] io_init,
+  output [31:0] io_out,
+  input         io_enable
+);

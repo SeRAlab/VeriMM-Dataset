@@ -1,0 +1,9 @@
+Design a Mealy state machine that processes an input data stream while being controlled by an enable signal. The machine uses one-hot encoding for its states (S0 to S3) and transitions based on the input and enable conditions. When in state S2 and the data input is high, it outputs a high signal on `data_out` and sets the `valid_out` signal to indicate valid output data. The state transitions occur on clock edges, with a reset functionality that initializes the state to S0. The output logic is explicitly defined based on the current state and input conditions, effectively creating a sequential circuit that reacts to its inputs according to predefined behaviors.
+module top_module(
+  input clk,
+  input reset,
+  input data_in,
+  input enable,
+  output reg data_out,
+  output reg valid_out
+);

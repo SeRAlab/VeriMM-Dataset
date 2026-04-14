@@ -1,0 +1,7 @@
+Implement a finite state machine (FSM) for detecting consecutive ones in a 16-bit input data stream. The module has two states: S0 for detecting when the input data is not all ones (16'hFFFF) and S1 for counting the occurrences of consecutive ones. The count output reflects the number of consecutive cycles where the input data remains all ones, resetting to zero when the input data changes to a different value. The circuit uses registers to maintain the current state and count, updating on the positive edge of the clock and resetting on the reset signal.
+module top_module(
+  input clk,
+  input reset,
+  input [15:0] data,
+  output reg [3:0] count
+);

@@ -1,0 +1,7 @@
+Design a register module that stores and updates time-related values in an 8-bit wide format. This module features a clock input for synchronous operation and a reset input that initializes all stored values to zero. When enabled, it uses a 4-bit select input to choose which specific register (such as seconds, minutes, hours, day, month, year, and timers) will receive new data from an 8-bit data input. The design's purpose is to manage and manipulate time-related data effectively for applications like digital clocks or timers.
+module top_module(
+	input clk,reset,En,
+	input [3:0] sel_reg,
+	input [7:0] data_save,
+	output reg [7:0] seg,min,hora,day,month,year,seg_t,min_t,hora_t
+    );

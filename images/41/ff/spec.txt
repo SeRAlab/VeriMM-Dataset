@@ -1,0 +1,23 @@
+Design a write-back stage for a processor that handles data retrieval from memory and multiply results. The module takes various inputs related to memory operations, including a flag for exceptions, and based on the clock signal, it determines the appropriate value to write back to the register file. If an exception occurs, it captures the program counter; otherwise, it outputs either the result from the load/store unit or the ALU result. The write-back stage also manages write-enable signals and destination register addresses, providing flexibility between standard load/store operations and exception handling. Additionally, it can select between the normal result and a multiply operation result based on control signals.
+module top_module(
+	input 		 rst,
+	input 		 clk,
+
+	input 		 do_exception,
+
+	input 		 mem_stall,
+	input [31:0] 	 mem_pc,
+	input [31:0] 	 mem_alu_result,
+	input [31:0] 	 mem_lsu_result,
+	input 		 mem_rf_r_we,
+	input [4:0] 	 mem_rf_r_addr,
+
+	input 		 mem_op_load,
+
+	input 		 wb_op_mul,
+	input [31:0] 	 wb_mul_result,
+
+	output [31:0] 	 wb_rf_r,
+	output reg 	 wb_rf_r_we,
+	output reg [4:0] wb_rf_r_addr
+);

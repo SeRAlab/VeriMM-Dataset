@@ -1,0 +1,29 @@
+Please act as a professional Verilog designer.
+
+Implement a module of an 8-bit parallel-to-serial converter. The converter should shift out the parallel data one bit at a time on each positive edge of the clock signal when the shift enable signal is high. The data is loaded into the shift register when the load signal is high.
+
+Module name:  
+    parallel_to_serial
+
+Input ports:
+    CLK: Clock input
+    RST: Active high reset signal
+    LOAD: Load enable signal
+    SHIFT_EN: Shift enable signal
+    DATA_IN: 8-bit parallel input data
+
+Output ports:
+    DATA_OUT: 1-bit serial output data
+
+Implementation:
+The parallel-to-serial converter module uses an always block to update the contents of the shift register based on the clock signal, reset signal, load signal, and shift enable signal.
+The always block triggers on the positive edge of the clock signal (posedge CLK) or the positive edge of the reset signal (posedge RST). It checks if the reset signal is active (RST) and sets the shift register contents to 0. If the load signal (LOAD) is high, it loads the parallel data (DATA_IN) into the shift register. If the shift enable signal (SHIFT_EN) is high, it shifts the contents of the shift register to the right by one position, and the LSB is output as the serial data (DATA_OUT).
+
+Give me the complete code.
+
+module parallel_to_serial(CLK, RST, LOAD, SHIFT_EN, DATA_IN, DATA_OUT);
+input CLK, RST, LOAD, SHIFT_EN;
+input [7:0] DATA_IN;
+output DATA_OUT;
+reg [7:0] shift_reg;
+reg DATA_OUT;

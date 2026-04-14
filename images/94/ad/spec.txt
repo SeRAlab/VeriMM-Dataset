@@ -1,0 +1,9 @@
+Design a cache memory block that supports both read and write operations controlled by a clock signal. The module features a configurable number of memory words (n) and bit-width per word (m). Upon a positive clock edge, if the write enable (we) signal is activated, data from the write data input (wd) is stored in the word indexed by the address input (addr). When the read enable (re) signal is activated, the module outputs the data from the designated memory word to the read data output (rd); otherwise, it outputs zero. This design serves as a small, efficient storage solution for caching data.
+module top_module(
+  input clk,
+  input we,
+  input re,
+  input [addr_bits-1:0] addr,
+  input [m-1:0] wd,
+  output reg [m-1:0] rd
+);

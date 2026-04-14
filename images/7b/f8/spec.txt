@@ -1,0 +1,11 @@
+Design a register interface that facilitates read and write operations to a bank of 256 registers, each 32 bits wide. The module receives control signals such as reset, clock, and register request, along with read/write indicators and address inputs. Upon a clock edge, if reset is asserted, it clears the read data and acknowledgment signals. When a valid register request is received, it checks for the address validity and performs the corresponding operation: either writing the provided data to the specified register or reading from it and outputting the data. The module also provides an acknowledgment signal to indicate the completion of the operation.
+module top_module(
+  input wire reset,
+  input wire clk,
+  input wire reg_req,
+  input wire reg_rd_wr_L,
+  input wire [7:0] reg_addr,
+  input wire [31:0] reg_wr_data,
+  output reg [31:0] reg_rd_data,
+  output reg reg_ack
+);

@@ -1,0 +1,19 @@
+The module is designed to implement a state machine for performing addition operations, specifically handling floating-point numbers with support for various modes including circular, linear, and hyperbolic. It processes input floating-point values (cout_Allign2 and zout_Allign2) and updates its state based on the current mode and idle conditions. When not in a 'put idle' state, it calculates the sum of the mantissas while considering the signs of the operands and adjusts the exponent accordingly. The output includes the resulting sum, along with relevant flags and state indicators for the operation. This module effectively serves as an arithmetic unit within a larger system for handling advanced mathematical operations.
+module top_module(
+	input [1:0] idle_Allign2,
+	input [35:0] cout_Allign2,
+	input [35:0] zout_Allign2,
+	input [31:0] sout_Allign2,
+	input [1:0] modeout_Allign2,
+	input operationout_Allign2,
+	input NatLogFlagout_Allign2,
+	input [7:0] InsTag_Allign2,
+	input clock,
+	output reg [1:0] idle_AddState,
+	output reg [31:0] sout_AddState,
+	output reg [1:0] modeout_AddState,
+	output reg operationout_AddState,
+	output reg NatLogFlagout_AddState,
+	output reg [27:0] sum_AddState,
+	output reg [7:0] InsTag_AddState
+    );

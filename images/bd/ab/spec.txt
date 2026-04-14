@@ -1,0 +1,27 @@
+Please act as a professional Verilog designer.
+
+Implement a 32-bit register file with 8 registers. It should support two read ports and one write port. The module should take a clock signal (clk), a reset signal (reset), read addresses (read_addr1, read_addr2), a write address (write_addr), a write enable signal (write_en), and write data (write_data). The module provides the read data (read_data1, read_data2) based on the read addresses.
+
+Module name:
+   regfile_32bit_8reg
+
+Input ports:
+   clk: Clock signal used for synchronous operation.
+   reset: Reset signal used to initialize the register file.
+   read_addr1: 3-bit read address for the first read port.
+   read_addr2: 3-bit read address for the second read port.
+   write_addr: 3-bit write address for the write port.
+   write_en: Write enable signal indicating if the write port is active.
+   write_data: 32-bit input data to be written into the register file.
+
+Output ports:
+   read_data1: 32-bit output data for the first read port.
+   read_data2: 32-bit output data for the second read port.
+
+Implementation:
+On the positive edge of the clock signal (clk) or the positive edge of the reset signal (reset), the module updates the register file based on the write enable signal (write_en).
+If the reset signal (reset) is high, all registers are reset to 0.
+If the reset signal (reset) is low and the write enable signal (write_en) is high, the register at the write address (write_addr) is updated with the write data (write_data).
+The read data outputs (read_data1, read_data2) are continuously updated based on the read addresses (read_addr1, read_addr2).
+
+Give me the complete code.

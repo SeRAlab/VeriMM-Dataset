@@ -1,0 +1,6 @@
+Design a circuit that produces a 32-bit output by concatenating an 8-bit input with the bitwise complement of an 8-bit slice from the input. The module takes a 16-bit input `data_in`, from which the least significant 8 bits are directly assigned to `data_out1`, while the next 8 bits are inverted to create `data_out2`. On each positive clock edge, these two outputs are concatenated to form a 32-bit `comp_concat_out`, effectively creating a combined output that pairs the original and complemented segments of the input.
+module top_module(
+    input clk,            // Added clk input declaration
+    input [15:0] data_in,
+    output reg [31:0] comp_concat_out
+);

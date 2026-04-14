@@ -1,0 +1,7 @@
+Design a memory block that incorporates Hamming code for error detection and correction. This module takes an 8-bit input, encodes it with 3 parity bits to form a 11-bit codeword, and stores it in memory. Upon reading, it calculates a syndrome based on the stored data to identify any single-bit errors, correcting them if necessary, and outputs the corrected 8-bit data. Additionally, it provides an error signal to indicate whether an error was detected during the read operation.
+module top_module(
+  input clk,                 // added clock input
+  input [7:0] data_in,
+  output reg [7:0] data_out, // changed to reg type
+  output reg error           // changed to reg type
+);

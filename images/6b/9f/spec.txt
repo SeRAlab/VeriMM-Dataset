@@ -1,0 +1,6 @@
+Develop a branch decision generator for a processor that determines whether a branch should be taken based on a given opcode and condition flags. The module evaluates a 6-bit opcode against predefined branch instructions (such as BEQ, BGT, and BNE) and utilizes status flags (flag_z for zero, flag_n for negative, and flag_v for overflow) to set the output `isBranch`. The output will be high (`isBranch = 1`) if the specified branching condition is met, allowing for successful control flow within the execution logic of a CPU.
+module top_module(
+    output reg isBranch,
+    input [5:0] opcode,
+    input flag_z, flag_n, flag_v
+);

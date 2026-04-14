@@ -1,0 +1,9 @@
+Design a pipelined module that performs several operations on two 3-bit input vectors, `a` and `b`. It computes the bitwise OR of corresponding bits from the inputs, produces a logical OR output indicating if either input is non-zero, and provides the bitwise NOT of both inputs. The results of these operations are registered in a pipeline to facilitate synchronous processing, ensuring proper timing management. The module outputs the bitwise OR result, the logical OR output, and a combined 6-bit output showcasing the inverted values of both inputs. This design effectively enables parallel computation of multiple operations while leveraging pipeline registers to enhance throughput.
+module top_module( 
+    input [2:0] a,
+    input [2:0] b,
+    input clk,                       // Added the clock input
+    output [2:0] out_or_bitwise,
+    output out_or_logical,
+    output [5:0] out_not
+);

@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+
+Implement an 8-bit shift register that shifts left on every clock edge. The module should also have a serial input for shifting data into the register.
+
+Module name:
+    shift_register
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    serial_in: Serial input for shifting data into the register.
+
+Output ports:
+    parallel_out: 8-bit output representing the current state of the shift register.
+
+Implementation:
+The module includes an 8-bit register, parallel_out, which is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the register is cleared to 0.
+On every rising edge of the clock, the bits are shifted left, and the serial input is shifted into the least significant bit.
+
+Give me the complete code.

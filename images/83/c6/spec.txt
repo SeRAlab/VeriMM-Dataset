@@ -1,0 +1,9 @@
+Design a synchronous load counter capable of counting in a 4-bit range. The counter can be asynchronously reset to zero when the reset signal is asserted, or it can load a specified value from the input L when the load signal is active. It utilizes two additional registers to handle the counting process, ensuring updated counts are available on each clock cycle. When neither the reset nor load conditions are met, the counter increments by one on each clock pulse. The areset signal provides an asynchronous reset functionality to reset the internal registers.
+module top_module(
+    input clk,
+    input reset,
+    input load,
+    input [3:0] L,
+    input areset,
+    output reg [3:0] count
+);

@@ -1,0 +1,10 @@
+Design a timer module with state control for counting up to a specified maximum value. The module transitions through three states: IDLE, COUNTING, and OVERFLOW. It initiates counting when the 'start' input is activated and increments a count from zero until it reaches a predetermined maximum (COUNT_MAX). If the counting reaches the maximum, it transitions to the OVERFLOW state. The timer can be stopped and cleared using the 'stopnclear' input, returning it to the IDLE state. Additionally, the module checks for errors, specifically if a new count is attempted while already in the OVERFLOW state, which sets an error flag. The 'busy' output indicates when the timer is actively counting. The timer operates synchronously with a clock signal and can be reset asynchronously.
+module top_module(
+  input start,
+  input stopnclear,
+  input tick,
+  input clk,
+  input rst_l,
+  output reg busy,
+  output reg error
+);

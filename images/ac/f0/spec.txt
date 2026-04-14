@@ -1,0 +1,18 @@
+Implement the Verilog module based on the following description.
+Module C implements the boolean function r = (a ^ b).
+
+// Module D can be described by the following simulation waveform: 
+
+If a = 1, b = 1, then r = 0.
+If a = 0, b = 1, then r = 1.
+If a = 0, b = 0, then r = 0.
+If a = 1, b = 0, then r = 1.
+
+// Now consider a top-level that uses one C submodule and two D submodules. The first input of all three submodules is connected to input 'x', and the second input of all three submodules is connected to 'y'. The output of the first D submodule is connected to a two-input NOR gate, along with the output of the C submodule. The second D submodule's output is connected to an AND gate with the NOR gate's output. The final output 'r' is the result of this AND gate.
+
+// Implement this circuit in Verilog.
+
+module top_module(
+    input x,
+    input y,
+    output r);

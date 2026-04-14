@@ -1,0 +1,8 @@
+Design a sequential multiplier circuit that computes the product of two 4-bit unsigned integers, A and B, and outputs the result as an 8-bit value, Y. The multiplication process is synchronized to a clock signal and includes an asynchronous reset feature to clear the registers. When reset is asserted, all internal registers are set to zero. On each clock cycle, the module takes the inputs A and B, performs a bit-by-bit multiplication using a shifting technique, and accumulates the result in a temporary product register, which is then assigned to the output Y.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] A,
+    input [3:0] B,
+    output reg [7:0] Y
+);

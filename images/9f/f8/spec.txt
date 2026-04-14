@@ -1,0 +1,11 @@
+Design a circuit that performs various bitwise operations (AND, OR, XOR, and left shift) on two 32-bit inputs, a and b, based on a 2-bit operation selector. Additionally, the module incorporates a 32-bit adder that adds a 16-bit input to the result of selected bitwise operation. The output `bitwise_result` reflects the selected operation while the `adder_result` provides the sum of the functional result and the adder input. The design allows for control over the output through a select signal that influences whether to use the functional result directly.
+module top_module(
+  input [31:0] a,
+  input [31:0] b,
+  input [1:0] operation_select,
+  input [4:0] shift_amount,
+  input [15:0] adder_input,
+  input select, 
+  output reg [31:0] bitwise_result, // Changed to reg type
+  output [31:0] adder_result
+);

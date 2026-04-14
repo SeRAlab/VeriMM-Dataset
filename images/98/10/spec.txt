@@ -1,0 +1,13 @@
+Design a module that performs a variety of binary logic operations on two 3-bit inputs, `a` and `b`. The module computes the bitwise AND and XOR results for each corresponding bit of the inputs and indicates whether logical AND is true based on the non-zero status of both inputs. It also generates the bitwise NOT results for both inputs and provides a 4-to-1 multiplexer output that selects between input `a`, input `b`, or the XOR result based on the `select` signal. This design serves as a combinational logic unit capable of performing essential logical operations and signal selections.
+module top_module( 
+    input [2:0] a,
+    input [2:0] b,
+    input c,
+    input control,
+    input select,
+    output [2:0] out_and_bitwise,
+    output out_and_logical,
+    output [2:0] out_xor,
+    output [5:0] out_not,
+    output [3:0] out_mux
+);

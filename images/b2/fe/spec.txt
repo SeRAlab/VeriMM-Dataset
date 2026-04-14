@@ -1,0 +1,10 @@
+Design a 4-bit shift register with parallel load capability. The module allows for synchronous loading of parallel data when the parallel_load signal is active. On each clock cycle, if reset is asserted, the output is cleared to zero. If shift_right is enabled, the bits are shifted one position to the right, with the least significant bit fed from the most significant bit, and vice versa for shift_left. This design enables flexible data manipulation, including shifting and loading operations.
+module top_module(
+    input clk,
+    input reset,
+    input parallel_load,
+    input shift_right,
+    input shift_left,
+    input [3:0] parallel_data,
+    output reg [3:0] serial_data
+);

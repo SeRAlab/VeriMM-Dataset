@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Design a simple 8-bit shift register with parallel load capability. The module should be able to shift data either left or right based on a control signal and also load parallel data on a load signal.
+
+Module name:  
+    shift_register  
+
+Input ports:
+    clk: Clock signal.
+    rst_n: Active-low reset signal.
+    load: Parallel load signal.
+    shift_right: Shift direction control signal. 1 for right shift, 0 for left shift.
+    parallel_in: 8-bit parallel input data.
+
+Output ports:
+    q: 8-bit shift register output.
+
+Implementation:
+On every positive edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the shift register performs its operations.
+If the reset signal (rst_n) is low, the shift register output (q_r) is reset to 0.
+If the load signal is active, the parallel input data is loaded into the shift register.
+If the shift direction control signal is high, the data is shifted right, otherwise, it is shifted left.
+
+Give me the complete code.

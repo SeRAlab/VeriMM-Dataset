@@ -1,0 +1,25 @@
+Design a memory interface module for a memory controller, allowing read and write operations to an external memory device. The module takes in a clock and reset signal, along with a 13-bit memory address and 8-bit data input. It generates control signals such as memory address, bank address, chip select, row address strobe, column address strobe, and write enable, managing the memory operations based on the input signals. Upon read operations, it tri-states the data output, allowing for data flow from either the internal output register or external memory, and it also handles output data masking. Overall, this module interfaces with dynamic random-access memory (DRAM) components, facilitating communication for data storage and retrieval.
+module top_module(
+    input clk,
+    input rst,
+    input [12:0] mem_addr,
+    input [7:0] mem_din,
+    input mem_we,
+    input mem_re,
+    output reg [7:0] mem_dout,
+    output reg mem_a,
+    output reg [2:0] mem_ba,
+    output reg mem_ck,
+    output reg mem_ck_n,
+    output reg mem_cke,
+    output reg mem_cs_n,
+    output reg mem_ras_n,
+    output reg mem_cas_n,
+    output reg mem_we_n,
+    output reg mem_reset_n,
+    inout [7:0] mem_dq,
+    inout mem_dqs,
+    inout mem_dqs_n,
+    output reg mem_odt,
+    output reg mem_dm
+);

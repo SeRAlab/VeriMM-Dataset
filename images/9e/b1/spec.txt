@@ -1,0 +1,9 @@
+Design a 32-bit comparator circuit that checks the relationship between two input values, D1 and D2. The module employs a selection mechanism based on a 4-bit control signal (BOp) to determine whether to compare D1 directly with D2 or to compare D1 with a zero value. The outputs indicate the result of the comparison: the More output becomes high if D1 is greater than D2, the Less output becomes high if D1 is less than D2, and the Zero output becomes high if both inputs are equal. This functionality is essential for decision-making operations in various digital systems, particularly in arithmetic and logic units.
+module top_module(
+    input [31:0] D1,
+    input [31:0] D2,
+	 input [3:0] BOp,
+    output reg More,
+    output reg Zero,
+    output reg Less
+    );

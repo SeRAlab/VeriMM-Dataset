@@ -1,0 +1,6 @@
+Design a reset signal generation circuit utilizing a shift register approach for managing a reset sequence. The circuit takes a clock and a pre-clear input; when pre-clear is asserted low, it initializes the pipeline register to zero. On each rising edge of the clock, it shifts the active reset signal (initially set to high) through a series of pipeline stages defined by the parameter PIPE_DEPTH. The final output, reset_out, reflects the state of the last stage of the pipeline, effectively providing a delayed reset signal that can be used to synchronize system components during initialization.
+module top_module(
+                                input  wire clock,
+                                input  wire pre_clear,
+                                output wire reset_out
+                              );

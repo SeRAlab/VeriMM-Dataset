@@ -1,0 +1,9 @@
+Develop a 5-output phase-locked loop (PLL) circuit that generates five clock signals (c0 to c4) based on an input clock signal (inclk0) and a reset signal (areset). This module counts clock cycles and uses a feedback mechanism to toggle each output signal in a predefined sequence determined by the `compare_value`, which changes from one binary value to the next in an incremental manner. When the count reaches the `compare_value`, the current output signal is toggled, and this process continues in a cascading manner across the outputs, resulting in clock signals that shift phase in synchronization with the input clock. The functionality allows for various clock phases that can be utilized in digital synchronous circuits.
+module top_module(
+	areset,
+	inclk0,
+	c0,
+	c1,
+	c2,
+	c3,
+	c4);

@@ -1,0 +1,6 @@
+Design a module that converts a 45-bit input representing a number into a 16-bit decimal representation of that number, formatted to display a four-digit decimal ID. The conversion occurs on the rising edge of an enable signal. The module extracts the integer part of the input and breaks it down into thousands, hundreds, tens, and units to assign the appropriate values to respective bits in the output. The design effectively acts as a decimal encoder, translating binary input into a structured decimal output suitable for display or further processing.
+module top_module(
+    input enable,
+    input [44:0] digits45,
+    output reg [15:0] iddecimal4
+    );

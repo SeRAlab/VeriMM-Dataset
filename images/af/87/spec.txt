@@ -1,0 +1,10 @@
+Design a 32-bit wide D flip-flop (DFF) with preset, clear, and enable functionality. On the rising edge of the clock, the DFF sets its output to a predefined value of 1 if the preset signal is active (low), clears its output to 0 if the clear signal is active (low), and updates its output with the provided data input when the write enable signal is high. Additionally, the module outputs the inverted value of the stored data.
+module top_module(
+    input wire clock,
+    input wire PREbar,
+    input wire CLRbar,
+    input wire Wen,
+    input wire [31:0] data,
+    output reg [31:0] q,
+    output reg [31:0] qbar
+);

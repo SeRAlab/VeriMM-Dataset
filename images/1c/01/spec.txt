@@ -1,0 +1,6 @@
+Design a SPI (Serial Peripheral Interface) controller that operates in Master mode. The SPI controller should have the following specifications:
+- It should have an input clock signal (`clk`), a reset signal (`rst`), a start signal (`start`), and an 8-bit data input (`data_in`).
+- The controller should generate SPI clock (`SCK`), chip select (`CS`), and the data output (`MOSI`) signals.
+- The controller should operate in 8-bit mode, transferring one byte at a time on the rising edge of the SPI clock. The transfer should occur when the `start` signal is asserted.
+- The `CS` signal should be low during data transmission (active low).
+- After transmission, `CS` should go high and the controller should be ready for the next operation when `start` is asserted again.

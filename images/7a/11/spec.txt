@@ -1,0 +1,7 @@
+Design a shift register module with an 8-element depth that can either load new data or perform a right shift operation. When the load signal is asserted, the module inputs a 32-bit data value into all registers. Otherwise, it shifts the contents of the registers right by one position, where the most significant register receives the value from the output. The output is always the value from the most significant position of the shift register array, effectively enabling data storage and sequential data shifting.
+module top_module(
+    input clk,
+    input load,
+    input [31:0] data_in,
+    output reg [31:0] data_out
+);

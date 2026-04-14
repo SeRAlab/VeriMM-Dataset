@@ -1,0 +1,6 @@
+Design a circuit that concatenates two 8-bit input signals, `in_hi` and `in_lo`, into a single 16-bit output. The first stage of the process combines the inputs into a half-word, while the second stage captures this result on the rising edge of a clock signal, ensuring proper synchronization. The final 16-bit output, `out`, reflects the concatenated value of `in_hi` and `in_lo`, effectively creating a double-width pipeline register.
+module top_module( 
+    input wire clk,          // Add clk as an input
+    input wire [7:0] in_hi,
+    input wire [7:0] in_lo,
+    output wire [15:0] out );

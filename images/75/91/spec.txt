@@ -1,0 +1,6 @@
+Design a serial communication module that handles both transmission and reception of data. It operates with a specified baud rate, defined by the parameter, and supports an n-bit data width for input and output. The module uses state machines to manage the transmission of data bits out based on a clock signal while generating a carrier signal for signaling purposes. It also implies a receive mode, where it captures incoming bits and stores them in a register. Control signals ensure that transmission and reception do not occur simultaneously, enabling smooth data communication. The module includes logic for bit timing, enabling the tracking of busy states during both transmitting and receiving operations.
+module top_module(
+  input [n-1:0] data_in,
+  input clk,
+  output [n-1:0] data_out
+);

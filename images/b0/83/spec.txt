@@ -1,0 +1,10 @@
+Design a circuit that performs a 32-bit multiplication of two input values, a and b, and outputs the 64-bit product, p. The multiplication operation is initiated by a start signal and is synchronized to the rising edge of a clock. On receiving a reset signal, the circuit clears the output and sets the done flag to indicate completion. Once the multiplication is processed, the done flag is set to signal the availability of the result.
+module top_module(
+    input clk,
+    input rst,
+    input start,
+    input [31:0] a,
+    input [31:0] b,
+    output [63:0] p,
+    output reg done
+);

@@ -1,0 +1,10 @@
+Develop a versatile circuit that combines an up/down counter, a barrel shifter, and an overflow detection mechanism. The counter increments or decrements based on the 'up_down' signal and can be initialized with 'load_data' when a load condition is met. The shifted result of the counter, manipulated by the 'SHIFT' input, can generate outcomes through left or right shifts. The final output combines the counter value and the shifted value using a bitwise AND operation. Additionally, the overflow output indicates when the counter reaches its maximum or minimum limits during counting, depending on the counting direction.
+module top_module(
+    input clk,
+    input rst_n,
+    input up_down,
+    input [3:0] load_data,
+    input [1:0] SHIFT,
+    output reg [3:0] data_out,
+    output reg overflow
+);

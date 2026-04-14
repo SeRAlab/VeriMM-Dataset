@@ -1,0 +1,21 @@
+Design a memory interface module for a Novena computer architecture that facilitates communication between a processor and a non-volatile RAM (NRAM). The module accepts a 16-bit data input and outputs a 16-bit data output. It operates on a primary clock (bclk) and supports various control signals for read/write operations, address selection, and chip selection. The module includes address control logic to handle high address bits, manages data transfers with the NRAM, and features outputs for read data based on control signals. Additionally, it includes an active wait signal (rb_wait) indicating readiness for communication. This design effectively acts as a bridge between the processor and external memory, ensuring data access and manipulation controlled by addressing and operational modes.
+module top_module(
+  input wire [15:0] din,
+  output reg [15:0] dout, // Change output to reg type
+  input wire clk,
+  input wire reset,
+
+  input wire bclk,
+  input wire [1:0] cs,
+  input wire [2:0] hi_addr,
+  input wire lba,
+  input wire oe,
+  input wire rw,
+  output wire rb_wait,
+
+  input nram_clk,
+  input [15:0] nram_a,
+  input [7:0] nram_din,
+  output reg [7:0] nram_dout, // Change output to reg type
+  input nram_we
+);

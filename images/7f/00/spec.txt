@@ -1,0 +1,11 @@
+Develop an 8-bit Serial Peripheral Interface (SPI) controller that facilitates read and write operations. The module generates a clock signal (sck), manages a chip select signal (cs), and transmits data via the Master Out Slave In (MOSI) line. When the write signal is asserted, it loads the 8-bit data input (din) into an internal register (dout) while retaining a chip select value. During read operations, it shifts in incoming data from the Master In Slave Out (MISO) line, completing a full transfer cycle after 15 clock cycles. The state management ensures that data transmission and reception are synchronized with the clock signal, with the chip select signal activated only when no operations are in progress.
+module top_module(
+   input 	    clock,
+   input 	    write,
+   input [8:0] 	    din,
+   output reg [7:0] dout = 16'h0,
+   output reg 	    cs = 1'b1,
+   output reg 	    sck = 1'b0,
+   output reg 	    mosi,
+   input 	    miso
+   );

@@ -1,0 +1,13 @@
+Design a data interface module that synchronizes data transfer between two components using a clock signal. The module accepts a 15-bit data input (`ast_sink_data`) and a 2-bit error indicator during valid data conditions (`ast_sink_valid`), while producing a 31-bit data output (`ast_source_data`) and a corresponding error signal (`ast_source_error`). It manages readiness signals for both input and output to control the flow of data. The `reset_n` signal initializes internal registers, while the clock signal triggers data capture and output generation, effectively functioning as a data buffer and error handler in a synchronous environment.
+module top_module(
+    clk,
+    reset_n,
+    ast_sink_data,
+    ast_sink_valid,
+    ast_source_ready,
+    ast_sink_error,
+    ast_source_data,
+    ast_sink_ready,
+    ast_source_valid,
+    ast_source_error
+);

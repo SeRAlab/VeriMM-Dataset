@@ -1,0 +1,8 @@
+Design a 3-bit Reed-Solomon encoder module that processes incoming data for error correction. The module takes a valid input signal, a clock signal, and a polynomial selection input, and generates a 3-bit encoded output based on the input data and chosen polynomial. The encoding employs a shift register to store input bits and utilizes a set of polynomial transformations based on predefined polynomial coefficients. The encoded output is derived through a series of XOR operations with a shifted polynomial, enabling reliable data transmission with error detection capabilities.
+module top_module(
+    input  clk,
+    input  io_valid_0,
+    input  io_ready,
+    input  [2:0] io_poly,
+    output reg [2:0] io_encoded   // Changed output to reg type
+);

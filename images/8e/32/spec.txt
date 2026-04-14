@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+
+Implement a 2-bit up/down counter module with an enable and reset signal. The counter should increment or decrement based on an additional control signal.
+
+Module name:
+    up_down_counter 
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rstn: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    en: 1-bit enable signal to allow counting.
+    up_down: 1-bit control signal. If 1, the counter increments; if 0, it decrements.
+
+Output ports:
+    count: 2-bit output signal representing the current count value.
+
+Implementation:
+- On the rising edge of the clock signal, if the reset signal is active (0), reset the count to 0.
+- If the enable signal is active (1), increment or decrement the count based on the up_down signal.
+- Otherwise, retain the current count value.
+
+Give me the complete code.

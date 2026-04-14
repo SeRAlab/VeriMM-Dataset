@@ -1,0 +1,26 @@
+Please act as a professional Verilog designer.
+
+Design a 16-bit shift register with parallel load and serial output. The shift register should load a 16-bit input value in parallel when the load signal is high. Otherwise, it should shift its contents to the right on every positive edge of the clock, with the new bit entering from the serial input.
+
+Module name:
+    shift_register
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    load: Load enable signal to load the parallel input.
+    parallel_in: 16-bit input to be loaded into the shift register.
+    serial_in: Serial input bit to be shifted into the register.
+
+Output ports:
+    serial_out: Serial output bit, the least significant bit of the shift register.
+
+Implementation:
+Shift Register Logic:
+The module includes a 16-bit register, shift_reg, which holds the current value of the shift register.
+The always block triggers on the positive edge of the clock signal (posedge clk).
+On reset, indicated by !rst_n, the shift_reg is cleared to 0.
+If the load signal is active, the parallel_in value is loaded into the shift_reg.
+Otherwise, the shift_reg shifts its contents to the right, with the new bit entering from the serial_in.
+
+Give me the complete code.

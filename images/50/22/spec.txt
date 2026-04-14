@@ -1,0 +1,12 @@
+Design a digital circuit that functions as a shift register and a counter. The module includes a 4-bit shift register which can load an external 4-bit input and cyclically shift its bits. It also features a 4-bit up/down counter that increments or decrements based on the count_enable and up_down signals, respectively, resetting to zero or rolling over at its extremes. Additionally, the output includes a result that is the sum of the current values of the shift register and the counter. The module provides output signaling for when the maximum or minimum count is reached, enhancing functionality for various applications requiring synchronized counting and data shifting.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] shift_in,
+    input shift_load,
+    input up_down,
+    input count_enable,
+    output reg [3:0] count,
+    output reg max_reached,  // Changed to reg to allow assignment in always block
+    output [7:0] result
+);

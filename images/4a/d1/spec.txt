@@ -1,0 +1,6 @@
+Design a Cascaded Integrator-Comb (CIC) filter capable of reducing the sampling rate of input signals by a specified decimation rate while integrating the input data across multiple cycles. The module has parameters defining the number of input and output signals, the decimation rate, and the filter order. It consists of a decimation stage that samples the input at specified intervals, an integrator stage that sums the incoming sampled values, and a comb stage that produces the final output by subtracting the previous output from the current integrated value. The overall functionality is aimed at efficiently processing digital signals for applications such as digital communication and audio processing.
+module top_module(
+  input clk,                     // Added clock input
+  input [n-1:0] in,
+  output [m-1:0] out
+);

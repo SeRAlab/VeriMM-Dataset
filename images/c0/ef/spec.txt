@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a basic flip-flop with scan capabilities, primarily used in digital integrated circuits for storing state information. Its primary role to latch data on the rising edge of a clock signal (`ck`) and provide both normal and inverted outputs (`so` and `q_l`, respectively). The inclusion of scan enable (`se`) and scan data (`sd`) inputs allows this module to be integrated into a scan chain for testability purposes, facilitating easier debugging and testing of the digital system by allowing the insertion of test data directly into the flip-flop.
+
+Module name:  
+	zsoffi_prim
+
+Input ports:
+	ck (input): The clock input. It is a singlebit signal that triggers the latching mechanism of the flipflop on its rising edge.
+	d (input): Data input. This is the primary singlebit data input to the flipflop, which is latched to the output on the rising edge of the clock signal when scan enable (se) is low.
+	se (input): Scan enable. A singlebit input that, when high, enables the scan operation mode, allowing sd to be latched instead of d.
+	sd (input): Scan data input. This singlebit input is latched to the output when the scan enable (se) is high, facilitating the insertion of test data into the flipflop.
+Output ports:
+	q_l (output): The inverted output of the flipflop. It provides the logical NOT of the latched data.
+	so (output): The normal output of the flipflop. It directly reflects the state of the latched data.
+
+
+Implementation:
+The zsoffi_prim module is a digital logic component designed to perform specific sequential and combinational operations based on its inputs. The core functionality of this module revolves around capturing and manipulating a data bit (d) based on a clock signal (ck) and other control signals (se, sd). This module also provides an inverted output (q_l) and a scan output (so) which is the non-inverted state of the internal register. The design incorporates both sequential and combinational logic elements to achieve its intended functionality.
+
+Give me the complete code.
+

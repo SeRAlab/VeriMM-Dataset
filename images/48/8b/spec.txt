@@ -1,0 +1,9 @@
+Design a 32-bit barrel shifter that can perform shift operations and parallel loading of data. The circuit is controlled by a clock and reset signal: upon reset, the output is cleared to zero. When the load signal is active, 32 bits of data are loaded into the output register. The shifting operation is determined by a 2-bit input 'amount', allowing for left shifts of 4 or 2 bits and right shifts of 2 or 4 bits on subsequent clock cycles, enabling flexible data manipulation for applications such as digital signal processing or arithmetic operations.
+module top_module(
+  input clk,
+  input reset,
+  input data,
+  input load,
+  input [1:0] amount,
+  output reg [31:0] q
+);

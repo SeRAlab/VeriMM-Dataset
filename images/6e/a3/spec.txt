@@ -1,0 +1,11 @@
+Design a simple arithmetic module that performs the operation \(X = A + B - C\) using three 4-bit inputs (A, B, and C). The module continuously calculates the result of the addition and subtraction. If the resulting value is negative, it outputs a fixed value of 0000; otherwise, it outputs the computed result. Additionally, the module includes power and ground management signals for proper operation within a digital circuit environment, ensuring consistent power supply to the module.
+module top_module(
+  input [3:0] A,
+  input [3:0] B,
+  input [3:0] C,
+  input VPWR,
+  input VGND,
+  input VPB,
+  input VNB,
+  output reg [3:0] X
+);

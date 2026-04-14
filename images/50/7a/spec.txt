@@ -1,0 +1,10 @@
+Design a data buffer that extends an 8-bit input signal A into a 16-bit output Z. When the enable signal TE_B is active (low), the module appends eight zeros to the input A, resulting in Z containing the 8-bit value followed by zeros. If TE_B is not active, the output Z is driven to zero. This functionality is commonly used in digital circuits to enable or disable data flow based on control signals.
+module top_module(
+    input [7:0] A,
+    output reg [15:0] Z,
+    input TE_B,
+    input VPB,
+    input VPWR,
+    input VGND,
+    input VNB
+);

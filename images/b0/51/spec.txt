@@ -1,0 +1,9 @@
+Design a gated D flip-flop with transparent latch functionality suited for 32-bit data storage. The circuit captures the input data when the enable signal is high and the transparent enable signal is low; otherwise, it retains its previously stored value. Additionally, when the transparent enable signal is high, the stored data is continuously outputted, effectively allowing the D flip-flop to function as a transparent latch. The inclusion of clock gating helps to minimize power consumption by controlling the clock signal with the enable signal, ensuring active clocking only when necessary.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] data_in,
+    output reg [31:0] data_out, // Changed to 'reg' since it is driven in always block
+    input enable,
+    input transparent_enable
+);

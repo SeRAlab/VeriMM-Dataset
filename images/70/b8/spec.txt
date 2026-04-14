@@ -1,0 +1,7 @@
+Design a one-shot pulse generator that outputs a single pulse when triggered. The pulse's duration is determined by an 8-bit input width value. Upon receiving a trigger signal, the module activates the output pulse and begins counting down from the specified width. The output remains high as long as the countdown is greater than zero, and it goes low once the countdown reaches zero. The module utilizes a clock signal to synchronize its operation.
+module top_module(
+  input clk, // clock signal
+  input trigger, // trigger signal
+  input [7:0] width, // width of the output pulse
+  output reg pulse_out // output pulse
+);

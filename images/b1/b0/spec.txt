@@ -1,0 +1,7 @@
+Design a pipelined multiplier that performs the multiplication of two n-bit wide inputs, a and b, producing an n-bit wide output, c. The module utilizes three stages: first, it computes the partial products from the bitwise AND of the input signals; second, it calculates the partial sums of these products; and third, it registers the final result on the rising edge of a clock, ensuring that the output is valid and synchronized. This design optimizes the multiplication process by breaking it down into stages, allowing for improved performance through pipelining.
+module top_module(
+  input [n-1:0] a,
+  input [n-1:0] b,
+  input clk, // Added clk input
+  output [2*n-1:0] c // Changed size of output to accommodate the product
+);

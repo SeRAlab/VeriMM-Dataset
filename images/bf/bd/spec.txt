@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to compute the 5-bit Cyclic Redundancy Check (CRC) for USB (Universal Serial Bus) packet headers. CRC is a popular error-detecting code used to detect accidental changes to raw data. In the context of USB communications, the CRC5 checksum is specifically used for ensuring the integrity of packet headers during transmission. This module takes a 5-bit initial CRC value and an 11-bit data input, representing part of a USB packet header, and outputs a 5-bit CRC value. The primary function of this module to facilitate error checking in USB communication protocols, enhancing data reliability and integrity.
+
+Module name:  
+	usbh_crc5
+
+Input ports:
+	crc_i [4:0]: A 5bit input representing the initial CRC value. This value is used as the starting point for the CRC calculation.
+	data_i [10:0]: An 11bit input representing the data (part of the USB packet header) for which the CRC is to be calculated. This data is used in conjunction with the initial CRC value to compute the final CRC output.
+Output ports:
+	crc_o [4:0]: A 5bit output representing the computed CRC value. This value is the result of the CRC calculation performed on the input data and the initial CRC value. It is used for error checking in the USB packet header.
+
+
+Implementation:
+The usbh_crc5 module is designed to calculate a 5-bit cyclic redundancy check (CRC) value based on an 11-bit input data (data_i) and a 5-bit initial CRC value (crc_i). This module is specifically tailored for USB (Universal Serial Bus) host applications, where CRC5 is used for error checking in packet headers. The calculation is purely combinational, meaning it does not involve any clocked sequential logic and computes the output (crc_o) directly from the current inputs.
+The CRC calculation implemented in this module follows a specific polynomial defined for USB CRC5 calculations. The logic equations for each bit of the output CRC (crc_o[0] to crc_o[4]) are derived from this polynomial. Each output bit is a function of certain bits of the input data and the initial CRC value, combined using XOR operations. The choice of bits and the structure of these equations are determined by the CRC polynomial and the algorithm used for its computation.
+The XOR operations effectively implement a division by the CRC polynomial in GF(2) (Galois Field of two elements, representing binary arithmetic), where addition and subtraction are equivalent to the XOR operation. The remainder of this division is the CRC value, which can be used for error detection.
+
+Give me the complete code.
+

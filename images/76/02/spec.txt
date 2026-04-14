@@ -1,0 +1,11 @@
+Design a programmable 8-bit shift register with load and shift capabilities. On a rising clock edge, if the reset (RST) signal is active, the register resets to zero, and the data output valid (DATA_OUT_VALID) signal is deactivated. If the load (LOAD) signal is asserted, the register loads the 8-bit input data (DATA_IN) while also indicating validity through DATA_IN_VALID. If the shift (SHIFT) signal is asserted, the contents of the register are rotated right by one bit, and the output valid signal (DATA_OUT_VALID) is activated. The current value of the shift register is always driven to the DATA_OUT output.
+module top_module(
+  input CLK,
+  input RST,
+  input SHIFT,
+  input LOAD,
+  input [7:0] DATA_IN,
+  input DATA_IN_VALID,
+  output reg [7:0] DATA_OUT,
+  output reg DATA_OUT_VALID
+);

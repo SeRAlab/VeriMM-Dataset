@@ -1,0 +1,7 @@
+Design a 64-to-1 multiplexer that selects data from two 64-bit input sources based on a 2-bit selection signal. When sel is 00, the output will be the lower 32 bits of in0; when sel is 01, the output will be the upper 32 bits of in0; when sel is 10, the output will be the lower 32 bits of in1; and when sel is 11, the output will be the upper 32 bits of in1. This module effectively allows you to route data from two 64-bit inputs to a single 64-bit output based on the specified selection criteria.
+module top_module(
+  input [63:0] in0,
+  input [63:0] in1,
+  input [1:0] sel,
+  output reg [63:0] out
+);

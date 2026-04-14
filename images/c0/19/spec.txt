@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module to interpret directional inputs (east, west, north, south) and a selection input (knob) to calculate and update X and Y coordinates accordingly. Additionally, it generates an `enter` signal upon a specific condition being met. This module could be part of a larger system where navigation or selection within a two-dimensional space or menu is required, such as in user interface navigation, cursor movement, or in gaming controls where directional inputs and selection are fundamental actions.
+
+Module name:  
+	xy_calculate
+
+Input ports:
+	clk (input): The clock signal driving the module's operation. It is essential for the sequential logic within the module, ensuring that updates to outputs occur synchronously with the system clock.
+	RST (input): A synchronous reset signal. When asserted (1), it initializes the module's internal state, setting X, Y coordinates to 0, and the enter signal to 0.
+	east, west, north, south (input): Directional inputs indicating the desired direction of movement. These signals are used to increment or decrement the X and Y coordinates.
+	knob (input): A selection input. When activated, it triggers the enter signal, indicating a selection action in the context of the module's application.
+Output ports:
+	X (output [2:0]): A 3bit output representing the X coordinate. It can be incremented or decremented based on the east or west inputs.
+	Y (output [2:0]): A 3bit output representing the Y coordinate. It can be incremented or decremented based on the north or south inputs.
+	enter (output [0:0]): A signal that is asserted (1) when the knob input is activated at a specific condition, indicating a selection or confirmation action.
+
+
+Implementation:
+The RTL module xy_calculate is designed to interpret directional inputs (east, west, north, south) and a selection input (knob) to manipulate coordinates (X, Y) and generate an enter signal. The module operates synchronously with a clock signal (clk) and can be reset (RST). The core functionality is encapsulated within a clocked process, ensuring that the module's behavior is synchronized with the system clock, making it suitable for digital systems where timing and synchronization are critical.
+
+Give me the complete code.
+

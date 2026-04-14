@@ -1,0 +1,6 @@
+Design a digital adaptive noise cancellation circuit that processes audio signals to remove echoes. It takes two signed 16-bit inputs: the original audio signal and the echoed audio signal. Using an adaptive filtering algorithm, it employs multiple filter taps, implemented with a delay line, to estimate the echo and subtract it from the echoed input, producing a filtered audio output. The filter coefficients are continuously updated using the Least Mean Squares (LMS) algorithm based on the difference between the output and the original input, allowing the system to adapt to changing auditory conditions in real-time.
+module top_module(
+  input signed [15:0] in1, // original audio signal
+  input signed [15:0] in2, // echoed audio signal
+  output reg signed [15:0] out // filtered audio signal
+);

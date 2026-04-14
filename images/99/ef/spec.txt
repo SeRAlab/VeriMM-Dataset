@@ -1,0 +1,11 @@
+Design a synchronous digital multiplier module that computes the product of a 32-bit input A and a 14-bit input B. The module features a clock input (CLK) for synchronized operation and a clear signal (SCLR) to reset the outputs. Upon receiving a clock edge, if the clear signal is active, it resets the product output (P) to zero, clears the pipeline output (PCASC), and indicates a zero detection status (ZERO_DETECT). If enabled (CE), the module updates its product output and status signals with results from the instantiated multiplier component. The design is intended for high-performance multiplication tasks in digital circuits.
+module top_module(
+  input CLK,
+  input [31:0] A,
+  input [13:0] B,
+  input CE,
+  input SCLR,
+  output reg [1:0] ZERO_DETECT,
+  output reg [53:0] P,
+  output reg [47:0] PCASC
+);

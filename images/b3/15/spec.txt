@@ -1,0 +1,15 @@
+Design a Verilog module to implement a Moore state machine with two states (S1, S2) and one input signal (A). The states are encoded as one-hot: S1=2'b01, S2=2'b10. The state machine has an output (out) that is dependent only on the state.
+
+The state machine has the following states and their corresponding outputs:
+1. state S1 (out = 0).
+2. state S2 (out = 1).
+
+State transitions:
+1. From state S1: If A = 1, then transition to state S2. If A = 0, stay in state S1.
+2. From state S2: If A = 0, then transition to state S1. If A = 1, stay in state S2.
+
+module moore_fsm (
+  input A,
+  input [1:0] state,
+  output reg [1:0] next_state,
+  output reg out);

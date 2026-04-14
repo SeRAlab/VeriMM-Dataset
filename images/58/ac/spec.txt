@@ -1,0 +1,8 @@
+Design a circuit that incorporates a shift register and a barrel shifter. The shift register, controlled by the enable signal, captures the least significant bit of a 16-bit input and shifts it in, while the barrel shifter separates the input into two 8-bit outputs: out_hi for the upper byte and out_lo for the lower byte. Additionally, the module outputs a 3-bit signal, shift_out, which combines the current state of the shift register with the lower byte of the input, effectively providing a selective output based on the current shift register value and the lower byte.
+module top_module( 
+    input wire [15:0] in,
+    input wire enable,
+    output wire [7:0] out_hi,
+    output wire [7:0] out_lo,
+    output reg [2:0] shift_out // Changed wire to reg
+);

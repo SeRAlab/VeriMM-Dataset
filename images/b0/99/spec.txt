@@ -1,0 +1,9 @@
+Create a Verilog module following the given description. Assume all signals are positive clock/clk edge triggered unless otherwise mentioned.
+You have a 12-bit input vector k[11:0]. Perform the following operations:
+// (1) out_sum: Each bit of this output vector should indicate the sum of the corresponding input bit and its neighbor to the right. For example, out_sum[10] should be the sum of k[10] and k[11]. Since k[11] has no neighbor to the right, we don't need to know out_sum[11].
+// (2) out_diff: Each bit of this output vector should indicate the difference between the corresponding input bit and its neighbor to the right. For example, out_diff[10] should be the difference between k[10] and k[11]. Since k[11] has no neighbor to the right, we don't need to know out_diff[11].
+
+module top_module (
+	input [11:0] k,
+	output [10:0] out_sum,
+	output [10:0] out_diff);

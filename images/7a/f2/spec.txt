@@ -1,0 +1,8 @@
+Design a circuit to control a audio output buzzer with a variable frequency based on a specified division factor. The module takes an input clock and a reset signal, along with a 20-bit division value. It generates a square wave signal (`b_clk`) that toggles based on the count of clock cycles, effectively producing audio signals for left and right channels. When the counter reaches the specified `note_div`, the counter resets and the square wave toggles, creating alternating audio outputs with fixed amplitude values, generating a sound that can vary in frequency based on the input division value.
+module top_module(
+	clk, 
+	rst_n, 
+	note_div, 
+	audio_left, 
+	audio_right 
+);

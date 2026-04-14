@@ -1,0 +1,14 @@
+Design a circuit that functions as a combination of a 6-to-1 multiplexer and a T flip-flop. The module selects one of six 4-bit input data streams (data0 to data5) based on a 3-bit selection signal (sel). When the T flip-flop is triggered (t=1) by a clock edge, it toggles its state; if the T flip-flop is set, the selected data from the multiplexer is output. If the flip-flop is not set, the output is forced to zero. The module integrates synchronous and asynchronous elements to control data flow based on the state of the T flip-flop, enabling conditional output based on both the selection and toggle states.
+module top_module(
+    input clk,
+    input reset,
+    input [2:0] sel,
+    input t,
+    input [3:0] data0,
+    input [3:0] data1,
+    input [3:0] data2,
+    input [3:0] data3,
+    input [3:0] data4,
+    input [3:0] data5,
+    output reg [3:0] out
+);

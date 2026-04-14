@@ -1,0 +1,9 @@
+Design a synchronous LIFO (Last-In-First-Out) stack module with a specified data width and depth. This module supports writing and reading operations controlled by the write and read enable signals. Upon a reset, the stack pointer and element count are initialized to zero. When writing, if the stack is not full, the module stores the incoming data at the current "top" index and increments the top pointer. When reading, if the stack is not empty, it retrieves the data from the top index (decremented afterwards) and returns it through the output while also decreasing the count of elements.
+module top_module(
+  input clk,
+  input rst,
+  input write_en,
+  input [width-1:0] write_data,
+  input read_en,
+  output reg [width-1:0] read_data // changed to reg
+);

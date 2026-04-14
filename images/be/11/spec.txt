@@ -1,0 +1,9 @@
+Design a 32x32 bit register file that allows reading and writing of registers. This module features two read address inputs (raddr1, raddr2) to fetch data from the specified registers, and a write address input (waddr) to update the register with the provided data (wdata) when the write enable signal (w_en) is active. It also includes a clock input (clk) to synchronize write operations and a reset input (rst) to clear the registers. The initial state of all registers is set to zero.
+module top_module(
+               input wire         clk,                   // clock to trigger write
+               input wire         rst,                   // reset
+               input wire [4:0]   raddr1, raddr2, waddr, // the registers numbers to read or write
+               input wire [31:0]  wdata,                 // data to write
+               input wire         w_en,                  // write enable
+               output wire [31:0] rdata1, rdata2         // the register values read
+               );

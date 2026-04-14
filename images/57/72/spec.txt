@@ -1,0 +1,11 @@
+Design a synchronous FIFO (First In, First Out) storage module that allows for data to be written to and read from an internal memory array of 8 elements, with an 8-bit width. The module features a clock and reset control, ensuring that data operations are synchronized with the clock signal. It includes write and read enable signals to control the respective operations, alongside status outputs for full and empty conditions, which help manage flow control. The write operation increments a pointer and updates the count of stored elements, while the read operation retrieves data and decrements the count, both while considering the reset condition to clear the pointers and memory.
+module top_module(
+  input clk, // clock signal
+  input rst, // reset signal
+  input [7:0] data_in, // input data
+  input wr_en, // write enable signal
+  output reg [7:0] data_out, // output data
+  input rd_en, // read enable signal
+  output full, // FIFO full signal
+  output empty // FIFO empty signal
+);

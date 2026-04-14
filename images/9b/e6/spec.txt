@@ -1,0 +1,11 @@
+Design a FIFO (First-In-First-Out) queue that operates on a 32-bit data width with a depth of 4 entries. The module accepts clock and reset signals, along with control signals for writing and reading data. When writing, it stores the incoming data on the rising edge of the clock if space is available, and updates pointers and the count of elements in the buffer. Conversely, when reading, it outputs the data from the current read pointer if there are items available. It also provides status outputs indicating whether the queue is empty or full, managing overflow and underflow conditions effectively.
+module top_module(
+  input clk,
+  input reset_n,
+  input wr,
+  input [31:0] wr_data,
+  input rd,
+  output [31:0] rd_data,
+  output empty,
+  output full
+);

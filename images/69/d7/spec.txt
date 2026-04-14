@@ -1,0 +1,8 @@
+Design a circuit implementing an 8-bit arithmetic and logic unit (ALU) with dual functionality. On the rising edge of the clock, the circuit performs two operations: it computes the sum of an 8-bit input `d` and another 8-bit input `b`, and it also shifts the least significant bit of `d` into an 8-bit shift register. The output `q` is determined by a control signal `a`; if `a` is high, `q` outputs the current value of the shift register, and if low, it outputs the computed sum. This design allows for the selection between addition and shifting based on the input control signal, facilitating versatile processing of 8-bit data.
+module top_module(
+    input clk,
+    input [7:0] d,
+    input a,
+    input [7:0] b,
+    output reg [7:0] q
+);

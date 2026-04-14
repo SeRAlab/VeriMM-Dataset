@@ -1,0 +1,9 @@
+Design a 4-bit shift register with asynchronous clear and load functionalities. On the rising edge of the clock, if the clear signal (CLR) is asserted, the output registers are reset to zero. If the load signal (LOAD) is asserted, the input data (D) is loaded into the shift register. In the absence of these controls, the contents of the register are shifted to the right, with the most significant bit (MSB) wrapping around to the least significant bit (LSB). The current state of the register is reflected in the output (Q), while the next state after shifting is available at the output (Q_next).
+module top_module(
+    input CLK,
+    input LOAD,
+    input CLR,
+    input [3:0] D,
+    output reg [3:0] Q,
+    output reg [3:0] Q_next
+);

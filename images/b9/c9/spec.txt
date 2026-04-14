@@ -1,0 +1,14 @@
+Design a circuit that serves as a switchable interface between two sets of SPI communication signals. When the SWITCH input is high, it enables communication using the MK_CLK and MK_MOSI signals, while routing the WIZ_MISO signal to MK_MISO and generating a LOW output for FPGA_MISO. Conversely, when the SWITCH input is low, the circuit utilizes FPGA_CLK and FPGA_MOSI for communication, with the WIZ_MISO signal being routed to FPGA_MISO and a LOW output for MK_MISO. This module effectively allows for dynamic selection between two SPI sources.
+module top_module(
+
+input wire 	FPGA_CLK,
+output 		WIZ_CLK,
+input wire 	FPGA_MOSI,
+output 		WIZ_MOSI,
+output		MK_MISO,
+output 		FPGA_MISO,
+input wire 	WIZ_MISO,
+input wire SWITCH,
+input wire 	MK_CLK,
+input wire 	MK_MOSI
+);

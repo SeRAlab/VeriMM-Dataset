@@ -1,0 +1,10 @@
+Develop a multi-sensor interface module that manages data collection from a configurable array of up to three sensors. The module uses clock and reset signals to synchronize and clear its state. Each sensor communicates its readiness through a data_ready signal, and the module reads digital outputs from the sensors when they are ready. It employs a simple state machine to transition between idle, waiting, and reading states, storing the temperature, pressure, and humidity readings in dedicated registers for each sensor. The final output reflects the converted sensor data, which could involve additional processing like lookup tables for meaningful readings.
+module top_module(
+  input clk, // clock signal
+  input rst, // reset signal
+  input [num_sensors-1:0] data_ready, // data ready signals from each sensor
+  input [num_sensors-1:0] data_out, // digital output values from each sensor
+  output [num_sensors-1:0] temp, // temperature readings from each sensor
+  output [num_sensors-1:0] press, // pressure readings from each sensor
+  output [num_sensors-1:0] humid // humidity readings from each sensor
+);

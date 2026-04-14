@@ -1,0 +1,11 @@
+Design a 3-to-1 multiplexer that combines multiple 4-bit data inputs (from data0 to data5) into a single 4-bit output based on the 3-bit select signal (sel). The module outputs an additional parity bit that indicates the parity of the selected data, resulting in a total 5-bit output. The parity bit is calculated by performing an XOR operation on the bits of the selected data, allowing the user to verify the integrity of the data being transmitted.
+module top_module(
+    input [2:0] sel,
+    input [3:0] data0,
+    input [3:0] data1,
+    input [3:0] data2,
+    input [3:0] data3,
+    input [3:0] data4,
+    input [3:0] data5,
+    output reg [4:0] out
+);

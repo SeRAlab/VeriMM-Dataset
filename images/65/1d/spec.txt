@@ -1,0 +1,6 @@
+Design a clock multiplexer that selects one of 'n' input clock signals based on a control signal. It receives 'n' clock inputs and a control signal that specifies which clock to output. If the control signal is valid (less than 'n'), the corresponding clock signal is output; otherwise, the output is set to LOW. This module facilitates the dynamic selection of clock sources in a circuit.
+module top_module(
+  input [n-1:0] clk,
+  input [clog2(n)-1:0] ctrl,
+  output out_clk
+);

@@ -1,0 +1,7 @@
+Create a result selection circuit that outputs a 32-bit value based on a 6-bit operation code (op). The module retrieves either data memory content or ALU result depending on the operation code value: if op is 16, it outputs the data memory value directly; if op is 18, it sign-extends the lower 16 bits of the data memory; if op is 20, it sign-extends the lowest 8 bits of the data memory; for all other op values, it outputs the ALU result. This serves as a multiplexer for selecting between ALU results and specific data memory values based on the operation code.
+module top_module(
+    input [5:0] op,
+    input [31:0] alu_result,
+    input [31:0] dm_data,
+    output [31:0] result
+    );

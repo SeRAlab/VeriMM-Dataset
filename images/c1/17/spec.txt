@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+    
+Implement a module to implement a basic form of a Direct Digital Synthesizer (DDS). The primary function of this module to generate a waveform with a frequency that is determined by an increment value (`INC_VAL`). This is achieved by continuously adding the increment value to an accumulator on every clock cycle. The module outputs a signal that toggles based on the most significant bit (MSB) of the accumulator. This simplistic DDS can be used in various applications where a stable and adjustable frequency output is required, such as signal generation, modulation, or clock generation within digital systems.
+
+Module name:  
+	dds_static
+
+Input ports:
+	clk_i: This is the input clock signal to the module. It is a singlebit (wire) signal that drives the operation of the DDS by triggering the accumulation process on its rising edge.
+	rst_i: This is the reset input signal. It is a singlebit (wire) signal used to asynchronously reset the accumulator to zero. When this signal is high (1), the accumulator is reset, regardless of the clock signal.
+Output ports:
+	clk_o: This is the output signal of the module. It is a singlebit (wire) signal that represents the most significant bit (MSB) of the accumulator. This signal can be used as a clock or waveform output with a frequency determined by the INC_VAL.
+
+
+Implementation:
+The RTL module presented, named dds_static, is designed to function as a simple Direct Digital Synthesizer (DDS) with a static increment value. The core of its operation lies in the generation of a waveform, which is achieved through the manipulation of a phase accumulator. This module is structured to operate with a clock signal (clk_i) and a reset signal (rst_i), producing an output signal (clk_o) that can be utilized for various applications, including but not limited to waveform generation and clock signal modulation.
+
+Give me the complete code.
+

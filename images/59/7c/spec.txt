@@ -1,0 +1,6 @@
+Design a circuit that acts as a simple address decoder with error indication. It takes a 14-bit input address and produces a primary output (`pre_dec_o`) that is HIGH when the upper bits of the address are in the range of 'h1 to 'h7, indicating a valid pre-decode condition. If the address falls outside the specified range, the output will be LOW and an error output (`pre_dec_err_o`) will be activated, indicating an invalid address. The design utilizes a case statement to map specific address ranges to the respective outputs, effectively serving as a basic pre-decode logic.
+module top_module(
+		input	wire	[13:0]	addr_i,
+		output	wire		pre_dec_o,
+		output	wire		pre_dec_err_o
+	);

@@ -1,0 +1,9 @@
+Design a simple memory system that interfaces with a Block RAM (BRAM). This module allows for read and write operations controlled by input signals: `clk`, `en`, and `we`. When enabled (`en`), the system can write data (`din`) to a specified address (`addr`) if the write enable signal (`we`) is active, or read data from that address into the output (`dout`) if `we` is inactive. The read data can be pipelined depending on the configuration, providing either immediate or delayed output based on the previous read operation. The width of the address and data buses is configurable through the parameters `ADDR_WIDTH` and `DATA_WIDTH`, making the design flexible for different memory sizes.
+module top_module(
+    input clk,
+    input en,
+    input we,
+    input [ADDR_WIDTH-1:0] addr,
+    input [DATA_WIDTH-1:0] din,
+    output reg [DATA_WIDTH-1:0] dout
+);

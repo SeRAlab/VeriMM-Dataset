@@ -1,0 +1,10 @@
+Design a synchronous dual-port RAM module with a memory depth of 2048 words and a data width of 8 bits. The module allows simultaneous read and write operations controlled by respective read and write enable signals (rce and wce). On the rising edge of the clock, if the read enable is activated, it outputs the content of the memory address specified by the read address input (ra) onto the read data output (rq). If the write enable is active, it stores the input data (wd) into the memory at the address specified by the write address input (wa). This design is suitable for applications requiring fast and efficient data storage and retrieval.
+module top_module(
+    input clk,
+    input rce,
+    input [10:0] ra,
+    output reg [7:0] rq,
+    input wce,
+    input [10:0] wa,
+    input [7:0] wd
+);

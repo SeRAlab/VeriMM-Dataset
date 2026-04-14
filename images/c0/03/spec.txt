@@ -1,0 +1,38 @@
+Please act as a professional verilog designer.
+    
+Implement a module primarily functions as a watchdog timer, a critical component in digital systems used for reliability enhancement. Its core objectives include monitoring the system's operation to detect and recover from malfunctions. When the system fails to operate correctly, such as due to software errors or getting stuck in an unintended state, the watchdog timer resets the system to a known safe state. This module offers additional functionalities like capturing counter values, generating interrupts, and providing debug support, making it versatile for various system monitoring and control applications.
+
+Module name:  
+	cop_count
+
+Input ports:
+	async_rst_b: Asynchronous reset (active low). Used to reset the module immediately regardless of the clock signal.
+	sync_reset: Synchronous reset. Resets the module in synchronization with the bus_clk.
+	por_reset_i: Poweron reset (active low). Used to reset the module during powerup sequences.
+	startup_osc_i: Startup oscillator input. Acts as one of the clock sources for the module.
+	bus_clk: Bus clock input. Provides the primary clocking mechanism for synchronization and timing operations within the module.
+	reload_count: Input signal to reload the watchdog timer with a predefined timeout value.
+	clear_event: Input signal to clear the event flag.
+	debug_mode_i: Input signal to enable debug mode.
+	debug_ena: Debug enable signal.
+	wait_ena: Wait enable signal. Used in conjunction with wait_mode_i.
+	wait_mode_i: Wait mode input. Determines the module's behavior in wait conditions.
+	stop_ena: Stop enable signal. Used in conjunction with stop_mode_i.
+	stop_mode_i: Stop mode input. Determines the module's behavior in stop conditions.
+	cop_ena: Watchdog timer enable signal.
+	cop_irq_en: Watchdog timer interrupt enable signal. Configures the conditions under which interrupts are generated.
+	timeout_value: Predefined timeout value for the watchdog timer.
+	scantestmode: Scan test mode input. Used for testing purposes, allowing the module to operate in a test mode.
+Output ports:
+	cop_counter: Current value of the watchdog timer counter.
+	cop_capture: Captured value of the watchdog timer counter at specific conditions.
+	cop_rst_o: Watchdog timer reset output. Indicates when the system should be reset based on the timer's state.
+	cop_irq_o: Watchdog timer interrupt output. Signals an interrupt based on predefined conditions.
+	cop_event: Event flag output. Indicates when specific events, such as a reset or interrupt condition, have occurred.
+
+
+Implementation:
+The RTL module described is a complex programmable watchdog timer, known as cop_count, designed to monitor the operation of a system and initiate a reset or generate an interrupt if the system fails to operate correctly within a specified time frame. The module's functionality is highly configurable, allowing it to be tailored to various operational scenarios through its input signals and parameters. The core logic of the module can be broken down into several key areas:
+
+Give me the complete code.
+

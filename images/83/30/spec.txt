@@ -1,0 +1,8 @@
+Design a module that serves as an input/output interface for handling specific address-based read operations. The module takes a 11-bit address, a 32-bit memory signal, and an 8-bit button input, along with an enable signal. When the enable signal is active, the output will be set to a concatenation of the button input with zeros if the address is 1, or to the memory signal if the address is 2. For all other addresses or when the enable signal is inactive, the output will be zeroed. This design effectively acts as a simple address decoder and output controller.
+module top_module(
+    input [10:0]addr,
+    input[31:0] ms,
+    input[7:0] btn,
+    input en,
+    output reg[31:0] out
+);

@@ -1,0 +1,43 @@
+Please act as a professional verilog designer.
+    
+Implement a module to facilitate testing and verification of integrated circuits (ICs) through scan-based methodologies. Its primary functions include:
+
+Control of Test Modes: It manages different test modes such as scan mode and normal mode, enabling or disabling specific functionalities based on the mode of operation.
+Selection of Scan Chains: It allows for the selection between long and short scan chains for efficiency in testing, depending on the test coverage and time requirements.
+Memory and Multiplexer Control: The module controls memory write operations and multiplexer driving during test modes to prevent unintended state changes or data corruption.
+Output Generation: Based on the selected scan chain and test mode, it generates appropriate output signals for further analysis or chaining.
+
+This module plays a crucial role in the broader system context of ensuring the IC's manufacturability and reliability through comprehensive testing.
+
+Module name:  
+	test_stub_scan
+
+Input ports:
+	ctu_tst_pre_grst_l: Active low signal to preassert global reset during test.
+	arst_l: Active low asynchronous reset.
+	global_shift_enable: Enables global shifting for scan operations.
+	ctu_tst_scan_disable: Disables scan test mode.
+	ctu_tst_scanmode: Indicates whether the chip is in scan mode.
+	ctu_tst_macrotest: Indicates a macro test is being performed.
+	ctu_tst_short_chain: Selects short scan chain for testing.
+	long_chain_so_[0:2]: Serial outputs from long scan chains.
+	short_chain_so_[0:2]: Serial outputs from short scan chains.
+Output ports:
+	mux_drive_disable: Disables driving of multiplexers.
+	mem_write_disable: Disables memory write operations.
+	sehold: Holds the scan enable signal.
+	se: Scan enable signal.
+	testmode_l: Active low signal indicating test mode.
+	mem_bypass: Bypasses memory operations during test.
+	so_[0:2]: Serial outputs based on selected scan chain.
+
+
+Implementation:
+The test_stub_scan module is designed to facilitate testing and verification of digital integrated circuits (ICs) by controlling various test modes and scan chains. It integrates seamlessly into a larger test architecture, providing essential functionalities such as enabling/disabling memory writes, multiplexer driving, and scan chain selection based on the inputs that dictate the current test mode. The module operates purely on combinational logic, with no sequential elements (e.g., flip-flops or latches) present, meaning its outputs are directly determined by the current state of its inputs.
+Combinational Logic: The core of the module is built around combinational logic, which ensures immediate response to changes in input signals. This is crucial for test environments where the state of the device under test (DUT) can change rapidly, and the testing infrastructure must adapt just as quickly.
+Scan Chain Selection: The module decides between long and short scan chains for test data shifting based on the test mode. This is essential for optimizing test time and coverage, allowing for more efficient testing of different parts of the IC.
+Test Mode Control: Various test modes are controlled through inputs like ctu_tst_scanmode, ctu_tst_macrotest, and global_shift_enable. These inputs enable or disable specific functionalities within the DUT, such as memory operations and multiplexer driving, to isolate and test specific components or paths.
+Output Control: Outputs such as mux_drive_disable, mem_write_disable, and sehold are controlled based on the test mode and the state of the scan chains. This allows for precise control over the DUT's behavior during testing, ensuring that tests can be conducted accurately and safely without interfering with unrelated components.
+
+Give me the complete code.
+

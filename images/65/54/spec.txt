@@ -1,0 +1,8 @@
+Develop a circuit that performs CRC (Cyclic Redundancy Check) computation on input data. The module captures a single bit of input data and shifts it into a 16-bit shift register each time the `crc_en` signal is asserted. Upon rising clock edges, if a reset is applied, the circuit initializes the shift register and the CRC output to zero. When enabled, it computes the CRC by performing a bitwise XOR operation with a predefined polynomial value (0xAE3C) and outputs the result. This design is useful for error detection in digital data transmission.
+module top_module(
+    input clk,
+    input rst,
+    input data_in,
+    input crc_en,
+    output reg [15:0] crc_out
+);

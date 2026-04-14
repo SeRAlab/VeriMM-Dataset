@@ -1,0 +1,9 @@
+Design a circuit that calculates the fifth power of an 18-bit input value \( n \). This implementation uses a state-controlled approach where the calculation initiates upon receiving a 'run' signal. It shifts a control signal to determine when the multiplication process is complete, indicated by the 'ready' signal. The module multiplies the input value \( n \) by itself four times, outputting the result as \( n\_pow\_5 \). It is synchronized with a clock and incorporates a reset mechanism to initialize the calculation state.
+module top_module(
+    input         clock,
+    input         reset_n,
+    input         run,
+    input  [17:0] n,
+    output        ready,
+    output [17:0] n_pow_5
+);

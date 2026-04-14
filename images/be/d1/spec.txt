@@ -1,0 +1,6 @@
+Design a channel equalizer that performs convolution of an input signal with a channel impulse response. The module takes an n-bit wide input signal and an m-bit wide channel filter (impulse response) and generates an output that is n+m-1 bits wide, representing the filtered result. The functionality is achieved by utilizing a delay line to store previous signal values, allowing it to systematically compute the output through a series of multiplications and accumulations, effectively mitigating the effects of channel distortion on the input signal.
+module top_module(
+  input [n-1:0] in,
+  input [m-1:0] h,
+  output reg [n+m-2:0] out
+);

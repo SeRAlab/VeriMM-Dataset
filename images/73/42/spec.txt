@@ -1,0 +1,18 @@
+Implement the Verilog module based on the following description.
+Module C implements the boolean function r = ~(a & b).
+
+// Module D can be described by the following simulation waveform: 
+
+If a = 1, b = 0, then r = 1.
+If a = 0, b = 1, then r = 1.
+If a = 0, b = 0, then r = 1.
+If a = 1, b = 1, then r = 0.
+
+// Now consider a top-level that uses two C submodules and two D submodules. The first input of all four submodules is connected to input 'a', and the second input of all four submodules is connected to 'b'. The output of the first C submodule is connected to a two-input OR, along with the output of the first D submodule. The second pair of C and D submodules is similarly connected to a NOR gate. The output of the OR and the NOR is connected to an XOR, whose output is 'r'.
+
+// Implement this circuit in Verilog.
+
+module top_module(
+    input a,
+    input b,
+    output r);

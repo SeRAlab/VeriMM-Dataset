@@ -1,0 +1,2 @@
+Design a synchronous write pointer synchronizer that transfers the write pointer signal from a writer clock domain to a reader clock domain. Upon a rising edge of the reader clock (rclk) or a negative edge of the active-low reset (rrst_n), the module captures the current write pointer (wptr) into a pair of registers (rq1_wptr and rq2_wptr). This effectively allows the reader to safely read the latest write pointer value while ensuring proper synchronization between different clock domains.
+module top_module(rq2_wptr, wptr, rclk, rrst_n);

@@ -1,0 +1,26 @@
+Please act as a professional Verilog designer.
+
+Implement an 8-bit register with enable. The module captures and holds an 8-bit input value on the rising edge of the clock signal when the enable signal is high. If the enable signal is low, the register retains its previous value.
+
+Module name:  
+    register_8bit_enable    
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    enable: Enable signal.
+    d: 8-bit input signal.
+
+Output ports:
+    q: 8-bit output signal representing the current value of the register.
+
+Implementation:
+The register is defined as reg [7:0] q and initialized to 0 using the initial statement. The value of q is updated to d on each rising edge of clk if enable is high.
+
+Give me the complete code.
+
+module register_8bit_enable(clk, enable, d, q);  
+
+    input  clk;  
+    input  enable;  
+    input  [7:0] d;  
+    output  [7:0] q;

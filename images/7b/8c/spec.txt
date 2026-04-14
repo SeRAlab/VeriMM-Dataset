@@ -1,0 +1,7 @@
+Design a wireless communication block that processes input data and control signals for transmission. It includes an 8-bit wide data input and output, along with 4 control signals. The module defines a basic wireless communication protocol where a specific control signal is derived from a combination of other control inputs. On the rising edge of this derived control signal, the module transmits the input data to the output. Additionally, it passes control signals directly from input to output, allowing for seamless integration and configuration in a wireless communication system.
+module top_module(
+  input [n-1:0] data_in,
+  input [m-1:0] ctrl_in,
+  output reg [n-1:0] data_out, // Changed to 'reg' to allow assignment in always block
+  output [m-1:0] ctrl_out
+);

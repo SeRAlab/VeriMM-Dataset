@@ -1,0 +1,9 @@
+Design a digital circuit that computes the exponent of a given base with respect to a predefined boundary value. The module increments a counter (current_exponent) on each clock cycle while multiplying the base by itself to find the corresponding power (current_value). When either the current_exponent reaches the boundary or the current_value equals the base, it outputs the exponent value and indicates readiness through the 'ready' signal. The circuit is enabled by the input_enable signal, and it resets internal values when disabled, ensuring accurate computation during the operation.
+module top_module(
+    input clk,
+    input [7:0] boundary,
+    input input_enable,
+    input [8:0] base,
+    output reg [7:0] exponent,
+    output reg ready
+);

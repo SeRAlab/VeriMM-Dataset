@@ -1,0 +1,8 @@
+Design a 4-bit parallel-in serial-out (PISO) shift register. It uses a clock signal for synchronized operation and a reset signal to initialize the shift register to zero. On a rising clock edge, if the reset signal is active, the register is cleared. If the shift control signal is activated, the register shifts right, inserting the least significant bit of the input data D into the most significant bit of the shift register, while outputting the most significant bit of the register. If the shift signal is inactive, the input data D is directly loaded into the shift register. The output Q continuously reflects the most significant bit of the shift register.
+module top_module(
+  input clk,
+  input reset,
+  input shift,
+  input [3:0] D,
+  output reg Q
+);

@@ -1,0 +1,7 @@
+Design a pulse generator circuit that can operate in either monostable or astable modes, based on a configurable pulse type parameter. In monostable mode, the output generates a single pulse of a user-defined width when triggered, defaulting to 255 clock cycles if no width is specified. In astable mode, the output oscillates between high and low states at a frequency defined by the input, with a configurable pulse width; when no frequency is specified, it defaults to 65535 clock cycles. The module ensures that the output signal conforms to either configuration based on the chosen mode, providing versatility in timing signal generation for various applications.
+module top_module(
+  input trig,
+  input [7:0] pw,
+  input [31:0] freq,
+  output reg out // Change output to reg to accommodate procedural assignment
+);

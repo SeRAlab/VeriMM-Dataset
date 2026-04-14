@@ -1,0 +1,8 @@
+Design a timecode reception FIFO (First In First Out) buffer that allows for storing and managing incoming timecode data. The module features a memory buffer capable of holding up to 256 bytes of timecode information. It uses a two-bit address to control operations such as writing to the buffer, reading from it, outputting the current byte, and clearing the buffer. The operating functionality is gated by a clock enable signal that activates the clock only for relevant operations. The output register provides the data read from the buffer or the currently selected byte based on the control signals, while also ensuring proper management of the read and write pointers and byte count.
+module top_module(
+  input wire [1:0] address,
+  input wire clk,
+  input wire [7:0] in_port,
+  input wire reset_n,
+  output reg [31:0] readdata
+);

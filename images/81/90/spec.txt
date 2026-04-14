@@ -1,0 +1,8 @@
+Design a circuit that outputs a direct pass-through of the signal `a` to output `b`. If the `TEST` preprocessor directive is defined, the module will also accept an additional input `c` and directly output it to `d`. This design allows for conditional inclusion of extra functionality based on the compilation context, enabling flexibility in testing scenarios.
+module top_module(input       a,
+   `ifdef TEST
+   input       c,
+   output wire d,
+   `endif
+   output wire b
+   );

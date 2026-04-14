@@ -1,0 +1,9 @@
+Design a synchronous multiplier circuit that performs multiplication of two 8-bit numbers (x and y). The module utilizes a clock and reset signal to control its operation. Upon reset, it initializes the input values and the product to zero. During each clock cycle, it progressively shifts the bits of the first number (rx) to the right and the second number (ry) to the left, effectively implementing a shift-and-add multiplication algorithm. If the least significant bit of rx is 1, the current value of ry is added to the product. The module also outputs a 'ready' signal indicating when the multiplication process is complete, which is determined by checking if either input number has been fully processed.
+module top_module(
+    clk, //clock
+    reset, //reset the Multiplier
+    x, //First Number to be multiplied 
+    y, //Second Number to be multiplied
+    prod, //result of multiplication
+    ready //signals if the result is ready
+);

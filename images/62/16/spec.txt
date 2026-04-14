@@ -1,0 +1,11 @@
+Design a circuit that detects specific regions on a graphical display based on input coordinates. The module receives clock signals, an enable signal, and coordinates (gr_x, gr_y). When enabled, it checks if the coordinates fall within predefined rectangular areas to indicate the presence of two titles. If the coordinates are within the first area, it activates out_title_1, and if within the second area, it activates out_title_2. If the enable signal is low, both outputs are deactivated.
+module top_module(
+	input wire clk,
+
+	input wire enable,
+	input wire [10:0]gr_x,
+	input wire [9:0]gr_y,
+	
+	output reg out_title_1,
+	output reg out_title_2
+	);

@@ -1,0 +1,7 @@
+Design a 16-bit carry-select adder that efficiently computes the sum of two 16-bit inputs, A and B, along with a carry input (Cin). The module uses a combination of generate statements to create smaller carry lookahead sections that quickly compute carry signals (Ci) and propagate signals for efficient summation. The output includes a 16-bit sum (S) and a carry-out (Cout). The adder enhances performance by concurrently calculating the sum for two possible carry scenarios and selects the appropriate carry-out based on the generated carry signals.
+module top_module(
+    input [15:0] A, B,
+    input Cin,
+    output [15:0] S,
+    output Cout
+);

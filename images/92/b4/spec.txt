@@ -1,0 +1,9 @@
+Design a simple vending machine controller with state machine functionality. This module accepts inputs for a clock signal, reset, item data, and a purchase request, while producing outputs for a display and an item dispensed signal. The controller operates through three states: IDLE, SELECTING, and DISPENSING. It displays information based on the current state, such as instructions or item pricing. When a purchase is initiated, it transitions to SELECTING to determine the price of the selected item, and then to DISPENSING to signal that an item has been dispensed, resetting back to IDLE afterward. The machine supports three predefined item prices and utilizes a simple item selection mechanism based on 4-bit input data.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] data,
+  input purchase,
+  output reg [3:0] display,
+  output reg item_dispensed
+);

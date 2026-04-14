@@ -1,0 +1,12 @@
+Implement a program counter (PC) management module for a digital processor. The module features a clock and reset functionality, along with multiple sources for determining the next PC value based on the `pc_source` input. It provides options to increment the PC, use an opcode-derived address, or branch conditionally based on the `take_branch` signal. Additionally, it has a pause feature that retains the current PC while inhibiting updates. The module outputs the current PC and its incremented value, effectively managing the flow of instructions during processing.
+module top_module(
+    input clk,
+    input reset,
+    input [31:2] pc_new,
+    input take_branch,
+    input pause_in,
+    input [25:0] opcode25_0,
+    input [1:0] pc_source,
+    output reg [31:0] pc_out,
+    output reg [31:0] pc_out_plus4
+);

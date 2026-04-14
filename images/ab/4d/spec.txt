@@ -1,0 +1,11 @@
+Design a 16-entry register file for an 8-bit wide data path. The module allows for reading from and writing to registers based on the inputs received. On a rising clock edge, if the write-back signal is asserted and the selected register address is not zero, the specified value is written into the corresponding register. The module also supports a reset functionality that initializes all registers to zero. Two output buses provide access to the values of specific registers based on the instruction word input: the high 4 bits for one output and the low 4 bits for another. The implementation is suitable for applications requiring a small set of registers to handle temporary data storage and retrieval within a digital system.
+module top_module(
+    output reg [7:0] w_bus_high_reg,
+    output reg [7:0] w_bus_low_reg,
+    input [7:0] w_bus_instr_word,
+    input [7:0] w_bus_write_back_value,
+    input [3:0] w_bus_write_back_reg,
+    input w_write_back,
+    input w_clock,
+    input w_reset
+);

@@ -1,0 +1,9 @@
+Design a module that performs either addition or subtraction on two 8-bit inputs based on a select signal. The module features a reset functionality that clears the outputs on a low-level reset. Upon the rising edge of the clock, if reset is not activated, it calculates either the sum or difference of the two inputs (`in_a` and `in_b`), using a straightforward approach while maintaining an internal register for the result. The final output is then assigned the value of this result. This design effectively acts as a simple arithmetic unit capable of executing bitwise addition or subtraction, making it suitable for various applications in digital circuits requiring basic arithmetic operations.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] in_a,
+    input [7:0] in_b,
+    input select,
+    output reg [7:0] out
+);

@@ -1,0 +1,6 @@
+Implement a bit selection and sign-extension module. The module takes a 32-bit input value and outputs a 32-bit value based on the value of a 3-bit function selector (funct3). It supports various operations: sign-extending the lower 8 bits when funct3 is 0, sign-extending the lower 16 bits when funct3 is 1, passing through the entire 32-bit input when funct3 is 2, zero-extending the lower 8 bits when funct3 is 4, and zero-extending the lower 16 bits when funct3 is 5. This functionality is useful for processing data in a manner consistent with some encoding or data format requirements in digital circuits.
+module top_module(
+    input [31:0] val_i,
+    output reg [31:0] val_o,
+    input [2:0] funct3
+);

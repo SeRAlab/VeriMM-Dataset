@@ -1,0 +1,9 @@
+Design a shift register capable of performing both data loading and shifting operations. The module features an 8-bit wide input and output, with control signals that dictate the shift direction (left or right) or allow loading of new data. Upon a clock edge, it can either shift data in the selected direction based on the previously stored shifting instruction or load new input data depending on the load signal, while an active reset initializes the register with default values. This design allows for flexible data manipulation in applications requiring sequential data processing.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data_in,
+  input [1:0] shift_direction,
+  input load,
+  output [7:0] data_out
+);

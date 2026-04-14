@@ -1,0 +1,8 @@
+Design a PWM (Pulse Width Modulation) generator that produces a variable duty cycle output based on an 8-bit input value. The circuit utilizes a clock signal for timing and a reset signal to initialize its internal states. The module maintains a 24-bit counter that increments on each clock cycle, aligning with a specified frequency, and computes a threshold value derived from the duty cycle input. When the counter value is less than the threshold, the PWM output is set high; otherwise, it is set low. A "done" signal indicates when the counter has completed a full cycle. This design is meant for applications that require controlling power to devices such as motors or LEDs through adjustable brightness or speed.
+module top_module(
+    input clock,
+    input reset,
+    input [7:0] dutyCycle,
+    output reg pwm,
+    output reg done
+);

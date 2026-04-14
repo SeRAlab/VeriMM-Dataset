@@ -1,0 +1,8 @@
+Design a 32-bit signed divisor adjustment module for a division operation. On each rising edge of the clock, if the 'divs' signal is high and the most significant bit of 'pcpi_rs2' is set (indicating a negative value), the module assigns the negative of 'pcpi_rs2' shifted left by 31 bits to the 'divisor' output. If 'divs' is low or the value is positive, it simply shifts 'pcpi_rs2' left by 31 bits and assigns that to 'divisor'. This effectively prepares the divisor for a division operation while accommodating signed number representation.
+module top_module(
+	input             clk, resetn,
+
+	input [31:0]      pcpi_rs2,
+        input             divs,
+	output reg [62:0] divisor
+);

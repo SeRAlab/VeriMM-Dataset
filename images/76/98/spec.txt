@@ -1,0 +1,25 @@
+Please act as a professional Verilog designer.
+
+Implement a 8-bit Gray code counter.
+
+Module name:  
+    Gray_counter               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the counter.
+Output port:
+    Q: 8-bit register representing the current Gray code value.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the counter value is updated.
+If the reset signal (rst_n) is low, indicating a reset condition, the counter value (Q) is set to 8'b0.
+Otherwise, the next value of the Gray code counter is obtained by incrementing the binary equivalent of the current Gray code and then converting it back to Gray code.
+
+Give me the complete code.
+
+module Gray_counter(
+   input                clk ,
+   input                rst_n,
+ 
+   output reg [7:0]     Q  
+);

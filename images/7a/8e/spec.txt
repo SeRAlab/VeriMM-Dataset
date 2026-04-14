@@ -1,0 +1,11 @@
+Design a module to manage write-back and exception handling signals in a processor architecture. The module takes various inputs related to the status of the write-back operation and any possible errors, determining when data is ready to be written back. It outputs a signal, `oitf_ret_ena`, that indicates whether the operation is valid and ready based on input conditions. Additionally, the logic handles flags related to write-back data and exception codes and ensures the appropriate readiness of the write-back and exception signals based on the presence of errors.
+module top_module(
+  input wbck_i_valid,
+  input wbck_i_err,
+  input wbck_i_wdat,
+  input wbck_i_flags,
+  input wbck_i_rdfpu,
+  input wbck_i_rdidx,
+  input wbck_i_pc,
+  output oitf_ret_ena
+);

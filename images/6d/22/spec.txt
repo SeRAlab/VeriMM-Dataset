@@ -1,0 +1,8 @@
+Design a sequential logic circuit that processes a 4-bit input while responding to control signals and a clock. The module maintains a 3-bit output that can be reset to zero or updated based on the control input. When the control signal is "00," the output directly reflects the 4-bit input. For other control values, it adds a constant value of 3 to the input, ensuring the output is constrained between 0 and 7. If the resulting value exceeds 7, the output is capped at 7; if the sum is less than 0, the output remains at 0.
+module top_module(
+  input wire clk,
+  input wire reset,
+  input wire [1:0] ctrl,
+  input wire [3:0] in,
+  output reg [2:0] out
+);

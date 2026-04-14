@@ -1,0 +1,7 @@
+Design a clock gating circuit that controls the propagation of a clock signal based on enable (EN) and test enable (TE) signals. When EN is active, the output ENCLK follows the CLK input; if EN is inactive and TE is asserted, ENCLK will output the TE signal; if both conditions are false, ENCLK will be set to LOW. This module is intended to optimize power consumption by selectively enabling the clock signal based on the provided control inputs.
+module top_module(
+  input CLK,
+  input EN,
+  input TE,
+  output ENCLK
+);

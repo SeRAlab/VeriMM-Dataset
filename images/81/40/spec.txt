@@ -1,0 +1,7 @@
+Design a clock gating circuit that controls the output clock signal based on an enable signal and a clock enable (te) signal. When the enable input is HIGH, the output enclk is set to HIGH at the positive edge of the input clock (clk). If the enable input is LOW, enclk is set to LOW. Additionally, if the te signal goes HIGH while enable is LOW, enclk is also set to LOW, effectively blocking the clock signal until re-enabled. This design reduces power consumption by disabling the clock when not needed.
+module top_module(
+  input clk,
+  input enable,
+  input te,
+  output enclk
+);

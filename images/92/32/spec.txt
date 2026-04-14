@@ -1,0 +1,10 @@
+Design a LED controller that manages the output state of a 32-bit LED array based on input data and masking conditions. The module takes a clock and reset signal, along with input data and a mask for controlling which LED states can change. On a positive clock edge, if reset is active, it clears the LED output and status flags. If the mask input is non-zero, it updates the LED output only for the bits specified by the mask, indicating a masked update. If there’s no mask and the input data differs from the current output, it directly updates the LED output, setting a flag to indicate that a change has occurred. The functionality allows flexible control over the LED states while ensuring changes can be selectively applied or ignored based on the mask.
+module top_module(
+  input clk,
+  input rst,
+  input [31:0] led_data_in,
+  input [31:0] led_mask_in,
+  output reg [31:0] led_data_out,
+  output reg led_data_changed,
+  output reg led_data_masked
+);

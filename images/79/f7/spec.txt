@@ -1,0 +1,13 @@
+Design a memory register module that functions as a control element in a data path. On the falling edge of the clock, it determines whether to enable writing (WE) based on the absence of an overflow condition and the RegWr signal. The Rw output is assigned based on the 5-bit input Rw_in. The DataIn output is conditionally sourced from either the DataOut input or the Addr input depending on the state of the MemtoReg signal, allowing for data retrieval from either the memory or address inputs based on the specified conditions.
+module top_module(
+    input Overflow,
+    input [31:0]DataOut,
+    input [31:0]Addr,
+    input [4:0]Rw_in,
+    input RegWr,
+    input MemtoReg,
+    input clk,
+    output reg [31:0]DataIn,
+    output reg WE,
+    output reg [4:0]Rw
+       );

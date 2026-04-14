@@ -1,0 +1,31 @@
+
+You are tasked with designing a Verilog module that implements a D flip-flop with an enable input and a clock enable input. The module should have the following input and output ports:
+
+- `clk` (input): the clock signal
+- `en` (input): the enable signal
+- `enclk` (input): the clock enable signal
+- `q` (output): the output of the flip-flop
+
+The module should implement the following behavior:
+
+- When `en` is low, the output `q` should hold its current value.
+- When `en` is high and `enclk` is high, the output `q` should follow the input `d` on the rising edge of the clock `clk`.
+
+You can assume that the input signals `clk`, `en`, and `enclk` are synchronous to each other and have a 50% duty cycle.
+
+Implement the module `dff_en_ce` in Verilog that satisfies the above requirements. 
+
+```verilog
+module dff_en_ce (
+  input clk,
+  input en,
+  input enclk,
+  input d,
+  output q
+);
+
+  // Implement your solution here
+
+endmodule
+```
+

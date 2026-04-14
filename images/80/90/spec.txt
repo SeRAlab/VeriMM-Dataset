@@ -1,0 +1,9 @@
+Implement a read/write memory interface sequencer utilizing a dual-port RAM architecture. It allows writing data to a specified address when the write enable signal is active and simultaneously reading data from a different address. The output reflects the data read from the memory, facilitating efficient memory operations synchronized with a clock signal.
+module top_module(
+  input clock,
+  input [31:0] data,
+  input [4:0] rdaddress,
+  input [4:0] wraddress,
+  input wren,
+  output [31:0] q
+);

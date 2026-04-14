@@ -1,0 +1,21 @@
+Please act as a professional Verilog designer.
+
+Design a 10-bit linear feedback shift register (LFSR) with an active-low reset (rst_n) signal. The LFSR shifts its value to the right on every positive edge of the clock signal (clk). The LFSR should initialize to a value of all ones on reset. The feedback taps should be at positions 10 and 9.
+
+Module name:
+    lfsr
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for normal operation.
+
+Output ports:
+    lfsr_out: 10-bit output signal representing the current LFSR value.
+
+Implementation:
+- The LFSR value is shifted to the right by one bit on the positive edge of the clock.
+- The feedback value is XOR of the two tap positions and becomes the new leftmost bit.
+- The LFSR value is reset to 10'b1111111111 when the reset signal is active.
+- The LFSR value is stored in a 10-bit register.
+
+Give me the complete code.

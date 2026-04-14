@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to control the output enable logic for a bus system, specifically for an 8-bit data bus (`db`). It has two primary functions:
+
+Output Enable Control: It controls whether the 8-bit data bus is driven with a specific value or left in a high-impedance state (`Z`), based on the input control signals.
+Data Driving: When enabled, it drives either a predefined value (`0xFF` when `ctl_bus_ff_oe` is high) or leaves the bus in a high-impedance state when both control signals are low.
+
+This module plays a critical role in systems where multiple devices are connected to a common bus and require controlled access to drive the bus lines without causing conflicts or short circuits.
+
+Module name:  
+	bus_control
+
+Input ports:
+	ctl_bus_ff_oe (input wire): A control signal that, when high, enables the output of a predefined value (0xFF) onto the db bus.
+	ctl_bus_zero_oe (input wire): A control signal that, when high, enables the output of a highimpedance state on the db bus if ctl_bus_ff_oe is low.
+Output ports:
+	db (inout wire [7:0]): An 8bit bidirectional data bus that is either driven with the value 0xFF (when ctl_bus_ff_oe is high) or left in a highimpedance state (when both control signals are low or when ctl_bus_zero_oe is high).
+
+
+Implementation:
+The bus_control module is designed to manage data flow on an 8-bit bus (db) based on control signals. It operates by selectively driving the bus lines to either a predefined logic level, high impedance state (Z), or leaving them unchanged, depending on the state of its control inputs. This module does not contain any sequential logic elements (like flip-flops or latches) and operates purely on combinational logic. The behavior of the module is dictated by two input control signals (ctl_bus_ff_oe and ctl_bus_zero_oe) and the internal logic that determines the output state of the 8-bit bus (db).
+
+Give me the complete code.
+

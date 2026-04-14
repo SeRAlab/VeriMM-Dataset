@@ -1,0 +1,8 @@
+Design a memory-block module that operates as both a read and write register for data storage. It features an 8-bit address input to access a 256-word memory array, each word 32 bits wide. On the positive edge of the data clock input (`dclkin`), when the control signal `scein` is active and `oe` (output enable) is high, it outputs the data stored at the specified address to `data0out`. Conversely, if `scein` is active and `oe` is low, it writes the input data (`sdoin`) into the memory at the specified address. This module effectively serves as a synchronous random access memory (RAM) for digital circuits.
+module top_module(
+  input dclkin,
+  input scein,
+  input sdoin,
+  input oe,
+  output reg data0out  // Changed to reg type
+);

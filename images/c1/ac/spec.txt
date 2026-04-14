@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform a key addition operation, which is a fundamental step in cryptographic algorithms such as the Advanced Encryption Standard (AES). The primary function of this module to execute a bitwise exclusive OR (XOR) operation between two inputs: the data block (`data_in`) and the round key (`round_key`). This operation is crucial for the encryption or decryption process, as it introduces the key material into the data path, thereby contributing to the confusion aspect of the cryptographic algorithm. The module is intended to be used within a larger cryptographic system, potentially as part of an AES encryption/decryption core, where it would be invoked at each round of the algorithm.
+
+Module name:  
+	AddRoundKey
+
+Input ports:
+	clk (input): The clock signal. It is a digital signal used to synchronize the operations of the module with the rest of the system.
+	reset (input): The reset signal. A negative logic signal that, when asserted (logic low), asynchronously resets the module's outputs to a known state.
+	data_valid_in (input): A signal indicating the validity of the data input. When high (logic 1), it signifies that data_in holds valid data ready for processing.
+	key_valid_in (input): A signal indicating the validity of the key input. When high (logic 1), it signifies that round_key holds a valid key ready for the XOR operation.
+	data_in (input, [DATA_W1:0]): The data input port. It is a vector carrying the data block to be combined with the round key. The width of this vector is defined by the parameter DATA_W.
+	round_key (input, [DATA_W1:0]): The round key input port. It is a vector carrying the key to be XORed with the data block. The width is also defined by DATA_W.
+Output ports:
+	valid_out (output, reg): A signal indicating the validity of the output data. It goes high (logic 1) when the XOR operation has been completed and the output data (data_out) is valid.
+	data_out (output, reg, [DATA_W1:0]): The output data port. It carries the result of the XOR operation between data_in and round_key. The width of this vector is defined by DATA_W.
+
+
+Implementation:
+The AddRoundKey module is designed to perform a key addition operation, which is a fundamental component of many cryptographic algorithms, including the Advanced Encryption Standard (AES). The module's primary function is to execute a bitwise exclusive OR (XOR) operation between two inputs: data_in and round_key, both of which are 128 bits wide, as defined by the parameter DATA_W. This operation is a critical step in the encryption or decryption process, where the input data is combined with a round key to increase cryptographic security.
+
+Give me the complete code.
+

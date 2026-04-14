@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+    
+Implement a module to compute the CRC-16 (Cyclic Redundancy Check) of an 8-bit input data stream. CRC is a popular error-detecting code used to detect accidental changes to raw data in digital networks and storage devices. The primary function of this module to take an 8-bit input data byte, compute its CRC-16 value based on a predefined polynomial (in this case, 0xA001), and output the 16-bit CRC result. This module is intended to be used in systems requiring data integrity checks, such as data transmission or storage systems.
+
+Module name:  
+	updateCRC16
+
+Input ports:
+	rstCRC (1bit): Reset input for the CRC computation. When high, it initializes the CRC computation process.
+	CRCEn (1bit): Enable input for starting the CRC computation on the input data. The computation starts when this signal goes high.
+	dataIn (8bit): The 8bit input data for which the CRC is to be computed.
+	clk (1bit): The clock input. The module operates on the rising edge of this clock.
+	rst (1bit): Global reset input. When high, it resets the entire module, including the CRC computation and internal states.
+Output ports:
+	CRCResult (16bit): The output CRC16 result of the computation.
+	ready (1bit): A signal that indicates whether the module is ready to accept new data. It is high when the module is ready.
+
+
+Implementation:
+The Verilog module updateCRC16 is designed to calculate a 16-bit CRC (Cyclic Redundancy Check) value for an 8-bit input data stream. This module operates synchronously with a clock signal (clk) and supports asynchronous reset (rst) and CRC reset (rstCRC). The module's primary function is to update the CRC value based on the input data (dataIn) when enabled (CRCEn). The CRC calculation follows a specific polynomial, often used in communication protocols to detect errors in data transmission.
+The module's operation is divided into two main phases: initialization/reset and CRC calculation/update.
+Initialization/Reset Phase:
+Upon an active-high reset signal (rst) or CRC reset signal (rstCRC), the module initializes the CRC result (CRCResult) to 0xFFFF, indicating a starting value for the CRC calculation. This is a common practice to ensure that leading zeros in the data do not affect the CRC calculation.
+The ready signal is set high, indicating that the module is ready to accept new data for CRC calculation.
+Internal control signals, such as doUpdateCRC and the counter i, are reset to their initial states.
+CRC Calculation/Update Phase:
+When the module is not in the reset state, and the CRCEn signal is asserted, indicating that new data is available for CRC calculation, the module captures the input data (dataIn) and begins the CRC update process.
+The module then enters a loop, controlled by the counter i, which iterates over each bit of the input data. For each bit, the module calculates the new CRC value based on the current CRC value and the bit's value, following the CRC polynomial represented by the XOR operation with 0xA001 if the LSB of the current CRC and the current data bit are different.
+This process is repeated for all 8 bits of the input data. Once all bits have been processed (i reaches 7), the module signals that it is ready for new data by setting the ready signal high and resets the doUpdateCRC flag and the counter i for the next operation.
+
+Give me the complete code.
+

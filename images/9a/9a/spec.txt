@@ -1,0 +1,12 @@
+Design a circuit that functions as a barrel shifter and multiplexer for 8-bit data inputs. It accepts four 8-bit inputs and utilizes control signals for shifting operations: left, right, and circular right shifts. The output can be selected from either the shifted data or any of the four input data sources based on a 2-bit select signal. The configuration allows for dynamic data manipulation, suitable for applications requiring flexible data routing and bit manipulation.
+module top_module(
+    input [7:0] data_in0,
+    input [7:0] data_in1,
+    input [7:0] data_in2,
+    input [7:0] data_in3,
+    input [1:0] select,
+    input shift_left,
+    input shift_right,
+    input rotate_right,
+    output reg [7:0] data_out // Change 'output' to 'output reg'
+);

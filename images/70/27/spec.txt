@@ -1,0 +1,16 @@
+Design a multifunctional latch module capable of implementing four different types of latches: D, JK, T, and SR. The module has inputs for the clock signal, reset signal, and various control signals specific to each latch type. When enabled, the D latch samples the input data; the JK latch toggles its state based on the J and K inputs; the T latch toggles on a clock edge when T is asserted; and the SR latch is set or reset based on S and R inputs. The outputs reflect the current state of each latch, allowing for versatile storage and switching functionality in digital applications.
+module top_module(
+  input clk, // clock signal
+  input rst, // reset signal
+  input data, // data signal
+  input en, // enable signal
+  input j, // J input for JK latch
+  input k, // K input for JK latch
+  input t_in, // T input for T latch (renamed to avoid conflict)
+  input s, // S input for SR latch
+  input r, // R input for SR latch
+  output reg d_out, // output of D latch
+  output reg jk_out, // output of JK latch
+  output reg t_out, // output of T latch
+  output reg sr_out // output of SR latch
+);

@@ -1,0 +1,7 @@
+Design a clock gating circuit that reduces the power consumption by controlling the clock signal. The module monitors an input clock (clk_i) and enables it based on two input signals: en_i (normal enable) and test_en_i (test enable). When the clock is low, it sets a latch (en_latch) based on the logical OR of the enable signals. The output clock (clk_o) is activated only when en_latch is high and clk_i is high, effectively allowing the clock to be gated off when not needed.
+module top_module(
+  input  clk_i,
+  input  en_i,
+  input  test_en_i,
+  output clk_o
+);

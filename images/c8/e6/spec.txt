@@ -1,0 +1,12 @@
+
+
+You are tasked with designing a module in Verilog that implements a D flip-flop with synchronous reset (SR). The module should have three inputs: `D` (data input), `clk` (clock input), and `sr` (synchronous reset input). The module should also have one output: `Q` (output).
+
+The module should operate as follows:
+- When `sr` is asserted (i.e., `sr` is high), `Q` should be forced to 0.
+- When `sr` is deasserted (i.e., `sr` is low), `Q` should be updated on the rising edge of `clk` with the value of `D`.
+- If `sr` is asserted while `clk` is high, `Q` should be forced to 0 on the next rising edge of `clk`.
+- If `sr` is asserted and `clk` is low, `Q` should remain 0 until `sr` is deasserted.
+
+You should implement this module within 200 lines of Verilog code.
+

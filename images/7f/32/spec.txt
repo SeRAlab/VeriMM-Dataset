@@ -1,0 +1,7 @@
+Design a hardware module that performs bit shifting operations on a 32-bit input. The module accepts a 32-bit data input, a 2-bit control signal to select the type of shift (left logical, right logical, or right arithmetic), and a 3-bit amount to specify the number of positions to shift. The output is a 32-bit result reflecting the applied shift based on the control signal: a left shift for control `00`, a right shift for control `01`, and an arithmetic right shift for control `10`. If an invalid control signal is detected, the output is set to zero.
+module top_module(
+  input [31:0] in,
+  input [1:0] ctrl,
+  input [2:0] amt,
+  output [31:0] out
+);

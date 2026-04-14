@@ -1,0 +1,8 @@
+Create a state machine that updates its state on the positive edge of a 1 MHz clock based on input signals. The module has four control inputs: `dir`, which determines the direction of operation; `choose`, which selects between different modes; and `speed`, which can disable the state change when set to zero. The output state is a 3-bit value that transitions to a specific state based on the input conditions, and defaults to a specific state if the conditions do not match any defined behavior. The design is aimed at controlling moving parts or logic flow, likely in an application where direction and speed control are crucial.
+module top_module(
+	input clk_1m,
+	input[2:0] dir,
+	input[1:0] choose,
+	input[1:0] speed,
+	output reg[2:0] state
+);

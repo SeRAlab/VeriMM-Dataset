@@ -1,0 +1,10 @@
+Design a 4-bit arithmetic logic unit (ALU) that performs various operations on two 4-bit inputs, A and B, based on a 3-bit opcode. The operations supported include addition, subtraction, bitwise AND, OR, and XOR, with an option to invert the second operand before the operation. The ALU also handles a carry-in signal for addition and subtraction, generating a carry-out flag as needed. The result of the chosen operation is stored in the output result register on the rising edge of the clock.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [2:0] opcode,
+    input carry_in,
+    input invert,
+    input clk,             // Added clock input
+    output reg [3:0] result
+);

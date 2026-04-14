@@ -1,0 +1,8 @@
+Design a 16-bit comparator module that compares two 16-bit input values, A and B. The module includes a reset input, which, when activated, resets the outputs. The outputs indicate whether A is equal to B or greater than B. Specifically, when the reset signal is active, both outputs are set to LOW. If A equals B, the `equal` output is set to HIGH while `greater_than` is LOW. If A is greater than B, `greater_than` is set to HIGH while `equal` remains LOW. If A is less than B, both outputs are LOW.
+module top_module(
+  input [15:0] A,
+  input [15:0] B,
+  input reset,
+  output reg equal,
+  output reg greater_than
+);

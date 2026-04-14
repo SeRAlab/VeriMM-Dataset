@@ -1,0 +1,6 @@
+Develop a signal synchronization and delay circuit that processes a 4-bit input from GPIO pins. The input signals are captured and synchronized to a clock signal, `s_axi_aclk`, across multiple clock cycles to mitigate metastability issues. The module achieves this by sequentially delaying each input bit through a series of registers, effectively isolating each bit for three clock cycles before outputting the fully synchronized 4-bit vector, `scndry_vect_out`. This design is essential for ensuring reliable signal integrity in digital systems where asynchronous input signals may introduce timing uncertainties.
+module top_module(
+    input [3:0] gpio_io_i,
+    input s_axi_aclk,
+    output reg [3:0] scndry_vect_out
+);

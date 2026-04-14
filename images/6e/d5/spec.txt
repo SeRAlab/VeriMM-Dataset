@@ -1,0 +1,8 @@
+Design a 16-bit barrel shifter that can perform either logical shifts or rotations based on the input signals. The module accepts a 16-bit input (`ain`), a 5-bit shift amount (`bin`), and control signals for rotation (`rotate`) and signed right arithmetic shift (`sra`). Depending on the value of `bin`, the circuit can shift or rotate the bits of `ain` to produce a modified output (`yout`). The design includes provisions for left and right shifts and integrates logic to choose between rotating the bits or filling the vacated bits with zeros or the sign bit, as specified by the control signals.
+module top_module(
+	 output [15:0] yout,
+	 input [15:0] ain,
+	 input [4:0] bin,
+	 input rotate,
+	 input sra
+    );

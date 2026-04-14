@@ -1,0 +1,12 @@
+Design a single-channel arbiter that facilitates data transfer between an input and an output interface. The module receives a valid input signal and, when the output is ready, forwards this input as the output while indicating that the output is valid. The arbiter always selects the input channel (io_in_0) and does not incorporate any form of arbitration for multiple channels, as the io_chosen output is consistently set to zero. This design serves to ensure reliable data communication with a straightforward control logic for managing readiness and validity.
+module top_module(
+  input   clock,
+  input   reset,
+  output  io_in_0_ready,
+  input   io_in_0_valid,
+  input   io_in_0_bits,
+  input   io_out_ready,
+  output  io_out_valid,
+  output  io_out_bits,
+  output  io_chosen
+);

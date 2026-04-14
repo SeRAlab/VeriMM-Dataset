@@ -1,0 +1,9 @@
+Design a simplified 8-bit analog-to-digital converter (ADC) that utilizes a binary search algorithm to approximate an input voltage, vin. The module operates in three states: IDLE, BUSY, and DONE. In the IDLE state, it waits for a start signal to begin the conversion process, initializing necessary registers and setting the busy flag. In the BUSY state, it performs up to 8 iterations of comparison between the current approximation and the input voltage, adjusting the approximation based on whether the input is greater or less than the current value. Upon completion of the iterations, it transitions to the DONE state, where it outputs the final approximation and clears the busy flag when the start signal is no longer asserted. The module incorporates a reset functionality to clear all states and registers.
+module top_module(
+  input clk,
+  input start,
+  input reset,
+  input [7:0] vin,
+  output reg [7:0] dout,
+  output reg busy
+);

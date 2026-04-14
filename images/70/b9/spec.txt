@@ -1,0 +1,11 @@
+Design a synchronous FIFO (First-In-First-Out) buffer with an 8-element storage capacity for 8-bit data. The module includes control signals for writing and reading data, with outputs indicating whether the buffer is full or empty. On each clock cycle, when the reset signal is low, the write and read pointers are initialized, and the number of stored entries is reset. When a write operation is requested and the buffer is not full, the current data is stored in the buffer, the write pointer is incremented, and the entry count is updated. Similarly, if a read operation is requested and the buffer is not empty, the data at the read pointer is outputted, the read pointer is incremented, and the entry count is decremented. The FIFO structure ensures that data is read in the same order it was written.
+module top_module(
+  input clk,
+  input reset_n,
+  input wr,
+  input [7:0] wr_data,
+  input rd,
+  output reg [7:0] rd_data,  // Changed to reg to allow assignment
+  output full,
+  output empty
+);

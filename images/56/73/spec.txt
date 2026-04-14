@@ -1,0 +1,16 @@
+Design a memory write-back (MEM_WB) stage for a pipelined processor architecture. This module captures and outputs the data required for writing back to the register file following an ALU operation or memory access. It features a reset mechanism that initializes outputs to zero on a reset signal and stores inputs (such as the destination register, ALU output, memory output, and control signals) upon the falling edge of the clock. The outputs facilitate subsequent stages in the pipeline, ensuring proper data flow and control signal propagation for register write operations.
+module top_module(
+		input clock,
+		input reset,
+		input [4:0] writeRegister,
+		input [31:0] aluOut,
+		input [31:0] memoryOut,
+		input regWrite,
+		input memToReg,
+		
+		output reg [4:0] writeRegisterOut,
+		output reg [31:0] aluOutOut,
+		output reg [31:0] memoryOutOut,
+		output reg regWriteOut,
+		output reg memToRegOut
+    );

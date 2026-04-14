@@ -1,0 +1,27 @@
+Please act as a professional Verilog designer.
+
+Implement an 8-bit shift register with parallel load and serial output. The module should have an 8-bit parallel input, clock input, load signal, and a serial output.
+
+Module name:  
+    shift_reg8bit 
+
+Input ports:
+    input [7:0] data_in: 8-bit parallel input signal.
+    input clk: 1-bit clock input signal.
+    input load: 1-bit load signal.
+    
+Output ports:
+    output serial_out: 1-bit serial output signal.
+
+Implementation:
+On the rising edge of the clock, if the load signal is active, load the parallel input into the register. Otherwise, shift the register contents to the right and produce the serial output.
+
+Give me the complete code.
+
+module shift_reg8bit
+(
+  input  [7:0] data_in,
+  input  clk,
+  input  load,
+  output serial_out
+);

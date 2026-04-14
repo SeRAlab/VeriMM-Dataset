@@ -1,0 +1,7 @@
+Design a random number generator utilizing a linear feedback shift register (LFSR) that produces an 8-bit output. The module operates under a clock signal and an active-low reset. Upon reset, it initializes the shift register to a specific value and a selector for output multiplexing. The LFSR generates new values on each clock cycle by shifting and applying a feedback operation. The output can be selected from one of four 8-bit segments of the 64-bit shift register based on a 2-bit select input. Additionally, the output is also controlled by an internal multiplexer that cycles through the same four segments, allowing for flexible access to the generated random bits.
+module top_module(
+  input clk,
+  input rst_n,
+  input [1:0] select,
+  output reg [7:0] out
+);

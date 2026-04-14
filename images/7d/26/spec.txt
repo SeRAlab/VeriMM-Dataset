@@ -1,0 +1,9 @@
+Design a simple calculator module that performs basic arithmetic operations (addition, subtraction, multiplication, and division) on two 8-bit inputs, num1 and num2, based on a 2-bit operation code (op). The calculator operates synchronously with a clock signal (clk) and includes a reset (rst) input to clear its outputs. On each clock cycle, if not reset, the module updates the result based on the selected operation and indicates the validity of the output with a valid signal. The result and valid status are available at the outputs.
+module top_module(
+  input clk,
+  input rst,
+  input [1:0] op,
+  input [7:0] num1,
+  input [7:0] num2,
+  output [7:0] result,
+  output valid);

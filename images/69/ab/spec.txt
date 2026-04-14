@@ -1,0 +1,7 @@
+Design a circuit for alpha blending that processes a 24-bit RGB color input and adjusts its intensity based on a 9-bit alpha value. On each rising edge of the clock, the module multiplies each color channel (red, green, blue) by the alpha value, effectively controlling transparency. The results are truncated to 8 bits for each channel before assembling a new 24-bit output. This functionality is useful in applications such as graphics processing where color blending effects are desired.
+module top_module(
+    input clock,
+    input [23:0] data,
+    input [8:0] alpha,
+    output reg [23:0] data_out
+);

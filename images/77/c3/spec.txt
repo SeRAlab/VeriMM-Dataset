@@ -1,0 +1,12 @@
+Design a 4-input XNOR circuit that computes the bitwise XOR of two pairs of 4-bit inputs (A with B and C with D), followed by taking the XNOR of the results. The final output Y will indicate a logical high only when all individual bits of the composite XOR result (AB and CD) are low, effectively functioning as a 4-input XNOR gate. The additional power and ground inputs (VPWR, VGND, VPB, VNB) indicate the module is likely designed for a specific technology or environment that requires proper power management.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [3:0] C,
+    input [3:0] D,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB,
+    output reg Y
+);

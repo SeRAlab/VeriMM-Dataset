@@ -1,0 +1,9 @@
+Develop a stack manager circuit that allows for the storage and retrieval of 11-bit wide data values. The module features inputs for loading and storing values and uses a clock signal for synchronization. When the store input is activated, the current input value (decremented by one) is pushed onto the stack at the current level, and the stack level is incremented. Conversely, when the load input is activated, the stack level is decremented to pop the last stored value. The output reflects the value at the top of the stack, allowing the retrieval of the most recently stored data. The module also provides a level output to indicate the current depth of the stack.
+module top_module(
+    input [10:0] in_val,
+    output [10:0] out_val,
+	 input load,
+    input store,
+    input clk,
+	 output [2:0]level_out
+    );

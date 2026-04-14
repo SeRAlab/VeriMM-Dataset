@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+    
+Implement a module to synchronize a signal (`set2`) from one clock domain (`clk2`) to another clock domain (`clk1`). This is a common requirement in digital systems where different parts of the system operate on different clock frequencies, and signals need to be passed between these parts without causing metastability issues. The module ensures that the signal transition is safely handled, minimizing the risk of metastable states when crossing clock domains.
+
+Module name:  
+	dbg_sync_clk1_clk2
+
+Input ports:
+	clk1: The clock input for the first domain. This is a primary clock under which certain operations of the module are synchronized.
+	clk2: The clock input for the second domain. This clock is used for operations that are initially synchronized under the second domain before being transferred to the first domain.
+	reset1: Asynchronous reset for the first clock domain. This signal is used to reset the synchronization mechanism related to clk1.
+	reset2: Asynchronous reset for the second clock domain. This signal resets the synchronization mechanism related to clk2.
+	set2: The input signal in the second clock domain (clk2) that needs to be synchronized to the first clock domain (clk1).
+Output ports:
+	sync_out: The output signal that is the synchronized version of set2 in the first clock domain (clk1). This signal represents the successful synchronization of set2 from the clk2 domain to the clk1 domain.
+
+
+Implementation:
+The RTL module dbg_sync_clk1_clk2 is designed to synchronize a signal (set2) from one clock domain (clk2) to another (clk1) while also providing a mechanism to clear the synchronized signal within the originating clock domain (clk2). This module employs a series of flip-flops and combinational logic to achieve cross-domain signal synchronization and control, ensuring that the signal transitions are safely handled to mitigate the risk of metastability and synchronization errors.
+
+Give me the complete code.
+

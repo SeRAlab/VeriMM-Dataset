@@ -1,0 +1,6 @@
+Design a traffic light controller that transitions between three states: green, yellow, and red, based on the current light state and the input from a pedestrian button. When the light is green (00) and the pedestrian button is pressed, the system transitions to yellow (01); otherwise, it moves to red (10). From yellow, it goes directly to red, and from red, it cycles back to green. The controller ensures safe pedestrian crossings by allowing a yellow signal to occur before switching to red. Default behavior is to reset to the green state if an undefined state is reached.
+module top_module(
+    input [1:0] current_state,
+    input pedestrian_button,
+    output reg [1:0] next_state // Change output to reg type
+);

@@ -1,0 +1,13 @@
+Design a control module that processes four input signals based on a clock and reset signal. When reset is activated, all outputs are initialized to zero. On each clock cycle, the module determines if `input_a` is greater than or equal to 8, setting `output_a` accordingly, and checks if `input_b` is less than or equal to 3 to set `output_b`. The module also uses a case statement to directly pass the 2-bit `input_c` to `output_c`. Additionally, it constructs a combined output `output_d` using the values of `input_d`, `input_c`, `input_b`, and `input_a`. This module offers control handling and conditional logic, suitable for applications needing status monitoring and output generation.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] input_a,
+  input [3:0] input_b,
+  input [1:0] input_c,
+  input input_d,
+  output reg output_a,
+  output reg output_b,
+  output reg [1:0] output_c,
+  output reg [3:0] output_d
+);

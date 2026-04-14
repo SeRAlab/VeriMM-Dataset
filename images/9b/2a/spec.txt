@@ -1,0 +1,6 @@
+Design a circuit that performs the ShiftRows operation utilized in the Advanced Encryption Standard (AES) algorithm. This module takes a 128-bit input and outputs a 128-bit value after rearranging its bytes based on a specified transformation. The arrangement is dependent on the 'inv' signal, which determines whether the operation is performing encryption (when 'inv' is 0) or decryption (when 'inv' is 1). Specifically, the second row shifts bytes left by one position, the third row shifts left by two positions, and the fourth row shifts left by three positions during encryption, while the reverse shifts are applied during decryption.
+module top_module(
+    output [127:0] shftOut, // Data Out
+    input [127:0] shftIn,  // Data In
+    input inv              // If 1, do decryption, else do encryption.
+);

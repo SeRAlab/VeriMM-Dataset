@@ -1,0 +1,8 @@
+Design a pulse width modulation (PWM) generator that produces a PWM signal based on a specified period and duty cycle. The module takes a clock input to drive the state updates, a reset signal to initialize the counter and output, and a control input that specifies the desired duty cycle as a percentage (0-100). The output goes high for a fraction of the period determined by the duty cycle and low for the remainder, effectively modulating the signal's width to control power delivery to a load.
+module top_module(
+  input clock,
+  input ctrl,
+  input reset,
+  input [15:0] period,
+  output pwm_out
+);

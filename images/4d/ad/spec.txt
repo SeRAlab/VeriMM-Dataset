@@ -1,0 +1,9 @@
+Design a traffic light controller that manages the sequencing of red, yellow, and green lights based on a clock signal and an active reset. The controller transitions through four states—red, red-yellow, green, and yellow—each associated with specific time durations defined by parameters. The output signals indicate which light is active, where red is on for 5 seconds, followed by a red-yellow state for 1.25 seconds, then green for 7.5 seconds, and finally yellow for 1.25 seconds. This module utilizes a counter that decrements over time to facilitate the transitions between states, ensuring safe traffic management at intersections.
+module top_module(
+  input clk,
+  input reset,
+  input [1:0] state,
+  output reg red,
+  output reg green,
+  output reg yellow
+);

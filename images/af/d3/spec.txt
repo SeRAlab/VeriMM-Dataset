@@ -1,0 +1,15 @@
+Design a demultiplexer (demux) that routes a single input data stream based on control signals. It takes a 3-bit input `din_data`, which is valid only when `din_valid` is high, and directs it to one of two outputs (dout0 or dout1) based on the value of the most significant bit of `din_data`. The module provides `dout0_valid` and `dout1_valid` signals to indicate when data is sent to each output, and the readiness of each output is monitored with `dout0_ready` and `dout1_ready` signals. The output data for both `dout0` and `dout1` comes from the same input stream, allowing for effective routing based on the control signals while ensuring synchronization with the clock and reset functionalities.
+module top_module(
+    input clk,
+    input rst,
+    output reg  din_ready,
+    input  wire din_valid,
+    input  wire [2:0] din_data,
+    input  wire         dout0_ready,
+    output reg          dout0_valid,
+    output wire  [0:0] dout0_data,
+    input  wire         dout1_ready,
+    output reg          dout1_valid,
+    output wire  [1:0] dout1_data
+
+);

@@ -1,0 +1,7 @@
+Design a control circuit that manages an 8-bit LED output based on user input from two keys and a reset signal. The module activates individual LEDs depending on the state of the keys: if key 0 is pressed, it turns on LED[0]; if key 1 is pressed, it activates LED[1]. Pressing both keys results in turning off all LEDs. Additionally, a reset signal clears the LEDs to a low state. The circuit operates on the rising edge of a 50 MHz clock.
+module top_module(
+    input CLOCK_50,
+    input [1:0] KEY,
+    input RESET,
+    output reg [7:0] LED
+);

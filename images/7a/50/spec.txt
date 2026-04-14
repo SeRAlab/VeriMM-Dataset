@@ -1,0 +1,14 @@
+The Verilog module defines a CCD (Charge-Coupled Device) capture system that processes incoming data from a camera or imaging sensor. It takes various inputs, including pixel data (`iDATA`), frame valid (`iFVAL`), line valid (`iLVAL`), and control signals (`iSTART`, `iEND`) and produces outputs such as the captured pixel data (`oDATA`), coordinate counters for X and Y (`oX_Cont`, `oY_Cont`), frame count (`oFrame_Cont`), and a data valid signal (`oDVAL`). The module also includes error detection capabilities, indicated by the `oError` output. The CCD capture module incrementally updates coordinate counters based on valid data and manages frame boundaries, ensuring reliable data capture through synchronization with clock edges and reset control.
+module top_module(	oDATA,
+					oDVAL,
+					oX_Cont,
+					oY_Cont,
+					oFrame_Cont,
+					iDATA,
+					iFVAL,
+					iLVAL,
+					iSTART,
+					iEND,
+					iCLK,
+					iRST,
+					oError	);

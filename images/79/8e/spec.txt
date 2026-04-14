@@ -1,0 +1,19 @@
+Implement the Verilog module based on the following description.
+We want to create a module that:
+
+// (1) receives an 8-bit binary number,
+// (2) determines if the number is a multiple of 4,
+// (3) calculates the sum of the bits in the binary number,
+// (4) outputs a flag if the number is a palindrome,
+// (5) provides a reset mechanism to reset all outputs.
+
+// The input binary number is available on the input signal 'binary_num'. The multiple of 4 determination should set the output 'is_multiple_of_4' to 1 if the number is a multiple of 4 and 0 otherwise. The sum of the bits in the binary number should be output on 'sum_bits[3:0]'. The palindrome flag should be set on 'is_palindrome' if the number reads the same forwards and backwards. The reset signal is active high synchronous.
+
+module top_module(
+    input wire clk,
+    input wire reset,
+    input wire [7:0] binary_num,
+    output reg is_multiple_of_4,
+    output reg [3:0] sum_bits,
+    output reg is_palindrome
+);

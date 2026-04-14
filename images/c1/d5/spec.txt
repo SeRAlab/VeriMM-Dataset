@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module to convert a 7-bit input signal into an 8-bit ASCII character, which is then outputted. This module is particularly useful in systems that require the representation of binary data in a human-readable format, such as debugging interfaces, data logging, or communication protocols where data needs to be encoded or decoded into ASCII characters for transmission or storage.
+
+The module operates on the edge of a clock signal and uses handshaking signals to manage data flow, ensuring that data is only processed when the module is not busy and the upstream system is ready to accept new data. This makes it suitable for use in systems where data processing cannot occur continuously or where synchronization between different system components is necessary.
+
+Module name:  
+	wbusixchar
+
+Input ports:
+	i_clk (input): The clock signal. The module's operations are synchronized to the rising edge of this clock.
+	i_stb (input): The strobe input signal. When high, it indicates that valid data is present on i_bits and ready to be processed.
+	i_bits (input, 7 bits): The 7bit input data to be converted into an ASCII character.
+	i_busy (input): The busy signal from the downstream system. When high, it indicates that the downstream system is not ready to accept new data.
+Output ports:
+	o_stb (output, reg): The strobe output signal. Goes high to indicate that an ASCII character is available on o_char.
+	o_char (output, reg, 8 bits): The 8bit ASCII character resulting from the conversion of i_bits.
+	o_busy (output, wire): The busy signal. Indicates that the module is currently processing data or waiting for the downstream system to become ready.
+
+
+Implementation:
+The Verilog module wbusixchar is designed to convert a 7-bit input (i_bits) into an 8-bit ASCII character (o_char), based on specific encoding rules, and manage the flow control between this module and an external system through handshake signals (i_stb, o_stb, i_busy, o_busy). The module operates synchronously with respect to a clock signal (i_clk).
+
+Give me the complete code.
+

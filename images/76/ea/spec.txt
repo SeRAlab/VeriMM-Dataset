@@ -1,0 +1,9 @@
+Design a control state machine (FSM) to manage a sequential process based on input signals. The module operates under a clock and has four states: S_READY, S_READY_WAIT, S_MOVE, and S_STOP. When the system is in the S_READY state and the 'go' signal is activated, it transitions to S_READY_WAIT, which then leads to S_MOVE. In the S_MOVE state, the FSM remains active until the 'stop' signal is triggered, at which point it transitions to S_STOP and subsequently back to S_READY on the next cycle. The control outputs, 'start' and 'move,' are asserted based on the current state, enabling the appropriate actions for initiating and moving the controlled process. The FSM also includes a reset feature to ensure it starts in the S_READY state upon reset.
+module top_module(
+    input clk,
+    input go,
+    input stop,
+    input resetn,
+    output reg start,
+    output reg move
+);

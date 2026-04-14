@@ -1,0 +1,11 @@
+Develop a clock generator circuit that produces a gated clock output, GCLK. The output is controlled by the SCE (Sample Clock Enable) and GATE signals. When SCE is active, the circuit transitions through four states: IDLE, RISE, HIGH, and FALL. In the IDLE state, if GATE is asserted, the circuit moves to the RISE state, asserting GCLK high. While in the HIGH state, GCLK remains high until GATE is deasserted, triggering the FALL state, which then brings GCLK low and returns the circuit to IDLE. If SCE is not active, the state resets to IDLE, keeping GCLK low. This design effectively creates a gated clock signal that is responsive to external control signals.
+module top_module(
+    input SCE,
+    input GATE,
+    input CLK,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB,
+    output reg GCLK
+);

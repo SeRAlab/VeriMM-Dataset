@@ -1,0 +1,18 @@
+Design a JTAG (Joint Test Action Group) interface for the Cyclone II FPGA, which facilitates boundary scan testing and programming of the device. The module manages shifting of test data through a shift register while responding to JTAG control signals such as TMS and TCK. It operates in a finite state machine with four states, enabling functions like data shifting and state management while generating output signals for TDO, TMS, TCK, and TDI to support communication with external devices. The JTAG interface ensures that the device can be tested and programmed effectively, enhancing its usability in various applications.
+module top_module(
+    tms, 
+    tck,
+    tdi, 
+    ntrst,
+    tdoutap,
+    tdouser,
+    tdo,
+    tmsutap,
+    tckutap,
+    tdiutap,
+    shiftuser,
+    clkdruser,
+    updateuser,
+    runidleuser,
+    usr1user
+);

@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a read-only memory (ROM) that stores predefined binary sequences. It to map a 6-bit input address (`NANO_PRE_IN`) to a specific 17-bit output data (`NANO_ROM_OUT`). This module is likely used in a larger system where specific binary sequences are required for operations such as instruction decoding, microcode implementation, or configuration settings. The ROM acts as a non-volatile storage element, ensuring that the binary sequences are preserved even when the system is powered off.
+
+Module name:  
+	NANOCODE_ROM
+
+Input ports:
+	NANO_PRE_IN [5:0]: This is a 6bit input port that serves as the address input for the ROM. The input is used to select one of the 12 predefined binary sequences stored within the module. The width of 6 bits allows for addressing up to 64 different locations, although this specific implementation utilizes only 12 addresses (0 to 11).
+Output ports:
+	NANO_ROM_OUT [16:0]: This is a 17bit output port that presents the binary sequence corresponding to the address specified by NANO_PRE_IN. The data outputted by this port is determined by the internal ROM content and the input address.
+
+
+Implementation:
+The RTL module presented, named NANOCODE_ROM, is designed to function as a read-only memory (ROM) that maps a 6-bit input (NANO_PRE_IN) to a 17-bit output (NANO_ROM_OUT). This module is a straightforward example of combinational logic, as the output is directly determined by the current value of the input without any dependency on previous states or clock cycles. The core of this module is the instantiation and assignment of a 17-bit wide, 12-entry deep ROM, which is implemented using a register array (NANO_ROM_OUT_r).
+Upon receiving an input on NANO_PRE_IN, the module uses this value as an index to access a specific location within the NANO_ROM_OUT_r array. The value retrieved from this location is then assigned to the output NANO_ROM_OUT. This process does not involve any clocked sequential logic, making the operation purely combinational. However, the use of non-blocking assignments (<=) in an always block triggered by changes in NANO_PRE_IN suggests an intention to mimic sequential behavior, which is unconventional and incorrect in this context as it may lead to simulation-synthesis mismatches and undefined behavior in hardware.
+The module lacks a clock input, which is typical for purely combinational logic but contradicts the use of non-blocking assignments typically used in sequential logic. The correct approach for updating the ROM content in a combinational manner would be to use blocking assignments (=) inside an initial block for initialization or to define the ROM content as a parameter or a constant.
+
+Give me the complete code.
+

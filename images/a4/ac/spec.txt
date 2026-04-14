@@ -1,0 +1,14 @@
+Design a loopback module that facilitates the transfer of 8-bit data between input and output interfaces with handshake signals for readiness and validity. The module becomes ready to accept data on the input side upon initialization, and upon receiving valid input data, it immediately forwards that data to the output. The output only indicates valid data when the output is ready to receive it, ensuring synchronization between input and output operations. Additionally, state management is handled internally to control the flow of data, relying on a state machine that transitions through three states to manage readiness and validity signals.
+module top_module(
+	input wire clk,
+	input wire rstn,
+
+	input wire [7:0] io_in_data,
+	output reg io_in_rdy,
+	input wire io_in_vld,
+	
+	(* mark_debug = "true" *) output reg [7:0] io_out_data,
+	input wire io_out_rdy,
+	output reg io_out_vld,
+
+	input wire [4:0] io_err);

@@ -1,0 +1,9 @@
+Design a synchronous module that functions as a selective adder and register. Upon receiving a clock signal, if the reset signal is active, the outputs and internal registers are reset to zero. If the reset is inactive, the module can either perform an addition operation on the 4-bit inputs `a` and `b`, or output the current value of `sum` based on the `select` input. If `select` is high, the module outputs the value of `sum`; if low, it calculates the sum of `a` and `b` and updates `sum` and the 8-bit output `q` accordingly.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input [3:0] a,
+    input [3:0] b,
+    input select, // Select input to choose between adder and register
+    output reg [7:0] q // 8-bit output from the active module
+);

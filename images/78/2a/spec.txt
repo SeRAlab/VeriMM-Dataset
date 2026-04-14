@@ -1,0 +1,12 @@
+Design a simple register-based data read module that outputs a 32-bit read value based on the selected address. The module uses a 2-to-1 multiplexer to choose between the `in_port` input and a zeroed output, selecting only when `address` equals 0. The output `readdata` is updated on the rising edge of the clock (`clk`), and resets to zero when the active low reset signal (`reset_n`) is deasserted. The module effectively enables data reading from a single input signal held in a register when a specific address is accessed.
+module top_module(
+                            
+                             address,
+                             clk,
+                             in_port,
+                             reset_n,
+
+                            
+                             readdata
+                          )
+;

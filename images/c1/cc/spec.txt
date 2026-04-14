@@ -1,0 +1,36 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform the Write-Back (WB) stage of a pipelined processor architecture. Its primary function to finalize the execution of instructions by determining the final result to be written back into the register file. This module plays a crucial role in the completion phase of instruction execution within a CPU pipeline, ensuring that the results of computations or memory operations are correctly updated in the processor's registers.
+
+The module decides whether to write back the result of an arithmetic/logic unit (ALU) operation or data fetched from memory into a specified destination register. It also outputs control signals indicating whether a write operation should occur and identifies the target register for the write-back operation. This functionality is essential for the correct execution of both computational and memory access instructions within a pipelined processor architecture.
+
+Module name:  
+	WB_stage
+
+Input ports:
+	pipeline_reg_in [36:0]: A 37bit input vector carrying the data from the previous pipeline stage. This vector encapsulates the results of the ALU operation, data read from memory, and control signals determining the writeback operation specifics. The breakdown is as follows:
+	ex_alu_result [36:21] : The 16bit result of the ALU operation.
+	mem_read_data [20:5]: The 16bit data read from memory.
+	write_back_en [4]: A control signal indicating if the writeback operation is enabled.
+	write_back_dest [3:1]: A 3bit identifier specifying the destination register for the writeback operation.
+	write_back_result_mux [0]: A control signal that selects between the ALU result and memory read data for the writeback operation.
+Output ports:
+	reg_write_en: A control signal output that indicates whether a register write operation should be enabled, directly driven by the input write_back_en.
+	reg_write_dest [2:0]: A 3bit output specifying the destination register for the writeback operation, directly driven by the input write_back_dest.
+	reg_write_data [15:0]: A 16bit output carrying the data to be written back into the destination register. This data is selected between the ALU result and memory read data based on the write_back_result_mux signal.
+	wb_op_dest [2:0]: A 3bit output that also specifies the destination register for the writeback operation, directly driven by the input write_back_dest. This output seems redundant given the presence of reg_write_dest and might be used for additional control or monitoring purposes within the broader system context.
+
+
+Implementation:
+The WB_stage module represents the Write-Back (WB) stage of a pipeline, a critical phase in many processor architectures where the results of executed instructions are written back to the register file, making them available for subsequent instructions. This module is designed to handle two primary tasks: determining the source of the data to be written back to a register and enabling the write operation when necessary.
+The module interfaces with a 37-bit input pipeline_reg_in, which encapsulates all the necessary signals for the write-back operation. This input is assumed to be coming from the previous pipeline stage, likely the Memory Access (MEM) stage in a typical processor pipeline. The outputs of the module include signals to enable the register write operation (reg_write_en), specify the destination register (reg_write_dest), provide the data to be written (reg_write_data), and an additional output wb_op_dest which seems to replicate the functionality of reg_write_dest.
+The logic within the module is purely combinational, as evidenced by the absence of clocked storage elements (e.g., flip-flops). The module decodes the pipeline_reg_in input to extract various control signals and data necessary for the write-back operation:
+ALU Result (ex_alu_result): A 16-bit value representing the result of an ALU operation. This data might be written back to a register depending on the instruction type.
+Memory Read Data (mem_read_data): A 16-bit value fetched from memory, relevant for load-type instructions where the result comes from the memory system rather than the ALU.
+Write Back Enable (write_back_en): A signal indicating whether the current instruction requires a register write-back operation.
+Write Back Destination (write_back_dest): A 3-bit value specifying the destination register for the write-back operation.
+Write Back Result Mux (write_back_result_mux): A selector signal determining whether the source of the write-back data is the ALU result or memory read data.
+The module uses the write_back_result_mux signal to choose between the ALU result and memory read data as the source for the reg_write_data output. The reg_write_en, reg_write_dest, and wb_op_dest outputs are directly derived from the decoded input signals, facilitating the write-back operation.
+
+Give me the complete code.
+

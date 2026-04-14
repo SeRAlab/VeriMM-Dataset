@@ -1,0 +1,14 @@
+Design a hazard detection unit (HDU) for a pipelined processor. This module monitors specific control signals and register dependencies to manage the flow of instructions by controlling signals for program counter (PC) write, instruction fetch (IF) write, and flushing of instruction and decode stages. It ensures that the pipeline operates correctly by preventing hazards: asserting the flush signals when a jump or branch occurs and managing forwarding paths to handle data hazards when necessary, thus facilitating proper instruction execution in a pipelined architecture.
+module top_module( 
+			 ID_Rs,
+             ID_Rt,
+			 EX_WR_out,
+			 EX_MemtoReg,
+			 EX_JumpCtrl,
+			 Branch,
+			 
+			 PCWrite,
+			 IF_Write,
+			 IF_Flush,
+			 ID_Flush
+			 );

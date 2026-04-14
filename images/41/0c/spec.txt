@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+
+Implement a module to perform a simple 8-bit wide, 16-depth memory block with read and write capabilities. The write_en signal indicates a write operation, and the read_en signal indicates a read operation. The address signal determines the address to read/write.
+
+Module name:
+    memory_block
+Input ports:
+	clk: Clock input for synchronization.
+	rst_n: Active-low reset signal.
+	addr[3:0]: 4-bit address for read/write operations.
+	data_in[7:0]: 8-bit input data for writing.
+	write_en: Signal indicating a write operation.
+	read_en: Signal indicating a read operation.
+Output ports:
+    data_out[7:0]: 8-bit output data read from memory.
+
+Implementation:
+When write_en is high, the data_in is written to the specified address. When read_en is high, the data_out outputs the data from the specified address. Both write and read operations are synchronous to clk.
+
+Give me the complete code.

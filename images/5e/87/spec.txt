@@ -1,0 +1,8 @@
+Design a read-write instruction memory module for a processor. It allows writing 32-bit instructions to a memory space, starting from an address defined by a specific instruction segment, while also enabling reading of instructions based on the provided address. The module uses a clock signal for synchronized write operations and shifts the input address to ensure proper alignment within a 2048-word (8 KB) memory array. When the write enable signal is active, it updates the memory with the new instruction, and it outputs the instruction stored at the addressed location upon request.
+module top_module(
+        input   wire        clk,
+        input   wire[31:0]  addr_imem_ram_i,
+        input   wire[31:0]  wr_instr_imem_ram_i,
+        input   wire        wr_en_imem_ram_i,
+        output  wire[31:0]  read_instr_imem_ram_o
+    );

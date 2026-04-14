@@ -1,0 +1,5 @@
+Design a circuit that generates a new program counter value for jump operations in a digital processor. This module takes a 32-bit input `nextPc` and a 32-bit instruction `inst`, and produces a 32-bit output `jumpPc`. The `jumpPc` is constructed by combining the upper 4 bits from `nextPc`, the middle 26 bits from `inst`, and setting the lower 2 bits to zero. This setup effectively facilitates the jump addressing for control flow changes in a processor's instruction set.
+module top_module(
+	input [31:0] nextPc,
+	input [31:0] inst,
+	output reg [31:0] jumpPc);

@@ -1,0 +1,15 @@
+Design a credit counter module with a configurable width that counts up or down based on input signals. It utilizes a clock signal for synchronization and features reset functionality to initialize the counter. The module can accept a configuration input to set the initial count value when valid, and it supports credit input for incrementing (when `decrement` is low) or decrementing (when `decrement` is high) the count based on external signals. The outputs include the current count value, a credit acknowledgment signal, and the configured count value, providing essential feedback for further processing.
+module top_module(
+    clock,
+    reset,
+    enable,
+    sim_time_tick,
+    config_in,
+    config_in_valid,
+    config_out,
+    config_out_valid,
+    credit_in_valid,
+    credit_ack,
+    decrement,
+    count_out
+);

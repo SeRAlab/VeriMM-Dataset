@@ -1,0 +1,11 @@
+Design a 8-register file that operates on a clock signal. It allows for writing 8-bit data into one of eight registers when the write enable signal is asserted. The module features two read addresses, enabling simultaneous reading of data from two different registers. Upon the clock's positive edge, if the write enable is active, data from the input is stored in the specified register. Regardless of the write operation, the module continuously presents the data from the two specified registers as outputs.
+module top_module(
+    input clk,
+    input wr_en,
+    input [2:0] wr_addr,
+    input [7:0] wr_data,
+    input [2:0] rd1_addr,
+    input [2:0] rd2_addr,
+    output reg [7:0] rd1_data,
+    output reg [7:0] rd2_data
+);

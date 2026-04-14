@@ -1,0 +1,11 @@
+Design a state machine for a vending machine control system. The module transitions between three states: Idle, Ready, and Dispense. In the Idle state, it waits for a product selection; in the Ready state, it checks for coin insertion before moving to Dispense, where it activates the dispense mechanism. The outputs indicate if the machine is ready to dispense, if enough coins have been provided, and if the product is out of stock. The system incorporates a reset functionality to return to the Idle state and uses clock edges to manage state transitions efficiently.
+module top_module(
+  input clk,
+  input reset,
+  input coin,
+  input product,
+  output reg dispense,
+  output reg ready,
+  output reg enough_coins,
+  output reg out_of_stock
+);

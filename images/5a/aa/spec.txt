@@ -1,0 +1,14 @@
+Design a low-power Linear Feedback Shift Register (LFSR) that generates a pseudo-random sequence of 8-bit data and simultaneously produces a heartbeat signal. The LFSR can accept a new seed for its initial state and operates based on a clock input, with an option to enable the LFSR functionality. Upon reset, it initializes the LFSR to a default state. The heartbeat signal toggles based on a count that is configurable through an input signal indicating whether a long or short heartbeat period is desired, allowing flexibility in timing without affecting the LFSR operation.
+module top_module(
+   
+   input clk,
+   input reset_n,
+   
+   input new_seed,
+   input enable,
+   input wire [7:0] seed,
+   input long_hb,
+   
+   output reg heartbeat,
+   output reg [7:0] lfsr_data
+  );

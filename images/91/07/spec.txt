@@ -1,0 +1,12 @@
+Design a motor control block that manages different types of motors based on user input. It features a state machine that can operate in four modes: IDLE, PWM, H-BRIDGE, and STEPPER. Depending on the selected motor type, the module produces relevant control signals and step patterns. In PWM mode, it generates a PWM signal based on the specified speed, while in H-BRIDGE mode, it configures direction controls without PWM. The STEPPER mode cycles through specific step signals when triggered by an external step input. This module enables flexible motor control in embedded systems and robotics applications.
+module top_module(
+  input clk,
+  input rst,
+  input [1:0] motor_type,
+  input dir,
+  input [7:0] speed,
+  input step,
+  output reg pwm,                // Change output to reg type
+  output reg [1:0] control,
+  output reg [3:0] step_signals
+);

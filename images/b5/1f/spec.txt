@@ -1,0 +1,20 @@
+Design a speaker control module with a Wishbone slave interface. This module accepts clock and reset signals, and handles data input through the Wishbone protocol. It outputs a speaker signal, which is active when a timer signal is high and when a specific bit in the output data is set. The module also provides an acknowledgment signal to indicate a successful data transfer. The data output is updated on the rising edge of the clock, either resetting to zero or writing new data based on the write control signals.
+module top_module(
+    // Clocks
+    input clk,
+    input rst,
+
+    // Wishbone slave interface
+    input      [7:0] wb_dat_i,
+    output reg [7:0] wb_dat_o,
+    input            wb_we_i,
+    input            wb_stb_i,
+    input            wb_cyc_i,
+    output           wb_ack_o,
+
+    // Timer clock
+    input timer2,
+
+    // Speaker pad signal
+    output speaker_
+  );

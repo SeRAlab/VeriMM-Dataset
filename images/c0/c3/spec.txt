@@ -1,0 +1,40 @@
+Please act as a professional verilog designer.
+    
+Implement a module appears to be an interface component designed for a system that utilizes a Wishbone bus, a popular bus architecture for connecting components in embedded systems. The primary functions of this module include:
+
+Generating control and data signals for read/write operations on the Wishbone bus.
+Handling immediate offsets and operation codes to determine the nature of the bus transaction.
+Managing data transactions between the core logic (presumably a processor or a similar computational unit) and the Wishbone bus, including data read acknowledgments and data latency handling.
+
+This module plays a crucial role in interfacing the core computational logic with the memory or peripheral devices connected through the Wishbone bus, facilitating data exchanges and control signal management based on the operation codes and immediate offsets provided.
+
+Module name:  
+	aeMB2_xslif
+
+Input ports:
+	xwb_dat_i [31:0]: 32bit input data from the Wishbone bus.
+	xwb_ack_i: Acknowledgment signal from the Wishbone bus indicating that a data transaction has been completed.
+	imm_of [15:0]: 16bit immediate offset, likely used for addressing or instruction modification.
+	opc_of [5:0]: 6bit operation code, determining the type of operation to be performed.
+	opa_of [31:0]: 32bit operand, possibly the data to be written to the bus or used in the operation.
+	gclk: Global clock signal.
+	grst: Global reset signal, used to initialize the module.
+	dena: Data enable signal, controlling the module's operation in synchronization with data availability.
+	gpha: Global phase signal, potentially used for timing adjustments or multiphase operations.
+Output ports:
+	xwb_adr_o [AEMB_XWB1:2]: Address output to the Wishbone bus, with its size determined by the AEMB_XWB parameter.
+	xwb_dat_o [31:0]: 32bit data output to the Wishbone bus.
+	xwb_sel_o [3:0]: 4bit bus select signal, likely used for byte enable signals in the bus transaction.
+	xwb_tag_o: Tag output, possibly used for transaction identification or additional control.
+	xwb_stb_o: Strobe signal, indicating an active transaction on the bus.
+	xwb_cyc_o: Cycle signal, representing the duration of a bus cycle.
+	xwb_wre_o: Write enable signal, indicating whether the current transaction is a write operation.
+	xwb_fb: Feedback signal, derived from the XOR of xwb_stb_o and xwb_ack_i, indicating the status of the bus transaction.
+	xwb_mx [31:0]: 32bit multiplexed data output, potentially used for data forwarding or latency handling.
+
+
+Implementation:
+The aeMB2_xslif module is designed to interface with an external bus, presumably for memory or peripheral access, using a Wishbone-like protocol. The module's primary function is to generate the necessary control signals for read/write operations based on the inputs it receives, and to manage data flow between the core logic (not fully detailed within this module) and the external bus. The design employs both combinational and sequential logic to achieve its objectives, with a focus on signal synchronization to the global clock (gclk) and reset (grst) conditions.
+
+Give me the complete code.
+

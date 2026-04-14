@@ -1,0 +1,9 @@
+Design a module that monitors the readiness of data in a SPI (Serial Peripheral Interface) communication setup. The module incorporates a counter that times out during idle periods of the SPI, resetting when the chip select line (s_cs) is active or when SPI communication is detected. It produces an output signal, `data_ready`, when it expires as long as the most recent data bit received (from the SPI data input, sdi) is low, indicating that new data is available for processing. This design effectively facilitates synchronization between the SPI master and slave devices by signaling when data is ready to be read.
+module top_module(
+    input clk, resetn,
+    input s_sclk, s_sdo, s_sdo_t,
+    output reg data_ready,
+    output reg s_sdi,
+    input s_cs,
+    input spi_active
+);

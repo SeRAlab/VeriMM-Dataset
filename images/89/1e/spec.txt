@@ -1,0 +1,8 @@
+Design a circuit that performs an arithmetic operation combining an 8-bit input and a 4-bit input. On each clock edge, if the reset signal is activated, the output is set to zero; otherwise, the output is calculated as the sum of the 8-bit input and the 4-bit input shifted left by 8 bits, effectively concatenating the 4-bit input to the high byte of the output. The result is a 12-bit output representing the combined value of the inputs.
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] a,
+    input [3:0] b,
+    output reg [11:0] c
+);

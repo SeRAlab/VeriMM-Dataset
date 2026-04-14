@@ -1,0 +1,5 @@
+Design a Bluetooth state machine that can operate in three states: IDLE, CONNECTED, and DISCONNECTED. The state transitions are triggered by the following inputs: 'connect' (1 when a connection should be established) and 'disconnect' (1 when a connection should be terminated). The state machine should output 'status' which indicates the current state. The initial state is IDLE. The state transitions are defined as follows:  
+- From IDLE, if 'connect' is 1, transition to CONNECTED.  
+- From CONNECTED, if 'disconnect' is 1, transition to DISCONNECTED.  
+- From DISCONNECTED, if 'connect' is 1, transition to CONNECTED.  
+- From all states, if both 'connect' and 'disconnect' are 0, remain in the current state.

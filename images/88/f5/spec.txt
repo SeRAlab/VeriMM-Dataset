@@ -1,0 +1,9 @@
+Design a simple arithmetic calculator capable of performing four basic operations: addition, subtraction, multiplication, and division on two 8-bit operands. The module accepts a 3-bit operation code to select the desired arithmetic function. It outputs the result of the operation while also indicating overflow and underflow conditions. Overflow is flagged if the result exceeds 255, and underflow is detected specifically during subtraction when the second operand is greater than the first.
+module top_module(
+  input [2:0] operation,
+  input [7:0] operand_a,
+  input [7:0] operand_b,
+  output reg [7:0] result,
+  output reg overflow,
+  output reg underflow
+);

@@ -1,0 +1,3 @@
+This Verilog module implements a portion of the SHA-256 hashing algorithm, specifically focusing on the update of state variables during the computation process. It takes inputs including a clock signal, constants, and the previous state of the hash, then computes new values for the state and intermediate variables using predefined functions for bitwise operations (e0, e1, ch, and maj) that are characteristic of SHA-256. Upon each clock edge, it updates the outputs `tx_state` and `tx_t1_part` based on the results of these operations, effectively transforming the internal state necessary for the SHA-256 digest calculation.
+module top_module(clk, k_next, rx_state, rx_t1_part, rx_w1, 
+                        tx_state, tx_t1_part);

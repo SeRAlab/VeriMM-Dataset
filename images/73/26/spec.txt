@@ -1,0 +1,18 @@
+Please act as a professional Verilog designer.
+
+Implement a module for a 16-bit loadable counter. The counter should increment its value on every positive edge of the clock signal (clk) and should load a new value from the input (load_val) when the load signal (load) is high. The counter should have an asynchronous reset (active low) that sets the count value to 16'd0 when activated.
+
+Module name:
+    loadable_counter
+Input ports:
+    rst_n: Asynchronous reset signal (active low)
+    clk: Clock signal
+    load: Signal to control loading of new value
+    load_val: 16-bit value to be loaded into the counter
+Output ports:
+    count: 16-bit output representing the current count value
+
+Implementation:
+If the reset signal is active (!rst_n), the counter is reset to 16'd0 by assigning the value 16'd0 to the output register (count). If the load signal is high, the counter loads the new value from the input (load_val). On every positive edge of the clock signal (clk), if the load signal is low, the counter increments its value by 1.
+
+Give me the complete code.

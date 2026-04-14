@@ -1,0 +1,15 @@
+Design a pipeline register that stores and outputs data for a write-back stage in a processor. This module captures signals from the memory stage of execution, specifically the write enable signal, the destination register address, and the ALU result. The module is triggered on the rising edge of the clock and is reset asynchronously; when reset, it clears the stored values. Upon receiving a valid clock edge, it latches the input signals, preparing them for subsequent stages of the pipeline.
+module top_module(
+  input CLK,
+  input RST,
+  input MEM_WB_RegWre,
+  
+  input [4:0] MEM_Reg_RD,
+  
+  
+  input [31:0] MEM_ALU_DataBus,
+  
+  output reg WB_RegWre,
+  output reg [31:0] WB_DataBus,
+  output reg [4:0] WB_Reg_RD
+  );

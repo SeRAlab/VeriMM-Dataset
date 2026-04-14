@@ -1,0 +1,15 @@
+Design a circuit that determines the leading zero count of a 16-bit input based on various criteria. The module accepts several input signals indicating if specific ranges of bits within the input word are equal to zero. The outputs signify the count of leading zeros across the entire 16-bit input: `din_15_0_eq_0` indicates if all bits are zero, while `lead0_16b_2`, `lead0_16b_1`, and `lead0_16b_0` denote the presence of leading zeros in different bit ranges, allowing for a hierarchical assessment of the leading zeros in the 16-bit input.
+module top_module(
+    input din_15_8_eq_0,
+    input din_15_12_eq_0,
+    input lead0_8b_1_hi,
+    input lead0_8b_0_hi,
+    input din_7_0_eq_0,
+    input din_7_4_eq_0,
+    input lead0_8b_1_lo,
+    input lead0_8b_0_lo,
+    output din_15_0_eq_0,
+    output lead0_16b_2,
+    output lead0_16b_1,
+    output lead0_16b_0
+);

@@ -1,0 +1,8 @@
+Design a 4-bit shift register with asynchronous load capability. On a rising clock edge, if the load signal is asserted, the module loads the 4-bit input data directly into the output. If the load signal is not active but the shift signal is asserted, the contents of the shift register are shifted to the left by one bit, with the least significant bit being set to zero.
+module top_module(
+  input clk,
+  input load,
+  input shift,
+  input [3:0] data_in,
+  output reg [3:0] data_out
+);

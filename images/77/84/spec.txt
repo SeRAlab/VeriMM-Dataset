@@ -1,0 +1,6 @@
+Design a clock splitter that generates a divided clock output based on an input clock and a latch edge signal. The module monitors the latch edge input, and when it detects a rising edge while the latch edge was previously low, it initializes a 2-count timer. The output clock toggles between high and low states based on the countdown of this timer, effectively creating a clock signal that is synchronized to the rising edges of the input clock while controlling its frequency based on the timing defined by the latch edge.
+module top_module(
+    input clk_in,
+    input latch_edge,
+    output reg clk_out
+    );

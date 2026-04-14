@@ -1,0 +1,15 @@
+Design a simple memory allocator that can allocate and free a fixed number of memory blocks. The memory allocator should support the following operations:
+1. `allocate`: Allocate memory from the pool.
+2. `free`: Free previously allocated memory.
+
+The memory pool will have a fixed size, and the allocator should keep track of allocated and free blocks. The input signals will be:
+- `clk`: Clock signal.
+- `reset`: Reset signal (active high).
+- `alloc_req`: Request to allocate a block (active high).
+- `free_req`: Request to free a block (active high).
+- `block_id`: Identifier for the block to free or allocate.
+
+The output signals will be:
+- `alloc_granted`: Indicates that allocation was successful (active high).
+- `free_granted`: Indicates that freeing was successful (active high).
+- `error`: Indicates an error (e.g., trying to free an unallocated block or allocating when no blocks are available).

@@ -1,0 +1,11 @@
+Design a data decoder module that processes input signals related to a vehicle's operational state. It accepts four 8-bit inputs: `decenas`, `unidades`, `presencia`, and `ignicion`, and outputs a 5-bit `Temp`, along with two single-bit signals, `Pres` and `Carro`. The module resets all outputs to zero upon receiving a reset signal (`rst`). It converts the `unidades` input into a decimal format based on specific conditions, determines the presence of the vehicle using the `presencia` signal, and identifies the ignition status from the `ignicion` signal. Finally, it calculates the `Temp` output based on the values of `decenas` and the converted `unidades_Decimal`, tailoring the output according to predefined criteria.
+module top_module(
+	 input wire rst,
+    input wire [7:0] decenas,
+    input wire [7:0] unidades,
+    input wire [7:0] presencia,
+    input wire [7:0] ignicion,
+    output reg [4:0] Temp,
+    output reg Pres,
+    output reg Carro
+    );

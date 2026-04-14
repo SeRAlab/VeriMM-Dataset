@@ -1,0 +1,8 @@
+Design a circuit that extracts and outputs consecutive 8-bit segments from a 32-bit input word upon receiving a valid signal. The circuit operates on a 4x clock frequency, where each clock cycle enables the output of a new 8-bit segment of the input data, starting with the most significant byte and cycling through to the least significant byte. When the valid input is not asserted, the output is reset to LOW, and the segment counter is cleared. The module effectively functions as a byte extractor that processes a 32-bit input into 4 separate 8-bit outputs sequentially.
+module top_module(
+	input clk_4f_c,
+	input valid_in,
+	input [31:0] Data_in,
+	output reg valid_out_c,
+	output reg [7:0] Data_out_c
+);

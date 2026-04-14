@@ -1,0 +1,8 @@
+Develop a finite-state machine-based vending machine controller. This module processes input coins and product selections, transitioning through states such as IDLE, COIN_INSERTED, and PRODUCT_SELECTED. It manages the price of selected items and determines when to dispense a product based on the accumulated coins. The system resets the state and price upon a reset signal, and it outputs a dispense signal when the correct amount of money is received for a selected product.
+module top_module(
+  input clk,
+  input reset,
+  input coin,
+  input [1:0] selection,
+  output reg dispense
+);

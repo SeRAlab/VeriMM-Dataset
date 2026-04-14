@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module to detect edges in a digital signal. It plays a crucial role in digital systems where the transition of a signal from one state to another (edge detection) triggers specific operations or actions. This module can detect rising edges, falling edges, and both edges of a binary input signal. Its functionality is essential in applications such as digital pulse processing, clock domain crossing, and interrupt generation, among others. The module operates synchronously with a clock signal and includes an enable signal for conditional operation.
+
+Module name:  
+	edge_det
+
+Input ports:
+	rst (input): A binary input signal that serves as the reset signal. When asserted (1), it initializes the internal state of the module, ensuring a known starting condition.
+	clk (input): The clock input signal. The module's operations are synchronized to the rising edge of this clock signal.
+	ce (input): The clock enable signal. It allows the module to update its internal state and perform edge detection only when asserted (1). This feature is useful for powersaving and conditional operation.
+	i (input): The binary input signal whose edges are to be detected by the module.
+Output ports:
+	pe (output): A binary output signal that indicates a positive (rising) edge detection on the input signal i. It is asserted (1) for one clock cycle when a rising edge is detected.
+	ne (output): A binary output signal that indicates a negative (falling) edge detection on the input signal i. It is asserted (1) for one clock cycle when a falling edge is detected.
+	ee (output): A binary output signal that indicates either edge (rising or falling) detection on the input signal i. It is asserted (1) for one clock cycle when any edge is detected.
+
+
+Implementation:
+The RTL module presented is designed to detect edges (both rising and falling) as well as the equality (or difference) of a signal i across clock cycles. It operates synchronously with a clock signal clk and incorporates an asynchronous reset rst. The module also features a clock enable signal ce that controls the sampling of the input signal i. The outputs of the module are pe (positive edge), ne (negative edge), and ee (edge equality).
+
+Give me the complete code.
+

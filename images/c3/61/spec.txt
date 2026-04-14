@@ -1,0 +1,54 @@
+
+
+You have been tasked with implementing a Verilog module that performs a 2:1 multiplexer. The module should have the following inputs and outputs:
+
+Inputs:
+- A0: a single bit input
+- A1: a single bit input
+- S: a single bit input representing the select line
+- VPWR: a power supply input
+- VGND: a ground input
+- VPB: a power supply input
+- VNB: a ground input
+
+Outputs:
+- X: a single bit output representing the selected input
+
+You should use the following module as a base for your implementation:
+
+```
+module sky130_fd_sc_hdll__mux2_12 (
+    X   ,
+    A0  ,
+    A1  ,
+    S   ,
+    VPWR,
+    VGND,
+    VPB ,
+    VNB
+);
+
+    output X   ;
+    input  A0  ;
+    input  A1  ;
+    input  S   ;
+    input  VPWR;
+    input  VGND;
+    input  VPB ;
+    input  VNB ;
+    sky130_fd_sc_hdll__mux2 base (
+        .X(X),
+        .A0(A0),
+        .A1(A1),
+        .S(S),
+        .VPWR(VPWR),
+        .VGND(VGND),
+        .VPB(VPB),
+        .VNB(VNB)
+    );
+
+endmodule
+```
+
+Implement the `sky130_fd_sc_hdll__mux2_12` module using primitive gates such as `and`, `or`, `not`, and `xnor`. Make sure to handle all possible input combinations.
+

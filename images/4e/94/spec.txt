@@ -1,0 +1,10 @@
+Design a 4-bit synchronous adder with a carry input. The module takes two 4-bit inputs (A and B) and a single-bit carry input (Cin) and produces a 4-bit sum output (S) along with a carry-out output (Cout). The operation is triggered on the rising edge of the clock or when a reset signal is active, ensuring that the outputs are reset to zero when the reset is high. When not in reset, the module computes the sum of A, B, and Cin, which is then registered to the outputs.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] A,
+  input [3:0] B,
+  input Cin,
+  output reg [3:0] S,   // Change net to reg
+  output reg Cout       // Change net to reg
+);

@@ -1,0 +1,192 @@
+`timescale 1ns/1ps
+
+module top_module_tb;
+
+    // Testbench signals (sequential circuit)
+    reg clk;
+    reg pwm;
+    wire led;
+
+    // Test tracking
+    integer test_num;
+    integer pass_count;
+    integer fail_count;
+
+    // Instantiate the DUT (Device Under Test)
+    top_module dut (
+        .clk(clk),
+        .pwm(pwm),
+        .led(led)
+    );
+
+    // Clock generation (10ns period)
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk;
+    end
+
+        task reset_dut;
+
+        begin
+            rst_n = 0;
+            pwm = 0;
+            repeat(2) @(posedge clk);
+            rst_n = 1;
+            @(posedge clk);
+        end
+        endtask
+    task testcase001;
+
+        begin
+            test_num = 1;
+            reset_dut();
+            pwm = 8'd10;
+
+            repeat(256) @(posedge clk);
+
+            repeat(10) @(posedge clk);
+            #1;
+            $display("Testcase %03d: PWM=10, checking at count 10", test_num);
+            #1;
+
+            check_outputs(1'b1);
+        end
+        endtask
+
+    task testcase002;
+
+        begin
+            test_num = 2;
+            reset_dut();
+            pwm = 8'd10;
+
+            repeat(256) @(posedge clk);
+
+            repeat(15) @(posedge clk);
+            #1;
+            $display("Testcase %03d: PWM=10, checking at count 15", test_num);
+            #1;
+
+            check_outputs(1'b0);
+        end
+        endtask
+
+    task testcase003;
+
+        begin
+            test_num = 3;
+            reset_dut();
+            pwm = 8'd128;
+            repeat(256) @(posedge clk);
+            repeat(128) @(posedge clk);
+            #1;
+            $display("Testcase %03d: PWM=128, checking at count 128", test_num);
+            #1;
+
+            check_outputs(1'b1);
+        end
+        endtask
+
+    task testcase004;
+
+        begin
+            test_num = 4;
+            reset_dut();
+            pwm = 8'd255;
+            repeat(256) @(posedge clk);
+            repeat(255) @(posedge clk);
+            #1;
+            $display("Testcase %03d: PWM=255, checking at count 255", test_num);
+            #1;
+
+            check_outputs(1'b1);
+        end
+        endtask
+
+    task testcase005;
+
+        begin
+            test_num = 5;
+            reset_dut();
+            pwm = 8'd0;
+            repeat(256) @(posedge clk);
+
+            #1;
+            $display("Testcase %03d: PWM=0, checking at count 0", test_num);
+            #1;
+
+            check_outputs(1'b1);
+        end
+        endtask
+
+    // Test stimulus
+    initial begin
+        // Initialize
+        test_num = 0;
+        pass_count = 0;
+        fail_count = 0;
+
+        $display("========================================");
+        $display("top_module Testbench");
+        $display("========================================");
+
+
+        testcase001();
+        testcase002();
+        testcase003();
+        testcase004();
+        testcase005();
+        
+        
+// Print summary
+        $display("\n========================================");
+        $display("Test Summary");
+        $display("========================================");
+        $display("Tests Passed: %0d", pass_count);
+        $display("Tests Failed: %0d", fail_count);
+        $display("Total Tests:  %0d", pass_count + fail_count);
+        $display("========================================");
+
+        if (fail_count == 0)
+            $display("ALL TESTS PASSED!");
+        else
+            $display("SOME TESTS FAILED!");
+
+        $display("\nSimulation completed at time %0t", $time);
+        $finish;
+    end
+
+    // Task to check outputs
+    task check_outputs;
+        input expected_led;
+        begin
+            if (expected_led === (expected_led ^ led ^ expected_led)) begin
+                $display("PASS");
+                $display("  Outputs: led=%b",
+                         led);
+                pass_count = pass_count + 1;
+            end else begin
+                $display("FAIL");
+                $display("  Expected: led=%b",
+                         expected_led);
+                $display("  Got:      led=%b",
+                         led);
+                fail_count = fail_count + 1;
+            end
+        end
+    endtask
+
+    // Timeout watchdog
+    initial begin
+        #1000000; // 1ms timeout
+        $display("\nERROR: Simulation timeout!");
+        $finish;
+    end
+
+    // Optional: Waveform dump for debugging
+    initial begin
+        $dumpfile("wave.vcd");
+        $dumpvars(0,clk, pwm, led);
+    end
+
+endmodule

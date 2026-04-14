@@ -1,0 +1,8 @@
+Develop a security access control module that manages access based on an attempt counter. The module increments a 4-bit counter on each clock cycle while enabled. If the counter exceeds 10 attempts, it sets the locked status to HIGH, indicating that access is denied. The module can be reset to initialize the counter and locked status to LOW. The output provides the current locked status, enabling integration into larger systems needing access control functionality.
+module top_module(
+  input clk,
+  input reset,
+  input enable,
+  input [3:0] attempt_count,
+  output locked
+);

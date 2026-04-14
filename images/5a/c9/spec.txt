@@ -1,0 +1,19 @@
+Please act as a professional Verilog designer.
+
+Implement a module of a 4-bit binary up/down counter. The counter should count from 0 to 15 in up mode and from 15 to 0 in down mode. The counting direction is controlled by a mode signal.
+
+Module name:
+    up_down_counter
+
+Input ports:
+    CLK: Clock input
+    RST: Active high reset signal
+    MODE: Mode control signal (0 for down, 1 for up)
+
+Output ports:
+    Count: 4-bit output representing the current counter value
+
+Implementation:
+The up_down_counter module uses one always block to update the counter value based on the clock signal, reset signal, and mode signal. The always block triggers on the positive edge of the clock signal (posedge CLK) or the positive edge of the reset signal (posedge RST). It checks if the reset signal is active (RST) and sets the counter value (Count) to 0. If in up mode, it counts up to 15 and wraps around to 0. If in down mode, it counts down to 0 and wraps around to 15.
+
+Give me the complete code.

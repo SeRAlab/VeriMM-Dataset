@@ -1,0 +1,12 @@
+Design a module that implements the quarterround function, which is a fundamental building block in certain cryptographic algorithms such as the ChaCha and Salsa stream ciphers. The module takes four 32-bit inputs and performs a series of arithmetic and bitwise operations, ultimately producing four 32-bit outputs. Specifically, it processes the inputs through a sequence of additions, left shifts, and exclusive OR (XOR) operations, ensuring that the outputs are dependent on the modified values of the inputs. This design allows for efficient mixing of input data, which is critical for maintaining cryptographic security.
+module top_module(
+                 input wire [31 : 0]  y0,
+                 input wire [31 : 0]  y1,
+                 input wire [31 : 0]  y2,
+                 input wire [31 : 0]  y3,
+
+                 output wire [31 : 0] z0,
+                 output wire [31 : 0] z1,
+                 output wire [31 : 0] z2,
+                 output wire [31 : 0] z3
+                );

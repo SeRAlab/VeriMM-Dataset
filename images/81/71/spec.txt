@@ -1,0 +1,15 @@
+Design a simple instruction cache interface component that captures and manages data for instruction retrieval. Upon each clock cycle, the module updates the data address using the provided instruction address (`ic_addr`), sets a read request signal (`data_rd`) based on the incoming instruction request (`ic_rq`), and stores the incoming data (`data_in`). It also indicates the validity of the instruction data output (`ic_data_out_valid`) when the data is ready to be read (`data_in_ready`). This design supports basic caching operations by aligning instruction fetching with data readiness for improved performance in a pipelined architecture.
+module top_module(input clk,
+                  input             reset,
+
+                  input [31:0]      ic_addr,
+                  input             ic_rq,
+                  output reg        ic_data_out_valid,
+                  output reg [31:0] ic_data_out,
+
+                  
+                  input [31:0]      data_in, 
+                  input             data_in_ready, 
+                  output reg        data_rd, 
+                  output reg [31:0] data_address 
+                  );

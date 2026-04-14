@@ -1,0 +1,8 @@
+Implement a synchronous RAM module with 256 words, each 16 bits wide. The module features a read/write operation controlled by the `wram` signal: when `wram` is high, data is read from the specified address (`direccionram`) and output through `datoram`; when `wram` is low, data from `datorom` is written to the given address. The module operates on the positive edge of the clock (`clk`).
+module top_module(
+input clk,
+input[7:0] direccionram,
+input wram,
+input [15:0]datorom,
+output reg [15:0]datoram
+);

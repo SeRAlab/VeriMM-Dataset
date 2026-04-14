@@ -1,0 +1,9 @@
+Design a control unit for a simple processor that decodes the instruction operation code (op) and generates appropriate control signals for instruction execution. The module produces signals for register destination selection, write enable, ALU input selection, memory read/write operations, branching decisions, and ALU control signals based on the type of instruction. Specifically, it distinguishes between R-type, load word (lw), store word (sw), branch equal (beq), and load upper immediate (lui) instructions, effectively coordinating the flow of data and control within the processor's data path.
+module top_module(
+	 input	[5:0] op,
+	 
+	 output	RegDst,RegWrite,ALUSrc,
+	 output	MemWrite,MemRead,MemtoReg,
+	 output	Branch,
+	 output	[1:0] ALUctr
+    );

@@ -1,0 +1,19 @@
+Implement the Verilog module based on the following description.
+We want to create a module that:
+
+// (1) receives a 7-bit binary number,
+// (2) checks if the number is less than or equal to 50,
+// (3) counts the number of 0s in the binary number,
+// (4) outputs a flag if the number is even,
+// (5) provides a reset mechanism to reset all outputs.
+
+// The input binary number is available on the input signal 'binary_num'. The output 'is_lte50' should be set to 1 if the number is less than or equal to 50 and 0 otherwise. The number of 0s in the binary number should be output on 'count_zeros[3:0]'. The even number flag should be set on 'is_even' if the number is even. The reset signal is active high synchronous.
+
+module top_module(
+    input wire clk,
+    input wire reset,
+    input wire [6:0] binary_num,
+    output reg is_lte50,
+    output reg [3:0] count_zeros,
+    output reg is_even
+);

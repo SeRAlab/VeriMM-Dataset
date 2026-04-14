@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+
+Design a 4x4-bit register file with two read ports and one write port. The register file should have a clock signal, reset signal, write enable signal, two 2-bit read address inputs, one 2-bit write address input, a 4-bit write data input, and two 4-bit read data outputs. When the write enable signal is high, the write data is written to the register specified by the write address on the positive edge of the clock. The read data outputs should always reflect the contents of the registers specified by the read addresses.
+
+Module name:
+    reg_file_4x4
+
+Input ports:
+    clk: Clock signal.
+    rst: Reset signal.
+    wr_en: Write enable signal.
+    rd_addr1: First 2-bit read address input.
+    rd_addr2: Second 2-bit read address input.
+    wr_addr: 2-bit write address input.
+    wr_data: 4-bit write data input.
+
+Output ports:
+    rd_data1: 4-bit read data output for rd_addr1.
+    rd_data2: 4-bit read data output for rd_addr2.
+
+Implementation:
+On every positive edge of the clock signal (clk), the register file is updated based on the control signals.
+If the reset signal (rst) is active, all registers are reset to 0.
+If the write enable signal (wr_en) is active, the write data is written to the register specified by the write address.
+
+The read data outputs always reflect the contents of the registers specified by the read addresses.
+
+Give me the complete code.

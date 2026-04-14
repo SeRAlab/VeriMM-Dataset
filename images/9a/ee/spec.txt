@@ -1,0 +1,9 @@
+Design a circuit that performs conditional concatenation and arithmetic operations. Specifically, it takes four 16-bit inputs (a, b, c, d) and a select signal. The module computes the sum and difference of inputs a and b, and concatenates the results with the sum and difference of inputs c and d, respectively. Depending on the value of the select signal (sel), it outputs a 48-bit result: if sel is 0, it outputs the concatenation of the sum with (c+d); if sel is 1, it outputs the concatenation of the difference with (c-d).
+module top_module(
+  input [15:0]      a,
+  input [15:0]      b,
+  input [15:0]      c,
+  input [15:0]      d,
+  input             sel,
+  output reg [47:0] res
+  );

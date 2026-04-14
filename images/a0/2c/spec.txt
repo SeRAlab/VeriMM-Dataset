@@ -1,0 +1,8 @@
+Design a behaviorally-based 8-bit shift register with both reset and load capabilities. Upon a rising clock edge, if the reset signal is low, the register is cleared to zero. If the load signal is high, the register is loaded with the value from the input data. If neither condition holds, the least significant bit is shifted into the register from the input data, while the other bits shift left, effectively implementing a serial input shift operation. The current value of the register is continuously outputted as an 8-bit wide bus.
+module top_module(
+  input clk,
+  input reset,
+  input load,
+  input data,
+  output [7:0] q
+);

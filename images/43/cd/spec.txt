@@ -1,0 +1,8 @@
+Design a data storage interface that translates a write operation based on the specified storage size and address. This module takes a 32-bit data input and outputs a corresponding 4-bit byte enable signal, determining which bytes of memory should be written. It adjusts the output data according to the specified store size: for a byte (8 bits), it selects a specific byte based on the address and pads the rest with zeros; for a half-word (16 bits), it uses two bytes and also pads the remaining bytes; and for a word (32 bits), it allows all bytes to be written without modification. The module intelligently directs memory write operations to achieve efficient data storage and access.
+module top_module(
+    input [WIDTH-1:0] write_data,
+    input [1:0] d_address,
+    input [1:0] store_size,
+    output reg [3:0] d_byteena,          // Change to 'reg'
+    output reg [WIDTH-1:0] d_writedataout // Change to 'reg'
+);

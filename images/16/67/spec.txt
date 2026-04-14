@@ -1,0 +1,15 @@
+
+Design an 8-channel DMA controller that allows for data transfer between devices and memory. The controller should have the following inputs:
+- `start`: A signal to initiate the transfer.
+- `channel`: A 3-bit select line to choose one of the 8 channels.
+- `data_in`: Data input to be transferred.
+- `ack`: Acknowledge signal from the destination device.
+
+The controller should output:
+- `data_out`: Data output from the selected channel.
+- `busy`: A signal indicating if the DMA controller is currently busy transferring data.
+
+The operation should be as follows:
+1. When `start` is high, the controller should check if the `ack` signal is received.
+2. If `ack` is received, the `data_in` should be assigned to `data_out` for the selected channel.
+3. The `busy` signal should be set high while the transfer is ongoing and set low once the transfer is complete.

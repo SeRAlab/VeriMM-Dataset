@@ -1,0 +1,8 @@
+Design a circuit that performs an 8-bit division operation, calculating both the quotient and the remainder from two 8-bit inputs: the dividend and divisor. The module utilizes a finite state machine to manage the division process in multiple states, including IDLE, SHIFT, COMPARE, SUBTRACT, and OUTPUT. It shifts the dividend and updates the quotient bit by bit, comparing the dividend with the divisor, performing subtraction when applicable, and ultimately storing the results in the output registers for the quotient and remainder upon completion.
+module top_module(
+    input clk, // Added clk input
+    input [7:0] DIVIDEND,
+    input [7:0] DIVISOR,
+    output reg [7:0] QUOTIENT,
+    output reg [7:0] REMAINDER
+);

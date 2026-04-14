@@ -1,0 +1,9 @@
+Design a UART (Universal Asynchronous Receiver/Transmitter) transmitter module that serializes an 8-bit data input. Upon asserting the `start` signal, the module initiates transmission by first sending a start bit, followed by the data bits in a least-significant-bit-first order, concluding with a stop bit. The `tx` output carries the serial data, which transitions from HIGH (idle state) to LOW upon starting the transmission. The module also signals completion of the transmission via the `done` output when the special value 0xFF is transmitted. It incorporates state management for IDLE, START, and TRANSMIT phases, with necessary handling for reset conditions.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data_in,
+  input start,
+  output reg tx,
+  output reg done
+);

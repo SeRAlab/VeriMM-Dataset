@@ -1,0 +1,11 @@
+Design a clock divider module that generates two divided clock signals from an input clock. The module produces a 1 Hz signal (`clkdivided1hz`) by counting to 50 million and a 200 Hz signal (`clkdivided200hz`) by counting to 250,000. The design includes reset functionality, allowing the counters (`OUT1` and `OUT2`) to be reset to zero when the reset signal (`rst`) is activated. The output `clkselect` indicates whether the 200 Hz clock output is currently active.
+module top_module(
+	 input clk,
+    input rst,
+	 input select,
+    output reg [31:0] OUT1,
+	 output reg [31:0] OUT2,
+    output clkdivided1hz,
+	 output clkdivided200hz,
+	 output clkselect
+    );

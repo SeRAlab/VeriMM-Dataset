@@ -1,0 +1,10 @@
+Design a LIFO (Last In, First Out) memory module that functions as a stack. It operates under a clock signal and supports write and reset operations. The module has inputs for data and control signals that allow it to push data onto the stack when the 'we' (write enable) signal is asserted, provided the stack is not full. If the stack is full, further write attempts are ignored. The module also pops data off the stack on each clock cycle, providing the most recently added data as output 'dout' unless the stack is empty. It has flags to indicate whether the stack is empty or full, initializing to an empty state on reset. The depth of the stack is configurable through a parameter.
+module top_module(
+  input clk,
+  input we,
+  input din,
+  input rst,
+  output reg dout,
+  output reg empty,
+  output reg full
+);

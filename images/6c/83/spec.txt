@@ -1,0 +1,8 @@
+Design a signed 18x18-bit multiplier that computes the product of two 18-bit inputs, A and B. The module utilizes a synchronous reset and clock signal to perform the multiplication operation. On the rising edge of the clock, if a reset is asserted, the module initializes all output registers to zero. If not reset, it calculates the absolute values of the inputs, multiplies them, and handles the sign of the product based on the original signs of A and B to generate the final signed 36-bit output, Z.
+module top_module(
+	input [17:0] A,
+	input [17:0] B,
+	input CLK,
+	input RST,
+	output [35:0] Z
+);

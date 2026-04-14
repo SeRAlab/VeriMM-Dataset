@@ -1,0 +1,6 @@
+Design a digital circuit module that takes a 16-bit input signal and separates it into a low 8-bit output and a high 8-bit output. The low output includes an even parity bit calculated from the lower 8 bits of the input, while the higher output simply mirrors the upper 8 bits of the input. Additionally, the module outputs the calculated even parity bit as a separate signal. The architecture includes a byte splitter, a parity bit calculation mechanism, and assigns the outputs accordingly, ensuring that parity verification can be performed on the low byte data.
+module top_module( 
+    input wire [15:0] in,
+    output wire [7:0] out_hi,
+    output wire [7:0] out_lo,
+    output wire parity );

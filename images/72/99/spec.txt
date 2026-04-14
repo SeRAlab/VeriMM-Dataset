@@ -1,0 +1,10 @@
+Design a calculator module that performs arithmetic operations on two 8-bit numbers based on a 2-bit operation selection input. The module supports addition, subtraction, multiplication, and division, which are determined by the `op` input. It operates synchronously with a clock signal, and upon a reset, it initializes the result and a flag indicating negative results. The output is a 16-bit result and a flag that signals if the result is negative.
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] num1,
+    input [7:0] num2,
+    input [1:0] op,
+    output reg [15:0] res,
+    output reg flag
+);

@@ -1,0 +1,7 @@
+Design a content addressable memory (CAM) module that compares an input data signal against a stored search key. The module has a data input width of `n` bits and a search key width of `m` bits. When the search key matches the stored data, the module outputs a match signal set to high and provides the stored data on the data output line; if there is no match, it outputs a low match signal and zero on the data output line. This functionality allows for quick lookups based on the content of the data, rather than its address.
+module top_module(
+  input [n-1:0] data_in,
+  input [m-1:0] search_key,
+  output reg match,                // Changed to reg type
+  output reg [n-1:0] data_out      // Changed to reg type
+);

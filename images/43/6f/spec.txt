@@ -1,0 +1,10 @@
+Design a digital circuit that incorporates an up/down counter, a barrel shifter, an adder, and a 7-segment display decoder. The counter increments or decrements based on the UP and DOWN inputs and can be loaded with a specified value via the LOAD input. The output of the counter can be shifted by a specified amount, dictated by the shift_amt input. This shifted value is then added to a 4-bit input value, in, and the resulting sum is decoded to generate a 7-segment display representation. The overall design is aimed at providing a user-interactive counting and display mechanism, suitable for applications such as scoreboards or simple calculators.
+module top_module(
+    input CLK,
+    input UP,
+    input DOWN,
+    input LOAD,
+    input [3:0] in,
+    input [1:0] shift_amt,
+    output reg [6:0] seg_display
+);

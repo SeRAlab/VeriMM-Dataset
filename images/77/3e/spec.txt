@@ -1,0 +1,32 @@
+Design a 16-bit USB Avalon interface module that facilitates communication between a USB controller and an Avalon memory-mapped master. The module handles control signals and data transmission, including write and read operations. It contains a mechanism for receiving data into a FIFO structure and managing valid and invalid states based on the presence of data packets. The design incorporates features such as status tracking for the receiver, outputting information on whether data is empty and preparing data for transmission, while also providing a handshake mechanism to synchronize read and write operations.
+module top_module(
+	input clk,
+	input reset,
+
+	
+	input avs_ctrl_address,
+	input avs_ctrl_write,
+	input [7:0]avs_ctrl_writedata,
+	input avs_ctrl_read,
+	output [7:0]avs_ctrl_readdata,
+
+	
+	output ready,
+	input valid,
+	input [15:0]data,
+	input startofpacket,
+	input endofpacket,
+	input empty,
+	
+	
+	output tx_write,
+	output [15:0]tx_data,
+	output [1:0]tx_mask,
+	input  tx_full,
+
+	
+	output rx_read,
+	input  [15:0]rx_data,
+	input  rx_mask,
+	input  rx_empty
+);

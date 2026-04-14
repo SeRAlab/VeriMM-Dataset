@@ -1,0 +1,10 @@
+Design a UART transmitter module that serially transmits 8-bit data. The module takes in a clock signal, a reset signal, a baud clock for timing, and a data strobe to initiate transmission. When a valid data strobe is received and the transmitter is ready, it shifts the data bits into a serial format, appending a start bit and a stop bit. The serial data is outputted via the `serial_txd` line, while the `ready` output indicates when the transmitter is free to accept new data. This design efficiently manages data transmission timing using the provided baud clock.
+module top_module(
+	input clk,
+	input reset,
+	input baud_clk,
+	input data_strobe,
+	input [7:0] data,
+	output ready,
+	output reg serial_txd
+);

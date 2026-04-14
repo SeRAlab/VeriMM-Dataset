@@ -1,0 +1,7 @@
+Design a module that performs multiplication of two n-bit inputs, A and B, with selectable modes for signed or unsigned multiplication. When the mode input is high, both A and B are treated as signed values, and their product is computed accordingly. If the mode is low, A and B are treated as unsigned integers, and the multiplication is performed without sign consideration. The output, P, is a signed result with a width of 2*n bits, accommodating the maximum range of the multiplication results.
+module top_module(
+  input [n-1:0] A,
+  input [n-1:0] B,
+  input mode,
+  output reg signed [2*n-1:0] P
+);

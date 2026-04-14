@@ -1,0 +1,9 @@
+Design a reset control module that manages system and PLL (Phase-Locked Loop) reset signals. The module generates a synchronized active-low reset signal (SYSRST_N) and controls the PLL reset (PLLRST) based on an input clock (INCLK) and an active-low reset input (RST_N). When RST_N is low, both PLLRST and SYSRST are asserted high, indicating a reset state. Once RST_N is released, PLLRST transitions low, and SYSRST goes low only when the PLL is ready (indicated by PLLRDY), ensuring the system is correctly initialized before normal operation.
+module top_module(
+input INCLK,
+input RST_N,
+input PLLRDY,
+output reg PLLRST,
+output reg SYSRST,
+output SYSRST_N
+ );

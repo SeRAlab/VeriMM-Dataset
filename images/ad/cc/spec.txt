@@ -1,0 +1,6 @@
+Design a circuit that functions as a demultiplexer (DEMUX) with one input and multiple outputs. It takes a single binary input and a selection signal that determines which one of the n output lines (where n is set to 8) receives the input value, while all other outputs are set to low. The selection signal allows the user to control which output line is activated based on its binary value, effectively routing the input to the desired output. If the selection signal exceeds the valid range, all outputs are reset to zero.
+module top_module(
+  input in,
+  input [log2(n)-1:0] sel,
+  output reg [n-1:0] out
+);

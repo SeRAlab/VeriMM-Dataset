@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform the "ShiftRows" operation, a crucial step in the AES (Advanced Encryption Standard) encryption and decryption processes. This operation involves a permutation step where bytes in the AES state matrix are shifted cyclically. The primary function of this module to accept a 128-bit input block (`data_in`), representing the AES state matrix, and produce two 128-bit output blocks: `data_out_enc` for encryption and `data_out_dec` for decryption. The shifting pattern varies for encryption and decryption, aiming to ensure diffusion in the AES algorithm, making it more resistant to cryptanalysis.
+
+Module name:  
+	shift_rows
+
+Input ports:
+	data_in [127:0]: A 128bit input representing the state matrix in AES. This input is the current state of the data block being encrypted or decrypted, arranged as a 4x4 matrix of bytes.
+Output ports:
+	data_out_enc [127:0]: A 128bit output representing the state matrix after applying the ShiftRows operation for encryption. This output is the modified state of the data block, ready for the next step in the AES encryption process.
+	data_out_dec [127:0]: A 128bit output representing the state matrix after applying the ShiftRows operation for decryption. This output is the modified state of the data block, ready for the next step in the AES decryption process.
+
+
+Implementation:
+The Verilog module shift_rows is designed to perform the "ShiftRows" operation, a crucial step in the AES (Advanced Encryption Standard) encryption and decryption processes. This operation is applied to the state matrix, which is a 4x4 matrix of bytes, to enhance the diffusion mechanism in AES. The module takes a 128-bit input (data_in), representing the state matrix, and outputs two 128-bit vectors: data_out_enc for encryption and data_out_dec for decryption, after applying the ShiftRows transformation for encryption and its inverse for decryption, respectively.
+The module is purely combinational, as it lacks any sequential elements like flip-flops or latches, meaning it performs its operations within a single clock cycle in a synchronous digital system. The transformation involves permuting the bytes within each row of the state matrix; for encryption, each row is shifted cyclically to the left by a number of positions equal to its row index (0-indexed), and for decryption, the shift is to the right.
+
+Give me the complete code.
+

@@ -1,0 +1,1 @@
+module top_module(input [31:0] A,B,output E);assign E=(A==B)?1:0;endmodule

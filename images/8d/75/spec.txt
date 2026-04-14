@@ -1,0 +1,12 @@
+Design a vending machine controller that manages the sale of two items: candy and chips. The module accepts clock and reset signals, along with two-bit inputs representing coin denominations (5, 10, and 25 cents) and a selection for the item to purchase. It calculates the total amount inserted, sets the price based on the selected item, and handles the dispensing of the item while ensuring the stock levels are tracked. The controller provides outputs indicating the item price, whether to dispense the item, the amount of change to return, and the current stock levels of candy and chips. When enough coins are inserted to cover the item's price, the appropriate item is dispensed, and any necessary change is given back to the user.
+module top_module(
+  input clk,
+  input reset,
+  input [1:0] coin,
+  input item,
+  output reg [5:0] price,
+  output reg dispense,
+  output reg [5:0] change,
+  output reg [3:0] stock_candy,
+  output reg [3:0] stock_chips
+);

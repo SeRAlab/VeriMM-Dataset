@@ -1,0 +1,9 @@
+Design a register bank that allows for simultaneous read and write operations using a synchronous RAM structure. The module features a 32-bit data input for writing and two 5-bit addresses for specifying read and write locations. The write-enable signal controls write access; when asserted, it allows data to be written to the specified address. The current value from the read address is output as a 32-bit register. The design effectively supports a basic multi-port RAM interface for seamless data storage and retrieval in synchronous circuits.
+module top_module(
+  input clock,
+  input [31:0] data,
+  input [4:0] rdaddress,
+  input [4:0] wraddress,
+  input wren,
+  output reg [31:0] q
+);

@@ -1,0 +1,12 @@
+Design a digital accumulator circuit that processes 8-bit input data. This module takes in input signals to accumulate values while keeping track of the number of valid inputs through a counting mechanism. Upon receiving valid data, it adds the incoming data to an internal register and updates a count. Once the accumulation reaches a predefined count (8 valid inputs), it sets an output flag indicating validity and outputs the accumulated result in a 10-bit width. The module also manages synchronization and readiness signals, ensuring that it can signal when the next input can be accepted based on its current state.
+module top_module(
+    input               clk         ,   
+    input               rst_n       ,
+    input       [7:0]   data_in     ,
+    input               valid_a     ,
+    input               ready_b     ,
+ 
+    output              ready_a     ,
+    output  reg         valid_b     ,
+    output  reg [9:0]   data_out
+);

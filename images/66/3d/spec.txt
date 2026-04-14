@@ -1,0 +1,13 @@
+Design a synchronous FIFO (First-In-First-Out) buffer with a depth of 2 and an address width of 1. The module supports read and write operations controlled by enable signals. It utilizes a clock signal for synchronization and a reset input to initialize the internal pointers and state. The buffer tracks its fullness and emptiness status, providing active-low indicators for both conditions. When writing, data is stored in memory if it is not full, and when reading, it outputs data if it is not empty, ensuring that operations adhere to FIFO principles.
+module top_module(
+    input clk,
+    input reset,
+    output reg if_empty_n,
+    input if_read_ce,
+    input if_read,
+    output reg [7:0] if_dout,
+    output reg if_full_n,
+    input if_write_ce,
+    input if_write,
+    input [7:0] if_din
+);

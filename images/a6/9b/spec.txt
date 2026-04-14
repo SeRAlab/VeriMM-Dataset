@@ -1,0 +1,17 @@
+Implement the Verilog module based on the following description.
+This is a sequential circuit. The circuit consists of combinational logic and a ten-bit binary counter with enable and clear. The output of the counter should be observable through the output count.
+
+Time 0ns: clk = 0, clear = 0, enable = 1, count = xxx.
+Time 5ns: clk = 1, clear = 0, enable = 1, count = xxx.
+Time 10ns: clk = 0, clear = 1, enable = 0, count = xxx.
+Time 15ns: clk = 1, clear = 1, enable = 0, count = 0000000000.
+Time 20ns: clk = 0, clear = 0, enable = 0, count = 0000000000.
+Time 25ns: clk = 1, clear = 0, enable = 1, count = 0000000001.
+Time 30ns: clk = 0, clear = 0, enable = 1, count = 0000000001.
+Time 35ns: clk = 1, clear = 0, enable = 1, count = 0000000010.
+
+module enable_clear_counter (
+	input clk,
+	input clear,
+	input enable,
+	output reg [9:0] count);

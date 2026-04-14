@@ -1,0 +1,21 @@
+
+
+You are tasked with designing a Verilog module that implements a 4-bit binary up-counter with asynchronous reset functionality. The module should have four inputs and one output. The inputs are: 
+
+- `clk`: a clock input signal
+- `rst`: an asynchronous reset input signal
+- `en`: an enable input signal
+- `load`: a load input signal
+
+The output is a 4-bit binary signal named `count`.
+
+The module should operate as follows:
+
+- When `rst` is asserted, the counter should be reset to 0.
+- When `en` is asserted, the counter should count up by 1 on each rising edge of the `clk` signal.
+- When `load` is asserted, the counter should load the value present on the 4-bit input signal `load_val` on the next rising edge of the `clk` signal.
+
+Assume that the counter should be able to count up to the maximum value of 15 (1111 in binary), and then wrap around back to 0.
+
+Your module should be named `up_counter` and should be contained within a single file that is no more than 200 lines of Verilog code.
+

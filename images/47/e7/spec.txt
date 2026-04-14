@@ -1,0 +1,7 @@
+Design a logic analyzer that captures and outputs a portion of a 16-bit input signal based on a 4-bit control input. The module operates on a clock signal and employs a shift register to accumulate sections of the input signal, specifically extracting 4 bits at a time from different quartets determined by the control lines. The output is updated once every eight clock cycles, where it presents the most recent captured bits from the shift register, effectively serving as a waveform output. The design allows for flexible signal sampling and visualization, making it suitable for digital signal analysis and debugging tasks.
+module top_module(
+  input clk,
+  input [15:0] signal_in,
+  input [3:0] control_in,
+  output reg [3:0] waveform_out
+);

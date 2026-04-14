@@ -1,0 +1,21 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit synchronous binary counter with enable and load functionality. The module counts up when enabled, and can load a specific value on a load signal.
+
+Module name:
+    binary_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Synchronous reset signal to initialize the counter to 4'b0000.
+    en: Enable signal, if asserted the counter counts up.
+    load: Load signal, if asserted the counter loads the value on the data input.
+    data: 4-bit input value to load into the counter.
+
+Output ports:
+    q: Output signal representing the current counter value.
+
+Implementation:
+The counter is defined as reg [3:0] q and initialized to 4'b0000. On each rising edge of the clock, if rst is asserted, q is reset to 4'b0000. If load is asserted, q is set to data. If en is asserted, q is incremented by 1.
+
+Give me the complete code.

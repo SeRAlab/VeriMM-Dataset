@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+
+Implement a module for a 8-bit register with an enable signal. The register should store the value of the input data on the positive edge of the clock signal only when the enable signal is high. 
+
+Module name:
+    reg_8bit
+
+Input ports：
+    clk: Clock signal.
+    en: Enable signal.
+    d: 8-bit data input.
+
+Output ports：
+    q: 8-bit data output.
+
+Implementation:
+Declare the module reg_8bit with input and output ports as specified in the ports statement.
+Declare an output register q to hold the output value.
+Inside an always block, sensitive to the positive edge of the clock, implement the register logic.
+If the enable signal is high, store the value of the input data on the positive edge of the clock.
+
+Give me the complete code.
+
+module reg_8bit(
+    input clk,
+    input en,
+    input [7:0] d,
+    output reg [7:0] q
+);

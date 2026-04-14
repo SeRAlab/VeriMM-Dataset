@@ -1,0 +1,28 @@
+Implement the Verilog module based on the following description.
+Create a state machine with 1 input (in) and 1 output (out). The state machine has the following states and their corresponding outputs:
+1. state K (out=0).
+2. state L (out=1).
+3. state M (out=0).
+
+State transitions:
+1. From state K: If in = 0, then remain in state K. If in = 1, then transition to state L.
+2. From state L: If in = 0, then transition to state M. If in = 1, then remain in state L.
+3. From state M: If in = 0, then remain in state M. If in = 1, then transition to state L.
+
+At reset, the state machine starts in state "K". Derive next-state logic equations and output logic equations by inspection using the following one-hot encoding: (K, L, M) = (3'b001, 3'b010, 3'b100).
+
+Write code that generates the following equations:
+
+- K_next -- next-state logic for state K
+- L_next
+- M_next
+- out -- output logic
+
+module state_control(
+    input in,
+    input [2:0] state,    // 3-bit one-hot current state
+    output reg K_next,
+    output reg L_next,
+    output reg M_next,
+    output reg out
+);

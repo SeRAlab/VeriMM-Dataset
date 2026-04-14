@@ -1,0 +1,21 @@
+Implement the Verilog module based on the following description.
+Consider the state machine shown below:
+
+The state machine has the following states and their corresponding outputs: 
+1. state T (Y3 = 0).
+2. state U (Y3 = 0).
+3. state V (Y3 = 1).
+4. state W (Y3 = 1).
+
+State transitions:
+1. From state T: If w = 0, then transition to state U. If w = 1, then transition to state V.
+2. From state U: If w = 0, then transition to state W. If w = 1, then transition to state T.
+3. From state V: If w = 0, then transition to state T. If w = 1, then transition to state W.
+4. From state W: If w = 0, then transition to state T. If w = 1, then transition to state U.
+
+Assume that you want to Implement the FSM using two flip-flops and state codes y[2:1] = 00, 01, 10, 11 for states T, U, V, W, respectively. Implement just the next-state logic for y[1] in Verilog. The output Y3 is y[1].
+
+module top_module(
+        input [2:1] y,
+        input w,
+        output reg Y3);

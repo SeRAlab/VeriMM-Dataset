@@ -1,0 +1,1 @@
+module top_module(input wire A, B, C, output wire Y);assign Y=(~A&~C) | (A&C) | (A&~B);endmodule

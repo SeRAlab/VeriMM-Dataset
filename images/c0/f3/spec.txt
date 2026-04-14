@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a single-port RAM with a separate read address path, enabling simultaneous read and write operations at different addresses. This module is primarily used in digital systems requiring temporary storage and retrieval of data, such as processors, digital signal processing (DSP) systems, and various control units. The module's ability to perform read and write operations in a single clock cycle makes it an efficient choice for high-speed data processing applications.
+
+Module name:  
+	raminfr
+
+Input ports:
+	clk (input, wire): The clock input. It is the primary timing signal for the module, used to synchronize write operations.
+	we (input, wire): Write enable signal. When high (1), it allows data to be written to the RAM at the address specified by a.
+	a (input, wire, [addr_width1:0]): Write address input. It specifies the address in the RAM where data should be written during a write operation.
+	dpra (input, wire, [addr_width1:0]): Data port read address. It specifies the address from which data is to be read during a read operation.
+	di (input, wire, [data_width1:0]): Data input. This is the data to be written into the RAM at the address specified by a.
+Output ports:
+	dpo (output, wire, [data_width1:0]): Data port output. This port outputs the data read from the RAM at the address specified by dpra.
+
+
+Implementation:
+The RTL module presented, named raminfr, implements a simple single-port RAM with a separate read address path, allowing for simultaneous read and write operations at different addresses. The module is parameterized, meaning its address width, data width, and depth can be customized according to the requirements of the specific application it is being used for. This flexibility makes the module versatile for various memory storage needs in digital designs.
+
+Give me the complete code.
+

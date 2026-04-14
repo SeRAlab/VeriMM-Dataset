@@ -1,0 +1,13 @@
+Design a burst counter module that tracks the number of bursts being processed in a system. It accepts control signals including a clock for synchronization, a reset signal to initialize the counter, and flags indicating the validity of bursts being processed. The module updates the burst counter and computes the pending burst count based on whether bursts are validated and consumed. When a burst is both valid and ready, it either increments or decrements the counter based on the consumption status, which supports managing burst data flows effectively in asynchronous data communication contexts. Additionally, it maintains a flag indicating whether the current burst was accepted for processing.
+module top_module(
+    input ctl_clk,
+    input ctl_reset_n,
+    input burst_valid,
+    input burst_ready,
+    input burst_consumed_valid,
+    input [31:0] burst_consumed_burstcount,
+    output reg [31:0] burst_counter,
+    output reg [31:0] burst_pending_burstcount,
+    output reg [31:0] burst_next_pending_burstcount,
+    output reg burst_accepted
+);

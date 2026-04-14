@@ -1,0 +1,8 @@
+Design a pulse generator that produces a high signal for a specified duration when triggered. The module takes a clock signal, a reset signal, a trigger input, and a 10-bit duration input. Upon receiving a trigger, it initializes a count with the duration value and outputs a high pulse. The pulse remains high while the count is greater than zero, counting down with each clock cycle, and resets to low once the count reaches zero. Additionally, the reset signal will clear the count and pulse output to ensure stable operation.
+module top_module(
+  input clk,
+  input reset,
+  input trigger,
+  input [9:0] duration,
+  output reg pulse
+);

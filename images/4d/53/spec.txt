@@ -1,0 +1,11 @@
+Design a clock generation module that derives two output clocks, VGA_clock at 25MHz and Main_clock at 100MHz, from an input clock signal (Clock_Board). The module includes a reset signal for proper initialization and a locked indicator to signal that the clock output is stable. It implements clock division via counters for accurate frequency generation and ensures that the output clocks remain synchronized with the input clock signal while also providing a reset functionality to handle initialization conditions.
+module top_module(
+  // Clock out ports
+  output        VGA_clock,
+  output        Main_clock,
+  // Status and control signals
+  input         resetn,
+  output        locked,
+ // Clock in ports
+  input         Clock_Board
+ );

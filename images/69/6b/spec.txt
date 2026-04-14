@@ -1,0 +1,8 @@
+Design a 8-bit multiplier that computes the product of two unsigned 8-bit integers, a and b. The multiplication occurs on the rising edge of the clock, and the output is reset to zero when the reset signal (rst) is activated. The resulting product is represented as a 16-bit output. The multiplication is implemented using a nested loop approach, iterating over the bits of a and b to perform bitwise AND operations, accumulating the results into the output register taking care of the appropriate bit positions based on the sum of the indices.
+module top_module(
+    input [7:0] a,
+    input [7:0] b,
+    input clk,
+    input rst,
+    output reg [15:0] out
+);

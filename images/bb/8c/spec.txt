@@ -1,0 +1,10 @@
+Design a 4-bit adder that can perform addition or subtraction depending on a control input, C. When C is 0, it computes the sum of inputs A and B, and when C is 1, it performs subtraction by calculating A + (two's complement of B). The module also generates overflow (OF) and carry (CF) flags based on the arithmetic operation, indicating if the results exceed the representable range or if a carry-out occurred. The final sum is stored in a synchronous manner on the positive edge of the clock.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input C,
+    input clk,                // Added clk input here
+    output reg [3:0] S,
+    output reg OF,
+    output reg CF
+);

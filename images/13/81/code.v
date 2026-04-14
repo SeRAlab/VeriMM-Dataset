@@ -1,0 +1,17 @@
+module SRAM_Cell (
+    input wire [3:0] data_in,
+    output reg [3:0] data_out,
+    input wire write_enable,
+    input wire clk
+);
+
+reg [3:0] memory;
+
+always @(posedge clk) begin
+    if (write_enable) begin
+        memory <= data_in; // Write data to memory
+    end
+    data_out <= memory; // Read data from memory
+end
+
+endmodule

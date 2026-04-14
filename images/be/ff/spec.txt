@@ -1,0 +1,19 @@
+Implement the Verilog module based on the following description.
+We want to create a module that:
+
+// (1) receives a 5-bit binary number,
+// (2) checks if the number is less than 16,
+// (3) counts the number of 0s in the binary number,
+// (4) outputs a flag if the number is a palindrome,
+// (5) provides a reset mechanism to reset all outputs.
+
+// The input binary number is available on the input signal 'binary_num'. The output 'is_lt16' should be set to 1 if the number is less than 16 and 0 otherwise. The number of 0s in the binary number should be output on 'count_zeros[2:0]'. The palindrome flag should be set on 'is_palindrome' if the number is a palindrome. The reset signal is active high synchronous.
+
+module top_module(
+    input wire clk,
+    input wire reset,
+    input wire [4:0] binary_num,
+    output reg is_lt16,
+    output reg [2:0] count_zeros,
+    output reg is_palindrome
+);

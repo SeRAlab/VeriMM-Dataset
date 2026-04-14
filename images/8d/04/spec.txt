@@ -1,0 +1,11 @@
+Design a shift register circuit that operates on an 8-bit data input. When the load signal is high, it loads the data from `din` into the shift register. On each clock pulse, if the shift signal is active, the register shifts its contents left and inputs a new bit from `in` into the least significant bit, effectively moving the bits towards the most significant bit. The circuit can be reset to zero with the `rst` signal. The most significant bit of the shift register is continuously outputted on `out`, while the entire register's content is available at `dout`.
+module top_module(
+    input clk,
+    input rst,
+    input load,
+    input shift,
+    input in,
+    input [7:0] din,
+    input out,
+    input [7:0] dout
+    );

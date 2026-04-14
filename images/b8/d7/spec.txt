@@ -1,0 +1,8 @@
+Design a pulse generator that produces a pulse output for a specified duration. The module takes a clock signal (CLK), a reset signal (RST), and a start signal (START), along with a 16-bit duration input (DURATION). Upon receiving a START signal while the reset is inactive, it counts up to the specified duration and maintains a HIGH pulse during this count. Once the duration is reached, the pulse output goes LOW, and the count resets. If RST is activated or START is not asserted, the output is set to LOW and the count resets to zero.
+module top_module(
+    input CLK,
+    input RST,
+    input START,
+    input [15:0] DURATION,
+    output reg PULSE
+);

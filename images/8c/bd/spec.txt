@@ -1,0 +1,7 @@
+Design a signal generator module that produces a square wave output, modulated by frequency, amplitude, offset, and duty cycle inputs. The module samples at a defined clock frequency, calculates the period based on the input frequency, and the duty cycle to determine the on/off timing of the square wave. It generates a square wave output whose instantaneous value is adjusted by the amplitude and offset, ensuring the output remains within valid ranges (0 to 4095) under specified conditions. If frequency or amplitude is zero, it outputs a constant value based on the offset.
+module top_module(input clksamp, 
+            input[31:0] freq, 
+            input signed[16:0] amp, 
+            input signed[16:0] offset, 
+            input[9:0] duty,
+            output[11:0] sq);

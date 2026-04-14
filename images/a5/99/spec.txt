@@ -1,0 +1,6 @@
+Design a finite state machine (FSM) that generates a sequence of output signals based on clock cycles with a reset capability. The FSM operates with three states: after a reset, it initializes to state S0, where it transitions to state S1 on the next clock cycle, outputting a high signal (1). In state S1, the output remains high while the state increments until a specific condition is met (though the condition appears incorrectly specified as "if state == 10"), transitioning to state S2, where the output goes low (0) and remains in this state. Overall, the module functions as a controlled output generator based on clock cycles, influenced by reset input, but requires correction for accurate state transition logic.
+module top_module(
+  input clk,
+  input reset,
+  output reg out
+);

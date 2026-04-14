@@ -1,0 +1,12 @@
+Design a circuit that functions as a combination of a shift register and a priority encoder. The module captures a serial input signal on a clock edge when the shift signal is asserted, effectively forming a 4-bit shift register. Simultaneously, it continuously evaluates an 8-bit input to determine the highest priority active bit and uses this information to set the module's output state. The final output is selected based on the highest priority detected, and additional outputs indicate the validity of the input signal and the index of the highest priority bit. This design is useful for scenarios requiring serial data processing and priority-based selection.
+module top_module(
+    input clk,
+    input reset,
+    input serial_in,
+    input shift,
+    input [7:0] in,
+    output reg out,
+    output reg valid,
+    output reg [2:0] index,
+    output reg [3:0] final_output  // Changed to reg
+);

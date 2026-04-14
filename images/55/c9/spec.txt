@@ -1,0 +1,12 @@
+Design a vending machine controller that accepts coins and manages the selection and dispensing of items. The module takes a clock signal, a reset signal, and inputs for coin value and item selection. It maintains a total amount of inserted coins and the stock levels of three distinct items. When a valid item is selected and sufficient funds are available, it dispenses the item while returning the appropriate change. The system supports resetting to initialize stock levels and total amounts. The outputs indicate whether an item is dispensed and the current stock status of each item.
+module top_module(
+    input clk,
+    input reset,
+    input [1:0] coin,
+    input [1:0] item,
+    output reg dispense,
+    output reg [1:0] change,
+    output reg item1,
+    output reg item2,
+    output reg item3
+);

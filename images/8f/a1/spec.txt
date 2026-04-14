@@ -1,0 +1,9 @@
+Design a simple 8-bit calculator that performs basic arithmetic operations based on a 2-bit operation selector. The module accepts two 8-bit operands (`operand_a` and `operand_b`), and based on the value of `op`, it will compute the result of addition, subtraction, multiplication, or division on the rising edge of the clock (`clk`). Additionally, the calculator features a reset (`rst`) input to clear the output result, setting it to zero when asserted.
+module top_module(
+    input clk,
+    input rst,
+    input [1:0] op,
+    input [7:0] operand_a,
+    input [7:0] operand_b,
+    output reg [7:0] result
+);

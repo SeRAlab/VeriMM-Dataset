@@ -1,0 +1,5 @@
+Design a pulse generator that produces a one-clock cycle pulse on the ENCLK output under specific conditions. The output pulse is triggered when both the EN and TE inputs are high while the CLK signal transitions. The module operates as a finite state machine with four states: IDLE, CLK_HIGH, EN_HIGH, and TE_HIGH. In the IDLE state, it waits for both enable signals to go high before transitioning to CLK_HIGH. It then toggles through states based on the CLK signal, ultimately generating an output pulse only when returning to the IDLE state from TE_HIGH, contingent on EN and TE remaining high throughout the process. Additionally, the ENCLK output is reset to low if any of the input signals change while a pulse is active.
+module top_module(
+  input CLK, EN, TE, RESET,
+  output reg ENCLK
+);

@@ -1,0 +1,7 @@
+Design a double-register synchronizer that captures an input signal and mitigates metastability by staging the signal through two flip-flops. On each rising edge of the clock, the module transfers the input value to `sync_reg0`, then moves the value from `sync_reg0` to `sync_reg1`, and finally outputs the value from `sync_reg1`. The module includes a reset feature that initializes all registers to zero when activated.
+module top_module(
+  input [DW-1:0] in,
+  input clk,
+  input reset,
+  output reg [DW-1:0] out
+);

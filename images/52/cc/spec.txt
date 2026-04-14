@@ -1,0 +1,20 @@
+Design a register file that supports reading and writing to multiple registers. This module is defined to have four eight-bit wide registers, capable of writing data to any of the registers based on individual write enable signals (we1 to we4) and corresponding addresses (addr1 to addr4). On each positive clock edge, if a write enable signal is asserted, the respective input data (data_in1 to data_in4) is stored in the indicated register. The module provides outputs for the content of the registers corresponding to the provided addresses, allowing for simultaneous read access to the registers while maintaining a simple interface for data storage and retrieval.
+module top_module(
+  input clk, // Added clk input
+  input [WIDTH-1:0] data_in1,
+  input [WIDTH-1:0] data_in2,
+  input [WIDTH-1:0] data_in3,
+  input [WIDTH-1:0] data_in4,
+  input we1,
+  input we2,
+  input we3,
+  input we4,
+  input [addr_width-1:0] addr1, // Changed to addr_width
+  input [addr_width-1:0] addr2,
+  input [addr_width-1:0] addr3,
+  input [addr_width-1:0] addr4,
+  output [WIDTH-1:0] data_out1,
+  output [WIDTH-1:0] data_out2,
+  output [WIDTH-1:0] data_out3,
+  output [WIDTH-1:0] data_out4
+);

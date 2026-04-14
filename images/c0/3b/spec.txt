@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform 64-bit addition operations. Its primary function to add two 64-bit numbers (`rs1_data` and `rs2_data`) along with an input carry (`cin`) and produce a 64-bit sum (`adder_out`). Additionally, it generates two carry-out signals: one after the lower 32 bits addition (`cout32`) and another after the full 64-bit addition (`cout64`). This module can be utilized in arithmetic logic units (ALUs), digital signal processing (DSP) applications, or any system requiring precise 64-bit addition with carry-in and carry-out functionality.
+
+Module name:  
+	zzadd64_lv
+
+Input ports:
+	rs1_data [63:0]: A 64bit input operand. It is one of the two numbers to be added.
+	rs2_data [63:0]: Another 64bit input operand. It is the second number to be added to rs1_data.
+	cin: A singlebit input carry signal. It allows for chaining of multiple adder modules by providing the carryout of a previous addition as the carryin for the current operation.
+Output ports:
+	adder_out [63:0]: A 64bit output that holds the result of the addition of rs1_data and rs2_data, along with the input carry cin.
+	cout32: A singlebit output that represents the carryout after adding the lower 32 bits of rs1_data and rs2_data. This signal can be used for operations that require knowledge of intermediate carry for further processing or chaining.
+	cout64: A singlebit output that represents the carryout after completing the 64bit addition. This signal is crucial for operations where the carry needs to be propagated to subsequent additions or for flagging an overflow condition in certain arithmetic operations.
+
+
+Implementation:
+The zzadd64_lv module is designed to perform a 64-bit addition operation, taking into account an input carry (cin). This module is a clear example of combinational logic, as its outputs are directly determined by its current inputs without any dependency on previous states or inputs, which is characteristic of sequential logic elements like flip-flops or latches.
+The module takes two 64-bit inputs, rs1_data and rs2_data, which represent the operands for the addition operation. Additionally, it accepts a single-bit input carry (cin), which is essential for operations where the carry from a previous addition needs to be considered in the current operation.
+The output of the module is a 64-bit sum (adder_out) of the two inputs, along with two carry-out signals (cout32 and cout64). The cout32 signal represents the carry out from the addition of the lower 32 bits of the operands, while cout64 represents the carry out from the entire 64-bit addition.
+The addition is performed in two stages:
+1. Lower 32-bit Addition: The lower 32 bits of rs1_data and rs2_data are added together along with the input carry (cin). The result of this operation is stored in the lower 32 bits of adder_out, and the carry out of this operation is stored in cout32. This step ensures that any carry generated from the lower half addition is captured and used in the next stage of the addition.
+2. Upper 32-bit Addition: The upper 32 bits of rs1_data and rs2_data are added together along with the carry out (cout32) from the lower 32-bit addition. The result of this operation is stored in the upper 32 bits of adder_out, and the carry out of this operation is stored in cout64. This step completes the 64-bit addition operation by incorporating the carry from the lower half.
+This design efficiently handles the 64-bit addition by breaking it down into two manageable 32-bit operations, ensuring that carries are appropriately propagated from the lower half to the upper half of the operation.
+
+Give me the complete code.
+

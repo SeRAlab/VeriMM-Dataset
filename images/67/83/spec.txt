@@ -1,0 +1,9 @@
+Design a circuit that controls a 32-bit LED display based on clock and reset signals. When the reset signal is active, the LEDs are set to a predefined pattern (0x11111111). When the enable signal is active, the circuit updates the LED state with the incoming 32-bit data input. The output led_lights reflects the inverted value of the led register, allowing for active LOW LED indication. Additionally, the module provides a data return to the CPU, outputting the current state of the led register.
+module top_module(
+	 input clk,
+	 input reset,
+	 input enable,
+	 input [31:0] data_in, 
+	 output [31:0] led_lights,
+	 output [31:0] data_return_cpu
+    );

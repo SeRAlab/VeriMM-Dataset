@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a synchronous flip-flop with scan enable (SE) functionality, designed for use in digital integrated circuits, particularly in applications requiring testability and synchronization. The primary objectives of the module include:
+
+Storing a single bit of data synchronized to a clock signal (`ck`).
+Allowing for the bit to be either the direct input (`d`) or a scan data input (`sd`), controlled by a scan enable signal (`se`).
+Providing both normal (`q`) and scan (`so`) outputs, which can be used for daisy-chaining flip-flops in scan chains for test purposes or for further logic processing.
+
+This module plays a crucial role in facilitating design for testability (DFT) by incorporating scan-based testing capabilities, which are essential for detecting manufacturing defects and verifying the correct operation of complex digital circuits.
+
+Module name:  
+	bw_u1_syncff_4x
+
+Input ports:
+	ck (input): The clock input. It is a singlebit signal that triggers the flipflop to capture the data input (d) or scan data (sd) on its rising edge.
+	d (input): The data input. It is a singlebit signal representing the normal operational data to be stored in the flipflop.
+	se (input): The scan enable input. It is a singlebit signal that determines whether the flipflop operates in normal mode (se = 0) or scan mode (se = 1).
+	sd (input): The scan data input. It is a singlebit signal used as the input to the flipflop when it is in scan mode (se = 1).
+Output ports:
+	q (output): The normal data output. It is a singlebit signal that represents the current state of the flipflop, reflecting either the last d or sd input captured on the rising edge of ck, depending on the mode.
+	so (output): The scan output. It is a singlebit signal identical to q, intended for use in daisychaining flipflops in scan chains for testing purposes.
+
+
+Implementation:
+The RTL module presented, named bw_u1_syncff_4x, is designed to function as a synchronous flip-flop with scan capabilities, which is a fundamental building block in digital integrated circuits, especially within the realm of testability and design for test (DFT) strategies. The module's primary function is to store a single bit of data and provide both normal and scan outputs based on the clock (ck) input. The design incorporates both sequential and combinational logic elements to achieve its functionality.
+
+Give me the complete code.
+

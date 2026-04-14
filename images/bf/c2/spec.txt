@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to facilitate bidirectional data transfer between two buses, `db_up` and `db_down`, based on enable signals. Its primary function to act as a controlled switch that selectively connects these two buses for data exchange. This module finds its application in systems where data paths need to be dynamically reconfigured, such as in multiplexers, crossbar switches, or more complex bus matrix systems. It enables the routing of data in a flexible manner, contributing to the scalability and modularity of digital systems.
+
+Module name:  
+	data_switch
+
+Input ports:
+	sw_up_en (input wire): This signal enables the transfer of data from db_down to db_up. When high (1), data from db_down is routed to db_up.
+	sw_down_en (input wire): This signal enables the transfer of data from db_up to db_down. When high (1), data from db_up is routed to db_down.
+Output ports:
+	db_down (inout wire [7:0]): An 8bit bidirectional data bus. When sw_down_en is high, it outputs data received from db_up. Otherwise, it is in a highimpedance state (Z), effectively disconnecting it from the circuit.
+	db_up (inout wire [7:0]): An 8bit bidirectional data bus. When sw_up_en is high, it outputs data received from db_down. Otherwise, it is in a highimpedance state (Z), effectively disconnecting it from the circuit.
+
+
+Implementation:
+The data_switch module is designed to facilitate bidirectional data transfer between two buses, db_up and db_down, based on enable signals sw_up_en and sw_down_en. This module does not contain any sequential logic elements (like flip-flops or latches) and operates purely on combinational logic. The functionality is achieved through the use of bidirectional inout ports and conditional assignments using the ternary operator.
+The module operates under two primary modes controlled by the enable signals:
+Upward Data Transfer (sw_up_en): When sw_up_en is asserted (1), data from the db_down bus is transferred to the db_up bus. Each bit of db_up is conditionally assigned the corresponding bit from db_down if sw_up_en is true; otherwise, it is set to high impedance (Z), effectively disconnecting it from the circuit. This mode allows data to flow from a lower-level module or subsystem to an upper-level one.
+Downward Data Transfer (sw_down_en): Conversely, when sw_down_en is asserted (1), data flows from the db_up bus to the db_down bus. Each bit of db_down is conditionally assigned the corresponding bit from db_up if sw_down_en is true; otherwise, it is set to high impedance (Z). This mode supports data transfer from an upper-level module or subsystem to a lower-level one.
+The module ensures that data transfer is unidirectional at any given time based on the enable signals. If both sw_up_en and sw_down_en are deasserted, both buses are left in a high impedance state, effectively isolating them from each other. The design does not explicitly handle the scenario where both enable signals are asserted simultaneously, which could potentially lead to bus contention if both buses attempt to drive data simultaneously.
+
+Give me the complete code.
+

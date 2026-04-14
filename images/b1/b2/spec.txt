@@ -1,0 +1,19 @@
+Design a GPIO (General Purpose Input/Output) LED controller module that interfaces with a memory-mapped peripheral. It takes various control signals and data inputs to manage an 8-bit LED output. When a chip select signal (cs_n) is asserted low and a write enable signal (we_n) is also low, it stores incoming data from a data bus (dq) into a register based on a bank address (ba). If the write enable is high, it updates the LED output with the currently stored data. The module includes data masking to selectively update the LED based on the provided mask signals.
+module top_module(
+    input [14:0] addr,
+    input [2:0] ba,
+    input cas_n,
+    input ck_n,
+    input ck_p,
+    input cke,
+    input cs_n,
+    input [3:0] dm,
+    input [31:0] dq,
+    input [3:0] dqs_n,
+    input [3:0] dqs_p,
+    input odt,
+    input ras_n,
+    input reset_n,
+    input we_n,
+    output reg [7:0] led
+);

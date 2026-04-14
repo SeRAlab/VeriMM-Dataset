@@ -1,0 +1,11 @@
+Design a circuit that functions as a 32-bit adder, a D flip-flop, and a difference output unit. The adder calculates the sum of two 32-bit inputs, A and B, while the D flip-flop samples the input d on the rising edge of the clock signal and maintains its output state until reset. The output D is derived by subtracting the output of the D flip-flop from the sum, and Cout indicates a carry out condition based on specific bit conditions of the sum and the flip-flop output.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] A,
+    input [31:0] B,
+    input d,
+    output [31:0] D,
+    output reg q,
+    output reg Cout
+);

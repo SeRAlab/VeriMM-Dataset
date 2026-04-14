@@ -1,0 +1,16 @@
+Design a bridge module that facilitates communication between an address bus and two separate data inputs. It includes address decoding logic to enable write operations for two different target memory regions (T0 and T1) based on the incoming address. The module outputs specific address bits (ADDR_T0_out, ADDR_T1_out) for both targets and provides the appropriate data output (READ_data_out) based on the address range accessed. Writes are enabled to T0 when addresses fall in the range 0x00007F00 to 0x00007F0B, and to T1 in the range 0x00007F10 to 0x00007F1B, while ensuring that READ_data_out remains zero if the address does not match either range.
+module top_module(
+    input [31:0] ADDR_in,
+    input we,
+    
+	
+    input [31:0] T0_data_in,
+    input [31:0] T1_data_in,
+	
+    output [3:2] ADDR_T0_out,
+    output [3:2] ADDR_T1_out,
+    
+    output [31:0] READ_data_out,
+	output T0_we,
+	output T1_we
+    );

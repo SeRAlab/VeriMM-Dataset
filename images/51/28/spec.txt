@@ -1,0 +1,8 @@
+Design a 4-bit up/down counter that increments or decrements its count based on the `up` control signal when enabled (`en`) and provides a synchronous reset functionality (`rst`). The counter's current state is stored in a register (`count_reg2`), which is updated on the rising edge of the clock (`clk`). When `rst` is activated, both registers are cleared to zero. The counter operates smoothly, reflecting changes to `count` as determined by the most recent enable and direction inputs.
+module top_module(
+    input clk,
+    input rst,
+    input en,
+    input up,
+    output reg [3:0] count
+);

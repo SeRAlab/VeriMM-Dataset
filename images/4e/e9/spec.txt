@@ -1,0 +1,11 @@
+Design a Mealy state machine with four states, capable of responding to four input signals (in1, in2, in3, in4). The machine transitions between states based on the input conditions while generating two output signals (out1 and out2) that vary based on the current state. Specifically, out1 asserts high in state S1 when in1 is true, out2 asserts high in state S2 when in4 is true, and both outputs are low in states S0 and S3 unless the appropriate transitions occur. The machine resets to state S0 when the reset signal is low, ensuring reliable initialization of the state and outputs.
+module top_module(
+  input clk,
+  input reset,
+  input in1,
+  input in2,
+  input in3,
+  input in4,
+  output reg out1,
+  output reg out2
+);

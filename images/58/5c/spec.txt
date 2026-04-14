@@ -1,0 +1,11 @@
+Design a circuit that functions as a byte splitter, a decade counter, and an additive module. The circuit takes an input of 16 bits, separates it into two 8-bit outputs (out_hi and out_lo), and implements a decade counter (q) that counts from 0 to 9 when enabled by the slowena signal, with synchronous reset functionality. Additionally, it computes the sum of out_hi and out_lo in an always block, providing an 8-bit result in the sum output.
+module top_module(
+    input clk,
+    input slowena,
+    input reset,
+    input [15:0] in,
+    output [7:0] out_hi,
+    output [7:0] out_lo,
+    output reg [3:0] q,
+    output reg [7:0] sum
+);

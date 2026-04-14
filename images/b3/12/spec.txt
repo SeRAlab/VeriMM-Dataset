@@ -1,0 +1,9 @@
+Design a simple 8-bit arithmetic calculator capable of performing addition, subtraction, multiplication, and division based on a 2-bit operation selector. It takes two 8-bit inputs, a and b, and produces an 8-bit output result. The operation is performed on the rising edge of the clock, and the calculator can be reset asynchronously to zero the internal registers. The operational modes are determined by the `op` input, allowing sequential execution of basic arithmetic operations.
+module top_module(
+	input wire [7:0] a,
+	input wire [7:0] b,
+	input wire [1:0] op,
+	input wire clk,
+	input wire reset_n,
+	output wire [7:0] result
+);

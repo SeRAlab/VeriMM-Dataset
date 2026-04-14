@@ -1,0 +1,12 @@
+Develop a finite state machine (FSM) for a vending machine control system. The FSM manages four states: IDLE, DISPENSE, RETURN_CHANGE, and ITEM_NOT_AVAILABLE. In the IDLE state, it transitions to DISPENSE when a coin is inserted and an item is selected, returns change if only a coin is inserted, or indicates item unavailability if an item is selected without coin input. In the DISPENSE state, it dispenses the item and returns to IDLE. In the RETURN_CHANGE state, it handles change return and also transitions to IDLE, while in the ITEM_NOT_AVAILABLE state, it signals item unavailability and waits before returning to IDLE. Outputs control the dispensing of items, returning change, and item availability feedback.
+module top_module(
+  input clk,
+  input reset,
+  input coin_inserted,
+  input item_selected,
+  input item_dispensed,
+  output reg dispense_item,
+  output reg return_change,
+  output reg item_not_available,
+  output reg ready_to_dispense
+);

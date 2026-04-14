@@ -1,0 +1,7 @@
+Design a circuit that implements two 7-bit counters driven by a clock signal. The first counter, `cnt`, counts from 0 to 99, resetting when the reset signal is low, and its value is continuously reflected at output `o_cnt`. The second counter, `cnt_always`, counts from 0 to 99 but automatically resets to 0 after reaching 99, providing a cycling counter behavior, with its current value available at output `o_cnt_always`. Both counters operate synchronously with the rising edge of the clock and are reset asynchronously with the active-low reset signal.
+module top_module(
+    input clk,
+    input reset_n,
+    output [6:0] o_cnt,
+    output [6:0] o_cnt_always
+    );

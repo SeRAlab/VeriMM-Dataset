@@ -1,0 +1,8 @@
+Design a circuit that functions as a 4-to-1 multiplexer with an enable signal. The module takes a 4-bit input and a 2-bit select line to choose one of the four input bits as the output. If the enable signal is active, the output reflects the selected input bit; if the enable signal is not active, the output is set to high impedance (z). The design incorporates pipelining by registering the input, selection, and enable signals on the rising edge of the clock.
+module top_module(
+    input [3:0] IN,
+    input [1:0] SEL,
+    input EN,
+    input clk,          // Added clock signal input
+    output reg out
+);

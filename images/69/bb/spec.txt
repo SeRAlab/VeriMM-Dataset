@@ -1,0 +1,9 @@
+Design a synchronous reset/set register with asynchronous control. This module captures the value of input D at the rising edge of the clock (CLK) while allowing for asynchronous reset (R) and set (S) functionality. When R is low, the output Q is reset to logic 0, and when S is low, Q is set to logic 1. If both controls are not activated, the output Q reflects the value of D. Additionally, the module provides the complement output QN, which is always the inverse of Q.
+module top_module(
+  input D,
+  input S,
+  input R,
+  input CLK,
+  output reg Q,   // Change made here to specify Q as a reg type
+  output QN
+);

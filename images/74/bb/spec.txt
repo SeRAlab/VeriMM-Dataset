@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement an 8-bit binary up-counter with an enable signal. The counter will count from 0 to 255.
+
+Module name:  
+    up_counter               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the counter.
+    en: Enable signal to allow counting.
+Output port:
+    Q: 8-bit register representing the current count value.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the counter value is updated.
+If the reset signal (rst_n) is low, the counter value (Q) is set to 0.
+If the enable signal (en) is high, the counter increments by 1.
+
+Give me the complete code.
+
+module up_counter(
+   input                clk ,
+   input                rst_n,
+   input                en,
+ 
+   output reg [7:0]     Q  
+);

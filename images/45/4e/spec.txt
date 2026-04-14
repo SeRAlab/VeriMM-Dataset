@@ -1,0 +1,6 @@
+Design a synchronous state machine that transitions through three states: IDLE, COUNT, and DONE. Upon reset, the machine initializes in the IDLE state. In IDLE, it transitions to the COUNT state, where it starts counting up sequentially. Once it reaches a certain condition (count state interpreted as 2'b11), it transitions to the DONE state. From DONE, it resets back to IDLE. This design is suitable for applications that require a controlled counting sequence and state management with reset capability.
+module top_module(
+  input clk,
+  input reset,
+  output reg [1:0] state
+);

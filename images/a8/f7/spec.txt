@@ -1,0 +1,2 @@
+Design a general-purpose output register that captures an 8-bit data input from the `iDTBUS` when the write signal `iWRSFR` is asserted and the select signal `iSSFRR` equals 4'b0001. The module operates on the rising edge of the clock input `iCLK`, and it continuously outputs the current value of the register `rGPO` through `oGPO`. If the write conditions are not met, the register retains its previous value.
+module top_module(input iCLK, input iWRSFR, input [7:0] iDTBUS, input [3:0] iSSFRR, output [7:0] oGPO);

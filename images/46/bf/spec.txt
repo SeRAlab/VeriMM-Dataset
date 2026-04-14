@@ -1,0 +1,8 @@
+Design a 7-bit address decoder that controls multiple chip enables for peripheral devices based on the provided address. The module activates specific outputs (switch_ce_n, bar_led_ce_n, mem1_ce_n, mem2_ce_n, and board_led_ce_n) by driving them low when the corresponding address matches predefined values, effectively enabling or disabling connected components depending on the address. The use of 'casex' allows for address pattern matching and the handling of don’t-care conditions, facilitating versatility in selecting a range of addresses for memory or peripheral access.
+module top_module(
+    input [6:0] address,
+    output reg  bar_led_ce_n,
+                board_led_ce_n,
+                switch_ce_n,
+                mem1_ce_n,
+                mem2_ce_n);

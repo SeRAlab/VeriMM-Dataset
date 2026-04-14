@@ -1,0 +1,7 @@
+This module implements a clock gating circuit designed to control the transmission of a clock signal based on enable (EN) and test enable (TE) inputs. The output (ENCLK) is generated using a latch that is activated only when EN is true and TE is false, effectively allowing the clock signal (CLK) to propagate through only when specific conditions are met. The design helps in reducing power consumption by preventing unnecessary clock toggles when certain parts of the circuit are inactive. This design is commonly used in digital circuits for managing clock distribution and optimizing performance.
+module top_module(
+  input CLK,
+  input EN,
+  input TE,
+  output reg ENCLK
+);

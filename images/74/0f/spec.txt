@@ -1,0 +1,8 @@
+Develop a circuit that implements a 4-to-16 decoder using NAND gates alongside a 2-bit binary counter. The circuit generates a 16-bit output based on the `decoder_input`, with each bit of `decoder_output` corresponding to the active state determined by the decoded input signal. Additionally, the counter increments on each clock cycle, wrapping around from 3 to 0. The `final_output` selects one of the decoder output lines based on the current counter value, providing a specific bit of the decoded output as the final result.
+module top_module(
+    input clk,              // Added clk input here
+    input [1:0] counter_input,
+    input [1:0] decoder_input,
+    output reg [15:0] decoder_output,
+    output reg final_output
+);

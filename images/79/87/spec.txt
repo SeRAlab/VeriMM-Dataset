@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit shift register. The shift register shifts its value to the left on each positive edge of the clock signal (CLK) when the shift enable signal (SEN) is asserted. The input data (D) is shifted into the least significant bit.
+
+Module name:
+    shift_register
+
+Input ports:
+    CLK: Clock input
+    SEN: Shift enable signal
+    D: Data input
+
+Output ports:
+    Q: 4-bit output representing the current register value
+
+Implementation:
+The shift_register module uses an always block triggered on the positive edge of the clock signal. If the shift enable signal (SEN) is active, the register value (Q) shifts left by 1 bit, and the input data (D) is shifted into the least significant bit.
+
+Give me the complete code.
+
+module shift_register(CLK,SEN,D,Q);
+input CLK,SEN,D;
+output [3:0] Q;
+reg [3:0] Q;

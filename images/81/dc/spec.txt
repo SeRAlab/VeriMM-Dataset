@@ -1,0 +1,10 @@
+Design a priority multiplexer that selects one of four 4-bit input signals based on a priority mechanism or a selection line. When the priority input (PRI) is asserted, the module outputs the highest priority non-zero input among in3, in2, in1, and in0. If PRI is not asserted, the module outputs one of the inputs selected by the 2-bit control signal (SEL), allowing for standard multiplexer functionality where SEL determines which input to output.
+module top_module(
+    input [3:0] in0,
+    input [3:0] in1,
+    input [3:0] in2,
+    input [3:0] in3,
+    input PRI,
+    input [1:0] SEL,
+    output reg [3:0] out
+);

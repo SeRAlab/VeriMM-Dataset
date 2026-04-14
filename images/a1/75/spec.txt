@@ -1,0 +1,7 @@
+Design a pulse-width modulation (PWM) generator that produces a PWM signal based on a given duty cycle. The module increments a counter on each positive clock edge and resets when a reset signal is asserted. When the counter reaches a threshold (16000), it resets and updates the PWM output, which remains HIGH when the counter is less than the specified duty cycle value and LOW otherwise. This allows for variable control of the PWM signal's duty cycle, useful in applications such as motor control or LED brightness adjustment.
+module top_module(
+    input Clk,
+    input Reset,
+    input [3:0] DutyCycle,
+    output reg PWM
+);

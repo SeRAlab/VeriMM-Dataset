@@ -1,0 +1,12 @@
+Design a 32x32 register file capable of reading and writing 32-bit values. The module allows for two read operations from specified source registers (src1 and src2), and outputs their values on reg1 and reg2. Upon a write enable signal (Write_EN), it stores a 32-bit value (Write_Val) into a designated destination register (dest) at the falling edge of the clock. Additionally, it includes a reset (rst) functionality to initialize all registers to their index values upon reset or to clear outputs during reads.
+module top_module(
+	input clk,    
+	input rst,  
+	input [4:0] src1,
+	input [4:0] src2,
+	input [4:0] dest,
+	input [31:0] Write_Val,
+	input Write_EN,
+	output reg[31:0]reg1,
+	output reg[31:0]reg2
+);

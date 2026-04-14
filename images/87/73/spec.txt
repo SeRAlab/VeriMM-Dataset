@@ -1,0 +1,10 @@
+Design a data processing module that adds 1 to a 32-bit input value when valid input is received. The module outputs the result and signals its validity for two clock cycles before indicating completion. It features a reset functionality to initialize all internal states and counters. The design primarily functions as a sequential state machine that manages input validation and output generation based on incoming data.
+module top_module(
+    input clk,            // Added clk input
+    input reset,
+    input [31:0] inData,
+    input inValid,
+    output [31:0] outData,
+    output outValid,
+    output done
+);

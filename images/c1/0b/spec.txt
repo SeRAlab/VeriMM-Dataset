@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to serve as a clock buffer. In digital IC design, clock buffers play a crucial role in distributing the clock signal across different parts of the chip to ensure synchronous operation. This module takes a reference clock input and outputs a buffered version of the clock signal. The buffering process is essential for maintaining signal integrity, reducing skew, and ensuring that the clock signal can drive the necessary load without degradation across the chip.
+
+In the broader system context, this module might be part of a larger clock distribution network, ensuring that various functional blocks within the IC receive a stable and reliable clock signal for their operations. It could also be used to isolate different sections of the design, minimizing the impact of one section's loading on the clock signal's quality in another.
+
+Module name:  
+	bw_u1_ckbuf_14x
+
+Input ports:
+	rclk (input): This is the reference clock input to the module. It is a singlebit signal (input), indicating that it carries a binary value (0 or 1) representing the clock's rising and falling edges. The rclk signal is the raw clock input that the module will buffer and output.
+Output ports:
+	clk (output): This is the buffered clock output of the module. It is also a singlebit signal (output), mirroring the binary nature of the input clock signal. The clk signal represents the processed version of the rclk input, having been buffered within the module to drive subsequent stages of the IC design.
+
+
+Implementation:
+The bw_u1_ckbuf_14x module is a fundamental digital design component that functions as a clock buffer. Its primary purpose is to receive a clock signal as input and directly output this signal without any logical alteration. This module does not incorporate any combinational or sequential logic elements beyond the direct signal assignment. The absence of logic gates or flip-flops indicates that the module's operation is purely combinational, with no inherent delay apart from the propagation delay that might be introduced by the physical implementation of the signal assignment.
+The direct assignment assign clk = ( rclk ); signifies that the output clock signal, clk, will mirror the input clock signal, rclk, at all times. This behavior is essential in scenarios where the clock signal needs to be distributed across different parts of a digital circuit without altering its frequency or phase. The simplicity of this module ensures minimal latency, making it suitable for high-speed digital circuits where maintaining clock integrity is crucial.
+
+Give me the complete code.
+

@@ -1,0 +1,9 @@
+Design a 32-bit wide shift register that can shift in a single bit `d` either to the left or to the right based on the `dir` input while synchronously clocking with `clk`. The register is enabled by `en`, and it is reset to zero when `rst` is low. When shifting left (`dir=0`), the new bit `d` is inserted at the least significant position, while existing bits are shifted towards the more significant position. Conversely, when shifting right (`dir=1`), `d` is inserted at the most significant position, and existing bits are shifted towards the less significant position. If `en` is low, the output remains unchanged.
+module top_module(
+    d,
+    clk,
+    en,
+    dir,
+    rst,
+    out
+);

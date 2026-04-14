@@ -1,0 +1,10 @@
+Design a ring buffer with a depth of 64 entries, capable of storing 24-bit wide data. The module features a clock (clk) and a reset (rst) input to control operations. On a write enable signal (we_i), data is stored at a specified address (addr_i) in the buffer. The next write pointer is updated to accommodate the incoming data, and the number of unread entries is tracked. The read pointer retrieves data from the buffer based on the current state. When the ring buffer is reset, all pointers and the unread counter are initialized. This structure facilitates continuous data read/write operations within a cyclical memory space, useful for buffering applications.
+module top_module(
+    input clk,
+    input rst,
+    input [23:0] data_i,
+    input [5:0] addr_i,
+    input we_i,
+    output reg [23:0] data_o,
+    output reg [5:0] unread_ff
+);

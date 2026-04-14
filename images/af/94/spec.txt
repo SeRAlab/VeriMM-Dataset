@@ -1,0 +1,11 @@
+Design a 6-to-1 multiplexer that selects one of six 4-bit data inputs based on a 3-bit select signal. The functionality is achieved through a combination of two 2-to-1 multiplexers and one 4-to-1 multiplexer for initial selection, followed by an additional logic that incorporates an AND operation when the select signal exceeds 5. The final output is determined based on the highest bit of the select input, allowing it to either output the selected data or a conditioned result based on the AND operation.
+module top_module(
+    input [2:0] sel,
+    input [3:0] data0,
+    input [3:0] data1,
+    input [3:0] data2,
+    input [3:0] data3,
+    input [3:0] data4,
+    input [3:0] data5,
+    output reg [3:0] out
+);

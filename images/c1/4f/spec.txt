@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to implement a pipelining mechanism with a configurable depth and data width. Its primary function to sequentially propagate input data through a series of stages (or pipeline stages), each stage being one clock cycle apart from the next. This pipelining technique is commonly used in digital circuits to increase throughput and optimize the timing characteristics of the system. The module can be parameterized to adjust the depth of the pipeline and the width of the data it processes, making it versatile for various applications within a digital system, such as in processors, data path units, or any system requiring sequential data processing with a fixed latency.
+
+Module name:  
+	pipe
+
+Input ports:
+	clk_i: Input port of type wire. This is the clock input to the module, which triggers the sequential progression of data through the pipeline stages. The rising edge of this clock signal is used to synchronize the data movement.
+	rst_i: Input port of type wire. This is the reset input, which is active high. When asserted, it initializes all the pipeline stages to a predefined reset value, effectively clearing the pipeline.
+	data_i: Input port of type wire with a width defined by the parameter WIDTH. This port receives the data to be fed into the pipeline. The size of this data is configurable, allowing for flexibility in the type and amount of information the pipeline can process.
+Output ports:
+	data_o: Output port of type wire, also with a width defined by the parameter WIDTH. This port outputs the data from the final stage of the pipeline. It represents the processed output after the data has traversed all the pipeline stages.
+
+
+Implementation:
+The Verilog module named pipe is designed to implement a parameterizable pipeline with a depth and width specified by the user. This pipeline is capable of buffering and sequentially passing data from its input to its output, with the ability to reset all stages to a predefined value. The module's behavior is governed by both combinational and sequential logic, as detailed below:
+Parameterization: The module is highly configurable through three parameters: DEPTH, WIDTH, and RESET_VAL. DEPTH determines the number of pipeline stages, WIDTH specifies the bit-width of the data being pipelined, and RESET_VAL sets the value to which the pipeline stages are reset.
+Combinational Logic: The module employs combinational logic to directly pass the input data to the output when DEPTH is set to 0, effectively bypassing the pipeline mechanism. This is achieved through a simple assignment (assign data_o = data_i;) within a conditional generate block.
+Sequential Logic: The core of the pipeline functionality is implemented using sequential logic. A register array stage[0:DEPTH-1] is declared to represent the pipeline stages, each capable of holding WIDTH-bit data. For each clock cycle (posedge clk_i) or reset event (posedge rst_i), the module iteratively updates the contents of these stages. On reset, each stage is loaded with RESET_VAL. Otherwise, each stage captures the value from the preceding stage, with the first stage capturing the external input (data_i). This sequential update mechanism ensures the pipelined propagation of data from the input to the output over multiple clock cycles.
+Reset Behavior: The module supports synchronous reset functionality, where a high signal on rst_i causes all pipeline stages to be set to RESET_VAL at the next positive edge of the clock. This allows for the pipeline to be quickly cleared and reset to a known state.
+
+Give me the complete code.
+

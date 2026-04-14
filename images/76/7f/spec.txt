@@ -1,0 +1,11 @@
+This module implements a coordinate transformation to compute the gx and gy values based on three 24-bit input signals (x1, x2, x3). When the gxgyrun signal is active, it performs calculations that seem to derive geometric derivatives from the input values. The results for gx and gy are stored as signed 11-bit outputs, which are reset to zero upon activation of the reset signal (rstn). The calculations involve weighted sums of specific bits from the inputs, indicating that this module is likely used in image processing or graphics applications to derive gradient values.
+module top_module(
+	clk,
+	rstn,
+	gxgyrun,
+	x1,
+	x2,
+	x3,
+	gx,
+	gy
+);

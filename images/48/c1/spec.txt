@@ -1,0 +1,18 @@
+Implement the Verilog module based on the following description.
+Module A implements the boolean function w = (p | q).
+
+// Module B can be described by the following simulation waveform: 
+
+If p = 1, q = 1, then w = 1.
+If p = 0, q = 1, then w = 1.
+If p = 0, q = 0, then w = 0.
+If p = 1, q = 0, then w = 1.
+
+// Now consider a top-level that uses three A submodules and one B submodule. The first input of all submodules is connected to input 'm', and the second input of all submodules is connected to 'n'. The output of the first A submodule is connected to a two-input NOR gate, along with the output of the B submodule. The second and third A submodules' outputs are connected to an AND gate. The output of the NOR and the AND is connected to an XOR, whose output is 'w'.
+
+// Implement this circuit in Verilog.
+
+module top_module(
+    input m,
+    input n,
+    output w);

@@ -1,0 +1,8 @@
+Design a UART (Universal Asynchronous Receiver-Transmitter) module that receives serial data over a single wire line. The circuit utilizes a state machine to process incoming data bits, starting with a low start bit, followed by 8 data bits, and concluding with a high stop bit. Upon receiving a complete byte, the received data is stored in an 8-bit register and transmitted as an output to the LEDs, while the transmit output is managed to indicate transmission status. The module is designed to reset all operational states, counters, and outputs when a reset signal is asserted.
+module top_module(
+   input clk_i,
+   input rst_i,
+   input rx_i,
+   output reg [7:0] led_o,
+   output reg tx_o
+);

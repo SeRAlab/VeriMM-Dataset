@@ -1,0 +1,17 @@
+Implement a Verilog module based on the following description.
+The following diagram is a Moore machine implementation of an air conditioning system controller. Implement in Verilog using one-hot encoding. Resets into state Off and reset is asynchronous active-high.
+
+The state machine has the following states and their corresponding outputs:
+1. state Off (ac_on = 0).
+2. state On (ac_on = 1).
+
+State transitions:
+1. From state Off: If temp_high = 1, then transition to state On. If temp_high = 0, then transition to state Off.
+2. From state On: If temp_low = 1, then transition to state Off. If temp_low = 0, then transition to state On.
+
+module top_module (
+        input clk,
+        input areset,
+        input temp_high,
+        input temp_low,
+        output reg ac_on);

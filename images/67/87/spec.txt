@@ -1,0 +1,33 @@
+This module implements a multiplexing function for two input ports in a streaming data interface. It selectively outputs data and control signals from either `avl_st_iport_0` or `avl_st_iport_1` based on the configuration signal `cfg_lpmx_sel_iport_1`. When `cfg_lpmx_sel_iport_1` is high, the outputs reflect the state of `avl_st_iport_1`, and `avl_st_iport_1_ready` is set to match `avl_st_oport_ready`. Conversely, when it is low, outputs correspond to `avl_st_iport_0`, with `avl_st_iport_0_ready` indicated accordingly. In this way, the module serves as a configurable data multiplexer within an Avalon streaming interface, managing data flow based on the selection signal.
+module top_module(
+      
+	  input  wire	    avl_st_iport_0_eop,
+	  input  wire[5:0]  avl_st_iport_0_error,
+	  input  wire	    avl_st_iport_0_sop,
+	  input  wire	    avl_st_iport_0_val,
+	  input  wire[63:0] avl_st_iport_0_data,
+	  input  wire[2:0]  avl_st_iport_0_empty, 
+	  output reg	    avl_st_lpmx_iport_0_ready,
+	  
+      
+	  input  wire	    avl_st_iport_1_eop,
+	  input  wire[5:0]  avl_st_iport_1_error,
+	  input  wire	    avl_st_iport_1_sop,
+	  input  wire	    avl_st_iport_1_val,
+	  input  wire[63:0] avl_st_iport_1_data,
+	  input  wire[2:0]  avl_st_iport_1_empty, 
+	  output reg	    avl_st_lpmx_iport_1_ready,
+          input  wire	    avl_st_default_iport_1_ready, 
+	  
+      
+      
+	  output reg	    avl_st_oport_eop,
+	  output reg[5:0]   avl_st_oport_error,
+	  output reg	    avl_st_oport_sop,
+	  output reg	    avl_st_oport_val,
+	  output reg[63:0]  avl_st_oport_data,
+	  output reg[2:0]   avl_st_oport_empty, 
+	  input  wire	    avl_st_oport_ready, 
+	  
+	  input  wire	    cfg_lpmx_sel_iport_1
+	);

@@ -1,0 +1,15 @@
+Design a SPI (Serial Peripheral Interface) communication module that facilitates the transmission and reception of 8-bit data. It uses a clock signal (sck) to synchronize data transfer, where incoming data is sampled on the positive edge of the clock and shifted into a register. The module detects the start and end of a data byte based on a chip select signal (_scs) and manages the output of data serially on the sdo line. Additionally, it flags the validity of received data with the output signal vld and indicates whether the received byte is a command or data through the cmd signal. The module maintains an internal state for tracking the bit count and managing the reception of bytes, ensuring proper synchronization and data integrity in SPI communications.
+module top_module(
+	input 	clk,		    
+  input clk7_en,
+  input clk7n_en,
+	input	_scs,			
+	input	sdi,		  	
+	output	sdo,	 		
+	input	sck,	  		
+	input	[7:0] in,		
+	output reg	[7:0] out,		
+	output	reg rx,		
+	output	reg cmd,		
+  output  vld     
+);

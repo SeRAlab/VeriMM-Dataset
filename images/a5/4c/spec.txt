@@ -1,0 +1,7 @@
+Design a Serial-In, Parallel-Out (SIPO) shift register that captures a serial input bitstream and converts it into a 4-bit parallel output. The register updates its 4-bit buffer on each rising edge of the clock, shifting in the most recent serial input bit while discarding the oldest bit from the buffer. The buffer resets to zero when the reset signal is low. The resulting 4-bit wide output can then be used for further processing or interfacing with parallel data paths.
+module top_module(
+    input wire clk,    // clock input
+    input wire rst,    // reset input
+    input wire SerialIn,   // serial input
+    output wire [3:0] BusOut   // parallel output
+);

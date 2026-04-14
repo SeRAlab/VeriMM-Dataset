@@ -1,0 +1,8 @@
+Design a finite impulse response (FIR) filter that processes a single-bit input signal with an adjustable number of filter taps defined by the parameter 'n'. The module employs a shift register to store the most recent input samples and uses an accumulator to compute the filtered output based on the provided coefficients. When activated, the filter updates its state with each clock cycle, computes the convolution of the input with the coefficients, and outputs the most significant bit of the accumulator as the filtered result. The design also includes a reset functionality to initialize the shift register, coefficients, and accumulator.
+module top_module(
+  input clk,
+  input reset,
+  input in,
+  input [n-1:0] coeff,
+  output reg out // Changed to reg type
+);

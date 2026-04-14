@@ -1,0 +1,10 @@
+Design a dual-port scratchpad memory block with a depth of 1024 locations, each 32 bits wide. The module features separate read and write operations controlled by enable signals (`wr_en` for writing and `rd_en` for reading) and allows for addressable memory access through an input address signal. On a positive clock edge, data can be written into memory if `wr_en` is asserted, while `rd_en` allows data to be read from the specified address outputting it on `data_out`. Additionally, the memory can be reset to zero, effectively clearing all stored values when the `rst` signal is activated.
+module top_module(
+  input clk,
+  input rst,
+  input wr_en,
+  input rd_en,
+  input [addr_width-1:0] addr,
+  input [width-1:0] data_in,
+  output reg [width-1:0] data_out
+);

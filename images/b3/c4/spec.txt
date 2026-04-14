@@ -1,0 +1,18 @@
+Design a register file with 8 pairs of 8-bit registers for high and low data paths. The module includes read and write functionality controlled by clock, enable, and write enable signals for both high and low registers. When the clock signal is active and the chip enable (CEN) is asserted, writing occurs based on the write enable signals (WEH for high data and WEL for low data) to the specified address. The output provides access to the high and low word data stored in the registers at specified addresses, allowing for retrieval of data from the register file.
+module top_module(
+input wire Clk,
+input wire CEN,
+input wire WEH,
+input wire WEL,
+input wire [2:0] AddrA,
+input wire [2:0] AddrB,
+input wire [2:0] AddrC,
+input wire [7:0] DIH,
+input wire [7:0] DIL,
+output wire [7:0] DOAH,
+output wire [7:0] DOAL,
+output wire [7:0] DOBH,
+output wire [7:0] DOBL,
+output wire [7:0] DOCH,
+output wire [7:0] DOCL
+);

@@ -1,0 +1,7 @@
+Design a finite state machine-based vending machine controller. The system has three states: idle, accepting, and dispensing. In the idle state, it waits for quarters; upon receiving a quarter, it transitions to the accepting state, where it counts the quarters until it reaches three. Once three quarters are received, it transitions to the dispensing state and activates the item dispensed output. After dispensing, it returns to the idle state, ready for the next transaction. The design incorporates synchronous reset functionality to initialize the machine.
+module top_module(
+  input clk,
+  input reset,
+  input quarter,
+  output reg item_dispensed
+);

@@ -1,0 +1,2 @@
+Design a serial-to-parallel converter that captures a serial data stream and outputs it as an 8-bit parallel signal. The module operates on a clock and reset, managing its state through a finite state machine. It shifts incoming serial data into an internal 9-bit register, with the most significant bit being utilized for packet framing. The module signals when the parallel output is ready via the `full` output after successfully receiving 8 bits of data, thereby enabling the output of `parallel_out`.
+module top_module(clk, reset, full, parallel_out, serial_in);

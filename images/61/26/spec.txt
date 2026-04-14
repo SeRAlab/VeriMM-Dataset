@@ -1,0 +1,14 @@
+Design a basic register-based controller for a video input subsystem that supports reading and writing operations based on address and chip select signals. The module features a two-bit address input, allowing it to control specific data registers. When the controller is enabled and a write operation is indicated, it captures a 32-bit data input into its internal register. On read operations, it returns the stored data as part of a 32-bit output data bus. The module also includes a synchronized reset and utilizes a clock signal to ensure stable operation, effectively serving as a simple data register interface in a larger video processing system.
+module top_module(
+  // inputs:
+  input [1:0] address,
+  input chipselect,
+  input clk,
+  input reset_n,
+  input write_n,
+  input [31:0] writedata,
+
+  // outputs:
+  output reg out_port,  // Changed to reg to avoid re-declaration error
+  output reg [31:0] readdata  // Changed to reg to avoid re-declaration error
+);

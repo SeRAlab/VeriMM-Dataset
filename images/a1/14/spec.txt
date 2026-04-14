@@ -1,0 +1,9 @@
+Design a signed adder with overflow detection for 8-bit inputs. The circuit adds two signed 8-bit numbers, 'a' and 'b', and outputs their sum 's'. It also includes a reset functionality to clear the output when reset is asserted. The system checks for overflow conditions based on the sign bits of the inputs and the result; if both inputs have the same sign and the resulting sum has a different sign, an overflow flag 'ov' is set to indicate this condition. This module is suitable for arithmetic operations where overflow needs to be monitored to ensure proper data integrity.
+module top_module(
+  input clk,
+  input reset,
+  input signed [7:0] a,
+  input signed [7:0] b,
+  output reg signed [7:0] s, // Changed to reg
+  output reg ov
+);

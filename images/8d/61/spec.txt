@@ -1,0 +1,7 @@
+Design a clock gating mechanism that controls the propagation of the clock signal based on the enabling signals. The module takes a clock input (CLK), an enable signal (EN), and a test enable signal (TE). It generates a gated clock output (ENCLK) that allows the clock to pass through only when both EN and TE are asserted. The functionality is managed through a registration process, ensuring that the clock is enabled or disabled on the rising edge of CLK based on these conditions. This design is useful in power management to reduce dynamic power consumption by disabling the clock to certain parts of the circuit when not in use.
+module top_module(
+  input CLK, 
+  input EN, 
+  input TE, 
+  output ENCLK
+);

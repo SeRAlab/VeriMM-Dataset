@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to generate horizontal and vertical synchronization (sync) signals for a VGA (Video Graphics Array) display interface. It also calculates the current pixel coordinates (`wcntX` for the horizontal axis and `wcntY` for the vertical axis) within the visible display area. This module plays a crucial role in driving VGA displays by providing the necessary timing signals that dictate when a new frame begins, when a line starts, and which pixels are to be illuminated based on their coordinates. It is an essential component in systems requiring VGA output, such as video game consoles, graphical user interfaces on embedded systems, or any application that requires visual output to a monitor.
+
+Module name:  
+	hvsync_gen
+
+Input ports:
+	clk: A clock input signal of type input. This clock signal drives the timing and state progression of the module. The frequency of this clock should be consistent with the VGA standard and the desired resolution's pixel clock.
+Output ports:
+	h_sync: Horizontal sync signal of type output. This is a digital signal that toggles to indicate the start of a new horizontal line on the VGA display.
+	v_sync: Vertical sync signal of type output. This is a digital signal that toggles to indicate the start of a new frame on the VGA display.
+	wcntX: A 10bit wide output signal representing the current horizontal pixel coordinate within the visible area of the VGA display.
+	wcntY: A 9bit wide output signal representing the current vertical pixel coordinate within the visible area of the VGA display.
+
+
+Implementation:
+This Verilog module, hvsync_gen, is designed to generate horizontal and vertical synchronization (sync) signals for a VGA (Video Graphics Array) display, along with the current pixel coordinates (wcntX, wcntY) within the visible area. The module operates based on a given input clock (clk), which is assumed to be at a frequency specified by the GLOBAL_CLOCK parameter. The design intricately combines both combinational and sequential logic to achieve its functionality.
+
+Give me the complete code.
+

@@ -1,0 +1,4 @@
+Design a memory interface module that operates on a clock signal and is controlled by an active-low reset. The module takes inputs indicating whether to write data (`ex_we`), the address and data to write (`ex_waddr`, `ex_wdata`), along with additional signals for high and low word handling (`ex_whilo`, `ex_hi`, `ex_lo`). Upon a positive clock edge or reset, it captures the input signals to output registers (`mem_we`, `mem_waddr`, `mem_wdata`, `mem_whilo`, `mem_hi`, `mem_lo`), effectively propagating write information to downstream memory or processing units in a system. When reset is activated, all output signals are cleared to zero.
+module top_module(clk,reset_n,
+	   ex_we,ex_waddr,ex_wdata,ex_whilo,ex_hi,ex_lo,
+	   mem_we,mem_waddr,mem_wdata,mem_whilo,mem_hi,mem_lo);

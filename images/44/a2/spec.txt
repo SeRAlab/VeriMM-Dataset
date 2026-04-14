@@ -1,0 +1,10 @@
+Design a circuit for a 16-bit ripple adder/subtractor that performs addition or subtraction based on a select signal. When in addition mode (select=0), it computes the sum of two 16-bit inputs A and B, along with a carry from the previous operation, and outputs the result along with the carry-out signal. In subtraction mode (select=1), it calculates the difference between A and B, subtracting any carry from the previous operation, and outputs the result along with the borrow signal. The circuit responds to a clock signal and has a reset feature to initialize the outputs to zero.
+module top_module(
+    input clk,
+    input reset,
+    input [15:0] A,
+    input [15:0] B,
+    input select,
+    output reg [15:0] S,
+    output reg O
+);

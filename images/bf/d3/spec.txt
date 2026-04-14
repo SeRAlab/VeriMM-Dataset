@@ -1,0 +1,31 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform a multiplexing function based on the inputs provided to it, specifically tailored for arithmetic logic unit (ALU) operations or similar logic where conditional selection between zero, a specific input `a`, or another input `b` is required. The module selects one of these three inputs (zero, `a`, or `b`) based on the control signals provided and outputs the selected input through its output port `Q`. Additionally, it outputs an enable signal `ena` indicating whether any of the selection inputs are active.
+
+Module name:  
+	alu_mux_3z
+
+Input ports:
+	sel_zero (input wire): A control signal that, when high, selects the zero value to be outputted on Q.
+	sel_a (input wire): A control signal that, when high, selects the input a to be outputted on Q.
+	sel_b (input wire): A control signal that, when high, selects the input b to be outputted on Q.
+	a (input wire [3:0]): A 4bit input signal representing one of the potential selections for the output Q.
+	b (input wire [3:0]): A 4bit input signal representing another potential selection for the output Q.
+Output ports:
+	ena (output wire): An enable signal that indicates if any of the selection inputs (sel_zero, sel_a, sel_b) are active.
+	Q (output wire [3:0]): A 4bit output signal that carries the result of the multiplexing operation based on the selection inputs.
+
+
+Implementation:
+The alu_mux_3z module is a combinational logic circuit designed to perform a simple multiplexing operation based on input selection signals. It takes two 4-bit inputs (a and b), along with three selection signals (sel_zero, sel_a, and sel_b). Based on these selection signals, the module outputs a 4-bit value (Q) and an enable signal (ena). The module does not contain any sequential logic elements (like flip-flops or latches), meaning its output is solely determined by the current state of its inputs.
+The core functionality of the module can be broken down as follows:
+Selection Logic: The module selects between three possible states for its output Q:
+  1. All zeros, when sel_zero is high.
+  2. The value of input a, when sel_a is high.
+  3. The value of input b, when sel_b is high.
+  This selection is implemented through a combination of bitwise AND operations and multiplexing logic. The selection signals are used to conditionally pass either input a or b or to force the output to zero.
+Output Enable (ena): The module generates an enable signal that is high when any of the selection signals are high, indicating that the output Q is valid and should be considered by downstream logic.
+Output Generation (Q): The final output Q is determined by first selecting between a, b, or zero based on the selection signals, and then applying a mask to ensure the output is either the selected value or zero, depending on the state of sel_zero.
+
+Give me the complete code.
+

@@ -1,0 +1,8 @@
+Design a 32-entry register file with 32-bit wide registers. It supports simultaneous read and write operations: on the rising edge of the clock, if writing is enabled, the data provided at write_data3 is stored in the register specified by write_address3. The outputs read_data1 and read_data2 provide the contents of the registers indicated by read_address1 and read_address2, respectively, returning zero if the read address is zero (to facilitate the zero-register behavior). This module is essential for implementing register-based storage in digital systems, such as CPUs or FPGAs.
+module top_module(
+    input clk,
+    input write_enable,
+    input [4:0] read_address1, read_address2, write_address3,
+    input [31:0] write_data3,
+    output [31:0] read_data1, read_data2
+    );

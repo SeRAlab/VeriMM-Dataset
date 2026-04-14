@@ -1,0 +1,9 @@
+Design a 16-entry register file capable of storing 32-bit wide data. On the rising edge of the clock, the module allows writing data to a specified register address if the reg_write signal is asserted. Simultaneously, it constantly provides the contents of a selected register through the read_reg_addr input. Thus, the functionality supports both read and write operations, enabling efficient data storage and retrieval in digital systems.
+module top_module(
+    input clk,
+    input reg_write,
+    input [3:0] write_reg_addr,
+    input [31:0] write_data,
+    input [3:0] read_reg_addr,
+    output reg [31:0] read_data
+);

@@ -1,0 +1,7 @@
+Design a signed 8-bit restoring divider circuit that computes the quotient of two signed 8-bit inputs (dividend and divisor). The module employs a finite state machine to sequentially process the division using the restoring division algorithm. In the implementation, the state transitions manage fetching the dividend, executing the restore and subtract operations based on the current remainder, and handling the output of the quotient at the end of the process. The quotient is constructed bit by bit within the designated states, ensuring the correct handling of signed values throughout the division operation.
+module top_module(
+    input signed [7:0] dividend,
+    input signed [7:0] divisor,
+    input clk, // Added clk input
+    output reg signed [7:0] quotient
+);

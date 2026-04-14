@@ -1,0 +1,8 @@
+Design a synchronous dual-port memory module utilizing a clock input for reading and writing operations. The module accepts an address, a data input, and a write enable signal to modify its stored data based on a 32-bit wide input. It outputs the data stored at the specified address. The address bus is expanded to align with the memory's internal structure by concatenating two bits of zero. This configuration aims to facilitate read and write operations in a memory array specifically designed for the Spartan-6 FPGA architecture, supporting a significant addressable range with 16,384 entries.
+module top_module(
+  input clk,
+  input we,
+  input [13:0] addr,
+  input [31:0] din,
+  output [31:0] dout
+);

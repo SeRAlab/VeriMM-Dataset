@@ -1,0 +1,10 @@
+Design a synchronous FIFO (First-In-First-Out) buffer that operates on a clock signal. The module includes a write enable signal (WEA) to allow data input (din) to be written into a memory array with 16 entries, each capable of holding 64 bits. On a reset signal (srst), the buffer's pointers and count are initialized. When WEA is asserted, data is written to the buffer at the position indicated by the write pointer, and the write pointer and count are updated accordingly. Upon asserting the read enable signal (tmp_ram_rd_en), the module outputs the oldest written data to dout while updating the read pointer and count, thus ensuring proper FIFO behavior.
+module top_module(
+  input clk,
+  input WEA,
+  input tmp_ram_rd_en,
+  input srst,
+  input [9:0] Q,
+  input [63:0] din,
+  output reg [63:0] dout
+);

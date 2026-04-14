@@ -1,0 +1,8 @@
+Design a synchronous flip-flop with asynchronous reset functionality. The module captures the value of the input 'd' on the rising edge of the clock when the enable signal 'en' is asserted. If the reset signal 'rst' is deasserted (low), the output 'q' is reset to zero regardless of the clock. The output 'q' follows the delayed value 'q_d', which is updated only when 'en' is high and a clock edge occurs. This design is suitable for applications requiring data storage with precise control over when to load new data and when to reset.
+module top_module(
+    input clk,
+    input rst,
+    input en,
+    input d,
+    output reg q
+);

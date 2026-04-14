@@ -1,0 +1,13 @@
+Design a slave device for a simple request-response communication protocol, functioning as a register interface. The module handles input signals including a clock, reset, request signal, address, command bit, and write data. It generates an acknowledgment (ack) output in response to requests, indicating whether data is being written or read. When writing, the module stores the provided write data in an internal register; when reading, it outputs the stored data based on the address. The design ensures that upon reset, all internal registers clear to zero, and the output reflects the current state of the internal data register on each clock cycle.
+module top_module(
+	input clk, 
+	input reset,
+	
+	input req,
+	input [31:0] addr,
+	input cmd,
+	input [31:0] wdata,
+	
+	output reg ack,
+	output reg [31:0] rdata_tr
+);

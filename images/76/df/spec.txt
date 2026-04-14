@@ -1,0 +1,7 @@
+Design a circuit that integrates a synchronous register, a shift register, and an adder to perform operations on an 8-bit input. The synchronous register holds a value, which is set to a default value of 0x34 upon reset or updated with the input `d` on each clock edge. The shift register updates its contents by shifting left and inserting the incoming 8-bit data `d` on each clock cycle, while also providing a reset condition to clear its contents to 0. The circuit computes the difference between the output of the synchronous register and the shift register, generating an 8-bit output `q`.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input [7:0] d,    // 8-bit input for the register
+    output [7:0] q    // 8-bit output from the functional module
+);

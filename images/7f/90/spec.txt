@@ -1,0 +1,10 @@
+Design a synchronous module that serves as a memory snooper for an 8-bit address space. The module reads data from a memory array (256 x 8 bits) based on the input address from `snoopa` and outputs the data to `snoopq`. Upon receiving a write signal (`snoopp`), it updates the memory at the address specified by `snoopa` with the data from `snoopd`. Additionally, the module includes a counter that, upon reaching a count of 255, activates the output `snoopm` to indicate a specific condition or state reached, while also resetting the counter. Reset functionality ensures that both outputs (`snoopq` and `snoopm`) are cleared when `reset` is asserted.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] snoopa,
+    input [7:0] snoopd,
+    input snoopp,
+    output reg snoopq,
+    output reg snoopm
+);

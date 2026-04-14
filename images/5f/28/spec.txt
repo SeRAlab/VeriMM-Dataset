@@ -1,0 +1,6 @@
+Design a 32-bit Arithmetic Logic Unit (ALU) capable of performing a variety of operations based on a 3-bit operation code (alu_op). The ALU can execute operations such as moving values from one input to another, addition, subtraction, multiplication, division, and bitwise shifting (both left and right). It produces a 32-bit output (cbus_in) representing the result of the selected operation, along with two status flags: a zero flag (z) that indicates when the result is zero, and a negative flag (n) that indicates the sign of the result based on the most significant bit. The ALU is sensitive to changes in its inputs and operates on the rising edge of the clock signal.
+module top_module(	input [31:0] abus_out, bbus_out,
+				input [2:0] alu_op,
+				input clock, 
+				output wire [31:0] cbus_in, 
+				output wire n, z);

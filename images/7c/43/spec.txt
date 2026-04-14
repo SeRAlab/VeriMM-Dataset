@@ -1,0 +1,29 @@
+Please act as a professional Verilog designer.
+
+Design a 4-bit up/down counter that counts up or down based on a control signal. The counter should have an active-high synchronous reset signal that resets the counter to zero when it is high.
+
+Module name:  
+    up_down_counter               
+Input ports:
+	clk: Clock signal used for synchronous operation.
+	rst: Active-high synchronous reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+	up_down: Control signal for counting direction. Defined as 1 for counting up and 0 for counting down.
+
+Output ports:
+    count: 4-bit output representing the counter value.
+
+Implementation:
+Counter Logic:
+The always block triggers on the positive edge of the clock signal (posedge clk).
+If the reset signal (rst) is active, the counter value is set to 0.
+If the up_down signal is 1, the counter increments by 1 on each rising edge of the clock signal.
+If the up_down signal is 0, the counter decrements by 1 on each rising edge of the clock signal.
+
+Give me the complete code.
+
+module up_down_counter (
+	input clk,
+	input rst,
+	input up_down,
+	output reg [3:0] count
+);

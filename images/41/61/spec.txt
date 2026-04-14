@@ -1,0 +1,8 @@
+Design a signal forwarding mechanism for a processor's execution stage that selects one of three potential source operands based on a 2-bit control signal, `ForwardAE`. When `ForwardAE` is set to 00, output the value of `RD1_out`; when set to 01, output `ResultW`; and when set to 10, output `ALUOutM`. This module ensures the ALU receives the correct operand by dynamically selecting between previous results, facilitating data hazard resolution in pipelined architectures.
+module top_module(
+   input [31:0]RD1_out,
+	input [31:0]ALUOutM,
+	input [31:0]ResultW,
+   input [1:0]ForwardAE,
+	output [31:0]SrcAE
+);

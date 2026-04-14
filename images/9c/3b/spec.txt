@@ -1,0 +1,10 @@
+Design a memory interface module that supports read and write operations to a memory array, specified with a data width of 32 bits. The module features synchronized operation using a clock signal, with an active reset to clear the output. It allows for memory reads and writes controlled by separate enable signals. When read is enabled, data is retrieved from a specified address; when write is enabled, data is stored at the specified address. The memory is structured as an array capable of addressing up to 4 GB of data, relevant for interfacing with DDR-type memory.
+module top_module(
+  input clk,
+  input reset,
+  input read_en,
+  input write_en,
+  input [31:0] address,
+  input [data_width-1:0] write_data,
+  output [data_width-1:0] read_data
+);

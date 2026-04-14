@@ -1,0 +1,7 @@
+Design a circuit that detects rising edges in an 8-bit input signal while identifying the position of the highest active bit. The module includes a rising edge detector that compares the current input state with its previous state to determine transitions and indicates these transitions with the `rising_edge` output. Additionally, it implements a priority encoder that translates the highest active bit of the input signal into a 3-bit position output, `pos`. The design effectively combines edge detection and priority encoding functionalities to provide real-time analysis of an 8-bit input signal.
+module top_module(
+    input clk,
+    input [7:0] in,
+    output [7:0] rising_edge,
+    output reg [2:0] pos
+);

@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+    
+Implement a module to implement a FIFO (First-In-First-Out) buffer mechanism with a parameterizable data width. Its primary functions include:
+
+Data Storage: Temporarily storing data entries in a sequential manner, allowing for data to be written into and read from the buffer based on the FIFO principle.
+Flow Control: Providing signals to indicate the full and empty status of the FIFO, enabling external control logic to manage data flow effectively.
+Data Transfer: Facilitating the transfer of data between different parts of a system that may operate at differing rates or require buffering to match processing speeds.
+
+This module plays a crucial role in systems where data buffering, synchronization, or temporary storage is required, such as in communication interfaces, data processing pipelines, and hardware accelerators.
+
+Module name:  
+	fm_ififo
+
+Input ports:
+	clk_core: The clock input for synchronizing the FIFO operations.
+	rst_x: Active low reset signal, used to initialize the FIFO state.
+	i_wstrobe: Write enable signal, indicating when a new data entry is to be written into the FIFO.
+	i_dt: Data input port, carrying the data to be stored in the FIFO. Its width is parameterizable through WIDTH.
+	i_renable: Read enable signal, indicating when a data entry is to be read from the FIFO.
+Output ports:
+	o_full: Indicates that the FIFO is full and cannot accept further write requests.
+	o_empty: Indicates that the FIFO is empty and there are no data entries to read.
+	o_dt: Data output port, carrying the data read from the FIFO. Its width matches that of i_dt.
+
+
+Implementation:
+The RTL module fm_ififo represents a First-In-First-Out (FIFO) memory buffer, designed to operate within digital systems that require temporary storage and retrieval of data in a sequential manner. The FIFO is parameterized with a WIDTH parameter, allowing for customization of the data width it handles. The core functionality of this FIFO includes writing data to the buffer (i_wstrobe and i_dt), reading data from the buffer (i_renable), and providing status signals indicating whether the FIFO is full (o_full) or empty (o_empty). The FIFO operates on a clock signal (clk_core) and can be asynchronously reset (rst_x).
+
+Give me the complete code.
+

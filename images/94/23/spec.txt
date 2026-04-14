@@ -1,0 +1,21 @@
+Formulate a Verilog module from the waveform description provided below. Assume signals are positive clock/clk edge triggered unless otherwise indicated.
+This is a sequential circuit. Utilize the provided waveforms to understand the circuit's behavior and then implement it in Verilog.
+
+Time 0ns: clock = 0, r = 0, w = x, z = x.
+Time 5ns: clock = 1, r = 1, w = x, z = x.
+Time 10ns: clock = 0, r = 0, w = 1, z = x.
+Time 15ns: clock = 1, r = 1, w = 1, z = x.
+Time 20ns: clock = 1, r = 0, w = 1, z = 1.
+Time 25ns: clock = 0, r = 1, w = 1, z = 1.
+Time 30ns: clock = 0, r = 0, w = 0, z = 1.
+Time 35ns: clock = 1, r = 1, w = 0, z = 1.
+Time 40ns: clock = 0, r = 0, w = 1, z = 0.
+Time 45ns: clock = 1, r = 1, w = 1, z = 0.
+Time 50ns: clock = 0, r = 0, w = 0, z = 1.
+Time 55ns: clock = 1, r = 1, w = 0, z = 1.
+
+module top_module (
+	input clock,
+	input r, 
+	output reg w,
+	output reg z);

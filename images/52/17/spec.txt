@@ -1,0 +1,8 @@
+Design a rising and falling edge detector circuit. The module monitors an input signal, `a`, and generates high outputs on `rise` and `down` to indicate detected transitions. Upon detecting a rising edge (when `a` transitions from LOW to HIGH), the `rise` output is set high, while the `down` output remains low. Conversely, when a falling edge (transition from HIGH to LOW) is detected, the `down` output is set high, and the `rise` output is reset to low. The outputs are synchronized to the clock and reset through a reset signal, allowing for reliable edge detection in digital systems.
+module top_module(
+  input               clk,
+  input               rst_n,
+  input               a,
+  output reg          rise,
+  output reg          down
+);

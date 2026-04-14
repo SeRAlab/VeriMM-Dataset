@@ -1,0 +1,28 @@
+
+
+You are tasked with designing a verilog module that implements a D flip-flop with asynchronous clear and clock enable. The module should be named "dff_ce_clr" and should have the following inputs and outputs:
+
+- Input "clk": the clock signal, which is a single bit.
+- Input "clr": the asynchronous clear signal, which is a single bit. When this signal is high, the output of the flip-flop should be forced to 0, regardless of the value of the data input.
+- Input "ce": the clock enable signal, which is a single bit. When this signal is low, the output of the flip-flop should be held constant, regardless of the value of the data input.
+- Input "d": the data input, which is a single bit. This is the value that should be stored in the flip-flop when the clock edge arrives.
+- Output "q": the data output, which is a single bit. This is the value stored in the flip-flop.
+
+The module should be implemented using only gates, registers, and other basic verilog constructs. You may not use any built-in flip-flop primitives or other pre-built modules.
+
+Your module should behave according to the following truth table:
+
+```
+  clk | clr | ce |  d  ||  q
+------+-----+----+----++----
+  0   |  0  | 1  |  x ||  q
+  1   |  0  | 1  |  d ||  d
+  1   |  1  | 1  |  x ||  0
+  1   |  0  | 0  |  x ||  q
+```
+
+In other words:
+- When the clock enable signal is low, the output of the flip-flop should be held constant at its previous value, regardless of the value of the data input.
+- When the clock enable signal is high, the output of the flip-flop should be updated on the rising edge of the clock, based on the value of the data input.
+- When the asynchronous clear signal is high, the output of the flip-flop should be forced to 0, regardless of the value of the data input.
+

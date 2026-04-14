@@ -1,0 +1,11 @@
+Design a FIFO (First-In, First-Out) buffer with a width of 99 bits and a depth of 128 entries. The module allows for reading and writing data synchronously with a clock signal and provides control signals to indicate if the buffer is empty or full. When the write request (wrreq) is active and the buffer is not full, incoming data is stored at the write address. Similarly, when the read request (rdreq) is active and the buffer is not empty, data is retrieved from the read address. The module also maintains a count of used words (usedw) to manage the state of the buffer and ensures proper operation through the use of dedicated registers and logic to track addresses, data output, and buffer status indicators.
+module top_module(
+    input clock,
+    input [98:0] data,
+    input rdreq,
+    input wrreq,
+    output empty,
+    output full,
+    output [98:0] q,
+    output reg [6:0] usedw
+);

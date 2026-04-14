@@ -1,0 +1,9 @@
+Design a 4-bit counter that increments its value on each clock cycle when enabled. The counter has the ability to reset to zero, and it can also be set to a specific value through the `set_value` input. When the counter reaches its maximum value of 15, it rolls over to zero, asserting a `max_value_reached` signal to indicate this state. The `max_value_reached` signal is reset when the counter is incremented or set to a new value. This module thus ensures proper counting and status signaling for a limited-range counter application.
+module top_module(
+  input clk,
+  input reset,
+  input enable,
+  input [3:0] set_value,
+  output reg [3:0] count,
+  output reg max_value_reached
+);

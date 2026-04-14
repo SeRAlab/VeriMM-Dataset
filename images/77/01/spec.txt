@@ -1,0 +1,9 @@
+Design a shift register circuit capable of performing both left and right shifts based on a control signal. It accepts an n-bit input, where `n` is parameterized. When the `shift_en` signal is triggered, the register shifts its contents either left or right according to the `shift_dir` signal, with the new data coming from the input for the shift operation. The output includes the current state of the shift register, a serial output of the entire register, and a specified width parallel output from the most significant bits of the register. This module serves to enable efficient data manipulation and transfer in digital systems.
+module top_module(
+  input [n-1:0] in,
+  input shift_en,
+  input shift_dir,
+  output [n-1:0] out,
+  output serial_out,
+  output [parallel_width-1:0] parallel_out
+);

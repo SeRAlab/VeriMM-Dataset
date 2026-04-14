@@ -1,0 +1,14 @@
+Design a 64-bit wide, 64-bit read FIFO memory with a depth of 512. The module allows data to be written and read independently on separate clock signals (wr_clk for writing and rd_clk for reading), while controlling the flow with reset, write enable (wr_en), and read enable (rd_en) signals. It provides output signals to indicate when the FIFO is full or empty and keeps track of the number of data items currently stored. The data is stored in a 512-entry RAM array, and the module maintains separate addresses for read and write operations to facilitate seamless data flow.
+module top_module(
+    input rst,
+    input wr_clk,
+    input rd_clk,
+    input [63:0] din,
+    input wr_en,
+    input rd_en,
+    output reg [63:0] dout,
+    output reg full,
+    output reg empty,
+    output reg [8:0] rd_data_count,
+    output reg [8:0] wr_data_count
+);

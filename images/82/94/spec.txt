@@ -1,0 +1,21 @@
+Please act as a professional Verilog designer.
+
+Implement a 12-bit up/down counter with a synchronous reset signal. The counter should increment by 1 if the up_down signal is high and decrement by 1 if the up_down signal is low on each positive clock edge. If the reset signal is high, the counter should reset to 0 on the next clock edge.
+
+Module name:
+    up_down_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    up_down: Control signal. Defined as 1 to increment the counter and 0 to decrement the counter.
+
+Output ports:
+    count: Output 12-bit counter value.
+
+Implementation:
+Counter Logic:
+The module includes a 12-bit counter, count, to store the current counter value.
+On the positive edge of the clock signal (clk), the module increments the counter value by 1 if the up_down signal is high and decrements the counter value by 1 if the up_down signal is low. If the reset signal (rst) is high, indicating a reset condition, the counter value is set to 12'b000000000000 on the next clock edge.
+
+Give me the complete code.

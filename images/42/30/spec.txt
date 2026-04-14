@@ -1,0 +1,8 @@
+Design a state machine that generates a beep signal based on the status of the `leds_on` and `clear` inputs. The module has two primary states: `wait_leds_on`, where it waits for the `leds_on` signal to become active before transitioning to a state that can increment until it reaches `wait_clr`, and `wait_clr`, where it checks the `clear` signal to reset the machine back to the initial state. When in default states (beyond the defined ones), the module produces a beep signal that follows the clock edge. This design can be used for controlling sound generation based on specific input conditions relevant to LED indicators and reset functionalities.
+module top_module(
+    output reg beep,
+    input leds_on,
+	 input clear,
+    input clk,
+    input rst
+    );

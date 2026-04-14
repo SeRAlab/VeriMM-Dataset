@@ -1,0 +1,6 @@
+Design a Phase-Locked Loop (PLL) circuit that generates an output clock signal synchronized to a reference clock. The PLL operates by multiplying the reference clock's frequency by a factor of N and then dividing the resultant frequency by a factor of M. It employs a feedback mechanism to compare the divided clock signal to the feedback clock to achieve phase alignment. The module includes a locking mechanism that takes a specified number of cycles, C, before indicating that it has achieved lock status, at which point it outputs a clock signal that maintains phase alignment with the reference clock.
+module top_module(
+  input ref_clk,
+  input fb_clk,
+  output reg out_clk // changed to reg since we need to assign values in always block
+);

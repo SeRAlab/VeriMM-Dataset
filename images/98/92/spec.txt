@@ -1,0 +1,7 @@
+Design a clock gating circuit that selectively enables or disables the clock signal based on the status of two inputs: an enable signal (en) and a test enable signal (te). When te is low or en is high, the output clock signal (enclk) tracks the input clock signal (clk). Conversely, when te is high and en is low, the output enclk is forced to zero, effectively disabling the clock. This module is useful for power management in digital designs by reducing unnecessary clock activity.
+module top_module(
+  input clk,
+  input en,
+  input te,
+  output reg enclk
+);

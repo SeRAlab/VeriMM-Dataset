@@ -1,0 +1,8 @@
+Design a 4-bit arithmetic unit capable of performing addition and subtraction based on a control input. When CTRL is 0, the module outputs the sum of inputs A and B, while also detecting overflow conditions. If CTRL is set to 1, it performs the subtraction of B from A, again monitoring for overflow. The overflow flag indicates whether the result has exceeded the representable range for 4-bit signed integers.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input CTRL,
+    output reg [3:0] OUT,
+    output reg OVF
+);

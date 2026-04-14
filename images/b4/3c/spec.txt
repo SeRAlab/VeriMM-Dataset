@@ -1,0 +1,31 @@
+Please act as a professional verilog designer.
+
+Implement a module to count the number of 1's in 8-bit serial input data. The valid_in will be set to 1 before the first data comes in. Whenever the module receives 4 input data, the data_out outputs the total count of 1's in the 4 received data and sets the valid_out to be 1 (will last only 1 cycle).
+
+Module name:  
+    bit_count               
+Input ports:
+	clk: Clock input for synchronization.
+	rst_n: Active-low reset signal.
+	data_in[7:0]: 8-bit input data for bit counting.
+	valid_in: Input signal indicating readiness for new data.   
+Output ports:
+    valid_out: Output signal indicating when 4 input data bit counting is reached.
+	data_out[5:0]: 6-bit output data representing the total count of 1's.
+
+Implementation:
+When valid_in is 1, data_in is a valid input. Count the total number of 1's in four valid input data_in values and calculate the output data_out by summing these counts. 
+There is no output when there are fewer than four data_in inputs in the interim. Along with the output data_out, a cycle of valid_out=1 will appear as a signal. 
+The valid_out signal is set to 1 when the data_out outputs the total count of 1's in the 4 received data. Otherwise, it is set to 0.
+
+Give me the complete code.
+
+module bit_count(
+    input               clk         ,   
+    input               rst_n       ,
+    input       [7:0]   data_in     ,
+    input               valid_in     ,
+ 
+    output  reg         valid_out     ,
+    output  reg [5:0]   data_out
+);

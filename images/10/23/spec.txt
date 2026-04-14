@@ -1,0 +1,6 @@
+Design a simple WiFi state machine that manages the connection states: DISCONNECTED, CONNECTING, CONNECTED, and DISCONNECTING. The state machine should transition between these states based on the input signals `connect` and `disconnect`. The state transitions are defined as follows:  
+- From DISCONNECTED: If `connect` is high, move to CONNECTING.   
+- From CONNECTING: If `connected` is high, move to CONNECTED; if `disconnect` is high, move to DISCONNECTED.  
+- From CONNECTED: If `disconnect` is high, move to DISCONNECTING.  
+- From DISCONNECTING: If `disconnected` is high, move to DISCONNECTED; if `connect` is high, move to CONNECTING.  
+The output should be the current state of the WiFi module in binary format (00 for DISCONNECTED, 01 for CONNECTING, 10 for CONNECTED, 11 for DISCONNECTING).

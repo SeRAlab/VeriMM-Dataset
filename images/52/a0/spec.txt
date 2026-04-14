@@ -1,0 +1,11 @@
+Design a handshake protocol controller that coordinates data transfers between two channels. The module operates in three states: IDLE, TRANSMIT, and RECEIVE. In the IDLE state, it waits for an enable signal to start transmission or an indication that data is ready to be received. During the TRANSMIT state, it acknowledges data sent from one channel if the corresponding acknowledgment signal is received. In the RECEIVE state, it manages the reception of data, signaling when the incoming data is ready while also ensuring that output acknowledgments are generated as needed. Overall, the module facilitates synchronous data communication between channels while managing flow control with acknowledgment signals.
+module top_module(
+    input clk,
+    input rst,
+    input channel_out_en,
+    input [31:0] channel_out_data,
+    output reg channel_out_ack,
+    output reg [31:0] channel_in_data,
+    output reg channel_in_en,
+    input channel_in_ack
+);

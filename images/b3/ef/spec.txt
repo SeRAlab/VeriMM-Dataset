@@ -1,0 +1,14 @@
+Design a module that functions as a simple register interface for a FIFO (First-In, First-Out) timecode transmitter. This module has a 2-bit address space allowing for chip selection, a write operation to store 32-bit data when the chip is selected and writing is enabled, and a read operation that outputs the least significant 8 bits of the written data through `out_port`. The remaining 24 bits are retained in a buffer and can be read back. The module resets both the output data and buffer when the reset signal is asserted low, ensuring controlled initialization of the stored data.
+module top_module(
+  // inputs:
+  address,
+  chipselect,
+  clk,
+  reset_n,
+  write_n,
+  writedata,
+
+  // outputs:
+  out_port,
+  readdata
+);

@@ -1,0 +1,10 @@
+Design a module that serves as an ADC (Analog-to-Digital Converter) expansion controller. It generates a clock signal for the ADC based on a system clock, powers the ADC on when reset is active, and captures 8 bits of data from the ADC input when power is low. When the reset signal is inactive, the module utilizes a counter to control the clock output and manages the power output based on the clock signal, ensuring coordinated operation of the ADC components in a digital system.
+module top_module(  
+        input           CLK       ,
+		input           RST_n     ,
+		
+		output           ADC_CLK   ,
+		output           ADC_PWR   ,
+		input      [7:0] ADC_Din   ,
+		output reg [7:0] data_out
+        );

@@ -1,0 +1,9 @@
+Design a one-hot state machine that transitions through four distinct states based on input signals and internal conditions. It operates synchronously with a clock signal, resetting to the initial state when reset is active. The machine has an 'enable' input to control state transitions, and its output is determined by the current state and the two-bit input 'in'. Each state defines specific output values, which are output during the state's execution, and the state transitions are designed based on the values of 'in'. The current state is represented in a one-hot format, ensuring only one state is active at any given time.
+module top_module(
+  input clk,
+  input rst,
+  input enable,
+  input [n-1:0] in,
+  output [n-1:0] state,
+  output reg [m-1:0] out
+);

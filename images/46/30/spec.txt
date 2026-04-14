@@ -1,0 +1,6 @@
+Design a module for an Analog-to-Digital Converter (ADC) that samples an input analog signal at a fixed rate determined by the clock frequency. The module operates at a clock frequency of 1 MHz and samples the signal at 1 kHz, using a counter to track the sampling intervals. When the counter reaches its maximum value, which corresponds to the specified sampling rate, the module quantizes the input signal into an 8-bit digital format, scaling it between 0 and 255 based on a presumed maximum input value of 5 volts. The quantized output is then made available on the digital_output signal.
+module top_module(
+  input clk,
+  input input_signal,
+  output reg [7:0] digital_output
+);

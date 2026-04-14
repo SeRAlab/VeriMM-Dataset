@@ -1,0 +1,14 @@
+Design a module that interfaces with LED indicators through a set of control signals. The module allows for writing to and reading from an 8-bit segment of LEDs using a 32-bit data bus. It accepts input signals for reset (rst), clock (clk), input enable (ie), data enable (de), and read/write signals (drw), along with address and data buses. When writing data, it assigns the lower 8 bits of the input data (din) to the LEDs, while a reset sets the LEDs to all ON. The module provides outputs for LED status through a data read mechanism, which returns the LED state when accessed at specific addresses. Additionally, outputs are set to high impedance (HiZ) when not actively driven.
+module top_module(
+    input rst,
+    input clk,
+    input ie,
+    input de,
+    input [31:0] iaddr,
+    input [31:0] daddr,
+    input [1:0] drw,
+    input [31:0] din,
+    output [31:0] iout,
+    output [31:0] dout,
+    output reg [7:0] leds
+);

@@ -1,0 +1,5 @@
+Design a 256-byte memory module that operates on a 32-bit word basis. The module has a clock input and an active-low reset. It supports both read and write operations controlled by the MemRW signal. When MemRW is high, data input (dataW) is written to a specified address (Addr) along with the next three consecutive addresses, effectively allowing for 4-byte writes. Conversely, when MemRW is low, the module reads 4 bytes from the specified address and outputs this data (dataR), combining the four individual byte values into a single 32-bit output. In case of reset, the memory values at the specified addresses are set to an undefined state.
+module top_module(input clk, rst_n,
+             input [31:0] dataW, Addr,
+             input MemRW,               
+             output [31:0] dataR);

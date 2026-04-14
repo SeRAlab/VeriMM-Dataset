@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+
+Create a module for an 8-bit parallel loadable shift register. The register loads data from the input bus (data_in) when the load signal (load) is high, and shifts the data to the right on every positive edge of the clock signal when the shift signal (shift) is high. The register resets to 0 when the reset signal (reset) is active.
+
+Module name:  
+    loadable_shift_register_8bit               
+Input ports:
+    reset: Reset signal (active high)
+    clk: Clock signal
+    load: Signal to load data
+    shift: Signal to shift data
+    data_in: 8-bit input bus
+Output ports:
+    q: 8-bit output representing the current register value
+
+Implementation:
+If the reset signal is active (reset), the register is reset to 0 by assigning the value 8'b00000000 to the output register (q). If the load signal (load) is high, the register loads data from the input bus (data_in). If the shift signal (shift) is high, the register shifts the data to the right on each positive clock edge, with the most significant bit (MSB) being filled with 0. If neither load nor shift signals are high, the register retains its current value.
+
+Give me the complete code.

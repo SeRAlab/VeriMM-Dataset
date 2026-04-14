@@ -1,0 +1,18 @@
+This module implements an instruction decoder for a RISC-V architecture. It takes a 32-bit instruction as input and extracts various fields necessary for instruction execution, including the operation code (operation), destination register (rd), function codes (funct3 and funct7), and source registers (rs1 and rs2). Additionally, the module produces immediate values (imm and imm_u) based on specified operation types such as load, arithmetic, store, and branch instructions. The 32-bit jump address (jmp) is also computed based on specific decoding logic. Overall, the purpose of this design is to transform a given instruction into its constituent parts, facilitating further processing in a processor pipeline.
+module top_module(
+	input	[31:0]		instr_in	,
+
+	output 	[6:0]		operation	,
+	output 	[4:0]		rd			,
+	output 	[2:0]		funct3		,	
+	output 	[4:0]		rs1			,
+	output 	[4:0]		rs2			,
+	output 	[6:0]		funct7		,
+
+	output  [11:0]		imm			,
+	output  [19:0]		imm_u		,
+	output	[31:0]		jmp			
+
+
+
+);

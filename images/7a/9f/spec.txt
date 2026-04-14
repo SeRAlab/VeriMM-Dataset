@@ -1,0 +1,9 @@
+Design a register shifter that processes a 32-bit input to prepare it for memory write operations based on control signals. It shifts the input data according to the provided memory address and modifies a byte-enable output signal depending on the write operation. Specifically, when the instruction opcode (IR_out) indicates a store operation (101011), the full data is output with all byte enables active. For other opcodes, the output will be shifted left according to the specified memory address, thereby determining which bytes of the data are targeted for writing, while appropriately setting the byte enable signal to indicate active bytes.
+module top_module(
+	input [31:0] rt_out,
+	input [1:0] mem_addr_in,
+	input MemWrite,
+	input [5:0] IR_out,
+	output reg [31:0] rt_out_shift,
+	output reg [3:0] mem_byte_write_out
+);

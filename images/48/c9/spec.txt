@@ -1,0 +1,10 @@
+Design a synchronous 8-bit shift register with a reset function and a 2-to-1 multiplexer that selects between two input sources (a and b) based on control signals. The circuit has a reset feature that initializes the shift register to zero and sets the multiplexer output to input a when activated. On each clock cycle, the shift register shifts its contents while conditionally loading its least significant bit (LSB) from the selected multiplexer output, which can either be the contents of the shift register itself, input b shifted left by 1 or 2 bits, or input a. The most significant bit (MSB) of the shift register is output on q, providing the value after the described shifting and loading operations.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input [7:0] a, // 8-bit input for selection port a
+    input [7:0] b, // 8-bit input for selection port b
+    input sel_b1, // Select input for port b MSB
+    input sel_b2, // Select input for port b LSB
+    output reg [7:0] q // 8-bit output from the last DFF in the shift register
+);

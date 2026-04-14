@@ -1,0 +1,6 @@
+Design a 32-bit wide bitwise shifter that performs different types of shifts based on the input `shift` signal. When `shift` is 00, it outputs the input value unchanged. When `shift` is 01, it performs a left shift by one bit, effectively multiplying the input by two and inserting a zero in the least significant bit. When `shift` is 10, it performs a right shift by one bit, inserting a zero in the most significant bit, effectively dividing the input by two and discarding any least significant bit. When `shift` is 11, it performs a right shift by two bits, inserting two zeros in the most significant bits, effectively dividing the input by four and discarding the least significant two bits.
+module top_module(
+  input [31:0] in,
+  input [1:0] shift,
+  output reg [31:0] out
+);

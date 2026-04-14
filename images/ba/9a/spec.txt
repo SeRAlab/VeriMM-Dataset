@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+
+Implement a dual-edge triggered D flip-flop. The flip-flop should store the input data on both the rising and falling edges of the clock. It should also have an asynchronous reset input to reset the output to zero.
+
+Module name:  
+    dual_edge_dff
+
+Inputs:
+    clk: Clock signal.
+    d: Data input.
+    rst: Asynchronous reset signal.
+
+Outputs:
+    q: Output representing the stored data.
+
+Registers and Wires:
+    q_reg: A register holding the stored data.
+
+Implementation:
+Two always blocks are used to handle the positive and negative edges of the clock signal separately. Each always block checks for the reset signal first. If the reset signal is high, the output is reset to zero. If the reset signal is not high, the data input is stored in the register on the respective clock edge.
+
+Give me the complete code.
+
+module dual_edge_dff
+    (
+        input clk,
+        input d,
+        input rst,
+        output reg q
+    );

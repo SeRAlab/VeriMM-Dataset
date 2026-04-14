@@ -1,0 +1,6 @@
+Design a circuit that performs an 8-bit logical AND operation between two input vectors, `x` and `y`, and then processes the result to produce a single output signal. The output is derived from a hierarchical combination of the intermediate results: first, it performs pairwise OR operations on the pairs of bits from the initial AND result, then applies pairwise AND operations on the results of those OR operations. Ultimately, the output reflects whether at least one bit is set in the final computed values. This design effectively reduces the 8-bit signal down to a single binary output, functioning as a form of complex bit-level reduction or aggregation logic.
+module top_module(
+        input [7:0] x,
+        input [7:0] y,
+        output out
+    );

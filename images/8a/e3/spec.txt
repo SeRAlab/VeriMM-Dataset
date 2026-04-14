@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a 3-bit up/down counter. The counter increments its value by 1 on each positive edge of the clock signal (CLK) when the UP signal is high and decrements its value by 1 when the UP signal is low. The counter resets to 0 when the active high reset signal (RST) is asserted.
+
+Module name:
+    up_down_counter
+
+Input ports:
+    CLK: Clock input
+    RST: Active high reset signal
+    UP: Up/Down control signal
+
+Output ports:
+    Q: 3-bit output representing the current counter value
+
+Implementation:
+The up_down_counter module uses an always block triggered on the positive edge of the clock signal or the positive edge of the reset signal. If the reset signal is active, the counter value (Q) is set to 0. Otherwise, the counter value increments by 1 if UP is high and decrements by 1 if UP is low.
+
+Give me the complete code.
+
+module up_down_counter(CLK,RST,UP,Q);
+input CLK,RST,UP;
+output [2:0] Q;
+reg [2:0] Q;

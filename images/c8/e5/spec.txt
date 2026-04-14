@@ -1,0 +1,17 @@
+
+
+In digital circuit design, a register is a device that stores data. A clock signal is used to synchronize the data transfer between the register and other parts of the circuit. In this problem, you are asked to design a clock gate module that can be used to control the clock signal of a register.
+
+The clock gate module has 3 inputs: CLK, EN, and TE, and 1 output: ENCLK. When EN is high, the module should pass the CLK signal to ENCLK. When EN is low, the module should hold ENCLK low, regardless of the CLK signal. When TE is high, the module should ignore the EN signal and hold ENCLK low, regardless of the CLK signal.
+
+You need to implement a Verilog module called "clock_gate" that takes these inputs and produces the output. Your module should be self-contained and not use any other modules. Your module should also be synthesizable and work correctly in simulation.
+
+Your implementation should follow these guidelines:
+
+- The module should be named "clock_gate".
+- The module should have 3 inputs: CLK (1-bit), EN (1-bit), and TE (1-bit).
+- The module should have 1 output: ENCLK (1-bit).
+- When EN is low, ENCLK should be held low, regardless of the CLK signal.
+- When EN is high and TE is low, ENCLK should be the same as CLK.
+- When TE is high, ENCLK should be held low, regardless of the CLK signal.
+

@@ -1,0 +1,9 @@
+Design a register adder circuit that accumulates an 8-bit input (D) into a 31-bit register (Q_reg) based on a clock signal (CLK) and a finite state machine selector (FSM_selector_D). When FSM_selector_D is high, the value of D is added to the current value in Q_reg; if it is low, Q_reg retains its previous value. Additionally, the module includes an asynchronous reset feature (AR) that sets Q_reg to zero when activated. The output Data_A indicates whether the sum of the least significant 8 bits of Q_reg and D exceeds the maximum value for an 8-bit number (255), providing a flag for overflow.
+module top_module(
+    input [7:0] D,
+    input FSM_selector_D,
+    input AR,
+    input CLK,
+    output reg [30:0] Q_reg,  // Changed to output reg
+    output reg Data_A         // Changed to output reg
+);

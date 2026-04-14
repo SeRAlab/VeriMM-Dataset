@@ -1,0 +1,8 @@
+Design a 4-bit shift register that can either load new data or shift existing data. When the load signal (LD) is asserted, the register captures the 4-bit input data (D) into the first stage of the shift register, propagating it through subsequent stages. Conversely, when the shift signal (SH) is asserted, the register shifts the contents of each stage to the next, clearing the last stage to zero. If neither LD nor SH is active, the register retains its current state. The output (Q) always reflects the data from the first stage, allowing for both data loading and shifting operations within the same circuit.
+module top_module(
+    input clk,           // Added clk input signal
+    input [3:0] D,
+    input LD,
+    input SH,
+    output reg [3:0] Q
+);

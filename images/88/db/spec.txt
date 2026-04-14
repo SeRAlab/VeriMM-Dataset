@@ -1,0 +1,10 @@
+Design a digital circuit that combines three functionalities: a 4-bit Johnson decade counter, a binary transition detector, and a summation operation. The circuit uses a clock input to increment the counter when enabled, while it resets when the reset input is asserted. The transition detector identifies changes in the input signal by producing a transition output that signifies the change in binary values. Finally, the circuit outputs the sum of the counter value and the transition output, formatted as a 36-bit sum.
+module top_module(
+    input clk,
+    input clock_enable,
+    input reset,
+    input [31:0] in,
+    output [3:0] counter_out,
+    output [31:0] transition_out,
+    output [35:0] sum_out
+);

@@ -1,0 +1,9 @@
+Design a circuit that performs complex multiplication on two 18-bit signed inputs, where each input consists of a real and an imaginary part. The module calculates the real part of the result by subtracting the product of the imaginary components from the product of the real components. The imaginary part is obtained by summing the products of the real part of one input with the imaginary part of the other input. The outputs are 36-bit signed values, representing the real and imaginary parts of the complex result. This module is essential for digital signal processing applications that require complex number manipulations.
+module top_module(
+    input signed [17:0] in1_re, // sfix18_En16
+    input signed [17:0] in1_im, // sfix18_En16
+    input signed [17:0] in2_re, // sfix18_En16
+    input signed [17:0] in2_im, // sfix18_En16
+    output signed [35:0] re,    // sfix36_En32
+    output signed [35:0] im     // sfix36_En32
+);

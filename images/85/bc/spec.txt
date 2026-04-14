@@ -1,0 +1,8 @@
+Design a digital circuit that performs a computation involving multiplication and addition in a synchronous manner. The circuit receives two 4-bit inputs (`a` and `b`) and one 8-bit input (`c`), using a counter to track the operations performed. On each clock cycle, it extracts values from the counter, multiplies the two 4-bit values, adds the result to the 8-bit input and the current output value, and stores the lower 9 bits of the sum as the output `y`. The design serves to accumulate results over time, leveraging a finite state machine-like behavior to facilitate sequential computations.
+module top_module(
+  input wire clk,           // Added clk input
+  input wire [3:0] a,
+  input wire [3:0] b,
+  input wire [7:0] c,
+  output reg [8:0] y
+);

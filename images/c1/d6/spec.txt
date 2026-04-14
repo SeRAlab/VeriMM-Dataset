@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a parameterizable, resettable D flip-flop (DFF) with a synchronous reset. The primary function of this module to store and update digital data based on the clock (`clk`) and reset (`rst`) signals. It is a fundamental building block in digital integrated circuits, used for data storage, synchronization, and state retention across clock cycles. In a broader system context, this module can be utilized in creating registers, counters, memory elements, and various sequential logic circuits, contributing to the overall state management and data flow control within digital systems.
+
+Module name:  
+	dffr_ns_r1
+
+Input ports:
+	din [SIZE1:0]: Data input port. This is a vector input whose width is parameterizable through the SIZE parameter. It represents the data to be stored in the flipflop upon the rising edge of the clock signal, provided the reset signal is not asserted.
+	clk: Clock input. This signal is used to synchronize the data storage operation. The data at the din port is sampled and stored into the flipflop on the rising edge of this signal.
+	rst: Reset input. This is a synchronous reset signal. When asserted (rst=1), it causes the flipflop to set its output to a predefined value (1 for each bit) on the next rising edge of the clock signal, overriding the data input.
+Output ports:
+	q [SIZE1:0]: Data output port. This is a vector output that mirrors the width of the din input. It represents the current state or the data stored in the flipflop. The output changes based on the din input and the state of the rst signal, following the rising edge of the clk signal.
+
+
+Implementation:
+The RTL module presented, named dffr_ns_r1, is designed to implement a parameterizable register with synchronous reset functionality. This module is a fundamental building block in digital design, particularly in synchronous circuits where state retention across clock cycles is essential. The module's behavior is governed by both combinational and sequential logic elements, which are detailed below:
+Sequential Logic: The core of this module is based on sequential logic, which is evident from the use of the always @ (posedge clk) construct. This indicates that the operations within this block are triggered on the rising edge of the clock signal (clk). Sequential logic is crucial for creating circuits that have memory or state, such as registers, counters, and more complex state machines.
+Synchronous Reset: The module incorporates a synchronous reset functionality, which is a type of reset where the reset operation is synchronized with the clock signal. This is achieved through the conditional operation within the sequential block, where the output register q is set to a predefined value ({SIZE{1'b1}}, which represents a binary value of all 1's with a width equal to SIZE) when the reset signal (rst) is asserted (rst ? {SIZE{1'b1}} : din[SIZE-1:0]). If the reset signal is not asserted, the data input (din) is loaded into the register q on the rising edge of the clock.
+Parameterization: The module uses a parameter (SIZE) to allow for flexibility in the width of the data it processes. This parameterization makes the module versatile, as it can be instantiated with different data widths according to the needs of the specific application. The use of [SIZE-1:0] notation for signal declarations and operations ensures that the module's behavior scales correctly with the parameter value.
+
+Give me the complete code.
+

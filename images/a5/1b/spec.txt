@@ -1,0 +1,5 @@
+Design a reduction circuit that checks for the presence of any non-zero signal among four 8-bit input values: `instr_mul`, `instr_mulh`, `instr_mulhsu`, and `instr_mulhu`. The output, `instr_any_mul`, indicates whether at least one of these inputs is non-zero by performing a bitwise OR operation across all of them, effectively summarizing the status of multiple multiplication instruction signals into a single boolean output.
+module top_module(
+	input [7:0] instr_mul, instr_mulh, instr_mulhsu, instr_mulhu,
+        output instr_any_mul
+);

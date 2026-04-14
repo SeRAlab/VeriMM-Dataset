@@ -1,0 +1,17 @@
+Implement the Verilog module based on the following description.
+This is a Moore state machine with two states, two inputs, and one output. Implement this state machine in Verilog. Reset is an active-high synchronous  reset to state OFF.
+
+The state machine has the following states and their corresponding outputs: 
+1. state OFF (out = 0).
+2. state ON (out = 1).
+
+State transitions:
+1. From state OFF: If x = 0, then transition to state OFF. If x = 1, then transition to state ON.
+2. From state ON: If k = 0, then transition to state ON. If k = 1, then transition to state OFF.
+
+module top_module (
+    input clk,
+    input x,
+    input k,
+    input reset,
+    output reg out);

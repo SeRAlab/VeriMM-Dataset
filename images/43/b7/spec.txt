@@ -1,0 +1,15 @@
+Design a module that interfaces with SRAM by handling read and write operations based on control signals. This module outputs a 15-bit data value on `out_port` and provides a 32-bit `readdata` that reflects stored information based on a specific address. When the system is reset, the stored data is cleared. Data writing occurs when `chipselect` is active, `write_n` is low, and the address is set to 0, allowing input data to be stored. The output is conditionally selected by the address input, effectively creating a simple memory interface for SRAM operations with a focus on addressing and data integrity.
+module top_module(
+                                 
+                                  address,
+                                  chipselect,
+                                  clk,
+                                  reset_n,
+                                  write_n,
+                                  writedata,
+
+                                 
+                                  out_port,
+                                  readdata
+                               )
+;

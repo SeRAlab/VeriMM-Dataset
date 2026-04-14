@@ -1,0 +1,8 @@
+Design a circuit that drives an 8-bit LED display based on a 3-bit switch input (SW) and a 32-bit ALU output (ALU_F). The LED display functionality varies according to the value of SW: it can show the direct output of ALU_F, its bitwise negation, left or right shifts, increment or decrement operations, or specific bitwise AND and OR results with constant values. Additionally, the circuit monitors overflow (OF) and zero flag (ZF) signals to control the most significant bit (MSB) of the LED and to clear the display if ZF is asserted. This module serves primarily as a visual display interface for the ALU's operations, providing immediate feedback based on switch settings and flag statuses.
+module top_module(
+    input OF,
+    input ZF,
+    input [2:0] SW,
+    input [31:0] ALU_F,
+    output reg [7:0] LED
+);

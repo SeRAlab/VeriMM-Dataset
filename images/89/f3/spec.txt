@@ -1,0 +1,7 @@
+Design a 32-bit wide data producer module that selectively manipulates the input data based on a 2-bit selector and the lower two bits of the address. The module takes a 32-bit input `MFRTMout` and an address, outputting modified data onto `Wdata`. Depending on the value of `sel`, it can directly pass the entire input, zero-extend, or lower the bits based on the address, effectively functioning as a specialized data formatter. This module is particularly useful for selectively writing data to memory in a specific format or alignment.
+module top_module(
+    input [31:0] MFRTMout,
+    input [31:0] address,
+    input [1:0] sel,
+    output reg [31:0] Wdata
+    );

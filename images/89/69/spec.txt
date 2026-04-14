@@ -1,0 +1,13 @@
+Design a FIFO (First-In-First-Out) buffer with a depth of 2 and a data width of 32 bits. The module allows writing data into the buffer and reading data from it, controlled by the write (wr) and read (rd) signals, respectively. The buffer tracks its usage via a pointer system for read and write operations, as well as an entry count to determine buffer status. It provides status outputs indicating whether the buffer is full, empty, almost full, or almost empty. Resetting the buffer is handled by an active-low reset signal.
+module top_module(
+  input clk,
+  input rd,
+  input reset_n,
+  input wr,
+  input [31:0] wr_data,
+  output almost_empty,
+  output almost_full,
+  output empty,
+  output full,
+  output reg [31:0] rd_data  // Changed `output` to `output reg`
+);

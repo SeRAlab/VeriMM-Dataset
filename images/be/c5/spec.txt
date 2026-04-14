@@ -1,0 +1,20 @@
+Design a register latch for the EX/MEM pipeline stage of a processor. This module captures and stores several control signals and ALU results on a clock edge when they are enabled, and resets them to zero when a reset signal is asserted. It facilitates the transfer of data and control signals—specifically, the ALU result, data from the second register operand, destination register selection, and write-back control signals—between the execute and memory stages of the processor, ensuring accurate data flow and synchronization in a pipelined architecture.
+module top_module(
+    input wire clk,
+    input wire reset,
+    inout wire ena,
+    input wire [31:0] alu_result_in,
+    input wire [31:0] r_data2_in,
+    input wire [4:0] mux_RegDst_in,
+    input wire wb_RegWrite_in,
+    input wire wb_MemtoReg_in,
+    input wire m_MemWrite_in,
+    input wire [5:0] opcode_in,
+    output wire [31:0] alu_result_out,
+    output wire [31:0] r_data2_out,
+    output wire [4:0] mux_RegDst_out,
+    output wire wb_RegWrite_out,
+    output wire wb_MemtoReg_out,
+    output wire m_MemWrite_out,
+    output wire [5:0] opcode_out
+);

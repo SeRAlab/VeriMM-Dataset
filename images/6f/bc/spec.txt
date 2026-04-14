@@ -1,0 +1,11 @@
+Design a 4-bit up/down counter with asynchronous reset and load capabilities. The counter increments or decrements its value based on a control signal; when control is high, it counts up, and when low, it counts down. It has a reset input to initialize the count to zero, and a load input to allow setting the count to a specified value. Additionally, the module includes output signals to indicate when the maximum (15) or minimum (0) count values are reached.
+module top_module(
+  input clk,
+  input reset,
+  input load,
+  input control,
+  input [3:0] data,         // Added input declaration for data
+  output reg [3:0] count,
+  output reg max_reached,   // Changed from wire to reg
+  output reg min_reached     // Changed from wire to reg
+);

@@ -1,0 +1,15 @@
+Design a finite state machine (FSM) that manages four output registers (dig1, dig2, dig3, dig4) based on two sets of input time values (seconds and minutes), and a control signal (alu) influenced by a switch. When the switch is OFF and the ALU command is set to a specific value (2'b10), the registers retain their current values. Otherwise, they are updated to display the minute and second values from the inputs. The outputs are synchronized with the rising edge of the clock and are reset to zero when the reset signal is asserted low. This module primarily functions to control and display a digital clock representation.
+module top_module(
+	dig1,
+	dig2,
+	dig3,
+	dig4,
+	sec1,
+	sec0,
+	min1,
+	min0,
+	alu,
+	clk,
+	rst_n,
+	switch
+    );

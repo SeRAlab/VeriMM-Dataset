@@ -1,0 +1,1 @@
+module top_module( output s, input p, q, r, t, u, v, x, z);assign s = ~(p | q | r | t | u | v | x | z);endmodule

@@ -1,0 +1,7 @@
+Design a module for wireless communication that encodes incoming 8-bit data based on a selected protocol: Bluetooth Low Energy (BLE), Wi-Fi, or Zigbee. The encoding occurs on the rising edge of a clock signal, where BLE directly passes the input data, Wi-Fi increments the input data by one, and Zigbee decrements it by one. The output reflects the encoded data, which is intended for wireless transmission according to the selected protocol, enabling the system to adaptively handle different communication standards.
+module top_module(
+  input [7:0] data_in,
+  input [1:0] protocol_sel,
+  input clk,
+  output reg [7:0] data_out
+);

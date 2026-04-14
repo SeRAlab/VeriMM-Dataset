@@ -1,0 +1,8 @@
+Design a 16-bit wide arithmetic and logic unit (ALU) that performs two primary operations: addition and shifting. The module takes two 16-bit inputs (a and b), adds them to produce an adder output, and then conditionally applies a shift based on a 4-bit input value. When the shift input is zero, the module outputs the adder result; otherwise, it performs a left shift of the adder output by the specified number of bits. Additionally, it computes a bitwise OR of both the adder and shifter outputs. The final output is determined by the select input, which chooses between the shifted result combined with the OR result or just the summed output combined with the OR result.
+module top_module(
+    input [15:0] a,
+    input [15:0] b,
+    input [3:0] shift,
+    input select,
+    output [15:0] out
+);

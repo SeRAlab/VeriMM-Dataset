@@ -1,0 +1,7 @@
+Design a character ROM module that retrieves pixel data for a given character and row from a pre-initialized memory. The module accepts a clock signal, an 8-bit character input, and a 4-bit row input. It outputs a 12-bit wide data row that corresponds to the specified combination of character and row using a distributed RAM structure initialized from a memory initialization file. The output data_row is updated on the rising edge of the clock, allowing for synchronized access to the font data for graphical display purposes, such as in a VGA terminal.
+module top_module(
+	input  wire			clk,
+	input  wire	[7:0]	char,
+	input  wire	[3:0]	row,
+	output reg	[11:0]	data_row
+);

@@ -1,0 +1,10 @@
+Design a versatile shift register that supports both parallel and serial input modes. The module has a parameterized bit-width of `n`, where it can accept an input `in` for serial shifting or a parallel input `p_in` for loading data when the `shift_dir` signal is high. On the rising edge of the clock signal, if the reset signal (`rst`) is active, the register resets to zero. In parallel mode, it takes the entire `p_in` input and loads it into the register, while in serial mode, it shifts the data right, introducing the `in` signal at the most significant bit and outputting the least significant bit as `out`. The current value of the shift register can be accessed through `p_out`.
+module top_module(
+  input in,
+  input [n-1:0] p_in,
+  input clk,
+  input rst,
+  input shift_dir,
+  output reg out,          // Changed to reg
+  output reg [n-1:0] p_out // Changed to reg
+);

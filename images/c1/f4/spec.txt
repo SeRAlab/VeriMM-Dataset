@@ -1,0 +1,20 @@
+
+You are tasked with designing a Verilog module that implements a clock gating circuit. The circuit should have the following inputs and outputs:
+- CLK: a clock input signal.
+- EN: an enable input signal.
+- TE: a trigger enable input signal.
+- ENCLK: an output signal that is high when both the enable input and trigger enable input are high, and low otherwise.
+
+Your clock gating circuit should use a D flip-flop as a basic building block. The circuit should also use a two-stage gating approach, where the first stage is a simple AND gate, and the second stage is a D flip-flop.
+
+Your Verilog module should be named "clock_gate" and should have the following interface:
+```
+module clock_gate (
+  input CLK,
+  input EN,
+  input TE,
+  output ENCLK
+);
+```
+You should assume that all input signals are synchronous to the same clock signal, and that the input signals are guaranteed to be stable before the rising edge of the clock.
+

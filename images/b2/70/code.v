@@ -1,0 +1,1 @@
+module top_module(output wire s, cout, input wire a, b, cin);assign {cout, s} = cin + a + b;endmodule

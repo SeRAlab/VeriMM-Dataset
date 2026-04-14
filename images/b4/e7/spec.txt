@@ -1,0 +1,13 @@
+Design a circuit that functions as a comparator for three sets of three 8-bit input values (CprogH, CprogM, CprogS and CcountH, CcountM, CcountS). The circuit outputs a signal, fin, that indicates when all corresponding high, medium, and low components of the program counters match while also ensuring that at least one of these program counter components is non-zero. The comparison is only conducted when the enable signal (en) is active, and it resets with a reset signal. The operation is synchronized to the rising edge of the clock.
+module top_module(
+    input [7:0] CprogH,
+	 input [7:0] CprogM,
+	 input [7:0] CprogS,
+    input [7:0] CcountH,
+	 input [7:0] CcountM,
+	 input [7:0] CcountS,
+    input en,
+    input reset,
+	 input clock,
+    output reg fin
+    );

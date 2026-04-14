@@ -1,0 +1,8 @@
+Design a 32-bit shift register with an integrated shifting capability. The module captures an incoming bit (DATA_IN) on the positive clock edge and shifts the existing data in a three-stage pipeline. It outputs the complete 32-bit data stream (DATA_OUT) from the last stage while also providing the most significant bit of the first stage as SHIFT_OUT. When the SHIFT control signal is high, the register shifts its contents left, moving bits through the stages and filling the least significant bit with zero. This design facilitates both data storage and manipulation through shifting operations.
+module top_module(
+    input clk,        // Added clk input
+    input SHIFT,
+    input DATA_IN,
+    output reg SHIFT_OUT,
+    output reg [31:0] DATA_OUT
+);

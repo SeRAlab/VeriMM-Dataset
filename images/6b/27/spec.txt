@@ -1,0 +1,9 @@
+Design a 32-bit wide FIFO (First-In-First-Out) memory module with a capacity of 16KB, accommodating 512 entries. The module features asynchronous reset and incorporates write and read enable signals to control data input (din) and output (dout). When enabled, data is written to the memory on the rising edge of the clock and read from it based on external control signals, while handling conditions for memory full and empty states. The implementation includes internal pointers for tracking the write and read locations, as well as a counter to monitor the number of stored entries.
+module top_module(
+    input clk,
+    input rst,
+    input [31:0] din,
+    input din_en,
+    output reg [31:0] dout,
+    input dout_en
+  );

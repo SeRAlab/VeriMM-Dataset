@@ -1,0 +1,11 @@
+Design a DDR memory interface that manages read and write operations to a memory array. The module features inputs for clock, reset, read enable, and write enable signals, along with a 16-bit address and write data input. Upon a rising clock edge, if the reset signal is active, it resets internal state variables. When reading (read_en active and write_en inactive), it captures the address for reading and sets the busy flag until the operation is complete, subsequently outputting the read data. Conversely, when writing (write_en active and read_en inactive), it captures the address and data to be written, updating the memory and setting the busy flag. The interface is designed to ensure that only one operation, read or write, occurs at any given time.
+module top_module(
+  input clk,
+  input reset,
+  input read_en,
+  input write_en,
+  input [15:0] address,
+  input [15:0] write_data,
+  output reg [15:0] read_data,
+  output reg busy
+);

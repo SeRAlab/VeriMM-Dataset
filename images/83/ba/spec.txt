@@ -1,0 +1,9 @@
+Design a two-dimensional array memory module that supports setting and retrieving 32-bit values. The array is initialized to zero and has a fixed size of 10x10. On the rising edge of the clock, if a reset signal is activated, it sets the specified element of the array to zero. Otherwise, it updates the element at the specified indices with the provided value. Additionally, the module outputs the value at the specified indices on each clock cycle, enabling retrieval of data stored in the array.
+module top_module(
+  input clk,
+  input reset,
+  input [31:0] set_index_i,
+  input [31:0] set_index_j,
+  input [31:0] set_value,
+  output reg [31:0] get_value // Changed to reg type
+);

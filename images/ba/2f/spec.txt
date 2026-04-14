@@ -1,0 +1,9 @@
+Design a circuit that functions as a rotating adder. It takes a 100-bit input data, which can be loaded and rotated based on a 2-bit enable signal. The rotation occurs in four different configurations: no rotation, a one-bit rotate, a two-bit rotate, or a three-bit rotate. The lower 32 bits of the rotated data are then added to a constant value of 12345678 before being outputted as a 32-bit result. The design also includes a synchronous reset to initialize the outputs and an input loading mechanism controlled by a clock signal.
+module top_module(
+    input clk,
+    input reset,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output reg [31:0] q
+);

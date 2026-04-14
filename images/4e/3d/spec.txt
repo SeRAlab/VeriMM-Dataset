@@ -1,0 +1,14 @@
+Design a circuit that evaluates various conditions based on input data, producing specific output signals based on the values of input signals. The module checks if a 32-bit input data matches a predefined MAC address, assesses the value of a header count input to generate specific condition flags, and determines lengths based on specific values in a 32-bit data input. Additionally, it verifies if a write address meets a calculated condition. The outputs include multiple boolean flags indicating conditions (SP, EH, PL, ST) and two 2-bit outputs that represent different length states based on the provided data.
+module top_module(
+		input[31:0] RDAT,
+		input[4:0] Header_count,
+		input[8:0] wraddr,
+		input[31:0] dataout,
+		
+		output condition_SP,
+		output condition_EH,
+		output condition_PL,
+		output condition_ST,
+		output[1:0] condition_length,
+		output[1:0] condition_length2
+		);

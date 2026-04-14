@@ -1,0 +1,8 @@
+Design a serial output shift register with an 8-bit width that utilizes a clock and reset signal. On a positive clock edge, if the reset signal is active, the register initializes to zero. If reset is not active and the enable signal is asserted, the current contents of the shift register are outputted to the serial output; if not enabled, the output is set to zero. The shift register takes an 8-bit parallel input, shifting its contents to the right by one position while inserting the parallel input on the left. This module is useful for applications requiring data serialization and controlled loading of shift register entries.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] parallel_in,
+  input enable,
+  output reg [7:0] serial_out
+);

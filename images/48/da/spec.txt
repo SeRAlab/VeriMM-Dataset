@@ -1,0 +1,18 @@
+Develop a Verilog module for an elevator controller using one-hot encoding. The elevator can be in three states. The reset is asynchronous active-high and the controller is positive clock/clk edge triggered.
+
+States and their corresponding outputs:
+1. state GroundFloor (at_floor = 2'b00)
+2. state FirstFloor (at_floor = 2'b01)
+3. state SecondFloor (at_floor = 2'b10)
+
+State transitions:
+1. From state GroundFloor: If move_up = 1, then transition to state FirstFloor.
+2. From state FirstFloor: If move_up = 1, then transition to state SecondFloor. If move_down = 1, then transition to state GroundFloor.
+3. From state SecondFloor: If move_down = 1, then transition to state FirstFloor.
+
+module top_module (
+        input clk,
+        input areset,
+        input move_up,
+        input move_down,
+        output reg [1:0] at_floor);

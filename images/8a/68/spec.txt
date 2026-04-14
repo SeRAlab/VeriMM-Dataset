@@ -1,0 +1,8 @@
+Design a synchronous 8-bit register with an asynchronous active-low reset and write enable functionality. On the rising edge of the clock, if the reset signal is low, the output resets to zero. If the reset is high and the write enable signal is asserted, the register updates its output with the incoming 8-bit data input.
+module top_module(
+    input wire clk,
+    input wire resetn,
+    input wire write_en,
+    input wire [7:0] data_in,
+    output reg [7:0] data_out
+);

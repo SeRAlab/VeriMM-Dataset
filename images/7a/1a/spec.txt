@@ -1,0 +1,32 @@
+Please act as a professional Verilog designer.
+
+Implement a simple dual-port RAM module with separate read and write ports. The module should support 8-bit data and 256 addresses.
+
+Module name:
+    dual_port_ram
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    we: Write enable signal. High to write data.
+    write_address: 8-bit address for writing data.
+    read_address: 8-bit address for reading data.
+    data_in: 8-bit input data to be written.
+
+Output ports:
+    data_out: 8-bit output data read from memory.
+
+Implementation:
+The module includes a 256x8 memory array.
+When the write enable signal (we) is high, the input data (data_in) is written to the memory at the write address (write_address) on the positive edge of the clock.
+The data output (data_out) is continuously driven by the value stored at the read address (read_address).
+
+Give me the complete code.
+
+module dual_port_ram(
+  input clk,
+  input we,
+  input [7:0] write_address,
+  input [7:0] read_address,
+  input [7:0] data_in,
+  output reg [7:0] data_out
+);

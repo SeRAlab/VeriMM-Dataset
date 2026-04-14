@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+
+Implement a 32-bit Binary Up Counter that counts from 0 to 2^32-1.
+
+Module name:  
+    Up_counter               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the counter.
+Output port:
+    count: 32-bit register representing the current count value.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the counter value is updated.
+If the reset signal (rst_n) is low, indicating a reset condition, the counter value (count) is set to 0.
+Otherwise, the counter increments by one.
+
+Give me the complete code.
+
+module Up_counter(
+   input                clk ,
+   input                rst_n,
+ 
+   output reg [31:0]     count 
+);

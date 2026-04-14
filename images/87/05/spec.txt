@@ -1,0 +1,6 @@
+Design a memory protection circuit that monitors a 32-bit input address. The circuit checks whether the input address falls within a specified protected memory range (from 0x00000000 to 0x000000FF) and whether the write enable signal is set. If the address is within this range and the write enable signal indicates that a write operation is attempted (in2 is high), the output signal will indicate that the memory region is protected and writing is not allowed. Otherwise, the output will indicate that the memory region is not protected, allowing write access.
+module top_module(
+  input [31:0] in1, // memory address
+  input in2, // write enable signal
+  output reg out // changing 'out' to output reg type
+);

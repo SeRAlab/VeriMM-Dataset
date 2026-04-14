@@ -1,0 +1,9 @@
+Design a shift register that supports loading a new value, shifting data, and resetting to zero. The register is 8 bits wide and operates on the positive edge of a clock signal. When the reset signal is active, the register is cleared to all zeros. If the load signal is asserted, the register is loaded with the value from the data_in input. In the absence of load and reset, the register shifts its contents to the left and inserts the value from shift_in at the least significant bit. The current value of the register is continuously available at the data_out output.
+module top_module(
+    input clk,
+    input load,
+    input data_in,
+    input shift_in,
+    input reset,
+    output reg [7:0] data_out
+);

@@ -1,0 +1,6 @@
+Design a Moore finite state machine (FSM) that produces a single output, y, based on the input x and operates with a reset signal rst_n and a clock signal clk. The FSM has three states (S0, S1, and S2) and transitions between them based on the value of x. The output y is asserted (high) only in state S2. In S0, the FSM remains in S0 if x is low, or transitions to S1 if x is high. When in S1, it always moves to S2. From S2, if x is low it transitions back to S1, while if x is high it resets to S0. The FSM also initializes to S0 upon reset.
+module top_module(
+    output reg y,
+    input x,
+    input rst_n,
+    input clk);

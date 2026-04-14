@@ -1,0 +1,11 @@
+Design a 64-bit arithmetic right shift module. The module takes two signed 64-bit inputs, `a` and `b`, where `b` specifies the number of bit positions to shift `a` to the right, utilizing arithmetic shifting to preserve the sign. The output `result` provides the shifted value, and the `valid` signal is always asserted to indicate that the result is valid. The module operates in synchronous logic, with potential control through a clock and reset inputs.
+module top_module(
+   input wire 		     clk,
+   input wire 		     reset,
+   input wire signed [63:0]  a,
+   input wire signed [63:0]  b,
+   input wire 		     nd,
+  
+   output wire signed [63:0] result,
+   output wire 		     valid
+   );

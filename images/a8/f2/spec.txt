@@ -1,0 +1,7 @@
+Design a module to calculate the Adler-32 checksum for an input data stream of n bytes. It takes an 8-bit wide concatenated input and computes two values, A and B, using the Adler-32 algorithm, which involves modular addition. The checksum is output as a 32-bit value, where the higher 16 bits consist of B and the lower 16 bits consist of A. Additionally, the module compares the calculated checksum with a provided expected value and sets an error flag accordingly: it outputs a LOW error signal if the checksums match and a HIGH signal if they do not.
+module top_module(
+  input [n*8-1:0] in,
+  input [15:0] check,
+  output reg error,
+  output reg [15:0] out
+);

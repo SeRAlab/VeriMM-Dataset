@@ -1,0 +1,12 @@
+Design a synchronous queue module with a maximum capacity of 10 elements, allowing for enqueueing and dequeueing operations controlled by clk (clock), rst (reset), enq (enqueue), and deq (dequeue) signals. The module supports input of 8-bit wide data and outputs the dequeued data, along with the current count of elements, and the indices of the head and tail of the queue. The design incorporates error handling for dequeue attempts on an empty queue, resetting all state variables upon receiving a reset signal, and implements a circular buffer mechanism for efficient management of the queue's elements.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] data_in,
+  input enq,
+  input deq,
+  output reg [7:0] data_out, // Changed to reg to allow assignment in always block
+  output reg [9:0] count,     // Changed to reg to allow assignment in always block
+  output reg [9:0] head,      // Changed to reg to allow assignment in always block
+  output reg [9:0] tail       // Changed to reg to allow assignment in always block
+);

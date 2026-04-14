@@ -1,0 +1,10 @@
+Design a module that parses a 32-bit instruction to extract various fields used in a RISC-V architecture. The module outputs the opcode, destination register (rd), three-bit function code (funct3), two source registers (rs1 and rs2), and a seven-bit function code (funct7) by slicing specific bit positions from the input instruction.
+module top_module(
+input [31:0] inst,
+output [6:0] opcode,
+output [4:0] rd,
+output [2:0] funct3,
+output [4:0] rs1,
+output [4:0] rs2,
+output [6:0] funct7
+);

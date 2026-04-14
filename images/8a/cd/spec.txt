@@ -1,0 +1,7 @@
+Design a module that implements the "choose" function commonly used in cryptographic applications, specifically mimicking the behavior of the SELECT function in the SHA-1 hashing algorithm. The module takes three 32-bit inputs: E_i, F_i, and G_i, and produces a 32-bit output ch_o. The output is calculated as the bitwise AND of E_i and F_i, XORed with the bitwise AND of the bitwise negation of E_i and G_i. This effectively selects bits from F_i when E_i is true and G_i when E_i is false, providing a form of conditional logic based on the input values.
+module top_module(input 	reg [31:0] E_i
+	,input 	reg [31:0] F_i
+	,input 	reg [31:0] G_i
+	
+	,output reg [31:0] ch_o
+	);

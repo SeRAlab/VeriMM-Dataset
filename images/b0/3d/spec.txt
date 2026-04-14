@@ -1,0 +1,10 @@
+Design a multifunctional circuit that includes an 8-bit shift register, a 4-bit counter, and an XOR operation. The module utilizes a clock and synchronous active-high reset input to manage its state. It selects between loading data into the shift register or incrementing the counter based on a select signal. The output can be configured to either show the current state of the shift register or the counter. Additionally, the circuit computes the XOR between the current content of the shift register and the counter, producing an 8-bit output. This design offers flexible data handling, counting, and logical processing capabilities in a single module.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input [7:0] d, // 8-bit input for the shift register
+    input select, // Select input to choose between register and counter
+    output reg [7:0] q, // Changed to reg to allow assignment in the always block
+    output [3:0] counter_q, // 4-bit output from the counter
+    output [7:0] xor_out // 8-bit output from the XOR module
+);

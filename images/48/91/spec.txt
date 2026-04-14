@@ -1,0 +1,20 @@
+Design a Verilog module for a Mealy state machine with four states (P, Q, R, S) and two inputs (in1, in2). Use one-hot state encoding where P=4'b0001, Q=4'b0010, R=4'b0100, S=4'b1000. The FSM has an output (out) which is dependent on the current state and inputs.
+
+The FSM has the following states and their corresponding outputs:
+1. state P (out = in1 & in2).
+2. state Q (out = in1 | in2).
+3. state R (out = ~in1).
+4. state S (out = ~in2).
+
+State transitions:
+1. From state P: If in1 = 1, then transition to state Q. If in1 = 0, then transition to state R.
+2. From state Q: If in2 = 1, then transition to state R. If in2 = 0, then transition to state S.
+3. From state R: If in1 = 0, then transition to state S. If in1 = 1, then transition to state P.
+4. From state S: If in2 = 0, then transition to state P. If in2 = 1, then transition to state Q.
+
+module mealy_fsm_4 (
+  input in1,
+  input in2,
+  input [3:0] state,
+  output reg [3:0] next_state,
+  output reg out);

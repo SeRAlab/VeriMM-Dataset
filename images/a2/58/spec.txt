@@ -1,0 +1,12 @@
+Design a control unit for a processor that interprets a 6-bit operation code (op) to generate control signals for various operations, including memory access, register writing, branching, and jumping. Depending on the op code, it sets specific output signals such as regdst, regwrite, memread, memwrite, branch, jump, memtoreg, and aluop, which facilitate the correct execution of different instruction types. The control unit orchestrates the data flow and operation execution within the CPU, responding dynamically to instruction types such as load, store, branch, and jump.
+module top_module(
+	input[5:0] 	op,
+  	output reg [1:0] regdst,
+  	output reg regwrite,
+	output 	reg branch,
+	output	reg jump,
+	output	reg memread,
+  	output reg [1:0]memtoreg,
+  	output reg memwrite,
+	output	reg [1:0] aluop,
+	output	reg aluscr );

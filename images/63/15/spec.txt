@@ -1,0 +1,11 @@
+Design a sequential circuit with buffering and output control that processes a 64-bit input signal and generates an 8-bit output based on a valid signal. The module stores incoming data in a 64-bit buffer, outputs the least significant 8 bits as mv_o, and manages valid output through a valid_o signal. It operates in a manner where it sequentially increments a column index (mv_col) up to 7, at which point it resets and increments a row index (mv_row) until it reaches 5, then cycles back to 0. The module ensures synchronous operation using a clock and an active-low reset, maintaining state and control logic to handle incoming signals effectively.
+module top_module(
+    input clk, 
+    input rst_n,
+
+    input             valid_i,
+    input      [63:0] mv_i,
+    output reg        valid_o,
+    output     [ 5:0] mv_addr_o,
+    output     [ 7:0] mv_o
+);

@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module to compare two 35-bit input vectors (`a` and `b`) and determine if they are equal, given that a valid signal (`valid`) is asserted. The module outputs a signal (`hit`) indicating the result of this comparison. This module could be a critical component in systems requiring equality checks, such as cache lookup mechanisms, address matching in memory management units, or any other logic requiring comparison of 35-bit identifiers or addresses, especially within the context of a SPARC (Scalable Processor Architecture) Instruction Fetch Unit (IFU), as suggested by its name.
+
+Module name:  
+	sparc_ifu_cmp35
+
+Input ports:
+	a [34:0]: A 35bit input vector. This is one of the two vectors to be compared. The notation [34:0] indicates that it is a 35bit wide bus, with bit indices ranging from 0 to 34.
+	b [34:0]: A 35bit input vector. This is the second vector to be compared against the first vector a.
+	valid: A singlebit input signal. This signal enables the comparison operation. The comparison between a and b is only performed when valid is asserted (1).
+Output ports:
+	hit: A singlebit output signal. This signal indicates the result of the comparison. If a equals b and valid is asserted, hit is set to 1; otherwise, it is set to 0.
+
+
+Implementation:
+The sparc_ifu_cmp35 module is designed to perform a simple yet crucial operation within a digital system, particularly aimed at comparing two 35-bit inputs to determine if they are equal, under the condition that a valid signal is asserted. This module encapsulates a fundamental combinational logic operation augmented with a control signal (valid) to gate the comparison operation. The logic is purely combinational as it lacks any form of storage elements like flip-flops or latches, implying that the output (hit) is directly dependent on the current inputs without any inherent delay apart from propagation delays.
+The core of the module's functionality is encapsulated within an always block that is sensitive to changes in its inputs: the two 35-bit vectors a and b, and the valid signal. The sensitivity list (@ (a or b or valid)) ensures that any change in these signals triggers the execution of the logic inside the block.
+Within the always block, a conditional check is performed:
+If valid is asserted (1'b1) and the two 35-bit vectors a and b are equal, the hit signal is set to 1'b1, indicating a match.
+In any other case, including when valid is not asserted, hit is set to 0, indicating either a mismatch between a and b or that the comparison is not valid to be considered.
+This design choice effectively gates the comparison operation with the valid signal, ensuring that hit only signifies a true match when the comparison is deemed valid. This mechanism is crucial in systems where data integrity or timing must be ensured before a comparison yields a meaningful result.
+
+Give me the complete code.
+

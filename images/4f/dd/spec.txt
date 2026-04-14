@@ -1,0 +1,8 @@
+Design a 4-bit multiplier circuit that performs multiplication of two 4-bit inputs, a and b, while synchronizing its operations with a clock input. The module has a finite state machine (FSM) to manage its operation states: it starts in an idle state waiting for a multiplication trigger, then computes the partial products of the input values in the multiply state, and finally sums the products in the sum state. The result of the multiplication is an 8-bit output, and a done signal is provided to indicate the completion of the operation.
+module top_module(
+  input [3:0] a,
+  input [3:0] b,
+  input clk,
+  output reg [7:0] result, // Changed to reg
+  output done
+);

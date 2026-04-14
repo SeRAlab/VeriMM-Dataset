@@ -1,0 +1,12 @@
+Design a simple parallel input-output (PIO) module that reads data from a 4-bit input port based on a 2-bit address signal. The module is triggered by a clock signal and includes an active-low reset functionality. When the reset_n signal is low, the output `readdata` is set to zero; otherwise, when the specified address is zero, the module outputs the data received from the input port (`in_port`). This effectively creates a mechanism to read input data conditionally based on the address provided, functioning as a basic interface for data transfer in a digital system.
+module top_module(
+                    // inputs:
+                     address,
+                     clk,
+                     in_port,
+                     reset_n,
+
+                    // outputs:
+                     readdata
+                  )
+;

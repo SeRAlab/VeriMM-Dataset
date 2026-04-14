@@ -1,0 +1,9 @@
+Design a pipelined data processing module that handles 8-bit wide input data with a valid signal. This module has a clock and reset signal for synchronous operation. It stores incoming data in a two-stage pipeline, where it can accept new data when the previous data is validated (out_valid). The module maintains a state to manage the flow of data through two registers (`data0` and `data1`), ensuring that the output (out_data) is only valid when certain conditions are met. When the pipeline is full, it outputs the data from the second stage and signals valid output status. The design primarily functions as a simple pipeline stage manager, enabling orderly data transfer in a clocked environment.
+module top_module(
+  input clk,
+  input reset,
+  input in_valid,
+  input [7:0] in_data,
+  output out_valid,
+  output [7:0] out_data
+);

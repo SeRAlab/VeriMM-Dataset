@@ -1,0 +1,11 @@
+Design a circuit that implements a barrel shifter, a 2-to-1 multiplexer, and a bitwise OR operation. The module takes a 16-bit input, separates it into high (out_hi) and low (out_lo) 8-bit outputs. Depending on the selection signal (SEL), it outputs either input A or B through the multiplexer as Y. Additionally, it performs a bitwise OR operation between out_hi, out_lo, and Y, producing an 8-bit OR_output.
+module top_module(
+    input wire [15:0] in,
+    input wire SEL,
+    input wire A,
+    input wire B,
+    output wire [7:0] out_hi,
+    output wire [7:0] out_lo,
+    output wire Y,
+    output wire [7:0] OR_output
+);

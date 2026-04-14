@@ -1,0 +1,9 @@
+Design a simple 32-bit wide memory module that operates on a read and write basis. The module features a memory array consisting of 64 entries. It reads data from the memory only if the upper bits of the address input match a specific value (0x710000), returning the corresponding memory content on the output, otherwise outputting zero. The memory can be written to on the rising edge of the clock signal when the write enable input is asserted, allowing data from the write data input to be stored in the specified memory location determined by the lower bits of the address input.
+module top_module(
+
+	input 				 clk_i, 
+	input 		[31:0] a_i  , 
+	input 		[31:0] wd_i , 
+	input 				 we_i ,
+	output wire	[31:0] rd_o 
+	);

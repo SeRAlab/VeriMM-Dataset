@@ -1,0 +1,8 @@
+Design a synchronous program counter (PC) register that updates its output on the rising edge of the clock signal. When the reset signal is asserted, the output resets to zero. If the enable signal is active, the register captures the value from the PC_input; otherwise, it retains its current value. This module facilitates instruction sequencing in a digital system by holding the program counter value conditionally based on the enable signal while allowing for reset functionality.
+module top_module(
+           input clk ,
+           input rst ,
+           input en ,
+           input [31: 0] PC_input ,
+           output reg [31: 0] PC_output
+       );

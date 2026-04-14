@@ -1,0 +1,7 @@
+Design a signed magnitude multiplier that takes two 4-bit signed inputs, `a` and `b`, and produces an 8-bit signed output, `product`, along with an `overflow` signal to indicate whether the result exceeds the limits of an 8-bit signed representation. The multiplier first computes the absolute values of the inputs to obtain an intermediate product, then determines the final signed product based on the signs of the inputs. It also checks for overflow conditions, signaling when the product cannot be accurately represented within the range of an 8-bit signed integer.
+module top_module(
+    input signed [3:0] a,
+    input signed [3:0] b,
+    output signed [7:0] product,
+    output overflow
+);

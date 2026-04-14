@@ -1,0 +1,5 @@
+Design a clock division module that generates two synchronized output signals, CDIV1 and CDIVX, based on a configurable division factor selected via three inputs (SEL2, SEL1, SEL0). The division factor can be set to values ranging from 2 to 9 and is controlled by a 3-bit selection vector. The module includes a reset functionality, which initializes the internal counter and divisor. The counter increments with each clock cycle and toggles the output signals whenever it reaches the divisor value, effectively producing a divided clock output. The signals CDIV1 and CDIVX have been assigned static initial values of zero, indicating they are not actively driven and will require further implementation for correct functionality.
+module top_module(
+	input CLKI, RST, SEL2, SEL1, SEL0,
+	output reg CDIV1, CDIVX
+);

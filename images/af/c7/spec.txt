@@ -1,0 +1,11 @@
+Design a 4-bit synchronous counter with load and reset functionality. The module features a clear input (CLR_n) that asynchronously clears the counter to zero, a load input (LOAD_n) that loads the 4-bit input data (D) into the counter when active, and controls for enabling the counter (ENP) and counting (ENT). When both enables are high, the counter increments its value on each clock pulse. Additionally, the module outputs a ripple carry output (RCO) signal, which indicates that the counter has reached its maximum value (1111).
+module top_module(
+    input [3:0] D,        
+    input CLK,            
+    input CLR_n,          
+    input LOAD_n,         
+    input ENP,            
+    input ENT,            
+    output [3:0]Q,         
+    output RCO            
+);

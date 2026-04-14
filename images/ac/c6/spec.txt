@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+
+Implement a module of an edge detector. The module should detect a rising edge on the `IN` signal and output a high pulse of one clock cycle on the `EDGE_DET` signal whenever a rising edge is detected.
+
+Module name:
+    edge_detector
+
+Input ports:
+    CLK: Clock input
+    RST: Active high reset signal
+    IN: Input signal to detect rising edge
+
+Output ports:
+    EDGE_DET: Output signal indicating rising edge detection
+
+Implementation:
+The edge_detector module uses an always block to detect a rising edge on the input signal (IN). The always block triggers on the positive edge of the clock signal (posedge CLK) or the positive edge of the reset signal (posedge RST). It checks if the reset signal is active and sets the edge detection output (EDGE_DET) to 0. It also uses a register to store the previous value of the input signal (IN). If the previous value of the input signal is low and the current value is high, it indicates a rising edge, and the output signal (EDGE_DET) is set to 1 for one clock cycle. Otherwise, the output signal remains 0.
+
+Give me the complete code.

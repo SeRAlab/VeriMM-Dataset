@@ -1,0 +1,21 @@
+
+
+You are tasked with designing a module that compares two n-bit registers, `sig` and `rfr`, and outputs a `check` signal that is high if their values are not equal. The module should also have a `verbose` signal that, when high, prints the values of `sig` and `rfr` using `$display` at each clock cycle. 
+
+Write a Verilog module that satisfies the following requirements:
+- The module should be named `register_comparator`.
+- The module should have the following inputs:
+  - `clk`: a clock signal
+  - `rst`: a synchronous active-high reset signal
+  - `check_en`: an enable signal for the `check` output
+  - `verbose_en`: an enable signal for the `verbose` output
+  - `sig`: an n-bit input register
+  - `rfr`: an n-bit input register
+- The module should have the following outputs:
+  - `check`: a 1-bit output signal that is high if `sig` and `rfr` are not equal
+  - `verbose`: a 1-bit output signal that enables printing of `sig` and `rfr` when high
+
+The module should have the following behavior:
+- On the rising edge of `clk`, if `rst` is high, the module should reset `sig` and `rfr` to 0.
+- On the rising edge of `clk`, if `rst` is low, the module should compare `sig` and `rfr`. If they are equal, `check` should be low. If they are not equal and `check_en` is high, `check` should be high. If `verbose_en` is high, the values of `sig` and `rfr` should be printed using `$display`.
+

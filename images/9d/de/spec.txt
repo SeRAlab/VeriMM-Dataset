@@ -1,0 +1,9 @@
+Design a simple 4-bit calculator that performs addition or subtraction based on a control signal. The module takes two 4-bit inputs, `num1` and `num2`, and a single-bit operation selector `op`, where `op=0` signifies addition and `op=1` signifies subtraction. The output `result`, which is 5 bits wide to accommodate any potential overflow, is updated on the rising edge of the clock or reset. On reset, the result is set to zero.
+module top_module(
+    input reset,
+    input clk,
+    input [3:0] num1,
+    input [3:0] num2,
+    input op,
+    output reg [4:0] result
+);

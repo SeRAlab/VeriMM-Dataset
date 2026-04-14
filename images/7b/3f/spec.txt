@@ -1,0 +1,10 @@
+Design a synchronous calculator module that performs four arithmetic operations (addition, subtraction, multiplication, and division) on two 8-bit inputs, `a` and `b`, based on a 2-bit operation selector, `op`. The module is controlled by a clock signal and features an asynchronous reset. Upon activation of the reset, it initializes the output `result` to zero and sets the `valid` signal to LOW. Depending on the value of `op`, the corresponding arithmetic operation is executed on the inputs, with the result stored in the `result` output and the `valid` signal asserted to indicate a successful operation. If an invalid operation is selected, the `valid` signal remains LOW.
+module top_module(
+    input clk,
+    input [1:0] op,
+    input [7:0] a,
+    input [7:0] b,
+    input reset,
+    output reg [7:0] result,
+    output reg valid
+);

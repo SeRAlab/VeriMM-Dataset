@@ -1,0 +1,10 @@
+Design a signed non-restoring divider that computes the quotient and remainder of a signed 32-bit dividend divided by a signed 32-bit divisor. The module operates synchronously, initialized upon receiving a start signal. As the clock cycles progress, it shifts through the bits of the dividend, adjusting the temporary values for the quotient and remainder based on comparisons with the divisor. Upon completion of the division process, it outputs the computed quotient and remainder and asserts a done signal to indicate the operation's finish.
+module top_module(
+  input signed [31:0] dividend,
+  input signed [31:0] divisor,
+  input start,
+  input clk,
+  output reg signed [31:0] quotient,
+  output reg signed [31:0] remainder,
+  output reg done
+);

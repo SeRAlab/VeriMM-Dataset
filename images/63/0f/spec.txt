@@ -1,0 +1,12 @@
+Design a FIFO (First-In, First-Out) buffer with a depth of 16 for managing data flow. This module allows writing and reading of 16-bit data entries, controlled by a clock signal and reset conditions. The `wr_en` and `rd_en` inputs enable write and read operations, respectively, while the `empty` and `full` outputs indicate the buffer's status. The design maintains a count of the number of entries in the buffer, facilitating flow control and preventing overflow or underflow situations during data transactions. The head and tail pointers track the positions for writing and reading data in the buffer.
+module top_module(
+    input clk,
+    input rst,
+    input wr_en,
+    input rd_en,
+    input [15:0] data_in,
+    output reg [15:0] data_out, // Changed from wire to reg
+    output empty,
+    output full,
+    output reg [3:0] count
+);

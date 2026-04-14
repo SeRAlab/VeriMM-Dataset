@@ -1,0 +1,9 @@
+Design a synchronous circuit that integrates a 4-digit binary counter and a 2-to-1 multiplexer to generate a 16-bit output sum. The counter increments on each clock pulse, resetting to zero when the reset signal is active. The multiplexer selectively outputs either the counter's accumulated value or the input signal 'a' based on the control signals 'sel_b1' and 'sel_b2'. The final output is the sum of the multiplexer output and the concatenated 4-digit binary count, formatted as a 16-bit value. This design is intended for applications requiring modular arithmetic and conditional data selection based on current states.
+module top_module(
+    input clk,
+    input reset,   // Synchronous active-high reset
+    input a,
+    input b,
+    input sel_b1,
+    input sel_b2,
+    output [15:0] q);

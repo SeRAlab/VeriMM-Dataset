@@ -1,0 +1,9 @@
+Design a 32-bit program counter (PC) that tracks the current instruction address in a processor. The counter is set to zero upon a reset signal and updates its value to the next program counter value (npc) on the rising edge of the clock signal if the enable signal (pc_en) is asserted. This module allows for controlled sequencing of instruction execution in a digital system.
+module top_module(
+    input wire rst,
+    input wire clk,
+    input wire pc_en,
+    input wire[31:0] npc,
+    
+    output reg[31:0] pc
+    );

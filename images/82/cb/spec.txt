@@ -1,0 +1,7 @@
+Design a circuit that functions as a 2-to-4 decoder with an optional output inversion. The module takes a 2-bit input `select` and an `enable` signal to activate the decoding process. It generates an 8-bit output, where the first 4 bits correspond to the normal decoded outputs based on the `select` inputs, and the second 4 bits correspond to the inverted outputs. When the `invert` signal is high, the output is the bitwise negation of the first stage outputs; otherwise, it passes those outputs directly.
+module top_module(
+    input enable,
+    input [1:0] select,
+    input invert,
+    output reg [7:0] out
+);

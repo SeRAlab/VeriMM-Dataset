@@ -1,0 +1,8 @@
+Design a module that computes an Adler-32 checksum, which is a checksum algorithm used for error detection in data transmission. The module initializes two 16-bit accumulators, `s1` and `s2`, upon receiving a reset signal. On each clock cycle, it updates these accumulators based on the incoming 8-bit data input, calculating their new values through summation and modulo operations. When `s2` reaches a specific threshold (0xFFFF), it combines `s2` and `s1` into a 32-bit checksum output. Additionally, the module compares the generated checksum with a recalculated value to detect discrepancies, signaling an error if they do not match.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] data_in,
+  output reg [31:0] checksum_out,
+  output reg error
+);

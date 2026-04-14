@@ -1,0 +1,8 @@
+Design a LED control circuit that operates based on a clock signal and a reset input. The module takes an 9-bit input representing LED states and generates an 11-bit output for LED control along with a 3-bit output that determines which group of LEDs to activate. The module uses a counter that increments on each clock cycle, resetting when the reset input is asserted. Depending on the counter value, it cycles through three different LED configurations, applying a specific mask to the input LED states to determine active LEDs, effectively allowing for sequential control of various LED outputs over time.
+module top_module(
+	input clk,
+	input rst,
+	input [8:0] led,
+	output reg [10:0] ledc,
+	output reg [2:0] leda
+);

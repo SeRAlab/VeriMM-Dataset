@@ -1,0 +1,7 @@
+Develop a clock domain crossing (CDC) synchronizer that facilitates the safe transfer of a single-bit signal across different clock domains. The module captures the incoming data from the `clk_in` clock domain using a two-stage flip-flop approach to mitigate metastability issues, generating an output `data_out` that reliably represents the latest value of `data_in` aligned with the `clk_out` clock domain. Additionally, it synchronizes pulse signals to ensure they are appropriately transferred without glitches or races, ensuring stable operation when crossing from the input to output domain.
+module top_module(
+  input data_in,
+  input clk_in,
+  input clk_out,
+  output reg data_out
+);

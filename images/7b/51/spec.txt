@@ -1,0 +1,7 @@
+Design a circuit that generates a random waiting time based on a counter. When the WAIT input is asserted, the module activates the wait_random output by evaluating the least significant 6 bits of a 9-bit wait_counter, providing a binary representation of whether any of those bits are set (i.e., enabling wait_random to be a non-zero value). If the WAIT input is deactivated, wait_random outputs a fixed value of zero. The counter increments on each clock cycle, while it resets to zero when nreset is low, establishing a mechanism for controlling wait times in a system.
+module top_module(
+    input clk,
+    input nreset,
+    input WAIT,
+    output reg [5:0] wait_random
+);

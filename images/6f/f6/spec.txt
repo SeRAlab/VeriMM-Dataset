@@ -1,0 +1,22 @@
+Design a register module that facilitates SPI (Serial Peripheral Interface) control and status reporting. It includes three separate registers: a control register for setting specific SPI parameters, a transaction control register that manages the transaction state based on start signals, and a status register that reflects the current status of the SPI interface (including busy, receive empty, and transmit full flags). The module supports loading data into the control and transaction registers based on an external signal, while maintaining reset functionality to initialize registers to known values. Outputs are provided for the control, transaction, and status registers.
+module top_module(
+
+	
+	input											clk_i,						
+	input											reset_n_i,					
+	
+	
+	input 										spi_busy_i,
+	input											trans_start_i,
+	input											rx_empty_i,
+	input											tx_full_i,
+	
+	
+	output			[31:0]					reg_control_o,
+	output			[31:0]					reg_trans_ctrl_o,
+	output			[31:0]					reg_status_o,
+	
+	input			   [31:0]					reg_data_i,
+	input											reg_load_i,
+	input			   [1:0]						reg_sel_i
+);

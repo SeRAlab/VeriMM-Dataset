@@ -1,0 +1,12 @@
+Design a data forwarding multiplexer for a processor pipeline that resolves data hazards. The module accepts control signals `ForwardRSD` and `ForwardRTD` to select the appropriate source for forwarding to outputs `D1` and `D2`. It routes either the original data inputs `Data1` and `Data2`, or selected values from the ALU output (`ALUout_M`) and write-back results (`result_W`, `result_WD`), based on the specified forwarding conditions. This implementation is crucial for maintaining data integrity and performance by minimizing stalls in an instruction pipeline.
+module top_module(
+	 input [1:0] ForwardRSD,
+	 input [1:0] ForwardRTD,
+	 input [31:0] result_W,
+	 input [31:0] result_WD,
+	 input [31:0] Data1,
+	 input [31:0] Data2,
+	 input [31:0] ALUout_M,
+	 output [31:0] D1,
+	 output [31:0] D2
+    );

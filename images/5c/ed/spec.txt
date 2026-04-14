@@ -1,0 +1,7 @@
+Design a circuit that integrates two modules, each producing 8-bit outputs based on the same clock and reset signals. The circuit uses a control mechanism to optionally reverse the bits of each output before adding them together. If the 'select' input is high, it sums the output from the first module and the reversed output of the second module; if low, it sums the reversed output of the first module and the direct output of the second module. The final result of this addition is provided as an 8-bit wide output.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] d,
+    output reg [7:0] q1
+);

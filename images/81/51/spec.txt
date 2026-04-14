@@ -1,0 +1,15 @@
+Design a Verilog module that implements a 4-bit shift register with parallel load capability. When 'load' is high, the register loads the value from 'data_in'. Otherwise, it shifts right by one bit on the positive edge of the clock.
+
+Initial state: shift_reg = 4'b0000
+Time 0ns: clock = 0, load = 0, data_in = 4'b1010, shift_reg = 4'b0000.
+Time 10ns: clock = 1, load = 1, data_in = 4'b1010, shift_reg = 4'b1010.
+Time 20ns: clock = 0, load = 0, data_in = 4'b0000, shift_reg = 4'b1010.
+Time 30ns: clock = 1, load = 0, data_in = 4'b0000, shift_reg = 4'b0101.
+Time 40ns: clock = 0, load = 0, data_in = 4'b0000, shift_reg = 4'b0101.
+Time 50ns: clock = 1, load = 0, data_in = 4'b0000, shift_reg = 4'b0010.
+
+module shift_register (
+	input clock,
+	input load,
+	input [3:0] data_in,
+	output reg [3:0] shift_reg);

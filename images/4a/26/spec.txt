@@ -1,0 +1,16 @@
+Design a register module for a pipeline architecture, specifically the MEM/WB stage of a CPU. This module captures and holds the relevant data from the MEM stage, which includes control signals, ALU results, memory data, and destination register information, on the rising edge of the clock. The data is reset to zero upon receiving a reset signal, ensuring that the output registers start from a known state, enabling proper sequential operation in the processor pipeline.
+module top_module(
+        
+        input clk,
+        input reset,
+        
+        input [1:0] MEM_WB,
+        input [31:0] MEM_ALUout,
+        input [31:0] MEM_MEMout,
+        input [4:0] MEM_rd_or_rt,
+        
+        output reg [1:0] WB_WB,
+        output reg [31:0] WB_ALUout,
+        output reg [31:0] WB_MEMout,
+        output reg [4:0] WB_rd_or_rt
+    );

@@ -1,0 +1,11 @@
+module erosion_3x3(  
+    input [8:0] image,  
+    output reg eroded  
+);  
+    always @(*) begin  
+        if (image == 9'b111111111)  
+            eroded = 1'b1;  
+        else  
+            eroded = 1'b0;  
+    end  
+endmodule

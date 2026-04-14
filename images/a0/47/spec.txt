@@ -1,0 +1,13 @@
+Design a combinational logic circuit that processes multiple input signals of varying widths to produce a 10-bit output. The module first checks the value of a single-bit input; if it is LOW (`in1` is 0), it computes the sum of a 2-bit input (`in2`) and a 3-bit input (`in3`), prepending a zero to the result. If `in1` is HIGH, it performs a bitwise OR operation on a 4-bit input (`in4`) and a 5-bit input (`in5`), shifting the result left by one bit. Following this, the output is modified based on a comparison of a 6-bit input (`in6`) with a 7-bit input (`in7`): if `in6` is greater than or equal to `in7`, the output is XORed with the concatenation of an 8-bit input (`in8`) and a 9-bit input (`in9`), otherwise, it performs a bitwise AND operation on the same two inputs and shifts the result right by one bit.
+module top_module(
+    input in1,
+    input [1:0] in2,
+    input [2:0] in3,
+    input [3:0] in4,
+    input [4:0] in5,
+    input [5:0] in6,
+    input [6:0] in7,
+    input [7:0] in8,
+    input [8:0] in9,
+    output reg [9:0] out
+);

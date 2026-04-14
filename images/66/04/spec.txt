@@ -1,0 +1,20 @@
+Please act as a professional Verilog designer.
+
+Implement an 8-bit synchronous ring counter with a clock input (clk), a reset input (reset), and an enable input (en). The current counter value is available on an 8-bit output (count).
+
+Module name:
+   ring_counter_8bit
+
+Input ports:
+   clk: Clock signal used for synchronous operation.
+   reset: Reset signal used to initialize the counter to 8'b0000_0001.
+   en: Enable signal to control whether the counter is active.
+
+Output ports:
+   count: 8-bit output representing the current counter value.
+
+Implementation:
+On the positive edge of the clock signal (clk) or the positive edge of the reset signal (reset), the module checks if the reset signal (reset) is high and initializes the counter value to 8'b0000_0001.
+If the reset signal (reset) is low and the enable signal (en) is high, the module shifts the counter value left by one bit and wraps the most significant bit to the least significant bit.
+
+Give me the complete code.

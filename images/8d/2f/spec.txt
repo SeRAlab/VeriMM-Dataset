@@ -1,0 +1,18 @@
+Design an interface module for a channelizer that handles inputs and outputs related to data processing. The module takes in signals such as valid input data, reset and setup control signals, and provides outputs that include data validity indicators, concatenated data, last transaction flags, and control registers. It effectively passes through the inputs while also connecting to downstream components like an IFFT processor and an AXI FIFO, facilitating the flow of processed data in a digital signal processing environment.
+module top_module(
+  input valid_in,
+  input [32-1:0] data_in,
+  input last_in,
+  input [1-1:0] reset_in,
+  input [1-1:0] set_strb_in,
+  input [8-1:0] set_addr_in,
+  input [1-1:0] ready_out,
+  
+  output ifft_fast_fourier_transform_8_1_m_axis_data_tvalid_net,
+  output [32-1:0] concat_y_net,
+  output axi_fifo_m_axis_tlast_net,
+  output [1-1:0] logical_y_net,
+  output [1-1:0] set_stb_in_net,
+  output [8-1:0] set_addr_in_net,
+  output [1-1:0] ready_out_net
+);

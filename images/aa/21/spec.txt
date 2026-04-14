@@ -1,0 +1,11 @@
+Design a LED controller that responds to an input signal (RX) to control the states of five output LEDs (LED1 to LED5) and a transmit signal (TX). On each rising edge of the clock (CLK), the module transitions between several states based on the value of RX. In state 00, it evaluates RX: if RX is 1, all LEDs are turned ON; if RX is 2, all LEDs are turned OFF; if RX is 3, LEDs 1 and 2 are ON while 3 to 5 are OFF; if RX is 4, LEDs 3 and 4 are ON while 1 and 2 are OFF; and if RX is 5, only LED5 is turned ON. States 01 and 10 send the value of RX to TX and reset back to state 00. State 11 provides a mechanism to reset based on specific RX values.
+module top_module(
+    input CLK,
+    input RX,
+    output reg TX,
+    output reg LED1,
+    output reg LED2,
+    output reg LED3,
+    output reg LED4,
+    output reg LED5
+);

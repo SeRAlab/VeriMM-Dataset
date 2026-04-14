@@ -1,0 +1,6 @@
+Design a forwarding unit for a pipelined processor to prevent hazards by selecting the appropriate data for the registers. The module takes the destination register identifiers from the execution (EX_MEM_rd) and write-back (MEM_WB_rd) stages, the source registers (rs1, rs2), and control signals indicating whether these registers should be written (RegW_in1, RegW_in2) and a flag (B_sel) to manage forwarding in special cases. The outputs, fa and fb, serve as two-bit signals that specify forwarding paths: a value of 10 indicates forwarding from the execution stage, 01 indicates forwarding from the write-back stage, and 11 indicates a special case defined by B_sel. This configuration enhances data flow efficiency within the CPU pipeline by directing the correct data to the necessary stages.
+module top_module(input [4:0] EX_MEM_rd, MEM_WB_rd,
+                        input [4:0] rs1, rs2,
+                        input RegW_in1, RegW_in2,
+                        input B_sel,
+                        output reg [1:0] fa, fb);

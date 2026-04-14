@@ -1,0 +1,8 @@
+Design a finite state machine (FSM) for the detection of a specific 6-bit sequence, "101010," in a serial input stream. The FSM operates based on clock edges and includes states for IDLE, TWO MATCHES (S1), ONE MISMATCH (S2), and DONE, where it outputs a match signal when the sequence is detected. The state transitions are governed by the current state and the contents of a shift register, which captures the last 6 bits of input data. Upon acknowledgment (ack) after detecting the sequence, the FSM resets to the IDLE state, ready for the next sequence detection cycle.
+module top_module(
+  input clk,
+  input reset,
+  input data,
+  input ack,
+  output reg match
+);

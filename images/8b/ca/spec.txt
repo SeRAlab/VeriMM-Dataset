@@ -1,0 +1,31 @@
+Please act as a professional verilog designer.
+
+Implement a module for a 4-bit shift register with parallel load.
+
+Module name:  
+    shift_register_4bit
+
+Input ports:
+    clk: Clock signal.
+    rst_n: Reset signal (active low).
+    load: Load signal.
+    data_in: 4-bit input data.
+    shift_in: Serial input data for shifting.
+
+Output ports:
+    data_out: 4-bit output data.
+
+Implementation:
+The shift_register_4bit module shifts the data on each clock cycle when load is low and loads the parallel data when load is high. The data is asynchronously reset to 0 when rst_n is low.
+
+Give me the complete code.
+
+module shift_register_4bit(
+    input clk,
+    input rst_n,
+    input load,
+    input [3:0] data_in,
+    input shift_in,
+    
+    output reg [3:0] data_out
+);

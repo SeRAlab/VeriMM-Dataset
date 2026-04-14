@@ -1,0 +1,23 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit priority encoder. The module should take a 4-bit input and produce a 2-bit encoded output and a valid signal.
+
+Module name:
+    priority_encoder_4to2
+
+Input ports:
+    A: 4-bit input signal
+
+Output ports:
+    Y: 2-bit encoded output signal
+    valid: 1-bit output signal indicating if any input is valid
+
+Implementation:
+The module uses a case statement to encode the 4-bit input to a 2-bit output. If any bit in A is set, Y will encode the position of the highest-order '1' bit, and valid will be set to 1.
+
+Give me the complete code.
+
+module priority_encoder_4to2 (A, Y, valid);
+input [3:0] A;
+output reg [1:0] Y;
+output reg valid;

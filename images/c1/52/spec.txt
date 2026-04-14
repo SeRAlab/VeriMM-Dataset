@@ -1,0 +1,33 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform a sequence of operations based on instructions fetched from a Read-Only Memory (ROM). It reads operands from a Random Access Memory (RAM), performs arithmetic or logical operations, and writes the result back to RAM. The module operates in a stateful manner, transitioning through various states such as reading source operands, calculating results, and writing back results. It supports looping constructs, allowing certain operations to be repeated a specified number of times. The module's primary functions include:
+
+Fetching and decoding instructions from ROM.
+Reading operands from RAM.
+Performing specified arithmetic or logical operations.
+Writing the results back to RAM.
+Handling loop constructs for repeated operations.
+
+This module plays a critical role in a broader system that involves data processing, where it acts as a processing element (PE) controller, orchestrating the execution of operations on data elements stored in memory.
+
+Module name:  
+	FSM
+
+Input ports:
+	clk (input): The clock signal that synchronizes the module's operations.
+	reset (input): A signal to reset the module to its initial state.
+	rom_q (input, [28:0]): The instruction fetched from ROM, containing the operation code, source and destination addresses, and loop count.
+Output ports:
+	rom_addr (output, reg [8:0]): The address of the ROM from which the next instruction is fetched.
+	ram_a_addr (output, reg [5:0]): The address of the first source operand in RAM.
+	ram_b_addr (output, reg [5:0]): The address for the second source operand or destination in RAM, depending on the state.
+	ram_b_w (output): A write enable signal for RAM B, indicating when a write operation should occur.
+	pe (output, reg [10:0]): The Processing Element control signals, determined by the current operation and state.
+	done (output, reg): A signal indicating that the module has completed its current set of instructions.
+
+
+Implementation:
+The RTL module presented is a Finite State Machine (FSM) designed to perform a series of operations on data fetched from a Read-Only Memory (ROM) and a Random Access Memory (RAM). The FSM transitions through various states to read data, perform calculations, and write results back to RAM. The operations include addition, subtraction, multiplication, and a cubic function, dictated by the opcode fetched from the ROM.
+
+Give me the complete code.
+

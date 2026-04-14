@@ -1,0 +1,11 @@
+Design a 4-channel DMA controller that can transfer data between memory and four peripheral devices. The controller should have the following inputs:
+- clk: Clock signal
+- rst: Reset signal
+- req: 4-bit request signal from the peripherals
+- ack: 4-bit acknowledgment signal to the peripherals
+- data_in: 8-bit data input from the memory
+The controller should have the following outputs:
+- data_out: 8-bit data output to the selected peripheral
+- sel: 2-bit select signal to indicate which peripheral is currently being serviced.
+
+The controller should transfer data from memory to the selected peripheral when a request is made and acknowledged. It should also handle requests in a round-robin fashion.

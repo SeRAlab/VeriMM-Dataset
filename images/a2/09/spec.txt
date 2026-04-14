@@ -1,0 +1,11 @@
+Design a 4-to-1 multiplexer with a controlled selection mechanism. This module takes four inputs (a, b, c, d) and utilizes two selection signals (sel_a, sel_b1, sel_b2) to determine which input is routed to the output. When sel_a is high, the output is assigned the value of input a. If sel_a is low and both sel_b1 and sel_b2 are low, the output will be b. However, if sel_a is low and sel_b1 is high while sel_b2 is also high, the output will be c. In all other cases, the output will be d. This design allows for flexible selection of outputs based on the defined conditions.
+module top_module(
+  input a,
+  input b,
+  input c,
+  input d,
+  input sel_a,
+  input sel_b1,
+  input sel_b2,
+  output reg out_mux
+);

@@ -1,0 +1,8 @@
+Design a 16-bit shift register that can either load parallel data or perform a shift operation. When the `parallel_load_enable` input is activated, the register loads `data_in` directly into the register. If `shift_enable` is activated instead, the register shifts its contents to the left by one bit, inserting a zero at the least significant bit position. The current contents of the register are available at the `data_out` output.
+module top_module(
+  input clk,
+  input shift_enable,
+  input parallel_load_enable,
+  input [15:0] data_in,
+  output [15:0] data_out
+);

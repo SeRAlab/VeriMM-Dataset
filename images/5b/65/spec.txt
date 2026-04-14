@@ -1,0 +1,11 @@
+Design a memory module that facilitates data storage and retrieval based on two different address input widths (8-bit and 16-bit). The module features write capability controlled by a `write_enable` signal, where data can be written to specific addresses (0x11 and 0x22) based on either 8-bit or 16-bit addressing modes. It provides four separate output lines, each reflecting the data stored at the corresponding addresses for read operations. The outputs (`data_out1`, `data_out2`, `data_out3`, and `data_out4`) correspond to the stored data for the given addresses, with provisions to handle invalid addresses by displaying a message when a write attempt occurs to an unrecognized address. This module essentially operates as a dual-width addressable memory unit.
+module top_module(
+    input [7:0] addr,
+    input [7:0] data_in,
+    input write_enable,
+    input [15:0] addr16,
+    output reg [7:0] data_out1,
+    output reg [7:0] data_out2,
+    output reg [7:0] data_out3,
+    output reg [7:0] data_out4
+);

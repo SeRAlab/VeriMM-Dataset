@@ -1,0 +1,19 @@
+Implement the Verilog module based on the following description.
+We want to create a module that:
+
+// (1) receives a 4-bit binary number,
+// (2) checks if the number is greater than or equal to 8,
+// (3) counts the number of 0s in the binary number,
+// (4) outputs a flag if the number is a power of 2,
+// (5) provides a reset mechanism to reset all outputs.
+
+// The input binary number is available on the input signal 'binary_num'. The output 'is_gte8' should be set to 1 if the number is greater than or equal to 8 and 0 otherwise. The number of 0s in the binary number should be output on 'count_zeros[2:0]'. The power of 2 flag should be set on 'is_power_of_two' if the number is a power of 2. The reset signal is active high synchronous.
+
+module top_module(
+    input wire clk,
+    input wire reset,
+    input wire [3:0] binary_num,
+    output reg is_gte8,
+    output reg [2:0] count_zeros,
+    output reg is_power_of_two
+);

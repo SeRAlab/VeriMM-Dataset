@@ -1,0 +1,8 @@
+Design a key selection circuit that outputs a 1024-bit key based on the mode input. When mode_i is high (1), the output key_o is assigned the value from key_register_i; when mode_i is low (0), key_o receives its value from key_constant_i. This module effectively operates as a selector or multiplexer for two 1024-bit key sources.
+module top_module(
+	input mode_i,
+	input [1023:0] key_register_i,
+	input [1023:0] key_constant_i,
+	
+	output [1023:0] key_o
+    );

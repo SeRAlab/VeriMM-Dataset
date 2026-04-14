@@ -1,0 +1,9 @@
+Design a SPI (Serial Peripheral Interface) device that facilitates data communication in a bit-serial manner. The module initializes itself through a reset signal, and on each clock cycle, it transmits and receives 8 bits of data. It utilizes a buffer to manage the data being sent (via the MOSI signal) and received (via the MISO signal), processing the bits in a controlled sequence determined by a counter. The design includes a 'ready' output signal that indicates when the transmission is complete, specifically when all 8 bits have been processed. This module effectively enables serial data exchanges with an external device, handling data integrity and transfer synchronization.
+module top_module(
+    input reset,
+    input clk,
+    input [7:0] data_in,
+    output reg mosi,
+    input miso,
+    output reg ready
+);

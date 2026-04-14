@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+
+Design a 4-bit synchronous up/down counter with an enable signal and a reset signal. The counter should count up when the direction signal is 1 and count down when it is 0.
+
+Module name:
+    counter_4bit
+
+Input ports:
+    clk: Clock signal.
+    rst: Reset signal.
+    en: Enable signal.
+    direction: Direction signal (1 for up, 0 for down).
+
+Output ports:
+    count: 4-bit counter value.
+
+Implementation:
+The module uses an always block triggered by the rising edge of the clock signal. If the reset signal is active, the counter is set to 0. Otherwise, if the enable signal is active, the counter either increments or decrements based on the direction signal.
+
+Give me the complete code.
+
+module counter_4bit(
+    input wire clk,
+    input wire rst,
+    input wire en,
+    input wire direction,
+    output reg [3:0] count
+    );

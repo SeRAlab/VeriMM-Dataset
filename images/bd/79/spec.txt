@@ -1,0 +1,11 @@
+Design a register file that supports reading from two registers and writing to one register on a positive clock edge. The module has inputs for two register select lines (RS and RT), a destination register select line (RD), a write enable signal (RegWrite), a clock signal (Clock), and input data (DataIN). It outputs the values of the registers corresponding to RS and RT as rs_Reg and rt_Reg, respectively. When RegWrite is asserted, the data from DataIN is stored in the register indexed by RD. This design mimics the functionality of a small memory array specifically for managing register values in a processor.
+module top_module(
+    input RegWrite,
+    input [5:0] RS,
+    input [5:0] RT,
+    input [5:0] RD,
+    input Clock,
+    input [31:0] DataIN,
+    output reg [31:0] rs_Reg,
+    output reg [31:0] rt_Reg
+    );

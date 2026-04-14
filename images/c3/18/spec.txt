@@ -1,0 +1,27 @@
+Please act as a professional Verilog designer. Your task is to create a Verilog module that implements a Johnson counter state machine. 
+A Johnson counter is a type of digital circuit that cycles through a sequence of states, and can be used for applications such as frequency division, timing, and control.
+
+Your module should have the following inputs and outputs:
+
+Inputs: a clock signal (clk)
+Outputs: a set of n output signals (out1, out2, ..., outn)
+The module should also have the following parameters:
+
+n: the number of output signals
+Your module should implement the following functionality:
+
+The circuit should have n states, each of which is represented by a unique combination of the output signals.
+The circuit should cycle through the states in a pre-defined sequence, determined by the Johnson counter algorithm.
+The output signals should change on each clock cycle, according to the current state of the Johnson counter.
+To implement the Johnson counter state machine, you should use Verilog code to define the sequence of states as a set of Boolean functions of the current state and the clock signal. 
+You should then use these functions to connect the current state to the next state, and to determine the output signals for each state.
+Finally, you should use the clock signal to trigger the state transitions and output updates on each clock cycle.
+
+Your module should be named johnson_counter and have the following input and output definitions:
+  
+  module johnson_counter (
+    input clk,
+    output [n-1:0] out
+  );
+
+  parameter n = 4; // number of output signals

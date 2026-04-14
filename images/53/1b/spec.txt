@@ -1,0 +1,10 @@
+Design a finite state machine (FSM) for a vending machine that manages the item dispensing process. The module operates based on three states: IDLE, ITEM_SELECTED, and ITEM_DISPENSED. In the IDLE state, it waits for a coin to be inserted and an item to be selected; upon detecting these inputs, it transitions to the ITEM_SELECTED state, where it activates the item dispensing mechanism. Upon confirming that the item has been dispensed, it moves to the ITEM_DISPENSED state, where it returns the coin and resets back to the IDLE state. This design effectively handles coin insertion, item selection, and item dispensing while allowing for appropriate state transitions based on user inputs and events in a vending machine context.
+module top_module(
+  input clk,
+  input reset,
+  input coin_inserted,
+  input [1:0] item_selected,
+  input item_dispensed,
+  output reg dispense_item,
+  output reg return_coin
+);

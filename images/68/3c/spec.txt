@@ -1,0 +1,7 @@
+Design a 4-bit shift-and-add multiplier circuit that computes the product of two 4-bit inputs, `a` and `b`, producing an 8-bit output, `product`. The operation is initiated on the rising edge of the clock, with an active low reset signal that clears the product to zero. For each bit in `b`, if the bit is set, the circuit adds the value of `a` left-shifted by the current bit position to the product. This implementation utilizes sequential logic to perform multiplication through iterative addition and shifting.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] a, b,
+    output reg [7:0] product
+);

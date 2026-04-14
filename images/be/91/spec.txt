@@ -1,0 +1,6 @@
+Design a 16-bit wide, 512-word random access memory (RAM) module that functions with a clock input. The module accepts a chip enable (cen) and a write enable (wen) control signal, along with a 9-bit address input (addr) to select memory locations. When the chip is enabled and write is not asserted, the RAM allows data input (din) to be written to the specified address on the rising edge of the clock. When the chip is enabled and the write signal is asserted, it reads from the specified memory location, outputting the data to dout. The module includes conditions to ensure valid operations, checking for valid addresses and control signals to prevent undefined behaviors.
+module top_module(input clk,input cen,input wen
+   ,input      [15:0] din
+   ,output     [15:0] dout
+   ,input     [8:0] addr
+);

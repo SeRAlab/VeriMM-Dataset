@@ -1,0 +1,8 @@
+Design a state machine that toggles between two states based on keyboard input and a clock signal. The module detects a specific key press (carriage return) while the home video output is active, and transitions between two states. In state 0, the home video output is enabled while the attack video output is disabled. In state 1, the situation reverses, with the attack video output enabled and the home video output disabled. The state changes occur incrementally every 2.5 million clock cycles, effectively allowing user interaction through the keyboard to control the state of the video outputs.
+module top_module(
+        input clk, 
+        input [7:0]keyboard,
+        input home_on, attack_on,
+        
+        output reg video_home_on,video_attack_on 
+    );

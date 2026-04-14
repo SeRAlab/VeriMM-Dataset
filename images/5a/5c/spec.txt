@@ -1,0 +1,20 @@
+Design a memory stage register for a pipelined processor architecture. This module captures and holds data related to write-back enable signals, memory read enable signals, and results from the ALU, along with the destination register information during the clock's rising edge. It utilizes a reset functionality to clear all output registers to zero and includes a freeze mechanism that prevents updates when active. The outputs include control signals for memory operations and the values obtained from the previous processing stages, thereby facilitating smooth transitions between pipeline stages in the processor.
+module top_module(
+	input clk,
+	input rst,
+	input freeze,
+	input WB_en_in,
+	input MEM_R_EN_in,
+
+	input [31:0] ALU_result_in,
+	
+	input [31:0] MEM_read_value_in,
+	input [4:0] Dest_in,
+
+	output reg WB_en,
+	output reg MEM_R_en,
+
+	output reg [31:0] ALU_result,
+	output reg [31:0] MEM_read_value,
+	output reg [4:0] Dest
+);

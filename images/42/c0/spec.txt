@@ -1,0 +1,8 @@
+Design a register module that stores an 8-bit value, `reg_0x15`, which can be reset or written to based on input control signals. When the `reset` input is asserted, the register is cleared to zero. During the clock's positive edge, if the `wenb` (write enable) signal is low, the module updates the register with `in_data`, allowing for data storage in a controlled manner. If `wenb` is high, the register retains its current value, effectively preventing writes.
+module top_module(
+    output reg [7:0] reg_0x15, 
+    input wire reset, 
+    input wire wenb, 
+    input wire [7:0] in_data, 
+    input wire clk
+);

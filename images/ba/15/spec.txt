@@ -1,0 +1,9 @@
+Design a finite state machine (FSM) that detects a specific input sequence of '101' from three input bits (x1, x2, x3) provided at each clock cycle. In the IDLE state, the FSM captures the inputs and checks for the matching sequence. Once the sequence '101' is detected, it transitions to the MATCH state, where it indicates detection with a high output (f). If the sequence does not match while in the MATCH state, it returns to the IDLE state, resetting the detection process. The FSM also includes a reset input to initialize its state and sequence registers.
+module top_module(
+  input clk,
+  input reset,
+  input x3,
+  input x2,
+  input x1,
+  output reg f
+);

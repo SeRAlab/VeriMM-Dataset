@@ -1,0 +1,8 @@
+Design a 4-bit Booth multiplier that multiplies two 4-bit signed numbers, A and B, producing an 8-bit output P. The module utilizes a state machine to manage multiplication processes, including accumulation and adjustments based on the current bit states of B. Upon each clock cycle, the state transitions allow for conditional addition or subtraction of A to an accumulator based on the bits of B. The product P is constructed by selecting the appropriate bits from the accumulator and shifting right through the states until the multiplication is complete, effectively implementing the Booth's algorithm for efficient binary multiplication. The behavior can be reset to initial conditions using the reset input.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] A,
+  input [3:0] B,
+  output reg [7:0] P
+);

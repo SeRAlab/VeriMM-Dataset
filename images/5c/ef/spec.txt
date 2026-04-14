@@ -1,0 +1,7 @@
+Develop a signed multiplier circuit that can perform both signed and unsigned multiplication operations based on a control signal. The module takes two n-bit signed inputs, A and B, and produces an n-bit signed output, P. When the control signal (ctrl) is low, it performs unsigned multiplication of A and B. When ctrl is high, it checks the signs of A and B to handle signed multiplication appropriately, managing potential overflow by setting the output to the maximum signed value when overflow occurs. The design leverages conditional logic to correctly handle the sign and magnitude, ensuring accurate results for both signed and unsigned scenarios.
+module top_module(
+  input signed [n-1:0] A,
+  input signed [n-1:0] B,
+  input ctrl,
+  output reg signed [n-1:0] P // Change 'output signed [n-1:0] P' to 'output reg signed [n-1:0] P'
+);

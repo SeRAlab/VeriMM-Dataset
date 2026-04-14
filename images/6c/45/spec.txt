@@ -1,0 +1,11 @@
+Design a circuit that performs the addition of two aligned floating-point numbers, represented as 36-bit inputs. This module takes an input signal to determine the operating state (idle or active) and processes the provided inputs (cout_Allign and zout_Allign) accordingly. When not in the idle state, it compares the signs of the two input numbers and computes the sum or difference of their mantissas while adjusting the exponent. The output includes a status signal indicating the output's idle state, a reconstructed 32-bit floating-point number (sout_AddState), and a 28-bit representation of the computed sum (sum_AddState). The module effectively manages floating-point arithmetic operations within a synchronous framework, updating its outputs on the rising edge of a clock signal.
+module top_module(
+	input idle_Allign,
+	input [35:0] cout_Allign,
+	input [35:0] zout_Allign,
+	input [31:0] sout_Allign,
+	input clock,
+	output reg idle_AddState,
+	output reg [31:0] sout_AddState,
+	output reg [27:0] sum_AddState
+    );

@@ -1,0 +1,12 @@
+Design a programmable sequencer that manages the execution of commands based on input signals. It features a start and stop mechanism controlled by the `start`, `sync`, and `reset` inputs. Upon activation, it enters a running state, tracking an instruction pointer (`ip`) while outputting a signal (`pgout`) derived from a command word (`cmd`). The sequencer supports programmable delays, decrementing a delay counter until it reaches zero, at which point it advances to execute the next command signal, indicated by `cmd_sig`. If the stop condition is met while the sequencer is ready (`next`), it ceases operation and resets its state. This module provides a basic structure for implementing finite state machines or control sequences in digital circuits.
+module top_module(
+  input clk,
+  input sync,
+  input reset,
+  input enable,
+  input start,
+  output reg running,
+  output reg [5:0] pgout,
+  output reg [7:0] ip,
+  input [15:0] cmd
+);

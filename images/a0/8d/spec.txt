@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that detects consecutive high signals (ones) on the input data line. The FSM operates with three states: IDLE, COUNTING, and DONE. It transitions from IDLE to COUNTING upon receiving high input data, where it begins counting the number of consecutive high signals. If it counts five consecutive ones, it transitions to the DONE state and sets the output done high. If a low signal is detected at any point, the FSM will transition back to the IDLE state, resetting the count and the done output. This module is intended for applications that require detection of a specific sequence of signals, such as input validation or trigger generation in digital systems.
+module top_module(
+  input clk,
+  input reset,
+  input data,
+  output reg done
+);

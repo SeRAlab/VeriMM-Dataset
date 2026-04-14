@@ -1,0 +1,9 @@
+Implement a VGA output controller that generates horizontal and vertical sync signals, as well as RGB color output for a 640x480 resolution display. The module uses a clock input to drive two counters: a horizontal counter for timing the pixel clock and a vertical counter for managing frame timing. The horizontal and vertical sync signals are produced based on the defined timing parameters, including sync pulses and front/back porch durations. Additionally, during specific horizontal intervals, the module outputs a predefined color (greenish tint) for the RGB channels, while otherwise outputting black. This design facilitates displaying raster graphics on a VGA-compatible monitor.
+module top_module(
+  input clk,
+  output reg vga_hs,
+  output reg vga_vs,
+  output reg [4:0] vga_r,
+  output reg [5:0] vga_g,
+  output reg [4:0] vga_b
+);

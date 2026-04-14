@@ -1,0 +1,6 @@
+Design a 32-bit Gray code counter that outputs a 32-bit value, Q. On a negative edge of the reset signal (rst_n), the counter initializes its internal registers and the output to zero. On each positive clock edge, it calculates the next Gray code value based on the current output; each bit of the output is derived as the XOR of the corresponding and previous bits, ensuring that only one bit changes at a time, which minimizes errors in digital systems. This module can be useful for applications requiring unique binary representation minimizing transitional errors, such as position encoders and digital communication systems.
+module top_module(
+  input                clk,
+  input                rst_n,
+  output reg  [31:0]   Q
+);

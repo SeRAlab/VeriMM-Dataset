@@ -1,0 +1,10 @@
+Design a 4-bit shift register with load functionality controlled by clock and reset signals. When reset is asserted, the register outputs zero. If loading is enabled, it takes a 4-bit input value on the rising edge of the clock when the load signal is active. Otherwise, it shifts the contents of the register left, with the most significant bit wrapping around to the least significant bit position, provided the enable signal is also asserted.
+module top_module(/*AUTOARG*/
+    // Ports
+    input clk,
+    input rst,
+    input load,
+    input [3:0] in,
+    output [3:0] out,
+    input enable
+);

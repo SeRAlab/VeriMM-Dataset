@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+
+Implement a 2-to-4 line decoder with an enable signal. The decoder should take a 2-bit input and decode it into one of the four outputs. If the enable signal is low, all outputs should be zero.
+
+Module name:  
+    decoder_2to4   
+
+Input ports:
+    enable: Signal to enable the decoder.
+    data_in: 2-bit input data to be decoded.
+
+Output ports:
+    data_out: 4-bit output representing the decoded value.
+
+Implementation:
+The data_out register is updated combinationally based on the enable signal and the value of data_in.
+If enable is low, data_out is set to 4'b0000.
+If enable is high, data_out is set according to the value of data_in, where data_in = 2'b00 sets data_out to 4'b0001, data_in = 2'b01 sets data_out to 4'b0010, data_in = 2'b10 sets data_out to 4'b0100, and data_in = 2'b11 sets data_out to 4'b1000.
+
+Give me the complete code.
+
+module decoder_2to4(
+    input                 enable,
+    input       [1:0]     data_in,
+    output   reg [3:0]    data_out
+);

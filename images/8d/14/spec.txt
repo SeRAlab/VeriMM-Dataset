@@ -1,0 +1,11 @@
+Design a synchronous calculator module that performs arithmetic operations on two 8-bit inputs, A and B. The module includes input signals for a clock (clk), a reset, and a ready signal, along with a 2-bit operation selector (op) for choosing between addition, subtraction, multiplication, and division. Upon receiving a clock pulse and when ready, the calculator computes the result based on the selected operation, updates the output (C) with the computed value, and asserts a valid signal to indicate that the result is ready for use. The reset input initializes the result and valid signal to zero when asserted.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] A,
+    input [7:0] B,
+    input [1:0] op,
+    output [7:0] C,
+    output valid,
+    input ready
+);

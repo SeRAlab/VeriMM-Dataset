@@ -1,0 +1,8 @@
+Design a 4-to-2 priority encoder that takes a 4-bit input and outputs a 2-bit representation of the highest priority active input signal. The module includes a clock and reset functionality; when reset is active, the output is set to 0, and the valid signal is low. On the rising edge of the clock, the module checks the input signals from highest (in[3]) to lowest (in[0]) priority, setting the output to the corresponding value based on the highest priority input detected and asserts the valid signal when any input is active. If no inputs are active, the output is reset and the valid signal is low.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] in,
+  output reg [1:0] out,
+  output reg valid
+);

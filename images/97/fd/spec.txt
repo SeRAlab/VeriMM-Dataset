@@ -1,0 +1,7 @@
+Design a pulse-width modulation (PWM) controller that generates an 8-bit PWM signal based on an 8-bit analog input. The module calculates the duty cycle from the analog input divided by the maximum value corresponding to the specified PWM resolution. When the enable signal is high, the PWM output is updated with the computed duty cycle; when the enable signal is low, the PWM output is reset to zero.
+module top_module(
+  input [7:0] analog_in,
+  input enable,
+  input clk, // Added clk input
+  output reg [7:0] pwm_out
+);

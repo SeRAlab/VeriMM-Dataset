@@ -1,0 +1,9 @@
+Design a combined 3-to-8 decoder and barrel shifter. The decoder generates an 8-bit output based on the three input select lines (A, B, and C), while the barrel shifter takes a 4-bit input (data_in) and shifts it either left or right based on the direction input (dir). The final output (data_out) is determined by checking if the decoder's output is zero; if true, it outputs the original data_in, otherwise, it outputs the shifted data. This module thus allows for flexible data routing and manipulation based on the select lines and direction signal.
+module top_module(
+    input A,
+    input B,
+    input C,
+    input [3:0] data_in,
+    input dir,
+    output [3:0] data_out
+);

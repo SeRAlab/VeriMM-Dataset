@@ -1,0 +1,7 @@
+Design a data channel module that serially outputs bits from a 10-bit input data signal in a cyclic manner. On a rising clock edge, it shifts through the input data using a 4-bit index to select one of the 10 data bits, and outputs that bit as 'dout.' The output index resets to 0 after reaching 9, and the module can be reset to a specific state via the 'rst' input, initializing the index to 9.
+module top_module(
+    input clk,
+    input rst,
+    input [9:0] data,
+    output reg dout
+);

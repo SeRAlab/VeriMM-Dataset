@@ -1,0 +1,9 @@
+Design a module that combines a 4-to-2 encoder, a 3-bit shift register, and a functional XOR operation. The encoder takes a 4-bit input and generates a 2-bit output representing the position of the highest active input, with priority given to the higher-order bits. The shift register captures a new bit of data on the clock's rising edge, maintaining a 3-bit wide output. Finally, the module computes a single-bit output that is the XOR of the highest output of the encoder and the most recent bit stored in the shift register, allowing for combined data processing and transformation within the circuit.
+module top_module( 
+    input [3:0] in, // 4-to-2 encoder inputs 
+    input clk, // clock input for shift register 
+    input d, // data input for shift register 
+    output [2:0] q, // 3-bit output from shift register 
+    output [1:0] pos, // 2-bit output from 4-to-2 encoder 
+    output [0:0] out // 1-bit output from functional module 
+);

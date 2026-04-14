@@ -1,0 +1,8 @@
+Design a timing delay circuit that measures elapsed time based on a specified delay in milliseconds. The module has an enable signal (DELAY_EN) that initiates the timing process when asserted. Upon activation, it transitions through states—starting from "Idle," moving to "Hold" where it increments a millisecond counter until the specified delay (DELAY_MS) is reached, and then transitioning to a "Done" state. The output (DELAY_FIN) indicates the completion of the delay when the enable signal is active and the delay has elapsed, allowing for subsequent system actions to be triggered based on this timing function.
+module top_module(
+    CLK,
+    RST,
+    DELAY_MS,
+    DELAY_EN,
+    DELAY_FIN
+    );

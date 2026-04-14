@@ -1,0 +1,9 @@
+Design a forwarding control unit for a pipeline processor. This module determines the necessary forwarding path based on the register read and write signals, enabling the correct data to be forwarded to the execution stage. It checks if the destination registers from the previous stages (EX/MEM and MEM/WB) match the source register in the current instruction (ID/EX) and if the corresponding write signals are active, thus preventing data hazards by allowing the use of the most recent values without stalling the pipeline. The output is a 2-bit signal that directs the forwarding mechanism accordingly.
+module top_module(
+	input [4:0]		ID_EX_RS,   
+	input [4:0]		EX_MEM_RD,
+	input [4:0]		MEM_WB_RD,
+	input 			EX_MEM_RegWrite,  
+	input 			MEM_WB_RegWrite,
+	output [1:0]	Forward
+);

@@ -1,0 +1,12 @@
+Design a synchronous memory control module that captures and registers various control signals and data on the rising edge of a clock signal. It outputs the control signals related to memory operations, including branch decision, read/write commands, and register management. The module utilizes input data such as ALU results and memory data to facilitate proper data flow within a larger system, ensuring that specified signals are made available to subsequent stages of processing.
+module top_module(
+    input clk,
+    input branch, memread,memwrite,zero,regwrite,memtoreg,
+    input [15:0] aluresult,
+    input [15:0] data_to_mem,
+    input [3:0] regdst,
+    output reg branchout, memreadout,memwriteout,zeroout,regwriteout,memtoregout,
+    output reg[15:0] aluresultout,
+    output reg [15:0] data_to_memout,
+    output reg [3:0] regdstout    
+    );

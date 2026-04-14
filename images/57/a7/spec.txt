@@ -1,0 +1,8 @@
+Design a signed multiplication circuit using Booth's algorithm. The module takes two 4-bit signed inputs, A and B, and produces an 8-bit signed output P that represents their product. It features a state machine to control the multiplication process, handling the shifting and adding/subtracting steps required by Booth's method. The circuit resets on a reset signal and operates synchronously with a clock to ensure proper sequencing of operations.
+module top_module(
+  input clk,
+  input reset,
+  input signed [3:0] A,
+  input signed [3:0] B,
+  output reg signed [7:0] P // Changed to 'reg' type
+);

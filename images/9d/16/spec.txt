@@ -1,0 +1,11 @@
+Design a simple arithmetic calculator that performs addition or subtraction on two 8-bit inputs based on an operation select signal. The module includes a reset and enable functionality, where upon receiving a reset, it clears the result and overflow flags. When enabled, if the operation select signal indicates addition (op = 0), it computes the sum of inputs 'a' and 'b'; if it indicates subtraction (op = 1), it computes the difference. The module also checks for overflow, flagging it if the result exceeds 255 and retaining only the lower 8 bits of the result. If not enabled, the output is reset.
+module top_module(
+    input clk,
+    input rst,
+    input en,
+    input op,
+    input [7:0] a,
+    input [7:0] b,
+    output reg [7:0] result,
+    output reg overflow
+);

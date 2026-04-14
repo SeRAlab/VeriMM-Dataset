@@ -1,0 +1,19 @@
+Design a pipeline stage for an LC-3 processor, handling program counter (PC) updates and instruction fetching. The module manages a memory interface where it can load instructions from memory, controls whether to apply the loaded data based on the current state and stall conditions, and predicts the next PC as the current PC incremented by one. It uses a multiplexer to select the next PC value based on the `ld_pc` input, enabling transitions to the next instruction address from various sources, including the predicted PC, ALU output, or memory. The instantiation includes control logic for resetting the state and preparing for new instructions, ensuring correct pipeline execution.
+module top_module(
+	input			reset,
+	input			clk,
+	input			stall,
+	input		[5:0]	state,
+
+	input		[15:0]	memdata,
+	input			memload,
+	output			memapply,
+
+	input		[1:0]	ld_pc,
+	input		[15:0]	alu_out,
+	output		[15:0]	forcast_pc,
+	
+	output	reg	[15:0]	pc,
+	output		[15:0]	npc,
+	output		[15:0]	inst
+);

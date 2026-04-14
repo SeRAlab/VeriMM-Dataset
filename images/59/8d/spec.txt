@@ -1,0 +1,9 @@
+Develop a circuit that functions as a synchronous 8-bit register with a selection input for a 2-to-1 multiplexer. It takes two 8-bit inputs (d_1 and d_2) and outputs one of them based on the select signal. When the clock signal falls and if the reset signal is active, the register loads a default value of 0x34. Otherwise, it captures the output of the multiplexer, which is constructed using NAND gates to achieve the selection. The final output is available at the output port q.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input [7:0] d_1,  // 8-bit input for the first data signal
+    input [7:0] d_2,  // 8-bit input for the second data signal
+    input select,     // Select signal for the multiplexer
+    output [7:0] q    // 8-bit output from the register
+);

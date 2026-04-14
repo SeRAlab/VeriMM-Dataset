@@ -1,0 +1,13 @@
+The module implements a LED blinking circuit that generates a periodic output signal to control an LED based on user-defined high and low periods. It uses a finite state machine with three states: 'Start', 'On', and 'Off'. In the 'On' state, the LED is turned ON, and it stays lit until a timer overflow occurs, which is triggered based on the countdown of a timer initialized with the provided high and low period inputs. When the timer overflows, the state transitions to 'Off', turning the LED OFF. This process continues in a cyclical manner, creating a blinking effect, with the frequency of blinking determined by the input period parameters. The module includes external reset functionality and is clocked by the input clock signal.
+module top_module(
+  (* intersynth_port = "Reset_n_i" *)
+  input Reset_n_i,
+  (* intersynth_port = "Clk_i" *)
+  input Clk_i,
+  (* intersynth_port = "Outputs_o", intersynth_conntype = "Bit" *)
+  output reg LED_o,
+  (* intersynth_param = "PeriodH_i", intersynth_conntype = "Word" *)
+  input[15:0] PeriodH_i,
+  (* intersynth_param = "PeriodL_i", intersynth_conntype = "Word" *)
+  input[15:0] PeriodL_i
+);

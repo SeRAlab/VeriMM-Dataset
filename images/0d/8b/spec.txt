@@ -1,0 +1,8 @@
+
+Design a branch predictor using a 2-bit saturating counter for making predictions. The counter should be used to predict whether to take or not take a branch based on the previous outcomes of the branch instruction. Initialize the counter to 00, and have the following behavior:
+- 00: Strongly not taken
+- 01: Weakly not taken
+- 10: Weakly taken
+- 11: Strongly taken
+
+The branch predictor should take a 1-bit input `branch_outcome` (0 for not taken, 1 for taken) and update the counter based on this outcome. After updating, it should output the predicted value (0 for not taken, 1 for taken) based on the current counter state.

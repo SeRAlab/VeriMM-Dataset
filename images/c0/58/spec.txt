@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+    
+Implement a module to decode signals from an NEC protocol-based infrared (IR) remote control. The NEC protocol is a widely used communication protocol in IR remote controls for consumer electronics. The primary functions and objectives of this module include:
+
+Detecting and interpreting the IR signal transmitted by an NEC protocol remote control.
+Extracting the command and address information encoded within the IR signal.
+Driving an 8-bit LED display based on the decoded command information, presumably for visual feedback or further processing.
+
+This module plays a critical role in enabling a device to respond to user commands delivered through an IR remote, making it an essential component in applications such as television sets, audio systems, and other consumer electronics that require remote control functionality.
+
+Module name:  
+	nec
+
+Input ports:
+	clk (input): The clock input. It is a digital signal that synchronizes the module's operations. The entire decoding process is synchronized to the rising edge of this clock signal.
+	rst (input): The reset input. A low (activelow) signal on this input initializes the module, resetting its internal state to a predefined starting condition.
+	ir (input): The infrared signal input. This is the raw signal received from the IR receiver, representing the data transmitted by the remote control.
+Output ports:
+	led (output reg [7:0]): An 8bit register driving an LED display. The specific bits lit on this display are determined by the decoded command from the IR signal.
+
+
+Implementation:
+The RTL module named nec is designed to decode signals from an NEC infrared (IR) remote control protocol. This protocol is widely used in consumer electronics, allowing devices to be controlled remotely via an IR transmitter. The module processes the IR signal input and outputs an 8-bit LED signal, presumably for demonstration or testing purposes. The design employs a finite state machine (FSM) to manage the decoding process, alongside various counters and registers to interpret the signal timing and content.
+
+Give me the complete code.
+

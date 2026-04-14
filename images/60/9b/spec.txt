@@ -1,0 +1,10 @@
+Design a synchronous RAM module with a 16-bit address and an 8-bit data bus. The module allows for writing data to memory when the write enable (we) signal is asserted, storing the 8-bit input data (d) at the memory location specified by the lower 15 bits of the address (a). It also supports reading data when the read enable (re) signal is active, outputting the value stored at the specified address (a) to the output (q). This design is intended for applications requiring temporary data storage and retrieval.
+module top_module(
+  input clk,
+  
+  input [15:0] a,
+  
+  input [7:0] d,
+  input we,
+  input re,
+  output reg [7:0] q);

@@ -1,0 +1,7 @@
+Design a 4-bit Booth multiplier capable of multiplying two 4-bit signed operands, A and B, to produce an 8-bit product. The module implements the Booth's algorithm, utilizing shift and add/subtract operations based on the least significant bits of the multiplier, B. The resulting product is updated on the rising edge of a clock signal, leveraging control logic to handle different cases determined by the state of the multiplier and the current bits of the multiplicand, ensuring efficient multiplication while minimizing the number of additions and subtractions required.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input clk,               // Added input for the clock signal
+    output reg [7:0] product
+);

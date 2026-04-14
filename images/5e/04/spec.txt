@@ -1,0 +1,6 @@
+Design a 4-bit shift register with load, clear, and clock functionality. The module captures a 4-bit input (D) when the load signal (LD) is activated, shifting the bits through three storage registers (Q1, Q2, Q3) on each positive clock edge (CLK). If the clear signal (CLR) is asserted, all registers are reset to zero. When not loading new data, the shift register shifts the current contents of Q2 into Q1 and shifts Q3 left by one bit. The output (Q) reflects the value in Q3, providing a delayed shifted version of the input.
+module top_module(
+    input [3:0] D,
+    input LD, CLK, CLR,
+    output reg [3:0] Q
+);

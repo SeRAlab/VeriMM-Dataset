@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+
+Implement a 16-bit register with a load signal. The module loads a new value into the register when the load signal is high on the rising edge of the clock signal. The register resets to 0 when the reset signal is high.
+
+Module name:  
+    load_register    
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    reset: Synchronous reset signal.
+    load: Load signal to load new value into the register.
+    data_in: 16-bit input data to be loaded into the register.
+
+Output ports:
+    data_out: 16-bit output representing the current register value.
+
+Implementation:
+The register is defined as reg [15:0] data_out and initialized to 0 using the initial statement. The value of data_out is loaded with data_in when the load signal is high: if (load) data_out <= data_in.
+The register is reset to 0 when the reset signal is high: if (reset) data_out <= 0.
+
+Give me the complete code.

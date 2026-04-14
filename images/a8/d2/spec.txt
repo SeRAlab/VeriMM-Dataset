@@ -1,0 +1,12 @@
+Design a circuit that performs a bitwise operation combining multiple inputs. This module takes four single-bit inputs (A1, A2, A3, B1) and a set of additional control signals (VPWR, VGND, VPB, VNB) to compute its output. It first calculates the bitwise AND of pairs of inputs (A1 & A2 and A3 & B1), then combines these results using an OR operation. The output also incorporates results from XOR and OR operations on the supply voltages (VPWR, VGND) and (VPB, VNB). Finally, the output is the result of the AND operation of the combined results, providing a versatile logic function based on the specified inputs.
+module top_module(
+    input A1,
+    input A2,
+    input A3,
+    input B1,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB,
+    output out
+);

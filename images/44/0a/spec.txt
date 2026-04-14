@@ -1,0 +1,13 @@
+Implement the Verilog module based on the following description.
+Build a 12-bit shift register with synchronous active low reset signal and parallel load signal. When the parallel load signal is high, the register loads the input data. Otherwise, it shifts right by one bit.
+// (1) reset_n: Resets the shift register to 12'b000000000000 when low.
+// (2) load: Enables the parallel load operation when high.
+// (3) data_in: The data to be loaded into the register.
+// (4) q: The current state of the shift register.
+
+module shift_register_with_load(
+    input clk,
+    input reset_n,
+    input load,
+    input [11:0] data_in,
+    output reg [11:0] q);

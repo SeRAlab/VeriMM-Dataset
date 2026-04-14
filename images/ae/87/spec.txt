@@ -1,0 +1,8 @@
+Implement an 8-bit adder circuit with an additional carry output. The module takes two 8-bit inputs, num1 and num2, along with a clock signal and a reset signal. On each positive clock edge, if reset is asserted, the internal temporary sum and carry are initialized to zero. Otherwise, it computes the sum of num1, num2, and any carry generated from the previous operation, updating the carry output if the temporary sum exceeds the maximum value for an 8-bit number. The final output is a 9-bit sum that includes the carry as the most significant bit.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] num1,
+  input [7:0] num2,
+  output reg [8:0] sum
+);

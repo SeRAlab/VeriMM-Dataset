@@ -1,0 +1,8 @@
+Implement a finite state machine (FSM) that counts consecutive high pulses in a stream of input data, specifically counting the number of consecutive '1's. The FSM has two states: STATE_0, where it waits for the first '1', and STATE_1, which counts the consecutive '1's until a '0' is detected. Upon detecting a '0', it resets the count and signals output_data high if it was counting '1's. When reset is activated, the state machine and count are set to their initial values. The output count is a 4-bit register, enabling the counting of up to 15 consecutive '1's.
+module top_module(
+  input clk,
+  input reset,
+  input data,
+  output reg [3:0] count,
+  output reg output_data
+);

@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+
+Implement a frequency divider that divides the input clock frequency by 4. The module operates on the rising edge of the clock signal "clk" and uses a synchronous design. The output signal "clk_out" should have a frequency that is one-fourth of the input clock frequency.
+
+Module name:  
+    freq_divider          
+
+Input ports:
+	clk: Clock signal.
+	rst_n: Reset signal (active low).
+
+Output ports:
+	clk_out: Divided clock output signal.
+
+Implementation:
+The module should use a 2-bit counter to divide the clock frequency. The counter increments on each clock cycle and the output clock toggles every time the counter reaches 2.
+
+Give me the complete code.
+
+module freq_divider(
+	input clk,
+	input rst_n,
+	output reg clk_out
+);

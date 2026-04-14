@@ -1,0 +1,7 @@
+Design a shift register that captures data on the rising edge of the clock when enabled (EN). The module utilizes a latch to differentiate between the enable (EN) and test (TE) signals, controlling an intermediate signal (ENCLK) that is buffered for output. The state of the latch is stored in a series of registers (q1 and q2), which store the value of the TE input on each clock cycle while EN is active. When EN is high, the TE value is propagated through the shift register, allowing for sequential data storage.
+module top_module(
+    input CLK,
+    input EN,
+    input TE,
+    output ENCLK
+);

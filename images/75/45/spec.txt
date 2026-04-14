@@ -1,0 +1,9 @@
+Design a module that incorporates an accumulator with parity bit calculation. On the rising edge of a clock signal, if a reset signal is active, both the accumulator and parity bit are reset, with the output ready flag set to low. When valid input data is received, the module computes the parity bit of the 8-bit input data, adds it to the accumulated value, and sets the ready output to high, indicating that new data is available. The output of the accumulator is provided when ready is high; otherwise, the parity bit is sent as output. This functionality allows for simple data validation and accumulation based on valid input conditions.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] data_in,
+    input valid_in,
+    output reg ready_out,
+    output reg [9:0] accu_out
+);

@@ -1,0 +1,12 @@
+
+Design a power gating controller in Verilog that controls the power state of multiple modules based on the input signals. The controller has the following inputs:
+- `enable`: A signal that enables or disables power to the modules.
+- `module1_status`, `module2_status`: Status signals from two modules indicating if they are active or idle.
+
+The output signals:
+- `module1_power`: Indicates if power should be supplied to module 1 (1: power on, 0: power off).
+- `module2_power`: Indicates if power should be supplied to module 2 (1: power on, 0: power off).
+
+The rules are:
+- If `enable` is 1, then the power to the modules should be on only if their respective status signals indicate they are active (1).
+- If `enable` is 0, power to all modules should be off (0).

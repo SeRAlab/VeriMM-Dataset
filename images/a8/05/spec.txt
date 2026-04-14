@@ -1,0 +1,7 @@
+Design a circuit for a serial-to-parallel data buffer. The module accepts a 32-bit input (pdi), and based on control signals (wr, en, crct), it updates a 128-bit internal buffer (bfr). When the write signal (wr) is active, new data from pdi is shifted in from the least significant side, discarding the oldest data bit. If the enable signal (en) is asserted, the buffer is loaded with the value from data_core, and if the correction signal (crct) is activated, it replaces the buffer's contents with data_mode. The current state of the buffer is continuously available on the output (key).
+module top_module(
+   
+   key,
+   
+   pdi, data_core, data_mode, wr, clk, en, crct
+   ) ;

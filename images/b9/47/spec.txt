@@ -1,0 +1,8 @@
+Design a light control system that utilizes an Analog-to-Digital Converter (ADC) to digitize an input signal, followed by a Pulse-Width Modulation (PWM) mechanism to adjust the brightness of a light source. When the enable signal is active, the module captures the digital representation of the incoming signal and compares it against a specified brightness level. If the captured signal exceeds the brightness threshold, it outputs a fully ON signal; otherwise, it outputs a fully OFF signal, effectively controlling the light's illumination based on the input conditions.
+module top_module(
+  input enable,
+  input [7:0] brightness,
+  input [7:0] in,
+  input clk, // Added clk as an input
+  output reg out // Changed output to reg to match the PWM output
+);

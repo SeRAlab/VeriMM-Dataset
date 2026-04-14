@@ -1,0 +1,9 @@
+Design a register for the LLbit flag, which is designed to store a one-bit value. This register has asynchronous reset and flush capabilities, allowing it to clear its output (LLbit_o) to zero when either of these conditions is met. The register updates its stored value based on the input LLbit_i only when the write enable signal (we) is asserted. The primary purpose of this module is to hold and manage the state of the LLbit flag in response to clock signals and control inputs, making it suitable for use in processor architectures, especially in the context of managing conditions such as overflow or underflow status.
+module top_module(
+    input wire clk,
+    input wire rst,
+    input wire flush,
+    input wire LLbit_i,
+    input wire we,
+    output reg LLbit_o
+);

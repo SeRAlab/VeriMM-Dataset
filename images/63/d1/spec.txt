@@ -1,0 +1,7 @@
+Design a functional unit for a computer datapath that performs various arithmetic and logic operations on input data buses. The module takes address and data inputs, along with a control bus to determine the operation to be executed. It generates a 16-bit output based on the specified operations, such as addition, subtraction, bitwise AND, OR, and shifts, while also producing a flag output indicating the overflow, carry, negative, and zero status. The functionality is selected via a 4-bit function select line decoded from the control bus.
+module top_module(
+	output reg [WORD_WIDTH-1:0] FU_out,
+	output [FLAG_WIDTH-1:0] FLAG_bus_out,
+	input  [WORD_WIDTH-1:0] ADDR_bus_in, DATA_bus_in,
+	input [CNTRL_WIDTH-1:0] CNTRL_bus_in
+	);

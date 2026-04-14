@@ -1,0 +1,10 @@
+Design a timer module for an RISC-V system that counts up to a specified target value. The module accepts a reset signal (RST_N) and a clock signal (CLK) for operation. It uses an input bus for writing a target value and reads back the current target value when requested. The timer increments its count on each clock cycle and sets the output signal EXPIRED to indicate when the count has reached the target. The target value can be updated via the bus interface, specifically when the bus write enable (BUS_WE) is asserted and the correct bus address is accessed. This module enables the CPU to monitor elapsed time effectively.
+module top_module(
+  RST_N,
+  CLK,
+  BUS_WE,
+  BUS_ADDR,
+  BUS_WDATA,
+  BUS_RDATA,
+  EXPIRED
+);

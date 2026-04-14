@@ -1,0 +1,9 @@
+Design a circuit that implements a Last-In-First-Out (LIFO) memory block, also known as a stack. The module features an 8-bit wide data input and output, with control signals for writing data, popping data, and resetting the stack. The depth of the stack is defined as 16 entries. On a rising clock edge, if the reset signal is activated, the stack pointer resets to the base. When write_en is high, the incoming data is stored in the stack at the current top position, and the top pointer increments, wrapping around upon reaching the maximum depth. If pop_en is high, the module provides the most recently stored data from the stack and decrements the top pointer accordingly. If neither operation is active, the module continuously outputs the current top value.
+module top_module(
+  input clk,
+  input reset,
+  input write_en,
+  input [7:0] data_in,
+  input pop_en,
+  output reg [7:0] data_out
+);

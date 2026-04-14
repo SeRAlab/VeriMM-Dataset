@@ -1,0 +1,25 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit synchronous up-counter with an asynchronous reset. The counter should increment its value on every positive edge of the clock signal when the enable signal is high. When the reset signal is low, the counter should reset to zero. 
+
+Module name:  
+    up_counter               
+Input ports:
+    clk: Clock signal for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    en: Enable signal to allow counting.
+
+Output ports:
+    count: 4-bit output representing the current counter value.
+
+Implementation:
+The module includes a 4-bit register, count. The counter increments its value on the positive edge of the clock signal (posedge clk) if the enable signal (en) is high. If the reset signal (rst_n) is low, the counter resets to zero.
+
+Give me the complete code.
+
+module up_counter (
+    input clk,
+    input rst_n,
+    input en,
+    output reg [3:0] count
+);

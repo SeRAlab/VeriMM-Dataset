@@ -1,0 +1,8 @@
+Design a module that simulates the aging process of an entity based on a given live count. The `calc_next_age` module produces a binary output (`age_out`) that represents the current age state, which can be either 0 or 1, depending on the conditions influenced by the number of live neighbors and the control signals. When the `reset` signal is asserted, the age is set to 0. On each positive edge of the clock, if the `step` signal is active, the module checks the `live_count`: if there are exactly three neighbors, it initiates a birth (sets age to 1 if currently 0); if there are two or three neighbors, survival occurs, but if there is one or zero neighbors while currently aged 1, it sets the age back to 0. This functionality can be conceptualized as a rudimentary cellular automaton regarding growth and survival.
+module top_module(
+    age_out,
+    live_count,
+    step,
+    clock,
+    reset
+);

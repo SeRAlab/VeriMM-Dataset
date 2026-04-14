@@ -1,0 +1,19 @@
+
+Design a 2-channel DMA controller that allows two different memory addresses to be transferred to a data register. The controller should have the following inputs:
+- clk: Clock signal
+- reset: Reset signal
+- start_channel1: Start transfer signal for channel 1
+- start_channel2: Start transfer signal for channel 2
+- address_channel1: Memory address for channel 1
+- address_channel2: Memory address for channel 2
+- data_in_channel1: Data input for channel 1
+- data_in_channel2: Data input for channel 2
+
+The outputs should be:
+- data_out: Data output register that holds the transferred data
+- channel_busy: Indicates whether either channel is currently busy transferring data.
+
+The controller should operate as follows:
+1. Upon receiving a start signal for either channel, it should transfer the corresponding data input to the data output register.
+2. The channel_busy output should be set to high when a transfer is in progress and low otherwise.
+3. The transfer should be synchronous with the clock, and the reset should clear the output and busy signals.

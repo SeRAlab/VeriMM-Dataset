@@ -1,0 +1,8 @@
+Design a circuit that performs a 16-to-32 bit sign extension or zero extension of a 16-bit input based on a control signal. When the ExtSel input is high, the most significant bit of the input (bit 15) is replicated in the upper 16 bits of the output, effectively sign-extending the value to 32 bits. Conversely, when ExtSel is low, the upper 16 bits of the output are filled with zeros, resulting in zero extension. The output is a 32-bit wide result combining the original 16-bit input with the selected upper bits based on the ExtSel control.
+module top_module(
+    
+    input [15:0] extendee,
+    input ExtSel,
+    
+    output reg[31:0] result
+    );

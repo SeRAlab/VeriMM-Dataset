@@ -1,0 +1,9 @@
+Design a 4-bit binary counter with additional functionality to load a specific target value and reset to zero. The counter increments on each clock cycle unless the reset input is active, which sets the count to zero. If the load input is asserted, the counter loads the provided 4-bit target value instead of incrementing. Additionally, the module outputs a signal indicating whether the current count is equal to the target value, allowing for easy comparison between the count and a specified reference.
+module top_module(
+  input clk,        // clock input
+  input reset,      // reset input
+  input load,       // load input
+  input [3:0] target,  // target value input
+  output reg [3:0] count,  // binary count output
+  output reg equal  // target value equality output
+);

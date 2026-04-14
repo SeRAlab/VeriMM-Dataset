@@ -1,0 +1,10 @@
+Design a synchronous 8-bit calculator capable of performing four arithmetic operations: addition, subtraction, multiplication, and division, based on a 2-bit operation code input. The module receives two 8-bit operands (a and b) and outputs an 8-bit result along with a validity signal indicating if the operation was successful. The calculator resets the output to zero when the reset signal is high and updates the result on the rising edge of the clock based on the selected operation. Special handling for division by zero is included to ensure safe operation.
+module top_module(
+    input wire clk,
+    input wire reset,
+    input wire [7:0] a,
+    input wire [7:0] b,
+    input wire [1:0] op,
+    output reg [7:0] result,  // Changed to reg to allow assignment in always block
+    output reg valid           // Changed to reg to allow assignment in always block
+);

@@ -1,0 +1,7 @@
+Design a circuit that functions as a selector based on a 2-bit control signal to generate a 32-bit output. The module, `ss_component`, takes three inputs: `controleSS`, `dataRegOut`, and `b_out`. It uses the `controleSS` signal to determine which manipulation of the `dataRegOut` and `b_out` inputs to perform. Specifically, it outputs `b_out` directly for the first case, combines the upper bits of `dataRegOut` with the lower bits of `b_out` in case two, and combines a different section of `dataRegOut` with a wider part of `b_out` for the third case. Thus, it operates as a combinational logic unit that selectively formats and outputs data based on the control inputs.
+module top_module(
+    input wire [1:0] controleSS,
+    input wire [31:0] dataRegOut,
+    input wire [31:0] b_out,
+    output reg [31:0] ss_out
+);

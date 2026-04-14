@@ -1,0 +1,20 @@
+module top_module(PSEN,A15,IOM,RAM1,RAM2,ROM1,ROM2,LCD,SEVSEG, RTC, A14, WR);input PSEN ;
+input A15 ;
+input IOM ;
+input WR ;
+input A14;
+output SEVSEG ;
+output LCD ;
+output ROM2 ;
+output ROM1 ;
+output RAM2 ;
+output RAM1 ;
+output RTC ;
+assign SEVSEG = (PSEN & !A15 & IOM & !WR & A14);
+assign LCD = !(PSEN & A15 & IOM);
+assign ROM2 = !(!PSEN & A15);
+assign ROM1 = !(!PSEN & !A15);
+assign RAM2 = !(PSEN & A15 & !IOM);
+assign RAM1 = !(PSEN & !A15 & !IOM);
+assign RTC = !(PSEN & !A15 & !A14 & IOM);
+endmodule

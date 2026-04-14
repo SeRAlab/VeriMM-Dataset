@@ -1,0 +1,6 @@
+Design a debounce circuit that processes an 8-bit input signal to stabilize output changes caused by noise or bouncing. The circuit monitors the input for edges, using a dual-edge triggered flip-flop to detect transitions and a counter to ensure that the signal remains stable before updating the output. The output 'q' is asserted when a valid edge is detected and the counter reaches a predefined threshold, thereby ensuring that brief disturbances in the input do not cause erroneous output changes.
+module top_module(
+    input clk,
+    input [7:0] in,
+    output reg q
+);

@@ -1,0 +1,8 @@
+Design a signed arithmetic calculator capable of performing addition, subtraction, multiplication, and division on two 8-bit signed inputs (A and B). The operation type is selected using a 2-bit input (OP). The output (Y) is a signed 8-bit result of the selected operation, while a FLAG output indicates any error conditions, such as division by zero or overflow during addition and subtraction. The module ensures proper handling of overflow scenarios and signals an error with the FLAG when necessary.
+module top_module(
+    input signed [7:0] A,
+    input signed [7:0] B,
+    input [1:0] OP,
+    output reg signed [7:0] Y,
+    output reg FLAG
+);

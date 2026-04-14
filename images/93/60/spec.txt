@@ -1,0 +1,7 @@
+Design a clock gating circuit that controls the propagation of a clock signal (CLK) based on enable inputs (EN and TE). When EN is high and TE is low, the internal gated clock signal (gated_clk) is set high, allowing the CLK to pass through to the output ENCLK. Conversely, when TE is high, the circuit directly outputs the CLK signal regardless of the EN signal. This module is used to optimize power consumption by selectively enabling the clock signal to various components based on specific conditions.
+module top_module(
+    input CLK,
+    input EN,
+    input TE,
+    output reg ENCLK
+);

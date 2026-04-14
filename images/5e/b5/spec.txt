@@ -1,0 +1,7 @@
+Design a module for parity checking that operates on 8-bit input data. It has a clock input for synchronous operation and a reset input to initialize the internal registers and outputs. When the reset is inactive, the module captures the incoming data and calculates the parity bit, which indicates whether the number of set bits in the data is odd or even. The computed parity is then output as a single bit, allowing for error detection in data transmission. The design utilizes registers to hold the data and parity values, ensuring that parity is computed based on the most recent valid input.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data_in,
+  output reg parity_out
+);

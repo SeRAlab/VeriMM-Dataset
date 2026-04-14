@@ -1,0 +1,8 @@
+Design a SPI (Serial Peripheral Interface) slave module that receives an 8-bit command via the serial data input (sdi) and provides a 24-bit output (sdo). The module operates based on a clock signal (sclk) and an active-low chip select (cs_n). When the chip is selected (cs_n is low), it shifts in the bits of the command from sdi on each clock cycle while keeping track of the bit count. Once all 8 bits are received, the module computes the square of the command value and shifts out the most significant bit of the result as sdo. The module also resets the command and value registers when reset_n is low, ensuring proper initialization and functionality.
+module top_module(
+  input       reset_n,
+  input       sclk,
+  input       sdi,
+  output      sdo,
+  input       cs_n
+);

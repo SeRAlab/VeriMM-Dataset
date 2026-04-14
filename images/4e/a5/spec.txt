@@ -1,0 +1,6 @@
+Design a counter module that increments a 5-bit output called "number" on each positive clock edge, with a reset capability and a maximum value defined by a parameter (n-1, where n=24). Upon a reset (active low), the output resets to zero. If the least significant bit of the input switch (SW[0]) is high, the counter holds its current value instead of incrementing. Once the counter reaches its maximum value (23), it wraps around to zero on the next increment.
+module top_module(
+				input		          clk,
+				input		          rst,
+				input			[17:0] SW,
+				output	reg[4:0]  number);

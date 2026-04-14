@@ -1,0 +1,8 @@
+Design a 4-bit binary countdown counter that decrements its value on each clock pulse when enabled, starting from 9 and rolling over to 9 after reaching 0. The counter can be loaded with a new value when the load signal is inactive and is asynchronously cleared to zero when the clear signal is asserted. Additionally, the module provides outputs to indicate when the counter reaches zero and when a terminal count occurs while the counter is enabled.
+module top_module(
+        output wire [3:0] data_out,
+        output wire tc,
+        output wire zero,
+        input wire loadn, clock, clear, enable,
+        input wire [3:0] data_in
+    );

@@ -1,0 +1,6 @@
+Design a parallel-to-serial converter that shifts an 8-bit input data (`data_in`) into a single-bit serial output (`serial_out`) on the rising edge of the clock (`clk`). The module uses a shift register to store the input data and a counter to track the number of bits shifted. On the first clock edge, the data is loaded into the shift register and the counter starts incrementing. Each subsequent clock cycle shifts out one bit of data from the most significant bit (MSB) to the least significant bit (LSB) until all bits have been output. After transmitting all bits, the counter resets to allow for a new data input cycle.
+module top_module(
+    input clk,
+    input [7:0] data_in,
+    output reg serial_out
+);

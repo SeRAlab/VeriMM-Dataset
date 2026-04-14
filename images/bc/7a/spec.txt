@@ -1,0 +1,8 @@
+Design a 32-bit wide forwarding multiplexer that selects one of three input values based on the 2-bit forward control signal. The module takes in the source register value (RS_VALUE), the value from the Memory Write-Back stage (MEM_WB_VALUE), and the value from the Execute-Memory stage (EX_MEM_VALUE). Depending on the value of forward_control, it outputs either RS_VALUE (when control is 00), EX_MEM_VALUE (when control is 10), or MEM_WB_VALUE (when control is 01). If the control value is invalid, it outputs an undefined value (32'bx). This module is essential for hazard resolution in pipeline architectures by directing the appropriate data to the next stage based on dependencies.
+module top_module(
+    RS_VALUE,
+    MEM_WB_VALUE,
+    EX_MEM_VALUE,
+    forward_control,
+    VALUE_OUT
+);

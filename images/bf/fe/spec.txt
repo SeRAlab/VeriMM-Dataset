@@ -1,0 +1,31 @@
+Please act as a professional verilog designer.
+    
+Implement a module appears to function as a state machine with a programmable sequence of operations based on the value of a program counter (`program_counter`). Its primary objectives include:
+
+Receiving inputs (`input_a`, `input_b`, `input_select`) along with their respective strobes (`input_a_stb`, `input_b_stb`, `input_select_stb`).
+Acknowledging the receipt of each input by asserting corresponding acknowledgment signals (`input_a_ack`, `input_b_ack`, `input_select_ack`).
+Selectively processing the inputs based on the `input_select` value and generating an output (`output_z`) with an output strobe (`output_z_stb`) when data is ready.
+The module operates synchronously with a clock (`clk`) and can be reset (`rst`).
+
+This module could be part of a larger system where data processing and routing based on dynamic conditions are required, such as in a data acquisition system, a simple arithmetic unit, or a control path in a microcontroller.
+
+Module name:  
+	main
+
+Input ports:
+	[15:0] input_a, input_b, input_select: 16bit wide inputs for processing. input_a and input_b are data inputs, while input_select determines the operation or routing of data.
+	input_a_stb, input_b_stb, input_select_stb: Strobe (or valid) signals for input_a, input_b, and input_select, respectively. They indicate when the corresponding data inputs are valid.
+	output_z_ack: Acknowledgment signal from the downstream module or system, indicating that the output output_z has been received and processed.
+	clk: System clock signal.
+	rst: Synchronous reset signal. Resets the internal state of the module.
+Output ports:
+	[15:0] output_z: 16bit wide output, the result of the module's processing based on the inputs.
+	output_z_stb: Strobe (or valid) signal for output_z, indicating when the output data is valid.
+	input_a_ack, input_b_ack, input_select_ack: Acknowledgment signals for input_a, input_b, and input_select, respectively. They indicate that the corresponding inputs have been received and processed by the module.
+
+
+Implementation:
+The RTL module presented is designed to perform operations based on the inputs input_a, input_b, and input_select under the control of a state machine driven by a program_counter. The module operates synchronously with a clock signal clk and can be reset using the rst signal. The core functionality revolves around processing inputs and generating an output output_z with an accompanying strobe signal output_z_stb to indicate the validity of the output data. Acknowledgment signals (input_a_ack, input_b_ack, input_select_ack) are used to manage the flow of data into the module, ensuring that inputs are correctly received and processed.
+
+Give me the complete code.
+

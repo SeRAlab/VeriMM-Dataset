@@ -1,0 +1,13 @@
+Design a module that functions as a memory address decoder for reading data. It takes a 32-bit address input to determine from which data source to retrieve data. If the most significant bit (bit 11) of the address is set, it checks the lower 12 bits of the address to select from predefined data sources such as Random, Switch, Timer, and Ethernet-related signals, returning the corresponding 32-bit output. If the most significant bit is not set, it defaults to returning data from DMEM.
+module top_module(
+	input [31:0]addr,
+	input [31:0]DMEM,
+	input [31:0]Random,
+	input [31:0]Switch,
+	input [31:0]Timer,
+	input [31:0]EthNew,
+	input [31:0]EthData1,
+	input [31:0]EthData2,
+	input [31:0]EthSendFinish,
+	output reg[31:0]rdata
+);

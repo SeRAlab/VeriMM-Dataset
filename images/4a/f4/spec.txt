@@ -1,0 +1,7 @@
+Design a data memory module with a 32-bit data width and a 1024-byte storage capacity, suitable for synchronous read and write operations. The module has a clock input that triggers the write operation on the negative edge, allowing data to be stored in four consecutive 8-bit memory locations when the write signal is active. During read operations, it outputs a 32-bit word constructed from four sequential memory bytes based on the provided byte address. This functionality makes it ideal for applications requiring temporary data storage and retrieval in a digital system.
+module top_module(
+   input clk,
+   input [31:0] address,
+   input [31:0] write_data,
+   output [31:0] read_data,
+   input write);

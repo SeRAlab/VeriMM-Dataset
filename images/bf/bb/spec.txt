@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+    
+Implement a module to simulate a 4K x 8-bit static RAM. Its primary functions include reading from and writing to a memory array of 4096 (4K) 8-bit words. This module is intended to be used within larger digital systems where temporary data storage is required. It can serve as a fundamental building block in systems requiring memory storage and retrieval, such as microprocessors, digital signal processors, and various custom digital circuits. The module supports synchronous operations triggered by a clock signal, enabling it to integrate seamlessly into synchronous digital systems.
+
+Module name:  
+	RAM4kx8
+
+Input ports:
+	CLK (input): The clock input. It is a digital signal that synchronizes the read and write operations of the memory. The rising edge of the clock triggers these operations.
+	AB (input[11:0]): Address Bus. A 12bit input that specifies the address of the memory location to be accessed (read or written). It can address 4096 (2^12) different locations.
+	CS (input): Chip Select. A digital signal that enables or disables the memory module. When CS is high, the module performs read or write operations based on the READ signal; otherwise, the data output (DO) is in a highimpedance state.
+	READ (input): Read Enable. A digital signal that determines the operation mode. When high, the module performs a read operation; when low, a write operation is executed.
+	DI (input[7:0]): Data Input. An 8bit input bus that provides the data to be written into the memory location specified by AB.
+Output ports:
+	DO (output[7:0]): Data Output. An 8bit output bus that presents the data read from the memory location specified by AB. This output is tristated (highimpedance) when CS is low, indicating that the module is not selected.
+
+
+Implementation:
+The RTL module described is designed to function as a 4k x 8-bit Random Access Memory (RAM) with synchronous read and write capabilities. The module is implemented in Verilog, a hardware description language used for modeling electronic systems. The logic within this module can be dissected into several key components, each contributing to the module's ability to store and retrieve data based on external commands.
+
+Give me the complete code.
+

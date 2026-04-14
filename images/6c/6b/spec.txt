@@ -1,0 +1,8 @@
+Design a clock gating module that controls the propagation of a clock signal based on enable signals and a test enable input. The module takes a clock input (CLK) and an enable input (EN), along with a test enable input (TE) and a 32-bit data input (data_in). When the test enable (TE) is active, the output clock enable (ENCLK) is set to HIGH regardless of other inputs. If TE is not active and the enable (EN) input is HIGH, it captures the incoming data_in into a register and passes the CLK signal to ENCLK. If neither condition is met, ENCLK is set to LOW, effectively gating the clock signal based on the enable logic.
+module top_module(
+  input CLK,
+  input EN,
+  input TE,
+  input [31:0] data_in,
+  output reg ENCLK
+);

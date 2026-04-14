@@ -1,0 +1,6 @@
+Develop a module that performs two main functions: byte-reversing and priority encoding. The module accepts a 32-bit input signal, which is divided into four 8-bit segments and reversed in order. Additionally, it incorporates a 4-bit input for priority selection, allowing the identification of the highest active bit among the inputs. The output is a 2-bit representation of the corresponding priority level based on the highest active input bit. When the input priority signal is activated (e.g., 4'b0001 for the lowest priority), the output indicates the respective priority in a compact form.
+module top_module(
+    input [31:0] in, // 32-bit input for byte-reversing module
+    input [3:0] priority_in, // 4-bit input for priority encoder
+    output reg [1:0] priority_out // 2-bit output of priority encoder
+);

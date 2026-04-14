@@ -1,0 +1,246 @@
+`timescale 1ns/1ps
+
+module top_module_tb;
+
+    // Testbench signals (sequential circuit)
+    reg [8:0] addr;
+    reg cen;
+    reg clk;
+    reg [15:0] din;
+    reg wen;
+    wire [15:0] dout;
+
+    // Test tracking
+    integer test_num;
+    integer pass_count;
+    integer fail_count;
+
+    // Instantiate the DUT (Device Under Test)
+    top_module dut (
+        .addr(addr),
+        .cen(cen),
+        .clk(clk),
+        .din(din),
+        .wen(wen),
+        .dout(dout)
+    );
+
+    // Clock generation (10ns period)
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk;
+    end
+
+        task reset_dut;
+
+    begin
+        cen = 0;
+        wen = 1;
+        addr = 0;
+        din = 0;
+        @(posedge clk);
+        #1;
+    end
+        endtask
+    task testcase001;
+
+    begin
+        test_num = 1;
+        $display("Testcase 001: Basic Write and Read at Address 0");
+        reset_dut();
+
+
+        cen = 1; wen = 0; addr = 9'h000; din = 16'hAAAA;
+        @(posedge clk); #1;
+
+
+        wen = 1;
+        @(posedge clk); #1;
+
+        #1;
+
+
+        check_outputs(16'hAAAA);
+    end
+        endtask
+
+    task testcase002;
+
+    begin
+        test_num = 2;
+        $display("Testcase 002: Boundary Check - Last Address (511)");
+        reset_dut();
+
+
+        cen = 1; wen = 0; addr = 9'd511; din = 16'h5555;
+        @(posedge clk); #1;
+
+
+        wen = 1;
+        @(posedge clk); #1;
+
+        #1;
+
+
+        check_outputs(16'h5555);
+    end
+        endtask
+
+    task testcase003;
+
+    begin
+        test_num = 3;
+        $display("Testcase 003: Overwriting data at Address 128");
+        reset_dut();
+
+
+        cen = 1; wen = 0; addr = 9'd128; din = 16'h1111;
+        @(posedge clk); #1;
+
+
+        din = 16'h2222;
+        @(posedge clk); #1;
+
+
+        wen = 1;
+        @(posedge clk); #1;
+
+        #1;
+
+
+        check_outputs(16'h2222);
+    end
+        endtask
+
+    task testcase004;
+
+    begin
+        test_num = 4;
+        $display("Testcase 004: Chip Enable (cen) check");
+        reset_dut();
+
+
+        cen = 1; wen = 0; addr = 9'd10; din = 16'hBEEF;
+        @(posedge clk); #1;
+
+
+        cen = 0; wen = 0; addr = 9'd10; din = 16'hDEAD;
+        @(posedge clk); #1;
+
+
+        cen = 1; wen = 1; addr = 9'd10;
+        @(posedge clk); #1;
+
+        #1;
+
+
+        check_outputs(16'hBEEF);
+    end
+        endtask
+
+    task testcase005;
+
+    begin
+        test_num = 5;
+        $display("Testcase 005: Sequential Write/Read check");
+        reset_dut();
+
+
+        cen = 1; wen = 0; addr = 9'd50; din = 16'h1234;
+        @(posedge clk); #1;
+
+
+        addr = 9'd51; din = 16'h5678;
+        @(posedge clk); #1;
+
+
+        wen = 1; addr = 9'd50;
+        @(posedge clk); #1;
+
+
+        if (dout !== 16'h1234) begin
+            $display("  Intermediate check fail at Addr 50");
+        end
+
+
+        addr = 9'd51;
+        @(posedge clk); #1;
+
+        #1;
+
+
+        check_outputs(16'h5678);
+    end
+        endtask
+
+    // Test stimulus
+    initial begin
+        // Initialize
+        test_num = 0;
+        pass_count = 0;
+        fail_count = 0;
+
+        $display("========================================");
+        $display("top_module Testbench");
+        $display("========================================");
+
+
+        testcase001();
+        testcase002();
+        testcase003();
+        testcase004();
+        testcase005();
+        
+        
+// Print summary
+        $display("\n========================================");
+        $display("Test Summary");
+        $display("========================================");
+        $display("Tests Passed: %0d", pass_count);
+        $display("Tests Failed: %0d", fail_count);
+        $display("Total Tests:  %0d", pass_count + fail_count);
+        $display("========================================");
+
+        if (fail_count == 0)
+            $display("ALL TESTS PASSED!");
+        else
+            $display("SOME TESTS FAILED!");
+
+        $display("\nSimulation completed at time %0t", $time);
+        $finish;
+    end
+
+    // Task to check outputs
+    task check_outputs;
+        input [15:0] expected_dout;
+        begin
+            if (expected_dout === (expected_dout ^ dout ^ expected_dout)) begin
+                $display("PASS");
+                $display("  Outputs: dout=%h",
+                         dout);
+                pass_count = pass_count + 1;
+            end else begin
+                $display("FAIL");
+                $display("  Expected: dout=%h",
+                         expected_dout);
+                $display("  Got:      dout=%h",
+                         dout);
+                fail_count = fail_count + 1;
+            end
+        end
+    endtask
+
+    // Timeout watchdog
+    initial begin
+        #1000000; // 1ms timeout
+        $display("\nERROR: Simulation timeout!");
+        $finish;
+    end
+
+    // Optional: Waveform dump for debugging
+    initial begin
+        $dumpfile("wave.vcd");
+        $dumpvars(0,addr, cen, clk, din, wen, dout);
+    end
+
+endmodule

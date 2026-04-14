@@ -1,0 +1,7 @@
+Design a control unit for a simplified RISC processor that translates operation codes (opcodes) into control signals for various pipeline stages. The module interprets a 6-bit opcode input to generate a set of control outputs for data path elements, including register destination selection, ALU operation signals, memory read/write control, and branching logic. It differentiates between various instruction types like immediate operations (e.g., addi, lw, sw), branch instructions (e.g., beq, bne), jumps (j, jal), and R-type operations. The module incorporates logic to handle special cases like undefined opcodes, ensuring proper sequencing of data and control based on the detected instruction type.
+module top_module(
+    input [5:0] op,
+    output [2:0] alu_op,
+    output regDst0, regDst1, aluSrc, memToReg0, memToReg1, regWrite,
+    output memRead, memWrite, branch, branch_ne, jump
+  );

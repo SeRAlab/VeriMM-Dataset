@@ -1,0 +1,39 @@
+Design a dual-input multiplexer that selects between two sets of control signals based on the initialization state of the system. When the initialization process is complete (indicated by `dprio_init_done`), the module routes signals from the AVMM master input; otherwise, it routes signals from the initialization block inputs. This functionality is essential for managing the flow of data and control signals during different operational phases of the device. Additionally, certain control signals such as `atpgmode`, `scanen`, `mdio_dis`, and `ser_shift_load` are directly passed from the initialization block without multiplexing.
+module top_module(
+    // Inputs from init block
+    input       [ 5:0]  init_dprio_address,
+    input               init_dprio_read,
+    input       [ 1:0]  init_dprio_byteen,
+    input               init_dprio_write,
+    input       [15:0]  init_dprio_writedata,
+
+    input               init_atpgmode,
+    input               init_mdio_dis,
+    input               init_scanen,
+    input               init_ser_shift_load,
+    input               dprio_init_done,
+
+    // Inputs from avmm master
+    input       [ 5:0]  avmm_dprio_address,
+    input               avmm_dprio_read,
+    input       [ 1:0]  avmm_dprio_byteen,
+    input               avmm_dprio_write,
+    input       [15:0]  avmm_dprio_writedata,
+
+    input               avmm_atpgmode,
+    input               avmm_mdio_dis,
+    input               avmm_scanen,
+    input               avmm_ser_shift_load,
+
+    // Outputs to fpll
+    output      [ 5:0]  dprio_address,
+    output              dprio_read,
+    output      [ 1:0]  dprio_byteen,
+    output              dprio_write,
+    output      [15:0]  dprio_writedata,
+
+    output              atpgmode,
+    output              mdio_dis,
+    output              scanen,
+    output              ser_shift_load
+);

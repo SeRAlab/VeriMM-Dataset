@@ -1,0 +1,8 @@
+Design a circuit that functions as an 8-bit output device capable of operating either as a register or as an up-counter, based on the select input. When the select signal is HIGH, data can be loaded into the 8-bit register from the 8-bit input `d`, and this data becomes available at the output `q`. When the select signal is LOW, the circuit operates as a 4-bit up-counter that counts from 0 to 15, with the current count presented at the lower 4 bits of the output `q` (extended to 8 bits with leading zeros). The design features a synchronous active-high reset that resets both the counter and register to predefined initial values when activated.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input [7:0] d, // 8-bit input for the register
+    input select, // Select input to choose between register and counter
+    output reg [7:0] q // 8-bit output from the active module
+);

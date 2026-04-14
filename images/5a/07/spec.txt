@@ -1,0 +1,23 @@
+Design a control module for a sound envelope generator, implementing an attack-decay-sustain-release (ADSR) response. The module receives input signals for key on and off events, state information, and various rate settings, and it transitions between different states (ATTACK, DECAY, HOLD, RELEASE) based on these inputs. The output includes a base rate used for waveform generation and a signal for determining inversion in the envelope shape. The module also handles sustain level logic and generates a reset signal for the sound generator. Overall, this design is crucial for shaping sound dynamics in synthesizers by managing the time constants involved in audio waves.
+module top_module(
+	input				keyon_now,
+	input				keyoff_now,
+	input		[2:0]	state_in,
+	input		[9:0]	eg,
+	
+	input		[4:0]	arate, 
+	input		[4:0]	rate1, 
+	input		[4:0]	rate2, 
+	input		[3:0]	rrate,
+	input		[3:0]	sl,   
+	
+	input				ssg_en,
+	input		[2:0]	ssg_eg,
+	
+	input				ssg_inv_in,
+	output reg			ssg_inv_out,
+
+	output reg	[4:0]	base_rate,
+	output reg	[2:0]	state_next,
+	output reg			pg_rst
+);

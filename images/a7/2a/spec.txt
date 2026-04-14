@@ -1,0 +1,7 @@
+Design a simple arithmetic logic unit (ALU) specifically for control and status register (CSR) operations. The module takes two 32-bit input operands, `op1` and `op2`, and a 2-bit control signal, `csrALU_ctrl`. Based on the value of the control signal, the ALU outputs either `op2`, the result of a bitwise OR operation between `op1` and `op2`, a bitwise AND operation of `op1` with the bitwise negation of `op2`, or a default output of zero. This design enables basic operational control for CSR manipulations within a processor.
+module top_module(
+    input wire [31:0] op1,
+    input wire [31:0] op2,
+    input wire [1:0] csrALU_ctrl,
+    output reg [31:0] ALU_out
+    );

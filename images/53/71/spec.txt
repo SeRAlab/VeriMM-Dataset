@@ -1,0 +1,11 @@
+Design a 4-bit shift register with load and shift capabilities. The module supports asynchronous reset to initialize all registers to zero, loading the input data into all registers, and shifting the contents either to the right or left based on the control signals. The output reflects the state of the fourth register, while an additional output indicates whether all registers are full, signifying that none of them contain zero.
+module top_module(
+    input clk,
+    input areset,
+    input load,
+    input shift_right,
+    input shift_enable,
+    input [3:0] data_in,
+    output [3:0] data_out,
+    output full
+);

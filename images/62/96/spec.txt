@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) for detecting a specific data pattern within a 4-bit input stream. The FSM has three states: IDLE, S1, and S2. In the IDLE state, it looks for the pattern `1010` and transitions to S1 when the pattern is detected. In S1, if the same pattern appears again, it moves to S2. In S2, detecting the pattern causes a transition back to S1 and sets the output signal `match` high, indicating a successful detection. If the pattern is not detected in any state, the FSM resets to the IDLE state. The design is intended for applications such as pattern recognition or sequence detection in digital systems.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] data_in,
+  output reg match
+);

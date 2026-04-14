@@ -1,0 +1,13 @@
+Design a digital-to-analog converter (DAC) driver that receives two 14-bit input data signals, `dac_dataA` and `dac_dataB`, and outputs them as `dac_dataA_out` and `dac_dataB_out`. The module also generates clock signals for both DAC channels by inverting the input clock (clk), producing `dac_clkA_out` and `dac_clkB_out`. Additionally, it sets constant control signals: `dac_gset_out` to high, `dac_mode_out` to high, and `dac_sleep_out` to low, which likely configure the DAC for operational mode and prevent it from entering sleep. This circuit is instrumental in interfacing digital data with DAC hardware, facilitating signal generation for various applications.
+module top_module(
+        input clk,
+        input [13:0] dac_dataA,
+        input [13:0] dac_dataB,
+        output [13:0] dac_dataA_out,
+        output [13:0] dac_dataB_out,
+        output dac_clkA_out,
+        output dac_clkB_out,
+        output dac_gset_out,
+        output dac_mode_out,
+        output dac_sleep_out
+    );

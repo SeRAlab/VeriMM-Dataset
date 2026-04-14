@@ -1,0 +1,10 @@
+Design a state machine for a stream input processing module. It operates in four states: idle, waiting for a flag, writing data, and writing with a delay. The module generates a 32-bit output data that increments when in write state and in the appropriate mode. The output write enable signal is controlled based on the state and readiness signals from the GPIF interface. When reset, the module initializes to idle and resets the data counter. This design effectively manages data streaming operations by coordinating state transitions based on input signals.
+module top_module(
+	input  rst_n,
+	input  clk_100,
+	input  stream_in_mode_selected,
+	input  i_gpif_in_ch0_rdy_d,
+	input  i_gpif_out_ch0_rdy_d,
+	output o_gpif_we_n_stream_in_,
+	output [31:0] data_out_stream_in
+);

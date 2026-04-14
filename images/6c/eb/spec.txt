@@ -1,0 +1,10 @@
+Design a complex flip-flop with additional control features. The module includes inputs for a clock (CLK) signal, data (D), synchronous clear (SCD), synchronous enable (SCE), and asynchronous set (SET_B). The flip-flop primarily functions as a D flip-flop: it captures the input D on the rising edge of CLK when SCD is low and SCE is inactive, while also allowing toggle functionality based on D when SCE is high. The output Q is complemented to generate Q_N, allowing easy access to both the true and complemented states. Additionally, the module incorporates a SET_B input to control a toggle register (T) that can influence the behavior when SCE is active, adding versatility to its operational modes.
+module top_module(
+    input CLK,
+    input D,
+    input SCD,
+    input SCE,
+    input SET_B,
+    output reg Q,
+    output reg Q_N
+);

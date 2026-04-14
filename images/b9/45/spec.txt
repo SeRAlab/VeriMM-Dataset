@@ -1,0 +1,7 @@
+Implement a binary ones counter that counts the number of high bits (logic 1s) in a 4-bit input `binary_in`. The counting operation occurs on the rising edge of the clock signal, and it can be reset asynchronously with a high reset signal. The output, `ones_count`, is a 3-bit register that reflects the number of active bits in the input, ensuring it can represent counts from 0 to 4. The design includes both a combinational logic section for calculating the count and a sequential logic section for updating the count based on the clock and reset conditions.
+module top_module(
+  input [3:0] binary_in,
+  input clk,
+  input reset,
+  output reg [2:0] ones_count
+);

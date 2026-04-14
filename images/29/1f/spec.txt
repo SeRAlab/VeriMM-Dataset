@@ -1,0 +1,16 @@
+
+Design a DVFS controller that dynamically adjusts the operating frequency of a system based on the input voltage levels and load conditions. The controller should have the following inputs:
+- `voltage_level`: A 3-bit input representing the voltage levels (000 = Low, 001 = Medium, 010 = High).
+- `load_condition`: A 2-bit input that indicates the load conditions (00 = Low Load, 01 = Medium Load, 10 = High Load).
+The output should be a 2-bit `frequency_setting` that indicates the frequency setting of the system (00 = Low Frequency, 01 = Medium Frequency, 10 = High Frequency).
+
+The frequency setting should be determined by the following rules:
+1. If the voltage level is low (000), set frequency to low (00) regardless of the load condition.
+2. If the voltage level is medium (001), set frequency to:
+   - low (00) for low load (00)
+   - medium (01) for medium load (01)
+   - high (10) for high load (10)
+3. If the voltage level is high (010), set frequency to:
+   - medium (01) for low load (00)
+   - high (10) for medium load (01)
+   - high (10) for high load (10)

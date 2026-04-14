@@ -1,0 +1,10 @@
+Design a 32-bit Arithmetic Logic Unit (ALU) that performs various arithmetic and logical operations based on a 3-bit operation code (op). It takes two 32-bit inputs, A and B, and operates on them using the specified op value: addition, subtraction, bitwise AND, bitwise OR, bitwise XOR, or set less than (slt). The ALU outputs the result of the operation, and a zero flag that indicates if the result is zero. The design incorporates a synchronous reset functionality to initialize outputs to zero.
+module top_module(
+    input clk,
+    input rst,
+    input [2:0] op,
+    input [31:0] A,
+    input [31:0] B,
+    output reg [31:0] result,
+    output reg zero
+);

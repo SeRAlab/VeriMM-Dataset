@@ -1,0 +1,9 @@
+Design a Delay-Locked Loop (DLL) circuit that synchronizes a feedback clock with a reference clock. The module adjusts an 8-bit delay based on the phase error between `ref_clk` and `fb_clk`. When enabled, it shifts the delay value according to the detected phase error, locking the output when the phase error is zero. It also includes a reset functionality to initialize the delay and locked status. The `locked` output indicates whether the two clocks are aligned, while the `delay` output provides the current delay setting.
+module top_module(
+  input ref_clk,
+  input fb_clk,
+  input reset,
+  input enable,
+  output reg locked,
+  output reg [7:0] delay
+);

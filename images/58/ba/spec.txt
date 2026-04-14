@@ -1,0 +1,14 @@
+Design a circuit for managing PHY (Physical Layer) transactions using a state machine that operates in either read or write mode. This module utilizes a reset and clock signal to control transitions between states: IDLE, READ, and WRITE. In IDLE, it waits for a transaction request and then determines the mode of operation. In READ mode, it captures incoming data from the MDI line while clocking the MDC signal, while in WRITE mode, it outputs data onto the MDO line based on the data input provided. The system effectively handles data transfer to and from registers, thus facilitating communication with external devices.
+module top_module(
+    input  wire        reset,
+    input  wire        clock,
+    input  wire        mdc,
+    input  wire        mdi,
+    output wire        mdo,
+    input  wire        mode,
+    input  wire        begin_transaction,
+    input  wire [4:0]  phy_address,
+    input  wire [4:0]  reg_address,
+    input  wire [15:0] data_in,
+    output wire [15:0] data_out
+);

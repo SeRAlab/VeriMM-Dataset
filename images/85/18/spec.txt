@@ -1,0 +1,8 @@
+Design a 4-bit arithmetic unit that performs addition or subtraction based on the mode input M. When M is 0, the module adds the 4-bit inputs A and B, setting a carry-out overflow flag V if the sum exceeds the 4-bit limit (greater than 15). Conversely, when M is 1, it subtracts B from A, setting the overflow flag V if the result is negative. This module effectively functions as a simple arithmetic logic unit (ALU) capable of handling both addition and subtraction while monitoring for overflow conditions.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input M,
+    output reg [3:0] S,
+    output reg V
+);

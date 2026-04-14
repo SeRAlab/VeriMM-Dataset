@@ -1,0 +1,7 @@
+Design a control module for a paddle in a 2D gaming environment where the paddle moves vertically in response to the position of a ball. The module will reset the paddle's position to the center of the screen when the reset signal is activated. When the advance signal is triggered, the module calculates the current top and bottom boundaries of the paddle and determines the paddle's direction based on the ball's vertical position. The paddle is designed to move up or down incrementally while ensuring it remains within the screen limits, effectively keeping it centered around the ball when necessary and restricting its movement to the playable area.
+module top_module(
+    input reset,
+    input advance,
+    input [9:0] ball_y,
+    output reg [9:0] paddle_y
+);

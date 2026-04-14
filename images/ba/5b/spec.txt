@@ -1,0 +1,7 @@
+Implement an echo cancellation circuit that takes a digital input signal and a corresponding echo signal, both n bits wide. The circuit introduces a controlled delay to the echo signal, specified by the `delay` parameter, and subtracts this delayed echo from the input signal, effectively removing the echo component from the output. This is achieved using a flip-flop to store the delayed echo, ensuring accurate synchronization with the input signal. The design is crucial for applications in audio processing and communication systems where echo interference needs to be minimized.
+module top_module(
+  input [n-1:0] in,
+  input [n-1:0] echo,
+  input clk, // Added clk input
+  output reg [n-1:0] out // Changed output to reg type for drive assignment
+);

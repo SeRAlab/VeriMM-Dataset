@@ -1,0 +1,7 @@
+Design a 3-bit shift register with a configurable direction. On each positive clock edge, the module shifts its output either right or left based on the dir input signal. If dir is 0, the least significant bit of the input is shifted into the most significant bit of the output, while the other bits are shifted right. If dir is 1, the most significant bit of the output receives the least significant bit of the input, and the output shifts left. This creates a dynamic signal movement based on the chosen direction.
+module top_module(
+    input clk,
+    input dir,
+    input [2:0] in,
+    output reg [2:0] out
+);

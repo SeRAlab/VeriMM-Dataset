@@ -1,0 +1,10 @@
+Design a synchronous digital circuit that processes a 32-bit input vector. The module detects changes in the input and stores the result in a register, outputting the accumulated changes on the 'out' signal. It features an array of 8 D flip-flops that shift in the least significant bit of the input vector, with an active-high asynchronous reset; the outputs of these flip-flops are available on the 'q' signal. The circuit also computes the logical OR of all flip-flop outputs and provides this as 'or_out'. Additionally, it calculates the bitwise AND between the accumulated change result and a vector created by replicating the OR output, outputting the result on 'and_out'.
+module top_module(
+    input clk,
+    input reset,            // Synchronous reset
+    input [31:0] in,
+    output [31:0] out,
+    output [7:0] q,
+    output or_out,
+    output [31:0] and_out
+);

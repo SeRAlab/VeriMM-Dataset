@@ -1,0 +1,6 @@
+Design a circuit that drives a 7-segment display based on a 4-bit binary input. The module takes a clock signal and a 4-bit input (`input_data`), and upon each rising edge of the clock, it decodes the input into an 8-bit control signal that activates the appropriate segments of the display to represent the corresponding digit (0-9) or letters (A-F). The output segments (segA to segG and segDP) are connected to the 7-segment display, and the output is inverted to display the correct segments, as the common anode configuration is implied.
+module top_module(
+    input clk,
+	 input [3:0] input_data,
+    output segA, segB, segC, segD, segE, segF, segG, segDP
+);

@@ -1,0 +1,31 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a configurable timer with optional reload capability. It interfaces with a Wishbone bus, allowing for control and data exchange through standard bus operations. The primary functions of this module include:
+Counting down from a set value to zero, with the ability to operate in either a one-shot mode or a continuous reload mode.
+Generating an interrupt signal upon reaching the countdown target (zero).
+Allowing for dynamic configuration through the Wishbone bus, including setting the initial countdown value, enabling/disabling auto-reload, and starting/stopping the timer.
+Providing the current countdown value and the status of the auto-reload feature via the Wishbone bus.
+
+This module can be utilized in systems requiring timing functions, such as scheduling tasks, generating time delays, or measuring time intervals, with the flexibility of being controlled programmatically via a bus interface.
+
+Module name:  
+	ziptimer
+
+Input ports:
+	i_clk: Clock input. The primary clock signal driving the timer's operation.
+	i_rst: Reset input. Asynchronously resets the module when asserted.
+	i_ce: Clock enable. Enables the timer's counting operation when asserted.
+	i_wb_cyc, i_wb_stb, i_wb_we: Wishbone bus control signals. These signals indicate an active bus cycle, a strobe signal for data transfer, and a write enable signal, respectively.
+	i_wb_data[(BW1):0]: Wishbone bus data input. The data being written to the module during a write operation, used to set the timer's initial value or configure the autoreload feature.
+Output ports:
+	o_wb_ack: Wishbone bus acknowledge output. Indicates the completion of a read or write operation.
+	o_wb_stall: Wishbone bus stall output. Indicates that the module is not ready to complete the current bus operation (always 0 in this module, indicating no stall condition).
+	o_wb_data[(BW1):0]: Wishbone bus data output. Provides the current timer value or configuration status during a read operation.
+	o_int: Interrupt output. Asserted when the timer reaches zero, signaling an event or condition to the rest of the system.
+
+
+Implementation:
+The RTL module presented, named ziptimer, is designed to function as a configurable timer with optional reload capability. It interfaces with a Wishbone bus, allowing for control and data exchange with a host processor or controller. The module operates on a clock signal (i_clk) and can be reset (i_rst). Its primary function is to count down from a set value and generate an interrupt (o_int) upon reaching zero. The module's behavior can be modified through write operations over the Wishbone bus, including starting the timer, setting the countdown value, and configuring the auto-reload feature.
+
+Give me the complete code.
+

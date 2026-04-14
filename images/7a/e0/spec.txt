@@ -1,0 +1,11 @@
+Design a 2-to-1 multiplexer with a synchronous reset. The module selects one of two 2-bit input buses (data_in0 or data_in1) based on the value of the selector signal. The selected input is stored in an internal register (cable_conexion) and transferred to the output (data_out) on the rising edge of the clock, provided that the reset signal (reset_L) is asserted. If reset_L is deasserted, the output is set to zero.
+module top_module(
+
+input clk,
+input reset_L,
+input selector,
+input [1:0] data_in0,
+input [1:0] data_in1,
+
+output reg [1:0] data_out
+);

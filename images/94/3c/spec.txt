@@ -1,0 +1,6 @@
+Design a Binary Coded Decimal (BCD) counter with four digits, where each digit ranges from 0 to 9 and represents the ones, tens, hundreds, and thousands places. The module has a clock input for synchronization and a synchronous active-high reset input that initializes the counter to zero. The counter increments the ones digit on each clock cycle, while asynchronous enable signals allow for independent control of the tens, hundreds, and thousands digits, which can be incremented when their respective enable signals are high. The output provides a 16-bit wide representation of the current count in BCD format.
+module top_module(
+    input clk,
+    input reset,   // Synchronous active-high reset
+    input [3:1] ena, // Asynchronous enable signals for tens, hundreds, and thousands digits
+    output [15:0] q);

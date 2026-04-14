@@ -1,0 +1,8 @@
+Design a UART receiver module that captures serial data transmitted over a single wire. This module operates using a finite state machine (FSM) with four states: IDLE, START, DATA, and PARITY. In the IDLE state, it waits for a start bit (when the rx input goes LOW) to transition to the START state, where it initializes data reception. The DATA state collects 8 bits of data while calculating the parity. In the PARITY state, it checks the received parity bit against the computed parity to determine the validity of the received data. If valid, it outputs the received byte and sets a valid signal high; otherwise, the valid signal remains low.
+module top_module(
+    input clk,
+    input reset,
+    input rx,
+    output reg [7:0] data,
+    output reg valid
+);

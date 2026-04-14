@@ -1,0 +1,12 @@
+Design a versatile digital processing module that operates in response to a clock signal. It includes a barrel shifter which can perform bitwise rotation of a 100-bit input data word based on the 'ena' control signals. The module also implements a D flip-flop that can either load a new value or shift in the most significant bit of the shifted data upon clock edges, and it incorporates a 4-bit counter capable of incrementing or decrementing based on the control signals. Additionally, the design features an XOR operation that combines specified segments of both the input data and the rotated output, resulting in a 32-bit output. Overall, this module provides data manipulation capabilities suitable for applications requiring bitwise operations, counting, and state retention.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    input d,
+    input reset,
+    output reg [3:0] counter_out,
+    output reg [31:0] xor_out,
+    output reg q
+);

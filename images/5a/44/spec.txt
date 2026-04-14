@@ -1,0 +1,9 @@
+Design a Memory Management Unit (MMU) that translates a 32-bit virtual address to a corresponding physical address by adding a predefined base address. The MMU controls read and write operations based on input enable signals; it outputs data to be written to memory when the write operation is enabled, and it passes data from memory when the read operation is enabled. The output physical address and memory data inputs are determined by the virtual address and the respective enable signals, facilitating basic memory access operations in a larger system.
+module top_module(
+  input [31:0] virtual_address,
+  input read_enable,
+  input write_enable,
+  output [31:0] physical_address,
+  output [31:0] memory_data_in,
+  input [31:0] memory_data_out
+);

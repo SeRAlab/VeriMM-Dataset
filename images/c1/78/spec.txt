@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a configurable counter with a delayed output signal. Its primary objectives include:
+
+Counting up to a specified modulus value starting from an initial value (which is set to 1 in the current implementation, ignoring the `initial_value` input).
+Generating a toggled output (`cout`) each time the count reaches the modulus value, effectively dividing the input clock frequency by the modulus value.
+Introducing a delay to the toggled output signal based on a specified `time_delay` input.
+Allowing for reset functionality that resets the count and prepares the module for a fresh counting cycle.
+
+This module can be utilized in digital systems requiring frequency division, timing control, or pulse generation with a specific delay.
+
+Module name:  
+	stx_m_cntr
+
+Input ports:
+	clk (input): The input clock signal. The module counts based on the rising edges of this clock.
+	reset (input): A synchronous reset signal. When high, it resets the counter to its initial state.
+	initial_value (input, [31:0]): Intended to set the initial value of the counter. However, in the current implementation, this input is not used, and the counter is always reset to 1.
+	modulus (input, [31:0]): The value at which the counter resets and toggles the output signal. It defines the frequency division factor.
+	time_delay (input, [31:0]): Specifies the delay in time units for the output signal toggle to take effect after the counter reaches the modulus.
+Output ports:
+	cout (output): The toggled output signal, which changes state each time the counter reaches the modulus value. This signal is delayed by the amount specified in time_delay.
+
+
+Implementation:
+The stx_m_cntr module is designed to function as a counter with a configurable modulus and an initial value, incorporating a delay mechanism for its output signal. The core functionality is built around a clock (clk) signal, a reset signal, and several parameters that dictate the counter's behavior. The module's primary purpose is to generate an output signal (cout) that toggles after a specified number of clock cycles, defined by the modulus parameter, and introduces a delay (time_delay) to this toggling behavior.
+
+Give me the complete code.
+

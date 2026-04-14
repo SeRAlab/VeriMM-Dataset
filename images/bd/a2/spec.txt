@@ -1,0 +1,22 @@
+Please act as a professional Verilog designer.
+
+Implement a 16-bit register with a synchronous load enable signal. The register should load a new value from the input when the load signal is high on the next positive clock edge. If the reset signal is high, the register should reset to 0 on the next clock edge.
+
+Module name:
+    register_with_load
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    load: Load enable signal. Defined as 1 to load new data and 0 to hold the current value.
+    data_in: 16-bit input data to be loaded into the register.
+
+Output ports:
+    data_out: Output 16-bit register value.
+
+Implementation:
+Register Logic:
+The module includes a 16-bit register, data_out, to store the current register value.
+On the positive edge of the clock signal (clk), the module loads the new value from data_in if the load signal is high. If the reset signal (rst) is high, indicating a reset condition, the register value is set to 16'b0000000000000000 on the next clock edge.
+
+Give me the complete code.

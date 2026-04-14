@@ -1,0 +1,7 @@
+The module implements a data handling unit that facilitates bidirectional communication between two systems by transforming packet data from binary to Gray code and vice versa. It includes inputs for clock signals, reset, and data packets, while it outputs states related to transaction statuses and active conditions. The DUT (Design Under Test) appears to actively interface with incoming access requests and packet data while ensuring synchronization through clock signals. Additionally, it includes error detection by comparing the original packet data and the processed output, indicating a robust design suitable for reliable data transmission in digital systems.
+module top_module(/*AUTOARG*/
+   // Outputs
+   dut_active, clkout, wait_out, access_out, packet_out,
+   // Inputs
+   clk1, clk2, nreset, vdd, vss, access_in, packet_in, wait_in
+   );

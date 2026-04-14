@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that detects a specific 3-bit sequence in a 6-bit input data stream. The FSM transitions through defined states based on the value of the most significant bit (data[5]) to track the progression of the sequence, resetting when an incorrect bit is encountered. Upon successfully detecting the sequence, the module sets the output signal "match" high, indicating the successful detection of the specified sequence. The design includes state management with reset functionality, ensuring operation under various conditions.
+module top_module(
+  input clk,
+  input reset,
+  input [5:0] data,
+  output reg match
+);

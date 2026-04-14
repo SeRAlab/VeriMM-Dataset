@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as an interface between a VGA (Video Graphics Array) controller and a system utilizing the Wishbone bus protocol. Its primary function to facilitate communication and data exchange between the VGA subsystem and other components in a system that communicates using the Wishbone protocol. This module acts as a bridge, allowing for the configuration of VGA-related parameters (such as base address and enable signal) through the Wishbone bus. It supports read and write operations to two internal registers, which can be used to control and configure the VGA output.
+
+Module name:  
+	tessera_vga_wbif
+
+Input ports:
+	res: Reset signal (active high). When asserted, it initializes the internal registers to their default values.
+	clk: Clock signal. It governs the timing of the module's operations.
+	wb_cyc_i: Wishbone cycle signal. Indicates the start and duration of a Wishbone bus cycle.
+	wb_stb_i: Wishbone strobe signal. Used alongside wb_cyc_i to indicate a valid bus cycle.
+	wb_adr_i[31:0]: Wishbone address bus. Specifies the address of the data being accessed.
+	wb_sel_i[3:0]: Wishbone byte select signals. Indicates which bytes of the data bus are relevant during the transfer.
+	wb_we_i: Wishbone write enable signal. Distinguishes between read (0) and write (1) operations.
+	wb_dat_i[31:0]: Wishbone data input bus. Carries data to be written into the module.
+	wb_cab_i: Wishbone cycle attribute signal. Not used in this module.
+Output ports:
+	wb_dat_o[31:0]: Wishbone data output bus. Carries data read from the module.
+	wb_ack_o: Wishbone acknowledge signal. Indicates the completion of a successful bus cycle.
+	wb_err_o: Wishbone error signal. Indicates an error in the bus cycle (always 0 in this module, indicating no error).
+	enable: Output signal derived from reg1[0]. Used to enable or disable the VGA output.
+	base[23:11]: Base address for the VGA output, derived from bits 23:11 of reg0.
+
+
+Implementation:
+The tessera_vga_wbif module is designed to interface with a VGA controller through a Wishbone bus, a popular bus architecture for embedded systems. The module facilitates read and write operations to two internal registers (reg0 and reg1) based on the Wishbone protocol signals. The module operates synchronously with a clock signal (clk) and also supports asynchronous reset (res).
+
+Give me the complete code.
+

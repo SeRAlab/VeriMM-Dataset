@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+
+Design a 4-bit binary counter with an enable signal and asynchronous reset. The counter should increment its value on each clock cycle when the enable signal is active. The counter should reset to zero when the reset signal is active.
+
+Module name:  
+    BinaryCounter               
+Input ports:
+    clk: Clock signal for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    en: Enable signal to allow counting.
+
+Output ports:
+    count: 4-bit output representing the current state of the counter.
+
+Implementation:
+Binary Counter:
+The module includes a register count to hold the current state of the counter.
+The always block triggers on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by !rst_n, the count register is cleared to 0.
+If the enable signal is active, the count register increments by 1 on each clock cycle.
+
+Give me the complete code.

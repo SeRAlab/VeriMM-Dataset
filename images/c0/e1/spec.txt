@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to interface with a bus system, specifically for handling address lines. Its primary functions include latching address values on a positive edge of an inverted clock signal and controlling the output enable (OE) state of these address lines to the address bus (`abus`). This module plays a crucial role in systems where address information needs to be temporarily stored and then driven onto a bus, depending on control signals. It is particularly useful in microcontroller, microprocessor interfaces, or memory addressing systems where precise control over address line states is required.
+
+Module name:  
+	address_pins
+
+Input ports:
+	clk (input wire): The primary clock input. It is used, in an inverted form, to trigger the latching of the address input into an internal register.
+	bus_ab_pin_we (input wire): Write Enable signal for the address pins. When high, it allows the address to be latched into the internal register on the rising edge of the inverted clock.
+	pin_control_oe (input wire): Output Enable control signal for the address bus. When high, it enables the driving of the latched address onto the abus; otherwise, the abus lines are in a highimpedance state.
+	address (input wire [15:0]): The 16bit address input intended to be latched and driven onto the abus based on control signals.
+Output ports:
+	abus (output wire [15:0]): The 16bit address bus output. Its state is controlled by the pin_control_oe signal, either driving the latched address or being in a highimpedance state.
+
+
+Implementation:
+The RTL module named address_pins is designed to interface with an address bus (abus) by either driving the bus with a specific address or leaving the bus in a high-impedance state (Z), depending on the control signals. This module operates based on the input clock (clk), a write enable signal (bus_ab_pin_we), and an output enable signal (pin_control_oe). The core functionality revolves around capturing an input address (address) and conditionally driving it onto an output address bus (abus).
+
+Give me the complete code.
+

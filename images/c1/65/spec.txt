@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a dual-port memory block with parameterizable address and data widths. It to store and retrieve data based on the provided addresses. The module supports both read and write operations. The dual-port feature allows simultaneous access to the memory block through two separate interfaces, enabling efficient data handling in systems where multiple entities may need to access the memory concurrently. This module is particularly useful in digital systems requiring configurable memory resources, such as processors, digital signal processing (DSP) systems, or any application requiring temporary storage of digital data.
+
+Module name:  
+	aeMB2_dparam
+
+Input ports:
+	adr_i [AW1:0]: Address input for the first port. It selects the memory location for read or write operations.
+	dat_i [DW1:0]: Data input for the first port. It is the data to be written into the memory location specified by adr_i.
+	wre_i: Write enable for the first port. When high, it enables writing the data present on dat_i into the location specified by adr_i.
+	xadr_i [AW1:0]: Address input for the second port. It selects the memory location for read or write operations through the second interface.
+	xdat_i [DW1:0]: Data input for the second port. It is the data to be written into the memory location specified by xadr_i.
+	xwre_i: Write enable for the second port. When high, it enables writing the data present on xdat_i into the location specified by xadr_i.
+	clk_i: Clock input. The rising edge of the clock triggers the write operations.
+	ena_i: Enable input. This signal must be high for the module to operate. Its specific function is not implemented in the provided code, suggesting it may be intended for future use or external control mechanisms.
+Output ports:
+	dat_o [DW1:0]: Data output for the first port. It outputs the data stored in the memory location specified by adr_i.
+	xdat_o [DW1:0]: Data output for the second port. It outputs the data stored in the memory location specified by xadr_i.
+
+
+Implementation:
+The RTL module aeMB2_dparam is designed to simulate a simple dual-port memory block with parameterizable address and data widths. This module is capable of performing read and write operations based on the input signals it receives. The core logic of this module is divided into combinational and sequential parts, which are described below:
+
+Give me the complete code.
+

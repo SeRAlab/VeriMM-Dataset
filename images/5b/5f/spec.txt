@@ -1,0 +1,11 @@
+Design a right shifter circuit that processes a 16-bit input signal. It reads from the input when the input storage is not empty (`in0_empty == 0`) and the output storage is not full (`out0_full == 0`). Upon these conditions being met, it shifts the input signal to the right by one bit and writes this shifted result into the output while asserting a read signal. If the conditions are not satisfied, it does not read from the input, does not write to the output, and sets the output to an undefined state.
+module top_module(
+    input in0_empty,
+    input [15:0] in0,
+    output reg in0_rd,
+    input out0_full,
+    output reg [15:0] out0,
+    output reg out0_wr,
+    input clock,
+    input reset
+);

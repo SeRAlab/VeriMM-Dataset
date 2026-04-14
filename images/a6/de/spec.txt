@@ -1,0 +1,8 @@
+Design a system that combines a shift register and a binary counter with an XOR output. The shift register, implemented as a 3-bit register, captures the input 'd' on each clock cycle and shifts its previous values accordingly. The 4-bit binary counter increments its value on each clock pulse, but resets to zero when the reset signal is asserted. The most significant bit of the shift register feeds into the binary counter to influence its operation. Finally, the output produces an XOR between the current state of the shift register and the binary counter's value, generating a unique resultant signal.
+module top_module(
+    input clk,
+    input d,
+    input reset,
+    output [3:0] counter_q,
+    output xor_output
+);

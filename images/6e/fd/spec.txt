@@ -1,0 +1,6 @@
+Design a Viterbi decoder that processes incoming data bits and known states to output decoded results. It features parameters for the number of received bits (n) and known bits (k). The module utilizes state transition and output tables generated during initialization, and applies the Viterbi algorithm to calculate the likelihood of each state based on the received input, ultimately selecting the state with the minimum likelihood to generate the decoded output. This design aims to enhance error correction capabilities in communication systems.
+module top_module(
+  input [n-1:0] rx_in,
+  input [k-1:0] known_in,
+  output reg [k-1:0] decoded_out // Changed to 'reg' to make it a valid l-value
+);

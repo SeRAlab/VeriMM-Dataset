@@ -1,0 +1,8 @@
+Design a comparator module that evaluates two n-bit inputs, A and B, and produces outputs indicating their relational results. Specifically, it outputs three signals: `eq` for equality, `gt` for greater-than, and `lt` for less-than comparisons. The module performs both unsigned and signed comparisons, capturing scenarios where the inputs may represent positive and negative values based on their most significant bit. The outputs reflect whether the two inputs are equal, if A is greater than B, or if A is less than B, independent of the signedness of the inputs. The design is parameterized to accommodate variable bit widths, defaulting to 8 bits.
+module top_module(
+  input [n-1:0] A,
+  input [n-1:0] B,
+  output eq,
+  output gt,
+  output lt
+);

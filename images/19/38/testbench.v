@@ -1,0 +1,211 @@
+`timescale 1ns/1ps
+
+module otsu_threshold_tb;
+
+    // Testbench signals (combinational circuit)
+    reg enable;
+    reg [7:0] pixel_value;
+    reg [7:0] threshold;
+    wire binary_output;
+
+    // Test tracking
+    integer test_num;
+    integer pass_count;
+    integer fail_count;
+
+    // Instantiate the DUT (Device Under Test)
+    otsu_threshold dut (
+        .enable(enable),
+        .pixel_value(pixel_value),
+        .threshold(threshold),
+        .binary_output(binary_output)
+    );
+    task testcase001;
+
+        begin
+            test_num = test_num + 1;
+            $display("Test Case %0d: Enable high, pixel value above threshold", test_num);
+            enable = 1'b1;
+            pixel_value = 8'd150;
+            threshold = 8'd100;
+            #10;
+            #1;
+
+            check_outputs(1'b1);
+        end
+        endtask
+
+    task testcase002;
+
+        begin
+            test_num = test_num + 1;
+            $display("Test Case %0d: Enable high, pixel value below threshold", test_num);
+            enable = 1'b1;
+            pixel_value = 8'd50;
+            threshold = 8'd100;
+            #10;
+            #1;
+
+            check_outputs(1'b0);
+        end
+        endtask
+
+    task testcase003;
+
+        begin
+            test_num = test_num + 1;
+            $display("Test Case %0d: Enable high, pixel value equal to threshold", test_num);
+            enable = 1'b1;
+            pixel_value = 8'd128;
+            threshold = 8'd128;
+            #10;
+            #1;
+
+            check_outputs(1'b1);
+        end
+        endtask
+
+    task testcase004;
+
+        begin
+            test_num = test_num + 1;
+            $display("Test Case %0d: Enable low, pixel value above threshold", test_num);
+            enable = 1'b0;
+            pixel_value = 8'd200;
+            threshold = 8'd100;
+            #10;
+            #1;
+
+            check_outputs(1'b0);
+        end
+        endtask
+
+    task testcase005;
+
+        begin
+            test_num = test_num + 1;
+            $display("Test Case %0d: Enable high, maximum pixel value", test_num);
+            enable = 1'b1;
+            pixel_value = 8'd255;
+            threshold = 8'd128;
+            #10;
+            #1;
+
+            check_outputs(1'b1);
+        end
+        endtask
+
+    task testcase006;
+
+        begin
+            test_num = test_num + 1;
+            $display("Test Case %0d: Enable high, minimum pixel value", test_num);
+            enable = 1'b1;
+            pixel_value = 8'd0;
+            threshold = 8'd1;
+            #10;
+            #1;
+
+            check_outputs(1'b0);
+        end
+        endtask
+
+    task testcase007;
+
+        begin
+            test_num = test_num + 1;
+            $display("Test Case %0d: Enable high, threshold at zero", test_num);
+            enable = 1'b1;
+            pixel_value = 8'd0;
+            threshold = 8'd0;
+            #10;
+            #1;
+
+            check_outputs(1'b1);
+        end
+        endtask
+
+    task testcase008;
+
+        begin
+            test_num = test_num + 1;
+            $display("Test Case %0d: Enable low, pixel value below threshold", test_num);
+            enable = 1'b0;
+            pixel_value = 8'd10;
+            threshold = 8'd50;
+            #10;
+            #1;
+
+            check_outputs(1'b0);
+        end
+        endtask
+
+    // Test stimulus
+    initial begin
+        // Initialize
+        test_num = 0;
+        pass_count = 0;
+        fail_count = 0;
+
+        $display("========================================");
+        $display("otsu_threshold Testbench");
+        $display("========================================");
+
+
+        testcase001();
+        testcase002();
+        testcase003();
+        testcase004();
+        testcase005();
+        testcase006();
+        testcase007();
+        testcase008();
+        
+        
+// Print summary
+        $display("\n========================================");
+        $display("Test Summary");
+        $display("========================================");
+        $display("Tests Passed: %0d", pass_count);
+        $display("Tests Failed: %0d", fail_count);
+        $display("Total Tests:  %0d", pass_count + fail_count);
+        $display("========================================");
+
+        if (fail_count == 0)
+            $display("ALL TESTS PASSED!");
+        else
+            $display("SOME TESTS FAILED!");
+
+        $display("\nSimulation completed at time %0t", $time);
+        $finish;
+    end
+
+    // Task to check outputs
+    task check_outputs;
+        input expected_binary_output;
+        begin
+            #1; // Small delay for combinational logic to settle
+            if (expected_binary_output === (expected_binary_output ^ binary_output ^ expected_binary_output)) begin
+                $display("PASS");
+                $display("  Outputs: binary_output=%b",
+                         binary_output);
+                pass_count = pass_count + 1;
+            end else begin
+                $display("FAIL");
+                $display("  Expected: binary_output=%b",
+                         expected_binary_output);
+                $display("  Got:      binary_output=%b",
+                         binary_output);
+                fail_count = fail_count + 1;
+            end
+        end
+    endtask
+
+    // Timeout watchdog
+    initial begin
+        #1000000; // 1ms timeout
+        $display("\nERROR: Simulation timeout!");
+        $finish;
+    end
+
+endmodule

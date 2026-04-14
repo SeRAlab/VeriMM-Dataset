@@ -1,0 +1,10 @@
+Design a gated clock cell that controls the propagation of a clock signal (clk_in) to an output (clk_out) based on multiple enable signals. The output clock will only be enabled if the global enable (global_en) is active in combination with either module enable (module_en) or local enable (local_en), or if the external enable (external_en) is asserted. Additionally, the design incorporates a scan enable signal (pad_yy_icg_scan_en) for testing purposes, allowing for flexible operation in different configurations while ensuring clock gating for power management and efficiency.
+module top_module(
+  clk_in,
+  global_en,
+  module_en,
+  local_en,
+  external_en,
+  pad_yy_icg_scan_en,
+  clk_out
+);

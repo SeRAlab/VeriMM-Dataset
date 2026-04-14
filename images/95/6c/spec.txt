@@ -1,0 +1,8 @@
+Design a UART (Universal Asynchronous Receiver-Transmitter) input module capable of receiving an 8-bit data stream. On detecting a start bit (when the input 'in' signal goes low and 'bit_num' is 8), it initializes the receive process and resets the data register. As each subsequent clock pulse occurs, it shifts in the incoming bits on each rising edge of the clock until all 8 bits are received. The module outputs a flag `flag_complete` when an 8-bit data frame has been fully received, indicating readiness for further processing.
+module top_module(
+	input clk,
+	input in,
+
+	output reg [7:0]data,
+	output flag_complete
+);

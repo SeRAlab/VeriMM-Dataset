@@ -1,0 +1,11 @@
+Design a circuit that performs synchronous integer division on two 8-bit inputs, A and B. The module captures the dividend and divisor on the rising edge of the clock, computes their quotient and remainder, and provides valid output flags when the division operation is complete. It also handles a reset condition to clear all registers and outputs, ensuring proper initialization. The state machine controls the sequence of operations, transitioning through states for setup, division computation, readiness check, and output presentation. If the divisor is zero, the module avoids division by setting quotient and remainder to zero, while still asserting the valid signal.
+module top_module(
+    input clk,
+    input rst_n,
+    input [7:0] A,
+    input [7:0] B,
+    input ready,
+    output reg [7:0] quotient,
+    output reg [7:0] remainder,
+    output reg valid
+);

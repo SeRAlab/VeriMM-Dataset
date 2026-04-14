@@ -1,0 +1,11 @@
+Design a 4-bit priority encoder that processes a 4-bit input and prioritizes the highest active bit, outputting a corresponding 4-bit code. The module includes multiple comparators to assess the input against predefined values, generating comparison outputs. These outputs are fed into a decoder that translates them into a 4-bit output, reflecting the highest priority input detected. The output is synchronized with the clock and can be reset to zero; when the reset signal is active, the output is cleared to all zeros.
+module top_module(
+    input [3:0] a,
+    input [3:0] b,
+    output eq,
+    output [1:0] gt,
+    output [1:0] lt,
+    output [1:0] ge,
+    output [1:0] le,
+    output [1:0] ne
+);

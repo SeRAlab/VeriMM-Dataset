@@ -1,0 +1,8 @@
+Design a circuit that performs multiplication of two 8-bit unsigned integers, A and B, resulting in a 16-bit output P. The operation is triggered on the rising edge of a clock signal, with an active reset signal to initialize the output and internal registers. The multiplication is carried out using a shift-and-add algorithm, where A is shifted left by the current value of a counter register, and P accumulates these shifted values. The operation continues for 8 cycles, determined by the counter, allowing for the complete calculation of the product within the specified bit-width constraints.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] A,
+    input [7:0] B,
+    output reg [15:0] P
+);

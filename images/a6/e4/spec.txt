@@ -1,0 +1,9 @@
+Design a synchronous memory module that operates on a clock signal to manage a 1024-word RAM array, each word being 64 bits wide. The module supports writing data into the RAM when the temporary RAM read enable signal (`tmp_ram_rd_en`) is asserted, provided the RAM is not full (indicated by `ram_full_fb_i_reg`). It also includes a counter to track the number of stored entries, resetting when the RAM is deemed full. The output (`dout`) provides access to read data from a specified address (`Q`), while an output (`out`) indicates when the RAM has reached its full capacity.
+module top_module(dout,
+    clk,
+    ram_full_fb_i_reg,
+    tmp_ram_rd_en,
+    out,
+    count_d1_reg,
+    Q,
+    din);

@@ -1,0 +1,8 @@
+Design a 4-bit shift register with load, shift, and reset capabilities. When the reset signal is asserted, the output is set to 0000. If the load signal is activated, the module captures the input data on the next clock event. If neither reset nor load is asserted but the shift signal is high, the register shifts its current value left by one bit, introducing a zero in the least significant bit.
+module top_module(
+  input [3:0] data_in,
+  input load,
+  input shift,
+  input reset,
+  output reg [3:0] data_out
+);

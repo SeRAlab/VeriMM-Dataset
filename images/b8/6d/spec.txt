@@ -1,0 +1,8 @@
+Design a dual-address RAM module that reads data based on a one-bit address input (AR) and provides it as output (out) on the rising edge of a clock (rd_clk). The module has a 10-bit wide data input (D), but it does not appear to be used in this implementation. Additionally, it includes an output signal (prog_empty) that indicates whether the read data is zero, effectively serving as an empty flag for the addressed RAM location.
+module top_module(
+  input [0:0] AR,
+  input [9:0] D,
+  input rd_clk,
+  output reg out,      // Changed output to reg
+  output reg prog_empty // Changed output to reg
+);

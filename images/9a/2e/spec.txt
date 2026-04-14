@@ -1,0 +1,9 @@
+Design a 4-bit ripple carry adder/subtractor capable of performing addition or subtraction based on a control signal. When the 'sub' input is low, the module will add two 4-bit numbers A and B, while it will subtract B from A when 'sub' is high, utilizing two's complement representation for the subtraction operation. The module generates a 4-bit output 'sum' representing the result and a 'carry_out' signal indicating an overflow beyond the 4-bit representation.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input sub,
+    input clk,           // Added clk input
+    output reg [3:0] sum, // Changed output to reg
+    output reg carry_out  // Changed output to reg
+);

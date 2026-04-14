@@ -1,0 +1,8 @@
+Design a circuit for a CRC (Cyclic Redundancy Check) generator and checker. This module takes in a specified number of data bits and can generate a CRC value based on a defined polynomial, while also verifying the integrity of received data. Upon receiving an enable signal, it appends the calculated or received CRC to the data, performs polynomial division with the generator polynomial, and outputs the CRC. It also checks the validity of the received data by confirming if the division remainder is zero, which indicates no errors in transmission. The parameters allow for customization of data size and polynomial degree, making this module versatile for error detection in communication systems.
+module top_module(
+  input [n-1:0] data,
+  input enable,
+  input reset,
+  output [d-1:0] crc,
+  output reg valid // Changed to reg
+);

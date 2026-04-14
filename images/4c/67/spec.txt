@@ -1,0 +1,8 @@
+Design a circuit that monitors HDB3 encoded data for violation patterns, particularly checking for sequences suggesting a failure in the signal integrity. The module captures incoming 2-bit data on each valid clock cycle and stores it in a series of buffers. It uses these buffers to identify specific conditions indicating a potential signal failure (e.g., consecutive zeroes or disruptions in the expected pattern). A 5-bit flag register tracks the validity of the incoming data, and the output indicates whether a failure condition (checkv_out) has been detected, thereby providing a mechanism for error checking in digital signal processing applications.
+module top_module(
+	input clk,
+	input rst,
+	input valid,
+	input [1:0] hdb3_in,
+	output checkv_out
+    );

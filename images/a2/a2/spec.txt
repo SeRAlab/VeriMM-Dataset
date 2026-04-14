@@ -1,0 +1,10 @@
+Design a finite state machine (FSM) that transitions among a defined set of states based on four input signals (in1, in2, in3, in4) and a clock signal. The FSM has five states (0 to 4) with the ability to reset to the initial state (0) when the reset input is high. The next state is determined by the current state and the relevant input signals, enabling different transitions depending on which input is active. The current state is outputted as a binary value, utilizing a register to hold the state information, effectively managing state changes on each clock edge while also responding to reset conditions.
+module top_module(
+  input clk,
+  input reset,
+  input in1,
+  input in2,
+  input in3,
+  input in4,
+  output reg [3:0] out // Output width based on n = 8, which requires 3 bits
+);

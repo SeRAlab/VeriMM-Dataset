@@ -1,0 +1,14 @@
+
+Design a Verilog module for an 8-channel DMA (Direct Memory Access) controller. The controller should be able to select one of the 8 channels based on a 3-bit channel selector input. The module should have the following inputs and outputs:
+- Inputs: 
+  - `clk`: Clock signal
+  - `reset`: Reset signal (active high)
+  - `channel_select`: 3-bit input to select the channel (0 to 7)
+  - `data_in`: 8-bit input data from the selected channel
+- Outputs:
+  - `data_out`: 8-bit output data to be sent to memory from the selected channel
+  - `active_channel`: 3-bit output indicating the currently active channel.
+
+The DMA controller should operate as follows:
+- On reset, `data_out` should be set to 8'b0 and `active_channel` should be set to 3'b000.
+- On each rising edge of the clock, if `reset` is inactive, the controller should update `active_channel` with `channel_select` and `data_out` with the corresponding `data_in`.

@@ -1,0 +1,8 @@
+Design a 32-bit wide first-in, first-out (FIFO) buffer with a depth of 32 kilobytes. The module features separate write and read clock inputs to control data flow independently. Data can be written to a main memory and a temporary RAM within the FIFO, using respective control signals. When the buffer is full, it sets a full flag (Q), and when it is empty, it sets an empty flag (E). The module ensures data integrity during reads and writes by managing write and read pointers, allowing for circular addressing of memory. It effectively handles memory capacity by toggling the status flags, indicating whether the FIFO is in a full or empty state.
+module top_module(dout,
+    E,
+    wr_clk,
+    tmp_ram_rd_en,
+    rd_clk,
+    Q,
+    din);

@@ -1,0 +1,12 @@
+Design a sequencer module that controls a sequence of operations based on a command word. The module receives clock, synchronization, reset, enable, and start signals and outputs a running state, program output (pgout), and instruction pointer (ip). The command word is structured to specify a target program output and an operational delay. When synchronized and enabled, starting the sequencer initiates its operation, setting pgout and starting a delay countdown. The sequencer performs actions in a loop based on the delay, providing a mechanism to halt with a stop condition or progress to the next instruction based on the timing from the delay counter. This functionality makes it suitable for timing control applications where sequential command processing is required.
+module top_module(
+  input clk,
+  input sync,
+  input reset,
+  input enable,
+  input start,
+  output reg running,
+  output reg [5:0]pgout,
+  output reg [7:0]ip,
+  input [15:0]cmd
+);

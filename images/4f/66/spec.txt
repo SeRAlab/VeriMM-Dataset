@@ -1,0 +1,8 @@
+Design a clock-gated D flip-flop with enable and test functionalities. This module utilizes an enable signal (EN) to control the clock gating, where the flip-flop only operates when EN is high. It has a test enable (TE) signal, allowing it to capture the input data (D) and update the output (Q) at the positive edge of the gated clock, which is set high only when EN is active. This design effectively reduces power consumption by disabling the clock when not in use.
+module top_module(
+    input CLK,
+    input EN,
+    input TE,
+    input D,
+    output reg Q
+);

@@ -1,0 +1,10 @@
+Design a register pipeline stage for an instruction fetch and decode in a processor. This module captures the incoming instruction and program counter values on the positive edge of the clock, provided that there is no stall signal. If the flush signal is asserted, it resets the instruction output to zero, effectively discarding the current instruction. This functionality allows for control over the flow of instructions in a pipelined architecture, enabling efficient handling of stalls and instruction flushing.
+module top_module(
+    clk_i,     
+    inst_i,   
+    pc_i,
+    stall_i, 
+    flush_i,  
+    inst_o, 
+    pc_o,
+);

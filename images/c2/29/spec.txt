@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer. Your task is to create a Verilog module that implements a digital delay line. 
+A digital delay line is a type of digital circuit that delays the input signal by a certain number of clock cycles. 
+The delay time can be adjusted by changing the number of clock cycles.
+
+Your module should have the following inputs and outputs:
+Inputs: 
+- clk: the clock signal that drives the delay line
+- rst: the reset signal that resets the delay line
+- din: the input signal that is delayed
+Outputs: 
+- dout: the delayed output signal
+
+Your module should also have the following parameters:
+- delay: the number of clock cycles by which the input signal is delayed
+
+Your module should implement the following functionality:
+- On the rising edge of the clock signal, the input signal (din) should be sampled and stored in a shift register.
+- The output signal (dout) should be the value that was stored in the shift register delay clock cycles ago.
+- The delay time should be adjustable by changing the value of the parameter "delay".
+- When the reset signal (rst) is asserted, the shift register should be cleared and the output signal should be set to 0.
+
+To implement the digital delay line, you should use Verilog code to define a shift register and connect it to the input and output signals. 
+You should then use the clock signal to control the shift register, and the reset signal to clear the shift register and the output signal.
+Finally, you should use the parameter "delay" to determine the number of clock cycles by which the input signal is delayed.

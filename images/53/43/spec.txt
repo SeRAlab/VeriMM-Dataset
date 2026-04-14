@@ -1,0 +1,8 @@
+Design a multi-channel data multiplexer that selects and formats output data based on a four-bit control signal (MuxCtrl). The module takes multiple 32-bit input operands (exec_operand, load_data, and exec_operand_fast) and produces a 34-bit output (MuxData) that prefixes the selected data with 2 additional bits to indicate its source. Specific combinations of the control signal determine whether to use load data or execution operands, with distinct prefixes used to differentiate between fast and standard execution paths, ensuring proper data handling for subsequent processing stages.
+module top_module(
+    input wire [3:0] MuxCtrl,
+    input wire [31:0] exec_operand,
+    input wire [31:0] load_data,
+    input wire [31:0] exec_operand_fast,
+    output reg [33:0] MuxData
+    );

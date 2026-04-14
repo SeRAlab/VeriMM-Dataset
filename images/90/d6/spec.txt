@@ -1,0 +1,8 @@
+Design a register file with eight 8-bit registers. On each rising edge of the clock, if the write enable (we) signal is asserted, the data input (d_in) is written to the selected register corresponding to the address (adr). Regardless of the write operation, the output (d_out) always reflects the contents of the register specified by the address, allowing for simultaneous reading of data while writing. This module serves as a standard memory component for storing and retrieving data in digital systems.
+module top_module(
+    input clk,
+    input we,
+    input [7:0] d_in,
+    input [2:0] adr,
+    output reg [7:0] d_out
+);

@@ -1,0 +1,8 @@
+Design a simple register module that supports writing and reading 16-bit data. When `write_en` is high, it captures the 16-bit input `data_in` and stores it in the upper 16 bits of a 32-bit register, while the lower 16 bits remain zero. Upon enabling `read_en`, it outputs the upper 16 bits of the register; if `read_en` is not asserted, it outputs zero, effectively serving as a controlled data storage element.
+module top_module(
+    input clk,            // Added the clock input
+    input [15:0] data_in,
+    input write_en,
+    input read_en,
+    output [15:0] data_out
+);

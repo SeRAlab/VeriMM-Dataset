@@ -1,0 +1,11 @@
+Design a circuit that functions as a priority encoder combined with an arithmetic logic unit (ALU). It accepts two 4-bit inputs, A and B, and produces a 6-bit output. On the rising edge of the clock, the circuit either outputs the priority of the non-zero inputs (from A and B) with the lower bits set to zero if select is low, or the ALU result (based on the given opcode and inputs A and B) if select is high. The circuit also includes reset functionality to clear the output.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] A,
+    input [3:0] B,
+    input [2:0] opcode,
+    input [3:0] in,
+    input select,
+    output reg [5:0] out
+);

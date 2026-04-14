@@ -1,0 +1,10 @@
+Design a replacement policy for a Level 2 Translation Lookaside Buffer (TLB) that determines which entry to evict when new entries need to be allocated. The module takes inputs representing the validity of four ways in the TLB and a priority value used for replacement (L2_plru_val). It generates a 2-bit output indicating the way index of the entry to be replaced. The logic checks which ways are invalid (not in use) and utilizes a form of priority encoding along with the provided L2 priority value to select the appropriate way for replacement, ensuring efficient memory management.
+module top_module(
+	input valid_way0_idx,
+	input valid_way1_idx,
+	input valid_way2_idx,
+	input valid_way3_idx,
+	input [3:0] L2_plru_val,
+
+	output [1:0] repl_waddr
+    );

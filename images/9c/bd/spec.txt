@@ -1,0 +1,7 @@
+Design a delay module that introduces a programmable delay on an input signal based on a 2-bit delay amount. The module utilizes a counter to determine the appropriate duration for which the output signal remains unaffected by the input signal. If the delay amount is 0, the output signal immediately follows the input signal. For a delay of 1, the output signal is set after a brief period, and for a delay of 2 or more, the output is held low until the counter decrements, thus implementing a configurable delay logic for the input signal.
+module top_module(
+    input clk,                // Added clock input
+    input input_signal,
+    input [1:0] delay_amount,
+    output reg output_signal
+);

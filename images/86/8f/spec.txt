@@ -1,0 +1,7 @@
+Design a clock gating circuit that controls the propagation of the clock signal based on enable signals. When both the enable (EN) and test enable (TE) inputs are asserted, the output (ENCLK) will mirror the previous clock state (CLK_D) captured on the rising edge of the primary clock (CLK). This design helps to reduce power consumption by disabling the clock signal to certain parts of the circuit when not in use.
+module top_module(
+  input CLK,
+  input EN,
+  input TE,
+  output reg ENCLK
+);

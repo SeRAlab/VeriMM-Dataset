@@ -1,0 +1,7 @@
+Design a JTAG command decoder that monitors AXI read requests. It implements a two-state finite state machine (FSM) with states IDLE and BUSY. When the system is IDLE, if an AXI read is not initiated or if the AXI bus is busy, it remains in IDLE and outputs a LOW signal. When an AXI read request is detected and it is not busy, the FSM transitions to the BUSY state, outputting a HIGH signal. In the BUSY state, if the AXI read remains busy, the output remains HIGH; otherwise, it transitions back to IDLE and outputs LOW. This module effectively synchronizes the JTAG interface with AXI read operations.
+module top_module(
+  input aclk,
+  input axi_rd,
+  input axi_rd_busy,
+  output reg out // Change output to reg type
+);

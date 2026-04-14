@@ -1,0 +1,1 @@
+module top_module(output [2:0] out, input [3:0] a, input [3:0] b);assign out = a>b?3'b100:a<b?3'b010:3'b001;endmodule

@@ -1,0 +1,28 @@
+Please act as a professional Verilog designer.
+
+Design an 8-bit register file with 2 read ports and 1 write port. The register file should have 8 registers, each 8 bits wide. The write operation should occur on the rising edge of the clock signal when the write enable signal is high.
+
+Module name:
+    reg_file_8x8
+Input ports:
+    CLK: Clock signal.
+    WE: Write enable signal.
+    WR_ADDR: 3-bit write address.
+    WR_DATA: 8-bit write data.
+    RD_ADDR1: 3-bit read address 1.
+    RD_ADDR2: 3-bit read address 2.
+Output ports:
+    RD_DATA1: 8-bit read data 1.
+    RD_DATA2: 8-bit read data 2.
+
+Give me the complete code.
+
+module reg_file_8x8(CLK, WE, WR_ADDR, WR_DATA, RD_ADDR1, RD_ADDR2, RD_DATA1, RD_DATA2);
+input CLK;
+input WE;
+input [2:0] WR_ADDR;
+input [7:0] WR_DATA;
+input [2:0] RD_ADDR1;
+input [2:0] RD_ADDR2;
+output [7:0] RD_DATA1;
+output [7:0] RD_DATA2;

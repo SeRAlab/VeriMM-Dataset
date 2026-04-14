@@ -1,0 +1,14 @@
+Design a 32-bit wide FIFO (First-In, First-Out) memory buffer with a depth of 256 entries. The module allows for synchronous writing on a dedicated write clock and reading on a separate read clock, with control signals for enabling writes and reads. It features reset functionality to initialize the buffer, marking it empty and resetting the counters. The FIFO maintains indicators for its full and empty states, along with counters that track the number of written and read data entries. This design enables seamless data flow between components in digital systems, ensuring that data can be temporarily stored and retrieved efficiently.
+module top_module(
+  rst,
+  wr_clk,
+  rd_clk,
+  din,
+  wr_en,
+  rd_en,
+  dout,
+  full,
+  empty,
+  rd_data_count,
+  wr_data_count
+);

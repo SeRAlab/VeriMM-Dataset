@@ -1,0 +1,39 @@
+Please act as a professional verilog designer.
+    
+Implement a module to interface with a Wishbone bus, a popular bus architecture used in embedded systems for connecting different components such as CPUs, memory, and peripherals. This module acts as a bridge or an adapter, facilitating data transfers between the Wishbone bus and a custom peripheral or coprocessor. Its primary functions include:
+
+Handling read and write operations initiated by the bus master.
+Generating acknowledgment signals (`wb_ack_o`) to indicate the completion of data transfers.
+Supporting both single-cycle and multi-cycle data transfer modes, configurable through a parameter.
+Providing asynchronous and synchronous reset functionalities.
+Multiplexing read data from a set of registers based on the address and bus width.
+Indicating which internal registers are being written to, based on the write operations.
+
+Module name:  
+	cop_wb_bus
+
+Input ports:
+	wb_clk_i: The clock input for the module. All synchronous operations are referenced to this clock.
+	wb_rst_i: Synchronous reset input. When asserted, it initializes the module's state synchronously with the clock.
+	arst_i: Asynchronous reset input. It allows for the module's state to be reset independently of the clock signal.
+	wb_adr_i [2:0]: The address input, selecting which internal register is being accessed during read or write operations.
+	wb_dat_i [DWIDTH1:0]: Data input for write operations from the bus master to the module.
+	wb_we_i: Write enable signal. When asserted, it indicates a write operation.
+	wb_stb_i: Strobe signal. It indicates an active transfer.
+	wb_cyc_i: Cycle signal. It indicates the start and duration of a bus cycle.
+	wb_sel_i [1:0]: Byte select signals for partial writes or reads on the data bus.
+	irq_source: Input signal indicating an interrupt request source.
+	read_regs [47:0]: A 48bit wide input representing a set of registers from which data can be read.
+Output ports:
+	wb_dat_o [DWIDTH1:0]: Data output for read operations from the module to the bus master.
+	wb_ack_o: Acknowledge output signal. It indicates the completion of a data transfer.
+	write_regs [4:0]: A 5bit output indicating which internal registers are being targeted for write operations.
+	async_rst_b: Asynchronous reset output, derived from the arst_i input and the ARST_LVL parameter.
+	sync_reset: Synchronous reset output, directly driven by the wb_rst_i input.
+
+
+Implementation:
+The RTL module described is designed to interface with a Wishbone bus, a popular bus architecture for connecting different components in a microcontroller system. This module acts as a bridge or a coprocessor that facilitates data transactions between the Wishbone bus and internal registers or functionalities. The module is parameterized to allow for flexibility in its application, specifically in terms of asynchronous reset level, data width, and operation mode (single or multi-cycle).
+
+Give me the complete code.
+

@@ -1,0 +1,11 @@
+Design a register that serves as an Instruction Register (IR) in a processor architecture. This module captures and stores various components of a 32-bit instruction fetched from memory on the positive edge of the clock signal, provided the write enable signal (IRWre) is active. The captured components include the opcode (bits 31-26), source and destination register specifiers (rs, rt, rd), a shift amount (sa), an immediate value (immediate), and a jump address (add). This structure helps facilitate the decoding and execution of instructions in the CPU pipeline.
+module top_module(
+    input CLK,
+    input  [31:0] DataOut,
+    input IRWre,
+    output reg [5:0] opcode,
+    output  reg [4:0] rs, rt, rd,
+    output  reg [15:0] immediate,
+    output  reg [31:0] sa,
+    output  reg [25:0] add
+    );

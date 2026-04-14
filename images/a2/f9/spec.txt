@@ -1,0 +1,8 @@
+Design a FIFO (First In, First Out) buffer that stores 16 bits of data. The module samples 2 bits of input data on each clock cycle when the enable signal is active. On a reset signal, the output data is cleared to zero. The function shifts the current 16-bit output, discarding the oldest data and appending the new 2-bit input, allowing for dynamic data storage in a sequential manner.
+module top_module(
+    input  wire        clk,
+    input  wire        reset,
+    input  wire [1:0]  i_data,
+    input  wire        en,
+    output reg  [15:0] o_data
+);

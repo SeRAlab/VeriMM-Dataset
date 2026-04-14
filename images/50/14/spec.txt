@@ -1,0 +1,11 @@
+Design a register state controller that captures and outputs a 64-bit state value based on the clock signal. The module selects between two 64-bit data inputs (iv_data1 and iv_data2) based on a select signal (i_select): when i_select is low, the state is set from iv_data1; when high, it pulls from iv_data2. The 64-bit state value is stored in a register (rv_state) and is divided into four 16-bit outputs (ov_regstate0 to ov_regstate3), allowing access to segments of the state. The state is updated on each rising edge of the clock.
+module top_module( 
+        i_clk, 
+        i_select, 
+        iv_data1, 
+        iv_data2, 
+        ov_regstate0, 
+        ov_regstate1, 
+        ov_regstate2, 
+        ov_regstate3 
+        );

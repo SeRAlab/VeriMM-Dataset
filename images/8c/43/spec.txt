@@ -1,0 +1,19 @@
+Implement the Verilog module based on the following description.
+Module D implements the boolean function v = a | b & ~c.
+
+// Module E can be described by the following simulation waveform: 
+
+If a = 1, b = 1, c = 1, then v = 1.
+If a = 0, b = 1, c = 0, then v = 1.
+If a = 0, b = 0, c = 0, then v = 0.
+If a = 1, b = 0, c = 1, then v = 1.
+
+// Now consider a top-level that uses two D submodules and two E submodules. The first input of all four submodules is connect to input 'a', the second input is connected to 'b', and the third input is connected to 'c'. The output of the first D submodule is connected to a two-input OR, along with the output of the first E submodule. The second pair of D and E submodules is similarly connected to an AND gate. The output of the OR and the AND is connected to an XOR, whose output is 'v'.
+
+// Implement this circuit in Verilog.
+
+module top_module(
+    input a,
+    input b,
+    input c,
+    output v);

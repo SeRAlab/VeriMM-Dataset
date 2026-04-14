@@ -1,0 +1,12 @@
+Design a 16-bit adder/subtractor module that performs addition or subtraction based on the input control signal `is_sub`. When `is_sub` is high, the module subtracts `arg_1` from `arg_0`, otherwise, it adds them. The outputs `ret_0` and `ret_1` provide the result and its components, while `ret_2` indicates if the left-hand side operand was negative and `ret_3` indicates if the right-hand side operand was negative, both relevant for understanding the operation's outcome. The module resets to zero in response to the `rst` signal when it is activated, ensuring predictable behavior on initialization.
+module top_module(
+    input clk,
+    input rst,
+    input [15:0] arg_0,
+    input [15:0] arg_1,
+    input is_sub,
+    output reg [15:0] ret_0, // Changed to reg
+    output reg [15:0] ret_1, // Changed to reg
+    output reg ret_2,        // Changed to reg
+    output reg ret_3         // Changed to reg
+);

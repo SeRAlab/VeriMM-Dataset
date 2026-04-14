@@ -1,0 +1,8 @@
+Design a finite state machine (FSM) that receives an 8-bit data input over a serial connection. The FSM operates in three states: IDLE, RECV, and DONE. In the IDLE state, it waits for the start of data reception indicated by a transition from high to low on the `rxd` input. Upon detecting this transition, it moves to the RECV state, where it samples the incoming data bit by bit until it collects 8 bits. Once the data is fully received, it transitions to the DONE state, where it outputs the received data and signals the completion of the reception process. The module also incorporates reset functionality to initialize its state and data registers.
+module top_module(
+    input clk,
+    input rst,
+    input rxd,
+    output reg [7:0] data,      // Change output to reg to allow assignment
+    output reg received          // Change output to reg to allow assignment
+    );

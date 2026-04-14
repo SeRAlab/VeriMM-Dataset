@@ -1,0 +1,8 @@
+Design a circuit to control a 16-bit LED display with a shifting pattern. The module takes a clock signal, a reset signal, a direction input, and a baud rate clock input. Upon reset, the LEDs are initialized to light up the most significant bit. Depending on the direction input, the LEDs will shift left or right on each `clk_bps` pulse, wrapping around when reaching the end of the LED range. If the LEDs reach the least significant bit while shifting right, they reset to the initial position; similarly, when shifting left and reaching the most significant bit, they reset to the least significant bit.
+module top_module(
+ 	 	input clk,
+ 	 	input rst,
+ 	 	input dir,
+ 	 	input clk_bps,
+ 	 	output reg[15:0]led
+ 	 	);

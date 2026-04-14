@@ -1,0 +1,15 @@
+Design a pulse generator that operates in an AXI stream interface configuration. It receives a 64-bit data input and generates a pulse based on the specified duration, which is derived from the higher-order bits of the input data. The module features a reset mechanism and manages internal counters to track pulse duration. When valid data is received (indicated by `s_axis_tvalid`), it initializes the pulse based on the specified duration, and it signals readiness for new data via `s_axis_tready`. The output side provides a 16-bit data output (`m_axis_tdata`) and indicates data validity with `m_axis_tvalid`. The module effectively integrates functionality for pulse management and AXI interface compliance.
+module top_module(
+  input  wire        aclk,
+  input  wire        aresetn,
+
+  // Slave side
+  output wire        s_axis_tready,
+  input  wire [63:0] s_axis_tdata,
+  input  wire        s_axis_tvalid,
+
+  // Master side
+  input  wire        m_axis_tready,
+  output wire [15:0] m_axis_tdata,
+  output wire        m_axis_tvalid
+);

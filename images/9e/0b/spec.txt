@@ -1,0 +1,8 @@
+Design a 3-bit up/down counter that increments or decrements its count based on the state of the 'up_down' input. The counter operates on the rising edge of the clock input 'clk' and is enabled by the 'enable' signal. It resets to zero when the 'reset' input is asserted. The current count value is held in a register and made available at the output. If 'up_down' is high, the counter decrements; if low, it increments. The design maintains two registers to effectively manage the counting operations, ensuring accurate transition between states.
+module top_module(
+    input clk,
+    input up_down,
+    input enable,
+    input reset,
+    output reg [2:0] count
+);

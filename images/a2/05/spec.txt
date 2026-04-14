@@ -1,0 +1,8 @@
+Design a Phase-Locked Loop (PLL) in combination with a Delay-Locked Loop (DLL) for clock synchronization. The module takes a reference clock and feedback clock as inputs, generating an output clock that is phase-aligned with the reference clock while maintaining a specified multiplication and division factor. It features delay elements in the DLL to fine-tune the phase difference between the incoming signals, with a low-pass filter processing the phase differences to achieve stable locking. The system includes enablement for reset and lock status output, signaling when both the PLL and DLL are locked, ensuring accurate frequency and phase output for clock distribution in digital circuits.
+module top_module(
+  input ref_clk,
+  input fb_clk,
+  input reset,
+  output out_clk,
+  output locked
+);

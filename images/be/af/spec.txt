@@ -1,0 +1,11 @@
+Design a hardware module for SHA-256 hash computation that processes input data and manages initialization and state transitions. The module features a clock and active-low reset, accepts a 256-bit input and a validity signal, and outputs control signals for initialization and sequential processing, along with a 512-bit block register that combines the input data with specific padding. The design utilizes a state memory to track input validity and controls the flow of data, marking when the SHA computation should begin or advance to the next state.
+module top_module(
+    input clk,
+    input rst_n,
+    input [255:0] p_mosi,
+    input p_valid,
+    output sha_init,
+    output sha_next,
+    output sha_mode,
+    output [511:0] sha_block
+);

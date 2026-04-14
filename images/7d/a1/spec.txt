@@ -1,0 +1,11 @@
+Develop a dual-port RAM controller that facilitates reading from and writing to a memory module with a specified address width of 12 bits and a data width of 9 bits. The controller takes a clock signal and an enable signal to control the operation, providing outputs for two separate addresses (addrA and addrB) while utilizing a write address (addrW) and input data (dataIn). When the enable signal is active, the output registers (dataOutA and dataOutB) are updated on the rising edge of the clock with the data retrieved from the memory for the respective read addresses. This design allows simultaneous access to the RAM for reading and writing operations.
+module top_module(
+    input clk,
+    input enable,
+    input [11:0] addrA,
+    input [11:0] addrB,
+    input [11:0] addrW,
+    input [8:0] dataIn,
+    output reg [8:0] dataOutA,
+    output reg [8:0] dataOutB
+);

@@ -1,0 +1,8 @@
+Design a circuit that incorporates a shift register and a counter, allowing for flexible operation based on control signals. The shift register can be loaded with a 4-bit input and then cyclically shifts its contents on each clock edge. Simultaneously, a 4-bit counter increments its value on each clock cycle when a select signal is active. The module outputs either the current state of the shift register or the counter based on the select signal, while also providing the sum of both registers internally. This functionality makes it suitable for applications requiring both shifting and counting operations, such as in digital signal processing or timing applications.
+module top_module(
+    input clk,
+    input load,
+    input select,
+    input [3:0] data_in,
+    output [3:0] q
+);

@@ -1,0 +1,8 @@
+Write a Verilog module for a 6-bit Johnson counter with enable and synchronous reset. Assume positive clock/clk edge triggered. When enable is low, the counter holds its value. When reset is high, the counter resets to "000000". When enable is high, the counter shifts its contents to the right by one bit and the inverted output of the last bit is fed back to the first bit.
+
+module johnson_counter (
+  input clk,
+  input reset,
+  input enable,
+  output reg [5:0] count
+);

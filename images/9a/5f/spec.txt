@@ -1,0 +1,16 @@
+Create a versatile digital circuit that integrates a 6-to-1 multiplexer and a shift register, with additional XOR functionality. The module features an asynchronous active-high reset, allows for loading data from the multiplexer or shifting the contents of the shift register based on the clock signal. When the load signal is active, the selected data input (from six possible 4-bit inputs) is loaded into the shift register. If the enable signal is active, the content of the shift register is shifted left, with the most significant bit being pushed into the least significant bit position. The module outputs the least significant 4 bits of the shift register, while also providing an XOR output that combines this value with the selected multiplexer output.
+module top_module(
+    input clk,
+    input areset,  // Async active-high reset to zero
+    input load,
+    input ena,
+    input [2:0] sel,
+    input [3:0] data0,
+    input [3:0] data1,
+    input [3:0] data2,
+    input [3:0] data3,
+    input [3:0] data4,
+    input [3:0] data5,
+    output reg [3:0] q,
+    output reg xor_out
+);

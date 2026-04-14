@@ -1,0 +1,9 @@
+Design a circuit for a four-digit seven-segment display controller that takes a 16-bit Binary-Coded Decimal (BCD) input and a 4-bit decimal point control. The module utilizes a clock input to manage the display refreshing, cycling through each digit every 2.6 milliseconds. It includes a 4-to-1 multiplexer to select one of the four BCD digits along with its corresponding decimal point to display on the seven-segment LEDs. A seven-segment decoder converts the selected BCD digit into the appropriate signal pattern for the display. Additionally, it controls anode signals to activate the correct digit on the display while ensuring that only one digit is lit at a time. A clock divider is implemented to achieve the required timing for refreshing the display.
+module top_module(
+    input [15:0] bcd_in,
+    input [3:0] decimal_points,
+    input clk,
+    output  reg [6:0] a_to_g,
+    output reg decimal_point,
+    output reg [3:0] anode
+    );

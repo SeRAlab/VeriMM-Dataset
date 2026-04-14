@@ -1,0 +1,7 @@
+Design a vending machine controller that accepts coins and a drink selection, dispensing a drink while managing balance and change. Upon each clock cycle, if reset is triggered, it initializes the balance and states. When the button is pressed, if a coin is inserted and sufficient balance is available, it deducts the appropriate amount, dispenses the selected drink according to the drink code, and calculates change. If insufficient balance or no coin is received, it does not dispense any drink and retains the current balance for potential future transactions.
+module top_module(
+    input clk, reset, coin, button,
+    input [1:0] drink_code,
+    output reg [1:0] dispensed_drink,
+    output reg [1:0] change
+);

@@ -1,0 +1,7 @@
+Design a sequential counting module that operates based on a clock signal. It tracks the number of clock cycles since the last reset or specific input conditions. The module resets the counter to zero when the input signal is all zeros or all ones. If the most significant bit of the input signal is high, the counter is set to one. Otherwise, the counter increments on each clock cycle. The output is updated to display the current count or reset to zero, depending on the input conditions and the reset signal. This design effectively counts valid input conditions while providing a mechanism to clear and initialize states based on specific criteria.
+module top_module(
+  input wire clk,
+  input wire reset,
+  input wire [15:0] input_signal,
+  output reg [3:0] output_signal
+);

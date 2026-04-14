@@ -1,0 +1,6 @@
+Design a simple dual-entry memory module that operates based on a single-bit address input and a clock signal. The module contains two 16-bit memory locations, indexed by the input address; it outputs the contents of the selected memory location on each rising edge of the clock. When the address is 0, it provides the value stored in the first memory location, and when the address is 1, it provides the value from the second memory location. Additionally, the module is designed to allow for writing to the memory based on the current output value, effectively creating a register-like behavior where it can update the stored data depending on the address.
+module top_module(
+    input [0:0] address,
+    input clock,
+    output reg [15:0] q  // Change output to reg
+);

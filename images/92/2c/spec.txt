@@ -1,0 +1,7 @@
+Design a synchronous 8-bit shift register that captures input data on the rising edge of the clock. When the reset signal is activated, the register resets to zero. On each clock cycle, the existing contents of the register shift one bit to the left, and the least significant bit (LSB) is filled with the new input data provided at `data_in`. The current state of the shift register can be accessed through the `data_out` output.
+module top_module(
+    input clk,
+    input reset,            // Synchronous reset
+    input [7:0] data_in,
+    output [7:0] data_out
+);

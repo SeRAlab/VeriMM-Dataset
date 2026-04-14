@@ -1,0 +1,11 @@
+Create a simple memory read module that operates as an Avalon slave interface for an ALU system. It outputs a 32-bit read data based on a 2-bit address input, which selects data from an input port. When the address is 00, it reads the input port as is, and when the address is 01, it performs a bitwise OR operation with the input port before storing the result in the `readdata` output on the positive edge of the clock. The module resets to zero upon the reset signal being asserted low.
+module top_module(
+  // inputs:
+  address,
+  clk,
+  in_port,
+  reset_n,
+
+  // outputs:
+  readdata
+);

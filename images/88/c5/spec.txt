@@ -1,0 +1,19 @@
+Implement the Verilog module based on the following description.
+This is a sequential circuit. The circuit consists of combinational logic and two bits of memory (i.e., two flip-flops). The outputs of the flip-flops have been made observable through the outputs state1 and state2.
+
+Time 0ns: clk = 0, a = 0, b = 0, state1 = x, state2 = x, o = x.
+Time 5ns: clk = 1, a = 0, b = 0, state1 = x, state2 = x, o = x.
+Time 10ns: clk = 0, a = 1, b = 0, state1 = x, state2 = x, o = x.
+Time 15ns: clk = 1, a = 1, b = 0, state1 = 1, state2 = 0, o = 0.
+Time 20ns: clk = 0, a = 1, b = 1, state1 = 1, state2 = 0, o = 0.
+Time 25ns: clk = 1, a = 1, b = 1, state1 = 1, state2 = 1, o = 1.
+Time 30ns: clk = 0, a = 1, b = 1, state1 = 1, state2 = 1, o = 1.
+Time 35ns: clk = 1, a = 0, b = 1, state1 = 0, state2 = 1, o = 1.
+
+module top_module (
+	input clk,
+	input a,
+	input b,
+	output reg o,
+	output reg state1,
+	output reg state2);

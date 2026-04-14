@@ -1,0 +1,29 @@
+Design a bus arbiter that allows two master devices (s0 and s1) to access a shared memory module. This arbiter takes input signals for each master, including address, read/write commands, and write data. It controls access to the memory by generating signals that indicate which master is granted access at any given time, ensuring that when one master is active, the other is held in a wait state. It outputs relevant memory transaction details to the selected master while providing the read data and wait request signals based on the memory's response. The design incorporates reset functionality and prioritizes arbitration based on activity detection from each master.
+module top_module(
+	input wire clk,
+	input wire reset,
+
+	
+	input wire [17:0] s0_address,
+	input wire s0_write,
+	input wire s0_read,
+	input wire [35:0] s0_writedata,
+	output reg [35:0] s0_readdata,
+	output reg s0_waitrequest,
+
+	
+	input wire [17:0] s1_address,
+	input wire s1_write,
+	input wire s1_read,
+	input wire [35:0] s1_writedata,
+	output reg [35:0] s1_readdata,
+	output reg s1_waitrequest,
+
+	
+	output reg [17:0] m_address,
+	output reg m_write,
+	output reg m_read,
+	output reg [35:0] m_writedata,
+	input wire [35:0] m_readdata,
+	input wire m_waitrequest
+);

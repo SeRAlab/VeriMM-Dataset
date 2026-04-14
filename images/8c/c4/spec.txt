@@ -1,0 +1,10 @@
+This Verilog module implements an absolute counter that combines an absolute value computation with a binary counter. The circuit takes a signed 32-bit input to compute its absolute value, ensuring that the output is always non-negative. It features control inputs for resetting the counter, enabling counting, and loading a predefined value. The counter operates on the clock signal and can be reset to zero, incremented when enabled, or loaded with a 4-bit input value. The final output is a 36-bit wide signal that represents the sum of the absolute value of the input and the binary counter's current value.
+module top_module(
+    input clk,
+    input rst,
+    input en,
+    input ld,
+    input signed [31:0] in,
+    input [3:0] load_data,
+    output [35:0] out
+);

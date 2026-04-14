@@ -1,0 +1,7 @@
+Develop a 4-to-2 priority encoder circuit that outputs the position of the highest active input bit from a 4-bit input vector. If all input bits are zero, the output position defaults to 2'b00 and a zero flag is asserted. The module captures the input on the rising edge of the clock, maintaining the correct output position based on the highest significant bit detected in the input. The circuit includes a zero flag output to indicate when no active input is present.
+module top_module(
+    input clk,              // Added the clk input here
+    input [3:0] in,
+    output reg [1:0] pos,
+    output reg zero_flag
+);

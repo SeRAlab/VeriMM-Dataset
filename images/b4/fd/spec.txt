@@ -1,0 +1,10 @@
+Design a pipelined arithmetic circuit capable of calculating both the sum and difference of two 4-bit binary inputs, A and B, controlled by a 2-bit control signal. It supports three operational modes: computing both the sum and difference, computing only the sum, or computing only the difference. The results are valid on a positive clock edge and are stored in registers, while also allowing for synchronous reset functionality. Additionally, the module incorporates a carry-out signal based on the sum operation for potential use in cascading operations.
+module top_module(
+    input CLK, RST, CTRL,
+    input [3:0] A,
+    input [3:0] B,
+    input CIN,
+    output reg [3:0] SUM,
+    output reg [3:0] DIFF,
+    output reg COUT
+);

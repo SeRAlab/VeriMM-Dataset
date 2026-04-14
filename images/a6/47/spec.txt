@@ -1,0 +1,14 @@
+Design a communication module that manages data signaling and synchronization within a system. The module incorporates two 16-bit shift counters (counter4 and counter5) for tracking the states of a watchdog timer and acknowledgement signals. When RX_SP is asserted in a ready state, it resets the watchdog indicators. Additionally, the module toggles a polarity control signal based on the RX_NEG input and conditions the RX_POLARITY output based on the reception state changes. The counters are incremented under specific conditions related to ready and acknowledgement signals, indicating the completion of certain events when their most significant bits are asserted. Overall, this module provides essential control and timing functionalities for effective communication signal management.
+module top_module(
+    input RX_SP,
+    input ready_r,
+    input USER_CLK,
+    input RX_NEG,
+    input ack_r,
+    input count_128d_done_r,
+    input polarity_r,
+    output reg remote_reset_watchdog_done_r,
+    output reg watchdog_done_r,
+    output reg sp_polarity_c,
+    output reg RX_POLARITY
+);

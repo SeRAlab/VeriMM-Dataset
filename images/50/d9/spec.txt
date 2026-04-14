@@ -1,0 +1,10 @@
+Design a UART transmit buffer that manages the transmission of data bytes. It implements a circular buffer with a capacity of eight 8-bit data words, controlled by input signals for data readiness, a clock, and a reset. When data is ready and the buffer is not full, incoming data is stored in the buffer. During transmission, if the buffer is not empty and the transmitter is not busy, the module initiates transmission of the oldest byte while updating status signals for buffer fullness and emptiness. The module provides outputs indicating the start of transmission, the current data byte being transmitted, and the buffer's status regarding fullness and emptiness.
+module top_module(
+    input clk, rst, dataReady,
+    input [7:0] data,
+    output reg txStart,
+    output reg [7:0] txData,
+    output reg empty,
+    output reg full,
+    output reg txBusy
+);

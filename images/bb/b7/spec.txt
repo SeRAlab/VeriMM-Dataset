@@ -1,0 +1,8 @@
+This Verilog module integrates a 4-to-16 decoder with active-low outputs and a 4-bit barrel shifter, culminating in an 8-bit final output. The decoder takes a 2-bit input (A and B) and an active-high enable signal (EN) to generate one of 16 outputs based on the concatenated values of A and B; all outputs are inactive when not enabled. The barrel shifter accepts a 4-bit data input and a 2-bit control signal (shift) to adjust the input's bit positions (either left or right) according to the specified shift amount, while maintaining the width of the data. Lastly, the final output is computed by performing a bitwise OR operation between the lowest four bits of the decoded output and the shifted data, allowing the result to aggregate information from both the shifting and decoding operations effectively.
+module top_module(
+    input [1:0] A, B, // 2-bit binary value for the decoder input 
+    input EN, // Active-high enable input for the decoder 
+    input [3:0] data_in, // 4-bit data input for the barrel shifter 
+    input [1:0] shift, // 2-bit shift input for the barrel shifter 
+    output [7:0] final_output // 8-bit final output from the functional module 
+);

@@ -1,0 +1,12 @@
+Develop a FIFO (First In, First Out) buffer system designed for receiving data. The module operates on a clock signal and includes a write enable control. It accepts incoming data through specific input registers, stores this data in a buffer when writing is enabled, and tracks the number of stored items. The system provides an output function that delivers the oldest data in the buffer while managing head and tail pointers for data access and a full flag to indicate when the buffer is at capacity. The total count of stored items can be monitored via an output signal.
+module top_module(
+  input clk,
+  input wr_en,
+  input wr_rst_busy,
+  input E,
+  input [5:0] v1_reg,
+  input [5:0] v1_reg_0,
+  output reg out,
+  output reg full,
+  output reg [11:0] count
+);

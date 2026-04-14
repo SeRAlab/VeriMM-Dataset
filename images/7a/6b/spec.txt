@@ -1,0 +1,12 @@
+Design a synchronous serial peripheral interface (SSPI) synchronization module. This module captures and registers the chip select (cs), serial clock (sck), and serial input (si) signals on the rising edge of the clock, allowing for synchronized data communication. It provides three outputs: a positive edge indication for the clock (sck_p), a negative edge indication for the clock (sck_n), and the latched values of the chip select (cs_s) and serial input (si_s). The module includes a reset feature that initializes output registers when the reset (nrst) signal is low.
+module top_module(
+    input nrst,
+    input clk,
+    input cs,
+    input sck,
+    input si,
+    output cs_s,
+    output sck_p,
+    output sck_n,
+    output si_s
+);

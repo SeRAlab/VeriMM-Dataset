@@ -1,0 +1,9 @@
+Design a synchronous single-port memory (SPM) module that supports both read and write operations. It features a memory array with a configurable depth of 16 and a data width of 8 bits. The module accepts a clock signal for synchronization, a write enable signal to control write operations, a read enable signal for read operations, an address input to specify the memory location, and an input data bus for writing data. On the rising edge of the clock, if write enabled, the data input is stored in the specified address; if read enabled, the data from the specified address is made available on the output bus.
+module top_module(
+  input clk,
+  input write_en,
+  input read_en,
+  input [log2_depth-1:0] addr,
+  input [data_width-1:0] data_in,
+  output reg [data_width-1:0] data_out
+);

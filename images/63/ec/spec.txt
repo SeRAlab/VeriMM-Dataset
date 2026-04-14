@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit synchronous loadable counter module that can count up or down based on a mode input. The counter should load a preset value when the load signal is high.
+
+Module name:
+    loadable_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    load: Signal to load the preset value.
+    mode: Mode signal (0 for count up, 1 for count down).
+    preset_value: 4-bit value to load when the load signal is high.
+
+Output ports:
+    count: 4-bit output representing the current value of the counter.
+
+Implementation:
+The module includes a 4-bit register, count, which is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the count register is cleared to 0.
+On every rising edge of the clock, if load is high, count captures preset_value.
+Otherwise, if mode is 0, count is incremented by 1; if mode is 1, count is decremented by 1.
+
+Give me the complete code.

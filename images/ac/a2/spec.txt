@@ -1,0 +1,26 @@
+Design a hazard detection unit for a pipelined processor that manages data hazards and control hazards. It identifies situations where data dependencies between instructions may cause incorrect execution, particularly for load-use hazards and branches. The unit outputs stall signals for the fetch and decode stages to prevent premature execution and generates flushing signals for the execute stage when hazards are detected. It also determines forwarding scenarios to mitigate data hazards by indicating whether to use data from the memory stage or the write-back stage for specific source registers in the execution stage.
+module top_module(
+		
+		input branchID,
+		input [4:0]rsID,
+		input [4:0]rtID,
+		input [4:0]rsEX,
+		input [4:0]rtEX,
+		input [4:0]writeRegEX,
+		input [4:0]writeRegMEM,
+		input [4:0]writeRegWB,
+		input memToRegEX,
+		input memToRegMEM,
+		input regWriteEX,
+		input regWriteMEM,
+		input regWriteWB,
+
+		output stallFE,
+		output stallID,
+		output forwardAID,
+		output forwardBID,
+		output flushEX,
+		output reg [1:0]forwardAEX,
+		output reg [1:0]forwardBEX
+		
+    );

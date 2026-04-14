@@ -1,0 +1,10 @@
+Design a memory encryption and decryption module that utilizes the AES algorithm. This circuit takes a clock signal and a reset signal, alongside enabling input and 32-bit plaintext address and data. Upon activation, it registers the input values and performs AES encryption on them, outputting the resulting ciphertext for both address and data. The output updates on the rising edge of the clock while ensuring proper reset functionality.
+module top_module(
+  input clk,
+  input rst_n,
+  input en,
+  input [31:0] plaintext_addr,
+  input [31:0] plaintext_data,
+  output [31:0] ciphertext_addr,
+  output [31:0] ciphertext_data
+);

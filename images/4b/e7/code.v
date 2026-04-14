@@ -1,0 +1,1 @@
+module top_module( input S, A0, A1, output Q);assign Q = S ? A1 : A0;endmodule

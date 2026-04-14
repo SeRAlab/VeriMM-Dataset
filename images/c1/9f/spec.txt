@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a parameterizable, scan-enabled D flip-flop (DFF) with scan chain integration capabilities. Its primary functions include:
+
+Data Storage: Acting as a basic storage element in digital circuits, capturing and storing the logic state (`din`) presented at its input upon the rising edge of the clock signal (`clk`).
+Testability Enhancement: Facilitating enhanced testability through scan chain integration (`se`, `si`, `so`), allowing for easier detection and diagnosis of faults within complex integrated circuits by serially shifting test data through the flip-flops.
+
+This module plays a crucial role in both the normal operational mode of digital systems, where it stores state information, and in test modes, where it aids in the application of Design for Test (DfT) strategies by enabling scan-based testing.
+
+Module name:  
+	dff_s
+
+Input ports:
+	din [SIZE1:0]: Data input port. A vector of size SIZE, carrying the data to be stored in the flipflop during normal operation.
+	clk: Clock input. A singlebit input that triggers the storage of data on its rising edge.
+	se: Scan enable. A singlebit input that, when high, enables the scan operation mode, allowing data to be shifted in through si.
+	si [SIZE1:0]: Scan data input. A vector of size SIZE, carrying the data to be shifted into the flipflop during scan operations.
+Output ports:
+	q [SIZE1:0]: Data output port. A vector of size SIZE, representing the current state stored in the flipflop.
+	so [SIZE1:0]: Scan data output. A vector of size SIZE, representing the data to be shifted out during scan operations. This is directly connected to the q output, facilitating the daisychaining of flipflops in a scan chain.
+
+
+Implementation:
+The RTL module presented, named dff_s, is designed to function as a parameterizable scan flip-flop with scan enable functionality. This module is a fundamental building block in digital integrated circuits, especially within the context of Design for Testability (DFT) strategies. The module's primary purpose is to store a bit or a vector of bits (depending on the parameter SIZE) and to allow for either normal operation or scan operation based on the se (scan enable) input. The design incorporates both combinational and sequential logic elements to achieve its functionality.
+
+Give me the complete code.
+

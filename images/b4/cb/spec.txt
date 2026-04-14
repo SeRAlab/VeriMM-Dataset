@@ -1,0 +1,6 @@
+Create a circuit that converts a 4-bit binary input into a 2-bit Gray code output while also indicating validity for specific binary values. The module takes a 4-bit input and generates a 2-bit Gray code based on certain mappings defined in the case statement, ensuring that the output is only valid for certain binary input combinations (such as 0000, 0001, 0011, 0111, and 1111). The valid signal outputs a high value when the input is one of these specified combinations, distinguishing valid from invalid states.
+module top_module(
+  input [3:0] bin_input,
+  output reg [1:0] gray_output,  // Changed 'wire' to 'reg'
+  output valid
+);

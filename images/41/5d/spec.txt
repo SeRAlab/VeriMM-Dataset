@@ -1,0 +1,9 @@
+Design a circuit that functions as a barrel shifter combined with a priority encoder. The module supports loading a 100-bit input data on a clock edge and can perform left or right shifts based on the enable signals. The highest set bit in the shifted data is encoded into an 8-bit output, indicating its priority position. Additionally, the module combines this priority-encoded output with a separate 8-bit input, producing a final output that reflects both the priority of the data and the additional input.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [7:0] in,
+    input [99:0] data,
+    output reg [7:0] out
+);

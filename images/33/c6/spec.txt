@@ -1,0 +1,11 @@
+
+Design a 4-channel DMA controller that can transfer data from one memory location to another. The controller should have the following inputs:
+1. `start`: a signal to start the DMA transfer.
+2. `channel`: a 2-bit signal to select one of the 4 channels (00, 01, 10, 11).
+3. `read_data`: 8-bit data read from memory.
+4. `ack`: an acknowledgment signal from the target memory.
+The outputs should be:
+1. `transfer_complete`: a signal indicating that the DMA transfer is complete for the selected channel.
+2. `write_data`: the 8-bit data to be written to memory.
+
+The DMA controller should handle the transfers sequentially, one channel at a time. Once the transfer is complete, it should move to the next channel upon the next `start` signal.

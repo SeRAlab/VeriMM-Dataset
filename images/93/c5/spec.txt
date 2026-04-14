@@ -1,0 +1,7 @@
+Implement an 8-bit shift register that shifts data on each clock cycle. When the load signal (L) is high, the input data (A) is loaded into the first register (reg1), and subsequent registers (reg2, reg3, reg4) are updated to hold the values from the preceding registers, resulting in the output (B) reflecting the shifted value from reg4. When L is low, the data in reg1 is preserved for output, and all other registers shift their values to the left while reg4 is reset to zero, thus allowing for a left shift operation.
+module top_module(
+    input clk,
+    input [7:0] A,
+    input L,
+    output reg [7:0] B  // Change output to reg type
+);

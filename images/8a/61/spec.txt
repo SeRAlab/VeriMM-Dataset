@@ -1,0 +1,2 @@
+Design a register update module that modifies a 64-bit output based on control signals and inputs. If the MovK signal is high (1), the module takes the upper 48 bits from the input RFRD2 and concatenates it with a subset of bits from the instruction to create the WriteReg output. If MovK is low (0), it simply passes the value from the MemMov input to WriteReg. This module serves the purpose of conditionally forming a new register value either by modifying part of RFRD2 or directly utilizing data from memory.
+module top_module(instruction, RFRD2, WriteReg, MovK, MemMov);

@@ -1,0 +1,7 @@
+Design a pipelined two-input AND gate. The module takes two inputs, a and b, and computes their logical AND in a two-stage pipeline. The result is first stored in an intermediate register (pipe1_out) on the rising edge of the clock. This intermediate result is then passed to another register (pipe2_out) on the next clock cycle, before finally producing the output (out) on the subsequent rising edge. This design introduces latency in the output while allowing for higher throughput in larger systems.
+module top_module(
+    input clk,     // Added clock input
+    input a, 
+    input b,
+    output reg out
+);

@@ -1,0 +1,22 @@
+Please act as a professional Verilog designer.
+
+Implement a D flip-flop with synchronous reset and enable signals. The flip-flop should store the input data on the rising edge of the clock signal when the enable signal is high. The reset signal should reset the output to zero when asserted.
+
+Module name:
+    d_ff
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    en: Enable signal that controls the storage operation.
+    d: Input data signal.
+
+Output ports:
+    q: Output data signal.
+
+Implementation:
+Flip-Flop Register:
+The module includes a register, q_reg, to store the output data signal.
+On the positive edge of clock signal (clk), the module updates the register. If the reset signal (rst) is high, the output register (q_reg) is set to 0. If the enable signal (en) is high and the reset signal (rst) is low, the output register (q_reg) is updated with the input data signal (d).
+
+Give me the complete code.

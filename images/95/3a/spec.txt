@@ -1,0 +1,10 @@
+Design a memory block that incorporates error correction using Hamming codes. This module features configurable data, address, and ECC widths, and it includes functionality for writing data to memory and reading it back with error correction capabilities. Upon writing, it generates and stores the corresponding Hamming code for the input data. When reading, the module outputs the stored data and employs the error correction algorithm to identify and correct single-bit errors, ensuring reliable data retrieval in the presence of errors. The design is synchronous and resets the ECC register on reset, maintaining an organized and efficient memory structure with built-in error detection and correction.
+module top_module(
+  input clk,
+  input rst,
+  input [data_width-1:0] data_in,
+  input [addr_width-1:0] addr,
+  input we,
+  output reg [data_width-1:0] data_out, // change to reg
+  output reg [ecc_width-1:0] ecc // change to reg
+);

@@ -1,0 +1,6 @@
+Design a write control module for a FIFO (First In, First Out) memory structure. The module features a write pointer (`wptr`) that toggles based on a write enable signal (`wen`), which is activated when the FIFO is ready to accept new data (`wrdy`). The readiness of the FIFO is determined by comparing the write pointer with a read pointer from another FIFO (`wq2_rptr`). Upon a clock edge, if not in reset, the write pointer updates, and the module outputs readiness status while managing the write enable condition based on input signals.
+module top_module(
+  output wrdy, wen,
+  output reg wptr,
+  input wput, wq2_rptr,
+  input wclk, wrst_n);

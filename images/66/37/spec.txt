@@ -1,0 +1,7 @@
+Design a signed 32-bit Booth multiplier that computes the product of two signed integers A and B, delivering a 64-bit result Y. The module operates synchronously on a clock signal, utilizing a finite state machine (FSM) for managing the multiplication process. It initializes the product based on the least significant bit of B, then iteratively shifts A and B while adjusting the intermediate product based on the current state and the value of the least significant bit of B, until all bits of B are processed. The final output Y reflects the computed product.
+module top_module(
+    input signed [31:0] A,
+    input signed [31:0] B,
+    input clk,
+    output signed [63:0] Y
+);

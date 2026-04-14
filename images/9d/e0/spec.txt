@@ -1,0 +1,15 @@
+Design a pipeline register module that captures and stores execution stage information in a processor architecture. The module samples inputs on the rising edge of the clock, resetting on a reset signal or maintaining state during a stall condition to prevent data from changing. It effectively holds ALU command and source data for computation, memory writing control signals, and write-back information, encapsulating this data in a 58-bit register. The output interface provides the stored state for subsequent stages in the pipeline.
+module top_module(
+  input clock,
+  input reset,
+  input[3:0] ex_alu_cmd,
+  input [15:0] ex_alu_src1,
+  input[15:0] ex_alu_src2,
+  input mem_write_en,
+  input [15:0] mem_write_data,
+  input write_back_en,
+  input [2:0] write_back_dest,
+  input write_back_result_mux,
+  input stall,
+  output [57:0] RegIDToExOut
+);

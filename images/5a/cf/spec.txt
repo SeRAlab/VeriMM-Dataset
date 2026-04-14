@@ -1,0 +1,5 @@
+Create a clock gating circuit that generates a controlled clock output, ENCLK, based on the input signals CLK, EN, and TE. When EN is high (enabled) and TE is low (test enabled), the gated clock state is set to high on each positive edge of the input clock. ENCLK will output the gated clock, which is the logical AND of gated_clk and the original CLK signal, effectively enabling clock signal propagation only under specified conditions, thereby optimizing power consumption and reducing clock skew in digital circuits.
+module top_module(
+  input CLK, EN, TE,
+  output ENCLK
+);

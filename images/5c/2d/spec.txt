@@ -1,0 +1,25 @@
+Implement the Verilog module based on the following description.
+For the following Karnaugh map, give the circuit implementation using one 4-to-1 multiplexer and as many 2-to-1 multiplexers as required, but using as few as possible. You are not allowed to use any other logic gate and you must use _i_ and _j_ as the multiplexer selector inputs, as shown on the 4-to-1 multiplexer below.
+
+If ijkl is 0000, then o is 0.
+If ijkl is 0100, then o is 1.
+If ijkl is 1100, then o is 0.
+If ijkl is 1000, then o is 1.
+If ijkl is 0001, then o is 0.
+If ijkl is 0101, then o is 1.
+If ijkl is 1101, then o is 0.
+If ijkl is 1001, then o is 1.
+If ijkl is 0011, then o is 0.
+If ijkl is 0111, then o is 1.
+If ijkl is 1111, then o is 0.
+If ijkl is 1011, then o is 1.
+If ijkl is 0010, then o is 0.
+If ijkl is 0110, then o is 1.
+If ijkl is 1110, then o is 0.
+If ijkl is 1010, then o is 1.
+// Consider a block diagram with inputs 'k' and 'l' going into a module called "logic_module". This "logic_module" has four outputs, mux_outputs[3:0], that connect to a four input mux. The mux takes as input {i,j} and ij = 00 is connected to mux_outputs[0], ij=01 is connected to mux_outputs[1], and so in. You are implementing in Verilog just the portion labelled "logic_module", such that the entire circuit (including the 4-to-1 mux) implements the K-map.
+
+module logic_module (
+	input k,
+	input l,
+	output reg [3:0] mux_outputs);

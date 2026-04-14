@@ -1,0 +1,10 @@
+Design a GPS receiver module that processes satellite and antenna data to compute and output the receiver's geographical position in terms of latitude, longitude, and altitude. The module utilizes a clock and reset mechanism to synchronize operations, incrementing a local clock and updating the satellite and receiver positions on each clock cycle. Upon a reset signal, it initializes internal registers to start acquiring satellite signals. The navigation logic calculates the receiver's position using the difference between satellite and receiver positions, partitioning the result into 32-bit fields for latitude, longitude, and altitude outputs.
+module top_module(
+  input clk,
+  input rst,
+  input sat_data,
+  input antenna_data,
+  output reg [31:0] lat,
+  output reg [31:0] lon,
+  output reg [31:0] alt
+);

@@ -1,0 +1,8 @@
+The provided Verilog code implements a control unit for a simplified CPU architecture that decodes instruction opcodes to generate various control signals necessary for the execution of operations such as memory access, branching, and arithmetic. It outputs signals for branch conditions (equal and not equal), ALU operation selection, memory read/write control, and register operations. The control logic utilizes a combinational always block, which responds to the input opcode by setting specific control signals based on the instruction type, such as load, store, branch, and jump operations. The design allows the CPU to manage data flow and processing based on the type of instruction received, thus acting as a critical component in the instruction execution cycle.
+module top_module(
+		input  wire	[5:0]	opcode,
+		output reg			branch_eq, branch_ne,
+		output reg [1:0]	aluop,
+		output reg			memread, memwrite, memtoreg,
+		output reg			regdst, regwrite, alusrc,
+		output reg			jump);

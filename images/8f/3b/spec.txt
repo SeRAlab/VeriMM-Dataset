@@ -1,0 +1,7 @@
+Develop a glitch filter circuit that allows only stable input signals to pass through while eliminating transient noise. The module employs a shift register composed of multiple flip-flops to store the incoming signal over several clock cycles. By comparing the current and next states of the shift register, the circuit detects glitches. If no glitches are detected, the stable value is assigned to the output. The design includes a reset feature to clear the shift register when necessary, ensuring a reliable and clean output signal from a potentially noisy input.
+module top_module(
+  input clk, // clock signal
+  input rst, // reset signal
+  input in, // input signal with glitches
+  output out // filtered signal
+);

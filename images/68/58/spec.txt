@@ -1,0 +1,9 @@
+Design a flip-flop with asynchronous set and reset functionality. The module captures the value of input D on the rising edge of the CLK signal, while also allowing for immediate setting or resetting of the output Q via the active-low SET_B and RESET_B inputs. When RESET_B is asserted, Q is set to LOW and Q_N to HIGH; when SET_B is asserted, Q is set to HIGH and Q_N to LOW. In the absence of active reset or set signals, the module updates Q and Q_N to mirror the input D and its complement, respectively.
+module top_module(
+  input D,
+  input SET_B,
+  input RESET_B,
+  input CLK,
+  output reg Q,
+  output reg Q_N
+);

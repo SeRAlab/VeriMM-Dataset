@@ -1,0 +1,6 @@
+Design a reset synchronizer circuit that is capable of safely synchronizing an asynchronous active-low reset signal (rstn) to a clock domain (clk). The module ensures that the synchronized reset output (rst) reflects the status of rstn with appropriate setup and hold timing requirements, preventing glitches or unwanted resets in downstream logic. It utilizes a two-stage synchronization mechanism, where the incoming reset signal is delayed and processed to maintain stability and avoid metastability, guaranteeing that rst is asserted low when rstn is active. The initial conditions set both synchronization registers to high, ensuring a known state upon startup.
+module top_module(
+  input rstn,
+  input clk,
+  output reg rst
+);

@@ -1,0 +1,7 @@
+Design a 4-bit barrel shifter that performs variable bit shifting based on a 2-bit control input. The module takes a 4-bit input A and a 2-bit shift value, which determines the type of shift operation: no shift, right shift by 1, left shift by 1, or left shift by 2 bits. The shifting results are registered on the rising edge of the clock, allowing for synchronized output of the shifted value. This design enables efficient data manipulation for digital signal processing or communication applications.
+module top_module(
+    input [3:0] A,
+    input [1:0] shift,
+    input clk,          // Added input for clock
+    output reg [3:0] out
+);

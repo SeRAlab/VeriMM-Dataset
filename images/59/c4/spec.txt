@@ -1,0 +1,5 @@
+Design a state machine for controlling a vehicle's tail light system. The module transitions between various states based on the inputs for left and right turn signals, managing the output signals for left (LA, LB, LC) and right (RA, RB, RC) tail lights. When only the left turn signal is active, it sequentially illuminates the left lights from L1 to L3. Similarly, when only the right turn signal is engaged, it follows a sequence from R1 to R3. If both turn signals are activated, the system resets to an idle state, ensuring safety by preventing simultaneous left and right signaling. The clock and reset inputs synchronize the state transitions.
+module top_module(
+	input reset, left, right, clk,
+	output LC, LB, LA, RA, RB, RC
+);

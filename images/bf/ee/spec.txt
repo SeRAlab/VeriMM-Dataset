@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as the Arithmetic Logic Unit (ALU) for a processor, specifically designed to perform a variety of arithmetic and logical operations. The ALU is a fundamental component of the CPU, enabling it to execute instructions involving mathematical operations, bitwise operations, and decision-making processes. This module is capable of handling operations such as addition, bitwise NOT, OR, AND, XOR, bit shifting, and setting or clearing specific bits within a byte. It plays a critical role in the execution of the instruction set, directly influencing the processor's capability to perform computations and control logic flow.
+
+Module name:  
+	P16C5x_ALU
+
+Input ports:
+	Rst: Reset signal (active high) to initialize the module.
+	Clk: Clock signal for synchronizing operations.
+	CE: Clock Enable signal, allowing operations to proceed when high.
+	ALU_Op: 12bit input specifying the operation to be performed by the ALU.
+	WE_PSW: Write Enable for the Program Status Word, controlling updates to flags.
+	DI: 8bit Data Input, one of the operands for arithmetic/logical operations.
+	KI: 8bit Immediate value, serving as an operand for certain operations.
+Output ports:
+	DO: 8bit Data Output, the result of the executed operation.
+	Z_Tst: Zero Test output, indicating if the result (DO) is zero.
+	g: General output for conditional operations, based on bit testing.
+	W: 8bit register output, potentially updated based on the operation.
+	Z: Zero flag, set if the result of the operation is zero.
+	DC: Digit Carry flag, used in arithmetic operations for carry/borrow out of the lower nibble.
+	C: Carry flag, indicating an overflow or underflow in arithmetic operations.
+
+
+Implementation:
+The P16C5x_ALU module represents an Arithmetic Logic Unit (ALU) tailored for a specific processor architecture, likely a variant of the PIC microcontroller family given the naming convention. This ALU is designed to perform a variety of arithmetic and logical operations based on the inputs it receives. The module's functionality is controlled through several input signals that dictate the operation mode, operands, and control flags. The ALU's output includes the result of the operation, flags indicating zero, digit carry, and carry/borrow conditions, and a general-purpose register W.
+
+Give me the complete code.
+

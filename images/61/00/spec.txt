@@ -1,0 +1,8 @@
+Design a floating-point multiplier circuit that performs multiplication on two 32-bit IEEE 754 floating-point inputs, afl and bfl, producing a 32-bit floating-point output, fl. The module utilizes a pipeline architecture to calculate the sign, exponent, and mantissa of the resulting product while handling special cases such as zero. It first multiplies the mantissas, computes the combined exponent, and determines the sign from the input signs. The output is conditioned to represent zero when either input is zero. This design efficiently implements the floating-point multiplication operation, ensuring compliance with the IEEE 754 standard.
+module top_module(
+	input			clk,
+	input			rstn,
+	input	    [31:0]	afl,
+	input	    [31:0]	bfl,
+	output	reg [31:0]	fl
+	);

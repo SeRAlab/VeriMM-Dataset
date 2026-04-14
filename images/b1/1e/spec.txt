@@ -1,0 +1,9 @@
+Design a configurable binary counter that can count either upwards or downwards based on control signals. The counter is synchronized to a clock signal and can be reset to zero with an active reset signal. The width of the counter is determined by a 32-bit input that sets the maximum count value. When the 'up' signal is asserted, the counter increments; when the 'down' signal is asserted, it decrements. The counter wraps around when it reaches its maximum value during upward counting or zero during downward counting.
+module top_module(
+  input wire clk,
+  input wire rst,
+  input wire en,
+  input wire up,
+  input wire [31:0] width,
+  output reg [31:0] count
+);

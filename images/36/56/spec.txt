@@ -1,0 +1,8 @@
+Design a 1D Kalman filter in Verilog that updates its estimated position and velocity based on noisy measurements. The filter should take inputs for the measured position and a control input for velocity. The filter should output the estimated position and velocity after processing the inputs. The filter equations used are as follows:  
+1. Prediction step:  
+   - Position: x_pred = x_prev + v_prev * dt  
+   - Velocity: v_pred = v_prev  
+2. Update step:  
+   - x_est = x_pred + K * (z - x_pred)  
+   - v_est = v_pred + K_v * (z_v - v_pred)  
+   where K and K_v are the Kalman gain values for position and velocity, respectively, z is the measurement, and z_v is the control input. The parameters dt, K, and K_v will be provided as inputs. The initial position and velocity will also be provided. The filter should work in a clocked process, updating on the rising edge of the clock signal.

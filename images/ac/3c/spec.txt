@@ -1,0 +1,8 @@
+Design a remapping module that processes incoming data packets for a network interface. The module conditionally modifies the address within the packets based on a control mechanism, allowing for both static and dynamic remapping of the address space. It produces output signals that can either reflect the original packet address or a modified address, depending on the states of the remap enable and bypass signals. The module also incorporates stalling logic based on read and write wait signals, ensuring that transactions proceed only when appropriate conditions are met.
+module top_module(
+   // Outputs
+   emesh_access_out, emesh_packet_out,
+   // Inputs
+   clk, reset, emesh_access_in, emesh_packet_in, remap_en,
+   remap_bypass, etx_rd_wait, etx_wr_wait
+);

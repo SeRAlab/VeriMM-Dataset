@@ -1,0 +1,11 @@
+Design a digital circuit that serves as a data processor with multiple functionalities. It accepts a clock signal, a load signal, and a 2-bit enable signal to manage data operations. When the load signal is asserted, it stores a 100-bit input data. Based on the enable signals, it can perform left or right rotations of the stored data on each clock cycle. Additionally, the module computes the XOR of two single-bit inputs and uses the result to generate an output that combines both the XOR output and the rotated data. Finally, it outputs the 100-bit processed data and a single-bit output derived from the XOR operation, facilitating multiple data transformation capabilities.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input a,
+    input b,
+    output reg out,
+    input [99:0] data,
+    output reg [99:0] q
+);

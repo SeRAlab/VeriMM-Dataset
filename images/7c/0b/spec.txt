@@ -1,0 +1,14 @@
+Design a JTAG-AXI FIFO interface module that serves as a bridge for data transfer between JTAG and AXI systems. This module incorporates a FIFO (First-In, First-Out) buffer to manage the flow of data, utilizing the clock signals for synchronization and control inputs for enabling write operations. It offers outputs such as the current data count and data ready signals, and facilitates seamless writing of data into the FIFO based on external logic conditions, enabling efficient data handling in high-speed applications.
+module top_module(
+    out,
+    count_d1_reg,
+    m_axi_wdata,
+    aclk,
+    s_dclk_o,
+    Q,
+    m_axi_wready,
+    burst_count_reg,
+    tx_fifo_wr,
+    tx_fifowren_reg,
+    tx_fifo_dataout_reg
+  );

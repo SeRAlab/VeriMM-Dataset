@@ -1,0 +1,7 @@
+Design a sequential logic circuit that generates a 36-bit wide data signal based on clock cycles, reset, and enable inputs. The circuit initializes the output to zero when reset is asserted. Upon receiving an enabled signal, it either increments the current data value by one if the least significant bit is zero or applies a transformation of multiplying the current value by three and adding one if that bit is one. The output wraps back to zero if it exceeds the maximum representable value of 36 bits, effectively creating a custom number generation algorithm.
+module top_module(
+  input clk,
+  input rst,
+  input en,
+  output reg [35:0] tr_data
+);

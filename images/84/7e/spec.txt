@@ -1,0 +1,8 @@
+Design a phase-locked loop (PLL) module that generates a clock output based on an input clock signal, allowing dynamic frequency control. The module features a phase accumulator to track the phase difference between input and output clocks, along with a frequency divider that adjusts the output clock frequency based on a two-bit selection input. A low-pass filter smooths phase variations to enhance stability in the output signal. When the module is enabled, it modifies the output clock based on the filtered phase difference and selected frequency, ensuring that the output clock (clk_out) is driven high or low according to the processed phase information while maintaining functionality during reset conditions.
+module top_module(
+  input clk_in,
+  input reset,
+  input enable,
+  input [1:0] freq_sel,
+  output reg clk_out
+);

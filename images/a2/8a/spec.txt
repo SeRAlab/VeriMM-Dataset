@@ -1,0 +1,11 @@
+Design a module for driving a four-digit seven-segment display based on an input 32-bit number. The module supports clearing the display and utilizes different selections for segment visibility. It scans the digits of the given input to determine which digit to display and what segments to activate based on the binary value of that digit. The segments are configured depending on a combination of control switches and a scanning signal. The module also allows for a decimal point to be controlled for each digit. Thus, it communicates visually a numeric representation across a four-digit display for various applications.
+module top_module(
+	input wire[31:0] disp_num,
+	input clk,
+	input wire clr,
+	input wire[1:0]SW,
+	input wire[1:0]Scanning,
+	input wire [3:0] dpdot,
+	output wire[7:0]SEGMENT,
+	output reg[3:0]AN
+    );

@@ -1,0 +1,7 @@
+Implement a falling edge detector circuit for a 32-bit input signal. Upon receiving a clock pulse, the circuit captures the current state of the input signal. It then computes the falling edges by identifying transitions where the previous state (stored in `edge_r`) was HIGH while the current state (`in`) is LOW. The detected falling edges are accumulated in the output register (`q_r`), which resets to zero when the reset signal is asserted. The final output presents the cumulative falling edges detected since the last reset.
+module top_module(
+    input           clk,
+    input           reset,
+    input   [31:0]  in,
+    output  [31:0]  out
+);

@@ -1,0 +1,7 @@
+Design a 4-bit binary multiplier that computes the product of two 4-bit inputs, A and B, producing an 8-bit output P. The multiplication is carried out in a pipelined fashion using three stages: initially capturing the inputs, followed by progressively adding scaled versions of B based on the bits of A. The structure utilizes registers to store intermediate results at each clock cycle, effectively managing the multiplication process in a sequential manner while enhancing throughput by spreading the computation across multiple clock cycles.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input clk,       // Added clock input here
+    output reg [7:0] P
+);

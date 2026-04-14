@@ -1,0 +1,6 @@
+Design a 4-to-2 priority encoder that generates a 2-bit output indicating the position of the highest-priority active input among four input signals. If none of the inputs are asserted (all zeros), it sets a zero flag high and outputs a position of 00. Otherwise, it determines and outputs the position of the highest active input while keeping the zero flag low. The circuit uses internal logic to invert the input signals and perform bitwise operations to ascertain the most significant active input.
+module top_module(
+    input [3:0] in,
+    output reg [1:0] pos,
+    output reg zero_flag
+);

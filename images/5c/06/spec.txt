@@ -1,0 +1,8 @@
+Design a 8-bit shift register that operates on the rising edge of the clock signal. When the reset input is active, the output is initialized to zero. If the shift control signal is asserted, the register shifts its current data to the right by one bit, inserting the least significant bit from the input data. If the shift control signal is deactivated, the register shifts its current data to the left by one bit, inserting the most significant bit from the input data. This design allows for bidirectional shifting depending on the control signal, enabling flexible data manipulation.
+module top_module(
+    input clk, 
+    input reset, 
+    input shift, 
+    input [7:0] data_in, 
+    output reg [7:0] data_out
+);

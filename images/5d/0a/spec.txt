@@ -1,0 +1,9 @@
+Design a module to interface with an LCD display by controlling its register select (rs), read/write (rw), and enable (e) signals based on a clocked state machine. The module accepts an 8-bit data input and an enable signal, determining whether to write a command or data to the LCD. In the IDLE state, it checks the top two bits of the input data to decide which register to write to. If the input corresponds to a command (00), it transitions to the WRITE_COMMAND state; if it's data (non-zero), it enters the WRITE_DATA state. In both cases, after the write operation, the module returns to the IDLE state, effectively managing the control signals for the LCD's operation.
+module top_module(
+  input clk, // clock signal
+  input en, // control signal
+  input [7:0] d, // data signals
+  output rs, // register select
+  output rw, // read/write
+  output e // enable
+);

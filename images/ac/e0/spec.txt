@@ -1,0 +1,11 @@
+Implement a D-type flip-flop with asynchronous negative edge reset functionality. The flip-flop captures the value of the input D on the rising edge of the clock signal (CLK) and outputs it on Q, while output Q_N is the complement of Q. The design includes support for power management signals (VPWR, VGND, VPB, VNB), indicating it is intended for integration into low-power applications. The use of internal signals ensures proper handling of the flip-flop's state, allowing for reliable operation in synchronous digital circuits.
+module top_module(
+    output reg Q   ,
+    output reg Q_N ,
+    input  CLK     ,
+    input  D       ,
+    input  VPWR    ,
+    input  VGND    ,
+    input  VPB     ,
+    input  VNB
+);

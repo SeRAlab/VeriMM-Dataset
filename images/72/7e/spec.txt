@@ -1,0 +1,15 @@
+Design a device for managing a set of 8 LEDs, incorporating a simple control interface. The module accepts a clock and reset signal, along with a 16-bit data input and an 8-bit address input. It features read and write functionality controlled by the `rw` signal and features two addressable control lines, `uds` (upper data select) and `lds` (lower data select). When writing, the module updates the LED states based on the upper 8 bits of the data input when the address matches; when reading, it outputs the current state of the LEDs on the upper part of the data output, with an additional acknowledgement signal. On reset, the LEDs are set to low. This module functions as an interface between a microcontroller and the LED drivers, facilitating direct control and monitoring of the LED states.
+module top_module(
+		input clk,
+		input reset_n,
+		
+		input [15:0] data_write,
+		output reg [15:0] data_read,
+		input [7:0] addr,
+		input uds,
+		input lds,
+		input rw,
+		output reg ack,
+
+		output reg [7:0] leds
+    );

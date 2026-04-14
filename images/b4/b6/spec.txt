@@ -1,0 +1,6 @@
+Design a circuit that functions as a demultiplexer (DEMUX) with one input and n outputs based on a selection signal. The circuit takes a single input signal and directs it to one of the outputs determined by the select lines; when the select lines are set to a specific value, the input is forwarded to the corresponding output, while all other outputs remain inactive (set to zero). The module supports a parameterized number of outputs (n), effectively allowing it to scale for different configurations.
+module top_module(
+  input in,
+  input [1:0] sel,     // Select signal, adjusted to accommodate for n=4
+  output [3:0] out     // Output size defined according to n=4
+);

@@ -1,0 +1,4 @@
+Design a time-setting circuit that manages the adjustment of time values, specifically for minutes and hours. The module utilizes two operational modes controlled by the `mode` and `turn` signals. It cycles through three states, incrementing or resetting counters (`count1`, `count2`, `counta`, and `countb`) based on user input from the `change` signal. The status of the counters also indicates whether to load new values for minutes and hours (`LD_min` and `LD_hour`). On each positive edge of the `mode` signal, the state increments, while the `turn` signal toggles a flag used to differentiate between minute and hour adjustments, facilitating the intuitive setting of a timekeeping device.
+module top_module(
+		change,turn,count1,count2,counta,countb,LD_min,LD_hour,mode
+		);

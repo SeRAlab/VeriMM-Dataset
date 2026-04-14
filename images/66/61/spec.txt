@@ -1,0 +1,9 @@
+Design a circuit that converts a 32-bit parallel input signal into a serial output. The module operates with a clock signal (SD_CLK) and has an enable control (enable_pts) and a reset input (reset_pts). When enabled, it sequentially shifts out the bits of the input signal one at a time on each rising edge of the clock, while keeping track of the number of bits shifted using an internal counter (contador). Once all 32 bits are shifted out, a signal (parallel_complete) indicates the completion of the operation. If the reset is activated, the outputs are cleared and the internal counter resets.
+module top_module(
+    input wire enable_pts, 
+    input wire reset_pts, 
+    input wire SD_CLK, 
+    input wire [31:0] signal_in, 
+    output reg signal_out, 
+    output reg parallel_complete
+    );

@@ -1,0 +1,18 @@
+
+
+You have been tasked with designing a memory block generator module that can store and retrieve data. The module should be written in Verilog and should be able to handle 8192 memory locations, each storing 13-bit data. The module should have the following inputs and outputs:
+
+- `clka` : clock input
+- `ena` : enable input
+- `wea` : write enable input
+- `addra` : address input (13-bit wide)
+- `dina` : data input (13-bit wide)
+- `douta` : data output (13-bit wide)
+
+The module should have the following behavior:
+- On the rising edge of `clka`, if `ena` is high, the module should output the data stored at the memory location specified by `addra` on `douta`.
+- If `wea` is high, the module should write the data on `dina` to the memory location specified by `addra`.
+- The module should not write or output any data if `ena` is low.
+
+Write a Verilog module that implements the above behavior. Your module should be no longer than 200 lines of code.
+

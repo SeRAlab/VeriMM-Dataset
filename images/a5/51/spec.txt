@@ -1,0 +1,2 @@
+Design a circuit for bit destuffing from a USB data stream. The module samples incoming data bits sequentially when enabled by the clken signal, maintaining a seven-bit shift register to track the last seven bits. The strobe output is asserted when clken is active and the current seven-bit register value is not equal to the USB stuffing sequence (7'b0111111), indicating valid data. The reset functionality allows the register to initialize to zero when the rst_n signal is low, ensuring a clean start.
+module top_module(input rst_n,input clk,input clken,input d,output strobe);

@@ -1,0 +1,11 @@
+Design a 4-to-1 multiplexer with an additional output that selects between two other 2-to-1 multiplexers based on a two-bit select input and a reset signal. The module has four 4-bit wide input ports (in0, in1, in2, in3) and produces two outputs: `out_assign`, which is updated on the rising edge of the reset signal and is driven by the selected input based on the complete 2-bit selection (selector `sel`), and `out_alwaysblock`, which is continuously assigned based on a case structure that uses the most significant bit of the selector to choose between the outputs of two 2-to-1 multiplexers. The module also has a reset capability to set the `out_assign` output to zero when activated.
+module top_module(
+    input [3:0] in0,
+    input [3:0] in1,
+    input [3:0] in2,
+    input [3:0] in3,
+    input [1:0] sel,
+    input       reset,
+    output reg  [3:0] out_assign,
+    output reg  [3:0] out_alwaysblock
+);

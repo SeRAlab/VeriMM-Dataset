@@ -1,0 +1,7 @@
+Design a counter circuit capable of counting from 0 up to a specified maximum value. This counter increments its count on each rising edge of the clock signal when the start_stop signal is high. Once the counter reaches the max_count value, it resets to 0 and asserts a 'max_reached' output signal. The counter can be halted (with 'max_reached' reset) when the start_stop signal is low, allowing for controlled counting behavior based on external inputs.
+module top_module(
+    input clk, start_stop, 
+    input [31:0] max_count,
+    output [31:0] count,
+    output max_reached
+    );

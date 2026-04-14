@@ -1,0 +1,8 @@
+Design a synchronous inverter circuit that takes a single-bit input and produces its inverted output. The output is registered and can be cleared via an asynchronous reset (clr) signal, which sets the output to low when asserted. Additionally, the clock enable (ce) allows the output to be updated conditionally, contingent upon certain internal signals. This module effectively serves as a latch for the inverted value, ensuring controlled output under specified conditions.
+module top_module(
+  input [(1 - 1):0] ip,
+  output [(1 - 1):0] op,
+  input clk,
+  input ce,
+  input clr
+);

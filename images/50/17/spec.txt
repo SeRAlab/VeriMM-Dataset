@@ -1,0 +1,7 @@
+Design a 32-bit barrel shifter that performs a variable shift operation based on a 5-bit shift value and a control signal indicating the direction of the shift. The module takes a 32-bit input data, and if the `shift_right` signal is high, it shifts the data to the right; otherwise, it shifts to the left. The shifting uses a series of intermediate stages for efficient shifting by 1, 2, 4, and 8 bits, enabling the final shift amount to be specified by the `shift` input, which determines how many bits to shift from the previously processed output stage. The final result is provided as the `shifted_data` output.
+module top_module(
+    input [31:0] data,
+    input [4:0] shift,
+    input shift_right,
+    output reg [31:0] shifted_data
+);

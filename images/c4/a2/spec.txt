@@ -1,0 +1,18 @@
+Please act as a professional Verilog designer. Your task is to create a Verilog module that implements an asynchronous reset release circuit. 
+An asynchronous reset release circuit is a digital circuit that releases the reset signal asynchronously, which means that the reset signal can be released at any time, regardless of the clock signal.
+Your module should have the following inputs and outputs:
+
+Inputs: 
+- rst: asynchronous reset signal
+- clk: clock signal
+Outputs: 
+- out: output signal
+
+Your module should implement the following functionality:
+- When the reset signal is asserted, the output signal should be set to 0.
+- When the reset signal is released, the output signal should be set to 1, and it should remain at 1 until the next reset signal is asserted.
+- The circuit should be sensitive to the clock signal. The output signal should only change on the rising edge of the clock signal.
+
+To implement the asynchronous reset release circuit, you should use Verilog code to define the behavior of the output signal based on the input signals. 
+You should use an edge detector to detect the rising edge of the clock signal and synchronize the output signal with the clock signal. 
+You should also use a latch to hold the output signal at 1 after the reset signal is released.

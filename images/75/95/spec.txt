@@ -1,0 +1,9 @@
+Design a simple 32-bit calculator with both synchronous reset and clock control. The module takes two 32-bit operands and a 2-bit operation selector to perform one of four arithmetic operations: addition, subtraction, multiplication, or division. The result of the selected operation is outputted on a 32-bit data line. The calculator resets its output to zero when the reset signal is asserted low.
+module top_module(
+  input clk,
+  input reset_n,
+  input [31:0] operand1,
+  input [31:0] operand2,
+  input [1:0] operation,
+  output reg [31:0] result
+);

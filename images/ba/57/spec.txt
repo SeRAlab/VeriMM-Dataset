@@ -1,0 +1,14 @@
+Design a multi-input 8-bit wide multiplexer that selects one of several data sources based on control signals. The module takes inputs from various components such as RAM, expanded RAM (eram), a programmable input/output device (pio8255), I/O ports, and a floppy disk controller (fdc). Each source has a corresponding enable signal that determines if its data is routed to the output. If none of the enable signals are asserted, the output defaults to 255 (all bits HIGH).
+module top_module(
+  input [7:0] ram,
+  input ram_e,
+  input [7:0] eram,
+  input u_ram_e,
+  input [7:0] pio8255,
+  input pio8255_e,
+  input [7:0] io,
+  input io_e,
+  input [7:0] fdc,
+  input fdc_e,
+  output reg [7:0] D
+);

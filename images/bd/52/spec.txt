@@ -1,0 +1,9 @@
+Develop a 3-bit binary counter that can count both up and down based on an input control signal. The counter increments when the `up_down` input is high and decrements when it is low, wrapping around from 7 to 0 or from 0 to 7. The `reset` input initializes the counter to zero, and the `load` input also resets the counter. Additionally, the `max_min_flag` output indicates when the counter has wrapped around to its maximum (7) or minimum (0) values.
+module top_module(
+  input clk,
+  input reset,
+  input load,
+  input up_down,
+  output reg [2:0] count,
+  output reg max_min_flag
+);

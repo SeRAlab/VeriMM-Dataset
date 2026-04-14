@@ -1,0 +1,8 @@
+Design a 4-bit Arithmetic Logic Unit (ALU) with the ability to perform four different operations based on a 2-bit operation selector. The ALU accepts two 4-bit inputs (data1 and data2) and produces a 4-bit output (q) that reflects the result of the chosen arithmetic or logic operation. The operations include addition (op = 00), subtraction (op = 01), bitwise AND (op = 10), and bitwise OR (op = 11). The computation is pipelined through two stages, where the result of the selected operation is stored in an intermediate register before being output on the clock's rising edge.
+module top_module(
+    input [3:0] data1,
+    input [3:0] data2,
+    input [1:0] op,
+    input clk,         // Added clk input
+    output reg [3:0] q
+);

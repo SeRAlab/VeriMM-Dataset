@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) to count consecutive ones in a binary input stream. The module utilizes a clock and reset signal to control its operation. When in the IDLE state, the FSM transitions to the COUNT state, where it increments a 4-bit counter (cnt) for each consecutive '1' detected in the input data. If a '0' is encountered, it moves to the DONE state, holding the current count value. The counter resets to zero upon a reset signal. This implementation allows tracking how many consecutive '1's have been received in the input stream.
+module top_module(
+  input clk,
+  input reset,
+  input data,
+  output reg [3:0] cnt
+);

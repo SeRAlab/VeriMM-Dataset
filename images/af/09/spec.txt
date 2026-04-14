@@ -1,0 +1,8 @@
+Design a 64-bit wide D flip-flop with an enable (EN) and a transparent enable (TE) feature. When EN is asserted, the flip-flop captures the input data (D) on the rising edge of the clock (CLK) only if TE is also asserted; otherwise, it does not update the output (Q). This design allows for controlled data storage with the option for the flip-flop to be transparent when TE is active, effectively passing the input data directly to the output when enabled.
+module top_module(
+    input CLK,
+    input EN,
+    input TE,
+    input [63:0] D,
+    output reg [63:0] Q
+);

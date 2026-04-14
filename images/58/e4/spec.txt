@@ -1,0 +1,8 @@
+Design a 4-bit counter that increments on each clock cycle when enabled. The counter has a comparison value as a 2-bit input; it generates a comparison output that indicates whether the current count is greater than or equal to this value. The design utilizes a three-stage pipelining mechanism for the counter value to ensure stable counting, ensuring that the output is updated with the last counted value after three clock cycles. The circuit serves as a basic counter with a comparator functionality.
+module top_module(
+    input clk,
+    input en,
+    input [1:0] compare_val,
+    output reg [3:0] Q,
+    output reg comp_out
+);

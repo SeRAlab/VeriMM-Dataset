@@ -1,0 +1,11 @@
+Design a multi-port RAM module that supports simultaneous read and write operations on a memory array. This RAM has a configurable data width of 8 bits and a depth of 64 words, enabling storage and retrieval of data. The module features two independent ports for handling read and write requests, activated by control signals, allowing for data to be written to or read from specified addresses on the rising edge of the clock, provided that the module is enabled. When the write enable (wr_en) signal is asserted, data will be stored at the designated write address, and when the read enable (rd_en) signal is active, data from the specified read address will be output.
+module top_module(
+  input clk,
+  input en,
+  input wr_en,
+  input rd_en,
+  input [addr_width-1:0] wr_addr,
+  input [addr_width-1:0] rd_addr,
+  input [data_width-1:0] wr_data,
+  output reg [data_width-1:0] rd_data // Change wire to reg to allow assignment in always block
+);

@@ -1,0 +1,10 @@
+Design a combinational arithmetic calculator that performs operations based on a 2-bit operation code (op). This module takes two 8-bit inputs (a and b) and, on the rising edge of the clock, executes one of four operations—addition, subtraction, multiplication, or division—depending on the value of op. There is an active reset signal that clears the result and validation output. The computed result is stored in a register and outputted along with a valid flag indicating that a computation has been completed.
+module top_module(
+    input [1:0] op,
+    input [7:0] a,
+    input [7:0] b,
+    input clk,
+    input rst,
+    output [7:0] result,
+    output valid
+);

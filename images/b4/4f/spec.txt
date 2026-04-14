@@ -1,0 +1,11 @@
+Design a 5-bit up/down counter with additional control capabilities. This module takes a clock signal and responds to several control inputs: a clear signal that resets the counter to zero, a reset signal that loads a specified initial value from an 8-bit input, a load signal that directly sets the counter to a specified value, and an enable signal that allows counting to occur. The counter can increment or decrement its value based on an up signal. The current count is outputted through a 5-bit wide output signal. This functionality enables various counting operations in digital systems, such as in communication systems or digital signal processing applications.
+module top_module(
+    input clk, // clock signal
+    input clr, // clear signal
+    input rst, // reset signal
+    input up, // up signal
+    input load, // load signal
+    input [7:0] din, // data input signal
+    input en, // enable signal
+    output reg [4:0] op // output signal
+);

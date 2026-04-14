@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit bidirectional shift register with synchronous reset.
+
+Module name:  
+    BiDirShiftReg_4               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high reset signal to initialize the register.
+    SI_L: Serial input for left shift.
+    SI_R: Serial input for right shift.
+    dir: Direction control signal (1 for left shift, 0 for right shift).
+Output ports:
+    Q: 4-bit parallel output representing the current value of the register.
+
+Implementation:
+On every rising edge of the clock signal (clk), the register value is updated.
+If the reset signal (rst) is high, the register value is set to 0.
+If the direction control signal (dir) is high, the register value is shifted to the left by one position, and the input bit (SI_L) is added to the least significant bit position.
+Otherwise, the register value is shifted to the right by one position, and the input bit (SI_R) is added to the most significant bit position.
+
+Give me the complete code.

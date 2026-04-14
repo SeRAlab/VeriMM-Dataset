@@ -1,0 +1,10 @@
+Design a servo control block that adjusts the position of a servo motor based on PWM (Pulse Width Modulation) input. The module takes an 8-bit PWM input and two 8-bit bounds, `pwm_min` and `pwm_max`, specifying the minimum and maximum allowable PWM values. It outputs an 8-bit `pwm_out` reflecting the current PWM value adjusted smoothly over time while transitioning from the previous angle to the target angle specified by `pwm_in`. The control logic updates the output PWM signal based on a clock signal, ensuring gradual changes for smoother servo movements. The current servo angle is also maintained and updated based on the computed PWM output.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] pwm_in,
+  input [7:0] pwm_min,
+  input [7:0] pwm_max,
+  output reg [7:0] pwm_out,
+  output reg [7:0] servo_angle
+);

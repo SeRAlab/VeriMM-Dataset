@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+
+Design a 4-bit parallel-in serial-out (PISO) shift register. The module should load a 4-bit parallel input (pdata) when the load signal is active and then shift out the data one bit at a time on each rising edge of the clock signal (clk).
+
+Module name:  
+    piso_shift_reg_4bit  
+
+Input ports:
+    clk: Chip clock signal.
+    rst_n: Active-low reset signal. Defined as 0 for chip reset and 1 for reset signal inactive.
+    load: Load signal to load the parallel data.
+    pdata: 4-bit parallel input data.
+
+Output ports:
+    sdata: Serial output data.
+
+Implementation:
+Shift register logic:
+On every positive edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the shift register is updated.
+If the reset signal (rst_n) is low, the shift register is set to 0.
+If the load signal is active, the shift register is loaded with the parallel input data (pdata).
+Otherwise, the shift register shifts the data one bit to the right, and the least significant bit is shifted out as the serial output data (sdata).
+
+Give me the complete code.

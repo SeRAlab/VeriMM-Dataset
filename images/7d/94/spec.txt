@@ -1,0 +1,13 @@
+Design a module that serves as a SGMII (Serial Gigabit Media Independent Interface) interface and includes additional functionality for monitoring and control. The module takes differential clock inputs and 4-bit differential receive signals as inputs, while generating corresponding 4-bit differential transmit signals by inverting the received signals. It also features LED and PMOD outputs for status indications, governed by 24-bit counters that increment on specific clock edges, representing different frequency clocks. A push button input is used to control the MDIO (Management Data Input/Output) clock. Overall, this module integrates SGMII data transmission with monitoring capabilities via visual indicators and CS at the PMOD interface.
+module top_module(
+   input                sgmii_refclk_p,
+   input                sgmii_refclk_n,
+   input [3:0]          sgmii_rxn,
+   input [3:0]          sgmii_rxp,
+   input                pl_btn,
+   output [3:0]         sgmii_txn,
+   output [3:0]         sgmii_txp,
+   output               mdio_mdc,
+   output [1:0]         pl_led,
+   output [1:0]         pl_pmod
+);

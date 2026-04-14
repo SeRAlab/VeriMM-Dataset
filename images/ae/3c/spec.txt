@@ -1,0 +1,17 @@
+Implement a Verilog module based on the following description.
+The following diagram is a Moore machine implementation of a garage door controller. Implement in Verilog using one-hot encoding. Resets into state Closed and reset is asynchronous active-high.
+
+The state machine has the following states and their corresponding outputs: 
+1. state Closed (door_open = 0).
+2. state Open (door_open = 1).
+
+State transitions:
+1. From state Closed: If open_button = 1, then transition to state Open. If open_button = 0, then transition to state Closed.
+2. From state Open: If close_button = 1, then transition to state Closed. If close_button = 0, then transition to state Open.
+
+module garage_door (
+        input clk,
+        input areset,
+        input open_button,
+        input close_button,
+        output reg door_open);

@@ -1,0 +1,13 @@
+Design a hazard detection unit for a pipelined processor to manage data hazards during instruction execution. The module monitors the memory read signal and the source and destination register addresses of the instructions in different pipeline stages. When a data hazard is detected—specifically when a memory read in the execute stage refers to a register that is also being read or written in the instruction currently in the decode stage—the unit disables the program counter update and prevents writing to the pipeline register in the instruction fetch stage. It also asserts control reset signals to handle potential stalls in the pipeline. If no hazards are present, normal operation proceeds, enabling fetching and writing.
+module top_module(
+	
+	MemRead_EX_i,
+	RSaddr_IFID_i,
+	RTaddr_IFID_i,
+	RTaddr_IDEX_i,
+	PCWrite_o,
+	
+	WritePipeReg_IFID_o,
+	ControlReset_ID_o,
+	ControlReset_EX_o
+	);

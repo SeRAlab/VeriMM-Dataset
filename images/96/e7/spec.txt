@@ -1,0 +1,12 @@
+Develop a sequential control module that manages output signaling based on various input conditions. It uses a clock to synchronize the interleaving of two signal paths via the `Interleave_b` input, storing its previous state in `Interleave_a`. The `FF_en` input controls a flip-flop enable signal, toggling the `output_en` based on the `trigger` signal and the interleave state. When triggered with FF_en active, the module toggles `output_en` based on the current interleave state; if not active, it sets the output to LOW. The output behavior is designed to facilitate controlled multiplexing or enabling of downstream logic based on these conditions.
+module top_module(
+    input clk,
+    input trigger,
+    input Interleave_b,
+	 input FF_en,
+	 `ifdef XILINX_ISIM
+		output reg output_en = 1'b1
+	 `else
+		output reg output_en = 1'b0
+	 `endif
+    );

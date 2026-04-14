@@ -1,0 +1,8 @@
+Design a dual-clock controlled memory interface module that manages an 8-bit data input and output. The module takes input data, processes it based on clock cycles, and writes it to a memory array of 128 entries. It utilizes two state control signals (xcnt and ycnt) to regulate writing data, performing addition with the input and previously stored memory content. When triggering conditions are met (specifically when fx reaches 255), the control signals toggle to manage data processing flows, while the write enable signal is asserted when both ycnt and xcnt are active. The output data is generated during specific states, combining stored data with the processed input.
+module top_module(
+    clk,
+    rst_n,
+    din,
+    dout,
+    write_en
+);

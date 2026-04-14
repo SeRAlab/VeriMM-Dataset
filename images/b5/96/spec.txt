@@ -1,0 +1,5 @@
+Design a forwarding unit for a pipelined processor to handle data hazards by determining the appropriate forwarding paths for two sources, ForwardA and ForwardB. The unit uses control signals indicating whether the relevant registers will be written to in the current or previous pipeline stages. Based on comparisons of register destination identifiers, it sets ForwardA and ForwardB outputs to specific values that dictate whether to use values from earlier pipeline stages (2'b10 for EX stage, 2'b01 for MEM stage, and 2'b00 for no forwarding) to ensure the correct data is supplied in the execution stage for dependent instructions.
+module top_module(EXtoMEM_RegWrite,MEMtoWB_RegWrite,
+                       EXtoMEM_RegRd,MEMtoWB_RegRd,
+                       IDtoEX_RegRs,IDtoEX_RegRt,
+                       ForwardA,ForwardB);

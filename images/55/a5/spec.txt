@@ -1,0 +1,10 @@
+Design a circuit that performs oversampling and data transformation on an 8-bit input signal. The module takes an 8-bit clock input (`sclk`) for sampling the `sdata` signal, capturing it over multiple clock edges to ensure reliable data acquisition. The sampled data is stored in intermediate registers (`s1`, `s2`, `s3`, and `s4`), with `s4` representing the final output of the oversampling process. The module also computes a transformed output (`trans`) derived from XOR operations between adjacent bits of the sampled data under the control of the `res` and `enable` signals, allowing for reset functionality and conditional processing. This design effectively filters and encodes the sampled input data for subsequent usage.
+module top_module(
+	input [7:0]sclk,
+	input res,
+	input enable,
+	
+	input sdata,
+	output [7:0]samples,
+	output reg [7:0]trans
+);

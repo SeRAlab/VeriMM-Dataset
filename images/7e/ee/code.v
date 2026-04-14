@@ -1,0 +1,1 @@
+module top_module(output s, input x, y, w, z);assign s = (~x & ~y & ~w & ~z) | (~x & ~y & w & ~z) | (~x & y & ~w & z) | (~x & y & w & z) | (x & ~y & ~w & ~z) | (x & ~y & w & ~z)| (x & y & ~w & z);endmodule

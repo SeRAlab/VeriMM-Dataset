@@ -1,0 +1,31 @@
+Please act as a professional Verilog designer.
+
+Design a 4-bit shift register with parallel load. The shift register should load parallel data when the load signal is high. Otherwise, it should shift the data to the left on each rising edge of the clock signal.
+
+Module name:  
+    shift_reg               
+Input ports:
+	clk: Clock signal used for synchronous operation.
+	rst_n: Active-low asynchronous reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+	load: Load signal for parallel data input.
+	parallel_data: 4-bit parallel data input.
+
+Output ports:
+    q: 4-bit output representing the shift register value.
+
+Implementation:
+Shift Register Logic:
+The always block triggers on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by !rst_n, the shift register value is set to 0.
+If the load signal (load) is active, the parallel data (parallel_data) is loaded into the shift register.
+Otherwise, the data is shifted to the left by 1 bit.
+
+Give me the complete code.
+
+module shift_reg (
+	input clk,
+	input rst_n,
+	input load,
+	input [3:0] parallel_data,
+	output reg [3:0] q
+);

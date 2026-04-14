@@ -1,0 +1,14 @@
+The provided Verilog code describes a memory module that consists of three separate read-only memory (ROM) banks, each 256 entries deep and 8 bits wide. The module allows asynchronous read operations from these ROM banks based on the provided address and chip enable signals. On the rising edge of the clock, if the reset signal is active, all memory entries in the three ROM banks are reset to zero. When the chip enable signals (ce0, ce1, ce2) are asserted for the respective banks, the module outputs the data from the addressed locations (address0, address1, address2) to the outputs (q0, q1, q2). The module is designed to facilitate parallel reads from multiple memory banks, making it suitable for applications requiring multiple data retrieval paths simultaneously.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] address0,
+    input ce0,
+    output reg [7:0] q0,
+    input [7:0] address1,
+    input ce1,
+    output reg [7:0] q1,
+    input [7:0] address2,
+    input ce2,
+    output reg [7:0] q2
+);

@@ -1,0 +1,9 @@
+Develop a motor control block that manages a stepper motor's operation based on direction, stepping signals, and a PWM duty cycle for speed control. The module produces an enable signal, a step direction output, and a 4-bit step pulse to control the motor's movement. It utilizes PWM to modulate power applied to the motor: when the duty cycle is non-zero, it generates pulses proportional to the duty cycle value. Additionally, the module implements an H-bridge driver to dictate motor direction and ensures synchronized stepping of the motor through a state machine for managing the step pulse sequence.
+module top_module(
+  input dir,
+  input step,
+  input [7:0] duty_cycle,
+  output reg enable,    // Changed to reg
+  output reg step_dir,  // Changed to reg
+  output reg [3:0] step_pulse
+);

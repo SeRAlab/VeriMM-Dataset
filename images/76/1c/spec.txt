@@ -1,0 +1,15 @@
+Design a toy instruction cache module that interfaces with a memory bus to retrieve instruction data. The module operates on a clock signal and resets its internal state on a reset signal, initializing addresses and output registers. When a read request is active (ic_rq), the module outputs the instruction cache address (ic_addr) and signals the memory bus to read data. Once data is received and ready (data_in_ready), it stores the incoming instruction in the output register (ic_data_out), while also indicating the validity of the received data through ic_data_out_valid.
+module top_module(input clk,
+                  input             reset,
+
+                  input [31:0]      ic_addr,
+                  input             ic_rq,
+                  output reg        ic_data_out_valid,
+                  output reg [31:0] ic_data_out,
+
+                  // memory bus interface
+                  input [31:0]      data_in, // bus data in
+                  input             data_in_ready, // bus data ready
+                  output reg        data_rd, // request data read 
+                  output reg [31:0] data_address // output data address
+                  );

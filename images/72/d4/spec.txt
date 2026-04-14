@@ -1,0 +1,21 @@
+Implement the Verilog module based on the following description.
+The following is the state transition table for a Moore state machine with one input, one output, and four states. Use the following state encoding: Q0=2'b00, Q1=2'b01, Q2=2'b10, Q3=2'b11. Implement only the state transition logic and output logic (the combinational logic portion) for this state machine. Given the current state (state), compute the next_state and output (out) based on the state transition table.
+
+The state machine has the following states and their corresponding outputs:
+1. state Q0 (out = 0).
+2. state Q1 (out = 1).
+3. state Q2 (out = 0).
+4. state Q3 (out = 1).
+
+State transitions:
+1. From state Q0: If in = 0, then transition to state Q1. If in = 1, then transition to state Q2.
+2. From state Q1: If in = 0, then transition to state Q3. If in = 1, then transition to state Q0.
+3. From state Q2: If in = 0, then transition to state Q1. If in = 1, then transition to state Q3.
+4. From state Q3: If in = 0, then transition to state Q2. If in = 1, then transition to state Q0.
+
+module top_module (
+  input in,
+  input [1:0] state,
+  output reg [1:0] next_state,
+  output reg out
+);

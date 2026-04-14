@@ -1,0 +1,9 @@
+Design a memory interface module that performs read and write operations to a 32-bit wide memory array consisting of 1024 entries. It features synchronous operation triggered by a rising clock edge. When the reset_n signal is deasserted (low), the output data is initialized to zero. If the write_en signal is high, the module writes the incoming data_in to the specified address in memory. If write_en is low, it reads the data from the specified address and outputs it on data_out.
+module top_module(
+    input clk,
+    input reset_n,
+    input [31:0] data_in,
+    input write_en,
+    input [14:0] address,
+    output reg [31:0] data_out
+);

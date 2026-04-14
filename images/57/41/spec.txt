@@ -1,0 +1,7 @@
+Design a sequential circuit that computes a four-bit output based on a 16-bit input value. The module uses a clock signal to update the output, which is reset to zero when the reset signal is asserted. The output is determined by examining the upper four bits of the input: if they are `0000`, the output is set to `0000`, and if they are `1111`, the output is set to `1111`. For any other value in the upper four bits, the module adds this value to the lower four bits of the input and assigns the result to the output.
+module top_module(
+    input clk,
+    input reset,
+    input [15:0] data_in,
+    output reg [3:0] data_out
+);

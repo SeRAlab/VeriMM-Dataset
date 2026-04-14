@@ -1,0 +1,9 @@
+Develop a Serial Peripheral Interface (SPI) controller that facilitates data transmission and reception over a serial line. The module manages the sending of 8 bits of data via a clock signal (SCLK) and can also receive data when enabled. It uses flags for indicating data readiness (NEW_DATA) and completion of transmission (tx_done). The controller activates data reception in response to an external interrupt signal, allowing for the synchronization of data transactions. It also maintains internal registers to hold transmitted and received data, ensuring proper bit counting for both transmission and reception processes.
+module top_module(
+    input SCLK,
+    input INTERRUPT,
+    input CLOCK,
+    output reg [7:0] DATA_IN,
+    output reg [7:0] DATA_OUT,
+    output reg NEW_DATA
+);

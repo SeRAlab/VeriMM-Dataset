@@ -1,0 +1,8 @@
+Design a circuit implementing a Booth's multiplication algorithm for two signed 8-bit integers. The module processes inputs in clock cycles, using two 8-bit inputs, `a` and `b`, and outputs a 16-bit result. It utilizes a control logic to determine whether to add the multiplicand, subtract it, or do nothing based on the current state of the multiplier and the control signals. The design maintains an internal counter to manage the number of iterations needed for the multiplication and handles reset functionality to initialize all internal state registers.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] a,
+  input [7:0] b,
+  output reg [15:0] result
+);

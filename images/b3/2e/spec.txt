@@ -1,0 +1,6 @@
+Design a circuit that separates a 16-bit input into two 8-bit outputs based on a control signal. The module accepts a 16-bit input and a select signal that determines whether to output the upper or lower byte. When the select signal is high, the upper 8 bits of the input are shifted to the output; otherwise, it outputs the original lower 8 bits. This design functions as a byte selector with the ability to rearrange the bytes, effectively allowing for the implementation of a halfword separator.
+module top_module(
+    input wire [15:0] in,
+    input wire select_upper,
+    output wire [7:0] out_hi,
+    output wire [7:0] out_lo);

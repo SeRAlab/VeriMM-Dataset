@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+    
+Implement a module to interface with a 7-segment LED display, providing the necessary logic to display numbers or characters on the display based on input data. It serves as a bridge between a digital system (such as a microcontroller or another digital circuit) and one or more 7-segment LED displays. The primary functions of this module include:
+
+Data Buffering: It buffers up to four 8-bit data inputs, allowing for temporary storage of display data.
+Write and Read Operations: It supports write and read operations to and from the internal buffers using specified addresses.
+7-Segment Data Conversion: It converts 4-bit binary data into 7-segment display patterns.
+Multiplexing and Flashing Control: The module supports multiplexing across multiple 7-segment displays and can flash individual segments based on control bits.
+
+Module name:  
+	clock_seg7led_interface
+
+Input ports:
+	clk: Clock input (1bit). The primary clock signal driving the module's synchronous operations.
+	rst: Reset input (1bit). Used to initialize or reset the module's state.
+	din: Data input (8bit). The binary data to be displayed on the 7segment LED.
+	wr: Write enable (1bit). When high, it allows writing din to the buffer at wr_addr.
+	rd: Read enable (1bit). When high, it allows reading data from the buffer at rd_addr into dout.
+	wr_addr: Write address (3bit). Specifies the buffer address for write operations.
+	rd_addr: Read address (3bit). Specifies the buffer address for read operations.
+Output ports:
+	seg7_sel: 7segment select (8bit). Controls which 7segment display is active.
+	seg7_data: 7segment display data (8bit). Specifies the pattern to be displayed on the active 7segment LED.
+
+
+Implementation:
+The clock_seg7led_interface module is designed to interface with a 7-segment LED display, managing the display data and selection based on input commands and internal logic. The module operates on a clock (clk) and can be reset (rst). It interfaces through data input (din), data output (dout), write (wr), read (rd), write address (wr_addr), and read address (rd_addr). The module outputs to the 7-segment display through seg7_sel for segment selection and seg7_data for the segment data.
+
+Give me the complete code.
+

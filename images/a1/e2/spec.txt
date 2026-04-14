@@ -1,0 +1,8 @@
+Design a circuit that implements a clock-controlled scan counter. The module features a finite state machine (FSM) with three states: IDLE, LOW, and HIGH. Upon reset, it initializes the state to IDLE. The state transitions define the behavior of the counter: it increments the counter while in the HIGH state and resets it while in the LOW state, contingent on the 'halt' signal. The output 'clock_out' toggles based on the state, providing a single pulse during the IDLE and HIGH states and remaining low in the LOW state. The counter measures up to a predefined limit (DIM), after which it resumes a low state. The design is suitable for applications requiring a controlled scanning mechanism with clear state definitions and output signaling.
+module top_module(
+reset,
+clock_in,
+counter,
+clock_out,
+halt
+);

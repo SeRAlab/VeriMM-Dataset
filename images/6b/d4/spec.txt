@@ -1,0 +1,9 @@
+Design a D flip-flop with asynchronous set and clear capabilities. The module captures the input data, D, on the rising edge of the CLK signal. If the SET_B input is low, the output Q is set to high and Q_N to low, overriding the input data. Conversely, if CLR_B is low, Q is set to low and Q_N to high, also overriding the input data. When both control signals are high, the output follows the input, with Q reflecting D and Q_N reflecting the inverse of D.
+module top_module(
+    input CLK,
+    input D,
+    input SET_B,
+    input CLR_B,
+    output reg Q,
+    output reg Q_N
+);

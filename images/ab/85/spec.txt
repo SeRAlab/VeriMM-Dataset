@@ -1,0 +1,11 @@
+Design a module that performs multiplication of two complex numbers using fixed-point arithmetic. The inputs are two complex numbers represented by their real and imaginary parts, each being 16 bits wide and signed. The module utilizes a clock for synchronization and includes an active-low reset signal. Upon a reset, all internal registers are cleared. During each clock cycle, the module converts the inputs to a higher precision format by left-shifting them, calculates the products necessary for the multiplication of complex numbers, and subsequently shifts the results back down to produce 16-bit outputs for the real and imaginary parts of the product. The final output represents the result of multiplying the two input complex numbers.
+module top_module(
+  input clk,
+  input rst_n,
+  input signed [15:0] x_re,
+  input signed [15:0] x_im,
+  input signed [15:0] y_re,
+  input signed [15:0] y_im,
+  output reg signed [31:0] z_re,
+  output reg signed [31:0] z_im
+);

@@ -1,0 +1,12 @@
+Design a data storage module that captures input signals and provides controlled outputs based on clock signals. The module consists of two main functionalities: it samples the values of DOUT0 and DOUT1 on the rising edge of CLOCKENABLE and stores them in a 2-bit register. It then uses INPUTCLK to latch these stored values into output registers DIN0 and DIN1 when LATCHINPUTVALUE is asserted, and also allows for re-outputting these values on the rising edge of OUTPUTCLK when OUTPUTENABLE is active. This configuration enables the module to manage sampling and output timing effectively, acting as a controlled data capture system.
+module top_module(
+  input CLOCKENABLE,
+  input DOUT0,
+  input DOUT1,
+  input INPUTCLK,
+  input LATCHINPUTVALUE,
+  input OUTPUTCLK,
+  input OUTPUTENABLE,
+  output reg DIN0,
+  output reg DIN1
+);

@@ -1,0 +1,11 @@
+Design a circuit for address decoding that takes a 13-bit input address and generates four 10-bit output addresses corresponding to different memory banks (bank0 to bank3). The address is decoded based on the two least significant bits of the input address, which determine how the primary address (derived from bits 12 to 3) is assigned to the bank outputs. The module also includes delayed registers for the output addresses and control signals (sel and odd) to ensure synchronization with the clock. The design is intended for managing access to multiple memory banks while handling address modifications based on specific input conditions.
+module top_module(
+    input clk,
+    input [12:0] addr_in,
+    output reg [9:0] bank0_addr,
+    output reg [9:0] bank1_addr,
+    output reg [9:0] bank2_addr,
+    output reg [9:0] bank3_addr,
+    output reg [1:0] sel,
+    output reg odd
+);

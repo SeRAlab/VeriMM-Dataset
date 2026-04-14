@@ -1,0 +1,14 @@
+Design a Verilog module based on the following description.
+Consider a FSM with the following states and outputs:
+1. state P (G = 1).
+2. state Q (G = 0).
+3. state R (G = 1).
+4. state S (G = 0).
+
+State transitions:
+1. From state P: If p = 1, transition to state Q. If p = 0, transition to state R.
+2. From state Q: If p = 1, transition to state S. If p = 0, transition to state P.
+3. From state R: If p = 1, transition to state P. If p = 0, transition to state S.
+4. From state S: If p = 1, transition to state R. If p = 0, transition to state Q.
+
+Use two flip-flops with state codes g[1:0] = 00, 01, 10, 11 for states P, Q, R, S, respectively. Implement just the next-state logic for g[1:0] in Verilog. The output G is g[1].

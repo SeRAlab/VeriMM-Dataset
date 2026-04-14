@@ -1,0 +1,14 @@
+Design a dual-clock, 64-bit wide, 512-depth FIFO (First-In, First-Out) memory buffer. This module allows for asynchronous writing and reading of data, characterized by separate clock signals for write and read operations (wr_clk and rd_clk). It supports reset functionality, generates output signals for indicating buffer status (full or empty), and maintains counters for the number of data items written and read. Upon a valid write enable (wr_en) signal, it stores the input data (din) into memory, incrementing the write pointer and data count, while the read operation occurs on a valid read enable (rd_en) signal, producing the output data (dout) and updating the read pointer and data count accordingly. The design ensures safe operation by preventing overflows and underflows during data transactions.
+module top_module(
+  rst,
+  wr_clk,
+  rd_clk,
+  din,
+  wr_en,
+  rd_en,
+  dout,
+  full,
+  empty,
+  rd_data_count,
+  wr_data_count
+);

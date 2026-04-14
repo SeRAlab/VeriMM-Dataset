@@ -1,0 +1,13 @@
+Design a counter circuit that increments or decrements a 32-bit count value based on the `up` and `dn` control signals while also generating a 4-bit count value that increments approximately every 100,000 clock cycles. The module incorporates reset functionality, ensuring all counting registers reset to zero on a low reset signal (`n_rst`). The output `cnt` reflects the current value of the main counter, while the output `cnt_1k` updates every time the internal divider reaches its threshold, effectively creating a slower count signal. Additionally, the module has provisions for other input signals (`in1`, `in2`) and output signals (`out1`, `out2`), though their specific functions are not defined in the provided code.
+module top_module(
+    input wire clk,
+    input wire n_rst,
+    input wire up,
+    input wire dn,
+    output reg [31:0] cnt,
+    output reg [3:0] cnt_1k,
+    input wire in1,
+    input wire in2,
+    output reg out1,
+    output reg out2
+);

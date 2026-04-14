@@ -1,0 +1,20 @@
+Design a digital interface module for audio signal processing that operates on both left and right audio channels. The module utilizes a clock and reset inputs to manage the timing and synchronization of data transfer. It receives signed 16-bit audio data for both left and right channels and outputs processed audio data while also indicating when the output is ready via the `ready_o` signal. The module interacts with an external digital-to-analog converter (DAC) and an analog-to-digital converter (ADC), controlling operations based on the provided audio clock signals. The internal logic ensures proper data handling and synchronization for effective audio playback and conversion.
+module top_module(
+    
+    input                     clk_i, 
+    input                     rst_i, 
+    input      signed [15:0]  datal_i,
+    input      signed [15:0]  datar_i,
+    output reg signed [15:0]  datal_o,
+    output reg signed [15:0]  datar_o,
+
+    output reg                ready_o,
+
+
+
+    
+    input                     aud_bclk_i,
+    input                     aud_daclrck_i,
+    output reg                aud_dacdat_o,
+    input                     aud_adcdat_i
+  );

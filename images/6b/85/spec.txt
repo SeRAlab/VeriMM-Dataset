@@ -1,0 +1,10 @@
+Design a Reed-Solomon error-correcting code module that operates on a data stream of `k` symbols, each consisting of `n` bits. The module includes functionality for encoding input data when the `encode_enable` signal is active, as well as for decoding and error detection when encoding is not taking place. It can correct up to `t` errors in the coded data and can introduce errors to the encoded data stream if `error_enable` is activated. The module outputs the encoded or decoded data and a flag indicating whether errors were detected during the decoding process.
+module top_module(
+  input clk,
+  input reset,
+  input [n-1:0] data_in,
+  input encode_enable,
+  input error_enable,
+  output reg [n-1:0] data_out,
+  output reg error_detected
+);

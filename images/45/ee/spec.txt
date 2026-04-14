@@ -1,0 +1,6 @@
+Design a control system for managing a backlight based on touch input and a timer. The module has two states: 'DISPLAY_ON' and 'DISPLAY_OFF.' When a touch event occurs, it transitions to 'DISPLAY_ON,' which triggers the backlight (output o_Light = HIGH). The backlight remains active until a specified time passes (indicated by the overflow of a 34-bit counter). Once the counter's high bit is reached, it moves to 'DISPLAY_OFF,' turning off the light output. The counter resets on touch, allowing the backlight to stay on longer with continued interaction.
+module top_module(
+    input i_Clk,
+    input i_Touch,
+    output o_Light
+);

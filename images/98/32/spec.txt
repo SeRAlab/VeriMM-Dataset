@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+
+Implement a 16-bit shift register with parallel load capability. The shift register should be able to shift left and load data based on a control signal.
+
+Module name:
+    shift_register
+
+Input ports:
+    clk: Clock signal.
+    reset: Asynchronous reset signal.
+    load: Load control signal.
+    load_data: Data to be loaded into the shift register.
+    shift_enable: Shift control signal.
+
+Output ports:
+    q: Current shift register value.
+
+Implementation:
+Shift Register:
+The module includes a register, q, to store the current shift register value.
+Load Operation:
+On the positive edge of the clock signal (clk), if the load signal is high, the data (load_data) is loaded into the shift register.
+Shift Operation:
+If the load signal is low and the shift_enable signal is high, the shift register shifts left by one bit.
+Reset Operation:
+The reset operation is asynchronous and resets the shift register to 16'b0 whenever the reset signal is high.
+
+Give me the complete code.

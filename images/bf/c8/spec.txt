@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module performs a specific logical operation known as an OR-AND-Invert (OAI) operation with a configuration that can be described as a 2-2-2 setup. This designation indicates that the module takes two sets of two inputs for each of the OR operations and then combines these results through an AND operation, followed by an inversion (NOT) at the output. The primary function of this module to generate a single output `z` based on the logical combination of its six input signals. This type of logic gate is commonly used in digital circuits for implementing complex combinational logic in a compact and efficient manner. It can serve various roles within a broader system, such as part of arithmetic circuits, control logic, or any application requiring specific combinations of its inputs to determine its output.
+
+Module name:  
+	bw_u1_oai222_1x
+
+Input ports:
+	c1, c2: These are input ports that are part of the first OR operation. They are digital signals and contribute to one of the three conditions that determine the output z. If either c1 or c2 is high (1), the condition for their part of the OR operation is met.
+	b1, b2: These input ports are part of the second OR operation. Similar to c1 and c2, they are digital signals, and if either b1 or b2 is high, the condition for their part of the OR operation is met.
+	a1, a2: These inputs are part of the third OR operation. They function under the same principle as the other inputs, where if either a1 or a2 is high, their condition is satisfied.
+Output ports:
+	z: This is the single output port of the module. It is a digital signal (binary, either 0 or 1) that represents the result of the ORANDInvert operation performed on the input signals. The output is active low, meaning that a logical low (0) is asserted when the conditions of the OAI logic are met.
+
+
+Implementation:
+The RTL module presented, named bw_u1_oai222_1x, implements a specific type of combinational logic circuit known as an OR-AND-Invert (OAI) gate, with a configuration that could be described as a double 2-input OR followed by a 3-input AND and then an inverter. This particular configuration is often referred to as an OAI222, indicating two inputs for each of the OR gates leading into a single AND gate, which is then inverted.
+The logic operation performed by the module can be broken down as follows:
+1. OR Operations: The module begins its logic operation by performing OR operations on pairs of inputs. There are three pairs of inputs: c1 and c2, a1 and a2, and b1 and b2. Each pair is subjected to an OR operation, resulting in three intermediate signals (not explicitly defined in the code but conceptually present for explanation purposes). These can be thought of as or_c = c1 | c2, or_a = a1 | a2, and or_b = b1 | b2.
+2. AND Operation: Following the OR operations, the results are then combined in an AND operation. This operation is the crux of the logic processing, integrating the outcomes of the OR operations into a single signal. Conceptually, this can be represented as and_result = or_c & or_a & or_b.
+3. Inversion: The final step in the logic operation is the inversion of the AND operation's result. This inverts the logic level of the and_result, producing the module's output z. Therefore, if the AND operation results in a logic high (1), the output z will be a logic low (0), and vice versa.
+This module does not contain any sequential logic elements (like flip-flops or latches), indicating that its output is purely combinational and directly dependent on the current state of its inputs. There are no internally stored states or feedback loops. The output z immediately reflects changes in the inputs following the combinational logic path described.
+
+Give me the complete code.
+

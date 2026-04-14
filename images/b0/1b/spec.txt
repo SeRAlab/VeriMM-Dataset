@@ -1,0 +1,8 @@
+Design a priority encoder that accepts an 8-bit input and outputs the binary representation of the highest priority active input bit. The module features an enable signal (EN) that indicates when any input is active and a valid signal (V) that toggles whenever a new valid input is detected. The output, represented by three bits (Q), corresponds to the index of the highest bit set in the input, with the most significant bit (bit 7) having the highest priority. The state transitions and outputs are synchronized with the rising edge of the clock signal, ensuring reliable operation.
+module top_module(
+    input [7:0] I,
+    input clk, // Added clock input
+    output reg EN,
+    output reg V,
+    output reg [2:0] Q
+);

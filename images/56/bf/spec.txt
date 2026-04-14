@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+
+Implement an 8-bit register file with two read ports and one write port. The register file should have 16 registers, support asynchronous read, and synchronous write.
+
+Module name:
+    reg_file_8bit
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    we: Write enable signal. Defined as 1 for write and 0 for no write.
+    waddr: 4-bit write address.
+    wdata: 8-bit data to be written to the register specified by waddr.
+    raddr1: 4-bit read address for the first read port.
+    raddr2: 4-bit read address for the second read port.
+
+Output ports:
+    rdata1: 8-bit data read from the register specified by raddr1.
+    rdata2: 8-bit data read from the register specified by raddr2.
+
+Implementation:
+The module includes a 16x8 register array.
+An always block, triggered on the positive edge of the clock signal (posedge clk), handles the write operation.
+Two continuous assignment statements handle the asynchronous read operations.
+
+Give me the complete code.

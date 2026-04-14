@@ -1,0 +1,9 @@
+Design a binary to Gray code converter that operates based on an 8-bit input value. The module includes reset functionality, allowing the initial value to be set, which is converted to Gray code upon reset. The conversion process continuously updates the binary counter, which increments based on an enable signal. The corresponding Gray code output is computed by XORing the binary count with a shifted version of itself. The design ensures synchronous operation with a clock while providing both current and next values of the Gray code count as outputs.
+module top_module(
+  input clk,
+  input rst_n,
+  input [7:0] rst_val,
+  input en,
+  output reg [7:0] gry_cnt,
+  output reg [7:0] gry_cnt_nxt
+);

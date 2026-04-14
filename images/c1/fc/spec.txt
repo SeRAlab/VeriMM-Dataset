@@ -1,0 +1,43 @@
+
+
+You are tasked to implement a verilog module that performs a 3-bit-to-1-bit multiplexer. The module should have the following interface:
+
+Inputs:
+- `reset`: a synchronous reset signal.
+- `clk`: a clock signal.
+- `sel`: a 3-bit selection signal.
+- `in0`, `in1`, `in2`: 1-bit input signals.
+
+Outputs:
+- `out`: a 1-bit output signal.
+
+The module should output the value of `in0`, `in1`, or `in2` depending on the value of the `sel` signal. If `sel` is `000`, `out` should be equal to `in0`. If `sel` is `001`, `out` should be equal to `in1`. If `sel` is `010`, `out` should be equal to `in2`.
+
+You should use the following template for your module:
+
+```
+module mux3to1(
+    reset,
+    clk,
+    sel,
+    in0,
+    in1,
+    in2,
+    out);
+
+// Inputs
+input reset;
+input clk;
+input [2:0] sel;
+input in0;
+input in1;
+input in2;
+
+// Outputs
+output out;
+
+// Your code here
+
+endmodule
+```
+

@@ -1,0 +1,7 @@
+Design a circuit to count the number of clock cycles and instructions executed in a processor, with special handling for no-operation (NOP) instructions. The module operates with a rising edge clock signal and a reset signal. Upon a reset, both the clock cycle count and instruction count are set to zero. The `clk_no` output increments with each clock cycle, while the `ins_no` output increments only for non-NOP instructions, effectively tracking the performance of the processor in terms of executed instructions versus total clock cycles.
+module top_module(		 	   
+        input clk,
+        input rst,
+        input is_nop,
+        output reg [100:0] ins_no,
+        output reg [100:0] clk_no);

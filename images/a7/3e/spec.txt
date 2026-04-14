@@ -1,0 +1,11 @@
+Design a synchronous FIFO (First-In, First-Out) memory structure with configurable data width (n bits) and depth (16 elements). The FIFO allows writing data when the write enable signal is active and the queue is not full, while reading data when the read enable signal is active and the queue is not empty. It includes flags to indicate when the buffer is empty or full and manages two pointers—head for writing new data and tail for reading old data—along with a counter for the number of elements stored. The module resets the pointers and counter upon receiving a reset signal.
+module top_module(
+  input [n-1:0] din,
+  input wen,
+  input ren,
+  input rst,
+  input clk,
+  output reg [n-1:0] dout,
+  output reg empty,
+  output reg full
+);

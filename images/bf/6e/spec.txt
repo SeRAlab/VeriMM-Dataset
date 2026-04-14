@@ -1,0 +1,7 @@
+Design a motor control module that manages the speed of a motor based on a 16-bit input signal. The module uses a clock and a reset signal to operate. Upon reset, both the temporary signal and motor speed are set to zero. When the module receives a clock pulse, it captures the input signal and adjusts the motor speed accordingly: if the input signal is less than or equal to 32767, the speed is set to the input signal right-shifted by 7 bits; otherwise, it is right-shifted by 8 bits. This functionality effectively scales the input signal to a controllable motor speed output, allowing for varying motor performance based on the input provided.
+module top_module(
+    input clk,
+    input reset,
+    input [15:0] input_signal,
+    output reg [7:0] motor_speed
+);

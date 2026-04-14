@@ -1,0 +1,10 @@
+Design an 8-bit Linear Feedback Shift Register (LFSR) that generates pseudorandom sequences. The module can be seeded with a user-defined initial value through the `seedData` input when the `ld_seed` signal is asserted. When enabled, the LFSR shifts its bits on each clock cycle, using an XNOR operation on selected bits to determine the new bit that enters the register. The output `outData` provides the current state of the LFSR, representing the generated pseudorandom sequence.
+module top_module(
+	input clock,
+   input enable,
+	
+	input ld_seed,
+   input [7:0] seedData,
+ 
+   output [7:0] outData
+   );

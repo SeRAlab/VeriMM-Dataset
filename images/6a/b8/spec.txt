@@ -1,0 +1,9 @@
+Design a synchronous FIFO (First-In-First-Out) memory buffer. The module accepts a clock signal, reset signal, write enable, and data input, and provides a data output. It features a memory block of a specified depth and data width, where data can be written if the buffer is not full, and read if it is not empty. Upon receiving a reset signal, it initializes write and read pointers and the count of stored items. The module manages data storage and retrieval in a way that maintains the order of entries, facilitating temporary data storage in applications such as streaming data or buffering.
+module top_module(
+  input clk,
+  input reset,
+  input write_en,
+  input [data_width-1:0] data_in,
+  input read_en,
+  output reg [data_width-1:0] data_out // Changed to reg to allow assignment in always block
+);

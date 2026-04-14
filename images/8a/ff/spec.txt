@@ -1,0 +1,6 @@
+Design a sequential circuit that processes an input signal `x` based on a clock signal `clk`. It includes three registers (`q`, `q1`, and `q2`) that perform different operations on the input: `q` holds the XOR of its current state and `x`, while `q1` is set to HIGH only if it is LOW and `x` is HIGH, and `q2` is set to HIGH if it was LOW or if `x` is HIGH. The output `z` is the negation of the ORed states of `q`, `q1`, and `q2`, producing a LOW output when any of the internal states are HIGH. This module essentially implements a combination of state toggling and conditionally set registers for a specific control logic application.
+module top_module(
+    input clk,
+    input x,
+    output z
+);

@@ -1,0 +1,7 @@
+Design a toggle module that operates based on a clock input and a toggle control signal. This module counts cycles until reaching a specified number defined by the `cyc_copy` input. When the count matches the `cyc_copy` value, it toggles the output `toggle_up` and resets the count. The circuit also handles changes in the toggle signal by resetting the counter, ensuring accurate toggling based on the most recent toggle state. This functionality makes it suitable for applications requiring periodic toggling based on an external clock and trigger signal.
+module top_module(
+   input clk,
+   input toggle,
+   input [7:0] cyc_copy,
+   output reg toggle_up
+);

@@ -1,0 +1,9 @@
+Develop a Verilog module based on the provided description. Assume signals are positive clock/clk edge triggered unless otherwise stated.
+You have a 26-bit input vector t[25:0]. Perform the following operations:
+// (1) out_eq3: Each bit of this output vector should indicate whether the corresponding input bit is equal to its neighbor to the left. For example, out_eq3[24] should indicate if t[24] is equal to t[25]. Since t[25] has no neighbor to the left, we don't need to know out_eq3[25].
+// (2) out_nand3: Each bit of this output vector should indicate whether both the corresponding input bit and its neighbor to the right are not both '1'. For example, out_nand3[24] should indicate if t[24] and t[23] are not both 1. Since t[0] has no neighbor to the right, we don't need to know out_nand3[0].
+
+module top_module (
+	input [25:0] t,
+	output [24:0] out_eq3,
+	output [24:0] out_nand3);

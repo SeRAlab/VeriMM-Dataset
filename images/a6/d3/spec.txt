@@ -1,0 +1,9 @@
+Design a 4-bit magnitude comparator that assesses the relationship between two 4-bit inputs, A and B. The module generates three output signals: EQ (equal), GT (greater than), and LT (less than). Upon the positive edge of the clock, it first stores the values of A and B, and in the next stage, it compares the two. Depending on the comparison results, it outputs EQ as high if the values are equal, GT as high if A is greater than B, or LT as high if A is less than B.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input clk,           // Added clk as input
+    output reg EQ,
+    output reg GT,
+    output reg LT
+);

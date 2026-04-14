@@ -1,0 +1,9 @@
+Design a 4-bit shift register with parallel load, left shift, and right shift capabilities. When the PL (parallel load) signal is high, the input value (IN) is loaded into the register. When SL (shift left) is asserted, the bits in the register are shifted left, with the most significant bit being rotated back to the least significant bit position. Conversely, asserting SR (shift right) shifts the bits to the right, with the least significant bit wrapping around to the most significant bit position. The output is a 4-bit register that gets updated on the rising edge of the clock signal.
+module top_module(
+    input clk,
+    input [3:0] IN,
+    input PL,
+    input SL,
+    input SR,
+    output reg [3:0] q
+);

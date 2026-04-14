@@ -1,0 +1,12 @@
+Design a program counter (PC) block for a digital system that updates its address based on various control signals. The module takes inputs such as a clock signal (clk), a reset signal, and a control signal that determines whether to push or add an increment value (inc) to the current address. When reset is asserted, the address resets to zero. If the control logic conditions are met, the address is incremented by the specified increment value plus one. The output includes the current address and a next status signal, which indicates readiness for the next operation. The design allows for conditional address updates based on the control signals while maintaining state across clock cycles.
+module top_module(
+				input control,
+				input push,
+				input clk,
+				input [31:0] inc,
+				input reset,
+				input addcontrol,
+				output [31:0] addr,
+				output next
+				
+    );

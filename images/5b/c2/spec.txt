@@ -1,0 +1,13 @@
+Design a module that combines a 100-bit barrel shifter and a combinational logic circuit for bitwise operations. Upon a positive clock edge and when the load signal is active, the design shifts the input data left or right based on the enable (ena) signals. At the same time, it performs AND, OR, and XOR operations between the shifted data and an external input, producing corresponding output signals. The final output is computed by adding the AND and XOR results, all synchronized to the clock. Additionally, the shifted data is retained in an output register for further use. This module effectively facilitates data manipulation and logical operations for signal processing applications.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output reg [99:0] q,
+    input [99:0] in,
+    output out_and,
+    output out_or,
+    output out_xor,
+    output reg [99:0] final_output
+);

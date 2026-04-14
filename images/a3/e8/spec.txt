@@ -1,0 +1,10 @@
+Design a 4-to-1 multiplexer that selects one of four 4-bit wide input lines (ic0, ic1, ic2, ic3) based on a 2-bit selector composed of is1 and is0. The output, oz, will reflect the value of the selected input line according to the binary value represented by the selector inputs. If is1 and is0 are both low, oz outputs ic0; if is1 is low and is0 is high, it outputs ic1; if is1 is high and is0 is low, it outputs ic2; and if both are high, it outputs ic3. In cases where the selector state is invalid (not within the range of 00 to 11), oz is assigned an unknown state.
+module top_module(
+    input [3:0] ic0,
+    input [3:0] ic1,
+    input [3:0] ic2,
+    input [3:0] ic3,
+    input is0,
+    input is1,
+    output reg [3:0] oz
+    );

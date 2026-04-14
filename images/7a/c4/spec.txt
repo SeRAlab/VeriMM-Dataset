@@ -1,0 +1,7 @@
+Design a 16-bit barrel shifter that takes in a 16-bit input data and a 4-bit shift amount to produce 16-bit shifted output. It performs left shifting based on the specified shift amount, chaining multiple shifts if necessary. If the shift amount exceeds 15, the output is set to zero; otherwise, the shifted result is registered on the rising edge of the clock. This module can facilitate efficient bit manipulation for applications such as data alignment or arithmetic operations.
+module top_module(
+    input [15:0] data,
+    input [3:0] shift_amount,
+    output reg [15:0] shifted_data,
+    input clk // Added clk input
+);

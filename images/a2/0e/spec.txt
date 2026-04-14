@@ -1,0 +1,17 @@
+Design a basic processor module that features a register file, an arithmetic logic unit (ALU), and a memory subsystem. The processor operates on 32-bit data, with registers that can be written to based on a control signal and a reset mechanism for initialization. It supports various ALU operations such as addition, subtraction, bitwise operations, and shifts, determined by a 3-bit opcode. Additionally, the module includes a memory write functionality that allows data to be stored at computed addresses, with control signals to manage operations such as writing to registers and memory. The output includes the data from the selected registers, the ALU result, and flags for overflow (OF) and zero (ZF) conditions.
+module top_module(
+    input clk,
+    input Reset,
+    input Write_Reg,
+    input Mem_Write,
+    input [15:0] offset,
+    input [2:0] ALU_OP,
+    input wire [4:0] W_Addr,
+    input wire [4:0] RS,
+    input wire [4:0] RT,
+    output wire [31:0] A,
+    output wire [31:0] Data_Bus,
+    output reg [31:0] Result, // Change wire to reg
+    output wire OF,
+    output wire ZF
+);

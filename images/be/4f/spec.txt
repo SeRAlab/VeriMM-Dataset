@@ -1,0 +1,6 @@
+Design a simple two-entry register file with a clock input. The register file has a write enable (we) signal that allows writes to occur on the positive clock edge; when enabled, it writes the values of two 32-bit data inputs (wd0 and wd1) into the two registers. The read address (ra) determines which of the two registers is output: if ra is 0, the output is the content of the first register; if ra is 1, it outputs the content of the second register.
+module top_module(input       clk, 
+               input         we, 
+               input         ra, 
+               input  [31:0] wd0, wd1, 
+               output [31:0] rd);

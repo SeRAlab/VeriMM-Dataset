@@ -1,0 +1,10 @@
+Design a 4-bit shift register with three stages of storage that can load input data, shift data left or right, and reset to zero. The circuit includes a clock input for synchronization, a load signal to initialize the register with input data, and control signals for shifting direction. Upon reset, all stages of the register are cleared to zero, ensuring that the outputs reflect the correct state of the data in the shift operation. The output provides the 4-bit value from the last stage of the pipeline.
+module top_module(
+    input clk,
+    input load,
+    input shift_left,
+    input shift_right,
+    input reset,
+    input [3:0] data_in,
+    output [3:0] data_out
+);

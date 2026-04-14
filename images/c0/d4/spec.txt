@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+    
+Implement a module to interface with a 7-segment LED display. Its primary functions include:
+
+Data Buffering: It buffers up to 8 bytes of data, allowing for asynchronous data writing and reading operations.
+Write and Read Operations: It supports write and read operations to and from the internal buffer based on external addresses.
+7-Segment Display Control: It cyclically outputs the buffered data to a 7-segment display, controlling which segment is active and what data it displays.
+
+This module plays a crucial role in systems requiring visual data representation on 7-segment displays, such as digital clocks, counters, or any application needing numerical output visualization.
+
+Module name:  
+	seg7led_interface
+
+Input ports:
+	clk: Clock input (type: input). The primary clock signal driving the module's synchronous operations.
+	rst: Reset input (type: input). Used to initialize or reset the module's internal state, not explicitly used in the provided code.
+	din: Data input (type: input, 8 bits). The byte of data to be written into the module's buffer.
+	wr: Write enable (type: input). When high, it enables writing din to the buffer at the address specified by wr_addr.
+	rd: Read enable (type: input). When high, it enables reading data from the buffer at the address specified by rd_addr into dout.
+	wr_addr: Write address (type: input, 3 bits). Specifies the buffer address to write to when wr is high.
+	rd_addr: Read address (type: input, 3 bits). Specifies the buffer address to read from when rd is high.
+Output ports:
+	dout: Data output (type: output reg, 8 bits). Holds the data read from the buffer when rd is high; otherwise, it is set to 0.
+	seg7_sel: 7Segment selector (type: output reg, 8 bits). Determines which of the 7segment displays is active.
+	seg7_data: 7Segment display data (type: output reg, 8 bits). The data to be displayed on the currently active 7segment display.
+
+
+Implementation:
+The seg7led_interface module is designed to interface with a 7-segment LED display, managing data input/output and the selection of individual segments for display. The module operates on a synchronous digital logic principle, utilizing the rising edge of a clock signal (clk) for its operations. The design incorporates both combinational and sequential logic elements to perform its tasks.
+
+Give me the complete code.
+

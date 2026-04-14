@@ -1,0 +1,5 @@
+Design a finite state machine (FSM) that detects a specific sequence based on the inputs of a switch and a clock. The circuit transitions between three states (state_a, state_b, state_c) and produces a request output when it successfully detects the sequence "1-0-1." The clear input resets the state machine to the initial state and disables the request signal. The request is asserted high when the machine transitions back to state_a from state_c, indicating the completion of the detected sequence.
+module top_module(
+    input clear, switch, clock,
+    output reg request
+);

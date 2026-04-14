@@ -1,0 +1,11 @@
+Develop a circuit that represents a blue obstacle on a graphical display based on its coordinates. The module takes in clock signals and 10-bit coordinate inputs (x, y) to determine whether the coordinates fall within a defined rectangular area specified by parameters. If the coordinates indicate that the obstacle should be rendered, the output colors are set to blue (RGB: 0, 0, 255), and a two-bit signal (`obXLOn`) is activated to indicate the obstacle's presence. Additionally, if a collision signal is detected, the obstacle is turned off, indicating that it no longer exists.
+module top_module(
+    input wire Clk,
+    input wire [9:0] x,
+    input wire [9:0] y,
+    output reg [7:0] red,
+    output reg [7:0] green,
+    output reg [7:0] blue,
+    output reg [1:0] obXLOn,
+    input wire onCollision_obXL
+    );

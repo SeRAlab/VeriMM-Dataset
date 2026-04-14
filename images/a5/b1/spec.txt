@@ -1,0 +1,11 @@
+Design a dual-port RAM module with 16-bit width for both data inputs and outputs, allowing simultaneous read and write operations. The module supports two independent address lines and write enable signals for each port. When `write_en_port1` or `write_en_port2` is asserted on the rising edge, the corresponding data from `data_in_port1` or `data_in_port2` is stored in the memory location specified by `addr_port1` or `addr_port2`, respectively. The module outputs the data stored at the addresses provided by `addr_port1` and `addr_port2` on `data_out_port1` and `data_out_port2`, enabling concurrent access to the RAM by two ports.
+module top_module(
+    input [15:0] addr_port1,
+    input [15:0] addr_port2,
+    input [15:0] data_in_port1,
+    input [15:0] data_in_port2,
+    input write_en_port1,
+    input write_en_port2,
+    output [15:0] data_out_port1,
+    output [15:0] data_out_port2
+);

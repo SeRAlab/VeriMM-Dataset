@@ -1,0 +1,106 @@
+`timescale 1ns/1ps
+
+module adder_pipe_16bit_tb;
+
+    // Testbench signals (sequential circuit)
+    reg [15:0] add_a;
+    reg [15:0] add_b;
+    reg clk;
+    reg i_en;
+    reg rst_n;
+    wire o_en;
+    wire [15:0] result;
+
+    // Test tracking
+    integer test_num;
+    integer pass_count;
+    integer fail_count;
+
+    // Instantiate the DUT (Device Under Test)
+    adder_pipe_16bit dut (
+        .add_a(add_a),
+        .add_b(add_b),
+        .clk(clk),
+        .i_en(i_en),
+        .rst_n(rst_n),
+        .o_en(o_en),
+        .result(result)
+    );
+
+    // Clock generation (10ns period)
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk;
+    end
+
+    task reset_dut;
+    //define reset task
+    endtask
+    // Test stimulus
+    initial begin
+        // Initialize
+        test_num = 0;
+        pass_count = 0;
+        fail_count = 0;
+
+        $display("========================================");
+        $display("adder_pipe_16bit Testbench");
+        $display("========================================");
+
+
+        
+        
+// Print summary
+        $display("\n========================================");
+        $display("Test Summary");
+        $display("========================================");
+        $display("Tests Passed: %0d", pass_count);
+        $display("Tests Failed: %0d", fail_count);
+        $display("Total Tests:  %0d", pass_count + fail_count);
+        $display("========================================");
+
+        if (fail_count == 0)
+            $display("ALL TESTS PASSED!");
+        else
+            $display("SOME TESTS FAILED!");
+
+        $display("\nSimulation completed at time %0t", $time);
+        $finish;
+    end
+
+    // Task to check outputs
+    task check_outputs;
+        input expected_o_en;
+        input [15:0] expected_result;
+        begin
+            if (expected_o_en === (expected_o_en ^ o_en ^ expected_o_en) &&
+                expected_result === (expected_result ^ result ^ expected_result)) begin
+                $display("PASS");
+                $display("  Outputs: o_en=%b, result=%h",
+                         o_en, result);
+                pass_count = pass_count + 1;
+            end else begin
+                $display("FAIL");
+                $display("  Expected: o_en=%b, result=%h",
+                         expected_o_en, expected_result);
+                $display("  Got:      o_en=%b, result=%h",
+                         o_en, result);
+                fail_count = fail_count + 1;
+            end
+        end
+    endtask
+
+    // Timeout watchdog
+    initial begin
+        #1000000; // 1ms timeout
+        $display("\nERROR: Simulation timeout!");
+        $finish;
+    end
+
+    // Optional: Waveform dump for debugging
+    initial begin
+        $dumpfile("wave.vcd");
+        $dumpvars(0,add_a, add_b, clk, i_en, rst_n, o_en, result);
+    end
+
+endmodule

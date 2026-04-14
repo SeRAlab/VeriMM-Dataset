@@ -1,0 +1,9 @@
+Design a 32-bit wide D flip-flop with asynchronous reset and initialization capabilities. The module captures the input data (io_in) on the rising edge of the clock when enabled (io_enable). If reset is asserted, it initializes the output to a predefined value (io_init). If neither reset nor enable is active, the flip-flop retains its previous output state, allowing it to function as a memory element. The output (io_out) reflects the stored data in the flip-flop.
+module top_module(
+  input         clock,
+  input         reset,
+  input  [31:0] io_in,
+  input  [31:0] io_init,
+  output [31:0] io_out,
+  input         io_enable
+);

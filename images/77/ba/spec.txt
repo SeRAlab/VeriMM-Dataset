@@ -1,0 +1,9 @@
+Design a digital clock module that counts time based on a clock signal. It outputs a 2-bit hour value, a 6-bit minute value, an AM/PM indicator, and a validation signal to indicate the occurrence of 12:00 PM. The clock increments the minute count up to 59, and upon reaching this limit, it resets the minute count and increments the hour count. When the hour count reaches 12, it toggles the AM/PM indicator and resets the clock if both hour and minute counts are at the reset condition. The module also ensures the output is valid only at 12:00 PM by setting the valid flag accordingly.
+module top_module(
+    input clk,
+    input reset,
+    output reg [1:0] hour,
+    output reg [5:0] minute,
+    output reg ampm,
+    output reg valid
+);

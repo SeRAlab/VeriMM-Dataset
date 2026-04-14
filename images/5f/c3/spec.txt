@@ -1,0 +1,7 @@
+Design a circuit that monitors a voltage signal and generates a "power good" output based on clock and reset inputs. The circuit evaluates the voltage signal and produces an internal condition which is then synchronously registered on the rising edge of the clock. If the reset signal is active, the output resets to LOW; otherwise, it reflects the result of a logical AND operation between the voltage and its inverse, combined with the clock signal. The overall functionality is to ensure that the output indicates the adequacy of the voltage in a power supply system, maintaining the registered state until reset or clocked.
+module top_module(
+    input clk,
+    input reset,
+    input voltage,
+    output power_good
+);

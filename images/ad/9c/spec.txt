@@ -1,0 +1,13 @@
+Design a simulation model for a write-only FIFO (First-In-First-Out) buffer connected to a UART interface. The module accepts a clock signal and write data input, simulating the writing of data to the FIFO without actually storing it, as indicated by the constant outputs for FIFO status (empty, full, and used depth). It outputs "writes" to the console for simulation purposes but does not implement true FIFO behavior, as the FIFO status outputs are fixed values. The design is intended for testing and verifying UART communication without complete FIFO functionality.
+module top_module(
+  // inputs:
+  clk,
+  fifo_wdata,
+  fifo_wr,
+
+  // outputs:
+  fifo_FF,
+  r_dat,
+  wfifo_empty,
+  wfifo_used
+);

@@ -1,0 +1,31 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit Up/Down Counter module that counts up or down based on a control signal. The counter can count from 0 to 15 and will wrap around.
+
+Module name:  
+    counter
+                 
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    up: Control signal. When high, the counter increments. When low, the counter decrements.
+
+Output ports:
+    count: 4-bit output signal representing the current count value.
+
+Implementation:
+The module includes a 4-bit register, count, which represents the current count value.
+The count register is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the count register is cleared to 0.
+Based on the control signal up, the count is either incremented or decremented.
+If the count reaches the maximum value of 15 while incrementing, it wraps around to 0.
+If the count reaches the minimum value of 0 while decrementing, it wraps around to 15.
+
+Give me the complete code.
+
+module counter(
+  input clk,
+  input rst_n,
+  input up,
+  output reg [3:0] count
+);

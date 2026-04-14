@@ -1,0 +1,4 @@
+Design a write-back (WB) stage module for a processor that handles data transfer to a memory or register file. The module captures write signals from memory at the rising edge of the clock, propagating relevant write enable, address, and data fields to the output when enabled, while also resetting all output signals to zero upon a reset. This allows for efficient management of write operations, including handling high and low parts of data, facilitating operations in a pipelined processor architecture.
+module top_module(clk,reset_n,
+	  mem_we,mem_waddr,mem_wdata,mem_whilo,mem_hi,mem_lo,
+	  wb_we,wb_waddr,wb_wdata,wb_whilo,wb_hi,wb_lo);

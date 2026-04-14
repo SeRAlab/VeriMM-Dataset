@@ -1,0 +1,8 @@
+Write a Verilog module for a 7-bit linear feedback shift register (LFSR) with enable and asynchronous reset. Assume positive clock/clk edge triggered. When enable is low, the register holds its value. When reset is high, the register resets to a non-zero value, e.g., "0000001". When enable is high, the register shifts its contents to the right by one bit and the feedback is XOR of certain bits.
+
+module lfsr (
+  input clk,
+  input reset,
+  input enable,
+  output reg [6:0] q
+);

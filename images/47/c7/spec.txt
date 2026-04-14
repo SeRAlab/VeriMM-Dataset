@@ -1,0 +1,7 @@
+Design a module that verifies if a given 32-bit input, representing a time unit in a particular module, meets a specified minimum threshold (10,000). On the rising edge of the clock, if a reset signal is asserted, the module initializes its output, `valid_timeunit`, to LOW and resets a counter. Otherwise, it checks if the input time unit exceeds or equals 10,000, setting `valid_timeunit` to HIGH if the condition is satisfied and to LOW otherwise. The counter increments with each clock cycle, although its purpose isn't utilized in this design.
+module top_module(
+  input clk,
+  input reset,
+  input [31:0] module_to_check_timeunit,
+  output reg valid_timeunit
+);

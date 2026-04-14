@@ -1,0 +1,16 @@
+The module implements a simple memory controller with read and write capabilities for multiple 16-bit registers based on a 3-bit address input. It utilizes a clock and reset for synchronous operation, where the reset sets the registers to predefined values. The memory can accept write operations when the write enable signal is active and a valid address is provided, allowing data input to be stored in one of the specified registers. The output data reflects the contents of the selected register based on the address input. The circuit also includes an acknowledgment signal that indicates when a memory access request is recognized. Overall, this module acts as a basic register file or RAM interface with controlled read/write access.
+module top_module(
+    clk_i,
+    rst_i,
+    we_i,  
+    stb_i,
+    ack_o,
+    dat_i,
+    dat_o,
+    adr_i,
+    a11,
+    a12,
+    b10,
+    b11,
+    b12
+  );

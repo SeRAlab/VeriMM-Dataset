@@ -1,0 +1,26 @@
+Implement a Verilog module with the following description: Avalon-MM module for system control.
+module top_module(
+
+input					rsi_MRST_reset,	
+input					csi_MCLK_clk,
+
+
+input		[31:0]	avs_ctrl_writedata,
+output	[31:0]	avs_ctrl_readdata,
+input		[3:0]		avs_ctrl_byteenable,
+input					avs_ctrl_write,
+input					avs_ctrl_read,
+output				avs_ctrl_waitrequest,
+
+
+output				ins_OC_irq,
+
+input					coe_A_OCN,
+output				coe_A_PWREN,
+output				coe_A_HOE,
+output				coe_A_LOE,
+input					coe_B_OCN,
+output				coe_B_PWREN,
+output				coe_B_HOE,
+output				coe_B_LOE
+);

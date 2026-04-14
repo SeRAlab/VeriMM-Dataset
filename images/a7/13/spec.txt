@@ -1,0 +1,9 @@
+Design a synchronous register file with a parameterized number of registers and data widths. The module features an input clock signal to control read and write operations. When a write enable signal (we) is asserted, it stores the provided write_data into the register specified by addr. When a read enable signal (re) is asserted, it outputs the content of the addressed register to read_data. This register file allows for concurrent reading and writing of data, supporting efficient data storage and retrieval in digital systems.
+module top_module(
+  input clk,
+  input [n-1:0] addr,
+  input [m-1:0] write_data,
+  input we,
+  input re,
+  output reg [m-1:0] read_data // Change to reg type
+);

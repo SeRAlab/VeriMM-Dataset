@@ -1,0 +1,11 @@
+Design a memory stage control module for a pipelined processor that manages the write-back operations. This module captures signals on the rising edge of the clock and handles reset conditions. Upon reset, it initializes its output registers to zero. If a stall condition occurs, it retains its previous values, effectively pausing any updates. Otherwise, it updates the outputs based on inputs from the previous stage, selectively ignoring the register write signal if a flush is indicated, while always passing through the memory data and ALU output. The outputs include control signals for write-back operations and hold the necessary data for the subsequent write-back stage.
+module top_module(
+    input clk, rst, M_flush, M_stall, WB_stall, M_regwrite, M_memtoreg, 
+    input [31:0] M_alu_out, M_readdata,
+    input [4:0] M_rt_rd,
+    output reg WB_regwrite,
+    output reg WB_memtoreg,
+    output reg [31:0] WB_readdata,
+    output reg [31:0] WB_alu_out,
+    output reg [4:0] WB_rt_rd
+);

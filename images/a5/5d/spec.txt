@@ -1,0 +1,11 @@
+Develop a circuit that determines an "Inexact" condition based on various control signals and internal calculations. The module processes inputs related to rounding, structural flags, and bit indicators to generate an output signal that signifies whether an operation is inexact. It performs logical operations and combines different signal conditions to assess inexactness, accommodating both specific input states and certain control flags. The design integrates the results of intermediary calculations, including flags for rounding and bit conditions from the arithmetic model, ultimately yielding a singular output that captures the overall inexactness state.
+module top_module(
+  input RomInexactRound,
+  input SNnotDB,
+  input AMCBit,
+  input AM32,
+  input AM3,
+  input notAM31_3,
+  input notAM2_0,
+  output Inexact
+);

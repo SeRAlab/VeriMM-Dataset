@@ -1,0 +1,11 @@
+Design a circuit that performs arithmetic operations based on input mode. It takes two 16-bit inputs, in_a and in_b, and produces a 36-bit output either by adding or subtracting these inputs, depending on the mode signal. When in_mode is 1, the module computes the difference (in_a - in_b); otherwise, it calculates the sum (in_a + in_b). The output is valid (out_valid signal goes high) only when in_valid is asserted. The module also features a synchronous reset, ensuring that on reset it initializes the output and valid signal to zero.
+module top_module(
+  input clk,
+  input rst_n,
+  input in_valid,
+  input [15:0] in_a,
+  input [15:0] in_b,
+  input in_mode,
+  output reg out_valid,  // Changed from wire to reg
+  output reg [35:0] out
+);

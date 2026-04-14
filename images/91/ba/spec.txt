@@ -1,0 +1,13 @@
+Develop a synchronous calculator module that performs basic arithmetic operations (addition, subtraction, multiplication, and division) on two 32-bit input values (a and b) based on a 2-bit operation code. The module uses a clock (clk) for synchronization and includes a reset function to clear all registers. When the 'go' signal is asserted, the module executes the specified operation and outputs the results for sum, difference, product, and quotient accordingly. Division is handled with a check for division by zero to prevent errors.
+module top_module(
+  input clk,
+  input reset,
+  input [1:0] operation,
+  input go,
+  input [31:0] a,
+  input [31:0] b,
+  output [31:0] sum,
+  output [31:0] difference,
+  output [31:0] product,
+  output [31:0] quotient
+);

@@ -1,0 +1,18 @@
+Design a register file with 32 registers, each 32 bits wide, capable of reading and writing data based on control signals. On a rising clock edge, if the reset signal is low, all registers are initialized to zero; otherwise, if the register write control signal (RegWr) is high, the data input (Data_in) is written to the register specified by the write address (Rw). The module outputs the contents of the registers specified by the read addresses (Rs and Rt) to BusA and BusB, respectively, allowing for concurrent read operations during the register write.
+module top_module(input clk,
+
+        input rst,
+
+        input RegWr,
+
+        input [0:4] Rw,
+
+        input [0:31] Data_in,
+
+        input [0:4] Rs,
+
+        output [0:31] BusA,
+
+        input [0:4] Rt,
+
+     output [0:31] BusB);

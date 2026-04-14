@@ -1,0 +1,8 @@
+Design a four-bit up/down counter that increments or decrements its count based on the control signals. It features a clock input for synchronous operation and a reset input to initialize the count to zero. When the count control signal is active, the counter will either increment towards a maximum value of 15 (0000 to 1111) or decrement towards a minimum of 0 (1111 to 0000) depending on the state of the count-up signal. The counter also rolls over from 15 to 0 when counting up and from 0 to 15 when counting down.
+module top_module(
+    input i_clk,
+    input i_reset,
+    input i_count_up,
+    input i_count,
+    output reg [3:0] o_count
+);

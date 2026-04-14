@@ -1,0 +1,7 @@
+Design a 4-to-1 multiplexer with an output that selects one of four input signals (A, B, C, D) based on a 2-bit select line (sel). The module employs a clock-triggered mechanism to capture the selected input value and store it in the output (Y). The multiplexer operates on positive clock edges, responding to the value of the select line to switch the output accordingly: Y outputs A for sel=00, B for sel=01, C for sel=10, and D for sel=11.
+module top_module(
+    input A, B, C, D,
+    input [1:0] sel,
+    input clk,            // Added clk input
+    output reg Y
+);

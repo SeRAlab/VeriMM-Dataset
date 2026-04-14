@@ -1,0 +1,7 @@
+Design a clock generation module that produces an output clock (`clk_out`) with a frequency that can be divided by a factor controlled by the `ctrl` input (from 1 to 8). The module features a reset signal (`rst`) to initialize the division factor to 1 and a clock input (`clk`) to drive the functionality. The division factor is selected based on the value of the `ctrl` input, which encodes the desired division. A counter increments on each positive clock edge and toggles the output clock when it reaches the set division factor, effectively reducing the frequency of the output clock signal relative to the input clock.
+module top_module(
+  input clk,
+  input rst,
+  input ctrl,
+  output reg clk_out
+);

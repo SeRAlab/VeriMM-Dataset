@@ -1,0 +1,13 @@
+Design a module for an ultrasonic sensor interface that operates based on a finite state machine (FSM). The module manages the sensor's trigger and echo signals based on control inputs from a microcontroller. When a write operation is initiated, the sensor sends a triggering pulse. Once the trigger is sent, the module switches to an echo state, where it counts clock cycles to measure the duration of the returned echo. The module outputs the measured time after a read operation is requested. This design supports basic communication with external logic for distance measurement applications in robotics and automation.
+module top_module(
+    input clk,
+    input rst,
+    input [15:0] d_in,
+    input cs,
+    input [3:0] addr,
+    input rd,
+    input wr,
+    output reg [15:0] d_out,
+    output reg trigg,
+    output reg echo
+);

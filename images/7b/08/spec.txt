@@ -1,0 +1,8 @@
+Design a 4-bit booth multiplier that performs multiplication of two 4-bit signed inputs, A and B, producing an 8-bit signed output P. Using the Booth's algorithm, this module shifts and adds the partial products based on the value of the least significant bit of the B register, while maintaining a count of iterations. It includes a reset signal to initialize the output and internal registers, and operates synchronously on the rising edge of a clock signal. The final product is output as an 8-bit result.
+module top_module(
+    input clk,              // Added clock input
+    input reset,            // Added reset input
+    input [3:0] A,
+    input [3:0] B,
+    output reg [7:0] P     // Changed output to reg to store computed value
+);

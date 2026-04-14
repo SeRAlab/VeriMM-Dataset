@@ -1,0 +1,6 @@
+Design a circuit that drives a specified number of LEDs based on an input data signal. The module accepts an n-bit input (`data_in`) and outputs an m-bit LED signal. It uses a register to multiplex the selected bits from `data_in` to control the corresponding LEDs. On each positive clock edge, the module transfers the relevant bits from `data_in` to the LED output, allowing for dynamic display updates based on the input data.
+module top_module(
+  input clk,                    // Added clock input
+  input [n-1:0] data_in,
+  output reg [m-1:0] LED
+);

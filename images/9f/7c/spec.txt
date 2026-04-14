@@ -1,0 +1,19 @@
+Design a 32-bit leading zero counter that determines how many leading zero bits are present in a given 32-bit input data. The module takes in signals indicating whether certain segments of the input (both high [bits 31:16] and low [bits 15:0]) are zero. It produces outputs that reflect the count of leading zeros in 4 bits, encapsulating the results for the entire 32-bit width based on the conditions of the respective bit groups. The calculated outputs indicate the adjusted leading zero counts based on the evaluated ranges of the input data.
+module top_module(
+    din_31_16_eq_0,
+    din_31_24_eq_0,
+    lead0_16b_2_hi,
+    lead0_16b_1_hi,
+    lead0_16b_0_hi,
+    din_15_0_eq_0,
+    din_15_8_eq_0,
+    lead0_16b_2_lo,
+    lead0_16b_1_lo,
+    lead0_16b_0_lo,
+
+    din_31_0_eq_0,
+    lead0_32b_3,
+    lead0_32b_2,
+    lead0_32b_1,
+    lead0_32b_0
+);

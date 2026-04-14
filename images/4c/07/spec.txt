@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Design a 32-bit register file with 8 registers. It should have two read ports and one write port. The register file should allow reading from two registers and writing to one register simultaneously. The write operation should occur on the rising edge of the clock signal.
+
+Module name:
+    reg_file_32bit_8reg
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low asynchronous reset signal.
+    write_en: Write enable signal.
+    write_addr: 3-bit address for writing data.
+    write_data: 32-bit data to be written.
+    read_addr1: 3-bit address for the first read port.
+    read_addr2: 3-bit address for the second read port.
+
+Output ports:
+    read_data1: 32-bit data read from the first read port.
+    read_data2: 32-bit data read from the second read port.
+
+Implementation:
+The register file should have 8 registers, each 32-bits wide. The write operation should occur on the rising edge of the clock signal if the write enable signal is high. The read operations should be combinatorial, meaning they should always provide the data at the specified read addresses. The reset signal should asynchronously clear all registers to zero.
+
+Give me the complete code.

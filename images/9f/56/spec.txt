@@ -1,0 +1,13 @@
+Design a dual-function set/reset flip-flop with an asynchronous reset feature. This module takes inputs for data (D), set control (SCD), enable control (SCE), and an active-low reset (RESET_B), along with power supply inputs. On a positive clock edge, the output Q is determined by several conditions: it will be set to LOW if power is present or if RESET_B is asserted; it will hold the current value when both SCD and SCE are high; and it will be set to HIGH or LOW based on SCD and SCE states. If neither set nor clear conditions are met, it captures the value of D. The design integrates power management signals (VPWR, VGND, VPB, VNB), emphasizing its application in low-power digital circuit designs.
+module top_module(
+    input D,
+    input SCD,
+    input SCE,
+    input RESET_B,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB,
+    output Q,
+    input CLK
+);

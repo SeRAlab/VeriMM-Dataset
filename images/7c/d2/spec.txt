@@ -1,0 +1,10 @@
+Design a digital module that functions as a priority encoder combined with a multiplexer. The circuitry comprises a 2-to-1 multiplexer that selects between two inputs, `a` and `b`, based on the control signals `sel_b1` and `sel_b2`. Additionally, the module includes a priority encoder that scans an 8-bit input vector, `in`, to determine and output the position of the highest active bit (from 0 to 7). The module also computes a sum, `out_sum`, which adds the selected multiplexer output to the position value derived from the encoder, facilitating functionality that integrates selection and encoding with summation based on priority.
+module top_module(
+    input a,
+    input b,
+    input sel_b1,
+    input sel_b2,
+    input [7:0] in,
+    output reg [2:0] pos,
+    output reg [3:0] out_sum
+);

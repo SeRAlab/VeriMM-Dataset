@@ -1,0 +1,5 @@
+Design a synchronizer circuit to ensure reliable data transfer between asynchronous clock domains. The module takes a single-bit input (`in0`) and a signal (`out`), which represents data. It utilizes a flip-flop (FDRE) clocked by `phy_tx_clk` to capture the `out` signal. The output (`AS`) is derived from a two-input lookup table (LUT2), which combines `in0` and the output of the flip-flop, providing a synchronized result. This design purpose emphasizes mitigating metastability issues when transferring signals between different clock domains, enhancing overall system stability in an Ethernet communication setup.
+module top_module(AS,
+    out,
+    phy_tx_clk,
+    in0);

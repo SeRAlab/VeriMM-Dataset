@@ -1,0 +1,8 @@
+Design a 6-bit Linear Feedback Shift Register (LFSR) that generates pseudo-random sequences based on specified parameters. The module features clock and reset inputs, with a selectable enable signal that allows for shifting of the output register. The feedback mechanism is determined by specific tap positions depending on the parameter LENGTH, which influences how the new bit (din) is calculated from existing bits (dout). Additionally, it includes a lockup condition that can prevent all-zero states based on the FULL_CYCLE parameter. The resulting output, dout, provides the current state of the shift register while dout_next indicates the next state. This LFSR is suitable for applications in random number generation and digital signal processing.
+module top_module(
+    clock,
+    reset,
+    enable,
+    dout,
+    dout_next
+);

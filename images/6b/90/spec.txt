@@ -1,0 +1,9 @@
+Design a 2-to-1 multiplexer that selects between two 32-bit input signals, `io_jmp` and `io_br`, based on a 2-bit selection input `io_jmp_br_mux_sel`. When `io_jmp_br_mux_sel` equals 0, the output `io_to_adder` reflects the value of `io_jmp`. When it equals 1, the output selects `io_br`. The module also accounts for a reset and clock input, indicating it may be used in a sequential logic context, but the provided code does not implement any state-holding functionality.
+module top_module(
+  input   		 clock,
+  input   		 reset,
+  input  [31:0] io_jmp,
+  input  [31:0] io_br,
+  input  [1:0]  io_jmp_br_mux_sel,
+  output [31:0] io_to_adder
+);

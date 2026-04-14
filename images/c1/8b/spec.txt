@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a Microprogrammed Control (MPC) unit for a variant of the 6502 microprocessor architecture, specifically tailored for the 65C02 version. Its primary role to generate the microprocessor's next address (`MA`) for fetching instructions or data based on the current instruction (`I`), the current microinstruction step (`T`), and other control signals. This module is pivotal in controlling the flow of execution within the microprocessor, including instruction fetch, branching, subroutine calls and returns, and memory access operations.
+
+Module name:  
+	M65C02_MPC
+
+Input ports:
+	Rst (input): A reset signal that initializes the module's internal state.
+	Clk (input): The clock signal driving the synchronous operations within the module.
+	I (input, [3:0]): The current instruction code being executed.
+	T (input, [3:0]): The current microinstruction step or timing within the execution of an instruction.
+	MW (input, [2:0]): Memory width control bits, used in memory access operations.
+	BA (input, [(pAddrWidth1):0]): Base address for operations requiring memory access.
+	En (input): Enable signal for controlling the update of the program counter.
+	Rdy (input): Ready signal indicating that the module can proceed with the next operation.
+	PLS (input): A control signal used to modify the reset behavior.
+Output ports:
+	Via (output, [1:0]): Control signals derived from the instruction code, possibly for external interfacing or further control logic.
+	MA (output, reg, [(pAddrWidth1):0]): The next address to be accessed, serving as the module's primary output.
+
+
+Implementation:
+The RTL module presented, named M65C02_MPC, is designed to function as a microprogrammed control unit for a processor, likely inspired by or related to the MOS Technology 6502 microprocessor and its variants. This module is responsible for generating the next address (MA) for the program counter (PC), based on various inputs that dictate the processor's current state and operation. The design employs both combinational and sequential logic to achieve its functionality, with a focus on flexibility through parameterization and responsive control flow.
+
+Give me the complete code.
+

@@ -1,0 +1,9 @@
+Design a circuit that functions as a controlled data processing unit which integrates a shift register and a multiplexer. The module receives an 8-bit data input and a 3-bit select signal to control the active functionality. The shift register stores the data and shifts it on each clock cycle, with a reset option. The 3-bit vector input selects one of eight predetermined outputs from the multiplexer, which can also be combined with the shift register's output. The output is determined by the active control signal, allowing for either the shift register's current state or the combined result of the shift register and the selected multiplexer output to be sent as a final 8-bit output. This module effectively manages two functionalities—data shifting and selection—based on input control signals.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] d,
+    input [2:0] select,
+    input [2:0] vec,
+    output [7:0] q
+);

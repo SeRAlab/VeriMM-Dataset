@@ -1,0 +1,6 @@
+Design a data selection circuit that behaves like a conditional data output unit. It takes two 32-bit inputs, `reg_data_in` and `mem_data_in`, and outputs one of them based on control signals. When both the `load` and `enable` signals are asserted high, the module outputs `mem_data_in`; otherwise, it defaults to outputting `reg_data_in`. This design is suitable for use in memory interfaces or register file configurations where data needs to be selectively routed based on control conditions.
+module top_module(
+  input [31:0] reg_data_in,mem_data_in,
+  input load,enable,
+  output reg [31:0] data_out
+);

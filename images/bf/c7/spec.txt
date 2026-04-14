@@ -1,0 +1,31 @@
+Please act as a professional verilog designer.
+    
+Implement a module is a parameterizable, scan-enabled D flip-flop with reset, load enable, and scan capabilities. Its primary functions include:
+
+Storing Data: It captures and stores data on the rising edge of the clock signal, based on the enable signal.
+Reset Capability: It supports asynchronous reset, clearing the stored data when the reset signal is active.
+Load Enable: It allows conditional data loading based on the enable signal, providing control over when data is updated.
+Scan Functionality: It supports scan testing by allowing data to be shifted in and out through scan inputs, facilitating testing and debugging of integrated circuits.
+
+This module plays a crucial role in digital designs that require reliable data storage and manipulation, especially in systems where testing and configurability are paramount.
+
+Module name:  
+	dffrle_s
+
+Input ports:
+	din [SIZE1:0]: Data input port. A vector of size SIZE that represents the data to be loaded into the flipflop.
+	en: Enable signal. When high, it allows din to be loaded into the flipflop on the next rising edge of clk.
+	rst_l: Asynchronous reset signal, active low. When low, it asynchronously clears the flipflop, setting q to 0.
+	clk: Clock signal. The rising edge triggers data capture based on the conditions of en and rst_l.
+	se: Scan enable signal. When high, it enables scan mode, allowing si to be loaded into the flipflop instead of din.
+	si [SIZE1:0]: Scan input port. A vector of size SIZE that represents the data to be loaded into the flipflop during scan mode.
+Output ports:
+	q [SIZE1:0]: Data output port. A vector of size SIZE that holds the current state of the flipflop.
+	so [SIZE1:0]: Scan output port. A vector of size SIZE that is used to shift out the flipflop's state during scan mode.
+
+
+Implementation:
+The RTL module presented, named dffrle_s, is designed to implement a parameterizable register with reset, load enable, and optional scan capabilities. This module is a versatile component often used in digital integrated circuits for temporary data storage, state holding, and facilitating testability through scan chains in complex designs. The logic and functionality embedded within this module can be dissected into several key operational aspects:
+
+Give me the complete code.
+

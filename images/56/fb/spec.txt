@@ -1,0 +1,12 @@
+Design a modular accumulator that computes a cumulative sum of three consecutive 8-bit input values, outputting the final 10-bit result. The module operates in a state machine fashion, progressing through four stages: capturing the input data when valid, adding it to an accumulation register, and outputting the result when ready. The input data is stored across multiple registers, and the output is indicated by a valid signal, which is asserted when the computation is complete and ready to be transmitted. The module supports synchronous reset, ensuring proper initialization of all internal states and registers.
+module top_module(
+    input               clk         ,   
+    input               rst_n       ,
+    input       [7:0]   data_in     ,
+    input               valid_a     ,
+    input               ready_b     ,
+ 
+    output              ready_a     ,
+    output  reg         valid_b     ,
+    output  reg [9:0]   data_out
+);

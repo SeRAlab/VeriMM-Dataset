@@ -1,0 +1,12 @@
+Design a binary up/down counter that reflects the current state based on increment and decrement operations. The module receives a clock and reset signal, along with two 10-bit inputs for stride increments and decrements. Based on the control inputs (io_inc and io_dec), it either adds the stride increment or subtracts the stride decrement from its current value, outputting the result. It also provides the next potential increment and decrement values after the current operation. The counter utilizes a register to maintain its state across clock cycles and operates under reset conditions, ensuring correct initial behavior.
+module top_module(
+  input        clock,
+  input        reset,
+  input  [9:0] io_strideInc,
+  input  [9:0] io_strideDec,
+  input        io_inc,
+  input        io_dec,
+  output [9:0] io_out,
+  output [9:0] io_nextInc,
+  output [9:0] io_nextDec
+);

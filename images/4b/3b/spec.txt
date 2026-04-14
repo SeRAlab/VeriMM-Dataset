@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+
+Implement an 8-bit up-down counter module with an enable signal and an up/down control signal. The counter should count up when the control signal is high and count down when the control signal is low. The counter should only count when the enable signal is high.
+
+Module name:
+    up_down_counter
+
+Input ports:
+    clk: clock signal.
+    reset: synchronous reset signal.
+    enable: enable signal.
+    up_down: control signal for up/down counting.
+
+Output ports:
+    count: 8-bit counter value.
+
+Implementation:
+The module uses a synchronous always block triggered by the clock signal. The count value is updated based on the enable and up/down control signals.
+
+Give me the complete code.
+
+module up_down_counter(
+    input wire clk,
+    input wire reset,
+    input wire enable,
+    input wire up_down,
+    output reg [7:0] count
+    );

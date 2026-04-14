@@ -1,0 +1,8 @@
+Develop a circuit that determines if a specific pixel (identified by `pixelNum`) is illuminated based on the object's position (`objPos`), size (`objSize`), and masking (`objMask`). The module calculates the object's index relative to the pixel position, derives a byte index for the object size, and applies the relevant mask to ascertain if the pixel should be considered "on." The output (`pixelOn`) will be high only if the pixel is both within the defined boundaries of the object and passes the mask check. This design is suitable for graphical displays where object visibility is contingent on multiple parameters.
+module top_module(
+  input [7:0] pixelNum,
+  input [7:0] objPos,
+  input [7:0] objMask,
+  input [2:0] objSize,
+  output      pixelOn
+);

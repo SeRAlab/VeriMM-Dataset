@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that detects a specific 5-bit sequence, namely "10110," from an incoming data stream. The FSM transitions through four states (S0 to S3) based on the input data received on each clock cycle. If the data matches the expected sequence, the output signal 'match' is set to high. The circuit initializes to a reset state, maintaining a 5-bit shift register to keep track of the latest bits. Upon encountering the correct sequence, it asserts the match output while returning to the initial state for further detection.
+module top_module(
+  input clk,
+  input reset,
+  input data,
+  output reg match
+);

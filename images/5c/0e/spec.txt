@@ -1,0 +1,18 @@
+Design a data selector module that routes input signals based on a 2-bit status code. When status is 00, it accepts communication data, address, and write enable signals for use in a data memory (DM). For status 01, it processes signals from a processor, updating the data memory and outputting the content from the memory back to the processor. With status 10, it again utilizes the communication signals but instead outputs the memory data. This functionality allows for controlled interaction between different data input sources and a shared data memory, essential for managing data transfers in a system with both communication and processing capabilities.
+module top_module(
+    input clk,
+    input [1:0]status,
+    input [15:0]com_data_in,
+    input [15:0]com_addr,
+    input com_wr_en,
+    input [15:0]proc_bus,
+    input [15:0]proc_addr,
+    input proc_wr_en,
+    input [15:0]DM_out,
+
+    output reg [15:0]DM_data_in,
+    output reg [15:0]DM_addr,
+    output reg DM_write_en,
+    output reg [15:0]com_data_out,
+    output reg [15:0]proc_data_out
+);

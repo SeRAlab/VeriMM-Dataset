@@ -1,0 +1,13 @@
+Design a digital system that combines a binary counter and a division operation. The module features an 8-bit division circuit taking inputs A and B to produce a quotient and remainder, with a validity flag indicating successful division. It includes a 4-bit counter that increments with each clock cycle when enabled, and it can be reset synchronously. The final output is the sum of the current count and the calculated quotient. The module handles edge cases like division by zero, ensuring that both the quotient and remainder are set to zero in such scenarios. Overall, this module is useful for applications requiring counting and arithmetic operations simultaneously.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset for counter
+    input enable,     // Enable input for counter
+    input [7:0] A,    // 8-bit input A for division module
+    input [7:0] B,    // 8-bit input B for division module
+    output reg [7:0] quotient,    // 8-bit output for quotient from division module
+    output reg [7:0] remainder,   // 8-bit output for remainder from division module
+    output reg valid,            // Valid output for quotient and remainder values
+    output reg [3:0] count,      // 4-bit output for current count value from counter
+    output reg [7:0] final_out   // 8-bit output for sum of count and quotient
+);

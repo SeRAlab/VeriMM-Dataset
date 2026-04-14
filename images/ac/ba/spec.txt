@@ -1,0 +1,14 @@
+Design a sound processing module that performs multiplication and accumulation of audio data. The module accepts a clock signal, a volume input, and sound data, and uses a load pulse to initialize the process. It accumulates the product of the volume and the sound data across multiple samples, controlled by a 4-bit counter that tracks the number of samples processed. The resulting 16-bit sum output indicates the final accumulated sound value, while a ready signal informs when the accumulation is complete. The implementation includes a serial multiplier and adder to handle the 6-bit volume and 8-bit inverted signed sound data, ensuring proper handling of carry bits during the accumulation process.
+module top_module(
+
+	clock,   // input clock (24 MHz)
+
+	vol_in,  // input volume (6 bit unsigned)
+	dat_in,  // input sound data (8 bit signed with sign bit inverted)
+
+	load,    // load pulse input
+	clr_sum, // clear sum input
+
+	ready,   // ready output
+	sum_out  // 16-bit sum output
+);

@@ -1,0 +1,9 @@
+Design a 32-bit shift register with capabilities for parallel loading and shifting operations. On each clock edge, if the reset signal is high, the shift register clears to zero. If parallel_load is asserted, the input data_in is loaded into the register, and the most significant bit (MSB) is output as data_out. When enable is active, the register shifts left, moving the current data_out to the least significant position and updating data_out to reflect the new MSB. If neither operation is triggered, data_out retains the value of the current MSB of the shift register.
+module top_module(
+    input clk,
+    input reset,
+    input enable,
+    input parallel_load,
+    input [31:0] data_in,
+    output reg data_out
+);

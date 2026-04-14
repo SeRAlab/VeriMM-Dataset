@@ -1,0 +1,12 @@
+The Verilog code describes a cell that implements a power gating functionality combined with a logical AND and NOR operation. The module takes two active-low inputs (A1_N and A2_N) along with two regular inputs (B1 and B2) and utilizes an AND gate to derive an output based on B1 and B2, while concurrently processing the active-low inputs through a NOR gate. The outputs of these gates are then combined in another NOR operation to generate a power-gated output signal. Finally, the power-good output is buffered and sent to the output Y, ensuring that the output is valid and maintains proper power levels in varying conditions. This design effectively creates a power-aware logic circuit suitable for use in low-power integrated circuits.
+module top_module(
+    Y   ,
+    A1_N,
+    A2_N,
+    B1  ,
+    B2  ,
+    VPWR,
+    VGND,
+    VPB ,
+    VNB
+);

@@ -1,0 +1,9 @@
+Design a circuit that functions as an 8-bit register with multiplexing capabilities. It uses a 2-to-1 multiplexer to select between input data `d1` and `d2`, where `d2` is passed through as is when the selection signal `sel` is high, and outputs zero when `sel` is low. On the rising edge of the clock or during a reset condition, the circuit captures the selected input and stores it in an 8-bit register. The output `q` reflects the current state of this register, while being reset to zero when the reset signal is activated.
+module top_module(
+    input clk,
+    input [7:0] d1,
+    input [7:0] d2,
+    input sel,
+    input reset,
+    output reg [7:0] q
+);

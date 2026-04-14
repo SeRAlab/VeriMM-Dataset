@@ -1,0 +1,8 @@
+Design a pixel color generation circuit for a display that operates based on horizontal and vertical pixel counters. The module outputs specific RGB color values based on the horizontal pixel count: it produces a full red signal when the horizontal count is between 0 and 212, a full blue signal when it is between 213 and 600, and a full green signal when the count is between 601 and 639. Outputs are set to zero when not in the specified ranges. The circuit utilizes horizontal and vertical blanking signals to manage active pixel output.
+module top_module(
+    input wire clk, rst,
+    input wire [9:0] hcount, vcount,
+    input wire hblank, vblank,
+    output wire [4:0] red, blue,
+    output wire [5:0] green
+);

@@ -1,0 +1,8 @@
+Design a 4-bit shift register with parallel load capability. On the rising edge of the clock, if the reset signal is low, the output will be reset to all zeros. If the load signal is high, the input data will be loaded in parallel into the output. Otherwise, the register will perform a left shift operation, discarding the most significant bit and inserting the least significant bit from the input data.
+module top_module(
+  input clk,
+  input reset,
+  input load,
+  input [3:0] data_in,
+  output reg [3:0] data_out
+);

@@ -1,0 +1,11 @@
+Design a circuit that compares two 16-bit input signals, `int_a` and `int_b`, on the negative edge of a clock signal, `clk_in`. If the two inputs are equal, it sets a `match` flag to HIGH. The output clock signal, `clk_out`, will follow `clk_in` when the circuit is not active or when there is no match; otherwise, it outputs LOW, effectively disabling the clock signal in matching conditions. The circuit operates as a clock signal controller that activates based on equality detection between the two 16-bit integers.
+module top_module(
+	input clk_in,
+	input active,
+	
+	input [15:0] int_a,
+	input [15:0] int_b,
+	
+	output clk_out,
+	output reg match = 1'b0
+);

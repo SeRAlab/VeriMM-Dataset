@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a dual-clock FIFO (First-In-First-Out) buffer with configurable depth and data width, featuring full and empty flags. It supports optional underflow and overflow checking and can operate in either read or write mode. This module is crucial for scenarios where data must be transferred between two clock domains or when buffering is required to manage data flow in digital systems, ensuring synchronization and preventing data loss or corruption.
+
+Module name:  
+	dcfifo_fefifo
+
+Input ports:
+	usedw_in [lpm_widthad1:0]: A binary input representing the number of words currently stored in the FIFO. Its width is determined by the lpm_widthad parameter, which defines the address width.
+	wreq: A write request signal. When high, it indicates a request to write data into the FIFO.
+	rreq: A read request signal. When high, it indicates a request to read data from the FIFO.
+	clock: The clock input for the FIFO. This signal drives the internal state machine and data movement.
+	aclr: An asynchronous clear input. When high, it resets the FIFO's internal state to its initial condition.
+Output ports:
+	empty: A flag that indicates whether the FIFO is empty. It goes high when there are no elements left to read.
+	full: A flag that indicates whether the FIFO is full. It goes high when the FIFO has reached its maximum capacity and cannot accept further write requests.
+
+
+Implementation:
+The dcfifo_fefifo module is designed to manage a dual-clock FIFO (First-In-First-Out) buffer with configurable depth and data width, incorporating features for overflow and underflow checking. It operates under two primary modes: "READ" and "WRITE", dictated by the lpm_mode parameter. The module's behavior is synchronized to a clock signal and can be asynchronously cleared with an active-high reset signal (aclr). The FIFO's status is indicated through empty and full flags, and it supports read (rreq) and write (wreq) requests.
+
+Give me the complete code.
+

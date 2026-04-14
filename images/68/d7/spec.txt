@@ -1,0 +1,18 @@
+Implement the Verilog module based on the following description.
+This is a sequential circuit. The circuit consists of combinational logic and a four-bit binary down counter. The output of the counter should be observable through the output count.
+
+Time 0ns: clk = 0, reset = 0, load = 1, load_value = 0111, count = xxx.
+Time 5ns: clk = 1, reset = 0, load = 1, load_value = 0111, count = xxx.
+Time 10ns: clk = 0, reset = 1, load = 0, load_value = 0111, count = xxx.
+Time 15ns: clk = 1, reset = 1, load = 0, load_value = 0111, count = 0111.
+Time 20ns: clk = 0, reset = 0, load = 0, load_value = 0111, count = 0111.
+Time 25ns: clk = 1, reset = 0, load = 0, load_value = 0111, count = 0110.
+Time 30ns: clk = 0, reset = 0, load = 0, load_value = 0111, count = 0110.
+Time 35ns: clk = 1, reset = 0, load = 0, load_value = 0111, count = 0101.
+
+module down_counter (
+	input clk,
+	input reset,
+	input load,
+	input [3:0] load_value,
+	output reg [3:0] count);

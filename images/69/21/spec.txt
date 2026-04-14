@@ -1,0 +1,7 @@
+Design a circuit that performs both addition and subtraction of two 4-bit inputs A and B based on the control signal `sub`. If `sub` is high, the circuit computes A - B; otherwise, it computes A + B. The output `Y` is a 2-bit signal indicating the result's characteristics: `Y[0]` reflects whether any of the lower four bits of the result is high (indicating a non-zero result), and `Y[1]` provides information on the result's magnitude or sign, being set to '10' for overflow, '01' for non-overflow, and '00' for a zero result.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input sub,
+    output reg [1:0] Y
+);

@@ -1,0 +1,9 @@
+Design a coordinate generator for a 2D space, specifically for managing pixel indexes in a 320x240 resolution. The module increments x and y indexes based on an incremental signal, `inc_in`, and resets the counters when `rst_in` is asserted. The x index counts from 0 to 319, and upon reaching the maximum, it resets to 0 while incrementing the y index from 0 to 239. If both the x and y counters overflow after reaching their respective limits, an overflow output signal (`ov_out`) is set high. This design could be useful in applications like video processing or image rendering where pixel indexing is necessary.
+module top_module(
+		input wire clk_in,
+		input wire rst_in,
+		input wire inc_in,
+		output wire[18:0] x_index_out,
+		output wire[18:0] y_index_out,
+		output reg ov_out
+	);

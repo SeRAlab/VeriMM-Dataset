@@ -1,0 +1,12 @@
+Develop a circuit that functions as an 8-bit accumulator with a 10-bit output. The module accumulates input data over eight cycles (when valid_a is high) and outputs the sum once the count reaches 7, at which point valid_b is set high. It resets the accumulator and the count after outputting the result. The module also interfaces with external signals, providing a ready_a signal when valid_b is low and ready_b is high, indicating it is ready to accept new data.
+module top_module(
+    input               clk         ,   
+    input               rst_n       ,
+    input       [7:0]   data_in     ,
+    input               valid_a     ,
+    input               ready_b     ,
+ 
+    output              ready_a     ,
+    output  reg         valid_b     ,
+    output  reg [9:0]   data_out
+);

@@ -1,0 +1,8 @@
+Design a shift register with a configurable width and depth that stores incoming data on the rising edge of the clock when the clock enable signal is active. The register has a specified depth of 4, allowing it to hold multiple data values. The stored values can be retrieved asynchronously based on an address input, enabling access to any of the previously stored data elements, effectively functioning as a parallel read shift register.
+module top_module(
+    input clk,
+    input [WIDTH-1:0] data,
+    input ce,
+    input [ADDR_WIDTH-1:0] a,
+    output reg [WIDTH-1:0] q
+);

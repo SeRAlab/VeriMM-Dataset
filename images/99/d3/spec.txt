@@ -1,0 +1,8 @@
+Design a JK flip-flop circuit. The flip-flop outputs the state `q`, which is set to LOW when the asynchronous reset (`reset_n`) is activated. On the rising edge of the clock signal, the output `q` toggles based on the inputs `j` and `k` according to the JK flip-flop behavior: if `j` is high and `k` is low, it sets `q` to HIGH; if `j` is low and `k` is high, it resets `q` to LOW; if both are high, it toggles the output state. This design implements standard JK flip-flop functionality suitable for synchronous and asynchronous reset operations.
+module top_module(
+   input      clk,
+   input      reset_n,
+   input      j,
+   input      k,
+   output reg q
+   );

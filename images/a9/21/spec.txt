@@ -1,0 +1,6 @@
+Design a simple memory module that allows reading and writing 16-bit data. When the write signal (mW) is active, the module stores the data input (WD) into the location specified by the address input, and on the clock edge, the stored data can be outputted on the read data (RD) line. The read signal (mR) suggests that data can be retrieved based on the address, although it is not explicitly implemented in the code.
+module top_module(
+    input clk, mR, mW,
+    input [15:0] address, WD,
+    output reg [15:0] RD
+    );

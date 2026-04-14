@@ -1,0 +1,25 @@
+Please act as a professional Verilog designer.
+
+Design a module that implements a 3-bit Johnson counter. The Johnson counter shifts its bits to the left on each rising edge of the clock, and the inverted value of the last bit is shifted into the first bit.
+
+Module name:
+    johnson_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    reset: Synchronous reset signal.
+
+Output ports:
+    q: 3-bit output signal representing the counter value.
+
+Implementation:
+The output q is defined as reg [2:0] q and initialized to 3'b000 using the initial statement. The value of q is updated on the rising edge of the clock: q <= {q[1:0], ~q[2]}.
+If the reset signal is high, q is reset to 3'b000: if (reset) q <= 3'b000.
+
+Give me the complete code.
+
+module johnson_counter(clk, reset, q);
+
+    input clk;
+    input reset;
+    output [2:0] q;

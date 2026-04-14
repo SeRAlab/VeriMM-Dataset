@@ -1,0 +1,18 @@
+
+Design an 8-channel DMA (Direct Memory Access) controller that can handle multiple memory transfers. The DMA controller should be able to select one of the eight channels to read data from a source address and write it to a destination address. The controller has the following inputs:
+- clk: Clock signal
+- reset: Active-high reset signal
+- start: Active-high signal to start the transfer
+- channel_select: 3-bit input to select one of the 8 channels
+- src_address: 32-bit source address
+- dst_address: 32-bit destination address
+- data_in: 32-bit data input from the source memory
+
+The outputs should be:
+- data_out: 32-bit data output to the destination memory
+- transfer_complete: Active-high signal indicating the transfer is complete
+
+The DMA controller should operate as follows:
+1. On reset, all internal registers should be cleared.
+2. When 'start' is asserted, the DMA controller should read data from 'src_address' and output it to 'dst_address'.
+3. The selected channel's transfer should be completed, and 'transfer_complete' should be asserted until the next 'start' signal.

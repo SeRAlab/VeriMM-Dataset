@@ -1,0 +1,7 @@
+Design a sequential arithmetic operation module that performs a specific calculation on a signed 32-bit input value. On each rising edge of the clock, if the reset input is active, the output is cleared to zero. Otherwise, the output is updated to the result of the computation \(((input\_data \times 3) + 7 - 2)^2\). This module effectively applies a mathematical transformation to the input data, providing the computed output at each clock cycle.
+module top_module(
+    input clk,
+    input reset,
+    input signed [31:0] input_data,
+    output reg signed [31:0] output_data
+);

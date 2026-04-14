@@ -1,0 +1,6 @@
+Design a 1-to-n demultiplexer with n output lines, where n is a configurable parameter (defaulting to 4). When the input signal is low, all output lines are set to low. If the input signal is high, the output corresponding to the binary value of the control signal is set to high, while all other outputs remain low. If the control signal is outside the range of 0 to 3, all outputs are also set to low.
+module top_module(
+  input in,
+  input [n-1:0] control,  // Added input declaration for control
+  output reg [n-1:0] out   // Changed output to reg type
+);

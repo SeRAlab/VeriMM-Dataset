@@ -1,0 +1,6 @@
+Design a multi-source arbiter module that arbitrates access based on a set of request signals and their respective priorities. The module takes `n` request inputs and `n` priority inputs, where a grant signal is asserted to indicate which source has been granted access. If multiple sources request access simultaneously, the arbiter resolves contention by selecting the source with the highest priority, based on the provided priority inputs. If no requests are made, the grant output is LOW, ensuring only one active grant signal at any given time.
+module top_module(
+  input [n-1:0] req,
+  input [n-1:0] pri,
+  output reg [n-1:0] grant // Changed 'grant' to be a reg type
+);

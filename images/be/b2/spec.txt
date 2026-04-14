@@ -1,0 +1,13 @@
+Design a task management register that controls requests and values for 16 different tasks based on a 12-bit address input and a 16-bit data input. The module produces a request signal when a specific address is accessed in write mode, and it tracks acknowledgment from each task. Upon reset, it initializes all task registers. When a task is active, it signals a request until an acknowledgment is received, after which it resets the task's value. The design integrates synchronous reset handling and state tracking for each task through a series of flip-flops driven by the clock signal.
+module top_module(
+   input 	     clk,
+   input 	     rst,
+   
+   input [11:0]      adr,
+   input 	     wr,
+   input [15:0]      data,
+   
+   output reg [15:0] req = 0,
+   input [15:0]      ack,
+   output reg [15:0] val = 0
+   );

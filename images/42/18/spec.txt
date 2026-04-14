@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement a module for a 4-bit counter with enable and reset functionality. The counter increments by 1 on each positive clock edge when the enable signal is high. If the reset signal is asserted (active high), the counter value is reset to 0 regardless of the enable signal.
+
+Module name:  
+    counter_4bit      
+
+Input ports:
+    clk: Clock signal.
+    rst: Reset signal (active high).
+    en: Enable signal.
+
+Output ports:
+    count: 4-bit output for the current counter value.
+
+Implementation:
+The counter_4bit module increments the counter value on the positive edge of the clock signal clk when the enable signal en is high. If the reset signal rst is asserted, the counter is reset to 0. The counter value is synchronized with the clock and is a 4-bit wide signal.
+
+Give me the complete code.
+
+module counter_4bit(
+    input clk,
+    input rst,
+    input en,
+    
+    output reg [3:0] count
+);

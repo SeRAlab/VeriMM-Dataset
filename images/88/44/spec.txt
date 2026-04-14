@@ -1,0 +1,11 @@
+Design a module that performs multiple functions: it computes both bitwise and logical OR operations on two 3-bit inputs, generates the bitwise negation of each input, and outputs a 6-bit concatenation of the negated results. Additionally, it implements a 3-stage shift register that captures a single bit input 'd' on every clock cycle, allowing sequential storage and processing of this input. The final output combines the results of the bitwise OR operation with the output from the shift register, providing a versatile circuit capable of performing logical operations and data shifting.
+module top_module( 
+    input clk,
+    input [2:0] a,
+    input [2:0] b,
+    input d,
+    output [2:0] out_or_bitwise,
+    output out_or_logical,
+    output [5:0] out_not,
+    output q
+);

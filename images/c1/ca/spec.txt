@@ -1,0 +1,44 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as a memory interface that bridges the gap between a generic Wishbone bus and a custom memory subsystem. Its primary functions include:
+
+Write Operation Handling: It processes write requests from the Wishbone bus, translating them into signals compatible with the custom memory subsystem.
+Read Operation Handling: It manages read requests from the Wishbone bus, converting them into appropriate signals for the memory subsystem and relaying read data back to the bus.
+Acknowledgment and Error Handling: The module generates acknowledgment signals upon the completion of read or write operations and handles error signaling (though, in this implementation, errors are not actively generated).
+
+This module plays a crucial role in enabling communication between a standard bus protocol (Wishbone) and a specific memory architecture, ensuring data can be written to and read from memory efficiently and correctly.
+
+Module name:  
+	tessera_mem_wbif
+
+Input ports:
+	res: Reset signal (active high) used to initialize the module.
+	clk: Clock signal driving the synchronous logic of the module.
+	wb_cyc_i: Wishbone cycle signal indicating an active bus cycle.
+	wb_stb_i: Wishbone strobe signal indicating a valid data transfer.
+	wb_adr_i[31:0]: Wishbone address bus for specifying the memory address.
+	wb_sel_i[3:0]: Wishbone byte select signals for partial data transfers.
+	wb_we_i: Wishbone write enable signal distinguishing read and write operations.
+	wb_dat_i[31:0]: Wishbone data input bus for write operations.
+	wb_cab_i: Wishbone consecutive address burst signal (not used in this module).
+	write_ack: Acknowledgment signal from the memory subsystem for write operations.
+	read_ack: Acknowledgment signal from the memory subsystem for read operations.
+	read_data[31:0]: Data bus from the memory subsystem for read operations.
+Output ports:
+	wb_dat_o[31:0]: Wishbone data output bus for read operations.
+	wb_ack_o: Wishbone acknowledgment signal indicating the completion of a data transfer.
+	wb_err_o: Wishbone error signal (permanently tied to 0 in this module).
+	write_req: Request signal to the memory subsystem for write operations.
+	write_byte[3:0]: Byte select signals for the memory subsystem during write operations.
+	write_address[31:0]: Memory address for write operations.
+	write_data[31:0]: Data bus for write operations to the memory subsystem.
+	read_req: Request signal to the memory subsystem for read operations.
+	read_byte[3:0]: Byte select signals for the memory subsystem during read operations.
+	read_address[31:0]: Memory address for read operations.
+
+
+Implementation:
+The tessera_mem_wbif module serves as an interface between a Wishbone bus and a memory subsystem, facilitating both read and write operations. The module is designed to operate in a synchronous digital circuit environment, with its operations clocked by a positive edge-triggered clock signal. The module's primary function is to translate Wishbone bus transactions into memory read or write requests and to handle the acknowledgments from the memory subsystem back to the Wishbone bus. The logic within the module can be categorized into combinational and sequential parts, as detailed below:
+
+Give me the complete code.
+

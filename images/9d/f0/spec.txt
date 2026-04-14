@@ -1,0 +1,10 @@
+Design a memory interface module that operates on a clock signal to read from and write to a 4KB memory array. When the `IO_write` signal is asserted, the module stores the `IO_data_in` value at the address specified by the `IO_address`. If `IO_write` is not asserted, it outputs the data stored at that address to `IO_data_out`. Additionally, it continuously outputs the `processor_input` to `processor_output`. This module facilitates communication between an I/O interface and a processor, supporting both data storage and retrieval operations.
+module top_module(
+    input clock,
+    input IO_write,
+    input [11:0] IO_address,
+    input [15:0] IO_data_in,
+    input [15:0] processor_input,
+    output reg [15:0] IO_data_out,
+    output reg [15:0] processor_output
+);

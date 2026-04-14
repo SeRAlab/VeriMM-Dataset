@@ -1,0 +1,15 @@
+Design a Verilog module that implements a simplified version of the ChaCha20 stream cipher's quarter-round function. The quarter-round function takes four 32-bit input words and produces four 32-bit output words. The output should be computed using the ChaCha20 mixing algorithm, specifically the quarter-round transformation. The transformation can be defined as follows:  
+```
+a += b; d ^= a; d = rotate(d, 16);  
+c += d; b ^= c; b = rotate(b, 12);  
+a += b; d ^= a; d = rotate(d, 8);  
+c += d; b ^= c; b = rotate(b, 7);
+```  
+Your module should have the following inputs and outputs:  
+Inputs:  
+- clk: Clock signal  
+- rst: Reset signal (active high)  
+- in_a, in_b, in_c, in_d: 32-bit input words  
+Outputs:  
+- out_a, out_b, out_c, out_d: 32-bit output words  
+The module should operate on the rising edge of the clock and reset the outputs to zero when the reset signal is high. The computation should only occur during the clock cycle when the reset is low.

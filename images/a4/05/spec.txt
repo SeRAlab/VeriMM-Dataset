@@ -1,0 +1,14 @@
+Design a simple round-robin arbiter that manages data flow from a FIFO buffer to two processing elements (PE0 and PE1). It outputs readiness signals based on the availability of each PE and signals validity for data transfer. When either PE is ready, it allows the FIFO to send data to the currently selected PE while preventing simultaneous access, effectively alternating access between the two PEs based on their readiness. The module ensures that only one PE at a time can receive data from the FIFO, based on the status of the PEs.
+module top_module( 
+  input         clock, 
+  input         reset, 
+  input         io_fifo_valid, 
+  output        io_fifo_ready, 
+  input  [15:0] io_fifo_data, 
+  output        io_pe0_valid, 
+  input         io_pe0_ready, 
+  output [15:0] io_pe0_data, 
+  output        io_pe1_valid, 
+  input         io_pe1_ready, 
+  output [15:0] io_pe1_data 
+);

@@ -1,0 +1,6 @@
+Design a register that loads a 512-bit input when the load signal is active; otherwise, it performs a bitwise operation that involves a left rotation with a feedback mechanism. Specifically, on every positive edge of the clock, if load is high, the output q is set to the data input. If load is low, q undergoes a left rotation while also being XORed with its own bitwise left-shifted version, effectively creating a feedback loop that manipulates the stored data bits.
+module top_module(
+	input clk,
+	input load,
+	input [511:0] data,
+	output reg [511:0] q);

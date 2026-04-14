@@ -1,0 +1,8 @@
+Design a 100-bit wide pipeline register with rotation capabilities. The module stores input data in a series of three shift-register stages on the rising edge of a clock signal when the load signal is asserted. The stored data can then be accessed with controlled rotation based on a two-bit enable signal, 'ena'; where 'ena' determines the output to either be the current state without rotation or the state rotated left or right by one bit, facilitating flexible data manipulation and processing in a pipelined architecture.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output reg [99:0] q
+);

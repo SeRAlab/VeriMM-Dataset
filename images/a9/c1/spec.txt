@@ -1,0 +1,10 @@
+Design a circuit that generates a 4-bit output indicating the increment value for a FIFO write pointer based on specific conditions. The output `fifowp_inc` is determined by the status of the `free2` and `free3` inputs, as well as the value of the 2-bit input `tm_count`. If `free3` is asserted and `tm_count` equals 3, the output increments by 3. If `free2` is asserted and `tm_count` is greater than or equal to 2, the increment is set to 2. If `tm_count` is at least 1, the increment will be 1; otherwise, the increment will be 0. This effectively prioritizes the increment values based on the inputs and controls the FIFO buffer behavior in a memory interface.
+module top_module(
+  // inputs:
+  free2,
+  free3,
+  tm_count,
+
+  // outputs:
+  fifowp_inc
+);

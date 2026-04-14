@@ -1,0 +1,6 @@
+Design a power-on reset (POR) circuit that asserts a reset signal for a predetermined duration when power is applied. The module continuously counts clock cycles until the specified time period (converted based on the clock frequency) elapses. Once power is detected, the reset signal is asserted low until the counter reaches the calculated threshold, after which the reset signal is deasserted high, allowing the system to start normally. The implementation ensures a clean power-on state for the connected digital logic.
+module top_module(
+  input pwr,
+  input clk,      // Added clk input signal
+  output reg rst  // Changed rst to reg to allow assignment
+);

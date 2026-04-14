@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+    
+Implement a module primarily functions as a 64-bit adder with carry input and output capabilities. It to perform addition operations on two 64-bit operands (`rs1_data` and `rs2_data`) and an input carry (`cin`). The module outputs the 64-bit sum (`adder_out`) along with two carry outputs (`cout32` and `cout64`) indicating overflow from the lower 32 bits and the entire 64-bit operation, respectively. This module is a critical component within arithmetic logic units (ALUs), specifically tailored for SPARC architecture-based processors, facilitating arithmetic operations that are fundamental to the processor's execution unit.
+
+Module name:  
+	sparc_exu_aluadder64
+
+Input ports:
+	rs1_data [63:0]: A 64bit input operand representing one of the numbers to be added. This input is part of the arithmetic operation.
+	rs2_data [63:0]: Another 64bit input operand representing the second number to be added. Along with rs1_data, it forms the pair of numbers that undergo addition.
+	cin: A singlebit input carry flag. This is used for operations where the carry from a previous operation needs to be considered in the current addition, enabling chained or extended arithmetic operations.
+Output ports:
+	adder_out [63:0]: A 64bit output representing the sum of the inputs rs1_data, rs2_data, and the input carry cin. This is the primary result of the module's operation.
+	cout32: A singlebit output carry flag that indicates an overflow from the addition of the lower 32 bits of rs1_data and rs2_data, along with the input carry cin. This can be used to signal overflow conditions or for further chained arithmetic operations.
+	cout64: A singlebit output carry flag that indicates an overflow from the entire 64bit addition operation. This serves a similar purpose to cout32 but for the full 64bit operation.
+
+
+Implementation:
+The sparc_exu_aluadder64 module is designed to perform 64-bit addition, taking into account a carry-in (cin) input. This module is a fundamental building block in arithmetic logic units (ALUs), specifically tailored for operations that require addition of two 64-bit operands (rs1_data and rs2_data). The design is purely combinational, with no sequential elements, meaning it computes the output solely based on the current inputs without any internal state or memory.
+The addition is split into two parts: the lower 32 bits and the upper 32 bits of the operands. This split approach allows for handling the carry-out of the lower 32-bit addition as the carry-in for the upper 32-bit addition, enabling a cascaded addition process that accurately computes the sum and carry-out for 64-bit operands.
+Lower 32-bit Addition: The lower half of rs1_data and rs2_data (bits [31:0]) are added together along with the carry-in (cin). The result of this operation is the lower 32 bits of the adder_out signal, and the carry-out of this addition (cout32) serves as an intermediate signal.
+Upper 32-bit Addition: The upper half of rs1_data and rs2_data (bits [63:32]) are then added, with the carry-out from the lower 32-bit addition (cout32) included as an input. The result forms the upper 32 bits of the adder_out signal. The carry-out from this addition (cout64) represents the final carry-out of the entire 64-bit addition operation.
+This design ensures that the module can perform a full 64-bit addition in a single operation cycle, making it efficient and suitable for high-performance computing tasks that require rapid arithmetic operations.
+
+Give me the complete code.
+

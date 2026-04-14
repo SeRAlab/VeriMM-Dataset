@@ -1,0 +1,10 @@
+Develop a Mealy state machine with three states: IDLE, STATE1, and STATE2. The machine responds to three input signals (i, j, k) and transitions between states based on their values. In IDLE, if input i is high, it transitions to STATE1; otherwise, it remains in IDLE. In STATE1, a high j input causes a transition to STATE2, while the output out1 is asserted high. In STATE2, if input k is high, the machine returns to IDLE, asserting out2 high, while maintaining out1 low. The outputs out1 and out2 are registered and are determined by the current state and input values. The state machine utilizes synchronous reset functionality to initialize to the IDLE state.
+module top_module(
+  input clk,
+  input reset,
+  input i,
+  input j,
+  input k,
+  output reg out1,
+  output reg out2
+);

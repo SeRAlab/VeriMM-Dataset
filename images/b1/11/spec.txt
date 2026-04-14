@@ -1,0 +1,7 @@
+Design a synchronous 4-bit counter that counts from 0 to 9. The counter increments its value on each rising edge of the clock when the enable signal is high. When a synchronous reset signal is activated, the counter is set to 0. Once the counter reaches the value of 9 (binary 1001), it will reset to 0 on the next increment, effectively creating a modulo-10 counting behavior. This module is frequently used in digital applications requiring a counting mechanism, such as in timers or event counters.
+module top_module(
+    input clk, // clock input
+    input reset, // synchronous reset input
+    input enable, // counting enable input
+    output reg [3:0] count // 4-bit output
+);

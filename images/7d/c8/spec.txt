@@ -1,0 +1,14 @@
+Design a dual-port block memory with one write and two read capabilities. The module allows data to be written to a specific address when the write enable signal is asserted. Simultaneously, it supports reading from two distinct addresses, delivering the contents of those addresses simultaneously to the output ports. The memory is organized as a 256-word array, with each word being 32 bits wide, and all operations are synchronized to the clock signal.
+module top_module(
+                    input wire           clk,
+
+                    input wire  [07 : 0] read_addr0,
+                    output wire [31 : 0] read_data0,
+
+                    input wire  [07 : 0] read_addr1,
+                    output wire [31 : 0] read_data1,
+
+                    input wire           wr,
+                    input wire  [07 : 0] write_addr,
+                    input wire  [31 : 0] write_data
+                   );

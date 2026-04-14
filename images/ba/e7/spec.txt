@@ -1,0 +1,7 @@
+Create a module for computing the sine, cosine, and tangent of a given input angle using the CORDIC algorithm. The design includes a parameterized width for the input and output signals, allowing for flexibility in precision. It utilizes a lookup table for arctangent values to facilitate iterative calculations, ultimately storing the results for sine, cosine, and tangent in separate output signals. The module is capable of handling signed inputs, and provides reasonable values for sine and cosine, while computing tangent as an edge case when the sine is zero.
+module top_module(
+  input signed [width-1:0] in,
+  output reg signed [width-1:0] sin,
+  output reg signed [width-1:0] cos,
+  output reg signed [width-1:0] tan
+);

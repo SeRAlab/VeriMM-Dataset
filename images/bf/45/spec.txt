@@ -1,0 +1,10 @@
+Design a 12-bit addressable memory controller that handles read and write operations based on clock and reset signals. The module supports writing a 16-bit data input to the specified memory address when the write enable (we) signal is asserted, and it outputs the data from the specified address when reading. The controller generates an acknowledgment signal (ack) after every valid operation to indicate that the read or write action has completed. The internal memory consists of 4096 locations, each capable of holding 16 bits.
+module top_module(
+    input clk,
+    input rst,
+    input [11:0] addr,
+    input we,
+    input [15:0] din,
+    output reg [15:0] dout,
+    output reg ack
+);

@@ -1,0 +1,12 @@
+Design a dual-port RAM module that allows simultaneous read and write operations. This memory unit supports two distinct addresses, enabling each port to independently write data when the corresponding write enable signal is active and to read data continuously from its addressed location. With a specified depth of 256 memory locations and an 8-bit width for each location, the RAM facilitates efficient data storage and retrieval controlled by a clock signal, suitable for applications requiring high-speed memory access in digital systems.
+module top_module(
+  input clk,
+  input [addr_width-1:0] addr1,
+  input [addr_width-1:0] addr2,
+  input we1,
+  input we2,
+  input [width-1:0] din1,
+  input [width-1:0] din2,
+  output reg [width-1:0] dout1,
+  output reg [width-1:0] dout2
+);

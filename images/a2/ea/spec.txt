@@ -1,0 +1,12 @@
+Design a circuit that implements a priority encoder followed by a multiplexer and decoder system. The priority encoder receives an 8-bit input and determines the position of the highest set bit, outputting the 3-bit position value. The multiplexer selects one of the 256 possible 8-bit inputs based on a 3-bit select signal. The decoder interprets a 2-bit enable signal to activate one of four outputs, which can receive the multiplexed data based on the enabled condition. The final outputs include four 8-bit buses that are controlled by the enable decoder's selection, allowing for dynamic routing of the selected multiplexer output.
+module top_module(
+    input [7:0] in,
+    input [2047:0] mux_in,
+    input [7:0] sel,
+    input [1:0] enable,
+    output reg [2:0] pos,
+    output reg [7:0] out1,  // Changed to reg
+    output reg [7:0] out2,  // Changed to reg
+    output reg [7:0] out3,  // Changed to reg
+    output reg [7:0] out4   // Changed to reg
+);

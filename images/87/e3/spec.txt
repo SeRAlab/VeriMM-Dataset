@@ -1,0 +1,7 @@
+Design a module that performs arithmetic operations using both a Ripple Carry Adder (RCA) and a Carry Save Adder (CSA). It takes two 32-bit inputs, `a` and `b`, along with a subtraction control flag (`sub`) and a 4-bit input for priority encoding. The module features a selector to choose between the outputs of the RCA and CSA based on a 2-bit input `select`, ultimately generating a 32-bit sum output. Additionally, it incorporates a priority encoder to determine the positions of active bits from the `in` input, outputting the result as a 2-bit `pos` signal.
+module top_module(
+    input [31:0] a,
+    input [31:0] b,
+    input sub,
+    output [31:0] out
+);

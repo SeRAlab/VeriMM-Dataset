@@ -1,0 +1,12 @@
+
+Design a Verilog module that implements a simplified AES encryption for a 4-bit input. The module should take a 4-bit plaintext input and a 4-bit key, and perform one round of AES transformation, which includes:
+1. SubBytes: Each nibble (4 bits) of the input is replaced by a corresponding nibble from a predefined S-box.
+2. ShiftRows: For this simplified version, keep the rows unchanged.
+3. AddRoundKey: XOR the result of the previous step with the key.
+
+The module should have the following ports:
+- `input [3:0] plaintext`
+- `input [3:0] key`
+- `input clk`
+- `input rst`
+- `output reg [3:0] ciphertext`

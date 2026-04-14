@@ -1,0 +1,30 @@
+Please act as a professional Verilog designer.
+
+Design a module to implement a 3-bit shift register. The module should have a data input, clock input, and synchronous reset input. The shift register should shift the input data to the right on each rising edge of the clock. The least significant bit of the register should be filled with the data input, and the most significant bit should be discarded.
+
+Module name:
+    shift_register
+
+Input ports:
+    data_in: Data input.
+    clk: Clock input.
+    rst: Synchronous reset input (active high).
+
+Output ports:
+    shift_out: 3-bit shift register output.
+
+Implementation:
+Declare the module shift_register with input and output ports as specified in the ports statement.
+Declare a 3-bit register shift_reg to hold the shift register value.
+Inside an always block, sensitive to the positive edge of the clk signal, implement the logic for the shift register.
+If the reset signal rst is high, set the shift_reg register to 0.
+Otherwise, shift the data input into the least significant bit of shift_reg on each rising edge of the clk signal.
+
+Give me the complete code.
+
+module shift_register(
+    input data_in,
+    input clk,
+    input rst,
+    output reg [2:0] shift_out
+);

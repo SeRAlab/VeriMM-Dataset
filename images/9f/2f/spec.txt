@@ -1,0 +1,8 @@
+Design a finite state machine (FSM) for a traffic light control system that manages the traffic and pedestrian signals based on the input clock and a pedestrian button. The module operates with three states: RED, GREEN, and YELLOW. In the RED state, the traffic light is on while the pedestrian light remains off; in the GREEN state, the pedestrian light is activated; and during the YELLOW state, the pedestrian light stays on as well. The FSM transitions through these states based on the clock signal, with the additional capability to change to YELLOW if the pedestrian button is pressed, allowing for pedestrian crossing. The system resets to the RED state when triggered.
+module top_module(
+  input clk,
+  input reset,
+  input pedestrian_button,
+  output reg traffic_light,
+  output reg pedestrian_light
+);

@@ -1,0 +1,8 @@
+Design a digital circuit that combines two 8-bit input bytes into a 16-bit half-word and incorporates a 4-bit binary up-counter. The counter is synchronized to a clock and resets synchronously when the reset signal is active. On each clock cycle, the counter increments its value, which is then added to the combined half-word to produce a final 16-bit output. This module effectively functions as a combination of a data combiner and an arithmetic unit, allowing for the generation of a summed output based on the current counter state and the provided input bytes.
+module top_module(
+    input clk,
+    input reset,   // Synchronous active-high reset
+    input [7:0] in_hi,  // Upper byte input for the combinational circuit
+    input [7:0] in_lo,  // Lower byte input for the combinational circuit
+    output [15:0] out  // Output from the functional module
+);

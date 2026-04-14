@@ -1,0 +1,15 @@
+Design a simple CPU module that initializes its output registers upon receiving a reset signal. It includes various control inputs such as buttons, a clock, and others, but primarily focuses on setting its output state to all zeros when reset is triggered. Upon clock cycles when not in reset, it outputs a fixed value for the general-purpose output (GPO) set to '111111'. The purpose is to manage state and outputs of a basic control unit or processor component based on reset conditions and clock1 edges.
+module top_module(
+	input [2:0]Btns,
+	input Clock,
+	input [7:0]Din,
+	input Reset,
+	input Sample,
+	input Turbo,
+	output reg [3:0]Debug = 0,
+	output reg [7:0]Dout = 0,
+	output reg Dval = 0,
+	output reg [5:0]GPO = 0,
+	output reg [7:0]IP = 0
+	
+);

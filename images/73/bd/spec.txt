@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Design a 4-to-16 decoder module that converts a 4-bit binary input to a 16-bit one-hot output. The decoder should have 4 input lines and 16 output lines.
+
+Module name:
+    decoder_4to16
+
+Input ports:
+    bin_in: 4-bit binary input signal.
+
+Output ports:
+    one_hot_out: 16-bit one-hot output signal.
+
+Implementation:
+The module includes a 16-bit register named one_hot_out.
+The one_hot_out register is updated in the always block, triggered on any change of the bin_in input.
+The 4-bit binary input is decoded to the appropriate one-hot output pattern using a case statement.
+
+Give me the complete code.
+
+module decoder_4to16(
+  input [3:0] bin_in,
+  output reg [15:0] one_hot_out
+);

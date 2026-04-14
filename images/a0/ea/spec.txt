@@ -1,0 +1,28 @@
+Please act as a professional Verilog designer.
+
+Implement a 3-bit Up/Down Counter. The counter should count up or down based on a control signal. If the control signal is high, the counter should count up; if the control signal is low, the counter should count down. The counter rolls over when it reaches its maximum value (7 for up count) or minimum value (0 for down count). It also has a reset signal to reset the counter.
+
+Module name:  
+    up_down_counter  
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    ctrl: Control signal. Defined as 1 to count up and 0 to count down.
+
+Output ports:
+    count: 3-bit output representing the current count value.
+
+Implementation:
+The module includes a 3-bit register to store the count value. On the positive edge of the clock signal (clk) or the positive edge of the reset signal (rst), the module updates the count value.
+If the reset signal (rst) is high, the count register is set to 0. If the reset signal (rst) is low, the count register is incremented or decremented based on the control signal (ctrl). When counting up, if the count value reaches 7, it rolls over to 0. When counting down, if the count value reaches 0, it rolls over to 7.
+
+Give me the complete code.
+
+module up_down_counter(
+    input clk,
+    input rst,
+    input ctrl,
+
+    output [2:0] count
+);

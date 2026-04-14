@@ -1,0 +1,9 @@
+Design a circuit that functions as an interface for a single-port RAM memory module. The RAM has a depth of 1024 entries and a data width of 32 bits. The module outputs data from the RAM (Q) based on a specified address (A) when the clock (CLK) triggers, provided the chip enable (CEN) is active and the write enable (WEN) signal is managed to control writing. This design optimizes power usage by enabling the RAM only when needed, supporting both read and write operations.
+module top_module(
+   output reg [31:0] Q,
+   input CLK,
+   input CEN,
+   input WEN,
+   input [9:0] A,
+   input [31:0] D
+);

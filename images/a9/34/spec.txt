@@ -1,0 +1,7 @@
+Design a 4-bit calculator module that performs addition or subtraction based on a control signal. The inputs A and B are two 4-bit numbers, while the op input selects the operation: when op is 0, the module outputs the sum of A and B; when op is 1, it outputs the difference A minus B. The output C is also 4 bits wide, with the most significant bit used as a sign flag to indicate overflow (greater than 15) or underflow (less than -8) conditions in the result, ensuring that the calculator maintains correct signaling for potential errors during arithmetic operations.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input op,
+    output reg [3:0] C
+);

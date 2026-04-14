@@ -1,0 +1,16 @@
+Design a circuit that normalizes a floating-point product result and manages scaling based on the input conditions. This module takes an extended precision product output and a normalization value, checks the exponent for necessary adjustments, and modifies both the output values and the product as needed. When the input indicates that processing is active, it handles different cases for scaling the exponent and shifting the product, while keeping track of associated control signals and tags for subsequent operations. If the module is idle, it directly passes the input results through.
+module top_module(
+	input [32:0] zout_Multiply,
+	input [49:0] productout_Multiply,
+   input [7:0] InsTagMultiply,
+	input ScaleValidMultiply,
+	input [31:0] z_Multiply,
+	input clock,
+	input idle_Multiply,
+	output reg idle_NormaliseProd,
+	output reg [32:0] zout_NormaliseProd,
+	output reg [49:0] productout_NormaliseProd,
+	output reg [7:0] InsTagNormaliseProd,
+	output reg ScaleValidNormaliseProd,
+	output reg [31:0] z_NormaliseProd
+   );

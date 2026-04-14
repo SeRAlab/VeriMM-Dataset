@@ -1,0 +1,8 @@
+Design an up-down counter that counts based on a clock signal. It can either increment or decrement its value depending on the mode input. When in increment mode (mode = 0), it counts from 0 to 15 and wraps around to 0 after reaching 15. When in decrement mode (mode = 1), it counts down from 15 to 0 and wraps around to 15 after reaching 0. The counter can be initialized to a specific 4-bit value through the input `initial_value` when the reset signal is activated.
+module top_module(
+  input clk,
+  input reset,
+  input mode,
+  input [3:0] initial_value,
+  output reg [3:0] counter_value
+);

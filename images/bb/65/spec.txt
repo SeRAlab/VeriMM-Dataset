@@ -1,0 +1,11 @@
+Design a gated clock circuit that generates a clock output (GCLK) based on enable (SCE) and gate (GATE) control signals and the input clock (CLK). When the SCE signal is low and the GATE signal is active, the output GCLK follows the input clock, but is inverted. The circuit utilizes a latch to control the propagation of the negated clock signal, ensuring that GCLK is active only under the appropriate conditions defined by SCE and GATE. This functionality is crucial for sectioning off clock domains or controlling when components of a larger system should respond to clock signals, thus enhancing power efficiency and timing management.
+module top_module(
+    GCLK,
+    SCE,
+    GATE,
+    CLK,
+    VPWR,
+    VGND,
+    VPB,
+    VNB
+);

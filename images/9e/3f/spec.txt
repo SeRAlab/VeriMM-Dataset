@@ -1,0 +1,10 @@
+Design a memory interface module for handling timecode data. This module features an 8-bit input for timecode data and a 13-bit address to access specific memory locations. Upon receiving a valid timecode input, it writes the data to the designated memory address. The module includes a clock and reset functionality, where on reset, it initializes internal states to zero and disables writing. On a clock edge, if the timecode data is valid, it updates the memory data and address and enables writing; otherwise, it retrieves the data from memory based on the current address without writing. The output includes the retrieved data and the write enable signal indicating whether a write operation is active.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] timecode_data,
+    input timecode_valid,
+    input [12:0] timecode_address,
+    output reg [7:0] data_out,
+    output reg write_enable
+);

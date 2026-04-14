@@ -1,0 +1,6 @@
+Design a module that computes the Adler-32 checksum for an 8-bit input data stream. It utilizes two 16-bit registers initialized to 1, incrementally updating these registers with each incoming byte of data—a process governed by a clock signal. The first register accumulates the sum of all input data while the second register accumulates the first register's value. Both registers are then combined to produce a 32-bit checksum output, providing an efficient error-checking mechanism for the data stream.
+module top_module(
+  input clk,                // Added clk input
+  input [7:0] data,
+  output reg [31:0] checksum
+);

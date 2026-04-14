@@ -1,0 +1,7 @@
+Implement a simple encryption module that processes a 16-bit input data signal. On the rising edge of the clock, the module first checks for a reset condition. If reset is active, it initializes the output to zero. If not, it divides the input data into two 8-bit segments. It performs an XOR operation on these segments, multiplies the result by 3, and combines the values in a specific manner to generate the final encrypted output. The final output is obtained by XORing this computed value with the original input data, providing a basic level of data obfuscation suitable for lightweight encryption applications.
+module top_module(
+    input iCLK,
+    input iRST,
+    input [15:0] iData,
+    output reg [15:0] oEncData
+);

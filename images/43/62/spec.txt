@@ -1,0 +1,5 @@
+Design a 32-bit immediate value generator for a processor. This module extracts and generates a 32-bit immediate value (`d_out`) from a 32-bit instruction input (`inst`). Depending on the opcode, it instantiates different formats for the immediate value: it uses specific bits from the instruction based on the value of certain control bits to create a 12-bit immediate (`imm`), which is then sign-extended to 32 bits before being output. This functionality is essential for implementing operations involving immediate values in instruction sets such as RISC architectures.
+module top_module(
+    input [31:0] inst,
+    output [31:0] d_out 
+);

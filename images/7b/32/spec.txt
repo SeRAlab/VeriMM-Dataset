@@ -1,0 +1,8 @@
+Design a pipelined multiplier that performs the multiplication of two 32-bit inputs, A and B, producing a 64-bit output, C. The multiplier operates on 16-bit segments of the inputs in a sequential manner, allowing it to generate partial products during clock cycles and accumulate the results over multiple stages. It loads the segments of A and B when the load signal is asserted, initializing the computation, and subsequently calculates the products of the segments, combining them to form the final 64-bit product. The design enhances throughput by utilizing pipelining, enabling it to process additional multiplications while the previous ones are still being computed.
+module top_module(
+    input clk,
+    input [31:0] A,
+    input [31:0] B,
+    input load,
+    output reg [63:0] C
+);

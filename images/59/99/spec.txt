@@ -1,0 +1,11 @@
+Design a dual-port RAM module with 8 addressable locations, where each location can store 4 bits of data. The module supports synchronous write operations on the rising edge of the clock and initializes all memory locations to '1111' upon reset. It allows reading from the memory asynchronously based on the read enable signal, outputting the stored data at the specified address, or returning '1111' when not enabled. This functionality enables simultaneous read and write operations, making it suitable for applications requiring fast data access with low latency.
+module top_module(
+    input clk,
+    input rst_n,
+    input write_en,
+    input [2:0] write_addr,
+    input [3:0] write_data,
+    input read_en,
+    input [2:0] read_addr,
+    output reg [3:0] read_data
+);

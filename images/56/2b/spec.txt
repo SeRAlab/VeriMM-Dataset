@@ -1,0 +1,7 @@
+Design a keypad interface that decodes a 4x4 matrix keypad input, outputting an 8-bit representation of the pressed key based on the combination of selected row and column signals. The module utilizes a predefined key mapping, where each key corresponds to a specific output value, helping to identify which key has been pressed. This is managed through a combinational logic process that reads the row and column inputs, updating the output accordingly with the associated key code. An initial block initializes the keymap for mapping the keys to their corresponding output values.
+module top_module(
+    input clk,
+    input [3:0] keypad_row,
+    input [3:0] keypad_col,
+    output reg [7:0] keypad_out
+);

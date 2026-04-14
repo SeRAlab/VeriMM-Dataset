@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module to serve as a 5-bit register with a load enable feature. Its primary function to temporarily store a 5-bit data input (`datain`) and output this data (`dataout`) based on the control signals it receives. The module operates synchronously with the rising edge of a clock signal (`clock`). The inclusion of a load signal (`load`) allows for conditional data storage: when `load` is asserted (high), the input data is latched into the register on the next clock edge; when `load` is deasserted (low), the register is cleared, setting all bits of `dataout` to 0. This functionality makes the module versatile for various applications within a digital system, including but not limited to data buffering, temporary data storage, and state holding in finite state machines.
+
+Module name:  
+	register5_wl
+
+Input ports:
+	datain [4:0]: A 5bit wide input port that serves as the data source for the register. The data presented on this port is stored in the register when the load signal is active.
+	clock: A clock input signal that synchronizes the data storage operation. The register captures or clears the data on the rising edge of this signal.
+	load: A control input signal that determines the operation of the register. When high, the register latches the datain value on the next rising edge of clock. When low, the register clears its contents on the next rising edge of clock.
+Output ports:
+	dataout [4:0]: A 5bit wide output port that presents the current contents of the register. This port reflects the stored data or a cleared state (all zeros), depending on the load signal's status during the last clock edge.
+
+
+Implementation:
+The RTL module presented, named register5_wl, is designed to implement a 5-bit register with a load enable feature. This module is a fundamental building block in digital design, particularly in the realms of data storage and transfer within a synchronous digital circuit. The module's operation is governed by both combinational and sequential logic elements, which are orchestrated to achieve the desired functionality of data storage and conditional data loading based on the control signals provided.
+Sequential Logic:
+The core of the register5_wl module is its sequential logic, which is encapsulated within an always block that is triggered on the positive edge of the clock signal. This design choice ensures that the register operates in a synchronous manner, aligning its operations with the system clock, thereby facilitating its integration into larger, clock-driven digital systems.
+Within this always block, the module examines the state of the load signal. If load is asserted (load = 1), the register latches the 5-bit input data (datain) into its internal storage (dataout) at the next positive clock edge. This operation represents the loading or updating of the register's contents based on external inputs, a critical function in dynamic data processing scenarios.
+Combinational Logic:
+Conversely, if the load signal is deasserted (load = 0), the module employs combinational logic to clear its contents, setting dataout to a 5-bit zero (5'b0). This operation effectively resets the register's stored value, preparing it for a fresh data load upon the next assertion of the load signal. This conditional logic, though simple, is pivotal in controlling the register's behavior, enabling or disabling data retention based on system requirements.
+
+Give me the complete code.
+

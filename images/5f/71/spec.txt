@@ -1,0 +1,10 @@
+Design a simple signed 8-bit calculator that performs addition or subtraction based on an operation control signal. Upon receiving a clock signal, the module checks for a reset condition to clear the result and overflow flags. If not in a reset state, it performs addition when the operation signal is low (op=0), and subtraction when high (op=1), while also detecting overflow situations for each operation. The result of the operation is stored in the output register, and an overflow indicator is set when the calculation exceeds the limits of 8-bit signed representation.
+module top_module(
+    input clk,
+    input reset,
+    input signed [7:0] a,
+    input signed [7:0] b,
+    input op,
+    output reg signed [7:0] result,
+    output reg overflow
+);

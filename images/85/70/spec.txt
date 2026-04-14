@@ -1,0 +1,12 @@
+Design a synchronous FIFO (First-In-First-Out) memory buffer that facilitates data storage and retrieval while managing overflow and underflow conditions. The module features a 512-word memory array with each word being 16 bits wide, controlled by read and write enable signals. It outputs flags for full and empty states, as well as an "almost full" indication when the buffer reaches a predefined threshold of near capacity. A reset signal initializes pointers and counts, while clock edges synchronize operations. This design supports data flow management efficiently by ensuring data integrity during read/write operations.
+module top_module(
+  input clk,
+  input srst,
+  input [15 : 0] din,
+  input wr_en,
+  input rd_en,
+  output reg [15 : 0] dout,  // Changed output to reg
+  output full,
+  output empty,
+  output prog_full
+);

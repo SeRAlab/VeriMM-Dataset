@@ -1,0 +1,12 @@
+Design a digital module that implements a combination of a 4-to-1 multiplexer and a falling edge detection mechanism. The multiplexer outputs one of four 32-bit inputs based on a 2-bit selection signal. Additionally, it includes a priority encoder that evaluates the most significant bits of the input signals, facilitating the detection of the specific output value of 32'hDEADBEEF, which triggers an output signal indicating a specific condition. The module also contains a resettable falling edge detector that captures the transitions of the output by comparing the current and previous states, enabling the generation of a flag when a falling edge occurs.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] in0,
+    input [31:0] in1,
+    input [31:0] in2,
+    input [31:0] in3,
+    input [1:0] sel,
+    output reg [31:0] out,
+    output reg [31:0] falling_edge_detection
+);

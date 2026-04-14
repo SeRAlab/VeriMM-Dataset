@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module performs a specific combinational logic function, which is an advanced form of an AND-OR-INVERT (AOI) gate, specifically an AOI211 configuration. This module to implement a complex logic operation that combines two AND inputs, two OR inputs, and an inverter at the output. The primary function of this module to provide a compact and efficient way to execute this specific logic operation, which is commonly used in digital circuits for optimizing logic gate count, reducing propagation delay, and improving overall circuit performance. In a broader system context, this module could be used in various applications such as arithmetic logic units, control logic circuits, or any digital system requiring optimized combinational logic operations.
+
+Module name:  
+	bw_u1_aoi211_1x
+
+Input ports:
+	c1 and c2: These are input ports intended for the AND part of the logic operation. They are digital signals (binary) and are used in conjunction with each other. When both c1 and c2 are high (1), the AND condition is satisfied.
+	b and a: These are additional input ports that are part of the OR operation within the module. They are also digital signals. If either a or b is high (1), the OR condition is met.
+	All input and output ports are singlebit, aligning with the module's focus on performing a specific logic operation efficiently.
+Output ports:
+	z: This is the single output port of the module. It is a digital signal (binary, either 0 or 1) that represents the result of the module's logic operation. The output is active low due to the inversion at the output stage.
+
+
+Implementation:
+The RTL module bw_u1_aoi211_1x is designed to implement a specific combinational logic function using AND, OR, and NOT gates. This module does not contain any sequential logic elements such as flip-flops or latches, meaning its output is solely dependent on its current inputs without any memory of previous states. The logic function realized by this module can be described as an AND-OR-Invert (AOI) gate with two AND inputs and two OR inputs, specifically tailored to meet certain design criteria.
+The core functionality of the module can be broken down as follows:
+AND Operation: The inputs c1 and c2 are fed into an AND gate. This operation checks if both c1 and c2 are high (1). The result of this operation will be used in a subsequent OR operation. This part of the logic can be seen as a condition that needs to be met alongside other conditions for the final output to be determined.
+OR Operation: The module performs an OR operation on three inputs: the result of the c1 AND c2 operation, and the individual inputs a and b. This operation checks if any of these conditions are true. If any of the inputs to the OR operation are high (1), the OR operation will output high (1).
+Invert Operation: The output of the OR operation is then inverted (NOT gate). This means if the OR operation outputs high (1), the final output z will be low (0), and vice versa. This inversion is crucial as it transforms the module into an AND-OR-Invert logic gate, which is a common building block in digital logic design for creating complex logic functions with fewer transistors, hence potentially saving space and power.
+
+Give me the complete code.
+

@@ -1,0 +1,11 @@
+Design a GPIO interface module that facilitates communication between a processor and a peripheral device. This module processes read and write operations based on the state of control signals. When in read mode (indicated by bus2ip_rnw), it ignores the input GPIO settings and maintains the output signals, asserting transfer acknowledgment signals as needed. Conversely, in write mode, it captures the GPIO inputs and updates the output register while signaling the completion of the transfer. The module also includes handshake signals to confirm read and write acknowledgments, ensuring proper data transfer between the internal and external devices.
+module top_module(
+    input s_axi_aclk,
+    input bus2ip_cs,
+    input bus2ip_rnw,
+    input [7:0] gpio_io_t,
+    output reg [7:0] gpio_io_o, // Changed to reg
+    output reg ip2bus_rdack_i,   // Changed to reg
+    output reg ip2bus_wrack_i_D1_reg, // Changed to reg
+    output reg GPIO_xferAck_i    // Changed to reg
+);

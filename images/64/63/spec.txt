@@ -1,0 +1,9 @@
+Design a digital calculator that performs arithmetic operations based on a 2-bit operation code (op). The module accepts two 8-bit signed inputs (a and b) and outputs the result as an 8-bit signed value. It supports four operations: addition, subtraction, multiplication, and division. The operations are initiated on the rising edge of a clock signal, and a reset input clears the result and any temporary storage. Special handling for division ensures that when the second input (b) is zero, a predefined error value is returned to indicate a division by zero condition.
+module top_module(
+    input clk,
+    input rst,
+    input [1:0] op,
+    input signed [7:0] a,
+    input signed [7:0] b,
+    output reg signed [7:0] result
+);

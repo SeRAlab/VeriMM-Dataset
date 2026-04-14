@@ -1,0 +1,11 @@
+Design a register bank with four 16-bit registers (R0, R1, R2, R3) that can be loaded with data based on control signals. On a negative reset, all registers are initialized to zero. During each clock cycle, each register is conditionally updated based on the corresponding bits in the control input. Depending on the control signals, the data for each register can be sourced from other registers or external input data. Each register's next state is determined by a combinatorial logic that selects values based on specific control bit combinations.
+module top_module(
+				input [15:0] data,
+				input [15:0] control,
+				input clk,
+				input rst_n,
+				output reg [15:0] R0,
+				output reg [15:0] R1,
+				output reg [15:0] R2,
+				output reg [15:0] R3
+			 );

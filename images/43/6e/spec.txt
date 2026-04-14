@@ -1,0 +1,9 @@
+Design a FIFO (First-In, First-Out) memory module with asynchronous reset, capable of storing and retrieving 8-bit wide data. It allows data to be written into the FIFO when the write enable signal is asserted and read out when the read enable signal is asserted. The FIFO has a depth of 8, with addresses managed by separate write and read address pointers that increment on each operation while maintaining the order of data retrieval. The module effectively serves as a buffer, ensuring data can be temporarily stored and accessed in a controlled manner according to the clock cycles.
+module top_module(
+    input           rst_n,              // Asynchronous reset
+    input           clk,                // System clock
+    input           wr_en,              // Write enable
+    input           rd_en,              // Read enable
+    input           [7:0] data_in,      // Data input
+    output reg      [7:0] data_out      // Data output
+);

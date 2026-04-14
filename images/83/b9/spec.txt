@@ -1,0 +1,6 @@
+Implement a 4-to-16 line decoder. The module takes a 4-bit select input (sel) and generates a one-hot output (out) across 16 bits, where only one bit is high (active) depending on the value of sel. The decoder utilizes a case statement to activate the corresponding output line for each sel value from 0 to 15, with a default condition that sets all outputs low if sel is outside the expected range. The input width is much larger (256 bits), but it is not utilized in the current functionality.
+module top_module(
+    input [255:0] in,
+    input [3:0] sel,
+    output reg [15:0] out
+);

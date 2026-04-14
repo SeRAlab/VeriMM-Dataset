@@ -1,0 +1,8 @@
+Design a PWM (Pulse Width Modulation) generator capable of producing a variable frequency output signal with adjustable duty cycle. The module takes a clock input, a reset signal, a frequency value, and a duty cycle percentage. On receiving the reset signal, it initializes the output signal to low and resets the internal counter. The counter increments on each clock cycle and determines the output state based on the calculated period (derived from the pwm_freq input) and the high_time (derived from the duty cycle). The output signal, pwm_out, is set high for the duration of high_time and low otherwise, effectively producing a modulated signal based on the specified frequency and duty cycle.
+module top_module(
+   input clk,
+   input rst,
+   input [31:0] pwm_freq,
+   input [7:0] duty_cycle,
+   output reg pwm_out
+);

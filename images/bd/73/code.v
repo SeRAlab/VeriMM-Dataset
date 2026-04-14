@@ -1,0 +1,1 @@
+module top_module(input x1,input x2,input x3,input [1:0]signal,output OUTPUT);assign OUTPUT = (~signal[0] & ~signal[1] & x1)|(signal[0] & ~signal[1] & x2)|(~signal[0] & signal[1] & x3);endmodule

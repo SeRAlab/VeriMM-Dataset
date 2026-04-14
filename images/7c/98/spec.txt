@@ -1,0 +1,8 @@
+Develop a synchronous sequential circuit with three stages of registered data processing. The module captures an input signal, DATA_IN, on the rising edge of the CLK signal. It generates two intermediate stages, where stage1 stores the complement of stage0, and stage2 stores the complement of stage1. Upon a reset signal (RESETn), all stages are initialized to LOW. The final output, DATA_OUT, presents the value of stage2, effectively implementing a three-stage pipeline that inverts the input signal twice, resulting in a delayed version of the original input signal, first inverted and then restored to its original state.
+module top_module(
+  input   wire      CLK,
+  input   wire      RESETn,
+
+  input   wire      DATA_IN,
+  output  wire      DATA_OUT
+);

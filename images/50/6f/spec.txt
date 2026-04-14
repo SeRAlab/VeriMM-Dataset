@@ -1,0 +1,23 @@
+Please act as a professional Verilog designer.
+
+Implement a module of a 20-bit XNOR gate with pipelining stages. The result is available on the result port, and the o_en = 1 indicates the availability of the result.
+
+Module name:
+    xnor_gate_pipe_20bit
+Input ports:
+    clk: Clock input
+    rst_n: Active low reset signal
+    i_en: Enable signal for XNOR operation
+    xnor_a: 20-bit input operand A
+    xnor_b: 20-bit input operand B
+
+Output ports:
+    result: 20-bit output representing the bitwise XNOR of xnor_a and xnor_b.
+    o_en: Output enable signal.
+
+Implementation:
+The module includes several registers to enable the pipeline stages and synchronize the input enable signal (i_en). These registers are controlled by the clock (clk) and reset (rst_n) signals.
+The XNOR values for each pipeline stage are calculated by performing a bitwise XNOR on the corresponding input operands.
+The output enable signal (o_en) is updated based on the pipeline stages and synchronized with the clock (clk) and reset (rst_n) signals.
+
+Give me the complete code.

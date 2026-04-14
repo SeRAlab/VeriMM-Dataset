@@ -1,0 +1,9 @@
+Design a cryptographic module that supports encryption, decryption, and hashing operations using an AES encryption algorithm and a SHA-256 hashing algorithm. The module accepts a plaintext, a key, and an initialization vector (IV), all 128 bits wide, and includes a mode selection input to determine the operation: mode 00 performs AES encryption, mode 01 performs AES decryption, and mode 10 computes a SHA-256 hash of the plaintext. The module outputs the resulting ciphertext for encryption and decryption modes and a hash value for the hashing mode. In cases of invalid mode selection, it outputs zero for both ciphertext and hash value.
+module top_module(
+  input [n-1:0] plaintext,
+  input [n-1:0] key,
+  input [n-1:0] iv,
+  input [1:0] mode_sel,
+  output reg [n-1:0] ciphertext, // Change wire to reg for l-value assignment
+  output reg [n-1:0] hash_value // Change wire to reg for l-value assignment
+);

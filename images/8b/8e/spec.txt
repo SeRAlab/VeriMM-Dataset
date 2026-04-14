@@ -1,0 +1,11 @@
+Design a simple 2-word RAM with a 16-bit data width. The module supports reset, write enable, and read enable operations. On a rising clock edge, if reset is active, the memory is initialized to zero. When reading is enabled, it outputs the data from the addressed memory location; when writing is enabled, it stores the provided data at the specified address. Additionally, the module indicates readiness for operation through a status signal.
+module top_module(
+    input rst,
+    input clk,
+    input we,
+    input re,
+    input [15:0] addr,
+    input [15:0] wdata,
+    output reg [15:0] rdata,
+    output reg ready
+);

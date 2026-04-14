@@ -1,0 +1,13 @@
+Design a simple RAM (Random Access Memory) module that supports 32-bit data input and output. The module allows read and write operations based on control signals where `wb_adr_i` specifies the memory address, `wb_we_i` indicates a write operation, and `wb_stb_i` along with `wb_cyc_i` manages the acknowledgment signal (`wb_ack_o`). It uses an array of 8-bit registers to implement the memory, and the output data consists of four consecutive bytes from RAM, corresponding to the address specified by `wb_adr_i`. The design is suitable for integration in a wider system requiring basic memory access functionality.
+module top_module(
+    
+    input  [31:0] wb_dat_i,
+    output [31:0] wb_dat_o,
+    input  [31:0] wb_adr_i,
+    input         wb_we_i,
+    input         wb_tga_i,
+    input         wb_stb_i,
+    input         wb_cyc_i,
+    input  [ 1:0] wb_sel_i,
+    output        wb_ack_o
+  );

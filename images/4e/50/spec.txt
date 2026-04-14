@@ -1,0 +1,12 @@
+Develop a circuit that functions as an 8-output decoder coupled with a multiplexer and a signed magnitude divider. The module decodes a 3-bit input (A, B, C) into one of eight outputs (Y0 to Y7), where each output corresponds to a particular value. Additionally, it performs signed division on provided 16-bit inputs (dividend and divisor), yielding a quotient and remainder while also indicating divide-by-zero conditions. The multiplexer selects the appropriate 8-bit output based on the decoder's output, with specific outputs for basic values and a dedicated case for division operations, ensuring that proper handling occurs when dividing by zero.
+module top_module(
+    input A,
+    input B,
+    input C,
+    input signed [15:0] dividend,
+    input signed [15:0] divisor,
+    output reg [7:0] Y, // 8-bit output from the decoder
+    output signed [15:0] quotient, // Output from the signed magnitude divider
+    output signed [15:0] remainder, // Output from the signed magnitude divider
+    output divide_by_zero // Divide-by-zero flag output
+);

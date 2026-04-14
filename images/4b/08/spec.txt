@@ -1,0 +1,11 @@
+Design a SPI (Serial Peripheral Interface) sender module that transmits a 48-bit wide data stream serially based on clock signals. The module operates in three states: IDLE, SYNC, and ENABLED. Upon receiving an enable signal, it transitions from IDLE to SYNC, and after a defined number of clock cycles (indicated by `bit_counter`), it moves to the ENABLED state where it begins outputting the bits of the provided data in sync with the negative edge of the clock signal (sclk_negedge). The transmission process continues until all bits have been sent, at which point it returns to the IDLE state. The output signal reflects the current bit being transmitted, and a 'done' signal indicates the completion of the data transmission when returning to IDLE.
+module top_module(
+   input                  clk,
+   input                  sclk_posedge,
+   input                  sclk_negedge,
+   input                  reset,
+   input                  en,
+   input [DATA_BITS-1:0]  data,
+   output reg             out,
+   output                 done
+   );

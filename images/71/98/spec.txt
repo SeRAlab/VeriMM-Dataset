@@ -1,0 +1,11 @@
+Design a memory-mapped LED control module that updates the state of two outputs, `leds` and `led_high`, based on control signals and input data. Upon receiving a reset signal, the module initializes `leds` to zero. When the chip select (`Cs`) is active and a write operation (`Iow`) is indicated, it uses the `Address` input to determine how to process the `Wdata` input: writing the 16-bit `Wdata` directly to `leds` if the address is `0`, or assigning the lower 8 bits of `Wdata` to `led_high` if the address is `2`. Other address values leave `leds` unchanged.
+module top_module(
+        input Reset,
+        input [2:0] Address,
+        input Cs,
+        input Clk,
+        input Iow,
+        input [15:0] Wdata,
+        output reg [15:0] leds,
+        output reg[7:0] led_high
+        );

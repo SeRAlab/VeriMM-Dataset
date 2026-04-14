@@ -1,0 +1,9 @@
+Design a simple synchronous memory interface with read and write capabilities. The module allows data to be written to or read from a memory array of 32-bit words, indexed by a 16-bit address. On a positive clock edge, if a reset signal is asserted, the output data becomes zero. If the write enable signal is active, the module stores the input data at the specified address. If the write enable signal is not active, the module outputs the data from the memory at the given address, effectively implementing a basic RAM functionality.
+module top_module(
+  input clk,
+  input rst,
+  input we,
+  input [addr_width-1:0] addr,
+  input [data_width-1:0] din,
+  output reg [data_width-1:0] dout
+);

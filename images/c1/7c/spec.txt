@@ -1,0 +1,37 @@
+Please act as a professional verilog designer.
+    
+Implement a module to monitor the status of a slave receiver in a communication system, specifically focusing on connection state changes and the detection of resume signals. Its primary functions include:
+
+Monitoring Connection State: It tracks changes in the connection state of the slave receiver, which is represented by a 2-bit input signal. Any change in this state triggers a reset event.
+Detecting Resume Signals: It identifies the transition of a resume detection signal, which indicates that a resume operation has been detected. This transition generates an interrupt signal.
+Outputting Connection State: It passes the current connection state through to an output port for external use, ensuring that other components can react to the current connection state.
+
+This module plays a crucial role in managing the state of a slave receiver, ensuring that it can properly respond to changes in connection status and resume operations, which are critical for maintaining effective communication in the system.
+
+Module name:  
+	slaveRxStatusMonitor
+
+Input ports:
+	connectStateIn [1:0]: A 2bit input signal representing the current connection state of the slave receiver. Changes in this state are monitored to trigger reset events.
+	resumeDetectedIn: A singlebit input signal indicating whether a resume operation has been detected. A rising edge on this signal triggers a resume interrupt.
+	clk: The clock input signal for the module. It synchronizes the internal operations of the module.
+	rst: The reset input signal. When asserted (1'b1), it initializes the internal state of the module.
+Output ports:
+	resetEventOut: A singlebit output signal that is asserted (1'b1) when a change in the connection state is detected, indicating a reset event.
+	connectStateOut [1:0]: A 2bit output signal that mirrors the current connection state input, allowing external components to react to the connection state.
+	resumeIntOut: A singlebit output signal that is asserted (1'b1) when a resume operation is detected, acting as an interrupt signal.
+
+
+Implementation:
+The slaveRxStatusMonitor module is designed to monitor the status of a slave receiver in a communication system, specifically tracking its connection state and detecting resume signals. The module operates under a synchronous design paradigm, with its logic being clocked by an external clock signal (clk) and having the ability to be reset through an external reset signal (rst). The module's functionality is divided into combinational and sequential logic blocks, each serving distinct roles in the operation of the module.
+Combinational Logic:
+The module directly assigns the input connectStateIn to the output connectStateOut using combinational logic. This implies that any change in the connectStateIn will be immediately reflected on connectStateOut, providing a real-time status of the connection state to external modules.
+Sequential Logic:
+The core of the module's functionality is encapsulated within a sequential logic block, triggered on the positive edge of the clock signal (posedge clk). This block is responsible for monitoring changes in the connection state (connectStateIn) and detecting resume signals (resumeDetectedIn), and accordingly updating the outputs resetEventOut and resumeIntOut.
+Upon a reset event (when rst is high), the module initializes oldConnectState and oldResumeDetected with the current values of connectStateIn and resumeDetectedIn, respectively. This serves as a baseline for detecting changes in subsequent clock cycles.
+In normal operation (when rst is low), the module updates oldConnectState and oldResumeDetected at every clock cycle to the current values of connectStateIn and resumeDetectedIn, respectively. This updating mechanism is crucial for detecting transitions in these signals.
+The module generates a resetEventOut signal when a change in the connection state is detected (i.e., when oldConnectState does not match connectStateIn). This signal can be used by external modules to initiate appropriate actions in response to a change in the connection state.
+The module generates a resumeIntOut signal when a rising edge is detected on the resumeDetectedIn signal (i.e., transitioning from low to high between consecutive clock cycles). This functionality is critical for identifying resume events in the communication system.
+
+Give me the complete code.
+

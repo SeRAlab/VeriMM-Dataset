@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit binary counter. The module increments the counter value on each rising edge of the clock. The counter should be reset to 0 when the reset signal is high.
+
+Module name:
+    binary_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    reset: Reset signal to initialize the counter to 0.
+
+Output ports:
+    q: Output signal representing the current counter value.
+
+Implementation:
+The counter is defined as reg [3:0] q and initialized to 0 using the initial statement. On each rising edge of the clock, if the reset signal is high, the counter is reset to 0; otherwise, the counter is incremented by 1: q <= q + 1.
+
+Give me the complete code.
+
+module binary_counter(clk, reset, q);
+
+    input clk;
+    input reset;
+    output [3:0] q;

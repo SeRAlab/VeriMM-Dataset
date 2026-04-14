@@ -1,0 +1,11 @@
+Design a 1024x32-bit register file with three read ports and one write port. The module allows simultaneous reading of data from three registers specified by the read addresses. It can also write data into a single register, where the specific bytes are determined by the write enable signals, and the write operation occurs on the rising edge of the clock. This structure supports efficient data access in digital systems requiring multiple read operations, such as in processing units or microcontrollers.
+module top_module(
+  // Outputs
+  output [31:0] rd0_data, rd1_data, rd2_data,
+  // Inputs
+  input [9:0] rd0_addr, rd1_addr, rd2_addr, 
+  input [9:0] wr0_addr, 
+  input [3:0] wr0_en, 
+  input [31:0] wr0_data, 
+  input clk
+);

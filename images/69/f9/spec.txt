@@ -1,0 +1,7 @@
+Design a watchdog timer circuit that generates a timeout signal after a specified number of clock cycles defined by the parameter 't'. The timer is activated or reset by the rst input, and while enabled, it counts the number of clock cycles. If the count reaches the timeout threshold, it deactivates the 'en' output and asserts the timeout signal 'to'. This functionality ensures that the system is monitored for responsiveness, allowing external components to detect a system fault if the timer reaches its timeout state.
+module top_module(
+  input clk,
+  input rst,
+  output reg en, // Changed to reg type
+  output to
+);

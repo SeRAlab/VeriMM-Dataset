@@ -1,0 +1,11 @@
+Implement the Verilog module based on the following description.
+You are given a 4-bit input vector vec[3:0]. We want to know some relationships between each bit and its neighbour:
+(1) result_left: Each bit of this output vector should indicate whether both the corresponding input bit and its neighbour to the left are '1'. For example, result_left[2] should indicate if vec[2] and vec[3] are both 1. Since vec[3] has no neighbour to the left, the answer is obvious so we don't need to know result_left[3].
+(2) result_right: Each bit of this output vector should indicate whether any of the corresponding input bit and its neighbour to the right are '1'. For example, result_right[1] should indicate if either vec[1] or vec[0] are 1. Since vec[0] has no neighbour to the right, the answer is obvious so we don't need to know result_right[0].
+(3) result_xor: Each bit of this output vector should indicate whether the corresponding input bit is different from its neighbour to the left. For example, result_xor[2] should indicate if vec[2] is different from vec[3]. For this part, treat the vector as wrapping around, so vec[3]'s neighbour to the left is vec[0].
+
+module bitwise_check (
+	input [3:0] vec,
+	output [2:0] result_left,
+	output [3:1] result_right,
+	output [3:0] result_xor);

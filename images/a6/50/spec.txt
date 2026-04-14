@@ -1,0 +1,7 @@
+Develop a memory arbiter that manages requests from multiple memory modules, granting access based on a predefined priority scheme. It takes in multiple request signals and acknowledgment signals, processes them to determine the highest priority request, and generates an output request signal for the memory controller. When a memory request is fulfilled, the corresponding acknowledgment output is activated, ensuring that memory operations are managed efficiently among the available modules. The design supports up to four memory modules based on the parameterized input size.
+module top_module(
+  input [n-1:0] mem_req,
+  input [n-1:0] mem_ack,
+  output reg [n-1:0] mem_req_out,  // Renamed output to mem_req_out
+  output reg [n-1:0] mem_ack_out   // Renamed output to mem_ack_out
+);

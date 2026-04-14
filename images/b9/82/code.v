@@ -1,0 +1,19 @@
+module top_module(
+
+   input wire [3:0] D,
+   input wire [1:0] S,
+   output reg Z
+
+   ) ;always @(*) begin
+
+      case( S[1:0] )
+
+         2'b00 : Z = D[0] ;
+         2'b01 : Z = D[1] ;
+         2'b10 : Z = D[2] ;
+         2'b11 : Z = D[3] ;
+
+      endcase
+   end  
+
+endmodule

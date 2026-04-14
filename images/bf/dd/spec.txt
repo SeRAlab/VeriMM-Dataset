@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+    
+Implement a module to arbitrate between two input signals, `input_a` and `input_b`, based on a simple state machine logic. Its primary function to select one of the two inputs for output, acknowledging the receipt of the input and indicating when the output is ready. This module plays a crucial role in systems where multiple sources are competing for a single resource or output channel, ensuring orderly access and preventing conflicts.
+
+Module name:  
+	arbiter
+
+Input ports:
+	input_a [15:0]: A 16bit input signal A.
+	input_b [15:0]: A 16bit input signal B.
+	input_a_stb: A strobe signal indicating that input_a is valid and ready to be processed.
+	input_b_stb: A strobe signal indicating that input_b is valid and ready to be processed.
+	output_z_ack: An acknowledgment signal from the downstream component, indicating that the output output_z has been received and processed.
+	clk: The clock signal for the module, driving the state machine and synchronization.
+	rst: The reset signal, used to initialize the module to a known state.
+Output ports:
+	output_z [15:0]: The selected 16bit output signal, chosen from either input_a or input_b.
+	output_z_stb: A strobe signal indicating that output_z is valid and ready to be consumed.
+	input_a_ack: An acknowledgment signal indicating that input_a has been received and processed by the module.
+	input_b_ack: An acknowledgment signal indicating that input_b has been received and processed by the module.
+
+
+Implementation:
+The RTL module presented is designed to function as an arbiter, managing inputs from two sources (input_a and input_b) and producing a single output (output_z). The module operates based on a state machine, with the program_counter serving as the state register that dictates the current state of the machine. The operation of this module is clock-driven, with state transitions and signal assignments occurring on the rising edge of the clock signal (clk). The module also supports a reset functionality (rst), which initializes the state machine and certain signals.
+
+Give me the complete code.
+

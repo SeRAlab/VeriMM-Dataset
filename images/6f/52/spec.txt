@@ -1,0 +1,6 @@
+Design a power-on reset (POR) circuit that generates a reset signal with a defined delay. The module utilizes a clock input and an active-low reset signal. When the circuit is initially powered, or if the reset is activated, the output `por_n` remains low until a specified number of clock cycles (defined by `POR_WIDTH`) have elapsed, at which point it transitions to high. This functionality is critical for ensuring that the system does not start operating until it is stable and ready, helping to manage the initialization sequence of digital circuits.
+module top_module(
+  input clk,
+  input rst_n,
+  output reg por_n
+);

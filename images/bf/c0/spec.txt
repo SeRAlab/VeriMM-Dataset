@@ -1,0 +1,47 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a Serial Interface Engine (SIE) endpoint for a USB function. Its primary role to manage the transmission (TX) and reception (RX) of data packets over a USB connection, adhering to the USB protocol specifications. This module is a critical component within a USB device's architecture, facilitating communication between the device and the USB host. It handles various aspects of USB communication, such as data integrity checking, packet framing, and flow control.
+
+Module name:  
+	usbf_sie_ep
+
+Input ports:
+	clk_i: Clock input. Synchronizes the module's operations.
+	rst_i: Reset input. Asynchronously resets the module when asserted.
+	rx_setup_i: Indicates a setup packet has been received.
+	rx_valid_i: Indicates the RX data is valid.
+	rx_strb_i: Strobe signal for RX data, indicating data is ready to be read.
+	rx_data_i [7:0]: 8bit RX data input.
+	rx_last_i: Indicates the last byte of RX data.
+	rx_crc_err_i: Indicates a CRC error in the received data.
+	rx_full_i: Indicates the RX buffer is full.
+	rx_ack_i: Acknowledgment signal for RX operations.
+	tx_data_i [7:0]: 8bit TX data input.
+	tx_empty_i: Indicates the TX buffer is empty.
+	tx_flush_i: Command to flush the TX buffer.
+	tx_length_i [10:0]: Length of the TX data.
+	tx_start_i: Signal to start TX operations.
+	tx_data_accept_i: Acknowledgment signal for TX data acceptance.
+Output ports:
+	rx_space_o: Indicates available space in the RX buffer.
+	rx_push_o: Command to push data into the RX buffer.
+	rx_data_o [7:0]: 8bit RX data output.
+	rx_length_o [10:0]: Length of the RX data.
+	rx_ready_o: Indicates RX data is ready.
+	rx_err_o: Indicates an error in RX operations.
+	rx_setup_o: Indicates a setup packet is ready.
+	tx_pop_o: Command to pop data from the TX buffer.
+	tx_busy_o: Indicates TX operations are ongoing.
+	tx_err_o: Indicates an error in TX operations.
+	tx_ready_o: Indicates the module is ready for TX operations.
+	tx_data_valid_o: Indicates TX data is valid.
+	tx_data_strb_o: Strobe signal for TX data, indicating data is ready to be sent.
+	tx_data_o [7:0]: 8bit TX data output.
+	tx_data_last_o: Indicates the last byte of TX data.
+
+
+Implementation:
+The usbf_sie_ep module is designed to manage a USB endpoint's transmit (TX) and receive (RX) operations, specifically tailored for a USB Full Speed (12 Mbps) interface. The module interfaces with both the USB physical layer (PHY) and the system's application layer, handling data packet transmission, reception, error checking, and flow control. The module operates under a synchronous design, with all operations clocked by an external clock signal (clk_i). The design incorporates both combinational and sequential logic to perform its tasks.
+
+Give me the complete code.
+

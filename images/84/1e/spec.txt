@@ -1,0 +1,10 @@
+Design a dual-port memory module that allows simultaneous read and write operations. The memory has a specified width of 512 bits and a depth of 512 entries. The module supports a clock input for synchronous operation, where data can be written to a location determined by the write_address when the write_enable signal is asserted. When read_enable is active, the data stored at the read_address is outputted. The module is configurable with parameters for memory depth, width, latency, and an optional initialization file for pre-loading the memory content.
+module top_module(
+    input clk,
+    input [$clog2(MEMORY_DEPTH)-1:0] write_address,
+    input [MEMORY_WIDTH-1:0] data_in,
+    input write_enable,
+    input [$clog2(MEMORY_DEPTH)-1:0] read_address,
+    input read_enable,
+    output [MEMORY_WIDTH-1:0] data_out
+);

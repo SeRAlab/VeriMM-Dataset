@@ -1,0 +1,12 @@
+Design a module that functions as a 10-bit accumulator with a state machine for controlling data flow. The module takes an 8-bit input, accumulates it upon valid input signals, and provides a ready signal to indicate when it can accept new data. It has two states: an idle state, where it waits for valid input, and an accumulation state, where it adds the input to the accumulated value. The output includes the accumulated result and a valid signal to indicate when the output is ready. This design facilitates efficient data processing by managing input readiness and output validation.
+module top_module(
+    input               clk         ,   
+    input               rst_n       ,
+    input       [7:0]   data_in     ,
+    input               valid_a     ,
+    input               ready_b     ,
+ 
+    output              ready_a     ,
+    output  reg         valid_b     ,
+    output  reg [9:0]   data_out
+);

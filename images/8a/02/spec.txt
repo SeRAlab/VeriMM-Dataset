@@ -1,0 +1,29 @@
+Design a module that serves as a Media Access Control (MAC) interface for a Reduced Gigabit Media Independent Interface (RGMII). This module manages the transmission and reception of data across a network by transforming input signals from the MAC layer into respective PHY (physical layer) output signals and vice versa. It handles the transmission of data by splitting the 8-bit MAC data into two 4-bit outputs for RGMII, and it constructs control signals for managing frame errors and data validity during reception. The module also generates necessary clock signals for both transmitting and receiving data, while allowing for proper error detection and collision handling within the communication.
+module top_module(
+    input   wire        reset,
+    input   wire        generated_clk,
+
+    
+    output  wire [3:0]  phy_txd_rising,
+    output  wire [3:0]  phy_txd_falling,    
+    output  wire        phy_tx_ctl_rising,
+    output  wire        phy_tx_ctl_falling,    
+    output  wire        phy_gtx_clk,
+    input   wire [3:0]  phy_rxd_rising,
+    input   wire [3:0]  phy_rxd_falling,
+    input   wire        phy_rx_ctl_rising,
+    input   wire        phy_rx_ctl_falling,    
+    input   wire        phy_rx_clk,
+
+    
+    input   wire        mac_tx_er,
+    input   wire [7:0]  mac_txd,
+    input   wire        mac_tx_en,
+    output  wire        mac_tx_clk,
+    output  wire        mac_col,
+    output  wire [7:0]  mac_rxd,
+    output  wire        mac_rx_er,
+    output  wire        mac_rx_clk,
+    output  wire        mac_crs,
+    output  wire        mac_rx_dv
+);

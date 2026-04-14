@@ -1,0 +1,33 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as an interface between a higher-level functional module logic (FML) and a memory management unit, specifically designed for operations with SDRAM (Synchronous Dynamic Random-Access Memory). Its primary functions include:
+
+Address Translation: It translates FML addresses to the memory management unit's address space.
+Control Signal Management: It manages control signals for read/write operations and acknowledges between the FML and the memory management unit.
+Strobe Signal Management: It controls the strobe signal for enabling the memory management unit based on specific conditions.
+
+This module plays a crucial role in ensuring that data transactions between the system's functional logic and the SDRAM are correctly managed, synchronized, and acknowledged, facilitating efficient memory access and data integrity.
+
+Module name:  
+	hpdmc_busif
+
+Input ports:
+	sys_clk: System clock input. It is a synchronous signal used for timing the operations within the module.
+	sdram_rst: SDRAM reset signal. It is used to initialize or reset the state of the module.
+	fml_adr: FML address input. This [sdram_depth1:0] signal represents the address from the FML for which an operation is requested.
+	fml_stb: FML strobe input. This signal indicates when there is a valid address and operation request from the FML.
+	fml_we: FML write enable input. This signal specifies whether the operation is a write (1) or read (0).
+	mgmt_ack: Management acknowledge input. This signal from the memory management unit acknowledges the acceptance of an address and operation request.
+	data_ack: Data acknowledge input. This signal indicates the completion of a data read/write operation.
+Output ports:
+	fml_ack: FML acknowledge output. This signal indicates to the FML that a data read/write operation has been completed.
+	mgmt_stb: Management strobe output. This signal enables the memory management unit to accept addresses and operation requests.
+	mgmt_we: Management write enable output. This signal is passed through from fml_we and specifies the operation type to the memory management unit.
+	mgmt_address: Management address output. This [sdram_depth31:0] signal represents the translated address for the memory management unit.
+
+
+Implementation:
+The RTL module presented, named hpdmc_busif, serves as an interface between a higher-level functional module (FML) and a memory management unit (MGMT) within a system that interacts with SDRAM. The module is parameterized with sdram_depth, which defines the address space depth of the SDRAM. This parameter is crucial for determining the width of various signals within the module, particularly those related to addressing.
+
+Give me the complete code.
+

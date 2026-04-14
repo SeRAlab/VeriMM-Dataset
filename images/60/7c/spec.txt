@@ -1,0 +1,11 @@
+Design a 128-byte (16 words of 64 bits each) FIFO (First-In, First-Out) buffer that allows data transfer between a slave and master interface. The module accepts clock and reset signals, along with a valid signal and data input from the slave side. It indicates readiness for slave data input and manages data output validity based on the master’s readiness. The FIFO supports read and write operations, updating internal memory and read/write addresses accordingly. The output data width is 8 bits, extracted from 64-bit memory locations based on the read address. The module also maintains a data count to ensure storage limits are respected, allowing up to 120 bytes to be written into the buffer.
+module top_module(
+input wire         i_clk,
+input wire         i_rst_n,
+input wire         i_slv_valid,
+output wire        o_slv_rdy,
+input wire [63:0]  i_slv_data,
+output reg [7:0]   o_mst_data,
+output wire        o_mst_valid,
+input              i_mst_rdy
+);

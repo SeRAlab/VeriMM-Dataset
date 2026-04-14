@@ -1,0 +1,8 @@
+Design a 100-bit Manchester carry-chain adder that computes the sum of two 100-bit binary numbers, `a` and `b`, with an additional input carry `cin`. The adder utilizes a carry generation technique, where intermediate carry signals are created based on the propagate (`p`) and generate (`g`) logic for each bit. The carry output `cout` represents the carry out from the most significant bit (MSB), while the `sum` output is produced by directly adding `a`, `b`, and `cin`. Additionally, the design incorporates a final output that adds the `sum` to the left-shifted `cout`, effectively implementing the Manchester carry-chain method for enhanced speed and efficiency in carry handling.
+module top_module( 
+    input [99:0] a, b,
+    input cin,
+    output [99:0] cout,
+    output [99:0] sum,
+    output [99:0] final_output
+);

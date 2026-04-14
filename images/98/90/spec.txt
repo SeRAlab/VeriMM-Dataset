@@ -1,0 +1,19 @@
+Implement a Verilog module based on the following description.
+The following diagram is a Moore machine implementation of a pedestrian signal controller. Implement in Verilog using one-hot encoding. Resets into state Don't Walk and reset is asynchronous active-high.
+
+The state machine has the following states and their corresponding outputs: 
+1. state Don't Walk (signal = 2'b00).
+2. state Walk (signal = 2'b01).
+3. state Flashing (signal = 2'b10).
+
+State transitions:
+1. From state Don't Walk: If pedestrian_request = 1, then transition to state Walk. If pedestrian_request = 0, then transition to state Don't Walk.
+2. From state Walk: If timer_expired = 1, then transition to state Flashing. If timer_expired = 0, then transition to state Walk.
+3. From state Flashing: If timer_expired = 1, then transition to state Don't Walk. If timer_expired = 0, then transition to state Flashing.
+
+module pedestrian_signal (
+        input clk,
+        input areset,
+        input pedestrian_request,
+        input timer_expired,
+        output reg [1:0] signal);

@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform 64-bit addition operations, taking into account a carry-in (`cin`) input. It is a fundamental arithmetic unit that can be utilized within a larger digital system, such as a processor or an arithmetic logic unit (ALU), to execute addition operations required by various instructions or tasks. The module not only computes the 64-bit sum of two input operands but also provides carry-out signals for both the lower 32 bits and the entire 64-bit result, which can be critical for operations requiring carry-chain calculations or for multi-precision arithmetic operations.
+
+Module name:  
+	zzadd64
+
+Input ports:
+	rs1_data [63:0]: A 64bit input operand. This is one of the two numbers to be added together.
+	rs2_data [63:0]: Another 64bit input operand. This is the second number to be added to rs1_data.
+	cin: A singlebit carryin input. This is used for chaining additions or for adding carry from a previous operation.
+Output ports:
+	adder_out [63:0]: A 64bit output that represents the sum of rs1_data and rs2_data, including the carryin (cin).
+	cout32: A singlebit output that represents the carryout from the addition of the lower 32 bits of rs1_data and rs2_data. This can be used for operations that are sensitive to the carry generated from the lower half of the operation.
+	cout64: A singlebit output that represents the carryout from the entire 64bit addition operation. This signal is crucial for multiprecision arithmetic operations where the carry needs to be propagated to subsequent additions.
+
+
+Implementation:
+The zzadd64 module is designed to perform 64-bit addition, taking into account an input carry (cin). It operates on two 64-bit inputs (rs1_data and rs2_data) and produces a 64-bit sum (adder_out), along with two carry-out signals (cout32 and cout64). The module is purely combinational, meaning it does not contain any sequential logic elements like flip-flops or latches; its output solely depends on the current inputs.
+The addition is split into two parts:
+The lower 32 bits of the inputs are added first, along with the input carry (cin). This operation produces the lower 32 bits of the output sum and a carry-out (cout32) which is used in the next addition.
+The upper 32 bits of the inputs are then added, along with the carry-out from the previous addition (cout32). This produces the upper 32 bits of the output sum and the final carry-out (cout64).
+This split approach allows the module to handle the carry propagation between the lower and upper halves of the 64-bit inputs, ensuring accurate addition across the entire 64-bit width.
+
+Give me the complete code.
+

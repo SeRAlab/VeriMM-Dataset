@@ -1,0 +1,11 @@
+Design a flip-flop module with asynchronous reset and a gated clock mechanism. When the GATE input signal is high, the module captures the value of the D input at the rising edge; if RESET_B is low, it asynchronously resets the output Q to LOW regardless of D. If D is high while GATE is asserted, the output Q is set to HIGH; otherwise, under the same condition, Q takes the value of VPWR, effectively maintaining a state based on the supplied power input. This design integrates power management features with standard flip-flop functionality, making it ideal for low-power applications.
+module top_module(
+    input  wire RESET_B,
+    input  wire D,
+    input  wire VPWR,
+    input  wire VGND,
+    input  wire VPB,
+    input  wire VNB,
+    output wire Q,
+    input  wire GATE
+);

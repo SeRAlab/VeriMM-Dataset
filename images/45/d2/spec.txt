@@ -1,0 +1,8 @@
+Design a circuit that implements a dual-output system controlled by two selection signals. It includes a combinational logic path represented by a one-bit wide multiplexer for `out_assign`, which outputs `b` when both `sel_b1` and `sel_b2` are high; otherwise, it outputs `a`. Additionally, the `out_always` output replicates this logic using an always block, ensuring it provides the same functionality as `out_assign` but retains the value even in the absence of further combinational changes until the inputs are updated.
+module top_module(
+    input a,
+    input b,
+    input sel_b1,
+    input sel_b2,
+    output wire out_assign,
+    output reg out_always   );

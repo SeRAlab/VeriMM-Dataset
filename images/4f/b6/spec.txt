@@ -1,0 +1,10 @@
+Design a 32x32-bit register file with synchronous write capability and combinational read functionality. On the rising edge of the clock signal, if the RegWrite control signal is asserted, the module writes the input writeData into the register indexed by readReg1. Additionally, it continuously provides outputs readData1 and readData2, reflecting the contents of the registers indexed by readReg1 and readReg2, respectively. This module serves as a crucial storage element in a digital system, enabling the retrieval and storage of data needed for operations such as arithmetic or logical computations.
+module top_module(
+    input clk,
+    input RegWrite,
+    input [4:0] readReg1,
+    input [4:0] readReg2,
+    input [31:0] writeData,
+    output reg [31:0] readData1,
+    output reg [31:0] readData2
+);

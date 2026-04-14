@@ -1,0 +1,6 @@
+Design a 4-to-2 priority encoder that produces a 2-bit output based on the highest priority input from a 4-bit input vector. The encoder assesses the input signals using combinational logic, with the outputs reflecting the index of the highest-order active input. The results are then registered on the positive edge of a clock signal to provide a synchronous output. The module effectively translates active inputs into a binary representation of their priority while ensuring data stability with the clocking mechanism.
+module top_module(
+    input [3:0] in,
+    input clk,          // Added clk input
+    output reg [1:0] out
+);

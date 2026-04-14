@@ -1,0 +1,14 @@
+Develop a module that implements four types of flip-flops: D flip-flop, JK flip-flop, T flip-flop, and SR flip-flop, all operating with a common clock signal. The design enables the storage of binary data based on the D, J, K, S, and R inputs. The D flip-flop captures the value of the D input on the rising edge of the clock; the JK flip-flop toggles its output based on J and K inputs; the T flip-flop toggles when T is asserted; and the SR flip-flop sets or resets the output based on S and R conditions. The results of these operations are reflected in the respective outputs QD, QJK, QT, and QSR.
+module top_module(
+  input clk,
+  input [width-1:0] D,
+  input [width-1:0] J,
+  input [width-1:0] K,
+  input [width-1:0] S,
+  input [width-1:0] R,   // Added input R for SR flip-flop
+  input [width-1:0] T,   // Added input T for T flip-flop
+  output reg [width-1:0] QD,
+  output reg [width-1:0] QJK,
+  output reg [width-1:0] QT,
+  output reg [width-1:0] QSR
+);

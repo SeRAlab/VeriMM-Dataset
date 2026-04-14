@@ -1,0 +1,12 @@
+Design a synchronous first-in, first-out (FIFO) memory buffer capable of storing 32-bit data words. It supports simultaneous read and write operations, with control signals for writing (`wr_en`) and reading (`rd_en`). The FIFO maintains a count of stored items and provides flags for indicating when it is not full (`not_full`) and not empty (`not_empty`). An error signal (`error`) is asserted when a read is attempted from an empty FIFO or when an overflow condition occurs if the FIFO is full during a write. Data integrity is ensured through a reset mechanism that initializes the indices and count.
+module top_module(
+    clk,
+    reset,
+    wr_en,
+    rd_en,
+    wr_data,
+    rd_data, 
+    not_full,
+    not_empty,
+    error
+);

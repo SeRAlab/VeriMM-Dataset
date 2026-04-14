@@ -1,0 +1,10 @@
+Design a digital audio codec that decodes audio data based on a specified format, which can be MP3, AAC, or WMA. The module takes a clock signal, a reset signal, 16-bit audio data input, a 2-bit format selector, and a valid signal indicating whether the input data is valid. Upon receiving a valid signal and with the appropriate format selected, the module outputs the decoded 16-bit audio data and indicates readiness through a 'ready' signal. The design initializes the output to zero on reset and supports multiple audio formats by utilizing a case statement to handle the different decoding processes.
+module top_module(
+  input clk,
+  input rst,
+  input [15:0] data_in,
+  input [1:0] format,
+  input valid,
+  output reg [15:0] data_out, // Change to reg since data_out is assigned in an always block
+  output ready
+);

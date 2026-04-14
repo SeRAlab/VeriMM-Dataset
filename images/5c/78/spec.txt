@@ -1,0 +1,6 @@
+Design a circuit that outputs an 8-bit segment map based on a 32-bit input and a 3-bit select signal. The module uses the lower two bits of the select signal to choose between four different configurations of bits from the 32-bit input, mapping them to the output, which can be used for driving a seven-segment display or similar applications. Each configuration specifies which bits from the input correspond to the output segments, enabling flexible display options based on the select signal.
+module top_module(
+    input [31:0] Hexs,
+    input [2:0] Scan,
+    output reg[7:0] Seg_map
+    );

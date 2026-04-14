@@ -1,0 +1,9 @@
+Design a circuit that performs bitwise operations on two 3-bit inputs, `a` and `b`. This module implements a 3-bit wide XOR operation, a logical AND operation, and a 6-bit wide NOT operation for both inputs. It utilizes a two-stage pipeline to register intermediate results, enhancing throughput. The output includes the result of the bitwise XOR operation, the logical AND result, and a 6-bit output which concatenates the NOT results of both inputs, ensuring that operations are synchronized to the clock signal.
+module top_module( 
+    input clk, // Added clk input
+    input [2:0] a,
+    input [2:0] b,
+    output [2:0] out_xor_bitwise,
+    output out_and_logical,
+    output [5:0] out_not
+);

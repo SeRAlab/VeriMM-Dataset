@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+
+Implement a 8-bit Parallel In Serial Out (PISO) shift register.
+
+Module name:  
+    PISO_shift_reg               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the register.
+    load: Load signal to load the parallel data.
+    parallel_in: 8-bit parallel input data.
+Output port:
+    serial_out: Single bit serial output.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the register value is updated.
+If the reset signal (rst_n) is low, indicating a reset condition, the register value is set to 0.
+If the load signal is high, the parallel data is loaded into the register.
+Otherwise, the register shifts left by one bit, and the most significant bit is shifted out as the serial output.
+
+Give me the complete code.
+
+module PISO_shift_reg(
+   input                clk ,
+   input                rst_n,
+   input                load,
+   input  [7:0]         parallel_in,
+ 
+   output reg           serial_out 
+);

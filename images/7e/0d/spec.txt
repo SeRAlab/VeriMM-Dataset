@@ -1,0 +1,9 @@
+This module implements a pipeline register with control signals for reset, flush, and write operations. It captures data on the rising edge of the clock while providing the ability to reset the output to zero or flush the stored data. The output, `data_o`, holds the incoming data (`data_i`) if the `write` signal is asserted; otherwise, it retains its previous value. The module is parameterized by size, allowing it to accommodate various bit widths for the data input and output. This design is used to support pipelining in digital circuits, enabling efficient data flow between stages while maintaining synchronization with the clock.
+module top_module(
+    clk_i,
+    rst_i,
+    flush,
+    write,
+    data_i,
+    data_o
+    );

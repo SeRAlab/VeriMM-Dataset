@@ -1,0 +1,6 @@
+Design a 16-bit to 32-bit immediate value extension module. Based on the 2-bit selector input 'extop', the module produces a 32-bit output 'imm32' by extending the 16-bit input 'imm16' in various ways: '00' pads it with zeros on the left, '01' sign-extends it from the most significant bit, '10' pads it with zeros on the right, and '11' replicates the sign bit followed by zeros and the original immediate value.
+module top_module(
+    input [1:0] extop,
+    input [15:0] imm16,
+    output reg[31:0] imm32
+    );

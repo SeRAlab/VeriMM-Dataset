@@ -1,0 +1,10 @@
+Design a bit-slipping mechanism that processes a data stream based on control signals. The module takes a clock input and control signals to determine whether to shift the incoming data bits or maintain the current state. It includes a feature to introduce 'corrupt bits' into the data output when a specified condition is met, allowing for error insertion or testing. The `bslipmax` output indicates when the shift register has reached an empty state. Additionally, the circuit has reset capabilities and manages a corruption counter to regulate the number of corrupted bits output, effectively functioning as a controlled data manipulator for simulating bit errors in a data channel.
+module top_module(
+  input clk0,
+  input bslipcntl,
+  input bsliprst,
+  input datain,
+  input x_on_bitslip,
+  output bslipmax,
+  output dataout
+);

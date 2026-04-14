@@ -1,0 +1,8 @@
+Design a 16-bit shift register with a variable delay output. The shift register captures the input signal `din` on the rising edge of `clk`, while also allowing for a synchronous reset feature. The output `dout` can be selected based on the provided delay input `dly`, which determines from which bit of the shifted register the output should be taken. In simulation mode, additional logic checks the content of the shift register to produce a specific output based on whether any bits are set. The module effectively serves as a delayed version of the input signal, offering both reset and delay functionalities in a sequential logic design context.
+module top_module(
+    input       clk,
+    input       rst,
+    input [3:0] dly,
+    input       din,
+    output      dout
+);

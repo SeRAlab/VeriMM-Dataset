@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module implements a First-In-First-Out (FIFO) memory buffer, designed to temporarily store and manage data in a sequential manner. The primary functions of this module include data storage, data retrieval, and status reporting. It is intended for use in systems requiring temporary storage and sequential access to data streams, such as in data buffering between asynchronous processes or in handling variable data rates within digital communication or processing systems.
+
+Module name:  
+	fm_fifo
+
+Input ports:
+	clk_core: Clock input (type: input). The primary clock signal driving the FIFO's operations.
+	rst_x: Asynchronous reset signal (type: input, active low). Used to reset the FIFO's internal state and counters.
+	i_wstrobe: Write enable signal (type: input). When high, it allows data to be written into the FIFO on the rising edge of clk_core.
+	i_dt: Data input (type: input, width: P_WIDTH1:0). The data to be written into the FIFO when i_wstrobe is active.
+	i_renable: Read enable signal (type: input). When high, it allows data to be read from the FIFO on the rising edge of clk_core.
+Output ports:
+	o_full: FIFO full flag (type: output). Indicates that the FIFO is full and cannot accept more data.
+	o_empty: FIFO empty flag (type: output). Indicates that the FIFO is empty and contains no data to read.
+	o_dt: Data output (type: output, width: P_WIDTH1:0). The data being read from the FIFO.
+	o_dnum: Number of data items currently stored in the FIFO (type: output, width: P_RANGE:0).
+
+
+Implementation:
+The RTL module presented is designed as a FIFO (First-In, First-Out) memory buffer, which is a common data structure used in hardware design for buffering data streams. The FIFO operates on a clock signal (clk_core) and can be asynchronously reset using the rst_x signal. The module parameters allow customization of the FIFO's data width (P_WIDTH) and depth (P_DEPTH), with the depth being determined as a power of two based on the P_RANGE parameter. An optional parameter (P_CLEAR) is provided to control whether the FIFO's internal data buffer is cleared to zero upon reset.
+
+Give me the complete code.
+

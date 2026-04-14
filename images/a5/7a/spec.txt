@@ -1,0 +1,10 @@
+Design a 2-to-4 multiplexer circuit with a selection mechanism based on a 2-bit input called PcSource. Depending on the value of PcSource, the module outputs one of three 32-bit inputs (in0, in1, in2) or zero. Specifically, if PcSource is '00', the output will be in0; if '01', it will be in1; if '10', it will be in2; and if '11', it will produce a constant zero. Additionally, the module is designed to be synchronous with a clock and reset signal, allowing for controlled operation in a larger system.
+module top_module(
+    input clk,
+    input rst,
+	input [1:0]PcSource,
+	input [31:0]in0,
+	input [31:0]in1,
+	input [31:0]in2, 
+	output wire[31:0]out
+);

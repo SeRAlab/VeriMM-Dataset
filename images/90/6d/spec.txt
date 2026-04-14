@@ -1,0 +1,10 @@
+Design a pulse-width modulation circuit that generates a controlled pulse output based on two timing parameters: "hightime" and "deadtime." The module includes an input signal (d) to initiate the pulse generation process. Upon receiving a high signal, it starts a pulse, which lasts for the duration specified by "hightime," followed by a "deadtime" where the output remains low. The circuit incorporates an asynchronous reset functionality to clear its internal state and prevents the pulse when the reset signal is active. Additionally, it tracks whether the signal is currently entering or if the gate is closed, providing output signals for the pulse and gate status. The module utilizes shift registers to manage the timing delays accordingly.
+module top_module(
+    input wire d,
+    input wire [3:0] hightime,
+    input wire [3:0] deadtime,
+    input wire CLK,
+    output wire pulse,
+    output wire gate_closed,
+    input wire reset
+);

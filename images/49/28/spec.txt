@@ -1,0 +1,7 @@
+Design a circuit that calculates the even parity of the last three data inputs received. This circuit utilizes a pipeline approach, storing the three most recent 8-bit data inputs in a register array and outputs a single bit indicating whether the total number of 1s in those inputs is even. The output resets to a HIGH state when a reset signal is activated, and updates with each clock pulse, effectively cycling through the stored data.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data_in,
+  output reg parity_out
+);

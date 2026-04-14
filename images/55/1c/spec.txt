@@ -1,0 +1,8 @@
+Design a LED rotator circuit that controls the sequential lighting of 8 LEDs based on a clock input and a reset signal. The circuit incorporates a 4-bit position counter to determine the active LED, which cycles through each LED in order upon each clock cycle. Additionally, the circuit utilizes a 2-bit multiplexer output to adjust the LED blink rate conditionally based on a 4-bit counter's output, thus allowing the last few LEDs to either blink or stay lit. When reset, the circuit initializes the LED position and output, ensuring reliable operation and predictable behavior.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input [3:0] counter_out,  // 4-bit output from the counter
+    input [1:0] mux_out,  // 2-bit output from the multiplexer
+    output reg [7:0] led_out // 8-bit output controlling the LED rotation
+);

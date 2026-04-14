@@ -1,0 +1,5 @@
+Design a control logic circuit that interprets a 6-bit opcode input to generate a 2-bit memory selection output. The circuit uses a combinational always block to map specific opcodes to predefined memory selection values, allowing for appropriate memory access in response to different instruction types. For opcodes 6'h28, 6'h38, 6'h29, and others, it sets the `mem_sel` output accordingly. If the opcode does not match any of the specified cases, it defaults to a memory selection of `2'b11`.
+module top_module(
+    input [5:0] opcode,
+    output reg [1:0] mem_sel      
+);

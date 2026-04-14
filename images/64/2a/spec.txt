@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit binary counter that increments on each positive edge of the clock. The counter should have an enable input and a synchronous reset input. When the enable input is high, the counter increments on each clock cycle. When the reset input is high, the counter resets to zero on the next clock cycle.
+
+Module name:  
+    binary_counter
+
+Inputs:
+    clk: Clock signal.
+    enable: Enable signal.
+    rst: Synchronous reset signal.
+
+Outputs:
+    count[3:0]: A 4-bit output representing the current count value.
+
+Registers and Wires:
+    count_reg: A 4-bit register holding the current count value.
+
+Implementation:
+The always block is triggered on the positive edge of the clock signal. Inside the block, the first condition checks if the reset signal is high. If it is, the count register is reset to zero. If the reset signal is not high, the next condition checks if the enable signal is high. If the enable signal is high, the count register is incremented. The count output is then assigned the value of the count register.
+
+Give me the complete code.
+
+module binary_counter
+    (
+        input clk,
+        input enable,
+        input rst,
+        output reg [3:0] count
+    );

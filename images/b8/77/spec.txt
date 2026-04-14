@@ -1,0 +1,6 @@
+Design a next program counter (NPC) generator that selects the next instruction's address based on control signals and specific branch conditions. The module takes the current program counter (PCF), as well as potential target addresses for branches and jumps (JalrTarget, BranchTarget, JalTarget). It utilizes a combinational logic block to determine the next program counter input (PC_In) based on the status of branch and jump signals (BranchE, JalD, and JalrE). Depending on the combination of these signals, it can either select a branch target, a jump target, or increment the current PC by 4 to proceed to the next sequential instruction.
+module top_module(
+    input wire [31:0] PCF,JalrTarget, BranchTarget, JalTarget,
+    input wire BranchE,JalD,JalrE,
+    output reg [31:0] PC_In
+    );

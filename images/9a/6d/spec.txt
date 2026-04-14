@@ -1,0 +1,11 @@
+Design a hazard detection unit that outputs a 'stall' signal to prevent data hazards in a pipelined processor. The unit monitors two source register IDs (rs1_ID and rs2_ID), along with their validity signals, to check if there is a potential conflict with a destination register (rd_EX) in an executing instruction. If both a memory read and a register write are in progress for the executing instruction, and either source register matches the destination register, the stall signal is asserted to pause the pipeline, ensuring data integrity and proper sequential execution.
+module top_module(
+    input [4:0] rs1_ID,
+    input [4:0] rs2_ID,
+    input rs1_valid,
+    input rs2_valid,
+    input [4:0] rd_EX,
+    input memread_EX,
+    input regwrite_EX,
+    output stall
+    );

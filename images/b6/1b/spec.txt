@@ -1,0 +1,5 @@
+Design a Verilog module that models a 7-bit ring counter with an asynchronous reset signal. The module should have an input clock signal (clk), an input asynchronous reset signal (rst), and a 7-bit output signal (q). On the rising edge of the clock, if reset is high, q should be set to 7'b0000001. Otherwise, q should be updated with {q[5:0], q[6]}.
+module ring_counter (
+  input clk,
+  input rst,
+  output reg [6:0] q);

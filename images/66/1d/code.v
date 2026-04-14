@@ -1,0 +1,4 @@
+module top_module(subResult, equalOut);input [31:0] subResult;
+	output equalOut;
+	
+	assign equalOut = ( subResult[0] | subResult[1] | subResult[2] | subResult[3] | subResult[4] | subResult[5] | subResult[6] | subResult[7] | subResult[8] | subResult[9] | subResult[10] | subResult[11] | subResult[12] | subResult[13] | subResult[14] | subResult[15] | subResult[16] | subResult[17] | subResult[18] | subResult[19] | subResult[20] | subResult[21] | subResult[22] | subResult[23] | subResult[24] | subResult[25] | subResult[26] | subResult[27] | subResult[28] | subResult[29] | subResult[30] | subResult[31]);endmodule

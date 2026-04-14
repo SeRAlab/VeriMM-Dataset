@@ -1,0 +1,11 @@
+Develop a synchronous FIFO (First In, First Out) buffer designed for handling packet lengths. The module has a reset input (`aclr`), a clock input (`clock`), data input (`data`), and control signals for reading (`rdreq`) and writing (`wrreq`). It maintains a maximum storage capacity of 512 entries, each 33 bits wide. The FIFO provides outputs for the current data at the read pointer (`q`), an indicator of whether it is empty (`empty`), and a count of the used space (`usedw`). The design ensures that data can be written to the FIFO as long as there is space, and read from it while there are entries available, updating the read and write pointers accordingly.
+module top_module(
+    aclr,
+    clock,
+    data,
+    rdreq,
+    wrreq,
+    empty,
+    q,
+    usedw
+);

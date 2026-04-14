@@ -1,0 +1,6 @@
+Design a 3-to-8 decoder with a pipelined output mechanism. This module takes a 3-bit input and, based on its value, activates one of the eight corresponding bits in an output register. The selected output bit is set to high (1) on the positive edge of the clock, while the entire output register is shifted left on each clock cycle, facilitating delayed activation of the outputs. The purpose of this design is to sequentially enable the outputs in a controlled fashion following each clock pulse.
+module top_module(
+    input clk,
+    input [2:0] in,
+    output reg [7:0] out
+);

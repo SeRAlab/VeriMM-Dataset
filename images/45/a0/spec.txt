@@ -1,0 +1,7 @@
+Design a circuit that performs a 16-bit wide XOR operation on input data and a key, followed by three clocked stages to propagate the result through registers. The module takes an input `data_in` and an `xor_key`, computes the XOR in the first stage, and subsequently transfers the result through two additional pipeline stages before presenting it at the output `data_out`. This design effectively implements a simple data processing pipeline for secure data manipulation or obfuscation.
+module top_module(
+    input clk,             // Added clk input
+    input [15:0] data_in,
+    input [15:0] xor_key,
+    output [15:0] data_out
+);

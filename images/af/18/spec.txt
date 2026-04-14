@@ -1,0 +1,6 @@
+Design a 7-segment display decoder that converts a 4-bit binary input (num) into the corresponding 7-segment display output (hex). The module has an enable signal (en) to activate the display, a decimal point control (dp), and a sign indicator (sign) that displays a minus sign when active. When the enable signal is low, the display turns off. When the sign is active, it outputs a graphical representation for a negative sign; otherwise, it decodes the input number (0 to 15) to its respective 7-segment configuration, supporting hexadecimal representation. The final output includes the decimal point bit concatenated with the 7-segment pattern.
+module top_module(
+	input wire[3:0] num,
+	input wire en, dp, sign,
+	output wire[7:0] hex
+);

@@ -1,0 +1,9 @@
+Design a circuit that functions as a 3-to-1 multiplexer for selecting the next program counter (nextPC) value based on the input selection signal (PC_sel). The multiplexer takes three 32-bit inputs: ADD4, NPC, and jrPC. When PC_sel equals 3, it outputs jrPC; if PC_sel is 2 or if PC_sel is 1 and CMP_out is high, it outputs NPC; otherwise, it selects ADD4. This design allows for dynamic control of the flow of program execution in a processor.
+module top_module(
+    input [31:0] ADD4,
+    input [31:0] NPC,
+    input [31:0] jrPC,
+    input [2:0] PC_sel,
+    input CMP_out,
+    output [31:0] nextPC
+    );

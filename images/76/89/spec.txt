@@ -1,0 +1,11 @@
+Design a binary division decoder that calculates the quotient and remainder of two 4-bit inputs (dividend and divisor) when a specific selector is active. The circuit utilizes a clock to synchronize operations and resets all registers to zero when the reset signal is asserted. Additionally, the module integrates a 3-to-8 decoder that generates an 8-bit output signal based on a three-bit input selector, where each output corresponds to one of the eight possible input combinations. The primary purpose of this module is to perform both division and decoding tasks, making it suitable for applications that require arithmetic operations alongside control signal generation.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] dividend,
+    input [3:0] divisor,
+    input [2:0] selector,
+    output reg [3:0] quotient,
+    output reg [3:0] remainder,
+    output reg [7:0] Y
+);

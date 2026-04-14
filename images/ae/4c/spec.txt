@@ -1,0 +1,12 @@
+Design a 4-to-1 multiplexer with enable and reset functionalities. The circuit selects one of the four 4-bit inputs (in0 to in3) based on the 2-bit selection signal (sel) when the enable signal is asserted. If the reset signal is active, the output is set to zero regardless of the inputs. When the enable signal is not asserted, the output is also reset to zero. The operation occurs on the rising edge of the clock signal, ensuring synchronous behavior.
+module top_module(
+    input [3:0] in0,
+    input [3:0] in1,
+    input [3:0] in2,
+    input [3:0] in3,
+    input [1:0] sel,
+    input enable,
+    input clk,
+    input reset,
+    output reg [3:0] out
+);

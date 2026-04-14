@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform multiplexing operations on data inputs from multiple stacks, based on selection inputs. It is capable of selecting data and address values from up to eight different input sources (pop_data0_i to pop_data7_i) for further processing or routing within a digital system. The module also supports immediate data injection for both data and address outputs, allowing for dynamic operation based on control signals. This functionality is essential in systems requiring flexible data routing and manipulation, such as processors, digital signal processing (DSP) systems, or complex state machines.
+
+Module name:  
+	stacks_mux
+
+Input ports:
+	clk_i: Clock input. Although not directly used in the provided code, it's typically essential for synchronous operations in a larger system context.
+	rst_i: Reset input. Similar to clk_i, it's not directly used but is crucial for initializing or resetting the system in a broader context.
+	data_sel_a_i: A STK_Wbit wide selection signal for choosing the data source for output a_data_o.
+	data_sel_b_i: A STK_Wbit wide selection signal for choosing the data source for output b_data_o.
+	addr_sel_b_i: A STK_Wbit wide selection signal for choosing the address source for output b_addr_o.
+	imda_i: Immediate data control signal for b_data_o. When high, im_i is used as the source for b_data_o.
+	imad_i: Immediate address control signal for b_addr_o. When high, im_i is used as the source for b_addr_o.
+	pop_data0_i to pop_data7_i: Data inputs from eight different sources, each DATA_W bits wide.
+	im_i: An IM_Wbit wide immediate data input used for b_data_o or b_addr_o when respective control signals are asserted.
+Output ports:
+	a_data_o: Output data selected by data_sel_a_i, DATA_W bits wide.
+	b_data_o: Output data selected by data_sel_b_i or immediate data based on imda_i, DATA_W bits wide.
+	b_addr_o: Output address selected by addr_sel_b_i or immediate data based on imad_i, ADDR_W bits wide.
+
+
+Implementation:
+The stacks_mux module is designed to select and manipulate data from a set of eight input data lines (pop_data0_i to pop_data7_i) based on selection inputs, and to generate output data and address lines accordingly. The module operates purely on combinational logic, as evidenced by the use of always @ () blocks, which react to any change in the input signals. This design choice ensures that the outputs are updated immediately following any change in the inputs, without the need for clock cycles to propagate the changes.
+
+Give me the complete code.
+

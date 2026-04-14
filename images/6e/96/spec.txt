@@ -1,0 +1,9 @@
+Implement a three-stage shift register with 8-bit width that operates on a rising clock edge. The module incorporates reset functionality to clear all stages, and an enable signal to control the data transfer. When enabled, the internal data shifts through the stages with options for both parallel loading and traditional shifting; if the shift signal is active, new data from the parallel_in input can be loaded into the third stage, while the contents shift through the other registers. The output reflects the current state of the first stage of the shift register.
+module top_module(
+    input clk,
+    input reset,
+    input enable,
+    input shift,
+    input [7:0] parallel_in,
+    output reg [7:0] parallel_out
+);

@@ -1,0 +1,17 @@
+Please act as a professional verilog designer.
+
+Implement a module of an 8-bit Johnson counter. The counter starts cycling through its sequence when the enable signal is high. The counter shifts on every positive edge of the clock signal and resets to 8'b00000000 when the reset signal (rst) is active.
+
+Module name:  
+    johnson_counter_8               
+Input ports:
+    rst: Reset signal (active high)
+    clk: Clock signal
+    enable: Signal to enable counting
+Output ports:
+    count: 8-bit output representing the current Johnson counter value
+
+Implementation:
+If the reset signal is active (rst), the counter is reset to 8'b00000000. If the enable signal is high, the counter shifts its sequence on each positive clock edge by shifting left and setting the least significant bit to the inverted value of the most significant bit. If the enable signal is low, the counter will stop, and the output register (count) remains unchanged.
+
+Give me the complete code.

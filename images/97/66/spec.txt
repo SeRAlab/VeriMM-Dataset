@@ -1,0 +1,6 @@
+Design a 2-to-1 priority encoder that converts a 2-bit input into a 2-bit output indicating the highest priority active input. The module processes the input signals to determine which input is high, with priority given to the higher bit. The output indicates '10' if the second input (in[1]) is active, '01' if only the first input (in[0]) is active, and '00' if neither is active. The logic is implemented over two stages, where the first stage computes intermediate results, and the second stage captures these results on the rising edge of a clock signal.
+module top_module(
+    input [1:0] in,
+    input clk,         // Added clk input declaration
+    output reg [1:0] out
+);

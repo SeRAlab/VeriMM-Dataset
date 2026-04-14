@@ -1,0 +1,8 @@
+Design a sequential circuit that features two D flip-flops with a synchronous active-high reset and allows selection between them based on a control signal. The circuit captures two 4-bit data inputs (d1 and d2), stores them in independent flip-flops (q1 and q2), and outputs the value of the actively selected flip-flop to a 4-bit output (q). Additionally, the module computes the sum of the outputs from both flip-flops, representing a simple digital adder functionality.
+module top_module(
+    input clk,          // Clocks are used in sequential circuits
+    input reset,        // Synchronous active-high reset
+    input d1, d2,       // Data inputs for the two D flip-flops
+    input select,       // Select input to choose between D flip-flops
+    output reg [3:0] q  // 4-bit output from the active D flip-flop
+);

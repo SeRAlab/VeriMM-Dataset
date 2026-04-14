@@ -1,0 +1,8 @@
+Develop a 32-bit binary counter that increments on each clock cycle when enabled. It has an active-high reset input that sets the count to zero. The counter wraps around to zero when it reaches a specified maximum count value, which is provided as an input. If the count enable signal is not asserted, the counter retains its value.
+module top_module(
+    input wire clk,
+    input wire reset,
+    input wire [31:0] max_count,
+    input wire count_en,
+    output reg [31:0] count
+);

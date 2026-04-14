@@ -1,0 +1,7 @@
+Design a module that converts a frequency input into a voltage output. This module calculates the absolute value of the input frequency, scales it based on a provided scalar parameter, adds a bias parameter, and finally outputs an eighteen-bit signed voltage. The output voltage will retain the sign of the biased scaled frequency based on its most significant bit, yielding a positive or negative voltage output accordingly.
+module top_module(
+    input signed [31:0] F, // sfix32_En22
+    input signed [17:0] param_open_loop_bias, // sfix18_En14
+    input signed [17:0] param_open_loop_scalar, // sfix18_En16
+    output signed [17:0] V // sfix18_En12
+);

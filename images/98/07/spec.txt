@@ -1,0 +1,9 @@
+Design a comparator circuit comparing two 8-bit inputs, `input_1` and `input_2`. The module outputs a results signal: if `input_1` is greater, it sets `result` to 0 and asserts `output_1` to indicate the greater condition. If the inputs are equal, it passes `input_1` through to `result` while asserting `output_2`. If `input_1` is less than `input_2`, `result` is set to 0 and `output_3` is asserted, indicating the lesser condition. This design provides a way to determine the comparative relationship between the two inputs while generating specific output flags for each case.
+module top_module(
+    input  [7:0] input_1,
+    input  [7:0] input_2,
+    output reg [7:0] result,
+    output reg output_1,
+    output reg output_2,
+    output reg output_3
+);

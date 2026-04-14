@@ -1,0 +1,7 @@
+Design a signed 8-bit multiplier with overflow detection. The module takes two signed 8-bit inputs, 'a' and 'b', and produces a signed 16-bit output, 'result'. It employs a state machine approach to implement the multiplication process in stages. The multiplication is performed using shift-and-add methodology, where intermediate sums are accumulated in a temporary register. Once the multiplication is complete, the result is checked for overflow conditions, indicating whether the output exceeds the representable range of a signed 16-bit number. The final output includes both the multiplication result and an overflow flag.
+module top_module(
+   input signed [7:0] a,
+   input signed [7:0] b,
+   output reg signed [15:0] result,
+   output reg overflow
+);

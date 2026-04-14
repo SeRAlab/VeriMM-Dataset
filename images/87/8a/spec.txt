@@ -1,0 +1,12 @@
+Design a dual-port RAM module that allows simultaneous read and write operations on two independent memory banks. Each port supports a separate write enable signal, address input, and data input, enabling the user to store data into one of the two memory arrays (mem1 and mem2) at specified addresses on the rising edge of the clock. The module also provides data output for both ports, delivering the data stored at the given addresses. The parameter WIDTH sets the data bus width, which is 8 bits by default, allowing flexibility in memory size and data handling.
+module top_module(
+  input clk,
+  input write_en1,
+  input write_en2,
+  input [WIDTH-1:0] addr1,
+  input [WIDTH-1:0] addr2,
+  input [WIDTH-1:0] din1,
+  input [WIDTH-1:0] din2,
+  output reg [WIDTH-1:0] dout1, // Change to reg
+  output reg [WIDTH-1:0] dout2  // Change to reg
+);

@@ -1,0 +1,1 @@
+module top_module(input sel,i0,i1,output f);assign f=(sel==1'b0)?i0:i1;endmodule

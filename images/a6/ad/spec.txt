@@ -1,0 +1,10 @@
+This module implements a 4-bit adder/subtractor. It takes two 4-bit inputs, `a` and `b`, and performs either addition or subtraction based on the `sub` control signal. The `cin` input serves as a carry-in for the addition operation. The module calculates the resultant sum and carry-out, along with detecting overflow conditions. If `sub` is high, it inverts `b` and adds one to perform subtraction using the two's complement method. The outputs include a 4-bit `sum`, a carry-out signal (`cout`), and an overflow flag indicating when the result exceeds the 4-bit range.
+module top_module(
+    input [3:0] a,
+    input [3:0] b,
+    input sub,
+    input cin,
+    output reg cout,
+    output reg overflow,
+    output reg [3:0] sum
+);

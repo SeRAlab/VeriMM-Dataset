@@ -1,0 +1,6 @@
+Design a barrel shift module that takes a 1024-bit input and produces a 4-bit output based on an 8-bit selector input. The module performs a shift operation on the input data, enabling left shifts based on the value of the selector. Each value of the selector corresponds to a specific amount of bits to shift the input left, and the module captures the lower 4 bits of the shifted result to output. If the selector indicates a shift greater than 15 bits, the output will be zeroed out, allowing for systematic management of input data widths through the shifting mechanism.
+module top_module(
+    input [1023:0] in,
+    input [7:0] sel,
+    output [3:0] out
+);

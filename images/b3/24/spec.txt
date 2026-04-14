@@ -1,0 +1,8 @@
+Design a module that performs three logical operations (AND, OR, and XOR) on a 100-bit input vector. The module outputs the results of these operations based on a control signal. The control input `select` chooses the active output: when `select` is 0, it outputs the result of the AND operation; when `select` is 1, it provides the OR operation result; for any other value, it outputs the XOR operation. Each output is mutually exclusive, ensuring only one logical result is valid at any given time.
+module top_module( 
+    input [99:0] in,
+    input [1:0] select, // Select input to choose between AND, OR, and XOR outputs
+    output reg out_and,
+    output reg out_or,
+    output reg out_xor 
+);

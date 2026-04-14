@@ -1,0 +1,6 @@
+Design a circuit that functions as an 8-bit Gray code counter. Upon a rising clock edge, the counter transitions to the next Gray code value, which is derived from a series of shift registers that hold intermediate states. The output `count` reflects the current Gray code representation, with the `reset` input initializing all registers and the output to zero. The use of XOR logic across the shift registers ensures that the properties of Gray code—where only one bit changes at each step—are maintained throughout the counting process.
+module top_module(
+  input clk,
+  input reset,
+  output reg [7:0] count
+);

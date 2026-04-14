@@ -1,0 +1,7 @@
+Design a 16-bit adder/subtractor module that performs arithmetic operations based on a control signal. When the control signal is high, the module computes the result as the difference between the minuend and the subtrahend by adding the two's complement of the subtrahend. If the control signal is low, it simply adds the minuend and the subtrahend. This allows the module to function as both an adder and a subtractor, enhancing flexibility in arithmetic operations.
+module top_module(
+    input [15:0] minuend,
+    input [15:0] subtrahend,
+    input control,
+    output reg [15:0] result  // Change wire to reg to use in always block
+);

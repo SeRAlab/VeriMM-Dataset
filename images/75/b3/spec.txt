@@ -1,0 +1,7 @@
+Design a clock divider module that generates a baud rate clock output based on the provided input clock and selected baud rate. The module accepts an input clock signal (CLKIN) and a reset signal (RST), along with a 4-bit input (BAUD) to select from predefined baud rates ranging from 300 to 115200 bits per second. Upon receiving a reset, the default baud rate is set to 9600. The clock division is accomplished by counting clock cycles and toggling the output clock (CLKOUT) when the count reaches the level corresponding to the selected baud rate. This module is essential for serial communication applications, where time-sensitive data transmission at various speeds is required.
+module top_module(
+    input CLKIN,
+    input RST,
+    input [3:0] BAUD,
+    output CLKOUT
+    );

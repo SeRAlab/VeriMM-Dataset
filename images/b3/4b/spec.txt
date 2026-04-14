@@ -1,0 +1,9 @@
+Design a thermal management system that regulates the speed of a fan based on temperature inputs. It takes in the current temperature and a set temperature, adjusting fan speed proportionally to the difference between the two while ensuring the fan operates at maximum speed if the current temperature exceeds a defined threshold. The system indicates an over-temperature condition with a flag when the limit is surpassed. The circuit resets both the fan speed and the over-temperature indicator when a reset signal is received.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] in_temp,
+  input [7:0] set_temp,
+  output reg [7:0] fan_speed,
+  output reg over_temp
+);

@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+    
+Implement a module to convert ASCII-encoded hexadecimal characters into their corresponding 6-bit binary representations. This module to handle both uppercase and lowercase ASCII hexadecimal characters ('0'-'9', 'A'-'Z', 'a'-'z'), as well as two special characters ('@' and '%'). It is a crucial component in systems where ASCII-encoded data needs to be processed or analyzed in its binary form, such as in communication systems, data parsers, or cryptographic applications. The module also provides validity and strobe signals to facilitate synchronization and data integrity checks in a broader system context.
+
+Module name:  
+	wbutohex
+
+Input ports:
+	i_clk (input): The clock input signal. It is used to synchronize the operations of the module with the system clock.
+	i_stb (input): The strobe input signal. It indicates when a new byte is available for conversion.
+	i_byte (input, 8 bits): The 8bit input byte representing an ASCIIencoded character. This byte is to be converted into its hexadecimal binary representation.
+Output ports:
+	o_stb (output, reg): The output strobe signal. It mirrors the input strobe signal i_stb to indicate the availability of a new input byte for external modules.
+	o_valid (output, reg): The validity signal. It indicates whether the conversion of the input byte to its hexadecimal binary representation was successful (1) or not (0).
+	o_hexbits (output, reg, 6 bits): The 6bit output representing the hexadecimal binary equivalent of the input ASCII character. This output is valid only when o_valid is high.
+
+
+Implementation:
+The Verilog module wbutohex is designed to convert ASCII representations of hexadecimal characters into their corresponding 6-bit binary values. The module operates synchronously with respect to a clock signal i_clk and processes input data upon the assertion of a strobe signal i_stb. The input data, i_byte, is expected to be an 8-bit value representing an ASCII character. The module outputs a 6-bit value, o_hexbits, which is the binary representation of the hexadecimal character, along with two control signals, o_stb and o_valid, which indicate the presence of output data and its validity, respectively.
+
+Give me the complete code.
+

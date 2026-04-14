@@ -1,0 +1,12 @@
+Design a control unit for a simplified processor that generates various control signals based on a 5-bit opcode input. The outputs include signals for branch operations, memory reading and writing, controlling the data path for the ALU (Arithmetic Logic Unit), and enabling register writing. Specific opcodes determine whether to branch, read from memory, write to memory, select ALU operation modes, and control jump instructions (JAL and JALR). This module effectively orchestrates the operation of the processor by decoding instructions and directing the data flow accordingly.
+module top_module(
+    input [4:0] opcode,
+    output Branch,
+    output MemRead,
+    output MemToReg,
+    output [1:0] ALUOp,
+    output MemWrite,
+    output ALUSrc,
+    output RegWrite,
+    output JAL,
+    output JALR);

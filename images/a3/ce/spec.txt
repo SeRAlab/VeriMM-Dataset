@@ -1,0 +1,6 @@
+Design a pipeline register that captures and stores input signals on the rising edge of a clock. The module has the capacity to accept `n` input signals, each `w` bits wide, and generates `m` output signals, also `w` bits wide, from the stored data. The primary function of this design is to provide a temporary storage solution for multi-bit data inputs, facilitating synchronization in multi-stage processes within digital systems, such as in a pipeline processing architecture.
+module top_module(
+  input clk,  // Added clock input
+  input [n*w-1:0] in,
+  output [m*w-1:0] out
+);

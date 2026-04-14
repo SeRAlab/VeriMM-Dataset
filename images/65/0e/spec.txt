@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+
+Design a 3-bit ring counter with synchronous reset. The ring counter should circulate a single '1' bit through its 3-bit state on each rising edge of the clock. When the reset signal is active, the ring counter should be reset to the initial state '001'.
+
+Module name:
+    ring_counter_3bit
+
+Input ports:
+    clk: Clock signal.
+    rst: Reset signal.
+
+Output ports:
+    state: 3-bit ring counter state.
+
+Implementation:
+The module uses an always block triggered by the clock and reset signals. If the reset signal is active, the ring counter is reset to the initial state '001'. On each rising edge of the clock, the single '1' bit circulates through the 3-bit state.
+
+Give me the complete code.
+
+module ring_counter_3bit(
+    input wire clk,
+    input wire rst,
+    output reg [2:0] state
+    );

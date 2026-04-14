@@ -1,0 +1,10 @@
+Design a module that performs two sets of operations based on a conditional compilation directive. When `BUG` is not defined, the module computes the right shift of input `y` by the value of `x`, uses this result in an arithmetic right shift and addition with `y` to calculate `cout`, and combines `cout` and the shifted value `A` for further left shift to produce outputs `B` and `C`. If `BUG` is defined, the module instead computes the difference involving the multiplication of `y` and `x`, adjusted by the input carry `cin`, producing the outputs `cout` and `A`.
+module top_module(
+ input signed x,
+ input signed y,
+ input signed cin,
+
+ output signed A,
+ output signed cout,
+ output signed B,C
+ );

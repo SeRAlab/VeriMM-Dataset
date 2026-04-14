@@ -1,0 +1,10 @@
+Design a 4-bit shift register with the capability to load data, shift left, and shift right based on control signals. The circuit includes a reset functionality that clears the register to zero. On the rising edge of the clock, if the reset signal is active, the register is cleared; if the load signal is asserted, the 4-bit input data is loaded into the register. If the shift_left signal is high, the contents of the register are shifted left with a zero filled in on the least significant bit; conversely, if the shift_right signal is active, the contents are shifted right, filling the most significant bit with zero. The current state of the register is output through the data_out signal.
+module top_module(
+    input clk,
+    input load,
+    input shift_left,
+    input shift_right,
+    input reset,
+    input [3:0] data_in,
+    output [3:0] data_out
+);

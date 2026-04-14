@@ -1,0 +1,6 @@
+Design a 4-bit shift register with load and clear functionalities. The register outputs the value of Q, which can be loaded with the input D when the LD signal is high. On the positive edge of the CLK signal, if CLR is activated, Q is reset to zero. If CLR is not active and LD is low, the register performs a right shift, shifting the current value of Q to the right while preserving the leftmost bit.
+module top_module(
+    input [3:0] D,
+    input LD, CLK, CLR,
+    output reg [3:0] Q
+);

@@ -1,0 +1,10 @@
+Design a circuit capable of performing bitwise and logical operations on two 3-bit wide inputs. The module takes two 3-bit inputs, `a` and `b`, and produces a 3-bit output for the bitwise OR of the inputs, a single output for the logical OR of the inputs, and a 6-bit output for the bitwise NOT of each input. Additionally, it incorporates a multiplexer controlled by two select lines that enables the choice of the final output based on the desired operation, allowing selection between the bitwise OR result and the logical OR result.
+module top_module(
+    input [2:0] a,
+    input [2:0] b,
+    input sel_b1,
+    input sel_b2,
+    output [2:0] out_or_bitwise,
+    output out_or_logical,
+    output [5:0] out_not
+);

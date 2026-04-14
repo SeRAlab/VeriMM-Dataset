@@ -1,0 +1,7 @@
+Design a 2-to-1 multiplexer for 64-bit inputs. The module selects between two sources, `pc_sinsalto` and `pc_consalto`, based on the control signal `pcsrc`. When `pcsrc` is low (0), the output `nextpc` is assigned the value of `pc_sinsalto`; when `pcsrc` is high (1), `nextpc` takes the value of `pc_consalto`. This functionality is typically used in program counter selection within a processor's control logic.
+module top_module(
+	input [63:0] pc_sinsalto,
+	input [63:0] pc_consalto,
+	input pcsrc,
+	output reg [63:0] nextpc
+	);

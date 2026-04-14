@@ -1,0 +1,8 @@
+Design a barrel shift decoder that takes an 8-bit input and a 3-bit shift amount to perform circular bit shifts on the input data. The module outputs a 4-bit value based on a 4-bit selector (SEL) and an enable signal (EN). When EN is low, the output is set to zero. When EN is high, the output is determined by the selected bit from the shifted data according to the SEL input, allowing for flexible access to specific bits of the shifted result.
+module top_module(
+    input [7:0] data_in,
+    input [2:0] shift_amount,
+    input [3:0] SEL,
+    input EN,
+    output reg [3:0] Y
+);

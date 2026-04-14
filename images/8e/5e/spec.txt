@@ -1,0 +1,5 @@
+Design a circuit that functions as a sequential logic element with a three-bit output represented by LEDR. The output is updated on the positive edge of the clock signal (KEY[0]). The input SW can directly set the output when the load control signal (KEY[1]) is high; otherwise, the output is generated from a feedback mechanism that combines XOR logic with the previous state of LEDR, effectively creating a simple state machine or shift register behavior.
+module top_module(
+	input [2:0] SW,      
+	input [1:0] KEY,     
+	output reg [2:0] LEDR);

@@ -1,0 +1,9 @@
+Design a synchronous JK flip-flop with active-high reset functionality. On each positive edge of the clock signal, the flip-flop updates its output Q based on the states of inputs J and K. If the reset (RST) is asserted, Q is set to LOW and Q_n to HIGH. When both J and K are HIGH, the flip-flop toggles its output state; if only J is HIGH, the output Q is set to HIGH and Q_n to LOW; if only K is HIGH, Q is set to LOW and Q_n to HIGH. This design allows for robust control of the flip-flop's state based on the J and K inputs, while providing a reset capability.
+module top_module(
+    input CLK,
+    input J,
+    input K,
+    input RST,
+    output reg Q,
+    output reg Q_n
+    );

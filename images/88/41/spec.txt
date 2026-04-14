@@ -1,0 +1,8 @@
+Design a circuit that selectively outputs an updated program counter value based on a jump instruction. When the Jump input is asserted, the module constructs a new program counter by concatenating the upper 4 bits from the PCPlus4 input and the lower 28 bits from the instruction (ins), resulting in a 32-bit PC_out. If the Jump input is not asserted, the output is simply the value from the PC_BMUX input.
+module top_module(
+    input Jump,
+    input [3:0] PCPlus4,
+    input [27:0] ins,
+    input [31:0] PC_BMUX,
+    output reg [31:0] PC_out
+);

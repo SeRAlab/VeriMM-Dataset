@@ -1,0 +1,13 @@
+Design a circuit that integrates a 4-to-1 multiplexer, a barrel shifter, and an XOR operation. The multiplexer selects one of four 8-bit inputs based on two selection signals. The barrel shifter takes a 16-bit input, splitting it into high and low 8-bit segments, which are then right-shifted and left-shifted, respectively. The final output includes the shifted high and low segments, along with the result of an XOR operation between the multiplexer output and the concatenated shifted segments. This design effectively facilitates data selection, manipulation, and combination for further processing.
+module top_module(
+    input wire [7:0] input1,
+    input wire [7:0] input2,
+    input wire [7:0] input3,
+    input wire [7:0] input4,
+    input wire sel_b1,
+    input wire sel_b2,
+    input wire [15:0] in,
+    output wire [7:0] out_hi,
+    output wire [7:0] out_lo,
+    output wire [7:0] out_xor
+);

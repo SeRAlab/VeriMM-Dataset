@@ -1,0 +1,32 @@
+Please act as a professional Verilog designer.
+
+Design a debouncer circuit for a mechanical switch. The circuit will use a 1ms debounce time to filter out switch bounce noise. The input signal 'switch_in' will be noisy and the output signal 'switch_out' should be stable and clean. The debounce mechanism should be implemented using a counter that counts up to a predefined threshold.
+
+Module name:  
+    debouncer  
+
+Input ports:
+	clk: Clock signal for synchronous operations.
+	reset: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+	switch_in: Noisy input signal from the mechanical switch.
+
+Output ports:
+    switch_out: Debounced output signal.
+
+Implementation:
+Counter:
+The module includes a counter that counts clock cycles. The counter is incremented on each clock cycle when the input signal 'switch_in' remains in the same state. If 'switch_in' changes state, the counter is reset to 0.
+Threshold:
+A parameterized threshold value (e.g., 1000 clock cycles for a 1ms debounce time at a 1MHz clock frequency) is used to determine when the input signal is stable. If the counter reaches the threshold, the input signal is considered stable and 'switch_out' is updated to reflect the value of 'switch_in'.
+Output Assignment:
+On the positive edge of the clock signal or the active-high reset signal, the module updates the output signal 'switch_out'. If the reset signal is high, 'switch_out' is set to 0. If the reset signal is low and the counter reaches the threshold, 'switch_out' is updated to the value of 'switch_in'.
+
+Give me the complete code.
+
+module debouncer(
+    input           clk,
+    input           reset,
+    input           switch_in,
+
+    output reg      switch_out
+);

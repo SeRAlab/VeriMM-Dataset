@@ -1,0 +1,12 @@
+Design a 6-to-1 multiplexer that selects one of the six 4-bit data inputs (data0 to data5) based on a 3-bit select signal. The selected 4-bit output is provided on the output line `out`, and additionally, a parity bit is calculated from the output using an XOR operation, indicating whether the number of ones in the selected output is even or odd. If the select signal exceeds valid input range, the output defaults to zero. The design includes a decoding mechanism to manage input selection and output generation.
+module top_module(
+  input [2:0] sel,
+  input [3:0] data0,
+  input [3:0] data1,
+  input [3:0] data2,
+  input [3:0] data3,
+  input [3:0] data4,
+  input [3:0] data5,
+  output reg [3:0] out,
+  output reg parity
+);

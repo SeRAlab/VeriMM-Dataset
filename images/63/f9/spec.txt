@@ -1,0 +1,14 @@
+Design a counter system that operates based on input signals and a clock. The module maintains two registers (r0 and r1), which are updated on the rising edge of sys_clk. When the 'first' signal is asserted, both registers are reset to zero. When the 'next' signal is triggered, r0 increments until it reaches a defined limit (hmesh_last), at which point it resets to zero, and r1 increments. The module also outputs a 'last' signal which indicates when both r0 and r1 have reached their respective limits. This design is intended for mesh grid or similar applications where coordinated counting along horizontal and vertical axes is required.
+module top_module(
+	input sys_clk,
+	
+	input first,
+	input next,
+
+	input [6:0] hmesh_last,
+	input [6:0] vmesh_last,
+	
+	output [31:0] r0,
+	output [31:0] r1,
+	output reg last
+);

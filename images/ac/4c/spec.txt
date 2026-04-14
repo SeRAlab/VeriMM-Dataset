@@ -1,0 +1,7 @@
+Design a position counter that increments or decrements a 2-bit position output based on specific key codes received on the input. The circuit monitors a clock signal and a reset signal, with the output resetting to zero on reset. When a "got_code_tick" signal is active, the counter checks the input "key_code" for specific values (8'h74 for incrementing and 8'h6B for decrementing). If the incrementing action reaches the maximum value (2), it wraps around to 0, and if decrementing from 0, it wraps around to the maximum (2). This module effectively serves as a state controller for toggling positions based on user input.
+module top_module(
+	input clk, rst,
+    input [N-1:0]key_code, 
+	 input got_code_tick, 
+	 output reg [P-1:0] posicion 
+    );

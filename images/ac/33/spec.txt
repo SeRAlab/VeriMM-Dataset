@@ -1,0 +1,12 @@
+Design a 32-entry, 30-bit wide FIFO (First In, First Out) memory buffer. The module supports asynchronous reset and includes signals for write and read requests. It tracks the state of the buffer with flags indicating whether it is empty or full and provides a count of the used entries. When writing data, the FIFO stores the input data at the current write pointer position, increments the pointer, and updates the used count. Conversely, when reading, it retrieves data from the current read pointer position, increments the pointer, and decrements the used count while managing underflow and overflow conditions. This design efficiently handles data flow in applications requiring temporary data storage.
+module top_module(
+    aclr,
+    clock,
+    data,
+    rdreq,
+    wrreq,
+    empty,
+    full,
+    q,
+    usedw
+);

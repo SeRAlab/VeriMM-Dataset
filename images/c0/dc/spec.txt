@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to generate a clock enable signal (`CE_16x`) for UART transmission or reception at a specific baud rate. This module plays a crucial role in the broader system context by ensuring that data transmission and reception occur at a predefined rate, which is essential for the correct operation of UART communication. The baud rate is determined by the input parameters `PS` (Prescaler value) and `Div` (Divider value), allowing for flexible configuration of the UART's baud rate based on the system clock (`Clk`) frequency.
+
+Module name:  
+	UART_BRG
+
+Input ports:
+	Rst: A synchronous reset input signal. When high, it initializes the internal counters and the output clock enable signal. It is a singlebit (1'b) input.
+	Clk: The system clock input. All operations within the module are synchronized to the rising edge of this clock. It is a singlebit (1'b) input.
+	PS: Prescaler value input. It is a 4bit input that determines the initial value of the prescaler counter, which in turn affects the baud rate. The prescaler value helps in dividing the system clock to a lower frequency.
+	Div: Divider value input. It is an 8bit input that specifies the initial value of the divider counter. This value further divides the prescaled clock to achieve the desired baud rate.
+Output ports:
+	CE_16x: Clock Enable signal for 16x oversampling. This output signal is a singlebit (1'b) and is used to enable the UART transmitter or receiver at a rate 16 times the baud rate. This oversampling technique is crucial for accurate data sampling in UART communication.
+
+
+Implementation:
+The provided RTL module, named UART_BRG (UART Baud Rate Generator), is designed to generate a clock enable signal (CE_16x) at a frequency that is a fraction of the input clock (Clk) frequency. This fraction is determined by two parameters: the prescaler value (PS) and the divider value (Div). The module operates synchronously with the rising edge of the input clock and includes a reset signal (Rst) for initialization and synchronization purposes.
+
+Give me the complete code.
+

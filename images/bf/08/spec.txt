@@ -1,0 +1,10 @@
+Design a simple calculator module that performs either addition or subtraction of two 4-bit operands based on a single operation control signal. The module utilizes a clock for synchronous operation and includes a reset functionality to initialize outputs. It detects overflow conditions by checking if the computed result exceeds the 4-bit representation limits, with an appropriate overflow output signal. The resulting output is a 4-bit value representing the result of the selected operation.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] operand1,
+    input [3:0] operand2,
+    input operation,
+    output reg [3:0] result, // Change from wire to reg
+    output reg overflow       // Change from wire to reg
+);

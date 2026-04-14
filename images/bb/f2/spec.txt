@@ -1,0 +1,8 @@
+Design a circuit that functions as a combination of a shift register and a multiplexer, with a counter-like behavior controlled by a clock signal. The circuit includes a 4-bit shift register that updates its contents based on a clock edge and outputs a feedback XOR operation between specific bits of the shift register. Additionally, a 3-to-1 multiplexer selects one of four input signals to drive the output Q, based on a 3-bit selection signal. When the reset signal is activated, the shift register is cleared to zero, ensuring predictable operation during initialization.
+module top_module(
+  input clk,
+  input reset,
+  input [2:0] sel,
+  input [3:0] data,
+  output reg [3:0] Q
+);

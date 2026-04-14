@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a 3-bit down-counter. The module performs a 3-bit counting operation starting from 7. On each falling edge of the clock and when the enable signal is high, the module decrements the count by 1. The count value is available on the output port.
+
+Module name:  
+    down_counter    
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    enable: Enable signal to control the counting operation.
+
+Output ports:
+    count: Output signal representing the current count value.
+
+Implementation:
+The register is defined as reg [2:0] count and initialized to 7 using the initial statement. On each falling edge of the clock, if enable is high, the value of count is decremented by 1 using the - operator: count <= count - 1.
+
+Give me the complete code.
+
+module down_counter(clk, enable, count);  
+
+    input  clk;  
+    input  enable;  
+    output  [2:0] count;

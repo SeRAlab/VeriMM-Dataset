@@ -1,0 +1,24 @@
+Design a VGA controller interface for a Wishbone bus system. This module facilitates communication between a microcontroller (or similar master device) and a VGA display, handling data transfer, address selection, and acknowledgments. It operates in two planes (high and low) for data, allowing for efficient reading and writing of 16-bit data across two 8-bit channels. The design includes toggling between these planes based on control signals and manages data flow while adhering to the Wishbone protocol for synchronous operation. The module incorporates acknowledgment signals to confirm successful transactions and ensures robustness through a reset state.
+module top_module(
+    
+    input         wb_clk_i,
+    input         wb_rst_i,
+
+    
+    input  [16:1] wbs_adr_i,
+    input  [ 1:0] wbs_sel_i,
+    input         wbs_we_i,
+    input  [15:0] wbs_dat_i,
+    output [15:0] wbs_dat_o,
+    input         wbs_stb_i,
+    output        wbs_ack_o,
+
+    
+    output     [17:1] wbm_adr_o,
+    output     [ 1:0] wbm_sel_o,
+    output            wbm_we_o,
+    output     [15:0] wbm_dat_o,
+    input      [15:0] wbm_dat_i,
+    output reg        wbm_stb_o,
+    input             wbm_ack_i
+  );

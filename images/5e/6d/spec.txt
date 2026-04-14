@@ -1,0 +1,9 @@
+Design a dual-port RAM module that allows simultaneous read and write operations on a 10-bit address space with 36-bit data words. The module features a clock input that synchronizes read and write actions, with separate enable signals for read (OE) and write (WE) operations. It dynamically assigns data for writing through a parallel input while allowing data to be read from the same address. The use of a parameterized dual-port RAM block facilitates efficient data storage and retrieval, providing flexibility in memory access while ensuring data integrity with the enable control signals.
+module top_module(
+    input CLK,
+    input [9:0] ADDR,
+    input [35:0] DATAIN,
+    output reg [35:0] DATAOUT,
+    input WE,
+    input OE
+);

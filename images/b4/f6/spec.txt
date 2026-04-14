@@ -1,0 +1,9 @@
+Design a D-type flip-flop with additional set and clock enable functionalities. The module captures the value of the input D on the rising edge of the clock signal (CLK). If the Set Clear Direct (SCD) signal is high, it asynchronously resets the output Q to 0 and Q_N to 1. When the Set Clock Enable (SCE) signal is high, the flip-flop retains its current state, while Q_N holds the inverse of Q. In normal operation without SCD or SCE asserted, the output Q takes the value of D, and Q_N outputs the complementary value of D.
+module top_module(
+    input D,
+    input SCD,
+    input SCE,
+    input CLK,
+    output reg Q,
+    output reg Q_N
+);

@@ -1,0 +1,6 @@
+Design a debouncer for a mechanical switch input. This module implements a delay mechanism using a shift register to filter out unwanted bounces from the switch. It employs a state machine to track whether the switch is in a pressed or released state. Based on the configured delay time, the module will only change the debounced output after the switch input has remained stable for a specific number of clock cycles, thereby providing a clean and stable output signal for further processing.
+module top_module(
+  input switch_input,
+  input clk, // Added the clock input
+  output debounced_output
+);

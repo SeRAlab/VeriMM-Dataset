@@ -1,0 +1,11 @@
+Implement the Verilog module based on the following description.
+You are given a 14-bit input vector signal[13:0]. We want to know some relationships between each bit and its neighbour:
+(1) and_result: Each bit of this output vector should indicate whether both the corresponding input bit and its neighbour to the left are '1'. For example, and_result[12] should indicate if signal[12] and signal[13] are both 1. Since signal[13] has no neighbour to the left, the answer is obvious so we don't need to know and_result[13].
+(2) or_result: Each bit of this output vector should indicate whether any of the corresponding input bit and its neighbour to the right are '1'. For example, or_result[1] should indicate if either signal[1] or signal[0] are 1. Since signal[0] has no neighbour to the right, the answer is obvious so we don't need to know or_result[0].
+(3) xor_result: Each bit of this output vector should indicate whether the corresponding input bit is different from its neighbour to the left. For example, xor_result[12] should indicate if signal[12] is different from signal[13]. For this part, treat the vector as wrapping around, so signal[13]'s neighbour to the left is signal[0].
+
+module bit_check (
+	input [13:0] signal,
+	output [12:0] and_result,
+	output [13:1] or_result,
+	output [13:0] xor_result);

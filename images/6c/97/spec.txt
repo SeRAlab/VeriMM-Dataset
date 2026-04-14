@@ -1,0 +1,8 @@
+Design a circuit that implements an 8-depth Last-In-First-Out (LIFO) memory stack. The module supports writing 8-bit data items to the stack when the write enable (wr_en) signal is active, and allows reading the most recently written data item when the module is clocked. The stack pointer tracks the number of items currently in the stack, and a reset signal (rst) initializes the pointer and clears the output. When in operation, upon a rising clock edge, it either saves incoming data or retrieves the last stored data based on the state of the control signals.
+module top_module(
+  input clk,
+  input wr_en,
+  input [7:0] data_in,
+  input rst,
+  output reg [7:0] data_out // Change output to reg type
+);

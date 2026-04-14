@@ -1,0 +1,8 @@
+Design a memory protection block that manages data input and output while providing write protection based on specific addresses. The module takes an n-bit data input and an m-bit address input alongside a write enable signal (we). When the write enable signal is low (we=0), it allows the data input to be passed to the output. If the write enable signal is high, it checks the address input against a list of protected addresses; if the address matches one of those, it activates the write protection flag (wp) and prevents the data output from being altered. This module is useful in ensuring that critical memory locations remain immutable under certain conditions, enhancing memory safety.
+module top_module(
+  input [n-1:0] data_in,
+  input [m-1:0] addr_in,
+  input we,
+  output [n-1:0] data_out,
+  output wp
+);

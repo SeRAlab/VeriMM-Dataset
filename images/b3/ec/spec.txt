@@ -1,0 +1,9 @@
+Design a synchronous I/O register that captures and holds a n-bit input signal based on clock edges, with additional functionalities for asynchronous reset and set operations. The module includes an enable signal to control when the input is transferred to the output register. If the reset signal is asserted, the register outputs a predefined reset value; if the set signal is asserted, it outputs a predefined set value. The module's behavior can be finely tuned with parameters for width, initial value, and synchronous/asynchronous operations to suit various circuit designs.
+module top_module(
+    input Clock,
+    input Reset,
+    input Set,
+    input Enable,
+    input [Width-1:0] In,
+    output reg [Width-1:0] Out
+);

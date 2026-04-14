@@ -1,0 +1,6 @@
+Design a 64-bit linear feedback shift register (LFSR) counter. The circuit utilizes a clock signal for synchronization and a reset signal to initialize the register. On each positive clock edge, if the reset is not asserted, the shift register is updated by shifting bits to the left and generating new input based on the XOR of the most significant and least significant bits. The current state of the shift register is output through the Q signal. This design is useful for applications requiring pseudo-random binary sequences.
+module top_module(
+  input                clk,
+  input                rst_n,
+  output reg  [63:0]   Q
+);

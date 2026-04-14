@@ -1,0 +1,8 @@
+Design a 2-to-1 multiplexer with additional conditional logic based on the selector input. The module takes a 2-bit selector and three 32-bit input signals. Depending on the value of the first bit of the selector, it either outputs a constant value of 4 or the first input signal. It then selects between the second and third input signals based on the first selector bit, and finally, the output is determined by the second bit of the selector, which chooses between the results of these two intermediate signals.
+module top_module(
+  input wire  [1:0]  selector,
+  input wire  [31:0] input_one,
+  input wire  [31:0] input_three,
+  input wire  [31:0] input_four,
+  output wire [31:0] output_final
+);

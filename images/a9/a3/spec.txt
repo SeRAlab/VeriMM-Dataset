@@ -1,0 +1,10 @@
+Design a simple arithmetic calculator that performs basic operations on two 8-bit inputs, A and B. The module takes a clock signal and a reset signal, along with a 2-bit control input that selects the operation: addition, subtraction, multiplication, or division. Upon receiving a clock pulse, if not in reset, it executes the specified operation based on the control signals and updates the output register, C, with the result. The module also provides a VALID output to indicate when the output C holds a valid computation result.
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] A,
+    input [7:0] B,
+    input [1:0] CTRL,
+    output [7:0] C,
+    output VALID
+);

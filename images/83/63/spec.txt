@@ -1,0 +1,17 @@
+Design a circuit that implements a two-stage multiplexer followed by a 4-bit adder. The first multiplexer selects one of six 4-bit input data values based on a 3-bit select signal (`sel_mux`). A second multiplexer, also controlled by the same select signal, chooses from another set of six 4-bit input data values. The outputs of both multiplexers are then added together to produce a single 4-bit output result.
+module top_module(
+    input [2:0] sel_mux, // Select input for the multiplexers
+    input [3:0] data0, // Input data for the first multiplexer
+    input [3:0] data1,
+    input [3:0] data2,
+    input [3:0] data3,
+    input [3:0] data4,
+    input [3:0] data5,
+    input [3:0] data0_mux2, // Input data for the second multiplexer
+    input [3:0] data1_mux2,
+    input [3:0] data2_mux2,
+    input [3:0] data3_mux2,
+    input [3:0] data4_mux2,
+    input [3:0] data5_mux2,
+    output [3:0] out // Output of the adder
+);

@@ -1,0 +1,7 @@
+Design a convolutional encoder that generates a two-bit output based on a single input bit and internal states stored in flip-flops. The module uses two D flip-flops to store and shift the input data while producing the output through XOR gates. When activated by a clock signal, it captures the input bit (`b`) and the state of the first flip-flop, generates outputs based on the XOR of current and previous flip-flop values, and resets to zero when the reset signal is high. This device is commonly used in digital communications to add redundancy for error correction.
+module top_module(
+    input clk,
+    input reset,
+    input b,
+    output reg [1:0] c
+);

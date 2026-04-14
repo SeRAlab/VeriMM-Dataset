@@ -1,0 +1,6 @@
+Design a clock data recovery (CDR) circuit that extracts a regenerated clock signal from an incoming data stream. The module utilizes a phase detector to compare the input data against a reference clock, which informs a charge pump that adjusts a loop filter based on the phase relationship. The loop filter smooths the adjustments to generate a control signal for a voltage-controlled oscillator (VCO), which adjusts its frequency according to the loop filter's output. A jitter filter stabilizes the VCO's output by averaging it, and the final output, clk_out, provides a cleaned-up clock signal suitable for synchronization with the incoming data.
+module top_module(
+  input data_in,
+  input clk_ref,
+  output reg clk_out // Change to reg, since we are driving it in an always block
+);

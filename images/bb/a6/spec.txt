@@ -1,0 +1,9 @@
+Design a synchronous circuit that samples an 8-bit input data signal on the rising edge of a clock. The module has two enable signals: `data_en_in`, which indicates when data is valid, and `out_en`, which influences whether the output enable signal (`data_en`) is asserted. The output will maintain the value of `data_in` on every clock edge, regardless of the enable signals. The `data_en` output is set based on the logical sum of `data_en_in` and `out_en`, allowing for combined control of data flow based on these inputs.
+module top_module(
+	input clk,
+	input data_en_in,
+	input out_en,
+	input [7:0] data_in,
+	output reg data_en,
+	output reg [7:0] data_out
+	);

@@ -1,0 +1,8 @@
+Design a digital module that incorporates a synchronous active-high reset and a 4-bit counter, along with a priority encoder and a functional summing operation. The module outputs two signals: a 2-bit binary value from the priority encoder based on a 4-bit input (ABCD), and an 8-bit sum from adding the current count of the counter to the encoder output. The counter increments on each clock cycle and resets to zero when the reset signal is asserted, while the priority encoder identifies the highest-priority active input among the four bits. The sum output combines the counter's value with the encoder's output, informing further digital processing stages.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input [3:0] ABCD, // Input for priority encoder
+    output reg [1:0] Y, // Output from priority encoder
+    output reg [7:0] sum // Output from functional module
+);

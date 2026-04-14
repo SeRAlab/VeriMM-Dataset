@@ -1,0 +1,8 @@
+Design a servo control module that regulates the position of a servo motor using PWM (Pulse Width Modulation) signals. It takes a clock and reset input, along with an 8-bit PWM input for the duty cycle and a desired position input. The module calculates the current and desired positions, computes the error, and generates PWM signals based on the desired position, constrained within specified minimum and maximum duty cycles. The output PWM signal allows for precise control of the servo motor's position, ensuring smooth operation while adhering to defined bounds on duty cycle.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] pwm_in,
+  input [7:0] pos_in,
+  output [7:0] pwm_out
+);

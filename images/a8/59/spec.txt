@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+
+Implement the design of a 4-bit synchronous counter with enable and load functionalities. The counter includes a clock signal (clk), reset signal (rst_n), enable signal (en), and load signal (load). The counter takes a 4-bit load value (d) as input and produces a 4-bit count value (q) as output.
+
+Module name:
+    counter_4bit
+
+Input ports:
+    clk: Chip clock signal.
+    rst_n: Active-low reset signal. Defined as 0 for chip reset and 1 for reset signal inactive.
+    en: Enable signal to allow counting.
+    load: Load signal to load the counter with a specific value.
+    d: 4-bit load value.
+
+Output ports:
+    q: 4-bit count value.
+
+Implementation:
+Data bit control:
+On every positive edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the count register (q) is updated.
+If the reset signal (rst_n) is low, indicating a reset condition, the count register (q) is reset to 0.
+If the load signal (load) is high, the count register (q) is loaded with the input value (d).
+If the enable signal (en) is high and the load signal (load) is low, the count register (q) increments by 1.
+
+Give me the complete code.

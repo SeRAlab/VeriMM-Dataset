@@ -1,0 +1,11 @@
+Design a module that processes inputs from three sets of binary signals (A1, A2; B1, B2; and C1) to generate a single output X. The module first computes the logical OR of inputs B1 and B2, as well as A1 and A2. It then performs a logical AND operation on these OR results along with C1. The output of this AND operation is passed through a buffer connected to the power and ground inputs (VPWR and VGND), ensuring the output X is driven appropriately based on the combined logic of the inputs. This design functions as a configurable logic gate with additional power domain management.
+module top_module(
+    A1,
+    A2,
+    B1,
+    B2,
+    C1,
+    VPWR,
+    VGND,
+    X
+);

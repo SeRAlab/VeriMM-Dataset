@@ -1,0 +1,12 @@
+Implement a control module for a cellular automaton, managing two inputs (r and b) and forward/backward conditions (fw_in and bw_in). The module determines the output states based on the conditions of these inputs and a pulse signal. Specifically, if both fw_in and bw_in are active, it forces b_out to a logic high while resetting r_out. Otherwise, b_out reflects the value of input b and r_out reflects the value of input r. Additionally, the module generates fw_out based on the pulse or if r is active alongside fw_in, and bw_out based on bw_in or if b is active alongside fw_in.
+module top_module(
+    input r,
+    input b,
+    input fw_in,
+    input bw_in,
+    output fw_out,
+    output bw_out,
+    input pulse,
+    output r_out,
+    output b_out
+    );

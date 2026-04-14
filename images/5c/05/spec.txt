@@ -1,0 +1,14 @@
+Design a module that acts as a data storage and retrieval system for two sets of quantization tables in a JPEG decompression context. The module stores 64 eight-bit values for luminance (DQT_Y) and 64 eight-bit values for chrominance (DQT_C) based on input data when enabled. It takes color-related inputs to determine whether to store data for the luminance or chrominance tables. On the rising edge of the clock, it retrieves the appropriate table value based on a specified table number, allowing access to either the Y or C table depending on the input color selector. The output is an 8-bit value that reflects the data either from the luminance or chrominance table, facilitating the decoding process in JPEG image processing.
+module top_module(
+    input           rst,
+    input           clk,
+
+    input           DataInEnable,
+    input           DataInColor,
+    input [5:0]     DataInCount,
+    input [7:0]     DataIn,
+
+    input           TableColor,
+    input  [5:0]    TableNumber,
+    output [7:0]    TableData
+);

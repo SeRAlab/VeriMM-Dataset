@@ -1,0 +1,7 @@
+Design a synchronous data register with an active-low reset functionality. The module samples the input data signal on the rising edge of the clock and utilizes two delay elements to synchronize the input data signal to the clock domain, thus reducing the risk of metastability. When the reset signal is asserted low, all output and internal registers are cleared to low, ensuring a safe initialization state. The output reflects the delayed version of the input data, allowing for smooth data transitions synchronized with the clock.
+module top_module(
+    input clk,
+    input data_in,
+    input reset_n,
+    output reg data_out
+);

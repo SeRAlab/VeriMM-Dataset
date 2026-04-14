@@ -1,0 +1,5 @@
+Design a module that calculates effective addresses based on a 32-bit input address. The module interprets the upper nibble of the address to identify different types of memory or peripheral modules, such as ROM, RAM, UART, and others. Depending on the identified module type, it modifies the address format: for RAM, it retains the lower 24 bits with a 00 prefix; while for other types, it includes a 000 prefix followed by the lower 20 bits. This functionality enables address decoding for accessing various components within a system, optimizing how addresses are utilized based on the component accessed.
+module top_module(
+    input [31:0] addr,
+    output reg [31:0] eff_addr // Changed to reg type
+);

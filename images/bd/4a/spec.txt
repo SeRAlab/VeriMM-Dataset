@@ -1,0 +1,8 @@
+Design a module that implements an adaptive arithmetic encoder and decoder for a set of symbols with given probabilities. The encoder takes a set of symbols and their associated probabilities, computes their cumulative distribution function (CDF), and outputs an encoded value that represents a range corresponding to the input symbols according to their probabilities. The decoder, using the encoded value, reconstructs the original set of symbols based on the same CDF and probabilities, generating the decoded symbols as output. This module is parameterized to support variable lengths of input symbols and probabilities, making it flexible for various applications in data compression.
+module top_module(
+  input [n-1:0] sym,
+  input [n-1:0] prob,
+  output reg [31:0] encoded_value,
+  input [31:0] encoded_value_in,
+  output reg [n-1:0] decoded_sym
+);

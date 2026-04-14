@@ -1,0 +1,9 @@
+Design a 4-bit shift register with load and shift capabilities. The module receives a 4-bit parallel input (P) and serial input (SI), and it is controlled by a clock (CLK) and a load signal (PL). When PL is high, the register loads the individual bits of P into its flip-flops. If PL is low, the behavior of the shift register is determined by the CTRL signal: when CTRL is high, it performs a right shift, pushing the contents of each flip-flop to the next lower position and inputting SI into the least significant bit (LSB). When CTRL is low, it performs a left shift, shifting the contents to the next higher position and feeding SI into the most significant bit (MSB). The current state of the register is available on the output Q as a 4-bit value.
+module top_module(
+    input CLK,
+    input [3:0] P,
+    input SI,
+    input PL,
+    input CTRL,
+    output reg [3:0] Q
+);

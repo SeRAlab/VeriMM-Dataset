@@ -1,0 +1,11 @@
+Design a data processing module that accumulates valid input data. The module accepts an 8-bit input (`data_in`), along with a sign indicator (`data_in_sign`) and a validation signal (`data_valid`). On each clock cycle, when the reset signal (`rst_n`) is not asserted, the module sums the input data into a register (`data_reg`) if `data_in_sign` is high and increments a counter (`data_regnum`) that tracks the number of valid inputs, up to a maximum of 8. The output signals include an 8-bit output (`data_out`), a sign indicator for the output (`data_out_sign`), and a flag (`data_ok`) indicating whether the accumulated data equals 28 or 36 after 8 valid inputs are received. The output signal is only asserted when the `data_out_sign` is low and both the `data_ok` and `data_valid` conditions are met. This module effectively functions as an accumulator with conditionally signaled output based on specific criteria.
+module top_module(
+    input clk,
+    input rst_n,
+    input [7:0] data_in,
+    input data_in_sign,
+    input data_valid,
+    output reg [7:0] data_out,
+    output reg data_out_sign,
+    output reg data_ok
+);

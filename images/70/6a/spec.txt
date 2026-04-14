@@ -1,0 +1,38 @@
+Please act as a professional Verilog designer.
+
+Design a simple digital clock using a 1Hz clock signal. The clock should display hours, minutes, and seconds in binary format. The clock should include a reset signal to reset the time to 00:00:00.
+
+Module name:  
+    digital_clock
+
+Input ports:
+	clk: 1Hz clock signal.
+	reset: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+
+Output ports:
+    hours: 5-bit output representing hours (0-23).
+    minutes: 6-bit output representing minutes (0-59).
+    seconds: 6-bit output representing seconds (0-59).
+
+Implementation:
+Counters:
+The module includes three counters: seconds_counter, minutes_counter, and hours_counter. Each counter increments on specific conditions.
+Seconds Counter:
+The seconds_counter increments on every positive edge of the 1Hz clock signal. If the counter reaches 60, it resets to 0 and increments the minutes_counter.
+Minutes Counter:
+The minutes_counter increments when the seconds_counter resets to 0. If the minutes_counter reaches 60, it resets to 0 and increments the hours_counter.
+Hours Counter:
+The hours_counter increments when the minutes_counter resets to 0. If the hours_counter reaches 24, it resets to 0.
+Output Assignment:
+The output ports hours, minutes, and seconds are assigned the values of the hours_counter, minutes_counter, and seconds_counter, respectively.
+
+Give me the complete code.
+
+module digital_clock(
+    input           clk,
+    input           reset,
+
+    output reg [4:0] hours,
+    output reg [5:0] minutes,
+    output reg [5:0] seconds
+);

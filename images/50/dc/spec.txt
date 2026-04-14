@@ -1,0 +1,8 @@
+Design a 4-bit shift register with load capability. On the negative edge of the reset signal, the register is cleared to zero. On the rising edge of the clock signal, if the load input is asserted, the register captures the value from data_in; otherwise, it performs a circular shift operation, moving the bits right and wrapping the most significant bit to the least significant position. The current state of the shift register is output via data_out.
+module top_module(
+    input clk,
+    input reset,
+    input load,
+    input [3:0] data_in,
+    output reg [3:0] data_out
+);

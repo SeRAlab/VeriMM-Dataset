@@ -1,0 +1,9 @@
+Design a 4-bit binary addition circuit that incorporates carry-handling capabilities. This module takes a carry-in signal and initializes the carry process with an optional input buffer and control signals. The output consists of a 4-bit sum and a carry-out signal, enabling it to cascade with other carry operations for larger arithmetic computations. The use of multiple CARRY4 instances facilitates efficient handling of carry propagation across each addition stage, ensuring accurate results during multi-bit addition.
+module top_module(
+    input CI,
+    output [3:0] O,
+    output CO,
+    input CYINIT,
+    input [3:0] DI,
+    input [3:0] S
+);

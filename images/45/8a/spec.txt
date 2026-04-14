@@ -1,0 +1,7 @@
+Design a clock gating module that outputs a controlled clock signal, ENCLK, based on two input conditions. When the enable signal (EN) and the test enable signal (TE) are both asserted, ENCLK is set high on the rising edge of the CLK input; otherwise, it is driven low. This module helps to reduce power consumption by selectively enabling the clock signal only when necessary, effectively gating the clock for downstream components based on operational conditions.
+module top_module(
+  input CLK,
+  input EN,
+  input TE,
+  output reg ENCLK
+);

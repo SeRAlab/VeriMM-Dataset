@@ -1,0 +1,13 @@
+Design a PCIe data receiver with a FIFO buffer to temporarily store incoming data. The module has inputs for clock, reset, received data, and validation signals, and outputs for readiness and acknowledgment signals, as well as transmitted data. It manages a buffer of 16 bytes, tracking the head, tail, and count of stored elements. The receiver is ready to accept new data when space in the buffer is available, and it acknowledges the reception of valid data. Simultaneously, it sends data from the buffer if requested by the transmitter, ensuring efficient communication while preventing overflows and underflows.
+module top_module(
+    input clk,
+    input rst,
+    input rx,
+    input rx_valid,
+    output reg rx_ready,
+    output reg rx_ack,
+    output reg tx,
+    output reg tx_valid,
+    input tx_ready,
+    input tx_ack
+);

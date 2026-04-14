@@ -1,0 +1,5 @@
+Design a sequential circuit that utilizes two registers to perform a form of state feedback. On the rising edge of the clock, it updates the first register `p` to be the XOR of input `d` and the second register `n`. On the falling edge of the clock, it updates `n` to be the XOR of `d` and the first register `p`. The output `q` is the result of the XOR operation between `p` and `n`, thereby creating a dynamic output dependent on the input signal `d` and the internal states of `p` and `n`. This implementation effectively creates a form of feedback loop with clocked logic.
+module top_module(
+	input clk,
+	input d,
+	output q);

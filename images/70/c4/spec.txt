@@ -1,0 +1,11 @@
+Design a dual-port RAM module that allows simultaneous read and write operations controlled by a clock signal. The module utilizes asynchronous reset, enabling the system to initialize all internal registers and memory values to zero. It has inputs for write enable and read enable signals, along with address and data inputs. When the write enable is asserted, data is stored in a specified address; when read enable is asserted, data is retrieved from the specified address and provided at the output. The design maintains state information to manage the flow of operations effectively, allowing for efficient memory access in a digital system.
+module top_module(
+    input clk,
+    input rst_n,
+    input write_en,
+    input [7:0] write_addr,
+    input [3:0] write_data,
+    input read_en,
+    input [7:0] read_addr,
+    output reg [3:0] read_data
+);

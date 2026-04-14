@@ -1,0 +1,5 @@
+The module implements a set of bitwise operations for an n-bit input signal, where n is configurable with a parameter. It performs AND, OR, XOR, and NOT operations on the input, but it seems to have some issues in distinguishing between the output for each operation since all operations write to the same output variable. The intended functionality is to generate outputs for each respective operation: the AND operation accumulates a logical AND across the input bits, the OR similar for logical OR, and the XOR accumulates for logical XOR, while the NOT operation inverts the input bits. Overall, this module aims to provide a way to perform and output the results of these fundamental bitwise operations on a parallel set of bits.
+module top_module(
+  input [n-1:0] in,
+  output [n-1:0] out
+);

@@ -1,0 +1,14 @@
+Design a Verilog module for a 3-bit up/down counter. The counter increments when 'up_down' is 1 and decrements when 'up_down' is 0. The counter operates on the rising edge of the clock.
+
+Initial state: counter = 3'b000
+Time 0ns: clock = 0, up_down = 1, counter = 3'b000.
+Time 10ns: clock = 1, up_down = 1, counter = 3'b001.
+Time 20ns: clock = 0, up_down = 0, counter = 3'b001.
+Time 30ns: clock = 1, up_down = 0, counter = 3'b000.
+Time 40ns: clock = 0, up_down = 1, counter = 3'b000.
+Time 50ns: clock = 1, up_down = 1, counter = 3'b001.
+
+module up_down_counter (
+	input clock,
+	input up_down,
+	output reg [2:0] counter);

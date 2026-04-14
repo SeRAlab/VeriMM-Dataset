@@ -1,0 +1,8 @@
+Design a memory management unit (MMU) that translates virtual addresses to physical addresses in a system with a defined virtual address space width (w). The MMU takes a virtual address (va) and utilizes a page table (pt) to retrieve the corresponding page table entry (PTE). It extracts the virtual page number (VPN) and offset from the virtual address. If the PTE is valid (non-zero), the MMU combines the physical frame number (PFN) from the PTE with the page offset to produce the physical address (pa) and indicates its validity through the 'valid' signal. If the PTE is invalid (zero), the 'valid' signal is set to low.
+module top_module(
+  input [w-1:0] va,
+  input [2**w-1:0] pt,
+  input [w-1:0] pba,
+  output reg [w-1:0] pa,
+  output reg valid
+);

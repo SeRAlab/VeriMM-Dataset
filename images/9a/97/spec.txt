@@ -1,0 +1,20 @@
+Implement a Verilog module that models a simple finite state machine (FSM) with two inputs and one output. The FSM should have four states (A, B, C, D) with the following one-hot state encoding: A=4'b0001, B=4'b0010, C=4'b0100, D=4'b1000. The FSM transitions between states based on the two inputs (in1 and in2) and produces an output based on the current state and inputs.
+
+The state machine has the following states and their corresponding outputs:
+1. state A (out = in1).
+2. state B (out = in2).
+3. state C (out = in1 & in2).
+4. state D (out = in1 | in2).
+
+State transitions:
+1. From state A: If in1 = 1, then transition to state B. If in1 = 0, then transition to state C.
+2. From state B: If in2 = 1, then transition to state C. If in2 = 0, then transition to state D.
+3. From state C: If in1 = 1, then transition to state D. If in1 = 0, then transition to state A.
+4. From state D: If in2 = 1, then transition to state A. If in2 = 0, then transition to state B.
+
+module fsm_4 (
+  input in1,
+  input in2,
+  input [3:0] state,
+  output reg [3:0] next_state,
+  output reg out);

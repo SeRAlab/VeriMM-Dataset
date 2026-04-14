@@ -1,0 +1,10 @@
+Design a 16-entry register file that interfaces with a 4-bit address input and a reset signal. On each positive clock edge, the module outputs a 32-bit value from one of the registers selected by the address input (addra). The first register is updated with an 8-bit wide input (sw) when the reset signal is not asserted, while all registers are cleared to zero upon a reset. This design primarily functions as a simple storage mechanism for the input switches, providing the ability to read and reset register values.
+module top_module(
+
+	input clk,
+	input rst,
+	input [3:0] addra,
+	output reg [31:0] douta,
+	input [7:0] sw
+
+	);

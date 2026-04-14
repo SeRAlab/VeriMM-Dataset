@@ -1,0 +1,7 @@
+Design a synchronous accumulator circuit that accumulates an input value provided on `data_in` upon each rising edge of the clock signal (`clk`). The accumulator resets to zero when the `rst` (reset) signal is high. It maintains an accumulated sum in an internal register, ensuring that the output (`acc_out`) does not exceed a specified maximum value of 255 (for an 8-bit wide accumulator). When the sum plus `data_in` exceeds this maximum, it saturates the output at 255, effectively preventing overflow.
+module top_module(
+  input clk,
+  input rst,
+  input [n-1:0] data_in,
+  output reg [n-1:0] acc_out
+);

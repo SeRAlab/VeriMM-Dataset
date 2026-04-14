@@ -1,0 +1,7 @@
+Design a data processing module that performs various transformations on a 16-bit input data based on a 4-bit control signal. When the clock signal is positive, the module selects from different operations: directly passing the input data as output, masking the lower byte, setting the upper byte to 1, performing a bitwise XOR with 16'hFFFF, or outputting a default value of zero for unsupported control codes. This functionality allows for basic data manipulation and control in a digital circuit.
+module top_module(
+    input clk,
+    input [15:0] din,
+    input [3:0] ctrl,
+    output reg [15:0] dout     // Change output to reg type
+);

@@ -1,0 +1,19 @@
+Design a serial FIFO (First-In-First-Out) buffer that operates on an 8-bit data width. The buffer interfaces with a clock and active-low reset, allowing data to be written when the `fifo_wr` signal is asserted, provided the buffer isn't full, while managing write and read pointers to track data storage. The buffer can read data out via a `fifo_Read` signal and indicates when it's full through the `tx_Buffer_Full` signal. It also includes a multiplexer that selects between input data bits and an additional input based on control signals, and a `tx_Start0` output that is asserted when data transmission is enabled.
+module top_module(
+  input wire s_axi_aclk,
+  input wire s_axi_aresetn,
+  input wire fifo_wr,
+  input wire tx_Start,
+  input wire tx_Data_Enable_reg,
+  input wire [7:0] tx_DataBits,
+  input wire [7:0] s_axi_wdata,
+  input wire p_4_in,
+  input wire fifo_Read,
+  input wire reset_TX_FIFO_reg,
+  input wire mux_sel_reg_0,
+  input wire mux_sel_reg_2,
+  output wire tx_Buffer_Full,
+  output wire mux_Out,
+  output reg [7:0] Q,  // Changed from output wire to output reg
+  output wire tx_Start0
+);

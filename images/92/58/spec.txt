@@ -1,0 +1,12 @@
+Design a dual-port memory module that allows for simultaneous reading and writing operations. It has one write port controlled by the `write_0r` signal, which captures 16-bit data `write_0d` and signals a successful write with `write_0a`. There are two read ports, where `read_0r` activates the first read operation, providing access to the written data through `read_0d` and asserting `read_0a`, while the second read port, controlled by `read_1r`, captures the data from the first read and outputs it via `read_1d`, also asserting `read_1a`. This design facilitates concurrent data access, making it suitable for applications requiring multiple data streams.
+module top_module(
+  input write_0r,
+  input [15:0] write_0d,
+  output reg write_0a,
+  input read_0r,
+  output reg read_0a,
+  output reg [15:0] read_0d,
+  input read_1r,
+  output reg read_1a,
+  output reg [15:0] read_1d
+);

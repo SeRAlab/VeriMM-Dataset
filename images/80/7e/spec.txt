@@ -1,0 +1,10 @@
+Design a finite state machine (FSM) that detects a specific sequence based on four input signals (in1, in2, in3, and in4). The FSM has two states: S0 (idle) and S1 (match state), with an output 'match' indicating whether the specific sequence has been recognized. The machine transitions to S1 when in1 is high while in S0, and it returns to S0 under various conditions including when in1 is low or certain other input conditions are met when in S1. The state transitions are synchronized with a clock signal, and the FSM is reset to the idle state (S0) when the reset signal is asserted.
+module top_module(
+  input clk,
+  input reset,
+  input in1,
+  input in2,
+  input in3,
+  input in4,
+  output reg match
+);

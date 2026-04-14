@@ -1,0 +1,4 @@
+Design a synchronous reset signal generator. The module generates a synchronized reset output (rst_sync) based on the negative edge of an asynchronous reset input (rst_n) and the clock signal (clk). When rst_n is asserted low, both internal register R1 and the output rst_sync are set to low. On subsequent clock cycles, if rst_n is high, R1 is set to high, and rst_sync follows R1, effectively synchronizing the reset signal with the clock.
+module top_module(
+output reg rst_sync,
+input clk, rst_n);

@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit binary up-down counter module that counts from 0 to 15. The counting direction is controlled by an up_down signal.
+
+Module name:
+    binary_counter_4bit_up_down
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    up_down: Control signal to determine counting direction. 1 for up and 0 for down.
+
+Output ports:
+    count: 4-bit output representing the current binary count value.
+
+Implementation:
+The module includes a 4-bit register, count, which is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the count register is cleared to 0.
+On every rising edge of the clock, the count is incremented by 1 if up_down is 1, or decremented by 1 if up_down is 0. When the count reaches 15 and up_down is 1, it wraps around to 0. When the count reaches 0 and up_down is 0, it wraps around to 15.
+
+Give me the complete code.

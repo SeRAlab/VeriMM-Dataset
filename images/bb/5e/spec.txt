@@ -1,0 +1,12 @@
+Design a frequency divider circuit that generates a clock output (clk_out) based on a specified input frequency (freq). When the module is reset, it initializes the count and sets the clock output and done signal to LOW. As long as the stop signal is inactive, the circuit counts clock cycles until it reaches the specified frequency, toggling the clk_out signal at that point. If the stop signal is activated, it resets the count and clk_out, indicating that the operation is complete by setting the done flag to HIGH.
+module top_module(
+	input clk,
+	input [31:0]freq,
+	input stop,
+	input reset,
+	
+	output reg done,
+	output reg clk_out
+	
+
+);

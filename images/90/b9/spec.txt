@@ -1,0 +1,6 @@
+Design a 64-word by 16-bit wide data memory module with read and write capabilities. The module stores data in an array, where each word in memory can be accessed using a 6-bit address derived from the lower bits of the input address. On a positive clock edge, if the write enable signal is high, the module will store the incoming data at the specified address. Additionally, the data_out output continuously reflects the data at the selected address, while test_data_out always provides the data stored at address 0.
+module top_module(
+	input clk, rst, wr_en,
+	input[15:0] addr, data_in,
+	output[15:0] data_out, test_data_out
+);

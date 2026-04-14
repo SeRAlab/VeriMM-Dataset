@@ -1,0 +1,12 @@
+Design a dual-clock circuit that generates a toggling clock output (tr_clk) and data output (tr_data) based on an input selection signal (tw) and two clock signals (clk and clkx2). The module uses an asynchronous reset signal (jrst_n) to initialize its state. The output tr_clk toggles on the rising edge of clkx2, while tr_data selects between two sets of bits from the input tw depending on the phase determined by the XOR of two internal registers (x1 and x2). The circuit effectively serves as a clock and data synchronization mechanism suitable for interfacing or transferring data in a video or processing system.
+module top_module(
+                                      // inputs:
+                                      clk,
+                                      clkx2,
+                                      jrst_n,
+                                      tw,
+
+                                      // outputs:
+                                      tr_clk,
+                                      tr_data
+                                   );

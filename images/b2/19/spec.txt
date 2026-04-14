@@ -1,0 +1,10 @@
+Design a circuit that combines a Johnson counter with a 3-to-1 multiplexer. The Johnson counter generates a shifting pattern based on the clock signal, and when the most significant bit of the counter is high, the multiplexer outputs one of the three 8-bit input signals (input0, input1, or input2) based on a 2-bit select input. If the counter's most significant bit is low, the output defaults to zero. This configuration effectively controls the output based on both the counter state and the selected input signal.
+module top_module(
+  input clk,
+  input rst_n,
+  input [7:0] input0,
+  input [7:0] input1,
+  input [7:0] input2,
+  input [1:0] select,
+  output [7:0] out
+);

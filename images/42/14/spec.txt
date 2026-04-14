@@ -1,0 +1,10 @@
+Design a digital filter module that implements a 16-bit signed IIR (Infinite Impulse Response) filter with specific tap weights. The module takes a clock input and a trigger signal, processes a 16-bit signed input data stream multiplied by a 7-bit signed tap weight, and outputs a 16-bit signed result. It has built-in overflow detection to prevent erroneous outputs due to overflow conditions. Additionally, the module allows for a reset of the internal accumulator based on an external signal, enabling it to clear its accumulated value when triggered. The implementation facilitates optional pipelining for enhanced performance and control over the data processing flow.
+module top_module(
+	input clk,
+	input trig,
+	input signed [15:0] din,
+	input signed [6:0] tapWeight,
+	input accClr_en,
+	
+	(* shreg_extract = "no" *) output reg oflowDetect = 1'd0,
+	output reg signed [15:0] dout = 16'sd0);

@@ -1,0 +1,30 @@
+Please act as a professional Verilog designer.
+
+Implement a 32-bit synchronous up counter with a loadable value.
+
+Module name:  
+    up_counter               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the counter.
+    load: Signal to load a specific value into the counter.
+    load_value: 32-bit value to load into the counter when the load signal is high.
+Output port:
+    count: 32-bit register representing the current count value.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the counter value is updated.
+If the reset signal (rst_n) is low, indicating a reset condition, the counter value (count) is set to 0.
+If the load signal is high, the counter value (count) is set to the load_value.
+Otherwise, the counter increments by 1.
+
+Give me the complete code.
+
+module up_counter(
+   input                clk ,
+   input                rst_n,
+   input                load,
+   input [31:0]         load_value,
+ 
+   output reg [31:0]    count
+);

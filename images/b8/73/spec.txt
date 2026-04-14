@@ -1,0 +1,7 @@
+Design a unary counter that counts in a specific pattern based on user input. It has two buttons: 'btnU' to increment the count and 'btnD' to decrement it. The counter output, a 16-bit register, transitions through predefined values on the rising edge of the clock signal: it moves from 0x0000 to 0x0001, then to 0x0011, 0x0111, and finally to 0x1111 with each increment. In contrast, pressing 'btnD' decrements the count in reverse order, returning to 0x0000 from 0x0001, and so forth, maintaining the defined sequence. If the current count is not at a valid value for incrementing or decrementing, it remains unchanged.
+module top_module(
+    output reg[15:0] num,
+    input btnU,
+    input btnD,
+    input clk
+    );

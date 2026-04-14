@@ -1,0 +1,10 @@
+Design a 3-bit priority encoder with asynchronous enable output. The module takes three input bits (A2, A1, A0) and generates a 3-bit output (Y) that indicates the highest-priority active input. An enable signal (EN) is asserted when at least one input is high, while the output reflects which input is active: if A2 is high, Y outputs 100; if both A2 and A1 are high, Y outputs 110; if all three are high, Y outputs 111. The design also features a state machine that cycles through different stages to evaluate the inputs, resetting the stage through a reset signal.
+module top_module(
+    input A2,
+    input A1,
+    input A0,
+    input clk,    // Added clock input
+    input reset,  // Added reset input
+    output reg EN, // Changed EN to be a reg
+    output reg [2:0] Y
+);

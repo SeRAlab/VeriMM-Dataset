@@ -1,0 +1,7 @@
+Design a synchronous 4-bit comparator that determines if two 4-bit inputs, `a` and `b`, are equal. The module processes the comparison in a pipelined manner across two stages of logic, using a clock signal to synchronize updates. In the first stage, it compares pairs of bits from both inputs and stores intermediate results. During the second stage, it evaluates the combined results of the first stage to assert the output signal `equal` high if all corresponding bits from `a` and `b` are equal.
+module top_module(
+    input [3:0] a,
+    input [3:0] b,
+    input clk,
+    output reg equal
+);

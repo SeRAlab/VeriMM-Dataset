@@ -1,0 +1,6 @@
+Implement a frequency divider that takes an input clock signal and produces an output clock signal with a frequency that is reduced by a factor specified by the parameter 'div'. When the reset signal is asserted, the output clock and internal counter are initialized to zero. On each positive edge of the input clock, the module increments the counter until it reaches the value of 'div - 1', at which point it toggles the output clock signal and resets the counter. This design effectively halves the input clock frequency when div is set to 2, or allows other divisions as determined by changing the 'div' parameter.
+module top_module(
+  input clk,
+  input rst,
+  output reg clk_out
+);

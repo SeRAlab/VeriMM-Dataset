@@ -1,0 +1,16 @@
+Please act as a professional verilog designer.
+
+Implement a module of a 4-bit Johnson counter. The Johnson counter cycles through a sequence of states where the bit pattern "walks" from all 0s to all 1s and then back to all 0s. The counter resets to 4'b0000 when the reset signal (rst) is active.
+
+Module name:  
+    johnson_counter_4               
+Input ports:
+    rst: Reset signal (active high)
+    clk: Clock signal
+Output ports:
+    count: 4-bit output representing the current Johnson counter value
+
+Implementation:
+If the reset signal is active (rst), the counter is reset to 4'b0000 by assigning the value to the output register (count). On each positive clock edge, the counter shifts its bits to the right, and the most significant bit is set to the inverse of the least significant bit of the count.
+
+Give me the complete code.

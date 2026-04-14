@@ -1,0 +1,8 @@
+Design a 3-bit shift register with parallel loading capability. On each positive clock edge, the shift register shifts its contents to the left and inputs a new bit from `serial_in`. If the reset signal is asserted, the register is cleared to zero. The final output is produced by performing a bitwise AND operation between the contents of the shift register and a 3-bit input vector `vec`. This design allows for shifting in serial data while selectively masking the output based on the provided vector.
+module top_module(
+    input clk,
+    input reset,
+    input [2:0] vec,
+    input serial_in,
+    output reg [2:0] final_output
+);

@@ -1,0 +1,9 @@
+This module implements a stateful multiplexing D flip-flop with control inputs. The design utilizes a clock signal to drive the state transitions based on input signals SCE (state change enable) and SCD (state change disable). The output Q represents the stored value, while Q_N is its logical negation. In the idle state (00), the module can either lock the input D or transition to states that force Q to HIGH (01) or LOW (10) based on the respective control signals. This allows for controlled data retention and state management in digital systems, integrating both storage and multiplexing functionality.
+module top_module(
+    input wire D,
+    input wire SCD,
+    input wire SCE,
+    input wire CLK,
+    output reg Q,
+    output reg Q_N
+);

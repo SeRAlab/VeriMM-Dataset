@@ -1,0 +1,28 @@
+Implement the Verilog module based on the following description.
+Given the following Mealy state machine with 1 input (in) and 1 output (out). Unless otherwise stated in the diagram below, assume outputs are determined by the current state and input.
+
+The state machine has the following states and their corresponding output behavior:
+1. state U, if in = 0, out = 0; if in = 1, out = 1.
+2. state T, if in = 0, out = 1; if in = 1, out = 0.
+
+State transitions:
+1. From state U: If in = 0, then remain in state U. If in = 1, then transition to state T.
+2. From state T: If in = 0, then transition to state U. If in = 1, then remain in state T.
+
+At reset, the state machine starts in state "U". Derive next-state logic equations and output logic equations by inspection assuming the following one-hot encoding is used: (U, T) = (2'b01, 2'b10).
+
+Derive state transition and output logic equations by inspection assuming a one-hot encoding. Implement only the state transition logic and output logic (the combinational logic portion) for this state machine.
+
+Write code that generates the following equations:
+
+- U_next -- next-state logic for state U
+- T_next
+- out -- output logic
+
+module top_module(
+    input in,
+    input [1:0] state,    // 2-bit one-hot current state
+    output reg U_next,
+    output reg T_next,
+    output reg out
+ );

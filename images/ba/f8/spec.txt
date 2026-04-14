@@ -1,0 +1,18 @@
+Implement the Verilog module based on the following description.
+Module M implements the boolean function z = (p ^ ~q).
+
+// Module N can be described by the following simulation waveform: 
+
+If p = 1, q = 1, then z = 0.
+If p = 0, q = 1, then z = 1.
+If p = 0, q = 0, then z = 1.
+If p = 1, q = 0, then z = 0.
+
+// Now consider a top-level that uses two M submodules and one N submodule. The first input of all three submodules is connected to input 'a', and the second input of all three submodules is connected to 'b'. The output of the first M submodule is connected to a two-input AND gate with the output of the N submodule. The second M submodule's output is connected to an OR gate with the AND gate's output. The final output 'z' is the result of this OR gate.
+
+// Implement this circuit in Verilog.
+
+module top_module(
+    input a,
+    input b,
+    output z);

@@ -1,0 +1,9 @@
+Design a 4-bit up/down counter that operates on a rising clock edge. It has the capability to reset to zero (RST), load a value (LD) from a parallel input D, and count either upward or downward based on the UP/DOWN control signal (UD). When LD is asserted, the counter is initialized with the value on D. In counting mode, if UD is high, the counter increments from the current value; if UD is low, it decrements. The current counter value is output on Q.
+module top_module(
+    input CLK,
+    input RST,
+    input LD,
+    input UD,
+    input [3:0] D,
+    output reg [3:0] Q
+);

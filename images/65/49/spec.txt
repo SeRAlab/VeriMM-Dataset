@@ -1,0 +1,11 @@
+Design a circuit that acts as a state machine with an associated state table for controlling state transitions based on multiple input signals. The module utilizes a clock input to synchronize updates to a 3-bit state number, which indexes into a 4-bit wide state table. The state transitions can be advanced or reversed based on the `advance_i` and `direction_i` inputs. It includes functionality to reset the state to an initial condition, set a break state, or align to a specific state based on external control signals. The output represents the current state based on the indexed position in the state table.
+module top_module(
+  input wire clk,
+  input wire enable_i,
+  input wire reset_i,
+  input wire advance_i,
+  input wire direction_i,
+  input wire break_i,
+  input wire align_i, 
+  output wire [3:0] state_o
+);

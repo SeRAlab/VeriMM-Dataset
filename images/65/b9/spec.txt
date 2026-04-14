@@ -1,0 +1,9 @@
+Design a 4-to-2 priority encoder that takes four binary inputs (A, B, C, D) and outputs a 2-bit code (X) and a valid signal (Y). The encoder prioritizes the inputs in the order of D, C, B, and A; whenever there is at least one active high input, it outputs the respective binary code for the highest priority input along with a valid output signal. If no inputs are active, the output code defaults to 11 and the valid signal to low. The design consists of two stages: the first stage combines inputs into intermediate signals, and the second stage determines the output code based on these signals.
+module top_module(
+    input A,
+    input B,
+    input C,
+    input D,
+    output reg [1:0] X,
+    output reg Y
+);

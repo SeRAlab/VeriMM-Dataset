@@ -1,0 +1,14 @@
+Design a dual-port 16-bit RAM module that allows simultaneous read and write operations from two separate ports. Each port can input data and an address, while generating an output for read operations. The RAM includes parity checking to ensure data integrity; it calculates the parity of the data being written and the data read out, reporting an error if parity mismatches. The module facilitates memory access and validation through a state machine operating in four stages: read from port 1, read from port 2, write to port 1, and write to port 2.
+module top_module(
+    input clk,                 // Added clock input
+    input rst,                 // Added reset input
+    input [15:0] addr_port1,
+    input [15:0] addr_port2,
+    input [15:0] data_in_port1,
+    input [15:0] data_in_port2,
+    input write_en_port1,
+    input write_en_port2,
+    output [15:0] data_out_port1,
+    output [15:0] data_out_port2,
+    output error
+);

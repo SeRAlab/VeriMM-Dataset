@@ -1,0 +1,9 @@
+Design a binary to BCD converter that transforms an 8-bit binary input into its Binary-Coded Decimal (BCD) representation, divided into two sets of high and low nibbles. The module outputs four 4-bit values: BCD_HIGH1 and BCD_LOW1 represent the high and low nibbles of the most significant decimal digit, while BCD_HIGH2 and BCD_LOW2 represent those of the least significant decimal digit. The conversion is performed in two stages on the rising edge of a clock signal.
+module top_module(
+    input clk,                       // Added clock input
+    input [7:0] BIN,
+    output [3:0] BCD_HIGH1,
+    output [3:0] BCD_LOW1,
+    output [3:0] BCD_HIGH2,
+    output [3:0] BCD_LOW2
+);

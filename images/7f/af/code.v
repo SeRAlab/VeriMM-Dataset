@@ -1,0 +1,24 @@
+module top_module (
+	input [3:0] z,
+	output reg f);always_comb begin
+		case (z)
+			4'h0: f = 0;
+			4'h1: f = 1;
+			4'h2: f = 0;
+			4'h3: f = 1;
+			4'h4: f = 0;
+			4'h5: f = 1;
+			4'h6: f = 1;
+			4'h7: f = 0;
+			4'h8: f = 1;
+			4'h9: f = 0;
+			4'ha: f = 1;
+			4'hb: f = 0;
+			4'hc: f = 1;
+			4'hd: f = 1;
+			4'he: f = 0;
+			4'hf: f = 1;
+		endcase
+	end
+
+endmodule

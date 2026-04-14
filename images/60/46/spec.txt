@@ -1,0 +1,12 @@
+Design a 16-bit CRC (Cyclic Redundancy Check) generator and checker that verifies data integrity. The module computes the CRC based on incoming data or a reply, and outputs the inverted CRC value. It includes a mechanism to indicate whether the received CRC matches a predefined value (16'h1d0f), signaling a successful check. The operation is synchronized to a clock and resets on an active low signal, ensuring that the CRC calculations are updated only when a package is complete or synchronous operation is enabled. The design allows for verification of either the primary data or a response, facilitating error detection in data communication protocols.
+module top_module(
+output reg crc16_check_pass_reg,
+output [15:0]crc_16,
+input clk_crc16,
+input rst_crc16,
+input data,
+input reply_data,
+input sync,
+input package_complete,
+input en_crc16_for_rpy
+);

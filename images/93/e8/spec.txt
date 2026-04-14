@@ -1,0 +1,7 @@
+Design a 4-bit barrel shifter that performs left logical shifts based on a 2-bit shift amount input. When the reset signal is low, the output is set to zero. On the rising edge of the clock, the module shifts the input data left by 0, 1, or 2 positions, or clears the output for a 3-position shift, effectively implementing a fixed-width left shift operation for a specified number of positions. The resulting shifted data is continuously outputted.
+module top_module(
+  input clk, rst,
+  input [3:0] data_in,
+  input [1:0] shift_amount,
+  output [3:0] data_out
+);

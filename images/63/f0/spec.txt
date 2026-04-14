@@ -1,0 +1,6 @@
+Implement a touch sensor circuit that detects changes in the state of an array of capacitive touch sensors. The module takes multiple touch sensor signals as input and produces a smaller number of digital output signals, representing the current state of these sensors compared to their previous state. The outputs change whenever any of the detected touch sensor signals transition, effectively capturing touch events. This functionality is achieved through the use of registers to store previous states and a combinational logic block that identifies state changes.
+module top_module(
+  input clk,                  // Added clock input
+  input [n-1:0] touch_sensors,
+  output reg [m-1:0] digital_outputs // Changed from wire to reg
+);

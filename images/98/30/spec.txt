@@ -1,0 +1,27 @@
+Implement a Verilog module with the following description: 32-bit counter with control signals.
+module top_module(
+  (* intersynth_port = "Reset_n_i" *)
+  input Reset_n_i,
+  (* intersynth_port = "Clk_i" *)
+  input Clk_i,
+  (* intersynth_conntype = "Bit" *)
+  input ResetSig_i,
+  (* intersynth_conntype = "Bit" *)
+  input Preset_i,
+  (* intersynth_conntype = "Bit" *)
+  input Enable_i,
+  (* intersynth_conntype = "Bit" *)
+  input Direction_i,
+  (* intersynth_conntype = "Word" *)
+  input[15:0] PresetValH_i,
+  (* intersynth_conntype = "Word" *)
+  input[15:0] PresetValL_i,
+  (* intersynth_conntype = "Word" *)
+  output[15:0] DH_o,
+  (* intersynth_conntype = "Word" *)
+  output[15:0] DL_o,
+  (* intersynth_conntype = "Bit" *)
+  output Overflow_o,
+  (* intersynth_conntype = "Bit" *)
+  output Zero_o
+);

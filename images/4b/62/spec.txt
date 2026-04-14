@@ -1,0 +1,9 @@
+Design a 2-digit BCD (Binary-Coded Decimal) counter capable of counting from 0 to 12, with inputs to enable counting up or down. The module takes a clock signal and a reset signal, alongside a 4-bit enable input (en_count) to determine when the counting operations are valid, specifically activating count changes when en_count equals 5. The counter increments or decrements based on the enUP and enDOWN signals, wrapping around from 11 to 0 and vice versa. The output data_MES represents the counted value in BCD format, providing separate 4-bit outputs for the tens and units digits.
+module top_module(
+input wire clk,
+input wire reset,
+input wire [3:0] en_count,
+input wire enUP,
+input wire enDOWN,
+output wire [7:0] data_MES
+);

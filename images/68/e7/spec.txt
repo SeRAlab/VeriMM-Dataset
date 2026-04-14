@@ -1,0 +1,14 @@
+Design a circuit that functions as a state-based edge detection multiplexer. It detects rising or falling edges in an 8-bit input signal and selects one of six 4-bit data inputs based on the number of detected edges. The output reflects the selected data from these inputs, and there are specific states managed by a finite state machine for handling the edge detection and selection process. The circuit also features a reset mechanism to initialize its state.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] in,
+    output reg [3:0] out,
+    output reg [2:0] select,
+    input [3:0] data0,
+    input [3:0] data1,
+    input [3:0] data2,
+    input [3:0] data3,
+    input [3:0] data4,
+    input [3:0] data5
+);

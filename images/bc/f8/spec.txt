@@ -1,0 +1,8 @@
+Design a rate divider circuit that counts down from a specified start value. The module takes a 32-bit input to set the starting value and outputs the current count as a 32-bit value. The counting operates on the rising edge of the clock; it resets the count to zero when the reset signal is low. If the reset is high and the counter reaches zero, it loads the start value. Additionally, while the enable signal is active, the counter decrements by one on each clock cycle; otherwise, it retains the start value when not enabled.
+module top_module(
+    input [31:0] startVal,          
+    input reset,
+    input enable,
+    input clk,
+    output reg [31:0] count
+    );

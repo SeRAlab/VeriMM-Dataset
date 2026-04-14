@@ -1,0 +1,6 @@
+Design a pulse-width modulation (PWM) generator. The module uses an 8-bit input to determine the duty cycle of the PWM signal. On each rising edge of the clock, it increments a counter, generating a high output (pwm = 1) when the counter is at zero. The output transitions to low (pwm = 0) when the counter reaches the value specified by the duty cycle, and then the counter is reset to zero. This module effectively produces a PWM signal with adjustable duty cycle based on the input provided.
+module top_module(
+    input clock,
+    input [7:0] duty_cycle,
+    output reg pwm
+);

@@ -1,0 +1,9 @@
+Design a 4-bit shift register with two's complement functionality. This module captures input bits on each clock cycle and provides an output for shifting the bits while also allowing for direct loading of a 4-bit input (D) upon reset. The shift register shifts in a serial input (SI) at the least significant bit and retains its previous state otherwise. The module computes the two's complement of the stored value when the most significant bit is set, outputting this result as the two's complement value. Additionally, it provides the least significant bit of the shift register as an output (SO).
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] D,
+    input SI,
+    output reg [3:0] twos_comp,
+    output reg SO
+);

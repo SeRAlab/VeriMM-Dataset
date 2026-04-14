@@ -1,0 +1,13 @@
+Design a stage of a pipelined processor known as the EX/MEM (Execute/Memory) latch. This module captures and holds various inputs from the execution stage, including control signals (WB2_input and M2_input), the result of the ALU operation, the instruction for the next stage, and data from the register. On a reset signal, all outputs are set to zero, ensuring a clean state. At each clock cycle, if not in reset, the module transfers its input data to the respective outputs, facilitating smooth data flow between stages in a pipelined architecture.
+module top_module(input clk,
+              input reset,
+              input [1:0] WB2_input, 
+              input [2:0] M2_input, 
+              input [31:0] ALU_input, 
+              input [4:0] instruction_mux_in, 
+              input [31:0] RdData2_in, 
+              output reg[2:0] M2_output, 
+              output reg[1:0] WB2_output, 
+              output reg[31:0] ALU_output, 
+              output reg[4:0] instruction_mux_out, 
+              output reg[31:0] RdData2_out);

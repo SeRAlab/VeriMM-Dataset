@@ -1,0 +1,6 @@
+Design a 4-bit multiplier that computes the product of two 4-bit inputs, A and B. The module uses a state-machine approach to implement the multiplication algorithm. Initially, it prepares the multiplier by extending A, while B is zero-padded. In the subsequent states, it checks the least significant bit of the product and conditionally updates the result and products through subtraction, right-shifting the multiplier and product on each iteration. The multiplication process continues until the multiplier reaches zero, upon which the state remains fixed, outputting the final 8-bit result.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    output reg [7:0] result
+);

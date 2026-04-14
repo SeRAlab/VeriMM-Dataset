@@ -1,0 +1,23 @@
+Please act as a professional Verilog designer.
+
+Implement a Pulse Width Modulation (PWM) signal generator module that generates a PWM signal with a duty cycle controlled by an 8-bit input named "duty_cycle". The PWM signal cycles between 0 and 255.
+
+Module name:
+    pwm_generator
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    duty_cycle: 8-bit input signal representing the desired duty cycle.
+
+Output ports:
+    pwm_out: Output PWM signal.
+
+Implementation:
+The module includes a register, counter, with a width of 8 bits, which counts from 0 to 255.
+The module also includes a register, pwm_out, which represents the output PWM signal.
+The counter is incremented in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the counter register is cleared to 0.
+The pwm_out signal is set high when the counter value is less than the duty_cycle value and set low otherwise.
+
+Give me the complete code.

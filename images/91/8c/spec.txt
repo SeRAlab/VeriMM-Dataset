@@ -1,0 +1,5 @@
+Design a rounding unit that processes a 16-bit input to produce a 7-bit output. The module evaluates specific bits of the input to determine how to round the value represented by the bits in positions 13 to 7. If the bits from 13 to 7 are all ones, or if the sixth bit is zero, the output will directly mirror these bits. If the sixth bit is one and any of the lower six bits are non-zero, the output will be incremented by one. Additionally, if the seventh bit is zero, it will again retain the bits from 13 to 7, except if none of the previous conditions are met, which results in an incremented output. This functionality is crucial for applications requiring rounding operations on fixed-point representations or similar data formats.
+module top_module(
+    output reg[6:0] out,
+    input wire [15:0] in
+    );

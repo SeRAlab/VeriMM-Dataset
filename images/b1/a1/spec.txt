@@ -1,0 +1,9 @@
+Design a multi-port RAM module with configurable input and output widths. This module features simultaneous read and write capabilities controlled by separate enable signals. It contains a parameterized memory array capable of storing a defined number of entries, with data input and output widths specified by the parameter `n`. Upon a rising clock edge, if the write enable (`wr_en`) is asserted, it writes the incoming data into the specified memory address; if the read enable (`rd_en`) is asserted, it retrieves data from the specified address and presents it at the output. This design is useful for applications requiring flexible memory access in digital systems.
+module top_module(
+  input clk,
+  input wr_en,
+  input rd_en,
+  input [n-1:0] addr,
+  input [n-1:0] data_in,
+  output [n-1:0] data_out
+);

@@ -1,0 +1,5 @@
+Design an arbiter circuit that manages multiple request signals (up to n, where n is a configurable parameter) and grants access to the highest priority request based on a defined priority and waiting time mechanism. The arbiter assesses incoming requests, prioritizes them by their index, and increases waiting time for each assertion of the request. It then selects the request with the highest priority; if two requests have the same priority, the one with the longer waiting time is granted access. The output is a grant signal indicating which request has been granted access.
+module top_module(
+  input [n-1:0] req,
+  output reg [n-1:0] grant // Changed from wire to reg
+);

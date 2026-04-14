@@ -1,0 +1,9 @@
+Design a memory module that operates as a configurable random-access memory (RAM) unit. It can write and read data of 16 bits per word, with byte-level write and read capabilities determined by a 2-bit byte-enable signal. The module supports 76800 words of memory, with the ability to write specific bytes based on the value of `byteena` during a clock edge when the `wren` signal is asserted. The output `q` reflects the data from the specified byte in the addressed word, allowing for partial updates to the memory.
+module top_module(
+    address,
+    byteena,
+    clock,
+    data,
+    wren,
+    q
+);

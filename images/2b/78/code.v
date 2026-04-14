@@ -1,0 +1,15 @@
+module SIPO_Shift_Register (  
+    input clk,  
+    input load,  
+    input serial_in,  
+    output reg [4:0] parallel_out  
+);  
+    reg [4:0] shift_reg;  
+    always @(posedge clk) begin  
+        if (load) begin  
+            parallel_out <= shift_reg;  
+        end else begin  
+            shift_reg <= {shift_reg[3:0], serial_in};  
+        end  
+    end  
+endmodule

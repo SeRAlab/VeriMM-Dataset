@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform Cyclic Redundancy Check (CRC) calculations and error checking based on input data. CRC is a popular method for detecting errors in data transmission or storage. The primary functions of this module include:
+
+CRC Calculation: It calculates the CRC value for the input data stream (`CRC_data`) using a predefined polynomial. This calculation is performed when the `CRC_en` input is enabled.
+CRC Initialization: It initializes or resets the CRC calculation to a predefined value (`32'hffffffff`) upon receiving a signal through the `CRC_init` or `Reset` inputs.
+CRC Error Checking: It compares the calculated CRC value against a predefined correct value (`32'hc704dd7b`) when the `CRC_chk_en` input is enabled, and outputs an error signal (`CRC_err`) if there is a mismatch.
+
+This module can be utilized in systems requiring data integrity checks, such as data communication systems, storage systems, and in applications where data corruption needs to be detected and flagged.
+
+Module name:  
+	CRC_chk
+
+Input ports:
+	Reset: A synchronous reset signal. When high, it resets the CRC calculation to its initial value.
+	Clk: The clock signal for the module. The CRC calculations and updates are performed on the rising edge of this clock.
+	CRC_data[7:0]: An 8bit input data stream for which the CRC is to be calculated.
+	CRC_init: When high, it initializes the CRC calculation to its starting value, similar to the Reset signal.
+	CRC_en: Enables the CRC calculation for the current input data (CRC_data).
+	CRC_chk_en: Enables the CRC error checking mechanism.
+Output ports:
+	CRC_err: A signal that indicates a CRC mismatch error. It goes high if the calculated CRC value does not match the predefined correct value (32'hc704dd7b) when CRC_chk_en is enabled.
+
+
+Implementation:
+The RTL module presented, named CRC_chk, is designed to compute and check the CRC (Cyclic Redundancy Check) of incoming data streams. CRC is a popular error-detecting code used to detect accidental changes to raw data. The module operates on 8-bit data inputs and utilizes a 32-bit CRC register (CRC_reg) to compute the CRC value based on a predefined polynomial. The core functionality of the module is encapsulated within a combinational logic function (NextCRC) and sequential logic that updates the CRC_reg based on the clock (Clk) and reset (Reset) signals.
+
+Give me the complete code.
+

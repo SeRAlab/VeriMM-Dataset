@@ -1,0 +1,11 @@
+Design a 4-register file with 16-bit wide registers. The module accepts a 16-bit data input and a 16-bit control input to determine which register to write to and which registers to read from, while being clocked by an input clock signal. On a reset (active low), all registers (R0 to R3) are initialized to zero. The write operation is determined by the upper two bits of the control input, allowing data to be stored in one of the four registers. The read operations, based on the relevant bits of the control input, determine which register values are output, with a high impedance state for non-selected registers.
+module top_module(
+    input [15:0] data,
+    input [15:0] control,
+    input clk,
+    input rst_n,
+    output reg [15:0] R0,
+    output reg [15:0] R1,
+    output reg [15:0] R2,
+    output reg [15:0] R3
+);

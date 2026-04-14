@@ -1,0 +1,8 @@
+Design a module that conditionally swaps the first and last 16 bits of a 32-bit input vector based on a control signal. On each positive clock edge, if the reset signal is active, the output vector is set to zero. If the reset is inactive and the control signal is high, the module assigns the upper half of the input vector to the lower half of the output vector and vice versa. If the control signal is low, the output vector directly reflects the input vector.
+module top_module(
+  input clk,
+  input reset,
+  input [31:0] in_vec,
+  input control,
+  output reg [31:0] out_vec
+);

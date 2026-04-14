@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that detects a specific 4-bit pattern within a serial data input. The FSM transitions through four states (S0 to S3) based on the input `data`, searching for the sequence "1010". Upon completing the detection of the pattern, the output `match` is asserted high. The FSM resets to the initial state when the `reset` signal is high, ensuring proper initialization of state and output. The design effectively combines state transitions and pattern recognition, allowing for detection of the specified binary sequence in real-time data streams.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] data,
+  output reg match
+);

@@ -1,0 +1,10 @@
+Design a low-power signal passthrough module that controls power output and signal transmission based on the state of a data input and a clock signal. The module outputs a low power signal when the divided clock is high and the serial data input (ssp_dout) is also high, while other outputs are tied to the state of the serial data input and fixed logic levels. Additionally, it routes a cross-connect signal (cross_lo) to the serial data input (ssp_din) and provides a direct debug output (dbg). The design effectively implements logic for managing power enable signals for four outputs while allowing signal passthrough based on operational conditions.
+module top_module(
+    input pck_divclk,
+    output pwr_lo, output pwr_hi,
+    output pwr_oe1, output pwr_oe2, output pwr_oe3, output pwr_oe4,
+    output adc_clk,
+    output ssp_din, input ssp_dout,
+    input cross_lo,
+    output dbg
+);

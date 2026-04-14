@@ -1,0 +1,9 @@
+Design a multiply-accumulate unit that computes the product of a signed 8-bit weight and a signed 32-bit data input, accumulating the result over clock cycles. The output, Dout, reflects the running total of these products when the Cal_Valid signal is high. If reset is asserted (rst_n low), both Dout and an internal buffer are cleared to zero. If Cal_Valid is low, Dout is also reset to zero, and the buffer is cleared, effectively disabling accumulation during that cycle.
+module top_module(
+    input clk,
+    input rst_n,
+    input Cal_Valid,
+    input signed [7:0]  weight,
+    input signed [31:0] data,
+    output reg signed [31:0] Dout
+);

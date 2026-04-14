@@ -1,0 +1,8 @@
+Design a 2-bit wide D flip-flop with reset functionality. The output holds the value of the input data on the rising edge of the clock unless the active-low reset signal is triggered, which sets the output to zero. Additionally, if the `io_input_0_reset` signal is high, the current value of the flip-flop is retained without changing. The module thereby acts as a synchronous storage element in digital circuits, supporting both a synchronous reset and a retained state under specific conditions.
+module top_module(
+  input        clock,
+  input        reset,
+  input  [1:0] io_input_0_data,
+  input        io_input_0_reset,
+  output [1:0] io_output_data
+);

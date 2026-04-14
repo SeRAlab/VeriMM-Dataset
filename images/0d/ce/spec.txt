@@ -1,0 +1,6 @@
+Implement a simple version of the ChaCha20 stream cipher's quarter-round function. The quarter-round function takes four 32-bit input words and produces four 32-bit output words. The function is defined as follows:
+1. a += b; d ^= a; d = rotate(d, 16);
+2. c += d; b ^= c; b = rotate(b, 12);
+3. a += b; d ^= a; d = rotate(d, 8);
+4. c += d; b ^= c; b = rotate(b, 7);
+The module should have a clock input, a reset input, and four 32-bit input words, producing four 32-bit output words. The outputs should be valid after a clock cycle following the input. The reset should initialize the outputs to zeros.

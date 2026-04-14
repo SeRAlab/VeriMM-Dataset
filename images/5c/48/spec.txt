@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit Fibonacci LFSR (Linear Feedback Shift Register) module that generates a pseudo-random sequence of 4-bit values. The sequence repeats after a specific number of cycles.
+
+Module name:
+    fibonacci_lfsr
+                 
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+
+Output ports:
+    lfsr: 4-bit output signal representing the current LFSR value.
+
+Implementation:
+The module includes a 4-bit register, lfsr, which represents the current LFSR value.
+The lfsr register is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the lfsr register is initialized to a non-zero value.
+The lfsr is updated using the Fibonacci LFSR algorithm with taps at bit positions 4 and 3.
+
+Give me the complete code.
+
+module fibonacci_lfsr(
+  input clk,
+  input rst_n,
+  output reg [3:0] lfsr
+);

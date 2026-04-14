@@ -1,0 +1,10 @@
+Implement a register that holds a 32-bit Control and Status Register (CSR). On a positive clock edge, if the reset signal is active, the CSR resets to zero. Otherwise, if the CSRSel signal is asserted, the CSR will be updated with the value from the input rs1_to_csr, allowing for selective loading of the CSR based on the control signal.
+module top_module(
+	input clk,
+	input reset,
+
+	input [31:0] rs1_to_csr,
+	input CSRSel,
+
+	output reg [31:0] csr
+);

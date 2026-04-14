@@ -1,0 +1,10 @@
+Design a circuit that performs both addition and subtraction on two 16-bit wide inputs, A and B, based on a control signal (MODE). When MODE is 0, the circuit outputs the sum of A and B along with a carry input (CIN), while preserving the 16 least significant bits of the result. When MODE is 1, the circuit outputs the difference of A and B, again incorporating the carry input. The module also handles the carry/borrow logic for both operations, ensuring accurate results for consecutive operations. The output is registered and updated on the rising edge of the clock signal, with an external reset capability to initialize the internal state.
+module top_module(
+    input [15:0] A,
+    input [15:0] B,
+    input MODE,
+    input CIN,
+    input clk,        // Added missing clock input
+    input reset,      // Added missing reset input
+    output reg [15:0] Q
+);

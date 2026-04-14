@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+
+Implement a Debounce Circuit for a mechanical switch. The circuit should filter out the noise caused by bouncing. It has an input signal representing the raw switch state and an output signal representing the debounced switch state.
+
+Module name:  
+    debounce 
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    switch_in: Raw input signal from the mechanical switch.
+
+Output ports:
+    switch_out: Debounced output signal.
+
+Implementation:
+The module includes a shift register to sample the input switch signal at regular intervals. On the positive edge of the clock signal (clk) or the positive edge of the reset signal (rst), the module updates the shift register.
+If the reset signal (rst) is high, the shift register is set to 0. The debounced output signal (switch_out) is determined by checking if all bits of the shift register have the same value.
+
+Give me the complete code.
+
+module debounce(
+    input clk,
+    input rst,
+    input switch_in,
+
+    output switch_out
+);

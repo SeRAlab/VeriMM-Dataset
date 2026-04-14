@@ -1,0 +1,6 @@
+Design a synchronous decrementing counter with load capability. The counter counts down from a specified 6-bit value when the 'load' signal is high, loading 'dfload' into the counter. When 'load' is not asserted, the counter decrements with each clock pulse, and outputs a carry signal when it reaches zero. The counter can be reset asynchronously using the 'rst' input and operates only when 'clk_ena' is asserted, making it suitable for controlled timing applications.
+module top_module(
+  input clk, rst, clk_ena, load,
+  input [5:0] dfload,
+  output carry
+);

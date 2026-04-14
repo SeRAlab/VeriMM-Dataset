@@ -1,0 +1,76 @@
+
+
+You are tasked with designing a verilog module that implements a D-latch with an enable signal. The D-latch should be sensitive to the rising edge of the enable signal. The module should have the following inputs and outputs:
+
+Inputs:
+- D (1-bit): Data input
+- EN (1-bit): Enable signal
+
+Outputs:
+- Q (1-bit): Latched output
+- Q_bar (1-bit): Inverted latched output
+
+Use the following template to design your module:
+
+```
+module d_latch_en (
+    input D,
+    input EN,
+    output Q,
+    output Q_bar
+);
+
+    // Your code here
+
+endmodule
+```
+
+Test your module using the following testbench:
+
+```
+module tb_d_latch_en;
+
+    reg D;
+    reg EN;
+    wire Q;
+    wire Q_bar;
+
+    d_latch_en dut (.D(D), .EN(EN), .Q(Q), .Q_bar(Q_bar));
+
+    initial
+    begin
+        // Test case 1
+        D = 1'b0;
+        EN = 1'b0;
+        #10 $display("Q=%b Q_bar=%b", Q, Q_bar); // Expected output: Q=0 Q_bar=1
+
+        // Test case 2
+        D = 1'b1;
+        EN = 1'b0;
+        #10 $display("Q=%b Q_bar=%b", Q, Q_bar); // Expected output: Q=0 Q_bar=1
+
+        // Test case 3
+        D = 1'b0;
+        EN = 1'b1;
+        #10 $display("Q=%b Q_bar=%b", Q, Q_bar); // Expected output: Q=0 Q_bar=1
+
+        // Test case 4
+        D = 1'b1;
+        EN = 1'b1;
+        #10 $display("Q=%b Q_bar=%b", Q, Q_bar); // Expected output: Q=1 Q_bar=0
+
+        // Test case 5
+        D = 1'bx;
+        EN = 1'b1;
+        #10 $display("Q=%b Q_bar=%b", Q, Q_bar); // Expected output: Q=x Q_bar=x
+
+        // Test case 6
+        D = 1'bx;
+        EN = 1'b0;
+        #10 $display("Q=%b Q_bar=%b", Q, Q_bar); // Expected output: Q=x Q_bar=x
+
+    end
+
+endmodule
+```
+

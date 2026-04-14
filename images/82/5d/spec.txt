@@ -1,0 +1,8 @@
+Design a D flip-flop with asynchronous set and reset functionalities. The module outputs a registered state Q based on input D, and it is clocked by C. When C is low, the module prioritizes the asynchronous behavior: if set (S) is high, Q is set to high, and if reset (R) is high, Q is reset to low. When C is high, Q takes the value of D, allowing data to be stored on the rising edge, contingent on the states of S and R. The initial output is configurable via the INIT parameter, allowing for flexible circuit initialization.
+module top_module(
+    output reg Q,
+    input D,
+    input C,
+    input R,
+    input S
+);

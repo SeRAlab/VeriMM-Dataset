@@ -1,0 +1,8 @@
+Design a digital integrator circuit that accumulates incoming signed data over time. The module takes a clock input and a data input, while it indicates its readiness to process new data with the `i_ready` signal. When `i_ready` is asserted, the current `o_data`, which represents the sum of the new input data and the previous accumulated value, is stored in an accumulator register, and the `o_ready` output is set high to signify that valid output data is available. The output `o_data` is formatted to accommodate the wider bit-width (OW) resulting from the accumulation of the narrower input data (IW).
+module top_module(
+    i_clk,
+    i_data,
+    i_ready,
+    o_data,
+    o_ready
+    );

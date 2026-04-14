@@ -1,0 +1,6 @@
+Design a digital-to-analog converter (DAC) that translates a 4-bit digital input into a variable output voltage. The module utilizes a clock signal to synchronize updates, mapping the input to corresponding weight values for a weighted sum calculation. The output voltage is determined by scaling the reference voltage based on the selected weight and is updated every half sampling period, providing a smooth conversion from digital to analog values proportional to the input.
+module top_module(
+  input clk,
+  input [3:0] din,
+  output reg [15:0] vout // Changed to a wider output for voltage representation
+);

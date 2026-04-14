@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a synchronous FIFO (First-In-First-Out) register stage with configurable data width. It to be a part of a larger FIFO buffer system, potentially within a high-speed memory controller or a similar data processing environment. The primary objectives of this module include:
+
+Temporarily storing data in a pipeline stage.
+Controlling the flow of data based on the fullness of adjacent stages and specific control signals.
+Dynamically selecting between two input data sources based on control signals and the fullness status of adjacent stages.
+
+The module plays a critical role in managing data throughput and ensuring smooth data transitions between different stages of a FIFO buffer, contributing to the overall efficiency and reliability of the data processing system.
+
+Module name:  
+	openhmc_sync_fifo_reg_stage
+
+Input ports:
+	clk (input wire): The clock signal that synchronizes the data transfer and internal state updates within the module.
+	res_n (input wire): Activelow reset signal used to initialize the module's internal state.
+	d_in (input wire [DWIDTH1:0]): Primary data input port.
+	d_in_p (input wire [DWIDTH1:0]): Secondary data input port, potentially from a previous stage in a FIFO buffer.
+	p_full (input wire): A signal indicating whether the previous stage in the FIFO buffer is full.
+	n_full (input wire): A signal indicating whether the next stage in the FIFO buffer is full.
+	si (input wire): A control signal indicating whether the current stage should store incoming data.
+	so (input wire): A control signal indicating whether the current stage should output data.
+Output ports:
+	full (output reg): A signal indicating whether the current FIFO stage is full.
+	d_out (output reg [DWIDTH1:0]): The data output port of the module.
+
+
+Implementation:
+The openhmc_sync_fifo_reg_stage module is designed to function as a synchronous FIFO (First-In, First-Out) register stage with additional control logic for managing full conditions and data routing based on external and internal signals. The module operates on a parameterized data width (DWIDTH), allowing for flexibility in the size of data it handles. The core functionality is centered around storing incoming data (d_in or d_in_p) into an internal register (d_out) under specific conditions and managing a full flag that indicates whether the current stage is considered full.
+
+Give me the complete code.
+

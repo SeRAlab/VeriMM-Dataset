@@ -1,0 +1,5 @@
+Create a Verilog module based on the following description. Assume positive clock/clk edge triggering unless otherwise noted.
+You are provided with an eight-bit input vector in[7:0]. We want to compute various relationships between the bits:
+// (1) out_greater: Each bit of this output vector should indicate whether the corresponding input bit is greater than its neighbour to the right (lower index). For example, out_greater[3] should indicate if in[3] is greater than in[2]. Since in[0] has no neighbour to the right, out_greater[0] is not needed.
+// (2) out_equal: Each bit of this output vector should indicate whether the corresponding input bit is equal to its neighbour to the left (higher index). For example, out_equal[4] should indicate if in[4] is equal to in[5]. Since in[7] has no neighbour to the left, out_equal[7] is not needed.
+// (3) out_wrap: Each bit of this output vector should indicate whether the corresponding input bit is equal to its neighbour to the right. For example, out_wrap[1] should indicate if in[1] is equal to in[0]. For this part, treat the vector as wrapping around, so in[0]'s neighbour to the right is in[7].

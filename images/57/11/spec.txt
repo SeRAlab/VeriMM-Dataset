@@ -1,0 +1,8 @@
+Design a shift register that supports both loading and shifting operations. On the rising edge of the clock or when reset is activated, the shift register clears its internal state. If the load signal is high, it loads an 8-bit input data value into the register; otherwise, it performs a left shift, pushing the existing data left and inserting a zero at the least significant bit. The shifted data output reflects the current state of the shift register after each operation.
+module top_module(
+  input clk,
+  input reset,
+  input load,
+  input [7:0] data,
+  output reg [7:0] shifted_data
+);

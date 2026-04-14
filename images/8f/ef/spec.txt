@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+
+Implement a module for a 3-bit binary up/down counter with enable and synchronous reset. The counter should increment or decrement on each clock pulse based on the mode signal when the enable signal is high. When the reset signal is high, the counter should be set to 0.
+
+Module name:  
+    up_down_counter
+
+Input ports：
+    clk: Clock signal.
+    rst: Synchronous reset signal.
+    en: Enable signal.
+    mode: Mode signal (0 for up, 1 for down).
+
+Output ports：
+    count: 3-bit counter output.
+
+Implementation:
+Declare the module up_down_counter with input and output ports as specified in the ports statement.
+Declare a register count to hold the current value of the counter.
+Inside an always block, sensitive to the positive edge of the clk signal, implement the logic for resetting, counting up, and counting down.
+If the reset signal is high, set the count register to 0.
+If the enable signal is high and the reset signal is low, increment the count register by 1 if mode is 0, otherwise decrement the count register by 1.
+
+Give me the complete code.
+
+module up_down_counter(
+    input clk,
+    input rst,
+    input en,
+    input mode,
+    output reg [2:0] count
+);

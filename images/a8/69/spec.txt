@@ -1,0 +1,11 @@
+Design a simple synchronous memory module with a dual functionality of read and write operations. The module has a clock input for synchronization and a reset input to initialize its output. When the select (sel) signal is asserted, it either stores 198 bits of data into one of the 64 memory locations specified by the 6-bit address (if the write signal w is high) or retrieves data from that address (if w is low), providing the output through the 'out' signal. The 'done' output indicates the completion status of the operation. If sel is not asserted, the module maintains the done signal as low, indicating that no operation has taken place.
+module top_module(
+    input clk,
+    input reset,
+    input sel,
+    input [5:0] addr,
+    input w,
+    input [197:0] data,
+    output reg [197:0] out,
+    output reg done
+);

@@ -1,0 +1,8 @@
+Design a data processing module that processes a 4-bit input based on a 2-bit control signal. The module captures the input on the rising edge of the clock or resets to zero when a reset signal is asserted. Depending on the control signal (Ctrl), the module can perform one of four operations: it can either pass the input (Ctrl=00), invert the input (Ctrl=01), swap the two least significant bits with the two most significant bits (Ctrl=10), or perform a circular shift of the bits (Ctrl=11). The processed output is made available on a 4-bit output signal.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] DataIn,
+    input [1:0] Ctrl,
+    output [3:0] DataOut
+);

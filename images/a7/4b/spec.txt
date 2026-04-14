@@ -1,0 +1,8 @@
+Design a variable-duty-cycle clock generator. This module takes a clock input and a reset signal, alongside a 32-bit modulus value and an 8-bit duty cycle value, to produce an output clock signal with adjustable duty cycle. The output clock (out_clk) will be HIGH based on the specified duty cycle proportion of the modulus, resetting seamlessly when the reset signal is activated or when the count wraps around the modulus value.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] modulus,
+    input [7:0] duty_cycle,
+    output reg out_clk
+);

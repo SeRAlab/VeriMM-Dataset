@@ -1,0 +1,6 @@
+Design a circuit to decode PS/2 keyboard data signals. The module captures data bits from a PS/2 interface on the falling edge of the clock and stores them in a data register. When a complete scan code (indicated by a specific bit pattern) is received, it updates the output with the last key pressed and signals that a key was pressed. If the complete code has not been detected, it continues to shift in new data bits.
+module top_module( input clk
+    , input data
+    , output reg key_pressed
+    , output reg [7:0] last_pressed
+    );

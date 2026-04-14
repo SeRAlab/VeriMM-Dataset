@@ -1,0 +1,9 @@
+Implement a delay flip-flop circuit with control features. This module captures the state of input D on the rising edge of the clock (CLK) under normal conditions but can introduce a delay based on the SCD signal when the SCE (Serial Clock Enable) is activated. The RESET_B signal asynchronously resets the output Q and the delay counter to zero. When the delay counter is zero, if SCD is high, it triggers a delayed transition of Q based on the input D. This design effectively allows for controlled timing and state retention in digital applications.
+module top_module(
+    input CLK,
+    input D,
+    input SCD,
+    input SCE,
+    input RESET_B,
+    output reg Q
+);

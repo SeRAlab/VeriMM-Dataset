@@ -1,0 +1,6 @@
+Design a circuit that functions as a 4-to-2 priority encoder, converting a 4-bit binary input into its corresponding 2-bit position output while also producing a Gray code output. The module detects the highest-priority active input, outputs the position of that input through 'pos', and encodes its value in Gray code format to 'gray'. If no inputs are active, it outputs a default position of '00' and a Gray code of '0000'; if all inputs are active, it outputs '11' and '1111'. The logic uses OR, AND, and XOR operations to determine the appropriate outputs based on the input conditions.
+module top_module(
+    input [3:0] in,
+    output reg [1:0] pos,
+    output reg [3:0] gray
+);

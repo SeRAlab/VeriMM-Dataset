@@ -1,0 +1,1 @@
+module top_module(output [3:0] register, input [1:0] reg_no);assign register = 4'b1000>>reg_no;endmodule

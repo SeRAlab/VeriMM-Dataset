@@ -1,0 +1,15 @@
+Design a circuit that extracts and decodes various fields from a 32-bit instruction word, typical in instruction processing for a CPU. The module outputs the opcode, field identifiers, shift information, and immediate value from the instruction, facilitating further instruction handling within a processor or controller. Specifically, it separates components such as the operation code (`fld_opcode`), register fields (`fld_field0`, `fld_field1`, `fld_field2`), shift-related data (`fld_shift_type`, `fld_shamt`), and immediate values (`fld_immediate`) for various instruction formats.
+module top_module(
+    input [31:0] instruction,
+    output reg [5:0] fld_opcode,
+    output reg [1:0] fld_affect,
+    output reg [4:0] fld_field0,
+    output reg [4:0] fld_field1,
+    output reg [4:0] fld_field2,
+    output reg [1:0] fld_shift_type,
+    output reg fld_shift_IR,
+    output reg [4:0] fld_shamt_S,
+    output reg [4:0] fld_shamt_I,
+    output reg [4:0] fld_shamt_R,
+    output reg [15:0] fld_immediate
+);

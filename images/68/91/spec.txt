@@ -1,0 +1,12 @@
+Develop a circuit that combines a parity checker and a multiplexer. The module receives an 8-bit input for parity checking and a 3-bit select input to choose one of six provided 4-bit data inputs. The circuit calculates the odd parity of the 8-bit input and uses the selected 4-bit data input as output, ensuring the output retains the parity bit in the least significant position while conducting a bitwise AND operation with a 4-bit mask. This design effectively integrates parity validation with flexible data selection functionality.
+module top_module(
+    input [7:0] in,  // 8-bit input for parity checker
+    input [2:0] sel, // Select input for multiplexer
+    input [3:0] data0, // 4-bit input for multiplexer
+    input [3:0] data1, // 4-bit input for multiplexer
+    input [3:0] data2, // 4-bit input for multiplexer
+    input [3:0] data3, // 4-bit input for multiplexer
+    input [3:0] data4, // 4-bit input for multiplexer
+    input [3:0] data5, // 4-bit input for multiplexer
+    output reg [3:0] out // 4-bit output from functional module
+);

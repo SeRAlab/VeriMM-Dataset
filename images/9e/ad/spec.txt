@@ -1,0 +1,7 @@
+Design a circuit that determines whether to clamp a signal based on its pre-integration and saturation values. The module takes two signed 36-bit inputs, `preIntegrator` and `preSat`, along with a `saturated` control signal. It checks if both input values are less than or equal to zero; if they are, along with the `saturated` signal being asserted, the output `Clamp` is set to high. Otherwise, `Clamp` outputs low. This effectively implements a clamping mechanism to limit dynamic range based on specific conditions.
+module top_module(
+  input signed [35:0] preIntegrator,
+  input signed [35:0] preSat,
+  input saturated,
+  output Clamp
+);

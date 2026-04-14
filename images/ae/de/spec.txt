@@ -1,0 +1,9 @@
+Design a vending machine controller that operates based on user inputs, handling the states of item selection, payment processing, and item dispensing. In the IDLE state, it waits for the user to select an item, which sets the price based on the selection. The SELECTION state waits for sufficient payment; if enough is inserted, it dispenses the selected item and calculates any change to be returned. Finally, in the DISPENSING state, the module completes the transaction and returns to the IDLE state, resetting prices and inserted money.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] selection,
+  input [7:0] payment,
+  output reg [3:0] dispensing,
+  output reg [7:0] change
+);

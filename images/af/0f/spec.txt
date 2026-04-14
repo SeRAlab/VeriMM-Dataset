@@ -1,0 +1,7 @@
+Design a two-stage synchronous shift register that captures input data on the rising edge of the clock. When the reset signal is activated, it initializes both stages to zero. The first stage stores the incoming 8-bit data, and the second stage holds the value of the first stage, effectively allowing for delayed data output, which is provided on the `data_out` port.
+module top_module(
+    input clk,
+    input reset,            // Synchronous reset
+    input [7:0] data_in,
+    output [7:0] data_out
+);

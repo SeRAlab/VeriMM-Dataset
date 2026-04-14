@@ -1,0 +1,21 @@
+Please act as a professional Verilog designer.
+
+Implement a 12-bit linear feedback shift register (LFSR) with an asynchronous reset. The LFSR should shift its value on each positive clock edge and use a feedback polynomial of x^12 + x^11 + x^10 + x^4 + 1. If the reset signal is high, the LFSR should reset to a non-zero seed value immediately, regardless of the clock signal.
+
+Module name:
+    lfsr
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    seed: 12-bit non-zero seed value for reset.
+
+Output ports:
+    out: Output 12-bit LFSR value.
+
+Implementation:
+LFSR Logic:
+The module includes a 12-bit register, out, to store the current LFSR value.
+On the positive edge of the clock signal (clk), the module shifts its value and applies the feedback polynomial. If the reset signal (rst) is high, indicating a reset condition, the LFSR value is set to the seed value immediately.
+
+Give me the complete code.

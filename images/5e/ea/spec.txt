@@ -1,0 +1,6 @@
+Design a synchronous circuit that transfers a program counter (PC) value through a series of register stages. On each rising edge of the CLOCK signal, the module captures the input PC, increments it by 4, and passes it through four pipeline registers, ultimately outputting the value from the last register stage (pc4) as the final pcout output. This design implements a form of pipelining for PC update in a processor architecture, allowing for the delay and sequential updating of the PC value for subsequent instruction fetches.
+module top_module(
+    input CLOCK,
+    input signed [31:0] pc,
+    output signed [31:0] pcout
+);

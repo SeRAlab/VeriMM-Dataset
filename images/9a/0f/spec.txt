@@ -1,0 +1,13 @@
+Design a clock and data management module that produces multiple clock signals and processes input data. The module takes three clock inputs (i_clk0, i_clk1, i_clk2) and a single data input (i_data). It generates an output data signal (o_data) that is registered based on i_clk0, delaying the data by one clock cycle. It also generates three distinct output clock signals: o_clk, which toggles high for half of a 10-cycle count (5 cycles); o_clk2, which toggles high for half of a 15-cycle count (7 cycles); and o_clk3, which is a one-cycle pulse that occurs every three cycles of i_clk0. This design effectively combines data sampling and clock signal generation, suitable for synchronizing operations in a digital system.
+module top_module(
+  input [2:0] i_clks,
+  input        i_clk0,
+  input        i_clk1,
+  input        i_clk2,
+  input        i_data,
+
+  output reg   o_data,   // Change wire to reg
+  output reg   o_clk,    // Change wire to reg
+  output reg   o_clk2,   // Change wire to reg
+  output reg   o_clk3    // Change wire to reg
+);

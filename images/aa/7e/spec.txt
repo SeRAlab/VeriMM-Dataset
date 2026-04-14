@@ -1,0 +1,8 @@
+Design a digital circuit to implement a signed 16-bit Booth multiplier. The module takes two signed 16-bit inputs, `a` and `b`, and computes their product, storing the result in a 32-bit output register `p`. The multiplication process uses a sequential algorithm that leverages addition and bit-shifting based on the current state of a two-bit control signal `q`. It initializes and resets the internal registers on the rising edge of a clock signal, and the multiplication progresses on subsequent clock cycles until a complete 15 iterations are completed, at which point the final product is output. This design efficiently handles signed multiplication through bitwise operations and avoids the direct use of multiplication hardware.
+module top_module(
+  input clk,
+  input reset,
+  input signed [15:0] a,
+  input signed [15:0] b,
+  output reg signed [31:0] p
+);

@@ -1,0 +1,6 @@
+Develop a circuit that converts a 4-bit Binary-Coded Decimal (BCD) input into a 7-segment display output. The module takes a 4-bit BCD value and, upon receiving a clock signal, processes this value through two pipeline stages before determining the appropriate 7-segment representation. The output will correspond to numbers 0-9, where each unique BCD input value is mapped to its respective 7-segment code. If the input is outside the valid BCD range (i.e., 10-15), the display will show an error state (all segments off).
+module top_module(
+    input clk,          // Added clk as an input
+    input [3:0] BCD,
+    output reg [6:0] SEG
+);

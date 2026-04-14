@@ -1,0 +1,8 @@
+Design a comparator module that generates a 32-bit output based on specific control signals. The module evaluates inputs representing zero (Z), overflow (V), and negative (N) conditions, and utilizes a 3-bit control signal (ctrl) to determine the output. Depending on the value of ctrl, the least significant bit of dout is set based on various combinations of the inputs and their logical conditions, with the remaining bits of dout always held to zero. This functionality can be applied in scenarios requiring status flag interpretation in a processor or digital system.
+module top_module(
+    output reg [31:0] dout,
+    input Z,  
+    input V,  
+    input N,  
+    input [3:1] ctrl
+);

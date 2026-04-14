@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+
+Implement a 3-bit binary counter module that counts from 0 to 7 and wraps around to 0. The count should increment on every rising edge of the clock signal.
+
+Module name:
+    binary_counter_3bit
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+
+Output ports:
+    count: 3-bit output representing the current binary count value.
+
+Implementation:
+The module includes a 3-bit register, count, which is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the count register is cleared to 0.
+On every rising edge of the clock, the count is incremented by 1. When the count reaches 7, it wraps around to 0.
+
+Give me the complete code.

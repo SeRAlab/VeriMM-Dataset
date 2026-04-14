@@ -1,0 +1,6 @@
+Design a digital module that implements both Decimation and Upsampling processes, operating on a fixed number of input signals. This module takes an n-bit input signal and a k-bit coefficient, performing multiplication in the Decimation block to filter and downsample the input signal into m-bit output signals. It then upsamples the original input, introducing zeroes between the samples, before multiplying by the same coefficients in the DUC (Digital Upconverter) block. Ultimately, the module outputs filtered results, which can be selected based on desired operational characteristics, enabling efficient signal processing for applications such as communication systems.
+module top_module(
+  input [n-1:0] in,
+  input [k-1:0] coeff,
+  output [m-1:0] out
+);

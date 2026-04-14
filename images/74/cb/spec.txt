@@ -1,0 +1,11 @@
+Design a FIFO (First-In, First-Out) buffer with RS-232 interfacing capabilities. This module utilizes an 8-bit wide memory array to store input data, managed by write (shift_in) and read (shift_out) operations controlled by a clock signal. It keeps track of the number of used and free slots in the buffer and allows for input data to be passed directly to the output when the buffer is empty. On reset, the module initializes pointers and slot counts, while during operation, it updates its state based on the availability of free or used slots, ensuring efficient data handling for serial communication applications.
+module top_module(
+    input clk,
+    input resetn,
+    input [7:0] din,
+    output [7:0] dout,
+    input shift_in,
+    input shift_out,
+    output reg [7:0] used_slots,
+    output reg [7:0] free_slots
+);

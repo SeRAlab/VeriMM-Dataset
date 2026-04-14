@@ -1,0 +1,17 @@
+
+Create a Verilog module that implements a simple Kalman filter for sensor fusion. The module should take in two sensor measurements (z1 and z2), along with their respective uncertainties (r1 and r2), and output the fused measurement (z_fused) and its uncertainty (r_fused). Implement the basic equations for the Kalman filter update step.
+
+Inputs:
+- z1: Sensor 1 measurement (input)
+- r1: Sensor 1 measurement uncertainty (input)
+- z2: Sensor 2 measurement (input)
+- r2: Sensor 2 measurement uncertainty (input)
+
+Outputs:
+- z_fused: Fused measurement (output)
+- r_fused: Fused measurement uncertainty (output)
+
+The Kalman filter equations to use are:
+1. Kalman gain, K = r1 / (r1 + r2)
+2. Fused measurement, z_fused = z1 + K * (z2 - z1)
+3. Fused uncertainty, r_fused = (1 - K) * r1

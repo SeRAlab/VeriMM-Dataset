@@ -1,0 +1,11 @@
+Design a simple calculator module that performs basic arithmetic operations. It takes two 8-bit inputs (a and b), a 2-bit operation select signal (op), and a start signal to trigger the calculation. On the rising edge of the clock, if reset is asserted, it clears the result and done flags. If the start signal is active, the module performs the operation defined by op—addition, subtraction, multiplication, or division—and sets the done output high to indicate completion. The result of the operation is stored and made available on the result output.
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] a,
+    input [7:0] b,
+    input [1:0] op,
+    input start,
+    output done,
+    output [7:0] result
+);

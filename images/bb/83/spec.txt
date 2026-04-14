@@ -1,0 +1,8 @@
+Design a circuit that functions as an 8-bit wide D-type flip-flop with dual data inputs and a selection mechanism. The module takes two 8-bit inputs, d1 and d2, and a selection signal, sel. On the negative edge of the clock (clk), it samples either d1 or d2 based on the value of sel—if sel is 0, it captures d1, and if sel is 1, it captures d2. The captured value is then stored in the output register, q, which reflects the last selected input.
+module top_module(
+    input clk,
+    input [7:0] d1,
+    input [7:0] d2,
+    input sel,
+    output [7:0] q
+);

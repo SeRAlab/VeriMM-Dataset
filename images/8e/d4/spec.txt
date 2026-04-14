@@ -1,0 +1,12 @@
+Design a 16-bit wide, 64-deep first-in-first-out (FIFO) memory module. The FIFO uses separate write and read clocks, allowing for asynchronous operations. Write requests (wr_req) allow data to be stored in the FIFO, while read requests (rd_req) retrieve data from it. The FIFO indicates its status with two output signals, 'empty' when there are no entries to read, and 'full' when it cannot accept more data. A clear signal (clr) resets both the write and read pointers to zero, flushing the FIFO. This design supports efficient data buffering for various applications in digital circuits.
+module top_module(
+    wr_clk,
+    rd_clk,
+    wr_req,
+    rd_req,
+    clr,
+    data_in,
+    data_out,
+    empty,
+    full
+);

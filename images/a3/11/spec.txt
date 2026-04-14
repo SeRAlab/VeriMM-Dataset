@@ -1,0 +1,9 @@
+Design a counter module that counts from 0 to 5, utilizing a 4-bit register to store the count. The module operates with a clock and a reset signal, where it resets to 0 on receiving a reset signal. The count increments on each clock cycle, but only if the counter is enabled (io_enable). When the counter reaches its maximum value of 5, it wraps around back to 0, indicated by the output signal io_done being asserted. The current count value is provided on the io_out output. This design effectively implements a finite state machine for counting operations within a defined range.
+module top_module(
+  input         clock,
+  input         reset,
+  input  [31:0] io_max,
+  output [31:0] io_out,
+  input         io_enable,
+  output        io_done
+);

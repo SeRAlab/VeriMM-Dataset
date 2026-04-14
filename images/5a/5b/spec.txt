@@ -1,0 +1,12 @@
+Design a D latch that captures and holds a data input (D) based on an enable signal (GATE), while supporting active-low reset (RESET_B). When GATE is high, the latch outputs the stored value on Q and its complement on Q_N. The circuit is designed for low-power operation with additional power and ground connections (VPWR, VGND, VPB, VNB) to ensure proper functionality within a specific technology node (sky130_fd_sc_lp).
+module top_module(
+    input D,
+    input RESET_B,
+    input GATE_N,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB,
+    output reg Q,
+    output reg Q_N
+);

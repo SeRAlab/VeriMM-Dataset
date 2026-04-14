@@ -1,0 +1,8 @@
+Design a memory protection module that securely manages access to an n-bit wide memory array with m locations. This module uses a password for both read and write operations, allowing data only to be stored or retrieved if the input matches the predefined password. Additionally, it maintains a checksum to ensure data integrity; if the checksum does not match the output during a read operation, the module outputs zero instead of the stored data. The design provides secure and reliable access control for sensitive data in a memory circuit.
+module top_module(
+  input [n-1:0] in,
+  input [m-1:0] addr,
+  input clk,
+  input we,
+  output reg [n-1:0] out // Change output to reg type
+);

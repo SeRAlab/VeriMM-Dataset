@@ -1,0 +1,10 @@
+Design a clock controller module that manages various enable signals based on a counting mechanism driven by an input clock. The module counts up to 2000 with a register, resetting to 1 upon a reset signal. It generates four output enable signals: one general enable (`enb`), which is always active when the clock is enabled, and two phase-specific enables (`enb_1_2000_0` and `enb_1_2000_1`) that activate based on specific counting conditions within the 2000-count cycle. The output signals can be utilized to control other peripherals or components in the system based on the clock's phases and enable conditions.
+module top_module(
+           CLK_IN,
+           reset,
+           clk_enable,
+           enb,
+           enb_1_1_1,
+           enb_1_2000_0,
+           enb_1_2000_1
+          );

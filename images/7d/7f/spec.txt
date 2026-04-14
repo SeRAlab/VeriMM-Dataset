@@ -1,0 +1,9 @@
+Develop a Mealy state machine that responds to two input signals, `a` and `b`, to generate two outputs, `x` and `y`. The state machine transitions between three states (S0, S1, S2) based on the inputs, with S0 being the initial reset state. The outputs `x` and `y` are determined by the current state: in S0 both outputs are LOW, in S1 output `x` is HIGH while `y` is LOW, and in S2 output `x` is LOW while `y` is HIGH. The state transitions and outputs are designed to react to `a` and `b`, forming a finite state machine that operates on the rising edge of the clock signal or resets to S0 when the reset input is asserted.
+module top_module(
+  input clk,
+  input reset,
+  input a,
+  input b,
+  output reg x,
+  output reg y
+);

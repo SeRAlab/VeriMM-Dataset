@@ -1,0 +1,7 @@
+Design a dual-register address generator that operates on a clock signal with an enable input. The module features an 8-bit low byte (AL) and an 8-bit high byte (AH) that can be manipulated based on control signals derived from a 5-bit operation code. The functionality includes selecting inputs for AL through a multiplexer controlled by the MuxCtrl signal and performing arithmetic operations, with a carry output indicating overflow. AH can be updated based on specific operation codes, including retaining its value, resetting to zero, or adding with AL under certain conditions. The overall design serves to generate a 16-bit address output (AX) for further processing in a digital circuit.
+module top_module(input clk, input ce,
+                        input [4:0] Operation, 
+                        input [1:0] MuxCtrl,
+                        input [7:0] DataBus, T, X, Y,
+                        output [15:0] AX,
+                        output Carry);

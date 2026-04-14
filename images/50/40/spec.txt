@@ -1,0 +1,9 @@
+Design a circuit that calculates a weight value based on the horizontal and vertical distance from a specified center point. The module takes a pixel clock signal and the current horizontal and vertical counts as inputs, along with specified center coordinates. The difference between the pixel counts and the center coordinates is computed as absolute values for both dimensions. Based on these differences, the circuit assigns a four-bit weight output, ranging from 0 to 15, depending on specific distance thresholds; closer proximity yields higher weight values while greater distances lead to lower weights. This design is potentially used in image processing applications to emphasize or de-emphasize pixel importance based on their spatial relationship to a defined region.
+module top_module( 
+    input PCLK, 
+input [11:0] VtcHCnt, 
+input [10:0] VtcVCnt, 
+input [11:0]    center_h, 
+input [10:0]   center_v,  
+ output reg[3:0]  weight 
+);

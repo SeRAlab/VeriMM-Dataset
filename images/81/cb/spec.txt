@@ -1,0 +1,11 @@
+Design a module that performs the SUBLEQ (subtract and branch if less than or equal to zero) operation, commonly used in low-level programming and theoretical computing models. This circuit takes an instruction as input and, upon receiving a clock pulse, processes the instruction to determine if the result of a subtraction operation between two operands (S and D) is less than or equal to zero. If true, it updates the instruction pointer (oIP) to a branch target (B); otherwise, it increments the instruction pointer by 4. Additionally, it outputs the operands (oA and oB) and the next instruction pointer (oNextIP) for further processing. The module can be reset to initialize all outputs to zero.
+module top_module(
+    input iClock,
+    input iReset,
+    input [31:0] iInstruction,
+    output reg [31:0] oIP,
+    output reg [31:0] oA,
+    output reg [31:0] oB,
+    output reg oJump,
+    output reg [31:0] oNextIP
+);

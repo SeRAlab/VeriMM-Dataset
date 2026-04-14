@@ -1,0 +1,16 @@
+Design a multi-input/output module that aggregates and processes several input signals. It takes three 5-bit inputs (i_0, i_1, i_2), two 2-bit inputs (i_3, i_4), and one 1-bit input (i_5), and outputs three 7-bit wide signals (o_0, o_1, o_2) alongside two 1-bit outputs (o_3, o_4). The module features a reset mechanism that initializes all registered inputs to zero. The output o_0 concatenates the three 5-bit inputs, while o_1 combines the 2-bit inputs and the 1-bit input. Output o_2 is a further concatenation of o_0 and o_1. The output o_3 is asserted high when i_3 equals '11' and i_4 equals '11', while o_4 is asserted high when both o_3 and the input i_5 are also high, thereby functioning effectively as a conditional signal generator based on the control conditions provided.
+module top_module(
+  input [4:0] i_0,
+  input [4:0] i_1,
+  input [4:0] i_2,
+  input [1:0] i_3,
+  input [1:0] i_4,
+  input i_5,
+  input reset,
+  input clk,  // Added clk input
+  output [6:0] o_0,
+  output [6:0] o_1,
+  output [6:0] o_2,
+  output o_3,
+  output o_4
+);

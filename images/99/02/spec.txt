@@ -1,0 +1,9 @@
+Design a read pointer module for a FIFO (First In, First Out) buffer that manages read operations. The module uses a clock and an active-low reset signal to control the read pointer state, incrementing it on each clock cycle when the FIFO is not empty and a read request is active. It generates an output read pointer (rptr) indicating the current read position in the FIFO and a signal (fifo_rd) to indicate when a read is allowed. Additionally, the module includes a debugging feature that logs the state of the inputs and outputs at each clock cycle.
+module top_module(
+    input clk,
+    input rst_n,
+    input rd,
+    input fifo_empty,
+    output reg [4:0] rptr,
+    output reg fifo_rd
+);

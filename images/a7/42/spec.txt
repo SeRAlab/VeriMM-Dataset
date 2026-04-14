@@ -1,0 +1,34 @@
+Please act as a professional verilog designer.
+
+Implement the design of a 32-bit ALU (Arithmetic Logic Unit) that can perform addition, subtraction, AND, OR, and XOR operations. The module includes a clock signal (clk), reset signal (rst_n), and operation selection signal (op_sel). The ALU takes two 32-bit input operands (a and b) and produces a 32-bit result (result). There is also a zero flag (zero) to indicate if the result is zero.
+
+Module name:
+    alu_32bit
+
+Input ports:
+    clk: Chip clock signal.
+    rst_n: Active-low reset signal. Defined as 0 for chip reset and 1 for reset signal inactive.
+    op_sel: Operation selection signal with a data width of 3 bits.
+    a: First 32-bit input operand.
+    b: Second 32-bit input operand.
+
+Output ports:
+    result: 32-bit result of the ALU operation.
+    zero: Flag signal indicating whether the result is zero.
+
+Implementation:
+Data bit control:
+On every positive edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the result register (result_r) is updated.
+If the reset signal (rst_n) is low, indicating a reset condition, the result register (result_r) is reset to 0.
+The ALU performs the operation based on the op_sel value as follows:
+    000: Addition (result = a + b)
+    001: Subtraction (result = a - b)
+    010: AND (result = a & b)
+    011: OR (result = a | b)
+    100: XOR (result = a ^ b)
+Zero flag generation:
+On every positive edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the zero flag (zero_r) is updated.
+If the reset signal (rst_n) is low, the zero flag (zero_r) is reset to 0.
+The zero flag is set to 1 if the result is zero.
+
+Give me the complete code.

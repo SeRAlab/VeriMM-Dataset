@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+
+Implement a module for a 5-bit shift register with parallel load and shift left functionality. The register should load the input data when the load signal is high. When the shift signal is high, the register should shift its contents left by one bit on each positive edge of the clock signal. The register should reset to 0 when the reset signal is active (rst_n = 0).
+
+Module name:
+    shift_register
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst_n: Reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    load: Load signal. When high, the register loads the input data.
+    shift: Shift signal. When high, the register shifts its contents left by one bit.
+    data_in: 5-bit input data to be loaded into the register.
+
+Output ports:
+    data_out: 5-bit output representing the current contents of the register.
+
+Implementation:
+On every positive clock edge, if the reset signal (rst_n) is low, the register value (data_out) should be set to 0. If the reset signal is high and the load signal is high, the register should load the input data (data_in). If the load signal is low and the shift signal is high, the register should shift its contents left by one bit.
+
+Give me the complete code.

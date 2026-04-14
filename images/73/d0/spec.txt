@@ -1,0 +1,8 @@
+Develop a round-robin arbiter for five request inputs (req[4:0]) that grants access to a shared resource by outputting a 3-bit grant signal (gnt[2:0]). The arbiter operates synchronously with the system clock (sys_clk) and is reset asynchronously. It cycles through the states based on the current grant status, transitioning to the next request in line when the current request is no longer asserted, ensuring fair access to the resource while preventing conflicts and starvation among competing requests.
+module top_module(
+	input sys_clk,
+	input sys_rst,
+	
+	input [4:0] req,
+	output [2:0] gnt
+);

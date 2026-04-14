@@ -1,0 +1,7 @@
+Implement a light control system that adjusts the brightness of an output signal based on ambient light sensor (als) readings compared to a predefined threshold (dll). When the enable input (en) is active, the system computes the difference between als and dll, shifts this value right by four bits, and limits the output to a maximum of 255 (8'b11111111) to prevent overflow. If the ambient light is less than or equal to the threshold, the output brightness is set to zero. If the enable input is not active, the output also remains zero.
+module top_module(
+  input [11:0] als,
+  input [11:0] dll,
+  input en,
+  output reg [7:0] dim
+);

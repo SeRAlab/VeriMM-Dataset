@@ -1,0 +1,39 @@
+Implement the Verilog module based on the following description.
+Given the following Mealy state machine with 2 input (clk, reset) and 2 outputs (out1, out2). Unless otherwise stated in the diagram below, assume outputs are 0 and inputs are don't cares.
+
+The state machine has the following states and their corresponding outputs: 
+1. state Q0 (out1=0, out2=0).
+2. state Q1 (out1=0, out2=1).
+3. state Q2 (out1=1, out2=0).
+4. state Q3 (out1=1, out2=1).
+
+State transitions:
+1. From state Q0: If clk = 0, then transition to state Q1. If clk = 1, then transition to state Q2.
+2. From state Q1: If clk = 0, then transition to state Q3. If clk = 1, then transition to state Q0.
+3. From state Q2: If clk = 0, then transition to state Q0. If clk = 1, then transition to state Q3.
+4. From state Q3: If clk = 0, then transition to state Q2. If clk = 1, then transition to state Q1.
+
+At reset, the state machine starts in state "Q0". Derive next-state logic equations and output logic equations by inspection assuming the following one-hot encoding is used: (Q0, Q1, Q2, Q3) = (4'b0001, 4'b0010, 4'b0100, 4'b1000)
+
+Derive state transition and output logic equations by inspection assuming a one-hot encoding. Implement only the state transition logic and output logic (the combinational logic portion) for this state machine.
+
+Write code that generates the following equations:
+
+- Q0_next -- next-state logic for state Q0
+- Q1_next
+- Q2_next
+- Q3_next
+- out1 -- output logic
+- out2
+
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] state,    // 4-bit one-hot current state
+    output reg Q0_next,
+    output reg Q1_next,
+    output reg Q2_next,
+    output reg Q3_next,
+    output reg out1,
+    output reg out2
+ );

@@ -1,0 +1,9 @@
+Design a Phase-Locked Loop (PLL) and a Delay-Locked Loop (DLL) circuit that generates two synchronized clock signals: a PLL output clock (pll_clk) and a DLL output clock (dll_clk). The module receives a reference clock (ref_clk) and a feedback clock (feedback_clk) while offering reset and enable controls. It utilizes a phase accumulator to maintain phase alignment, a phase detector to quantify phase discrepancies, and a control voltage to govern a Voltage-Controlled Oscillator (VCO). The circuit is capable of dynamically adjusting the generated clocks based on input frequencies defined by parameters, enabling frequency doubling and phase synchronization as per application requirements.
+module top_module(
+  input ref_clk,
+  input feedback_clk,
+  input reset,
+  input enable,
+  output pll_clk,
+  output dll_clk
+);

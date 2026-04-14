@@ -1,0 +1,8 @@
+Construct a circuit featuring a bank of eight D flip-flops that store individual bits from an 8-bit input `d` on the falling edge of a clock signal. A 2-to-1 multiplexer selects between the outputs of the first two flip-flops based on the combined state of two select signals, `sel_b1` and `sel_b2`. The selected output from the multiplexer is then captured on the rising edge of the clock and assigned to the output `out_always`. This design facilitates controlled data storage and retrieval, allowing for dynamic selection of stored data.
+module top_module(
+    input clk,
+    input [7:0] d,
+    input sel_b1,
+    input sel_b2,
+    output reg out_always
+);

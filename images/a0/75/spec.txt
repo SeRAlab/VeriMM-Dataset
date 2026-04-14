@@ -1,0 +1,9 @@
+Design a Verilog module based on the following description. Assume the signals are triggered by the positive edge of the clock/clk.
+You are given an 8-bit input vector a[7:0]. Perform the following operations on the input vector: 
+// (1) sum_and: Each bit of this output vector should be the AND result of the corresponding input bit and its neighbor to the left. For example, sum_and[1] should indicate if a[1] and a[0] are both 1. a[0] has no neighbor to the left, so sum_and[0] should be 0. 
+// (2) sum_or: Each bit of this output vector should be the OR result of the corresponding input bit and its neighbor to the right. For example, sum_or[5] should indicate if a[5] or a[6] is 1. a[7] has no neighbor to the right, so sum_or[7] should be 0.
+
+module top_module (
+	input [7:0] a,
+	output [7:0] sum_and,
+	output [7:0] sum_or);

@@ -1,0 +1,7 @@
+Design a pulse synchronizer that transfers a single pulse input from an asynchronous clock domain (`clk_in`) to a synchronous clock domain (`clk_out`). The module captures the `pulse_in` signal and generates a synchronized output pulse (`pulse_out`) that aligns with the rising edges of `clk_out`. The design employs double-register synchronization to mitigate metastability issues, ensuring that the output pulse accurately reflects the presence of the input pulse while operating under different clock domains.
+module top_module(
+    input wire clk_in,
+    input wire pulse_in,
+    input wire clk_out,
+    output wire pulse_out
+);

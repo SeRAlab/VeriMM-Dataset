@@ -1,0 +1,10 @@
+Develop a clock divider circuit that operates based on a primary clock input, producing two outputs: a divided clock signal (clk_div) and a secondary clock indicator (clkdiv). The module counts clock cycles using two separate 28-bit registers, counter and cter. The counter increments on the rising edge of the clock unless a reset (rst) or stop condition is active, while cter increments on every clock cycle or when stop is asserted. The clk_div output is derived from the 16th bit of the counter, resulting in a slower clock signal, and clkdiv is generated from the 11th bit of the cter, providing a secondary clock signal for timing purposes or other logic.
+module top_module(
+    input clk,
+    input rst,
+    input start,
+    input stop,
+    output clk_div,
+    output clkdiv
+
+    );

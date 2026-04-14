@@ -1,0 +1,11 @@
+Design a forwarding unit for a pipelined processor that determines the source of operands for the ALU based on register dependencies. The module analyzes the source registers (rs and rt) against the destination registers (rd_EX and rd_MEM) of previous instructions and their respective write signals (RegWrite_EX and RegWrite_MEM). It generates 2-bit control signals (ALUScrA and ALUScrB) to indicate whether to use the value from the EX stage, the MEM stage, or the original source registers, thereby preventing hazards and improving data flow efficiency during execution.
+module top_module(
+    input [4:0] rs,
+	 input [4:0] rt,
+	 input [4:0] rd_EX,
+	 input [4:0] rd_MEM,
+	 input RegWrite_EX,
+	 input RegWrite_MEM,
+	 output reg [1:0] ALUScrA,
+	 output reg [1:0] ALUScrB
+	 );

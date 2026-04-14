@@ -1,0 +1,9 @@
+Design a synchronous logic circuit that evaluates three input signals (a, b, c) on the rising edge of a clock signal (clk). The output consists of two registers, y and z, which are assigned based on the combination of input states. Specifically, when all inputs are high (111), y is set to LOW and z to HIGH. If two inputs are high (110), y is set to HIGH and z remains HIGH. For the case where only the highest bit is high (100), both outputs reset to LOW. For all other input combinations, y is reset to LOW, and z is assigned an undefined state. This module acts as a state machine that responds to specific input conditions, managing output states accordingly.
+module top_module(
+    input wire a,
+    input wire b,
+    input wire c,
+    output reg y,
+    output reg z,
+	 input wire clk
+    );

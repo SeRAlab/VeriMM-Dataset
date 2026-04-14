@@ -1,0 +1,8 @@
+Design a 64-bit shift register with configurable shift operations based on input control signals. Upon receiving a clock pulse, if the load signal is asserted, the register loads the input data into its output. If load is not asserted and the enable (ena) signal is active, the register performs a shift operation determined by the 2-bit amount input: a left logical shift by 1 bit, a left logical shift by 8 bits, a circular left shift, or an arithmetic left shift by 8 bits, depending on the value of amount. If neither load nor ena is asserted, the output retains its previous value.
+module top_module(
+    input clk,
+    input load,
+    input ena,
+    input [1:0] amount,
+    input [63:0] data,
+    output reg [63:0] q);

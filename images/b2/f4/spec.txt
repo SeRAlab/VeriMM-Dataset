@@ -1,0 +1,13 @@
+Design a synchronous circuit that operates on a clock signal to accumulate and store the results of several input probes. Specifically, it adds the 64-bit wide inputs `probe0` and `probe1` to produce a 64-bit register output `reg1`. Additionally, it sums two 1-bit probes, `probe2` and `probe3`, storing the result in a 1-bit register `reg2`, and combines a 1-bit probe `probe4` with a 4-bit probe `probe5`, storing the result in a 4-bit register `reg3`. The output `probe0` is overwritten by a concatenation of `reg1`, `reg2`, and `reg3`, effectively creating an accumulating register structure that integrates various probe inputs on each clock cycle.
+module top_module(
+    input clk,
+    input [63:0] probe0,
+    input [63:0] probe1,
+    input [0:0] probe2,
+    input [0:0] probe3,
+    input [0:0] probe4,
+    input [3:0] probe5,
+    output reg [63:0] out_probe0,
+    output reg [0:0] out_probe2,
+    output reg [3:0] out_probe3
+);

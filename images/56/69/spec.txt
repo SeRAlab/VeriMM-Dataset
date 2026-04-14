@@ -1,0 +1,8 @@
+Design a 4-bit parallel-in serial-out (PISO) shift register. The module takes a 4-bit parallel input and shifts the bits out serially on each clock cycle when enabled. If the `reset` signal is active, the shift register initializes to zero. When `shift_enable` is asserted, the most significant bit (MSB) is outputted while new data is shifted into the least significant bit (LSB) from the parallel input, effectively allowing for serial transmission of the input data.
+module top_module(
+    input [3:0] parallel_in,
+    input clk,
+    input shift_enable,
+    input reset,
+    output serial_out
+);

@@ -1,0 +1,10 @@
+Design a sequential circuit that performs binary multiplication of two 8-bit numbers, `a` and `b`. The module is controlled by a clock signal (`clk`) and an active-low reset signal (`rst_n`). Upon receiving a start signal, it iteratively shifts the multiplier `b` based on the bits of the multiplicand `a`, accumulating the result in a 16-bit wide output register (`result`). The `done` output indicates the completion of the multiplication process. This implementation effectively mimics the shift-and-add multiplication technique.
+module top_module(
+  input rst_n,
+  input clk,
+  input start,
+  input [7:0] a,
+  input [7:0] b,
+  output reg done,
+  output reg [15:0] result
+);

@@ -1,0 +1,9 @@
+Design a logic circuit that generates an output signal based on multiple conditions. The output signal is set to HIGH when an active low reset (async_reset_neg) is deactivated while the feedback clock (fb_clk) is HIGH, the adg_int input is non-negative, the feedback tag (fb_tag_r) is active, and the feedback write enable (fb_we_r) is inactive. All other conditions result in a LOW output. This functionality effectively acts as a conditional state indicator based on specific input signals.
+module top_module(
+  input async_reset_neg,
+  input fb_clk,
+  input [31:0] adg_int,
+  input fb_tag_r,
+  input fb_we_r,
+  output reg output_signal
+);

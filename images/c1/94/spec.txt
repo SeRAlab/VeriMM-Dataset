@@ -1,0 +1,38 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform data manipulation and control operations for an LED display or indicator system. Its primary functions include:
+
+Data Handling: It accepts a 15-bit input data (`dataIn`), where the lower 14 bits can be stored internally and optionally outputted, and the 15th bit (`dataIn[14]`) is used to control a mode of operation (interrupt usage).
+Mode Control: Based on the input data, the module can operate in two modes normal data display mode and interrupt mode. In interrupt mode, the output is determined by an 8-bit IP address rather than the stored data.
+Acknowledgment Signal: It generates an acknowledgment signal (`Ack`) upon write or read operations, indicating the completion of the operation.
+Output Generation: It outputs a 14-bit data (`dataOut`) which is either the stored data or a combination of the IP address and zeros, depending on the mode of operation. Additionally, it controls an LED (or a set of LEDs) through its 14-bit `LED` output, which mirrors the `dataOut` content.
+
+This module is intended to be a part of a larger system where data manipulation and signaling are crucial, such as in embedded systems, microcontroller interfaces, or digital signal processing applications.
+
+Module name:  
+	LED
+
+Input ports:
+	clock (input): A clock signal that drives the internal logic of the module, synchronizing data handling and output operations.
+	reset (input): A reset signal that initializes the module, clearing the stored data and resetting the mode of operation.
+	dataIn (input, 15 bits): The input data signal, where the lower 14 bits are used for data storage and output, and the 15th bit controls the interrupt mode.
+	IP (input, 8 bits): An 8bit IP address used in the interrupt mode to generate part of the LED output.
+	Write (input): A control signal that triggers the storage of dataIn into the module.
+	Read (input): A control signal that, along with Write, is used to generate the acknowledgment signal.
+Output ports:
+	dataOut (output, 14 bits): The output data signal, which mirrors the stored data or a combination of the IP address and zeros, depending on the mode.
+	Ack (output, reg): An acknowledgment signal that indicates the completion of a write or read operation.
+	LED (output, 14 bits): The LED control signal, which is identical to dataOut and is used to drive an LED display or indicator.
+
+
+Implementation:
+The RTL module named LED is designed to manage data inputs and outputs with specific functionalities tied to LED control, based on the input conditions it receives. The module operates under a synchronous design, with all major operations triggered by the rising edge of a clock signal. The design incorporates both combinational and sequential logic elements to perform its tasks.
+Sequential Logic:
+Data and UseInterrupts Registers: At every positive edge of the clock, if the reset signal is active, the 14-bit data register is reset to 0, and the useInterrupts register is reset to 0. If the reset is not active and the Write signal is high, the data register is loaded with the lower 14 bits of dataIn, and the useInterrupts register captures the 15th bit of dataIn. If neither reset is active nor Write is high, both registers retain their previous values. This behavior ensures that the module can update its internal state based on external inputs while providing a mechanism for reset.
+Ack Register: The Acknowledgment (Ack) register is also updated on every positive clock edge. It is reset to 0 when the reset signal is active. Otherwise, it is set high if either Write or Read operations are requested, indicating that an operation is being acknowledged.
+Combinational Logic:
+LED Output: The LED output is determined by the state of the useInterrupts register. If useInterrupts is high, the LED output consists of the 8-bit IP input zero-extended to 14 bits. If useInterrupts is low, the LED output mirrors the data register. This allows the module to switch between displaying data and showing an IP-based value conditionally.
+DataOut Output: The dataOut output directly mirrors the data register, providing an interface to read back the data currently held within the module.
+
+Give me the complete code.
+

@@ -1,0 +1,10 @@
+Design a circuit that functions as an 8-bit up/down counter with load and reset capabilities. The counter increments or decrements its value based on the `up_down` input, which determines the direction of counting. When the `load` input is high, the counter loads a specified 8-bit `data` value instead of performing the increment or decrement operation. Additionally, the counter can be reset to zero or to its previous state when the `rst` signal is activated or when the current count equals a specified `reset_variable`. The design ensures that within one clock cycle, the counter either updates to the loaded value, increments or decrements, or resets accordingly.
+module top_module(
+    input clk,
+    input rst,
+    input up_down,
+	 input load,
+	 input [7:0] data,
+	 input [7:0]reset_variable,
+    output reg [7:0] count
+    );

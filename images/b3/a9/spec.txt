@@ -1,0 +1,9 @@
+Design a digital circuit that operates as a 256-to-8 multiplexer combined with a shift register and a final logic operation. Upon receiving a clock signal and if not reset, it selects one of the 256 input bits based on the 8-bit selector `sel`. If the `enable` signal is high, it shifts the selected input into a 3-bit shift register and constructs an output from its contents. The final output is derived from a bitwise AND operation between the shifted output and the most recently selected input. This design can be used in applications requiring variable input selection and shifting functionalities, such as digital signal processing or data handling systems.
+module top_module(
+    input clk,
+    input reset,
+    input enable,
+    input [255:0] in,
+    input [7:0] sel,
+    output reg final_output
+);

@@ -1,0 +1,8 @@
+Design a module for driving a 7-segment display that showcases four numerical digits from a 16-bit input value. The system includes a clock divider for synchronization, which allows for the sequential display of each nibble (4 bits) of the input number at a slower rate. On a reset, the module initializes the display to show zero and cycles through the digits of the input number to update the displayed value accordingly. Each digit is represented by its corresponding 7-segment encoding, with the ability to reset and manage the display based on clock inputs.
+module top_module(
+	output reg [6:0] display,
+	output reg [3:0] digit,
+	input wire [15:0] nums,
+	input wire rst,
+	input wire clk
+    );

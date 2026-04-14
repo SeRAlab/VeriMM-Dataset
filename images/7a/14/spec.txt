@@ -1,0 +1,11 @@
+Design a control module for a programmable random access memory (PRAM) that interfaces with SRAM. This module orchestrates various states to manage read and write operations, responding to control signals such as `go` and `halt`. It operates through a finite state machine with states for initializing, address output, testing conditions, and reading data while managing write enable (`we`), enable (`en`), and address (`sram_addr`) outputs. The module cycles through states to perform sequential memory operations, updating the address and executing commands based on input conditions.
+module top_module(
+	input clk,
+	input clr,
+	input go,
+	input halt,
+	output reg we,
+	output [17:0] sram_addr,
+	output [5:0] pattern,
+	output reg en
+);

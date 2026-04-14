@@ -1,0 +1,13 @@
+Design a three-port RAM module that supports multiple read and write operations with different data widths and address sizes. The module features four instances of a 40K-bit RAM, configured for various read/write modes: one port allows for 16-bit write and read with an 8-bit address, another provides an 8-bit output from a 9-bit address, the third generates a 4-bit output from a 10-bit address, and the last delivers a 2-bit output based on the full 11-bit address. Additionally, a LUT processes specific bits from the RAM output to produce a single bit output. This design enables flexible data manipulation, compliant with diverse application requirements within a compact memory management system.
+module top_module(
+	input  [10:0] WADDR,
+	input  [10:0] RADDR,
+	input  [15:0] MASK,
+	input  [15:0] WDATA,
+	output [15:0] RDATA_0,
+	output [ 7:0] RDATA_1,
+	output [ 1:0] RDATA_3,
+	input         WE, WCLKE, WCLK,
+	input         RE, RCLKE, RCLK,
+	output        X
+);

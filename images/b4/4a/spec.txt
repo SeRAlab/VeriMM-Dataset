@@ -1,0 +1,12 @@
+Design a 16-bit wide instrumentation adapter that reads system state information based on a 2-bit address input. It outputs appropriate data based on the received address: if the address is `00`, it outputs the current instruction; if `01`, it outputs the current program counter (with six leading zeroes); and if `10`, it outputs the current state (with eleven leading zeroes). The output is reset to zero on the rising edge of the clock when the reset signal is asserted, ensuring proper initialization of the module.
+module top_module(
+    input clk,
+    input reset,
+
+    input      [1:0]  avl_address,
+    output reg [15:0] avl_readdata,
+
+    input      [15:0] current_instr,
+    input      [9:0]  current_pc,
+    input      [4:0]  current_state
+);

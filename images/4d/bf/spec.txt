@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that detects a specific 3-bit sequence in a data stream. The FSM operates with a clock and reset signal, transitioning through defined states based on the input data. The states represent various stages of recognizing the sequence, specifically looking for transitions that lead to a final state (`G`) when the 3-bit pattern `101` is detected. Upon successfully reaching state `G`, the output `match` is set high to indicate a successful detection of the sequence. The design incorporates robust state transitions and outputs based on the received data inputs, enabling effective sequence recognition in digital systems.
+module top_module(
+  input clk,
+  input reset,
+  input [2:0] data,
+  output reg match
+);

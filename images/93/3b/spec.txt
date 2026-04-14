@@ -1,0 +1,14 @@
+Design a system for receiving and processing data with a ring buffer in a communication interface. The module handles incoming data via a 24-bit input and manages data acknowledgment signals. It maintains a ring buffer of 64 entries to store received data, tracking the next write position. The module also features a mechanism to count unread data and manage shifting operations based on specific address decoding. It interfaces with an external RAM through address signals, allowing read operations from the ring buffer or retrieval of the unread data count. The design effectively coordinates data reception and retrieval in a structured manner, ensuring reliable data handling in a communication environment.
+module top_module(
+    input wire clk,
+    input wire rst,
+
+    // dmix interface
+    input wire [23:0] rx_data_i,
+    input wire rx_ack_i,
+
+    // To nkmm R bus
+    input wire [31:0] data_i,
+    output wire [31:0] data_o,
+    input wire [31:0] addr_i,
+    input wire we_i);

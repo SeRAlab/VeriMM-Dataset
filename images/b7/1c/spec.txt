@@ -1,0 +1,18 @@
+Please act as a professional Verilog designer.
+
+Implement a module of a modulo-10 counter. The counter should increment its value by 1 at each clock cycle and reset to 0 when it reaches 9. The counter should also reset to 0 when the reset signal is active.
+
+Module name:
+    mod10_counter
+
+Input ports:
+    CLK: Clock input
+    RST: Active high reset signal
+
+Output ports:
+    Count: 4-bit output representing the current counter value
+
+Implementation:
+The mod10_counter module uses one always block to update the value of the counter based on the clock signal and reset signal. The always block triggers on the positive edge of the clock signal (posedge CLK) or the positive edge of the reset signal (posedge RST). It checks if the reset signal is active (RST) and sets the counter value (Count) to 0. If the counter value reaches 9, it wraps around and sets the counter value to 0. Otherwise, it increments the counter value by 1 at each clock cycle.
+
+Give me the complete code.

@@ -1,0 +1,12 @@
+Design a module that combines memory and bitwise operations. This circuit captures bitwise results based on a two-bit select input, performing AND, OR, or XOR operations on a 16-bit input with its left-shifted version. It also includes an 8-entry RAM, allowing writing and reading of 4-bit data at specified addresses. The outputs are composed of selected bits from the computed bitwise result and the data read from RAM, providing two separate 8-bit outputs: out_hi and out_lo. The module also includes reset functionality to initialize the outputs to zero.
+module top_module(
+    input clk,
+    input rst_n,
+    input [15:0] in,
+    input [1:0] select,
+    input [7:0] write_addr,
+    input [3:0] write_data,
+    input [7:0] read_addr,
+    output reg [7:0] out_hi,
+    output reg [7:0] out_lo
+);

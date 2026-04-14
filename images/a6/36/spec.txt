@@ -1,0 +1,6 @@
+Design a control module for a servo motor that generates a PWM signal based on a 16-bit input representing the desired pulse width. The module uses the input PWM value to calculate the appropriate pulse width within a specified range (1000 to 2000 microseconds). It operates at a specified PWM frequency of 50 Hz and drives the servo output at the same frequency, allowing for finely-tuned position control of the servo. The output is a PWM signal with a duty cycle determined by the input value, which is updated on each clock cycle to ensure timely motor control.
+module top_module(
+  input clk,
+  input [15:0] pwm,
+  output reg [15:0] servo
+);

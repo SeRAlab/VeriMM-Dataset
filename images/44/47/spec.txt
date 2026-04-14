@@ -1,0 +1,12 @@
+Design a circuit that functions as an accumulator with a controlled output. The module takes an 8-bit input data and accumulates it on each clock cycle when the valid_a signal is high. It counts the number of valid inputs using a 4-bit register and, upon reaching a count of 15 (0xF), outputs a 10-bit data value that combines the accumulated result (shifted left by 2 bits) and sets the valid_b signal high to indicate data readiness. The ready_a output indicates when the module is prepared to receive new data based on the state of valid_b and ready_b signals, effectively coordinating the data flow in a producer-consumer configuration.
+module top_module(
+    input               clk         ,   
+    input               rst_n       ,
+    input       [7:0]   data_in     ,
+    input               valid_a     ,
+    input               ready_b     ,
+ 
+    output              ready_a     ,
+    output  reg         valid_b     ,
+    output  reg [9:0]   data_out
+);

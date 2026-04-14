@@ -1,0 +1,10 @@
+Design a module that functions as a combined counter and shift register with configurable operations. The module allows for both up and down counting based on the input UD, with synchronization to the CLK signal. It can also load a 4-bit input D into a shift register when the LD signal is asserted. If LD is not active, the shift register shifts left on each clock cycle, inserting the serial input SI into the least significant bit position. The output Q is the sum of the current counter value and the contents of the shift register, while the output SO provides the least significant bit of the shift register. This module is suited for applications requiring both counting and shifting operations in a single integrated unit.
+module top_module(
+    input UD,
+    input CLK,
+    input LD,
+    input [3:0] D,
+    input SI,
+    output reg SO,
+    output [3:0] Q
+);

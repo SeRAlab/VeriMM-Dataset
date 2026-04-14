@@ -1,0 +1,7 @@
+Design a 3-stage shift register that captures a serial input bit and outputs it as a 4-bit parallel value. On each rising edge of the clock, the serial input is passed through three pipeline stages, effectively capturing and shifting the input data. On the falling edge of the clock, if the reset signal is inactive, the final shifted value from the last stage of the pipeline is outputted as a 4-bit wide parallel signal; if the reset is active, the output is zeroed.
+module top_module(
+    input clk,
+    input serial_in,
+    input reset,
+    output reg [3:0] parallel_out
+);

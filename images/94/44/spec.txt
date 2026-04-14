@@ -1,0 +1,8 @@
+Design a 16-bit barrel shifter that performs both logical and arithmetic shift operations based on an input control signal. The logic of the design specifies that when the control signal S is low, the circuit performs a logical left shift of the input value A by a number of bits specified in the 4-bit input B, zero-filling the vacated bits. If S is high, the circuit executes an arithmetic right shift, maintaining the sign bit for negative values, or shifts the bits to the right based on the value in B. If the highest bit of B is set, the output P is set to zero for logical shifts or filled with the sign bit for arithmetic shifts. This module effectively provides versatile shifting capabilities suitable for arithmetic operations and bit manipulation tasks.
+module top_module(
+    input clk,
+    input [15:0] A,
+    input [3:0] B,
+    input S,
+    output reg [15:0] P
+);

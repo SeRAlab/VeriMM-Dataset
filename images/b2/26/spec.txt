@@ -1,0 +1,9 @@
+Design a 4-bit adder/subtractor circuit with an additional control input for carry. The module takes two 4-bit inputs, A and B, and performs either addition or subtraction based on the select input S. If S is set to 1, it performs subtraction, and if C (carry input) is also 1, it subtracts an additional 1. When S is 0, it adds A and B, and similarly increments the result by 1 if C is 1. The output F represents the 4-bit result, while C_out indicates whether a carry or borrow has occurred during the operation, allowing functionality for both addition and subtraction in a single design.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input S,
+    input C,
+    output reg [3:0] F,     // Change to reg
+    output reg C_out        // Change to reg
+);

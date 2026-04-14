@@ -1,0 +1,12 @@
+Develop a circuit that converts YCbCr color space values to RGB format. The module accepts 8-bit inputs for Y, Cb, and Cr components and produces 10-bit outputs for the RGB values along with an indication of data validity. It operates synchronously with a clock signal and features a reset functionality to initialize the outputs. The RGB values are computed based on standard transformation equations while ensuring that the output values remain within the valid range of 0 to 1023, clipping where necessary.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] y,
+    input [7:0] cb,
+    input [7:0] cr,
+    output reg [9:0] r,
+    output reg [9:0] g,
+    output reg [9:0] b,
+    output reg data_valid
+);

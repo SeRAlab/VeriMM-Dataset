@@ -1,0 +1,9 @@
+Design a single-bit CRC (Cyclic Redundancy Check) calculator for error detection in serial data. The module generates an 8-bit CRC output by updating the CRC state based on incoming bit data. The CRC computation is synchronized to a clock signal, and it can be reset asynchronously via a reset signal or a synchronous reset signal. When the enable_crc input is active, the module calculates the next CRC using a polynomial method, ensuring the reliability of transmitted data by maintaining a running CRC value throughout the data stream.
+module top_module(
+  input data,
+  input enable_crc,
+  input reset,
+  input sync_reset_crc,
+  input clk,
+  output reg [7:0] crc_out
+);

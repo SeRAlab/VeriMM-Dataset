@@ -1,0 +1,11 @@
+Design a 32-bit barrel shifter that performs left or right bit shifting on an input data signal based on control signals. The module takes in a clock signal, a reset signal, a load signal, a shift value, and an input data signal. When the reset signal is active, the output is set to zero. When the load signal is asserted, the module shifts the input data left or right according to the specified shift value and direction (determined by the Left_Right_i control signal). Additionally, the shifting can be configurable to perform either logical or arithmetic shifts based on the Bit_Shift_i control signal. The output is updated on the rising edge of the clock.
+module top_module(
+    input clk,
+    input rst,
+    input load_i,
+    input [31:0] Shift_Value_i,
+    input [31:0] Shift_Data_i,
+    input Left_Right_i,
+    input Bit_Shift_i,
+    output reg [31:0] N_mant_o
+);

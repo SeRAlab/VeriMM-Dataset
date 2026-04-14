@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+
+Implement a simple single-port RAM with synchronous read and write operations. The module should have a clock input (clk), a write enable input (we), an address input (addr), a data input (data_in), and a data output (data_out). The memory should have a depth of 16 and a width of 8 bits.
+
+Module name:  
+    single_port_ram  
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    we: Write enable signal. When asserted, data_in is written to the memory at the specified address.
+    addr: 4-bit address input to specify the memory location.
+    data_in: 8-bit data input to be written to the memory.
+
+Output ports:
+    data_out: 8-bit data output read from the memory.
+
+Implementation:
+The data_out output should be updated on the rising edge of the clock. If the write enable signal (we) is high, data_in should be written to the memory at the specified address on the rising edge of the clock. The data at the specified address should be read on the rising edge of the clock regardless of the state of the write enable signal.
+
+Give me the complete code.
+
+module single_port_ram(
+	input 		clk,
+	input 		we,
+	input  [3:0] addr,
+	input  [7:0] data_in,
+ 
+	output reg [7:0] data_out
+);

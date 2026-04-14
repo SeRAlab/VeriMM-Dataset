@@ -1,0 +1,6 @@
+Design a frequency synthesizer that produces an output clock signal with a variable frequency based on the control word input. The circuit uses a reference clock (clk_ref) to increment a counter and a divider. The output clock (out_clk) toggles its state when the divider reaches a specified count (M), effectively dividing the reference frequency by a ratio set by parameters N and M. The synchronizing behavior of both the counter and divider ensures that the output clock frequency is stable and can be set by adjusting the control parameters.
+module top_module(
+  input clk_ref,
+  input [31:0] ctrl_word,
+  output reg out_clk
+);

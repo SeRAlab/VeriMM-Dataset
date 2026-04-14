@@ -1,0 +1,27 @@
+Please act as a professional Verilog designer.
+
+Implement a synchronous FIFO with a depth of 32 and a width of 16 bits. The module should support synchronous reset to clear the FIFO content.
+
+Module name:
+    sync_fifo
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Synchronous reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    wr_en: Write enable signal.
+    rd_en: Read enable signal.
+    data_in: Input data signal of size 16 bits.
+
+Output ports:
+    data_out: Output data signal of size 16 bits.
+    empty: Signal indicating if the FIFO is empty.
+    full: Signal indicating if the FIFO is full.
+
+Implementation:
+Memory Array:
+The module includes a memory array, mem, to store the data, with depth of 32 and width of 16 bits. It also uses read and write pointers to keep track of the data read and written positions.
+On the positive edge of clock signal (clk) and if the reset signal (rst) is high, the module clears the memory array and resets the read and write pointers. If the write enable signal (wr_en) is high and the reset signal (rst) is low, the memory array is updated with the input data signal (data_in) at the location specified by the write pointer.
+Read Operation:
+The module includes a read operation which fetches the data from the memory array at the location specified by the read pointer. The fetched data is assigned to the output data signal (data_out) if the read enable signal (rd_en) is high.
+
+Give me the complete code.

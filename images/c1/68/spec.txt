@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+    
+Implement a module to select between two input clock signals based on a control signal. Its primary function to dynamically switch the source of a clock signal feeding into other parts of a digital system, allowing for flexibility in clock management. This could be particularly useful in scenarios where different operational modes of a system require different clock speeds or sources, such as power-saving modes, performance scaling, or handling of asynchronous events. The module plays a critical role in systems that require dynamic clock routing to optimize performance, power consumption, or to manage clock domains effectively.
+
+Module name:  
+	CLK_SWITCH
+
+Input ports:
+	IN_0 (input): This is the first clock signal input to the module. It serves as one of the potential clock sources that can be routed to the output. The signal is a singlebit (1'b0 or 1'b1), representing the binary state of the clock at any given time.
+	IN_1 (input): This is the second clock signal input to the module. Similar to IN_0, it acts as an alternative clock source that can be selected for output. It is also a singlebit signal, representing the binary state of the clock.
+	SW (input): This is the control signal input that determines which clock signal (either IN_0 or IN_1) is routed to the output. It is a singlebit signal, where a binary 1 selects IN_1 and a binary 0 selects IN_0.
+Output ports:
+	OUT (output): This is the output clock signal of the module. The source of this signal is determined by the state of the SW input. It is a singlebit signal, carrying the selected clock signal to other parts of the system.
+
+
+Implementation:
+The RTL module named CLK_SWITCH is designed to select between two input signals based on the state of a switch signal and output the selected signal. This module is purely combinational, as it does not contain any sequential elements like flip-flops or latches. The logic implemented within this module is straightforward and does not involve any internal state retention or clocked operations. The operation of the module can be summarized as follows:
+Inputs: The module has three inputs, namely IN_0, IN_1, and SW.
+  IN_0 and IN_1 are the two signals among which one will be selected as the output.
+  SW is the selection signal that determines which input signal (IN_0 or IN_1) is forwarded to the output.
+Output: There is a single output named OUT, which carries the signal selected based on the state of the SW input.
+Selection Logic: The core logic of the module is implemented using a simple conditional (ternary) operator in the assignment statement assign OUT = SW ? IN_1 : IN_0;. This statement succinctly captures the selection mechanism:
+  If SW is high (1), IN_1 is selected, and its value is assigned to OUT.
+  If SW is low (0), IN_0 is selected, and its value is assigned to OUT.
+This design is inherently combinational, with its output solely dependent on the current values of its inputs. There are no timing constraints or sequential logic elements involved in the decision-making process, making the module's operation immediate and synchronous with changes in its inputs.
+
+Give me the complete code.
+

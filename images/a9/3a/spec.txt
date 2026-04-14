@@ -1,0 +1,11 @@
+Design a controller for managing a preparation counter based on various input signals. The module increments an 8-bit 'preparing' counter when the pipeline is ready, a task is scheduled, and the work counter reaches three, provided that no decrement or work conditions are active. Conversely, it decrements the counter when both pipeline and task scheduling are inactive, while the decrement condition is asserted. Additionally, it manages a 'decreasePrepare' signal based on the availability of a 'scryptResult,' and it sets the 'scryptResultAvailable' output high if the preparing counter is greater than zero, thus facilitating task management and synchronization in a processing pipeline.
+module top_module(
+    input pipelineReady,
+    input scheduleTask,
+    input [2:0] workCounter,
+    input scryptResultInputAvailable,
+    input doWork,
+    output reg [7:0] preparing,
+    output reg decreasePrepare,
+    output reg scryptResultAvailable
+);

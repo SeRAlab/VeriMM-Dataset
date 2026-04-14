@@ -1,0 +1,10 @@
+
+Design a simple Automatic Repeat reQuest (ARQ) error correction system. The system should have the following inputs:
+- `data_in`: The data to be sent (5 bits).
+- `ack`: Acknowledgment signal (1 bit), which indicates whether the previous data was received correctly (1 for correct, 0 for incorrect).
+
+The system should output:
+- `data_out`: The data to be sent (5 bits).
+- `send`: A signal (1 bit) indicating whether data should be sent (1 for send, 0 for hold).
+
+The logic should hold the last sent data if the acknowledgment is not received, and send new data only when the last data was acknowledged.

@@ -1,0 +1,6 @@
+Design a FIFO (First-In-First-Out) memory generator with a 94-bit data width and a depth of 64 entries. The module supports asynchronous read and write operations controlled by the `wr_en` and `rd_en` signals, respectively. On each clock cycle, if writing is enabled, it captures the input data along with the write pointer and stores it in memory. Similarly, when reading is enabled, it outputs the data stored at the current read pointer. The module automatically manages the update of both the write and read pointers to ensure correct operation, thus facilitating efficient data flow in applications requiring temporary storage and retrieval of sequential data.
+module top_module(output reg [93:0] dout, // Change to reg type
+   input clk,
+   input wr_en,
+   input rd_en,
+   input [93:0] din);

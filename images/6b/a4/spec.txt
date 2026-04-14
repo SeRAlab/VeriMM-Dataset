@@ -1,0 +1,18 @@
+Create a combinational logic circuit that generates an 8-bit output `Q` based on the values of four single-bit inputs (`A`, `B`, `C`, `D`) and a 3-bit input (`E`). Specifically, each bit of the output is determined by specific conditions: 
+- `Q[0]` and `Q[1]` are directly assigned based on `A` and `B`, respectively.
+- `Q[2]` is directly set from the third bit of `E`.
+- `Q[3]` is determined by the value of `D`.
+- `Q[4]` reflects the second bit of `E`.
+- `Q[5]` is the inverse of `A`.
+- `Q[6]` is set according to the least significant bit of `E`.
+- `Q[7]` is determined by `C`. 
+
+This circuit effectively acts as a data encoder that combines the inputs into a specific output format based on defined logic conditions.
+module top_module(
+    input A,
+    input B,
+    input C,
+    input D,
+    input [2:0] E,
+    output reg [7:0] Q
+);

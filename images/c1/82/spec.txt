@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to compute an 8-bit cyclic redundancy check (CRC) value based on the input data stream. This module to enhance data integrity in digital communication systems by enabling error detection capabilities. The CRC computation is based on a specific polynomial represented in the logic of the `nextCRC8_D1` function. The module allows for CRC computation to be enabled or disabled dynamically and provides mechanisms for synchronous reset.
+
+In a broader system context, this module can be integrated into data transmission or storage systems where data integrity verification is crucial. It can be used to generate CRC values for data packets before transmission and to check the integrity of received data by comparing the computed CRC against a received or stored value.
+
+Module name:  
+	dbg_crc8_d1
+
+Input ports:
+	Data (input): A singlebit input representing the current bit of the data stream for which the CRC is being computed.
+	EnableCrc (input): A singlebit input that enables or disables the CRC computation. When high (1), the CRC computation is active; when low (0), it is inactive.
+	Reset (input): A singlebit input that asynchronously resets the CRC output to 0 when high (1). This is typically used for initial setup or in error conditions.
+	SyncResetCrc (input): A singlebit input that synchronously resets the CRC output to 0 when high (1). This allows for reset behavior that is synchronized with the system clock, avoiding potential metastability issues.
+	Clk (input): The system clock input. The CRC computation and the reset operations are triggered on the rising edge of this clock.
+Output ports:
+	CrcOut ([7:0] output): An 8bit output that holds the current value of the computed CRC. This value is updated on each clock cycle when the CRC computation is enabled and not being reset.
+
+
+Implementation:
+The RTL module dbg_crc8_d1 is designed to compute an 8-bit cyclic redundancy check (CRC) value based on the input data stream. This module is particularly tailored for applications requiring data integrity checks, such as communication protocols or data storage systems. The core functionality of this module is encapsulated within a combinational logic function nextCRC8_D1 and a sequential logic block governed by the clock (Clk) and reset signals (Reset and SyncResetCrc).
+
+Give me the complete code.
+

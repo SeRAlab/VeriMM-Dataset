@@ -1,0 +1,9 @@
+Design a 16x1024 RAM memory module with 12-bit wide data input and output. It uses an 8-bit address where the upper 4 bits (address[7:4]) select one of the 16 banks, and the lower 4 bits (address[3:0]) select one of the 1024 words within the chosen bank. The module supports clocked read and write operations, where data can be written to the memory location if write enable (wren) and clock enable (clken) are asserted. On each rising edge of the clock, if clock enable is high, the module outputs the data from the selected memory location.
+module top_module(
+    input [7:0] address,
+    input clken,
+    input clock,
+    input [11:0] data,
+    input wren,
+    output reg [11:0] q
+);

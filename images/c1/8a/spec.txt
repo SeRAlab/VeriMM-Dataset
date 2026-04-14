@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+    
+Implement a module to generate a partial product bit (`PPBIT`) for a multiplication operation, specifically tailored for applications requiring Booth encoding or similar multiplication algorithms. It plays a crucial role in digital signal processing (DSP) systems, arithmetic logic units (ALUs), and other computational circuits where efficient multiplication is essential. The module achieves this by logically combining the inputs related to the multiplicand (`INA`, `INB`), and control signals (`ONEPOS`, `ONENEG`, `TWONEG`) that dictate the operation mode based on the encoding of the multiplier bit and its neighbors.
+
+Module name:  
+	PP_LOW
+
+Input ports:
+	ONEPOS (input): A binary signal indicating the positive identity condition. When set, it signifies that the current bit of the multiplier (after encoding) is +1.
+	ONENEG (input): A binary signal indicating the negative identity condition. When set, it signifies that the current bit of the multiplier (after encoding) is 1.
+	TWONEG (input): A binary signal indicating a negative double condition. When set, it signifies that the current bit of the multiplier (after encoding) is 2.
+	INA (input): A binary signal representing one bit of the multiplicand A. Its contribution to the partial product is conditional on the encoding of the multiplier bit.
+	INB (input): A binary signal representing one bit of the multiplicand B. Its contribution to the partial product is conditional on the encoding of the multiplier bit.
+Output ports:
+	PPBIT (output): The output binary signal representing a single bit of the partial product. This bit is the result of the logical operations performed based on the input conditions and multiplicand bits.
+
+
+Implementation:
+The RTL module named PP_LOW is designed to perform a specific combinational logic operation. It does not contain any sequential logic elements, such as flip-flops or latches, indicating that its output is purely a function of its current inputs without any dependency on previous states. The module is structured to generate a single output signal, PPBIT, based on the logical evaluation of its input signals. The inputs to this module are ONEPOS, ONENEG, TWONEG, INA, and INB.
+The logic implemented within the module can be dissected as follows:
+ONEPOS & INA: This part of the logic ANDs the ONEPOS signal with the INA signal. If both ONEPOS and INA are high (1), this part of the expression evaluates to high (1).
+ONENEG & INB: Similar to the first part, this expression ANDs the ONENEG signal with the INB signal. If both ONENEG and INB are high (1), this part of the expression evaluates to high (1).
+TWONEG: This signal directly influences the output without being ANDed with any other input signal. If TWONEG is high (1), it can independently set the output PPBIT to high (1).
+The output PPBIT is the result of ORing the above three parts. This means that if any of the three conditions (ONEPOS & INA, ONENEG & INB, or TWONEG alone) evaluates to high (1), the output PPBIT will be high (1). Otherwise, PPBIT will be low (0). This logic is purely combinational, as the output is directly determined by the current values of the inputs without any delay or memory element involved.
+
+Give me the complete code.
+

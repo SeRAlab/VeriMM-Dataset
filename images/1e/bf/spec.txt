@@ -1,0 +1,11 @@
+
+Design a Direct Memory Access (DMA) controller in Verilog that allows a peripheral device to read from and write to memory without involving the CPU. The controller should have the following interfaces:
+1. `clk`: Clock signal.
+2. `reset`: Asynchronous reset signal.
+3. `start`: Signal to start the DMA transfer.
+4. `src_addr`: Source address in memory from where data is to be read.
+5. `dest_addr`: Destination address in memory to where data is to be written.
+6. `data`: Bidirectional data line for the transfer.
+7. `done`: Signal indicating that the DMA transfer is complete.
+
+The DMA controller should support a simple transfer mechanism, where it reads a byte from the source address, writes it to the destination address, and signals when the transfer is done. The controller should be able to handle multiple transfers as long as it is signaled to start again.

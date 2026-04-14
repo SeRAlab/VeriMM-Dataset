@@ -1,0 +1,9 @@
+Design a 4x8-bit synchronous RAM module. The module allows data to be written to or read from memory locations specified by a 3-bit address input. When the enable (en) signal is active, if the write enable (we) signal is also active, it stores the 4-bit input data (din) at the designated address. If the write enable signal is inactive, it retrieves the data from the specified address and outputs it on dout at the next clock cycle.
+module top_module(
+    input clk,
+    input [2:0] addr,
+    input [3:0] din,
+    input en,
+    input we,
+    output reg [3:0] dout
+);

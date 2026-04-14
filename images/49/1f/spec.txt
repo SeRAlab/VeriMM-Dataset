@@ -1,0 +1,9 @@
+Design a circuit that generates a 32-bit Pseudo-Random Binary Sequence (PRBS) using a Linear Feedback Shift Register (LFSR). The module provides a reset and seed initialization capability, enabling the output to be set to a specific value defined by the input seed when either a reset signal or a seed initialization signal is asserted. When the clock is enabled, the LFSR feedback mechanism shifts the bits to produce the PRBS output. The final output consists of the current state of the LFSR, which rotates and mixes bits to create a pseudo-random sequence suitable for various testing and simulation applications.
+module top_module(
+  input clk_i,
+  input clk_en,
+  input rst_i,
+  input prbs_seed_init,
+  input [31:0] prbs_seed_i,
+  output [31:0] prbs_o
+);

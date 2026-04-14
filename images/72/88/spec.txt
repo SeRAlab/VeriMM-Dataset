@@ -1,0 +1,9 @@
+Design a 4-bit arithmetic unit capable of performing addition or subtraction based on the mode input. When mode is 0, the module adds the two 4-bit inputs (in_a and in_b); when mode is 1, it subtracts in_b from in_a. The output is a 4-bit result and includes an overflow detection signal that indicates if the result exceeds the representable range for a 4-bit signed number (-8 to 7). The result is registered on the rising edge of the clock.
+module top_module(
+    input [3:0] in_a,
+    input [3:0] in_b,
+    input mode,
+    input clk, // Added the clk input declaration
+    output reg [3:0] out,
+    output reg overflow // Changed to reg since we are assigning it within always blocks
+);

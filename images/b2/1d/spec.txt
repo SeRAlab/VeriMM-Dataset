@@ -1,0 +1,8 @@
+Design a digital clock manager (DCM) module that generates a clock output (CLKFX) and a lock status signal (LOCKED) based on the input clock (CLKIN). The module includes a reset signal (RST) and provides an 8-bit status output indicating various internal states. The DCM features a counter to control the clock frequency and a duty cycle correction mechanism. When RST is asserted, the module resets internal registers and outputs. The clock output toggles based on the counter value, while the LOCKED signal indicates the stability of the generated clock, changing its state based on specific counter conditions. The status output reflects the lock status, clock output state, and duty cycle correction values, facilitating monitoring and control in digital systems.
+module top_module(
+  input CLKIN,
+  output reg CLKFX,      // changed to reg
+  output reg LOCKED,     // changed to reg
+  input RST,
+  output reg [7:0] STATUS
+);

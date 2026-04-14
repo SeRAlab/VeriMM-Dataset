@@ -1,0 +1,7 @@
+Create an 8-bit shift register with load capability. When the LOAD signal is high, the shift register captures the 8-bit input DATA_IN at the rising edge of the CLK signal. If LOAD is low, the register shifts its contents to the left by one bit, with the most significant bit (Q7) being shifted into the least significant bit position. The output Q provides the current state of the shift register, while Q7 outputs the most significant bit separately.
+module top_module(
+    input CLK, LOAD,
+    input [7:0] DATA_IN,
+    output [7:0] Q,
+    output Q7
+);

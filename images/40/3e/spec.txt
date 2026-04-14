@@ -1,0 +1,10 @@
+
+Design a Verilog module that implements a simple Dynamic Voltage and Frequency Scaling (DVFS) controller. The module should accept two inputs: the current workload (in terms of a 3-bit binary value representing low, medium, or high workload) and a control signal indicating whether the system is in a power-saving mode or normal mode. Based on these inputs, the module should output the appropriate voltage level (in 2 bits) and frequency (in 2 bits) for the system. The output should depend on the workload and the mode:
+- For power-saving mode:
+  - Low workload: Voltage = 01, Frequency = 00
+  - Medium workload: Voltage = 10, Frequency = 01
+  - High workload: Voltage = 11, Frequency = 10
+- For normal mode:
+  - Low workload: Voltage = 10, Frequency = 01
+  - Medium workload: Voltage = 11, Frequency = 10
+  - High workload: Voltage = 11, Frequency = 11

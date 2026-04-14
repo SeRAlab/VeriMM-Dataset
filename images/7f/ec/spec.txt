@@ -1,0 +1,11 @@
+Design a simple calculator module that performs arithmetic operations on two 32-bit inputs, A and B, based on a 2-bit control signal. The module supports addition, subtraction, multiplication, and division, with an error flag that indicates division by zero. On each clock cycle, the results of the operation are updated, and the outputs consist of a 32-bit result and an error signal. The module also includes a reset functionality to initialize all registers.
+module top_module(
+    input clk,
+    input reset_n,
+    input [31:0] A,
+    input [31:0] B,
+    input [1:0] control,
+    input start,
+    output [31:0] C,
+    output error
+);

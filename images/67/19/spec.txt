@@ -1,0 +1,7 @@
+Design a voltage-controlled oscillator (VCO) interface that produces a square wave output signal with a frequency modulated by an input control voltage. The module operates within a predefined frequency range, specified by the parameters `fmin` and `fmax`, and utilizes an 8-bit control input `vctrl` to determine the output frequency dynamically. The output toggles when a counter exceeds a threshold value calculated based on the control voltage, allowing for frequency adjustment as the control voltage changes. The module also features reset functionality to initialize the output and counter.
+module top_module(
+  input wire clk,
+  input wire rst,
+  input wire [n-1:0] vctrl,
+  output reg vco_out
+);

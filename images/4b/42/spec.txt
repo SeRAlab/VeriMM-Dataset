@@ -1,0 +1,18 @@
+Design a circuit that interfaces with a Super Nintendo (SNES) addressing scheme by decoding the 24-bit input address to control multiple RAM banks, a programmable address space, and a block RAM. The module generates specific enable signals for each RAM bank based on the input address pattern, allowing access to various memory mapped regions while utilizing linear addressing for seamless memory access. It also incorporates registers to keep track of enable signals for banking, interrupt requests, and linear addressing to ensure they are stable across clock cycles. The output includes dedicated address lines for each of the RAM sections and related functionalities.
+module top_module(
+  input CLK,
+  input [23:0] SNES_ADDR,   
+  output [23:0] ram0_addr,
+  output [18:0] ram1_addr,
+  output [7:0] PA_addr,
+  output [12:0] bram_addr,
+  input [7:0] ram0_bank,
+  input ram0_linear,
+  output ram0_enable,
+  output ram1_enable,
+  output PA_enable,
+  output bram_enable,
+  output irq_enable,
+  output bank_enable,
+  output linear_enable
+);

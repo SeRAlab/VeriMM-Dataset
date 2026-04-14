@@ -1,0 +1,8 @@
+Design a priority encoder circuit that outputs a 4-bit representation of the highest-priority active input from an 8-bit input vector. The output is determined based on the value of a 2-bit select input, which allows the system to adapt or configure its functionality. Upon receiving a reset signal, the circuit initializes the output and internal state to zero. The priority encoder evaluates the input bits in order, with a higher index representing lower priority, effectively signaling which input is active first and translating that active input into a corresponding output value from 1 to 8, or zero if no inputs are active.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] in,
+    input [1:0] select,
+    output reg [3:0] out
+);

@@ -1,0 +1,13 @@
+Design a digital circuit that functions as an accumulator and a parallel-to-serial converter. The accumulator accumulates input data over time based on control signals and outputs the result in a wider format. It incorporates a state machine to manage its operational states: an idle state that waits for valid input and an accumulation state that adds incoming data when enabled. The circuit is also equipped with a serial output mechanism, which shifts out accumulated data bits one at a time, synchronizing with control signals to indicate valid output. The system includes handshaking signals for data validity and readiness, ensuring robust data flow between modules.
+module top_module(
+    input clk,
+    input rst_n,
+    input [7:0] data_in,
+    input ctrl,
+    input valid_a,
+    input ready_b,
+    output ready_a,
+    output reg valid_b,
+    output reg [9:0] data_out,
+    output reg serial_out
+);

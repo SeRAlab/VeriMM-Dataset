@@ -1,0 +1,10 @@
+Design a multi-port random access memory (RAM) module that supports simultaneous read and write operations. This RAM has a configurable address width (n), data width (m), and supports multiple ports (p) for concurrent access. When a write enable signal is asserted for any port, the corresponding data input is written to the memory at the specified address. The module continuously outputs the data stored at the specified address. A busy signal is generated to indicate when either a read or write operation is active, facilitating control in a larger memory management system.
+module top_module(
+  input clk,
+  input [n-1:0] addr,
+  input [m-1:0] data_in,
+  input [p-1:0] wr_en,
+  input [p-1:0] rd_en,
+  output reg [m-1:0] data_out, // Changed to reg as it is assigned in an always block
+  output reg busy // Changed to reg as it is assigned in an always block
+);

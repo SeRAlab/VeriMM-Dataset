@@ -1,0 +1,6 @@
+Design a SPI (Serial Peripheral Interface) receiver module that operates with a clock (clk), a reset signal (reset_n), serial data input (sdi), clock input (sck), and a chip select signal (ss_n). The module captures incoming data serially, buffering it in a shift register and two data buffers. It counts the number of received bits and populates an address and data output upon successful reception of a complete 8-bit data frame. Additionally, it generates a valid signal (rx_valid) to indicate when new data is ready for processing, ensuring proper synchronization of received data with system timing.
+module top_module(
+  input  wire         clk, reset_n, sdi, sck, ss_n,
+  output wire  [7:0]  adrs, data,
+  output wire         rx_valid
+);

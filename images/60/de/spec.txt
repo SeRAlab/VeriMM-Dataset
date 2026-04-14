@@ -1,0 +1,9 @@
+Design a 4-bit shift register with additional capabilities for loading new data and enabling shifting operations. The module features a synchronous active-high reset and a counter to track clock cycles. When the load signal is activated, the module loads a 4-bit input data into the shift register, shifting existing data to the right. When the enable signal (ena) is active, the shift register shifts the contents rightward while inserting a zero at the most significant bit. The output combines the shifted register with a bitwise AND operation against a constant value (0xAA), filtering the bits for specific purposes, likely aiming to output specific patterns or states based on the data held in the register.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input load,
+    input ena,
+    input [3:0] data,
+    output [7:0] q
+);

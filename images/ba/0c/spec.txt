@@ -1,0 +1,14 @@
+Design a module that manages the writing of data based on specific conditions, utilizing a clock signal for synchronization. The module outputs an address and data for writing, controlling a memory operation through the `md_we` signal (write enable). It increments the write address (`md_waddr`) on each clock cycle while the write enable is active, and resets the address when a `finish` signal is received. The `md_wdata` output is populated with different input values (`bestmode`, `bestmode16`, `bestmode32`) depending on the current count value (`cnt`). This functionality allows for selective memory writes based on state and control signals, facilitating efficient data handling in a larger system.
+module top_module(
+    input clk,
+    input rstn,
+    input [5:0] cnt,
+    input [6:0] blockcnt,
+    input [5:0] bestmode,
+    input [5:0] bestmode16,
+    input [5:0] bestmode32,
+    input finish,
+    output reg md_we,
+    output reg [5:0] md_wdata,
+    output reg [6:0] md_waddr
+);

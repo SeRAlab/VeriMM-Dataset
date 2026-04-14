@@ -1,0 +1,12 @@
+Design a synchronous buffer module that captures and outputs the positions of a mouse (x and y coordinates) and the state of the left mouse button. On each rising edge of the clock, if the reset signal is asserted, the output values for the mouse coordinates and button state are reset to zero. Otherwise, the current inputs are passed through to the output, effectively storing the most recent mouse input data.
+module top_module(
+    input wire clk,
+    input wire [11:0] xpos_in,
+    input wire [11:0] ypos_in,
+    input wire mouseleft_in,
+    input wire rst,
+    
+    output reg [11:0] xpos_out,
+    output reg [11:0] ypos_out,
+    output reg mouseleft_out
+    );

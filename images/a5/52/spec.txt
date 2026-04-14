@@ -1,0 +1,11 @@
+Design a control signal multiplexer that outputs three sets of signals: EX_signal_o, MEM_signal_o, and WB_signal_o. The selection of these outputs is governed by two control inputs: stall_select_i and flush_select_i. If either stall_select_i or flush_select_i is asserted (i.e., set to high), the module outputs undefined states for all signals, indicating a stall or flush condition. Otherwise, it simply forwards the corresponding input signals (EX_signal_i, MEM_signal_i, and WB_signal_i) directly to their respective outputs. This design is useful in contexts such as pipeline control in microprocessors, where managing the flow of signals during stalled or flushed states is critical.
+module top_module(
+	stall_select_i   ,
+    flush_select_i   ,
+    EX_signal_i    ,
+    MEM_signal_i   ,
+    WB_signal_i    ,
+    EX_signal_o    ,
+    MEM_signal_o   ,
+    WB_signal_o   
+);

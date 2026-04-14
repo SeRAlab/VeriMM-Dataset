@@ -1,0 +1,11 @@
+Design a synchronous 4-bit counter capable of both counting up and down based on the `count_en` signal. The counter resets to zero when the `reset` signal is active, or it can be loaded with an external 4-bit value (`data_in`) when the `load` signal is asserted. The module provides overflow and underflow indications: it sets the `overflow` signal when the counter wraps around from 15 to 0 during an increment operation, and sets the `underflow` signal when it wraps from 0 to 15 during a decrement operation.
+module top_module(
+    input clk,
+    input reset,
+    input count_en,
+    input load,
+    input [3:0] data_in,
+    output reg [3:0] count_val,
+    output reg overflow,
+    output reg underflow
+);

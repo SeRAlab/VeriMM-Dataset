@@ -1,0 +1,8 @@
+Design a 4-bit comparator that can determine whether two 4-bit inputs (`in0` and `in1`) are equal (`EQ`) or if `in0` is greater than `in1` (`GT`). The comparator uses a simple state machine controlled by a 2-bit stage register to manage the input registration process. Based on the current stage, the inputs are registered, and the outputs are computed accordingly. The design involves sequential logic to progress through stages and allows for efficient comparison using combinational logic for equality and greater-than checks.
+module top_module(
+    input [3:0] in0,
+    input [3:0] in1,
+    input clk, // Added clk input
+    output reg EQ, // Changed to reg to allow assignment in always block
+    output reg GT  // Changed to reg to allow assignment in always block
+);

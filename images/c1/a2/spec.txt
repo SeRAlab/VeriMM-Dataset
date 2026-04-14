@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module to subtract one from a 16-bit input operand and provide the result along with a borrow flag. This module plays a crucial role in arithmetic operations within a digital system, especially in scenarios requiring decrement operations. It can be utilized in counters, address calculations, or any arithmetic logic requiring subtraction by one. The module employs a bitwise manipulation technique to achieve the subtraction, avoiding the use of traditional arithmetic circuits, which might be more resource-intensive.
+
+Module name:  
+	minus_one
+
+Input ports:
+	i_operand [15:0]: A 16bit input operand from which one is to be subtracted. It is the primary data input for the subtraction operation.
+Output ports:
+	o_result [15:0]: A 16bit output representing the result of the subtraction operation (i_operand  1). It provides the decremented value of the input operand.
+	o_borrow: A singlebit output flag indicating a borrow from the subtraction operation. In the context of subtracting one, this flag effectively indicates whether the input operand was zero, resulting in a borrow during subtraction.
+
+
+Implementation:
+The Verilog module minus_one is designed to subtract one from a 16-bit input operand (i_operand) and produce a 16-bit result (o_result) along with an output flag (o_borrow) indicating whether the operation resulted in a borrow (which, in the context of subtracting one, can be interpreted as an underflow indicator). The module employs a purely combinational logic approach, with no sequential elements (e.g., flip-flops or latches), meaning that the output is directly determined by the current inputs without any internal state.
+The core logic of the module is built around a series of bitwise NOT operations and a cascading series of AND gates that effectively implement a binary decrement operation. The process can be broken down into several stages, each represented by a group of internal signals (G_0 through G_5), which progressively transform the input operand to achieve the final result. This transformation is essentially a bitwise conditional operation that depends on the propagation of a "borrow" through the bits of the operand.
+
+Give me the complete code.
+

@@ -1,0 +1,6 @@
+Design a circuit that detects transitions (edges) in an 8-bit input signal over consecutive clock cycles. This module utilizes three pipeline registers to store the input signal across three clock cycles, and the output `anyedge` indicates any change in the input signal between these cycles. Specifically, it computes the logical XOR between adjacent registers to determine whether an edge has occurred, combining these results to assert the output when conditions of change are met.
+module top_module(
+    input clk,
+    input [7:0] in,
+    output [7:0] anyedge
+);

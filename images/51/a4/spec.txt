@@ -1,0 +1,12 @@
+Design a 32-entry register file capable of reading from and writing to 32-bit wide registers. The module supports synchronous write operations on the negative edge of the clock when write enable is active. It allows reading the data from two specified registers simultaneously, outputting the values as r_data_p1_rf_o and r_data_p2_rf_o based on the provided register addresses. Additionally, it includes reset functionality to initialize the module as needed.
+module top_module(
+        input   wire           clk,
+        input   wire           reset,
+        input   wire           w_en_rf_i,
+        input   wire [31:0]    w_data_rf_i,
+        input   wire [4:0]     w_reg_rf_i,
+        input   wire [4:0]     r_reg_p1_rf_i,
+        input   wire [4:0]     r_reg_p2_rf_i,
+        output  wire [31:0]    r_data_p1_rf_o,
+        output  wire [31:0]    r_data_p2_rf_o
+    );

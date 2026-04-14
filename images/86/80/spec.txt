@@ -1,0 +1,10 @@
+Design a FIFO (First-In-First-Out) buffer capable of storing up to 256 eight-bit data entries. It is clocked by `clk` and supports write operations when `fifo_wr` is asserted, provided the buffer is not full. The module manages read and write pointers to keep track of the data in the buffer, outputs the current data being read as `r_dat`, and provides flags indicating whether the buffer is full (`fifo_FF`) or empty (`wfifo_empty`). Additionally, it outputs the count of used entries in the FIFO via `wfifo_used`, facilitating efficient data storage and retrieval suitable for applications like buffering in data communication systems.
+module top_module(
+  input clk,
+  input [7:0] fifo_wdata,
+  input fifo_wr,
+  output reg fifo_FF,            // Changed output to reg
+  output reg [7:0] r_dat,
+  output reg wfifo_empty,        // Changed output to reg
+  output reg [5:0] wfifo_used
+);

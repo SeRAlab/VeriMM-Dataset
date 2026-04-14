@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to compute the CRC (Cyclic Redundancy Check) for a given input data stream. CRC is a popular error-detecting code used to detect accidental changes to raw data in digital networks and storage devices. Specifically, this module calculates a 16-bit CRC code based on an 8-bit input data (`din_i`) and a 16-bit initial CRC value (`crc_in_i`). The primary function of this module to ensure data integrity during transmission or storage, making it a critical component in systems where data accuracy is paramount, such as USB communication protocols, network transmission systems, and data storage applications.
+
+Module name:  
+	usbf_crc16
+
+Input ports:
+	crc_in_i [15:0]: A 16bit input representing the initial or previous CRC value. This allows for the continuation of CRC calculation across multiple data blocks.
+	din_i [7:0]: An 8bit input data for which the CRC is to be calculated. This data is typically a portion of a larger data packet or stream.
+Output ports:
+	crc_out_o [15:0]: A 16bit output that provides the updated CRC value after processing the input data din_i with the initial/previous CRC value crc_in_i.
+
+
+Implementation:
+The usbf_crc16 module is designed to calculate a 16-bit cyclic redundancy check (CRC) value based on an 8-bit input data (din_i) and a 16-bit initial CRC value (crc_in_i). CRC is a popular error-detecting code commonly used in digital networks and storage devices to detect accidental changes to raw data. The primary purpose of this module is to ensure data integrity by providing a short, fixed-size checksum of the data.
+The module operates purely on combinational logic, meaning its output (crc_out_o) is directly determined by its current inputs without any internal state or memory (sequential logic). The calculation is based on a specific polynomial represented in the XOR operations within the module. Each bit of the output CRC (crc_out_o) is calculated as a function of both the input data bits (din_i[0] to din_i[7]) and the bits of the input CRC (crc_in_i[0] to crc_in_i[15]).
+The logic for each bit of crc_out_o is defined by a series of XOR operations that effectively implement the division by the CRC polynomial in hardware. This is evident in the way bits from din_i and crc_in_i are selectively XORed to produce each bit of crc_out_o. The specific pattern of XOR operations corresponds to the coefficients of the polynomial used for the CRC calculation.
+
+Give me the complete code.
+

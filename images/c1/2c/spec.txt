@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module appears to function as a lookup table for a specific application, possibly related to Pulse Width Modulation (PWM) signal generation or processing, with a logarithmic or non-linear mapping aspect. The primary function of this module to map a 4-bit digital input (`din`) to two 8-bit output representations (`rep0` and `rep1`). This mapping could be used in applications where different PWM duty cycles or patterns are selected based on the input value, potentially for controlling the brightness of LEDs, the speed of motors, or other PWM-driven devices in a non-linear fashion that might correspond to human perception scales (e.g., logarithmic scales for brightness or sound volume).
+
+Module name:  
+	SQM_PWM_LOG
+
+Input ports:
+	din (4bit): This is the primary input to the module, likely representing a discrete level or command that selects a specific PWM pattern or duty cycle. The input is 4 bits wide, allowing for 16 different input states (0 to 15).
+Output ports:
+	rep0 (8bit): This output represents the first part of the mapping for the input din. The specific meaning of rep0 is not defined within the code but could represent a duty cycle, frequency, or other parameter in a PWM application.
+	rep1 (8bit): Similar to rep0, this output represents the second part of the mapping for the input din. Together with rep0, it might define a complex or multidimensional parameter for the PWM signal.
+	zero (1bit): This is a flag output that indicates whether the input din is zero. It could be used externally to trigger specific behaviors or conditions when no input is provided.
+
+
+Implementation:
+The RTL module SQM_PWM_LOG is designed to map a 4-bit digital input (din) to two 8-bit output representations (rep0 and rep1). This module operates purely on combinational logic, as evidenced by the absence of clock signals and the use of an always @(din) block, which triggers the logic execution upon any change in the din input signal.
+The core functionality of this module is encapsulated within a case statement that examines the value of din and assigns predefined values to rep0 and rep1 based on din's value. This mapping is hardcoded into the module, making it a straightforward lookup operation without any arithmetic or logical processing of the input value beyond the comparison and assignment operations.
+The module also features an output signal zero, which is a combinational logic output directly derived from the input din. This signal is asserted (1) when din is equal to 0, and deasserted (0) otherwise. This is achieved through a continuous assignment statement (assign zero = din==0;), which ensures that zero reflects the state of din being zero at all times, independent of the always block.
+The design does not include any sequential logic elements (e.g., flip-flops or latches) and relies entirely on the combinational logic to perform its function. This means the outputs (rep0, rep1, and zero) immediately reflect changes in the input din following propagation delays inherent in the logic gates that implement the combinational logic.
+
+Give me the complete code.
+

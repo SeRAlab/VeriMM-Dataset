@@ -1,0 +1,14 @@
+
+
+You have been tasked with designing a module that will take in a 4-bit binary number and output a 3-bit binary number representing the range of memory indices that the input number falls within. The memory array has 4096 elements, and each memory element is a single bit. The memory array is defined as `reg mem[4095:0]`. 
+
+You must design a module called `memidxrng` that takes in a 4-bit binary number `in_num`, and outputs a 3-bit binary number `out_num` representing the range of memory indices that the input number falls within. Specifically, the output `out_num` should be such that the memory indices `mem[out_num*8 +: 8]` to `mem[out_num*8 + 7 -: 8]` (inclusive) are the ones that the input number falls within. 
+
+For example, if the input number is `0101`, then the output number should be `000`, indicating that the memory indices `mem[0:7]` are the ones that the input number falls within. 
+
+You should assume that the module has a clock input, a reset input, and an enable input. When the enable input is high, the module should output the correct `out_num` value for the given `in_num`. When the enable input is low, the module should output a default value of `000`. 
+
+You should also assume that the module has been instantiated in a testbench, and that the testbench will provide appropriate values for the inputs. 
+
+Write the `memidxrng` module in Verilog.
+

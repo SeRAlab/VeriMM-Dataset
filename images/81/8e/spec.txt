@@ -1,0 +1,10 @@
+Design a synchronous edge detection and output control circuit. The module captures the state of input 'a' on each clock cycle, using two flip-flops to create delayed versions of 'a' for detecting rising and falling edges. The output, `out_comb_always`, indicates a change in signal state, derived from the XOR of the current and previous states of 'a'. The `rise` signal is asserted on a rising edge of 'a', while the `down` signal is asserted on a falling edge. The `final_output` registers the value of `out_comb_always` depending on whether a rising or falling edge is detected, thereby allowing the circuit to output the direct or inverted version of `out_comb_always` based on the edge detected.
+module top_module(
+    input clk,
+    input rst_n,
+    input a,
+    output reg out_comb_always,
+    output reg rise,
+    output reg down,
+    output reg final_output
+);

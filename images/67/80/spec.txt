@@ -1,0 +1,7 @@
+Design a 4-to-16 line decoder with pipelined input sampling. The module accepts a 2-bit selection input and an enable signal. On the positive edge of the clock, it captures the selection and enable states. When the enable signal is low, the decoder activates one of the 16 output lines corresponding to the selected input by setting the respective output bit to 0 while the others remain high. When the enable signal is high, all outputs are set to high. This design is useful for selecting one out of several options in digital circuits, allowing for efficient state management.
+module top_module(
+    input [1:0] select,
+    input en,
+    input clk,          // Added the clk input
+    output reg [15:0] out
+);

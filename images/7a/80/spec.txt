@@ -1,0 +1,14 @@
+Design a memory write-back stage that captures and stores data from input signals on the rising edge of the clock. It takes a 5-bit wide register identifier (`rd_in`), a 64-bit ALU result (`alu_in`), a 64-bit read data value (`read_data_in`), and a 2-bit wide write-back control signal (`wb_in`), and outputs these values as `rd_out`, `alu_out`, `read_data_out`, and `wb_out`, respectively. This module serves to transfer data between different stages of a pipelined architecture, specifically focusing on holding values that will be used in the write-back phase of instruction execution.
+module top_module(
+  input [4:0]rd_in,
+  input [63:0]alu_in,
+  input [63:0]read_data_in,
+  input [1:0]wb_in,
+
+  input clk,
+  
+  output reg [4:0]rd_out,
+  output reg  [63:0]alu_out,
+  output reg  [63:0]read_data_out,
+  output reg  [1:0]wb_out
+);

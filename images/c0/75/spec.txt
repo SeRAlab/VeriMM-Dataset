@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+    
+Implement a module primarily functions as an Instruction Register (IR) within a digital system, likely part of a processor or a microcontroller architecture. Its main objectives include:
+
+Storing the instruction fetched from memory (SRAM) temporarily.
+Providing part of the instruction to other components of the system for decoding and execution.
+Conditionally masking a portion of the instruction based on an external enable signal.
+
+This module plays a crucial role in the instruction fetch and decode phases of a processor's operation, acting as a bridge between the memory holding the program instructions and the decoding logic that interprets these instructions.
+
+Module name:  
+	IR
+
+Input ports:
+	clk (input): The clock signal input. It is a singlebit signal that synchronizes the internal operations of the module, including the updating of the instruction register.
+	LI (input): Load Instruction signal. It is a singlebit signal that controls whether the instruction register should be updated with a new instruction from the SRAM. A low value (0) on this signal triggers the loading of the instruction.
+	EI (input): Enable Instruction signal. It is a singlebit signal that determines whether the lower 4 bits of the instruction register are outputted through IR_OUT_2. When high (1), IR_OUT_2 outputs the lower 4 bits; otherwise, it outputs 0.
+	SRAM_IN (input): SRAM Input. It is a 9bit signal representing the instruction fetched from SRAM (Static RandomAccess Memory) to be loaded into the instruction register.
+Output ports:
+	IR_OUT_1 (output): The upper 5 bits of the instruction register. This 5bit signal represents the first part of the instruction, likely the opcode or a significant portion of it, which is always outputted regardless of the state of other signals.
+	IR_OUT_2 (output): The lower 4 bits of the instruction register. This 4bit signal represents the second part of the instruction, possibly an operand or addressing mode, which is conditionally outputted based on the EI signal.
+
+
+Implementation:
+The RTL module named IR is designed to interface with a memory component (presumably SRAM) and selectively output parts of the data fetched from this memory based on specific control signals. The module operates synchronously with a clock signal (clk) and uses three primary control inputs: LI, EI, and SRAM_IN. The output of the module is divided into two parts: IR_OUT_1 and IR_OUT_2, which are derived from an internal register IR_OUT_r.
+
+Give me the complete code.
+

@@ -1,0 +1,13 @@
+Design a simple computational function unit (CFU) that processes two 32-bit inputs based on a 10-bit function identifier. It selects either `cmd_payload_inputs_0` or `cmd_payload_inputs_1` for output based on the least significant bit of `cmd_payload_function_id`. The module indicates readiness to accept commands with `cmd_ready`, outputs a result through `rsp_payload_outputs_0`, and signals the validity of the response with `rsp_valid`. Integrated synchronous reset functionality ensures proper initialization and state management in response to a clock signal.
+module top_module(
+  input               cmd_valid,
+  output              cmd_ready,
+  input      [9:0]    cmd_payload_function_id,
+  input      [31:0]   cmd_payload_inputs_0,
+  input      [31:0]   cmd_payload_inputs_1,
+  output              rsp_valid,
+  input               rsp_ready,
+  output     [31:0]   rsp_payload_outputs_0,
+  input               reset,
+  input               clk
+);

@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement the design of a 16-bit shift register with parallel load capability. It utilizes a clock signal (clk), an active-high reset signal (rst), a load enable signal (load), and a serial input signal (sin).
+
+Module name:
+    shift_reg_16bit
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high reset signal. Defined as 1 for register reset and 0 for normal operation.
+    load: Load enable signal that allows parallel loading when asserted.
+    sin: Serial input signal for shifting.
+    pdata: Parallel data input signal with a data width of 16 bits.
+
+Output ports:
+    sout: Serial output signal of the shift register.
+    q: Parallel data output signal with a data width of 16 bits.
+
+Implementation:
+The module includes a shift register (shift_reg) to store the current data.
+On the positive edge of the clock signal, if the reset signal is active, the shift register is reset to 0.
+If the load signal is active and the reset signal is inactive, the shift register is loaded with the parallel data input (pdata).
+If the load signal is inactive and the reset signal is inactive, the shift register shifts left by one bit and the serial input (sin) is shifted into the least significant bit.
+The serial output (sout) is assigned the most significant bit of the shift register.
+The parallel data output (q) is assigned the value of the shift register.
+
+Give me the complete code.

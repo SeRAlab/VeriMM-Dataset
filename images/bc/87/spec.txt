@@ -1,0 +1,10 @@
+Design a register bank that consists of a synchronous RAM memory. The module allows for input of a 32-bit data signal, enabling write functionality controlled by a write enable signal. It accepts two 5-bit read addresses to simultaneously fetch 32-bit data from two distinct registers. The outputs provide the data corresponding to the read addresses on the rising edge of the clock, facilitating the reading of stored values while managing the timing and synchronization of data access.
+module top_module(
+  input clk,
+  input [31:0] data_in,
+  input write_en,
+  input [4:0] read_address_1,
+  input [4:0] read_address_2,
+  output reg [31:0] read_data_1,
+  output reg [31:0] read_data_2
+);

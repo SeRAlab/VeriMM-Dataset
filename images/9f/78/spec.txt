@@ -1,0 +1,6 @@
+Design a four-stage pipelined priority encoder. The module takes an 8-bit input and outputs a 3-bit position corresponding to the highest-priority active input bit. The implemented pipeline consists of four registers to delay the input signal and the position output across multiple clock cycles, effectively allowing the system to process inputs asynchronously while maintaining the priority order. The encoder prioritizes input bits starting from the lowest index, ensuring that the output position reflects the first active (logic high) bit from the input, defaulting to position 0 if no bits are active.
+module top_module(
+    input clk,
+    input [7:0] in,
+    output reg [2:0] pos
+);

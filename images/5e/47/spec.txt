@@ -1,0 +1,8 @@
+Design a SHA-1 hash function module that processes a 512-bit input (datain) and outputs a 512-bit hash (hashout) along with a signal indicating completion (done). The module initializes with specific hash values and supports reset functionality. During operation, it sets up the necessary working and message schedule variables for the SHA-1 algorithm, which is executed on each clock cycle, allowing for iterative hash calculations. The module aims to securely compute a hash value from the provided input data following the SHA-1 specification.
+module top_module(
+  input [511:0] datain,
+  input rst,
+  input clk,          // Added clock input
+  output reg [511:0] hashout,
+  output reg done
+);

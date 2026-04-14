@@ -1,0 +1,10 @@
+Design a dual-edge-triggered flip-flop with active-low reset functionality. The module accepts a data input (D) and clock signal (CLK), and it outputs the stored data (Q) and its complement (Q_N). When the RESET_B signal is low, the flip-flop resets the output Q_N to a low state. Otherwise, on the rising edge of the clock, it captures the value of D. The design utilizes an external standard cell (from the sky130 library) for its fundamental operations while also implementing a simple reset mechanism via an always block.
+module top_module(
+    RESET_B,
+    CLK    ,
+    D      ,
+    Q      ,
+    Q_N    ,
+    VPWR   ,
+    VGND
+);

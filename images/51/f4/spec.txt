@@ -1,0 +1,8 @@
+Design a circuit that functions as a shift register-based multiplier and adder. The module takes two 8-bit inputs, `a` and `b`, and on each clock cycle, it stores these inputs while shifting a 3-bit register. It computes the product of `a` and `b`, adds the lower 8 bits of the product to the shifted register, and produces a sum output `s`. Additionally, it provides an overflow signal to indicate if there was an overflow in the summation. The design effectively combines multiplication and addition operations for 8-bit values while managing shifting and overflow detection.
+module top_module(
+    input clk,
+    input [7:0] a,
+    input [7:0] b,
+    output [7:0] s,
+    output overflow
+);

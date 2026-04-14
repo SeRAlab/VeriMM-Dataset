@@ -1,0 +1,11 @@
+Design a motor control module that utilizes a D flip-flop to manage the output state based on clock input and control signals. The module features inputs for clock (CLK), data (D), and various control signals (SCD, SCE, SET_B) to dynamically control the output (Q). When SCD is active, the output is reset to LOW, while SCE sets the output to HIGH. If neither SCD nor SCE are active, the output follows the state of the data input D, effectively capturing its value on the rising edge of CLK. This circuit enables conditional behavior for motor activation based on the defined control signals.
+module top_module(
+    input CLK,
+    input D,
+    output reg Q,
+    input SCD,
+    input SCE,
+    input SET_B,
+    input VPWR,
+    input VGND
+);

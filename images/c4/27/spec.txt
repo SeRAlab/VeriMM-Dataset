@@ -1,0 +1,22 @@
+
+
+You have been hired to design a verilog module that implements a D flip-flop with asynchronous reset and set inputs. The module should have the following inputs and outputs:
+
+Inputs:
+- `clk`: a clock signal
+- `rst`: an asynchronous reset signal
+- `set`: an asynchronous set signal
+- `d`: the data input
+
+Outputs:
+- `q`: the output of the flip-flop
+- `q_bar`: the complement of the output
+
+The module should operate as follows:
+- When the `rst` input is asserted, the output `q` should be set to 0 and `q_bar` should be set to 1.
+- When the `set` input is asserted, the output `q` should be set to 1 and `q_bar` should be set to 0.
+- When neither `rst` nor `set` are asserted, the output `q` should follow the input `d`, and `q_bar` should be the complement of `q`.
+- The output `q` and `q_bar` should be updated on the rising edge of the `clk` signal.
+
+Implement the module using behavioral Verilog code.
+

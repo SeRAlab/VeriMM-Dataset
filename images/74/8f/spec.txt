@@ -1,0 +1,7 @@
+Design a timer circuit that toggles a selection signal and manages a 7-bit output timer. On a system clock's rising edge, when reset is asserted, both the count and the outputs are initialized to zero. As the count increments with each clock cycle, when it reaches a defined threshold (TOGGLE_VALUE), the selection signal toggles its state. Additionally, when the count matches the TOGGLE_VALUE, the egg_timer output is set to a maximum value; otherwise, it is reset to zero. This module effectively acts as a timer control, managing timing intervals and state changes based on a clock input.
+module top_module(
+  input reset,
+  input sysclk,
+  output reg selection,
+  output reg [6:0] egg_timer
+);

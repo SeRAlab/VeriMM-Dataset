@@ -1,0 +1,3 @@
+Design a register file stage for a pipelined architecture that captures and holds control and data signals from the execute stage to the memory stage. On the negative edge of a reset signal, it initializes all output registers to zero. On the positive edge of the clock, it transfers the control signals (ewreg, em2reg, ewmem) and data values (eAlu, eb, ern) from the execute stage to the corresponding output registers (mwreg, mm2reg, mwmem, mAlu, mB, mrn) for use in the memory stage. This module effectively facilitates the communication and proper timing of data flow within a pipelined processor.
+module top_module( ewreg,em2reg,ewmem,eAlu,eb,ern,clock,resetn,
+							mwreg,mm2reg,mwmem,mAlu,mB,mrn);

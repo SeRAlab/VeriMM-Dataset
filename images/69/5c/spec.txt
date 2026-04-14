@@ -1,0 +1,27 @@
+Implement the Verilog module based on the following description.
+Consider this Verilog module "counter_module":
+
+// module counter_module (
+//     input clk,
+//     input reset,
+//     input enable,
+//     output reg [3:0] count
+// );
+
+// always @(posedge clk or posedge reset) begin
+//     if (reset) begin
+//         count <= 0;
+//     end else if (enable) begin
+//         count <= count + 1;
+//     end
+// end
+
+// endmodule
+
+// Create a hierarchical Verilog design where an incrementer and a reset block are in a submodule, and that submodule is instantiated in this code. Create the submodule called "top_module".
+
+module top_module(
+    input clk,
+    input reset,
+    input enable,
+    output reg [3:0] count);

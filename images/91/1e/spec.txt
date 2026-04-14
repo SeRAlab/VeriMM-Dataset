@@ -1,0 +1,6 @@
+Design a circuit that performs serial-to-parallel data conversion with enable functionality. The module accepts a serial input (ShiftIn) and concurrently outputs a parallel 4-bit value (ParallelOut). On each positive clock edge, if the ShiftEn signal is active, the circuit shifts the incoming serial data into a 16-bit shift register. The most significant bit of the shift register is made available as ShiftOut. The 16-bit shift register is also divided into four 4-bit segments, which are updated in parallel to output the current 4-bit state of the shift register. The module resets the shift register and output values when the reset signal is asserted.
+module top_module(
+    input Clk, ShiftIn, reset, ShiftEn,
+    output reg ShiftOut,
+    output reg [3:0] ParallelOut
+);

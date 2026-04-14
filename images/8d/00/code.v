@@ -1,0 +1,30 @@
+module top_module(
+  input clk,
+  input reset,
+  input direction,
+  input load,
+  input [3:0] data,
+  output reg [3:0] count
+);always @(posedge clk) begin
+    if (reset) begin
+      count <= 4'b0000;
+    end else if (load) begin
+      count <= data;
+    end else begin
+      if (direction) begin
+        if (count == 4'b1111) begin
+          count <= 4'b0000;
+        end else begin
+          count <= count + 1;
+        end
+      end else begin
+        if (count == 4'b0000) begin
+          count <= 4'b1111;
+        end else begin
+          count <= count - 1;
+        end
+      end
+    end
+  end
+  
+endmodule

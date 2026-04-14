@@ -1,0 +1,9 @@
+Design a simple Kalman filter that estimates the position of an object. The filter should take in a noisy measurement of position (`z`), a control input (`u`), and use a constant process noise covariance (`Q`) and measurement noise covariance (`R`). The filter should output the estimated position (`x_hat`). The filter equations are as follows:  
+1. Prediction step:  
+   x_hat = A * x_hat + B * u  
+   P = A * P * A' + Q  
+2. Update step:  
+   K = P * H' / (H * P * H' + R)  
+   x_hat = x_hat + K * (z - H * x_hat)  
+   P = (I - K * H) * P  
+You need to implement this in Verilog with appropriate state registers and combinational logic for the calculations.

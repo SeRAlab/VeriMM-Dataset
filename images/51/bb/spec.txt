@@ -1,0 +1,35 @@
+Please act as a professional Verilog designer.
+
+Design a module for a 4-bit shift register with parallel load, serial input, and a synchronous reset. The shift register should be able to shift its content to the right on each rising edge of the clock, load new data when the load signal is active, or reset to 0 when the reset signal is active.
+
+Module name:
+    shift_register
+
+Input ports:
+    clk: Clock signal.
+    rst: Synchronous reset signal.
+    load: Load enable signal.
+    d: 4-bit parallel input data.
+    sin: Serial input data.
+
+Output ports:
+    q: 4-bit output signal representing the current state of the register.
+
+Implementation:
+Declare the module shift_register with input and output ports as specified.
+Declare a 4-bit register to hold the shift register state.
+Inside an always block, sensitive to the positive edge of the clk signal, implement the logic for shifting, parallel loading, and synchronous reset.
+If the reset signal is active, set the register to 0.
+If the load signal is active, load the new data into the register.
+If neither reset nor load signals are active, shift the register content to the right and load the serial input.
+
+Give me the complete code.
+
+module shift_register(
+    input clk,
+    input rst,
+    input load,
+    input [3:0] d,
+    input sin,
+    output reg [3:0] q
+);

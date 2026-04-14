@@ -1,0 +1,16 @@
+Develop a synchronous module that functions as a two-counter and sum aggregator. It features asynchronous clear (CLR) and load (LD) controls, allowing it to reset the counters and to load a 4-bit input (DATA) into the second counter (counter2), respectively. The module continuously increments two 4-bit counters (counter1 and counter2) on each positive edge of the clock (CLK), while also computing the sum of these counters, which is output as an 8-bit value (Q). The individual bits of the counters are exposed as separate 4-bit outputs (Q0 to Q7), representing the least significant bits of both counters. The module resets all outputs to zero upon receiving a clear signal.
+module top_module(
+    input CLK,
+    input CLR,
+    input LD,
+    input [3:0] DATA,
+    output reg [7:0] Q, // 8-bit output from the functional module
+    output reg [3:0] Q0,
+    output reg [3:0] Q1,
+    output reg [3:0] Q2,
+    output reg [3:0] Q3,
+    output reg [3:0] Q4,
+    output reg [3:0] Q5,
+    output reg [3:0] Q6,
+    output reg [3:0] Q7
+);

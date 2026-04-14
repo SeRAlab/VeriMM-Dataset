@@ -1,0 +1,37 @@
+Implement a Verilog module with the following description: Vector difference calculation module with pipeline.
+module top_module(
+	input sys_clk,
+	input sys_rst,
+
+	output busy,
+
+	input pipe_stb_i,
+	output pipe_ack_o,
+	input signed [17:0] ax,
+	input signed [17:0] ay,
+	input signed [17:0] bx,
+	input signed [17:0] by,
+	input signed [17:0] cx,
+	input signed [17:0] cy,
+	input signed [17:0] dx,
+	input signed [17:0] dy,
+	input signed [11:0] drx,
+	input signed [11:0] dry,
+
+	output reg pipe_stb_o,
+	input pipe_ack_i,
+	output reg signed [17:0] ax_f,
+	output reg signed [17:0] ay_f,
+	output reg signed [17:0] bx_f,
+	output reg signed [17:0] by_f,
+	output reg diff_cx_positive,
+	output reg [16:0] diff_cx,
+	output reg diff_cy_positive,
+	output reg [16:0] diff_cy,
+	output reg diff_dx_positive,
+	output reg [16:0] diff_dx,
+	output reg diff_dy_positive,
+	output reg [16:0] diff_dy,
+	output reg signed [11:0] drx_f,
+	output reg signed [11:0] dry_f
+);

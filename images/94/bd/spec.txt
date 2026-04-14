@@ -1,0 +1,15 @@
+Design a GPIO (General Purpose Input/Output) interface module that allows for input and output operations controlled through a simple address and chip select mechanism. The module has two primary addresses: one for reading data from an input port when the chip is selected, and another for writing data to an interrupt request mask. The readdata output reflects the value read from the input port or the current interrupt mask based on the specified address. It also generates an interrupt signal (irq) that is asserted when the input data, bitwise ANDed with the irq_mask, results in a non-zero value, indicating that an interrupt condition is met. This design incorporates asynchronous reset functionality to initialize the data and mask states.
+module top_module(
+  // inputs:
+  address,
+  chipselect,
+  clk,
+  in_port,
+  reset_n,
+  write_n,
+  writedata,
+
+  // outputs:
+  irq,
+  readdata
+);

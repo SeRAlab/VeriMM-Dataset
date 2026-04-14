@@ -1,0 +1,19 @@
+Please act as a professional Verilog designer.
+
+Implement an edge detector for a rising edge. The edge detector outputs a high signal for one clock cycle when a rising edge is detected on the input signal.
+
+Module name:
+    rising_edge_detector
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high synchronous reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    signal_in: Input signal for which the rising edge is to be detected.
+
+Output ports:
+    edge_detected: Output signal that is high for one clock cycle when a rising edge is detected.
+
+Implementation:
+The edge detector is triggered on the positive edge of the clock signal (posedge clk).
+If the reset signal is asserted (rst == 1), the edge detector is cleared.
+The edge detector compares the current value of the input signal (signal_in) with its value from the previous clock cycle to detect a rising edge.

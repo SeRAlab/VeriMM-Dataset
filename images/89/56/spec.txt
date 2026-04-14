@@ -1,0 +1,15 @@
+Design a synchronous register module that captures and stores a 10-bit wide input based on a negative-edge clock signal (CLK_N). The module has several control inputs, including a reset (RESET_B) and various power (KAPWR, VPWR, VGND) and status controls (SCE, SCD, SLEEP_B). Depending on the current state of the input register, the output (Q) will either reflect a specific state or be set to an unknown state (1'bx). It transitions the internal register to a next state defined by particular fixed inputs while ensuring that certain control states dictate the register's behavior, particularly holding or resetting the outputs. The design appears to manage power and operational modes while ensuring synchronous operation with defined responses to input conditions.
+module top_module(
+    input wire CLK_N,
+    input wire KAPWR,
+    input wire RESET_B,
+    input wire SCE,
+    input wire SCD,
+    input wire SLEEP_B,
+    input wire D,
+    input wire VPB,
+    input wire VNB,
+    input wire VPWR,
+    input wire VGND,
+    output reg Q  // Changed from wire to reg
+);

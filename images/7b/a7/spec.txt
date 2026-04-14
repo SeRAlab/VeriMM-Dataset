@@ -1,0 +1,6 @@
+Design a Voice Activity Detection (VAD) circuit that processes audio samples in frames to determine if speech is present. It computes the energy of the audio input and distinguishes between silence, voiced, and unvoiced states based on energy thresholds and changes in energy. The circuit maintains state information to ensure that it accurately detects periods of speech activity, and it employs a counter to confirm persistent detection of speech before asserting a speech_detected output high. The design effectively enables real-time monitoring of audio streams to identify when speech is occurring.
+module top_module(
+  input [n-1:0] audio_in,
+  input clk, // Added clk input
+  output reg speech_detected // Changed to reg type for assignment in always block
+);

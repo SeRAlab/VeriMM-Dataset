@@ -1,0 +1,18 @@
+The module described implements a memory mapper for a specific type of programmable video game hardware, likely aimed at handling PRG and CHR ROM addressing. It utilizes a 4-bit register to manage PRG bank selection based on input address lines and control signals while supporting two types of memory access: PRG and CHR. The module allows read and write operations for the PRG memory, with special behavior for bank switching based on the incoming address and specific flags. Additionally, it provides outputs for address mapping for CHR access and control signals for VRAM, making it versatile for managing memory in a gaming system or similar application.
+module top_module(
+    input clk,
+    input ce,
+    input reset,
+    input [31:0] flags,
+    input [15:0] prg_ain,
+    output [21:0] prg_aout,
+    input prg_read,
+    input prg_write,
+    input [7:0] prg_din,
+    output prg_allow,
+    input [13:0] chr_ain,
+    output [21:0] chr_aout,
+    output chr_allow,
+    output vram_a10,
+    output vram_ce
+);

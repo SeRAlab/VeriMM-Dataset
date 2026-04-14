@@ -1,0 +1,8 @@
+Design a circuit that performs addition or subtraction on two 8-bit inputs based on a control signal and then selects the output using a 4-to-1 multiplexer. The `add_sub` module outputs the result of the addition or subtraction of inputs `a` and `b`, while the `mux4` module allows the selection of this result or zero, determined by the `select_ctrl` signal. The multiplexer is enabled by the `add_sub_ctrl` signal, ensuring that the output `Q` reflects the result when addition or subtraction is selected. This design effectively creates a conditional arithmetic operation with selectable output.
+module top_module(
+    input [7:0] a,
+    input [7:0] b,
+    input select_ctrl,
+    input add_sub_ctrl,
+    output [7:0] Q  // Changed output to match width of signals
+);

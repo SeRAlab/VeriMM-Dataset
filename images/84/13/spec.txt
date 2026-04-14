@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+
+Implement a 32-bit register with synchronous load capability. The register loads the input data when the load signal is high.
+
+Module name:  
+    load_reg               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the register.
+    load: Load signal to load the input data into the register.
+    data_in: 32-bit data input for the register.
+Output port:
+    Q: 32-bit register representing the current value of the register.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the register value is updated.
+If the reset signal (rst_n) is low, the register value (Q) is set to 0.
+If the load signal is high, the register value is set to data_in.
+
+Give me the complete code.
+
+module load_reg(
+   input                clk ,
+   input                rst_n,
+   input                load,
+   input  [31:0]        data_in,
+ 
+   output reg [31:0]    Q  
+);

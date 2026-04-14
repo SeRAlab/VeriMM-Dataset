@@ -1,0 +1,8 @@
+Design a 4-bit up/down counter with reset and load functionality. The counter increments its value upon the rising edge of the clock when the `UD` input is high; it decrements the value when `UD` is low. A reset signal (`RST`) sets the counter to zero. Additionally, if the `LOAD` input is active, the counter loads a new value specified by the `LOAD` input, overriding the current count. This module effectively manages counting operations while supporting asynchronous reset and load capabilities.
+module top_module(
+    input CLK,
+    input RST,
+    input UD,
+    input [3:0] LOAD,
+    output reg [3:0] Q
+);

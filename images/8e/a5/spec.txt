@@ -1,0 +1,7 @@
+Design a floating-point to fixed-point converter module. This module takes a 32-bit floating-point number as input and converts it to a 32-bit fixed-point representation, handling different cases for positive, negative, and zero values. The conversion process involves right-shifting the mantissa based on the exponent and applying saturation logic to manage overflow conditions. The output is updated on the rising edge of the clock, resulting in a fixed-point representation suitable for further processing in digital systems.
+module top_module(
+	input 		clk,
+	input [31:0]	float,
+
+	output reg [31:0]	fixed_out
+	);

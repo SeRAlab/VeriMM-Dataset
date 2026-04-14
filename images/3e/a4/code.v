@@ -1,0 +1,12 @@
+module dram_cell(  
+    input wire [7:0] data_in,  
+    input wire write_en,  
+    input wire clk,  
+    output reg [7:0] data_out  
+);  
+    always @(posedge clk) begin  
+        if (write_en) begin  
+            data_out <= data_in;  
+        end  
+    end  
+endmodule

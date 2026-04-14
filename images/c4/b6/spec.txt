@@ -1,0 +1,18 @@
+Please act as a professional Verilog designer. Your task is to create a Verilog module that implements a bus hold block.
+A bus hold block is a type of digital circuit that is used to avoid glitches in a bus signal caused by the changing state of the signal's inputs.
+Your module should have the following inputs and outputs:
+
+Inputs: a bus signal (bus_in), a clock signal (clk), a reset signal (reset)
+Outputs: a bus signal (bus_out)
+The module should also have the following parameters:
+
+n: the number of bits in the bus signal
+Your module should implement the following functionality:
+
+The circuit should hold the value of the bus signal when the clock signal is low.
+When the clock signal goes high, the circuit should latch the value of the bus signal and hold it until the clock signal goes low again.
+The circuit should also have a reset input that sets the output bus signal to 0 when it is active.
+To implement the bus hold block, you should use Verilog code to define a D flip-flop that is triggered by the rising edge of the clock signal.
+The input to the flip-flop should be the bus signal, and the output should be the output bus signal.
+You should also use a multiplexer to select between the input bus signal and the output bus signal based on the value of the reset signal.
+Finally, you should use an always block to implement the bus hold functionality, which should hold the output bus signal when the clock signal is low and latch the input bus signal when the clock signal is high.

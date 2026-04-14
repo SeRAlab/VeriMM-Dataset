@@ -1,0 +1,27 @@
+Implement a register stage in a pipelined processor design that stores various control signals and data outputs from the Execute stage to be used by the Memory stage. The module captures input values such as branch addresses, program counter additions, conditions, and memory-related signals on each positive clock edge, conditioned by control signals for flushing and stalling. When the flush signal is active, it resets all outputs to zero; otherwise, if there's no stall, it propagates the input values to respective output registers, ensuring proper signal flow through the pipeline while maintaining data integrity and control over the processing sequence.
+module top_module(
+input Clk,
+input stall,
+input flush,
+
+input [31:0] Branch_addr,PC_add,
+input [2:0] Condition,
+input Branch,
+input [2:0]PC_write,
+input [3:0]Mem_Byte_Write,Rd_Write_Byte_en,
+input MemWBSrc,OverflowEn,
+input [31:0] MemData,WBData,
+input Less,Zero,Overflow,
+input [4:0]Rd,
+
+
+output reg [31:0] Branch_addr_out,PC_add_out,
+output reg [2:0] Condition_out,
+output reg Branch_out,
+output reg [2:0]PC_write_out,
+output reg [3:0]Mem_Byte_Write_out,Rd_Write_Byte_en_out,
+output reg MemWBSrc_out,OverflowEn_out,
+output reg [31:0] MemData_out,WBData_out,
+output reg Less_out,Zero_out,Overflow_out,
+output reg [4:0]Rd_out
+);

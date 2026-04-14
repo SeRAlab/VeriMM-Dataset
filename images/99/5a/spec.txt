@@ -1,0 +1,10 @@
+Design a motor control module that manages the operation of a PWM output for motor speed control, along with H-bridge and stepper motor control signals. The module generates a PWM signal based on a specified frequency while directly passing through control signals for an H-bridge and a stepper motor. The internal logic updates the PWM output on each clock cycle, allowing for precise motor speed adjustments, while the control signals ensure proper interfacing with motor driver circuits.
+module top_module(
+  input pwm_in, 
+  input hbridge_ctrl, 
+  input stepper_ctrl,
+  input clk, 
+  output pwm_out, 
+  output hbridge_out, 
+  output stepper_out
+);

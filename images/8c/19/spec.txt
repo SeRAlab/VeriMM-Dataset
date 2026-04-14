@@ -1,0 +1,7 @@
+Design a data extension module that processes a 32-bit input word based on specified control signals for byte and half-word extraction. The module extracts one of four bytes or one of two half-words determined by the 2-bit ALU output selection. It then extends the selected byte or half-word to generate a 32-bit output based on the 3-bit ExtDM control input. The outputs can represent the original data, right-extended zeroes, or sign-extended values, thus facilitating data formatting for various operations in a processor pipeline.
+module top_module(
+    input [1:0] ALUOut_W,
+    input [31:0] ReadData_W,
+    input [2:0] ExtDM_W,
+    output reg [31:0] ReadData_W_R
+    );

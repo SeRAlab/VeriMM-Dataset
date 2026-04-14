@@ -1,0 +1,7 @@
+Design a register file module that operates with an 8-bit address space and allows controlled updates to six 8-bit registers. On a positive clock edge, it captures an update signal, and upon a rising edge of the update signal, it writes new data to the selected register based on the provided address. The module is reset to predefined initial values when the reset signal is low. It outputs a concatenation of four registers as a 32-bit signal, shares the upper four bits of the first register as the 'occupation' signal, extracts a four-bit 'waveform' signal from the same register, and exposes a four-bit 'bit_gain' signal from the sixth register, enabling the effective management and analysis of register values in a digital system.
+module top_module(
+	input clk,reset_n,update,
+	input [7:0] addr,data,
+	output [31:0] inc_phi,
+	output [3:0] occupation,waveform,bit_gain 
+);

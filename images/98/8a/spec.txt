@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+
+Implement a module of a 3-bit synchronous binary counter with enable and parallel load signals. The counter increments by 1 only when the enable signal is high. The counter can be loaded with a specific value in parallel when the load signal is high. The counter resets to 0 when the reset signal (rst) is active.
+
+Module name:
+    binary_counter_parallel_load_3
+Input ports:
+    rst: Reset signal (active high)
+    clk: Clock signal
+    enable: Signal to enable counting (1 for enable, 0 for disable)
+    load: Signal to load a specific value in parallel (1 for load, 0 for no load)
+    load_value: 3-bit value to be loaded into the counter when load is high
+Output ports:
+    count: 3-bit output representing the current count value
+
+Implementation:
+If the reset signal is active (rst), the counter is reset to 0 by assigning the value 3'b000 to the output register (count). If load is high, the counter is loaded with the value of load_value. If enable is high and load is low, the counter increments by 1 on each positive clock edge.
+
+Give me the complete code.

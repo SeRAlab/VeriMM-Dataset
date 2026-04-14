@@ -1,0 +1,13 @@
+Design a 128-depth, 31-bit wide synchronous FIFO (First-In, First-Out) memory buffer. The module supports asynchronous clear functionality, write requests (wrreq), and read requests (rdreq), with outputs indicating data availability (empty), capacity status (full), and current utilization (usedw). It also provides an almost full signal for managing buffer thresholds. When the write request is processed and the FIFO is not full, incoming data is stored, and the write pointer is updated. Conversely, when the read request is processed and the FIFO is not empty, data is retrieved, and the read pointer is updated. The design efficiently manages memory through wrap-around addressing for both read and write operations.
+module top_module(
+    input [30:0] data,
+    input wrreq,
+    input rdreq,
+    input clock,
+    input aclr,
+    output reg [30:0] q,  // Changed from wire to reg
+    output full,
+    output empty,
+    output [6:0] usedw,
+    output almost_full
+);

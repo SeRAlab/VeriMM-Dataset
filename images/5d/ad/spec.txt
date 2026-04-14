@@ -1,0 +1,9 @@
+Design a 4-to-1 multiplexer that selects between four 4-bit wide input signals (A, B, C, D) based on a condition derived from the input signal A and an enable signal EN. When EN is high, if A equals zero, the output Y will be assigned the value of B; if A equals 15 (binary 1111), Y will take the value of C; otherwise, Y will be set to the value of A. When EN is low, Y directly takes the value of D. The module uses additional logic gates to process the inputs before determining the final output based on the specified conditions.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [3:0] C,
+    input [3:0] D,
+    input EN,
+    output reg [3:0] Y
+);

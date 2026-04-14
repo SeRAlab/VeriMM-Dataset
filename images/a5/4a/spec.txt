@@ -1,0 +1,8 @@
+Design a single-bit wide shift register with an 8-bit parallel input. Upon a rising edge of the clock, if the reset signal is low, the output initializes to zero. If the load signal is asserted, the register captures and outputs the 8-bit data input; otherwise, it performs a left shift operation, shifting the existing output to the left by one bit and inserting a zero at the least significant bit position.
+module top_module(
+    input clk,
+    input rst_n,
+    input load,
+    input [7:0] data_in,
+    output reg [7:0] data_out
+);

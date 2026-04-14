@@ -1,0 +1,11 @@
+Design a forwarding unit for a pipelined processor to handle data hazards. The module takes inputs indicating source and destination registers, along with control signals that indicate whether the memory write back stage of the pipeline is active. Based on the inputs, it determines when to forward data for two source registers (ForwardA and ForwardB) by producing a two-bit output for each, indicating if the data should come from the execution stage or the memory write-back stage. This helps maintain correct data flow and prevents incorrect reads from the registers that might still hold previous values.
+module top_module(
+	idex_Rs,
+	idex_Rt,
+	exmem_Rd,
+	exmem_RegWrite,
+	memwb_Rd,
+	memwb_RegWrite,
+	ForwardA,
+	ForwardB
+	);

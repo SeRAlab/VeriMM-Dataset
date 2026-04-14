@@ -1,0 +1,10 @@
+Design a UART (Universal Asynchronous Receiver-Transmitter) transmitter that serially sends 8-bit data over one output line. The module takes a clock signal, a reset signal, an 8-bit data input, a new data signal, and a 16x clock enable. Upon receiving a new data signal while not busy, it prepares the data for transmission by appending a start bit and storing it in a buffer. During transmission, it shifts out each bit of data at a baud rate controlled by the clock, and it signals when the shift is complete. The output line defaults to HIGH when idle. Additionally, it includes a clock enable signal to manage the timing of bit transmission.
+module top_module(
+    input clock,
+    input reset,
+    input [7:0] tx_data,
+    input new_tx_data,
+    input ce_16,
+    output reg ser_out,
+    output reg ce_1
+);

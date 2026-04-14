@@ -1,0 +1,13 @@
+Design a control logic module that determines various enabling signals based on the input conditions. If the `fra_result` input is high, the module activates all output signals (`mux_5_en`, `mux_4_en`, `incre_en`, `incre_bit`, `shift_right_en`) except for `decre_en` and `shift_left_en`, indicating that incrementing and right shifting operations are enabled. Conversely, if `res` is low (indicating some sort of reset), all output signals are disabled. This setup is likely intended for a system that manages multiplexing, incrementation, and shifting operations within a digital circuit.
+module top_module(
+  input fra_result,
+  input res,
+  output reg mux_5_en,
+  output reg mux_4_en,
+  output reg incre_en,
+  output reg decre_en,
+  output reg incre_bit,
+  output reg shift_right_en,
+  output reg shift_left_en,
+  output reg shift_right_bits
+);

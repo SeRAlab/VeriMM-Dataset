@@ -1,0 +1,10 @@
+Design a circuit that implements a 64-bit shift register with scrolling LED display capabilities. The module features a clock and reset input for synchronization, a load signal to initialize the shift register with 64 bits of data, and a two-bit enable input that governs the type of shift operation performed (e.g., circular shifting of bits). The state of the shift register is reflected on two 8-bit outputs, `led_row` and `led_col`, which combine the corresponding bits from the shift register with a 4-bit counter. This design allows for visual representation on LEDs, enabling users to manage and manipulate data in real-time for scrolling effects.
+module top_module(
+    input clk,
+    input reset,
+    input load,
+    input [1:0] ena,
+    input [63:0] data,
+    output reg [7:0] led_row,
+    output reg [7:0] led_col
+);

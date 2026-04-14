@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit Johnson Counter module that generates a sequence of 4-bit Johnson counter values. The counter cycles through all possible 4-bit Johnson counter states in a cyclic manner.
+
+Module name:
+    johnson_counter
+                 
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+
+Output ports:
+    johnson_code: 4-bit output signal representing the current Johnson counter value.
+
+Implementation:
+The module includes a 4-bit register, johnson_code, which represents the current Johnson counter value.
+The johnson_code register is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the johnson_code register is cleared to 0.
+The johnson_code is updated by shifting its bits to the right, and the leftmost bit is set to the complement of the rightmost bit before the shift.
+
+Give me the complete code.
+
+module johnson_counter(
+  input clk,
+  input rst_n,
+  output reg [3:0] johnson_code
+);

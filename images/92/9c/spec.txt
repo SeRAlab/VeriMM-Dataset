@@ -1,0 +1,18 @@
+Design a digital signal processing module that facilitates communication between two Digital-to-Analog Converters (DACs) via a FIFO interface. The module captures control signals and provides a status output that indicates the device ID. On each clock cycle, it synchronously relays the enable signal from the destination DAC to the source DAC while transferring data from the source DAC to the destination DAC and validating the data transfer through valid signals. This design effectively manages data flow between the DACs while maintaining proper control and status signaling.
+module top_module(
+
+  input clk,
+
+  // control ports
+  input [31:0] control,
+  output reg [31:0] status,
+
+  // FIFO interface
+  output reg src_dac_enable,
+  input [15:0] src_dac_data,
+  output reg src_dac_valid,
+
+  input dst_dac_enable,
+  output reg [15:0] dst_dac_data,
+  input dst_dac_valid
+);

@@ -1,0 +1,11 @@
+Design a GPIO (General Purpose Input/Output) controller that interfaces with a data bus for memory-mapped access. This module supports two separate GPIO data registers, corresponding to address ranges 0x0000-0x000F and 0x0010-0x001F. The controller reads from and writes to these registers based on the address provided on the bus. When the device is reset, both GPIO registers are initialized to zero. Data input is enabled through a tri-state buffer, and the corresponding outputs are driven depending on the address space active during read operations. The controller reacts to clock signals and allows write operations when the BUS_WR signal is asserted.
+module top_module(
+    input wire          BUS_CLK,
+    input wire          BUS_RST,
+    input wire  [15:0]  BUS_ADD,
+    inout wire  [7:0]   BUS_DATA_IN,
+    output wire [7:0]   BUS_DATA_OUT_1,
+    output wire [7:0]   BUS_DATA_OUT_2,
+    input wire          BUS_RD,
+    input wire          BUS_WR
+);

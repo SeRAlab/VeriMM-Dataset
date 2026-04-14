@@ -1,0 +1,11 @@
+
+Design a Verilog PCIe endpoint controller that can handle read and write requests from the PCIe bus. The controller should have the following interfaces:
+- `clk`: Clock signal
+- `reset`: Active high reset signal
+- `req`: Read/write request signal (1 for write, 0 for read)
+- `address`: Address for the read/write operation (8-bit)
+- `data_in`: Data input for write operations (8-bit)
+- `data_out`: Data output for read operations (8-bit)
+- `ready`: Signal indicating the controller is ready to accept new requests (active high)
+
+The controller should respond to requests based on the clock and reset signals, storing data written to it and providing that data for read requests.

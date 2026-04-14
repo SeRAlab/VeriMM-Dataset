@@ -1,0 +1,9 @@
+Design a 32-bit comparator that determines the relationship between two unsigned or signed integers. The module takes two 32-bit inputs, `a` and `b`, along with a control signal `unsigned_cmp` to decide the comparison mode. When `unsigned_cmp` is high, it performs an unsigned comparison, setting the `greater`, `less`, or `equal` output signals accordingly. If `unsigned_cmp` is low, it performs a signed comparison, first checking the sign bits (31st bit) to determine the relationship before evaluating the numerical values. The outputs will indicate whether `a` is greater than, less than, or equal to `b`.
+module top_module(
+  input [31:0] a,
+  input [31:0] b,
+  input unsigned_cmp,
+  output reg greater,
+  output reg less,
+  output reg equal
+);

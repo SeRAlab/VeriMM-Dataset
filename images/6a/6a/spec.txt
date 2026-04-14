@@ -1,0 +1,16 @@
+Design a circuit that functions as a register interface for handling input/output operations in a microcontroller or similar device. It has a set address (IOADDR) for writing to and reading from an 8-bit register. Upon a write operation, it stores the input data into an internal register and asserts a flag indicating that the address has changed. During a read operation, it outputs the current contents of the register on the data bus while controlling the output enable signal. Additionally, it provides status signals to indicate whether a read or write operation is occurring at a secondary address (IODATA), thereby facilitating communication between the CPU and peripheral devices.
+module top_module(
+   input wire clk,
+   input wire rst_n,
+   input wire [15:0] a,
+   input wire iorq_n,
+   input wire rd_n,
+   input wire wr_n,
+   input wire [7:0] din,
+   output reg [7:0] dout,
+   output reg oe_n,
+   output wire [7:0] addr,
+   output wire read_from_reg,
+   output wire write_to_reg,
+   output wire regaddr_changed
+   );

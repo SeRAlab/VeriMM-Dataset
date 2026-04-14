@@ -1,0 +1,23 @@
+Please act as a professional Verilog designer.
+
+Design a 4-to-1 multiplexer with an active-high enable signal. The multiplexer should select one of the four 8-bit input data lines based on a 2-bit select signal. If the enable signal is high, the selected input is passed to the output. If the enable signal is low, the output should be 0.
+
+Module name:
+    mux_4_to_1
+
+Input ports:
+    en: Enable signal to allow the output to follow the selected input.
+    sel: 2-bit select signal to choose one of the four inputs.
+    d0, d1, d2, d3: Four 8-bit input data lines.
+
+Output ports:
+    y: 8-bit output representing the selected input or 0 if enable is low.
+
+Implementation:
+Multiplexer Logic:
+The module includes a register, y, which holds the current value of the selected input.
+The always block triggers on any change in the input data lines, the select signal, or the enable signal.
+If the enable signal (en) is active, the selected input based on the select signal (sel) is assigned to y.
+If the enable signal is not active, y is set to 0.
+
+Give me the complete code.

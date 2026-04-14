@@ -1,0 +1,9 @@
+Design a synchronous memory module with a 16-bit data width and a depth of 64. It supports read and write operations based on the input signals. The module resets its contents and outputs on a high level reset signal, preparing the memory for new data. When valid data is provided, a write operation can occur if the write/read signal is asserted, storing the input data at the specified address. Conversely, if the read operation is indicated, the module outputs the data stored at the given address. The 'ready' output signal indicates whether the memory is in a valid state for read or write operations, thus enabling proper interaction with external systems.
+module top_module(clk_i,
+	      rst_i,
+	      addr_i,
+	      wdata_i,
+	      w_r_data_i,
+	      rdata_o,
+	      valid_i,
+	      ready_o);

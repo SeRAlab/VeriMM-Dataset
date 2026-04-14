@@ -1,0 +1,9 @@
+Design a dual-function module that combines a 4-bit adder and a 2-to-1 multiplexer. The module accepts two 4-bit inputs, `a` and `b`, and a selection signal `sel` that determines the operation mode. When `sel` is low, the module computes the sum of `a` and `b`, providing the result on the output `q`. When `sel` is high, it outputs a modified version of input `a`, where the output is either `a` or its bitwise negation based on a comparison with `b`. Additionally, the module features a synchronous active-high reset, ensuring that it can return to a known state.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input [3:0] a, // 4-bit input A
+    input [3:0] b, // 4-bit input B
+    input sel, // Select input to choose between addition and multiplexer
+    output [3:0] q // 4-bit output from the module
+);

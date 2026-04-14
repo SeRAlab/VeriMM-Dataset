@@ -1,0 +1,18 @@
+Implement the Verilog module based on the following description.
+Create a Moore state machine that has the following states and their corresponding outputs:
+1. state 2'b00 (y = 1).
+2. state 2'b01 (y = 0).
+3. state 2'b10 (y = 1).
+4. state 2'b11 (y = 0).
+
+State transitions:
+1. From state 2'b00: If x = 0, transition to state 2'b01. If x = 1, transition to state 2'b10.
+2. From state 2'b01: If x = 0, transition to state 2'b11. If x = 1, transition to state 2'b00.
+3. From state 2'b10: If x = 0, transition to state 2'b00. If x = 1, transition to state 2'b11.
+4. From state 2'b11: If x = 0, transition to state 2'b10. If x = 1, transition to state 2'b01.
+
+module moore_fsm (
+  input clk,
+  input reset,
+  input x,
+  output reg y);

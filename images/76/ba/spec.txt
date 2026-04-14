@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+
+Design a 16-bit binary up-down counter with synchronous reset, enable, and direction control. The module includes control signals such as clock (clk), reset (rst), enable (en), and direction (dir). When the enable signal is active, the counter increments or decrements based on the direction signal on every positive edge of the clock signal. The counter resets to zero when the reset signal is active.
+
+Module name:  
+    up_down_counter_16bit
+
+Input ports:
+    clk: Clock signal.
+    rst: Synchronous reset signal. Defined as 1 for reset condition and 0 for normal operation.
+    en: Enable signal to update the counter.
+    dir: Direction control signal. Defined as 1 for increment and 0 for decrement.
+
+Output ports:
+    count: 16-bit counter output.
+
+Implementation:
+Data bit control:
+On every positive edge of the clock signal (clk) or the active edge of the reset signal (rst), the counter register (count) is updated.
+If the reset signal (rst) is active, the counter register (count) is set to 0.
+If the enable signal (en) is active, the counter register (count) increments by 1 if the direction signal (dir) is 1, or decrements by 1 if the direction signal (dir) is 0.
+
+Give me the complete code.

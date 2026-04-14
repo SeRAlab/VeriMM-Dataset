@@ -1,0 +1,18 @@
+Design a video data fetching module that captures and processes video data based on specific control signals. The module operates on the rising edge of the clock and utilizes a video strobe signal to determine when to sample incoming 16-bit video data. The `f_sel` input allows for selective population of the `fetch_temp` register, where bits are assigned based on the `b_sel` input, effectively choosing between upper and lower segments of the `video_data` for different sections of the `fetch_temp`. Subsequently, when the `fetch_stb` signal is asserted, the contents of `fetch_temp` are transferred to `fetch_data`, enabling coordinated data fetching for video processing applications.
+module top_module(
+  
+  input  wire       clk,
+
+  
+  input  wire [3:0]  f_sel,
+  input  wire [1:0]  b_sel,
+  input  wire        fetch_stb,
+
+  
+  output reg  [31:0] fetch_data,
+  output reg  [31:0] fetch_temp,
+
+  
+  input  wire        video_strobe,
+  input  wire [15:0] video_data
+);

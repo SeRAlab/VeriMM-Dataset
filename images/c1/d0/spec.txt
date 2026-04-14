@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform logical operations on two input signals, `A` and `B`, under the influence of a clock or control signal `PHI` (although `PHI` is not utilized in the current logic). The primary functions of this module are to generate two outputs, `POUT` and `GOUT`, which are derived from the inputs through specific logical operations. The module serves as a fundamental building block in digital circuits, potentially used for generating specific control signals, logic gates emulation, or in larger combinational or sequential logic systems where the inversion of OR and AND operations of inputs are required.
+
+Module name:  
+	BLOCK0
+
+Input ports:
+	A: A singlebit input signal. It is one of the primary operands for the logical operations within the module.
+	B: A singlebit input signal. It serves as the second operand for the logical operations alongside A.
+	PHI: A singlebit input signal intended as a clock or control signal. However, in the current implementation, PHI does not influence the module's logic.
+Output ports:
+	POUT: A singlebit output signal. It represents the negation of the OR operation performed on inputs A and B. Essentially, POUT is true only when both A and B are false.
+	GOUT: A singlebit output signal. It signifies the negation of the AND operation on inputs A and B. GOUT is true unless both A and B are true.
+
+
+Implementation:
+The RTL module BLOCK0 is designed to perform specific logical operations on two input signals, A and B, under the influence of another input signal, PHI, although PHI does not directly participate in the current logic implementation. The module outputs two signals, POUT and GOUT, which are derived from the inputs A and B through combinational logic. There is no sequential logic (i.e., logic involving storage elements like flip-flops or latches) within this module, indicating that the outputs are purely a function of the current inputs.
+Combinational Logic: The module employs basic logical operations (NOT, AND, OR) to compute its outputs. Specifically, it uses NOR and NAND operations, which are universal gates capable of implementing any Boolean function.
+  POUT is computed as the NOR of inputs A and B. This means POUT will be high (1) only when both A and B are low (0). In all other cases, POUT will be low (0). The NOR operation is achieved by first OR-ing A and B, and then inverting the result.
+  
+  GOUT is computed as the NAND of inputs A and B. This means GOUT will be low (0) only when both A and B are high (1). In all other cases, GOUT will be high (1). The NAND operation is achieved by first AND-ing A and B, and then inverting the result.
+These operations are fundamental and are often used in digital circuits for various purposes, including logic function implementation, signal inversion, and control logic.
+
+Give me the complete code.
+

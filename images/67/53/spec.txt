@@ -1,0 +1,18 @@
+Construct a data forwarding unit that resolves data hazards in a pipelined processor architecture. This module forwards the correct values for two register operands, ra_i and rb_i, based on execution and writeback stage results while detecting when a load operation is pending. If a given register is flagged for load and a load is pending, it signals a stall to prevent incorrect execution. The logic also handles forwarding from the execution results and the writeback results, ensuring that the most recent data is used while managing dependencies and potential stalls using flags.
+module top_module(
+    input [4:0] ra_i,
+    input [4:0] rb_i,
+    input [31:0] ra_regval_i,
+    input [31:0] rb_regval_i,
+    input [4:0] rd_ex_i,
+    input [4:0] rd_wb_i,
+    input load_pending_i,
+    input [4:0] rd_load_i,
+    input mult_ex_i,
+    input [31:0] result_ex_i,
+    input [31:0] result_wb_i,
+    output reg [31:0] result_ra_o,
+    output reg [31:0] result_rb_o,
+    output reg resolved_o,
+    output reg stall_o
+);

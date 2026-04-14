@@ -1,0 +1,15 @@
+Design a pipeline register for the Instruction Fetch (IF) to Instruction Decode (ID) stage in a processor architecture. This module captures and holds the instruction data, new program counter value, instruction number, and instruction type on the rising edge of the clock while also providing a reset functionality to initialize outputs to zero.
+module top_module(
+    input wire clock,
+    input wire reset,
+    
+    input wire [31:0] FromIF_Inst,
+    input wire [31:0] FromIF_NewPC,
+    input wire [3:0]  FromIF_InstNum,
+    input wire [3:0]  FromIF_InstType,
+    
+    output reg [31:0] ToID_Inst,
+    output reg [31:0] ToID_NewPC,
+    output reg [3:0]  ToID_InstNum,
+    output reg [3:0]  ToID_InstType
+    );

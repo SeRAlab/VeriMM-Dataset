@@ -1,0 +1,10 @@
+Design a circuit that performs various bitwise operations on three 8-bit input vectors. The circuit calculates the bitwise XOR of the first two inputs and outputs it as `out_xor`. It also computes the bitwise AND of all three inputs, providing the result as `out_and`. Additionally, on the rising edge of a clock signal, the circuit sums the `out_xor` result and the `out_and` result, storing this final output in `out_final`.
+module top_module(
+    input clk,              // Added clk input
+    input [7:0] in1,
+    input [7:0] in2,
+    input [7:0] in3,
+    output [7:0] out_xor,
+    output [7:0] out_and,
+    output reg [7:0] out_final
+);

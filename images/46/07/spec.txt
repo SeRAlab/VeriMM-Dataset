@@ -1,0 +1,5 @@
+Design a control circuit that generates two output signals based on the inputs and clock conditions. The circuit uses a clock input and a synchronous reset to manage two output registers, data_out1 and data_out2. When the synchronous reset (sreset) is active, both outputs are set to LOW. For each output, if the clock enable (clk_en) signal is active high, the output will be updated to the logical AND of the respective 6-bit input data (data_in1 or data_in2). If clk_en is not asserted, the output retains its previous value. This design is suitable for situations where the status of multiple input signals needs to be monitored and reported based on specific control signals.
+module top_module(input clk, sreset,
+                     input clk_en,
+                     input [5:0] data_in1,data_in2, 
+                     output reg data_out1,data_out2);

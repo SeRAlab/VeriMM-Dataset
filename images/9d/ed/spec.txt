@@ -1,0 +1,9 @@
+Design a configurable shift register capable of storing and shifting a binary input with a specified number of stages. The module has a clock input for synchronization, a reset input for clearing the memory, a clear signal for immediate reset, and an enable signal to control data loading and shifting. The register supports a configurable width (defaulting to 32 bits) for the data input and output. If the number of stages is zero, it directly outputs the input data. Otherwise, it shifts the data through the stages on each clock cycle when enabled, producing the final output from the last stage.
+module top_module(
+  input clock,
+  input resetn,
+  input clear,
+  input enable,
+  input [WIDTH-1:0] D_in,  // Changed the name of input D to D_in
+  output [WIDTH-1:0] Q
+);

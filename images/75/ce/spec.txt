@@ -1,0 +1,10 @@
+Design a SPI (Serial Peripheral Interface) master module that facilitates serial communication by sending 32-bit data to a slave device. The module operates based on control signals: when enabled, it transitions through defined states—idle, data latching, and data sending—using a finite state machine. The MOSI (Master Out Slave In) line transmits the data, while sClk generates the clock signal for synchronization. The SPI_CS (Chip Select) output indicates the active data transfer. The module manages data preparation, transmission timing, and reset operations, enabling seamless integration within a larger communication system.
+module top_module(
+input clk,
+input [31:0]ToSPI,
+input enable,
+input reset,
+output reg MOSI,
+output sClk,
+output reg SPI_CS
+    );

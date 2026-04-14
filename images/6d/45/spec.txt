@@ -1,0 +1,9 @@
+Implement a Verilog module for a traffic light controller with three states: Red, Yellow, and Green. Use the following one-hot state encoding: RED=3'b001, YELLOW=3'b010, GREEN=3'b100. The controller should follow the sequence Red -> Green -> Yellow -> Red. Derive state transition and output logic equations by inspection assuming a one-hot encoding. Implement only the state transition logic and output logic (the combinational logic portion) for this state machine.
+
+module traffic_light_controller (
+  input clk, 
+  input [2:0] state, 
+  output reg [2:0] next_state, 
+  output reg red, 
+  output reg yellow, 
+  output reg green);

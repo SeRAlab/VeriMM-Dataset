@@ -1,0 +1,8 @@
+Design a finite state machine (FSM) that controls a start signal based on player input and game state. The module transitions between two states: S_IDLE and S_STAY. In S_IDLE, the start signal is LOW, and it transitions to S_STAY when the 'enter' signal is asserted. In S_STAY, the start signal is HIGH and remains in this state until the 'gameEnd' signal is detected, at which point it returns to S_IDLE. The state transitions occur on the rising edge of the clock, ensuring synchronized operation.
+module top_module(
+    input clk,
+    input resetn,
+	 input enter,
+	 input gameEnd,
+    output reg  start
+    );

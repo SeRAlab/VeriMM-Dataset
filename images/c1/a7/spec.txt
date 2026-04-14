@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+    
+Implement a module to map a 4-bit hexadecimal input (`i_hex`) to a 7-bit output (`o_map`) that represents the configuration of segments in a 7-segment display. This module is crucial in applications where numerical data needs to be visually represented, such as in digital clocks, calculators, or any digital system requiring human-readable output. The module operates synchronously with a clock signal (`i_clk`), ensuring that the output changes in a controlled manner aligned with the system clock, thereby facilitating smooth integration within a broader digital system context.
+
+Module name:  
+	hexmap
+
+Input ports:
+	i_clk: A clock signal input. It is a singlebit (1bit) input that triggers the mapping operation on the rising edge. The clock signal is essential for synchronizing the output updates with the rest of the system.
+	i_hex: A 4bit input representing a hexadecimal digit. This input is the value that needs to be displayed on a 7segment display. The hexadecimal digit is mapped to a specific configuration of the display segments.
+Output ports:
+	o_map: A 7bit output where each bit corresponds to one segment of a 7segment display. The segments are typically labeled from 'a' to 'g', and a '1' in a bit position indicates that the corresponding segment is turned on, while a '0' indicates it is turned off. This output directly drives the segments of a 7segment display to visually represent the hexadecimal digit provided at i_hex.
+
+
+Implementation:
+The RTL module presented, named hexmap, is designed to map a 4-bit hexadecimal input (i_hex) to a 7-bit output (o_map) that represents the segments of a 7-segment display. This module operates on the rising edge of a clock signal (i_clk), making it a synchronous design that relies on sequential logic for its operation. The core functionality is encapsulated within an always @(posedge i_clk) block, indicating that the output mapping updates synchronously with the clock's positive edge.
+
+Give me the complete code.
+

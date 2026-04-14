@@ -1,0 +1,9 @@
+Design a tone generator circuit that produces a square wave output based on a configurable frequency determined by the `tone_switch_period` input. The module utilizes a clock input for synchronization and includes an output enable signal to control the generation of the waveform. The output features a PWM (Pulse Width Modulation) signal that adjusts the square wave's duty cycle based on the `volume` input. The module outputs a synchronous square wave through `square_wave_out` when enabled, while the internal `counter` keeps track of timing and modulates the output accordingly.
+module top_module(
+    input clk,
+    input output_enable,
+    input [23:0] tone_switch_period,
+    input volume,
+    output square_wave_out,
+    output [31:0] _counter
+);

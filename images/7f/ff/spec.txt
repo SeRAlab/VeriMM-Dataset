@@ -1,0 +1,10 @@
+Design a shift and rotate module that operates on a 3-bit input. It incorporates a clock and reset signal, with the ability to load new data from a 100-bit input when the load signal is active. The module supports three modes of operation based on a 2-bit select signal: it can either pass the input directly, perform a right rotation of the input bits, or perform a left rotation. The results are stored in a shift register and are output as a 3-bit value.
+module top_module(
+    input clk,
+    input reset,
+    input [2:0] in,
+    input load,
+    input [1:0] select,
+    input [99:0] data,
+    output reg [2:0] out
+);

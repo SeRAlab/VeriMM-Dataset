@@ -1,0 +1,13 @@
+Design a circuit that performs various bitwise operations on two 3-bit input vectors based on control signals. The module accepts a clock, a reset signal, and an input vector for demultiplexing. When the reset signal is active, all internal registers are initialized to zero. On the rising edge of the clock, the module computes the NOT operation, XOR, AND, and OR of two 3-bit input vectors. The output selects among these operations based on the specific bits of a 3-bit control vector, allowing for flexible functionality that includes negation, bitwise combinations, and conditional output.
+module top_module(
+    input wire clk,
+    input wire reset,
+    input wire [2:0] input1_vec,
+    output wire [2:0] input1_outv,
+    output wire input1_o2,
+    output wire input1_o1,
+    output wire input1_o0,
+    input wire [2:0] input2_a,
+    input wire [2:0] input2_b,
+    output wire [2:0] out_final
+);

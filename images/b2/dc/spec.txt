@@ -1,0 +1,10 @@
+The module implements a conditional data path that produces three different output signals (A, B, and C) based on the preprocessor directive controlling the `BUG` flag. When `BUG` is not defined, it concatenates the input signals to generate outputs A, B, and C; specifically, A is a 2-bit value formed by combining inputs x and z, B is a 3-bit value formed by combining x and y, and C is a 4-bit value formed by combining x, y, and z. If `BUG` is defined, the outputs perform arithmetic operations: A outputs the sum of x and z, B outputs the product of x and y, and C outputs the result of subtracting y and z from x. Thus, the design allows for either straightforward data concatenation or arithmetic manipulation based on the compilation condition.
+module top_module(
+ input x,
+ input [1:0] y,
+ input z,
+
+ output [1:0] A,
+ output [2:0] B,
+ output [3:0] C
+ );

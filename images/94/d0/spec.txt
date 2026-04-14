@@ -1,0 +1,9 @@
+Design a traffic light controller that sequentially manages three LED indicators (red, yellow, and green) based on a finite state machine (FSM). The controller cycles through four states: RED, RED_YELLOW, GREEN, and YELLOW, with specified timings for each state controlled by a counter. Upon receiving a reset signal, the FSM initializes to the RED state. While the 'go' signal is active, the FSM progresses through states based on the counter values, turning the appropriate LED on or off to indicate traffic signals. In the RED state, only the red LED is lit; in RED_YELLOW, both red and yellow are on; in GREEN, only the green LED is active; and in YELLOW, the yellow LED is illuminated. The counter ensures the LEDs remain in each state for predetermined durations before transitioning to the next state.
+module top_module(
+  input clk,
+  input reset,
+  input go,
+  output reg red_led,
+  output reg yellow_led,
+  output reg green_led
+);

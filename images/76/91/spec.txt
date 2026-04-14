@@ -1,0 +1,17 @@
+Design a dual-port RAM that allows simultaneous read and write operations. The module supports two independent read and write interfaces, each with separate enable signals, addresses, and data inputs. When the clock signal is active, incoming data is stored in the memory at the specified addresses if the respective write enable signals are asserted. At the same time, data can be read from the designated memory addresses based on the read enable signals, outputting the data to distinct read output ports. The RAM is initialized to zero upon a low reset signal.
+module top_module(
+    input clk,
+    input rst_n,
+    input [1:0] write_en_0,
+    input [3:0] write_addr_0,
+    input [15:0] write_data_0,
+    input [1:0] write_en_1,
+    input [3:0] write_addr_1,
+    input [15:0] write_data_1,
+    input [1:0] read_en_0,
+    input [3:0] read_addr_0,
+    output reg [15:0] read_data_0,
+    input [1:0] read_en_1,
+    input [3:0] read_addr_1,
+    output reg [15:0] read_data_1
+);

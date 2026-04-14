@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a dual-port RAM (Random Access Memory) with separate read and write ports, specifically designed for Reed-Solomon decoding applications or similar use cases where such a memory architecture is beneficial. Its primary functions include:
+
+Data Writing: It allows data to be written into the memory array at a specific address during a write operation, which is triggered by the write enable signal.
+Data Reading: It enables the reading of data from the memory array at a specific address during a read operation, which is initiated by the read enable signal.
+
+This module plays a crucial role in systems requiring efficient and separate read/write operations to memory, particularly in error correction or digital signal processing applications where quick access to stored data is essential for performance.
+
+Module name:  
+	RsDecodeDpRam
+
+Input ports:
+	clock (input): The system clock signal. It synchronizes the read and write operations in the memory.
+	data (input, 9 bits): The data to be written into the memory during a write operation.
+	rdaddress (input, 9 bits): The read address. It specifies the memory location from which data is to be read during a read operation.
+	wraddress (input, 9 bits): The write address. It specifies the memory location into which data is to be written during a write operation.
+	rden (input): The read enable signal. When high, it enables the read operation from the memory at the rising edge of the clock.
+	wren (input): The write enable signal. When high, it enables the write operation into the memory at the rising edge of the clock.
+Output ports:
+	q (output, 9 bits): The output data. It holds the data read from the memory location specified by rdaddress when a read operation is enabled.
+
+
+Implementation:
+The RsDecodeDpRam module is designed as a dual-port RAM (Random Access Memory) with separate read and write ports, which allows simultaneous read and write operations at different addresses. This module is implemented using Verilog, a hardware description language used for modeling electronic systems. The core functionality of this module revolves around its ability to store and retrieve data based on the provided addresses and control signals. The logic within this module can be categorized into combinational and sequential parts, as described below:
+
+Give me the complete code.
+

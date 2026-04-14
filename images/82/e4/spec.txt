@@ -1,0 +1,10 @@
+Design a 16-bit shift register with load and shift capabilities. On the rising edge of the clock, if the reset signal is high, the output is cleared to zero. If the load signal is asserted, the register takes the input data. If shift enable is active, the register can perform a left or right shift based on the shift direction control, effectively shifting the bits and filling the vacated position with zeros. This functionality allows for versatile manipulation of 16-bit data in digital applications.
+module top_module(
+    input clk,
+    input reset,
+    input load,
+    input [15:0] data_in,
+    input shift_en,
+    input shift_left,
+    output reg [15:0] data_out
+);

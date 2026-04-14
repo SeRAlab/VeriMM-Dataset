@@ -1,0 +1,8 @@
+Design a circuit that generates a 2 Hz output clock signal and implements brightness control based on a 4-bit input. The module uses a phase-locked loop (PLL) to stabilize the frequency and will effectively create a PWM (Pulse Width Modulation) signal for brightness control. The circuit integrates a counter to manage the duty cycle derived from the `brightness_control` input, facilitating the adjustment of brightness in relation to the desired output frequency. Additionally, the design includes a reset feature to initialize the internal states and a locking mechanism to confirm stable operation within a specified range.
+module top_module(
+    areset,
+    inclk0,
+    c0,
+    locked,
+    brightness_control
+);

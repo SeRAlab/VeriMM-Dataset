@@ -1,0 +1,4 @@
+Design a hazard detection unit for a pipelined CPU architecture. This module determines if a stall condition is necessary based on memory read signals and destination register dependencies. It checks if the current instruction is trying to read from a register that is being updated by a previous instruction that is still in the memory stage. If a stall condition is detected either from the execution stage or the memory stage, the output signal 'Stall' is asserted to prevent data hazards and ensure correct instruction execution.
+module top_module(
+    ID_EX_MemRead, EX_MEM_MemRead, EX_Rd, ID_Rs, ID_Rt, EX_MEM_Rd, PCSrc, Stall
+    );

@@ -1,0 +1,9 @@
+Design a circuit that functions as a dual 4-bit adder control unit, capable of selecting between two different addition operations based on a control signal. When activated, each of the two adder paths computes the sum of two 4-bit inputs, with the first adder directly adding inputs 'a' and 'b', while the second adder adds the result of the first adder to 'b'. A synchronous reset clears both adder outputs, and on each clock cycle, the output is determined by the 'select' signal: either outputting the result from the first adder or the second. This design enables flexibility in arithmetic operations and ensures that the results can be reset and controlled synchronously.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input select,     // Select input to choose between adders
+    input [3:0] a,    // 4-bit input for the first adder
+    input [3:0] b,    // 4-bit input for the first adder and the second adder
+    output reg [3:0] sum  // 4-bit output from the active adder (changed to reg type)
+);

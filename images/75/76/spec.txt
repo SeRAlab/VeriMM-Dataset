@@ -1,0 +1,11 @@
+Design a circuit that performs multiple operations on 100-bit binary inputs. The module includes a 100-bit binary adder that computes the sum of two 100-bit inputs `a` and `b`, including a carry-in `cin`, and outputs a carry-out signal. A shift register captures external 100-bit data on a specific load signal, allowing for either left or right rotation based on control signals. Finally, the module performs a bitwise OR operation between the results of the addition and the rotated data, with the final output stored in a register and made available at the next clock cycle. This design effectively combines arithmetic and bit manipulation functionalities in a single module.
+module top_module(
+    input clk,
+    input [99:0] a, b,
+    input cin,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output cout,
+    output reg [99:0] q
+);

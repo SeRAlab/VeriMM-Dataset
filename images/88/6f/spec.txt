@@ -1,0 +1,12 @@
+Design a 16-depth, 8-bit wide FIFO (First-In, First-Out) memory module. It accepts a clock signal and a reset signal, alongside input data for writing. The module includes control signals for enabling write and read operations, and outputs indicate whether the buffer is full or empty. In operation, it maintains a count of the number of elements stored, updating the head and tail pointers for read and write requests accordingly, while managing overflow conditions when full and underflow conditions when empty. The count of entries is tracked using a 4-bit register.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] data_in,
+    input write_en,
+    input read_en,
+    output reg [7:0] data_out, // Change wire to reg for data_out
+    output full,
+    output empty,
+    output reg [3:0] count
+);

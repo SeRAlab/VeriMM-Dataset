@@ -1,0 +1,15 @@
+Design a receive (rx) data module that selectively captures and registers incoming data and associated tags from two different sources—user arbitration (usr_arb) and user pipeline (usr_pipe)—based on validity signals. The module updates the data register (rx_data_reg) with data from usr_arb when its valid signal is high; otherwise, it selects data from usr_pipe. Additionally, the module manages output registers for read tags (rx_rd_tag_reg) and read validity (rx_rd_valid_reg), which are reset on a low reset signal or interface reset. This functionality facilitates effective data handling in a communication interface, ensuring proper tracking of valid read requests and associated data.
+module top_module(
+    input clk,
+    input rst_n,
+    input reset_interface,
+    input usr_arb_rx_rd_valid,
+    input usr_arb_rx_rd_tag,
+    input usr_arb_rx_data,
+    input usr_pipe_rx_rd_valid,
+    input usr_pipe_rx_rd_tag,
+    input usr_pipe_rx_data,
+    output reg [31:0] rx_data_reg,
+    output reg [31:0] rx_rd_tag_reg,
+    output reg rx_rd_valid_reg
+);

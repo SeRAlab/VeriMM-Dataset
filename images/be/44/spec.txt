@@ -1,0 +1,10 @@
+Design a circuit that performs multiple logical operations on two 3-bit input buses, `a` and `b`. The circuit generates the following outputs: a 3-bit result (`out_or_bitwise`) from a bitwise OR operation between `a` and `b`; a single-bit result (`out_or_logical`) from a logical OR operation of all bits in `a` and `b`; a 3-bit NOT operation result on `a` (`out_not_a`); and a 3-bit NOT operation result on `b` (`out_not_b`) with a zero-padding bit. Additionally, the output `out_xor` provides a result from the XOR operation between the bitwise OR and logical OR results.
+module top_module( 
+    input [2:0] a,
+    input [2:0] b,
+    output [2:0] out_or_bitwise,
+    output out_or_logical,
+    output [5:3] out_not_b,
+    output [2:0] out_not_a,
+    output [2:0] out_xor
+);

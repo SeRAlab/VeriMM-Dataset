@@ -1,0 +1,6 @@
+Design a module that performs a three-input adder followed by a comparison and LED output control. The module takes three 3-bit inputs, computes their sum, and compares it to a constant value of 12 (binary 1100). If the sum is greater than or equal to this constant, the sum is stored in a register; otherwise, the previous value remains. Finally, it activates one of the four output LEDs based on the binary value of the stored result, with active low outputs for each LED. This implementation serves the purpose of monitoring the sum of the inputs and visually indicating the result on the LEDs.
+module top_module(
+  input wire [2:0] a, b, c, // 3 inputs for the adder
+  input wire clk,           // Added clock input
+  output wire [3:0] out_leds // Output LEDs controlled by the decoder
+);

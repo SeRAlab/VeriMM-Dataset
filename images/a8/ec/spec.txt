@@ -1,0 +1,6 @@
+Design a circuit for PC (Program Counter) forwarding that selects the appropriate source for the next instruction based on the decoded values from multiple instruction registers. The module takes clock and equality flags as inputs along with several instruction data inputs. Using combinatorial logic, it determines the control signal for a multiplexer based on specific opcode patterns and register conditions, enabling effective instruction flow control in a pipelined processor architecture. This ensures that the next instruction address is correctly managed in scenarios like load-word operations, branch instructions, and jumps, enhancing processor efficiency.
+module top_module(
+    input clk, equ,
+    input [15:0] pr2_IR, pr3_IR, pr4_IR, pr5_IR,
+    output reg [2:0] pc_mux_select
+);

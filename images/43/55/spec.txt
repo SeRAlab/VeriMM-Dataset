@@ -1,0 +1,16 @@
+Implement a Verilog module with the following description: SPI and AMBA connector module.
+module top_module(
+    input             clk,
+    input             rst,
+
+    input             hwrite,
+    input      [31:0] hwdata,
+    input      [31:0] haddr,
+    input             hsel,
+    output     [31:0] hrdata,
+
+    input      [ 7:0] spi_data_out,
+    input             spi_busy,
+    output reg [ 7:0] spi_data_in,
+    output reg        spi_ready_send
+);

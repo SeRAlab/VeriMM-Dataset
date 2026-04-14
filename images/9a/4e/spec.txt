@@ -1,0 +1,9 @@
+Design a circuit that implements a shift register with 2's complement arithmetic and outputs the result of an AND operation. On the rising edge of the clock, the shift register can be loaded with a 4-bit input or perform a left shift (shifting in a zero on the least significant bit side) based on the load signal. The module computes the 2's complement of the current register value if the sign bit is set and produces an AND output between the shifted value and its 2's complement. Additionally, the circuit provides a serial output of the least significant bit of the shift register, with logic to reset and control the shift/load operation based on the reset signal.
+module top_module(
+    input clk,
+    input reset,
+    input load,
+    input [3:0] in,
+    output [3:0] out,
+    output ser_out
+);

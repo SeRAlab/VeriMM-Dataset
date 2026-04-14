@@ -1,0 +1,15 @@
+Please act as a professional Verilog designer.
+
+Implement a simple 8-bit register with asynchronous reset. The register should store the input data value on the rising edge of the clock. If the reset signal is asserted, the register should reset to 0 immediately.
+
+Module name:
+    async_reset_register
+Input ports:
+    clk: a 1-bit clock signal
+    reset: a 1-bit asynchronous reset signal
+    d: an 8-bit input data signal
+Output ports:
+    q: an 8-bit output data signal
+
+Implementation:
+The module uses an always block that is triggered on the positive edge of the clock or the negative edge of the reset signal. Inside the always block, if the reset signal is asserted, the output is set to 0. Otherwise, the output is set to the input data value.

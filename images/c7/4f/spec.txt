@@ -1,0 +1,16 @@
+
+
+You are tasked with designing a clock gate module that will enable or disable the clock signal to a specific register based on the state of two input signals. The module should be named "clock_gate" and should have the following inputs and outputs:
+
+Inputs:
+- clk (1-bit): the clock signal that needs to be gated
+- en (1-bit): the enable signal that determines whether the clock should be gated or not
+- te (1-bit): the trigger enable signal that determines whether the clock should be gated or not
+
+Outputs:
+- enclk (1-bit): the gated clock signal that will be fed to the register
+
+The module should use a D flip-flop with asynchronous set and reset to implement the clock gating functionality. The flip-flop should be sensitive to the positive edge of the clock signal. When the enable signal is high, the flip-flop should operate normally, and the gated clock signal should be the same as the original clock signal. When the enable signal is low, the gated clock signal should be held low, regardless of the state of the original clock signal. When the trigger enable signal is low, the gated clock signal should be held low, regardless of the state of the enable signal.
+
+Write the Verilog code for the "clock_gate" module that implements the clock gating functionality as described above.
+

@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module to implement a two-input OR-AND-Invert (OAI22) logic gate with a drive strength of 2x. This module is a fundamental building block in digital integrated circuit (IC) design, particularly useful in the construction of complex logic functions, timing control mechanisms, and in the optimization of gate-level logic for area and power efficiency. Its primary function to provide a logic high output only when both pairs of its inputs are not simultaneously logic high. This behavior is crucial in applications requiring conditional logic inversion based on the combination of input signals, such as multiplexers, decoders, and arithmetic logic units (ALUs) within a broader system context.
+
+Module name:  
+	bw_u1_oai22_2x
+
+Input ports:
+	a1 and a2: These are input ports of type input, which accept digital signals. They represent the first pair of inputs to the OR gate within the module. The logical OR of these inputs is one of the two inputs to the AND gate.
+	b1 and b2: Similar to a1 and a2, these are input ports of type input that represent the second pair of inputs to the OR gate within the module. The logical OR of these inputs forms the second input to the AND gate.
+Output ports:
+	z: This is the single output port of the module. It is of type output, indicating that it drives a signal out of the module. The output z represents the inverted result of the ORAND combination of the input signals. It is a digital signal that can either be in a logic high (1) or logic low (0) state.
+
+
+Implementation:
+The RTL module presented, named bw_u1_oai22_2x, implements a specific combinational logic function known as an OR-AND-Invert (OAI22) gate with a double input for each OR gate, hence the "22" in its name. This module does not contain any sequential logic elements (like flip-flops or latches), meaning its output is purely a function of its current inputs without any dependency on past input states. The operation performed by this module can be broken down into three primary stages:
+1. OR Operations: The first stage involves two separate OR operations. The inputs a1 and a2 are OR'ed together, and similarly, inputs b1 and b2 are OR'ed together. This means if either or both inputs in each pair are high (1), the result of their respective OR operation will be high.
+2. AND Operation: The second stage takes the outputs of the two OR operations and performs an AND operation on them. This means the AND gate's output will only be high if both OR gates' outputs are high, indicating that at least one of the inputs a1 or a2, and at least one of the inputs b1 or b2, are high.
+3. Inversion: The final stage inverts the output of the AND gate. This means if the AND gate's output is high, the final output z will be low, and vice versa.
+The logical function implemented by this module can be summarized by the Boolean expression: z = ~((a1 | a2) & (b1 | b2)). This expression and the corresponding module implement a logic gate combination that is commonly used in digital circuits for various purposes, including logic function optimization and timing critical path improvement.
+
+Give me the complete code.
+

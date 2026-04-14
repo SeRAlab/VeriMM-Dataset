@@ -1,0 +1,7 @@
+Design a floating-point arithmetic unit capable of performing basic operations on two IEEE 754 single-precision floating-point numbers. The module takes two 32-bit inputs, `a` and `b`, along with a 2-bit control signal `ctrl` that determines the operation to perform: addition, subtraction, multiplication, or division. The outputs of each arithmetic operation are generated via instantiated modules for each operation and are selected based on the control input, with the result being a 32-bit output `result`.
+module top_module(
+  input [31:0] a,
+  input [31:0] b,
+  input [1:0] ctrl,
+  output reg [31:0] result // Changed to reg since we are using it in an always block
+);

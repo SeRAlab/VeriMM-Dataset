@@ -1,0 +1,3 @@
+Design a transmission control circuit that manages the inhibition of data transmission based on received flow control signals. The module uses a 16-bit internal state register to count down from a maximum value when a "XOFF" signal is received, indicating that transmission should stop. If a "XON" signal is received, the state resets to zero, allowing transmissions to resume. The output "inhibit_tx" is activated whenever the state is non-zero, effectively halting data transmission when the count is greater than zero. This design implements flow control for a serial communication interface, ensuring proper management of data flow based on external signals.
+module top_module(input clk, input rst,
+   input xon_rcvd, input xoff_rcvd, output reg inhibit_tx);

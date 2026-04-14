@@ -1,0 +1,12 @@
+Design a flip-flop based register that functions as an instruction fetch and decode pipeline stage (IF/ID) in a CPU architecture. It captures the program counter (pc_i) and instruction (instr_i) inputs on the rising edge of the clock when allowed, essentially updating pc_o and instr_o outputs. It features reset and control signals that dictate its behavior: resetting the outputs to zero on a negative reset, holding output values when writing is disabled, and flushing the outputs to zero when the flush signal is asserted. This module is essential for pipelining in instruction processing, facilitating smooth transitions between different stages of operation while preventing unwanted states during instruction fetch cycles.
+module top_module(
+    clk_i,
+    rst_i,
+    start_i,
+    IF_IDWrite_i,
+    IF_IDflush_i,
+    pc_i,
+    instr_i,
+    pc_o,
+    instr_o
+);

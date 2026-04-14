@@ -1,0 +1,8 @@
+Design a register in a pipelined processor to facilitate the transfer of data from the Execute stage (EX) to the Write-back stage (WB). This module captures control signals such as register file write enables, memory-to-register switching, and write addresses, along with the ALU output, extended immediate values, program counter updates, and jump instructions on the positive edge of the clock. It allows the dependent control and data signals to be safely passed through the pipeline, ensuring correct data flow and preventing hazards during instruction execution.
+module top_module(clk, s7_exmem, rf_wen_exmem, 
+mem2reg_exmem, rf_waddr_exmem, aluout_exmem, extended_exmem, 
+rf_wen_memwb, mem2reg_memwb, rf_waddr_memwb, aluout_memwb, extended_memwb, s7_memwb,
+nop_lw_exmem, nop_lw_memwb,
+pc_added_exmem, pc_added_memwb,
+jal_exmem, jal_memwb
+);

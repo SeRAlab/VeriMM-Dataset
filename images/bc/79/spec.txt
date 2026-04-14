@@ -1,0 +1,9 @@
+Design a circuit to implement a custom data transmission protocol. The module takes a clock signal and 32-bit input data along with a validation signal. When both the input data is valid and the output is ready, it transfers the data to the output and sets a transmit flag. If the output is ready and data has been transmitted, it clears the data output to an invalid state and signals that the output is valid. The valid output is then reset after being acknowledged, ensuring controlled communication in a synchronous manner.
+module top_module(
+    input clk,
+    input [31:0] data_in,
+    input valid_in,
+    input ready_out,
+    output [31:0] data_out,
+    output valid_out
+);

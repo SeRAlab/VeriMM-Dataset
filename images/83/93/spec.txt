@@ -1,0 +1,6 @@
+Design a 1-to-2^m demultiplexer that routes a single input signal to one of 2^m output lines based on m select bits. The module outputs the input to the output line corresponding to the binary value of the select signal, while all other outputs remain LOW. Specifically, when the select input is 0, the input is directed to the first output; for other values of sel, the input is directed to the output that matches the binary representation of sel, effectively allowing for decoupling of a single data line to multiple destinations.
+module top_module(
+  input in,
+  input [m-1:0] sel, 
+  output [2**m-1:0] out
+);

@@ -1,0 +1,13 @@
+Design a counter module that implements a configurable arithmetic counter with the ability to increment by a specified stride value, reset, and saturate at a maximum value. The counter outputs its current value (`io_out`), the next value to be reached (`io_next`), and a completion signal (`io_done`) indicating when the maximum value has been reached after enabling. The module incorporates a flip-flop for state retention and distinguishes behavior based on the enable and reset inputs, allowing for either a reset to zero or continuation towards a pre-defined maximum count. 
+module top_module(
+  input         clock,
+  input         reset,
+  input  [10:0] io_max,
+  input  [10:0] io_stride,
+  output [10:0] io_out,
+  output [10:0] io_next,
+  input         io_reset,
+  input         io_enable,
+  input         io_saturate,
+  output        io_done
+);

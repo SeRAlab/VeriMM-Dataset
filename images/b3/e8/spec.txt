@@ -1,0 +1,5 @@
+Design a finite state machine (FSM) that determines the next state and an associated output based on a 2-bit input, `din`. The FSM transitions to `state1` when the most significant bit of `din` is 1 (regardless of the least significant bit) and transitions to `state3` when `din` ends with a 0. Simultaneously, the outputs `next_state` and `next_s` are also set to `state1` when `din` has its most significant bit high or when the least significant bit is low. The design effectively encodes conditions for next state determination and output signaling based on the input patterns.
+module top_module(input [1:0] din,
+                     output reg [1:0] next_state,
+                     output reg [1:0] next_s
+                     );

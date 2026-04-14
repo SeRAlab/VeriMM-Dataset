@@ -1,0 +1,7 @@
+Design a simple arithmetic calculator that performs two operations: addition and subtraction on two 8-bit operands. It takes a clock and reset signal to control the operation flow. When the reset signal is activated, the result is set to zero. Depending on the 2-bit operation input, the calculator either adds or subtracts the two operands upon the rising edge of the clock, storing the interim result in a temporary variable before outputting it.
+module top_module(
+    input clk, reset,
+    input [1:0] operation,
+    input [7:0] operand1, operand2,
+    output reg [7:0] result
+);

@@ -1,0 +1,16 @@
+Design a synchronization module for an LCD display that processes incoming data and control signals. The module generates horizontal and vertical pixel coordinates alongside the pixel data output, aligning with the timing of the display's pixel clock. It latches new pixel data only when the data enable signal is active, while also managing the synchronization signals for horizontal and vertical synchronization to reset pixel counters accordingly. This ensures that the pixel data is valid and properly organized in sync with the LCD's display timing requirements.
+module top_module(
+	input			rst,
+
+	input	[23:0]	lcd_data_i,
+	input			lcd_pclk_i,
+	input			lcd_vsync_i,
+	input			lcd_hsync_i,
+	input			lcd_de_i,
+
+	output			lcd_clk_o,
+	output	[11:0]	lcd_x_o,
+	output	[11:0]	lcd_y_o,
+	output	[23:0]	lcd_data_o,
+	output			lcd_data_valid_o
+);

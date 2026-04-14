@@ -1,0 +1,10 @@
+Design a 50-bit wide data processing module with input loading, rotating, and combinational logic features. The module utilizes a clock (clk) and a reset signal to manage state. When reset is activated, it initializes its registers to zero. The 'load' signal enables loading of external data into an internal register. The 'enable' signal permits data processing: depending on the 'select' signal, the module can perform a left or right rotation on the loaded data. Additionally, it computes a combinational output based on the bitwise OR of the first four bits of the input data, negates this result, and then subtracts the rotated output from it to produce the final output 'q'. This module is capable of sequential data manipulation and is defined primarily as a data rotator and combinational logic unit.
+module top_module(
+    input clk,
+    input reset,
+    input [49:0] in,
+    input select,
+    input load,
+    input enable,
+    output reg [49:0] q
+);

@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a simple addressable read-only memory (ROM), mapping a 5-bit input address (`IR_OUT`) to a corresponding 5-bit output address (`AR_OUT`). This module to be used in systems where specific address mappings are required, such as instruction decoding, address translation, or other lookup table functionalities within a digital system. The module is controlled by a chip select signal (`CS`), which triggers the update of the internal address mapping.
+
+Module name:  
+	ADDR_ROM
+
+Input ports:
+	IR_OUT [4:0]: A 5bit input representing the address to be looked up in the ROM. This input selects which of the 16 possible addresses in the ROM is to be output.
+	CS: A chip select signal that triggers the updating of the internal address mapping. The sensitivity of the internal logic to this signal implies that changes in the address mapping occur in response to changes in CS.
+Output ports:
+	AR_OUT [4:0]: A 5bit output that provides the address mapped from the input IR_OUT according to the ROM's internal mapping. This output is directly driven by the internal ROM array based on the current IR_OUT value.
+
+
+Implementation:
+The RTL module presented is designed to function as an Address ROM (Read-Only Memory), specifically tailored for a system that requires a predefined set of addresses based on input instructions. The module is named ADDR_ROM and is structured to accept a 5-bit input IR_OUT, which acts as an index or address to the ROM, and a control signal CS (Chip Select). It outputs a 5-bit address AR_OUT based on the input index. The core logic of the module is encapsulated within two primary constructs: a combinational logic pathway facilitated by an assign statement and a sequential logic block governed by an always block sensitive to the CS signal.
+
+Give me the complete code.
+

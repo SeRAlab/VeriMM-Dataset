@@ -1,0 +1,6 @@
+Design a dual-data-rate output buffer that captures two different data inputs (D1 and D2) on rising and falling clock edges, respectively. The output Q is driven based on the clock state; when the clock is high, Q outputs the data from D1 subject to enable (CE), and when the clock is low, Q outputs from D2, also subject to enable. Additionally, the module has reset (R) and set (S) inputs, allowing for initialization control of the output state, although their functionality is not explicitly defined in the output logic.
+module top_module(
+    input wire D1, D2,
+    input wire C, CE, R, S,
+    output wire Q
+);

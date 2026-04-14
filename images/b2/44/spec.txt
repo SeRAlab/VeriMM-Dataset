@@ -1,0 +1,9 @@
+Create a 3-to-1 multiplexer with three input lines and a select signal, outputting a 3-bit result. The module outputs individual values for each input bit, as well as a combined output based on the select signal. When `sel` is 0, the first two bits of `in_vec` are selected, while for `sel` equal to 1, the last two bits are chosen. The final output vector combines the selected input with the initial input lines through a logical OR operation, allowing for flexible output scenarios based on the selection condition.
+module top_module(
+    input wire [2:0] in_vec,
+    input wire sel,
+    output wire [2:0] out_vec,
+    output wire o2,
+    output wire o1,
+    output wire o0
+);

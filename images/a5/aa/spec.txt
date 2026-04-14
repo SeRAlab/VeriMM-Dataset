@@ -1,0 +1,3 @@
+Design a memory write-back unit that captures and stores data during the write-back phase of a pipelined architecture. This module takes clock and reset inputs, along with instruction and data inputs from the memory and ALU, and on each clock cycle (when not reset), it captures these values to internal registers. The captured data, including the instruction, read data, ALU output, program counter increment, and memory address, are then provided as outputs to be used in subsequent pipeline stages. The module effectively interfaces the execution stage with the write-back stage, ensuring the correct retrieval and storage of processed data.
+module top_module(clk,rst,instrM,MemAddrE,ReadDataM,ALUOutM,pcplusM,
+               instrW,MemAddrW,ReadDataW,ALUOutW,pcplusW);

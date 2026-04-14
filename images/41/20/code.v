@@ -1,0 +1,1 @@
+module top_module(output s, input a,b);assign s = (~(a^b));endmodule

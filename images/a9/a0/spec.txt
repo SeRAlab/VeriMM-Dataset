@@ -1,0 +1,5 @@
+The design implements a five-bit exponent and fraction extraction circuit from an 8-bit posit representation. The module takes an 8-bit posit input and a 7-bit one-hot encoded shift signal, where each bit of the shift signal represents a positional shift for the corresponding bits of the posit input. The output consists of five bits, with each bit of the output determined by logical operations that check the relevant bits of the posit input based on the active bits in the one-hot signal, effectively decoding the required exponent and fraction. This module is likely used in a floating-point representation context to facilitate numerical operations in digital systems.
+module top_module(
+  input [7:0] posit,
+  input [6:0] shift_onehot,
+  output [4:0] expfrac);

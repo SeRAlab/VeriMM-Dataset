@@ -1,0 +1,7 @@
+Design a versatile 100-bit wide shift and rotate register with the ability to either load new data or perform left and right rotations based on control signals. The circuit uses a clock to synchronize operations and has an enable input that determines the specific operation: a no-rotation shift, a left rotation by 3 bits, a right rotation by 3 bits, or loading new data into the register. The functionality allows for dynamic shifting and rotation, making it suitable for applications requiring data manipulation in digital signal processing or high-level data handling tasks.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output reg [99:0] q);

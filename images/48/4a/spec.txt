@@ -1,0 +1,8 @@
+Design a digital potentiometer module that allows for the adjustment of an output voltage based on a wiper control signal input. It operates with a clock signal and includes reset and chip select features. The module maintains a register to hold the wiper position, defines a resistor array to model the potentiometer's behavior, and computes the total resistance and corresponding output voltage based on the wiper position. When enabled, the wiper position can be set via the control signal to vary the output voltage, facilitating applications in voltage selection and signal attenuation.
+module top_module(
+  input clk, // clock signal
+  input rst, // reset signal
+  input cs, // chip select signal
+  input [n-1:0] wiper, // digital potentiometer control signal
+  output out // potentiometer output voltage
+);

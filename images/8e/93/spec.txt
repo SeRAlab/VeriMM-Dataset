@@ -1,0 +1,7 @@
+Design a clock gating circuit that outputs an enable clock signal (ENCLK) based on the state of the enable (EN) and test enable (TE) signals. When EN is low, or when TE is low, ENCLK will also be low, effectively disabling the clock. Conversely, when both EN and TE are high, the output ENCLK will mirror the input CLK, allowing the clock signal to be passed through. This function helps in reducing power consumption by controlling clock distribution based on the operational state of the system.
+module top_module(
+  input CLK,
+  input EN,
+  input TE,
+  output ENCLK
+);

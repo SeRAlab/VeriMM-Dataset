@@ -1,0 +1,16 @@
+
+
+You have been tasked with designing a module that will control the blinking of an LED based on a clock signal and a control enable signal. The module should have one input clock signal and one input control enable signal. The output of the module should be a single bit that controls the LED.
+
+Your task is to design a Verilog module that implements this functionality. The module should be named `ledctr` and should have the following ports:
+
+- `clk`: input clock signal
+- `ce`: input control enable signal
+- `ledalive`: output signal that controls the LED
+
+The `ledalive` signal should be high for one clock cycle every 1024 clock cycles when `ce` is high. Otherwise, `ledalive` should be low.
+
+You should implement the counter using a 10-bit register named `counter`. The `ledalive` signal should be set to the most significant bit of the `counter` register.
+
+You should assume that the input clock signal has a frequency of 50 MHz.
+

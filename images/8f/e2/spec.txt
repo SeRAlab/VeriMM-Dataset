@@ -1,0 +1,7 @@
+Design a stateful circuit that utilizes a clock input to manage temperature or time values represented in minutes. When the switch (sw7) is engaged, the module outputs a stored "freeze_value". If sw7 is not engaged, it calculates the value of 'min' based on the input 'map', reducing it from 56 according to a specified formula, and then updates the 'freeze_value' with the current 'min'. This module effectively functions as a value storage and computation unit, allowing dynamic control of output based on user input through the switch.
+module top_module(
+    input CLK100MHZ,
+    input sw7,
+    input [3:0] map,
+    output reg [5:0] min
+    );

@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+    
+Implement a module to introduce a programmable delay to the input data before passing it to the output. This delay is variable and can be adjusted dynamically through an input signal. The primary function of this module to store incoming data in a shift register-like structure and output the data after a specified delay. This module finds its application in systems where data synchronization or timing adjustments are necessary, such as in digital signal processing, communication systems, or any application requiring phase alignment or timing adjustment of digital signals.
+
+Module name:  
+	rand_delay_r
+
+Input ports:
+	clk_core (input): This is the clock input to the module. It is used to synchronize the operations within the module, including data shifting and output updating.
+	rst_x (input): This is the activelow reset signal. When asserted (low), it initializes the internal state of the module, setting the delay registers to zero.
+	i_en (input): This is the enable signal. When high, it allows the module to update the delay registers with new data and shift the existing data accordingly.
+	i_delay (input, [7:0]): This 8bit input signal specifies the delay amount. It determines how many clock cycles the input data is delayed before being presented at the output.
+	i_data (input, [P_WIDTH1:0]): This is the input data signal. The width of this signal is parameterizable through P_WIDTH. This data is to be delayed as per the value specified by i_delay.
+Output ports:
+	o_data (output, [P_WIDTH1:0]): This is the output data signal, presenting the input data after the specified delay. The width of this signal matches that of i_data.
+
+
+Implementation:
+The Verilog module rand_delay_r is designed to introduce a programmable delay to the input data i_data based on the input delay value i_delay. The module operates on a clock signal clk_core and can be asynchronously reset using the active-low reset signal rst_x. The enable signal i_en controls the data flow through the delay line. The parameterized width P_WIDTH allows for flexibility in the data size, and P_NUM_DELAY sets the maximum number of delay stages.
+
+Give me the complete code.
+

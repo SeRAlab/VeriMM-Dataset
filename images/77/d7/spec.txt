@@ -1,0 +1,16 @@
+Design a register module for an instruction fetch and decode pipeline stage. The module captures and stores the program counter (PC), instruction, exception signals, and trap data from the instruction fetch stage while handling reset, flush, and stall control signals. On reset or flush, the outputs are set to default values, while under stall conditions, the outputs retain their previous values. This effectively supports pipeline control in a CPU, ensuring proper instruction handling during various states of execution.
+module top_module(
+			input 			clk,
+			input 			rst,
+			input 			id_flush,
+			input 			id_stall,
+			input 		[31:0]	if_pc,
+			input 		[ 3:0]	if_exception_i,
+		        input 			if_trap_valid,
+			input 		[31:0]	if_exc_data,	
+			input 		[31:0]	if_inst,
+	       		output reg 	[31:0] 	id_pc,
+			output reg 	[ 3:0]	if_exception_o,
+			output reg 	[31:0] 	id_inst,
+			output reg	[31:0]	id_exc_data,	
+			output reg 		id_trap_valid	);

@@ -1,0 +1,6 @@
+Design a module for padded data processing that takes a length input and a 128-bit data block to generate a padded output. The module creates a bitmask based on the length, with bits set to '1' indicating the active data region in the block. It masks the input data to retain only the valid portions as specified by the length and sets the first bit after the valid data to '1', ensuring that the output block indicates the end of the actual data. This functionality is useful for preparing data sequences for transmission or storage with proper padding to delineate valid data boundaries.
+module top_module(
+  input [6:0] length,
+  input [127:0] block_in,
+  output reg [127:0] block_out  // Changed from wire to reg
+);

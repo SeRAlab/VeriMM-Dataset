@@ -1,0 +1,9 @@
+Design a synchronous block RAM with a 4-bit address space and a 64-bit data width. The module features an enable signal (ce0) to control read and write operations. When ce0 is high and the write enable (we0) is asserted, data from the input (d0) is written to the specified address (addr0). Regardless of the write operation, the data at the specified address is output (q0) on the rising edge of the clock. This module is intended for applications requiring simple memory storage and retrieval.
+module top_module(
+    input [3:0] addr0,
+    input ce0,
+    input [63:0] d0,
+    input we0,
+    output reg [63:0] q0,
+    input clk
+);

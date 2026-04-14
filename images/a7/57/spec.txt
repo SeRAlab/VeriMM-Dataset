@@ -1,0 +1,5 @@
+Design a multi-level bit extraction and selection module that takes a 256-bit input and uses an 8-bit selector signal to determine the output. The module successively reduces the input to obtain selected bit-width outputs (128, 64, 32, 16, 8, 4, 2 bits) by combining corresponding segments at each level. The final output is a logical AND of the selected bits based on the selector, effectively implementing a complex bitwise selection and reduction.
+module top_module( 
+    input [255:0] in,
+    input [7:0] sel,
+    output out );

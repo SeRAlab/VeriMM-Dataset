@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a dual-port RAM (Random Access Memory) with a specific focus on distributed control memory (hence the "dist_cm" in the name). It to store and retrieve 32-bit data words. The module supports two primary operations: writing data to a memory location and reading data from any memory location asynchronously. This capability is crucial in applications requiring fast access to a set of predefined data, such as instruction sets for a processor, configuration data for digital logic, or lookup tables in digital signal processing systems.
+
+Module name:  
+	rf_dist_cm3
+
+Input ports:
+	a [6:0]: 7bit address input for writing data. It selects which of the 128 possible memory locations (0 to 95 actually used) will be written to during a write operation.
+	d [31:0]: 32bit data input to be written into the memory location specified by a during a write operation.
+	dpra [6:0]: 7bit address input for reading data. It selects which of the 128 possible memory locations (0 to 95 actually used) will be read from during a read operation, independent of the write address.
+	clk: Clock input. The rising edge of clk triggers the write operation.
+	we: Write enable signal. A high level on this signal enables writing the data present on d to the memory location specified by a.
+Output ports:
+	spo [31:0]: 32bit output that presents the data stored at the memory location specified by a. This output changes immediately following a write operation to the same address.
+	dpo [31:0]: 32bit output that presents the data stored at the memory location specified by dpra. This allows for reading from any part of the memory independently of the write operations.
+
+
+Implementation:
+The rf_dist_cm3 module is designed as a register file with a distributed control mechanism, primarily used for storing and retrieving 32-bit data values. The module is implemented using Verilog, a hardware description language (HDL), which allows for the description of digital circuits in a textual form. The core functionality of this module revolves around its ability to write data to a specific memory location and to read data from any memory location, either synchronously or asynchronously with respect to the system clock.
+
+Give me the complete code.
+

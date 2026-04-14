@@ -1,0 +1,6 @@
+Design a circuit that functions as a four-output selective register. The module stores four separate bits based on the inputs `in0` to `in3`, and at each clock edge, if the respective input is high, the corresponding data (`d0` to `d3`) is loaded into its associated output register. If the input is low, the register retains its current value. The entire state can be reset to zero with an active reset signal. Outputs `out0` to `out3` reflect the current states of the registers.
+module top_module(
+    input in0, in1, in2, in3, clk, reset,
+    input d0, d1, d2, d3,
+    output reg out0, out1, out2, out3
+);

@@ -1,0 +1,8 @@
+Design a single iteration of a 16-bit division operation. This module takes in the current dividend and divisor, as well as the intermediate remainder and quotient values. It shifts the dividend left by one bit and updates the quotient based on whether the new remainder (formed by appending the most significant bit of the dividend to the existing remainder) is less than the divisor. If the new remainder is less than the divisor, the quotient is incremented with a 0; otherwise, it increments with a 1, and the remainder is updated accordingly. This module is a fundamental building block for implementing an iterative division algorithm in a larger arithmetic operation system.
+module top_module(input  wire [15:0] i_dividend,
+                            input  wire [15:0] i_divisor,
+                            input  wire [15:0] i_remainder,
+                            input  wire [15:0] i_quotient, 
+                            output wire [15:0] o_dividend,
+                            output wire [15:0] o_remainder,
+                            output wire [15:0] o_quotient);

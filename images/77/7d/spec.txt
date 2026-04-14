@@ -1,0 +1,6 @@
+Design a state machine that processes a sequence of operations through four distinct states: start_bit, data_bit, parity, and stop_bit. In the data_bit state, it counts from 0 to 7, enabling the 'en' output while counting. Once it reaches the maximum count, it transitions to the parity state, where 'en' is disabled and transitions to the stop_bit state, before returning to the start_bit state. The 'done' output indicates when the machine is in the start_bit state. This module is intended for sequential logic applications where data transmission and state transitions are managed cyclically.
+module top_module(
+	input wire clk,
+	output wire done,
+	output reg en
+);

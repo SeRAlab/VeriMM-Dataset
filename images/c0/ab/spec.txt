@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform key expansion operations, specifically tailored for a cryptographic algorithm that requires a transformation of a 192-bit input key into two separate outputs. The primary function of this module to take a 192-bit input key and process it to generate one 192-bit output (`out_1`) and one 128-bit output (`out_2`). These outputs are likely intended for use in different stages or components of a cryptographic system, possibly serving as expanded keys for encryption or decryption processes. The module operates synchronously with a clock signal, ensuring that the key expansion process aligns with the system's timing requirements.
+
+Module name:  
+	expand_key_type_B_192
+
+Input ports:
+	clk: A clock signal (input, single bit). This signal synchronizes the key expansion process, ensuring that the outputs are updated at the rising edge of the clock.
+	in: The 192bit input key (input, 192 bits). This key is the raw material for the expansion process, intended to be transformed into the module's outputs.
+Output ports:
+	out_1: A 192bit output (output, 192 bits, registered). This output is one of the results of the key expansion process, likely serving a specific role in the cryptographic system.
+	out_2: A 128bit output (output, 128 bits). This output is directly derived from part of the internal state of the module after the key expansion process.
+
+
+Implementation:
+The expand_key_type_B_192 module is designed to perform key expansion operations, primarily for cryptographic applications. It takes a 192-bit input key and expands it into two separate outputs: a 192-bit output (out_1) and a 128-bit output (out_2). The module operates on the rising edge of a clock signal (clk), indicating its sequential nature in processing the input to generate the outputs.
+Combinational Logic:
+The input key is divided into six 32-bit segments (k0 to k5), which are directly assigned from the 192-bit input (in) through concatenation. This division is the initial step in processing the key for expansion.
+Four intermediate values (v2 to v5) are generated through a series of XOR operations. Each of these values is derived by XORing the previous value with one of the key segments, starting from v2 = k1 ^ k2 and ending with v5 = v4 ^ k5. This chain of XOR operations introduces non-linearity, a desirable property in cryptographic key expansion.
+Sequential Logic:
+The module uses two always blocks triggered on the positive edge of the clock signal. The first block updates six 32-bit registers (k0a to k5a) with the original key segments (k0, k1) and the generated intermediate values (v2 to v5). This step effectively mixes the original key segments with the XOR-derived values, further contributing to the expansion process.
+The second always block assigns the updated key segments (k0a to k5a) to the 192-bit output (out_1). This assignment ensures that the output is only updated at the clock edge, maintaining the sequential nature of the operation.
+The 128-bit output (out_2) is directly assigned a concatenation of the last four updated key segments (k2a to k5a), bypassing the need for sequential logic as it directly depends on the updated values from the first always block.
+
+Give me the complete code.
+

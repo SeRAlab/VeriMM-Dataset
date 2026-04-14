@@ -1,0 +1,9 @@
+Design a 16-bit wide accumulator circuit that allows for input accumulation based on several control signals. On each positive clock edge, if the reset signal is active, the output is set to zero. If the clear signal is asserted, the output is also reset to zero. When the load signal is active, the circuit adds the 8-bit input value to the current accumulated output. This functionality enables the circuit to sum input values while providing control for reset and clear operations.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] in,
+  input load,
+  input clear,
+  output reg [15:0] out
+);

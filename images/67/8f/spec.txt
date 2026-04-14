@@ -1,0 +1,11 @@
+Design a combinational circuit that outputs the signal X based on the states of its inputs A1, A2, B1, C1, D1, VPWR, and VGND. The output X is primarily determined by the two-bit combination of A1 and A2, where the output is LOW for combinations 00 and 11, and HIGH for combinations 01 and 10. Additionally, if input B1 is HIGH, or if either D1 or VPWR is HIGH, X will be set to HIGH, while C1 and VGND will set X to LOW when asserted. Thus, the module functions as a multi-input control logic generator with priority given to specific control signals.
+module top_module(
+    input A1,
+    input A2,
+    input B1,
+    input C1,
+    input D1,
+    input VPWR,
+    input VGND,
+    output reg X
+);

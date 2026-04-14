@@ -1,0 +1,7 @@
+Design a data modifier circuit that processes a 16-bit input based on a 2-bit control signal. When control is set to 00, the output directly mirrors the input. If control is 01, the output produces the bitwise NOT of the input. For control set to 10, the circuit performs a left shift on the input, effectively multiplying it by two, and for control 11, it performs a right shift, effectively dividing the input by two while filling the most significant bit with zero. The operations occur on the rising edge of the clock signal.
+module top_module(
+    input clk,
+    input [15:0] data_in,
+    input [1:0] control,
+    output reg [15:0] data_out
+);

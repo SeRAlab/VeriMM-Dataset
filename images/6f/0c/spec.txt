@@ -1,0 +1,17 @@
+Design a peripheral I/O (PIO) module that interfaces with various addressable registers through a simple control mechanism. This module features a 3-bit address input to select between multiple functions, such as reading from an input port or writing to an output port and an interrupt mask register. It has read and write capabilities, allowing data to flow bi-directionally based on the chip select and write signals. The module asserts an interrupt signal (`irq`) if input data matches the enabled bits in the interrupt mask, facilitating interrupt-driven communication. Additionally, the output data and read data signals provide visibility into the written data and input port state, ensuring effective control over the peripheral I/O interface.
+module top_module(
+                    
+                     address,
+                     chipselect,
+                     clk,
+                     in_port,
+                     reset_n,
+                     write_n,
+                     writedata,
+
+                    
+                     irq,
+                     out_port,
+                     readdata
+                  )
+;

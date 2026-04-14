@@ -1,0 +1,8 @@
+Design an arithmetic logic unit (ALU) that performs various operations based on a 7-bit control signal (`alu_op`) and operates on two 3-bit input values (`r_in1` and `r_in2`). The ALU supports multiple functions, including outputting zero, performing bitwise NOT, right shifting by one position, rotating bits, adding two inputs, and passing through input values. The output is synchronized to the positive edge of the clock signal, ensuring that operations occur in a controlled sequence.
+module top_module(
+    input wire clk,
+    input wire [2:0] r_in1,r_in2,
+    input wire [2:0] m_in,
+    input wire [6:0] alu_op,
+    output reg [2:0] out
+);

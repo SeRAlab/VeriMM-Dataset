@@ -1,0 +1,8 @@
+Develop a simulated ROM (Read-Only Memory) that allows for data read and write operations controlled by enable signals. The module accepts a 19-bit input address to select a specific byte from a 512-byte storage space (512 bits) and uses an 8-bit data bus for input and output. When the chip enable (ce_n) is active, and the output enable (oe_n) is low, it reads the data from the specified address into the output. Conversely, when the write enable (we_n) is low, it enables writing to the memory at the specified address. The circuit is designed to handle simultaneous read and write operations with tri-state output control.
+module top_module(
+    input  wire [18:0] a,
+    inout  wire [ 7:0] d,
+    input  wire        ce_n,
+    input  wire        oe_n,
+    input  wire        we_n
+);

@@ -1,0 +1,28 @@
+
+
+You are tasked with implementing a Binary Exponentiation module in Verilog. The module should take two inputs, `base` and `exponent`, and calculate the result of `base` raised to the power of `exponent`. The module should also have a `reset` input that sets the output to 0 and a `clk` input that is used to synchronize the module.
+
+The module should output two signals, `result` and `isDone`. The `result` signal should be a 100-bit wide wire that holds the result of the calculation. The `isDone` signal should be a wire that is high when the calculation is complete.
+
+The module should be instantiated using the following code:
+
+```
+BinaryExponentiation uut (
+    .clk(clk),
+    .base(base), 
+    .exponent(exponent), 
+    .reset(reset),
+    .result(result), 
+    .isDone(isDone)
+);
+```
+
+You should test your module using the following test cases:
+
+1. `base = 2`, `exponent = 25`
+2. `base = 3`, `exponent = 17`
+3. `base = 5`, `exponent = 30`
+4. `base = 11`, `exponent = 1`
+
+Your implementation should be contained within a single Verilog module that is no more than 200 lines long.
+

@@ -1,0 +1,12 @@
+Design a 32-register file with 32-bit wide registers that supports simultaneous read and write operations. The module allows two read addresses (r1Addr and r2Addr) to output the contents of the corresponding registers (r1Dout and r2Dout). It also enables writing to a specified register (wAddr) with new data (wDin) if the write enable signal (wEna) is active. The registers can be reset to a known value (0x00000000) when the reset signal (rst_n) is asserted low. This module is essential for storage and retrieval of data within a processing unit, facilitating the management of multiple data operands in a hardware design.
+module top_module(
+    input           clk,
+    input           rst_n,
+    input   [4:0]   r1Addr,
+    output  [31:0]  r1Dout,
+    input   [4:0]   r2Addr,
+    output  [31:0]  r2Dout,
+    input   [4:0]   wAddr,
+    input   [31:0]  wDin,
+    input           wEna
+);

@@ -1,0 +1,13 @@
+This Verilog code implements a 128-word, 181-bit wide First-In-First-Out (FIFO) memory buffer. It features separate write and read clocks to facilitate asynchronous operations, allowing data to be written on one clock edge while being read on another. The module includes input signals for write and read requests, a reset signal (aclr), and outputs for the data being read (q), as well as flags indicating whether the FIFO is empty (rdempty and wrempty) and the number of words currently used in the FIFO (wrusedw). The design allows for efficient data storage and retrieval, making it suitable for applications requiring temporary data buffering between two clock domains.
+module top_module(
+    aclr,
+    data,
+    rdclk,
+    rdreq,
+    wrclk,
+    wrreq,
+    q,
+    rdempty,
+    wrempty,
+    wrusedw
+);

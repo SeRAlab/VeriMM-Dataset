@@ -1,0 +1,16 @@
+Design a digital circuit that functions as a multi-stage synchronous register system, utilizing flip-flops to store input signals across three distinct stages triggered by a clock signal. Upon reset, all output registers are cleared to zero. In the first stage, the circuit captures inputs 'b' and 'e'. In the second stage, it holds the values of 'c', along with the previously stored 'r_b' and 'r_e'. In the final stage, it retains 'rr_b' and 'rr_e', while also controlling an output based on the reset state. This circuit structure ensures that inputs can be sequentially shifted and processed in a controlled manner, allowing for various timing and data handling applications.
+module top_module(
+    input clk,
+    input reset,
+    input b,
+    input e,
+    input c,
+    output reg cx,  // Change `cx` to reg to assign a value
+    output reg r_b,
+    output reg r_e,
+    output reg r_c,
+    output reg rr_b,
+    output reg rr_e,
+    output reg rb,
+    output reg e2
+);

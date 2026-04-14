@@ -1,0 +1,5 @@
+Design a valve controller circuit that manages data flow based on readiness signals and a shutoff condition. The module receives data inputs along with control signals indicating readiness and resets. It outputs the same data while determining the active state based on the readiness signals. When in a shutoff state, it halts the source readiness output while maintaining destination readiness based on the external signal. The active state is updated on clock edges and can be reset or cleared, influencing the internal shutoff condition which governs the overall data flow process.
+module top_module(input clk, input reset, input clear,
+   input shutoff,
+   input [35:0] data_i, input src_rdy_i, output dst_rdy_o,
+   output [35:0] data_o, output src_rdy_o, input dst_rdy_i);

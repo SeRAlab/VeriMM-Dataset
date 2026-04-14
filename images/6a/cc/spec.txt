@@ -1,0 +1,7 @@
+Design a 7-bit shift register that supports both shifting in data and enabling control. The module has an enable (EN) and a test enable (TE) input. When EN is active, it either shifts the existing data left (with the least significant bit being replaced by the least significant bit of DATA_IN) or conditionally loads the first bit with an enable clock signal (ENCLK) based on the state of TE. If EN is not active, the output (DATA_OUT) is reset to zero, but still incorporates ENCLK under certain conditions. This circuit provides flexible data manipulation and control suitable for various digital applications.
+module top_module(
+    input E, 
+    input SE, 
+    input CK, 
+    output ECK
+);

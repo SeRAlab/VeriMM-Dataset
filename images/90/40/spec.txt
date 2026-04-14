@@ -1,0 +1,7 @@
+Design a 4-to-1 multiplexer with encoding capabilities. The module takes four 1-bit inputs (A, B, C, D) and outputs a 4-bit signal (Y) corresponding to the active input. It uses a priority encoder to determine which input is active, generating a 4-bit encoded output based on the highest priority input that is high. The enable output (EN) indicates whether any of the inputs are active. The encoded output is registered to synchronize it with the clock signal, ensuring proper timing in digital designs.
+module top_module(
+    input [3:0] A, B, C, D,
+    input clk,  // Added input definition for clk
+    output [3:0] Y,
+    output EN
+);

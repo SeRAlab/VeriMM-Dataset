@@ -1,0 +1,18 @@
+Design a peripheral multiplexer with an address decoder for a system where various input and output peripherals are selected based on specific address ranges. The module decodes the upper 8 bits of a 16-bit address to generate a chip select (cs) signal, which identifies which peripheral is active. It then uses this cs signal to control a multiplexer that outputs data from the selected peripheral, providing a 16-bit data bus output (j1_io_din) according to the peripheral that matches the address specified. This structure enables communication with multiple peripherals like audio devices, Bluetooth, UART, a multiplier, and a divider, facilitating data read/write operations in a modular design.
+module top_module(
+    input sys_clk_i,
+    input sys_rst_i,
+    input j1_io_rd,
+    input j1_io_wr,
+    input [15:0] j1_io_addr,
+    output reg [15:0] j1_io_din,  // Changed output to reg
+    output reg [7:0] cs,
+    input [15:0] mult_dout,
+    input [15:0] div_dout,
+    input [15:0] uart_dout, // Changed type to match j1_io_dout
+    input [15:0] dp_ram_dout,
+    input [15:0] bt_dout,
+    input [15:0] audio_dout,
+    input [15:0] ultra_dout,
+    input echo
+);

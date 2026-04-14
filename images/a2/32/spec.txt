@@ -1,0 +1,9 @@
+Design a synchronous circuit that acts as a combined counter and shift register. It includes a 4-bit counter that increments on each clock cycle and a 4-bit shift register that can either load new data or shift in data based on the `load` and `ena` control signals. The counter resets synchronously when the `reset` signal is active. The output `q` is an 8-bit value formed by concatenating the counter and the shift register contents. This module allows for both counting and bit-shifting operations, which can be useful in various digital applications such as data processing and timing control.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input load,
+    input ena,
+    input [3:0] data,
+    output [7:0] q
+);

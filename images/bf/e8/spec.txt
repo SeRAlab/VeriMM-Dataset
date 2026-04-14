@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module to process a 36-bit input word (`i_word`) and generate a sequence of hexadecimal bits for transmission, based on the input word's length and content. It manages the timing and control signals for transmitting these hexadecimal bits, ensuring that transmission occurs only when the system is not busy (`i_tx_busy` is low). The module also signals when it is busy processing or transmitting data through the `o_busy` output. This module is likely part of a larger system where data words need to be serialized and transmitted over a communication interface, possibly with specific formatting or protocol requirements.
+
+Module name:  
+	wbudeword
+
+Input ports:
+	i_clk (input): The clock signal. It drives the timing of the module's operations.
+	i_stb (input): A strobe input signal indicating when a new word is available for processing.
+	i_word (input, 36 bits): The input data word to be processed and transmitted. The format and length of the data to be transmitted are determined by specific bits within this word.
+	i_tx_busy (input): A signal indicating whether the transmission channel is currently busy. If high, the module will wait before sending more data.
+Output ports:
+	o_stb (output, reg): A strobe output signal that indicates when the module has data ready to be transmitted.
+	o_nl_hexbits (output, reg, 7 bits): The next set of hexadecimal bits to be transmitted. The most significant bit is used as a flag.
+	o_busy (output, reg): A signal indicating that the module is currently busy processing or waiting to transmit data.
+
+
+Implementation:
+The Verilog module wbudeword is designed to process a 36-bit input word (i_word) and generate a sequence of output strobes (o_stb) along with 7-bit hexadecimal representations (o_nl_hexbits) of portions of the input word or a special character. The module also indicates its busy status through the o_busy signal to external entities, ensuring that it does not accept new input while processing the current one. The operation of this module is clock-driven, with actions triggered on the rising edge of the input clock signal (i_clk).
+
+Give me the complete code.
+

@@ -1,0 +1,36 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a slave device in a Serial Peripheral Interface (SPI) communication protocol setup. Its primary objectives include:
+
+Receiving serial data from a master device through the MOSI (Master Out Slave In) line.
+Sending serial data to the master device through the MISO (Master In Slave Out) line.
+Handling specific control signals such as SSEL (Slave Select), SCK (Serial Clock), and Rst (Reset).
+Decoding the received data to perform read or write operations based on the decoded address and control bits.
+Generating an End Of Communication (EOC) signal to indicate the completion of a data transfer cycle.
+
+This module plays a critical role in enabling communication between the master device and itself, facilitating data exchange and control operations within a broader system context, such as in embedded systems, microcontrollers, or other digital communication environments.
+
+Module name:  
+	SSPx_Slv
+
+Input ports:
+	Rst: Reset signal (active high) to initialize or reset the module's internal state.
+	SSEL: Slave Select signal (active low) indicating the slave device is selected for communication.
+	SCK: Serial Clock signal used to synchronize data transmission.
+	MOSI: Master Out Slave In signal carrying serial data from the master to the slave device.
+	DO: Data Out [11:0] input holding the data to be sent to the master device.
+Output ports:
+	MISO: Master In Slave Out signal carrying serial data from the slave to the master device.
+	RA: Register Address [2:0] output indicating the address to which the data is written or read from.
+	WnR: Write not Read signal indicating the operation mode (write when high, read when low).
+	En: Enable signal indicating when the slave device is enabled for data transfer.
+	EOC: End Of Communication signal indicating the completion of a data transfer cycle.
+	DI: Data In [11:0] output holding the received data to be processed.
+	BC: Bit Counter [3:0] output indicating the current bit position in the serial data transfer.
+
+
+Implementation:
+The RTL module SSPx_Slv is designed to function as a slave device in a Serial Peripheral Interface (SPI) communication protocol. The module interfaces with an SPI master through signals such as SSEL (Slave Select), SCK (Serial Clock), MOSI (Master Out Slave In), and MISO (Master In Slave Out). The module's primary function is to receive a 16-bit command from the master, decode it, and perform read or write operations based on the command received. The command structure includes a 3-bit register address, a 1-bit read/write flag, and a 12-bit data field.
+
+Give me the complete code.
+

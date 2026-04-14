@@ -1,0 +1,11 @@
+Design an 8-bit synchronous adder that computes the sum of two 8-bit input operands A and B. The module has a clock and reset input for control; upon reset, it initializes the sum and status outputs to zero. When the clock's positive edge is detected, the module adds A and B, while also determining the overflow status, negative flag, and unsigned flag. The overflow flag indicates if the result exceeds the maximum representable value for 8 bits, the negative flag is set if either input is negative (indicated by their most significant bits), and the unsigned flag is set to indicate that the inputs are treated as unsigned numbers. The outputs are the computed sum, overflow detection, negative status, and whether the numbers are unsigned.
+module top_module(
+    input [7:0] A,
+    input [7:0] B,
+    input clk,
+    input reset,
+    output reg [7:0] sum,
+    output reg overflow,
+    output reg negative,
+    output reg unsigned_flag  // Changed name from 'unsigned' to 'unsigned_flag'
+);

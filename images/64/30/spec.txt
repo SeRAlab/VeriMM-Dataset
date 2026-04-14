@@ -1,0 +1,6 @@
+Design a synchronous data memory module that operates with a reset and clock signal. This module supports two types of read operations and two types of write operations, allowing for flexibility in memory management. Upon reset, it initializes specific memory locations with predefined values. For read operations, it retrieves data from the memory based on a provided address; it can return either the full 16-bit data or the lower byte, depending on the `memRead` signal. For write operations, it allows writing either a full 16-bit data or just the lower byte to a specified address, controlled by the `memWrite` signal. The overall purpose is to implement a simple RAM-like structure with specific functionalities tailored for a system requiring configurable read and write operations.
+module top_module(input rst, clk,
+		input [1:0] memRead, memWrite, 
+		input [15:0] addr, 
+		input [15:0] writeData, 
+		output reg [15:0] readData);

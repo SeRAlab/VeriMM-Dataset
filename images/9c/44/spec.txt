@@ -1,0 +1,11 @@
+Design a module that renders a colored square (blob) on a pixel grid based on given horizontal and vertical coordinates. The module accepts clock input, horizontal and vertical counters, location coordinates for the top-left corner of the blob, an enable signal, and a color input. When the horizontal and vertical counters are within the defined area of the blob (determined by the size parameter), the module outputs the specified color; otherwise, it outputs black (9'h00). This functionality is useful for graphical applications where colored regions need to be displayed dynamically.
+module top_module(
+	input wire clk,
+	input wire [9:0] hcount,
+	input wire [9:0] vcount,
+	input wire [9:0] x_loc,
+	input wire [9:0] y_loc,
+	input wire enable,
+	input wire [8:0] color,
+	output reg [8:0] pixel
+    );

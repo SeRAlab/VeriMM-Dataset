@@ -1,0 +1,10 @@
+Design a simple FIFO (First-In-First-Out) buffer that operates with single-bit data or parameterized width. The module allows for enqueue and dequeue operations, controlled by respective enable signals. When the `enqEn` signal is asserted, the module captures the input value (`enqVal`) on the rising edge of the clock if the buffer is ready to accept new data (indicated by `enqRdy`). Conversely, when the `deqEn` signal is asserted, the module makes the stored value available at the output (`deqVal`) if valid, signaled by `deqRdy`. The buffer also includes a reset functionality that initializes its state, ensuring it can be cleared when needed.
+module top_module( clk
+  , rst_n
+  , enqRdy
+  , enqEn
+  , enqVal
+  , deqRdy
+  , deqEn
+  , deqVal
+  );

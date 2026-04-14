@@ -1,0 +1,26 @@
+Please act as a professional Verilog designer.
+
+Implement a simple D flip-flop with asynchronous reset. The flip-flop captures the value of the D input on the rising edge of the clock signal and outputs it on Q. If the reset signal is high, the Q output is set to 0 asynchronously.
+
+Module name:  
+    d_ff_async_reset    
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    reset: Asynchronous reset signal.
+    d: Data input signal.
+
+Output ports:
+    q: Output signal representing the stored value.
+
+Implementation:
+The register is defined as reg q and initialized to 0 using the initial statement. On the rising edge of clk, the value of q is updated to d. If reset is high, q is set to 0 regardless of clk.
+
+Give me the complete code.
+
+module d_ff_async_reset(clk, reset, d, q);  
+
+    input  clk;  
+    input  reset;  
+    input  d;  
+    output  q;

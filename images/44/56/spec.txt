@@ -1,0 +1,14 @@
+Design a module that performs multiple logical operations and a rotation mechanism on 3-bit inputs. The module computes the bitwise OR and logical OR of two 3-bit inputs, generates their NOT values, and provides outputs for these operations. It also implements a 100-bit shift register that can load data, reset, and perform either left or right rotations based on the control inputs. The final output combines the rotated data with the results of the previously mentioned operations, enabling a wide range of logical processing features suitable for applications requiring data manipulation and bitwise operations.
+module top_module(
+    input [2:0] a,
+    input [2:0] b,
+    input clk,
+    input reset,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output [2:0] out_or_bitwise,
+    output out_or_logical,
+    output [5:0] out_not,
+    output [99:0] final_output
+);

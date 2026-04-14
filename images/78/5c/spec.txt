@@ -1,0 +1,10 @@
+Design a module for an up-down barrel shifter that combines an up/down counter with a barrel shifter. The circuit increments or decrements a 4-bit count based on the `up_down` input signal when triggered by a clock pulse. The count can be reset or loaded with external 4-bit data through the `reset` and `load` signals, respectively. The output is a shifted value from the count, controlled by the `select` signal of the barrel shifter, allowing for versatile bit manipulation.
+module top_module(
+    input clk,
+    input reset,
+    input up_down,
+    input load,
+    input select,
+    output reg [3:0] shifted_count,
+    input [3:0] data_in
+);

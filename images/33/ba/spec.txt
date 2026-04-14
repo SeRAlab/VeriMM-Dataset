@@ -1,0 +1,4 @@
+
+Design a hazard detection circuit that identifies data hazards in a pipelined CPU. The circuit should take three inputs: `current_instruction`, `next_instruction`, and `writeback_instruction`. The output should indicate whether a hazard is present by outputting a signal `hazard_detected`. A hazard is detected if:
+1. The `current_instruction` and `next_instruction` are both trying to write to the same register.
+2. The `writeback_instruction` is trying to write to the same register as the `current_instruction` before it is read.

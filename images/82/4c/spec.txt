@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+
+Design an 8-bit parallel-in serial-out (PISO) shift register. The register captures 8-bit parallel data on a load signal and then shifts the data out serially on every positive edge of the clock signal (clk).
+
+Module name:  
+    piso_shift_reg_8bit  
+
+Input ports:
+    clk: Chip clock signal.
+    rst_n: Active-low reset signal. Defined as 0 for chip reset and 1 for reset signal inactive.
+    load: Load signal to capture parallel data.
+    pdata: 8-bit parallel data input.
+
+Output ports:
+    sdata: Serial data output.
+
+Implementation:
+On every positive edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the shift register value is updated.
+If the reset signal (rst_n) is low, indicating a reset condition, the shift register value is set to 0.
+If the load signal is high, the shift register captures the parallel data (pdata).
+Otherwise, the shift register shifts the data out serially.
+
+Give me the complete code.

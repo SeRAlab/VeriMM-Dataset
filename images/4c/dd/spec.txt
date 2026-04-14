@@ -1,0 +1,8 @@
+Design a 6-bit up/down counter that is controlled by an external clock and reset signal. The module counts in either direction based on the `ud` (up/down) input, while the `count` input defines the counting operation. If `count` is low, the counter holds its current value; if `count` is high, the counter increments when `ud` is high and decrements when `ud` is low. The counter value is reset to zero when the `rst` signal is asserted. This module effectively manages counting operations with the ability to maintain, increment, or decrement its value based on the provided control signals.
+module top_module(
+		input		clk, 
+		input		rst, 
+		input		count, 
+		input		ud, 
+		output reg [5:0]	counter_value 
+	);

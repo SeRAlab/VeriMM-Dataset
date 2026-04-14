@@ -1,0 +1,28 @@
+Please act as a professional Verilog designer.
+
+Implement a 16-bit register with an enable signal and an active-low asynchronous reset.
+
+Module name:
+    register_16
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    enable: Signal to control the loading of data.
+    rst_n: Active-low asynchronous reset signal to initialize the register.
+    d: 16-bit data input.
+Output port:
+    q: 16-bit output signal representing the stored value.
+
+Implementation:
+On every rising edge of the clock signal (clk), if the enable signal is high, the data input (d) is stored in the output (q).
+If the reset signal (rst_n) is low, the output (q) is asynchronously reset to 16'b0.
+
+Give me the complete code.
+
+module register_16(
+   input                clk,
+   input                enable,
+   input                rst_n,
+   input [15:0]         d,
+ 
+   output reg [15:0]    q
+);

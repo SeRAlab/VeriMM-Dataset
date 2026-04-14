@@ -1,0 +1,9 @@
+Design a 4-bit up/down counter with shift functionality. The module increments or decrements a counter based on the up_down control signal upon receiving a clock pulse. The counter can be initialized with a 4-bit input data when the load signal is high. Additionally, the result output can present the current counter value or a shifted version of it, determined by the 2-bit shift input, allowing for right or left shifts by 1 or 2 bits or no shift at all.
+module top_module(
+    input clk,
+    input up_down,
+    input load,
+    input [3:0] data,
+    input [1:0] shift,
+    output reg [3:0] result
+);

@@ -1,0 +1,6 @@
+Design a sign-extending unit that takes a 16-bit immediate value as input and extends it to a 32-bit output based on the ExtSign control signal. When ExtSign is high, the 16-bit input is extended with its sign bit to fill the upper 16 bits of the output; if the sign bit is 1, the upper bits are filled with ones, otherwise they are filled with zeros. If ExtSign is low, the output will remain unmodified (although this case is not explicitly handled in the provided code).
+module top_module(
+  input [15:0] EU_immediate, 
+  input ExtSign,  
+  output reg [31:0] extended  
+  );

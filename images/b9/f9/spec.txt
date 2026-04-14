@@ -1,0 +1,7 @@
+Create a pulse generation circuit that captures an 8-bit input when a tick signal is received. The circuit uses a state machine with two states: "wait_tick" and "get_pulse." In the "wait_tick" state, it waits for the tick signal to initiate the sampling process, which then allows a defined number of clock cycles (5 million) to pass before outputting the captured input data. Once the countdown reaches zero, the module resets to the "wait_tick" state, ready to capture new data. The output is therefore a delayed version of the input data, contingent upon the tick event.
+module top_module(
+	input wire clk, reset,
+	input wire tick,
+	input wire [7:0] data_in,
+	output wire [7:0] data_out
+    );

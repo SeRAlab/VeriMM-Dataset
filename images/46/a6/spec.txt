@@ -1,0 +1,6 @@
+Design a module that calculates the natural logarithm and exponential of a 16-bit input value. The module outputs a 32-bit logarithm result (`ln_x`) and a 32-bit exponential result (`exp_x`). For input values, if `x` equals zero, the logarithm output is zero and the exponential output is one. If `x` is negative, the logarithm output is set to -1 and the exponential output is zero. For positive values of `x`, both functions are computed using the Taylor series expansion, where the logarithm is approximated over 10 terms and the exponential is computed similarly, ensuring the module effectively handles basic mathematical operations involving logarithmic and exponential functions.
+module top_module(
+  input [15:0] x,
+  output reg [31:0] ln_x,
+  output reg [31:0] exp_x
+);

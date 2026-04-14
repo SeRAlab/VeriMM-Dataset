@@ -1,0 +1,7 @@
+Design a 8-bit shift register that can either load new data or perform a circular shift operation. When the load signal is asserted, the register takes in the 8-bit input `data_in` and stores it. Otherwise, on each positive edge of the clock, the register performs a circular shift left, moving the most significant bit (MSB) to the least significant bit (LSB) position. The current state of the shift register is continuously output as `data_out`.
+module top_module(
+    input clk,
+    input load,
+    input [7:0] data_in,
+    output [7:0] data_out
+);

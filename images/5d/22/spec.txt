@@ -1,0 +1,10 @@
+Design a 32-bit wide register file with 31 registers for storing and retrieving values. The module operates based on a clock signal, allowing a write operation when the write enable (wen) signal is asserted. The write address (waddr) specifies which register to update with the provided data (wdata). Simultaneously, it reads data from two specified registers (raddr1 and raddr2) and outputs the values as rdata1 and rdata2, respectively, making it suitable for use in a processor architecture for efficient data storage and retrieval.
+module top_module(
+    input clk, wen,
+    input [5:0] waddr,
+    input [5:0] raddr1,
+    input [5:0] raddr2,
+    input [31:0] wdata,
+    output reg [31:0] rdata1,  // Changed from wire to reg
+    output reg [31:0] rdata2   // Changed from wire to reg
+);

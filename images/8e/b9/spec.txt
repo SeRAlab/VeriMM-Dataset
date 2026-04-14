@@ -1,0 +1,9 @@
+Design a synchronous RAM module with a 32x32-bit memory capacity. It operates on the rising edge of the clock signal, with a reset functionality to clear the output. When the reset is inactive (reset_n is low), the output is set to zero. If write_en is asserted, the module writes the input data (data_in) to the specified memory address. Conversely, if write_en is deasserted, the module reads data from the specified address and outputs it through data_out.
+module top_module(
+    input clock,
+    input reset_n,
+    input [31:0] data_in,
+    input write_en,
+    input [4:0] address,
+    output reg [31:0] data_out
+);

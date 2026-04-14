@@ -1,0 +1,15 @@
+Design a D flip-flop with additional synchronous set and reset functionality. The flip-flop captures the input D on the rising edge of the inverted clock (CLK_N). It also incorporates asynchronous set (SET_B) and reset (RESET_B) controls to force the output Q high or low, respectively. Additionally, Signal Control inputs (SCD and SCE) influence the set/reset behavior, allowing for conditional control of the memory state. The outputs are provided as Q and its complement Q_N. This module is suitable for use in digital registers, state machines, or any sequential logic requiring controlled memory elements.
+module top_module(
+    input D,
+    input SCD,
+    input SCE,
+    input CLK_N,
+    input SET_B,
+    input RESET_B,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB,
+    output reg Q,
+    output reg Q_N
+);

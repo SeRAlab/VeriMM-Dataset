@@ -1,0 +1,7 @@
+Design a binary-to-BCD (Binary-Coded Decimal) converter that translates a 4-bit binary input into a 4-bit BCD output. The module activates on the rising edge of a clock signal, with a reset mechanism to clear the output. For any binary input value between 0 and 9, the corresponding BCD output remains the same. However, for binary values from 10 to 15, the BCD output maps to the values 1 through 6, effectively allowing it to represent numbers in a valid BCD format while handling overflow conditions.
+module top_module(
+  input clk,
+  input rst,
+  input [3:0] bin,
+  output reg [3:0] bcd
+);

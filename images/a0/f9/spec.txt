@@ -1,0 +1,10 @@
+Design a signed magnitude comparator for two 8-bit signed inputs, A and B. The module outputs four signals: `eq`, which indicates whether A equals B; `lt`, which indicates if A is less than B; `gt`, which indicates if A is greater than B; and `overflow`, which signifies an overflow condition during subtraction. The comparison is achieved by calculating the difference between A and B and analyzing the most significant bits (MSBs) to determine the relationship between the two inputs, while also handling overflow cases based on the signs of the operands and the result. The design employs a state machine to manage the process of loading inputs and performing the subtraction operation.
+module top_module(
+    input signed [7:0] A,
+    input signed [7:0] B,
+    input clk,          // Added the clk input
+    output eq,
+    output lt,
+    output gt,
+    output overflow
+);

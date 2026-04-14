@@ -1,0 +1,11 @@
+Design a system control module that generates clock signals and reset conditions for various components within a digital system. It produces a waveform clock output for "wb_clk_o" by dividing the auxiliary clock input and for "dsp_clk_o" by dividing the FPGA clock input. The module also manages reset signals, setting "ram_loader_rst_o" to the status of the RAM loader's completion and generating a reset for the processor based on the readiness of the clock. This design ensures proper timing and initialization for system operations.
+module top_module(
+    input wire aux_clk_i,
+    input wire clk_fpga_i,
+    input wire ram_loader_done_i,
+    input wire clock_ready_i,
+    output wire wb_clk_o,
+    output wire dsp_clk_o,
+    output wire ram_loader_rst_o,
+    output wire processor_rst_o
+);

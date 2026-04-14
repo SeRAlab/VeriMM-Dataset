@@ -1,0 +1,6 @@
+Design a sequential circuit that functions as an output signal controller. On the rising edge of the clock, if the reset signal is active, the output will be set to all ones (16'hFFFF). If the reset is inactive and the input signal equals zero, the output remains all ones. Otherwise, the circuit captures the lower 16 bits of the 32-bit input signal and assigns them to the output. This module essentially serves to conditionally relay part of an input signal to an output while also handling a reset state.
+module top_module(
+    input clk, reset,
+    input [31:0] in_signal,
+    output reg [15:0] out_signal
+);

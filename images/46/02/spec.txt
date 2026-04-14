@@ -1,0 +1,7 @@
+Design a data alignment circuit that reorganizes a 64-bit input based on a 2-bit mode selector (`datamode`). The module determines the size of data to be extracted and replicated into specific output segments of `data_out`. Each segment of the output (from `data_out[7:0]` to `data_out[63:56]`) is populated conditionally based on the corresponding bits in `datamode`, allowing for flexible alignment of the lower bits from `data_in` across the output. This design effectively manages data reorganization for varying data sizes as indicated by `datamode`, facilitating the alignment of data for further processing or transmission.
+module top_module(
+   
+   data_out,
+   
+   datamode, data_in
+   );

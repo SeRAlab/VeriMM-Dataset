@@ -1,0 +1,17 @@
+Please act as a professional Verilog designer.
+
+Implement a module that detects a rising edge on an input signal. The module should output a single clock pulse whenever a rising edge is detected.
+
+Module name: 
+    edge_detector
+Input ports:
+    clk: Clock signal
+    rst_n: Reset signal (active low)
+    signal_in: Input signal to detect rising edge on
+Output ports:
+    edge_detected: Output pulse on rising edge detection
+
+Implementation:
+If the reset signal is active (!rst_n), the previous value of the input signal is set to 0. On each clock cycle, the module compares the current value of the input signal to its previous value. If the current value is 1 and the previous value was 0, a rising edge is detected, and the output edge_detected is set to 1 for one clock cycle. Otherwise, the output edge_detected is set to 0. The previous value of the input signal is updated on each clock cycle.
+
+Give me the complete code.

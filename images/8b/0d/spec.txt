@@ -1,0 +1,14 @@
+Design a register file capable of storing 32 words of 32-bit data. It features a write interface that allows data to be written to specified registers on the rising edge of a clock, provided that the write enable signal is active and the target register is not the reserved register 31. Two read ports are available that allow fetching data from two specified registers, returning a value of zero if the selected register is 31.
+module top_module(
+    input wire 		 clk_i,
+    
+    input wire [4 : 0] 	 w_add_i,
+    input wire [31 : 0]  w_dat_i,
+    input wire 		 write_en_i,
+    
+    input wire [4 : 0] 	 a_add_sel,
+    input wire [4 : 0] 	 b_add_sel,
+
+    output wire [31 : 0] r_port_a_o,
+    output wire [31 : 0] r_port_b_o
+);

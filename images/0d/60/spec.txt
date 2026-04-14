@@ -1,0 +1,14 @@
+Design a Verilog module for a simplified ChaCha20 stream cipher core that implements a quarter round function. The module should take 16 input 32-bit words and produce 16 output 32-bit words after applying the quarter round operation. The quarter round operation is defined as follows for four input words a, b, c, d:  
+1. a = a + b   
+2. d = d XOR a  
+3. d = d <<< 16  
+4. c = c + d  
+5. b = b XOR c  
+6. b = b <<< 12  
+7. a = a + b  
+8. d = d XOR a  
+9. d = d <<< 8  
+10. c = c + d  
+11. b = b XOR c  
+12. b = b <<< 7  
+The output should be the transformed 16 words.

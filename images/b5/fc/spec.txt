@@ -1,0 +1,13 @@
+Design a circuit that functions as a simple arithmetic and logical unit (ALU). It takes two one-bit inputs (src1 and src2) and performs different operations based on a 2-bit operation selector. The module supports bitwise AND, bitwise OR, and an additional operation that incorporates a carry input (`cin`) while also accounting for inverted inputs (A_invert and B_invert). The result is a single output (`result`) that reflects the selected operation, along with additional outputs for group generate (`g`) and propagate (`p`) signals, which are useful in multi-bit carry logic. The module can also handle a comparison input (`less`) when the operation code indicates it.
+module top_module(
+               input src1,
+               input src2,
+               input less,
+               input A_invert,
+               input B_invert,
+               input cin,
+               input [1:0] operation,
+               output reg result,
+               output g,
+               output p
+               );

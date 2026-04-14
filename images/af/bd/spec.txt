@@ -1,0 +1,9 @@
+Design a barrier synchronization module for a multi-directional communication system. It uses clock and reset inputs to manage state transitions, where it receives directional data inputs and source references. The module processes inputs to control data broadcasting and output based on active sources. It utilizes logical operations to gather status from sources, determining whether to broadcast or encode data for a specific destination. The output is a combination of broadcasted information and controlled data selection based on the current state, allowing for effective coordination of communication across multiple directions in the system.
+module top_module(
+  input clk_i,
+  input reset_i,
+  input [dirs_p-1:0] data_i,
+  input [dirs_p-1:0] src_r_i,
+  input [lg_dirs_lp-1:0] dest_r_i,
+  output [dirs_p-1:0] data_o
+);

@@ -1,0 +1,1 @@
+module top_module(input signed [10:0] IRshort, output signed [15:0] IRlong);assign IRlong = IRshort;endmodule

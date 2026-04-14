@@ -1,0 +1,24 @@
+Design a circuit to resample RGB color data from a 24-bit input format to a 15-bit output format. The module takes in a valid RGB stream with accompanying control signals indicating the start and end of packets, along with an empty signal, and processes this information on the rising edge of a clock. When the output is ready, it performs a color conversion by scaling the input RGB values to fit within a reduced bit depth, while also propagating the control signals. The circuit ensures readiness for input data when the output is not valid, facilitating smooth data flow in streaming applications.
+module top_module(
+	// Inputs
+	clk,
+	reset,
+
+	stream_in_data,
+	stream_in_startofpacket,
+	stream_in_endofpacket,
+	stream_in_empty,
+	stream_in_valid,
+
+	stream_out_ready,
+	
+	// Outputs
+	stream_in_ready,
+
+
+	stream_out_data,
+	stream_out_startofpacket,
+	stream_out_endofpacket,
+	stream_out_empty,
+	stream_out_valid
+);

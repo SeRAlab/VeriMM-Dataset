@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+
+Implement an 8-bit shift register module with parallel load capability. The register should shift left or right based on a direction input and load a parallel input value when the load signal is high.
+
+Module name:
+    shift_register
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    load: Signal to load the parallel input value.
+    direction: Direction signal (0 for shift left, 1 for shift right).
+    parallel_in: 8-bit value to load when the load signal is high.
+
+Output ports:
+    data_out: 8-bit output representing the current value of the shift register.
+
+Implementation:
+The module includes an 8-bit register, data_out, which is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the data_out register is cleared to 0.
+On every rising edge of the clock, if load is high, data_out captures parallel_in.
+Otherwise, if direction is 0, data_out shifts left by 1 bit; if direction is 1, data_out shifts right by 1 bit.
+
+Give me the complete code.

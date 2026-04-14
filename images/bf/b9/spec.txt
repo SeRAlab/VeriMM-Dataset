@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform signal synchronization between two clock domains or to detect signal edges, depending on its configuration. Its primary functions include:
+
+Signal Synchronization: It ensures that a signal (`in`) from one clock domain is safely transferred to another clock domain governed by `clk`, minimizing the risk of metastability.
+Edge Detection: Optionally, when configured, it can detect the rising or falling edges of the input signal. This is useful in scenarios where the transition of the signal itself carries significance, such as interrupt signals or event triggers.
+
+This module plays a crucial role in digital systems where multiple clock domains exist, ensuring reliable communication between these domains and enhancing system stability and performance.
+
+Module name:  
+	meta_sync_single
+
+Input ports:
+	clk: A clock input signal (input). This clock signal governs the timing of the synchronization and edge detection processes.
+	reset_n: An activelow reset signal (input). It is used to initialize the module's internal state and outputs to a known state upon system reset.
+	in: The input signal to be synchronized or edgedetected (input). This signal originates from a different clock domain or the same domain in case of edge detection.
+Output ports:
+	out: The synchronized output signal or the edge detection result (output). Its behavior depends on the configuration of the module (whether edge detection is enabled or not).
+
+
+Implementation:
+The meta_sync_single module is designed to synchronize a single-bit input signal (in) to the domain of the clock signal (clk) it is associated with. This synchronization is crucial in digital design, especially when signals cross clock domains, to mitigate the risk of metastability. The module offers two modes of operation, controlled by the EDGE_DETECT parameter: a straightforward synchronization mode and an edge detection mode.
+
+Give me the complete code.
+

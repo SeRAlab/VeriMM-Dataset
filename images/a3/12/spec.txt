@@ -1,0 +1,14 @@
+Design a data buffer module that forwards various input signals to corresponding output signals without modification. This module includes buffers for signals related to cache or data memory operations, such as column offset, hit flags, read/write control, set identifiers, and word enable signals. It captures and outputs the states of these control signals, suggesting its use in a system that requires synchronization or isolation of data paths, particularly in cache memory contexts.
+module top_module(
+   
+   sctag_scdata_col_offset_c2_buf, sctag_scdata_fb_hit_c3_buf, 
+   sctag_scdata_fbrd_c3_buf, sctag_scdata_rd_wr_c2_buf, 
+   sctag_scdata_set_c2_buf, sctag_scdata_stdecc_c2_buf, 
+   sctag_scdata_way_sel_c2_buf, sctag_scdata_word_en_c2_buf, 
+   scdata_sctag_decc_c6, 
+   
+   sctag_scdata_col_offset_c2, sctag_scdata_fb_hit_c3, 
+   sctag_scdata_fbrd_c3, sctag_scdata_rd_wr_c2, sctag_scdata_set_c2, 
+   sctag_scdata_stdecc_c2, sctag_scdata_way_sel_c2, 
+   sctag_scdata_word_en_c2, scdata_sctag_decc_c6_ctr
+   );

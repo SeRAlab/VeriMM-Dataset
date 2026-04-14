@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+
+Implement a simple 8-bit Arithmetic Logic Unit (ALU) with the following operations: addition, subtraction, AND, OR, XOR, and NOT. The ALU should have a parameter DATAWIDTH, which is set to 8 by default but can be changed when instantiating the module.
+
+Module name:  
+    simple_alu 
+
+Parameter:
+DATAWIDTH = 8
+
+Input ports:
+    a: DATAWIDTH bit input signal [DATAWIDTH-1:0] representing the first operand.
+    b: DATAWIDTH bit input signal [DATAWIDTH-1:0] representing the second operand.
+    opcode: 3-bit input signal [2:0] representing the operation to be performed.
+        000 - ADD
+        001 - SUB
+        010 - AND
+        011 - OR
+        100 - XOR
+        101 - NOT (operation only uses 'a', 'b' is ignored)
+Output ports:
+    result: DATAWIDTH bit output signal [DATAWIDTH-1:0] representing the result of the ALU operation.
+    zero: 1-bit output signal indicating if the result is zero.
+
+Implementation:
+Perform the operation indicated by the opcode on the inputs 'a' and 'b' and output the result on 'result'. The 'zero' flag is set if the result is zero.
+
+Give me the complete code.

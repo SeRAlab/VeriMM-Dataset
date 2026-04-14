@@ -1,0 +1,35 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as an Arithmetic Logic Unit (ALU) output handler within a digital system, primarily focusing on processing and routing the results of various arithmetic, logical, shifting, and multiplication operations to appropriate destinations. It plays a crucial role in determining the next state of flags based on the operation results and in formatting the output data for further processing or storage. The module to handle both byte and word operations, making it versatile for different data sizes and types of operations.
+
+Module name:  
+	aluout
+
+Input ports:
+	adder_c (1bit): Carry flag result from the adder unit.
+	adder_hc (1bit): Halfcarry flag result from the adder unit.
+	hi_byte (1bit): Selector for high byte duplication in the output data bus.
+	logic_c (1bit): Carry flag result from the logic unit.
+	logic_hc (1bit): Halfcarry flag result from the logic unit.
+	shft_c (1bit): Carry flag result from the shift unit.
+	word_op (1bit): Selector between word (16bit) and byte (8bit) operations.
+	unit_sel (2bit): Selector for the active unit (adder, shifter, multiplier, or logic).
+	shft_out (8bit): Output from the shift unit.
+	adder_out (16bit): Output from the adder unit.
+	logic_out (16bit): Output from the logic unit.
+	mult_out (16bit): Output from the multiplier unit.
+Output ports:
+	cry_nxt (1bit): Next state of the carry flag.
+	hcar_nxt (1bit): Next state of the halfcarry flag.
+	one_nxt (1bit): Indicates if the result is exactly one.
+	par_nxt (1bit): Next state of the parity flag.
+	sign_nxt (1bit): Next state of the sign flag.
+	zero_nxt (1bit): Indicates if the result is zero.
+	data_bus (16bit): Formatted output data bus.
+
+
+Implementation:
+The RTL module presented, named aluout, is designed to function as an Arithmetic Logic Unit (ALU) output handler. This module is responsible for selecting the appropriate result based on the operation performed by the ALU and generating various flags and outputs that are essential for the subsequent stages of a processor or a computing system. The module operates based on the inputs from arithmetic, logic, shift, and multiply units, and it outputs the result along with flags indicating the outcome of the operation.
+
+Give me the complete code.
+

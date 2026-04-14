@@ -1,0 +1,9 @@
+Design a 4-bit up/down counter with load and reset functionalities. This module counts either up or down based on the `up_down` input signal while being clocked by the `clk` input. When `reset` is activated, the counter resets to zero, and when `load` is activated, it loads a new value from the 4-bit input `D`. The current count value is output through the register `Q`. The counter behavior is controlled such that it increments when `up_down` is high and decrements when it is low, effectively allowing bidirectional counting.
+module top_module(
+    input clk,
+    input up_down,
+    input load,
+    input reset,
+    input [3:0] D,
+    output reg [3:0] Q
+);

@@ -1,0 +1,9 @@
+Design a 4-bit comparator circuit that compares two 4-bit inputs, A and B. The module outputs three signals: EQ, which is high when A equals B; GT, which is high when A is greater than B; and LT, which is high when A is less than B. The comparison results are updated based on a clock signal that determines the operational stage of the comparator. The module uses two registers to hold the values of A and B during comparison and includes a simple state mechanism managed by the clock to control the timing of these operations.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input clk,           // Added clk input
+    output reg EQ,      // Changed to reg to match usage in always blocks
+    output reg GT,      // Changed to reg to match usage in always blocks
+    output reg LT       // Changed to reg to match usage in always blocks
+);

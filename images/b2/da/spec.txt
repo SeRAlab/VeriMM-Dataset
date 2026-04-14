@@ -1,0 +1,11 @@
+Design a circuit that incorporates a 2-to-1 multiplexer and a 3-bit shift register. The multiplexer selects between two inputs, `a` and `b`, based on the select signals `sel_b1` and `sel_b2`, or outputs their bitwise AND if both selectors are low. Upon each rising edge of the clock, if enabled, the selected output is shifted into the least significant bit of the shift register, while the most significant bits are preserved. The shift register's least significant bit is assigned to the output `q`, ensuring that the circuit provides a shifted version of the multiplexed input based on the system clock and control signals.
+module top_module(
+    input a,
+    input b,
+    input sel_b1,
+    input sel_b2,
+    input clk,
+    input reset,
+    input enable,
+    output reg q
+);

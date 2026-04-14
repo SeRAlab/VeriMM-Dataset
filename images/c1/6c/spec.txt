@@ -1,0 +1,37 @@
+Please act as a professional verilog designer.
+    
+Implement a module appears to function as a register file with additional logic for data manipulation and forwarding within a microprocessor or a similar computational system. Its primary roles include:
+
+Storing and providing access to multiple registers which can be used for arithmetic operations, data storage, or as pointers.
+Handling data from different sources (e.g., data wishbone (DWB) bus, fast simplex link (FSL) interface) and selecting the appropriate data based on control signals.
+Performing data forwarding to mitigate data hazards by providing the result of an operation as an input to the next operation without waiting for it to be written back to the register file.
+Supporting different data sizes and formats through masking and concatenation operations.
+
+Module name:  
+	aeMB_regf
+
+Input ports:
+	gclk (input): The global clock signal for synchronizing the module's operations.
+	grst (input): Global reset signal to initialize or reset the module's state.
+	gena (input): Global enable signal to control the operation of the module.
+	rOPC (input, [5:0]): Opcode or operation code to determine the operation to be performed.
+	rRA, rRB, rRW, rRD (input, [4:0]): Register addresses for source A, source B, write register, and destination register, respectively.
+	rMXDST (input, [1:0]): Control signal to select the data source for writing to the register file.
+	rPCLNK (input, [31:2]): Program counter link address, possibly for jump and branch operations.
+	rRESULT (input, [31:0]): The result from an arithmetic or logic unit to be written to the register file.
+	rDWBSEL (input, [3:0]): Control signal to select the data width for the DWB data.
+	rBRA, rDLY (input): Control signals, possibly related to branching and delay slots.
+	dwb_dat_i (input, [31:0]): Data input from the data wishbone bus.
+	fsl_dat_i (input, [31:0]): Data input from the fast simplex link interface.
+Output ports:
+	rREGA, rREGB (output, [31:0]): Data outputs for source A and source B registers.
+	rDWBDI (output, [31:0]): Data output selected based on rDWBSEL.
+	dwb_dat_o (output, [31:0]): Data output for the data wishbone bus.
+	fsl_dat_o (output, [31:0]): Data output for the fast simplex link interface.
+
+
+Implementation:
+The RTL module aeMB_regf appears to be a part of a microprocessor or a microcontroller, specifically dealing with the register file and data handling aspects. It interfaces with both a data wishbone (DWB) bus and a fast simplex link (FSL) for data input and output, and manipulates data based on various control signals. The module's logic can be broken down into several key areas:
+
+Give me the complete code.
+

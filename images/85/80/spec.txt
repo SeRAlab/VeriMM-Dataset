@@ -1,0 +1,9 @@
+Design a next program counter (NPC) module that determines the next instruction address based on the current program counter (pc_F) and additional control signals. This module takes a 2-bit selector (sel) to choose among four potential next addresses: the address of the next sequential instruction (pc_F + 4), the address calculated from a sign-extended immediate value shifted left by two (for branch offsets), the address from a register specified by grf_rs, and a jump address formed by concatenating the upper bits of pc_F with a left-shifted immediate value (imm26). The selected address is output as the next program counter value (npc).
+module top_module(
+	input[1:0] sel,
+	input[31:0] pc_F,
+	input[31:0] signextimm16,
+	input[31:0] grf_rs,
+	input[25:0] imm26,
+	output[31:0] npc
+	);

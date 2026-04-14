@@ -1,0 +1,9 @@
+Design a serial transmitter module that sends an 8-bit data byte over a single serial line. Upon receiving a start signal, the module utilizes a state machine to control the transmission process, driven by clock and baud rate ticks. It extracts each bit of data sequentially from the input byte, controlled by the current state, and outputs it to the `txd` line. The module additionally provides a `txd_busy` signal to indicate when transmission is in progress and a `txd_ready` signal to signify when the module is available for a new byte, thus enabling efficient control over serial data transmission.
+module top_module(
+    input        clk,
+    input        txd_start,
+    input        baud1tick,  
+    input  [7:0] txd_data,
+    output reg   txd,  
+    output       txd_busy
+  );

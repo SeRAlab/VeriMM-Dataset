@@ -1,0 +1,11 @@
+Design a register module that stores an 8-bit input value based on control signals. The module features an enable signal (en) that allows operations only when active. It has asynchronous reset signals (arst and srst) that clear the stored value regardless of the clock state. When the load signal (ld) is high, the module captures the input data (d) on the clock's rising edge and updates the stored value, while also indicating that data has been loaded via the output signal (lz). The module outputs the stored value through the output (z).
+module top_module(
+    input clk,
+    input en,
+    input arst,
+    input srst,
+    input ld,
+    input [7:0] d,
+    output reg lz,       // Changed 'output lz' to 'output reg lz'
+    output [7:0] z
+);

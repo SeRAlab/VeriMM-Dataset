@@ -1,0 +1,8 @@
+Design a Moore finite state machine (FSM) that outputs a 2-bit signal based on input conditions and internal states. The FSM has three states (A, B, C), encoded in a one-hot format, with state transitions determined by the values of inputs x and y on the rising edge of the clock or on a reset signal. The output z corresponds to the current state: when in state A, z outputs 00; in state B, z outputs 01; and in state C, z outputs 10. The FSM initializes to state A upon reset and transitions between states based on defined input conditions.
+module top_module(
+  input clk,
+  input reset,
+  input x,
+  input y,
+  output reg [1:0] z
+);

@@ -1,0 +1,9 @@
+Design a three-stage pipeline register module that captures a 3-bit input vector. On each clock cycle, the input `vec` is passed through three sequential registers, with the output `outv` continuously reflecting the value of the third register. Additionally, individual bits from the intermediate registers are output as `o2`, `o1`, and `o0`, representing specific bits from the third, second, and first registers, respectively. This design enables delayed processing and data propagation through the stages of the pipeline.
+module top_module(
+    input wire clk, // Added clock input
+    input wire [2:0] vec,
+    output wire [2:0] outv,
+    output wire o2,
+    output wire o1,
+    output wire o0
+);

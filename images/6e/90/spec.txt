@@ -1,0 +1,9 @@
+Design a circuit that functions as a data serializer. It takes a two-bit input, `dataIn`, and a validity signal, `validIn`, and processes this data on the rising edge of a clock signal, `rxClk`. Upon receiving a valid input, the circuit shifts the data into an internal register while producing a one-bit output, `dataOut`, that corresponds to the most recent valid bit. The output validity, `validOut`, is also indicated based on the processed data. The circuit includes a reset feature that initializes the outputs and internal state when `rxReset` is activated.
+module top_module(
+    input rxClk,
+    input rxReset,
+    input [1:0] dataIn,
+    input validIn,
+    output reg dataOut,
+    output reg validOut
+    );

@@ -1,0 +1,10 @@
+Design a synchronous circuit that integrates a 4-bit binary counter, a 2's complement computation, and a multiplexer. The counter increments on each clock cycle and resets to zero on an active-high reset signal. The circuit provides output signals representing the current count and the 2's complement of the count. An input control signal selects between the counter value and its 2's complement for further processing. Additionally, the circuit generates a sum output by adding the selected value (either from the counter or its 2's complement) to the input signal. This design effectively combines counting, arithmetic operations, and selection logic in a single module.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    output [3:0] q,
+    input in,
+    output out,
+    input [3:0] counter_out,
+    output [3:0] sum_out
+);

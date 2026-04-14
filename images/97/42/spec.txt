@@ -1,0 +1,6 @@
+Design a frequency divider circuit that generates a square wave output `fout` with a frequency that is 1/50,000,000 of the input clock frequency `clk`. The design includes a 27-bit counter that increments on each clock cycle until it reaches a predetermined value (49,999,999), at which point it resets the counter and toggles the output state `s_cnt`. The output `fout` represents the toggled state of `s_cnt`, effectively creating a 1 Hz signal from a 50 MHz input clock. The module also incorporates an active-low reset input `rst_n` for synchronization and initialization.
+module top_module(
+    input clk,
+    output fout,
+    input rst_n
+    );

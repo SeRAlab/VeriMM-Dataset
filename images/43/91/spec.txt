@@ -1,0 +1,9 @@
+Design a module to facilitate SPI (Serial Peripheral Interface) data reading. The module captures bits transmitted over the `bitIn` line while synchronized with the `spiClock`. It begins reading when the `start` signal is asserted, transitioning to a running state. During this state, it shifts in bits to form a byte stored in `inputBuffer`, and outputs this byte on `byteOut` when the transfer is complete. The `finish` signal indicates when the byte has been fully read, allowing the system to manage subsequent transfers. An optional `waitForBitIn` condition controls whether to wait for a valid input bit before starting the read process. The module also detects and manages potential errors in operation.
+module top_module(
+    spiClock,
+    start,
+    bitIn,
+    finish,
+    byteOut, 
+    waitForBitIn
+);

@@ -1,0 +1,9 @@
+Design a memory allocator module in Verilog that can allocate and free a fixed number of memory blocks. The module should have the following inputs and outputs:
+- Inputs:
+  - `alloc`: a signal to trigger allocation of a memory block.
+  - `free`: a signal to trigger the freeing of a memory block.
+  - `block_id`: a 3-bit input representing the block number to allocate or free (0 to 7).
+- Outputs:
+  - `allocated`: a signal indicating whether the allocation was successful.
+  - `freed`: a signal indicating whether the freeing was successful.
+The memory allocator should maintain the state of 8 memory blocks (initialized to free). Allocation should succeed if the block is free, while freeing should succeed if the block is currently allocated.

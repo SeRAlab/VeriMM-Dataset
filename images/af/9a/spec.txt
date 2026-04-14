@@ -1,0 +1,10 @@
+Design a dual-port RAM module with 64 bits of width that supports reading from and writing to specified addresses. The module allows initialization of memory content, and on a positive clock edge, it writes the data input (DI) to the memory at the address specified by WA if the write enable (WE) signal is asserted and a designated high address line (WA7) condition is met. The output (O) reflects the current value at the memory location indexed by input address A, providing simultaneous access for one read and one write operation.
+module top_module(
+  output O,
+  input DI, 
+  input CLK, 
+  input WE, 
+  input WA7,
+  input [5:0] A, 
+  input [5:0] WA
+);

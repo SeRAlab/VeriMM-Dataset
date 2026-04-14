@@ -1,0 +1,9 @@
+Design a 100-bit wide shift register with a loading capability and conditionally outputs a signal based on a comparison. The module accepts a clock signal to synchronize operations, a load signal to write data into the register, and a 2-bit enable signal to determine the direction and extent of the shift operations. When loading, the input data is stored in the shift register. The shift operation occurs on each clock cycle when the load signal is low, where the enable signal controls how many bits to shift (left or right). Additionally, the module generates an output signal that indicates whether the current contents of the shift register differ from the original input data, effectively implementing a basic comparison function.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output reg [99:0] q,
+    output reg out_if_else
+);

@@ -1,0 +1,16 @@
+Design a synchronous buffer module with a configurable depth and width that supports loading and unloading of data. It has an enable signal to control data operations, and it can be asynchronously reset. The module uses two counters, `head` and `tail`, to manage data insertion and removal from the buffer. The output `z` is driven by the read operation when valid data is available, while `vdin` and `vdout` indicate the validity of the input and output data respectively. The design effectively implements a First-In-First-Out (FIFO) structure, allowing data flow control within a specified depth, ensuring that operations respect buffer capacity constraints.
+module top_module(
+    input clk,
+    input en,
+    input arst,
+    input srst,
+    input ldin,
+    input vzin,
+    input ldout,
+    input vzout,
+    output vdin,
+    output [7:0] din,
+    output lzout,
+    output vdout,
+    output reg [7:0] z  // Changed from wire to reg
+);

@@ -1,0 +1,10 @@
+Design a differential signal generator that processes a signed 12-bit input. On each rising edge of the clock, if enabled and data strobe is active, it updates the current DC component with the input value and computes the difference between the current and previous DC components. The computed difference is then outputted as a differential signal when data strobe is asserted, while a control signal indicates when the output is valid. The circuit resets to initial states when a reset signal is activated.
+module top_module(
+    input clk,
+    input ena,
+    input rst,
+    input dstrb,
+    input signed [11:0] din,
+    output reg signed [11:0] dout, // Change net to reg
+    output reg douten              // Change net to reg
+);

@@ -1,0 +1,13 @@
+Design a synchronous FIFO (First-In-First-Out) memory queue capable of storing 8-bit wide data words with a depth of 16 entries. This module features asynchronous clear, input for writing data (wrreq), and reading data (rdreq). It provides signals to indicate the status of the queue: empty, full, and almost full (when the usage reaches 87.5% of capacity). The current data being read is available at the output q, and the count of used words is accessible via the usedw output. The FIFO supports overflow prevention by limiting writes when full and underflow prevention by limiting reads when empty.
+module top_module(
+    aclr,
+    clock,
+    data,
+    rdreq,
+    wrreq,
+    empty,
+    full,
+    almost_full,
+    q,
+    usedw
+);

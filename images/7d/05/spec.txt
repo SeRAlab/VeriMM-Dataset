@@ -1,0 +1,10 @@
+Design a circuit that determines if a given memory address is writable based on the writable status of specific sectors. The module takes a 3-bit address input and checks it against predefined sector addresses (from 1 to 5). Each sector's writability is input as a signal. The output indicates whether the address is writable, which is true if the address matches a sector that is marked as writable. This design effectively functions as an address decoder combined with a writable checker for multiple sectors.
+module top_module(
+    input [2:0] address,
+    input is_sector1_writable,
+    input is_sector2_writable,
+    input is_sector3_writable,
+    input is_sector4_writable,
+    input is_sector5_writable,
+    output is_addr_writable
+);

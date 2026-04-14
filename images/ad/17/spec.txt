@@ -1,0 +1,5 @@
+Design a double-register circuit that operates based on two clock signals, SCLK and ECLK. Upon the positive edge of SCLK, it captures the input signals T0 and T1 into a 2-bit temporary register. If the DQSW270 input is active and global set/reset (GSR) is enabled, it resets the output register q_reg to zero. The ECLK clock event transfers the most significant bit of q_reg to the output Q while shifting the register contents to accommodate the next input data. Additionally, upon a reset trigger, if the register set (REGSET) is set to "SET," it resets q_reg to zero, ensuring that the output can be initialized appropriately.
+module top_module(
+    input T0, T1, SCLK, ECLK, DQSW270, RST,
+    output reg Q           // Change output to reg type
+);

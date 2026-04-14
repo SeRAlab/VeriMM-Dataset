@@ -1,0 +1,10 @@
+Design a 4-bit up/down counter with asynchronous reset and clock enable. The counter increments its value when the control signal `ctrl` is low and decrements when `ctrl` is high, provided that `ce` (count enable) is asserted. When reset, the counter initializes to zero. The module also generates a terminal count output (`tc`) that indicates when the counter reaches its maximum (15) or minimum (0) value, and a borrow output that signals when the counter underflows.
+module top_module(
+    input clk,
+    input rst_n,
+    input ce,
+    input ctrl,
+    output reg [3:0] count,
+    output reg tc,        // Changed from wire to reg
+    output reg borrow     // Changed from wire to reg
+);

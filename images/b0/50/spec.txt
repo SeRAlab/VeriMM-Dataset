@@ -1,0 +1,6 @@
+Design a clock divider module that takes an input clock signal and generates a lower frequency output clock signal. The module uses a 2-bit counter to count clock edges. On every reset signal, it initializes the counter and the output clock to zero. On each positive edge of the input clock, the counter increments, and when it reaches a count of 2 (binary `10`), the output clock toggles its state (from high to low or low to high), effectively dividing the input clock frequency by 4.
+module top_module(
+    input clock,
+    input reset,
+    output reg clock_out
+);

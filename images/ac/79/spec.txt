@@ -1,0 +1,7 @@
+Design a 6-bit counter capable of counting up or down based on the `dir` input, with an asynchronous active-low reset. When `rst_n` is LOW, the counter initializes to either a full count of 63 (binary 111111) if `dir` is HIGH, or to 0 if `dir` is LOW. When the reset is not active, the counter increments by 1 with `dir` LOW and decrements by 1 with `dir` HIGH, providing basic counting functionality in both directions.
+module top_module(
+    output reg [5:0] counter,
+    input clock,
+    input rst_n,
+    input dir
+    );

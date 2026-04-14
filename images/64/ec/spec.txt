@@ -1,0 +1,9 @@
+Design a programmable up/down binary counter with a reset feature. The counter increments or decrements its value based on the control signal (ctrl: HIGH for counting up, LOW for counting down). It accepts an external reset (rst) to set the count value to zero and rolls over back to zero when it reaches a specified maximum count value (mod_value). The module also outputs the current count value and a zero_flag that indicates when the count is zero. The counter operates on a clock signal (clk) and is designed to handle a specified number of bits (n), defaulting to 4 bits.
+module top_module(
+  input clk,
+  input rst,
+  input ctrl,
+  input [n-1:0] count_in,
+  output [n-1:0] count_out,
+  output zero_flag
+);

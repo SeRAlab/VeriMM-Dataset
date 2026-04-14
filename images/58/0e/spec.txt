@@ -1,0 +1,16 @@
+Implement a signal processing module designed for IQ (In-phase and Quadrature) component manipulation. This module processes input signals Ix and Qx, applying transformations based on the inputs Wr_in and Wj_in while operating under a specified mode and control signals. It updates the output signals Iy and Qy based on the clock cycles and can be reset or frozen based on the respective control inputs. The output also includes flags indicating the state of the operation, namely whether the processing has settled, along with maintaining the latest values of Wr and Wj.
+module top_module(
+    input clk,
+    input RESETn,
+    input freeze_iqcomp,
+    input [1:0] op_mode,
+    input signed [3:0] Ix,
+    input signed [3:0] Qx,
+    input signed [12:0] Wr_in,
+    input signed [12:0] Wj_in,
+    output signed [3:0] Iy,
+    output signed [3:0] Qy,
+    output wire settled,
+    output signed [12:0] Wr,
+    output signed [12:0] Wj
+);

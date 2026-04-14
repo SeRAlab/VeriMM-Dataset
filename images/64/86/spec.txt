@@ -1,0 +1,6 @@
+Design a bus hold block that maintains the last valid input state on an n-bit wide bus. Upon the rising edge of the clock, if the input changes, the output register is updated to reflect the new input values. The output continuously reflects the state of the output register, effectively holding the output stable until a change in the input is detected. This module is useful for preserving the state of a bus signal across cycles.
+module top_module(
+  input clk,                   // Added clk input
+  input [n-1:0] in,
+  output reg [n-1:0] out      // Changed output to reg since it's driven by always block
+);

@@ -1,0 +1,9 @@
+Design a circuit that compares two 8-bit input values, `a` and `b`, and outputs their relational status. The module includes outputs for greater than (`gt`), less than (`lt`), and equal to (`eq`) conditions, which are valid only after a 4-stage processing delay determined by the internal state machine. The inputs are registered on the rising edge of a clock signal, allowing sequential comparison without immediate feedback, ensuring accurate outputs after the fourth stage of operation.
+module top_module(
+    input [7:0] a,
+    input [7:0] b,
+    input clk,            // Added clk input
+    output reg gt,       // Changed to output reg
+    output reg lt,       // Changed to output reg
+    output reg eq        // Changed to output reg
+);

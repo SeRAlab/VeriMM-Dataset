@@ -1,0 +1,6 @@
+Implement a clock multiplexer that selects one of several input clock signals based on a given select line. The module takes `n` clock inputs and, depending on the value of the `sel` input, outputs the corresponding clock signal. When the `sel` value does not match any defined case, the default output is connected to the first clock input. This design effectively allows for dynamic selection among multiple clock sources for further processing in digital circuits.
+module top_module(
+  input [n-1:0] clk,
+  input [log2_n-1:0] sel,
+  output reg out
+);

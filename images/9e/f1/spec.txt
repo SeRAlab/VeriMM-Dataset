@@ -1,0 +1,9 @@
+Design a circuit that functions as a shift register and a 16-bit adder with the capability to perform subtraction. The shift register captures the lower 8 bits of input 'a' on the positive edge of the clock when the load signal is active, while concurrently shifting its contents on each clock cycle when load is inactive. The outputs of the shift register and input 'b' are combined to form the input for a 16-bit adder. Depending on the state of the 'sub' signal, the circuit either sums the two inputs or calculates their difference, with the final result being available on the 32-bit output 'sum'.
+module top_module(
+    input clk,
+    input load,
+    input [31:0] a,
+    input [31:0] b,
+    input sub,
+    output [31:0] sum
+);

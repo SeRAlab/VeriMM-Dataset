@@ -1,0 +1,13 @@
+Design a counter control module that manages several counting processes based on various input states and signaling conditions. The module counts the total number of received nibbles (4-bit chunks) and the received address from RAM, resetting these counts under specific conditions (e.g., when idle or during certain states). It also maintains a separate counter for the Frame CRC nibble count, which can indicate the end of the Frame CRC state. The outputs indicate whether the total received nibble count is zero and track addresses and counts relevant to data reception and error checking processes in a communication protocol.
+module top_module(
+   input MRxClk, Reset, MRxDV, RxValid,
+   input StateIdle, StateFFS, StatePreamble,
+   input [1:0] StateData,
+   input StateFrmCrc,
+   input MRxDEqDataSoC,
+   output TotalRecvNibCntEq0,
+   output reg [15:0] TotalRecvNibCnt,  // Changed to reg
+   output reg [7:0] RxRamAddr,          // Changed to reg
+   output reg [3:0] FrmCrcNibCnt,       // Changed to reg
+   output FrmCrcStateEnd
+);

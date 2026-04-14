@@ -1,0 +1,6 @@
+Design a clock divider that generates a reduced frequency output clock, clk_out, from an input clock, clk_in. The output clock's frequency is determined by the divide_factor input, which specifies how many input clock cycles are needed to toggle the output. The module includes a 32-bit counter that increments on each rising edge of clk_in and toggles clk_out when the counter reaches the value of divide_factor minus one. Additionally, it features an optional delay before the output clock initializes to LOW, allowing for flexible timing adjustments in applications requiring clock signal management or synchronization.
+module top_module(
+  input clk_in,
+  input [31:0] divide_factor,
+  output reg clk_out
+);

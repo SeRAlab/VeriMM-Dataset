@@ -1,0 +1,17 @@
+Design a 4-bit wide test pattern generator (TPG) that produces a sequence of output patterns based on various control inputs and clock signals. The module initializes the TPG output to zero upon a reset signal and increments the output value under certain conditions driven by a combination of control signal states and clock edges. The outputs include control signals for standby and power on conditions, derived from the internal state of the TPG. The design incorporates combinational logic to monitor various inputs, ensuring that the four-bit output updates according to the specified logic, allowing it to generate specific test sequences for circuit verification or debugging purposes.
+module top_module(
+	input  					CLK1,				
+	input  					CLK0,				
+	input 					NPURST,			
+	input 					F17X,				
+	input 					FCLK,				
+	input 					F13X,				
+	input 					INST,				
+	input 					NRUN,				
+	input 					SNI,				
+	input 					OUT8,				
+	input 					NSA,				
+	input 					NSTEP,			
+	output reg	[3:0]		TPG,				
+	output					STBY				
+);

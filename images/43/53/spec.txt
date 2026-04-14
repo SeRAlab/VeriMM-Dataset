@@ -1,0 +1,6 @@
+Design a finite state machine (FSM) that transitions between three states (S_A, S_B, S_C) based on the input signal 'a' and a clock signal. The FSM resets to state S_A when the 'clear' signal is asserted. In state S_A, it transitions to S_B if 'a' is high or to S_C if 'a' is low. In state S_B, it stays in S_B if 'a' is high or returns to S_A if 'a' is low. In state S_C, it always transitions back to S_A. The output 'x' is determined by the current state: it is low when in states S_A and S_C (with x = ~a in S_A), and high when in state S_B.
+module top_module(
+    input wire a,
+    output reg x,
+    input wire clock, clear
+);

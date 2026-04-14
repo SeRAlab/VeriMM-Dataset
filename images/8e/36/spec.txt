@@ -1,0 +1,9 @@
+Design a FIFO (First-In-First-Out) buffer with a depth of 16 entries. The module enables writing data into the buffer when the write enable signal (wr_en) is active, provided that the buffer is not full. When reading data, the buffer outputs the data at the tail position when the read enable signal (rd_en) is active, given that the buffer is not empty. The buffer's operation is synchronized to a clock signal (clk) and can be reset using the reset signal (rst), which clears the head, tail, and count registers to their initial states. This implementation effectively manages data flow in applications where order preservation is critical.
+module top_module(
+    input clk,
+    input rst,
+    input wr_en,
+    input rd_en,
+    input [31:0] data_in,
+    output reg [31:0] data_out  // Changed wire to reg
+);

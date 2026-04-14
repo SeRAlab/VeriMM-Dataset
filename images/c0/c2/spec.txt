@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a basic sequential element with scan chain capabilities, commonly used in digital integrated circuits for purposes such as data storage, synchronization, and facilitating testability through scan-based testing methods. Its primary functions include:
+
+Data Storage and Synchronization: At its core, the module captures and stores a data bit (`d`) on the rising edge of a clock signal (`ck`). This stored bit is then available as an output (`q`), ensuring synchronized data flow within a digital system.
+Scan Chain Integration: The module supports scan testing by allowing the insertion of test data (`sd`) directly into its storage element (`q_r`) when in scan mode (`se` enabled). This feature is crucial for Design for Test (DfT) strategies, enabling easier detection and diagnosis of manufacturing defects.
+
+Module name:  
+	zsoff_prim
+
+Input ports:
+	ck (input): The clock signal input. It is a singlebit signal that triggers the storage of data on its rising edge.
+	d (input): Data input. This is the primary singlebit data signal intended for storage and synchronization.
+	se (input): Scan enable. A singlebit signal that, when high (1), switches the module's operation from normal data capture to scan mode.
+	sd (input): Scan data input. This singlebit signal is the data input used when the module is in scan mode (se = 1).
+Output ports:
+	q (output): Data output. This singlebit signal represents the stored data, reflecting the value of d (in normal mode) or sd (in scan mode) captured on the last rising edge of ck.
+	so (output): Scan output. In this implementation, it mirrors the q output, potentially serving as a chainable output in a scan chain configuration.
+
+
+Implementation:
+The RTL module presented, named zsoff_prim, is designed to function as a basic digital logic element with scan chain capabilities, commonly used in design for testability (DFT) strategies. The module encapsulates both sequential and combinational logic to achieve its intended functionality. The core operation revolves around a single D-type flip-flop (DFF) with scan enable (se) functionality, which allows for either normal data operation or scan data operation based on the mode selected.
+
+Give me the complete code.
+

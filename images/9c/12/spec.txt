@@ -1,0 +1,26 @@
+Please act as a professional Verilog designer.
+
+Implement a Binary to BCD Converter module that converts a 4-bit binary input to a Binary-Coded Decimal (BCD) output.
+
+Module name:  
+    bin_to_bcd
+                 
+Input ports:
+    binary_in: 4-bit binary input signal.
+
+Output ports:
+    bcd_out: 8-bit output signal representing the BCD value. The upper 4 bits represent the tens place, and the lower 4 bits represent the ones place.
+
+Implementation:
+The module includes a combinational logic block to perform the conversion.
+The conversion logic splits the 4-bit binary input into two BCD digits using appropriate arithmetic operations.
+The tens place is derived by dividing the binary input by 10.
+The ones place is derived by taking the remainder of the binary input divided by 10.
+The results are then combined to form the 8-bit BCD output.
+
+Give me the complete code.
+
+module bin_to_bcd(
+  input [3:0] binary_in,
+  output reg [7:0] bcd_out
+);

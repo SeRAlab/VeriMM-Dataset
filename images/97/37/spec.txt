@@ -1,0 +1,10 @@
+Develop a circuit that combines an adder-subtractor functionality with bit change detection. This module takes two 32-bit inputs (a and b) and has a control signal (sub) to determine whether to perform addition or subtraction. It generates an output based on whether the result of the addition or subtraction exceeds a threshold of 100 (0x64) and detects if there has been any change in the lower 16 bits of a separate 16-bit input (in) since the last clock cycle. The output is asserted when both conditions, a significant arithmetic result and a bit change event, are satisfied.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] a,
+    input [31:0] b,
+    input sub,
+    input [15:0] in,
+    output out
+);

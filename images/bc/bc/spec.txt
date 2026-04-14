@@ -1,0 +1,6 @@
+Design a 4-bit shift register capable of loading input data, shifting its contents, and being reset. The register loads the 4-bit value from `data_in` when the `load` signal is asserted. On each positive clock edge, if the `reset` signal is active, the register clears its contents to zero. If the `shift` signal is asserted, the register shifts its data to the left by one bit, inserting a zero into the least significant position. The current value of the shift register is continuously available at the `data_out` output.
+module top_module(
+    input [3:0] data_in,
+    input load, shift, reset, clk,
+    output [3:0] data_out
+);

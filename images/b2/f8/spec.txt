@@ -1,0 +1,10 @@
+Design a 16-bit signed restoring division circuit that takes a signed dividend and divisor as inputs. Upon receiving a clock pulse, the module performs the restoring division algorithm, calculating both the quotient and the remainder from the division operation. The circuit uses internal registers to store the dividend, divisor, quotient, and remainder throughout the process. The final output combines the quotient and the remainder and computes their division by the divisor. The module also includes reset functionality to initialize all registers to zero.
+module top_module(
+    input clk,
+    input reset,
+    input signed [15:0] dividend,
+    input signed [15:0] divisor,
+    output reg signed [15:0] quotient,
+    output reg signed [15:0] remainder,
+    output reg signed [15:0] final_output
+);

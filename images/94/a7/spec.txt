@@ -1,0 +1,13 @@
+Design a 4-entry FIFO (First-In-First-Out) memory buffer. The module has inputs for clock, reset, enqueue, and dequeue control signals, along with a 4-bit data input for enqueuing data and a 4-bit data output for dequeuing. It tracks the head and tail of the queue using a two-bit index and manages the number of items currently in the queue. The module also provides status outputs indicating whether the queue is full or empty. On reset, it initializes the queue state; on a clock edge, it enqueues data if space is available or dequeues data if there are items present, updating the memory and status signals accordingly.
+module top_module(
+  input reset,
+  input clock,
+  input enque,
+  input deque,
+  input [3:0] enque_data,
+  output reg [3:0] deque_data,
+  output reg enqued,
+  output reg dequed,
+  output reg is_full,
+  output reg is_empty
+);

@@ -1,0 +1,8 @@
+Design a pipelined multiplier that multiplies two 4-bit inputs, `a` and `b`, producing an 8-bit output. The module utilizes three stages within a clock-driven process: the first stage latches the input values, the second stage performs bit manipulation by left-shifting `a` and right-shifting `b`, and the final stage computes the product of modified values before updating the output. The circuit also incorporates a synchronous reset feature to initialize all registers to zero.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] a,
+    input [3:0] b,
+    output reg [7:0] out
+);

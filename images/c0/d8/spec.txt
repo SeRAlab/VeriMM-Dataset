@@ -1,0 +1,36 @@
+Please act as a professional verilog designer.
+    
+Implement a module to simulate a simple pseudo-static RAM (SPSRAM) interface in a digital system. Its primary functions include:
+
+Data Storage: It can store and retrieve data based on the address provided. The storage capacity and data width are parameterizable, making it flexible for various application needs.
+Write Operation: It allows writing data to a specific address in the memory array when the write enable (`wre_i`) signal is active.
+Read Operation: It enables reading data from a specific address in the memory array when the enable (`ena_i`) signal is active and outputs this data.
+Reset Functionality: It supports resetting the output data to a default state (all zeros) upon activation of the reset (`rst_i`) signal.
+
+This module plays a crucial role in systems requiring temporary data storage and retrieval, acting as a fundamental building block for memory elements in digital designs.
+
+Module name:  
+	aeMB2_spsram
+
+Input ports:
+	adr_i [AW1:0]: The address input port of width AW. It specifies the address in the memory from/to which data is to be read/written.
+	dat_i [DW1:0]: The data input port of width DW. It provides the data to be written to the memory at the address specified by adr_i when write enable (wre_i) is active.
+	wre_i: The write enable input. When high, it allows writing dat_i to the address specified by adr_i.
+	ena_i: The enable input. When high, it allows the module to output data from the specified address through dat_o.
+	rst_i: The reset input. When high, it resets the output data dat_o to all zeros.
+	clk_i: The clock input. It synchronizes the write and read/reset operations of the module.
+Output ports:
+	dat_o [DW1:0]: The data output port of width DW. It outputs the data stored at the address specified by adr_i when the module is enabled and not in reset state.
+
+
+Implementation:
+The aeMB2_spsram module is designed to simulate a simple pseudo-static RAM (SPSRAM) behavior using Verilog. It is parameterized with address width (AW) and data width (DW), allowing for flexibility in memory size and data size configurations. The module interfaces with external components through its inputs and outputs, enabling read and write operations based on the clock (clk_i), reset (rst_i), enable (ena_i), and write enable (wre_i) signals.
+Sequential Logic:
+Write Operation: The module performs write operations at the rising edge of the clock (clk_i) when the write enable signal (wre_i) is asserted. The data input (dat_i) is written into the memory array (rRAM) at the location specified by the address input (adr_i). The write operation introduces a one-time unit delay (#1) to mimic real memory behavior.
+Read Operation: The read operation is also synchronized with the rising edge of the clock. However, it is contingent upon the reset signal being deasserted and the enable signal (ena_i) being asserted. If these conditions are met, the data stored at the address specified by adr_i is loaded into the output register (dat_o) with a one-time unit delay (#1). This delay is introduced to simulate the access time of a real SPSRAM.
+Reset Operation: Upon the assertion of the reset signal (rst_i), the output data register (dat_o) is cleared (all bits set to 0) synchronously with the clock. This ensures that the module can be brought to a known state upon initialization or in response to a system reset.
+Combinational Logic:
+There is no explicit combinational logic defined in this module for processing the inputs or generating the outputs directly. The outputs are entirely dependent on the state of the internal memory (rRAM) and the output register (dat_o), which are updated based on the sequential logic described above.
+
+Give me the complete code.
+

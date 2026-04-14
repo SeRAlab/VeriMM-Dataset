@@ -1,0 +1,7 @@
+Design a synchronizer module that ensures reliable transition of asynchronous input signals to a synchronized output. It includes a two-stage flip-flop mechanism to minimize metastability issues caused by asynchronous data inputs, counting the number of cycles to detect metastability. If the metastability condition persists beyond a defined threshold, it switches the output clock signal to stabilize the synchronization process. Additionally, the data output is updated after a specified synchronization delay, ensuring that the output signals accurately reflect the stable state of the input data after synchronization delays, thus enhancing reliability in digital circuits interfacing with asynchronous inputs.
+module top_module(
+  input data_in,
+  input clk_in,
+  output reg data_out,
+  output reg clk_out
+);

@@ -1,0 +1,11 @@
+Design a UART (Universal Asynchronous Receiver-Transmitter) transmitter module that manages serial communication. The module takes an 8-bit data input and a write signal to initiate the transmission. It outputs a serial transmission wire while providing a busy signal to indicate when data is being transmitted. The system clock is downsampled to generate a 115200 Hz clock used for serial data transmission. It shifts the data bits out starting with a low start bit, followed by the data bits, and ends with a high stop bit, all while maintaining synchronization through a counter. The architecture ensures that only one byte is transmitted at a time, while also handling system reset conditions to initialize the UART state.
+module top_module(
+   // Outputs
+   output wire uart_busy,   // High means UART is transmitting
+   output reg uart_tx,     // UART transmit wire
+   // Inputs
+   input uart_wr_i,   // Raise to transmit byte
+   input [7:0]uart_dat_i,  // 8-bit data
+   input sys_clk_i,   // System clock, 68 MHz
+   input sys_rst_i    // System reset
+);

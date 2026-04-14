@@ -1,0 +1,18 @@
+Design a dual-port SRAM (Static Random Access Memory) module with 1024 addressable locations, each capable of storing 32 bits. The module supports simultaneous read and write operations for two separate channels identified by CE0/CE1 (Chip Enable), each with its own address, data input, write enable, and write mask (WEM). On a rising clock edge, if the chip is enabled, it reads data from the specified address into the output register; if the write enable is active, it stores data at the given address while respecting the write mask. Inactive chip enable states return an undefined output. This design is intended for applications requiring parallel data access and storage.
+module top_module(
+	input CLK,
+	
+	input CE0,
+	input[9:0] A0,
+	input[31:0] D0,
+	input WE0,
+	input [31:0] WEM0,
+	output reg[31:0] Q0,
+	
+	input CE1,
+	input[9:0] A1,
+	input[31:0] D1,
+	input WE1,
+	input [31:0] WEM1,
+	output reg[31:0] Q1
+	);

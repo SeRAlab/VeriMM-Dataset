@@ -1,0 +1,14 @@
+Design a simple RAM-based calculator module with read and write capabilities. This module provides the functionality to store and retrieve 4-bit data at specific addresses in an 8-location RAM array. It allows writing to the RAM when the write enable signal is activated and retrieves data from two different addresses upon each clock cycle. Based on a control input, it performs addition or subtraction on the retrieved data and outputs the result. The module also incorporates an asynchronous reset to initialize its outputs to zero.
+module top_module(
+    input clk,
+    input rst_n,
+    input write_en,
+    input [2:0] control,
+    input [7:0] write_addr,
+    input [3:0] write_data,
+    input [7:0] read_addr_1,
+    input [7:0] read_addr_2,
+    output reg [3:0] read_data_1,
+    output reg [3:0] read_data_2,
+    output reg [3:0] result
+);

@@ -1,0 +1,8 @@
+Design a barrel shifter that processes an 8-bit input data signal, enabling both logical left and right shifts based on a specified shift amount. The module uses a 3-stage pipeline to synchronize input data, and upon receiving a clock signal, it shifts the data either left or right according to the direction control signal, while handling the case of zero shift by directly outputting the unmodified data. This design facilitates efficient data manipulation in applications requiring bit manipulation and alignment.
+module top_module(
+    input [7:0] data_in,
+    input [2:0] shift_amount,
+    input direction_left,
+    input clk,                     // Added clk input
+    output reg [7:0] data_out
+);

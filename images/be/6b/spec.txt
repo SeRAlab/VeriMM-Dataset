@@ -1,0 +1,11 @@
+Design a 32-bit multiplier that computes partial products based on the input operands E_src1 and E_src2. The module separates the lower and upper halves of both inputs and uses three instances of a multiplication unit to perform the necessary computations: one for the lower bits of both inputs and the other two for mixed lower and upper bits. The results are output as M_mul_cell_p1, M_mul_cell_p2, and M_mul_cell_p3, where M_mul_cell_p2 combines additional terms to form a final sum for the middle partial product. The operation is enabled by the M_en input, and the design includes asynchronous reset functionality, ensuring reliable initialization and operation synchronized with the clock signal.
+module top_module(
+  input [31:0] E_src1,
+  input [31:0] E_src2,
+  input M_en,
+  input clk,
+  input reset_n,
+  output reg [31:0] M_mul_cell_p1,
+  output reg [31:0] M_mul_cell_p2,
+  output reg [31:0] M_mul_cell_p3
+);

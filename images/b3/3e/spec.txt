@@ -1,0 +1,10 @@
+Design a basic calculator circuit capable of performing four arithmetic operations: addition, subtraction, multiplication, and division on two 8-bit input operands. The operation is selected via a two-bit operation code, and the resulting output is valid on the positive edge of the clock unless a reset signal is asserted, which will clear the results. The module ensures that the result of the selected operation is stored and the 'valid' signal indicates successful computation.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] operand1,
+  input [7:0] operand2,
+  input [1:0] operation,
+  output reg [7:0] result,
+  output reg valid
+);

@@ -1,0 +1,24 @@
+Design a VGA interface controller that integrates with a Wishbone bus architecture for data communication and storage. This module acts as a bridge between a Wishbone slave interface and a Wishbone master that interfaces with SRAM, managing data transfer and acknowledgment signals. It distinguishes between two data planes (high and low) and selectively transfers data based on the addressed register, using control signals for read and write operations. The controller also incorporates a state machine mechanism to alternate between data planes and manage acknowledgment signals from the SRAM, ensuring proper synchronization and data integrity during communication.
+module top_module(
+    // Wishbone common signals
+    input         wb_clk_i,
+    input         wb_rst_i,
+
+    // Wishbone slave interface
+    input  [16:1] wbs_adr_i,
+    input  [ 1:0] wbs_sel_i,
+    input         wbs_we_i,
+    input  [15:0] wbs_dat_i,
+    output [15:0] wbs_dat_o,
+    input         wbs_stb_i,
+    output        wbs_ack_o,
+
+    // Wishbone master to SRAM
+    output     [17:1] wbm_adr_o,
+    output     [ 1:0] wbm_sel_o,
+    output            wbm_we_o,
+    output     [15:0] wbm_dat_o,
+    input      [15:0] wbm_dat_i,
+    output reg        wbm_stb_o,
+    input             wbm_ack_i
+  );

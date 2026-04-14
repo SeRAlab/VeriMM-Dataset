@@ -1,0 +1,7 @@
+Design a synchronous depth pipeline for digital signal processing. The module takes a clock and reset signal, along with an input vector of specified width, and propagates this input through a series of registers based on the configured depth. On each clock cycle, the input is captured and passed through the stages, allowing for a delayed output that effectively synchronizes the input signal over the defined number of clock cycles. The output is the value held in the last stage, ensuring that the output timing is aligned with the clock while managing potential metastability from asynchronous inputs.
+module top_module(
+    input clk,
+    input reset,
+    input [WIDTH-1:0] in,   
+    output [WIDTH-1:0] out  
+);

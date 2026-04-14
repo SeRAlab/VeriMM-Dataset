@@ -1,0 +1,7 @@
+Design a 4-bit shift register with asynchronous loading capability. When the load signal is high, the shift register captures the input data on the rising edge of the clock and propagates it through four sequential stages. If the load signal is low, the register shifts the current data one stage to the right, effectively maintaining the previous state. The output is taken from the last stage of the shift register (q4), providing either the loaded data or shifted data based on the load condition.
+module top_module(
+    input [3:0] data_in,
+    input load,
+    input clk,
+    output reg [3:0] q
+);

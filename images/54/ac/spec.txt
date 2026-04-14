@@ -1,0 +1,12 @@
+Design a touch detection module that outputs signals based on coordinate inputs. When enabled, the module checks if the given coordinates (tor_x, tor_y) fall within specified rectangular regions defined by parameters. If the coordinates are within the first region (x1, y1 to x2, y2) and clcount equals 1, the output t_yes is asserted. If the coordinates fall within the second region (x3, y1 to x4, y2), the output t_no is asserted. If neither condition is met, or if the module is disabled, both outputs are reset to zero.
+module top_module(
+	input wire clk,
+
+	input wire [1:0]clcount,	
+	input wire enable,
+	input wire [9:0]tor_x,
+	input wire [8:0]tor_y,
+	
+	output reg t_yes,
+	output reg t_no	
+	);

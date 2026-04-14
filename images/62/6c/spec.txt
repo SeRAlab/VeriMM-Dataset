@@ -1,0 +1,12 @@
+Design a module that outputs an 8-bit data signal based on the input address signals and various flags. The module reads the address to determine which data to return: for address 0, it outputs a combination of the `busy` signal and flags `flag_A` and `flag_B`; for address 1, it selects either the `psg_dout` or the same combination depending on the `use_ssg` parameter; and for addresses 2 or 3, it outputs a configuration involving `adpcmb_flag` and `adpcma_flags` based on the `use_adpcm` parameter. The functionality suggests this module serves as a data output selector for a CPU interfacing with audio processing components.
+module top_module(
+    input             clk,        // CPU clock
+    input             flag_A,
+    input             flag_B,
+    input             busy,
+    input      [5:0]  adpcma_flags,
+    input             adpcmb_flag,
+    input      [7:0]  psg_dout,
+    input      [1:0]  addr,
+    output reg [7:0]  dout
+);

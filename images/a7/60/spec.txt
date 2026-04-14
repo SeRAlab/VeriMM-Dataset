@@ -1,0 +1,29 @@
+Please act as a professional Verilog designer.
+
+Implement a module for a 16-bit register with parallel load. The register loads a 16-bit input value on the positive edge of the clock signal clk when the load signal is high. The register should have a synchronous reset signal rst, which sets the register value to 0 when asserted.
+
+Module name:  
+    parallel_load_register      
+
+Input ports:
+    clk: Clock signal.
+    rst: Synchronous reset signal (active high).
+    load: Control signal to load the input value.
+    data_in: 16-bit input value to be loaded into the register.
+
+Output ports:
+    q: 16-bit output representing the current register value.
+
+Implementation:
+The parallel_load_register module loads the input value data_in into the register on the positive edge of the clock signal clk when the load signal is high. When the reset signal rst is asserted, the register value is set to 0 on the next positive edge of clk. The register value is a 16-bit binary number.
+
+Give me the complete code.
+
+module parallel_load_register(
+	input clk,
+	input rst,
+	input load,
+	input [15:0] data_in,
+	
+	output reg [15:0] q
+);

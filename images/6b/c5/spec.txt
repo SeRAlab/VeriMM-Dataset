@@ -1,0 +1,9 @@
+Design a 16-bit shift register with functionalities for loading and shifting. The module accepts a clock signal (CLK) and features LOAD and SHIFT control inputs. When LOAD is activated, it captures the input data (DATA_IN) into the shift register. When SHIFT is activated, the register can perform a left shift, appending a 0 or 1 based on the mode input; with mode set to 1, it appends a 0; with mode set to 0, it appends a 1. The current contents of the shift register are continuously provided at the output (DATA_OUT).
+module top_module(
+    input CLK,
+    input SHIFT,
+    input LOAD,
+    input [15:0] DATA_IN,
+    input mode,
+    output reg [15:0] DATA_OUT
+);

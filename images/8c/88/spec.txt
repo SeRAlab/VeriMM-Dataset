@@ -1,0 +1,7 @@
+Design a pulse-width modulation (PWM) generator that outputs a PWM signal based on a modulation value. The module utilizes a clock input to increment a counter, which resets upon a reset signal. The width of the PWM pulse is determined by the value of the `mod` input, where the PWM signal is HIGH when the counter is less than `mod` and LOW otherwise. This design allows for fine control of the duty cycle of the generated PWM signal, using an `p`-bit wide modulation input.
+module top_module(
+  input clk,
+  input rst,
+  input [p-1:0] mod,
+  output pwm
+);

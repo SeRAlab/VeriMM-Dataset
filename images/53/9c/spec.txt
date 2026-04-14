@@ -1,0 +1,8 @@
+Design a Pulse Width Modulation (PWM) generator that produces a square wave output based on specified periods. The module takes a clock signal, an enable signal, a clock period, and a PWM period as inputs. When enabled, it counts clock cycles to generate a high output for the duration defined by the PWM period and then a low output for the remainder of the clock period; the counter resets after reaching the clock period. If not enabled, it generates a high signal only while the counter is less than the PWM period, effectively maintaining the last state until reset. The generated output can be used for controlling power delivered to devices in applications like motor speed control or LED brightness adjustment.
+module top_module(
+    input clk,
+    input enable,
+	input [31:0] clk_period,
+    input [31:0] pwm_period,
+    output out
+    );

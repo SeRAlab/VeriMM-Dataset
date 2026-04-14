@@ -1,0 +1,8 @@
+Design a counter module that increments or decrements a register based on specific conditions. The module has a reset input (rst) to initialize the counter to zero. When the clock signal (clk) pulses, if the Cambio input equals 8'h7A and got_data is asserted, the counter (Cuenta) increments until it reaches a predefined maximum value (X), at which point it resets to zero. Conversely, if Cambio equals 8'h69 and got_data is asserted, the counter decrements until it reaches zero, at which point it reloads to the maximum value (X). If neither condition is met, the counter retains its current value. The output is a register of size determined by the parameter N.
+module top_module(
+    input rst,
+    input [7:0] Cambio,
+    input got_data,
+    input clk,
+    output reg [(N-1):0] Cuenta
+);

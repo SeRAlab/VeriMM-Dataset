@@ -1,0 +1,9 @@
+Design a 4-bit up/down counter with load functionality. This module increments the count when the UP input is asserted and decrements it when the DOWN input is active. If the count reaches the maximum (1111) while counting up, it wraps around to zero, and similarly, if it reaches zero while counting down, it wraps around to the maximum value (1111). The counter can also be loaded with a new 4-bit value provided on the DIN input when the LOAD signal is asserted.
+module top_module(
+    input clk,
+    input UP,
+    input DOWN,
+    input LOAD,
+    input [3:0] DIN,
+    output reg [3:0] Q
+);

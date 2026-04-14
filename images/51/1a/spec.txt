@@ -1,0 +1,9 @@
+Design a signed 8-bit calculator module that performs basic arithmetic operations: addition, subtraction, multiplication, and division based on a 2-bit operation selection input (op). The module outputs the result of the computation (C) while also providing overflow indication (ovf) and a flag for division by zero (div0). The operation is selected as follows: op=00 for addition, op=01 for subtraction, op=10 for multiplication, and op=11 for division. The module includes logic to detect and indicate overflow conditions specific to each arithmetic operation, ensuring safe handling of signed values.
+module top_module(
+  input signed [7:0] A,
+  input signed [7:0] B,
+  input [1:0] op,
+  output reg signed [7:0] C,
+  output reg ovf,
+  output reg div0
+);

@@ -1,0 +1,7 @@
+Design a binary-to-hexadecimal converter that takes a 4-bit binary input and outputs an 8-bit hexadecimal representation on each clock cycle. The module resets the output when the reset signal is activated and uses a counter to manage the conversion process. Each 4-bit binary value is mapped to its corresponding 7-segment hexadecimal display value, allowing the hex_output to reflect the appropriate representation alongside the counter's state, which ensures the output is updated every four cycles.
+module top_module(
+    input wire clk,
+    input wire reset_n,
+    input wire [3:0] bin_input,
+    output wire [7:0] hex_output
+);

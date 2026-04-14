@@ -1,0 +1,7 @@
+Develop a frequency divider circuit that generates a clock output (clk_out) which is a scaled down version of the input clock (clk_in). The division factor is determined by an 8-bit wide input (divider). On each rising edge of clk_in, a counter increments until it reaches the specified divider value, at which point it toggles clk_out and resets the counter. The circuit also features an asynchronous reset function to initialize the counter and the output clock.
+module top_module(
+  input clk_in,
+  input reset,
+  input [7:0] divider,
+  output reg clk_out
+);

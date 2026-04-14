@@ -1,0 +1,19 @@
+
+
+You are tasked with designing a Verilog module that implements a 4-bit binary counter with synchronous reset and enable signals. The module should have the following inputs and outputs:
+
+Inputs:
+- `CLK`: The clock signal.
+- `RST`: The synchronous reset signal. When high, the counter should reset to 0.
+- `EN`: The enable signal. When low, the counter should not increment.
+
+Outputs:
+- `Q`: A 4-bit output representing the current count value.
+
+The module should have the following behavior:
+- On the rising edge of `CLK`, if `RST` is high, the counter should reset to 0.
+- On the rising edge of `CLK`, if `RST` is low and `EN` is high, the counter should increment by 1.
+- The counter should wrap around to 0 when it reaches 15 (0b1111).
+
+Write a Verilog module that implements this behavior, using no more than 200 lines of code.
+

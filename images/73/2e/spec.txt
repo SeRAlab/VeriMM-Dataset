@@ -1,0 +1,12 @@
+Develop a circuit that acts as a driver interface for an LCD display. It takes an 8-bit data input alongside control signals for Register Select (RS), Read/Write (RW), and Enable (E). On each rising edge of the clock signal, it updates the internal registers that govern the output to the LCD, ensuring it receives the appropriate data and control commands. The module generates the output signals for the LCD, including data and control lines, facilitating communication with the display for rendering content.
+module top_module(
+  input clk,
+  input [7:0] data,
+  input RS,
+  input RW,
+  input E,
+  output LCD_RS,
+  output LCD_RW,
+  output LCD_E,
+  output [7:0] LCD_DATA
+);

@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+
+Implement a simple debouncer circuit. The module operates on the rising edge of the clock signal "clk" and uses a synchronous design. It takes a noisy input signal "noisy" and outputs a debounced signal "clean". The debouncer uses a counter to ensure that the input signal is stable for a specified number of clock cycles before updating the output signal.
+
+Module name:  
+    debouncer          
+
+Input ports:
+	clk: Clock signal.
+	rst_n: Reset signal (active low).
+	noisy: Noisy input signal.
+
+Output ports:
+	clean: Debounced output signal.
+
+Implementation:
+The module uses a counter and a register to store the stable state of the input signal. The counter increments on each clock cycle where the input signal is stable and resets if the input signal changes. When the counter reaches a predefined value (indicating that the input signal has been stable for a sufficient period), the output signal is updated.
+
+Give me the complete code.

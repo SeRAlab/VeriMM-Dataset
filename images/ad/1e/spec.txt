@@ -1,0 +1,7 @@
+Design a 4-entry synchronous FIFO (First In, First Out) memory buffer that operates based on clock and reset signals. This module includes inputs for data writing (din) and control signals for write (we) and read (re) operations, while providing outputs for the data read (dout) and flags indicating buffer status (full, empty). The design uses two pointers—write pointer (wp) and read pointer (rp)—to manage data storage and retrieval, ensuring that data is written to and read from the correct locations within the memory. The FIFO operates with a clear signal (clr) for resetting the pointers, and will signal full or empty states based on the relative positions of the write and read pointers.
+module top_module(
+   // Outputs
+   dout, full, empty,
+   // Inputs
+   clk, rst_n, clr, din, we, re
+   );

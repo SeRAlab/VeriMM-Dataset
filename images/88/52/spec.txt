@@ -1,0 +1,7 @@
+Design a 16-bit barrel shifter that allows for both left and right shifting of the input data. The module takes a 16-bit input and a 4-bit shift amount indicating how many positions to shift. Based on the value of the shift amount, it outputs the shifted result by rotating the bits within the input, wrapping the bits around when they overflow. The output is updated on the rising edge of the clock, capturing the input and shift amount on each clock cycle. This design is useful for applications requiring flexible bit manipulation, such as digital signal processing and arithmetic operations.
+module top_module(
+    input [15:0] in,
+    input [3:0] shift_amount,
+    input clk,          // Added clk input
+    output [15:0] out
+);

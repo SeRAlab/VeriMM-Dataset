@@ -1,0 +1,12 @@
+Design a circuit that acts as a configurable logic gate based on the `select` input. It has two operational modes: when `select` is `00`, it generates a HIGH output, `X`, only if all three inputs `A1`, `A2`, and `A3` are HIGH; otherwise, it sets `X` to LOW and `valid` to LOW. When `select` is not `00`, it checks if `A1`, `B1`, and `C1` are all HIGH to set `X` and `valid` to HIGH; if not, both outputs are set to LOW. Additionally, a `reset` input temporarily forces both outputs to LOW. The design is suitable for applications requiring selective input verification and output signaling based on multiple conditions.
+module top_module(
+    input A1,
+    input [1:0] select,
+    input A2,
+    input A3,
+    input B1,
+    input C1,
+    input reset,
+    output reg X,
+    output reg valid
+);

@@ -1,0 +1,6 @@
+Design a clock signal generator for an Analog-to-Digital Converter (ADC). The module produces a pulsing output (`clkadc`), which toggles based on a counter that increments with each clock cycle. When initiated, the circuit counts up to 50,000 cycles to generate a pulse, which then remains high until the count reaches 100,000, at which point it resets the counter and the pulse output. The `reset` input allows for reinitializing the counter and pulse generation. This module effectively manipulates the clock input to create a specific timed output suitable for driving ADC operations.
+module top_module(
+clk,
+init,
+reset,
+clkadc    );

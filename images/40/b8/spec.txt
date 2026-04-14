@@ -1,0 +1,15 @@
+
+Design a Direct Memory Access (DMA) controller in Verilog. The DMA controller will have the following inputs and outputs:
+- Inputs:
+  - start: A signal to start the DMA transfer (1-bit)
+  - addr: A 16-bit address for the data transfer
+  - data_in: A 16-bit input data line
+  - clk: A clock signal
+  - reset: A reset signal (active high)
+- Outputs:
+  - data_out: A 16-bit output data line
+  - done: A signal indicating the transfer is complete (1-bit)
+
+The DMA controller should perform the following functions:
+- When reset is asserted, the controller should initialize its state.
+- When the start signal is asserted, the controller should transfer data from data_in to the memory address specified by addr and assert done when the transfer is complete.

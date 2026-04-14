@@ -1,0 +1,14 @@
+Design a forwarding unit for a pipelined processor to manage data hazards by selecting appropriate data sources for two input registers (rs and rt). The unit outputs two signals, forward_a_sel and forward_b_sel, which indicate whether to forward results from the execution stage (EX) or write-back stage (WB) back into the input registers based on conditions involving register write enable signals and active register values. Specifically, it prevents stale data from being used when newer data is available, thereby ensuring data consistency and improving the performance of the pipeline.
+module top_module(
+	
+	input  [4:0] rs, 
+	input  [4:0] rt, 
+	
+	input  [4:0] five_bit_mux_out, 
+	input  [1:0] ex_mem_wb, 
+	input  [4:0] mem_Write_reg,
+	
+	input  [1:0] mem_wb_wb, 
+	
+	output reg [1:0] forward_a_sel,
+	output reg [1:0] forward_b_sel);

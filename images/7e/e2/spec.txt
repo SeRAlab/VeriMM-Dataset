@@ -1,0 +1,19 @@
+Implement the Verilog module based on the following description.
+Module P implements the boolean function r = x & ~y & z.
+
+// Module Q can be described by the following simulation waveform: 
+
+If x = 1, y = 1, z = 1, then r = 0.
+If x = 0, y = 1, z = 0, then r = 0.
+If x = 0, y = 0, z = 0, then r = 0.
+If x = 1, y = 0, z = 1, then r = 1.
+
+// Now consider a top-level that uses two P submodules and two Q submodules. The first input of all four submodules is connect to input 'x', the second input is connected to 'y', and the third input is connected to 'z'. The output of the first P submodule is connected to a two-input AND, along with the output of the first Q submodule. The second pair of P and Q submodules is similarly connected to an OR gate. The output of the AND and the OR is connected to an XOR, whose output is 'r'.
+
+// Implement this circuit in Verilog.
+
+module top_module(
+    input x,
+    input y,
+    input z,
+    output r);

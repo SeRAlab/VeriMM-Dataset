@@ -1,0 +1,8 @@
+Design a module that implements four types of latches: a D-latch, a JK-latch, a T-latch, and an SR-latch, which can be selected through a 2-bit control input, `cin`. The module operates on a positive clock edge, where each latch can reset to a LOW state when the reset input is active. The D-latch captures the input `din`, the JK-latch toggles based on the inputs and previous state, the T-latch toggles its state if the `cin` signals it to do so, and the SR-latch sets or resets its state based on the `din`. The final output, `dout`, reflects the current state of the selected latch as determined by the `cin` selection.
+module top_module(
+  input clk,
+  input rst,
+  input din,
+  input [1:0] cin,
+  output dout
+);

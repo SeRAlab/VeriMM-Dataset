@@ -1,0 +1,10 @@
+Design a 16-to-1 multiplexer with a 4-bit select input. The module takes a 16-bit wide data input, D, and outputs one of the 16 bits to the output Z based on the value of the select input S. When S corresponds to a specific index, the respective bit from D is assigned to Z; if the select input does not fall within the defined range, the output Z defaults to an unknown state. The module also includes power supply and ground pins, indicative of its integration into a larger circuit potentially involving low power design considerations.
+module top_module(
+    input [15:0] D,
+    input [3:0] S,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB,
+    output reg Z
+);

@@ -1,0 +1,9 @@
+Design a register file with shift and load capabilities. The module accepts a 16-bit input, a 4-bit select line to choose one of the 16 input bits, and control signals for enabling, shifting, and loading data into the output register Q. When the load (LD) signal is activated, the selected input bit is stored in Q. On the shift (SH) signal, Q can be shifted left or right, with new bits filled with zeros depending on the shift direction. Additionally, when the enable (EN) signal is high, the selected input bit can again be loaded into Q, allowing for dynamic register manipulation.
+module top_module(
+    input [15:0] in,
+    input [3:0] sel,
+    input EN,
+    input SH,
+    input LD,
+    output reg [15:0] Q
+);

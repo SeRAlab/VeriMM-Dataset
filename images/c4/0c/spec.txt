@@ -1,0 +1,21 @@
+
+
+You are given a Verilog module `t` which has an input clock signal `clk`. The module instantiates another module `t_inst_v2k_sub` and connects its inputs and outputs. The `t_inst_v2k_sub` module has the following inputs and outputs:
+- `isizedwire`: an 8-bit wide register
+- `ionewire`: a single bit register
+- `oonewire`: a single bit wire
+- `tied`: a 2-bit wide wire
+- `tied_also`: a 4-bit wide wire
+- `osizedreg`: an 8-bit wide wire
+
+The module `t` also has the following internal variables:
+- `cyc`: an integer initialized to 1
+- `low`: a 2-bit wide supply0 vector
+- `high`: a 2-bit wide supply1 vector
+
+The module `t` instantiates another module `hello` and connects its input `tied_also`. The `hello` module has no outputs and only one input `tied_also` which is a 4-bit wide wire.
+
+The module `t` has an always block which executes on the positive edge of `clk`. Inside the always block, there are several if statements which execute based on the value of `cyc`. The code checks if the values of `low`, `high`, `oonewire`, `isizedwire`, `tied`, and `tied_also` are as expected. If any of these values are not as expected, the simulation is stopped. The simulation is stopped after all the checks are passed.
+
+You are required to write the Verilog code for the `hello` module. The `hello` module should have an input `tied_also` which is a 4-bit wide wire. The module should output nothing. The `hello` module should take the input `tied_also` and perform the following operation on it: if the 2nd bit of `tied_also` is 0, the 3rd bit of `tied_also` should be inverted. If the 2nd bit of `tied_also` is 1, the 1st bit of `tied_also` should be inverted. The output of the `hello` module should be the modified `tied_also` signal.
+

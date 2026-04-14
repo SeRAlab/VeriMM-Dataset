@@ -1,0 +1,5 @@
+Design a dual-port RAM module with 16-bit wide data and 32 addresses. It allows simultaneous read and write operations controlled by a single clock signal. When the write signal is active, data is stored at the specified write address. Two separate read addresses can be used to retrieve data concurrently, outputting the results to two distinct output ports. The design ensures that read operations occur on the rising edge of the clock, delivering a stable data read after a 1-time unit delay.
+module top_module(input clock, input write, 
+		    input [3:0] wr_addr, input [15:0] wr_data,
+		    input [3:0] rd_addr1, output reg [15:0] rd_data1,
+		    input [3:0] rd_addr2, output reg [15:0] rd_data2);

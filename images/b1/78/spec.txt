@@ -1,0 +1,8 @@
+Implement an 8-bit shift register that supports both left and right shifting operations based on a control signal. The module takes a single bit input (`data_in`), a clock (`clk`), a shift direction control (`shift_dir`), and a reset signal (`reset`). On the rising edge of the clock, if the reset is active, the entire shift register is cleared to zero. Otherwise, if `shift_dir` is high, the register performs a left shift, inserting `data_in` at the least significant bit position, whereas if `shift_dir` is low, the register performs a right shift, inserting `data_in` at the most significant bit position. The least significant bit of the shift register is made available as the output (`data_out`).
+module top_module(
+  input data_in,
+  input clk,
+  input shift_dir,
+  input reset,
+  output reg data_out
+);

@@ -1,0 +1,11 @@
+Design a signed multiplication module that processes two 32-bit signed inputs, `DR` and `DI`, driven by a clock signal (`CLK`). The module includes control signals for operation (`DS` for data selection and `ED` for enabling the operation) and utilizes a conditional structure to manipulate the input data using arithmetic shifts and additions. The processed results, `DOR` and `DOI`, are output as 32-bit signed results, where `DOR` is assigned based on a control signal `MPYJ` that determines the sign and order of the output values. The internal logic calculates intermediate values through a series of registers and wires, ultimately facilitating the multiplication and transformation of the inputs while maintaining appropriate register states between clock cycles.
+module top_module(
+    input CLK,
+    input DS,
+    input ED,
+    input MPYJ,
+    input [31:0] DR,
+    input [31:0] DI,
+    output reg [31:0] DOR,  // Changed to reg
+    output reg [31:0] DOI   // Changed to reg
+);

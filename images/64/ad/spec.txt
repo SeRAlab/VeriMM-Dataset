@@ -1,0 +1,10 @@
+Design a four-bit pipeline multiplexer that selects between four different latched data inputs based on a 3-bit selection signal. On each positive clock edge, the circuit stores the incoming 4-bit data into a series of three registers, creating a pipeline effect. Depending on the value of the selection signal (`sel`), the circuit assigns the outputs `w`, `x`, `y`, and `z` to the corresponding bits of the appropriate data register or sets them to zero if the selection indicates a non-valid state. This structure allows for sequential data processing while managing timing through registers.
+module top_module(
+    input clk,
+    input [2:0] sel,
+    input [3:0] data,
+    output reg w,
+    output reg x,
+    output reg y,
+    output reg z
+);

@@ -1,0 +1,7 @@
+Design a circuit that generates an output address and a sign indicator based on a 16-bit input address and a clock signal. The module interprets the two most significant bits of the input address to determine how to process the lower 14 bits. If the two MSBs are '00', the output address is directly taken from the lower bits, and the negative indicator is set to zero. If the two MSBs are '01', the output address is the bitwise negation of the lower bits, with the negative indicator remaining zero. If the two MSBs are '10' or '11', the output address is also based on the bitwise negation of the lower bits, but the negative indicator is set to one. This module essentially acts as an address generator with sign information, suitable for applications involving sine wave generation or similar waveforms that require both positive and negative addressing.
+module top_module(
+  input i_clk,
+  input [15:0] i_addr,
+  output reg [13:0] o_addr,
+  output reg o_neg
+);

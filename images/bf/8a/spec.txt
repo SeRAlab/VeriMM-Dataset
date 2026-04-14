@@ -1,0 +1,2 @@
+Design a control signal generator that manages a turn-off configuration based on external requests. The module monitors a clock and an active-low reset signal. It sets a pending transaction flag when a completion request is initiated and clears it once the completion is confirmed. The output "cfg_turnoff_ok" is asserted when a turn-off configuration is requested, and no pending transaction is active, indicating it is safe to proceed with the turn-off action.
+module top_module(clk,rst_n,req_compl_i,compl_done_i,cfg_to_turnoff,cfg_turnoff_ok);

@@ -1,0 +1,7 @@
+Develop a 4-bit shift-and-add multiplier that computes the product of two 4-bit inputs, `a` and `b`. Upon receiving a clock signal, the module shifts the bits of `a` and `b` appropriately while conditionally adding `b` to an accumulating product based on the least significant bit of `a`. It supports synchronous reset functionality to initialize the product and the registers to zero. The final product is output as an 8-bit value, effectively allowing the multiplication of two 4-bit numbers with a result that can accommodate the maximum possible value.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] a, b,
+    output reg [7:0] product
+);

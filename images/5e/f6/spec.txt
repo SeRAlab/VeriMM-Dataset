@@ -1,0 +1,11 @@
+Design a digital module that implements multiple functionalities involving two 3-bit input vectors, `a` and `b`. The module acts as a selection mechanism using two control signals, `sel_b1` and `sel_b2`, to produce a 3-bit output (`out_or_bitwise`) based on the selected input. Additionally, it computes the bitwise OR of `a` and `b`, resulting in `out_or_bitwise`, while also providing a logical OR output (`out_or_logical`) that indicates if either input is non-zero. Furthermore, the module generates a 6-bit output (`out_not`) representing the bitwise negation of both input vectors concatenated together.
+module top_module(
+    input [2:0] a,
+    input [2:0] b,
+    input sel_b1,
+    input sel_b2,
+    output reg out_always,
+    output reg [2:0] out_or_bitwise, // Changed to reg to match the usage in always block
+    output out_or_logical,
+    output [5:0] out_not
+);

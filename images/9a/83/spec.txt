@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+
+Implement a 16-bit register with asynchronous clear and load-enable functionality. The module should load data when load_enable is high and clear the register when clr is high.
+
+Module name:
+    register_with_control
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    clr: Asynchronous clear signal.
+    load_enable: Control signal for loading data into the register.
+    data_in: 16-bit input data.
+
+Output ports:
+    data_out: 16-bit output representing the current state of the register.
+
+Implementation:
+The module includes a 16-bit register, data_out, which is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the positive edge of the clear signal (posedge clr).
+On clear, indicated by clr being high, the register is cleared to 0.
+When load_enable is high, data_in is loaded into the register on the rising edge of the clock.
+
+Give me the complete code.

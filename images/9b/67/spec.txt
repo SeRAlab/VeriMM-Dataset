@@ -1,0 +1,11 @@
+Design a circuit containing a combination of flip-flops that can operate in multiple modes based on a control signal. The circuit includes a reset functionality that initializes the state, with a data input for direct storage, a toggle mode using J-K flip-flop behavior, a toggle mode based on a T flip-flop, and a set/clear functionality using S-R flip-flop logic. It outputs the state of the primary flip-flop (q) and provides a secondary output (dout) which captures the same state on every clock cycle.
+module top_module(
+  input clk,
+  input rst,
+  input din,
+  input set,
+  input clr,
+  input [1:0] ctrl,
+  output reg dout,
+  output reg q
+);

@@ -1,0 +1,6 @@
+Design a control unit for an Arithmetic Logic Unit (ALU) that determines the operation to be performed based on the provided function and operation codes. The module accepts a 6-bit function code and a 4-bit ALU operation code as inputs. It generates a 4-bit output control signal that defines the specific ALU operation to execute. If the ALU operation code is not the predefined "do not operate" signal, the output directly reflects the operation code. If it is, the module interprets the function code using a case statement to assign the corresponding ALU control signal based on standard operation codes such as addition, subtraction, and logical operations, defaulting to an "unknown operation" signal if the function code does not match any predefined cases.
+module top_module(
+          funct_i,
+          ALUOp_i,
+          ALUCtrl_o
+          );

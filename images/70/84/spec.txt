@@ -1,0 +1,6 @@
+Design a control unit for an Arithmetic Logic Unit (ALU) that determines the operation to be performed based on a combination of an operation code (alu_op) and a subset of the instruction (instruction_5_0). The module takes a 2-bit ALU operation signal and a 6-bit instruction field to produce a 4-bit ALU operation output. It implements various arithmetic and logical operations: for alu_op=00 and alu_op=01, it produces fixed outputs for addition (0010) and subtraction (0110), respectively; for alu_op=10, it decodes specific instruction codes, mapping them to corresponding ALU operations including addition, subtraction, AND, OR, NOR, and set on less than; while for alu_op=11, it again outputs subtraction (0110).
+module top_module(
+    input wire [1:0] alu_op , 
+    input wire [5:0] instruction_5_0 , 
+    output wire [3:0] alu_out  
+    );

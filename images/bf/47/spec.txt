@@ -1,0 +1,9 @@
+Design a circuit that functions as a multiplier followed by an adder. The module takes a clock signal, enable control, a clear signal, an 8-bit coefficient input, and an 8-bit data input. It multiplies the coefficient and the data inputs to produce a 16-bit intermediate product, which is then extended to 24 bits. Upon receiving the enable signal, the module either resets the result with the current multiplication output or adds this output to the previously computed result, providing a cumulative result. This structure supports a sequential multiplication and addition operation, effectively implementing a multiply-accumulator (MAC) functionality.
+module top_module(
+  input clk, // clock input
+  input ena, // enable input
+  input dclr, // clear input
+  input [7:0] coef, // coefficient input
+  input [7:0] din, // data input
+  output reg [23:0] result // output
+);

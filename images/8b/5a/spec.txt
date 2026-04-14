@@ -1,0 +1,7 @@
+Design a circuit that controls a 4-bit LED output based on a timer that can be adjusted by a speed control input. The module utilizes a clock signal and a reset signal to manage the timing and counting. When the reset is low, the timer and count values are initialized. The timer decrements at a rate determined by the clock unless the speed_up signal is asserted, which allows the count to increment. The LEDs illuminate sequentially based on specific counts relative to the timer, lighting up one LED at a time until all four are lit, thereby creating a visual indicator that cycles through states in a controlled manner.
+module top_module(
+input wire clk,
+input wire rst,
+input wire speed_up,
+output reg [3:0] led
+);

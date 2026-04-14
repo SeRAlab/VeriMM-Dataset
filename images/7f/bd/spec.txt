@@ -1,0 +1,8 @@
+Design a 8-bit shift register that accepts a single bit input `data_in` and is controlled by a clock signal `clk` and a reset signal `reset`. When the `reset` signal is asserted, the shift register clears to zero. On the rising edge of the clock, if `shift_en` is high, the register shifts its contents to the left, inserting `data_in` into the least significant bit and dropping the most significant bit. The output `data_out` reflects the value of the most significant bit of the shift register.
+module top_module(
+    input clk,
+    input reset,
+    input data_in,
+    input shift_en,
+    output reg data_out
+);

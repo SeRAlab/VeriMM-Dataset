@@ -1,0 +1,14 @@
+Design a synchronous shift register with an integrated multiplexer and XOR operation. The module allows loading one of six 100-bit input data lines into a shift register based on a 3-bit select input (sel). Depending on the enable signals (ena), the shift register can either shift left or right on each clock edge. Additionally, the output q is produced as the bitwise XOR of the current contents of the shift register and the selected input data, providing a modified version of the loaded data while shifting.
+module top_module( 
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data0,
+    input [99:0] data1,
+    input [99:0] data2,
+    input [99:0] data3,
+    input [99:0] data4,
+    input [99:0] data5,
+    input [2:0] sel,
+    output reg [99:0] q 
+);

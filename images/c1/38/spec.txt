@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+    
+Implement a module appears to function as a state-driven data processing unit, primarily designed to handle two sets of input data (`d_in_0` and `d_in_1`) based on a selection signal. Its core objectives include:
+
+Data Selection and Output: Depending on the `selection` signal, the module selects between two 8-bit input data streams (`d_in_0` and `d_in_1`) and processes them in a state-dependent manner. The processed bit is then outputted through `d_o`.
+Write Enable Control: The module generates a write enable signal (`wr_en`), which is likely used to control the writing of the processed output to a memory or register outside this module.
+State Management: The module transitions through various states based on the current state and the input data bit being processed. This state-driven approach allows for dynamic data handling based on the module's current operational phase.
+
+Module name:  
+	tbu
+
+Input ports:
+	clk (input): The clock signal driving the synchronous operations within the module, including state transitions and data processing.
+	rst (input): A reset signal that initializes the module's state and internal registers when asserted low.
+	enable (input): An enable signal that allows the module to operate when high; when low, the module resets to its initial state.
+	selection (input): A selection signal that determines which input data stream (d_in_0 or d_in_1) is to be processed.
+	d_in_0 (input, 8bit): The first data input stream to be selectively processed by the module.
+	d_in_1 (input, 8bit): The second data input stream, an alternative to d_in_0, to be processed based on the selection signal.
+Output ports:
+	d_o (output, reg): The output signal carrying the processed bit from the selected input data stream.
+	wr_en (output, reg): A write enable signal indicating when the d_o output is valid and can be written to an external memory or register.
+
+
+Implementation:
+The RTL module presented, named tbu, is designed to perform data processing based on input signals and internal state management. The module's core functionality is dictated by a combination of sequential and combinational logic, which together determine the output and internal state transitions based on the inputs and current state.
+
+Give me the complete code.
+

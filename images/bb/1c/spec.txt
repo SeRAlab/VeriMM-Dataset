@@ -1,0 +1,9 @@
+Design a 32-bit wide adder module that computes the next program counter (PC) value based on different selection criteria. The module takes in the current PC, an immediate value, and data from a register (rs1). Based on a 2-bit selection input (PCAddSelect), it can either add the immediate to the current PC, add the immediate to the rs1 data, or default to adding 4 to the current PC. This functionality facilitates control flow in pipeline architectures by determining the next instruction address based on various conditions.
+module top_module(
+	input [31:0] stage1_pc,
+	input [31:0] stage1_imm,
+	input [31:0] rs1_data,
+	input [1:0] PCAddSelect,
+
+	output reg [31:0] stage1_pc4
+);

@@ -1,0 +1,25 @@
+Design a pipeline register for the Execution to Memory (EXMEM) stage in a digital processor. This module captures control signals and data from the execution stage, including memory read/write flags, data to be written back, and the ALU result. It synchronously stores these inputs on the rising edge of the clock, while also providing a reset functionality to initialize outputs to zero upon reset. The outputs of this register serve as inputs to the next stage, facilitating smooth data and control signal transfer within the processor's pipeline architecture.
+module top_module(
+	
+	input clk,
+	input rst,
+		
+	input memReadEX, memWriteEX,
+		
+	input memToRegEX,
+	input regWriteEX,
+		
+	input [7:0] aluResEX,
+	input [7:0] readData2EX,
+	input [2:0] rdEX,
+	
+		
+	output reg memReadEXOut, memWriteEXOut,
+		
+	output reg memToRegEXOut,
+	output reg regWriteEXOut,
+		
+	output reg [7:0] aluResEXOut,
+	output reg [7:0] readData2EXOut,
+	output reg [2:0] rdEXOut
+);

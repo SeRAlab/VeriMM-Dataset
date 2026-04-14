@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module to control a VGA (Video Graphics Array) display. Its primary functions include generating synchronization signals for horizontal and vertical scanning, outputting pixel color data (red, green, blue), and managing the timing for these operations to conform to VGA standards. This module plays a crucial role in interfacing digital systems (like FPGAs or microcontrollers) with VGA-compatible displays, enabling the visualization of graphical data.
+
+Module name:  
+	VGA_Ctrl
+
+Input ports:
+	iRed, iGreen, iBlue ([9:0]): These 10bit inputs represent the color intensity for red, green, and blue channels, respectively, for the current pixel to be displayed.
+	iCLK: The input clock signal that drives the timing of the module.
+	iRST_N: Active low reset signal; it initializes the module's internal counters and state.
+	les_btn: An input signal used to trigger an internal counter increment, demonstrating an example of interfacing with external controls.
+Output ports:
+	oCurrent_X, oCurrent_Y ([10:0]): These outputs represent the current pixel coordinates (X, Y) on the VGA display.
+	oVGA_HS, oVGA_VS: Horizontal and vertical synchronization signals for the VGA display. These are critical for timing the start of new lines and frames.
+	oVGA_SYNC: A constant logic high signal, typically used in VGA standards for synchronization purposes.
+	oVGA_BLANK: This signal indicates whether the current pixel is within the displayable area or in the blanking interval.
+	oVGA_CLOCK: The VGA clock signal, which is the inverted version of iCLK, used to drive the VGA display at the correct timing.
+
+
+Implementation:
+The RTL module presented is designed to control a VGA (Video Graphics Array) interface, generating the necessary signals to drive a VGA display. The module takes in pixel color values (red, green, blue) and outputs the corresponding VGA signals (horizontal sync, vertical sync, RGB color signals, etc.) along with the current pixel coordinates being processed. The core functionality is built around two main components: the horizontal and vertical counters, and the logic that generates the VGA timing and synchronization signals based on these counters.
+
+Give me the complete code.
+

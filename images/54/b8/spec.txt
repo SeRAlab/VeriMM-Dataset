@@ -1,0 +1,3 @@
+Design a 16-bit shift register that captures a serial input signal (rx_in) with shift functionality controlled by a clock (clk) and a control signal (brg_en). On each clock cycle, if brg_en is asserted, the shift register shifts in the new input bit from rx_in while shifting out the least significant bit, effectively moving the contents of the register to the right. The output signals, shift_0 and shift_15, indicate the current values of the least and most significant bits of the register, respectively. Upon a reset (rst), the register initializes to all ones (16'hFFFF).
+module top_module(input wire rx_in, clk, rst, brg_en, 
+		output wire shift_0, shift_15);

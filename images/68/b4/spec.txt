@@ -1,0 +1,18 @@
+Please act as a professional Verilog designer.
+
+Implement a module of an 8-bit shift register that shifts its contents left or right based on the control signal shift_dir. The shifting can be controlled using the input signal enable. The shift register resets to 0 when the reset signal (rst_n) is active.
+
+Module name:  
+    shift_register               
+Input ports:
+    rst_n: Reset signal (active low)
+    clk: Clock signal
+    enable: Signal to enable shifting
+    shift_dir: Signal to control shift direction (1 for left, 0 for right)
+Output ports:
+    q: 8-bit output representing the current shift register value
+
+Implementation:
+If the reset signal is active (!rst_n), the shift register is reset to 0 by assigning the value 8'b00000000 to the output register (q). If the enable signal is 1, the shift register shifts its contents either left or right based on the shift_dir signal. If the shift_dir signal is 1, the shift register shifts left; if it is 0, the shift register shifts right. If the enable = 0, the shift register will stop, and the output register (q) remains unchanged.
+
+Give me the complete code.

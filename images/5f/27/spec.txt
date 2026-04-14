@@ -1,0 +1,17 @@
+Design a video output controller module for a 2-bit color depth display system. The module processes pixel data and generates horizontal and vertical sync signals (hr, vr), while controlling the pixel color output (r, g, b) based on a palette indexed by input signals. It utilizes a finite state machine to manage drawing operations, including horizontal and vertical counters to track the current pixel position on the screen. The design includes the ability to handle palette writes and outputs a request signal (drq) for data, along with an interrupt signal (vid_irq) based on vertical synchronization conditions. The overall operation supports dynamic updates to the display based on input video data and synchronization with the display refresh rate.
+module top_module(
+	input clk50,
+	output reg hr,
+	output reg vr,
+	output reg vid_irq,
+	output reg[3:0] r,
+	output reg[3:0] g,
+	output reg[3:0] b,
+	output reg drq,
+	output reg[13:0] addr,
+	input[15:0] idata,
+	input[1:0] pal_idx,
+	input[7:0] pal_data,
+	input pal_we_n,
+	input color_mode,
+	input mode);

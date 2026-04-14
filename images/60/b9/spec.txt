@@ -1,0 +1,31 @@
+Please act as a professional Verilog designer.
+
+Implement a module for a simple 8-bit register with an enable signal. The register should capture the input data d on the rising edge of the clk signal only when the enable signal en is high. The register should reset to 8'b00000000 when the rst_n signal is low.
+
+Module name:
+    register_with_enable
+
+Input ports:
+    clk: Clock signal.
+    rst_n: Reset signal (active low).
+    en: Enable signal.
+    d: 8-bit input data.
+
+Output ports:
+    q: 8-bit output data.
+
+Implementation:
+Declare the module register_with_enable with input and output ports as specified in the ports statement.
+Declare a register to store the output data.
+Inside an always block, sensitive to the positive edge of the clk signal and the negative edge of the rst_n signal, implement the logic for capturing and outputting data based on the enable signal.
+In the reset condition (~rst_n), set the output data to 8'b00000000. On each positive edge of clk, capture the input data and update the output accordingly only if the enable signal is high.
+
+Give me the complete code.
+
+module register_with_enable(
+    input clk,
+    input rst_n,
+    input en,
+    input [7:0] d,
+    output reg [7:0] q
+);

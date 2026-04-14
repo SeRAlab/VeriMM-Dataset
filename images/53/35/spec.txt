@@ -1,0 +1,12 @@
+Design a small FIFO (First In, First Out) buffer with a width of 72 bits and a depth of 8 entries. The FIFO allows for configurable read and write operations controlled by the `wrreq` and `rdreq` signals, respectively. It provides status outputs indicating whether the buffer is empty or full, along with a count of the currently used entries. The `sclr` signal initializes the FIFO, clearing the head, tail, and used word count. The structure utilizes registers to keep track of data location and facilitate the enqueueing and dequeueing process, ensuring data integrity and proper flow through the FIFO mechanism.
+module top_module(
+    input clock,
+    input [71:0] data,
+    input rdreq,
+    input sclr,
+    input wrreq,
+    output empty,
+    output full,
+    output [71:0] q,
+    output [2:0] usedw
+);

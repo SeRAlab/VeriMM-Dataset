@@ -1,0 +1,12 @@
+
+Design a simple DVFS controller that adjusts the operating frequency based on the input voltage level. The controller should have an input for voltage level (5 bits), a clock input, and a reset input. The output should be a frequency setting (3 bits). The frequency setting should increase with higher voltage levels, with specific mappings:
+- 00000 (0V) -> 000 (0Hz)
+- 00001 (1V) -> 001 (1Hz)
+- 00010 (2V) -> 010 (2Hz)
+- 00011 (3V) -> 011 (3Hz)
+- 00100 (4V) -> 100 (4Hz)
+- 00101 (5V) -> 101 (5Hz)
+- 00110 (6V) -> 110 (6Hz)
+- 00111 (7V) -> 111 (7Hz)
+Values above 7V should yield the maximum frequency (111).
+The controller should only update the frequency output on the rising edge of the clock when the reset is not asserted.

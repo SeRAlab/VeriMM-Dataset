@@ -1,0 +1,8 @@
+module top_module(
+    input a,
+    input b,
+    input c,
+    input d,
+    output q );assign q = b & (d | c) | a & (c | d); 
+
+endmodule

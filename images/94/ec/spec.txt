@@ -1,0 +1,8 @@
+Design a 16x4-bit synchronous static RAM module with write and read capabilities. The module features a data input port (DI) to receive data when writing is enabled (via the WRE signal) at the address specified by WAD. Data can be read from the specified address (RAD) to the output port (DO), with a validity check that outputs zero for invalid RAD values over 15. The RAM is initialized with values converted from a hexadecimal string input (INITVAL), processed through a conversion function to generate the initial memory contents. During each rising edge of the clock (WCK), write operations are performed based on the write enable signal.
+module top_module(
+    input [3:0] DI,
+    input WCK, WRE,
+    input [3:0] RAD,
+    input [3:0] WAD,
+    output [3:0] DO
+);

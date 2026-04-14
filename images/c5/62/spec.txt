@@ -1,0 +1,15 @@
+
+You are tasked with designing a Verilog module for a simple calculator that can handle addition, subtraction, multiplication, and division of two 16-bit signed integers. The module should have two inputs for the operands and one input for selecting the operation to be performed. The output should be the result of the selected operation.
+
+The module should have the following interface:
+- `input [15:0] operand_a`: the first operand
+- `input [15:0] operand_b`: the second operand
+- `input [1:0] operation`: a 2-bit input that selects the operation to be performed:
+  - `2'b00`: addition
+  - `2'b01`: subtraction (operand_a - operand_b)
+  - `2'b10`: multiplication
+  - `2'b11`: division (operand_a / operand_b)
+- `output reg [15:0] result`: the result of the selected operation
+
+Assume that the inputs will always be valid and that the division operation will not result in a divide-by-zero error.
+

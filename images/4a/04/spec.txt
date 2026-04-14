@@ -1,0 +1,8 @@
+Design a two-bit counter module that can increment or decrement its count based on input signals. The counter is enabled when either the increment or decrement signal is high. It resets to zero when the reset signal is active. On each positive edge of the clock, if the counter is enabled, it updates the count based on the increment signal (adding one for increment or subtracting one for decrement). The design effectively allows counting in both directions with synchronization to a clock signal.
+module top_module(
+       input increment,
+		 input decrement,
+		 input clk,
+		 input reset,
+		 output reg[1:0] count
+    );

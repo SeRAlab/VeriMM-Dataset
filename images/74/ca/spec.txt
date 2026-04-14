@@ -1,0 +1,10 @@
+Design a digital circuit that includes a D flip-flop and combinational logic. The circuit captures a single-bit input, `d`, on the rising edge of the clock signal and outputs it to `q`. Additionally, it performs bit-wise operations on a 32-bit input `in`, calculating both the XOR and AND of the upper and lower 16 bits, respectively. The final output, `out_final`, is determined by performing a bit-wise OR between the D flip-flop output `q` and the result of the AND operation processed with the XOR output.
+module top_module(
+    input clk,
+    input d,
+    input [31:0] in,
+    output reg q,
+    output [31:0] out_xor,
+    output [31:0] out_and,
+    output [31:0] out_final
+ );

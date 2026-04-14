@@ -1,0 +1,8 @@
+Implement a debouncing circuit for two input signals (I0 and I1) that are subject to noise or chatter. This module uses a clock signal to monitor the state of the inputs, incrementing a counter when the input state remains stable. After 20 clock cycles, if the input state has not changed, the output (O0 or O1) updates to reflect the stable state of the respective input. This design ensures that transient fluctuations are filtered out, providing clean, stable output signals.
+module top_module(
+    input clk,
+    input I0,
+    input I1,
+    output reg O0,
+    output reg O1
+    );

@@ -1,0 +1,7 @@
+Design a signed 8-bit calculator module capable of performing basic arithmetic operations: addition, subtraction, multiplication, and division, based on a 2-bit operation control signal. The module takes two signed 8-bit inputs and produces a signed 16-bit output. It includes built-in checks to manage overflow and underflow conditions for addition and subtraction, clamping the result within the range of a signed 16-bit integer. For multiplication and division, the result is also clamped appropriately and truncated to fit within 16 bits.
+module top_module(
+    input signed [7:0] a,
+    input signed [7:0] b,
+    input [1:0] op,
+    output reg signed [15:0] result // Changed from wire to reg
+);

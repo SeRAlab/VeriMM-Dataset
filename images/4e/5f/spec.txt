@@ -1,0 +1,9 @@
+Design a single-port RAM module that allows for read and write operations based on control signals. The RAM has a memory capacity of 2048 bytes, where each byte is 8 bits wide. When the enable (en) signal is asserted, the module can write data (din) to the specified address (addr) if the write enable (we) signal is high; otherwise, it reads data from the specified address and outputs it to dout. The operation is synchronized with the rising edge of the clock (clk).
+module top_module(
+  input wire clk,
+  input wire en,
+  input wire we,
+  input wire [10:0] addr,
+  input wire [7:0] din,
+  output reg [7:0] dout // Change wire to reg here
+);

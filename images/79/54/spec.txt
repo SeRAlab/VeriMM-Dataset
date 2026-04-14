@@ -1,0 +1,41 @@
+Please act as a professional Verilog designer.
+
+Implement the design of an unsigned 8-bit divider. It utilizes a non-restoring division algorithm to generate the quotient (qout) and remainder (rout) outputs. The module includes control signals such as clock (clk), reset (rst_n), and start (start), along with a completion flag (done) indicating the completion of the division operation.
+
+Module name:  
+    divider_8bit  
+
+Input ports:
+    clk: Chip clock signal.
+    rst_n: Active-low reset signal. Defined as 0 for chip reset and 1 for reset signal inactive.
+    start: Chip enable signal to initiate the division operation.
+    dividend: Input signal representing the dividend with a data width of 8 bits.
+    divisor: Input signal representing the divisor with a data width of 8 bits.
+
+Output ports:
+    qout: Quotient output signal with a data width of 8 bits.
+    rout: Remainder output signal with a data width of 8 bits.
+    done: Chip output flag signal. Defined as 1 indicates the completion of the division operation.
+
+Implementation:
+Data bit control:
+On every positive edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the count register (i) is updated.
+If the reset signal (rst_n) is low, indicating a reset condition, the count register (i) is set to 0.
+If the start signal is active (start) and the count register (i) is less than 9, the count register (i) increments by 1.
+If the start signal is inactive (!start), the count register (i) is reset to 0.
+Division completion flag generation:
+On every positive edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the division completion flag (done_r) is updated.
+If the reset signal (rst_n) is low, the division completion flag (done_r) is set to 0.
+If the count register (i) is equal to 8, indicating the completion of the division operation, the division completion flag (done_r) is set to 1.
+If the count register (i) is equal to 9, the division completion flag (done_r) is reset to 0.
+Non-restoring division operation:
+On every positive edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the module performs the non-restoring division operation.
+If the reset signal (rst_n) is low, indicating a reset condition, the dividend register (areg), divisor register (breg), quotient register (qout_r), and remainder register (rout_r) are reset to 0.
+If the start signal is active (start), the module starts the division operation.
+When the count register (i) is 0, the dividend (dividend) and divisor (divisor) are stored in the respective registers (areg and breg).
+For counts greater than 0 and less than 9, the module performs a series of subtract and shift operations to compute the quotient and remainder.
+Output assignment:
+The quotient output (qout) is assigned the value of the quotient register (qout_r).
+The remainder output (rout) is assigned the value of the remainder register (rout_r).
+
+Give me the complete code.

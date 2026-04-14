@@ -1,0 +1,11 @@
+Design a finite state machine-based vending machine controller that manages beverage dispensing based on coin input. The module transitions between four states: IDLE, COKE, PEPSI, and SODA. Depending on the inserted coin type (dime for Coke, nickel for Pepsi, and a generic coin for Soda), it alters its state and activates the corresponding output signal to vend the specified beverage. In the IDLE state, it waits for a coin insertion, while in the COKE, PEPSI, and SODA states, it dispenses the selected drink and returns to the IDLE state. The design incorporates a clock and reset mechanism for state management.
+module top_module(
+  input clk,
+  input reset,
+  input coin,
+  input nickel,
+  input dime,
+  output reg vend_coke,
+  output reg vend_pepsi,
+  output reg vend_soda
+);

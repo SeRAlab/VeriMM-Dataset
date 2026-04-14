@@ -1,0 +1,13 @@
+Design a burst counter circuit that measures the number of consecutive clock cycles during which specific conditions are met on the control and address lines. The module is activated when the chip select (cs) and advance (adv) signals are high, with a predefined address condition. Once activated, it increments a 16-bit counter (burstcnt) with each clock pulse. When deactivated (indicated by a falling edge on the chip select), it captures the current count value into another 16-bit register (finalcnt) and outputs the measured burst size, which is designed to reflect the count of cycles plus one, signifying the duration of an active burst state.
+module top_module(
+		    input wire bclk,
+
+		    
+		    input wire [15:0] bus_ad, 
+		    input wire [2:0] bus_a, 
+		    input wire adv, 
+		    input wire rw,  
+		    input wire cs,  
+
+		    output reg [15:0] measured_burst
+		    );

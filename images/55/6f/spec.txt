@@ -1,0 +1,9 @@
+Design a D-type flip-flop with additional control features for both setting and clock enable functionality. The module outputs Q, which reflects the state of the flip-flop. On a positive clock edge, the flip-flop updates its state based on the following conditions: if the asynchronous active-high SET_B signal is asserted, Q is set to 1; if the clock enable signal (SCE) is deasserted, Q is reset to 0; if neither control signal is active, Q will take the value of D as long as it differs from the SCD input. This design enables flexible control of the flip-flop's output state while ensuring synchronization with the clock signal.
+module top_module(
+    Q,
+    CLK,
+    D,
+    SCD,
+    SCE,
+    SET_B
+);

@@ -1,0 +1,14 @@
+
+Implement a simple combinational logic circuit that calculates the option price using the Black-Scholes model formula. The inputs will be:
+- S: Current stock price (8 bits)
+- K: Strike price (8 bits)
+- T: Time to expiration in years (8 bits, represented in a fixed-point format)
+- r: Risk-free interest rate (8 bits, represented in a fixed-point format)
+- sigma: Volatility (8 bits, represented in a fixed-point format)
+
+The output will be the calculated option price (16 bits). The Black-Scholes formula for a European call option price is:
+C = S * N(d1) - K * e^(-rT) * N(d2)
+where:
+d1 = (ln(S/K) + (r + (sigma^2)/2) * T) / (sigma * sqrt(T))
+d2 = d1 - sigma * sqrt(T)
+N(d) is the cumulative distribution function of the standard normal distribution.

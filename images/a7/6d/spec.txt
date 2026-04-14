@@ -1,0 +1,17 @@
+Please act as a professional verilog designer.
+
+Design a module that implements a down counter starting from 4'd15 down to 4'd0. The counter decrements on every positive edge of the clock signal when the enable signal (en) is high and resets to 4'd15 when the reset signal (rst_n) is active.
+
+Module name:  
+    down_counter               
+Input ports:
+    rst_n: Reset signal (active low)
+    clk: Clock signal
+    en: Signal to enable counting
+Output ports:
+    count: 4-bit output representing the current count value
+
+Implementation:
+If the reset signal is active (!rst_n), the counter is reset to 4'd15 by assigning the value 4'b1111 to the output register (count). If the enable signal (en) is high, the counter decrements on each positive clock edge. It checks if the current count value (count) is equal to 4'd0 (minimum count value). If it is, the counter wraps around and resets to 4'd15 by assigning the value 4'b1111 to the output register (count). Otherwise, it decrements the output register by 1. If the enable signal is low, the counter will stop, and the output register (count) remains unchanged.
+
+Give me the complete code.

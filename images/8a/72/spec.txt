@@ -1,0 +1,12 @@
+Design a register-based circuit that reads data based on address selection. The module features an input address bus, `Addr`, and outputs data from either `TxPlsCnt` (which captures a pulse count on the rising edge of `PosLock`) or the `Axis` input. Specifically, when `Addr[1]` is high, the output `DQ` is set to the `Axis` value; when it's low, `DQ` outputs either the high or low byte of `TxPlsCnt` depending on the state of `Addr[0]`. This functionality allows for flexible data retrieval from different sources based on the provided address lines.
+module top_module(
+						Addr,
+						PClk,
+						PosLock,
+						PlsCnt,
+						Axis,
+						Din,
+						
+						DQ		
+				
+    );

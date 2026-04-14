@@ -1,0 +1,11 @@
+Design a game state tracker that manages player progress through levels, lives, and win conditions. On a clock's rising edge, if not reset, the module initializes the game to level 1 with 3 lives. When the `finish` signal is activated, it checks for victory (`win`). If the player wins at level 10, it sets the `game_won` flag. Otherwise, it increments the level and restores life. If the player does not win, it decrements lives, and if life reaches zero, it triggers the `game_over` flag. The module effectively governs the game flow and player status through life and level management.
+module top_module(
+	clk,
+	reset_n,
+	life,
+	level,
+	finish,
+	win,
+	game_over,
+	game_won
+	);

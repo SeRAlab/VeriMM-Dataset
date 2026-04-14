@@ -1,0 +1,5 @@
+Design a VGA to RGB converter that processes pixel data based on the horizontal (`xaddr`) and vertical (`yaddr`) pixel addresses received at a 25 MHz clock. The module generates a 24-bit RGB output by accumulating red, green, and blue pixel data over several cycles. It operates in a state machine that initializes and captures pixel data in a sequential manner, ensuring that upon completion of processing one horizontal line, the state resets for the next line. The red, green, and blue pixel counters manage the data bits collected for each color, assembling the final RGB values in a buffered format before output.
+module top_module(clk_25,
+    xaddr,
+    yaddr,
+    rgb);

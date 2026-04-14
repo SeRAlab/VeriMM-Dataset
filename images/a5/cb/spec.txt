@@ -1,0 +1,6 @@
+Design a Verilog module that models a 6-bit linear feedback shift register (LFSR) with a synchronous load signal. The module should have an input clock signal (clk), an input load signal (ld), a 6-bit input data signal (d), and a 6-bit output signal (q). On the rising edge of the clock, if load is high, q should be set to the value of d. Otherwise, q should be updated with {q[4:0], q[5] ^ q[4]}.
+module lfsr (
+  input clk,
+  input ld,
+  input [5:0] d,
+  output reg [5:0] q);

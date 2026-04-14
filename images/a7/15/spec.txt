@@ -1,0 +1,11 @@
+Design a 64-bit wide matrix multiplier and vector manipulator. The module performs matrix multiplication with a 4x4 matrix derived from the higher bits of input A and lower bits of input B. Depending on the 2-bit selector input (SEL), it can output either the computed rows from the multiplication or a modified vector formed from inputs C, D, E, and F. Specifically, when SEL is 01, it selects vector C; when SEL is 10, it selects vector D; when SEL is 11, it computes and outputs the sum of vectors E and F. The final output, Y, concatenates the results from four processed columns.
+module top_module(
+    input [63:0] A,
+    input [63:0] B,
+    input [15:0] C,
+    input [15:0] D,
+    input [15:0] E,
+    input [15:0] F,
+    input [1:0] SEL,
+    output [63:0] Y
+);

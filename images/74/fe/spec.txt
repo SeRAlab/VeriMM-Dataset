@@ -1,0 +1,25 @@
+Please act as a professional Verilog designer.
+
+Design a 2-to-4 decoder with enable. The decoder takes a 2-bit input (A) and produces a 4-bit output (Y) such that only one output bit is set to 1 based on the value of the input. If the enable signal (en) is low, all outputs should be 0.
+
+Module name:  
+    decoder2to4   
+
+Input ports:
+    A: 2-bit input.
+    en: Enable signal. Active high to enable the decoding.
+
+Output ports:
+    Y: 4-bit output representing the decoded value.
+
+Implementation:
+The module uses a case statement to assign the output based on the input value (A). If the enable signal is high, the output corresponding to the input value is set to 1, and the others are set to 0. If the enable signal is low, all outputs are set to 0.
+
+Give me the complete code.
+
+module decoder2to4(
+    input [1:0] A,
+    input en,
+
+    output [3:0] Y
+);

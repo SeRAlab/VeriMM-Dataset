@@ -1,0 +1,7 @@
+Design a circuit that determines the next program counter (PC) value based on the type of exception encountered during execution. The module takes as inputs the exception type, the stored exception program counter (EPC), and the old program counter (oldpc). If no exception occurs (indicated by an exception type of 0), the new PC retains the value of oldpc. For specific exception types (1, 4, 5, 8, 9, 10, 12), it sets the new PC to a fixed value of 32'hBFC00380. For exception type 14, it updates the new PC to the value of EPC.
+module top_module(
+    input [31:0] excepttype,
+    input [31:0] epc,
+    input [31:0] oldpc,
+    output reg [31:0] newpc
+    );

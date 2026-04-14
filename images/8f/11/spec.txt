@@ -1,0 +1,8 @@
+Design a 4-bit shift register with load and shift capabilities. On the positive edge of the clock, if load_en is asserted, the module captures the input data_in and stores it in the register. If shift_en is asserted instead, the contents of the register are shifted to the right, with the most significant bit being wrapped around to the least significant bit position. The output data_out continuously provides the current state of the register.
+module top_module(
+    input clk,
+    input [3:0] data_in,
+    input shift_en,
+    input load_en,
+    output [3:0] data_out
+);

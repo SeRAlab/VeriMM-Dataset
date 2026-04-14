@@ -1,0 +1,29 @@
+Implement the Verilog module based on the following description.
+Given the following Moore state machine with 2 input (start, stop) and 1 output (active). Unless otherwise stated in the diagram below, assume outputs are 0 and inputs are don't cares.
+
+The state machine has the following states and their corresponding outputs: 
+1. state Idle (no output).
+2. state Running (active=1).
+
+State transitions:
+1. From state Idle: If start = 1, then transition to state Running. If start = 0, then remain in state Idle.
+2. From state Running: If stop = 1, then transition to state Idle. If stop = 0, then remain in state Running.
+
+At reset, the state machine starts in state "Idle". Derive next-state logic equations and output logic equations by inspection assuming the following one-hot encoding is used: (Idle, Running) = (2'b01, 2'b10)
+
+Derive state transition and output logic equations by inspection assuming a one-hot encoding. Implement only the state transition logic and output logic (the combinational logic portion) for this state machine.
+
+Write code that generates the following equations:
+
+- Idle_next -- next-state logic for state Idle
+- Running_next
+- active -- output logic
+
+module top_module(
+    input start,
+    input stop,
+    input [1:0] state,    // 2-bit one-hot current state
+    output reg Idle_next,
+    output reg Running_next,
+    output reg active
+ );

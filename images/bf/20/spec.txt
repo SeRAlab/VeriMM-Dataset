@@ -1,0 +1,6 @@
+Design a touch sensor interface that supports two types of touch sensing: capacitive and resistive. The module outputs a 'touched' signal based on the sensor type and touch input. For capacitive sensors (when sensor_type is 1), the module toggles its internal state (cap_sense) with each positive edge of the touch signal. For resistive sensors (when sensor_type is 0), a separate state (res_sense) is toggled instead. The final output is determined by the sensor type, providing a versatile interface for different touch sensing technologies.
+module top_module(
+  input sensor_type,
+  input touch,
+  output reg touched // Change output to reg
+);

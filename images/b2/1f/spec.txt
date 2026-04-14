@@ -1,0 +1,12 @@
+Design a control unit for a digital circuit that generates specific control signals based on the input conditions. It operates on the rising edge of a clock, resetting its outputs to zero when the reset signal is high. When enabled, it produces a 9-bit control output that reflects the status of the memory enable, branching, and immediate signals. Additionally, it generates a 2-bit program counter operation output, selecting between a bitwise AND operation when the immediate signal is asserted and an addition operation otherwise. This module is essential for managing the flow of data and operations in a processor or similar architecture.
+module top_module(
+    input clk,
+    input rst,
+    input en,
+    input en_mem,
+    input mem_wait,
+    input should_branch,
+    input imm,
+    output reg [8:0] control_o,
+    output reg [1:0] pc_op
+);

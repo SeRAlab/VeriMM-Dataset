@@ -1,0 +1,9 @@
+Design a module that determines the next program counter (PC) source based on the opcode of a jump instruction. Specifically, this module outputs a signal indicating whether to take a jump (PCSrc) and calculates the jump address (JmpAddr) based on the instruction provided. If the instruction is a jump (opcode 2 or 3), it either calculates a target address from the instruction or uses a specified resume address. In the event of a reset, the module disables the jump functionality.
+module top_module(
+Inst, 
+PCPlus4,
+PCSrc,
+JmpAddr,
+ResumeAddr,
+reset
+    );

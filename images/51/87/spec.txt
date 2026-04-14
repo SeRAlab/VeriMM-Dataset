@@ -1,0 +1,8 @@
+Design a FIFO (First-In, First-Out) counter that generates an output signal indicating the number of available slots to add new elements based on various input conditions. The module takes inputs for an empty state, two different free slot indicators (free2 and free3), and a 2-bit count representing items in the FIFO. Depending on these inputs, it determines the increment value for the FIFO count: it outputs the current count if the FIFO is empty, outputs specific increment values based on the occupation of the FIFO, or saturates the output to 5'b11111 when no further increments are possible. This design facilitates managing the filling and counting mechanism of a FIFO buffer in a digital system.
+module top_module(
+  input empty,
+  input free2,
+  input free3,
+  input [1:0] tm_count,
+  output reg [4:0] fifocount_inc
+);

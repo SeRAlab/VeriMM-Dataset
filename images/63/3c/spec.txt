@@ -1,0 +1,23 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit shift register with parallel load capability. The module should shift right on each clock cycle or load parallel data when load signal is high.
+
+Module name:
+    shift_register
+
+Input ports:
+    clk: Clock signal.
+    reset: Synchronous reset signal.
+    load: Load signal.
+    data_in: 4-bit parallel data input.
+
+Output ports:
+    data_out: 4-bit shift register output.
+
+Implementation:
+The module uses an always block to update the shift register output.
+When reset is 1, data_out is assigned 0.
+When reset is 0 and load is 1, data_out is assigned data_in.
+When reset is 0 and load is 0, data_out shifts right on each rising edge of the clock.
+
+Give me the complete code.

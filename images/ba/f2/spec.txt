@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+
+Design an 8-bit shift register with a parallel load and a serial input. The shift register should shift right on each clock cycle when the shift signal is high, otherwise, it should load the parallel input.
+
+Module name:
+    shift_register_8bit
+
+Input ports:
+    clk: Clock signal.
+    rst: Reset signal.
+    shift: Shift control signal (1 for shift, 0 for load).
+    parallel_in: 8-bit parallel input data.
+    serial_in: Serial input data.
+
+Output ports:
+    data_out: 8-bit output data.
+
+Implementation:
+The module uses an always block triggered by the rising edge of the clock signal. If the reset signal is active, the output data is set to 0. Otherwise, if the shift signal is high, the shift register shifts right and the serial input is shifted into the MSB. If the shift signal is low, the parallel input data is loaded into the shift register.
+
+Give me the complete code.
+
+module shift_register_8bit(
+    input wire clk,
+    input wire rst,
+    input wire shift,
+    input wire [7:0] parallel_in,
+    input wire serial_in,
+    output reg [7:0] data_out
+    );

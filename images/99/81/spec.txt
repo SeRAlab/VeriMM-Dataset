@@ -1,0 +1,8 @@
+Design a parallel-to-serial converter that serializes a 32-bit wide input data stream. When the 'load' signal is asserted, the module captures the input data into a register on the rising edge of the clock. After loading, the data shifts left on each subsequent clock cycle, effectively moving each bit towards the least significant position and generating a single-bit output. The output `ser` is driven by the most significant bit of the register when the enable signal `en` is active; otherwise, it outputs a low signal. This module is useful for data transmission applications where data from a parallel source needs to be serialized for outbound communication.
+module top_module(
+	clk,
+	load,
+    en,
+	data_in,
+	ser
+	);

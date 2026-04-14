@@ -1,0 +1,8 @@
+Design a synchronous memory module capable of performing both read and write operations. It includes a clock input (clk), a write enable signal (wen), a 32-bit address input (addr), and a 32-bit data input (din). When the write enable signal is high, the module writes the data from din into the memory location specified by addr on the rising edge of the clock. When write enable is low, it outputs the data from the specified memory location to dout. The memory consists of 1024 locations, each 32 bits wide, allowing for efficient data storage and retrieval.
+module top_module(
+  input clk,
+  input wen,
+  input [31:0] addr,
+  input [31:0] din,
+  output reg [31:0] dout
+);

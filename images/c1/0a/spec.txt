@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a watchdog timer within a digital system, typically used to monitor and reset the system in case of malfunction or failure to respond within a predetermined time frame. The primary functions and objectives of this module include:
+
+Timing Control: It counts down from a set timeout value and generates an interrupt signal when the count reaches zero, indicating a system timeout scenario.
+System Monitoring: By requiring regular 'kick' signals (clear or reset signals) to reset its timer, it ensures that the system is functioning correctly. If the 'kick' signals cease, indicating a potential system hang or failure, the watchdog triggers an interrupt.
+Interrupt Generation: On timeout, it generates an output interrupt signal (`o_int`), which can be used to initiate corrective actions, such as system reset or alerting a monitoring entity.
+
+This module plays a critical role in enhancing system reliability and safety by detecting and responding to system anomalies.
+
+Module name:  
+	wbwatchdog
+
+Input ports:
+	i_clk (input): The system clock signal. It drives the timing and state transitions of the module.
+	i_rst (input): The reset signal. When asserted, it initializes the module, setting the countdown value to i_timeout and clearing the interrupt signal.
+	i_ce (input): The clock enable signal. It controls the countdown operation; the countdown occurs only when this signal is high.
+	i_timeout (input, [(BW1):0]): The timeout value. It specifies the initial countdown value in clock cycles before an interrupt is generated. The width of this input is determined by the parameter BW.
+Output ports:
+	o_int (output, reg): The interrupt signal. It is asserted when the countdown reaches zero, indicating a timeout condition.
+
+
+Implementation:
+The Verilog module wbwatchdog is designed to function as a watchdog timer, a common hardware mechanism used to detect and recover from computer malfunctions. At its core, the module monitors a system's activity within a specified timeout period and generates an interrupt signal if the system becomes unresponsive or fails to meet certain conditions. The module is parameterized with BW, allowing for adjustable bit-width to accommodate different timeout durations.
+Sequential Logic:
+Counter (r_value): The module employs a counter (r_value) that increments on every clock cycle where the enable signal (i_ce) is high, and the interrupt output (o_int) is not already asserted. This counter is a fundamental component, as it tracks the elapsed time since the last reset or since it was last set to the timeout value. The counter is initialized to 0 and is set to the input i_timeout value upon a reset (i_rst) event. This reset logic ensures that the watchdog timer starts counting from the specified timeout value whenever it is reset, allowing for dynamic adjustment of the watchdog period based on system requirements.
+Interrupt Output (o_int): The interrupt output signal is driven by a comparison between the counter value and a specific condition (when r_value equals a value where all bits are 0 except the least significant bit). This condition effectively checks if the counter has reached a critical point where an interrupt should be triggered. The interrupt signal is reset either upon a system reset (i_rst) or when the enable signal (i_ce) is deasserted, ensuring that the watchdog can be re-armed or temporarily disabled as needed.
+Combinational Logic:
+The primary combinational logic within this module is the condition that sets the o_int signal. This logic evaluates whether the counter has reached its threshold for triggering an interrupt. The module also includes logic to handle the increment of the counter, taking into consideration the enable signal and the current state of the interrupt output.
+
+Give me the complete code.
+

@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit binary counter module with asynchronous clear. The counter should increment its value on the rising edge of the clock and reset to 0 when the clear signal is high.
+
+Module name:
+    counter_4bit_async_clear
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    clear: Asynchronous clear signal. Defined as 1 for clear and 0 for normal operation.
+
+Output ports:
+    q: 4-bit output representing the current counter value.
+
+Implementation:
+The module includes a register, q, which is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the positive edge of the clear signal (posedge clear).
+On clear, indicated by clear being high, q is cleared to 0.
+On every rising edge of the clock, if clear is not high, q increments by 1.
+
+Give me the complete code.

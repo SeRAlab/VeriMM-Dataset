@@ -1,0 +1,17 @@
+Please act as a professional verilog designer.
+
+Create a module for a 4-bit synchronous up/down counter that counts from 0 to 15. The counter increments on every positive edge of the clock signal when the up_down signal (up_down) is high and decrements when the up_down signal is low. The counter resets to 0 when the reset signal (reset) is active.
+
+Module name:  
+    sync_up_down_counter_4bit               
+Input ports:
+    reset: Reset signal (active high)
+    clk: Clock signal
+    up_down: Signal to control counting direction (1 for up, 0 for down)
+Output ports:
+    count: 4-bit output representing the current count value
+
+Implementation:
+If the reset signal is active (reset), the counter is reset to 0 by assigning the value 4'b0000 to the output register (count). If the up_down signal is high, the counter increments on each positive clock edge. If the up_down signal is low, the counter decrements on each positive clock edge. The counter must wrap around when it reaches the maximum or minimum count value.
+
+Give me the complete code.

@@ -1,0 +1,9 @@
+Create a simple 8-bit multiplier circuit that computes the product of two input values, `input1` and `input2`, when the `enable` signal is asserted. The operation is triggered on the rising edge of the `clk` signal, and if the `reset` signal is active, it will reset the output `result` to zero. If `enable` is low, the output will also be set to zero, effectively allowing the multiplier to function only when explicitly enabled, while providing synchronous reset functionality. The final result is a 16-bit wide output to accommodate the possible maximum product of two 8-bit numbers.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] input1,
+  input [7:0] input2,
+  input enable,
+  output reg [15:0] result
+);

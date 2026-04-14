@@ -1,0 +1,15 @@
+Design a hazard detection unit for a pipelined processor to manage control and data hazards. The module detects load hazards by checking if the executing load instruction's destination register matches the source registers of subsequent instructions. It generates a signal to pause the program counter and issues control signals to insert pipeline bubbles or pauses in the execution stages based on various conditions such as instruction flushes, exceptions, and whether an instruction is a jump. This ensures correct instruction flow and prevents erroneous data access in the pipeline.
+module top_module(
+    input ex_jump,
+    input ex_load,
+    input id_flush,
+    input ex_flush,
+    input mem_flush,
+    input s_exception,
+    input [4:0] ex_rd,
+    input [4:0] rs1,
+    input [4:0] rs2,
+    output pc_pause,
+    output [3:0] pipe_pause,
+    output [3:0] pipe_bubble
+);

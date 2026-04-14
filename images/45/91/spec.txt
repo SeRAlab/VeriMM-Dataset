@@ -1,0 +1,31 @@
+Design a simple UART (Universal Asynchronous Receiver-Transmitter) module that implements the APB (Advanced Peripheral Bus) interface. The module receives various inputs for clock signals, reset, address, and control signals, while consistently returning fixed default outputs such as PREADY, PSLVERR, and various interrupt signals all set to LOW. This design indicates that the module does not currently perform any UART functionality, serving instead as a placeholder or template for future development.
+module top_module(
+
+
+
+  input  wire        PCLK,     
+  input  wire        PCLKG,    
+  input  wire        PRESETn,  
+
+  input  wire        PSEL,     
+  input  wire [11:2] PADDR,    
+  input  wire        PENABLE,  
+  input  wire        PWRITE,   
+  input  wire [31:0] PWDATA,   
+
+  input  wire [3:0]  ECOREVNUM,
+
+  output wire [31:0] PRDATA,   
+  output wire        PREADY,   
+  output wire        PSLVERR,  
+
+  input  wire        RXD,      
+  output wire        TXD,      
+  output wire        TXEN,     
+  output wire        BAUDTICK, 
+
+  output wire        TXINT,    
+  output wire        RXINT,    
+  output wire        TXOVRINT, 
+  output wire        RXOVRINT, 
+  output wire        UARTINT);

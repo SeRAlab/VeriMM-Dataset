@@ -1,0 +1,7 @@
+Design a UART transmitter module that converts parallel 8-bit data input into a serial format for transmission. The module operates based on a clock signal and includes state machine control logic encompassing states for IDLE, START bit transmission, DATA bits transmission, and STOP bit signaling. When the transmission is initiated, the module sends a LOW signal for the start bit, followed by the individual bits of the data in a serial manner, and concludes with a HIGH signal for the stop bit. The timing of each bit is controlled using a baud rate derived from the provided clock frequency. The output signal (tx) reflects the current state of transmission, complying with UART communication protocols.
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] tx_data,
+    output reg tx
+);

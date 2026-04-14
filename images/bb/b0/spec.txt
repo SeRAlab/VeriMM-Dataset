@@ -1,0 +1,13 @@
+Design a bus interface module that facilitates communication between a master device and multiple slave devices based on a 12-bit address space. The module decodes the upper nibble of the address (ADDR[11:8]) to generate chip select signals (cs0 to cs3) for specific slave devices. It supports read and write operations, where, upon a read request (RD signal), it outputs data from the selected slave device through a tri-state DATA bus, and upon a write request (WR signal), it captures incoming data to send to the appropriate slave. Additionally, the module utilizes a register for reading data from six different inputs, ensuring proper synchronization with the clock signal.
+module top_module(
+input clk,rst_n,
+input [11:0]ADDR,
+input RD,WR,
+inout [15:0]DATA,
+
+output cs0,cs1,cs2,cs3,
+
+
+input [15:0]rddat0,rddat1,rddat2,rddat3,rddat4,rddat5,
+output reg [15:0] wrdat
+);

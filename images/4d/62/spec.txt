@@ -1,0 +1,9 @@
+Design a module for a 3-wire SPI (Serial Peripheral Interface) communication controller. The module manages four signals: chip select (spi_csn), clock (spi_clk), master out slave in (spi_mosi), and master in slave out (spi_miso). It features a 6-bit counter to track the number of clock cycles and determines the read/write operation based on the state of spi_mosi. The module enables data transmission on the spi_sdio line based on the control signal derived from the counter and chip select status, ensuring proper bidirectional communication with slave devices. The spi_dir output indicates the direction of data flow, facilitating seamless interfacing in an SPI setup.
+module top_module(
+  spi_csn,
+  spi_clk,
+  spi_mosi,
+  spi_miso,
+  spi_sdio,
+  spi_dir
+);

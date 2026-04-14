@@ -1,0 +1,9 @@
+Design a three-stage pipeline rotator that processes a 100-bit input data signal. On a rising clock edge, if the load signal is active, the data is loaded into all stages of the pipeline. If not, the output is passed through the stages, allowing for sequential processing. Simultaneously, the module supports rotation of the stored data based on a 2-bit enable signal: it can provide the original data, a right rotation, or a left rotation. The output `q_out` reflects the selected rotation or the current value of `q` based on the `ena` input.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output reg [99:0] q,
+    output reg [99:0] q_out
+);

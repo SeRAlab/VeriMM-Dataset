@@ -1,0 +1,8 @@
+Design a digital filter module that performs a three-stage moving average calculation on signed input data. The module uses synchronous reset and enable signals, and the filter accumulates values based on configurable shift parameters (K0_SHIFT and K1_SHIFT) for controlling the filter coefficients. The output (dataOut) is clamped within a specified range if the CLAMP parameter is enabled, ensuring that it does not exceed the bounds of the data type defined by the WIDTH parameter. The filter will produce results on the rising edge of the clock, making it suitable for real-time processing applications.
+module top_module(
+    input clk,        ///< System clock
+    input rst,        ///< Reset, active high and synchronous
+    input en,         ///< Filter enable
+    input signed [WIDTH-1:0] dataIn,  ///< [WIDTH-1:0] Filter input
+    output reg signed [WIDTH-1:0] dataOut ///< [WIDTH-1:0] Filter output
+);

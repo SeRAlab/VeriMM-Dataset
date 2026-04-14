@@ -1,0 +1,6 @@
+Design a circuit that detects both rising and falling edges of an 8-bit input signal. The module samples the input at each clock edge, indicating the presence of any edges by setting the corresponding bits in the `anyedge` output. On the rising edge of the clock, it identifies rising edges by comparing the current input with the previous input, while on the falling edge, it checks for falling edges. The result is captured in an 8-bit register named `anyedge`, which reflects detected transitions between consecutive clock cycles.
+module top_module(
+    input clk,
+    input [7:0] in,
+    output reg [7:0] anyedge
+);

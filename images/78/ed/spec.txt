@@ -1,0 +1,10 @@
+Design a four-bit counter with load and shift capabilities. The counter increments or decrements based on the `up_down` signal and is resettable via the `reset` input. Additionally, the module can shift the `shift_value` left or right, controlled by the `shift_dir` input, with the chosen shifted value or current counter outputting through the `RESULT` signal. The selection between counter output and shifted output is managed by an internal `select` register, allowing for dynamic operation based on the shifting and counting conditions.
+module top_module(
+    input [3:0] load_value,
+    input [3:0] shift_value,
+    input up_down,
+    input shift_dir,
+    input clk,
+    input reset,
+    output reg [3:0] RESULT  // Changed to 'reg' type
+);

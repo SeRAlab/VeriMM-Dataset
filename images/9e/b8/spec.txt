@@ -1,0 +1,13 @@
+Design a set-reset enabled D flip-flop with clock (CLK) and data (D) inputs, along with synchronous clear (SCD) and enable (SCE) controls. The flip-flop outputs Q and its complement Q_N, where a high SCD input asynchronously resets the output (setting Q to LOW and Q_N to HIGH), while a low SCE input disables the D input from affecting the output when enabled. When SCE is high, the flip-flop updates its state to D on the rising edge of the CLK. This module is typically used in sequential logic designs that require controlled state modification with clear and enable functionalities.
+module top_module(
+    input CLK,
+    input D,
+    input SCD,
+    input SCE,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB,
+    output reg Q,
+    output reg Q_N
+);

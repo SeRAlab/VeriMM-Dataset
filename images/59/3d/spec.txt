@@ -1,0 +1,11 @@
+Design a data forwarding mechanism to address load-use hazards in a pipeline. The module takes two 32-bit inputs (EXData1 and EXData2) and, based on control signals (LoadUse1 and LoadUse2), conditionally selects between the current and next values for two output registers (EXRegister1Data and EXRegister2Data). On a rising clock edge, the module captures the current state of the inputs and control signals, while a reset signal initializes the registers to zero. This functionality helps mitigate stalls in a pipelined architecture by allowing immediate use of data from the execution stage without delays caused by load-use dependencies.
+module top_module(
+input wire [31:0] EXData1,
+input wire [31:0] EXData2,
+input wire clk,
+input wire rst,
+input wire LoadUse1,
+input wire LoadUse2,
+output wire [31:0] EXRegister1Data,
+output wire [31:0] EXRegister2Data
+);

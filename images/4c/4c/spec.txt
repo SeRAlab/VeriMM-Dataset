@@ -1,0 +1,13 @@
+Design a data channel input module that captures and outputs various control and data signals. The module takes an input signal `ld` to indicate a load operation and outputs a data bus `d` based on the input `z`. It also provides a ready/valid signal `vd`, a load signal `lz`, and the size of the incoming data through `size`. Additionally, it produces a signal `sizelz` to indicate the request for the size of the data. The module operates combinationally, updating its outputs based on the current inputs.
+module top_module(
+  input ld,
+  output reg vd,
+  output reg [7:0] d,
+  output reg lz,
+  input vz,
+  input [7:0] z,
+  output reg [7:0] size,
+  input req_size,
+  input [7:0] sizez,
+  output reg sizelz
+);

@@ -1,0 +1,10 @@
+Design a circuit that functions as a controlled output generator by integrating a decade counter and an XOR gate. The module takes a clock signal and includes reset and enable control inputs. When the reset signal is activated, the circuit initializes to a known state. The decade counter increments its value on each clock cycle unless the slow enable input is active, allowing the count to persist. Depending on the select input, the output either reflects the most significant bit of the counter or the result of an XOR operation between two input signals, effectively managing output behavior based on the user's selection.
+module top_module(
+    input clk,
+    input slowena,
+    input reset,
+    input select,
+    input a,
+    input b,
+    output reg out
+);

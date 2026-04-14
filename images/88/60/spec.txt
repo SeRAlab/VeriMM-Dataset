@@ -1,0 +1,10 @@
+Design a 4-bit shift register coupled with an XOR operation. The module contains two 4-bit shift registers that operate synchronously with a clock signal. Upon a negative clock edge, if not reset, each register can shift in the least significant bit of their respective inputs, d1 and d2, provided that the enable signal is active. The second shift register's output is sent to the primary output q, while the XOR of the outputs from both registers is generated as xor_output. This design allows for the shifting of bits and the computation of bitwise exclusive OR between the two registers' contents.
+module top_module(
+    input clk,
+    input reset,            // Asynchronous reset
+    input [3:0] d1,         // 4-bit input for shift register 1
+    input [3:0] d2,         // 4-bit input for shift register 2
+    input enable,
+    output [3:0] q,         // 4-bit output from shift registers
+    output [3:0] xor_output // 4-bit output from XOR module
+);

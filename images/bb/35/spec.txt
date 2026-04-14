@@ -1,0 +1,8 @@
+The provided Verilog module implements a Phase-Locked Loop (PLL) and Delay-Locked Loop (DLL) design. It uses a reference clock (`ref_clk`) to generate a controlled output clock (`pll_clk`) based on specified multiplication and division parameters, while also providing a delayed output clock (`dll_clk`) derived from an input data clock (`data_clk`). The module incorporates counters to manage timing and reset conditions, ensuring that the PLL and DLL functionalities are synchronized. When reset is active, both counters are cleared, and on each positive edge of the respective clocks, the counters increment, facilitating the generation of the desired clock signals in a controlled manner. The PLL functionality allows clock frequency scaling, while the DLL adds a fixed delay to the data clock.
+module top_module(
+  input ref_clk,
+  input data_clk,
+  input reset,
+  output reg pll_clk, // Changed to reg
+  output reg dll_clk  // Changed to reg
+);

@@ -1,0 +1,15 @@
+Design a circuit that functions as an AXI protocol converter, managing the flow of read address commands between a master and slave interface. The module coordinates the timing of read requests and responses using a state machine with four states: IDLE, CMD_EN, CMD_ACCEPTED, and DONE. When a read request is valid and data is ready, it transitions to CMD_EN to enable the command. If the master is ready and there's a pending next command, it accepts the command or completes the transaction, controlling the signals for readiness and pushing data as needed. The design ensures proper synchronization and efficient handling of read transactions in an AXI-based system.
+module top_module(
+  input wire clk,
+  input wire reset,
+  input wire s_arvalid,
+  input wire [7:0] s_arlen,
+  input wire m_arready,
+  input wire next_pending,
+  input wire data_ready,
+  output wire s_arready,
+  output wire m_arvalid,
+  output wire next,
+  output wire a_push,
+  output wire r_push
+);

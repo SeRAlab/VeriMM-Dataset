@@ -1,0 +1,8 @@
+Design a 2-to-1 data selector module that utilizes an 8-bit input port and outputs a 32-bit read data based on a 2-bit address selector. The module captures the input data from 'in_port' and, upon a rising edge of the clock (clk), outputs this data into 'readdata' if reset is inactive. When the address is zero, it multiplexes the input data, otherwise, it outputs zero, effectively directing the selected data to the output while supporting reset functionality.
+module top_module(
+    input [1:0] address,
+    input clk,
+    input [7:0] in_port,
+    input reset_n,
+    output reg [31:0] readdata
+);

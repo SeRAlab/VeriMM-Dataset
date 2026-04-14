@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a dual-port RAM (Random Access Memory) with configurable parameters such as RAM type, data width, and depth. It supports separate clock domains for each port, enabling asynchronous read and write operations. This module can be utilized in systems requiring efficient data storage and retrieval mechanisms, such as cache memories, buffer storage, or any application necessitating separate read and write operations in different clock domains.
+
+The module's flexibility in configuration allows it to be tailored to specific requirements, making it a versatile component in digital designs. Depending on the `P_RAM_TYPE` parameter, it can operate in two modes, offering either simultaneous read-write capability on one port or independent read-write operations on both ports.
+
+Module name:  
+	fm_cmn_ram
+
+Input ports:
+	clka: Clock input for port A. This clock domain is used for write operations when P_RAM_TYPE is "TYPE_A" or for both read and write operations otherwise.
+	clkb: Clock input for port B. This clock domain is used for read operations.
+	wea: Write enable for port A. When high, data on dia is written to the address specified by addra.
+	addra: Address input for port A. Specifies the memory location for read or write operations, depending on the mode.
+	addrb: Address input for port B. Specifies the memory location for read operations.
+	dia: Data input for port A. The data to be written to the memory location specified by addra.
+Output ports:
+	doa: Data output for port A. Represents the data read from the memory location specified by addra when P_RAM_TYPE is not "TYPE_A".
+	dob: Data output for port B. Represents the data read from the memory location specified by addrb.
+
+
+Implementation:
+The RTL module fm_cmn_ram is designed to function as a dual-port RAM with configurable parameters, allowing it to be tailored to specific needs in terms of data width (P_WIDTH), address range (P_RANGE), and operational type (P_RAM_TYPE). The module supports separate clock domains for each port (clka for port A and clkb for port B), enabling asynchronous access from two different clock domains. This design is particularly useful in applications where data needs to be shared between two subsystems operating at different clock frequencies.
+
+Give me the complete code.
+

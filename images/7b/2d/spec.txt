@@ -1,0 +1,7 @@
+Design a barrel shifter that allows for left and right shifting of an n-bit input. It features a 2-bit control signal to determine the shift direction and a logarithmic amount of shift to specify how many positions the input should be shifted. When shifting right, the most significant bit is replicated to fill in the vacated bits, while shifting left fills in with zeros. The module also ensures that if the shift amount exceeds the predefined maximum, the output is set to zero, and if no shift is required, it simply passes the input to the output unchanged.
+module top_module(
+  input [n-1:0] in,
+  input [1:0] shift_dir,
+  input [log2(s)-1:0] shift_amt,
+  output reg [n-1:0] out // Changed to reg to allow assignment in always block
+);

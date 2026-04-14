@@ -1,0 +1,22 @@
+Please act as a professional Verilog designer.
+
+Design a 8-bit synchronous up/down counter with enable, up/down, and reset signals. The counter should increment its value by 1 on each positive edge of the clock signal when the enable signal is asserted and the up/down signal is high. If the up/down signal is low, the counter should decrement its value by 1. When the reset signal is asserted, the counter should reset to 0.
+
+Module name:
+    up_down_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Active-high synchronous reset signal.
+    en: Enable signal to increment or decrement the counter.
+    up_down: Signal to control whether the counter increments or decrements.
+    
+Output ports:
+    count: 8-bit output count signal.
+
+Implementation:
+Counter Logic:
+The module includes an 8-bit register, count, to store the counter value.
+On the positive edge of the clock signal (clk), the module updates the counter. If the reset signal (rst) is high, indicating a reset condition, the counter is set to 0. If the enable signal (en) is high and the up/down signal is high, the counter increments by 1. If the enable signal (en) is high and the up/down signal is low, the counter decrements by 1.
+
+Give me the complete code.

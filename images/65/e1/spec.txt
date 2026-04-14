@@ -1,0 +1,11 @@
+Design a 64-bit wide, four-bank memory module that supports write and read operations. Each of the four banks consists of 256 entries, where each entry is 16 bits wide. On a write command, the module will shift existing data in the selected bank downward, inserting incoming data if there is available space; if the bank is full, it sets a full flag. On a read command, it outputs the most recent entry from the specified bank, padding the output with zeros on the upper bits. This design is intended for systems needing a segmented memory architecture, allowing efficient data access and management across multiple banks.
+module top_module(
+    input clk,
+    input [63:0] din,
+    input wr_en,
+    input [1:0] wr_addr,
+    input rd_en,
+    input [1:0] rd_addr,
+    output reg [63:0] dout,
+    output reg full
+);

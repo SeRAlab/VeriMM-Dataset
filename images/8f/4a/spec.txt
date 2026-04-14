@@ -1,0 +1,18 @@
+Design a control module for an Nios II processor that facilitates the reading and writing of operational control interface (OCI) registers. The module responds to specific memory addresses and clock events, managing features such as single-step operation, interrupt enable settings, and the status of monitoring signals. It has two registers: one for control settings (including single-step mode and monitoring signals) and another for enabling interrupts, which are updated based on incoming write commands when the appropriate address is accessed. The module outputs the current state of the registers for external reading and ensures correct initialization and reset behavior for reliable operation during system resets.
+module top_module(
+    input [8:0] address,
+    input clk,
+    input debugaccess,
+    input monitor_error,
+    input monitor_go,
+    input monitor_ready,
+    input reset_n,
+    input write,
+    input [31:0] writedata,
+    output reg [31:0] oci_ienable,
+    output reg [31:0] oci_reg_readdata,
+    output reg oci_single_step_mode,
+    output reg ocireg_ers,
+    output reg ocireg_mrs,
+    output reg take_action_ocireg
+);

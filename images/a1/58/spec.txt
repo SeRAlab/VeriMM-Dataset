@@ -1,0 +1,10 @@
+Design a 16-bit floating-point multiplication module that computes the product of two input floating-point numbers, arg_0 and arg_1. The module extracts the sign, exponent, and fraction components of the inputs, calculates the sign of the result as the XOR of the input signs, and directly passes the exponents. It multiplies the adjusted fractions and normalizes the result to produce a 12-bit fraction output. The module outputs the sign, exponents, and normalized fraction, thus implementing the key functionality of a floating-point multiplier tailored for 16-bit precision.
+module top_module(
+ input       clk,
+ input       rst,
+ input [15:0]  arg_0,
+ input [15:0]  arg_1,
+ output reg    ret_0,
+ output reg [4:0]  ret_1,
+ output reg [4:0]  ret_2,
+ output reg [11:0] ret_3);

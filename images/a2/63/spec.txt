@@ -1,0 +1,5 @@
+Design a programmable 8-bit counter with the capability to count up or down, based on control signals. The module features inputs for clock, reset, enable, direction (count_dir), and a dual counting mode (dual_count). When enabled, the counter increments or decrements its value by 1 or 2 depending on the state of dual_count, with wrap-around behavior implemented for both counting directions. If the counter reaches its maximum (0xFF) while counting up, it resets to 0; conversely, if it reaches 0 while counting down, it wraps around to 0xFF. This design is suitable for applications requiring adjustable counting sequences and directions.
+module top_module(
+    input clk, rst, enable, count_dir, dual_count,
+    output reg [7:0] count_out
+);

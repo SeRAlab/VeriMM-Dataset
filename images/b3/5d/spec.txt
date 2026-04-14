@@ -1,0 +1,10 @@
+Design a 32-bit Pulse Width Modulation (PWM) generator. The module uses a clock input to increment a timer value and a clock divider, both resettable. It compares the current timer value against two thresholds: TMRCMP1 for resetting the timer and TMRCMP2 for generating the PWM output. When the timer reaches TMRCMP2, it sets the PWM output high, and when it equals TMRCMP1, the timer resets to zero, also resetting the PWM output to low. The PWM signal remains active based on the TMREN control signal, allowing for flexible duty cycle adjustments according to the provided comparison values.
+module top_module(
+		input wire clk,
+		input wire rst,
+		input wire [31:0] PRE,
+		input wire [31:0] TMRCMP1,
+		input wire [31:0] TMRCMP2,
+		input wire 				TMREN,
+		output reg pwm
+	);

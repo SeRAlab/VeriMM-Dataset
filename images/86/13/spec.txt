@@ -1,0 +1,7 @@
+Implement a dual-mode stack/queue circuit that can operate as either a stack (LIFO) or a queue (FIFO) based on a mode selection parameter. The module features a 16-bit wide data input and output and includes control signals to indicate when the stack/queue is full or empty. It uses internal pointers for read and write operations, a status counter to track the number of elements stored, and a RAM instance to manage the data storage. Data is written to the RAM when in stack mode and not full, and read from the RAM when in queue mode and not empty. The design enables efficient data management for temporary storage, suitable for various applications like buffering or task scheduling.
+module top_module(
+    input  [15:0] Datain, // Data to Stack/Queue.
+    output [15:0] Dataout, // Data from Stack/Queue.
+    output Full,  // Stack is Full Signal, High = True.
+    output Empty  // Stack is Empty Signal, High = True.
+);

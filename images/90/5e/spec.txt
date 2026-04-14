@@ -1,0 +1,6 @@
+Design a control logic module that determines specific output actions based on 18 input signals. The module is synchronized to a clock, and it can be reset, whereupon all outputs are cleared to zero. Depending on the value of the input signals, it will activate one of ten defined actions, represented as a 10-bit output. Each action corresponds to a specific binary representation of the input signals, allowing only one action at a time based on the signals input, while all other actions remain inactive. If none of the defined signals are detected, the output will also remain zero.
+module top_module(
+    input clk, reset, // clock and reset signals
+    input [17:0] signals, // input signals
+    output [9:0] actions // output signals
+);

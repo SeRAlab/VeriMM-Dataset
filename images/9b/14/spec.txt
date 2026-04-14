@@ -1,0 +1,8 @@
+Design a FIFO (First In, First Out) image filter that stores incoming data samples in a shift-register-like structure. On each clock cycle, if the chip enable (ce) signal is asserted, the module shifts the stored data down the register, effectively maintaining a queue of the latest data samples. The output (q) can then be selected based on the address input (a), allowing the retrieval of specific bits from the stored data across different depths, thus enabling image filtering operations by accessing previously captured pixel values.
+module top_module(
+    clk,
+    data,
+    ce,
+    a,
+    q
+);

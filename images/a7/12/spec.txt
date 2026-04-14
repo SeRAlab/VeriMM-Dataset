@@ -1,0 +1,7 @@
+The module implements a basic arithmetic calculator capable of performing addition, subtraction, multiplication, and division on two signed 32-bit inputs, A and B. The operation to be executed is determined by the 2-bit input 'op'. It provides an output, C, which holds the result of the arithmetic operation, and the calculation is synchronized to a clock signal, with an active-low reset to initialize the output to zero.
+module top_module(
+  input clk, rst,
+  input signed [31:0] A, B,
+  input [1:0] op,
+  output reg signed [31:0] C
+);

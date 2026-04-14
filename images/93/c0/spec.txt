@@ -1,0 +1,13 @@
+Construct a testbench for simulating an IO memory module. This testbench initializes various input signals and toggles a clock while performing read and write operations to validate memory functionality. It writes a specific value to a designated address in RAM and subsequently reads from that address to ensure the correct value is returned. The presence of UART signals indicates the module may support interfacing with a processor and UART, while an interrupt signal suggests capabilities for handling internal interrupts. The primary objective of the design is to verify the correct operation of the IO memory interface within a larger system.
+module top_module(
+    input clock,
+    input IO_write,
+    input [11:0] IO_address,
+    input [15:0] IO_data_in,
+    input [15:0] processor_input,
+    input processor_uart_rx,
+    output reg processor_uart_tx,
+    output reg [15:0] IO_data_out,
+    output reg [15:0] processor_output,
+    output reg internal_IRQ
+);

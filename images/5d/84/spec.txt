@@ -1,0 +1,6 @@
+Design a circuit that functions as a 16-to-1 multiplexer for 4-bit inputs extracted from a 64-bit vector. The module selects one of the 16 possible 4-bit inputs based on a 4-bit selection signal (`sel`). The output signal is set high if the selected 4-bit input matches a predetermined 4-bit fixed value; otherwise, it is low. This implies the module also includes a comparison mechanism to ascertain whether the selected input equals the fixed value.
+module top_module( 
+    input [63:0] in,        // 64-bit input vector containing 16 4-bit inputs
+    input [3:0] sel,        // Selects which 4-bit input to output
+    output out              // Output signal that is set high if the selected 4-bit input matches the fixed 4-bit value, otherwise set low
+);

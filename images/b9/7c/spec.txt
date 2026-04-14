@@ -1,0 +1,8 @@
+Implement a FIFO (First-In-First-Out) image filter with a configurable depth for processing input data. When enabled by the 'ce' signal and synchronized with the clock, the module shifts existing data in the buffer one position down and stores new incoming data at the top (buffer[0]). The output 'q' provides access to the buffered data based on the address 'a', allowing retrieval of previously stored values for applications such as image processing or data streaming. The design supports a data width of 12 bits and an address width of 2 bits, enabling handling of up to 4 data entries.
+module top_module(
+    clk,
+    data,
+    ce,
+    a,
+    q
+);

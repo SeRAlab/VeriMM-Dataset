@@ -1,0 +1,9 @@
+Design a module that implements an adaptive arithmetic coder and decoder for symbol encoding and decoding. The module takes an input symbol and its corresponding probabilities, along with an end flag to signify completion. It calculates cumulative probabilities and encodes the input symbol to produce a fixed-point representation of the encoded output. Conversely, it can also decode a given encoded input back into the original symbol based on the cumulative probabilities. The module operates with a parameterized number of symbols (n) and uses fixed-point arithmetic to manage ranges of encoded values, facilitating efficient data compression and reconstruction in applications such as lossless data compression.
+module top_module(
+  input [n-1:0] symbol_in,
+  input [n-1:0] prob_in,
+  input end_flag,
+  output reg [31:0] encoded_out,
+  input [31:0] encoded_in,
+  output reg [n-1:0] symbol_out
+);

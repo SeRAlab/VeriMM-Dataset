@@ -1,0 +1,9 @@
+Design a Last-In-First-Out (LIFO) stack with an 8-element depth that allows for pushing and popping of 8-bit wide data elements. The module features a clock input for synchronous operation and a reset input to initialize the stack's top pointer and clear any output. When data is pushed, it is stored at the current top index, and the top pointer increments. Conversely, when a pop operation is triggered, the module outputs the data at the top index and decrements the top pointer, provided the stack is not empty. The module also includes signals to indicate whether the stack is full or empty.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] push_data,
+  input pop,
+  output reg [7:0] top_data, // Change wire to reg
+  output empty
+);

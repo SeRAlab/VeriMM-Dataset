@@ -1,0 +1,9 @@
+Design a reset delay block that processes a 32-bit signed input. When the reset signal is active, the output is forced to zero. When reset is inactive, if the enable signal is active, the module either passes the input through (if Reset_1 is low) or holds the output at zero (if Reset_1 is high). This design effectively implements a controlled delay mechanism for the input signal, based on the enable and reset conditions.
+module top_module(
+           input CLK_IN,
+           input reset,
+           input enb_1_2000_0,
+           input Reset_1,
+           input signed [31:0] In,
+           output signed [31:0] Out
+          );

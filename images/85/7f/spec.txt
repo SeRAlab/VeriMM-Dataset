@@ -1,0 +1,9 @@
+Design a circuit that combines a 4-input multiplexer with a priority encoder. The module accepts four 4-bit inputs (A, B, C, D) and a 2-bit select line (SEL). The output corresponds to the selected input based on the SEL value, while also ensuring that if multiple inputs are active, the output reflects the highest priority input (with D having the highest priority and A the lowest). The design ensures that the output Q displays the active input according to the priority rules, or defaults to zero if none are high.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [3:0] C,
+    input [3:0] D,
+    input [1:0] SEL,
+    output reg [3:0] Q // Changed output to reg to use in always block
+);

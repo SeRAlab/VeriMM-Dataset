@@ -1,0 +1,9 @@
+Design a request-based arbiter circuit that controls access to a shared resource. The module accepts input signals from the north and west nodes (request sources) and produces output control signals for the south and east nodes (grant destinations). The grant output indicates when both north and west are requesting access simultaneously. The south output asserts when north requests but not while grant is active, while the east output asserts when west requests under the same conditions. This design is intended to manage and resolve contention for access in a multi-source network.
+module top_module(
+	north,
+	west,
+	south,
+	east,
+	request,
+	grant,
+	);

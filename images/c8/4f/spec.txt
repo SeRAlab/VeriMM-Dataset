@@ -1,0 +1,46 @@
+
+
+You have been tasked with designing a Verilog module that implements a 2-input AND gate. The module should have the following inputs and outputs:
+
+Inputs:
+- `A`: a single bit input
+- `B`: a single bit input
+
+Outputs:
+- `Z`: a single bit output representing the logical AND of `A` and `B`
+
+Your module should be named `and_gate` and should be contained within a single Verilog file of no more than 200 lines of code. Your implementation should use only basic Verilog constructs such as `wire`, `assign`, and `and` gates.
+
+Write a Verilog module that satisfies these requirements and passes the following testbench:
+
+```
+module testbench();
+
+    reg A;
+    reg B;
+    wire Z;
+
+    and_gate and_gate_inst(
+        .A(A),
+        .B(B),
+        .Z(Z)
+    );
+
+    initial begin
+        A = 0;
+        B = 0;
+        #1 $display("A=%b, B=%b, Z=%b", A, B, Z);
+        A = 0;
+        B = 1;
+        #1 $display("A=%b, B=%b, Z=%b", A, B, Z);
+        A = 1;
+        B = 0;
+        #1 $display("A=%b, B=%b, Z=%b", A, B, Z);
+        A = 1;
+        B = 1;
+        #1 $display("A=%b, B=%b, Z=%b", A, B, Z);
+    end
+
+endmodule
+```
+

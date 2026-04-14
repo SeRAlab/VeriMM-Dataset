@@ -1,0 +1,14 @@
+Design a module that decides the appropriate inputs for an arithmetic or logic operation based on various control signals and conditions. When `aluSrc` is asserted, it generates `input2` based on the `immediate` value, extending the sign if necessary. If `memRead` is set, it processes `imm_addr`, similarly extending or zeroing based on its sign bit. In case of a branch operation, it handles the value from `L`, using a conditional sign extension. Finally, `input1` is always assigned the value of `read_data1`, ensuring that one of the inputs remains constant while the other is conditionally determined.
+module top_module(
+		input [31:0]read_data1,
+		input [31:0]read_data2,
+		input aluSrc,		
+		input memRead,		
+		input branch,		
+		input [19:0]immediate, 
+		input [6:0] aluOp,
+		input [14:0] imm_addr, 
+		input [24:0] L,
+		output reg [31:0]input1,
+		output reg [31:0]input2
+    );

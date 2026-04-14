@@ -1,0 +1,7 @@
+Design a 4-bit wide configurable up counter with pipelined stages. The counter has a load feature, allowing it to be initialized to a specific value on the rising edge of the clock when the load signal is asserted. In normal operation, it increments the count value by one each clock cycle. The design involves two registers to hold the current count state in a pipelined manner, ensuring that the output reflects the incremented value in a synchronized manner.
+module top_module(
+    input clk,
+    input load,
+    input [3:0] load_value,
+    output reg [3:0] count
+);

@@ -1,0 +1,10 @@
+Design a basic arithmetic calculator that performs addition, subtraction, multiplication, and division on two 8-bit operands. The operation to be executed is selected via a 2-bit input signal. The module includes overflow detection for each operation, providing the status of overflow through a separate output signal. On the rising edge of the clock, the calculator resets to zero when instructed, otherwise, it computes the result based on the selected operation and updates the result and overflow outputs accordingly.
+module top_module(
+    input clk,
+    input reset,
+    input [1:0] op,
+    input [7:0] operand1,
+    input [7:0] operand2,
+    output reg [7:0] result,
+    output reg overflow
+);

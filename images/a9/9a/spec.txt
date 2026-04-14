@@ -1,0 +1,9 @@
+Design a sequential calculator module that performs basic arithmetic operations (addition, subtraction, multiplication, and division) on two 8-bit input numbers, num1 and num2. The operation to be performed is selected using a 2-bit operation code (op), which dictates the specific arithmetic function executed upon each positive clock edge. The module also includes a synchronous reset input (rst) that, when activated, sets the 16-bit result output to zero, ensuring a clean initialization before performing calculations.
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] num1,
+    input [7:0] num2,
+    input [1:0] op,
+    output reg [15:0] result
+);

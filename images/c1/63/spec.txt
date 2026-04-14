@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to debounce a pushbutton input. In digital systems, mechanical switches or pushbuttons often generate spurious electrical noise (bouncing) when toggled. This noise can cause multiple unwanted transitions to be registered by the digital system, leading to erratic behavior. The `mPshBtnDbnce` module addresses this issue by ensuring that only a clean, stable transition is registered after a button press or release, effectively filtering out the noise generated during the mechanical action.
+
+The module achieves this by implementing a simple debounce algorithm, which waits for the pushbutton signal to remain stable for a predefined period before considering the button press or release as valid. This module is crucial in systems where pushbuttons are used for input, ensuring reliable operation by mitigating the effects of signal bouncing.
+
+Module name:  
+	mPshBtnDbnce
+
+Input ports:
+	i_Clk: The input clock signal. This is a digital signal (1bit) that drives the timing of the debounce algorithm. The entire module operates on the rising edge of this clock signal.
+	i_PshBtn: The raw pushbutton input signal. This is a digital signal (1bit) that represents the state of the pushbutton (pressed or not pressed). This signal is expected to have bouncing, and the module's purpose is to clean it.
+Output ports:
+	o_Dbnced: The debounced pushbutton output signal. This is a digital signal (1bit) that represents the stable state of the pushbutton after debouncing. When this signal transitions, it indicates a valid button press or release, free from the effects of bouncing.
+
+
+Implementation:
+The RTL module presented, named mPshBtnDbnce, is designed to debounce a pushbutton input signal. Debouncing is a critical process in digital systems to eliminate the noise (rapid, undesired changes in state) associated with mechanical switch contacts or pushbuttons. This module employs a combination of sequential and combinational logic to achieve a stable output signal from a noisy input signal.
+
+Give me the complete code.
+

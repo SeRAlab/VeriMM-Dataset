@@ -1,0 +1,9 @@
+Design a memory-mapped interface module that enables data input and output based on a specified memory address range. The module takes a clock signal, a 16-bit memory address, and a 16-bit data input. It calculates a mapped address by subtracting a defined start address from the input memory address. The module generates an enable signal indicating whether the current address lies within the active range. On each clock cycle, it updates an output enable flag based on this signal, allowing the module to either output the input data or zero, depending on the status of the enable signal. This design is used for controlling access to a specific range of memory mapped registers or devices.
+module top_module(
+    input clk,
+    input [15:0] mem_addr,
+    input [15:0] data_in,
+    output [15:0] data_out,
+    output [ADDR_BITS-1:0] addr,
+    output en
+    );

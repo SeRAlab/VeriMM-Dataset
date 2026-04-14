@@ -1,0 +1,19 @@
+Design a capabilities reporting module that consolidates various device enable signals into a 32-bit output vector. The module accepts multiple input signals corresponding to different functionalities, such as memory card support, audio interfaces, and network connectivity, and organizes the capability statuses into a single output word. The upper 17 bits of the output are set to zero, while the lower 15 bits reflect the state of the respective input signals, providing a compact representation of enabled features for the device.
+module top_module(
+    input enable_memorycard,
+    input enable_ac97,
+    input enable_pfpu,
+    input enable_tmu,
+    input enable_ethernet,
+    input enable_fmlmeter,
+    input enable_videoin,
+    input enable_midi,
+    input enable_dmx,
+    input enable_ir,
+    input enable_usb,
+    input enable_memtest,
+    input enable_aceusb,
+    input enable_ps2keyboard,
+    input enable_ps2mouse,
+    output [31:0] capabilities
+);

@@ -1,0 +1,8 @@
+Design a 32-bit serial-in, parallel-out shift register. On each positive clock edge, the module captures the serial input and shifts the existing bits to the left, inserting the new bit at the least significant position. The shift register can be reset to zero asynchronously when the reset signal is activated. It provides the most significant bit as the serial output and offers the entire 32-bit state of the register as a parallel output.
+module top_module(
+  input clk,
+  input reset,
+  input serial_in,
+  output serial_out,
+  output reg [31:0] parallel_out
+);

@@ -1,0 +1,6 @@
+Design a pulse-width modulation (PWM) generator that produces a variable pulse signal with a duty cycle controlled by an 8-bit input signal. The module operates based on a clock input, incrementing a counter on each clock cycle to manage the timing of the output pulse. The duty cycle is dynamically adjusted based on the control signal, which is scaled to a range from 0 to a maximum of 100. The PWM signal will output high when the counter is greater than the calculated duty cycle and low otherwise, allowing for fine-tuned control of the output signal's width corresponding to the input control value.
+module top_module(
+  input clk, // clock signal
+  input [7:0] ctrl, // control signal
+  output reg pwm // pulse signal with variable duty cycle
+);

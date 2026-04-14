@@ -1,0 +1,10 @@
+Design a 32-bit deserializer circuit that converts serialized input data into parallel output. The module operates on a clock signal, enabling data processing only when the 'enable' signal is high. Upon receiving a reset signal, the output is cleared, and the internal counter reset. The deserializer takes in data bit-by-bit, storing each incoming bit in a designated position in the output register until the specified frame size is reached. Once the number of bits specified by 'framesize' is collected, it sets the 'complete' flag high, indicating that the deserialization process is finished. The deserializer supports proper synchronization and control through its input signals.
+module top_module(
+	clk, 		//serialized data proper clock
+	enable, 	//suspend while enable on low
+	reset, 		//set output to zero and reset counter to 0 on high
+	framesize, 	//number of bits to be deserialized
+	in, 		//serialized data
+	out, 		//deserialized data
+	complete	//reset counter to 0 and hold out's data while high
+);

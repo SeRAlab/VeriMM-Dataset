@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement a module for a simple 8-bit shift register. The shift register shifts its content to the right on every positive edge of the clock signal clk. If the reset signal rst_n is asserted low, the shift register should reset to 0. The shift register should also have an input data_in, which is the new bit to be shifted in.
+
+Module name:  
+    shift_register      
+
+Input ports:
+    clk: Clock signal.
+    rst_n: Reset signal (active low).
+    data_in: Input data bit to be shifted in.
+
+Output ports:
+    data_out: 8-bit output data.
+
+Implementation:
+The shift_register module shifts its content to the right on each positive edge of the clock signal clk, with the new bit data_in being shifted in. If the reset signal rst_n is asserted low, the shift register resets to 0. The content of the shift register is synchronized with the clock.
+
+Give me the complete code.
+
+module shift_register(
+    input clk,
+    input rst_n,
+    input data_in,
+    
+    output reg [7:0] data_out
+);

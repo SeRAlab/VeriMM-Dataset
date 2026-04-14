@@ -1,0 +1,7 @@
+Design a 4-bit serial-in parallel-out (SIPO) shift register. On each rising edge of the clock, if the shift enable (SH_EN) signal is active, the register shifts in a new bit from the serial input (SER_IN) while the most significant bit is discarded. When SH_EN is low, the register retains its current state. The parallel output (PAR_OUT) reflects the contents of the shift register, allowing for simultaneous access to all four bits.
+module top_module(
+    input clk,
+    input SER_IN,
+    input SH_EN,
+    output [3:0] PAR_OUT
+);

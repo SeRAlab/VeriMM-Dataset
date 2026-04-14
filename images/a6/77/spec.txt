@@ -1,0 +1,12 @@
+Design a D-type flip-flop with asynchronous reset and sleep functionality. The module captures the value of input D on the rising edge of the CLK signal while allowing for an asynchronous RESET condition that clears the output Q. Additionally, the flip-flop incorporates a sleep mode controlled by the SLEEP_B signal, which disables output updates when inactive. The module also includes a notifier output to signal any operational issues or events. This implementation ensures reliable data storage and management in power-sensitive applications.
+module top_module(
+    input D,
+    input CLK,
+    input RESET,
+    input SLEEP_B,
+    input KAPWR,
+    input VGND,
+    input VPWR,
+    output reg Q,
+    output reg NOTIFIER
+);

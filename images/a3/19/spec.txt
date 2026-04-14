@@ -1,0 +1,9 @@
+Design a module that functions as a flexible arithmetic and logic unit (ALU) with variable operations controlled by selection signals. The module utilizes a 2-to-1 multiplexer to select between inputs 'a' and 'b' or the bitwise OR of 'a' and 'b' based on the selector signals sel_b1 and sel_b2. It then adds the selected output to a 16-bit input 'c'. Additionally, when sel_b1 is set to 1, it performs subtraction of 'c' from the multiplexer output instead. The final result is output as a 16-bit vector, allowing for various arithmetic operations based on the input control signals.
+module top_module(
+    input a,
+    input b,
+    input sel_b1,
+    input sel_b2,
+    input [15:0] c,
+    output [15:0] out
+);

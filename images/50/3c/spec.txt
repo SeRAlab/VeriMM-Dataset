@@ -1,0 +1,11 @@
+Implement a straightforward calculator module capable of performing basic arithmetic operations—addition, subtraction, multiplication, and division—on two 8-bit inputs based on a 2-bit operation selector. The module outputs an 8-bit result, along with flags for overflow and zero conditions. The internal calculation is handled in a 16-bit temporary register to accommodate larger intermediate values and ensure accurate overflow detection. The calculations are synchronized to a clock edge and can be reset to initial values via a reset signal.
+module top_module(
+   input  wire        clk,
+   input  wire        rst,
+   input  wire [1:0]  op,
+   input  wire [7:0]  num1,
+   input  wire [7:0]  num2,
+   output reg  [7:0]  result,
+   output reg         overflow,
+   output reg         zero
+);

@@ -1,0 +1,11 @@
+Design a register comparator that checks if two n-bit wide signals, `sig` and `rfr`, are equal on the rising edge of the clock. When the `check_en` input is active and the signals are unequal, it sets the `check` output high. Additionally, if `verbose_en` is enabled, it outputs the current values of `sig` and `rfr` to the console for debugging. The module also has reset functionality to clear the signals when `rst` is triggered.
+module top_module(
+  input clk,
+  input rst,
+  input check_en,
+  input verbose_en,
+  input [n-1:0] sig,
+  input [n-1:0] rfr,
+  output reg check,
+  output reg verbose
+);

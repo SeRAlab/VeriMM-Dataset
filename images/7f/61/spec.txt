@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement a module for a 3-bit up/down counter. The counter increments its value by 1 on every positive edge of the clock signal clk if the up signal is high, and decrements its value by 1 if the up signal is low. The counter should have a synchronous reset signal rst, which sets the counter value to 0 when asserted.
+
+Module name:  
+    up_down_counter      
+
+Input ports:
+    clk: Clock signal.
+    rst: Synchronous reset signal (active high).
+    up: Control signal to count up or down.
+
+Output ports:
+    count: 3-bit output representing the current count value.
+
+Implementation:
+The up_down_counter module increments its count value by 1 on every positive edge of the clock signal clk if the up signal is high, and decrements its value by 1 if the up signal is low. When the reset signal rst is asserted, the count value is set to 0 on the next positive edge of clk. The count value is a 3-bit binary number.
+
+Give me the complete code.
+
+module up_down_counter(
+    input clk,
+    input rst,
+    input up,
+    
+    output reg [2:0] count
+);

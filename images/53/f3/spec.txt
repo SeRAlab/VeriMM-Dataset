@@ -1,0 +1,8 @@
+Design a last-in, first-out (LIFO) memory block with 8 entries, functioning as a stack. The module allows data to be pushed onto the stack when the write enable (wr_en) signal is active, storing an 8-bit input value (data_in) at the current top index of the stack. On each clock cycle, if the reset (rst) signal is asserted, the top index is reset, while if wr_en is not activated and the stack is not empty, the top index is decremented, effectively popping the top value. The output (data_out) reflects the value at the current top of the stack.
+module top_module(
+  input clk,
+  input rst,
+  input wr_en,
+  input [7:0] data_in,
+  output reg [7:0] data_out
+);

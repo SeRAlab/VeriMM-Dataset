@@ -1,0 +1,8 @@
+Design a datapath module for unsigned integer division. The module accepts an 8-bit dividend and divisor, loading them into registers upon receiving a 'Load_regs' signal. It performs division by repeatedly subtracting the divisor from the dividend while counting the number of subtractions in a 16-bit quotient register (QR) when the 'Dec_div' signal is active. The operation is clock-driven and supports an asynchronous reset to initialize the registers and output to zero. An output signal 'Zero' indicates whether the remaining dividend (AR) is zero, signaling the completion of the division.
+module top_module(
+	input clock, reset,
+	input [7:0] dividend, divisor,
+	input Load_regs, Dec_div,
+	output reg [15:0] QR,
+	output Zero
+);

@@ -1,0 +1,8 @@
+Design a circuit that performs conditional output generation based on input selections. It takes two 4-bit wide inputs, A and B, and a 2-bit selection input, C. The functionality utilizes a combinatorial logic block that, depending on the value of C, outputs the result of a bitwise XOR operation between A and B (when C equals 2), directly outputs B (when C equals 1), or defaults to outputting A (when C is 0). This intermediate result is then latched into a register on the positive edge of a clock signal, providing a synchronized 4-bit output at the `out` port.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [1:0] C,
+    input clk,          // Added clk input
+    output reg [3:0] out
+);

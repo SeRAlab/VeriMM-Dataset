@@ -1,0 +1,6 @@
+Design a reset signal generator that creates an active-low reset output, rst_n. The module monitors an external reset input, rst, and a clock signal, clk. On the falling edge of the clock, if rst is asserted, the output rst_n is driven low, and an internal register r is reset to zero. If rst is not asserted, the module shifts the value of r into rst_n, effectively creating a delayed and synchronized active-low reset signal that reflects the state of the internal register.
+module top_module(
+    input   rst,
+    input   clk,
+    output  reg rst_n
+);

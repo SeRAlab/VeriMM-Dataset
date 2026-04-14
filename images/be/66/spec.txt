@@ -1,0 +1,19 @@
+Design a circuit that performs an 18-bit signed multiplication of two input numbers (A and B) followed by the addition of a third input number (C). The module features clock-controlled synchronous operations with reset and enable signals for each input and output. When enabled, it updates the registers for A, B, and C based on their respective control signals. It returns a 36-bit output (Z) representing the result of the multiplication of A and B, which is then added to C, accommodating both signed and unsigned input configurations. This design is suitable for applications requiring precise arithmetic manipulations in digital processing systems.
+module top_module(
+  input [17:0] A,
+  input [17:0] B,
+  input [17:0] C,
+  input CLK,
+  input CEA,
+  input RSTA,
+  input CEB,
+  input RSTB,
+  input CEC,
+  input RSTC,
+  input SIGNEDA,
+  input SIGNEDB,
+  input SIGNEDC,
+  input RSTOUT,
+  input CEOUT,
+  output [35:0] Z
+);

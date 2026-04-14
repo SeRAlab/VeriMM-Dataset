@@ -1,0 +1,7 @@
+Implement a digital clock circuit that counts time in hours, minutes, and seconds using a 1 Hz clock input. The module maintains a 24-hour time format, where the hours range from 0 to 23, minutes from 0 to 59, and seconds also from 0 to 59. Upon receiving a clock pulse, the module increments the seconds; when seconds reach 60, it resets to 0 and increments the minutes. Similarly, when minutes reach 60, they reset to 0 and increment the hours. The design includes a reset mechanism for the 24-hour cycle, ensuring the count wraps around after 86400 seconds (24 hours). The outputs are also padded appropriately to ensure they are 4 bits wide.
+module top_module(
+    input clk_1hz,
+    output reg [3:0] hours,
+    output reg [3:0] minutes,
+    output reg [3:0] seconds
+);

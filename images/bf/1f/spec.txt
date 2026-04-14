@@ -1,0 +1,15 @@
+Design a 32-entry register file with 32-bit wide registers, used for storing and retrieving data. This module allows two read operations and one write operation per clock cycle. It accepts read address inputs `rs` and `rt` for outputting the contents of the specified registers as `outA` and `outB`, respectively. A write operation is enabled through the `wen` control signal, which allows data from `inData` to be written to the register specified by `wreg`. The design includes a reset functionality that initializes the register file when the reset signal is low.
+module top_module(
+    input           clk,
+    input           resetn,
+
+    input [4 :0]    rs,
+    input [4 :0]    rt,
+
+    input           wen,    
+    input [4 :0]    wreg,   
+    input [31:0]    inData, 
+
+    output[31:0]    outA,
+    output[31:0]    outB
+);

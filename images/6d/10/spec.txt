@@ -1,0 +1,13 @@
+Design a 1KB by 16-bit FIFO (First In, First Out) memory buffer that allows asynchronous read and write operations. The module features inputs for data, read and write requests, and a reset signal, along with outputs indicating the FIFO's status, including whether it is empty, full, or almost empty, as well as the current data being accessed and the total used memory space. Upon receiving a write request, the FIFO stores the incoming data at the head pointer's position, updates the head pointer, and tracks the number of utilized entries. Conversely, on a read request, it outputs the data at the tail pointer's position, updates the tail pointer, and decrements the count of used entries. The design effectively manages data flow and ensures that operations remain within the FIFO's defined boundaries.
+module top_module(
+    aclr,
+    clock,
+    data,
+    rdreq,
+    wrreq,
+    almost_empty,
+    empty,
+    full,
+    q,
+    usedw
+);

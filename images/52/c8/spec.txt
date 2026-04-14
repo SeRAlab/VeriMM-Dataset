@@ -1,0 +1,17 @@
+Implement a Verilog module based on the following description.
+The following diagram is a Moore machine implementation of a digital lock controller. Implement in Verilog using one-hot encoding. Resets into state Locked and reset is asynchronous active-high.
+
+The state machine has the following states and their corresponding outputs: 
+1. state Locked (lock = 1).
+2. state Unlocked (lock = 0).
+
+State transitions:
+1. From state Locked: If correct_code = 1, then transition to state Unlocked. If correct_code = 0, then transition to state Locked.
+2. From state Unlocked: If incorrect_code = 1, then transition to state Locked. If incorrect_code = 0, then transition to state Unlocked.
+
+module top_module (
+        input clk,
+        input areset,
+        input correct_code,
+        input incorrect_code,
+        output reg lock);

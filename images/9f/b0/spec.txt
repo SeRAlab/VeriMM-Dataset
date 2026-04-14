@@ -1,0 +1,8 @@
+Design a pipeline register that stores input data and updates its output based on clock and control signals. The module operates on the negative edge of a reset signal (`rst_n`) or the positive edge of a clock signal (`clk_i`). If the reset is active (reset is low), the output (`data_o`) is cleared to zero. When not in reset, if the `stall` signal is low, the input data (`data_i`) is passed through to the output; if `stall` is high, the output is also set to zero, effectively "stalling" the pipeline operation. This module is useful in synchronous digital designs where data needs to be temporarily held while managing flow control through stalling.
+module top_module(
+                    clk_i,
+                    rst_n,
+                    stall,
+                    data_i,
+                    data_o
+                    );

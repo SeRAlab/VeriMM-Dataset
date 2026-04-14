@@ -1,0 +1,10 @@
+Design a programmable up/down counter that increments or decrements a value based on a control signal. The counter can be reset to zero, loaded with a specific 8-bit value, and it outputs the current count along with a carry flag indicating when the count reaches 255. When the 'direction' input is high, the counter increments, and when low, it decrements. This functionality is suitable for applications requiring count management in both increasing and decreasing scenarios.
+module top_module(
+  input clk,
+  input reset,
+  input load,
+  input direction,
+  input [7:0] data_in,
+  output reg [7:0] count,
+  output carry
+);

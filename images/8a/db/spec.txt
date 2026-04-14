@@ -1,0 +1,8 @@
+Design a programmable shift register memory block with a width of `n` bits (default is 8 bits). It captures incoming data on a rising clock edge, shifting the current contents of the register to the left and inserting new data from `data_in` at the least significant bit when the `shift` control signal is asserted. The register can be reset to zero when the `reset` signal is activated. The most significant bit of the shift register is output as `data_out`, allowing for easy retrieval of the data stored in that position.
+module top_module(
+  input data_in,
+  input clk,
+  input reset,
+  input shift,
+  output reg data_out
+);

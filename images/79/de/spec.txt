@@ -1,0 +1,10 @@
+Design a column counter that monitors input signals for changes and outputs specific condition flags. It uses a clock signal to update internal registers for column indices and a count of consecutive pushes. When a reset is activated, the counter and timer are initialized. When the push_in signal is high, the module captures the in_col_index and starts a timer. If the same index is pushed multiple times, the counter increases up to a maximum value, but any change in the input index triggers a push_out signal, indicating a transition, along with outputting the current column index and count. The circuit effectively manages state transitions and counts occurrences, making it suitable for applications like input debouncing or event tracking in a digital system.
+module top_module(
+    input reset,
+    input clk,
+    input push_in,
+    output push_out,
+    input [31:0] in_col_index,
+    output [31:0] out_col_index,
+    output [4:0] out_count
+);

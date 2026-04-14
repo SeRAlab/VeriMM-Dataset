@@ -1,0 +1,5 @@
+Develop a ring oscillator that generates a square wave output whose frequency can be controlled using an external signal. The oscillator consists of a configurable number of stages (4 by default), each implemented as a synchronous D flip-flop. The output frequency is divided based on the control signal: when the control signal is high, the oscillator uses a threshold of 100,000 clock cycles; when low, it uses a threshold of 200,000 clock cycles, effectively toggling the output signal at half the frequency when selected. The design allows for dynamic frequency adjustment, enabling versatile applications in clock generation and signal modulation.
+module top_module(
+  input ctrl,
+  output reg out // Change 'wire' to 'reg' since it will be driven in an always block
+);

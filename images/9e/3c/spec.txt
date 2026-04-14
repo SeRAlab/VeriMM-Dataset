@@ -1,0 +1,7 @@
+Design a synchronous counter that increments on a specific rising edge of a 32-bit input signal. The counter triggers when the upper bit of the input goes from LOW to HIGH and the lower 31 bits are all HIGH, representing a unique transition condition. The count is a 4-bit output that resets to zero when the reset signal is active or when it reaches a maximum count of 15. This module effectively serves as a rising edge detector coupled with a 4-bit counter for event counting in digital circuits.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] in,
+    output reg [3:0] count
+);

@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement a 16-bit register file with 8 registers. The register file should support two read ports and one write port. It should have an asynchronous read and a synchronous write operation. The write operation should be triggered on the rising edge of the clock signal.
+
+Module name:
+   reg_file_16x8
+
+Input ports:
+   clk: Clock signal used for synchronous write operation.
+   reset: Reset signal used to initialize the register file.
+   write_enable: Signal to enable the write operation.
+   write_data: 16-bit input data to be written to the register.
+   write_address: 3-bit input specifying the address of the register to write.
+   read_address1: 3-bit input specifying the address of the first register to read.
+   read_address2: 3-bit input specifying the address of the second register to read.
+
+Output ports:
+   read_data1: 16-bit output representing the data read from the first register.
+   read_data2: 16-bit output representing the data read from the second register.
+
+Implementation:
+The register file contains an array of 8 registers, each 16 bits wide.
+The read operations are asynchronous and simply return the contents of the addressed registers.
+The write operation is synchronous and occurs on the rising edge of the clock signal if the write_enable signal is high.
+If the reset signal is high, all registers are initialized to 0.
+
+Give me the complete code.

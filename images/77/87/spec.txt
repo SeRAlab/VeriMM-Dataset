@@ -1,0 +1,9 @@
+Design a 32-bit counter module with load functionality. When the clock signal is active, the counter increments its value if the enable signal is high. If the reset signal is issued, both the counter and output are set to zero. Additionally, if the load signal is asserted while enable is high, the counter loads the provided 32-bit data input instead of incrementing. The current value of the counter is reflected on the output.
+module top_module(
+  input clk,
+  input reset,
+  input enable,
+  input load,
+  input [31:0] data,
+  output reg [31:0] q
+);

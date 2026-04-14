@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform clock gating, a crucial technique used in digital IC design to reduce power consumption. Clock gating works by controlling the delivery of the clock signal to certain parts of the circuit based on the operational need, effectively reducing dynamic power consumption by stopping the clock in idle parts of the circuit. This module achieves clock gating by providing a gated clock (`gclk`) output, which is the input clock (`clk`) modulated by an enable signal. Additionally, it incorporates a scan mode feature through the `scan_enable` input, ensuring that the clock can be forced on for test and scan purposes, overriding the normal enable mechanism. This functionality is essential in modern digital systems, particularly in low-power applications and systems where power efficiency is a critical design parameter.
+
+Module name:  
+	omsp_clock_gate
+
+Input ports:
+	clk (Input): The input clock signal. This is the primary clock that is being modulated by the module to produce the gated clock. It is a digital signal (single bit) that typically comes from a clock distribution network within the IC.
+	enable (Input): The enable signal for the clock gating logic. When high, it allows the input clock to pass through as the gated clock (subject to the state of scan_enable). When low, it prevents the clock from passing through, effectively gating the clock. This is a digital signal (single bit).
+	scan_enable (Input): The scan enable signal. This is used to override the normal enable logic for test and scan purposes, ensuring that the clock can always be enabled when required for such operations. It is a digital signal (single bit).
+Output ports:
+	gclk (Output): The gated clock output. This signal is the result of the input clock modulated by the enable mechanism within the module. It is a digital signal (single bit) that serves as the clock to other parts of the system that require conditional activation based on the module's enable logic.
+
+
+Implementation:
+The omsp_clock_gate module is designed to generate a gated clock signal (gclk) based on the input clock (clk), an enable signal (enable), and a scan enable signal (scan_enable). The primary function of this module is to control the propagation of the clock signal through the design, allowing for reduced power consumption by disabling clocking to certain parts of the circuit when they are not in use. This technique is particularly useful in power-sensitive applications where managing dynamic power consumption is crucial.
+
+Give me the complete code.
+

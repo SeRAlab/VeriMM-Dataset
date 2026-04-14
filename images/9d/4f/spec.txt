@@ -1,0 +1,9 @@
+Design a synchronous binary counter that increments on each rising edge of the clock when enabled (en). The counter resets to zero when the reset signal (rst) is asserted. Additionally, it incorporates a test input (test_input) that, when high, triggers the counter to output a carry-like signal (test_output) if the counter reaches its maximum value (15 in decimal or 4'hF in hexadecimal). In this case, test_output indicates that the counter has overflowed, returning to zero; otherwise, test_output remains low. If test_input is low, the counter continues to increment without affecting test_output.
+module top_module(
+    input clk,
+    input rst,
+    input en,
+    input test_input,
+    output reg test_output,
+    output reg [3:0] count_out
+);

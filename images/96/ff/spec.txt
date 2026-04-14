@@ -1,0 +1,7 @@
+Design a circuit that measures elapsed time in clock cycles between a start and stop signal. When the start signal is asserted, a counter begins counting until the stop signal is asserted. The elapsed time (in clock cycles) is then captured in a 32-bit register. The counter value resets upon receiving a start signal and freezes its value when the stop signal is detected, allowing for a timed measurement of duration.
+module top_module(
+  input clk,        // Added clk input
+  input start,
+  input stop,
+  output reg [31:0] elapsed_time
+);

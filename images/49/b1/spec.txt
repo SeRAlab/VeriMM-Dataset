@@ -1,0 +1,9 @@
+Design a clock domain crossing synchronization module that transfers a single data bit from one clock domain to another while preserving clock signals and reset state. The module uses a pulse generator synchronized to the input clock to ensure reliable data capture in the shift register. The shift register operates on the output clock, accumulating the incoming data values based on the generated pulse, and outputs the least significant bit of this register as the synchronized data. The output clock and reset signals are directly passed through from their respective inputs to maintain consistency across different domains.
+module top_module(
+  input clk_in,
+  input rst_in,
+  input data_in,
+  output clk_out,
+  output rst_out,
+  output data_out
+);

@@ -1,0 +1,7 @@
+Design a 4-bit shift register with serial input. The module captures a single bit from the serial input (SER_IN) on the rising edge of the clock (clk) when the shift enable signal (SH_EN) is high. The data is shifted through four pipeline registers, with the most recent serial input being stored in the first register, and then propagating through each consecutive register until it is output as a 4-bit parallel output (PAR_OUT) from the fourth register. When SH_EN is low, the contents of the registers remain unchanged.
+module top_module(
+    input clk,
+    input SER_IN,
+    input SH_EN,
+    output [3:0] PAR_OUT
+);

@@ -1,0 +1,22 @@
+Design a programmable input/output (PIO) module that provides an interface for reading and writing data to eight bi-directional signal lines (coe_P0 to coe_P7). The module utilizes a reset input and a clock signal for synchronous operation. It supports acts of writing data and enabling outputs based on the address and byte enable signals provided via the AVS GPIO interface. Upon a write operation, it updates its internal registers for data output and control, while also allowing data to be read back in a structured form based on specific address requests. The PIO effectively acts as a bridge between the control logic and external devices, enabling flexible communication through eight independent lines.
+module top_module(
+input					rsi_MRST_reset,
+input					csi_MCLK_clk,
+
+input		[31:0]	avs_gpio_writedata,
+output	[31:0]	avs_gpio_readdata,
+input		[2:0]		avs_gpio_address,
+input		[3:0]		avs_gpio_byteenable,
+input					avs_gpio_write,
+input					avs_gpio_read,
+output				avs_gpio_waitrequest,
+
+inout					coe_P0,
+inout					coe_P1,
+inout					coe_P2,
+inout					coe_P3,
+inout					coe_P4,
+inout					coe_P5,
+inout					coe_P6,
+inout					coe_P7
+);

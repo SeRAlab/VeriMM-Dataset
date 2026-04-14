@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit up-counter with a synchronous reset. The counter should count from 0 to 15 and then roll over to 0. The module should have an enable signal to control the counting operation. When the enable signal is high, the counter should count up on each clock pulse. When the enable signal is low, the counter should retain its value. The counter should reset to 0 when the reset signal is asserted.
+
+Module name:  
+    up_counter_4bit   
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high synchronous reset signal.
+    en: Enable signal for the counter.
+
+Output ports:
+    count: 4-bit output representing the current count value.
+
+Implementation:
+The count register is triggered on the positive edge of the clock signal (posedge clk).
+On reset, indicated by rst, the count register is cleared to 0.
+If the enable signal (en) is high, the count register is incremented by 1. When the count reaches 15, it rolls over to 0 on the next clock pulse.
+
+Give me the complete code.
+
+module up_counter_4bit(
+    input clk,
+    input rst,
+    input en,
+    output reg [3:0] count
+);

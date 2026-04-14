@@ -1,0 +1,13 @@
+Design a true dual-port RAM module capable of storing 8 entries of 4 bits each, with synchronous access for both reading and writing based on control signals. The module resets its memory contents to zero upon a low reset signal. In addition, it includes a byte-reversing functionality that rearranges the input data bytes before processing them. Finally, it incorporates an XOR operation that combines the reversed input data with multiple copies of the read data, outputting the result. This design effectively combines memory storage, data reordering, and basic arithmetic logic unit (ALU) operations in a compact form.
+module top_module(
+    input clk,
+    input rst_n,
+    input write_en,
+    input [7:0] write_addr,
+    input [3:0] write_data,
+    input read_en,
+    input [7:0] read_addr,
+    output reg [3:0] read_data,
+    input [31:0] in,
+    output [31:0] out
+);

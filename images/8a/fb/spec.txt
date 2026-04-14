@@ -1,0 +1,25 @@
+Design a monitoring and control module for a specific electronic system, intended to manage multiple access operations to various FIFOs (First In, First Out) buffers. The module accepts various control signals and data from external components and provides an output data stream along with flags indicating specific statuses or conditions (emon_zero_flag). It effectively interfaces with multiple FIFO buffers for read and write operations, and supports external memory access, making it versatile for both data input and output handling. The output's functionality may influence other components in the design, ensuring synchronization and correct data flow throughout the system.
+module top_module(
+    // Inputs
+    input clk,
+    input reset,
+    input mi_access,
+    input mi_write,
+    input [19:0] mi_addr,
+    input [31:0] mi_data_in,
+    input erx_rdfifo_access,
+    input erx_rdfifo_wait,
+    input erx_wrfifo_access,
+    input erx_wrfifo_wait,
+    input erx_wbfifo_access,
+    input erx_wbfifo_wait,
+    input etx_rdfifo_access,
+    input etx_rdfifo_wait,
+    input etx_wrfifo_access,
+    input etx_wrfifo_wait,
+    input etx_wbfifo_access,
+    input etx_wbfifo_wait,
+    // Outputs
+    output [31:0] mi_data_out,
+    output [5:0] emon_zero_flag
+);

@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform various types of data manipulation on its input data, based on the specified swap type. It supports four different swap operations: no swap, half-word swap, byte swap, and bit reversal. The module's primary function to rearrange or invert the bits of the input data according to the swap operation selected by the `swap_type` input. This functionality is crucial in systems requiring data format adjustments for compatibility, endianness conversion, or data manipulation for specific algorithmic purposes. The module can be integrated into broader digital systems such as communication interfaces, data processing units, or any application requiring dynamic data reordering.
+
+Module name:  
+	data_swap
+
+Input ports:
+	data_in [WIDTH  1:0]: A vector input port that carries the data to be manipulated. The size of this data is parameterizable through the WIDTH parameter, allowing for flexibility in different use cases.
+	swap_type [1:0]: A 2bit input that selects the type of swap operation to be performed on data_in. The encoding of the swap types is as follows:
+	2'b00: No swap.
+	2'b01: Halfword swap.
+	2'b10: Byte swap.
+	2'b11: Bit reversal (bit swap).
+Output ports:
+	data_swap [WIDTH  1:0]: The output port that presents the data after the specified swap operation has been performed. The width of this output matches that of data_in.
+
+
+Implementation:
+The data_swap module is designed to perform different types of data manipulation on an input signal data_in based on the swap_type signal. The module supports a 32-bit wide data input by default, which can be adjusted through the WIDTH parameter. The manipulation types include no swap, half-word swap, byte swap, and bit swap, controlled by a 2-bit swap_type input. The output data_swap reflects the result of the selected data manipulation.
+The core logic of the module is implemented using a combination of generate blocks and conditional assignments. The generate construct allows for the creation of repetitive structures based on compile-time constants, making the design scalable and parameterizable. Inside the generate block, nested for-loops iterate over the types of swaps and the bits of the input data to conditionally assign the manipulated data to intermediate wires.
+
+Give me the complete code.
+

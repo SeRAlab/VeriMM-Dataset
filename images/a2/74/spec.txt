@@ -1,0 +1,23 @@
+Please act as a professional Verilog designer.
+
+Implement a module for an 8-bit shift register with serial input and parallel output. The shift register should shift the data on each rising edge of the clk signal.
+
+Module name:  
+    shift_register
+
+Input ports：
+    clk: Clock signal.
+    rst: Reset signal (synchronous, active high).
+    serial_in: Serial data input.
+
+Output ports：
+    parallel_out: 8-bit parallel data output.
+
+Implementation:
+Declare the module shift_register with input and output ports as specified in the ports statement.
+Declare a reg to keep track of the shift register value parallel_out.
+Inside an always block, sensitive to the positive edge of the clk signal, implement the logic for shifting the data and resetting.
+In the reset condition (rst), set the parallel_out register to 0.
+On each positive edge of the clk signal, shift the contents of parallel_out to the left and input the serial_in value at the least significant bit.
+
+Give me the complete code.

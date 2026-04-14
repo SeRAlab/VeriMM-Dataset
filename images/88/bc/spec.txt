@@ -1,0 +1,9 @@
+Design a 16-bit timer module that increments a counter on each clock tick, with specific functionalities for resetting and limiting. The module accepts a clock input and a reset signal while monitoring a limit value. When the counter reaches the specified limit and there is a clock tick, it indicates a "full" status signal, unless it has been inhibited by the previous full condition. The output gives the current value of the counter, allowing for effective time tracking and control of operations based on the timer's state.
+module top_module(
+      input   io_tick,
+      input   io_clear,
+      input  [15:0] io_limit,
+      output  io_full,
+      output [15:0] io_value,
+      input   io_mainClk,
+      input   resetCtrl_systemReset);

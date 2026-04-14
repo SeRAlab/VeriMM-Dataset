@@ -1,0 +1,8 @@
+Design a 16-bit barrel shifter that can perform left or right shifting operations based on a 4-bit shift control input (S). The module takes two 16-bit inputs, A and B, and outputs a 16-bit result Y. The shifting operation is determined by the value of S, where different values correspond to specific shifts or selections of A or B. When S is 0000, the output is A; when S is 1111, the output is B. For other values of S, the circuit shifts A left or B right based on the most significant bit of S. This allows for versatile data manipulation within a synchronous design context.
+module top_module(
+    input [15:0] A,
+    input [15:0] B,
+    input [3:0] S,
+    input clk,               // Added clk input
+    output reg [15:0] Y
+);

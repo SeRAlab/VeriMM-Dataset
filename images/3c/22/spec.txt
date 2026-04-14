@@ -1,0 +1,22 @@
+
+Create a Verilog module that implements a simple Dynamic Voltage and Frequency Scaling (DVFS) control logic. The module should take a voltage level (2 bits) and a load level (3 bits) as inputs and output the appropriate frequency level (2 bits). The frequency level should be determined based on the following rules:
+1. If the voltage is 00, the frequency is always 00.
+2. If the voltage is 01, the frequency is determined by the load:
+   - 000: 01
+   - 001: 01
+   - 010: 01
+   - 011: 10
+   - 100: 10
+   - 101: 10
+   - 110: 11
+   - 111: 11
+3. If the voltage is 10, the frequency is:
+   - 000: 10
+   - 001: 10
+   - 010: 10
+   - 011: 11
+   - 100: 11
+   - 101: 11
+   - 110: 11
+   - 111: 11
+4. If the voltage is 11, the frequency is always 11.

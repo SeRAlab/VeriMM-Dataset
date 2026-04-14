@@ -1,0 +1,22 @@
+Implement a Verilog module with the following description: This is an EXMEM module with inputs and outputs. It has a synchronous reset and handles the passing of input signals to output signals.
+module top_module(
+
+	input 									Clk,
+	input										Reset,
+	input					[31:0]		PCIn,
+	input					[2:0]			WBIn,
+	input					[1:0]			MIn,
+	input					[31:0]		ALUResultIn,
+
+	input					[31:0]		MemDataIn,
+	input					[4:0]			DstMuxIn,
+
+
+	output	reg		[31:0]		PCOut,
+	(* equivalent_register_removal = "no" *) output	reg		[2:0]			WBOut,
+	(* equivalent_register_removal = "no" *) output	reg		[1:0]			MOut,
+	output	reg		[31:0]		ALUResultOut,
+
+	output	reg		[31:0]		MemDataOut,
+	output	reg		[4:0]			DstMuxOut
+);

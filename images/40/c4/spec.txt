@@ -1,0 +1,8 @@
+
+Design a 4-channel DMA controller that can handle data transfers from multiple sources to a single destination. The DMA controller should have the following inputs: 
+- `req`: a 4-bit request signal indicating which channel is requesting access (0-3).
+- `ack`: a 4-bit acknowledgement signal for the channels.
+- `clk`: clock signal.
+- `reset`: active high reset signal.
+
+The DMA controller should provide an output `active_channel`, which indicates which channel is currently active for data transfer. The controller should sequentially grant access to the channels based on the request signals, prioritizing lower-numbered channels in case of simultaneous requests. On reset, `active_channel` should be set to 4'b0000.

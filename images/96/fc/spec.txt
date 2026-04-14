@@ -1,0 +1,7 @@
+The module implements a simple encryption algorithm that combines the input data after a specific transformation. It takes a 16-bit input signal and splits it into two 8-bit segments, A and B. On each clock cycle, if the reset signal is low, it rotates the bits of segment A to the right by 2 positions, adds this rotated value to segment B, and outputs the 16-bit result. If the reset signal is high, it initializes its internal registers to zero. This design can be utilized in basic cryptographic operations requiring a substitution step followed by an addition, making it suitable for lightweight encryption applications.
+module top_module(
+  input aclk,
+  input reset,
+  input [15:0] data_in,
+  output reg [15:0] data_out
+);

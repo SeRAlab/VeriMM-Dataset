@@ -1,0 +1,7 @@
+Design a module that calculates and verifies a checksum for an n-bit wide input data block. The module computes the 1's complement of the sum of the input bits to generate a checksum. On a reset signal, it generates the checksum from the input and verifies it against the computed checksum from the same input. If the checksums match, the error output is asserted LOW; otherwise, it is HIGH, indicating an error in checksum verification. This functionality ensures data integrity by detecting errors in the input data stream.
+module top_module(
+  input [n-1:0] in,
+  input reset,
+  output reg [n-1:0] checksum, // Change wire to reg since it is assigned in an always block
+  output reg error             // Change wire to reg since it is assigned in an always block
+);

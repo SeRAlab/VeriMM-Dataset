@@ -1,0 +1,7 @@
+Design a circuit that performs an arithmetic operation based on a control signal, specifically an ALU write-back stage. The module takes an 8-bit input for read data, an 8-bit immediate value, and a control signal (ALUSrc). If ALUSrc is 0, it sets the operand to zero; otherwise, it uses the read data as the first operand. The output, Result, is the sum of this operand and the immediate data, allowing for dynamic selection between a zero and a value from memory for subsequent operations.
+module top_module(
+	input ALUSrc,
+	input [7:0] Read_Data,
+	input [7:0] Imm_Data,
+	output [7:0] Result
+    );

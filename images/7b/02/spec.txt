@@ -1,0 +1,7 @@
+Design a circuit that manages a wait cycle signaling mechanism for a bus controller. The module utilizes a two-bit counter (WAIT_CNT) to track and control wait states based on various zone signals (ROM, PORT, CARD) and an asynchronous signal nAS. The output nDTACK serves as a data acknowledge signal determined by the status of the address strobe (nAS) and the counter value. When an appropriate zone is active, the wait counter is loaded with specific values indicating the required wait states, decrementing on the negative edge of a clock, thus coordinating operations between different components in an intelligent way.
+module top_module(
+	input CLK_68KCLK, nAS,
+	input nROM_ZONE, nPORT_ZONE, nCARD_ZONE,
+	input nROMWAIT, nPWAIT0, nPWAIT1, PDTACK,
+	output nDTACK
+);

@@ -1,0 +1,37 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as an interface between a Wishbone bus and a flash memory device. Its primary functions include:
+
+Address Translation: It translates Wishbone addresses to flash memory addresses, allowing the CPU or any Wishbone-compliant master to access the flash memory.
+Data Handling: It facilitates data transfers between the Wishbone bus and the flash memory. This includes both reading data from and writing data to the flash memory.
+Control Signal Management: It generates the necessary control signals for flash memory operations based on the Wishbone bus signals, such as enabling the flash memory, selecting read or write operations, and handling wait states for synchronization.
+
+This module plays a crucial role in systems where flash memory is used for storage, enabling the system's processor or any Wishbone-compliant device to access the flash memory seamlessly as part of the system's memory map.
+
+Module name:  
+	wb_flash
+
+Input ports:
+	clk_i: Clock input. Synchronizes the module's operations.
+	nrst_i: Active low reset. Resets the module's internal state.
+	wb_adr_i [aw1:0]: Wishbone address input. Specifies the address for data transfers.
+	wb_dat_i [dw1:0]: Wishbone data input. Contains data to be written to flash memory.
+	wb_sel_i [3:0]: Wishbone byte select. Specifies which byte(s) of the data bus are relevant for the current operation.
+	wb_we_i: Wishbone write enable. Indicates if the current operation is a write.
+	wb_stb_i: Wishbone strobe. Indicates an active transfer.
+	wb_cyc_i: Wishbone cycle. Indicates the start and duration of a bus cycle.
+Output ports:
+	wb_dat_o [dw1:0]: Wishbone data output. Contains data read from flash memory.
+	wb_ack_o: Wishbone acknowledge. Indicates the completion of a data transfer.
+	flash_adr_o [18:0]: Flash memory address output. Specifies the flash memory address for the current operation.
+	flash_dat_o [7:0]: Flash memory data output. Contains data to be written to flash memory.
+	flash_oe: Flash output enable. Enables reading data from flash memory.
+	flash_ce: Flash chip enable. Activates the flash memory chip for operations.
+	flash_we: Flash write enable. Enables writing data to flash memory.
+
+
+Implementation:
+This RTL module, named wb_flash, serves as an interface between a Wishbone bus and a flash memory device. The module is parameterized with address width (aw) and data width (dw), and it operates with a configurable wait state (ws) to accommodate the timing requirements of the flash memory. The core functionality of this module is to translate Wishbone bus transactions into flash memory operations, handling both read and write commands while managing wait states for synchronization.
+
+Give me the complete code.
+

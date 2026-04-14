@@ -1,0 +1,19 @@
+Implement a Verilog module with the following description: Memory access controller module with error checking.
+module top_module(
+            input  wire           clock          
+           ,input  wire           reset
+
+            
+           ,input                 mem_waitrequest
+           ,output reg      [1:0] mem_id = 1
+           ,output reg     [29:0] mem_address = 0
+           ,output reg            mem_read = 0
+           ,output reg            mem_write = 0
+           ,output reg     [31:0] mem_writedata = 0
+           ,output reg      [3:0] mem_writedatamask = 0
+           ,input          [31:0] mem_readdata
+           ,input           [1:0] mem_readdataid
+
+
+           ,output reg     [31:0] errors = 0
+           );

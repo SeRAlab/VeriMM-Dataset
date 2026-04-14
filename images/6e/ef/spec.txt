@@ -1,0 +1,7 @@
+Design a 7-segment display driver that multiplexes four digits of a 28-bit input number across a single display. The module uses a clock signal to cycle through each digit, activating one segment at a time while updating the corresponding output for the 7-segment display. The digit selection is managed through a 2-bit counter derived from a division of the clock signal. For each active digit, the relevant 7-segment encoding is generated based on specific bits of the input number, allowing for a dynamic display of the entire 28-bit number across four individual segments.
+module top_module(
+	input clk_i, 
+	input [27:0] number_i, 
+	output reg [6:0] seg_o, 
+	output reg [3:0] an_o
+    );

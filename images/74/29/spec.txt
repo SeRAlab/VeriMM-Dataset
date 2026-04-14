@@ -1,0 +1,7 @@
+Design a module that integrates a half adder and a 4-to-1 multiplexer. The half adder takes two single-bit inputs (a and b) and produces a sum and a carry output. The multiplexer selects one of four input signals based on a 2-bit select line. The resulting output combines the mux output or the half adder’s sum and carry, depending on the condition defined for the final output. The module outputs a 4-bit result that encapsulates the selected operation based on the inputs and select lines, effectively allowing for dual functionality in a single design.
+module top_module(
+    input a, b,                     // Two input bits for the half adder
+    input [3:0] mux_inputs,         // Four inputs for the 4-to-1 multiplexer
+    input [1:0] select,             // Two select bits for the 4-to-1 multiplexer
+    output [3:0] result             // 4-bit output from the functional module
+);

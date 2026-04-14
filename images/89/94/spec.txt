@@ -1,0 +1,7 @@
+Design a finite impulse response (FIR) filter that processes signed input samples to produce signed output samples. The module accepts a clock and reset signal, along with an input data signal, and uses a predetermined set of filter coefficients for the convolution operation. Upon each clock cycle, when the reset is not asserted, it shifts the input data through a shift register, storing the most recent samples, and calculates a weighted sum of the stored samples using the filter coefficients. The resulting output is continuously updated and made available at the output port.
+module top_module(
+  input clk,
+  input reset,
+  input signed [n-1:0] in,
+  output signed [m-1:0] out
+);

@@ -1,0 +1,7 @@
+Design a circuit that interfaces between an Analog-to-Digital Converter (ADC) and a Digital-to-Analog Converter (DAC). The module takes a 32-bit ADC input and generates a 32-bit DAC output based on the input value. If the ADC input is less than or equal to half of the maximum representable value (2^31 - 1), the DAC output is set to zero and the DAC enable signal is inactive. Otherwise, the DAC output reflects the ADC input, and the DAC enable signal is activated.
+module top_module(
+  input       clk,
+  input [31:0] adc_input,
+  output reg [31:0] dac_output, // Change to reg to allow assignment in always block
+  output reg      dac_en        // Change to reg to allow assignment in always block
+);

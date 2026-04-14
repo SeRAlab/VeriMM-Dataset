@@ -1,0 +1,8 @@
+Design a data processing module that takes a 10-bit input and operates on it based on a clock signal. Upon receiving a reset signal, it initializes the output to zero and marks it as invalid. When the reset is not active, if the input data is greater than or equal to 100, it outputs the same data and signals that the output is valid. Otherwise, it outputs zero and indicates that the output is not valid. This module essentially acts as a threshold detector and data router, controlling the validity of the output based on a specified condition.
+module top_module(
+    input wire [9:0] datain,
+    input wire clk,
+    input wire reset,
+    output reg [9:0] dataout,
+    output reg validout
+);

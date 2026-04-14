@@ -1,0 +1,10 @@
+Design a digital circuit for capturing and processing an 8-bit data stream synchronized with horizontal and vertical sync signals. This module operates on the negative edge of a clock signal (Pclk) and facilitates a dual-stage data acquisition process. During the active video period (indicated by Href being high), it captures specific bits from the input Data signal into a data register (data_in) sequentially over two clock cycles. In the first cycle, it stores bits 7 to 2, and in the second cycle, it saves bits 4 and 3 while signaling a write operation (regWrite) and providing a sequential address (addr_in) for memory storage. The module effectively transforms the incoming pixel data into a structured format ready for back-end processing or storage based on the sync signals.
+module top_module(
+    input [7:0] Data,
+    input Href,
+    input Vsync,
+    input Pclk,
+    output reg regWrite,
+    output reg [16:0]addr_in,
+	 output reg [7:0]data_in
+    );

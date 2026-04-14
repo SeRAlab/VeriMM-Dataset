@@ -1,0 +1,7 @@
+Design a 16-bit wide barrel shifter that can perform left circular shifts based on a 4-bit shift control input. The module takes two 16-bit inputs, A and B; it shifts A circularly according to the value of the SHIFT control signal, with results ranging from no shift to a maximum of 15 positions. Additionally, if B is non-zero, the output is logically OR'd with B after the shift operation. This functionality allows the design to manipulate and combine bit patterns efficiently, making it suitable for various digital signal processing applications.
+module top_module(
+    input [15:0] A,
+    input [15:0] B,
+    input [3:0] SHIFT,
+    output reg [15:0] S
+);

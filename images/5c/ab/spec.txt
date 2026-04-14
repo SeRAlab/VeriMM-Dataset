@@ -1,0 +1,8 @@
+Design a circuit that functions as an 8-bit arithmetic unit capable of performing addition and subtraction. The input `do_sub` serves as a control signal: when it is low (0), the circuit adds the 8-bit inputs `a` and `b`; when it is high (1), it subtracts `b` from `a`. The output is the result of the operation, and the module also includes a `result_is_zero` output that indicates whether the calculated result is zero.
+module top_module( 
+    input do_sub,
+    input [7:0] a,
+    input [7:0] b,
+    output reg [7:0] out,
+    output reg result_is_zero
+);

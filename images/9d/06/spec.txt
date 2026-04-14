@@ -1,0 +1,7 @@
+Design a 4-bit LED decoder that drives an 8-segment display based on a 4-bit input (dat_in) when enabled (en). The output (led_n) encodes the input value as a specific pattern corresponding to hexadecimal digits 0-9 and A-F, while an additional input (dot_in) controls the state of a decimal point on the display. If enabled, the module outputs the appropriate LED pattern; if not enabled, all LEDs are turned off, and the state of the decimal point is determined by the dot_in signal.
+module top_module(
+	input  [3:0] dat_in,
+	input  dot_in,
+	input  en,
+	output reg [7:0] led_n
+);

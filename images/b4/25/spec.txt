@@ -1,0 +1,8 @@
+Implement a rectangular shape renderer for a VGA display. The module determines whether a specified pixel at coordinates (x, y) falls within a rectangle defined by its center (center_x, center_y) and its dimensions (width, height). When the enable signal is low, the output 'show' becomes high if the pixel is located inside the rectangle; otherwise, it becomes low. When the enable signal is high, the output is always low, effectively disabling the rectangle rendering functionality.
+module top_module(
+  input enable,
+  input [10:0] x, y,
+  input [10:0] center_x, center_y,
+  input [10:0] width, height,
+  output reg show
+);

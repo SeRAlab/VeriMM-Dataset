@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a programmable register within a digital system. Its primary role to temporarily store 5-bit data values and manipulate these values based on control signals. The module supports basic operations such as initialization, data loading, data holding, and resetting to zero. It is a versatile component that can be utilized in various applications, including but not limited to, data buffering, state holding in finite state machines, or as part of larger arithmetic or control units within a digital system.
+
+Module name:  
+	register_pe
+
+Input ports:
+	datain [4:0]: A 5bit input data port. This port is used to input data into the register when the load signal is active.
+	initdata [4:0]: A 5bit input port used for initializing the register with a specific value when the initialize signal is active.
+	load: A control signal input. When high, it allows the data present on the datain port to be loaded into the register on the next positive edge of the clock.
+	initialize: A control signal input. When high, it triggers the register to load the value present on the initdata port on the next positive edge of the clock.
+	hold: A control signal input. When high, it enables the register to maintain its current value, effectively ignoring other control signals except for initialize.
+	clock: The clock input. The register updates its contents on the rising edge of this clock signal, based on the state of the control signals.
+Output ports:
+	dataout [4:0]: A 5bit output port. This port outputs the current value stored in the register.
+
+
+Implementation:
+The RTL module presented, named register_pe, is designed to perform specific operations on a 5-bit input data (datain) based on control signals (load, initialize, hold) and a clock signal (clock). The module can initialize, load new data, hold the current data, or clear its output based on the control signals provided. This functionality is encapsulated within a synchronous process triggered by the rising edge of the clock signal, making it a sequential logic design. The output of the module is a 5-bit signal (dataout), which reflects the current state of the internal register (out).
+
+Give me the complete code.
+

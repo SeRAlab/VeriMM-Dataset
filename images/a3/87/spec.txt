@@ -1,0 +1,9 @@
+Design a shift register with asynchronous reset and dual functionality. The module can either load new data into the register when the load signal is active or shift the existing data to the left on each clock cycle when enabled. When the reset signal is asserted, the register contents reset to zero. The outputs provide the current contents of the shift register and a parallel output, making it suitable for applications that require serial-to-parallel data conversion and temporary data storage.
+module top_module(
+    input clk,
+    input areset,  // async active-high reset to zero
+    input load,
+    input ena,
+    input [7:0] data,
+    output reg [7:0] q,
+    output reg [7:0] parallel_out);

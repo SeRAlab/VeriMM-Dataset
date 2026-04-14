@@ -1,0 +1,1 @@
+module top_module(output [31:0] result, input [31:0] pc);assign result = pc + 4;endmodule

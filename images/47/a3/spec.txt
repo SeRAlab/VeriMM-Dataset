@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that detects a specific 3-bit sequence in the input data stream. The FSM transitions through three states (S0, S1, S2) based on the input data and produces a signal indicating a successful match. When the input data transitions from low to high, it initiates the detection process, and upon completing the predefined sequence (high, low, high), it asserts the match output. The module also supports asynchronous resetting to initialize the state to S0 and clear the match signal.
+module top_module(
+  input clk,
+  input reset,
+  input data,
+  output reg match
+);

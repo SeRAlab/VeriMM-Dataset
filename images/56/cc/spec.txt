@@ -1,0 +1,18 @@
+Implement a video data transfer module that interfaces with a memory system using an Avalon bus protocol. This module receives video stream data and manages its validity and readiness for writing to memory. It generates signals to indicate when the stream is ready for processing, handles reset conditions, and controls the write process to the master interface, including the address increment and reset functionality at the start of a new packet. The design ensures that data is only written when valid and allows for synchronization with the system clock while handling reset conditions appropriately.
+module top_module(
+    // Inputs
+    clk,
+    reset,
+    stream_data,
+    stream_startofpacket,
+    stream_endofpacket,
+    stream_empty,
+    stream_valid,
+    master_waitrequest,
+    // Outputs
+    stream_ready,
+    master_write,
+    master_writedata,
+    inc_address,
+    reset_address
+);

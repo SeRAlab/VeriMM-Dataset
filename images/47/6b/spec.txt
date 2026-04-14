@@ -1,0 +1,7 @@
+Design a 16-bit pipelined multiplier that processes an input value by splitting it into two 8-bit halves and multiplying each half by the constant value of 3. The module consists of two sequential stages: the first stage computes the product of the lower 8 bits, while the second stage computes the product of the upper 8 bits. Intermediate results are stored in pipeline registers, effectively enabling a two-stage pipeline architecture. The final output is the sum of the two multiplication results, updated on the rising edge of the clock, with reset functionality to clear all registers when activated. This design enhances throughput by allowing new input to be processed while previous computations are still being finalized.
+module top_module(
+  input clk,
+  input reset,
+  input [15:0] in,
+  output reg [15:0] out
+);

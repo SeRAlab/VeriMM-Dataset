@@ -1,0 +1,13 @@
+Design a Verilog module that implements a 4-bit binary to 7-segment display decoder. The input is a 4-bit binary number, and the output is a 7-segment display pattern.
+
+Initial state: segments = 7'b0000000
+Time 0ns: bin = 4'b0000, segments = 7'b0111111.
+Time 10ns: bin = 4'b0001, segments = 7'b0000110.
+Time 20ns: bin = 4'b0010, segments = 7'b1011011.
+Time 30ns: bin = 4'b0011, segments = 7'b1001111.
+Time 40ns: bin = 4'b0100, segments = 7'b1100110.
+Time 50ns: bin = 4'b0101, segments = 7'b1101101.
+
+module bin_to_7seg (
+	input [3:0] bin,
+	output reg [6:0] segments);

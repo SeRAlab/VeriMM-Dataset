@@ -1,0 +1,9 @@
+Design a single-port RAM module capable of read and write operations. This module utilizes a clock signal for synchronization, a write enable signal to control writing data into the memory, and a chip enable signal to activate the memory. The memory has a depth of 256 addresses, each storing an 8-bit wide data word. When the chip enable signal is low, the output is undefined, while if it is high, the module can either write data to a specified address (if write enable is active) or read data from that address (if write enable is inactive) to produce the output.
+module top_module(
+  input clk, // clock signal
+  input we, // write enable signal
+  input ce, // chip enable signal
+  input [n-1:0] din, // data input signal
+  input [addr_width-1:0] addr, // address input signal
+  output reg [n-1:0] dout // data output signal
+);

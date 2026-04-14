@@ -1,0 +1,7 @@
+Design a module that performs parity generation and checking for an n-bit data stream. When the selection signal (sel) is low, the module generates either even or odd parity based on the count of '1's in the input data, appending the parity bit to the end of the data output. When sel is high, the module checks the parity of the input data: if the parity is incorrect (odd number of '1's), it flips the last bit of the output to indicate this error; otherwise, it outputs the original data unchanged. This implementation effectively manages parity-related operations in digital communication or data storage systems.
+module top_module(
+  input [n-1:0] data,
+  input sel,
+  output parity,
+  output [n:0] out
+);

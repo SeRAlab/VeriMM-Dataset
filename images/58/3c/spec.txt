@@ -1,0 +1,14 @@
+Design a hazard detection unit for a CPU that manages control signals to mitigate data hazards during execution. The module detects situations where a data hazard might occur—specifically, when a load instruction followed closely by dependent instructions is being processed. It generates appropriate signals to stall instruction fetching and execution, flush pipeline stages, and manage program counter source selection based on flag inputs such as jumps, branches, and memory read conditions. This ensures correct instruction execution without conflicts, enhancing the overall stability and performance of the pipelined processor architecture.
+module top_module(
+input [4:0] Rt_IF_ID,Rs_IF_ID,Rt_ID_EX,
+input RtRead_IF_ID,
+input Jump,
+input MemRead_ID_EX,
+input Branch,
+output reg[1:0] PCSrc,
+output reg IF_ID_Stall,IF_ID_Flush, 
+output reg ID_EX_Stall,ID_EX_Flush, 
+output reg EX_MEM_Stall,EX_MEM_Flush,
+output reg MEM_REG_Stall,MEM_REG_Flush,
+output reg loaduse
+);

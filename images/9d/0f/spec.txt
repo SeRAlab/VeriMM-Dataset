@@ -1,0 +1,9 @@
+Design a baud rate generator that produces two output signals, `sio_ce` and `sio_ce_x4`, which represent clock enable signals for serial communication at varied baud rates. The module uses a clock input and an asynchronous active-low reset to manage timing. It implements a counter to generate a frequency four times the baud rate desired, while specific baud rate settings are determined by configurable parameters suitable for common serial communication rates like 38400, 31250, and 57600 across different clock frequencies. The outputs are conditioned by a pre-scaler mechanism to ensure accurate clock generation based on the input clock and reset conditions.
+module top_module(
+   // Outputs
+   output reg sio_ce,      // baud rate
+   output reg sio_ce_x4,   // baud rate x 4
+   // Inputs
+   input clk,
+   input arst_n
+);

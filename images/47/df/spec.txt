@@ -1,0 +1,9 @@
+Design a circuit that functions as an 8-bit barrel shifter. It accepts an 8-bit input data and allows for shifting either left or right by an adjustable amount, specified by a 3-bit shift_amount input. The shifting direction is controlled by the shift_direction input, where 0 indicates a right shift and 1 indicates a left shift. The circuit incorporates asynchronous reset functionality, setting the output to zero when activated, while otherwise reflecting the shifted value of the input data on the data_out output.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data_in,
+  input [2:0] shift_amount,
+  input shift_direction, // 0: right shift, 1: left shift
+  output reg [7:0] data_out
+);

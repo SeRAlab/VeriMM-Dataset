@@ -1,0 +1,22 @@
+Design a memory controller that interfaces between a CPU and external RAM. It manages read and write operations based on the control signals, enabling the CPU to access a 32-bit wide data bus while isolating the RAM's 16-bit data width. The module uses a state machine to generate timing signals for external chip select, read/write enable, and output enable. Additionally, it utilizes a last data storage register to maintain the most recent data read from RAM, allowing seamless two-phase data retrieval. The controller generates the necessary address and control signals, allowing synchronous operations based on the clock and reset signals.
+module top_module(
+   clock,
+   reset_b,
+
+   
+   ext_cs_b,
+   cpu_rnw,
+   cpu_clken,
+   cpu_addr,
+   cpu_dout,
+   ext_dout,
+
+   
+   ram_cs_b,
+   ram_oe_b,
+   ram_we_b,
+   ram_data_in,
+   ram_data_out,
+   ram_data_oe,
+   ram_addr
+   );

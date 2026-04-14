@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) for pattern detection that recognizes the sequence "101" in a stream of input data. The FSM operates on a clock and reset signal, transitioning between four states: IDLE, S1, S2, and S3. The output `match` is activated when the sequence is successfully detected, specifically transitioning to the IDLE state in S3 when the next input is a '0'. If the expected inputs are not received during the transitions, the FSM returns to the IDLE state, ensuring proper resets and state management.
+module top_module(
+  input clk,
+  input reset,
+  input data,
+  output reg match
+);

@@ -1,0 +1,8 @@
+Design a Bluetooth communication module that transmits and receives data using frequency-hopping spread spectrum (FHSS) modulation. The module takes an 8-bit input data stream, encodes it according to Bluetooth protocol, and outputs a modulated Bluetooth signal, while simultaneously receiving a Bluetooth signal, decoding it, and outputting the recovered data. The implementation includes mechanisms for managing channel indexing to ensure proper hopping through a predefined sequence. The design handles both transmission and reception in a synchronous manner with a clock signal.
+module top_module(
+  input clk,
+  input [7:0] data_in,
+  input bt_in,
+  output reg bt_out,  // Change bt_out from wire to reg
+  output reg [7:0] data_out
+);

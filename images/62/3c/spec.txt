@@ -1,0 +1,14 @@
+Design a timer module that counts clock cycles and interacts with a memory interface. The module increments a 32-bit count register on each negative clock edge when not in reset. It outputs the current count value on request and indicates readiness for memory operations based on the enable signal and memory validity. When enabled, the module provides the count as `mem_rdata` and a ready signal `mem_ready`, allowing for controlled memory access in a synchronous system. If the module is disabled or in reset, the outputs are tri-stated.
+module top_module(
+    
+    input  wire        clk,
+    input  wire        resetn,
+    input  wire        enable,
+    input  wire        mem_valid,
+    output wire        mem_ready,
+    input  wire        mem_instr,
+    input  wire [3:0]  mem_wstrb,
+    input  wire [31:0] mem_wdata,
+    input  wire [31:0] mem_addr,
+    output wire [31:0] mem_rdata
+);

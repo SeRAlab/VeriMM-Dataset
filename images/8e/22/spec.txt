@@ -1,0 +1,7 @@
+Design a binary-to-serial converter that serially transmits an 8-bit input data stream on each clock edge. Upon reset, the module initializes the data register and bit counter. On subsequent clock cycles, it iterates through the bits of the input data, outputting one bit at a time until all eight bits have been sent, after which it resets the bit counter. The output is a single bit, representing the current bit being transmitted from the 8-bit input.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] in_data,
+  output out_data
+);

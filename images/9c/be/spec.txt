@@ -1,0 +1,14 @@
+Design a switch receiver module that consolidates the inputs from eight 8-bit switches and one 8-bit user key to output a 32-bit data word based on a specified address. The module concatenates the first four switch inputs into a 32-bit signal (S1) and the next four switch inputs into another 32-bit signal (S2). It inverts the user key and pads it with zeros to form a third signal (S3). Depending on the value of the 8-bit address input, the module outputs either S1, S2, or S3, enabling flexible data selection based on the address provided.
+module top_module(
+    input [7:0] switch0,
+    input [7:0] switch1,
+    input [7:0] switch2,
+    input [7:0] switch3,
+    input [7:0] switch4,
+    input [7:0] switch5,
+    input [7:0] switch6,
+    input [7:0] switch7,
+	 input [7:0] userkey,
+    input [7:0] Address,
+    output [31:0] DataOut
+    );

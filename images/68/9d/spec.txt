@@ -1,0 +1,8 @@
+Design a dual-register system that interfaces with a 16-bit bus to store and retrieve data. The module contains two sets of registers: one for high byte storage and one for low byte storage, each capable of holding four 8-bit values indexed by two-bit inputs. The outputs, bus_out1 and bus_out2, provide access to the stored data based on control signals indicating whether to read the high byte, low byte, or both bytes (16 bits) for two separate outputs. Input control signals manage data storage operations at specified clock edges, allowing data to be written to either the high or low registers from the bus input. This design effectively enables the manipulation and storage of 16-bit data across two independently controlled output paths.
+module top_module(
+        clk,
+        bus_in, bus_out1, bus_out2,
+        num1, num2,
+        cs_h_in, cs_l_in, cs_16_in,
+        cs_h_out1, cs_l_out1, cs_16_out1,
+        cs_h_out2, cs_l_out2, cs_16_out2);

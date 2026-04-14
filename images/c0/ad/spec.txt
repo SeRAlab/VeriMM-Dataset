@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module to select between two input clock signals (`clk0_i` and `clk1_i`) based on a selection signal (`select`) and an enable signal (`enable`). The module outputs a single clock signal (`clk_o`) which is derived from either `clk0_i` or `clk1_i`. This functionality is crucial in systems where dynamic switching between different clock domains is required, such as in power-saving modes or in handling different operational modes that require varying clock speeds.
+
+The module also incorporates synchronization and glitch prevention mechanisms to ensure the stability of the output clock signal during the switching process. This is particularly important in digital systems where clock stability directly impacts system reliability and performance.
+
+Module name:  
+	clock_switch2_basic
+
+Input ports:
+	rst0_i: Reset signal for the first clock domain (clk0_i). It is an activehigh signal used to reset the synchronization mechanism associated with clk0_i.
+	clk0_i: First input clock signal. One of the potential sources for the output clock signal clk_o.
+	rst1_i: Reset signal for the second clock domain (clk1_i). It is an activehigh signal used to reset the synchronization mechanism associated with clk1_i.
+	clk1_i: Second input clock signal. One of the potential sources for the output clock signal clk_o.
+	enable: Enable signal for the clock switching functionality. When low, the module does not perform switching.
+	select: Selection signal that determines which input clock (clk0_i or clk1_i) is forwarded to the output. When low, clk0_i is selected; when high, clk1_i is selected.
+Output ports:
+	clk_o: Output clock signal. This is the selected clock signal based on the select and enable inputs.
+
+
+Implementation:
+The clock_switch2_basic module is designed to switch between two clock inputs (clk0_i and clk1_i) based on a select signal (select) and an enable signal (enable). The module outputs a single clock signal (clk_o) which is derived from either clk0_i or clk1_i depending on the state of select and enable. The module also incorporates reset functionality for each clock input through rst0_i and rst1_i.
+
+Give me the complete code.
+

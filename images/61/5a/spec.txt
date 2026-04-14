@@ -1,0 +1,30 @@
+Implement the Verilog module based on the following description.
+Given the following Mealy state machine with 1 input (in) and 1 output (out). Unless otherwise stated in the diagram below, assume outputs are 0 and inputs are don't cares.
+
+The state machine has the following states and their corresponding outputs: 
+1. state X (out=0).
+2. state Y (out=1).
+3. state Z (out=1).
+
+State transitions:
+1. From state X: If in = 0, then remain in state X. If in = 1, then transition to state Y.
+2. From state Y: If in = 0, then transition to state Z. If in = 1, then transition to state X.
+3. From state Z: If in = 0, then remain in state Z. If in = 1, then transition to state Y.
+
+At reset, the state machine starts in state "X". Derive next-state logic equations and output logic equations by inspection assuming the following one-hot encoding is used: (X, Y, Z) = (3'b001, 3'b010, 3'b100)
+
+Write code that generates the following equations:
+
+- X_next -- next-state logic for state X
+- Y_next
+- Z_next
+- out -- output logic
+
+module top_module(
+    input in,
+    input [2:0] state,    // 3-bit one-hot current state
+    output reg X_next,
+    output reg Y_next,
+    output reg Z_next,
+    output reg out
+ );

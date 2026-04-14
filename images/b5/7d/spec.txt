@@ -1,0 +1,8 @@
+Design a circuit that performs both addition and subtraction of two 32-bit inputs, a and b, based on a control signal. The 'sub' input determines whether to perform a standard addition or a subtraction. If 'sub' is low, the module outputs the sum of a and b along with a carry-out signal for the addition. If 'sub' is high, the module computes the two's complement of b for subtraction and outputs the result as well as the carry-out signal for the subtraction operation. The circuit effectively uses an adder module to handle both operations, encapsulating the logic necessary for arithmetic operations within a single design.
+module top_module(
+    input [31:0] a,
+    input [31:0] b,
+    input sub,
+    output reg [31:0] sum,
+    output carry_out
+);

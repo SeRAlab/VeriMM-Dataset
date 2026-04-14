@@ -1,0 +1,16 @@
+Design a digital signal processing circuit that performs a sound data multiplication and accumulation operation. The module takes an input clock, a 6-bit volume control, an 8-bit signed sound data input (with the option to invert the sign), and control signals for loading data and clearing the accumulated sum. It generates a 16-bit sum output that integrates the volume-modulated sound data across multiple clock cycles, indicating readiness when the accumulation is complete. The design utilizes a serial multiplier and adder architecture, ensuring that the operations execute sequentially, thereby facilitating efficient computation of the sound data while also managing initial loading and resetting conditions.
+module top_module(
+
+	clock,   // input clock (24 MHz)
+
+	vol_in,  // input volume (6 bit unsigned)
+	dat_in,  // input sound data (8 bit signed with sign bit inverted)
+
+	mode_inv7b, // whether to invert 7th bit of dat_in
+
+	load,    // load pulse input
+	clr_sum, // clear sum input
+
+	ready,   // ready output
+	sum_out  // 16-bit sum output
+);

@@ -1,0 +1,7 @@
+Design a light control circuit that utilizes a pulse-width modulation (PWM) signal for controlling brightness based on ambient light conditions. The circuit samples an 8-bit input representing ambient light levels and another 8-bit input for desired brightness levels. It calculates the duty cycle for the PWM signal based on the ratio of these inputs. The PWM output toggles based on a comparison of the duty cycle to a random value, allowing for varied brightness modulation at a frequency of 100 Hz. This design enables dynamic adjustment of light intensity in response to changing environmental light.
+module top_module(
+  input clk,
+  input [7:0] als,
+  input [7:0] dcs,
+  output reg pwm
+);

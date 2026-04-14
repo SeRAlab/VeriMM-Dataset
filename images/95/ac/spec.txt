@@ -1,0 +1,9 @@
+Design a synchronous 4-bit binary counter that increments its count on each clock cycle when enabled. The counter resets to zero when the Reset signal is active, and it counts up to a specified value determined by the CountTo input. When the count reaches CountTo, the counter wraps around to zero and sets the Overflow output to indicate that an overflow has occurred; otherwise, Overflow remains low.
+module top_module(
+	input wire       Clk,
+	input wire       Reset,
+	input wire       Enable,
+	input wire [3:0] CountTo,
+	output reg [3:0] Count,
+	output reg       Overflow
+);

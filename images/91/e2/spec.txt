@@ -1,0 +1,15 @@
+Design a phase-locked loop (PLL) that takes an input clock signal (PLLIN) and outputs core and global clocks (PLLOUTCORE and PLLOUTGLOBAL). This PLL includes configurable dynamic delay functionality, allowing adjustable timing through an 8-bit delay input (DYNAMICDELAY). The design features feedback mechanisms for synchronization, ensuring the output frequency aligns with the input frequency and locking status. Additionally, it supports bypassing the locking feature to directly handle the input signal and uses shift registers to manage configuration data and produce output via an SDI input upon a clock signal (SCLK). The overall intent is to stabilize and control clock signals in digital circuitry, particularly for applications requiring precise timing adjustments.
+module top_module(
+  input PLLIN,
+  output reg PLLOUTCORE,
+  output reg PLLOUTGLOBAL,
+  input EXTFEEDBACK,
+  input [7:0] DYNAMICDELAY,
+  output reg LOCK,
+  input BYPASS,
+  input RESETB,
+  input SCLK,
+  input SDI,
+  output reg SDO,
+  input LATCHINPUTVALUE
+);

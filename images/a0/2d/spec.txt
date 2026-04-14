@@ -1,0 +1,9 @@
+Design a 4-bit up/down counter that increments or decrements its value based on the up_down input signal. On a positive clock edge, if the reset signal is low, the counter resets to zero, and both overflow and underflow indicators are cleared. When counting up (up_down=1), the counter rolls over to zero from 15 and sets the overflow flag. Conversely, when counting down (up_down=0), it rolls over to 15 from 0 and sets the underflow flag. The outputs include the current count, along with overflow and underflow status indicators, allowing for clear tracking of counting limits.
+module top_module(
+  input clk,
+  input reset,
+  input up_down,
+  output reg [3:0] count_out,
+  output reg overflow,
+  output reg underflow
+);

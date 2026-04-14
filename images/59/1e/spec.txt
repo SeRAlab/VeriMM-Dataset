@@ -1,0 +1,8 @@
+Design a module that performs a variety of bitwise operations and a left shift operation on two 32-bit inputs, `a` and `b`. Based on a 2-bit `operation_select` signal, the module can execute a logical AND, OR, XOR between the inputs or shift `a` left by a specified `shift_amount`. The resulting 32-bit output `result` corresponds to the chosen operation, facilitating dynamic selection of bitwise functionality in digital circuits.
+module top_module(
+  input [31:0] a,
+  input [31:0] b,
+  input [1:0] operation_select,
+  input [4:0] shift_amount,
+  output reg [31:0] result // Change from wire to reg
+);

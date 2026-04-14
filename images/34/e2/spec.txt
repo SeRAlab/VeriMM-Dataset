@@ -1,0 +1,10 @@
+
+Create a simple SPI master controller that sends a byte of data to an SPI slave device. The master should have the following inputs: 
+- `clk`: the clock signal.
+- `start`: signal to start the transmission.
+- `data_in`: the 8-bit data to be transmitted.
+- `sck`: the clock signal to be sent to the slave.
+- `mosi`: the data line to send the data to the slave.
+- `done`: output signal to indicate that the transmission is complete.
+
+The master should shift out each bit of `data_in` on the `mosi` line with each rising edge of `sck`, and assert `done` high once the transmission is complete.

@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit shift register. The module shifts the contents of a 4-bit register to the right on each rising edge of the clock, inserting a new input bit at the most significant position.
+
+Module name:
+    shift_register
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    din: Input bit to be shifted into the register.
+
+Output ports:
+    q: 4-bit output register.
+
+Implementation:
+The register is defined as reg [3:0] q and initialized to 0 using the initial statement. The always block shifts the register contents to the right and inserts the new input bit: q <= {din, q[3:1]}.
+
+Give me the complete code.
+
+module shift_register(clk, din, q);
+
+    input clk;
+    input din;
+    output [3:0] q;

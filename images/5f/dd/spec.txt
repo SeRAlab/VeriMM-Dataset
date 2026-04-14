@@ -1,0 +1,11 @@
+Design a serial adder that sums two 4-bit inputs, a and b, over a sequence of clock cycles, with support for carry propagation. The module employs a state machine to shift in the input bits each cycle and computes the sum bit by bit, storing intermediate results and the carry. It also includes a reset functionality to initialize all registers. The output includes a 4-bit sum, a carry flag, a count of the bits processed, and the latest sum output during the addition process. The implementation handles both addition and carry generation using bitwise operations.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] a,
+  input [3:0] b,
+  output reg [3:0] sum,
+  output reg carry,
+  output reg [2:0] count,
+  output reg [3:0] so
+);

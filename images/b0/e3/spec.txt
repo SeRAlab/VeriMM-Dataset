@@ -1,0 +1,11 @@
+Design a delay flip-flop with asynchronous reset functionality. The circuit has a data input (D) and outputs the stored value (Q), which can be reset to LOW when RESET_B is asserted. The value of Q is sampled on the rising edge of the GATE signal; if GATE is high, it captures the input D. If GATE is low, it computes a value based on the supply states (VPB, VPWR, VGND, VNB). The design ensures that the stored value can be controlled through RESET and GATE, making it suitable for synchronous design applications where signal timing is critical.
+module top_module(
+    input  D      ,
+    output Q      ,
+    input  RESET_B,
+    input  GATE   ,
+    input  VPB    ,
+    input  VPWR   ,
+    input  VGND   ,
+    input  VNB
+);

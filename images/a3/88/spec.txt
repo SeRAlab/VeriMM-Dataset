@@ -1,0 +1,7 @@
+Design a circuit that performs a barrel shift operation on a 16-bit input and uses the shifted output to derive a majority decision. The design shifts the input bits to the right by 4 places, effectively placing the upper and lower bytes into separate signals. Two separate registers capture these bytes using clock and reset signals, and a majority gate produces an output based on the higher frequency of 1s among these two bytes. The final output indicates whether the majority of bits between the two captured bytes are low.
+module top_module(
+    input wire [15:0] in,
+    input wire a,
+    input wire b,
+    output reg out
+);

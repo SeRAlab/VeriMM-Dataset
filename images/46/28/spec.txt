@@ -1,0 +1,16 @@
+This module serves as an address decoder for a Super Nintendo Entertainment System (SNES) architecture, managing memory access for various components based on specified address ranges. It takes a clock signal and various input signals, including the ROM selection and address lines, to enable or disable access to RAM, peripheral address space (PA), and block RAM (BRAM). The design includes logic for enabling linear memory access, setting up IRQ requests, and setting control signals based on the incoming address. It implements state registers to capture IRQ and linear enable signals on clock edges to maintain stability. Overall, this module orchestrates the interaction between the CPU and memory in a SNES system, ensuring appropriate memory mapping and activation based on the incoming addresses.
+module top_module(
+  input CLK,
+  input SNES_ROMSEL,
+  input [23:0] SNES_ADDR,   
+  output [23:0] ram0_addr,
+  output [7:0] PA_addr,
+  output [12:0] bram_addr,
+  input ram0_linear,
+  output ram0_enable,
+  output PA_enable,
+  output bram_enable,
+  output irq_enable,
+  output linear_enable,
+  output linear_enable2
+);

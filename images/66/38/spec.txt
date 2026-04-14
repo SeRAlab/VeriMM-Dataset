@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+
+Design a 4-bit shift register with parallel load and serial shift capabilities. The module should allow for loading a 4-bit value in parallel when the load signal is high, and shifting the register contents to the right on each clock cycle when the shift signal is high.
+
+Module name:
+    ShiftRegister
+
+Input ports:
+    clk: Clock signal.
+    rst: Synchronous reset signal (active high).
+    load: Load signal for parallel loading.
+    shift: Shift signal for serial shifting.
+    d: 4-bit parallel input data.
+
+Output ports:
+    q: 4-bit register output.
+
+Implementation:
+When the load signal is high, the input data is loaded into the register. When the shift signal is high, the register contents shift to the right on each clock cycle. The reset signal clears the register.
+
+Give me the complete code.
+
+module ShiftRegister (
+    input clk,
+    input rst,
+    input load,
+    input shift,
+    input [3:0] d,
+    output reg [3:0] q
+);

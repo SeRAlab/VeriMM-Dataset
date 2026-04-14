@@ -1,0 +1,9 @@
+Design a dual-edge-triggered D flip-flop with a hold feature that incorporates reset and set functionality. The module captures the input value (d) on every fourth clock cycle after a hold period; during this period, it counts clock cycles without changing the output (q) or its inverse (qn), ensuring stability in the output until the hold condition is met. The flip-flop resets to zero when the reset signal is active and sets the output to one when the set signal is high.
+module top_module(
+    input clk,
+    input reset,
+    input set,
+    input d,
+    output reg q,
+    output reg qn
+);

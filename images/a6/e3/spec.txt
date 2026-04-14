@@ -1,0 +1,9 @@
+Design a simple encryption module that generates a ciphertext based on a plaintext input and a key using XOR operations. Upon the clock's rising edge, if the reset signal is active, the module resets its internal state and outputs a LOW ciphertext. If not in reset, the module computes two XOR outputs from the plaintext and the key. The output ciphertext is determined by an enable signal: if enable is high, it outputs the result of the first XOR operation; if low, it outputs the result of the second XOR operation, effectively allowing for a dynamic selection between the two XOR results.
+module top_module(
+  input clk,
+  input reset,
+  input plaintext,
+  input key,
+  input enable,
+  output reg ciphertext
+);

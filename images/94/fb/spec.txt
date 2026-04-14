@@ -1,0 +1,21 @@
+Design a synchronous SRAM controller module that interfaces with an external SRAM component. It accepts clock, address, chip enable, write enable, and data input signals to manage read and write operations. The module generates the necessary control signals for the SRAM, such as chip enable (CE), output enable (OE), write enable (WE), and upper/lower byte enables (UB, LB), based on the input control signals. The SRAM address is constructed by zero-padding the input address to match the SRAM's address width, while the data bus (DQ) operates in a tri-state mode for reading and writing data as determined by the read/write status. This module effectively provides a mechanism for a microcontroller or FPGA to access and manipulate data in the SRAM memory.
+module top_module(
+
+	input clk,
+
+	
+	input [ADDR_WIDTH-1:0] ram_addr,
+	input                  ram_cen,
+	input            [1:0] ram_wen,
+	input           [15:0] ram_din,
+	output reg      [15:0] ram_dout,
+
+	
+	inout      [15:0] SRAM_DQ,
+	output reg [17:0] SRAM_ADDR,
+	output reg SRAM_UB_N,
+	output reg SRAM_LB_N,
+	output reg SRAM_WE_N,
+	output reg SRAM_CE_N,
+	output reg SRAM_OE_N
+);

@@ -1,0 +1,7 @@
+Design a circuit that converts binary counts to Binary-Coded Decimal (BCD) format. The module features two counters: Counter 1 (4 bits) counts from 0 to 9, and Counter 2 (3 bits) counts from 0 to 5, both driven by a clock. A multiplexer selects the output of either counter based on a 2-bit select signal. The selected binary value is then converted to BCD through a combinational logic structure, providing a 4-bit BCD output. The module also includes a reset functionality to initialize counters to zero.
+module top_module(
+  input clk,
+  input reset,
+  input [1:0] sel,
+  output reg [3:0] bcd
+);

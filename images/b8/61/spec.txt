@@ -1,0 +1,8 @@
+Design a 4-bit shift register that can either load new data or perform a shift operation on the stored data. When the load signal is high, the module captures the 4-bit input data_in and transfers it to the output out on the rising edge of the clock. If the shift signal is high and the load signal is not asserted, the register shifts the current value right by one bit, inserting a zero into the most significant bit.
+module top_module(
+    input [3:0] data_in,
+    input shift,
+    input load,
+    input clk,
+    output reg [3:0] out
+);

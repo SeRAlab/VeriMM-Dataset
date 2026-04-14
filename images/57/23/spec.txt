@@ -1,0 +1,9 @@
+Design a synchronous memory module that functions as a read/write memory with a depth of 4096 (2^12) addresses, each capable of storing 8 bits. The module utilizes a clock signal for operation and requires an enable signal (ena) to activate reading or writing. On the rising edge of the clock, if the enable signal is active and the write enable signal (we) is low, it outputs the data from the specified address (addr) to dout. If we is high, it writes the input data (din) to the memory at the specified address. If ena is low, the output dout is set to zero.
+module top_module(
+    input clk,
+    input ena,
+    input [11:0] addr,
+    input [7:0] din,
+    input we,
+    output reg [7:0] dout
+  );

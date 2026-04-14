@@ -1,0 +1,6 @@
+Design a Verilog module for a simple PCIe endpoint controller that includes a state machine to handle a basic command sequence. The module should have states for IDLE, READ, and WRITE. The input signals are a clock, reset, and a command signal (2-bit). The output will indicate the current state of the controller. The state transitions should respond to the commands with the following behavior:  
+- IDLE state remains in IDLE unless a READ (01) or WRITE (10) command is received.  
+- Upon receiving READ, transition to READ state.  
+- Upon receiving WRITE, transition to WRITE state.  
+- After completing READ or WRITE, return to IDLE state.  
+The output should be a 2-bit representation of the current state: 00 for IDLE, 01 for READ, and 10 for WRITE.

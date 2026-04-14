@@ -1,0 +1,6 @@
+Design a dual-edge triggered D-type flip-flop with additional asynchronous control signals. This module captures the value of the input `d` on the rising edge of the clock (`clk`) when enabled (`ena`). It also has asynchronous reset (`clrn`) to force the output `q` to zero, asynchronous preset (`prn`) to set `q` to one, and the option to load data directly from `d` under specific conditions (`aload`, `sload`). Furthermore, it allows for immediate assignment of the input `d` to the output through `asdata` and provides a synchronous clear feature (`sclr`) to reset the output to zero.
+module top_module(
+    output reg q,      // Declare q as reg since it's assigned in always blocks
+    input d, clk, clrn, prn, ena,
+    input asdata, aload, sclr, sload
+);

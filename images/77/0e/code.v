@@ -1,0 +1,1 @@
+module top_module(output [15:0] O, input [15:0] x, y );assign O = x - y;endmodule

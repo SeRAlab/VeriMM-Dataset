@@ -1,0 +1,6 @@
+Design a multi-stage pipeline register that captures input data across three clock cycles. The module accepts an n-bit wide input signal and produces a m-bit wide output signal, with each stage of the pipeline maintaining a state of the input for one clock cycle. This effectively enables the serialization of input data through three distinct stages, allowing for synchronization and improved throughput in a timed design. The pipeline is structured to facilitate the transfer of data from one stage to the next on the rising edge of the clock, ultimately providing a consolidated output of the data stored in each stage.
+module top_module(
+  input clk, // Added the clock input
+  input [n-1:0] in,
+  output reg [m-1:0] out // Changed output to reg type to allow assignment in always block
+);

@@ -1,0 +1,17 @@
+Design a circuit for an instruction fetch unit that retrieves instructions and manages the program counter (PC). The module updates the PC based on control signals: when PCWrite is asserted, it can advance the PC by adding 4 (the size of an instruction) or modify it with an external immediate value depending on the state of PCSrc. Additionally, it can set the PC to the result of an ALU operation under specific conditions. The instruction word is written to the output when InstWrite is high, and it can be set to a specific no-operation instruction if the nop signal is triggered. The module also includes reset logic to initialize the PC and instruction outputs.
+module top_module(
+	input clk,
+	input reset,
+	input PCWrite,
+	input PCSrc,
+	input[31:0] pc,
+	output reg[31:0] pc_out,
+	input[31:0] inst,
+	input InstWrite,
+	input nop,
+	input[31:0] ExtImm,
+	input[3:0] WriteAddrE,
+	input RegWriteE,
+	input[31:0] ALUResultE,
+	output reg[31:0] instD
+	);

@@ -1,0 +1,8 @@
+Design a 4-bit ripple carry adder/subtractor. This module performs addition when the mode signal is set to 0 and subtraction when it is set to 1. It also handles overflow conditions, indicating when the result exceeds the 4-bit signed range. For addition, if the result exceeds 15, it wraps around by subtracting 16, while for subtraction, if the result is negative, it wraps around by adding 16. The output provides a 4-bit result along with an overflow flag, making it suitable for arithmetic operations in digital systems.
+module top_module(
+    input [3:0] a,
+    input [3:0] b,
+    input mode,
+    output reg [3:0] out,
+    output reg overflow
+);

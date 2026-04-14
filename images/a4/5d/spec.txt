@@ -1,0 +1,8 @@
+Design a delay buffer that captures a single input signal over four clock cycles, storing the values in a shift register. The module outputs one of the delayed values based on a 2-bit selector input (`sel`), providing four different output options. The `valid` signal indicates whether the current output corresponds to the most recent input (when `sel=00`) or indicates a retained value from earlier cycles (when `sel=01`, `10`, or `11`).
+module top_module(
+    input clk,
+    input in,
+    input [1:0] sel,
+    output reg out,
+    output reg valid
+);

@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module to determine whether a 64-bit input signal is equal to zero. It is a comparator module designed to output a single bit indicating a zero or non-zero status of the input. This module plays a crucial role in systems or processors where zero comparison operations are necessary, particularly in control logic, arithmetic units, or condition checking mechanisms within a SPARC (Scalable Processor Architecture) based system. Its operation is fundamental in decision-making processes where the outcome of a comparison influences the flow of operations, such as conditional branching, status flag updates, or initiating specific actions when a zero condition is met.
+
+Module name:  
+	sparc_tlu_zcmp64
+
+Input ports:
+	in [63:0]: This is a 64bit input port. The data type is a 64bit vector, indicating that it can carry a binary number ranging from 0 to 2^641. The purpose of this input is to provide the data that needs to be checked for a zero condition. It is the primary data input for the zero comparison operation.
+Output ports:
+	zero: This is a singlebit output port. The data type is a binary bit, which can either be 1 or 0. This output represents the result of the zero comparison operation. A value of 1 indicates that the input is equal to zero, and a value of 0 indicates that the input is nonzero. This output can be used by other modules or components within the system to make decisions based on whether the input was zero.
+
+
+Implementation:
+The sparc_tlu_zcmp64 module is designed to perform a simple yet crucial operation in digital logic design: it checks whether a 64-bit input signal is equal to zero. The module is purely combinational, as it does not contain any flip-flops or memory elements that would introduce a clock dependency or sequential behavior. The logic implemented within this module is straightforward and hinges on a single comparison operation.
+Upon any change in the value of the input signal in, the always block is triggered due to its sensitivity list being solely dependent on in. Within this block, a conditional statement checks if the input signal in is equal to a 64-bit representation of zero (64'b0). If this condition is true, the module outputs a logic high (1'b1) on the zero signal, indicating that the input is indeed zero. Conversely, if the condition is not met, the zero signal is set to a logic low (1'b0), indicating that the input is non-zero.
+This module does not employ any sequential logic elements or state-holding mechanisms, making its operation instantaneous with respect to the input changes, within the limits of propagation delays inherent to the logic gates synthesized from this description.
+
+Give me the complete code.
+

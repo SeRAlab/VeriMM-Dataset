@@ -1,0 +1,9 @@
+Design a 8-entry register file that supports reading and writing 32-bit wide data. The module features a clock input for synchronous operation, with a write address (waddr) and a write data (wdata) input for storing data into a specified register when the write enable signal (wen) is asserted. It also has a read address (raddr) input that allows the output (rdata) to reflect the contents of a specified register upon the rising edge of the clock, enabling efficient data retrieval.
+module top_module(
+    input clk,
+    input [4:0] waddr,
+    input [4:0] raddr,
+    input [31:0] wdata,
+    output reg [31:0] rdata,  // Change this to reg
+    output reg wen
+);

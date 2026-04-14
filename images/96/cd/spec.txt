@@ -1,0 +1,14 @@
+Design a 16-bit arithmetic and logic unit (ALU) capable of performing a variety of operations based on a 4-bit function selector. The ALU can handle addition, multiplication, bitwise operations (AND, OR, XOR, NOT), shifts, rotates, and includes provisions for 32-bit operations if specified. It takes two 16-bit inputs (`a` and `b`), an additional 16-bit input (`ahigh`), and a carry-in (`ci`). The output consists of a 16-bit result (`y`), an optional high result (`yhigh`), carry-out (`co`), and status flags indicating zero, overflow, and negative conditions. The module employs various internal signals to manipulate data and compute results synchronously, encapsulating complex functionalities within a single integrated unit.
+module top_module(
+    input wire[N-1:0] a,
+    input wire[N-1:0] ahigh,
+    input wire[N-1:0] b,
+    input wire[3:0] func,
+    input wire ci,
+    input wire use32bit,
+    output reg[N-1:0] y,
+    output reg[N-1:0] yhigh,
+    output reg co,
+    output reg zero,
+    output reg overflow,
+    output reg negative );

@@ -1,0 +1,11 @@
+Design a 16-bit shift register with parallel load and shift capabilities. On a clock edge, the register can be loaded with a 16-bit value when the load signal is high, while it can perform left or right shifting based on the shift_left or shift_right signals. The output q holds the current register state, while serial_out provides the highest bit of the register when loading or shifting left, and the lowest bit when shifting right, allowing for serial data output. The register can be reset to zero asynchronously with the reset signal.
+module top_module(
+  input clk,
+  input reset,
+  input [15:0] parallel_load,
+  input load,
+  input shift_left,
+  input shift_right,
+  output reg [15:0] q,
+  output reg serial_out
+);

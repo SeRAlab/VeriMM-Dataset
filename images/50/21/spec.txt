@@ -1,0 +1,6 @@
+Design a circuit that functions as a multiplexer and a priority encoder. The module takes six inputs (a, b, c, d, e, f) and includes two 2-to-1 multiplexers to select between pairs of inputs. The first multiplexer selects between inputs a and b based on the control signal c, while the second selects between d and e based on f. The module evaluates the outputs of these multiplexers and uses a priority encoding scheme to determine the highest priority active input, producing a corresponding output (x) along with additional outputs (y, z) that represent the inputs associated with the selected multiplexer. The output `pos` indicates the source of the highest priority input, which can be used to identify which multiplexer output was chosen.
+module top_module(
+    input a, b, c, d, e, f,
+    output reg x, y, z, // Changed to reg for process assignment
+    output reg [1:0] pos 
+);

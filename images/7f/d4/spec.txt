@@ -1,0 +1,7 @@
+Implement a 3-stage clocked D flip-flop pipeline with asynchronous clear and preset functionalities. The module takes a single-bit input, d, and propagates it through three registers (dffe4a, dffe5a, and dffe6a) on the rising edge of the clock while considering asynchronous clear (clrn) and preset (prn) signals. The design ensures that if the preset is active, the output is set to high, and if the clear is activated, the output is reset to low. The final output, q, is the state of the last flip-flop in the pipeline, effectively buffering the input signal d through the stages while providing the ability to asynchronously control its output state.
+module top_module(
+  input clock,
+  input clrn,
+  input [0:0] d,
+  output [0:0] q
+);

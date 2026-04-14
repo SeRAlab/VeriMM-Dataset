@@ -1,0 +1,9 @@
+Design a circuit featuring a 4-bit up/down counter and a 4-bit shift register capable of loading values from input. On the rising edge of the clock, if RESET is activated, both the counter and shift register reset to zero. If LOAD is active, the counter takes the value of the LOAD input, and the shift register is loaded with data from input D. If neither RESET nor LOAD is active, the counter increments or decrements based on the UP_DOWN signal, while the shift register performs a right shift and incorporates the least significant bit from D. The output OUT is the sum of the counter and the shift register's current values, enabling operations like arithmetic addition and data shifting.
+module top_module(
+    input [3:0] LOAD,
+    input UP_DOWN,
+    input CLK,
+    input RESET,
+    input [3:0] D,
+    output reg [3:0] OUT
+);

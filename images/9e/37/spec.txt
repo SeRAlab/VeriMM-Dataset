@@ -1,0 +1,7 @@
+Design a clocked delay circuit that accepts a 4-bit input and allows for variable output by implementing a delay determined by a 2-bit input. The circuit captures the input signal on each rising edge of the clock and stores it in a series of registers. Depending on the value of the delay input, the module outputs the value from one of the delay registers, corresponding to specific delays of 1, 2, 4, or 8 clock cycles. This functionality makes it suitable for applications requiring precise timing adjustments in digital signals.
+module top_module(
+    input clk,
+    input [3:0] in,
+    input [1:0] delay,
+    output reg [3:0] out
+);

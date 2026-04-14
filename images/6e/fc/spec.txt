@@ -1,0 +1,7 @@
+Design a three-stage shift register that can load an 8-bit input data and shift the stored data either left or right based on the control signal. The register operates in a multi-stage fashion, where data is loaded in the first stage and then passed through two consecutive stages before being shifted. When the `shift` signal is high, the data shifts left with a zero filled in from the right; when low, it shifts right with a zero filled in from the left. The 8-bit output reflects the current state of the last stage of the shift register.
+module top_module(
+    input [7:0] data_in,
+    input shift,
+    input load,
+    output [7:0] data_out
+);

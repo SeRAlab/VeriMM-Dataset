@@ -1,0 +1,13 @@
+Design a circuit that functions as an accumulator with control signals for input validation and output readiness. The module captures 8-bit input data, accumulates it based on a selection signal, and outputs a 10-bit result when valid. The accumulator can add either a newly received input or previously stored data depending on the select signal. It features a two-state operation to wait for valid data and to generate an output while managing internal states and ensuring proper timing with a clock and reset. The module also provides readiness indicators for both input and output, facilitating coordinated data flow with external components.
+module top_module(
+    input               clk         ,   
+    input               rst_n       ,
+    input       [7:0]   data_in     ,
+    input               select      ,
+    input               valid_a     ,
+    input               ready_b     ,
+ 
+    output              ready_a     ,
+    output  reg         valid_b     ,
+    output  reg [9:0]   data_out
+);

@@ -1,0 +1,11 @@
+Design a pipeline latch that captures and transfers various input signals on the rising edge of the clock. It includes two control signals, `CinWire1` and `immBit1`, and four 32-bit data buses: `abusWire1`, `bbusWire1`, `DselectWire1`, and `immWire1`, along with a 3-bit and a 2-bit control signal, `SWire1` and `lwSwFlag1`, respectively. The module's purpose is to store the values of these inputs and output them as `abusWire2`, `bbusWire2`, `DselectWire2`, `immWire2`, `SWire2`, `CinWire2`, `immBit2`, and `lwSwFlag2` at the next clock cycle, facilitating communication in a pipelined architecture.
+module top_module(
+  input clk, CinWire1, immBit1,
+  input [31:0] abusWire1, bbusWire1, DselectWire1, immWire1,
+  input [2:0] SWire1,
+  input [1:0] lwSwFlag1,
+  output reg CinWire2, immBit2,
+  output reg [31:0] abusWire2, bbusWire2, DselectWire2, immWire2,
+  output reg [2:0] SWire2,
+  output reg [1:0] lwSwFlag2
+);

@@ -1,0 +1,10 @@
+Design a D flip-flop with asynchronous active-low reset functionality. On the rising edge of the clock, if the reset signal is low, the output `q` is set to LOW and its complement `q_n` is set to HIGH. Otherwise, the output `q` takes the value of the input `d`, while `q_n` outputs the inverse of `d`. This flip-flop can be powered with external power supplies, indicated by the `vpwr` and `vgnd` inputs.
+module top_module(
+    input wire clk,
+    input wire reset_b,
+    input wire d,
+    input wire vpwr,
+    input wire vgnd,
+    output reg q,
+    output reg q_n
+);

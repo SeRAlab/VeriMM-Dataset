@@ -1,0 +1,20 @@
+
+
+You are tasked with designing a module that implements a 4-bit shift register using Verilog. A shift register is a digital circuit that can shift the bits of a binary word by one or more positions. In this case, the shift register should be able to shift the bits to the left or right, depending on a control signal.
+
+The module should have the following inputs and outputs:
+
+- `data_in`: a 4-bit input that represents the data to be loaded into the shift register.
+- `shift_left`: a control signal that determines the direction of the shift. When `shift_left` is high, the shift register should shift the bits to the left. When `shift_left` is low, the shift register should shift the bits to the right.
+- `clock`: a clock input that is used to synchronize the shift register.
+- `reset`: a reset input that is used to reset the shift register to its initial state.
+- `data_out`: a 4-bit output that represents the current state of the shift register.
+
+The shift register should operate as follows:
+
+- When the `reset` input is high, the shift register should be reset to all zeros.
+- When the `shift_left` input is high and the `clock` input transitions from low to high (a rising edge), the shift register should shift its contents one bit to the left. The leftmost bit should be discarded, and the `data_in` input should be loaded into the rightmost bit.
+- When the `shift_left` input is low and the `clock` input transitions from low to high (a rising edge), the shift register should shift its contents one bit to the right. The rightmost bit should be discarded, and the `data_in` input should be loaded into the leftmost bit.
+
+Write a module `shift_register` that implements the above functionality. You can assume that the inputs will always be valid, and that the `clock` input will have a period of 10ns.
+

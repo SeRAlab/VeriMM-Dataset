@@ -1,0 +1,10 @@
+Design a basic arithmetic calculator capable of performing addition, subtraction, multiplication, and division operations on two 32-bit input numbers, A and B. The operation to be executed is selected via a two-bit input signal, op, which defines the operation type: 00 for addition, 01 for subtraction, 10 for multiplication, and 11 for division. The calculator's operation is synchronized to a clock signal, with an asynchronous reset that initializes the output, C, to zero when activated. The calculator is enabled through the enable input, ensuring that operations are only performed when required.
+module top_module(
+  input clk,
+  input reset,
+  input enable,
+  input [1:0] op,
+  input [31:0] A,
+  input [31:0] B,
+  output reg [31:0] C
+);

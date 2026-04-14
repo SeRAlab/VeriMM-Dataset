@@ -1,0 +1,21 @@
+Please act as a professional Verilog designer.
+
+Implement a 3-bit up/down counter with an asynchronous reset. The counter should increment or decrement its value by 1 on each positive clock edge, based on the control signal. If the reset signal is high, the counter should reset to 0 immediately, regardless of the clock signal.
+
+Module name:
+    up_down_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    up_down: Control signal. Defined as 1 for counting up and 0 for counting down.
+
+Output ports:
+    count: Output 3-bit counter value.
+
+Implementation:
+Counter Logic:
+The module includes a 3-bit register, count, to store the current counter value.
+On the positive edge of the clock signal (clk), the module increments or decrements the counter value by 1 based on the up_down signal. If the reset signal (rst) is high, indicating a reset condition, the counter value is set to 3'b000 immediately.
+
+Give me the complete code.

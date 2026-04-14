@@ -1,0 +1,6 @@
+Design a parameterizable 4-to-1 multiplexer that selects one of four input lines to produce a single output line. The input data is organized as a flat vector of width 4 times a defined parameter (WIDTH), allowing flexibility in the width of the data being multiplexed. The selection input (select) is a 2-bit signal that determines which of the four input segments is routed to the output. The output is a slice of the input data corresponding to the selected input line.
+module top_module(
+		input [4 * WIDTH - 1:0] in,
+		input [1:0] select,
+		output [WIDTH - 1:0] out
+		);

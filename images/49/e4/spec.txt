@@ -1,0 +1,9 @@
+Design a data processing module that operates on an 8-bit input. Upon receiving a clock pulse, if the reset signal is active, the module resets both the output data and a count register to zero. If enabled, it performs a bitwise AND operation between the input data and the constant value 0x0F, outputting the result and incrementing a 4-bit count with each clock pulse. This design effectively monitors and processes data while providing a count of the operations performed.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] data_in,
+    input enable,
+    output reg [7:0] data_out, // Changed from wire to reg
+    output reg [3:0] count
+);

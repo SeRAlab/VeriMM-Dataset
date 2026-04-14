@@ -1,0 +1,8 @@
+Design a circuit that captures 8 input bits into a set of 8 D flip-flops, triggered on the negative edge of a clock. It incorporates a 3-to-8 multiplexer to select and output the state of one chosen D flip-flop based on the select input. Additionally, the module includes a functionality to count the total number of '1' bits across the outputs of the D flip-flops. This is achieved through a barrel shifter that right-shifts each flip-flop output and a binary tree adder that sums the results to produce the final count output.
+module top_module(
+    input clk,
+    input [7:0] d,
+    input [2:0] select, // Corrected to [2:0] since select must be 3 bits for 8 DFFs
+    output reg [7:0] q, // Changed to 'reg' since q is assigned in an always block
+    output [7:0] out // Output of the functional module that counts the number of '1's
+);

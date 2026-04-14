@@ -1,0 +1,13 @@
+Design a mixed-mode flip-flop with asynchronous clear and set functionalities. The module captures the input D on the rising edge of the CLK if the SCD (set clear disable) and SCE (set control enable) signals are deasserted; otherwise, it can asynchronously clear the output to 0 or set it to 1 based on the SET_B input. The output Q represents the stored value, and Q_bar is derived as the logical complement of Q. This design is suitable for applications requiring controlled storage and resetting capabilities in sequential circuits.
+module top_module(
+    output reg Q,
+    input  CLK,
+    input  D,
+    input  SCD,
+    input  SCE,
+    input  SET_B,
+    input  VPWR,
+    input  VGND,
+    input  VPB,
+    input  VNB
+);

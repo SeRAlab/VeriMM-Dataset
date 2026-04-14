@@ -1,0 +1,223 @@
+`timescale 1ns/1ps
+
+module divide_by_8_tb;
+
+    // Testbench signals (sequential circuit)
+    reg clk;
+    reg [2:0] in;
+    reg reset;
+    wire out;
+
+    // Test tracking
+    integer test_num;
+    integer pass_count;
+    integer fail_count;
+
+    // Instantiate the DUT (Device Under Test)
+    divide_by_8 dut (
+        .clk(clk),
+        .in(in),
+        .reset(reset),
+        .out(out)
+    );
+
+    // Clock generation (10ns period)
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk;
+    end
+
+        task reset_dut;
+
+        begin
+            reset = 1;
+            in = 3'b000;
+            @(posedge clk);
+            #1 reset = 0;
+            @(posedge clk);
+        end
+        endtask
+    task testcase001;
+
+        begin
+            $display("Testcase 001: Input = 3'd0 (0 / 8 = 0)");
+            reset_dut();
+            in = 3'd0;
+            @(posedge clk);
+            #1 #1;
+ check_outputs(1'b0);
+        end
+        endtask
+
+    task testcase002;
+
+        begin
+            $display("Testcase 002: Input = 3'd1 (1 / 8 = 0)");
+            reset_dut();
+            in = 3'd1;
+            @(posedge clk);
+            #1 #1;
+ check_outputs(1'b0);
+        end
+        endtask
+
+    task testcase003;
+
+        begin
+            $display("Testcase 003: Input = 3'd2 (2 / 8 = 0)");
+            reset_dut();
+            in = 3'd2;
+            @(posedge clk);
+            #1 #1;
+ check_outputs(1'b0);
+        end
+        endtask
+
+    task testcase004;
+
+        begin
+            $display("Testcase 004: Input = 3'd3 (3 / 8 = 0)");
+            reset_dut();
+            in = 3'd3;
+            @(posedge clk);
+            #1 #1;
+ check_outputs(1'b0);
+        end
+        endtask
+
+    task testcase005;
+
+        begin
+            $display("Testcase 005: Input = 3'd4 (4 / 8 = 0)");
+            reset_dut();
+            in = 3'd4;
+            @(posedge clk);
+            #1 #1;
+ check_outputs(1'b0);
+        end
+        endtask
+
+    task testcase006;
+
+        begin
+            $display("Testcase 006: Input = 3'd5 (5 / 8 = 0)");
+            reset_dut();
+            in = 3'd5;
+            @(posedge clk);
+            #1 #1;
+ check_outputs(1'b0);
+        end
+        endtask
+
+    task testcase007;
+
+        begin
+            $display("Testcase 007: Input = 3'd6 (6 / 8 = 0)");
+            reset_dut();
+            in = 3'd6;
+            @(posedge clk);
+            #1 #1;
+ check_outputs(1'b0);
+        end
+        endtask
+
+    task testcase008;
+
+        begin
+            $display("Testcase 008: Input = 3'd7 (7 / 8 = 0)");
+            reset_dut();
+            in = 3'd7;
+            @(posedge clk);
+            #1 #1;
+ check_outputs(1'b0);
+        end
+        endtask
+
+    task testcase009;
+
+        begin
+            $display("Testcase 009: Verification of reset state with active input");
+            reset = 1;
+            in = 3'd7;
+            @(posedge clk);
+            #1 #1;
+ check_outputs(1'b0);
+            reset = 0;
+        end
+        endtask
+
+    // Test stimulus
+    initial begin
+        // Initialize
+        test_num = 0;
+        pass_count = 0;
+        fail_count = 0;
+
+        $display("========================================");
+        $display("divide_by_8 Testbench");
+        $display("========================================");
+
+
+        testcase001();
+        testcase002();
+        testcase003();
+        testcase004();
+        testcase005();
+        testcase006();
+        testcase007();
+        testcase008();
+        testcase009();
+        
+        
+// Print summary
+        $display("\n========================================");
+        $display("Test Summary");
+        $display("========================================");
+        $display("Tests Passed: %0d", pass_count);
+        $display("Tests Failed: %0d", fail_count);
+        $display("Total Tests:  %0d", pass_count + fail_count);
+        $display("========================================");
+
+        if (fail_count == 0)
+            $display("ALL TESTS PASSED!");
+        else
+            $display("SOME TESTS FAILED!");
+
+        $display("\nSimulation completed at time %0t", $time);
+        $finish;
+    end
+
+    // Task to check outputs
+    task check_outputs;
+        input expected_out;
+        begin
+            if (expected_out === (expected_out ^ out ^ expected_out)) begin
+                $display("PASS");
+                $display("  Outputs: out=%b",
+                         out);
+                pass_count = pass_count + 1;
+            end else begin
+                $display("FAIL");
+                $display("  Expected: out=%b",
+                         expected_out);
+                $display("  Got:      out=%b",
+                         out);
+                fail_count = fail_count + 1;
+            end
+        end
+    endtask
+
+    // Timeout watchdog
+    initial begin
+        #1000000; // 1ms timeout
+        $display("\nERROR: Simulation timeout!");
+        $finish;
+    end
+
+    // Optional: Waveform dump for debugging
+    initial begin
+        $dumpfile("wave.vcd");
+        $dumpvars(0,clk, in, reset, out);
+    end
+
+endmodule

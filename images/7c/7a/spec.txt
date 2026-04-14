@@ -1,0 +1,8 @@
+Implement a clock gating mechanism with D flip-flop control. The circuit has inputs for a clock (CLK), enable (EN), and test enable (TE), along with a 32-bit data input (DATA). When EN is high and TE is low, it samples the DATA input on the rising edge of CLK. The ENCLK output reflects the CLK signal when EN is asserted and TE is low; otherwise, it is driven LOW. This design reduces power consumption by selectively enabling the clock for downstream logic based on the enable signals.
+module top_module(
+  input CLK, 
+  input EN, 
+  input TE, 
+  input [31:0] DATA, 
+  output reg ENCLK
+);

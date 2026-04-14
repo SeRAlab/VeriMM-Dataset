@@ -1,0 +1,7 @@
+Design a synchronous register module with three 8-bit output registers (q1_reg, q2_reg, q3_reg). The first register (q1_reg) captures its input (q1_next) on every positive clock edge. The second register (q2_reg) is reset to zero when the reset signal is high and captures its input (q2_next) on the next clock edge, only if the reset is not asserted. The third register (q3_reg) also resets to zero when the reset signal is high, but captures its input (q3_next) on a positive clock edge only when the enable signal (en) is asserted. This module is suitable for dynamic storage of data with controlled reset and enable functionalities.
+module top_module(
+    input wire clk, reset,
+    input wire en,
+    input wire [7:0] q1_next, q2_next, q3_next,
+    output reg [7:0] q1_reg, q2_reg, q3_reg
+   );

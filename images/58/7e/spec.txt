@@ -1,0 +1,22 @@
+Design a digital interface for an 8-bit flash memory controller that manages read and write operations. The module interfaces with a Wishbone bus, handling input signals such as clock, reset, data, address, and control signals. It generates control signals to manage the flash memory's read, write, and chip enable functions while maintaining acknowledgement and data output for read operations. The memory address is divided into two sections to accommodate lower and higher address bits, and the module utilizes state signals to ensure correct read and write commands are executed based on the input control signals, allowing seamless communication with the flash memory.
+module top_module(
+    
+    input         wb_clk_i,
+    input         wb_rst_i,
+    input  [15:0] wb_dat_i,
+    output [15:0] wb_dat_o,
+    input         wb_we_i,
+    input         wb_adr_i,
+    input  [ 1:0] wb_sel_i,
+    input         wb_stb_i,
+    input         wb_cyc_i,
+    output        wb_ack_o,
+
+    
+    output [21:0] flash_addr_,
+    input  [ 7:0] flash_data_,
+    output        flash_we_n_,
+    output        flash_oe_n_,
+    output        flash_ce_n_,
+    output        flash_rst_n_
+  );

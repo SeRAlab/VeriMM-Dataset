@@ -1,0 +1,8 @@
+Design a 4-bit barrel shifter that allows for both left and right shifting based on control signals. When the `shift_left` signal is asserted, the input `A` is shifted left by the value specified in `B`, while asserting `shift_right` shifts `A` to the right by the same value. If neither shift control signal is active, the output simply holds the value of `A`. The final output is stored in the `result` register, providing the desired shifted value or the original input based on the shift conditions.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input shift_left,
+    input shift_right,
+    output reg [3:0] result
+);

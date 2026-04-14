@@ -1,0 +1,12 @@
+Design a 4-entry register file with 32-bit storage capable of handling simultaneous read and write operations. It features a clock input for synchronous operation and a reset input to initialize all registers to zero. The module includes two write enable signals to allow writing data to specified registers based on the provided addresses, as well as mechanisms to store higher and lower 16 bits of written data into separate hi and lo registers. Outputs provide access to two specific registers for reading data, enabling the storage and retrieval of values in a compact format suitable for digital logic applications.
+module top_module(
+    input clock,
+    input reset,
+    input [1:0] reg_write_enable,
+    input [1:0] reg_write_address,
+    input [31:0] reg_write_data,
+    output [31:0] reg_read_data_1,
+    output [31:0] reg_read_data_2,
+    output reg [31:0] hi_register, // Changed to reg
+    output reg [31:0] lo_register  // Changed to reg
+);

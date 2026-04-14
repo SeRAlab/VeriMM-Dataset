@@ -1,0 +1,9 @@
+Design a circuit for selecting between two 8-bit input vectors based on a 4-bit control signal. On a rising clock edge or a reset signal, the output will either be set to zero if reset is asserted, directly assigned from `in1` when `sel` is `0000`, directly assigned from `in2` when `sel` is `1111`, or computed as the bitwise AND of `in1` and `in2` for all other values of `sel`. This functionality acts as a multiplexer with additional logic for specific control scenarios.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] in1,
+  input [7:0] in2,
+  input [3:0] sel,
+  output reg [7:0] out
+);

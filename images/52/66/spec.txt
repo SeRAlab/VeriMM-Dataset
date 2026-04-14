@@ -1,0 +1,7 @@
+Design a digital accumulator module that sums input values over a fixed number of clock cycles. The module takes a clock signal and a reset signal, and it features an n-bit wide input to receive data. Upon each positive clock edge, if the reset is activated, the sum is cleared to zero; otherwise, it accumulates the incoming data values. The final accumulated result is available on an n-bit output, reflecting the total sum of inputs processed since the last reset. This design facilitates data integration over time, suitable for applications like signal processing or arithmetic operations in digital systems.
+module top_module(
+  input clk,
+  input rst,
+  input [n-1:0] in,
+  output reg [n-1:0] out
+);

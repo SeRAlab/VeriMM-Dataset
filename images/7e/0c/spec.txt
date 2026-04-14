@@ -1,0 +1,8 @@
+Design a voltage-based reset circuit that monitors an input voltage (Vin) against a threshold voltage (Vth). On the rising edge of the clock signal (clk), if the reset signal is active (reset is high), the circuit sets a flip-flop (bor_ff) to HIGH when Vin is below Vth, indicating an under-voltage condition, and sets it to LOW otherwise. If the reset signal is low, the flip-flop is reset to LOW. The final output (rst_out) reflects the state of the flip-flop, serving as a system reset signal based on voltage conditions.
+module top_module(
+  input Vin,
+  input Vth,
+  input clk,
+  input reset,
+  output rst_out
+);

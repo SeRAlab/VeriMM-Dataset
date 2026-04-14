@@ -1,0 +1,6 @@
+Design a Morse code decoder that interprets incoming 16-bit data signals based on a clock input. The module maintains internal states to manage the processing of Morse code sequences, where it detects the presence of signal patterns (represented as 16'h0000 for a pause and 16'h0001 for a dot), counts the duration of these signals, and accumulates the corresponding Morse code characters. Once five characters are decoded, it outputs a predefined string ("hello") to a 5-bit wide output register. The decoder resets upon receiving the appropriate input to start a new Morse code sequence.
+module top_module(
+	input clk,
+	input [15:0] data,
+	output reg [4:0] str
+);

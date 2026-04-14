@@ -1,0 +1,13 @@
+Design a module that acts as a connector for multiple input signals, incorporating clock inputs and write enable signals for three 8-bit data inputs. The module assembles these inputs into a set of internal bit vectors, allowing for further processing. The `clk` vector collects the clock signals, while `wen` tracks the write enables, facilitating controlled data flow. The output will be organized for downstream components in a system where synchronized operations are crucial, and a reset control is incorporated to manage the initialization state.
+module top_module( input clk0,
+                            input clk1,
+			                input clk2,
+			                input clk3,
+			                input resetn,
+			                input wen0,
+			                input wen1,
+			                input wen2,
+			                input [7:0] data0,
+			                input [7:0] data1,
+			                input [7:0] data2
+			                );

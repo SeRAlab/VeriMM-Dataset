@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module primarily functions as a programmable counter, designed to update its output based on the input value it receives. This module is a fundamental building block in digital systems where precise control over sequence progression is required, such as in microcontrollers, digital signal processors, or more complex integrated circuits where nano-scale program counters are utilized for managing execution flow or state transitions.
+
+In a broader system context, this module could be used for implementing program counters, loop counters, or any scenario where a predictable, externally controlled increment or update mechanism is needed. Its simplicity and directness make it versatile for various applications requiring counter functionality with external input control.
+
+Module name:  
+	NANO_PROG_COUNTER
+
+Input ports:
+	MCR_IN : This is a 6bit wide input port ([5:0]), which serves as the primary data input to the module. The data type is binary, and it represents the value that the counter is to be updated to upon the next clock cycle or triggering event. The significance of this input is that it directly controls the value of the counter, allowing for external control over the counter's state.
+Output ports:
+	NANO_PRE_OUT : This is a 6bit wide output port ([5:0]), which represents the current state or value of the programmable counter. The data type is binary, and it reflects the counter's value as determined by the most recent update from the MCR_IN input. This output is crucial for interfacing the counter's current state with other modules or components within a system, enabling coordinated operation based on the counter's value.
+
+
+Implementation:
+The RTL module presented, named NANO_PROG_COUNTER, is designed to function as a simple programmable counter. The core logic of this module is relatively straightforward, primarily focusing on the transfer of a 6-bit input value to a 6-bit output, with the transfer occurring on every change of the input signal. This module does not incorporate any complex combinational or sequential logic elements beyond a basic signal assignment and update mechanism. The design can be dissected into two main logical components:
+
+Give me the complete code.
+

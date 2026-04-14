@@ -1,0 +1,7 @@
+Design a dual-port FIFO (First-In-First-Out) memory module that operates on a clock signal to manage incoming 16-bit data. It features two write control signals for each memory location: `wr0a`, `wr0b`, for the first memory location, and `wr1a`, `wr1b`, for the second. Depending on these control signals, the module can either store the input data (`inData`) directly or its bitwise negation in the two memory locations. Outputs `out0` and `out1` deliver processed data using an XOR operation with respective temporary memory registers, effectively enabling read-back with additional data transformation for further processing.
+module top_module(
+   // Outputs
+   out0, out1,
+   // Inputs
+   clk, wr0a, wr0b, wr1a, wr1b, inData
+);

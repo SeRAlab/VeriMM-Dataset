@@ -1,0 +1,12 @@
+Develop a character matching module that identifies whether the current input character matches a configured character while considering a chaining mechanism. The module receives a clock and reset signal, along with configuration inputs for character settings and their validity. When valid input data is provided, it compares the input character against the configured character. If a match occurs and chaining is enabled, it retains the previous match state; otherwise, it outputs a match. The module resets both the matched state and character data on the reset signal, allowing for reconfiguration as needed.
+module top_module(
+    clk,
+    rst,
+    config_valid,
+    config_char,
+    config_chained,
+    input_valid,
+    input_char,
+    prev_matched,
+    this_matched
+    );

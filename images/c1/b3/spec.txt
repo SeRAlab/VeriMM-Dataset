@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+    
+Implement a module to control the output data and its enable signal for an Ethernet communication interface, specifically during the transmission phase. Its primary functions include:
+
+Generating the output data (`Mdo`) and its enable signal (`MdoEn`) based on the current operation (read or write), the progress of the operation, and the bit counter value.
+Handling preamble suppression for operations that do not require a preamble (indicated by `NoPre`).
+Ensuring that the output data is correctly timed and synchronized with the Ethernet Management Data Clock (`MdcEn_n`).
+
+This module plays a crucial role in managing how data is serialized and sent out during Ethernet frame transmission, making it a vital component in the broader system context of Ethernet communication.
+
+Module name:  
+	eth_outputcontrol
+
+Input ports:
+	Clk (input): The system clock signal. It synchronizes the operations within the module.
+	Reset (input): The reset signal. When asserted, it initializes the module's internal registers.
+	WriteOp (input): A signal indicating whether the current operation is a write operation.
+	NoPre (input): A signal indicating whether the preamble should be suppressed.
+	InProgress (input): A signal indicating whether a transmission operation is currently in progress.
+	ShiftedBit (input): The current bit to be transmitted.
+	BitCounter (input, 7 bits): A counter indicating the current bit position within the frame being transmitted.
+	MdcEn_n (input): The enable signal for the Management Data Clock, active low.
+Output ports:
+	Mdo (output): The output data bit to be transmitted.
+	MdoEn (output): The enable signal for the output data bit, indicating when Mdo is valid.
+
+
+Implementation:
+The RTL module eth_outputcontrol is designed to manage the output control logic for an Ethernet interface, specifically focusing on the manipulation and timing of the Management Data Output (MDO) signal and its enable signal (MdoEn) based on various input conditions. The module operates in the context of Ethernet PHY management operations, likely adhering to the IEEE 802.3 standard for Ethernet management frames.
+
+Give me the complete code.
+

@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module to implement a 64-bit priority encoder. A priority encoder takes a binary input with multiple active bits and outputs the binary representation of the index of the highest-priority active bit. In this context, "highest-priority" refers to the bit with the highest index (i.e., the most significant bit) that is set to 1. This module is crucial in systems where it is necessary to identify the highest-order signal among a set, such as interrupt handling, where the highest-priority interrupt needs to be serviced first.
+
+Module name:  
+	sparc_tlu_penc64
+
+Input ports:
+	in [63:0]: A 64bit input vector. Each bit in this vector represents a signal or condition, and the module identifies the highestpriority (highestindex) active bit (set to 1) within this vector.
+Output ports:
+	out [5:0]: A 6bit output vector. This output represents the binary index of the highestpriority active bit in the input vector. Since the input is 64 bits, a 6bit output is sufficient to index any bit within the input vector (2^6 = 64).
+
+
+Implementation:
+The sparc_tlu_penc64 module is designed to perform a priority encoding operation on a 64-bit input vector, producing a 6-bit output. The core functionality of this module is to scan the 64-bit input vector from the least significant bit (LSB) to the most significant bit (MSB) and to identify the position of the first '1' bit encountered. This position is then encoded into a 6-bit output, effectively mapping the 64 possible positions (0 to 63) into a binary representation. The operation is purely combinational, as the output is directly dependent on the current state of the input without any internal state or memory elements influencing the outcome.
+The module employs a simple yet effective iterative approach to achieve this functionality. A for loop iterates through each bit of the input vector, checking each bit in sequence from bit 0 (LSB) to bit 63 (MSB). The loop uses an integer i as its index, which also serves as the bit position indicator. Upon encountering the first '1' bit in the input vector, the loop assigns the current index i (which corresponds to the position of the '1' bit) to the 6-bit output. This assignment is done in a bit-wise manner, ensuring that the binary representation of the index i is accurately reflected in the output.
+It's important to note that due to the nature of the loop and the condition within it, if multiple '1' bits are present in the input vector, only the position of the first '1' bit (starting from the LSB) will be encoded into the output. This characteristic is inherent to priority encoding, where the priority is given to the '1' bit closest to the LSB.
+
+Give me the complete code.
+

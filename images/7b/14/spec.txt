@@ -1,0 +1,9 @@
+Design a circuit that computes the cumulative sum of incoming 32-bit inputs over a clock cycle. This module captures valid input data when `in_valid` is asserted, continuously adding it to a running total, while keeping track of the count of valid inputs. Upon the next clock cycle when no valid input is present, if at least one valid input has been received, it outputs the calculated sum and sets an output valid signal high. Additionally, it resets the sum and count to prepare for the next batch of input data when a reset signal is received.
+module top_module(
+    input clk,
+    input rst,
+    input [31:0] in,
+    input in_valid,
+    output reg [31:0] out,
+    output reg out_valid
+);

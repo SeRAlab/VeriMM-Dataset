@@ -1,0 +1,33 @@
+Please act as a professional verilog designer.
+    
+Implement a module to serve as an interface between a Wishbone bus and external devices, specifically a keypad, buttons, and LEDs. Its primary functions include:
+
+Keypad Scanning: It controls the scanning of a keypad matrix by driving the columns and reading the rows to detect key presses.
+Button Debouncing: It debounces physical button inputs to ensure stable digital signals.
+LED Control: It allows for the control of LEDs based on data received from the Wishbone bus.
+Interrupt Generation: It generates interrupts for key presses and button presses, signaling the main system to take appropriate actions.
+
+This module plays a crucial role in human-machine interaction within systems that require input from a keypad or buttons and provide feedback through LEDs.
+
+Module name:  
+	spio
+
+Input ports:
+	i_clk: Clock input. The primary clock signal that drives the module's operations.
+	i_wb_cyc, i_wb_stb, i_wb_we: Wishbone bus control signals. These signals indicate an active bus cycle, a strobe signal, and write enable, respectively.
+	i_wb_data[31:0]: 32bit input data from the Wishbone bus, used for controlling the LEDs and keypad columns.
+	i_kp_row[3:0]: 4bit input representing the current state of the keypad rows.
+	i_btn[1:0]: 2bit input representing the state of two physical buttons.
+Output ports:
+	o_wb_data[31:0]: 32bit output data to the Wishbone bus, providing the status of the keypad rows, buttons, and LEDs.
+	o_kp_col[3:0]: 4bit output controlling the keypad columns for scanning.
+	o_led[3:0]: 4bit output controlling the state of four LEDs.
+	o_kp_int: Keypad interrupt signal, indicating a key press.
+	o_btn_int: Button interrupt signal, indicating a button press.
+
+
+Implementation:
+The RTL module presented, named spio, is designed to interface with a simple peripheral device, incorporating functionalities such as keypad scanning, button state monitoring, and LED control. The module operates synchronously with an input clock signal i_clk and communicates with a wishbone bus for data transfer. The design employs both combinational and sequential logic to achieve its functionalities, which are detailed below:
+
+Give me the complete code.
+

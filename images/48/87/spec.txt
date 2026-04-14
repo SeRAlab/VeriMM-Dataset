@@ -1,0 +1,25 @@
+Design a readback multiplexer for a Wishbone interface that allows for selecting and outputting one of 16 different 32-bit words based on the 4 least significant bits of the input address. The module generates an acknowledgment signal when a valid read request is detected, enabling seamless communication in a synchronous system.
+module top_module(input wb_clk_i,
+   input wb_rst_i,
+   input wb_stb_i,
+   input [15:0] wb_adr_i,
+   output reg [31:0] wb_dat_o,
+   output reg wb_ack_o,
+   
+   input [31:0] word00,
+   input [31:0] word01,
+   input [31:0] word02,
+   input [31:0] word03,
+   input [31:0] word04,
+   input [31:0] word05,
+   input [31:0] word06,
+   input [31:0] word07,
+   input [31:0] word08,
+   input [31:0] word09,
+   input [31:0] word10,
+   input [31:0] word11,
+   input [31:0] word12,
+   input [31:0] word13,
+   input [31:0] word14,
+   input [31:0] word15
+   );

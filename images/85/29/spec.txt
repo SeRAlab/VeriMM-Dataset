@@ -1,0 +1,18 @@
+Implement the Verilog module based on the following description.
+This is a sequential circuit. The circuit consists of combinational logic and a three-bit up/down counter. The output of the counter has been made observable through the output count.
+
+Time 0ns: clk = 0, up = 0, down = 0, reset = 0, count = xxx.
+Time 5ns: clk = 1, up = 0, down = 0, reset = 0, count = xxx.
+Time 10ns: clk = 0, up = 1, down = 0, reset = 0, count = xxx.
+Time 15ns: clk = 1, up = 1, down = 0, reset = 0, count = 001.
+Time 20ns: clk = 0, up = 1, down = 0, reset = 0, count = 001.
+Time 25ns: clk = 1, up = 1, down = 1, reset = 0, count = 000.
+Time 30ns: clk = 0, up = 1, down = 1, reset = 0, count = 000.
+Time 35ns: clk = 1, up = 0, down = 1, reset = 0, count = 111.
+
+module top_module (
+	input clk,
+	input up,
+	input down,
+	input reset,
+	output reg [2:0] count);

@@ -1,0 +1,7 @@
+Implement a circuit that performs the Hilbert transform on a pair of complex input signals represented as signed integers. The module accepts two complex inputs (in_i for the in-phase component and in_q for the quadrature component) and generates two complex output signals (out_i and out_q). It utilizes a series of delay elements and custom multipliers to compute the necessary transformations, followed by adders and subtractors to generate the final output. The design is intended to create an analytic signal that corresponds to the given complex input, useful in applications like signal processing, modulation, and filtering. The parameter `n` specifies the bit-width of the input/output signals and supports multiple complex input channels.
+module top_module(
+  input signed [n-1:0] in_i,
+  input signed [n-1:0] in_q,
+  output signed [n-1:0] out_i,
+  output signed [n-1:0] out_q
+);

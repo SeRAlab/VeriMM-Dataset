@@ -1,0 +1,9 @@
+Design a pipelined logic processing module that takes a 50-bit input and performs various logical operations. It has three pipeline stages: the first stage passes the input through unchanged, the second stage synchronizes the input to the clock, and the third stage computes four outputs: the logical AND, OR, and XOR of the input bits, along with a majority function that determines if the majority of the bits are high. The outputs are presented as individual signals: `out_and`, `out_or`, `out_xor`, and `majority_out`, enabling efficient data processing in a sequential manner.
+module top_module(
+    input [49:0] in,
+    input clk,               // Added clk input
+    output out_and,
+    output out_or,
+    output out_xor,
+    output majority_out
+);

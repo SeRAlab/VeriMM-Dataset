@@ -1,0 +1,11 @@
+Design a 4-bit ripple carry adder circuit with load and clear functionalities. The module processes two 4-bit inputs, A and B, and a carry input, Cin, to compute their sum on the rising edge of the clock. If the Clear signal is asserted, the sum output S and carry output Cout will be reset to zero. If the Load signal is active, the module will load the value of A into the sum output S and set the carry output Cout to Cin. Otherwise, it will perform the addition of A, B, and Cin, outputting the result in S and generating Cout for any overflow.
+module top_module(
+    input wire [3:0] A,
+    input wire [3:0] B,
+    input wire Cin,
+    input wire Load,
+    input wire Clear,
+    input wire clock,
+    output reg [3:0] S,
+    output reg Cout
+);

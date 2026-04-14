@@ -1,0 +1,8 @@
+Design a timer module that generates a pulse output based on a clock signal. The module counts clock cycles using an 18-bit counter and produces a 1-bit output that toggles on the rising edge of the 18th bit of the counter. The output, `wb_tgc_o`, remains low upon reset but will toggle high when the generated pulse occurs and `wb_tgc_i` is low. This functionality can be utilized for timing applications, generating periodic signals, or managing state transitions in other circuits.
+module top_module(
+    
+    input      wb_clk_i,
+    input      wb_rst_i,
+    output reg wb_tgc_o,   
+    input      wb_tgc_i    
+  );

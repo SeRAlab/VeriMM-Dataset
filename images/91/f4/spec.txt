@@ -1,0 +1,10 @@
+Design a register that captures and stores instruction-related data on the rising edge of a clock signal. When the reset signal is activated, it initializes the stored values to zero and sets the status flag low; otherwise, it takes an 8-bit input instruction, divides it into individual fields, and updates the `func`, `rdst`, and `rsrc` outputs accordingly while setting the status flag high to indicate valid data storage. This module serves as a part of a pipelined processor architecture, specifically handling the instruction-fetch to instruction-decode stage.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] instr,
+    output reg [1:0] func,
+    output reg [2:0] rdst,
+    output reg [2:0] rsrc,
+    output reg status
+    );

@@ -1,0 +1,13 @@
+Design a reset controller that manages multiple reset signals in a synchronized manner for a digital system. It takes various inputs, including external reset signals, a clock, and a lock signal from a clock manager (dcm_locked), to control the output reset signals for the system, bus structure, peripherals, and interconnects. The module generates a system reset when debugging is active or when specific reset conditions are met. It ensures that all reset signals are maintained in a stable state, thereby preventing glitches during system initialization or recovery from faults.
+module top_module(
+  input slowest_clk,
+  input ext_reset,
+  input aux_reset,
+  input dcm_locked,
+  input debug_sys_rst,
+  output reg sys_reset,
+  output reg [0:0]bus_struct_reset,
+  output reg [0:0]peripheral_reset,
+  output reg [0:0]interconnect_reset,
+  output reg [0:0]peripheral_aresetn
+);

@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+    
+Implement a module is a 4-to-1 multiplexer that selects one of the four input data signals based on the 2-bit selection signal and forwards the selected input to its output. This module is parameterized, allowing for the width of the inputs and output to be defined at instantiation, making it versatile for various data widths. In a broader system context, multiplexers like `Mux4` are fundamental building blocks used in digital circuits for data routing, function implementation, and resource sharing, among other applications.
+
+Module name:  
+	Mux4
+
+Input ports:
+	sel [1:0]: A 2bit selection signal that determines which of the four input data signals is routed to the output. It is a binary value where 2'b00 selects in0, 2'b01 selects in1, 2'b10 selects in2, and 2'b11 selects in3.
+	in0, in1, in2, in3 [(WIDTH1):0]: These are the four input data signals among which one is selected to be forwarded to the output. The width of these signals is defined by the parameter WIDTH, allowing for flexibility in the module's application. The default width is 32 bits, but it can be adjusted as needed during module instantiation.
+Output ports:
+	out [(WIDTH1):0]: The output data signal of the module. It carries the data of the selected input signal based on the sel input. The width of this signal matches that of the input signals, as defined by the WIDTH parameter.
+
+
+Implementation:
+The provided RTL module, named Mux4, implements a 4-to-1 multiplexer (mux) with a parameterizable data width. This multiplexer selects one of its four input signals to pass to its output based on the value of a 2-bit select signal. The core logic of this module is purely combinational, as it directly maps the select input to the corresponding data output without involving any clocked (sequential) operations.
+
+Give me the complete code.
+

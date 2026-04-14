@@ -1,0 +1,7 @@
+Design a 4-bit shift register with load and shift capabilities. When enabled by the shift_en signal, the module shifts the input data through four stages on each positive edge, moving the data from stage1 to stage4, where data_out reflects the content of stage4. The load_en signal allows for loading the same 4-bit input data simultaneously into all stages regardless of the current shift state. Thus, this module can either shift incoming data serially or load it in parallel, providing flexibility for data manipulation in digital circuits.
+module top_module(
+    input [3:0] data_in,
+    input shift_en,
+    input load_en,
+    output reg [3:0] data_out
+);

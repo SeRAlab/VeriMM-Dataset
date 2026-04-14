@@ -1,0 +1,7 @@
+Design a circuit that outputs a 32-bit signal with padding functionality. When the output enable (oe) signal is asserted, the module directly outputs the input signal (padin) while resetting a counter. When the oe signal is deasserted, the module initiates a padding operation by concatenating 16 zeros to the input signal and then sequentially outputs the padded data over several clock cycles, controlled by a counter. This design effectively serves to transfer and pad the input data, making it suitable for applications requiring extended data width or additional processing stages.
+module top_module(
+    output reg [31:0] padout,
+    input [31:0] padin,
+    input oe,
+    input clk
+);

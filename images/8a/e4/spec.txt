@@ -1,0 +1,7 @@
+Design a circuit that performs 8-bit signed addition of two inputs, a and b, while detecting overflow conditions. The module outputs the 8-bit sum and a separate overflow signal. It leverages a temporary 9-bit variable to accommodate the full range of the sum and checks if overflow occurs when the result exceeds the limits of signed 8-bit integers (-128 to 127). The output sum is truncated to fit within 8 bits, ensuring proper representation.
+module top_module(
+    input [7:0] a,
+    input [7:0] b,
+    output reg [7:0] s,  // s should be declared as reg since it is assigned in always block
+    output reg overflow   // overflow should also be declared as reg
+);

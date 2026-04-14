@@ -1,0 +1,9 @@
+Implement a Verilog module for a 2-bit shift register with enable and asynchronous reset. The shift register should have a clock input `clk`, an asynchronous reset input `rst`, an enable input `en`, a 2-bit data input `D`, and a 2-bit output `Q`. When `rst` is high, `Q` should be set to 0. When `en` is high, `Q` should shift left by 1 bit on the rising edge of `clk` and the least significant bit of `Q` should be set to the least significant bit of `D`.
+
+module shift_register(
+	input wire clk,
+	input wire rst,
+	input wire en,
+	input wire [1:0] D,
+	output reg [1:0] Q
+);

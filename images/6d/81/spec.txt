@@ -1,0 +1,18 @@
+Design a 3x3 mean filter module for image processing that processes color video signals in YCbCr format. This module utilizes a clock-driven state machine to shift in new pixel values (Y, Cb, Cr) while maintaining a buffered history of the last three rows of pixel data. Upon activation, it computes the average intensities of the 3x3 neighborhood for each color component and outputs the calculated average while preserving synchronization signals (data enable, vertical sync, and horizontal sync) for seamless integration into a video pipeline. The module includes reset functionality to initialize the buffer, ensuring reliable operation upon system startup.
+module top_module(
+    input clk,
+    input ce,
+    input rst,
+    input [7:0] in_Y,
+    input [7:0] in_Cb,
+    input [7:0] in_Cr,
+    input in_de,
+    input in_vsync,
+    input in_hsync,
+    output reg [7:0] out_Y,
+    output reg [7:0] out_Cb,
+    output reg [7:0] out_Cr,
+    output reg out_de,
+    output reg out_vsync,
+    output reg out_hsync
+);

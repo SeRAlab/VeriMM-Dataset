@@ -1,0 +1,7 @@
+Design a circuit that functions as an 8-depth shift register with data input and multi-select output. On each positive edge of the clock, the module shifts the data through eight registers, with the first register being loaded with the input data `d` and subsequently shifting the previous values into the next registers. The output `q` provides access to one of the registers based on the 3-bit `select` input. This design allows for temporary data storage and retrieval, making it suitable for applications requiring sequential data processing or buffering.
+module top_module(
+    input clk,
+    input [7:0] d,
+    input [2:0] select,
+    output [7:0] q
+);

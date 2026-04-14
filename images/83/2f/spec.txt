@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that transitions between five distinct states based on a clock signal and a reset signal. The state machine initializes to state `000` upon reset and then progresses through various states (`001`, `010`, `011`, and `100`) depending on the value of a 6-bit operation input `op`. The transitions between states are determined by specific conditions related to the bits of `op`, enabling functionalities such as handling jump, branch, and load/store operations. This structure allows the FSM to manage control flow in a digital circuit, typically found in instruction execution units of microcontrollers or processors.
+module top_module(
+    input clk,
+    input rst,
+    input [5:0] op,
+    output reg [2:0] state
+    );

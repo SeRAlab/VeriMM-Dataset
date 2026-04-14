@@ -1,0 +1,9 @@
+Design a 4-bit shift register that can be reset asynchronously, load data, and perform shifting operations. The register has four internal stages and operates on the rising edge of the clock signal. When the asynchronous reset is activated, all bits are set to zero. If the load signal is high, the register will store the input data. Otherwise, if the enable signal is high, the register will shift its data based on the current shift amount, which ranges from 0 to 3, effectively allowing for varying degrees of right shifting through the internal stages. The output of the register, `q`, represents the current state of the shifted data.
+module top_module(
+    input clk,
+    input areset,  // async active-high reset to zero
+    input load,
+    input ena,
+    input [3:0] data,
+    output reg [3:0] q
+);

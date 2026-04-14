@@ -1,0 +1,9 @@
+Implement a request arbiter that manages access to a shared resource between two competing requests (req_0 and req_1) using a state machine. The arbiter takes a clock and an active-high reset signal to control its operation. It produces two outputs (gnt_0 and gnt_1) indicating which request has been granted access based on priority and the current state. If both requests are active, it will grant access to the request with a higher priority; if only one request is active, it will grant access to that request. The state transitions occur on the rising edge of the clock or during a reset, ensuring that both grants can coexist in a conflict-free manner.
+module top_module(
+    input clock, // clock
+    input reset, // Active high, syn reset
+    input req_0, // Request 0
+    input req_1, // Request 1
+    output reg gnt_0, // Grant 0
+    output reg gnt_1 // Grant 1
+);

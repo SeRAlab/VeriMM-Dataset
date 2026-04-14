@@ -1,0 +1,7 @@
+Design a binary ones counter that counts the number of '1' bits in a 4-bit binary input. The module incorporates a reset function that initializes the count to zero and utilizes a clock signal for synchronization. On each rising edge of the clock, if reset is not asserted, the module processes the input to derive an intermediate output, which is then utilized in a series of bitwise operations to update the final count of '1' bits, stored in a 3-bit output register. This implementation allows for counting 1s in the binary input effectively.
+module top_module(
+  input [3:0] binary_in,
+  input clk,
+  input reset,
+  output reg [2:0] ones_count
+);

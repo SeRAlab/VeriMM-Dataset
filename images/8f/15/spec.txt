@@ -1,0 +1,29 @@
+Please act as a professional Verilog designer.
+
+Implement a module for a 32-bit register with enable. The register holds its value on the positive edge of the clock signal clk when the enable signal is high. The register should have a synchronous reset signal rst, which sets the register value to 0 when asserted.
+
+Module name:  
+    enable_register      
+
+Input ports:
+    clk: Clock signal.
+    rst: Synchronous reset signal (active high).
+    en: Control signal to enable the register.
+    data_in: 32-bit input value to be loaded into the register.
+
+Output ports:
+    q: 32-bit output representing the current register value.
+
+Implementation:
+The enable_register module holds its value on the positive edge of the clock signal clk when the enable signal is high. When the reset signal rst is asserted, the register value is set to 0 on the next positive edge of clk. The register value is a 32-bit binary number.
+
+Give me the complete code.
+
+module enable_register(
+	input clk,
+	input rst,
+	input en,
+	input [31:0] data_in,
+	
+	output reg [31:0] q
+);

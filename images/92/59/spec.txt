@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a 16-bit shift register with parallel load capability. The register should be able to load a 16-bit input (d) on a control signal (load). It utilizes a clock signal (clk), and a reset signal (reset), and provides the shifted value (q) as output. The register shifts left by one bit on each clock cycle if the load signal is low.
+
+Module name:
+   shift_register_16bit
+
+Input ports:
+   clk: Clock signal used for synchronous operation.
+   reset: Reset signal used to initialize the register.
+   load: Control signal indicating whether to load the input data.
+   d: 16-bit input data to be loaded into the register.
+
+Output ports:
+   q: 16-bit output representing the current value of the shift register.
+
+Implementation:
+On the positive edge of the clock signal (clk) or the positive edge of the reset signal (reset), the module updates the shift register value.
+If the reset signal (reset) is high, the shift register (q) is reset to 0.
+If the reset signal (reset) is low, the module checks the value of the control signal (load).
+If load is 1, the shift register (q) is loaded with the input data (d).
+If load is 0, the shift register (q) is shifted left by one bit.
+
+Give me the complete code.

@@ -1,0 +1,15 @@
+Design a register module that captures and outputs instruction and control signal data on the rising edge of the clock when enabled. The module accepts a 32-bit instruction, a 20-bit current program counter, a 20-bit previous destination address, and a previous jump enable signal as inputs. When the clock enable signal is asserted, it stores and outputs these values through corresponding output registers, effectively acting as a data latch to hold the current state for further processing in a digital system.
+module top_module(
+        input clk,
+        input clken,
+
+        input [31:0] i_instr,
+    input [19:0] i_cur_pc,
+    input [19:0] i_pre_des,
+    input i_pre_jum_en,
+    
+    output reg [31:0] o_instr,
+    output reg [19:0] o_cur_pc,
+    output reg [19:0] o_pre_des,
+    output reg o_pre_jum_en
+    );

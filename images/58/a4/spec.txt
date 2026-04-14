@@ -1,0 +1,6 @@
+Design a circuit for sign extension of a given 32-bit signed input based on varying input sizes. The module takes a 32-bit signed integer (`din`) and a 6-bit size indicator (`in_size`) that specifies the size of the input. Depending on the size, it extends the sign bit of `din` to ensure that the output (`dout`) is always 32 bits. For instance, if `in_size` is 2, 4, 8, or 16, it pads the higher order bits with the sign bit of `din` accordingly; if `in_size` is 32, the output is simply the original input. If an unrecognized size is given, the output defaults to zero.
+module top_module(
+    input signed [31:0] din,
+    input [5:0] in_size,
+    output reg signed [31:0] dout
+);

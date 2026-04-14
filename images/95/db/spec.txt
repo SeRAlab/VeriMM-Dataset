@@ -1,0 +1,9 @@
+Design a circuit that detects rising and falling edges of a digital input signal 'a' with the capability to introduce a configurable delay. The module implements a pipelined approach using a specified depth to sample the input over multiple clock cycles. Upon every rising edge of the clock, it captures the current state of 'a' and calculates the difference from the previous state to identify transitions. When a rise or fall edge is detected relative to the delayed state of 'a', it sets the outputs 'rise' and 'down' accordingly, signaling the edge detection functionality.
+module top_module(
+  input               clk,
+  input               rst_n,
+  input               a,
+  input               delay,
+  output reg          rise,
+  output reg          down
+);

@@ -1,0 +1,9 @@
+Design a circuit for a Memory Encryption and Decryption module implementing the AES algorithm. The module takes a 128-bit input data and a 128-bit key, and it supports two operational modes: encryption or decryption, controlled by the 'mode' signal. On the rising edge of the clock or during a reset signal, the module processes the input data according to the selected mode, outputting either the encrypted or decrypted data based on the provided key.
+module top_module(
+  input clk,
+  input reset,
+  input [127:0] data_in,
+  input [127:0] key,
+  input mode,
+  output reg [127:0] data_out
+);

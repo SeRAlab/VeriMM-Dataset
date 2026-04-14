@@ -1,0 +1,9 @@
+Design a circuit that operates as a data processing unit, which performs rotation, shifting, and multiplication based on input signals. The module features an input for a clock, a load signal to initialize values, and a 2-bit enable input to control data rotation. On a clock's positive edge, if the load signal is activated, it initializes the multiplier and count. Otherwise, it incrementally counts and, depending on the enable signals, either rotates the input data left or right. The rotated data is then used to create a shifted version and combined with the original input to compute a sum. Finally, the product of certain bits from the sum and the rotated data generates a 6-bit output.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [49:0] in,
+    output reg [5:0] q,
+    output reg [3:0] count
+);

@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+
+Design a 16-bit ALU (Arithmetic Logic Unit) that supports addition, subtraction, AND, OR, XOR, and NOT operations. The ALU should have two 16-bit inputs and produce a 16-bit output based on a 3-bit control signal. The control signal specifies which operation to perform.
+
+Module name:
+    alu_16bit
+
+Input ports:
+    a: First 16-bit input.
+    b: Second 16-bit input.
+    alu_ctrl: 3-bit control signal to select the operation.
+
+Output ports:
+    result: 16-bit result of the selected operation.
+
+Implementation:
+The module uses a combinational always block to evaluate the result based on the control signal. The control signal mappings are as follows:
+    000: Addition
+    001: Subtraction
+    010: AND
+    011: OR
+    100: XOR
+    101: NOT (only applies to the first input)
+
+Give me the complete code.
+
+module alu_16bit(
+    input wire [15:0] a,
+    input wire [15:0] b,
+    input wire [2:0] alu_ctrl,
+    output reg [15:0] result
+    );

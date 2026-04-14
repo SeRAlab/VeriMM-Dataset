@@ -1,0 +1,8 @@
+Design a simple 4-entry synchronous RAM module with 32-bit wide data words. The module supports write operations when the Memwrite signal is active, allowing data to be stored at a specified address with a 2-time unit delay upon the rising edge of the clock. The read_data output provides the stored word from memory corresponding to the given address, which is continuously updated based on the current address input. This module serves as a basic memory block in digital designs that require simple data storage and retrieval functionalities.
+module top_module(
+       output reg [31:0] read_data,
+       input [3:0] address,     
+       input [31:0] write_data,  
+       input  Memwrite,         
+       input  clock
+    );

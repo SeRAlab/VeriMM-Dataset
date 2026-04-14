@@ -1,0 +1,18 @@
+Design a control module for a simple user interface that drives a 7-segment display and outputs to LEDs based on button inputs. The module takes five button inputs (btnC, btnU, btnD, btnR, btnL) and a 16-bit switch input (sw). When any button is pressed, the corresponding segments of the 7-segment display are activated (set to low), while the decimal point is turned on when no buttons are pressed. The module initializes the display and the common anodes to ensure all digits are enabled at startup. This design allows for visual feedback on button presses and is ideal for interactive applications or embedded systems demonstrations.
+module top_module(
+    input             clk,      // 100MHz clock input, unused
+
+    input             btnC,     // push button inputs
+    input             btnU,
+    input             btnD,
+    input             btnR,
+    input             btnL,
+
+    input      [15:0] sw,       // slide switch inputs
+
+    output reg [15:0] led,      // LED outputs
+
+    output reg  [6:0] seg,      // 7-segment display outputs, active low
+    output reg        dp,       // decimal point, active low
+    output reg  [3:0] an        // common anodes, active low
+);

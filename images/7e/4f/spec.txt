@@ -1,0 +1,9 @@
+Design a signed multiplier circuit that multiplies two signed 26-bit inputs (Data_A_i and Data_B_i) and produces a signed 52-bit output (sgf_result_o). The multiplier operates on the rising edge of the clock and includes a reset function that sets the output and registers to zero. It also features a load control input (load_b_i) to update the second operand (Data_B_i) in a register before the multiplication operation. The result of the multiplication is stored in a register and provided as output.
+module top_module(
+    input clk, // clock input
+    input rst, // reset input
+    input load_b_i, // load input
+    input signed [25:0] Data_A_i, // input A
+    input signed [25:0] Data_B_i, // input B
+    output signed [51:0] sgf_result_o // output result
+);

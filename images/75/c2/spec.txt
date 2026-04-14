@@ -1,0 +1,8 @@
+Implement a circuit that calculates the two's complement of a 4-bit input value. When enabled, the module captures the input value and performs the negation followed by incrementing it by one. This is done in two stages to ensure the output is updated synchronously with the clock. Upon reset, the output and intermediate stages are initialized to zero, while the operation is conducted only when the enable signal is active.
+module top_module(
+    input clk,
+    input rst_n,
+    input en,
+    input [3:0] in,
+    output reg [3:0] out
+);

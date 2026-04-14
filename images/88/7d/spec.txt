@@ -1,0 +1,8 @@
+Design a four-function calculator that performs addition, subtraction, multiplication, and division on two 4-bit inputs, `a` and `b`, based on a 2-bit operation select input (`op`). The output is a 4-bit `result`, along with an `overflow` signal that indicates whether the result exceeds the maximum representable value (15). The calculator implements arithmetic operations and ensures proper handling of overflow conditions for operations that can exceed the 4-bit limit, effectively providing basic computational functionality within the constraints of binary representation.
+module top_module(
+  input [3:0] a,
+  input [3:0] b,
+  input [1:0] op,
+  output reg [3:0] result,   // Changed from wire to reg
+  output reg overflow         // Changed from wire to reg
+);

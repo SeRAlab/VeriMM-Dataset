@@ -1,0 +1,9 @@
+Design a 4-to-1 multiplexer with tri-state output control. This module selects between four 8-bit input signals (A, B, C, D) based on a single control bit (ctrl). When ctrl is low (0), the output (out) reflects the value of input A. When ctrl is high (1), the output takes the value from input D. In any other case, the output is set to high-impedance (tri-state), allowing for bus sharing in a circuit design. Note that inputs B and C are not utilized in the current design.
+module top_module(
+    input [7:0] A,
+    input [7:0] B,
+    input [7:0] C,
+    input [7:0] D,
+    input ctrl,
+    output reg [7:0] out
+);

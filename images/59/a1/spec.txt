@@ -1,0 +1,30 @@
+Please act as a professional Verilog designer.
+
+Create a Verilog module to implement a 4-bit binary counter with synchronous reset and enable signals. The counter should increment on every positive edge of the clock when the enable signal is high. If the reset signal is high, the counter should reset to 0.
+
+Module name:  
+    binary_counter
+
+Input ports:
+	clk: Clock signal for synchronous operations.
+	reset: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+	enable: Enable signal to control the counting operation.
+
+Output ports:
+    count: 4-bit output representing the current count value.
+
+Implementation:
+Counter:
+The module includes a 4-bit counter that increments on each positive edge of the clock signal when the enable signal is high. If the reset signal is high, the counter resets to 0.
+Output Assignment:
+The output port count is assigned the value of the counter.
+
+Give me the complete code.
+
+module binary_counter(
+    input           clk,
+    input           reset,
+    input           enable,
+
+    output reg [3:0] count
+);

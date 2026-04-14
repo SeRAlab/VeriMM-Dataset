@@ -1,0 +1,9 @@
+Design a signed 4-bit two's complement adder with overflow detection. The module takes two signed 4-bit inputs, A and B, and produces a 5-bit signed output, C, which represents their sum, including a carry bit. The design incorporates a clock signal for synchronous operation and a reset signal to initialize the output and internal states. The module detects overflow, which occurs when the sign of the result differs from the signs of the two inputs, indicating that the sum exceeds the range representable by the signed 4-bit format.
+module top_module(
+  input clk,
+  input reset,
+  input signed [3:0] A,
+  input signed [3:0] B,
+  output reg signed [4:0] C,
+  output reg overflow
+);

@@ -1,0 +1,9 @@
+Design a module for computing the Adler-32 checksum, which is a popular checksum algorithm used for data integrity verification. The module accepts an 8-bit input data stream and produces a 16-bit checksum output based on the cumulative addition of input values. It operates based on a state machine with three states: IDLE, PROCESS, and OUTPUT. In the IDLE state, it waits for valid input to initialize the checksum calculation. In the PROCESS state, it updates the checksum values based on the incoming data while ensuring they stay within the bounds of a specified prime number. Upon receiving an indication that input data processing is complete, it transitions to the OUTPUT state, where it outputs the calculated checksum before returning to the IDLE state for new input.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] data_in,
+  input valid_in,
+  output valid_out,
+  output reg [15:0] checksum
+);

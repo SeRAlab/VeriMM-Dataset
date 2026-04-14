@@ -1,0 +1,8 @@
+Design a vending machine controller that manages coin input and product dispensing through state machine logic. It has three primary states: IDLE, DISPENSING, and INVALID_COIN. In the IDLE state, it waits for a coin input; upon receiving a coin, it transitions to the DISPENSING state, updates the display to show a "THANK YOU" message, and signals to dispense the item. The DISPENSING state lasts for a specified delay before returning to IDLE, allowing the user to see the thank-you message briefly. If an invalid coin is detected, the machine transitions to INVALID_COIN, showing an error message and then resets back to IDLE. The overall design ensures proper feedback to the user and controls the dispensing mechanism according to the state of the machine.
+module top_module(
+  input clk,
+  input reset,
+  input coin,
+  output reg [11:0] display,
+  output reg dispense
+);

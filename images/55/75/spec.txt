@@ -1,0 +1,7 @@
+Design a circuit that calculates the Adler-32 checksum for a given input data stream comprising multiple bytes. The module takes an input array of data, processes it in parallel to compute two sums, `sum_a` and `sum_b`, using a series of modular additions, and outputs a 32-bit checksum derived from these sums. It also checks the validity of the computed checksum against an input checksum value, providing an indication of whether the received data is valid. The design leverages a generate loop to handle multiple data bytes efficiently, aiming to ensure both speed and accuracy in checksum computation.
+module top_module(
+  input [8*n-1:0] data_in,
+  input [15:0] checksum_in,
+  output [15:0] checksum_out,
+  output valid
+);

@@ -1,0 +1,5 @@
+Design a sequential circuit that detects the specific bit pattern "101" in a stream of input data (d_in). The circuit uses a shift register to store the last three bits and outputs a signal (found) indicating when the pattern is detected. It is reset asynchronously by the rst_n signal and operates on the rising edge of the clock. Upon detection, it shifts new input while maintaining the 101 pattern, effectively acting as a pattern recognizer in a finite state machine context.
+module top_module(
+  input rst_n, clock, d_in,
+  output found
+);

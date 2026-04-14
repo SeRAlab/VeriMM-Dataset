@@ -1,0 +1,13 @@
+Design a synchronous dual-operation calculator that performs basic arithmetic operations (addition, subtraction, multiplication, and division) on two 8-bit input numbers. The module operates based on a clock signal and includes reset and clear functionalities. On each rising edge of the clock, if the reset signal is activated, all internal and output values are cleared to zero. When clear is asserted, internal state is also reset. The calculator updates its output result only when there are changes in the input numbers or if any operation signal is activated, keeping track of the previous inputs and result to prevent unnecessary calculations.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] num1,
+  input [7:0] num2,
+  input add,
+  input sub,
+  input mult,
+  input div,
+  input clear,
+  output reg [7:0] result
+);

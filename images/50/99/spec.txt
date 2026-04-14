@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+
+Implement a pulse width modulation (PWM) generator. The module operates on the rising edge of the clock signal "clk" and uses a synchronous design. The duty cycle of the PWM output is determined by an 8-bit input "duty_cycle". The PWM period is fixed at 256 clock cycles.
+
+Module name:  
+    pwm_generator          
+
+Input ports:
+	clk: Clock signal.
+	rst_n: Reset signal (active low).
+	duty_cycle: 8-bit input determining the duty cycle.
+
+Output ports:
+	pwm_out: PWM output signal.
+
+Implementation:
+The module should use an 8-bit counter to generate the PWM output. The counter increments on each clock cycle. The PWM output is high when the counter value is less than the duty cycle value and low otherwise. When the reset signal is asserted, the counter should reset to zero.
+
+Give me the complete code.
+
+module pwm_generator(
+	input clk,
+	input rst_n,
+	input [7:0] duty_cycle,
+	output reg pwm_out
+);

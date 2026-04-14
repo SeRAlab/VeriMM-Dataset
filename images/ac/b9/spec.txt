@@ -1,0 +1,10 @@
+Design a 4-to-1 multiplexer with 8-bit wide inputs. The module takes four 8-bit inputs (in0, in1, in2, in3) and a 2-bit selection signal (sel) to determine which input to output (out). The multiplexer outputs the selected input based on the value of sel, defaulting to 0 when sel is out of range. Additionally, the output is latched to a zero value when the enable signal (en) is low, ensuring that the output can be reset.
+module top_module(
+  input [7:0] in0,
+  input [7:0] in1,
+  input [7:0] in2,
+  input [7:0] in3,
+  input sel,
+  input en,
+  output reg [7:0] out
+);

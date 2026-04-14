@@ -1,0 +1,24 @@
+Develop an AXI4-Lite bridge module that facilitates communication between an AXI4-Lite master and the connected bus, enabling address and data transactions. This module implements a straightforward passthrough mechanism for both write and read operations, signaling readiness based on valid input conditions. It provides basic response handling, always returning a fixed OKAY status for write operations and a zeroed data response for read requests, indicating no data available. The design ensures proper synchronization with external clock and reset signals, fulfilling the required interface specifications for an AXI4-Lite compliant transaction controller.
+module top_module(
+  input IPCORE_CLK,
+  input IPCORE_RESETN,
+  input AXI4_Lite_ACLK,
+  input AXI4_Lite_ARESETN,
+  input [15:0]AXI4_Lite_AWADDR,
+  input AXI4_Lite_AWVALID,
+  input [31:0]AXI4_Lite_WDATA,
+  input [3:0]AXI4_Lite_WSTRB,
+  input AXI4_Lite_WVALID,
+  input AXI4_Lite_BREADY,
+  input [15:0]AXI4_Lite_ARADDR,
+  input AXI4_Lite_ARVALID,
+  input AXI4_Lite_RREADY,
+  output AXI4_Lite_AWREADY,
+  output AXI4_Lite_WREADY,
+  output [1:0]AXI4_Lite_BRESP,
+  output AXI4_Lite_BVALID,
+  output AXI4_Lite_ARREADY,
+  output [31:0]AXI4_Lite_RDATA,
+  output [1:0]AXI4_Lite_RRESP,
+  output AXI4_Lite_RVALID
+);

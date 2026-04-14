@@ -1,0 +1,8 @@
+Design a register file that consists of multiple registers capable of storing and retrieving data. The module has parameters to define the number of bits per register, the number of registers, and the number of output signals. It accepts control signals to select which register to write to and which to read from. When the write enable signal is high, it writes the input data to the specified register. The output signals provide the contents of the registers selected by specific bits in the control signal.
+module top_module(
+  input clk, // Added clk input
+  input [n-1:0] ctrl,
+  input [k-1:0] data_in,
+  input write_en,
+  output [m-1:0] data_out
+);

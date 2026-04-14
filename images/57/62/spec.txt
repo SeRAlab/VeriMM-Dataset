@@ -1,0 +1,8 @@
+Design a differential signaling output driver for Low-Voltage Differential Signaling (LVDS) applications. The module takes a clock input (tx_clk) and two data inputs (tx_data_p and tx_data_n), where tx_data_p represents the positive data signal and tx_data_n represents the negative data signal. It outputs a single-ended data signal (tx_data_out_p) while driving the complementary output (tx_data_out_n) to a constant LOW. The module utilizes an instantiation of an output buffer (altddio_out) to handle the differential inputs, facilitating proper timing and signal integrity for LVDS communication.
+module top_module(
+  input tx_clk,
+  input tx_data_p,
+  input tx_data_n,
+  output reg tx_data_out_p,
+  output reg tx_data_out_n
+);

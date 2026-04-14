@@ -1,0 +1,30 @@
+
+
+You are tasked with designing a Verilog module for a 4-bit adder with carry in and carry out. The module should have four inputs, A, B, Cin (carry in), and a clock signal, and two outputs, S (sum) and Cout (carry out). The module should be able to add two 4-bit numbers A and B along with the carry in Cin, and output the 4-bit sum S along with the carry out Cout. The module should be designed using only combinational logic and should not use any sequential logic elements such as flip-flops.
+
+The module should be named "four_bit_adder" and should be written in only one module within 200 lines of Verilog code. The module should use the following interface:
+```
+module four_bit_adder (
+  input [3:0] A,
+  input [3:0] B,
+  input Cin,
+  input clk,
+  output [3:0] S,
+  output Cout
+);
+```
+The module should follow the following truth table:
+```
+Cin | A | B | S | Cout
+---------------------
+ 0  | 0 | 0 | 0 | 0
+ 0  | 0 | 1 | 1 | 0
+ 0  | 1 | 0 | 1 | 0
+ 0  | 1 | 1 | 0 | 1
+ 1  | 0 | 0 | 1 | 0
+ 1  | 0 | 1 | 0 | 1
+ 1  | 1 | 0 | 0 | 1
+ 1  | 1 | 1 | 1 | 1
+```
+In other words, the module should add the two 4-bit numbers A and B along with the carry in Cin, and output the 4-bit sum S along with the carry out Cout.
+

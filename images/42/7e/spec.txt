@@ -1,0 +1,6 @@
+Design a control unit for an Arithmetic Logic Unit (ALU) that produces a 3-bit ALU control signal based on a 2-bit ALU operation code (`ALUOp_i`) and a 6-bit function code (`funct_i`). The module decodes the input signals to determine the appropriate operation: for `ALUOp_i` of `01`, it sets the control output to `010`; for `ALUOp_i` of `11`, it distinguishes among various functions defined in `funct_i`, producing different control outputs for specific function codes. If none of the defined cases are matched, the output is set to an undefined state.
+module top_module(
+	funct_i,
+	ALUOp_i,
+	ALUCtrl_o
+);

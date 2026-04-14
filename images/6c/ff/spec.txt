@@ -1,0 +1,6 @@
+Design a program counter (PC) module for a sequential circuit that tracks the instruction address in a pipeline processor. This module increments the PC by 4 on each clock cycle to facilitate the normal execution flow, but can also handle branching. When a branch signal is activated, the module calculates a new PC address based on a branch address input, effectively directing the flow to a different sequence of instructions. The design incorporates a four-stage pipeline to propagate the current PC value through various stages, ensuring synchronized updates and precise management of instruction addresses.
+module top_module(
+		input				clk,
+		output		[31:0]	pc,
+		input				branch,
+		input		[31:0]	baddr);

@@ -1,0 +1,11 @@
+Design a synchronous First-In-First-Out (FIFO) memory buffer that can perform read and write operations. The module accepts input for clock signaling, reset conditions, read and write control signals, and data to write. It generates output signals indicating whether the buffer is empty or full, as well as providing the read data. The FIFO utilizes pointer registers to track the write and read positions, ensuring correct data handling and flow control based on the buffer's state, which is managed by combinational logic responding to the read and write operations.
+module top_module(
+	input wire          clk,
+	input wire          reset,
+	input wire          rd,
+	input wire          wr,
+	input wire [B-1:0]  w_data,
+	output wire         empty,
+	output wire         full,
+	output wire [B-1:0] r_data
+);

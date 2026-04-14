@@ -1,0 +1,9 @@
+Design a circuit that checks the consistency of interlock statuses between a test module and a Wishbone register during a verification process. The module uses a clock signal to manage its operations, where it reads the interlock status from the Wishbone register and compares it with the status provided by the test module. If a mismatch is detected, it sets error flags to indicate discrepancies, specifically identifying whether the error originated from the test interlock status or the Wishbone register. The process includes a two-clock cycle delay to ensure synchronization before commencing the test. This functionality is critical for ensuring the integrity and reliability of interconnected components in a system.
+module top_module(
+  input sys_clk,
+  input [1:0] test_intlk_status,
+  input [31:0] wb_reg,
+  output reg err,
+  output reg err_intlk,
+  output reg err_wb
+);

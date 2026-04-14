@@ -1,0 +1,15 @@
+Implement a register module that captures and holds the values of several inputs: instruction register (IR), program counter plus four (PC4), address output (AO), data from the register (RT), and shift value (SH) on the rising edge of the clock signal. The outputs reflect the stored values, and the module features a reset capability that sets all registers to zero when activated. This module serves as a holding register block within a larger digital system, ensuring proper synchronization and state retention across clock cycles.
+module top_module(
+    input [31:0] IR,
+    input [31:0] PC4,
+    input [31:0] AO,
+    input [31:0] RT,
+    input [31:0] SH,
+    output [31:0] IR_M,
+    output [31:0] PC4_M,
+    output [31:0] AO_M,
+    output [31:0] RT_M,
+    output [31:0] SH_M,
+    input Clk,
+	input Reset
+    );

@@ -1,0 +1,8 @@
+Design a digital countdown timer that tracks time in hours, minutes, and seconds. The module increments seconds on every positive clock edge, rolls over to zero upon reaching 59 seconds, and increments minutes accordingly. When minutes reach 59, it resets to zero and increments hours until 23, where it then rolls over back to zero. The timer can be reset to zero using the clear input signal. This implementation handles clear functionality and phase transitions between seconds, minutes, and hours for a 24-hour time format.
+module top_module(
+    input wire clk,
+    input wire clr,
+    output reg [4:0] h,
+    output reg [5:0] m,
+    output reg [5:0] s
+    );

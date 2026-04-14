@@ -1,0 +1,14 @@
+Design a dual-port RAM module that allows simultaneous read and write operations on separate addresses. This module features a configurable data width of 8 bits and an address width of 13 bits, providing a memory size of 5760 locations. Each port can independently enable or disable read/write operations through control signals, with data being written to the memory on a rising clock edge when the corresponding write enable signal is active. Data is read from the memory and assigned to output registers on the same clock edge when the corresponding read enable signal is active, allowing for efficient data handling in applications requiring concurrent access.
+module top_module(
+    input clk,
+    input [AWIDTH-1:0] addr0,
+    input ce0,
+    input we0,
+    input [DWIDTH-1:0] d0,
+    output reg [DWIDTH-1:0] q0,
+    input [AWIDTH-1:0] addr1,
+    input ce1,
+    input we1,
+    input [DWIDTH-1:0] d1,
+    output reg [DWIDTH-1:0] q1
+);

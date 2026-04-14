@@ -1,0 +1,9 @@
+Design a Serial Peripheral Interface (SPI) state machine that facilitates synchronous serial communication. The module transitions through four states: IDLE, TX (transmit), RX (receive), and COMPLETE. In the IDLE state, it waits for the slave select (ss) signal to begin transmission. During the TX state, data from the master is shifted out via the MISO line in synchronization with the clock (sck) while counting bits. In the RX state, incoming data is captured from the MOSI line. After completing the transfer of 8 bits, it moves to the COMPLETE state, indicating transmission is finished. The machine resets to IDLE upon detecting a high ss signal or external reset.
+module top_module(
+  input clk,
+  input rst,
+  input mosi,
+  input sck,
+  input ss,
+  output reg miso
+);

@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+
+Design a 32-bit shift register with parallel load capability. The module includes control signals such as clock (clk), reset (rst), shift enable (sh_en), and load enable (ld_en). The module shifts the data in the register on every positive edge of the clock signal when the shift enable signal is active, and loads the input data into the register when the load enable signal is active.
+
+Module name:  
+    shift_register_32bit
+
+Input ports:
+    clk: Clock signal.
+    rst: Synchronous reset signal. Defined as 1 for reset condition and 0 for normal operation.
+    sh_en: Shift enable signal.
+    ld_en: Load enable signal.
+    din: 32-bit parallel input data.
+
+Output ports:
+    dout: 32-bit shift register output.
+
+Implementation:
+Data bit control:
+On every positive edge of the clock signal (clk) or the active edge of the reset signal (rst), the shift register (shift_reg) is updated.
+If the reset signal (rst) is active, the shift register (shift_reg) is set to 0.
+If the load enable signal (ld_en) is active, the parallel input data (din) is loaded into the shift register (shift_reg).
+If the shift enable signal (sh_en) is active, the shift register (shift_reg) shifts its data.
+
+Give me the complete code.

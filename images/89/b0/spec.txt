@@ -1,0 +1,23 @@
+Please act as a professional Verilog designer.
+
+Implement a module of a 12-bit OR gate with pipelining stages. The result is available on the result port, and the o_en = 1 indicates the availability of the result.
+
+Module name:
+    or_gate_pipe_12bit
+Input ports:
+    clk: Clock input
+    rst_n: Active low reset signal
+    i_en: Enable signal for OR operation
+    or_a: 12-bit input operand A
+    or_b: 12-bit input operand B
+
+Output ports:
+    result: 12-bit output representing the bitwise OR of or_a and or_b.
+    o_en: Output enable signal.
+
+Implementation:
+The module includes several registers to enable the pipeline stages and synchronize the input enable signal (i_en). These registers are controlled by the clock (clk) and reset (rst_n) signals.
+The OR values for each pipeline stage are calculated by performing a bitwise OR on the corresponding input operands.
+The output enable signal (o_en) is updated based on the pipeline stages and synchronized with the clock (clk) and reset (rst_n) signals.
+
+Give me the complete code.

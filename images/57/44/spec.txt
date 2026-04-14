@@ -1,0 +1,26 @@
+Please act as a professional Verilog designer.
+
+Implement a module of a 8-bit parallel-in serial-out (PISO) shift register. The shift register should load 8-bit parallel data on the positive edge of the load signal. On each positive edge of the clock signal, it should shift its contents to the right by one bit and output the least significant bit (LSB) as the serial output.
+
+Module name:  
+    piso_shift_register
+
+Input ports:
+    CLK: Clock input
+    RST: Active high reset signal
+    LD: Load signal to enable loading of parallel data
+    Parallel_in: 8-bit parallel input data
+
+Output ports:
+    Serial_out: Serial output bit representing the LSB of the shift register
+
+Implementation:
+The piso_shift_register module uses an always block to update the register contents based on the clock signal and reset signal. The always block triggers on the positive edge of the clock signal (posedge CLK) or the positive edge of the reset signal (posedge RST). It checks if the reset signal is active (RST) and sets the register contents to 0. Otherwise, if the load signal is active (LD), it loads the parallel data (Parallel_in). On each positive edge of the clock signal, it shifts the contents of the register to the right by one bit and assigns the LSB to the Serial_out.
+
+Give me the complete code.
+
+module piso_shift_register(CLK, RST, LD, Parallel_in, Serial_out);
+input CLK, RST, LD;
+input [7:0] Parallel_in;
+output Serial_out;
+reg [7:0] shift_reg;

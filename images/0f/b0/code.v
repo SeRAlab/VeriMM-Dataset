@@ -1,0 +1,6 @@
+module DAC_24bit (
+    input wire [23:0] digital_input,
+    output wire [23:0] analog_output
+);
+assign analog_output = digital_input;
+endmodule

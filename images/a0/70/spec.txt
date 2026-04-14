@@ -1,0 +1,8 @@
+Design a 4-bit adder/subtractor circuit that can perform addition and subtraction on two 4-bit inputs, `a` and `b`, based on the value of the `sub` control signal. If `sub` is set high, the module calculates `a - b`, while if it is low, it computes `a + b`. The module also includes an overflow detection feature, which identifies when the result exceeds the range of a signed 4-bit integer, flagging an overflow condition through the `overflow` output. The sum is presented as a 4-bit output, ensuring proper handling of signed arithmetic operations.
+module top_module(
+    input [3:0] a,
+    input [3:0] b,
+    input sub,
+    output [3:0] sum,
+    output overflow
+);

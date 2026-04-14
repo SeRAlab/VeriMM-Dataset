@@ -1,0 +1,14 @@
+Design a FIFO (First-In-First-Out) buffer capable of storing 32-bit data elements, with a depth of 8. It includes inputs for clock, reset, write, read, and clear signals. The module maintains internal pointers for reading and writing operations, as well as a count of the current number of stored items. It provides outputs to indicate the status of the buffer, including whether it is full, empty, almost full, or almost empty. Data is written to the buffer when the write signal is asserted, provided it is not full, and data is read from the buffer when the read signal is active and there is data to read. The reset and clear operations initialize or clear the state of the buffer respectively.
+module top_module(
+    input clk,
+    input reset,
+    input write,
+    input read,
+    input clear,
+    input [31:0] data_in,
+    output reg [31:0] data_out, // Changed from wire to reg
+    output almost_full,
+    output full,
+    output almost_empty,
+    output empty
+);

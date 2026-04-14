@@ -1,0 +1,8 @@
+Design a control logic module for a processor that interprets operation codes (op) and function codes (m) to generate control signals. The module outputs three control signals: `eret`, `mfc0`, and `mtc0`, which indicate specific operations related to exception return, move from the coprocessor 0, and move to the coprocessor 0, respectively. The outputs are determined by specific combinations of bits in the input op and m vectors, effectively facilitating the management of control flow in the instruction execution pipeline.
+module top_module(
+    input [5:0] op,
+    input [4:0] m,
+    output eret,
+    output mfc0,
+    output mtc0
+    );

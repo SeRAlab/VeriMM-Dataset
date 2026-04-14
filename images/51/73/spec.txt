@@ -1,0 +1,12 @@
+Design a 4-to-1 multiplexer that selects one of four 144-bit input ports (port0_ci, port1_ci, port2_ci, port3_ci) and outputs it to a single 144-bit output port (port_co). The selection is controlled by two binary selection inputs (sel0 and sel1), with a reset (rst) functionality that initializes the output to zero when activated. The multiplexer operates on the rising edge of the clock signal (clk), ensuring synchronous selection and state management.
+module top_module(
+    input clk,
+    input rst,
+    input sel0,
+    input sel1,
+    input [143:0] port0_ci,
+    input [143:0] port1_ci,
+    input [143:0] port2_ci,
+    input [143:0] port3_ci,
+    output reg [143:0] port_co
+    );

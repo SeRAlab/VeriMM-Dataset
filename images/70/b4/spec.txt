@@ -1,0 +1,8 @@
+Design a circuit that performs subtraction between two 8-bit input registers with synchronous active-high reset functionality. Upon receiving a clock signal, it loads values from the inputs d1 and d2 into reg1 and reg2, respectively, unless the reset signal is activated, in which case both registers are reset to zero. The circuit then calculates the difference between reg1 and reg2, and outputs the result as an 8-bit value on q.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input [7:0] d1,   // 8-bit input for the first register
+    input [7:0] d2,   // 8-bit input for the second register
+    output [7:0] q    // 8-bit output from the functional module
+);

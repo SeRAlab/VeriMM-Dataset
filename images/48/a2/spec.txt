@@ -1,0 +1,10 @@
+Design a 16-bit shift register with load and shift capabilities. The module takes a clock signal and a reset signal to initialize or clear the output. When the load signal is asserted, it stores the 16-bit input data. If the enable signal is active, the register shifts its current contents to the right, with the least significant bit (LSB) being filled by the former most significant bit (MSB). The design facilitates both loading new data and performing a right-shift operation, making it suitable for applications requiring serial data manipulation.
+module top_module(
+    input clk,
+    input rst,
+    input load,
+    input [15:0] data_in,
+    input shift,
+    input enable,
+    output reg [15:0] data_out
+);

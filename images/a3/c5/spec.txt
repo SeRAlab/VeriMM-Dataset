@@ -1,0 +1,12 @@
+Design a FIFO (First-In, First-Out) buffer that operates with 128-bit wide data inputs and outputs. The module includes control signals for writing and reading data, along with status indicators for buffer fullness and emptiness, as well as a data count output. This FIFO is intended to manage data flow in systems requiring synchronized data storage and retrieval, ensuring that written data can be read in the same order it was added.
+module top_module(
+  input clk,
+  input rst,
+  input [127 : 0] din,
+  input wr_en,
+  input rd_en,
+  output reg [127 : 0] dout,
+  output reg full,
+  output reg empty,
+  output reg [6 : 0] data_count
+);

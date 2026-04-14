@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a configurable counter with scaling capabilities. Its primary role to generate a scaled output clock (`cout`) based on the input clock (`clk`), according to the parameters specified by the user. This module can operate in various modes, including off, bypass, even, and odd modes, each affecting the output clock signal in different ways. It is intended for use in systems requiring clock manipulation for timing adjustments, frequency division, or phase shifting, making it a versatile component in digital design, especially in applications like digital signal processing or clock management systems.
+
+Module name:  
+	arm_scale_cntr
+
+Input ports:
+	clk: Input clock signal. (1bit)
+	reset: Asynchronous reset signal. When high, it resets the internal state of the module. (1bit)
+	high: Specifies the high period of the output clock signal in terms of the number of input clock cycles. (32bit)
+	low: Specifies the low period of the output clock signal in terms of the number of input clock cycles. (32bit)
+	initial_value: Used to set the initial value of the output shift count, affecting the initial phase of the output clock. (32bit)
+	mode: A string input determining the operational mode of the module (e.g., "off", "bypass", "even", "odd"). (48bit, assuming 8 bits per character for a 6character string)
+	ph_tap: Phase tap, although not directly used in the provided code, implies potential use for phase adjustment. (32bit)
+Output ports:
+	cout: The scaled output clock signal. (1bit)
+
+
+Implementation:
+The arm_scale_cntr module is designed to generate a controlled output signal (cout) based on various input parameters and modes of operation. It operates on the edge of an input clock signal (clk) and can be reset through an active-high reset signal (reset). The core functionality of this module is to provide a scalable and adjustable pulse generation mechanism, which can be fine-tuned through its parameters such as high, low, initial_value, and operational mode. The module also incorporates a phase tap input (ph_tap), although its direct influence within the provided code is not apparent, suggesting it may be intended for future use or external interfacing.
+
+Give me the complete code.
+

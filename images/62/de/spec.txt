@@ -1,0 +1,6 @@
+Design a priority encoder with an 8-bit input and an enable signal. When the enable (EN) input is high, the module outputs a 3-bit binary representation (Y) of the position of the highest-order '1' bit detected in the 8-bit input (I), with the output values ranging from 0 (for I[0]) to 7 (for I[7]). If no '1' bits are present in the input, the output defaults to '000'. Additionally, the output includes signals that indicate if any bits are set (Y[1]) or if all bits are zero (Y[2]).
+module top_module(
+    input [7:0] I,
+    input EN,
+    output reg [2:0] Y
+);

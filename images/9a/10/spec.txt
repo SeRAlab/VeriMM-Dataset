@@ -1,0 +1,11 @@
+Design a synchronous FIFO (First-In, First-Out) buffer with a 16-word capacity, where each word is 64 bits wide. The module features control signals for writing (wr_en) and reading (rd_en), along with a clock (clk) and synchronous reset (srst). On a rising clock edge, data can be written to the buffer if it is not full, and read from it if it is not empty. The module maintains state information using write and read pointers (wr_ptr and rd_ptr), a count of current entries (count), and status flags for indicating if the buffer is empty or full.
+module top_module(
+  output reg [63:0] dout,
+  output reg empty,
+  output reg full,
+  input wr_en,
+  input rd_en,
+  input clk,
+  input srst,
+  input [63:0] din
+);

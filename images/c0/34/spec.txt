@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to select one of four input clock signals based on a 2-bit selection input and an enable signal. The selected clock signal is then output as the module's clock output. This module plays a crucial role in systems requiring dynamic clock switching capabilities, such as power-saving modes, performance scaling, or managing clock domains in complex digital systems. It ensures seamless switching between different clock sources without disrupting the system's operation.
+
+Module name:  
+	clock_switch4_basic
+
+Input ports:
+	rst0_i, rst1_i, rst2_i, rst3_i (Input, Single Bit): These are the reset inputs corresponding to each of the four clock inputs. They are used to reset the synchronization logic associated with each clock input.
+	clk0_i, clk1_i, clk2_i, clk3_i (Input, Single Bit): These are the four clock input signals. One of these clocks is selected based on the select input and the enable signal to be output as clk_o.
+	enable (Input, Single Bit): This signal enables the clock switching functionality. When not enabled, the module does not select any of the input clocks to be output.
+	select (Input, 2 Bits): This is a 2bit selection input that determines which of the four input clocks is selected to be output, based on its binary value (00, 01, 10, 11).
+Output ports:
+	clk_o (Output, Single Bit): This is the output clock signal. It is the result of selecting one of the four input clocks based on the select input and the enable signal.
+
+
+Implementation:
+The RTL module clock_switch4_basic is designed to select one of four input clocks (clk0_i, clk1_i, clk2_i, clk3_i) based on a 2-bit selection input (select) and output the selected clock through clk_o. The module also incorporates enable functionality and reset inputs for each clock input to ensure proper initialization and control.
+
+Give me the complete code.
+

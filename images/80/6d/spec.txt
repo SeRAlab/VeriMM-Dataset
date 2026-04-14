@@ -1,0 +1,8 @@
+Design a pipeline circuit for rotating a 100-bit input data stream, controlled by a clock and a load signal. The module includes a stage that loads the input data upon receiving a load signal. Subsequent stages perform various right/left bit rotations depending on the two-bit enable input `ena`. Specifically, when `ena` is 01, it rotates the bits to the right by one position; when `ena` is 10, it rotates the bits to the left by one position; when `ena` is 11, it performs a right rotation by two positions. If `ena` is set to 00, the input data is passed through without rotation. The final output is stored in the `q` register, providing the rotated result on each clock cycle.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output reg [99:0] q
+);

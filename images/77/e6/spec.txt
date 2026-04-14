@@ -1,0 +1,7 @@
+Design a multi-functionality bitwise operator module that performs logical operations on two n-bit wide binary inputs, `a` and `b`. The operation to be executed is determined by a 2-bit control signal, `ctrl`: when `ctrl` is `00`, it outputs the bitwise AND of `a` and `b`; when `ctrl` is `01`, it outputs the bitwise OR; when `ctrl` is `10`, it outputs the bitwise XOR; and when `ctrl` is `11`, it outputs the bitwise NOT of input `a`. The parameter `n` specifies the bit width of the inputs and output, defaulting to 8 bits.
+module top_module(
+  input [n-1:0] a,
+  input [n-1:0] b,
+  input [1:0] ctrl,
+  output reg [n-1:0] res  // Change to output reg to allow assignment in always block
+);

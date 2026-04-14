@@ -1,0 +1,34 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a microprogrammed control (MPC) unit for a variant of the 65C02 microprocessor, a well-known 8-bit microprocessor. The primary functions of this module include:
+
+Program Counter (PC) Management: It handles the incrementing of the PC and determines the next address for fetching instructions based on the current state and inputs.
+Microcode Sequencing: It sequences through micro-operations based on the current instruction and cycle, controlling the flow of execution within the processor.
+Branch Address Calculation: It calculates branch target addresses for various branching instructions, supporting both conditional and unconditional jumps.
+Wait State Management: It incorporates wait state logic to handle scenarios where the processor needs to wait, ensuring synchronization with slower memory or peripherals.
+
+This module plays a critical role in the control path of the microprocessor, directing the execution of instructions and managing the flow of data within the CPU.
+
+Module name:  
+	M65C02_MPCv3
+
+Input ports:
+	Rst: Reset signal (active high) to initialize the module.
+	Clk: Clock signal for synchronizing the module's operations.
+	uLen: 2bit input specifying the microoperation length.
+	Wait: Input signal indicating if the processor should enter a wait state.
+	I: 4bit input representing the current instruction code.
+	T: 4bit input used in branch address calculation, likely representing condition codes or similar flags.
+	MW: 3bit input used in memory write operations, possibly specifying the operation mode or target.
+	BA: Bus Address, input specifying the base address for memory operations, with a width defined by pAddrWidth.
+Output ports:
+	MC: 2bit Microcode Counter, indicating the current microoperation step.
+	Via: 2bit output, possibly used for routing or control signals external to the module.
+	MA: Memory Address output, specifying the current address for memory operations, with a width defined by pAddrWidth.
+
+
+Implementation:
+The RTL module presented is designed to function as a microprogrammed control unit for a processor, specifically tailored for operations related to the M65C02 microprocessor architecture. This module orchestrates the sequencing of micro-operations based on the current instruction, timing, and external conditions such as wait states. The design employs a mix of sequential and combinational logic to achieve its functionality, with a focus on instruction decoding, program counter management, and micro-operation sequencing.
+
+Give me the complete code.
+

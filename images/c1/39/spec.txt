@@ -1,0 +1,35 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform data width conversion and control signal adaptation between a system with a configurable data width interface (referred to as the application side, or `app`) and a synchronous dynamic RAM controller (SDR) with a fixed data width interface. This module facilitates the transfer of read and write data between these two interfaces, which may operate at different data widths. It manages the packing and unpacking of data as well as the generation of control signals to ensure correct data alignment and timing for read and write operations. This module plays a critical role in systems where the memory interface width does not directly match the application interface width, requiring dynamic adjustment to ensure data integrity and system compatibility.
+
+Module name:  
+	sdrc_bs_convert
+
+Input ports:
+	clk: Clock input signal for the module.
+	reset_n: Active low reset signal.
+	sdr_width: 2bit input specifying the data width configuration for the SDR interface.
+	x2a_rdstart: Signal indicating the start of a read operation from the SDR to the application interface.
+	x2a_rdlast: Signal indicating the last read transfer in a burst from the SDR to the application interface.
+	x2a_rddt: Data read from the SDR interface.
+	x2a_rdok: Signal indicating that read data is valid and can be accepted by the application interface.
+	x2a_wrstart: Signal indicating the start of a write operation from the application to the SDR interface.
+	x2a_wrlast: Signal indicating the last write transfer in a burst from the application to the SDR interface.
+	x2a_wrnext: Signal indicating readiness for the next write data piece from the application interface.
+	app_wr_data: Data to be written from the application interface to the SDR.
+	app_wr_en_n: Active low write enable signals for the application interface data.
+Output ports:
+	a2x_wrdt: Data to be written to the SDR interface.
+	a2x_wren_n: Active low write enable signals for the SDR interface data.
+	app_wr_next: Signal indicating readiness for the next write data piece to the application interface.
+	app_last_wr: Signal indicating the last write transfer in a burst to the application interface.
+	app_rd_data: Data read from the SDR interface, presented to the application interface.
+	app_rd_valid: Signal indicating that the read data is valid and can be accepted by the application.
+	app_last_rd: Signal indicating the last read transfer in a burst to the application interface.
+
+
+Implementation:
+The RTL module sdrc_bs_convert is designed to facilitate data width conversion between a system with a dynamic data width (SDR) and an application-specific interface with a fixed data width (APP). The module operates under the control of a clock signal (clk) and an active-low reset signal (reset_n). It supports read and write operations, handling data width conversions based on the sdr_width configuration. The module's primary functionality is orchestrated through a combination of combinational and sequential logic, enabling it to adaptively manage data transfers between interfaces of varying widths.
+
+Give me the complete code.
+

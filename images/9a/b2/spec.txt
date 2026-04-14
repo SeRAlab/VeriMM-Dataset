@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a 8-bit shift register with synchronous reset and parallel load. The shift register shifts its content to the left on each positive edge of the clock signal (clk) when the shift enable signal (shift_en) is active. It can also load a parallel input value when the load signal (load) is active.
+
+Module name:
+    shift_reg_8bit
+
+Input ports:
+    clk: Chip clock signal.
+    rst: Synchronous reset signal. Defined as 1 to reset the shift register.
+    shift_en: Shift enable signal. Defined as 1 to enable shifting.
+    load: Parallel load signal. Defined as 1 to load the input value.
+    data_in: 8-bit parallel input data.
+
+Output ports:
+    q: 8-bit output of the shift register.
+
+Implementation:
+On every positive edge of the clock signal (clk), the shift register (q) is updated.
+If the reset signal (rst) is high, indicating a reset condition, the shift register value (q) is set to 0.
+If the load signal (load) is active, the shift register loads the input value (data_in).
+If the shift enable signal (shift_en) is active and the load signal (load) is inactive, the shift register shifts its content to the left.
+
+Give me the complete code.

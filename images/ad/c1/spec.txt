@@ -1,0 +1,8 @@
+Design an integrated 32-register file with synchronous write capabilities. The module has inputs for clock, active-low reset, a write enable signal, and addresses for two read registers and one write register. It outputs the contents of the specified read registers. On a clock edge, if the reset is not active, all registers are initialized to zero, and if the write enable signal is asserted, it writes the provided data to the specified write register. This design allows for simultaneous reading from two registers while controlling the writing to a third register, facilitating efficient data storage and retrieval in digital circuits.
+module top_module(
+	clk,nrst,
+	RegWrite,
+	rreg1, rreg2,
+	wra, wrd,
+	rd1, rd2
+	);

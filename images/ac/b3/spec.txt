@@ -1,0 +1,7 @@
+Design a circuit that splits a 16-bit input into two 8-bit outputs: one for the upper byte and one for the lower byte. The module captures the 16-bit input on the rising edge of the clock, storing it in a register, and assigns the upper 8 bits to the output `out_hi` and the lower 8 bits to `out_lo`. This effectively acts as a data splitter for 16-bit data streams.
+module top_module(
+    input wire clk,          // Added clk input
+    input wire [15:0] in,
+    output wire [7:0] out_hi,
+    output wire [7:0] out_lo
+);

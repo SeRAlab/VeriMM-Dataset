@@ -1,0 +1,3 @@
+Design a register stage for a pipelined instruction fetch (IF) and decode (ID) process in a CPU architecture. The module captures an instruction and its associated program counter value at the positive edge of the clock signal, with conditional overrides based on control signals. If the hold signal is asserted, it preserves the current instruction and program counter output. If the IF_flush signal is asserted, it clears the instruction output while retaining the program counter value, effectively allowing the pipeline to manage instruction flow and incorporate dynamic changes like control hazards.
+module top_module(clk,PC_plus_4_in,hold,IF_flush,instruc_in
+                           ,instruc_out,PC_plus_4_out);

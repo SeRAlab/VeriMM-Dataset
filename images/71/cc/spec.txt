@@ -1,0 +1,8 @@
+Design a simple processor module that executes basic arithmetic and logical operations based on a 12-bit instruction input. It accepts a 16-bit data path input and computes results based on the specific operation encoded in the upper 4 bits of the instruction, including addition, subtraction, bitwise operations, and shifts. The computed result is stored in a data path register, which is then outputted. Additionally, the module sets a 3-bit status flag indicating whether the result is zero, positive, or negative. This module serves as a fundamental processing unit for implementing computations within a larger digital system.
+module top_module(
+    input clk,                 // clock
+    input [11:0] instruction,  // instruction input
+    input [15:0] datapath_in,  // data path input
+    output [15:0] datapath_out, // data path output
+    output [2:0] status        // status flag output
+);

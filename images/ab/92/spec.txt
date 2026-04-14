@@ -1,0 +1,6 @@
+Design a circuit that computes the odd parity of the least significant bit of a 16-bit input data word. On each positive edge of the clock, it shifts the least significant bit of `data` into a 4-bit count register while keeping track of the last four bits. The `parity` output is set high if the count of '1's in those bits matches specific values that represent an odd count (i.e., 9, 11, 13, or 15), thereby indicating odd parity; otherwise, it outputs low.
+module top_module(
+  input clk,
+  input [15:0] data,
+  output reg parity
+);

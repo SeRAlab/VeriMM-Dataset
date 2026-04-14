@@ -1,0 +1,8 @@
+Design a module that manages the increment of a FIFO (First-In-First-Out) buffer counter based on various input conditions. The output `fifo_cnt_inc` is determined by the state of the input count `input_tm_cnt`, and flags indicating whether the FIFO is empty (`empty`), and whether there are two or three (or more) available spaces (`ge2_free`, `ge3_free`). When the FIFO is empty, it outputs the current `input_tm_cnt`. If the count is at its maximum (3) and space is available for more items (indicated by `ge3_free`), it sets the increment to a specified value (2). If there is space for one more item (indicated by `ge2_free` with `input_tm_cnt` 2 or more), it decrements the count by one. If there is at least one item in the FIFO, it sets the output to zero. In scenarios where none of these conditions are met, it outputs a default value representing a full or invalid state.
+module top_module(
+  input [1:0] input_tm_cnt,
+  input empty,
+  input ge2_free,
+  input ge3_free,
+  output reg [4:0] fifo_cnt_inc
+);

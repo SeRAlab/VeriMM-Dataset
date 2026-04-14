@@ -1,0 +1,8 @@
+Design a probe decoder circuit that outputs specific device identifiers and action codes based on input signals. On each clock cycle, the module examines the lower 16 bits of the 64-bit `probe0` input to determine which device identifier to output in a 16-bit wide `device_out` register, with a default value of `16'hFFFF` for unrecognized inputs. Simultaneously, it checks the lower 48 bits of the `probe1` input, outputting a corresponding 48-bit wide `action_out` register based on predefined actions; if none match, it defaults to `48'hFFFFFFFFFFFF`. This functionality effectively maps input probes to specific device and action outputs, suitable for managing and decoding device states or commands in a larger system.
+module top_module(
+  input clk,
+  input [63:0]probe0,
+  input [63:0]probe1,
+  output reg [15:0]device_out,
+  output reg [47:0]action_out
+);

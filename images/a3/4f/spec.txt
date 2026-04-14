@@ -1,0 +1,13 @@
+Design a register stage for a pipelined processor, specifically the Memory to Write-Back (MEM/WB) stage. This module captures and transfers data from the memory stage to the write-back stage of the processor pipeline. It includes control signals (WB), a multiplexer output (mux3), a data word (ReadData), and an immediate value (immed). The module updates its outputs on the negative edge of the clock unless a stall condition is active, ensuring proper data flow and synchronization within the pipeline while managing the stalls efficiently.
+module top_module(
+	stall_i,
+	clk_i,
+	WB_i,
+	ReadData_i,
+	mux3_i,
+	immed_i,
+	WB_o,
+	ReadData_o,
+	mux3_o,	
+	immed_o
+);

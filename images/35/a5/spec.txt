@@ -1,0 +1,16 @@
+
+Design a 2-channel DMA (Direct Memory Access) controller that allows for transferring data from a source memory to a destination memory. The controller should manage two channels, where each channel can be activated independently. The DMA controller should have the following inputs and outputs:
+- Inputs:
+  - clk: Clock signal
+  - rst: Reset signal (active high)
+  - channel_1_start: Start signal for channel 1 (active high)
+  - channel_2_start: Start signal for channel 2 (active high)
+  - source_address_1: 8-bit source address for channel 1
+  - destination_address_1: 8-bit destination address for channel 1
+  - source_address_2: 8-bit source address for channel 2
+  - destination_address_2: 8-bit destination address for channel 2
+  - data: 8-bit data to be transferred
+- Outputs:
+  - channel_1_done: Indicator that channel 1 has completed the transfer (active high)
+  - channel_2_done: Indicator that channel 2 has completed the transfer (active high)
+The DMA controller should transfer data for a fixed number of cycles (e.g., 4 cycles) for each channel once the start signal is received. After the transfer is complete, the done signal for that channel should be asserted high for one clock cycle.

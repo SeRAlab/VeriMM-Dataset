@@ -1,0 +1,12 @@
+Design a Direct Memory Access (DMA) controller that facilitates data transfers between a source address and a destination address in memory. The module takes input signals for clock, reset, start command, source and destination addresses, and the length of the data transfer. When activated, it manages the transfer in a sequential manner, updating the addresses for each word processed, until the specified number of words has been transferred. The controller asserts a busy signal while the transfer is ongoing and generates a done signal upon completion. An error signal is available but remains inactive in this implementation.
+module top_module(
+    input clk,
+    input rst,
+    input start,
+    input [31:0] src_addr,
+    input [31:0] dest_addr,
+    input [9:0] length,
+    output busy,
+    output error,
+    output done
+);

@@ -1,0 +1,35 @@
+Design a multi-input, 8-to-1 multiplexer that selects one of eight 8-bit input signals (A_i, B_i, C_i, D_i, E_i, F_i, G_i, H_i) based on a series of seven select lines (SAB_i to SH_i). Each select line chooses between two options, progressively narrowing down to the final output, Y_o. When all select lines are considered, the selected input is routed to the output, allowing dynamic selection of the desired 8-bit data based on the states of the select lines.
+module top_module(
+  (* intersynth_conntype = "Byte" *)
+  input[7:0] A_i,
+  (* intersynth_conntype = "Byte" *)
+  input[7:0] B_i,
+  (* intersynth_conntype = "Byte" *)
+  input[7:0] C_i,
+  (* intersynth_conntype = "Byte" *)
+  input[7:0] D_i,
+  (* intersynth_conntype = "Byte" *)
+  input[7:0] E_i,
+  (* intersynth_conntype = "Byte" *)
+  input[7:0] F_i,
+  (* intersynth_conntype = "Byte" *)
+  input[7:0] G_i,
+  (* intersynth_conntype = "Byte" *)
+  input[7:0] H_i,
+  (* intersynth_conntype = "Bit" *)
+  input SAB_i,
+  (* intersynth_conntype = "Bit" *)
+  input SC_i,
+  (* intersynth_conntype = "Bit" *)
+  input SD_i,
+  (* intersynth_conntype = "Bit" *)
+  input SE_i,
+  (* intersynth_conntype = "Bit" *)
+  input SF_i,
+  (* intersynth_conntype = "Bit" *)
+  input SG_i,
+  (* intersynth_conntype = "Bit" *)
+  input SH_i,
+  (* intersynth_conntype = "Byte" *)
+  output[7:0] Y_o
+);

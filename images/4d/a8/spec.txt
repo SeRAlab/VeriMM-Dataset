@@ -1,0 +1,6 @@
+Design a 2-bit wide shift register with synchronous operation. The circuit takes a 2-bit input `d` and, upon receiving a clock pulse, captures this input into an intermediate register `q1`, which then shifts its value to another register `q2` on the next clock pulse. The output `q` reflects the value of `q2`. The operation is resettable: when the `reset` signal is asserted low, both registers are cleared to zero. Thus, the shift register functions to store and sequentially propagate a 2-bit binary value across its stages.
+module top_module(
+    input clk,    // Clocks are used in sequential circuits
+    input reset,
+    input [1:0] d,
+    output reg [1:0] q );

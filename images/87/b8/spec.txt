@@ -1,0 +1,6 @@
+Design a 2-to-4 line decoder with an enable input, generating a one-hot output vector of 16 bits. When the enable signal (EN) is LOW, the output (Q) is set to zero; when EN is HIGH, the four possible values of the 2-bit select input (SEL) determine which one of the four corresponding 4-bit outputs is activated, which in turn drives one of the 16 output bits in Q to HIGH, while all others remain LOW.
+module top_module(
+    input [1:0] SEL,
+    input EN,
+    output reg [15:0] Q
+);

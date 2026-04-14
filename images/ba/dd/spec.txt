@@ -1,0 +1,11 @@
+Design a digital circuit that integrates a 4-bit shift register and a comparator to find the larger of two 4-bit input numbers. The module takes a clock signal for synchronization, a load signal to input data into the shift register, and two 4-bit numbers (num1 and num2) to determine the larger value. The output reflects the larger number and computes the sum of the larger number and the current contents of the shift register on each clock cycle, generating an 8-bit output sum. The circuit effectively acts as both a shift register and an arithmetic unit with comparison functionality.
+module top_module(
+    input clk,
+    input load,
+    input [3:0] data_in,
+    input [3:0] num1,
+    input [3:0] num2,
+    output [3:0] q,
+    output reg [3:0] larger,
+    output reg [7:0] sum
+);

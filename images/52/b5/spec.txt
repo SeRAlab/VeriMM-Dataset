@@ -1,0 +1,10 @@
+Design a D flip-flop with additional control features: asynchronous reset, asynchronous set, and clock-enable functionality. When the RESET signal is high, the output Q is set to LOW and Q_N is set to HIGH. When SET is high, Q is set to HIGH and Q_N is set to LOW. If neither RESET nor SET is asserted and the clock (CLK) triggers, the flip-flop latches the input D, while Q_N outputs the inverse of D. The clock-enable (CE) signal allows the flip-flop to sample the input only when CE is asserted, effectively controlling the timing for when the input is registered.
+module top_module(
+    input  wire D,
+    input  wire CLK,
+    input  wire RESET,
+    input  wire SET,
+    input  wire CE,
+    output reg  Q,
+    output reg  Q_N
+);

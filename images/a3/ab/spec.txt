@@ -1,0 +1,6 @@
+Design a synchronous memory module with a 20-bit address space and 36-bit wide data output. On each positive clock edge, the module reads data from a pre-initialized memory array based on the input address. If the provided address is valid (within the range of 0 to 2^20-1), it outputs the corresponding 36-bit data; if the address is out of range, it outputs zero. This module serves as a simple RAM interface for digital circuits requiring read access to a large data space.
+module top_module(
+  input clk,
+  input [19:0] addr,
+  output reg [35:0] data
+);

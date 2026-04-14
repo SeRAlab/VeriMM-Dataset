@@ -1,0 +1,8 @@
+Design a FIFO counter incrementer that adjusts the `fifo_cnt_inc` output based on the status of an empty condition and two free slot conditions (ge2_free and ge3_free) alongside an input count value (`input_tm_cnt`). If the FIFO is empty, the output is set to the input count. If three slots are free and the input count is 3, the output is set to 2. If two slots are free and the input count is 2 or greater, the output is set to 1. If the input count is at least 1, the output is set to 0. In all other cases, the output defaults to a maximum value of 31.
+module top_module(
+  input empty,
+  input ge2_free,
+  input ge3_free,
+  input [1:0] input_tm_cnt,
+  output reg [4:0] fifo_cnt_inc
+);

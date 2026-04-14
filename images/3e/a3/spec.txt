@@ -1,0 +1,20 @@
+
+Design a simple WiFi module controller that manages the state of a WiFi connection. The module should have the following states:
+- 0: DISCONNECTED
+- 1: CONNECTING
+- 2: CONNECTED
+- 3: DISCONNECTING
+
+The inputs to the module are:
+- `connect`: A signal that indicates a request to connect to a WiFi network.
+- `disconnect`: A signal that indicates a request to disconnect from the WiFi network.
+- `clk`: The clock signal.
+
+The output is:
+- `state`: The current state of the WiFi connection.
+
+The state transitions are as follows:
+- From DISCONNECTED (0) to CONNECTING (1) on `connect` signal.
+- From CONNECTING (1) to CONNECTED (2) after one clock cycle.
+- From CONNECTED (2) to DISCONNECTING (3) on `disconnect` signal.
+- From DISCONNECTING (3) to DISCONNECTED (0) after one clock cycle.

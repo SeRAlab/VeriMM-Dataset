@@ -1,0 +1,8 @@
+Design a button debouncer circuit that processes the state of a 4-bit button input and outputs filtered button states along with an 8-bit switch status. The module utilizes a clock signal to manage timing and avoid false triggering from mechanical button noise. When a button is pressed, it starts a counter that must reach a threshold before confirming the button state, ensuring that only stable button presses are registered. The debounced button states are then outputted, with a conditional output for the switches (SW_OK), which reflects the switch values only if a specific button state is detected.
+module top_module(
+    input clk,
+    input [3:0] button,
+    input [7:0] SW,
+    output reg [3:0] button_out,
+    output reg [7:0] SW_OK
+);

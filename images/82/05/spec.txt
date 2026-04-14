@@ -1,0 +1,6 @@
+Design a circuit that converts a 16-bit Binary-Coded Decimal (BCD) input into a 4-bit binary output. The module processes four groups of 4 bits from the BCD input, using a counter to track the conversion state for each group. It assesses each BCD segment against the respective counter to determine if the binary output should be asserted (1) or negated (0). This design effectively facilitates the translation of BCD values into their corresponding binary representation, allowing for efficient numeric data handling in digital systems.
+module top_module(
+    input [15:0] bcd_in,
+    input clk,                // Added clk input
+    output reg [3:0] binary_out
+);

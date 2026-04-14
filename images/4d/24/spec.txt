@@ -1,0 +1,7 @@
+Design a simple synchronous state machine that operates in two states: IDLE and ACTIVE. On the rising edge of the clock, if reset is asserted, the state machine initializes to the IDLE state and resets the count. In the IDLE state, if an input signal is received, it transitions to the ACTIVE state and initializes the count. While in the ACTIVE state, the count increments with each clock cycle as long as the input signal remains active. Once the input signal goes low, the state machine returns to the IDLE state. The output provides the current count while in the ACTIVE state and outputs zero when in the IDLE state.
+module top_module(
+  input clk,
+  input rst,
+  input inp,
+  output reg [31:0] outp
+);

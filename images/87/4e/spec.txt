@@ -1,0 +1,7 @@
+Design a 4-bit binary counter with reset functionality. The counter increments on each positive edge of the clock signal. When the reset signal is asserted, the count resets to zero, and the output `out_range` also resets to low. The `out_range` output signals when the counter reaches a value of 10 (4'b1010) but turns off when the counter wraps around after reaching 15 (4'b1111), ensuring it never outputs a value outside the valid range of 0 to 15.
+module top_module(
+  input clk,
+  input rst,
+  output reg [3:0] count,
+  output reg out_range
+);

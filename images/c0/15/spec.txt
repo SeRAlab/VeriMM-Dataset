@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module performs a specific combinational logic function known as an AND-OR-INVERT (AOI) operation. This particular variant is a 3-input AND followed by an OR with another input, and finally, the result is inverted. The module to be a fundamental building block in digital integrated circuits, especially in applications requiring complex logic functions with minimal delay and power consumption. Its compact and efficient design makes it suitable for implementing fast and low-power logic gates, arithmetic circuits, and various other digital logic functions within a broader system context.
+
+Module name:  
+	bw_u1_aoi31_2x
+
+Input ports:
+	b1, b2, b3: These are the three input ports that are ANDed together in the first stage of the operation. Each of these inputs is a digital signal (binary, either 0 or 1) and contributes to the AND part of the AOI logic function.
+	a: This is the input port that is ORed with the result of the AND operation of b1, b2, and b3. It is a digital signal (binary, either 0 or 1) and plays a crucial role in the OR part of the AOI logic function.
+Output ports:
+	z: This is the single output port of the module. It is a digital signal (binary, either 0 or 1) that represents the result of the ANDORINVERT operation. The output is active low due to the inversion at the final stage of the operation.
+
+
+Implementation:
+The module bw_u1_aoi31_2x is a combinational logic circuit implemented in Verilog, a hardware description language used for electronic systems. This module represents an "AND-OR-Invert" (AOI) logic gate with a specific configuration, which is a common building block in digital circuits, especially in the design of complex logic functions and optimization of gate-level implementation for speed and area.
+The module takes four input signals (b1, b2, b3, and a) and produces one output signal (z). The logic implemented can be described by the Boolean expression z = ~((b1 & b2 & b3) | a). This expression indicates that the output z is the logical negation of the OR operation between the AND operation of inputs b1, b2, b3, and the input a. 
+The logic can be broken down into two main stages:
+AND Stage: The first stage is an AND operation among the three inputs b1, b2, and b3. This stage evaluates to true only if all three inputs are true.
+OR Stage: The second stage is an OR operation between the result of the AND stage and the fourth input a. This stage evaluates to true if either the result of the AND operation is true or if input a is true.
+Invert Stage: Finally, the result of the OR stage is negated. This means the output z is true only if both the AND operation of b1, b2, and b3 is false, and input a is also false.
+This module does not contain any sequential logic elements (like flip-flops or latches), meaning its output is purely a function of its current inputs, with no internal state being stored. The operation is entirely combinational.
+
+Give me the complete code.
+

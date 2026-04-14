@@ -1,0 +1,16 @@
+Design a storage and logic processing module that incorporates a true dual-port RAM capable of reading and writing 4-bit values based on input control signals. The module allows writing of 8-bit data to one of eight RAM locations and reading 4-bit data from a specified address, while resetting to zero on a negative reset signal. Additionally, it performs combinational logic operations (AND, OR, XOR) on a 4-bit input, generating corresponding output signals for each operation. The final output includes an XOR operation between the read data from RAM and a concatenated result of the logic operations, providing an additional functional output based on the stored and processed data.
+module top_module(
+    input clk,
+    input rst_n,
+    input [7:0] write_data,
+    input [7:0] read_addr,
+    input [3:0] write_addr,
+    input [3:0] in,
+    input read_en,
+    input write_en,
+    output reg [3:0] read_data,
+    output out_and,
+    output out_or,
+    output out_xor,
+    output [3:0] functional_output
+);

@@ -1,0 +1,12 @@
+Implement a hardware hazard detection unit for a pipelined CPU architecture. This module monitors instruction dependencies by checking source and destination operand addresses against the registers involved in the write-back, memory access, and execution stages. The output signal, `pipeline_stall_n`, indicates whether to stall the pipeline (set to LOW) in the presence of hazards, such as data dependencies, or to allow normal operation (set to HIGH) when no hazards are detected. The unit also includes a reset functionality to clear the stall condition.
+module top_module(
+  input       clk,
+  input       rst,
+  input      [2:0] decoding_op_src1,
+  input      [2:0] decoding_op_src2,
+  input      [2:0] decoding_op_dest,
+  input      [2:0] ex_op_dest,
+  input      [2:0] mem_op_dest,
+  input      [2:0] wb_op_dest,
+  output reg   pipeline_stall_n
+);

@@ -1,0 +1,7 @@
+Design a phase-locked loop (PLL) circuit that generates a clock output (outclk) synchronized with a reference clock (refclk). Upon reset, the PLL initializes its internal states, including a counter and dividers for feedback and reference clocks. After a predetermined lock time, the output signal will indicate that the PLL is locked (locked signal), ensuring stable clock generation. The PLL uses configurable dividers to derive the output frequency from the reference clock, allowing the outclk to toggle at a specific rate based on the REFCLK_DIVIDER and FEEDBACK_DIVIDER parameters (25 MHz target frequency).
+module top_module(
+    input refclk,
+    input rst,
+    output reg outclk, // Change to reg
+    output locked
+);

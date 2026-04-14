@@ -1,0 +1,9 @@
+Develop a circuit that functions as an 8-bit adder/subtractor with carry-in capability. The module takes two 8-bit inputs, A and B, and operates based on a control signal (SUB) to determine whether to perform addition or subtraction. When SUB is high, the circuit computes A + (~B + 1) to achieve subtraction, while normal addition occurs when SUB is low. Additionally, the circuit features a carry-in input (CIN) to accommodate carry propagation for both operations. The output provides the resulting 8-bit SUM and an overflow indicator (OVF) that signals if an overflow has occurred during the operation.
+module top_module(
+    input [7:0] A,
+    input [7:0] B,
+    input CIN,
+    input SUB,
+    output reg [7:0] SUM,
+    output reg OVF
+);

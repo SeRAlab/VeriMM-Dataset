@@ -1,0 +1,19 @@
+
+Design a combinational logic circuit that implements the Black-Scholes option pricing formula. The circuit should take the following inputs:
+- `S`: Current stock price (fixed-point representation, 16 bits)
+- `K`: Strike price (fixed-point representation, 16 bits)
+- `T`: Time to expiration (in years, fixed-point representation, 8 bits)
+- `r`: Risk-free interest rate (fixed-point representation, 8 bits)
+- `sigma`: Volatility of the stock (fixed-point representation, 8 bits)
+
+The output should be the calculated option price (fixed-point representation, 32 bits) using the Black-Scholes model for a European call option.
+
+The formula for the Black-Scholes model is:
+C = S * N(d1) - K * e^(-rT) * N(d2)
+
+Where:
+- d1 = (ln(S/K) + (r + (sigma^2)/2) * T) / (sigma * sqrt(T))
+- d2 = d1 - sigma * sqrt(T)
+- N(x) is the cumulative distribution function of the standard normal distribution.
+
+Make necessary assumptions for fixed-point arithmetic.

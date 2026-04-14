@@ -1,0 +1,9 @@
+Design a cache memory block that supports both read and write operations. The module has an input to control read/write access (rw), a specified address (addr) to access the storage locations, and a data input (data_in) for writing data. Upon a clock edge, if a write operation is initiated, data is stored in the corresponding location. For read operations, it checks if the requested data is valid (cache hit) using tags; if valid, it outputs the stored data, otherwise it signals a cache miss, fetches data from main memory, and updates the tag. The output also includes a valid signal indicating whether the data is valid or not. This module effectively implements a simple cache memory with tag checking to improve read efficiency.
+module top_module(
+  input rw,
+  input [n-1:0] addr,
+  input [m-1:0] data_in,
+  input clk,
+  output [m-1:0] data_out,
+  output valid
+);

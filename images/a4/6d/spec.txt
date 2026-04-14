@@ -1,0 +1,6 @@
+Design a bus hold block that retains the last value on the output bus when enabled. The module captures the input bus value on the rising edge of the enable signal and outputs it until the enable signal goes low, at which point it maintains the last output value. This functionality effectively creates a temporary data storage mechanism that prevents signal changes and ensures data integrity during control transitions. The bus width can be configured through a parameter, allowing flexibility in the design.
+module top_module(
+  input [n-1:0] bus_in,
+  input en,
+  output reg [n-1:0] bus_out // Change to reg type to allow assignment in always blocks
+);

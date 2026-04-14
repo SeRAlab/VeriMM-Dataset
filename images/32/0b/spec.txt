@@ -1,0 +1,8 @@
+Design a simple SLAM system state machine that transitions between three states: IDLE, MAPPING, and LOCALIZING. The system should respond to input signals to start mapping or localizing, and it should also allow for a stop command to return to the IDLE state. The state transitions are as follows:  
+- From IDLE, on START signal, transition to MAPPING.  
+- From MAPPING, on LOCALIZE signal, transition to LOCALIZING.  
+- From LOCALIZING, on STOP signal, transition to IDLE.  
+Additionally, if the STOP signal is received while in MAPPING or LOCALIZING, the system should also return to IDLE. The current state should be output as a 2-bit binary value. The states are defined as follows:  
+- IDLE = 00  
+- MAPPING = 01  
+- LOCALIZING = 10

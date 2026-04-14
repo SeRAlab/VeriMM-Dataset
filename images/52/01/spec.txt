@@ -1,0 +1,10 @@
+The module implements a synchronous register with a configurable delay line, designed to capture and hold a data input (D) on the rising edge of a clock signal (CLK). It features asynchronous reset (RST) and enable (EN) inputs, allowing the output (Q) to be set to zero or updated based on the delayed version of the input during active states. The delay line introduces internal delays for the data signal across a specified number of cycles, defined by the parameter `delay_cycles`, before the data is fed into the underlying flip-flop logic. Additionally, it supports features such as scan control (SCD) and scan enable (SCE), typically used in testing scenarios, enhancing its utility in digital circuit design for both synchronous data storage and testing reliability.
+module top_module(
+    output reg Q,
+    input CLK,
+    input D,
+    input SCD,
+    input SCE,
+    input RST,
+    input EN
+);

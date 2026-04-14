@@ -1,0 +1,11 @@
+Design a parallel-to-serial converter that outputs one bit of data at a time from a 9-bit input array. The module has a control signal (trans_start) to initiate the transmission, and it counts down the bits remaining to be transmitted based on data_len input. The output_start signal indicates when the transmission of data begins, while output_done signals the completion of transmission. The output_data wire provides the current bit being transmitted, derived from shifting the input data right according to the current count. The design is resettable and operates on a clock signal, ensuring synchronous operation.
+module top_module(
+  input       clk,
+  input       rst_n,
+  input       trans_start,   
+  input [8:0] data,          
+  input [3:0] data_len,      
+  output wire output_data,    
+  output wire output_start,
+  output wire output_done
+  );

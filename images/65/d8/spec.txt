@@ -1,0 +1,6 @@
+Design a 4-to-1 box selector for data transformation, implementing a substitution box (S-box) commonly used in cryptographic algorithms. The module takes a 64-bit input `sbox` and a 4-bit `in` signal, and based on the value of `in`, it outputs a 4-bit value from the corresponding segment of the `sbox`. Each 4-bit output corresponds to a specific 4-bit slice of the `sbox`, allowing it to perform a lookup operation to enhance data security through substitution.
+module top_module(
+  input      [63:0] sbox,
+  input      [3:0]  in,
+  output reg [3:0]  out
+);

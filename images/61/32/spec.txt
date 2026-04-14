@@ -1,0 +1,8 @@
+Design a 32-bit shift register that allows for both left and right shifting of data based on a specified shift amount. The module takes a clock signal (`clk`) for synchronization and a reset signal (`rst`) to initialize the register to zero. The input data (`data_in`) is shifted into the register according to the value of `shift_amt`: if positive, data is shifted left with new data entering from the right; if negative, data is shifted right with new data entering from the left; if zero, the register simply loads the input data. The current state of the shift register is outputted as `data_out`.
+module top_module(
+   input clk,
+   input rst,
+   input [31:0] data_in,
+   input [31:0] shift_amt,
+   output reg [31:0] data_out
+);

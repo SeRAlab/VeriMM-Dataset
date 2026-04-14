@@ -1,0 +1,10 @@
+Design a temperature monitoring circuit that utilizes a clock and reset signal to manage outputs based on temperature readings. The module takes a 3-bit input for the current temperature and a 3-bit threshold. It generates three outputs: ALARM, which activates when the temperature is either above or below the threshold; HOT, which indicates when the temperature exceeds the threshold; and COLD, which signals when the temperature is below the threshold. When a reset is triggered, all outputs are set to LOW.
+module top_module(
+    input CLK,
+    input RESET,
+    input [2:0] TEMP,
+    input [2:0] THRESHOLD,
+    output reg ALARM,
+    output reg HOT,
+    output reg COLD
+);

@@ -1,0 +1,7 @@
+Design a clock delay circuit that generates a timing signal based on an input clock. The module has a configurable delay determined by a 4-bit input, `delay_value`. On each rising edge of `clk_in`, the module counts up until it matches `delay_value`, at which point it asserts `clk_out` high for one clock cycle before resetting the counter. The circuit is also equipped with an asynchronous reset that brings the output low and resets the counter when activated. This functionality allows the generation of precise timing control for downstream logic based on the input clock frequency.
+module top_module(
+    input clk_in,
+    output reg clk_out,
+    input [3:0] delay_value,
+    input reset
+);

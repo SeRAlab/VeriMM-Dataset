@@ -1,0 +1,8 @@
+Design a circuit that functions as a 16-to-1 multiplexer combined with an 8-bit priority encoder and a bitwise OR operation. The module takes a 16-bit input and a 4-bit selection signal to choose between two 8-bit halves of the input. It also evaluates an 8-bit data input to determine a priority level, producing a 3-bit enable output based on the highest priority set bit. Finally, it performs a bitwise OR operation between the multiplexer output and the priority encoder's output. This design effectively selects data based on specified conditions and generates an enable signal for further processing.
+module top_module(
+    input [15:0] in,
+    input [3:0] sel,
+    input [7:0] D,
+    output [7:0] out,
+    output [2:0] EN
+);

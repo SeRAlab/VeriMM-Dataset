@@ -1,0 +1,6 @@
+Design a 2-bit shift register that captures input data on the rising edge of a clock signal and provides the output after a delay of four clock cycles. It employs two D flip-flops to store the intermediate values, where the first flip-flop takes the input as its data, and the second flip-flop takes the output of the first as its data. The shift register resets to zero when the reset signal is low, ensuring that it can be cleared synchronously. The output is updated with the value from the second flip-flop every fourth clock cycle.
+module top_module(
+    input clk,    // Clocks are used in sequential circuits
+    input reset,
+    input [1:0] d,
+    output reg [1:0] q );

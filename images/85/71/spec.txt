@@ -1,0 +1,8 @@
+Design a clock-gated D flip-flop module with enable and test features. The module has a 32-bit input data signal and outputs the stored data on a 32-bit output. When both the enable (en) and test (te) signals are high, the clock (clk) is permitted to trigger updates to the output; otherwise, the output retains its previous value, effectively holding the state. This design is useful for reducing power consumption in circuits by selectively gating the clock signal based on control inputs.
+module top_module(
+  input clk,
+  input en,
+  input te,
+  input [31:0] d,
+  output reg [31:0] q
+);

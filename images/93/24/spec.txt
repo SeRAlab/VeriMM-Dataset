@@ -1,0 +1,14 @@
+Design a synchronous D flip-flop with active-low reset and set signals. The module features two control inputs, SCD (set control) and SCE (clear enable), which dictate the behavior of the flip-flop in addition to the standard D input. When RESET_B is low, the flip-flop is reset, outputting Q as LOW and Q_N as HIGH. If SCD is low, it sets the output to LOW regardless of the D input. Conversely, when SCE is low, the flip-flop is set to HIGH. If both controls allow normal operation, the flip-flop captures the D input on the rising edge of the CLK signal, with Q reflecting the value of D and Q_N as its complement. The module is also supplied with power and ground connections for proper operation.
+module top_module(
+    input CLK,
+    input RESET_B,
+    input SCD,
+    input SCE,
+    input D,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB,
+    output reg Q,
+    output reg Q_N
+);

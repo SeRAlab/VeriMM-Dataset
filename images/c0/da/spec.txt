@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a configurable-width register within a digital system, likely within the context of Ethernet-based applications given its name. Its primary functions include storing data of a specified width, providing synchronous reset capabilities, and allowing data to be updated on a positive clock edge under certain conditions. This module plays a crucial role in data handling and control within digital systems, particularly in scenarios where data integrity and reset functionality are paramount.
+
+Module name:  
+	eth_register
+
+Input ports:
+	DataIn [WIDTH1:0]: A data input port of configurable width (WIDTH). This port is used to input data into the register. The width of this port can be adjusted based on the parameter WIDTH, allowing for flexibility in the module's application.
+	Write: A singlebit input signal that, when high, enables the DataIn to be written into the register on the next positive edge of the Clk.
+	Clk: The clock input signal. The register captures the input data or resets based on the positive edge of this clock signal.
+	Reset: A synchronous reset input signal. When high, it initializes the register to a predefined value (RESET_VALUE) on the next positive clock edge.
+	SyncReset: An additional synchronous reset input signal, functioning similarly to Reset. It provides an alternative mechanism to reset the register content to RESET_VALUE.
+Output ports:
+	DataOut [WIDTH1:0]: A data output port of the same configurable width as DataIn. This port outputs the current value stored in the register.
+
+
+Implementation:
+The RTL module presented, named eth_register, is designed to function as a register with specific control features, including synchronous and asynchronous reset capabilities, and a write enable control. The module is parameterized, allowing for flexibility in its bit-width (WIDTH) and its reset value (RESET_VALUE). This design is primarily used in digital systems where data storage and controlled data manipulation are required, such as in Ethernet modules or other communication interfaces.
+
+Give me the complete code.
+

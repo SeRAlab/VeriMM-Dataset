@@ -1,0 +1,9 @@
+Design a sequential circuit that counts and manages two 64-bit output registers, Output0 and Output1. The circuit is clocked and can be reset asynchronously. On a rising edge of the clock, if the Reset signal is active, both outputs and the internal counter are cleared. If En is high, Output0 increments by 1 on each clock cycle, while Output1 increments by 1 every fourth clock cycle, determined by a 4-bit counter controlled by the Slt signal. When Slt is low, only Output0 is affected, and when Slt is high, the counter governs the incrementing of Output1.
+module top_module(
+    input Clk,
+    input  Reset,
+    input Slt,
+    input En,
+    output reg [63:0] Output0 = 64'b0,
+    output reg [63:0] Output1 = 64'b0
+    );

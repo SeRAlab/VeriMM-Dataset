@@ -1,0 +1,12 @@
+Design a 8-element FIFO (First-In-First-Out) buffer with control signals for reading and writing. It has inputs for a clock, reset, read, and write signals, along with an 8-bit data input and an 8-bit data output. The buffer can signal when it is empty or full, and it maintains a count of the number of elements currently stored. On a clock edge, if reset is asserted, it initializes the head, tail, and count. When writing, if the buffer is not full, it stores the incoming data at the tail position and updates the tail pointer and count. When reading, if the buffer is not empty, it reads data from the head and increments the head pointer while decrementing the count.
+module top_module(
+    input clk,
+    input reset,
+    input rd,
+    input wr,
+    input [7:0] din,
+    output [7:0] dout,
+    output empty,
+    output full,
+    output reg [3:0] count
+);

@@ -1,0 +1,16 @@
+Design a serial peripheral interface (SPI) transmitter-receiver module that operates on a clock signal. This module manages the transmission and reception of 8-bit data during SPI communication, utilizing signals for master clock (SCK), master out slave in (MOSI), master in slave out (MISO), and slave select (SS). The module detects the edges of the clock and select signals to properly shift in data on the positive edges of SCK while also enabling data output on the negative edges. It features acknowledgments for data transfer completion and accepts input data, enabling seamless data communication in SPI applications. The module implements necessary data buffering and control logic to ensure accurate data handling in response to SPI protocols.
+module top_module(
+    input wire clk,
+
+    input wire sck,
+    output wire miso,
+    input wire mosi,
+    input wire ss,
+
+    output wire rst_o,
+
+    output wire [7:0] data_o,
+    output wire ack_pop_o,
+
+    input wire [7:0] data_i,
+    input wire ack_i);

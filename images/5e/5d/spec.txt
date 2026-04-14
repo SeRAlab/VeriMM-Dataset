@@ -1,0 +1,15 @@
+Design a basic pipelined processor module that executes simple arithmetic and logical operations based on input instructions. The module accepts a clock signal, a reset signal, an 8-bit instruction, and addresses for three registers, while providing output data for these registers. The processor operates in a finite state machine with six states: fetching the instruction, performing addition, storing the result, and executing logical operations (AND, OR, XOR, NOT) based on the opcode. The state transitions manage the execution flow and the results are stored in a register file, from which the outputs are derived.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] instruction,
+  input [2:0] reg1_addr,
+  input [2:0] reg2_addr,
+  input [2:0] reg3_addr,
+  input [15:0] reg1_data,
+  input [15:0] reg2_data,
+  input [15:0] reg3_data,
+  output [15:0] reg1_out,
+  output [15:0] reg2_out,
+  output [15:0] reg3_out
+);

@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that counts consecutive '1' inputs on each clock cycle. The FSM has three states: S0, S1, and S2. In state S0, the FSM waits for a '1' input to transition to state S1, where it increments a counter for each consecutive '1'. Upon receiving a '0', the FSM returns to state S0 and resets the counter. If a second consecutive '1' is detected, the system moves to state S2, captures the current count of consecutive '1's, and resets the counter before returning to state S0. The output is a 3-bit register that reflects the number of consecutive '1's read before a '0' is encountered, with the ability to reset based on the reset input signal.
+module top_module(
+  input clk,
+  input reset,
+  input in,
+  output reg [2:0] count
+);

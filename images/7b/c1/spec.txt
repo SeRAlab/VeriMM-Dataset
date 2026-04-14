@@ -1,0 +1,9 @@
+Design a Gray code counter capable of both incrementing and decrementing in response to control signals. The circuit features an asynchronous reset and a stop functionality that allows it to pause its counting when needed. It generates an 8-bit Gray code output based on the current binary count and also provides an 8-bit normal binary output. The counting operates based on a clock divided down to a specific frequency, allowing for controlled counting in a user-defined range.
+module top_module(
+    input clk,
+    input incdec,
+    input stop,
+    input rst,
+    output reg [7:0] gray,
+    output reg [7:0] normal
+);

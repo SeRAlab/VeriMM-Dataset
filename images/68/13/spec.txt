@@ -1,0 +1,6 @@
+Design a circuit to convert a 4-bit binary input into its corresponding Excess-3 code. The module takes a 4-bit binary number (B) and, on each rising edge of the clock, registers the input, adds 3 in binary (4'b0011) to produce the Excess-3 output (E). The design uses multiple registers to hold intermediate values for proper synchronization, ensuring that the output reflects the Excess-3 code after a sequence of clock cycles.
+module top_module(
+    input [3:0] B,
+    input clk,          // Added clock input signal
+    output reg [3:0] E
+);

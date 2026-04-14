@@ -1,0 +1,6 @@
+Design a circuit that performs a bit counting operation on a shifted input. The module utilizes a 4-bit shift register to sequentially store and shift in the most significant bit of a 2048-bit input signal at each clock cycle. After four clock cycles, the contents of the shift register are combined into a 4-bit value from which the number of ones is calculated, resulting in a 6-bit output representing the total count of logical high bits within that segment. This can be seen as a sequence detector that counts the number of active bits in a specific window of the input stream.
+module top_module(
+    input clk,
+    input [2047:0] in,
+    output reg [5:0] out
+);

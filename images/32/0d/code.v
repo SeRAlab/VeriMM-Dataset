@@ -1,0 +1,15 @@
+module priority_encoder_4to2(  
+    input [3:0] in,  
+    output reg [1:0] out,  
+    output reg valid  
+);  
+    always @(*) begin  
+        casez(in)  
+            4'b1???: begin out = 2'b11; valid = 1; end // Input 3 is active  
+            4'b01??: begin out = 2'b10; valid = 1; end // Input 2 is active  
+            4'b001?: begin out = 2'b01; valid = 1; end // Input 1 is active  
+            4'b0001: begin out = 2'b00; valid = 1; end // Input 0 is active  
+            default: begin out = 2'b00; valid = 0; end // No active inputs  
+        endcase  
+    end  
+endmodule

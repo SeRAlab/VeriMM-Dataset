@@ -1,0 +1,7 @@
+Design a 4-bit shift register module with load and shift capabilities. On the rising edge of the clock, if the load signal is high, the register captures the 4-bit parallel input data. If the load signal is low and the shift enable (ShiftEn) signal is high, the register shifts its contents to the left, inserting the ShiftIn input bit at the least significant position. The most significant bit of the shift register is provided as ShiftOut, while RegContent outputs the current state of the register.
+module top_module(
+    input Clk,ShiftIn,load,ShiftEn,
+    input [3:0] ParallelIn,
+    output ShiftOut, 
+    output [3:0] RegContent
+    );

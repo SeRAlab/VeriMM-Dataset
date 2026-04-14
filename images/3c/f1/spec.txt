@@ -1,0 +1,14 @@
+
+Design a Verilog module that implements a simplified version of the ChaCha20 stream cipher's quarter-round function. The module should take four 32-bit input words and produce four 32-bit output words. The quarter-round function is defined as follows:
+
+```
+def quarter_round(a, b, c, d):
+    a += b; d ^= a; d = (d << 16) | (d >> (32 - 16))
+    c += d; b ^= c; b = (b << 12) | (b >> (32 - 12))
+    a += b; d ^= a; d = (d << 8) | (d >> (32 - 8))
+    c += d; b ^= c; b = (b << 7) | (b >> (32 - 7))
+```
+
+The module should have the following ports:
+- Inputs: `input_a`, `input_b`, `input_c`, `input_d` (each 32 bits wide)
+- Outputs: `output_a`, `output_b`, `output_c`, `output_d` (each 32 bits wide)

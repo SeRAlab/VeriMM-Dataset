@@ -1,0 +1,8 @@
+Implement a dual-port RAM module with a 4-to-16 decoder. The module uses inputs A and B to address one of 16 locations in memory, storing 16-bit data when write_en_port1 is high. The memory content at the addressed location is used to set the output X. Concurrently, a decoder interprets the content of the addressed RAM location to generate a specific 16-bit output (decoder_out), which is then inverted and assigned to output Y. This design effectively allows for data storage and retrieval while translating specific values into predefined output representations.
+module top_module(
+    input A, B,
+    input [15:0] data_in_port1,
+    input write_en_port1,
+    output X,
+    output [15:0] Y
+);

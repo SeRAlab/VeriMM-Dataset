@@ -1,0 +1,9 @@
+Design a circuit that combines a synchronous 4-bit binary counter with a 2-to-1 multiplexer and a bitwise XOR operation. The circuit increments the counter on each clock cycle, resetting it when the reset signal is active. The multiplexer selects between two 4-bit inputs based on the select signal, outputting the chosen data. Finally, the circuit generates a 4-bit output by performing a bitwise XOR operation between the current value of the counter and the output of the multiplexer.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input [3:0] mux_in1, // 4-bit input for first input of the multiplexer
+    input [3:0] mux_in2, // 4-bit input for second input of the multiplexer
+    input select, // 1-bit select input for the multiplexer
+    output [3:0] out // 4-bit output from the XOR operation
+);

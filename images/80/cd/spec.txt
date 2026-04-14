@@ -1,0 +1,9 @@
+Design a circuit that implements a D flip-flop chain for data storage, controlled by a clock signal and a reset input. The module takes an 8-bit input 'd' and a selector signal to determine whether to store a majority value computed from the first three bits of 'd' or the eighth bit of 'd' in the last flip-flop of the chain. The circuit outputs the current state of the flip-flop chain as an 8-bit output 'q'. Additionally, it performs a bitwise AND operation between the computed majority value and the most significant bit of the flip-flop output, driving a reset signal that resets the flip-flop chain if the AND result is high.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] d,
+    input select,
+    output reg out_and,
+    output reg [7:0] q
+);

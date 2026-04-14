@@ -1,0 +1,8 @@
+Design a synchronous 4-to-1 multiplexer with asynchronous reset functionality. The module takes a 2-bit selection input to choose one of four 1-bit input lines, and it propagates the selected input to the output on the rising edge of the clock signal. In the event of a reset, the output and internal registers are cleared to zero. The output specifically presents the least significant bit of the internal register holding the selected input.
+module top_module(
+	input clk,
+	input reset,
+	input [1:0]sel,
+	input [3:0]in,
+	output reg out
+);

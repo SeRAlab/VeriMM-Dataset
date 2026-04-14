@@ -1,0 +1,8 @@
+Develop a memory-mapped I/O module that interfaces with an 8-bit keypad and a 32-bit millisecond counter. When enabled and accessed at address 1, the module outputs the keypad value padded with zeros to a 32-bit width. When accessed at address 2, it outputs the current value of the millisecond counter. If not enabled or accessed at any other address, the output defaults to zero.
+module top_module(
+    input [7:0] keypad,
+    input [31:0]msCount,
+    input en,
+    input [10:0]addr,
+    output reg[31:0] outputIO
+);

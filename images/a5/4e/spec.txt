@@ -1,0 +1,9 @@
+Design a 3-bit synchronous counter that increments its value on the rising edge of the clock when enabled, but only when a button is released (not pressed). The counter resets to zero when the reset signal is high. The current count is outputted through the `counter_out` signal and also mirrored to the `led_out` signal for visual representation. The design ensures that the counter increments only once per button press, utilizing a flag to detect the button state and prevent multiple counts during a single press.
+module top_module(
+  input clk,
+  input reset,
+  input enable,
+  input button,
+  output reg [2:0] counter_out,
+  output reg [2:0] led_out
+);

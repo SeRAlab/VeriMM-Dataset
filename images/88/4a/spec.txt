@@ -1,0 +1,9 @@
+Design a 16-bit by 32-bit multiplier with a cascading output feature. This module accepts two inputs, A (16 bits) and B (32 bits), and produces a 48-bit product, P. It includes clock enable (CE) and synchronous clear (SCLR) signals, where the output registers are cleared when SCLR is asserted. The output also includes a cascading output, PCASC, which accumulates the product values over successive clock cycles. Additionally, the module detects if the product P is zero and reflects that status via a 2-bit ZERO_DETECT output. When enabled, the device performs multiplication and continuous accumulation of results based on the given inputs.
+module top_module(CLK,
+    A,
+    B,
+    CE,
+    SCLR,
+    ZERO_DETECT,
+    P,
+    PCASC);

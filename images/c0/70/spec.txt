@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+    
+Implement a module to manage various reset signals within a digital system, likely within an FPGA or ASIC environment. Its primary functions include:
+
+Generating a system-wide reset signal (`nreset`) based on multiple input conditions.
+Providing a clear pulse signal (`clrpc`) that can be used to reset specific components or logic blocks within the system.
+Handling inverted clock signals and ensuring that reset logic operates correctly in both clock domains.
+Incorporating logic to manage reset conditions based on external inputs (`reset_in`, `M1`, `T2`, `fpga_reset`) and internal state machines or conditions (`nhold_clk_wait`).
+
+This module plays a critical role in ensuring that the system can be reliably reset under various conditions, contributing to the system's stability and robustness.
+
+Module name:  
+	resets
+
+Input ports:
+	reset_in (wire): An external reset input that can trigger system resets.
+	clk (wire): The primary system clock signal.
+	M1, T2 (wire): Control signals that likely contribute to conditional reset logic or state machine transitions.
+	fpga_reset (wire): A dedicated reset signal, possibly specific to FPGA initialization or external reset conditions.
+	nhold_clk_wait (wire): A control signal that may pause or hold certain operations, potentially affecting the reset logic's timing or sequence.
+Output ports:
+	clrpc (wire): An output signal that provides a clear pulse, possibly used to reset specific logic blocks or registers.
+	nreset (wire): The main system reset output, active low, indicating that it is asserted (active) when low.
+
+
+Implementation:
+The Verilog module named resets is designed to manage various reset signals within a digital system, particularly in the context of an FPGA. The module takes into account external reset inputs, clock signals, and specific conditions to generate internal and external reset signals. The logic implemented within this module can be categorized into combinational and sequential parts, each serving distinct purposes in the reset logic.
+
+Give me the complete code.
+

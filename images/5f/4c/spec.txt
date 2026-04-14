@@ -1,0 +1,7 @@
+Design a pipelined multiplexer capable of selecting one of eight 256-bit input lines based on an 8-bit selection signal. The circuit captures the selection signal and the input data on the rising edge of a clock, enabling it to consistently output the selected input line while maintaining the integrity of prior inputs in a register-based architecture. The design leverages a register for both the selection and input lines, facilitating seamless data propagation and ensuring timely output updates based on the specified selection.
+module top_module(
+    input [255:0] in,
+    input [7:0] sel,
+    input clk,           // Added clk input
+    output reg out
+);

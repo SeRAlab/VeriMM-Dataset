@@ -1,0 +1,26 @@
+Design a control module for an Avalon interface that manages two separate coils (A and B) based on control signals. The module handles input reset and clock signals, and interacts with control data via an Avalon memory-mapped interface, allowing for reading and writing specific configuration settings. It provides the ability to control power enable (PWREN), high output enable (HOE), and low output enable (LOE) signals for both coils, while also generating an interrupt signal for overcurrent events. The module initializes all control signals to defined states on reset and updates them based on the incoming control writes, facilitating precise management of the coils' operational states.
+module top_module(
+//Avalon System control signal.
+input               rsi_MRST_reset, // reset_n from MCU GPIO
+input               csi_MCLK_clk,
+
+//Avalon-MM Control.
+input       [31:0] avs_ctrl_writedata,
+output  [31:0] avs_ctrl_readdata,
+input       [3:0]  avs_ctrl_byteenable,
+input               avs_ctrl_write,
+input               avs_ctrl_read,
+output          avs_ctrl_waitrequest,
+
+//Over current interrupt.
+output          ins_OC_irq,
+
+input               coe_A_OCN,
+output          coe_A_PWREN,
+output          coe_A_HOE,
+output          coe_A_LOE,
+input               coe_B_OCN,
+output          coe_B_PWREN,
+output          coe_B_HOE,
+output          coe_B_LOE
+);

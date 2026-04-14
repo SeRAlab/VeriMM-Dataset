@@ -1,0 +1,9 @@
+Design a digital circuit that converts a binary-coded decimal (BCD) time format into a 24-hour format, taking into account day and night distinctions. The module accepts two 4-bit inputs representing the tens (bcd_ht) and units (bcd_hu) of the hour, and a control signal (day_night) indicating whether it is AM or PM. It generates a 4-bit output for the adjusted hour (bcd_hto) and another 4-bit output for the units (bcd_huo). The logic incorporates conditions to handle conversions at boundaries such as noon and midnight, ensuring that appropriate adjustments are made to the hour representation based on the time of day, with an output signal (day) indicating if it is daytime.
+module top_module(
+    input [3:0] bcd_ht,
+    input [3:0] bcd_hu,
+    input day_night,
+    output day,
+    output [3:0] bcd_hto,
+    output [3:0] bcd_huo
+    );

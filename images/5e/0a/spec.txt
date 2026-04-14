@@ -1,0 +1,8 @@
+Design a circuit that functions as a comparator, which checks if two 7-bit input values, in_x and in_y, are equal, while ensuring that the input in_x is stable. The output, comp, becomes high when the enable signal (en) is active, indicating that in_y equals in_x, and there is a change detected in in_x since the last clock cycle. The design incorporates a clock signal (counter_clk) to synchronize the sampling of in_x, creating a robust framework for comparison.
+module top_module(
+    input counter_clk,
+    input [6:0] in_x, in_y,
+    input en,
+    input reset, 
+    output comp
+);

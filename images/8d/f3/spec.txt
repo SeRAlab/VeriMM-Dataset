@@ -1,0 +1,11 @@
+Implement the Verilog module based on the following description.
+You are given a 10-bit input vector in_vector[9:0]. We want to know some relationships between each bit and its neighbour:
+(1) res_left: Each bit of this output vector should indicate whether both the corresponding input bit and its neighbour to the left are '1'. For example, res_left[8] should indicate if in_vector[8] and in_vector[9] are both 1. Since in_vector[9] has no neighbour to the left, the answer is obvious so we don't need to know res_left[9].
+(2) res_right: Each bit of this output vector should indicate whether any of the corresponding input bit and its neighbour to the right are '1'. For example, res_right[3] should indicate if either in_vector[3] or in_vector[2] are 1. Since in_vector[0] has no neighbour to the right, the answer is obvious so we don't need to know res_right[0].
+(3) res_xor: Each bit of this output vector should indicate whether the corresponding input bit is different from its neighbour to the left. For example, res_xor[8] should indicate if in_vector[8] is different from in_vector[9]. For this part, treat the vector as wrapping around, so in_vector[9]'s neighbour to the left is in_vector[0].
+
+module bitwise_relation (
+	input [9:0] in_vector,
+	output [8:0] res_left,
+	output [9:1] res_right,
+	output [9:0] res_xor);

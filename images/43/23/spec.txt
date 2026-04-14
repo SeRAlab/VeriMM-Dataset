@@ -1,0 +1,10 @@
+Design a sensor interface module that processes incoming sensor data. On the rising edge of the clock, if the reset signal is active, it initializes the sensor data register and its validity and readiness flags to zero. If the sensor select signal is active, the module stores the incoming 16-bit sensor data, sets the data valid and ready signals high, indicating that valid data is available for further processing. If the sensor select signal is inactive, it clears the data and flags, ensuring no unintended data is processed. The module outputs the sensor data value, along with corresponding signals to indicate data validity and readiness.
+module top_module(
+  input clk,
+  input rst,
+  input sensor_sel,
+  input [15:0] sensor_data,
+  output reg sensor_data_valid,
+  output reg sensor_data_ready,
+  output [15:0] sensor_data_value
+);

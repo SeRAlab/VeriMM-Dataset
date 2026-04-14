@@ -1,0 +1,12 @@
+Design a LED matrix display controller that manages two 8-bit patterns (pattern1 and pattern2) based on an input clock and reset signals. The module features an edge detection mechanism to determine when to update pattern2 with incoming 8-bit data; otherwise, pattern1 is updated. The final output to the LED matrix, a 16-bit signal, is multiplexed based on two select inputs (sel_b1 and sel_b2), allowing for four distinct output configurations: the first pattern with trailing zeros, the second pattern with trailing zeros, a single bit 'a' with leading zeros, or a single bit 'b' with leading zeros. This structure facilitates flexible visual displays on an LED matrix based on different input conditions.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data,
+  input edge_detect,
+  input a,
+  input b,
+  input sel_b1,
+  input sel_b2,
+  output reg [15:0] led_out
+);

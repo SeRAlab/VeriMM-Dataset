@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit up/down counter module with a synchronous reset and an enable signal. The counter should also have a parameter WIDTH, which is set to 4 by default but can be changed when instantiating the module.
+
+Module name:  
+    up_down_counter 
+
+Parameter:
+WIDTH = 4
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high reset signal.
+    en: 1-bit enable signal to allow counting.
+    up_down: 1-bit signal to control counting direction (1 for up, 0 for down).
+Output ports:
+    count: WIDTH bit output signal [WIDTH-1:0] representing the current count value.
+
+Implementation:
+On every rising edge of the clock, if the reset signal is asserted, reset the counter to 0. If the enable signal is asserted, increment or decrement the counter based on the up_down signal.
+
+Give me the complete code.

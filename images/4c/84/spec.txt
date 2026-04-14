@@ -1,0 +1,13 @@
+Design a simple PS/2 interface module that responds to I/O operations. The module features a reset and clock input, allowing for interaction with external devices. It accepts a 3-bit address input and provides fixed outputs: a constant value of 8'h42 is always returned on read operations, while the clock signal for PS/2 communication is statically assigned to LOW. This configuration suggests that the module is intended to operate in a basic, unidirectional manner without processing incoming PS/2 data or managing variable states.
+module top_module(
+input rst_n,
+input clk,
+input  [2:0] io_address,
+input        io_read,
+input        io_write, 
+input  [7:0] io_writedata,
+output [7:0] io_readdata,
+
+input        ps2data,
+output       ps2clk
+);

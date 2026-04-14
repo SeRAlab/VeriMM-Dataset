@@ -1,0 +1,11 @@
+Design a circuit that integrates an 8-bit register, a 2-to-1 multiplexer, and an OR operation. The register, which is synchronous and active-high reset, initializes to the value 0x34 on a reset signal and holds an 8-bit input (d) on the rising edge of the clock. The multiplexer selects between two 1-bit input signals (a and b) based on the select inputs (sel_b1 and sel_b2), outputting one of them as a part of an 8-bit wire. Finally, the module performs a bitwise OR operation between the contents of the register and the multiplexed output, producing an 8-bit output (q) that reflects the final result.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input [7:0] d, // 8-bit input for the register
+    input sel_b1, // Select input for 2-to-1 multiplexer
+    input sel_b2, // Select input for 2-to-1 multiplexer
+    input a, // Input signal a for 2-to-1 multiplexer
+    input b, // Input signal b for 2-to-1 multiplexer
+    output [7:0] q // 8-bit output from the final functional module
+);

@@ -1,0 +1,8 @@
+Design a byte-order adder that computes the sum of two 32-bit inputs after reversing their byte order. Upon a clock signal, if the reset is activated, the internal sum and carry registers are initialized to zero. Otherwise, the byte-reversed inputs are added together along with any carry from the previous operation, and the resulting sum undergoes a final byte-order reversal before being output. This module is particularly useful for applications requiring data alignment and summation in systems that utilize different endianness formats.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] data_in1,
+    input [31:0] data_in2,
+    output [31:0] sum_out
+);

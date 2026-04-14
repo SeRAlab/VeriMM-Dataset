@@ -1,0 +1,9 @@
+Design a control unit that processes 4-bit input data based on a 2-bit control signal and a load signal. When the load signal is high, it stores the input data into a register. On each clock cycle, depending on the control signal, it outputs either the stored register value, the bitwise negation of the register, the direct input data, or the bitwise negation of the input data. Additionally, it sets the output valid signal to indicate that the output data is valid, or to low under default conditions. This module functions as a versatile data processing unit, capable of various operations based on control input.
+module top_module(
+    input [1:0] ctrl,
+    input [3:0] data_in,
+    input load,
+    input clk,
+    output reg [3:0] data_out,
+    output reg valid
+);

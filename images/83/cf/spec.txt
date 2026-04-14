@@ -1,0 +1,9 @@
+Design a LIFO (Last-In, First-Out) stack memory module with a depth of 16 and an n-bit data width, where n is set to 8 bits. The module allows data to be written into the stack on a write enable signal (we) while a clock signal synchronizes the operations. Upon receiving a reset signal (rst), the stack clears its contents and resets its pointer. When the read signal (re) is asserted, the top element of the stack is retrieved and outputted, ensuring that the most recently written data is accessed first.
+module top_module(
+  input clk,
+  input rst,
+  input we,
+  input [n-1:0] data_in,
+  output reg re,
+  output reg [n-1:0] data_out
+);

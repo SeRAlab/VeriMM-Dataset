@@ -1,0 +1,11 @@
+Design a 2-bit shift register that captures a single input bit (d) on the rising edge of the clock (clk). On each clock cycle, the value of input d is shifted into the most significant bit (q[1]), while the previous value of q[1] is moved into the least significant bit (q[0]). This effectively allows the circuit to store two consecutive input values sequentially.
+module top_module(
+   input clk,
+   input d,
+   // Due to bug the below disable used to be ignored.
+   // verilator lint_off UNOPT
+   // verilator lint_off UNOPTFLAT
+   output reg [1:0] q
+   // verilator lint_on UNOPT
+   // verilator lint_on UNOPTFLAT
+   );

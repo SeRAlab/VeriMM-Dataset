@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+    
+Implement a module to synchronize an asynchronous input signal (`din`) to a clock domain defined by `clk`, and to generate a pulse (`pls`) and a trigger signal (`trg`) based on the synchronized input. The module incorporates debouncing functionality for the input signal and provides a mechanism for resetting its internal state either through an external reset signal (`rst`) or automatically upon generating a pulse. This module is essential in digital systems where signal integrity across different clock domains is critical, such as in interfacing modules or in systems requiring precise control and timing of events.
+
+Module name:  
+	re1ce
+
+Input ports:
+	den: A digital input signal that enables the capturing of the din signal. When den is high, din is considered for synchronization and triggering.
+	din: The asynchronous digital input signal to be synchronized to the clk domain.
+	clk: The clock signal to which din is synchronized. This clock defines the timing reference for the module's operation.
+	rst: A synchronous reset signal that, when high, resets the internal state of the module.
+Output ports:
+	trg: A trigger output that mirrors the state of the synchronized input signal (din) after debouncing. This signal can be used as a direct indication of the input signal's state within the clk domain.
+	pls: A pulse output that generates a single clock cycle pulse when the input signal (din) transitions from low to high and is successfully synchronized and debounced. This pulse can be used to trigger events or actions in response to the input signal.
+
+
+Implementation:
+The RTL module presented, named re1ce, is designed to synchronize an asynchronous input signal (din) to a clock domain defined by clk, while also generating a pulse (pls) based on the synchronized signal. The module operates with an enable signal (den), a reset signal (rst), and outputs two signals: trg and pls. The design employs both combinational and sequential logic elements to achieve its functionality.
+
+Give me the complete code.
+

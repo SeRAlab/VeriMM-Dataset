@@ -1,0 +1,8 @@
+Design a circuit that utilizes a clock signal to monitor a 32-bit input data. If the input data exceeds the value of 1023, it sets a GPIO signal to HIGH; otherwise, it sets the GPIO signal to LOW. Additionally, it generates a memory signal as the inverse of the GPIO signal, creating an output that indicates whether the input data is within the specified range.
+module top_module(
+    input               clk,
+    input    [31:0]     in_data,
+    
+    output              gpio_sinal,
+    output              mem_sinal
+);

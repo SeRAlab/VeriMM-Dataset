@@ -1,0 +1,13 @@
+Design a 2-entry FIFO (First-In-First-Out) buffer that utilizes 61-bit wide data entries. The module has input control signals for read, write, clock, and reset, which govern the data flow. It tracks the number of entries and provides signals to indicate the buffer's state, such as full, almost full, empty, and almost empty. The buffer alternates between two memory locations for writing and supports simultaneous read and write operations, ensuring proper data retrieval and storage while managing entry counts.
+module top_module(
+  input clk,
+  input rd,
+  input reset_n,
+  input wr,
+  input [61:0] wr_data,
+  output almost_empty,
+  output almost_full,
+  output empty,
+  output full,
+  output reg [61:0] rd_data  // Change wire to reg
+);

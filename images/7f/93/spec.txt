@@ -1,0 +1,8 @@
+Design a sound output module that utilizes a 3-bit sound code to select predefined 16-bit sound data samples. The module provides two separate audio outputs: left and right channel data. On the rising edge of the lrck input, if the reset signal is high, both output channels are set to zero; otherwise, the module assigns the lower and upper bytes of the selected sound sample to left_data and right_data respectively. The predefined sound samples include various audio waveforms, enabling stereo sound output based on input selection.
+module top_module(
+    input lrck,
+    input reset,
+    input [2:0] sound_code,
+    output reg [15:0] left_data,
+    output reg [15:0] right_data
+);

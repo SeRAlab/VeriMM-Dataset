@@ -1,0 +1,13 @@
+Design a circuit that combines the functionality of a shift register and a signal splitter with an AND operation. The module receives a 100-bit input signal, which it can load into a shift register on the rising edge of the clock when the load signal is asserted. Depending on the 2-bit enable input, the shift register can rotate its contents either left or right. Additionally, it splits the 3-bit vector input into individual output bits and performs an AND operation between the current contents of the shift register and a vector formed by these output bits, producing a 100-bit output. This design effectively handles data shifting and logical operations, making it suitable for applications requiring data manipulation and control signal distribution.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    input wire [2:0] vec,
+    output wire [2:0] outv,
+    output wire o2,
+    output wire o1,
+    output wire o0,
+    output reg [99:0] q
+);

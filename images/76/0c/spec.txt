@@ -1,0 +1,21 @@
+Design a module for an I2C controller that interfaces with an external I2C device. This module handles read and write operations based on the provided address, with the ability to output data to be sent over I2C while also managing internal flags for busy status and data readiness. It generates a memory write signal for specific address ranges and uses an always block to manage data buffering and readback control. Additionally, it provides an output signal that triggers the start of the I2C transaction, making it ready to send or receive data based on the write conditions provided, and supports resetting functionality.
+module top_module(
+	
+	input clk,
+	input reset,
+	
+	
+	input   [2:0]address,
+	input        write,
+	input  [31:0]writedata,
+	input        read,
+	output reg [31:0]readdata,
+
+	output go,
+	input full,
+	output reg [11:0]memd,
+	output memw,
+	input busy,
+	output tbm,
+	input [31:0]rda
+);

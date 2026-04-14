@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform timekeeping functions, which include maintaining a precise count of time in seconds and nanoseconds, adjusting time based on periodic adjustments and specific load commands, and generating a one pulse per second (1 PPS) signal. The module supports loading initial time values, adjusting the time periodically, and making fine adjustments. It is a critical component for systems requiring precise time tracking and synchronization, such as in telecommunications, data centers, and network infrastructure.
+
+Module name:  
+	rtc
+
+Input ports:
+	rst: Reset signal (active high). Resets the internal state of the module.
+	clk: Clock signal. Drives the timing and state updates within the module.
+	time_ld: Time load signal. Triggers the loading of initial time values into the module.
+	time_reg_ns_in: 38bit input representing the initial nanoseconds part of the time to be loaded.
+	time_reg_sec_in: 48bit input representing the initial seconds part of the time to be loaded.
+	period_ld: Period load signal. Triggers the loading of the period value for time adjustments.
+	period_in: 40bit input representing the period value for time adjustments.
+	adj_ld: Adjustment load signal. Triggers the loading of adjustment count data.
+	adj_ld_data: 32bit input representing the adjustment load data.
+	period_adj: 40bit input representing the period adjustment value.
+Output ports:
+	adj_ld_done: Indicates that the adjustment load operation is complete.
+	time_reg_ns: 38bit output representing the current nanoseconds part of the time.
+	time_reg_sec: 48bit output representing the current seconds part of the time.
+	time_one_pps: One pulse per second signal. Goes high for one clock cycle every second.
+	time_ptp_ns: 32bit output representing the current nanoseconds part of the time, formatted for Precision Time Protocol (PTP).
+	time_ptp_sec: 48bit output representing the current seconds part of the time, formatted for PTP.
+
+
+Implementation:
+The RTL module presented is designed to function as a real-time clock (RTC) with adjustable time and period settings. It operates based on input signals that dictate the current time, the period for adjustments, and specific adjustments to be made. The module's primary purpose is to maintain an accurate time count, which can be adjusted or loaded as needed, and to generate a one pulse per second (1 PPS) signal based on the internal timekeeping.
+
+Give me the complete code.
+

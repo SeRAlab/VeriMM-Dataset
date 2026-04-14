@@ -1,0 +1,11 @@
+Design a random number generator (RNG) that produces a 32-bit random output based on three internal state variables, s1, s2, and s3, which are updated every clock cycle. The generator initializes its state with predefined values upon a reset signal and allows for state configuration through input valid signals. When enabled, it computes new values for the state variables using specific linear feedback shift register (LFSR) operations and outputs the combined random result, while also providing a portion of the state as a configuration output. This module is suitable for applications requiring pseudo-random number generation.
+module top_module(
+    clock,
+    reset,
+    enable,
+    rand_out,
+    config_in_valid,
+    config_in,
+    config_out_valid,
+    config_out
+);

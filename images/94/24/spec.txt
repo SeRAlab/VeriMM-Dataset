@@ -1,0 +1,9 @@
+Design an astable pulse generator that produces a square wave output on the `pulse` signal. The frequency of the output is determined by the parameters R1, R2, and C, which collectively define the timing characteristics. When the `reset` signal is activated, the generator resets its internal counter and output state. On each positive edge of the `clk`, the counter is decremented until it reaches zero, at which point the output state (`pulse_reg`) toggles, and the counter is reloaded with the computed value based on R1, R2, and C. This module effectively generates pulses at a frequency based on the configured resistor and capacitor values.
+module top_module(
+  input reset,
+  input clk,
+  input [7:0] R1,
+  input [7:0] R2,
+  input [7:0] C,
+  output pulse
+);

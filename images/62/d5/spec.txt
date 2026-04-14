@@ -1,0 +1,4 @@
+Design a one-bit wide data selection circuit that functions as a multiplexer in the write-back stage of a processor. The module takes two 32-bit inputs, `mem_out` and `alu_out`, and uses the `mem_to_reg` control signal to determine the output. When `mem_to_reg` is high (1), the module outputs the value from `mem_out`; otherwise, it outputs the value from `alu_out`. This allows for selecting between data from memory and the ALU for writing back to a register.
+module top_module( input         mem_to_reg,
+                 input  [31:0] mem_out, alu_out,
+                 output [31:0] write_data );

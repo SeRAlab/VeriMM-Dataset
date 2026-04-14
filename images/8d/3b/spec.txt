@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement an 8-bit Synchronous Binary Counter with synchronous reset and enable signal. The counter should increment its value on each clock cycle when the enable signal is high, and reset to 0 when the reset signal is asserted.
+
+Module name:  
+    sync_counter   
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Synchronous reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    en: Enable signal. When high, the counter increments on each clock cycle.
+
+Output ports:
+    q: 8-bit output representing the counter value.
+
+Implementation:
+The module implements an 8-bit binary counter using a register and an always block. It increments the counter value by 1 on each positive edge of the clock signal if the enable signal (en) is high. If the reset signal (rst) is asserted, the counter resets to 0.
+
+Give me the complete code.
+
+module sync_counter(
+    input clk,
+    input rst,
+    input en,
+    
+    output [7:0] q
+);

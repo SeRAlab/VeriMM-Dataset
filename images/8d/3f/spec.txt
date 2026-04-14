@@ -1,0 +1,7 @@
+Design a pipelined Booth multiplier capable of multiplying two 16-bit input numbers, a and b, producing a 32-bit result. The module employs a state machine to manage the various stages of the Booth multiplication algorithm, allowing for efficient handling of multiplication through pipelining. It utilizes a register file to store intermediate product results and performs arithmetic shifts and additions based on the current state, thereby optimizing the multiplication process. The final output assembles all the computed partial results from the register file into a single 32-bit product after completing the necessary pipeline stages.
+module top_module(
+    input [15:0] a,
+    input [15:0] b,
+    input clk,
+    output [31:0] result
+);

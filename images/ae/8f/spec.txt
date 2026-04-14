@@ -1,0 +1,8 @@
+Create a serial data decoder that interprets an incoming serial data stream and outputs an 8-bit byte. The module operates in four states: IDLE (waiting for a start signal), START (detecting the start bit of the incoming byte), DATA (receiving the 8 data bits), and STOP (confirming the stop bit). When a full byte is received, it sets the `data_out` to the decoded byte and indicates the receipt of a byte with a `byte_received` flag. The module uses a shift register mechanism to capture data bits based on clock signals, facilitating synchronization with the serial input.
+module top_module(
+  input clk,
+  input reset,
+  input serial_in,
+  output reg [7:0] data_out,
+  output reg byte_received
+);

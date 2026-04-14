@@ -1,0 +1,13 @@
+Design a versatile 2048-bit wide source multiplexer that selects one of several inputs based on a 4-bit control signal, `source_mux_select`. The module can choose from a literal constant, sign-extended constant, various SGPR and VGPR data, or specific values related to execution registers. This multiplexer is crucial for data routing in a processor architecture, allowing for the flexible selection of source data based on operational requirements, thereby facilitating efficient data handling in a computational pipeline.
+module top_module(
+ src_constant,
+ sgpr_rd_data,
+ vgpr_source_data,
+ exec_rd_exec_value,
+ exec_rd_vcc_value,
+ exec_rd_m0_value,
+ exec_rd_scc_value,
+ literal_constant,
+ source_mux_select,
+ source_data
+);

@@ -1,0 +1,6 @@
+Design a clock gating module that generates a gated clock signal. The module outputs a clock signal (`gated_clk`) that is active (high) only when the enable signal (`clk_en`) is asserted. Upon each rising edge of the source clock (`src_clk`), it captures the state of the enable signal into a register (`clk_en_reg`), which is then logically ANDed with the `src_clk` to produce the gated clock output. This circuit helps in reducing power consumption by disabling the clock to certain parts of the circuit when they are not in use.
+module top_module(
+    src_clk            ,
+    clk_en             ,
+    gated_clk           
+);

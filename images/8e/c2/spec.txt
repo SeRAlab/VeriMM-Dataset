@@ -1,0 +1,6 @@
+Design a reset controller for a W5300 device that generates a low active reset signal (w5300_resetl) based on a counting mechanism. The module uses a clock (clk) and a trigger input (trigger_reset) to control the reset behavior. On receiving a trigger reset, the counter is initialized to 1, and it increments on each clock cycle while it is not zero. The output reset signal is active low, meaning it is low (asserted) when the counter is non-zero, and high (de-asserted) when the counter decrements to zero. This design facilitates a controlled reset operation for the W5300 device by counting the duration of the reset condition.
+module top_module(
+	clk,
+	trigger_reset,
+	w5300_resetl
+ );

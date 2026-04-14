@@ -1,0 +1,10 @@
+Design a synchronous data memory module that stores 32-bit data words and allows for both read and write operations. On a rising clock edge, the module can reset the entire memory to zero or write a value (St_value) to a specified address if the memory write enable signal (Mem_W_EN) is active. The memory output (Mem_out) is provided based on the memory read enable signal (Mem_R_EN); if active, it outputs the 32-bit word stored at the specified address, otherwise, it outputs zero. The memory can accommodate a total of 1024 32-bit words indexed by the address input.
+module top_module(
+		input clk,
+		input rst,
+		input [31:0] St_value,
+		input [31:0] Address,
+		input Mem_W_EN,
+		input Mem_R_EN,
+		output [31:0] Mem_out
+	);

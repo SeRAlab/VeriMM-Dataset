@@ -1,0 +1,11 @@
+Design a camera interface module that generates timing signals and pixel data from a reference clock. The module outputs a pixel clock (`pixclk`) synchronized with the input reference clock (`refclk`), and generates vertical (`vsync`) and horizontal (`hsync`) sync signals to support image frame generation. The horizontal sync counter (`hs_counter`) and vertical sync counter (`vs_counter`) are used to manage timing, resetting to their initial states upon receiving a reset signal. The module also produces 8-bit pixel data based on a pixel counter, facilitating the transmission of image data. When the module is active, `vsync` and `hsync` are asserted based on the counter values to define active periods for rendering pixel data, thus enabling integration with compatible video processing systems.
+module top_module(
+	input refclk,
+	input reset_n,
+
+	output pixclk,
+	output vsync,
+	output hsync,
+	output [7:0] data
+
+);

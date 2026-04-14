@@ -1,0 +1,7 @@
+This Verilog module implements a 4-bit barrel shifter that allows for left and right shifting operations based on a 2-bit control input. The input `A` is the 4-bit data to be shifted, while the 2-bit input `B` specifies the type of shift: 00 for no shift, 01 for a left shift by one position, 10 for a right shift by one position, and 11 for a right shift by two positions. The output `Q` holds the shifted result, and the output `COUT` provides the bit that is shifted out from the most significant or least significant position during the operation. This design allows for efficient data manipulation by shifting bits without the need for additional clock cycles or multiple gates.
+module top_module(
+    input [3:0] A,
+    input [1:0] B,
+    output [3:0] Q,
+    output COUT
+);

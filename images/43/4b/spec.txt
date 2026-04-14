@@ -1,0 +1,17 @@
+Implement a Verilog module based on the following description.
+The following diagram is a Moore machine implementation of a vending machine controller. Implement in Verilog using one-hot encoding. Resets into state Idle and reset is asynchronous active-high.
+
+The state machine has the following states and their corresponding outputs: 
+1. state Idle (dispense = 0).
+2. state Dispense (dispense = 1).
+
+State transitions:
+1. From state Idle: If coin_inserted = 1, then transition to state Dispense. If coin_inserted = 0, then transition to state Idle.
+2. From state Dispense: If item_taken = 1, then transition to state Idle. If item_taken = 0, then transition to state Dispense.
+
+module vending_machine (
+        input clk,
+        input areset,
+        input coin_inserted,
+        input item_taken,
+        output reg dispense);

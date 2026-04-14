@@ -1,0 +1,8 @@
+Design a 4-bit arithmetic logic unit (ALU) that performs various operations on two 4-bit inputs, A and B, with an optional carry-in (CIN) and a control signal (BINV) for bit inversion. The ALU can execute four primary operations determined by the 2-bit op-code (OP): addition, subtraction, logical AND/OR, and bit shifting (both left and right). The output (Y) represents the result of the operation, while COUT indicates a carry-out from addition/subtraction or the most significant bit during shifting. This module provides a flexible and robust means of manipulating binary data within digital circuits.
+module top_module(
+    input [3:0] A, B,
+    input CIN, BINV,
+    input [1:0] OP,
+    output reg COUT, // Changed COUT to reg type
+    output reg [3:0] Y
+);

@@ -1,0 +1,7 @@
+Design a digital potentiometer module that accepts a clock signal (CLK), chip select (CS), and serial data input (SDI) to shift in new resistance settings. The module maintains an 8-bit register representing the resistance value, which updates on the rising edge of the CLK when CS is asserted low. The output (SDO) provides the calculated resistance in ohms by multiplying the resistance register value by 1000, enabling it to be read as an analog voltage level in digital applications.
+module top_module(
+  input CS,
+  input SDI,
+  input CLK,
+  output reg SDO
+);

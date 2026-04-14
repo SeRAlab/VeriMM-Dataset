@@ -1,0 +1,8 @@
+Design a 4-bit arithmetic unit capable of performing both addition and subtraction based on the control signal S. When S=0, the module adds the two 4-bit inputs A and B, producing a 4-bit sum output S and a carry-out signal Cout. When S=1, the module performs subtraction (A - B), with the output S reflecting the difference and Cout indicating a borrow condition. This design effectively combines the functionality of an adder and a subtractor into a single unit.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input S_select, // Renamed S to avoid conflict
+    output [3:0] S_out, // Renamed output S to S_out
+    output Cout
+);

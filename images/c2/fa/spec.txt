@@ -1,0 +1,20 @@
+Please act as a professional Verilog designer. Your task is to create a Verilog module that implements a current source and sink. 
+A current source is a circuit element that produces a constant current regardless of the voltage across it, while a current sink is an element that draws a constant current regardless of the voltage across it. 
+The inputs to the circuit are the voltage across the circuit element and the output is the current through the circuit element.
+Your module should have the following inputs and outputs:
+
+Inputs: 
+- V: the voltage across the circuit element
+- Iset: the set current value of the source/sink
+- enable: a control signal to enable/disable the source/sink
+
+Outputs: 
+- I: the current through the circuit element
+
+Your module should implement the following functionality:
+- When enable is high, the module should act as a current source or sink, depending on the value of Iset. If Iset is positive, the module should act as a current source with a constant current of Iset. If Iset is negative, the module should act as a current sink with a constant current of -Iset.
+- When enable is low, the module should act as an open circuit, with zero current flowing through it.
+
+To implement the current source/sink, you should use Verilog code to calculate the current through the circuit element based on the voltage across it and the set current value. 
+You should then use this calculation to generate the output current. 
+You should also use the enable signal to control whether the circuit element acts as a current source/sink or an open circuit.

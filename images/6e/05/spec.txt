@@ -1,0 +1,6 @@
+Design a circuit that detects rising edges of a digital signal. The module monitors the input signal 'level' and, upon detecting a transition from LOW to HIGH, generates a single pulse 'tick' during the clock cycle when the edge occurs. The state machine transitions through three states: 'zero' when no edge is detected, 'edg' when a rising edge is found, and 'one' when the signal remains HIGH. The output 'tick' asserts HIGH for one clock cycle as an indication of the edge detection event. The design also includes a reset functionality to initialize the state to 'zero'.
+module top_module(
+	input wire clk, reset,
+	input wire level,
+	output reg tick
+);

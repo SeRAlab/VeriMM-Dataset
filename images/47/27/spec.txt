@@ -1,0 +1,9 @@
+Design a phase-locked data transfer circuit that generates a transition clock and outputs data based on the state of a dual-phase signal. The module uses two clock signals, `clk` and `clkx2`, and includes an active-low reset (`jrst_n`). It toggles an internal state (`x1`) on `clk`, and when `clkx2` is active, it captures this state along with another internal state (`x2`) to determine the output clock (`tr_clk`) and to select appropriate data segments from a 36-bit input (`tw`). The output data (`tr_data`) is determined by the state of the internal phases, enabling conditional data transmission based on clock phase.
+module top_module(
+    input clk,
+    input clkx2,
+    input jrst_n,
+    input [35:0] tw,
+    output reg tr_clk,
+    output reg [17:0] tr_data
+);

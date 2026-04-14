@@ -1,0 +1,9 @@
+Design a module that manages system request signaling for an active control system. The module responds to a clock signal (CLK) and active-low reset (RST_N), maintaining a registered request signal (req_reg) that captures the state of a system request input (CSYSREQ). The output signals include CACTIVE, which is always asserted HIGH, and CSYSACK, which reflects the state of req_reg. This design ensures that when the reset is inactive, the registered request is set to HIGH, and it updates based on the system request input when the clock is active, facilitating a straightforward acknowledgment mechanism for system requests.
+module top_module(
+  input CLK,
+  input RST_N,
+  input CSYSREQ,
+  output reg CACTIVE,
+  output reg CSYSACK,
+  output reg req_reg
+);

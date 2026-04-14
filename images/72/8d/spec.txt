@@ -1,0 +1,8 @@
+Design a circuit for performing a bitwise rotation on a 26-bit data input. The module takes a 26-bit input and allows the user to select between left and right rotation through the `select_i` input. The `bit_shift_i` input determines whether the output will be the rotated data directly or shifted left/right accordingly. The operation is synchronized with the clock signal, ensuring that the data is processed on the rising edge. The final output is a 26-bit wide value reflecting either the rotated or shifted version of the input data.
+module top_module(
+    input [25:0] Data_i,
+    input select_i,
+    input bit_shift_i,
+    input clk,
+    output reg [25:0] Data_o
+);

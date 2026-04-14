@@ -1,0 +1,16 @@
+The module implements an I2C slave interface that manages communication over the I2C bus. It receives a clock signal and control signals to determine when to read from or write to the I2C bus. When the slave address matches a predefined initialization address or a specified address, it responds to read and write operations by setting appropriate signals. It also generates an acknowledgment signal, an interrupt request, and a wake-up signal upon successful data transactions. The module maintains state to indicate whether it is busy processing a command, and it controls the serial clock (SCL) and data (SDA) lines based on the operational mode and the address matched.
+module top_module(
+    input SBCLKI,
+    input SBRWI,
+    input SBSTBI,
+    input [7:0] SBADRI,
+    input [7:0] SBDATI,
+    output reg [7:0] SBDATO,
+    output reg SBACKO,
+    output reg I2CIRQ,
+    output I2CWKUP,
+    output SCLO,
+    output SCLOE,
+    output SDAO,
+    output SDAOE
+);

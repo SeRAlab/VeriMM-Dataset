@@ -1,0 +1,8 @@
+Design a circuit that performs signed multiplication of two 8-bit inputs, A and B, producing a 16-bit output, P. The multiplication result is stored in a two-stage pipeline, using clock cycles to accommodate the timing requirements. On each rising edge of the clock, the current multiplication result is updated while the previous result is passed to the output, thus effectively implementing a synchronous multiplier. The module includes reset functionality, and the use of digital signal processing (DSP) resources is suggested for efficient hardware implementation.
+module top_module(
+  input      [7:0]    A,
+  input      [7:0]    B,
+  output     [15:0]   P,
+  input               clk,
+  input               reset
+);

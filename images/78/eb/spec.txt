@@ -1,0 +1,15 @@
+Design a data path module that operates as a basic arithmetic and logic unit (ALU) combined with a small register file. It supports two input register selections to fetch either values from a 4-entry register file or immediate input values, and performs arithmetic or logical operations based on a 2-bit ALU opcode (addition, subtraction, bitwise AND, or bitwise OR). The module also includes output control that determines whether to store the computed result back into the register file or to output a default value based on an enable signal. This module facilitates data processing operations in a digital system, enabling flexible data routing and manipulation.
+module top_module(
+    input [1:0] input_register_selector_1,
+    input [1:0] input_register_selector_2,
+    input [1:0] output_register_selector,
+    input output_source_selector,
+    input output_enable,
+    input [1:0] alu_opcode,
+    input [31:0] immediate_1,
+    input [31:0] immediate_2,
+    output reg [31:0] input_data_1,
+    output reg [31:0] input_data_2,
+    output reg [31:0] output_data,
+    output reg [1:0] output_register
+);

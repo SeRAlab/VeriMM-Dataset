@@ -1,0 +1,16 @@
+Design a circuit that determines whether a branch should be taken based on specific micro-instruction inputs and status conditions. The module processes a 20-bit micro-instruction and several status and operand signals to evaluate conditions defined in a case statement. Each case corresponds to different types of flags and addressing modes, applying XOR logic to relevant bits to set the output signal, `branch`, indicating if the branch condition is met. The default behavior is to take the branch unless otherwise specified by the input conditions.
+module top_module(
+  // Clock and reset
+  input             rst,    // CPU reset
+  input             clk,    // CPU clock
+  // Micro-instruction word
+  input  [19:0]     inst_in,
+  // Operand input
+  input  [3:0]      flg_in, // Partial flags
+  input  [15:0]     sr_in,  // Status register
+  input  [15:0]     a_src,  // A operand
+  input  [15:0]     ea1b,   // EA #1 bitfield
+  input  [15:0]     extw,   // Extension word
+  // Test output
+  output reg        branch  // Branch taken
+);

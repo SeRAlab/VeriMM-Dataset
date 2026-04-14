@@ -1,0 +1,8 @@
+Design a single-port synchronous RAM module that allows reading and writing operations based on a clock signal. The module has a configurable data width of 8 bits and a depth of 16 addresses. It accepts a write enable signal to determine the operation: when write enable is high, data is written to the specified address; when write enable is low, data is read from that address. The output data is provided on the dout signal, ensuring that all operations are synchronized to the positive edge of the clock.
+module top_module(
+  input clk, // clock signal
+  input we, // write enable signal
+  input [log2depth-1:0] addr, // address signal
+  input [width-1:0] din, // input data
+  output reg [width-1:0] dout // output data
+);

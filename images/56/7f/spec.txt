@@ -1,0 +1,8 @@
+Design a shift register capable of shifting data either to the left or right based on a control signal. The module captures an 8-bit input (data_in) on a clock edge and outputs its current state (data_out). If the reset signal is low, the register clears to zero. When shift_mode is zero, the register shifts to the right, introducing the new data at the leftmost bit and shifting existing bits toward the right. Conversely, when shift_mode is one, the register shifts to the left, pushing the current bits toward the leftmost position while introducing the data_in at the rightmost bit.
+module top_module(
+  input clk,
+  input reset,
+  input shift_mode, // 0 for shift right, 1 for shift left
+  input [7:0] data_in,
+  output [7:0] data_out
+);

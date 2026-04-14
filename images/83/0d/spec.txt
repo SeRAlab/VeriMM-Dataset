@@ -1,0 +1,9 @@
+Design a module that performs a 9-bit by 9-bit multiplication with optional reset and enable functionality. When the reset (RST) signal is asserted, it initializes the internal register (ra) to zero. If the enable (ENA) signal is active, the module captures the value of input A into the internal register on the rising edge of the clock (CLK); otherwise, it retains the previous value. The module utilizes a dedicated multiplier instance to compute the product of the internal register and input B, producing an 18-bit wide output (Z).
+module top_module(
+    input  wire        CLK,
+    input  wire        RST,
+    input  wire        ENA,
+    input  wire [ 8:0] A,
+    input  wire [ 8:0] B,
+    output wire [17:0] Z
+);

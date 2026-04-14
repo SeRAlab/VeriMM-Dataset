@@ -1,0 +1,7 @@
+Design a module that detects a rising edge in the input signal and checks for a specific condition on the lower 8 bits of a barrel-shifted input. It utilizes an edge detection circuit to monitor the input clock and reset signals, and a barrel shifter to shift the input data left by one position. If a rising edge is detected and the lower 8 bits of the shifted output equal the hexadecimal value 0x55, the module outputs a HIGH signal; otherwise, it outputs a LOW signal.
+module top_module(
+    input wire clk,
+    input wire rst_n,
+    input wire [15:0] in,
+    output reg rising_edge
+);

@@ -1,0 +1,20 @@
+Design a memory write-back module that captures and holds data from the ALU and memory during the write-back stage of a processor's pipeline. It utilizes a clock-driven mechanism to sample input signals, including the register to write back to, the ALU output, and the memory output, while also controlling the register write and data source selection. The module supports reset and debug reset functionalities to clear the stored values, ensuring proper operation during error handling or initialization. The outputs provide a consistent interface for downstream components to read the processed data.
+module top_module(
+    input clock,
+    input reset,
+    input debugEnable,
+    input debugReset,
+    input [4:0] writeRegister,
+    input [31:0] aluOut,
+    input [31:0] memoryOut,
+    input regWrite,
+    input memToReg,
+    input eop,
+    
+    output reg [4:0] writeRegisterOut,
+    output reg [31:0] aluOutOut,
+    output reg [31:0] memoryOutOut,
+    output reg regWriteOut,
+    output reg memToRegOut,
+    output reg eopOut
+);

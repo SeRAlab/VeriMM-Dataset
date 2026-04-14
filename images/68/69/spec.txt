@@ -1,0 +1,9 @@
+Design a register module that captures instruction and program counter (PC) values on the negative edge of the clock signal. The module features a control input, IF_ID_Write, which enables writing the inputs to internal registers: salida_inst holds a 32-bit instruction, and salida_pc holds an 11-bit PC value. When IF_ID_Write is high, the current instruction and PC values are latched into the outputs, enabling the storage of instruction information for further processing in a pipelined architecture.
+module top_module(
+    input [31:0] instruccion,
+	 input [10:0] pc,
+	 input clock,
+	 input IF_ID_Write,
+	 output [31:0] salida_inst,
+	 output [10:0] salida_pc
+	 );

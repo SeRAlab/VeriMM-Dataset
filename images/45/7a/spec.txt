@@ -1,0 +1,9 @@
+Design a single-port, synchronous SRAM (Static Random Access Memory) module with one read/write capability. The module features a clock input to synchronize operations, an enable signal to activate memory access, and a write signal to dictate whether to write data to or read data from the memory bank. The memory is addressed with a specified address size, allowing access to 64 entries, each capable of storing 23 bits of data. When enabled and the write signal is high, the module stores the input data at the given address; if the write signal is low, it retrieves the data from that address and outputs it through a dedicated read data line.
+module top_module(
+    input clk,
+    input en,
+    input write,
+    input [ADDR_SZ-1:0] addr,
+    input [DATA_SZ-1:0] write_data,
+    output [DATA_SZ-1:0] read_data
+);

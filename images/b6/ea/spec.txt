@@ -1,0 +1,11 @@
+Design a control unit that interprets a 32-bit instruction to generate control signals for a processor. It sets the `RegWrite` signal to enable writing to the register file based on whether the input instruction is non-zero. It derives multiple output signals from specific bits of the instruction, including selection signals for a multiplexer (`MUXsel1`), register addresses for source (`RS`), destination (`RD`), and temporary registers (`RT`), as well as an operation code (`ALUopsel`) that dictates the ALU operation. It also extracts a 15-bit immediate value. If the specified operation indicates particular conditions, it adjusts `RS` and `RT` accordingly. If the instruction is zero, it sets default values, indicating a no-operation state.
+module top_module(
+	input [31:0] Instruction,
+	output reg RegWrite,
+	output reg MUXsel1,
+	output reg [5:0] RS,
+	output reg [5:0] RD,
+	output reg [3:0] ALUopsel,
+	output reg [5:0] RT,
+	output reg [14:0] Immediate
+	);

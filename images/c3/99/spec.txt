@@ -1,0 +1,14 @@
+
+
+You are tasked with designing a module that generates a block memory with a specified width and parameter. The module should take in a clock signal `clka` and an address input of 10 bits `addra`. The output should be a 36-bit data output `douta`.
+
+Create a Verilog module called `block_mem_gen` that takes in the clock signal `clka` and address input `addra`. The module should generate a block memory with a specified width and parameter. The width and parameter should be defined as parameters within the module and should be set to 32 and 1024 respectively.
+
+The module should have a memory depth of 1024 and a data width of 32. The memory should be initialized with the values of an array `mem_init` which is defined as follows:
+
+```
+reg [31:0] mem_init [0:1023] = '{1024{32'h00000000}};
+```
+
+The module should output the value stored in the memory at the address specified by `addra`. If `addra` is greater than or equal to 1024, then the output should be 0.
+

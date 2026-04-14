@@ -1,0 +1,10 @@
+Design a digital circuit that performs edge detection and bit counting on an 8-bit input signal and a 256-bit input vector. The module tracks the number of rising edges in the input signal and the total number of set bits in the input vector, resetting these counts when a reset signal is asserted. On each clock cycle, it computes the difference between the edge count and the bit count, outputting this difference alongside the current edge and bit counts. The design effectively serves as an edge counter and bit counter, providing useful metrics for signal monitoring and analysis.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] in_signal,
+    input [254:0] in_vector,
+    output reg [7:0] edge_count,
+    output reg [7:0] bit_count,
+    output reg [7:0] output_diff
+);

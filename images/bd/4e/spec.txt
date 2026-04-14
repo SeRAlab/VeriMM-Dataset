@@ -1,0 +1,8 @@
+Design a 4-bit wide arithmetic unit capable of performing addition and subtraction using two's complement representation. The unit takes two 4-bit inputs, A and B, along with a control signal C that dictates the operation: when C=0, it performs A + B; when C=1, it computes A - B by adding the two's complement of B. The output consists of a 4-bit result S and a overflow flag V, which indicates whether the result has exceeded the range of a 4-bit signed representation. The design effectively manages overflow conditions and provides a compact solution for basic arithmetic operations.
+module top_module(
+  input [3:0] A,
+  input [3:0] B,
+  input C,
+  output reg [3:0] S,
+  output reg V
+);

@@ -1,0 +1,12 @@
+Design a priority arbiter module that manages multiple request input signals to grant access to shared resources based on priority and holding conditions. The module accepts a set of request signals, and based on the current clock state, enables or maintains grants while considering hold conditions for outstanding requests. It outputs grant signals to indicate which requests have been granted and a wait signal for those that have not, preventing simultaneous grants. The arbiter also implements logic to block requests when previous grants are still active and can reset or hold requests based on control inputs, ensuring deterministic resource allocation among competing requestors.
+module top_module(
+   // Outputs
+   output reg [ARW-1:0] grant,
+   output reg [ARW-1:0] arb_wait,
+   // Inputs
+   input clk,
+   input clk_en,
+   input reset,
+   input hold,
+   input [ARW-1:0] request
+);

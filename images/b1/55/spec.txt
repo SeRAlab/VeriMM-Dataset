@@ -1,0 +1,9 @@
+Design a synchronous multiplication circuit capable of multiplying two 8-bit inputs (in1 and in2) and producing a 16-bit output (out). The module operates on clock edges and features a reset signal to initialize all internal registers to zero. It uses a bit-shifting algorithm for multiplication, where the multiplier is halved and the multiplicand is doubled at each step, accumulating the result until all bits of the multiplier have been processed. The lower 8 bits of the multiplication result are separately output as out_lo, allowing for easy access to the least significant portion of the product.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] in1,
+  input [7:0] in2,
+  output [15:0] out,
+  output [7:0] out_lo
+);

@@ -1,0 +1,11 @@
+Design a synchronous first-in-first-out (FIFO) memory module that handles 8-bit data inputs. This module features write and read operations controlled by input signals. The module utilizes a memory array with a configurable depth of 16 to store data, employing write and read pointers to manage data flow. It provides status signals indicating whether the FIFO is empty or full, and it resets its internal state upon receiving an active low reset signal. When a write enable signal is asserted and the FIFO is not full, it stores incoming data; when a read enable signal is asserted and the FIFO is not empty, it outputs the oldest stored data.
+module top_module(
+    input clk,
+    input rst_n,
+    input we,
+    input [7:0] din,
+    output reg re,
+    output reg [7:0] dout,
+    output reg empty,
+    output reg full
+);

@@ -1,0 +1,16 @@
+
+
+You have been tasked with designing a PWM register in Verilog. The register should have an 8-bit output, `pwmval`, and should be able to receive an 8-bit input, `wrtdata`, on the rising edge of a clock signal, `clk`. The register should only update its value on the rising edge of another input signal, `pwmldce`. If `pwmldce` is high, the register should update its value with the input value, `wrtdata`. Otherwise, the register should hold its current value.
+
+Write a Verilog module, `pwmregister`, that implements this behavior. Your module should have the following inputs and outputs:
+
+Inputs:
+- `clk`: a 1-bit clock signal
+- `pwmldce`: a 1-bit input signal that indicates when the register should update its value
+- `wrtdata`: an 8-bit input signal that contains the new value for the register
+
+Outputs:
+- `pwmval`: an 8-bit output signal that contains the current value of the register
+
+Your module should be able to synthesize to a device within 200 lines of Verilog code.
+

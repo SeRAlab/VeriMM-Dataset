@@ -1,0 +1,8 @@
+Design a synchronous 4-bit shift register with load, enable, and reset functionalities. The module captures 4 bits of input data when the load signal is active, resets the shift register to zero when the reset signal is asserted, and allows shifting of the stored bits to the left upon each clock cycle when the enable signal is active. Additionally, it incorporates a 2-to-4 decoder to determine the output selection between the input data, shifted data, and the current register state based on the contents of the shift register. The output reflects either the loaded data, the shifted version of the register state, or the current register value depending on the control signals.
+module top_module(
+    input clk,
+    input reset,  // sync active-high reset
+    input load,
+    input ena,
+    input [3:0] data_in,
+    output [3:0] data_out);

@@ -1,0 +1,21 @@
+Design a memory interface module that manages data input/output and register write operations. When the reset signal is low, it initializes all outputs to zero. When the reset signal is high, it outputs the provided data inputs (`data_i`, `regw_addr_i`, `regw_i`, `hi_i`, `lo_i`, `hiw_i`, and `low_i`) to their respective output registers. This module serves to interface between a memory data bus and external control logic, facilitating the transfer of both standard data and special high/low word signals, along with the control signals indicating whether to write to the high or low registers.
+module top_module(
+    input clk,
+    input rst,
+    input   [31:0]data_i,
+    input   [4:0] regw_addr_i,
+    input   regw_i,
+    output reg  [31:0]data_o,
+    output reg  [4:0] regw_addr_o,
+    output reg  regw_o,
+    
+    input  hiw_i,
+    input  low_i,
+    input [31:0] hi_i,
+    input [31:0] lo_i,
+    output reg  [31:0]hi_o,
+    output reg  [31:0]lo_o,
+    output reg  hiw_o,
+    output reg  low_o
+        
+    );

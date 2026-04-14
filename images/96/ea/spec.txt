@@ -1,0 +1,8 @@
+Implement a serial communication module that facilitates transmission and reception of 8-bit data over a single data line. The module utilizes a clock signal to synchronize data transfer, where it leverages a transmitting and receiving mechanism based on a start and stop bit protocol. When the `xmit` signal is asserted, it initiates the transmission of the 8-bit input data, shifting it serially out bit by bit. Conversely, when the `recv` signal is asserted, it captures incoming serial data into an 8-bit register. The system uses bit counting to manage the state of transmission and reception, providing proper timing for data integrity between sender and receiver. This module is suited for applications where serial data management is required.
+module top_module(
+    input clk,
+    input xmit,
+    input recv,
+    input [7:0] tx,
+    output reg [7:0] rx
+);

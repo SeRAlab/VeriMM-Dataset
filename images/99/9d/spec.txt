@@ -1,0 +1,9 @@
+Design a circuit for an encryption and decryption block that operates based on a mode selection signal. This module takes a 128-bit key and an 8-bit data input, producing an 8-bit data output. In encryption mode (when mode_sel is high), the module processes the input data using a specified encryption algorithm, storing intermediate results in a registered variable for the final output. In decryption mode (when mode_sel is low), it applies a corresponding decryption algorithm to retrieve the original data. The circuit also features a reset mechanism to initialize internal registers upon receiving a reset signal, ensuring proper startup conditions.
+module top_module(
+  input clk,
+  input rst,
+  input mode_sel,
+  input [127:0] key,
+  input [7:0] data_in,
+  output reg [7:0] data_out // Changed to reg type
+);

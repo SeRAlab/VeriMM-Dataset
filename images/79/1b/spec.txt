@@ -1,0 +1,9 @@
+Design a hardware-based last-in, first-out (LIFO) memory structure, commonly known as a stack. This module supports writing and reading operations controlled by a clock signal and reset. Upon a positive clock edge, if reset is active, the write and read pointers along with the element count are reset. When the write enable signal is asserted, incoming data is stored in memory, updating the write pointer and count accordingly. The read enable signal is driven high when there are elements available for reading, allowing for the topmost data to be output and the read pointer to be incremented, maintaining circular behavior within the defined memory depth.
+module top_module(
+  input clk,
+  input rst,
+  input wr_en,
+  input [7:0] data_in,
+  output reg rd_en,       // Change to reg type
+  output reg [7:0] data_out // Change to reg type
+);

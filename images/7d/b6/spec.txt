@@ -1,0 +1,9 @@
+Design a D-type flip-flop with asynchronous reset and preset functionalities. When the clock signal (CLK) has a rising edge, the output Q captures the input D. If the RESET signal is high, Q is set to low (0) and Q_BAR to high (1). Conversely, if the PRESET signal is high, Q is set to high (1) and Q_BAR to low (0). If neither RESET nor PRESET is active, Q follows the input D, while Q_BAR outputs the inverse of Q.
+module top_module(
+    input D,
+    input CLK,
+    input RESET,
+    input PRESET,
+    output reg Q,
+    output reg Q_BAR
+);

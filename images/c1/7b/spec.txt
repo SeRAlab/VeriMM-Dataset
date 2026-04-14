@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as a microprogrammed control unit's program counter. Its primary functions include:
+
+Counting: Incrementally advancing the program counter to point to the next microinstruction in a microprogram sequence.
+Loading: Directly setting the program counter to a specific value based on external input, facilitating jumps or branches within the microprogram.
+Clearing: Resetting the program counter to its initial state, typically in response to a system reset or specific control signals indicating the start of a new operation or sequence.
+Holding: Maintaining the current value of the program counter in the absence of any control signals to increment, load, or clear.
+
+This module plays a critical role in the control unit of a microprogrammed processor or a similar system, where it dictates the sequence of microoperations by pointing to the corresponding microinstructions stored in a control memory (often referred to as microcode ROM).
+
+Module name:  
+	MICRO_PROG_COUNTER
+
+Input ports:
+	clk (input): The clock signal input. It is a positiveedge triggered signal that synchronizes the operations of the program counter, ensuring that updates to its value occur in a controlled, sequential manner.
+	rst (input): The reset signal input. When asserted (1), it initializes the program counter to 0, effectively resetting the microinstruction sequence.
+	AR_ROM_IN (input [4:0]): The address input from ROM. This 5bit input specifies the address (or value) to load into the program counter when the LOAD_MICRO signal is asserted, allowing for jumps within the microprogram.
+	LOAD_MICRO (input): The load control signal. When asserted (1), it enables the loading of the AR_ROM_IN value into the program counter, overriding the increment and clear operations.
+	INC_MICRO (input): The increment control signal. When asserted (1), it increments the current value of the program counter by 1, moving to the next microinstruction in sequence.
+	CLEAR_MICRO (input): The clear control signal. When asserted (1), it resets the program counter to 0, similar to the rst signal but controlled by the microprogram logic.
+Output ports:
+	PRE_OUT (output [4:0]): The current value of the program counter. This 5bit output reflects the program counter's current state, indicating the address of the microinstruction to be executed next.
+
+
+Implementation:
+The MICRO_PROG_COUNTER module is designed to function as a programmable micro-instruction counter, primarily used in the control unit of a microprocessor or a similar digital system. The module's core functionality revolves around managing a 5-bit counter (PRE_OUT_r), which can be manipulated through various control signals. The operations include loading a value, incrementing the counter, and clearing it to zero. The design employs both combinational and sequential logic elements to achieve its intended functionality.
+
+Give me the complete code.
+

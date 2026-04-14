@@ -1,0 +1,7 @@
+Design a 3-to-8 register file with read and write capabilities. The module allows for storing and retrieving 8-bit values from any of the 8 registers based on a 3-bit address input (AddrA). When the clock signal (clk) is active, it can write data (DI) to the specified register if the write enable (WE) signal is asserted and the chip enable (CEN) signal is also active. If CEN is low, the output (DO) will continue to provide the value from the selected register without allowing writes. The module effectively manages data reads and writes in a synchronous manner, making it suitable for applications requiring register storage.
+module top_module(
+  input clk, CEN, WE,
+  input [2:0] AddrA,
+  input [7:0] DI,
+  output reg [7:0] DO
+);

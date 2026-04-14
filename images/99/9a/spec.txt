@@ -1,0 +1,11 @@
+Design a synchronous FIFO buffer capable of storing 8 bytes of data, with read and write operations controlled by the `wr_en` and `rd_en` signals. The module includes inputs for clock and reset, and outputs for data, full, and empty status indicators. On a write enable signal, data is stored in the buffer until it is full, while on a read enable signal, data is retrieved until the buffer is empty. The reset signal initializes the write and read pointers, as well as the full and empty status flags.
+module top_module(
+  input clk,
+  input rst,
+  input wr_en,
+  input rd_en,
+  input [7:0] data_in,
+  output reg [7:0] data_out, // data_out should be a reg to store values.
+  output reg full,           // Change full to reg.
+  output reg empty           // Change empty to reg.
+);

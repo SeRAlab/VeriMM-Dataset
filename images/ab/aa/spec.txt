@@ -1,0 +1,7 @@
+Design a clock gated D flip-flop with enable and toggle functionality. The module samples the clock signal when the enable (EN) is high, capturing the clock state. It employs a clock gating technique to generate a gated clock signal that is asserted when the enable input is active; otherwise, it outputs LOW. Additionally, the output ENCLK can be toggled on each rising edge of the clock if the toggle enable (TE) signal is high, otherwise, it reflects the state of the gated clock. This design optimizes power consumption by controlling clock usage based on logic conditions.
+module top_module(
+  input logic CLK,
+  input logic EN,
+  input logic TE,
+  output logic ENCLK
+);

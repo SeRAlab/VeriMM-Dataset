@@ -1,0 +1,21 @@
+Please act as a professional Verilog designer.
+
+Implement an 8-bit shift register with a synchronous reset. The register should shift its contents to the right by one bit on each positive clock edge. If the reset signal is high, the register should reset to 0 on the next clock edge.
+
+Module name:
+    shift_register
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    data_in: Input data bit to be shifted into the register.
+
+Output ports:
+    data_out: Output 8-bit register value.
+
+Implementation:
+Shift Register Logic:
+The module includes an 8-bit register, data_out, to store the current register value.
+On the positive edge of the clock signal (clk), the module shifts the register value to the right by one bit and inserts data_in at the MSB. If the reset signal (rst) is high, indicating a reset condition, the register value is set to 8'b00000000 on the next clock edge.
+
+Give me the complete code.

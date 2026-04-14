@@ -1,0 +1,11 @@
+Design a circuit that computes a 5-bit CRC (Cyclic Redundancy Check) for an 8-bit input data stream. The module accepts a reset signal, a enable signal for the CRC update (CRCEn), an indicator for whether the input is 8 bits (CRC5_8BitIn), and the data to be processed (dataIn). On a rising clock edge, the CRCResult is initialized to a predefined value and is updated based on the data input while considering the CRC5_8BitIn signal. The module indicates when it is ready to output a new CRC value through the ready signal. The updating process involves bitwise operations and shifts to generate the CRC based on the input data, providing error-detection capabilities for data transmission.
+module top_module(
+  input rstCRC,
+  input CRCEn,
+  input CRC5_8BitIn,
+  input [7:0] dataIn,
+  input clk,
+  input rst,
+  output reg [4:0] CRCResult,
+  output reg ready
+);

@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module to serve as a clock buffer. Its role within a broader system context to receive a clock signal as input (`rclk`) and output a buffered version of this clock signal (`clk`). This module is crucial in digital IC design for several reasons:
+
+Signal Integrity: It helps in maintaining the integrity of the clock signal as it traverses through different parts of the chip. By buffering the clock signal, it ensures that the signal strength is preserved, reducing the risk of signal degradation over long distances.
+Fan-out Capability: It enhances the fan-out capability of the clock signal. A single clock source can drive multiple loads without compromising the signal quality, thanks to such buffering.
+Isolation: It provides isolation between the clock source and the driven circuits, minimizing the loading effect on the clock source and reducing the potential for noise coupling.
+
+Module name:  
+	bw_u1_ckbuf_40x
+
+Input ports:
+	rclk: This is the input port of the module, which accepts the raw clock signal to be buffered. It is of type input and carries a digital signal (binary values). The rclk signal is essential for the module's operation as it is the source clock that needs to be buffered and distributed.
+Output ports:
+	clk: This is the output port of the module, which delivers the buffered clock signal. It is of type output and also carries a digital signal. The clk signal is the result of the buffering process and is intended to be distributed to other parts of the IC that require the clock signal for synchronous operations.
+
+
+Implementation:
+The module bw_u1_ckbuf_40x is a simple, yet fundamental component in digital IC design, particularly in clock network design. Its primary function is to serve as a clock buffer, which is crucial for distributing the clock signal (rclk) throughout the chip with minimal delay and skew. The module takes a single input, rclk (raw clock), and produces a single output, clk (buffered clock). 
+The logic implemented in this module is purely combinational, as it directly assigns the input signal to the output without any form of storage or delay elements (like flip-flops or latches). This means the output clk immediately reflects any changes in the input rclk within the propagation delay constraints of the buffer. There is no sequential logic involved in this module, making its operation straightforward but essential for clock signal integrity and distribution.
+
+Give me the complete code.
+

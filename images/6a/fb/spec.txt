@@ -1,0 +1,33 @@
+Please act as a professional verilog designer.
+
+Implement a dual-port RAM module with a parameterizable data width and depth. The module should support separate read and write ports with independent addresses and control signals.
+
+Module name:  
+    dual_port_ram 
+
+Parameters:
+    DATAWIDTH: Width of the data bus (default: 8)
+    DEPTH: Depth of the memory (default: 256)
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    we: Write enable signal for the write port.
+    addr_wr: Write address bus, width determined by DEPTH.
+    data_wr: Data input bus for writing to memory, width determined by DATAWIDTH.
+    addr_rd: Read address bus, width determined by DEPTH.
+
+Output ports:
+    data_rd: Data output bus for reading from memory, width determined by DATAWIDTH.
+
+Implementation:
+Memory Array:
+Declare a memory array with the specified depth and data width.
+Write Operation:
+On the rising edge of the clock, if the write enable signal is asserted, write data to the specified address.
+Read Operation:
+On the rising edge of the clock, read data from the specified address.
+
+Output Assignments:
+The data_rd output is assigned the value read from the memory array.
+
+Give me the complete code.

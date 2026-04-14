@@ -1,0 +1,8 @@
+Design a Binary-Coded Decimal (BCD) converter that takes an 8-bit binary input and converts it to its BCD representation split into three separate outputs: Hundreds, Tens, and Ones. The module utilizes a shift-and-add-3 algorithm to convert the binary value into BCD, incrementing each digit by 3 if it meets the condition of being greater than or equal to 5, thus ensuring valid BCD outputs. The conversion process occurs in an always block triggered by changes in the binary input, enabling real-time updates of the BCD outputs.
+module top_module(
+	input [7:0] binary,
+	input [3:0] select,
+	output reg [3:0] Hundreds,
+	output reg [3:0] Tens,
+	output reg [3:0] Ones
+	);

@@ -1,0 +1,8 @@
+Design a data transformation module that processes a 4-bit input based on control signals. When the `valid` signal is high and a clock edge occurs, the module applies different operations on the `data_in` input depending on the value of the 2-bit `ctrl` signal. Specifically, it can invert the input, set the output to zero, perform a bitwise AND operation with a specific mask, or execute another masked AND operation. The output is stored in a 4-bit register, `data_out`, reflecting the result of the selected operation based on the control signals.
+module top_module(
+    input clk,
+    input valid,
+    input [3:0] data_in,
+    input [1:0] ctrl,
+    output reg [3:0] data_out
+);

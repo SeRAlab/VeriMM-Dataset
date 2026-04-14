@@ -1,0 +1,6 @@
+Design a UART transmitter module that serially sends 8-bit data. The module operates on a clock and needs a reset signal to initialize the state machine. When data is ready for transmission, the module transitions through states: START (sending a start bit), DATA (sending each bit of the 8-bit data), and END (sending a stop bit). The output 'tx' represents the transmitted data line, asserting low during the start bit, then transmitting the data bits in sequence before releasing high at the end. The 'data_accepted' signal indicates that new data has been successfully loaded for transmission. The design includes a baud rate control mechanism, which utilizes a counter to synchronize data transfer according to the baud edge signal.
+module top_module(
+    input rst, clk, baud_edge, data_ready,
+    input [7:0] data,
+    output reg tx, data_accepted
+);

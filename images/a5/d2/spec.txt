@@ -1,0 +1,7 @@
+Design a circuit that generates an 8-bit output comprising a 4-bit binary counter and the result of adding a parity bit derived from an 8-bit input. The module features a synchronous active-high reset that initializes the counter to a specific value (8) on the reset signal. The parity bit is computed by performing an XOR operation on all bits of the input data, ultimately influencing the counter output. The system increments the counter on each clock cycle, cycling back to zero after reaching a maximum of 15. The final output concatenates the modified counter value, which includes the parity bit, with the current state of the counter.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input [7:0] in,   // 8-bit input for the parity generator
+    output [7:0] out  // 8-bit output from the system
+);

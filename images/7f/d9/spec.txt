@@ -1,0 +1,8 @@
+Design a checksum calculation module that computes the checksum of an 8-bit input data stream. The module maintains a 16-bit checksum register that is updated on each clock cycle by adding the input data and inverting the result. It also provides a reset functionality to initialize the checksum to zero. The module outputs the current checksum and a validity signal that indicates whether the computed checksum matches a specified output checksum. The functionality ensures real-time checksum validation, which is useful in data integrity applications.
+module top_module(
+  input [7:0] data_in,
+  input reset,
+  input clk,              // Added clk input
+  output [15:0] checksum_out,
+  output valid
+);

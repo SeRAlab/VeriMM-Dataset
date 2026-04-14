@@ -1,0 +1,9 @@
+Design a clock enable module that produces an output clock signal (`outclk`) and an enable output (`enaout`) based on an input clock signal (`inclk`), an enable signal (`ena`), and other reset signals (`devpor` for power-on reset and `devclrn` for clear). The module incorporates two registers to control the enable signal dynamically, allowing it to be configured for operation on either the rising or falling edge of the clock, as specified by the `ena_register_mode` parameter. The final `outclk` is the result of an AND operation between the input clock and the computed enable signal, ensuring the clock only propagates when enabled.
+module top_module(
+    inclk,
+    ena,
+    devpor,
+    devclrn,
+    enaout,
+    outclk
+);

@@ -1,0 +1,57 @@
+
+
+You are tasked with designing a verilog module for a 4-bit adder that takes in two 4-bit inputs (A and B) and outputs a 4-bit sum (S) and a carry-out bit (Cout). The adder should be implemented using full adders (FA) and a carry-in bit (Cin). The module should have the following interface:
+
+Inputs:
+- A (4-bit input)
+- B (4-bit input)
+- Cin (1-bit input)
+
+Outputs:
+- S (4-bit output)
+- Cout (1-bit output)
+
+You should instantiate the FA module in your design, which has the following interface:
+
+Inputs:
+- A (1-bit input)
+- B (1-bit input)
+- Cin (1-bit input)
+
+Outputs:
+- S (1-bit output)
+- Cout (1-bit output)
+
+You should also use the following verilog code snippet to implement the 4-bit adder:
+
+```
+module FA (
+	input A, B, Cin,
+	output S, Cout
+);
+
+	assign S = A ^ B ^ Cin;
+	assign Cout = (A & B) | (A & Cin) | (B & Cin);
+
+endmodule
+
+module four_bit_adder (
+	input [3:0] A,
+	input [3:0] B,
+	input Cin,
+	output [3:0] S,
+	output Cout
+);
+
+	wire c0, c1, c2;
+
+	FA fa0 (.A(A[0]), .B(B[0]), .Cin(Cin), .S(S[0]), .Cout(c0));
+	FA fa1 (.A(A[1]), .B(B[1]), .Cin(c0), .S(S[1]), .Cout(c1));
+	FA fa2 (.A(A[2]), .B(B[2]), .Cin(c1), .S(S[2]), .Cout(c2));
+	FA fa3 (.A(A[3]), .B(B[3]), .Cin(c2), .S(S[3]), .Cout(Cout));
+
+endmodule
+```
+
+Implement the `four_bit_adder` module using the `FA` module.
+

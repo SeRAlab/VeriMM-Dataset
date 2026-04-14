@@ -1,0 +1,19 @@
+Design a Verilog module for a Mealy state machine with one input, one output, and four states using the following state encoding: K=4'b0001, L=4'b0010, M=4'b0100, N=4'b1000. The state machine should use the following state transition and output logic.
+
+State transitions:
+1. From state K: If in = 0, then transition to state L. If in = 1, then transition to state M.
+2. From state L: If in = 0, then transition to state N. If in = 1, then transition to state K.
+3. From state M: If in = 0, then transition to state L. If in = 1, then transition to state N.
+4. From state N: If in = 0, then transition to state K. If in = 1, then transition to state M.
+
+Output logic:
+1. From state K: out = 0.
+2. From state L: out = in.
+3. From state M: out = 1.
+4. From state N: out = ~in.
+
+module mealy_machine_3 (
+  input in,
+  input [3:0] state,
+  output reg [3:0] next_state,
+  output reg out);

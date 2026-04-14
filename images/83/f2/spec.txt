@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+
+Design a simple shift register that shifts a 4-bit input value to the right on each positive edge of the clock signal. The register should also have an asynchronous reset input which will set the register to 0 when activated.
+
+Module name:  
+    shift_register      
+
+Input ports:
+    CLK: Clock signal
+    RST: Asynchronous reset signal
+    D: 4-bit data input
+
+Output ports:
+    Q: 4-bit output representing the current register value
+
+Implementation:
+The shift register shifts its bits to the right on each positive edge of the clock signal. When the reset signal is active, the register is reset to 0 immediately.
+
+Give me the complete code.
+
+module shift_register (CLK, RST, D, Q);
+input CLK, RST;
+input [3:0] D;
+output reg [3:0] Q;

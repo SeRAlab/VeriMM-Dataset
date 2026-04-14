@@ -1,0 +1,6 @@
+Implement a 16-bit sign extension module that extends a 16-bit input (data_out) to a 32-bit output (extended). If the most significant bit of data_out (bit 15) is 1 and notXor is true, the upper 16 bits of extended will be filled with ones, indicating a negative number in two's complement representation. If not, those upper bits will be zeroed out, effectively preserving the sign of the original 16-bit data. The lower 16 bits of extended will directly mirror the input data_out.
+module top_module(
+	input [15:0] data_out,
+	input notXor,
+	output [31:0] extended
+);

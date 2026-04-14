@@ -1,0 +1,10 @@
+Design a 4-bit adder/subtractor circuit that can perform either addition or subtraction based on the AddSub control input. When AddSub is 0, the module adds the 4-bit inputs A and B along with a carry-in (Cin), producing a 4-bit sum (Sum) and a carry-out (Cout). If Clr is asserted, the output is reset to zero. When AddSub is 1, it subtracts B from A, also taking into account the carry-in signal in inverted form (to effectively represent addition with two's complement), again producing the sum and carry-out. The circuit also provides a mechanism to clear the outputs to zero when necessary.
+module top_module(
+  input [3:0] A,
+  input [3:0] B,
+  input Cin,
+  input AddSub,
+  input Clr,
+  output reg Cout,
+  output reg [3:0] Sum
+);

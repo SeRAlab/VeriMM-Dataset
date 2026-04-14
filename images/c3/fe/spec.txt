@@ -1,0 +1,14 @@
+
+
+You are tasked with designing a module that increments the write pointer of a first-in first-out (FIFO) buffer. The module should take in three inputs: `ge2_free`, `ge3_free`, and `input_tm_cnt`, and output a 4-bit signal `fifo_wrptr_inc`. 
+
+The `ge2_free` and `ge3_free` inputs are single-bit signals that indicate whether there are two or three free slots in the FIFO buffer, respectively. The `input_tm_cnt` input is a 2-bit signal that indicates the number of slots that will be used in the FIFO buffer. 
+
+The `fifo_wrptr_inc` output should be set according to the following conditions:
+- If `ge3_free` is high and `input_tm_cnt` is equal to 3, `fifo_wrptr_inc` should be set to 3.
+- If `ge2_free` is high and `input_tm_cnt` is greater than or equal to 2, `fifo_wrptr_inc` should be set to 2.
+- If `input_tm_cnt` is greater than or equal to 1, `fifo_wrptr_inc` should be set to 1.
+- Otherwise, `fifo_wrptr_inc` should be set to 0.
+
+Design a Verilog module that implements this logic.
+

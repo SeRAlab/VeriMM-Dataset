@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+
+Implement a 16-bit linear feedback shift register (LFSR) with a given polynomial for generating pseudo-random numbers. The LFSR should shift its bits to the right on each clock cycle when the enable (en) signal is high. If the reset (rst) signal is high, the LFSR should reset to an initial state of 16'b1.
+
+Module name:
+   lfsr_16bit
+
+Input ports:
+   clk: Clock signal used for synchronous operation.
+   rst: Reset signal used to initialize the LFSR.
+   en: Enable signal to control the shifting process.
+
+Output ports:
+   q: 16-bit output representing the current state of the LFSR.
+
+Implementation:
+On the positive edge of the clock signal (clk) or the positive edge of the reset signal (rst), the module performs the shifting process. 
+If the reset signal (rst) is high, the output register (q) is set to the initial state 16'b1. 
+If the reset signal (rst) is low and the enable signal (en) is high, the LFSR shifts its bits to the right by one position, with the most significant bit (q[15]) being the XOR of certain bits based on the given polynomial.
+
+Give me the complete code.

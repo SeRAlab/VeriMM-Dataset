@@ -1,0 +1,8 @@
+Design a finite impulse response (FIR) filter that processes a 16-bit input signal to produce a 28-bit output signal based on specified coefficients. The filter shifts in new data on each clock cycle when the new_data_rdy signal is asserted, applying the corresponding filter coefficients to the current and past input values to compute the filtered output. The output_data_ready signal indicates when valid output data is available. This module effectively implements a six-tap FIR filter, utilizing a series of delay registers to store previous input samples for the convolution operation with the defined coefficients.
+module top_module(
+    input clk,
+    input [15:0] din,
+    input new_data_rdy,
+    output reg [27:0] dout,
+    output reg output_data_ready
+);

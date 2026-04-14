@@ -1,0 +1,13 @@
+Design a transmitter module that manages data transfer operations based on control signals. The module captures input data, destination, source addresses, control, and data modes on the rising edge of the clock, all while considering a reset condition. When the `e_tx_access` signal is asserted, it stores the provided data and control information. If a write operation is indicated, the module facilitates the data transmission to a remote system (actual transmission details are abstracted), and subsequently signals completion by setting the `e_tx_done` output. This circuit is intended for managing data transactions in a structured manner between components in a digital system, ensuring proper control during the transmission process.
+module top_module(
+    input clk,
+    input reset,
+    input e_tx_access,
+    input e_tx_write,
+    input [1:0] e_tx_datamode,
+    input [3:0] e_tx_ctrlmode,
+    input [31:0] e_tx_dstaddr,
+    input [31:0] e_tx_srcaddr,
+    input [31:0] e_tx_data,
+    output reg e_tx_done
+);

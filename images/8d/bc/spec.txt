@@ -1,0 +1,7 @@
+Design a shift register capable of accepting a serial input bit and shifting it through a defined number of stages (determined by the parameter DEPTH). The shift operation occurs on the rising edge of the clock signal (`clk`), controlled by an enable signal (`en`) which can be inverted based on the ENPOL parameter. The register initializes to a predetermined value specified by the INIT parameter. This module effectively implements a configurable serial-in, parallel-out (SIPO) shift register.
+module top_module(
+  input clk,
+  input en,
+  input data_in,
+  output reg [DEPTH-1:0] data_out
+);

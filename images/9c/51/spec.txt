@@ -1,0 +1,16 @@
+Design a module that interfaces with an ADC using a JESD204B protocol, where it receives a 64-bit data stream at a reduced clock rate. The module outputs ADC sample data for two separate channels (adc_data_a and adc_data_b) each 32 bits wide, which is derived by multiplexing parts of the input data. It also generates an ADC clock aligned with the input rx_clk signal. Additionally, the module features a status register that indicates whether the ADC is operational, which resets on the adc_rst signal. The design effectively facilitates data acquisition and status monitoring in a digital communication system.
+module top_module(
+  // jesd interface 
+  // rx_clk is (line-rate/40)
+  rx_clk,
+  rx_data,
+
+  // adc data output
+  adc_clk,
+  adc_rst,
+  adc_data_a,
+  adc_data_b,
+  adc_or_a,
+  adc_or_b,
+  adc_status
+);

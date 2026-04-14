@@ -1,0 +1,8 @@
+Design a circuit that combines a 100-bit left/right rotator and a byte reordering mechanism for a 32-bit input. The module accepts a clock signal and control inputs to load data or perform rotation based on the `ena` signals. When `load` is activated, `data` is loaded into a 100-bit register. If `ena[0]` is asserted, the data rotates left, while `ena[1]` rotates it right. Simultaneously, the circuit reorganizes 4 bytes from the 32-bit `in` input into a shift register, allowing a circular update of the bytes. The final output is formed by concatenating the reordered bytes and the low 32 bits of the rotated data, effectively providing a combined output of byte-reordered and rotated values.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    input [31:0] in,
+    output [31:0] out);

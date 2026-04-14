@@ -1,0 +1,8 @@
+Design a left shift register that performs a logical left shift on a 32-bit input data based on a specified shift amount. The module takes a clock signal and a reset signal; upon a positive clock edge or a negative reset edge, it resets the output to zero if the reset is low. If the reset is high and the shift amount is valid (less than 32), it outputs the data shifted left by the specified amount, effectively multiplying the original value by \(2^{\text{shift\_amount}}\). If the shift amount is 32 or more, the output will also be zero.
+module top_module(
+  input clk,
+  input reset,
+  input [31:0] data,
+  input [4:0] shift_amount,
+  output reg [31:0] shifted_data
+);

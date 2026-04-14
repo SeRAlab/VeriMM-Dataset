@@ -1,0 +1,6 @@
+Design a 3-to-8 binary decoder that takes a 3-bit input and activates one of the 8 outputs based on the input value, while ensuring that the outputs are active LOW. Each of the output lines corresponds to a specific input combination, with only one line driven low (active) at a time, and all other outputs held high (inactive). This functionality is synchronized with the positive edge of the clock signal, ensuring that changes in inputs result in corresponding changes in outputs at the clock pulse.
+module top_module(
+    input clk,          // Added clock input
+    input [2:0] in,
+    output reg [7:0] out
+);

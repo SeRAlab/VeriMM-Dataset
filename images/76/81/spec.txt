@@ -1,0 +1,10 @@
+Implement a dual 4-bit counter system with asynchronous reset and clock enable functionalities. The module features two independent counters (count1 and count2) that increment on each clock cycle when enabled, with each counter having its own reset signal. Additionally, the design includes a combinational logic block that computes the sum of the two counters, providing a simultaneous output of their values and their sum. This structure is useful in various applications where simultaneous counting and summation of two signals are required.
+module top_module(
+    input clk,
+    input [1:0] reset,
+    input [1:0] ce,
+    input ctrl,
+    output [3:0] count1,
+    output [3:0] count2,
+    output [3:0] sum
+);

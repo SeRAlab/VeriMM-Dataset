@@ -1,0 +1,12 @@
+Design a digital circuit that functions as a serial input/output interface with shifting capabilities. The module captures data from the input pins based on clock edges, controlled by a clock enable (CLKEN) signal and reset condition (RESET_N). On a negative clock edge, if capture data (CAPTURE_DR) is low, it takes the TDI signal as input; otherwise, it sources from DATA_IN. The output TDO reflects an internal register (tdoInt), while a separate output (DATA_OUT) updates on a negative clock edge when the update command (UPDATE_DR) is activated, ensuring synchronous data transfer and state management in a shift register or similar data interface application.
+module top_module(
+      input CLK,
+      input RESET_N,
+      input CLKEN,
+      input TDI,
+      output TDO,
+      output reg DATA_OUT,
+      input DATA_IN,
+      input CAPTURE_DR,
+      input UPDATE_DR
+   );

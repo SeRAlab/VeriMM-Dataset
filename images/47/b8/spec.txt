@@ -1,0 +1,7 @@
+Design a cryptographic block that performs encryption, decryption, or hashing based on a control signal. It accepts an n-bit input and a k-bit key, with m-bit output. When the control signal is high, it encrypts the input using the key; if the control signal indicates decryption (though the implementation has an issue since it's tested twice for the same condition), it will perform decryption instead. In the case of neither operation being selected, it would execute a hashing algorithm. The module is intended for secure data processing, adapting its function dynamically based on the control input.
+module top_module(
+  input [n-1:0] in,
+  input [k-1:0] key,
+  input ctrl,
+  output [m-1:0] out
+);

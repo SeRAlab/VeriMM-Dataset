@@ -1,0 +1,9 @@
+Design a register bank module for a CPU that provides read and write functionalities. The module utilizes a synchronous RAM to store 32-bit data. It accepts a write enable signal (`wren`) to control writing data into a specified register (`wraddress`) and reads from another specified register (`rdaddress`). On each positive edge of the clock, the output (`q`) updates to reflect the data from the RAM corresponding to the `rdaddress`, facilitating both data retrieval and storage operations in a 32-bit architecture.
+module top_module(
+    input clock,
+    input [31:0] data,
+    input [4:0] rdaddress,
+    input [4:0] wraddress,
+    input wren,
+    output reg [31:0] q
+);

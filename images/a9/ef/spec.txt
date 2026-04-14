@@ -1,0 +1,6 @@
+Design a control module that manages the output signals for a processing element (PE) based on specific input conditions. The module activates `weight_out_Push_mioi_bdwt` when both `PERun_wen` (write enable signal) and `weight_out_Push_mioi_oswt` (output signal) are asserted. It computes `weight_out_Push_mioi_biwt` based on `weight_out_Push_mioi_oswt`, a negated `weight_out_Push_mioi_bcwt` (another input signal), and synchronization with `weight_out_Push_mioi_ccs_ccore_done_sync_vld`. Additionally, the module generates a start signal for the processing core (`weight_out_Push_mioi_ccs_ccore_start_rsc_dat_PERun_sct`) when both `weight_out_Push_mioi_oswt_pff` and `PERun_wen` are high, indicating readiness for operation.
+module top_module(
+  PERun_wen, weight_out_Push_mioi_oswt, weight_out_Push_mioi_biwt, weight_out_Push_mioi_bdwt,
+      weight_out_Push_mioi_bcwt, weight_out_Push_mioi_ccs_ccore_start_rsc_dat_PERun_sct,
+      weight_out_Push_mioi_ccs_ccore_done_sync_vld, weight_out_Push_mioi_oswt_pff
+);

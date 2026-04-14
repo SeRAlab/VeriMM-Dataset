@@ -1,0 +1,8 @@
+Design a control module for a communication protocol sender that operates based on a clock signal and a channel status input. When the CHANNEL_UP input is LOW, the module asserts a reset signal (rst_r) and disables the start and run signals (start_r and run_r). When CHANNEL_UP is HIGH, the module de-asserts the reset and controls the starting and running states based on the conditions derived from the state logic. Specifically, it sets the start signal (start_r) based on the reset state and enables the run signal (run_r) once the start condition has been met or during operation. This design facilitates the transition between initialization and operational phases in a sender for transmitting SCP characters.
+module top_module(
+    input CHANNEL_UP,
+    input USER_CLK,
+    output reg rst_r,
+    output reg start_r,
+    output reg run_r
+);

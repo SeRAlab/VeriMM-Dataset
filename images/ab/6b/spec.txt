@@ -1,0 +1,17 @@
+Design a simulation event controller that operates based on a clock and reset input. This module enables a behavior where it counts events while synchronizing with a trigger. It has an enable signal that can be controlled through a control interface, allowing the count to be set or cleared based on external write commands. The output includes a write signal that is activated if any of the first three bits of the trigger are high, along with a 16-bit data output containing part of the trigger and the current count value. The controller supports resetting the count and toggling its enable state with external controls, making it suitable for applications that require event counting and response mechanisms.
+module top_module(
+	input clk,
+	input reset,
+
+	
+	input avs_ctrl_write,
+	input [31:0]avs_ctrl_writedata,
+	input avs_ctrl_address,
+
+	
+	input sync,
+	input [3:0]trigger,
+	output reg enable,
+	output write,
+	output [15:0]data
+);

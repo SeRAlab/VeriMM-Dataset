@@ -1,0 +1,8 @@
+Design a 4-bit shift register with load functionality. On the rising edge of the clock, if the load signal is high, the register captures the 4-bit input value. If the load signal is low, the register performs a circular shift to the right, where the most significant bit wraps around to the least significant bit, while simultaneously shifting in the least significant bit of the input value into the next register output. The module has outputs for both the current state of the register and the next state after the clock pulse.
+module top_module(
+    input clk,
+    input load,
+    input [3:0] in,
+    output reg [3:0] out,
+    output reg [3:0] out_next
+);

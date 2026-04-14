@@ -1,0 +1,7 @@
+Design a digital circuit that computes a moving average of a 32-bit input signal over the last four samples. The circuit is clocked and includes a reset functionality. When reset is activated, it initializes the sum and count values. During each clock cycle, it accumulates the input signal into a sum and increments a count. Once four samples are received, it calculates the average by shifting down the sum (truncating to obtain the most significant 16 bits) for output and adjusts the sum for the next round of calculations. The final output is a 16-bit representation of the moving average of the input signal.
+module top_module(
+  input clk,
+  input rst,
+  input [31:0] input_signal,
+  output reg [15:0] output_signal
+);

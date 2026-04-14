@@ -1,0 +1,10 @@
+Design a simple 8-bit arithmetic calculator that performs basic operations such as addition, subtraction, multiplication, and division based on a selected operation code (op). The calculator takes two 8-bit inputs (a and b) and outputs the result of the specified operation through the 'result' output. An accompanying 'valid' output indicates whether the result is valid, which is set to low during reset or if a division by zero occurs. The operations are triggered on the rising edge of a clock signal, ensuring synchronized processing.
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] a,
+    input [7:0] b,
+    input [1:0] op,
+    output [7:0] result,
+    output valid
+);

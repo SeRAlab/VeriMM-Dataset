@@ -1,0 +1,13 @@
+Design a pipeline register for the execution to memory stage of a processor. This module captures control signals and data from the execution stage, including flags for register writing, memory operations, and jump branches, as well as the ALU or next program counter value and write-back data. Upon receiving a clock edge or reset signal, it transfers input values to output registers, ensuring data consistency and timing for subsequent memory operations.
+
+module top_module(
+    input clk, rst,
+    input EX_RegWrite, EX_MemtoReg, EX_MemWrite,
+    input [2:0] EX_JumpBranch,
+    input [31:0] EX_ALUorNPC, EX_wmData,
+    input [4:0] EX_rtAddr, EX_wrAddr,
+    output reg MEM_RegWrite, MEM_MemtoReg, MEM_MemWrite,
+    output reg [2:0] MEM_JumpBranch,
+    output reg [31:0] MEM_ALUorNPC, MEM_wmData,
+    output reg [4:0] MEM_rtAddr, MEM_wrAddr
+    );

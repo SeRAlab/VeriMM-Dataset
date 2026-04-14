@@ -1,0 +1,10 @@
+The Verilog module implements a synchronous 4-digit binary counter with enable signals and accompanying combinational logic functions. The counter increments based on the clock and the active enable signals, allowing selection of its outputs through multiplexed control signals. It synchronously resets to zero when activated. Additionally, it computes AND, OR, and XOR operations based on the counter value, providing outputs determined by a secondary select signal derived from the counter state. Ultimately, this module serves to generate both a count value and multiple logical outputs, which can be utilized in broader digital circuitry applications.
+module top_module(
+    input clk,
+    input reset,   // Synchronous active-high reset
+    output [3:1] ena,
+    output [15:0] q,
+    output out_and,
+    output out_or,
+    output out_xor
+);

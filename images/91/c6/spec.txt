@@ -1,0 +1,6 @@
+Design a priority encoder that converts a 3-bit input into an 8-bit output, where each output bit represents the active state of corresponding input bits in a one-hot encoded manner. The highest active bit from the 3-bit input takes precedence, with the least significant bit representing the first input bit (0) and the most significant bit representing the last input bit (2). The output is updated on the rising edge of the clock, ensuring synchronous operation. If no input is active, the output will be set to zero.
+module top_module(
+    input wire clk,           // Added clk input
+    input [2:0] in,
+    output reg [7:0] out
+);

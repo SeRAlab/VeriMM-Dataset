@@ -1,0 +1,6 @@
+Design a sequence detector that identifies a specific 3-bit pattern in a serial input data stream. The module transitions through four states in response to the input clock and data signals: starting from an initial state (000), it recognizes a sequence of three consecutive '1's (111). Upon detecting this pattern, it asserts the output signal `match` and then resets to the initial state. If the sequence is interrupted by a '0', the module returns to the initial state, indicating it has not found the desired pattern.
+module top_module(
+  input clk,
+  input data,
+  output reg match
+);

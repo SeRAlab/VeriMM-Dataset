@@ -1,0 +1,8 @@
+Design a synchronous system that counts in a 16-bit register based on the comparison of two signed 4-bit inputs, A and B. The module includes a signed magnitude comparator that determines whether A is greater than or equal to B, providing a comparison output (cmp_out). When the clock signal is active and the reset signal is not triggered, the counter increments by one each time cmp_out indicates that A is greater than or equal to B. Upon reset, the counter initializes to zero.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input signed [3:0] A,
+    input signed [3:0] B,
+    output reg [15:0] count
+);

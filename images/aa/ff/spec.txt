@@ -1,0 +1,14 @@
+Design a communication gateway module that facilitates data transfer between a processor and an external UART interface. It accepts 8-bit input data and signals validity, while generating outputs and control signals that inform the processor of data readiness and validity. The module manages both read and write operations based on specified memory addresses for control and data transfer, ensuring that the appropriate data is routed correctly based on the processor's demands. Additionally, it handles control signals for data input readiness and manages state transitions on the rising edge of the clock, maintaining synchronization with the processor's read/write operations.
+module top_module(
+    input wire Clock, Reset,
+    input [7:0] DataIn,
+    input DataInValid,
+    output DataInReady,
+    output [7:0] DataOut,
+    output DataOutValid,
+    input DataOutReady,
+    output reg [31:0] ProcessorDataIn, // Changed to reg
+    input [31:0] ProcessorDataOut,
+    input [31:0] ProcessorAddress,
+    input ProcessorMemRead, ProcessorMemWrite
+);

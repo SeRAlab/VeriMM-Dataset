@@ -1,0 +1,9 @@
+Design a circuit that implements a 4-bit shift register with both circular and linear shift modes. The circuit is controlled by a clock and a reset signal, and it allows for shifting data left or right based on the direction input. In circular shift mode, the bits wrap around, while in linear shift mode, the output reflects the shifting of incoming data with modifications based on previous shifts. The module's output is selected based on the mode, either outputting the shifted value or the current input directly.
+module top_module(
+    input clk,
+    input rst,
+    input mode,
+    input dir,
+    input [3:0] in,
+    output [3:0] out
+);

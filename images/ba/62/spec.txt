@@ -1,0 +1,10 @@
+Design a deserializer module that converts a serialized input data stream into a parallel output format. The module processes incoming data at each clock cycle while enabled, storing received bits into a 136-bit register. It starts from a specified frame size and counts down, indicating completion when all designated bits have been received. The deserializer can be reset, which clears the output and counter, ensuring idle states are controlled effectively. The design incorporates a flag to indicate when the deserialization process is complete, allowing for efficient data handling in sequential data communication systems.
+module top_module(
+    input clk, // serialized data proper clock
+    input enable, // suspend while enable on low
+    input reset, // set output to zero and reset counter to 0 on high
+    input [7:0] framesize, // number of bits to be deserialized - 1
+    input in, // serialized data
+    output reg [135:0] out, // deserialized data
+    output reg complete // reset counter to 0 and hold out's data while high
+);

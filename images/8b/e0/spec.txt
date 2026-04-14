@@ -1,0 +1,27 @@
+Design a register stage for the execution to memory (EX/MEM) path in a pipelined processor. This module captures control signals and data from the execution stage on the rising edge of the clock and holds them for the subsequent memory stage. It includes control signals such as `mem2reg`, `regwrite`, `memwrite`, and `memread`, as well as data signals such as `zero`, `regdst`, `readdata2`, `aluresult`, and `add_pc_offset`, which are transferred to their corresponding output registers for use in memory operations and writing back to registers. This ensures proper data flow within the pipeline architecture.
+module top_module(
+	input clk,
+	input mem2reg,
+	input regwrite,
+	
+	input memwrite,
+	input memread,
+	
+	input zero,
+	input [4:0] regdst,
+	input [31:0] readdata2,
+	input [31:0] aluresult,
+	input [31:0] add_pc_offset,
+	
+	output reg mem2reg_O,
+	output reg regwrite_O,
+	
+	output reg memwrite_O,
+	output reg memread_O,
+	
+	output reg zero_O,
+	output reg [4:0] regdst_O,
+	output reg [31:0] readdata2_O,
+	output reg [31:0] aluresult_O,
+	output reg [31:0] add_pc_offset_O
+);

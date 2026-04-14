@@ -1,0 +1,6 @@
+Design a glitch filter that eliminates transient signals by requiring a stable high input for a specified number of clock cycles before producing a high output. The module uses a shift register to sample the input over a designated period and a counter to track consecutive high input cycles. If the input remains high for three consecutive clock cycles (as determined by parameter k), the output is set high; otherwise, it remains low, helping to ensure that only sustained valid signals are passed through while ignoring short pulses or glitches.
+module top_module(
+  input clk,         // Added clock input
+  input in,
+  output reg out     // Changed output to reg to allow assignment in always block
+);

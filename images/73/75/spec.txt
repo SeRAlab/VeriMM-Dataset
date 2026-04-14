@@ -1,0 +1,28 @@
+Design a register file module that captures and holds various input signals from a prior stage in a processor pipeline (Instruction Decode stage) upon the leading edge of a clock signal. The module outputs the stored values for fields such as program counter, immediate data, read data, and control signals, effectively acting as a temporary storage mechanism to facilitate the transition to the next stage in the pipeline (Execute stage). This design is essential for maintaining data integrity and synchronizing pipeline stages in a multi-stage CPU architecture.
+module top_module(
+  input [63:0]pc_in,
+  input [63:0]imm_data_in,
+  input [63:0]read_data1_in,
+  input [63:0]read_data2_in,
+  input [4:0]rs1_in,
+  input [4:0]rs2_in,
+  input [4:0]rd_in,
+  input [3:0]funct4_in,
+  input [1:0]wb_in,
+  input [2:0]m_in,
+  input [2:0]ex_in,
+  
+  input clk,
+  
+  output reg [63:0]pc_out,
+  output reg [63:0]imm_data_out,
+  output reg [63:0]read_data1_out,
+  output reg [63:0]read_data2_out,
+  output reg [4:0]rs1_out,
+  output reg [4:0]rs2_out,
+  output reg [4:0]rd_out,
+  output reg [3:0]funct4_out,
+  output reg  [1:0]wb_out,
+  output reg  [2:0]m_out,
+  output reg  [2:0]ex_out
+);

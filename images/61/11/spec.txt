@@ -1,0 +1,10 @@
+Design a stepper motor controller that enables controlled rotation of a stepper motor based on input signals. The module accepts inputs for stepping the motor (`step`), determining rotation direction (`dir`), and a clock signal (`clk`). It utilizes a state machine to sequentially activate four coils for either clockwise or counter-clockwise rotation, providing precise control over motor positioning. The motor steps through a defined number of steps per revolution, with an internal counter to manage the stepping duration. When the `step` signal is low, all coils are deactivated to ensure the motor is stationary.
+module top_module(
+  input step,
+  input dir,
+  input clk,
+  output reg coil1,
+  output reg coil2,
+  output reg coil3,
+  output reg coil4
+);

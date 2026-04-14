@@ -1,0 +1,14 @@
+Design a UART transmission register that manages the transmission of serial data. The module consists of a transmit buffer register (TBR) and a transmission shift register (TSR). It receives an 8-bit input data and controls signals to load the data into the TBR, initiate the transmission by shifting data out of the TSR, and manage the validity of the TBR. The `Load` signal initializes the TSR with the data from the TBR, while the `Shift` signal shifts the bits of the TSR to send out the data serially, with the `Tx` output indicating the transmission state. The `TBR_Valid` output signals whether valid data is present in the TBR, controlled by the `TBR_en` and `Clear_Valid` inputs. Overall, this module serves as a critical component for serial communication in UART systems.
+module top_module(
+   input wire        clk,
+   input wire        reset,
+   input wire  [7:0] Data_in,
+   input wire        TBR_en,
+   input wire        Clear_Valid,
+   input wire        Shift,
+   input wire        Set,
+   input wire        Load,
+          
+   output reg        TBR_Valid,
+   output wire       Tx
+);

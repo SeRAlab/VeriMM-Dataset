@@ -1,0 +1,29 @@
+Please act as a professional Verilog designer.
+
+Implement a 16-bit up/down counter with an enable signal.
+
+Module name:  
+    UpDown_counter               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the counter.
+    en: Enable signal to allow counting.
+    up_down: Control signal to determine the counting direction (1 for up, 0 for down).
+Output port:
+    count: 16-bit register representing the current count value.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the counter value is updated if the enable signal (en) is high.
+If the reset signal (rst_n) is low, indicating a reset condition, the counter value (count) is set to 16'b0.
+Otherwise, the counter value is incremented or decremented based on the up_down signal.
+
+Give me the complete code.
+
+module UpDown_counter(
+   input                clk ,
+   input                rst_n,
+   input                en,
+   input                up_down,
+ 
+   output reg [15:0]    count  
+);

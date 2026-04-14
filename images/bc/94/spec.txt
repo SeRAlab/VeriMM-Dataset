@@ -1,0 +1,9 @@
+Design a branch decision circuit that evaluates branch conditions based on flags and a 3-bit branch type selector. The circuit takes four input flags (zero, carry, sign, overflow) and the branch type indicator (brType) to determine if a branch condition is met (brTrue). It selects the appropriate flags based on the values of brType and compares the resultant value to the third bit of brType. If they match, the output brTrue is asserted, indicating that the branch should be taken.
+module top_module(
+		input zFlag,
+		input carryFlag,
+		input signFlag,
+		input overflowFlag,
+		input[2:0] brType,
+		output brTrue
+    );

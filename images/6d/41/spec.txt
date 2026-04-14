@@ -1,0 +1,8 @@
+Design a counter module that tracks the number of valid requests and responses in a synchronous manner. It maintains two 64-bit counters: one for counting valid requests (`rq_count_s`) and another for counting valid responses (`rs_count_s`). On the rising edge of the clock, these counters increment by one for each valid input signal received, while both counters are reset to zero when the reset signal is activated. The module outputs a `done` signal that indicates when the counts of requests and responses match, thereby serving as a completion indicator for the request-response cycle.
+module top_module(
+   input                      clk,
+   input                      rst,
+   output                     done,
+   input                      rq_vld_in,
+   input                      rs_vld_in
+);

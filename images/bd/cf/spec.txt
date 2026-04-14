@@ -1,0 +1,9 @@
+Design a memory block that incorporates error correction using Hamming code. This module accepts an n-bit data input and an m-bit address input, with a write enable signal for storing data. It encodes the input data along with address bits for error correction before writing it into memory. Upon reading, it retrieves the stored data and checks for errors using a syndrome calculation. If an error is detected, it corrects it and indicates the occurrence via an error output. The module supports resetting the memory to clear all data.
+module top_module(
+  input [n-1:0] data_in,
+  input [m-1:0] addr_in,
+  input write_en,
+  input reset,
+  output [n-1:0] data_out,
+  output error
+);

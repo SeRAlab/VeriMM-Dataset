@@ -1,0 +1,11 @@
+Design a module that integrates both a priority encoder and an accumulator. The priority encoder processes an 8-bit input to determine the highest priority active input and outputs a 3-bit encoded value along with a valid signal when a 'ready' signal is received. The accumulator receives the same 8-bit input, adds it to a running total with an operational count to manage when to output the accumulated value. When ready, the accumulator outputs a 10-bit result that combines the outputs from the priority encoder and a portion of the accumulated result. The module is synchronized with a clock and features an active-low reset for initialization and state management.
+module top_module(
+    input clk,             // Clock input
+    input rst_n,           // Active low reset input
+    input [7:0] in,        // 8-bit input for the accumulator
+    input valid_a,         // Valid input for the accumulator
+    input ready_b,         // Ready input for the priority encoder
+    output reg ready_a,    // Ready output for the accumulator
+    output reg valid_b,    // Valid output for the priority encoder
+    output reg [9:0] out   // 10-bit output from the functional module
+);

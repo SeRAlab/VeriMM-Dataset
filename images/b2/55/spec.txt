@@ -1,0 +1,10 @@
+Design a 4-bit up/down counter with load capability and upper limit. The counter increments or decrements its value based on the DIR input, which determines the counting direction. If RESET is activated, the counter resets to zero; if LOAD is activated, it loads a specified 4-bit value from data_in. The counter also has a MAX_COUNT limit that prevents it from going beyond a specified value in either direction. The output Q reflects the current count value, updated on each clock cycle.
+module top_module(
+    input CLK,
+    input RESET,
+    input DIR,
+    input LOAD,
+    input [3:0] data_in,
+    input [3:0] MAX_COUNT,
+    output reg [3:0] Q
+);

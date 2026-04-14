@@ -1,0 +1,11 @@
+Design a D flip-flop with an asynchronous active-low reset feature. The module captures the value of the input D on the rising edge of the clock (CLK) when the reset (RESET_B) is not asserted. If the RESET_B signal is low, the output Q is immediately set to low, regardless of the clock state, ensuring that the flip-flop can be reset independently of the clock signal. The module supports power management signals (VPWR, VGND, VPB, VNB) for better integration in low-power designs.
+module top_module(
+    input CLK,
+    input D,
+    input RESET_B,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB,
+    output reg Q
+);

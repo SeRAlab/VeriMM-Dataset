@@ -1,0 +1,7 @@
+Develop a circuit that computes the running average of 100 input values received sequentially, utilizing a clock-driven process. The module maintains a cumulative sum of the input data while counting the number of inputs processed. Upon receiving a reset signal, it initializes the sum and count to zero. Once 100 values have been inputted, it calculates the average by dividing the total sum by 100 and outputs this average value. The design employs sequential logic and ensures synchronization with the clock input during the average calculation process.
+module top_module(
+    input clk,
+    input rst,
+    input [31:0] data_in,
+    output reg [31:0] average
+);

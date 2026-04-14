@@ -1,0 +1,6 @@
+Design a frequency measurement module that calculates the frequency of a square wave input signal. The module samples the input `square_signal` based on the `ref_clk` clock signal, using a three-stage buffer to detect rising edges of the square wave. It counts the number of clock cycles between consecutive rising edges and outputs this count as `signal_freq`. The counting operation is reset if the `reset` signal is asserted. When a rising edge is detected, the current count is stored as the frequency value, and the counter resets to zero for the next measurement cycle.
+module top_module(
+  ref_clk,
+  reset,
+  square_signal,
+  signal_freq);

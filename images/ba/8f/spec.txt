@@ -1,0 +1,19 @@
+Design a control module for a state machine that manages signal outputs based on command readiness and bus status. The module operates in three primary states: IDLE, DECODE, and BUSY. In the IDLE state, it waits for the command to be ready and checks if the bus is busy; upon readiness, it transitions to DECODE, asserting a command acknowledgment and potentially activating line and block signals. In the DECODE state, the module transitions to BUSY. While in the BUSY state, it monitors for a no-operation signal or bus availability to return to IDLE and may clear command copy signals. The module's outputs include signals for line activity, block activity, command acknowledgment, and command copy clear, along with an active status signal for loading active states.
+module top_module(
+ input     de_clk,
+ input     de_rstn,
+ input     d_busy,
+ input     cmdrdy,
+ input     pcbusy,
+ input     line_actv_1,
+ input     blt_actv_1,
+ input     noop_actv_2,
+
+ output reg    goline,
+ output reg    goblt,
+ output reg    d_cmdack,
+ output reg    d_cmdcpyclr,
+ output reg    load_actvn,
+ // For test only.
+ output reg    [1:0] d_cs
+ );

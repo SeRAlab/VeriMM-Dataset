@@ -1,0 +1,5 @@
+Design a circuit that splits a 16-bit input into two 8-bit outputs based on a selection mechanism. The high output, `out_hi`, gives priority to the upper 8 bits of the input when the most significant bit (MSB) of the input is high; otherwise, it selects the lower 8 bits. The low output, `out_lo`, is similarly controlled, ensuring a consistent split of the input data. A decoder is utilized to determine the selection for the multiplexers controlling the outputs, effectively allowing dynamic output selection based on the input's MSB.
+module top_module( 
+    input wire [15:0] in,
+    output wire [7:0] out_hi,
+    output wire [7:0] out_lo );

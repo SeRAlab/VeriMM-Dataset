@@ -1,0 +1,10 @@
+Design a circuit that performs multiplication of two 16-bit unsigned integers, a and b. The module initiates the multiplication process with the ap_start signal, which triggers a sequence to compute the product, returning a 32-bit result through ap_return. The circuit indicates its status with output signals: ap_done, which signifies the completion of the operation, ap_idle, indicating when the circuit is not processing, and ap_ready, showing when the circuit is ready to accept new inputs. The multiplication is accomplished using a shift-and-add method, iterating based on the bits of b.
+module top_module(
+        ap_start,
+        ap_done,
+        ap_idle,
+        ap_ready,
+        a,
+        b,
+        ap_return
+);

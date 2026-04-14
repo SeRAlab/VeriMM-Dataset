@@ -1,0 +1,12 @@
+Design a simple RAM write controller that manages write operations to a memory array under specific conditions. The module accepts clock, write and read pointers, and a flag indicating if the RAM is full. When the RAM is not full and the write pointer is not equal to the read pointer (indicating available space), it writes data to the specified address in memory, updates the write pointer, and sets a success flag. If the RAM is full, it prevents further writes and updates the corresponding status flags. Additionally, it maintains error status flags for both write and read operations, signaling any potential issues during memory access.
+module top_module(
+  input clk, // clock signal
+  input [7:0] wr_ptr, // write pointer
+  input [7:0] rd_ptr, // read pointer
+  input ram_full, // RAM full flag
+  input [7:0] addr, // RAM address to write to
+  input [31:0] data, // data to be written
+  output reg [7:0] new_wr_ptr, // updated write pointer
+  output reg ram_full_out, // updated RAM full flag
+  output reg write_success // write success flag
+);

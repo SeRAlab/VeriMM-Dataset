@@ -1,0 +1,8 @@
+Design a circuit that performs dual functionality: First, it counts the number of '1's in a 255-bit input vector that shifts in a new 255-bit input at every clock cycle, resetting with a signal. Second, it detects rising edges from a 32-bit input and captures the count of these edges while holding the output high until the next rising edge. Finally, the module outputs the sum of the total '1's counted from the input vector and the count of rising edges detected, resulting in a 16-bit output.
+module top_module(
+    input clk,
+    input reset,
+    input [254:0] in,
+    input [31:0] in2,
+    output [15:0] out
+);

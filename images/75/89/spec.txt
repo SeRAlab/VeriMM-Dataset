@@ -1,0 +1,6 @@
+Design a synchronizer module that minimizes metastability issues when transferring an asynchronous input signal (async_in) to a synchronous output (sync_out) using a clock input (clk_in). The module utilizes a two-stage flip-flop mechanism, first capturing the asynchronous input in an intermediate register (async_sync) on the rising edge of the clock, and then updating the output (sync_out) based on the stabilized signal from the first stage. This design ensures that the output reflects the state of the asynchronous signal in a stable and synchronized manner.
+module top_module(
+  input async_in,
+  input clk_in,
+  output reg sync_out
+);

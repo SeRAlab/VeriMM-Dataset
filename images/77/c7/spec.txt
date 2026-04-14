@@ -1,0 +1,7 @@
+Design a simple synchronous memory module with a 256-word capacity, each word being 32 bits wide. On the rising edge of the clock, if the memWrite signal is asserted, the module writes the provided writeData to the specified address. If the memRead signal is active, it outputs the data from the specified address; otherwise, it outputs zero. This module functions as a basic random-access memory (RAM) unit, enabling both read and write operations based on control signals.
+module top_module(
+  input clk,
+  input [31:0] addr, writeData,
+  input memWrite, memRead,
+  output [31:0] readData
+);

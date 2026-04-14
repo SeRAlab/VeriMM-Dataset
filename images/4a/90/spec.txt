@@ -1,0 +1,25 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit shift register with parallel load and serial output.
+
+Module name:
+    shift_reg_4bit
+
+Input ports:
+    D: 4-bit parallel data input
+    CLK: Clock input
+    LOAD: Load enable signal
+
+Output ports:
+    Q: Serial output signal
+
+Implementation:
+On each rising edge of CLK, if LOAD is 1, the 4-bit input D is loaded into the shift register. Otherwise, the register shifts right by 1 bit.
+
+Give me the complete code.
+
+module shift_reg_4bit (D, CLK, LOAD, Q);
+input [3:0] D;
+input CLK, LOAD;
+output Q;
+reg [3:0] shift_reg;

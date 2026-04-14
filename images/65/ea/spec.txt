@@ -1,0 +1,7 @@
+Design a circuit that implements two 16-bit and 8-bit Johnson counters to generate sequences of states based on the clock input. The outputs of these counters are then used to produce an XOR signal. Based on the `select` input, the module calculates the sum of the counter outputs and assigns the resultant value to the output `q`. This module effectively operates as a state machine that utilizes counters for generating changing states and employs conditional logic to compute and output different sums based on the selection, thereby allowing flexible data processing based on the input signals.
+module top_module(
+    input clk,
+    input rst_n,
+    input select,
+    output reg [15:0] q
+);

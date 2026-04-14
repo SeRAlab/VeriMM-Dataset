@@ -1,0 +1,7 @@
+Design a circuit that functions as a barrel shifter, allowing for a dynamic left shift of a 16-bit input based on a single select signal. When the select input is active, the shift is by 14 bits, otherwise, it shifts by 1 bit. The module outputs two 8-bit results: `out_hi` provides the upper byte of the shifted value, while `out_lo` gives the lower byte. This design effectively allows for controlled adjustment of data alignment in a 16-bit input.
+module top_module(
+    input wire [15:0] in,
+    input wire select,
+    output wire [7:0] out_hi,
+    output wire [7:0] out_lo
+);

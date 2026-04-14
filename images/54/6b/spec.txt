@@ -1,0 +1,9 @@
+Design a synchronous register that has multiple control signals for writing, setting, and resetting its output. Upon the rising edge of the clock, if the Reset signal is high, the output is set to a predefined RESET_VALUE (initially zero). If the Set signal is asserted, the output is set to all ones (maximum value). If the Write signal is active, the output is updated with the value from DataIn. The register has a configurable width, determined by the WIDTH parameter, allowing for versatile data handling in digital circuits.
+module top_module(
+  input [WIDTH-1:0] DataIn,
+  input Write,
+  input Set,
+  input Reset,
+  input Clk,
+  output reg [WIDTH-1:0] DataOut
+);

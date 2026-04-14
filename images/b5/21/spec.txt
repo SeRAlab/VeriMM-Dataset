@@ -1,0 +1,11 @@
+Design a serial communication module that transmits and receives data using a finite state machine (FSM). The module operates in three states: IDLE, TRANSMIT, and RECEIVE. In the IDLE state, it waits for valid data to transmit or a signal indicating incoming data. When valid data is detected, it shifts to the TRANSMIT state, where it sends the data out serially. If a receive condition is detected, it transitions to the RECEIVE state, capturing incoming data until the byte is fully received. The output signals include a transmitted data signal (tx), a data output (data_out), and a data ready signal (data_ready) to indicate the completion of data reception. The module also handles reset conditions to initialize its states and variables.
+module top_module(
+  input clk, 
+  input rst,
+  input data_in,
+  input data_valid,
+  input rx,
+  output reg data_out,
+  output reg data_ready,
+  output reg tx
+);

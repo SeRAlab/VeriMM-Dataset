@@ -1,0 +1,15 @@
+Design a circuit that functions as a data splitter, taking a single 64-bit data input and distributing it to two output streams. The module outputs the same data and last signals to both outputs while controlling the valid signals based on the readiness of the output streams. The input ready signal is asserted when both output streams are ready to receive data, enabling efficient data flow management for applications requiring data duplication across multiple paths.
+module top_module(
+    input wire[63:0] dataIn_data,
+    input wire dataIn_last,
+    output reg dataIn_ready,
+    input wire dataIn_valid,
+    output wire[63:0] dataOut_0_data,
+    output wire dataOut_0_last,
+    input wire dataOut_0_ready,
+    output reg dataOut_0_valid,
+    output wire[63:0] dataOut_1_data,
+    output wire dataOut_1_last,
+    input wire dataOut_1_ready,
+    output reg dataOut_1_valid
+);

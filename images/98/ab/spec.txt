@@ -1,0 +1,6 @@
+Design a control module that processes an 8-bit input based on a 2-bit control signal. The module operates as follows: if the control signal is 00, output the input data unchanged; if 01, output the bitwise NOT of the input; if 10, perform a left shift by one position; and if 11, perform a right shift by one position, inserting a zero. If an unrecognized control signal is received, the output will default to zero.
+module top_module(
+    input [7:0] data_in,
+    input [1:0] control_in,
+    output reg [7:0] data_out
+);

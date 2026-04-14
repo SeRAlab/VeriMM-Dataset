@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+
+Design a 16-bit shift register with parallel load capability. The shift register should have a clock signal, reset signal, shift enable signal, load enable signal, and a 16-bit parallel input. When the load enable signal is high, the parallel input is loaded into the shift register. When the shift enable signal is high, the shift register shifts its contents to the left by one bit on each positive edge of the clock.
+
+Module name:
+    shift_register_16bit
+
+Input ports:
+    clk: Clock signal.
+    rst: Reset signal.
+    shift_en: Shift enable signal.
+    load_en: Load enable signal.
+    parallel_in: 16-bit parallel input.
+
+Output ports:
+    q: 16-bit output representing the current state of the shift register.
+
+Implementation:
+Data bit control:
+On every positive edge of the clock signal (clk), the shift register is updated based on the control signals.
+If the reset signal (rst) is active, the shift register is reset to 0.
+If the load enable signal (load_en) is active, the parallel input is loaded into the shift register.
+If the shift enable signal (shift_en) is active, the shift register shifts its contents to the left by one bit.
+
+Give me the complete code.

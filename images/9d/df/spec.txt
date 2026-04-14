@@ -1,0 +1,11 @@
+Design a small RAM module that supports read and write operations based on input commands. It has a 16-bit address space, with the upper bits used for selecting the RAM and the lower four bits indexing a 16x8 memory array. The module takes an 8-bit data input for writing when the `RW` signal indicates a write operation, and it outputs the corresponding 8-bit data from memory when in read mode. The state machine controls the operation flow, transitioning from a waiting state to a finish state upon receiving a valid command, and then signaling completion. The output `Finish` indicates the completion of the last read or write operation. The design includes reset functionality to initialize its state.
+module top_module(
+    input [15:0] Addr,
+    output [7:0] RData,
+    input [7:0] WData,
+    input Cmd,
+    input RW,
+    output Finish,
+    input clk,
+    input rst_n
+    );

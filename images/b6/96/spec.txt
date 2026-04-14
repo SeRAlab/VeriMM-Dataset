@@ -1,0 +1,12 @@
+Design a module that performs addition or subtraction on two 3-bit binary numbers based on a control input, `cm1`, which acts as a carry-in for the operation. The module generates a 3-bit sum output (`S`), a carry-out (`c2`), and an overflow indicator (`OV`). Additionally, it constructs a 4-bit `digit` output that incorporates the carry-out and sum bits. The operation is synchronized with a clock signal, ensuring that the calculations are performed on the rising edge of the clock, making it suitable for sequential logic applications. This module effectively implements a combinational arithmetic operation with overflow detection and output formatting.
+module top_module(
+	input clk,
+    input [2:0] A,
+    input [2:0] B,
+	input cm1,
+	output reg [2:0] S,
+	output reg c2,
+	output reg OV,
+	output reg c2final,
+	output reg [3:0] digit
+	);

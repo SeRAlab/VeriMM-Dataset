@@ -1,0 +1,13 @@
+Design a synchronous RAM-based FIFO (First-In, First-Out) buffer. The module supports dual-port operations with read and write enables, allowing data to be written to and read from the buffer on clock edges. It has parameters for depth and width of the FIFO, providing a storage for data up to a specified depth and bit-width. The outputs indicate the status of the FIFO, including whether it is empty, full, or almost full, while a write reset busy signal indicates if a write operation is in progress or if the FIFO is being reset. The module effectively manages data flow through the use of pointers for reading and writing, ensuring orderly data access and preventing overflow or underflow conditions.
+module top_module(
+    rd_en,
+    wr_en,
+    clk,
+    rst,
+    din,
+    wr_rst_busy,
+    empty,
+    full,
+    almost_full,
+    dout
+);

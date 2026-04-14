@@ -1,0 +1,14 @@
+Design a clock divider module that generates four different frequency outputs derived from an input clock signal. It produces clock outputs at half (clk_div2), one-quarter (clk_div4), one-eighth (clk_div8), and one-sixteenth (clk_div16) the frequency of the input clock. Additionally, this module incorporates a 4-bit counter that increments on each clock cycle, providing output signals (cntr_div2, cntr_div4, cntr_div8, and cntr_div16) corresponding to the least significant bits of the counter, which indicate the state of the counter for various divisions. A reset input is included to initialize the counter back to zero.
+module top_module(
+  input clk,
+  input reset,
+  output reg clk_div2,
+  output reg clk_div4,
+  output reg clk_div8,
+  output reg clk_div16,
+  output reg [3:0] counter,
+  output cntr_div2,
+  output cntr_div4,
+  output cntr_div8,
+  output cntr_div16
+);

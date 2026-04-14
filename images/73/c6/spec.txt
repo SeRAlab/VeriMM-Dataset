@@ -1,0 +1,18 @@
+Implement the Verilog module based on the following description.
+Module F implements the boolean function z = (x | y).
+
+// Module I can be described by the following simulation waveform: 
+
+If x = 1, y = 1, then z = 0.
+If x = 0, y = 1, then z = 1.
+If x = 0, y = 0, then z = 1.
+If x = 1, y = 0, then z = 0.
+
+// Now consider a top-level that uses two F submodules and two I submodules. The first input of all four submodules is connect to input 'a', and the second input of all four submodules is connected to 'b'. The output of the first F submodule is connected to a two-input AND gate, along with the output of the first I submodule. The second pair of F and I submodules is similarly connected to an XOR gate. The output of the AND and the XOR is connected to an OR, whose output is 'z'.
+
+// Implement this circuit in Verilog.
+
+module top_module(
+    input a,
+    input b,
+    output z);

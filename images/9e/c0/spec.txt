@@ -1,0 +1,7 @@
+Design a VGA timing counter module that generates horizontal and vertical pixel count outputs. The module increments the horizontal count (`hcnt`) until it reaches 800 pixels, at which point it resets and increments the vertical count (`vcnt`) until it reaches 521 lines, after which it also resets. The counter operates based on a clock signal (`clk`), and it can be reset asynchronously with the `rst` input.
+module top_module(
+    input               clk,
+    input               rst,
+    output reg[9:0]     hcnt,
+    output reg[9:0]     vcnt
+);

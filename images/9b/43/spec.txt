@@ -1,0 +1,8 @@
+Design a pipelined half-adder circuit that computes the sum and carry-out for two input bits, `a` and `b`. The first stage uses combinational logic to determine the intermediate sum (`s1` as the XOR of `a` and `b`) and carry (`c1` as the AND of `a` and `b`). On the rising edge of the clock, the outputs are updated, with `sum` capturing the intermediate sum and `cout` capturing the carry-out. This design allows for staged processing of the inputs, suitable for integration into more complex pipelined arithmetic operations.
+module top_module(
+    input a,
+    input b,
+    input clk,       // Added clk input
+    output reg sum,
+    output reg cout
+);

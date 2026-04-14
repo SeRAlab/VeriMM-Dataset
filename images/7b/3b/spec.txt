@@ -1,0 +1,14 @@
+Design a low-latency 128-entry FIFO (First-In-First-Out) memory buffer for streaming data. This module allows for the pushing of 32-bit instructions along with an associated error flag, and it generates a ready signal indicating if new instructions can be pushed into the FIFO. It also manages the popping of instructions, signaling when valid data is available and allowing the retrieval of the instruction and its error status. The FIFO supports reset and flush operations to clear its contents while maintaining occupancy tracking to prevent overflows.
+module top_module(
+      input   io_push_valid,
+      output  io_push_ready,
+      input   io_push_payload_error,
+      input  [31:0] io_push_payload_inst,
+      output reg  io_pop_valid,
+      input   io_pop_ready,
+      output reg  io_pop_payload_error,
+      output reg [31:0] io_pop_payload_inst,
+      input   io_flush,
+      output [0:0] io_occupancy,
+      input   io_mainClk,
+      input   resetCtrl_systemReset);

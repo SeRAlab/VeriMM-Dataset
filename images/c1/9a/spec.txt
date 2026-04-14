@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as a specialized counter with integrated Wishbone bus interface capabilities. Its primary functions include:
+
+Counting: Incrementing its internal counter every clock cycle when enabled (`i_ce` is high).
+Data Interface: Allowing external modules to set the counter value through the Wishbone bus interface when a write operation is initiated.
+Interrupt Generation: Optionally generating an interrupt signal upon specific operations, although in the current implementation, the interrupt (`o_int`) is set to `0` following a write operation and not used in counting.
+Wishbone Bus Compatibility: Interfacing with systems adhering to the Wishbone bus protocol, supporting basic read and write operations without stalling (`o_wb_stall` is always `0`).
+
+This module can be utilized within larger digital systems requiring counter functionality alongside standard bus communication, offering a simple yet effective mechanism for counter control and data retrieval.
+
+Module name:  
+	zipcounter
+
+Input ports:
+	i_clk (input): The system clock signal. All operations within the module are synchronized to the rising edge of this clock.
+	i_ce (input): Counter enable signal. When high, it allows the counter to increment every clock cycle.
+	i_wb_cyc, i_wb_stb (input): Wishbone bus cycle and strobe signals. i_wb_stb indicates an active bus transaction, and i_wb_cyc is typically high to indicate an ongoing bus cycle.
+	i_wb_we (input): Wishbone write enable signal. When high and i_wb_stb is active, it indicates a write operation to the module.
+	i_wb_data (input, [BW1:0]): Data bus for Wishbone transactions. During write operations, it carries the data to be written into the module.
+Output ports:
+	o_wb_ack (output, reg): Wishbone acknowledge signal. Indicates to the bus master that the current transaction has been completed.
+	o_wb_stall (output, wire): Wishbone stall signal. Indicates if the module is unable to accept more transactions. It is always 0 in this module, indicating no stalling.
+	o_wb_data (output, reg, [BW1:0]): Data bus for Wishbone transactions. During read operations, it carries the data from the module to the bus master.
+	o_int (output, reg): Interrupt signal. In the current implementation, it is briefly set to 0 following a write operation but not used in the counting process.
+
+
+Implementation:
+The RTL module presented, named zipcounter, is designed to interface with a Wishbone bus and perform counting operations. The module is parameterized with a bit width (BW), allowing for flexibility in the size of the data it processes. The core functionality revolves around incrementing a counter and interfacing with the Wishbone bus protocol for data transactions. The module operates on the rising edge of a clock signal (i_clk) and is sensitive to an enable signal (i_ce), Wishbone cycle (i_wb_cyc), strobe (i_wb_stb), and write enable (i_wb_we) signals. Data is communicated to and from the module via the i_wb_data input and o_wb_data output, respectively. The module also generates an interrupt signal (o_int) and an acknowledgment signal (o_wb_ack), and it indicates that it never stalls the bus (o_wb_stall).
+
+Give me the complete code.
+

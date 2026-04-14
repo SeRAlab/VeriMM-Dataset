@@ -1,0 +1,9 @@
+Design a 4-bit binary multiplier that computes the product of two 4-bit binary numbers, controlled by a start signal and a clock. The module takes two input addresses representing the multiplier and multiplicand, and generates an 8-bit output for the product. It utilizes a combination of shift and add techniques to perform the multiplication sequentially over four clock cycles. The done signal indicates the completion of the multiplication process. On receiving the start signal, the module initializes the operands and begins processing, storing intermediate results in shift registers and using an adder for product calculation.
+module top_module(
+
+    input start, clk,
+    input [3:0] multiplier_address, multiplicand_address,
+    output reg [7:0] p,
+    output reg done
+    
+    );

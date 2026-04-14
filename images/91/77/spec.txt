@@ -1,0 +1,7 @@
+Design a memory module with 8-bit wide data storage, capable of storing up to 8192 addresses. The module utilizes a bidirectional data bus for read and write operations controlled by a read/write signal (rw). On a read operation (rw=1), it outputs the data from the specified address onto the data bus. On a write operation (rw=0), it captures the data from the data bus and stores it at the specified address on the rising edge of the clock signal.
+module top_module(
+input clock,
+input rw,
+input [15:0] add_bus,
+inout [7:0] data_bus
+);

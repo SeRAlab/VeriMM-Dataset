@@ -1,0 +1,12 @@
+Design a vending machine controller that manages the dispensing of three items (X, Y, Z) based on user input. The machine accepts a 25-cent coin and allows the selection of items via three buttons. It utilizes a finite state machine to handle states such as IDLE, BUTTON_PRESSED, and ITEM_DISPENSED. When an item is selected and the total inserted money reaches 75 cents, the corresponding item is dispensed and its stock is decremented. The controller also includes a mechanism to flag the machine as out of stock when all items are depleted, ensuring users are informed of availability.
+module top_module(
+  input clk, // system clock
+  input btn_a, // button A
+  input btn_b, // button B
+  input btn_c, // button C
+  input coin_slot, // 25-cent coin slot
+  output reg item_x, // dispensed item X
+  output reg item_y, // dispensed item Y
+  output reg item_z, // dispensed item Z
+  output reg out_of_stock // machine is out of stock
+);

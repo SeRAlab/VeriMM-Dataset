@@ -1,0 +1,6 @@
+Design a debouncer circuit for a mechanical switch input to ensure stable output during toggling. The module monitors the switch state and implements a state machine that transitions through three states: waiting for switch stabilization, waiting for the debounce period, and outputting the debounced signal. It uses a timer to filter out fluctuations, only updating the output after the switch state has been stable for a defined duration based on the clock period. This prevents erroneous signals caused by switch bounce, providing a clean, reliable output signal.
+module top_module(
+  input clk,        // Added clock input
+  input sw,
+  output reg deb    // Changed output to reg
+);

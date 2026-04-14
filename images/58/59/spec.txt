@@ -1,0 +1,9 @@
+Design a module that concatenates two 16-bit inputs, `in0` and `in1`, into a single 32-bit output `y`. The output is updated on the positive edge of the clock signal `clk`, conditioned by the clock enable signal `ce`. If the clear signal `clr` is activated, the output is reset to zero. When `ce` is high, the values of `in0` and `in1` are combined with `in0` occupying the higher 16 bits and `in1` occupying the lower 16 bits of the output.
+module top_module(
+  input [(16 - 1):0] in0,
+  input [(16 - 1):0] in1,
+  output [(32 - 1):0] y,
+  input clk,
+  input ce,
+  input clr
+);

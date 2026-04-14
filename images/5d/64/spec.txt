@@ -1,0 +1,5 @@
+Design a priority-based arbiter that manages four input signals with two priority levels. The module first checks for active input signals in the highest priority group (priority 0) and, if available, uses a round-robin method to select one of these inputs to output. If no signals from priority 0 are active, it checks the lower priority group (priority 1) and similarly selects from active inputs using round-robin. If no inputs are active, the output is set to LOW. This arbiter effectively ensures fair access to shared resources based on defined priorities, making it suitable for applications where signal contention occurs.
+module top_module(
+  input [n-1:0] in,
+  output reg out
+);

@@ -1,0 +1,7 @@
+Design a data processing module that operates on an 8-bit input. The module takes a clock signal and an active-low reset signal, performing different operations on the input data based on its value. If the input value is less than 10, it outputs the input directly. If the input is between 10 and 50 (inclusive), it doubles the input value. For input values greater than 50, it halves the input. The processed output is provided on an 8-bit output wire. This module effectively serves as a simple arithmetic and comparison unit with conditional data alteration based on predefined thresholds.
+module top_module(
+    input wire clk,
+    input wire reset_n,
+    input wire [7:0] data_in,
+    output wire [7:0] data_out
+);

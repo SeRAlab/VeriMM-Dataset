@@ -1,0 +1,6 @@
+Design a synchronous dual-port memory module with a configurable width and depth. This module uses the 'clka' clock signal to control read and write operations. When the write enable signal 'wea' is high, the input data 'dina' is written to the memory at the address specified by 'addra'. Regardless of the write operation, the module outputs the data stored at 'addra' to 'douta'. This memory structure is suitable for applications that require temporary data storage, such as image processing tasks involving shadow pixel management.
+module top_module(output reg [WIDTH-1:0] douta,  // Added direction declaration for douta
+    input clka,
+    input [11:0] addra,
+    input [WIDTH-1:0] dina,
+    input wea);

@@ -1,0 +1,10 @@
+Implement an 8-bit ripple carry adder that computes the sum of two 8-bit inputs A and B while incorporating an additional bit X through an XOR operation with B. The module also takes a carry-in input to handle overflow during addition. The outputs are the computed sum and a carry-out signal, which indicates whether an overflow occurred. The design utilizes registers to store intermediate values and updates the outputs on the rising edge of a clock signal.
+module top_module(
+    input [7:0] A,
+    input [7:0] B,
+    input carry_in,
+    input X,
+    input clk,             // Added clk input
+    output reg [7:0] sum,
+    output reg carry_out
+);

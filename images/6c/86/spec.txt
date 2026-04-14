@@ -1,0 +1,9 @@
+Design a single-port synchronous RAM module with 16-bit wide data and a 14-bit address space, allowing for 16,384 addresses. The module supports reading and writing operations controlled by the enable and write signals, with data being stored or retrieved on the rising edge of the clock. When the enable signal is active and the write signal is asserted, the data input is written to the specified address. If the write signal is not asserted, the data from the addressed location is read into a temporary register and provided at the output, ensuring synchronous data access based on the clock input.
+module top_module(
+  input [13:0] address,
+  input [15:0] data_in,
+  input enable,
+  input clock,
+  input write,
+  output reg [15:0] data_out
+);

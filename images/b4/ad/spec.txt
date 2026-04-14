@@ -1,0 +1,8 @@
+Develop a pseudo-random number generator (PRNG) module that generates a 32-bit random number based on a linear feedback shift register (LFSR) approach. The generator resets to zero upon receiving a negative edge on the reset signal and can be loaded with a 32-bit seed value when the load signal is asserted. On each positive clock edge, if not in reset and load is inactive, the module computes the next random number by shifting the current value and introducing new bits based on exclusive OR operations involving specific bits from the current state, effectively producing pseudo-random outputs.
+module top_module(
+    input wire clk,               
+    input wire rst,               
+    input wire load,              
+    input wire [31:0] seed,       
+    output reg [31:0] rand_num    
+    );

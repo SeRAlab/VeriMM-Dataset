@@ -1,0 +1,13 @@
+Design a reset management module that handles various reset conditions for a system. The module generates a main reset output (`mb_reset`) based on external reset signals, auxiliary resets, debug system resets, and a clock lock status. It further defines separate reset signals for peripherals (`peripheral_reset`), interconnect components (`interconnect_aresetn`), and bus structures (`bus_struct_reset`), ensuring that each component can be reset independently or collectively based on the specified inputs. This module is essential for managing the initialization and recovery of a system from various error states or power-up sequences.
+module top_module(
+  input slowest_sync_clk,
+  input ext_reset_in,
+  input aux_reset_in,
+  input mb_debug_sys_rst,
+  input dcm_locked,
+  output mb_reset,
+  output [0:0]bus_struct_reset,
+  output [0:0]peripheral_reset,
+  output [0:0]interconnect_aresetn,
+  output [0:0]peripheral_aresetn
+);

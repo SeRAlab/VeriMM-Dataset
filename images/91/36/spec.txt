@@ -1,0 +1,10 @@
+Design a simple synchronous memory module with a depth of 1024 32-bit words. The module supports read and write operations based on input addresses and control signals. On each clock cycle, the output data_a is updated with the data from the address specified by addr_a, while data_b outputs the data from addr_b. If the reset signal is activated, the outputs are cleared. The module allows writing to the memory at addr_b only when the write enable signal (data_b_we) is asserted and the upper bits of addr_b fall within a specific range. Additionally, a strobe signal (strobe_b) indicates a valid write operation for addresses that fall under this range. An optional initialization file can be loaded to pre-fill the memory at startup.
+module top_module(input clk,
+              input rst,
+              input [31:0] addr_a,
+              input [31:0] addr_b,
+              input [31:0] data_b_in,
+              input [31:0] data_b_we,
+              output reg [31:0] data_a,
+              output reg [31:0] data_b,
+              output reg strobe_b);

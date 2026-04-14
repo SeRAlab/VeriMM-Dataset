@@ -1,0 +1,31 @@
+Please act as a professional Verilog designer.
+
+Implement a dual-port RAM with 16-bit wide, 64-depth memory. One port for read and another port for write.
+
+Module name:
+    dual_port_ram
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    wr_en: Write enable signal for write port.
+    wr_addr: 6-bit write address to specify the memory location to write.
+    wr_data: 16-bit data input to write into the memory.
+    rd_addr: 6-bit read address to specify the memory location to read.
+Output port:
+    rd_data: 16-bit data output read from the memory.
+
+Implementation:
+On every rising edge of the clock signal (clk), the dual-port RAM is updated.
+If the write enable signal (wr_en) is high, data is written into the specified write address.
+The data at the specified read address is continuously available at the read data output.
+
+Give me the complete code.
+
+module dual_port_ram(
+   input                clk,
+   input                wr_en,
+   input [5:0]          wr_addr,
+   input [15:0]         wr_data,
+   input [5:0]          rd_addr,
+ 
+   output reg [15:0]    rd_data
+);

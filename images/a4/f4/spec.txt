@@ -1,0 +1,8 @@
+Design a synchronous shift register with a configurable data width and address depth. On the rising edge of the clock, when the chip enable (ce) signal is high, it shifts the input data through an array of registers, storing the latest input at the first position and shifting the previously stored values down the line. The output (q) provides access to the data stored at a specified address (a) within the shift register array, effectively allowing for reading of the shifted values based on the address input.
+module top_module(
+    input clk,
+    input [DATA_WIDTH-1:0] data,
+    input ce,
+    input [ADDR_WIDTH-1:0] a,
+    output reg [DATA_WIDTH-1:0] q
+);

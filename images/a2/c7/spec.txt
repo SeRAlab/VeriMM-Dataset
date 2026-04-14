@@ -1,0 +1,7 @@
+Design a digital potentiometer circuit that features an adjustable output voltage. The module takes a clock signal, a 3-bit address input to select one of eight resistive values, and a 7-bit data input for updating the selected resistance. The output voltage (vout) is computed based on the selected resistance, scaled from a maximum resistance value, allowing for a range of output voltages. Upon initialization, the circuit sets the initial wiper position to a specified resistance value while zeroing the others. The design facilitates dynamic adjustments of resistance values in response to incoming data, enabling applications in audio control, signal processing, or variable resistive load implementations.
+module top_module(
+  input clk,
+  input [2:0] addr,
+  input [6:0] data,
+  output reg [7:0] vout
+);

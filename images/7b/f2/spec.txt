@@ -1,0 +1,7 @@
+Develop a circuit that operates as an error generator, utilizing a clock and reset input to manage error signaling. The design produces a two-bit error output based on an input validity signal. When the valid input signal is high, it sequentially generates two predefined error codes: `error_invalid_port` and `error_invalid_class`. If a reset occurs, the error states are cleared. The module uniquely transitions through different error states and maintains an appropriate error output based on the sequence of validity events.
+module top_module(
+    input reset,
+    input clk,
+    input valid,
+    output reg [1:0] errors
+);

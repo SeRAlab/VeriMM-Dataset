@@ -1,0 +1,36 @@
+Please act as a professional verilog designer.
+
+Design a 16-bit register file with 8 registers, each 16 bits wide. The register file should support read and write operations. The write operation should occur on the rising edge of the clock signal when the write enable signal is high.
+
+Module name:
+    reg_file_16x8
+
+Input ports:
+    clk: Clock signal.
+    rst: Reset signal.
+    we: Write enable signal.
+    read_addr1: 3-bit read address for the first read port.
+    read_addr2: 3-bit read address for the second read port.
+    write_addr: 3-bit write address.
+    write_data: 16-bit write data.
+
+Output ports:
+    read_data1: 16-bit data from the first read port.
+    read_data2: 16-bit data from the second read port.
+
+Implementation:
+The module uses an array of registers to store the data. The always block for the write operation is triggered by the rising edge of the clock signal. If the reset signal is active, all registers are set to 0. Otherwise, if the write enable signal is high, the data is written to the specified register. The read data is continuously assigned based on the read addresses.
+
+Give me the complete code.
+
+module reg_file_16x8(
+    input wire clk,
+    input wire rst,
+    input wire we,
+    input wire [2:0] read_addr1,
+    input wire [2:0] read_addr2,
+    input wire [2:0] write_addr,
+    input wire [15:0] write_data,
+    output wire [15:0] read_data1,
+    output wire [15:0] read_data2
+    );

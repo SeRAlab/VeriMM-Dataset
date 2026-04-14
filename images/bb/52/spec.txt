@@ -1,0 +1,14 @@
+Design a memory interface module that connects a CPU (mlite_cpu) to a memory subsystem. The module handles clock and reset inputs and facilitates data transfer between the CPU and memory by managing address and data signals, read/write controls, and byte selection. It asserts a valid memory cycle and strobe signals based on the reset condition, while ensuring proper handling of data writes and reads. The interface maintains the current state of memory operations and integrates interrupt handling and acknowledgement mechanisms to synchronize data flow.
+module top_module(
+    input CLK_I,
+    input RST_I,
+    input [31:0] DAT_I,
+    input ACK_I,
+    input INT_I,
+    output reg [31:0] ADR_O,
+    output reg [31:0] DAT_O,
+    output reg WE_O,
+    output reg [3:0] SEL_O,
+    output reg STB_O,
+    output reg CYC_O
+);

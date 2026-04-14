@@ -1,0 +1,11 @@
+Design a block memory module with one read and one write port, accommodating 256 addresses, each capable of holding 32 bits of data. On a positive clock edge, if the write enable signal (wr) is active, it writes the provided 32-bit data to the specified write address. Regardless of the write operation, it always outputs the data from the specified read address to the read_data output, allowing simultaneous read access while managing write control.
+module top_module(
+                    input wire           clk,
+
+                    input wire  [07 : 0] read_addr,
+                    output wire [31 : 0] read_data,
+
+                    input wire           wr,
+                    input wire  [07 : 0] write_addr,
+                    input wire  [31 : 0] write_data
+                   );

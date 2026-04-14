@@ -1,0 +1,18 @@
+module top_module(
+    input [7:0] num1,
+    input [7:0] num2,
+    input [1:0] opcode,
+    input enable,
+    output reg [7:0] result
+);always @(*) begin
+    if(enable) begin
+        case(opcode)
+            2'b00: result = num1 + num2;
+            2'b01: result = num1 - num2;
+            2'b10: result = num1 * num2;
+            2'b11: result = num1 / num2;
+        endcase
+    end
+end
+
+endmodule

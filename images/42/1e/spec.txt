@@ -1,0 +1,6 @@
+Design a frequency counter that operates on a 50 MHz clock input. The module generates a gating signal, Gate_1S, which alternates between high and low states based on predetermined high and low durations, effectively creating a 1-second pulse. This gated signal is used to enable or reset a counter that increments on the rising edge of an external signal, ch_c. The output of the counter, FT_out, is a 64-bit register that increments when enabled, and upon the trigger from a load signal (indicating the end of a counting period), it updates a frequency register, freq_reg, which holds the final count. The design serves to measure the frequency of an input signal by counting occurrences within a defined time window.
+module top_module(	
+	input					sys_clk_50m,ch_c,
+	output	reg	[63:0]	freq_reg,
+	input					sys_rst_n
+	);

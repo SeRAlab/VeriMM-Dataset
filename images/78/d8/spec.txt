@@ -1,0 +1,11 @@
+Design a synchronous FIFO (First-In-First-Out) buffer that can store up to 8 bytes of data. It includes control signals for write enable (wr_en) and read enable (rd_en) to manage data input and output, respectively. The data input is 8 bits wide, and on each clock cycle, if writing is enabled and the buffer is not full, new data is written into the buffer at the write pointer. Conversely, if reading is enabled and the buffer is not empty, data is read from the buffer at the read pointer. The module also tracks the buffer's status, providing signals to indicate when the buffer is empty or full, ensuring proper data flow control.
+module top_module(
+  input clk,
+  input rst,
+  input wr_en,
+  input rd_en,
+  input [7:0] data_in,
+  output reg [7:0] data_out,  // Changed from wire to reg
+  output empty,
+  output full
+);

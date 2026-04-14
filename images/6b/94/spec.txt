@@ -1,0 +1,10 @@
+Design a 3-bit shift register coupled with a combinational logic output that incorporates an XOR function. On each clock cycle, the shift register captures the input `d`, moving existing bits to the left, while the XOR of inputs `a` and `b` is computed and stored. When reset, the shift register and the XOR output are initialized to zero. The module outputs the XOR of the least significant bit of the shift register and the XOR result as `out_comb_logic`, while `q` provides direct access to the least significant bit of the shift register.
+module top_module(
+    input clk,
+    input reset,
+    input d,
+    input a,
+    input b,
+    output reg out_comb_logic,
+    output q
+);

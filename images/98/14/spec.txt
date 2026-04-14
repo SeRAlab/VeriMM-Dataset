@@ -1,0 +1,14 @@
+Write a Verilog module to implement a 4-bit binary adder with carry-in and carry-out. The addition should take place at every positive edge of the clock.
+
+Time 0ns: clk = 0, a = 4'b0001, b = 4'b0010, carry_in = 0, sum = 4'b0000, carry_out = 0.
+Time 5ns: clk = 1, a = 4'b0001, b = 4'b0010, carry_in = 0, sum = 4'b0011, carry_out = 0.
+Time 10ns: clk = 0, a = 4'b0110, b = 4'b0011, carry_in = 1, sum = 4'b0000, carry_out = 1.
+Time 15ns: clk = 1, a = 4'b0110, b = 4'b0013, carry_in = 1, sum = 4'b1000, carry_out = 1.
+
+module binary_adder (
+	input clk,
+	input [3:0] a,
+	input [3:0] b,
+	input carry_in,
+	output reg [3:0] sum,
+	output reg carry_out);

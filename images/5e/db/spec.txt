@@ -1,0 +1,10 @@
+Design a 4-to-1 multiplexer with an enable feature. When enabled (EN = 1), the module selects one of the four 8-bit inputs (D0, D1, D2, D3) based on the 2-bit selection input (SEL) and outputs it on the 8-bit output (Y). If the enable signal is low (EN = 0), the output Y is set to zero, effectively turning off the multiplexer’s output.
+module top_module(
+    input [7:0] D0,
+    input [7:0] D1,
+    input [7:0] D2,
+    input [7:0] D3,
+    input [1:0] SEL,
+    input EN,
+    output reg [7:0] Y
+);

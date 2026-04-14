@@ -1,0 +1,8 @@
+Design a circuit that functions as an 8-bit multiplier with selectable output. The module accepts two 8-bit inputs, A and B, and calculates their product in three stages. During the first stage, it stores the inputs; in the second stage, it computes the unsigned product of A and B. In the final stage, based on the value of the select signal `sel`, it outputs either the unsigned product or its signed equivalent as a 16-bit result.
+module top_module(
+    input [7:0] A,
+    input [7:0] B,
+    input sel,
+    input clk,  // Added clk input
+    output reg [15:0] out
+);

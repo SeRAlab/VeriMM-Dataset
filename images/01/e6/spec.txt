@@ -1,0 +1,11 @@
+
+Design an 8-channel DMA (Direct Memory Access) controller that can read data from different memory locations and transfer it to a single memory location. The controller should have the following inputs:
+- `start`: A signal to start the data transfer.
+- `channel_select`: 3 bits to select one of the 8 channels (0 to 7).
+- `mem_address`: A 16-bit address of the memory from which data will be read.
+- `data_in`: 8-bit input data from the selected channel.
+
+The output of the DMA controller should be:
+- `data_out`: 8-bit output data that is transferred to a single memory location.
+
+The data from the selected channel (based on `channel_select`) should be read only when `start` is asserted.

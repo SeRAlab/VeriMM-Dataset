@@ -1,0 +1,7 @@
+Design a frequency divider module that generates an output clock signal based on the input clock and a speed control parameter. The module takes a 4-bit input (speedctr) that determines how rapidly the output clock (clk_gen) toggles. It uses a counter to track clock cycles, resetting when a specified number of cycles dictated by speedctr is reached. The counter value is retained until a reset signal (rst) is asserted, which also initializes both the counter and the output clock signal. The output clock toggles every time the counter reaches the predefined limit, effectively dividing the frequency of the input clock signal based on the value of speedctr.
+module top_module(
+	input clk,
+	input rst,
+	input [3:0] speedctr,
+	output reg clk_gen 
+);

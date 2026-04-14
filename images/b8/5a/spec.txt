@@ -1,0 +1,12 @@
+The design is a 7-segment display driver that takes a 4-bit binary input (D) and controls the individual segments (A, B, C, D, E, F, G) of the display to represent the corresponding decimal digit or hexadecimal symbol. It utilizes a look-up table structure to translate the binary input into the appropriate 7-segment encoding, allowing for the display of values from 0 to 15. The module employs a pipeline register to facilitate the data flow and ensure that the display reflects the input value reliably in a sequential manner. This module can be used in applications where numerical output is required, such as digital clocks or counters.
+module top_module(
+    input [3:0] D,
+    input clk, // Add missing clock input
+    output A,
+    output B,
+    output C,
+    output D_out, // Rename output D to D_out to avoid naming conflict
+    output E,
+    output F,
+    output G
+);

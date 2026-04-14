@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+    
+Implement a module is designed as a generic, parameterizable shift register array. Its primary function to shift bits of multiple parallel inputs over a specified number of stages and output the last bit of each shift register. This module can be utilized in various digital signal processing (DSP) applications, serial-to-parallel conversions, timing adjustments, or any application requiring synchronized shifting of multiple bitstreams. The parameterizable nature of the module allows for flexibility in terms of input width and the number of shift stages, making it adaptable to different use cases within a broader system context.
+
+Module name:  
+	jt51_sh
+
+Input ports:
+	clk (input): This is the clock input to the module. It is a singlebit signal that triggers the shifting operation within the shift registers. The rising edge of clk is used as the reference for shifting operations.
+	din (input): This is the data input port of the module. It is a vector with a width defined by the width parameter. Each bit of din is fed into a separate shift register. The size of din determines the number of parallel bits that can be shifted simultaneously.
+Output ports:
+	drop (output): This is the data output port of the module. It is a vector with the same width as din. Each bit of drop represents the output of a shift register, specifically the bit that is "dropped" or shifted out from the last stage of the shift register. The size of drop matches the number of bits being processed in parallel.
+
+
+Implementation:
+The RTL module presented, jt51_sh, is designed as a generic, parameterizable shift register array. It is capable of handling multiple parallel bit streams, each of a configurable width, and shifting them through a series of stages, also parameterizable. This module finds its utility in applications requiring synchronized, delayed versions of multiple input signals, such as in digital signal processing, communication systems, or timing adjustment circuits.
+
+Give me the complete code.
+

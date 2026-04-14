@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+
+Implement a 2-to-4 decoder with enable signal. The decoder takes in a 2-bit binary input (in) and decodes it into a 4-bit output (out) based on the enable signal (en). If the enable signal (en) is high, the output is the decoded value; if the enable signal (en) is low, the output is all zeros.
+
+Module name:  
+   decoder_2to4  
+
+Input ports:
+   in: 2-bit binary input.
+   en: Enable signal.
+
+Output ports:
+   out: 4-bit output representing the decoded value.
+
+Implementation:
+If the enable signal (en) is high, the module decodes the 2-bit input (in) and sets the corresponding output bit to 1 while other bits are 0.
+If the enable signal (en) is low, the output (out) is set to 4'b0000.
+
+Give me the complete code.
+`timescale 1ns / 1ps
+module decoder_2to4 (in, en, out);
+   input [1:0] in;
+   input en;
+   output [3:0] out;

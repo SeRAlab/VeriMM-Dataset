@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform a selection operation between two input data streams based on a control signal. Its primary function to output one of the two 198-bit wide inputs, `from_ram` or `from_const`, depending on the state of the `const_effective` control signal. This module plays a crucial role in systems where the source of data needs to be dynamically selected during operation, such as in configurable computing systems, memory management units, or in the implementation of conditional operations within digital circuits. The ability to choose between a constant value and a value fetched from RAM (Random Access Memory) on-the-fly makes this module particularly useful in scenarios where optimization of data paths and flexibility in data handling are required.
+
+Module name:  
+	muxer
+
+Input ports:
+	from_ram [197:0]: A 198bit wide input port intended to carry data fetched from RAM. This input represents one of the two data sources that can be selected for output by the module.
+	from_const [197:0]: A 198bit wide input port designed to carry a constant value. This input represents the second of the two data sources that can be selected for output by the module.
+	const_effective: A singlebit input signal that acts as the control signal for the multiplexer. When this signal is high (1), the data from from_const is selected for output. Conversely, when this signal is low (0), the data from from_ram is selected for output.
+Output ports:
+	out [197:0]: A 198bit wide output port that carries the selected data to the next stage of the system. The data on this port is determined by the state of the const_effective input signal.
+
+
+Implementation:
+The module presented, named muxer, is a straightforward yet essential component in digital design, particularly in systems where data routing is required. The primary function of this module is to select between two 198-bit wide data inputs, from_ram and from_const, based on a control signal, const_effective. The selected input is then outputted through the 198-bit wide out signal. This module employs purely combinational logic, as it does not contain any storage elements (like flip-flops or latches) and the output is solely dependent on the current inputs.
+
+Give me the complete code.
+

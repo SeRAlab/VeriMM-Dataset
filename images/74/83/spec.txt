@@ -1,0 +1,32 @@
+Please act as a professional Verilog designer.
+
+Implement a 32-bit ALU (Arithmetic Logic Unit) that supports addition, subtraction, AND, OR, and XOR operations. The ALU should have a control signal to select the operation.
+
+Module name:
+    alu
+
+Input ports:
+    a: First 32-bit operand.
+    b: Second 32-bit operand.
+    alu_ctrl: 3-bit control signal to select the operation. The operations should be as follows:
+        3'b000: Addition
+        3'b001: Subtraction
+        3'b010: AND
+        3'b011: OR
+        3'b100: XOR
+
+Output ports:
+    result: 32-bit output signal representing the ALU result.
+
+Implementation:
+The module should use combinational logic to implement the ALU operations.
+The ALU should perform the operation specified by the control signal.
+
+Give me the complete code.
+
+module alu(
+  input [31:0] a,
+  input [31:0] b,
+  input [2:0] alu_ctrl,
+  output [31:0] result
+);

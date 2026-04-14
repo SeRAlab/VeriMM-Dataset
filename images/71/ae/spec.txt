@@ -1,0 +1,9 @@
+Design a simple arithmetic calculator that performs operations based on a control signal. It accepts two signed 8-bit inputs, `a` and `b`, and a 2-bit operation selector `op`, which determines whether to add, subtract, multiply, or divide the inputs on each clock cycle. The result is an 8-bit signed output. The calculator can reset to zero when the reset input is activated, and it handles division by zero by outputting zero in such cases, ensuring safe behavior during operation.
+module top_module(
+    input clk,
+    input rst,
+    input [1:0] op,
+    input signed [7:0] a,
+    input signed [7:0] b,
+    output reg signed [7:0] result
+);

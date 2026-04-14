@@ -1,0 +1,9 @@
+The module implements a double-precision floating-point multiplier in Verilog, designed to compute the product of two 64-bit floating-point numbers based on the IEEE 754 standard. The module takes in two 64-bit inputs (srca and srcb) along with a clock and enable signal. It extracts the sign, exponent, and fraction from each input, performs the multiplication of their fractional parts, and adjusts the resultant exponent accordingly. The output (dst) is a 64-bit representation of the resulting floating-point product, which includes the correct sign and normalized value. Additionally, the design incorporates a conditional compilation feature to support either precise or approximate multiplication based on the `PRECISE_FMUL` directive. Overall, this module serves as a key component for performing efficient floating-point arithmetic in digital signal processing or computational applications.
+module top_module(
+	
+	clk,
+	enable,
+	srca,
+	srcb,
+	dst
+);

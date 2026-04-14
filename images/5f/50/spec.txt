@@ -1,0 +1,12 @@
+Implement a sound processing module that takes four 8-bit audio channel inputs and their corresponding frequency settings. It normalizes the channels based on the given frequencies, setting the output of a channel to zero if its frequency is either 0 or 1. The module then right-shifts each normalized channel by 2 bits (effectively dividing by 4) and sums them together to produce an 8-bit output signal. This design is intended for applications requiring audio mixing or processing with specific handling of input conditions.
+module top_module(
+  output[7:0] sound_out,
+  input[7:0] Chl1,
+  input[7:0] Chl2,
+  input[7:0] Chl3,
+  input[7:0] Chl4,
+  input [11:0] freq1,
+  input [11:0] freq2,
+  input [11:0] freq3,
+  input [11:0] freq4
+  );

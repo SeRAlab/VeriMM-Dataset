@@ -1,0 +1,9 @@
+Design a 16-bit up-counter with load and reset capabilities. The counter increments its value on each clock cycle, and if it reaches its maximum value (0xFFFF), it wraps around to zero and asserts an overflow signal. The count can be loaded with a specified input value when the load signal is high. Additionally, when the reset input is activated, the counter resets to zero and the overflow flag is cleared.
+module top_module(
+  input wire clk,
+  input wire [15:0] reset,
+  input wire [15:0] load,
+  input wire [15:0] count_in,
+  output reg [15:0] count_out,
+  output reg overflow
+);

@@ -1,0 +1,10 @@
+Design a UART (Universal Asynchronous Receiver-Transmitter) transmission controller that manages the reception and transmission of data bytes. This module receives incoming data through the `tb_rx_data` input when the `tb_rx_done` signal is asserted, storing a maximum of three bytes in a buffer. It then initiates the transmission of this buffered data via the `tb_tx_data` output, with control signals indicating whether a transmission is in progress (`tb_tx_busy`) and when to start a new transmission (`tb_tx_start`). The design incorporates state management through the use of counters for both reception and transmission processes.
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] tb_rx_data,
+    input tb_rx_done,
+    output reg tb_tx_start,
+    output reg tb_tx_busy,
+    output reg [7:0] tb_tx_data
+);

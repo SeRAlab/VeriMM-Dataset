@@ -1,0 +1,8 @@
+Design a register with a reset and write-enable functionality. This 8-bit register, named `reg_0x29`, outputs its value on the `reg_0x29` line. It resets to 0 when the `reset` input is activated. On each rising edge of the clock (`clk`), if `wenb` (write enable) is low, the register captures and stores the value present on the `in_data` input. If `wenb` is high, the register retains its previous value.
+module top_module(
+    output reg [7:0] reg_0x29,
+    input wire reset,
+    input wire wenb,
+    input wire [7:0] in_data,
+    input wire clk
+);

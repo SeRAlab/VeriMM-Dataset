@@ -1,0 +1,11 @@
+Design a non-restoring division circuit using a shift register that performs signed division of a 4-bit dividend by a 4-bit divisor, producing both a quotient and a remainder. The module synchronously loads the dividend and initializes the shift register upon receiving a load signal. It shifts the input serial data while progressively calculating the quotient and remainder over a series of clock cycles. After four clock cycles of computation, based on the select signal, it outputs either the final quotient or the remainder. The circuit efficiently manages the division operation using bitwise shifts and arithmetic adjustments, ensuring signed compatibility of the inputs.
+module top_module(
+    input clk,
+    input load,
+    input select,
+    input signed [3:0] dividend,
+    input signed [3:0] divisor,
+    input signed [3:0] serial_in,
+    output reg signed [3:0] quotient,
+    output reg signed [3:0] remainder
+);

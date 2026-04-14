@@ -1,0 +1,7 @@
+Design a circuit that acts as a falling edge detector with pipelined input stages. It takes a 32-bit input signal and captures its value across four clock cycles, monitoring for a condition where each successive registered value decreases, indicating a transition from a higher to a lower value (falling edge). When this condition is met, the output is set to a defined high value (0xFFFFFFFF); otherwise, it outputs zero. The design includes asynchronous reset functionality, ensuring all registers and the output can be initialized to zero when required.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] in,
+    output reg [31:0] out
+);

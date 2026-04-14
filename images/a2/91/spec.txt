@@ -1,0 +1,8 @@
+Implement a 3-to-1 multiplexer for selecting a 16-bit output based on the 2-bit input signal RegSrc. When RegSrc is 00 or 01, output data from readFromMem; when RegSrc is 10, output the ALUResult; and for RegSrc equal to 11, output op2Val. This module is typically used in a CPU to route register data based on control signals during instruction execution.
+module top_module(
+	input [1:0] RegSrc,
+	input [15:0] readFromMem,
+	input [15:0] ALUResult,
+	input [15:0] op2Val,
+	output reg [15:0] outRegSrc
+);

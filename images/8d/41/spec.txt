@@ -1,0 +1,7 @@
+Design a binary converter that maps a 4-bit input (A) into a 2-bit output (B) based on predefined thresholds. The output B indicates two conditions: B[1] signals whether the input A exceeds the value of 12, while B[0] reflects whether A is within specific ranges (greater than 4 and less than or equal to 12). The output B[0] is derived from a combinational logic evaluation, while B[1] is stored in a flip-flop that is clocked by the input CLK, ensuring synchronized output updates under a reset control (RESET_B).
+module top_module(
+    input CLK,
+    input RESET_B,
+    input [3:0] A,
+    output reg [1:0] B
+);

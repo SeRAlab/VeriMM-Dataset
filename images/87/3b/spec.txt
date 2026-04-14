@@ -1,0 +1,15 @@
+Design a simple synchronous pipeline stage that acts as a buffer to pass data from input to output. When the input is valid, it transfers the input signals (response, ID, and user bits) to the output, while also indicating readiness based on the output's readiness signal. This module effectively functions as a latency element, ensuring that data is only sent out when the downstream component is ready to receive it.
+module top_module(
+  input   clock,
+  input   reset,
+  output  io_in_ready,
+  input   io_in_valid,
+  input  [1:0] io_in_bits_resp,
+  input  [4:0] io_in_bits_id,
+  input   io_in_bits_user,
+  input   io_out_ready,
+  output  io_out_valid,
+  output [1:0] io_out_bits_resp,
+  output [4:0] io_out_bits_id,
+  output  io_out_bits_user
+);

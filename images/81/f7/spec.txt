@@ -1,0 +1,10 @@
+Design a circuit that implements a cryptographic module capable of performing encryption, decryption, and hashing operations. It employs basic XOR-based operations for encrypting and decrypting plaintext and ciphertext using a fixed-length key, and operates in ECB mode. Moreover, it computes a hash output using an SHA-256 hash function, which processes the given message. This module is structured to handle 256-bit messages, 128-bit secret keys, and outputs both ciphertext and plaintext of the same length as the input, along with a 256-bit hash value.
+module top_module(
+  input [m-1:0] plaintext,
+  input [k-1:0] key,
+  input [m-1:0] ciphertext,
+  input [m-1:0] message,
+  output [m-1:0] ciphertext_out,
+  output [m-1:0] plaintext_out,
+  output [n-1:0] hash_out
+);

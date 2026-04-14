@@ -1,0 +1,16 @@
+Implement a Verilog module based on the following description.
+The following diagram is a Mealy machine implementation of a simple bit toggler. Implement in Verilog using one-hot encoding. Resets into state Init and reset is asynchronous active-high.
+
+The state machine has the following states and their corresponding outputs: 
+1. state Init (If x = 0, then z = 0. If x = 1, then z = 1).
+2. state Toggle (If x = 0, then z = 1. If x = 1, then z = 0).
+
+State transitions:
+1. From state Init: If x = 0, then transition to state Init. If x = 1, then transition to state Toggle.
+2. From state Toggle: If x = 0, then transition to state Toggle. If x = 1, then transition to state Init.
+
+module top_module (
+        input clk,
+        input areset,
+        input x,
+        output reg z);

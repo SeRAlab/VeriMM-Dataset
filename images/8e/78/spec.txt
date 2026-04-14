@@ -1,0 +1,10 @@
+Design a vending machine controller that operates in three states: IDLE, SELECTING, and DISPENSING. The module takes inputs for a clock signal, reset, coin insertion, button selection, and stock levels. In the IDLE state, it displays the available stock and waits for a coin; once a coin is detected, it transitions to the SELECTING state where a button press determines which item to dispense based on the available stock. If an item is selected and is in stock, the machine transitions to the DISPENSING state, activates the dispense signal, updates the stock, and then returns to the IDLE state.
+module top_module(
+  input clk,
+  input reset,
+  input coin,
+  input btn,
+  input [3:0] stock,
+  output reg dispense,
+  output reg [3:0] led
+);

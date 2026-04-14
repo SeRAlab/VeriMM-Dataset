@@ -1,0 +1,10 @@
+Design a 32-bit arithmetic unit capable of performing both addition and subtraction based on a control input. The module takes two 32-bit inputs, A and B, and outputs a 32-bit result. When the Subtract control signal is asserted, the module computes A - B; otherwise, it computes A + B. The design also includes overflow detection: it sets the Overflow output high if an overflow occurs during the operation, either when subtracting or adding, ensuring proper handling of potential overflow scenarios. The unit is synchronized with a clock signal and can be reset asynchronously.
+module top_module(
+  input [31:0] A,
+  input [31:0] B,
+  input Subtract,
+  input CLK,
+  input RST,
+  output reg [31:0] Result,
+  output reg Overflow
+);

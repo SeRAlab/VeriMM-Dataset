@@ -1,0 +1,10 @@
+Design a digital video recorder (DVR) module that manages the recording and output of 16-bit data streams based on control signals. The module operates with a clock and reset, transitioning through three states: IDLE, RECORDING, and OUTPUTTING. When in IDLE and the start signal is asserted, it begins recording the input data and transitions to the RECORDING state. In the RECORDING state, data can be updated until the stop signal is issued, which halts recording and moves to the OUTPUTTING state. When not recording, and the stop signal is no longer active, the module outputs the last recorded data and returns to the IDLE state, ready for the next operation.
+module top_module(
+    input clk,
+    input reset,
+    input start,
+    input stop,
+    input [15:0] data,
+    output reg recording,
+    output reg [15:0] data_out
+);

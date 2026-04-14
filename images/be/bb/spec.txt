@@ -1,0 +1,9 @@
+Design a synchronous edge detection circuit that responds to an 8-bit input vector. The module has a reset functionality to initialize its internal state. On each rising clock edge, it captures the current and previous states of the input vector to detect rising edges, outputting these as an 8-bit vector. Additionally, it maintains a combined output that integrates the detection results with the current input vector. The module also includes a selection input that can control the output behavior, allowing for either passive output or active edge detection, facilitating modular functionality in larger designs.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input [7:0] in, // 8-bit input vector
+    input select, // Select input to choose between modules
+    output reg [7:0] anyedge, // Output from the active module
+    output reg [7:0] combined_out // Combined output from the first module and the input vector
+);

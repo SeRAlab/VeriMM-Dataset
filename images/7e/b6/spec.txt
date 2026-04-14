@@ -1,0 +1,7 @@
+Design a 32-bit arithmetic unit that performs addition or subtraction based on the control signals. The module takes two 32-bit inputs, `data_a` and `data_b`, along with a `sign` indicator and an `addsub` control signal to determine the operation. When `addsub` is high, the unit performs subtraction, differentiating between signed and unsigned arithmetic based on the `sign` input, producing an overflow flag if needed. If `addsub` is low, the unit performs addition in a similar manner, also accounting for signed or unsigned behavior and outputting an overflow flag. The result of the operation is provided on the `data_c` output.
+module top_module(/*AUTOARG*/
+	// Outputs
+	data_c, overflow,
+	// Inputs
+	data_a, data_b, sign, addsub
+	);

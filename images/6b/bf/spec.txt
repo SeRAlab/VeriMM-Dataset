@@ -1,0 +1,18 @@
+Design a 64-bit Arithmetic Logic Unit (ALU) that performs a variety of operations based on control signals. This ALU can execute addition, bitwise AND, bitwise XOR, logical shifts (both left and right), and comparisons for less than (signed and unsigned). The inputs include two 64-bit operands, control flags for carry and operation selection, and flags for outputting carry, overflow, and zero conditions. The module computes results based on the enabled operations, providing a comprehensive suite of arithmetic and logical functionalities suitable for complex computations in digital systems.
+module top_module(
+	input	[63:0]	inA_i,
+	input	[63:0]	inB_i,
+	input		cflag_i,
+	input		sum_en_i,
+	input		and_en_i,
+	input		xor_en_i,
+	input		invB_en_i,
+	input		lsh_en_i,
+	input		rsh_en_i,
+	input		ltu_en_i,	
+	input		lts_en_i,	
+	output	[63:0]	out_o,
+	output		cflag_o,
+	output		vflag_o,
+	output		zflag_o
+);

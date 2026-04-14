@@ -1,0 +1,9 @@
+The module implements a combination of a binary-to-Gray code converter and a comparator, alongside a shifting operation based on the comparison result. It takes a 4-bit binary input to generate a corresponding 4-bit Gray code output. Simultaneously, it compares two 4-bit inputs and produces a 1-bit output indicating if the first input is greater than or equal to the second input. Based on this comparison, the module also conditionally shifts the resulting Gray code left (if the first input is greater) or right (if it is less) to produce a final 4-bit output. This design is useful for applications requiring conversion between numerical representations and relative comparisons, as well as dynamic adjustments based on input conditions.
+module top_module(
+    input [3:0] binary_in, // 4-bit binary input for binary-to-Gray code converter module
+    input [3:0] comp_in_1, // 4-bit input 1 for comparator module
+    input [3:0] comp_in_2, // 4-bit input 2 for comparator module
+    output [3:0] gray_out, // 4-bit Gray code output from binary-to-Gray code converter module
+    output comp_out, // 1-bit output from comparator module
+    output [3:0] shift_out // 4-bit output from functional module
+);

@@ -1,0 +1,20 @@
+
+
+You are tasked with designing a module that takes in four 8-bit inputs (A, B, C, and D) and outputs a 16-bit value (Y) that is the result of concatenating the two 8-bit values (AB and CD) in a specific order. The module should have the following interface:
+
+```verilog
+module concat_module (
+    input [7:0] A,
+    input [7:0] B,
+    input [7:0] C,
+    input [7:0] D,
+    output reg [15:0] Y
+);
+```
+
+The concatenation order should be as follows: the most significant byte of Y should be AB, and the least significant byte should be CD. Note that the order of the inputs should not be changed, only the order of concatenation.
+
+For example, if A = 0x12, B = 0x34, C = 0x56, and D = 0x78, then Y should be 0x12345678.
+
+Write the Verilog code for the `concat_module` module that meets the specifications above.
+

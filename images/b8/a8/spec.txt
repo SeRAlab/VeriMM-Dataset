@@ -1,0 +1,20 @@
+Design a dual SPI bus multiplexer that selectively connects either a main or an alternate SPI bus to a single output. The module asserts the chip select (nSS) line for the active bus while ensuring that only one bus can be active at any time to prevent undefined behavior. When the alternate bus is selected, the secondary clock (sck) and master-out slave-in (mosi) signals are sourced from the alternate bus inputs. Conversely, when the main bus is selected, those signals are sourced from the main bus. If neither bus is active, the chip select and clock signals are deasserted, ensuring the system remains idle. Additionally, the module controls master-in slave-out (miso) lines by connecting them to the appropriate bus depending on the active bus state.
+module top_module(
+  // Primary SPI bus.
+  input main_nss,
+  input main_sck,
+  input main_mosi,
+  output main_miso,
+
+  // Secondary SPI bus.
+  input alt_nss,
+  input alt_sck,
+  input alt_mosi,
+  output alt_miso,
+
+  // Output SPI bus.
+  output reg nss,
+  output reg sck,
+  output reg mosi,
+  input miso
+);

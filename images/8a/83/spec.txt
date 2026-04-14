@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+
+Implement a module of a 10-bit synchronous down counter with enable signal and preset capability. The counter decrements by 1 only when the enable signal is high. The counter resets to 0 when the reset signal (rst) is active. If the preset signal (preset) is high, the counter loads the value from the input port (preset_value) into the counter register.
+
+Module name:
+    down_counter_10_with_preset
+Input ports:
+    rst: Reset signal (active high)
+    clk: Clock signal
+    enable: Signal to enable counting (1 for enable, 0 for disable)
+    preset: Signal to load the counter with a specific value
+    preset_value: 10-bit input value to load into the counter when preset is high
+Output ports:
+    count: 10-bit output representing the current count value
+
+Implementation:
+If the reset signal is active (rst), the counter is reset to 0 by assigning the value 10'b0000000000 to the output register (count). If preset is high, the counter is loaded with the value from the preset_value input. If enable is high, the counter decrements by 1 on each positive clock edge.
+
+Give me the complete code.

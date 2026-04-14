@@ -1,0 +1,7 @@
+Design a circuit that checks for the presence of two hashed values in a Bloom filter data structure. The module receives two 10-bit hash inputs and a 1024-bit Bloom table, indicating whether the hashed values correspond to "bad words." When the hash_ready signal is high, it outputs a signal indicating if both hash values are present in the Bloom table by performing a bitwise AND operation on the relevant bits of the table. If the hash_ready signal is low, the output remains unchanged.
+module top_module(
+    input [9:0] hash1, hash2,
+    input [1023:0] bloom_table,
+    input hash_ready,
+    output reg is_bad_word
+    );

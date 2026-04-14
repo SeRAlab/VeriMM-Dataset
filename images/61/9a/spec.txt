@@ -1,0 +1,16 @@
+Implement the Verilog module based on the following description.
+Given a 4-bit register with a parallel load enable input, a serial shift enable input, and an asynchronous reset:
+
+1. The register loads the input data (D) on the rising edge of the clock if the parallel load enable (load) is high.
+2. The register shifts the data (serial_in) on the rising edge of the clock if the serial shift enable (shift) is high.
+3. The register resets to zero when the asynchronous reset (reset) is high.
+
+Write Verilog implementing this register.
+module shift_load_register (
+        input clk,
+        input load,
+        input shift,
+        input reset,
+        input [3:0] D,
+        input serial_in,
+        output reg [3:0] Q);

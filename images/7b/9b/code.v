@@ -1,0 +1,14 @@
+module parallel_load_shift_register (
+    input clk,
+    input reset,
+    input load,
+    input [3:0] load_value,
+    output reg [3:0] q
+);always @(posedge clk) begin
+        if (reset)
+            q <= 4'b0000;
+        else if (load)
+            q <= load_value;
+    end
+
+endmodule

@@ -1,0 +1,18 @@
+Please act as a professional Verilog designer.
+
+Implement a module for a 4-bit Johnson counter. The counter should cycle through the states from 0000 to 1111 in the Johnson sequence. When it reaches 1111, it should wrap around to 0000 and continue counting.
+
+Module name:
+    johnson_counter
+
+Input ports:
+    CLK: Clock input
+    RST: Active high reset signal
+
+Output ports:
+    Q: 4-bit output representing the current Johnson counter value
+
+Implementation:
+The johnson_counter module uses an always block to update the counter value based on the clock signal and reset signal. The always block triggers on the positive edge of the clock signal or the positive edge of the reset signal. It checks if the reset signal is active (RST) and sets the counter value to 0000. It then shifts the counter and inverts the least significant bit on each clock cycle.
+
+Give me the complete code.

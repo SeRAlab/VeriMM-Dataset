@@ -1,0 +1,7 @@
+Design a circuit that converts 16 switch inputs into two sets of LED outputs. When the reset signal is asserted, both the red and green LED outputs will be turned off. When not in reset, the lower 8 bits of the switch input will control the red LEDs, outputting the inverted value of these bits, while the upper 8 bits will control the green LEDs, also outputting their inverted values.
+module top_module(
+    input [15:0] switch_input,
+    input reset,
+    output reg [7:0] red_led_output,
+    output reg [7:0] green_led_output
+);

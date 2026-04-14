@@ -1,0 +1,12 @@
+Design a 64-entry, 8-bit wide FIFO (First-In-First-Out) memory buffer that supports synchronous read and write operations. The module features control signals for write enable (wr_en) and read enable (rd_en), along with asynchronous reset functionality. It manages data storage using a memory array, tracking both the current write and read pointers, as well as the count of stored items. Additionally, the FIFO indicates its full and empty states to prevent overflows and underflows during data transactions. The data output corresponds to the value at the current read pointer, ensuring sequential access to stored data.
+module top_module(
+    input clk,
+    input rst_n,
+    input wr_en,
+    input rd_en,
+    input [7:0] data_in,
+    output [7:0] data_out,
+    output empty,
+    output full,
+    output reg [5:0] count
+);

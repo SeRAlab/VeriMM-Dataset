@@ -1,0 +1,40 @@
+Design a pipeline register for transferring data between the Instruction Decode (ID) stage and the Execute (EX) stage of a processor. This module captures various inputs, including the instruction, program counter, register read data, and control signals on the rising edge of the clock, and outputs these values for the EX stage. It ensures correct data propagation throughout the stages of execution, facilitating a smooth pipeline operation necessary for efficient instruction processing in a CPU architecture.
+module top_module(
+    input wire clock,
+
+    input wire [31:0] ID_instruction,
+    output reg [31:0] EX_instruction,
+
+    input wire [31:0] ID_pc_plus_four,
+    output reg [31:0] EX_pc_plus_four,
+    input wire [31:0] RegReadDataA,
+    output reg [31:0] EX_RegReadDataA,
+    input wire [31:0] RegReadDataB,
+    output reg [31:0] EX_RegReadDataB,
+    input wire [31:0] extended,
+    output reg [31:0] EX_extended,
+
+    input wire RegWrite,
+    output reg EX_RegWrite,
+    input wire RegDst,
+    output reg EX_RegDst,
+    input wire MemRead,
+    output reg EX_MemRead,
+    input wire MemWrite,
+    output reg EX_MemWrite,
+    input wire MemToReg,
+    output reg EX_MemToReg,
+    input wire Branch,
+    output reg EX_Branch,
+    input wire ALUSrc,
+    output reg EX_ALUSrc,
+    input wire [1:0] ALUOp,
+    output reg [1:0] EX_ALUOp,
+
+    input wire [4:0] rs,
+    output reg [4:0] EX_rs,
+    input wire [4:0] rt,
+    output reg [4:0] EX_rt,
+    input wire [4:0] rd,
+    output reg [4:0] EX_rd
+    );

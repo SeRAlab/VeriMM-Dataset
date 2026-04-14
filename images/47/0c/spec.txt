@@ -1,0 +1,12 @@
+Design a module that incorporates both a 6-to-1 multiplexer and a 4-way minimum comparison circuit. The multiplexer selects one of the six 4-bit input data lines based on a 3-bit selector signal. Simultaneously, the module computes the minimum value among four 8-bit inputs. Finally, it performs an XOR operation between the output of the multiplexer and the computed minimum, producing an 8-bit output. This design effectively combines data selection and minimum value computation with logical operations.
+module top_module(
+    input [2:0] sel, // Select input for the 6-to-1 mux
+    input [3:0] data0, // Input 0 for the 6-to-1 mux
+    input [3:0] data1, // Input 1 for the 6-to-1 mux
+    input [3:0] data2, // Input 2 for the 6-to-1 mux
+    input [3:0] data3, // Input 3 for the 6-to-1 mux
+    input [3:0] data4, // Input 4 for the 6-to-1 mux
+    input [3:0] data5, // Input 5 for the 6-to-1 mux
+    input [7:0] a, b, c, d, // Inputs for the 4-way minimum circuit
+    output [7:0] out // Output of the functional module
+);

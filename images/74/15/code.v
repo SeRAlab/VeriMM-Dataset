@@ -1,0 +1,1 @@
+module top_module(output s, input p, input q, input w);assign s = p & q & w;endmodule

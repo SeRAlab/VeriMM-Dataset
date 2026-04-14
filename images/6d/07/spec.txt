@@ -1,0 +1,6 @@
+Design a circuit for an interrupt controller that processes multiple interrupt request signals and generates corresponding acknowledge signals based on their priority. The module accepts a variable number of interrupt requests (specified by the parameter n) and produces acknowledge signals (specified by the parameter m). It includes a priority encoder that determines which interrupt has the highest priority based on the incoming requests, with the highest priority represented by the most significant bit. The acknowledge signals are then generated based on the prioritized state of the interrupts. Additionally, it features a reset mechanism for clearing the interrupt request status. This design facilitates efficient handling of interrupts in a digital system, ensuring responsive and prioritized interruption management.
+module top_module(
+  input [n-1:0] irq,
+  input clear, // Added input for clear signal
+  output [m-1:0] ack
+);

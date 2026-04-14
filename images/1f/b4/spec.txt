@@ -1,0 +1,8 @@
+
+Design a simple Ethernet MAC controller transmit state machine. The state machine should have the following states: IDLE, TRANSMIT, and WAIT_FOR_ACK. The state transitions are as follows:
+- From IDLE, if the transmit signal is asserted, go to TRANSMIT state.
+- In TRANSMIT state, if transmission is complete, go to WAIT_FOR_ACK state.
+- In WAIT_FOR_ACK state, if an acknowledgment signal is received, return to IDLE state.
+- If the transmit signal is not asserted in IDLE, remain in IDLE state.
+- If the acknowledgment is not received in WAIT_FOR_ACK, remain in WAIT_FOR_ACK state.
+The state machine outputs the current state as a 2-bit output where IDLE = 00, TRANSMIT = 01, WAIT_FOR_ACK = 10.

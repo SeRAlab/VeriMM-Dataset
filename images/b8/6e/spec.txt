@@ -1,0 +1,10 @@
+Design a data processing module that generates and manages an 8-bit data sequence based on control signals. The module increments a register, `data_reg`, each clock cycle when data is available and not being read. On a rising clock edge, when reset is not asserted, it outputs the current value of `data_reg` to `data_out` and indicates that data is available through `data_out_en`. If `reset` is activated, both the data register and outputs are cleared. This module is intended for scenarios where data needs to be processed sequentially and made available for reading.
+module top_module(
+    input clk,
+    input data_available,
+    input [7:0] data_in,
+    input data_read,
+    input reset,
+    output reg [7:0] data_out,
+    output reg data_out_en
+    );

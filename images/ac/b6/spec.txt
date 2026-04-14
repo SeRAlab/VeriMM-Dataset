@@ -1,0 +1,15 @@
+Design a circuit that detects collisions between a polling point and a rectangular object in a coordinate system. The module takes the object's position (ObjectX, ObjectY), dimensions (ObjectW, ObjectH), and a polling point's coordinates (PollX, PollY) as inputs. Upon each clock cycle, the circuit checks if the polling point falls within the boundaries of the object; if it does, the Hit output indicates a collision. The functionality is resettable, ensuring the Hit output can be cleared to LOW when the reset signal is activated.
+module top_module(
+	input clk,
+	input reset,
+	
+	input [10:0] ObjectX,		
+	input [9:0] ObjectY,		
+	input [9:0] ObjectW,		
+	input [8:0] ObjectH,		
+	
+	input [9:0] PollX,			
+	input [8:0] PollY,			
+	
+	output Hit					
+	);

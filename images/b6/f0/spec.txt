@@ -1,0 +1,7 @@
+Design a circuit that calculates the parity bit for a 16-bit input data word. The module uses a clock and a reset signal to synchronize operations. On a reset, it initializes the count of '1's in the input data to zero and sets the parity bit to zero. On each clock cycle, it updates the count of '1's from the data inputs and determines the parity bit by taking the least significant bit of the count. The output parity bit indicates whether the number of '1's in the data is odd or even, making it useful for error detection in digital communication systems.
+module top_module(
+  input clk,
+  input reset,
+  input [15:0] data,
+  output reg parity_bit
+);

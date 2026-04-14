@@ -1,0 +1,24 @@
+Design a module that manages the Time Division Duplex (TDD) interface for the AD9361 transceiver, capable of controlling RF and VCO (Voltage Controlled Oscillator) states. The module takes clock and reset signals, alongside enable inputs for RX (receive) and TX (transmit) paths. It implements overlapping detection for VCO and RF signals to ensure that RF operations do not occur simultaneously on both TX and RX channels. The control logic determines the enabling of the AD9361 based on either pulse mode or level mode, outputting status flags that indicate the current state of overlaps and enabling the transaction direction. The outputs include the transceiver's direction (TX/RX), an enable signal, and an 8-bit status indication regarding the TDD operation, making it suitable for flexible communication applications.
+module top_module(
+
+  
+
+  clk,
+  rst,
+
+  
+
+  tdd_rx_vco_en,
+  tdd_tx_vco_en,
+  tdd_rx_rf_en,
+  tdd_tx_rf_en,
+
+  
+
+  ad9361_txnrx,
+  ad9361_enable,
+
+  
+
+  ad9361_tdd_status
+);

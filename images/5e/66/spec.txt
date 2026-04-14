@@ -1,0 +1,7 @@
+Design a 36-bit input data splitter that processes incoming data based on a valid signal and manages its readiness for output. This module contains three states to control data distribution: in the STATE_COPY_BOTH state, it outputs the input data simultaneously to two outputs if both are ready; in STATE_COPY_ZERO, it only allows the first output to transmit data; and in STATE_COPY_ONE, it only allows the second output to transmit data. The module ensures that valid flags indicate when outputs are carrying valid data, while also assessing their readiness to accept new data. The reset and clear signals facilitate state management, ensuring the module can restart or reset its operation as required.
+module top_module(
+        input clk, input rst, input clr,
+        input [35:0] inp_data, input inp_valid, output inp_ready,
+        output [35:0] out0_data, output out0_valid, input out0_ready,
+        output [35:0] out1_data, output out1_valid, input out1_ready
+    );

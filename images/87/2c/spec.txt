@@ -1,0 +1,7 @@
+Design a sequence detector that identifies the binary sequence "01". The module processes an input signal (`in_i`) on the rising edge of a clock signal (`clk_i`) to transition through states representing the detection of parts of the sequence. It has three states: IDLE (waiting for '0'), FOUND_0 (detected '0'), and FOUND_01 (detected '01'). When the full sequence "01" is detected, the output (`out_o`) is set high for one clock cycle before returning to an IDLE state upon detection of another '0' or resetting to zero when the state is not matched. The implementation is suitable for applications requiring recognition of specific binary patterns.
+module top_module(
+    input clk_i,
+    input rst_i,
+    input in_i,
+    output reg out_o
+);

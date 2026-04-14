@@ -1,0 +1,13 @@
+Design a Memory Writeback (MEMWB) stage of a processor pipeline that captures and holds data from the memory and ALU operations. The module latches input signals such as the read data, ALU result, destination register address, and control signals for writing back to the register file on the positive edge of the clock when not in reset. If the reset signal is asserted, it initializes all outputs to their default values, effectively clearing the pipeline stage to prepare for new data. This structure supports the transition of data to the next stage in the pipeline, ensuring proper synchronization and state management during processing.
+module top_module(
+    input clk,
+    input reset,
+    input [63:0] ReadDatain,
+    input [63:0] ALU_Resultin,
+    input MemtoReg, RegWrite,
+    input [4:0] rd,
+    output reg [63:0] ReadDataout,
+    output reg [63:0] ALU_Resultout,
+    output reg [4:0] rdOut,
+    output reg MemtoRegOut, RegWriteOut
+);

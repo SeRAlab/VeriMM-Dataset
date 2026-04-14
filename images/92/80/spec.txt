@@ -1,0 +1,6 @@
+Design a circuit that performs a segmented addition of two 32-bit inputs, `in1` and `in2`. The module computes the sum of corresponding segments of the inputs in overlapping groups and aggregates the results into a 33-bit output, `res`. Each segment consists of an 8-bit addition, producing temporary 9-bit values, which are then combined by extracting specific bits to form the final result. The design is aimed at optimizing the addition process by managing carry propagation across overlapping regions of the input bits.
+module top_module(
+    input [31:0] in1,
+    input [31:0] in2,
+    output [32:0] res
+    );

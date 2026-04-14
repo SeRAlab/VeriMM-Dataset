@@ -1,0 +1,8 @@
+Design a digital potentiometer that adjusts its resistance level based on control and data inputs. It has 4 control signals to select among 256 resistance levels stored in memory and 8 data signals to determine the resistance value. The module utilizes write enable and chip select signals to manage memory operations and output the current resistance level. When enabled, it computes the resistance as the product of selected memory content and data input; when disabled, the output is set to zero.
+module top_module(
+  input [n-1:0] ctl,
+  input [m-1:0] data,
+  input we,
+  input cs,
+  output out
+);

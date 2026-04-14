@@ -1,0 +1,8 @@
+Design a 4-bit adder with carry output functionality. The module takes two 4-bit input vectors, `a` and `b`, computes their sum, and produces a 5-bit output result, `c`, which includes the carry bit. The carry output (`co`) is directly derived from the highest bit of the sum. Additionally, the module incorporates a clock signal to allow for sequential operations, enabling the addition of a previously computed carry with the new sum during each clock cycle. This design allows for chaining in multiple adder configurations.
+module top_module(
+    input [3:0] a,
+    input [3:0] b,
+    input clk,      // Added clk input
+    output reg [4:0] c,
+    output reg co
+);

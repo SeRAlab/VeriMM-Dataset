@@ -1,0 +1,12 @@
+Design a register-based module that performs the addition of two input values and outputs the least significant two bits of their sum, along with several status flags. The module incorporates a clock-driven mechanism to update outputs on the rising edge of the clock. Upon activation of the asynchronous reset (AR), outputs are cleared to predefined values indicating no overflow or underflow. The module sets flag signals based on the sum's value: it indicates whether the sum is greater than 2 (overflow) or less than 0 (underflow), and tracks whether the sum is zero. This design effectively serves to manage arithmetic operations while providing necessary feedback for overflow and underflow conditions.
+module top_module(
+    output reg [1:0] Q,
+    output reg D,
+    output reg DI,
+    output reg UNDRFLW_FLAG_FRMT,
+    output reg OVRFLW_FLAG_FRMT,
+    input [0:0] Q_reg_1_0,
+    input [2:0] Q_reg_2_0,
+    input CLK,
+    input [0:0] AR
+);

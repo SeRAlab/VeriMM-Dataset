@@ -1,0 +1,13 @@
+Design a D flip-flop with additional set and clear controls. The module captures the value of input D on the rising edge of the clock (CLK) while allowing for asynchronous set (SCD) and clear (SCE) functionalities. When SCD is high and SCE is low, the output Q is set to high; when SCE is high and SCD is low, Q is cleared to low. In the absence of both conditions (where both SCD and SCE are low), Q directly follows the value of D. The module also provides the complementary output Q_N, which is the inverse of Q.
+module top_module(
+    output reg Q   , // Changed to output reg
+    output wire Q_N , // Changed to output wire
+    input  CLK ,
+    input  D   ,
+    input  SCD ,
+    input  SCE ,
+    input  VPWR,
+    input  VGND,
+    input  VPB ,
+    input  VNB 
+);

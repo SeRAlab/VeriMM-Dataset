@@ -1,0 +1,7 @@
+Design a circuit that converts a 4-bit binary input to Gray code. The module takes a 4-bit binary input and generates the corresponding Gray code output. Additionally, it performs XOR and bitwise AND operations between the binary input and the Gray code, using a multiplexer to select either the XOR or AND result as the final output. A second output also provides the result of the AND operation between the Gray code and the binary input. The `select` signal determines which operation's output is presented as the primary output, allowing flexibility in the output based on the selected operation type.
+module top_module(
+  input [3:0] binary_input,
+  input select,
+  output [3:0] gray_output,
+  output [3:0] gray_and_binary_output
+);

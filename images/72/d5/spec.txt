@@ -1,0 +1,11 @@
+Design a synchronous flip-flop with asynchronous set and reset functionality. The flip-flop has a data input (D), a clock input (CLK_N), and control signals for set (SET_B) and reset (RESET_B). It operates on the negative edge of the clock, updating its output Q based on the conditions of the control inputs. When SCD (set clear) is active, the output Q is set to LOW, and Q_N is set to HIGH. When SCE (set enable) is active, Q is set to HIGH, and Q_N is set to LOW. If neither control condition is met, the output follows the D input. The asynchronous set and reset capabilities ensure that the outputs can be forcibly driven HIGH or LOW regardless of the clock state.
+module top_module(
+    output Q      ,
+    output Q_N    ,
+    input  D      ,
+    input  SCD    ,
+    input  SCE    ,
+    input  CLK_N  ,
+    input  SET_B  ,
+    input  RESET_B
+);

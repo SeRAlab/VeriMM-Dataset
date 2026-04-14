@@ -1,0 +1,10 @@
+Design a memory interface block that supports read and write operations to an internally defined memory array. The module utilizes a clock and reset for synchronous operation, with separate input signals for address and data, as well as a write enable signal to dictate memory writing actions. The memory can be configured for various types (such as DDR or SRAM) and accommodates multiple memory banks through a bank selection signal. When the write enable is active, data from the `din` input is written to the specified address; otherwise, the module outputs the data from the addressed location via the `dout` output. The design encapsulates functionality typical of a memory controller in digital systems.
+module top_module(
+  input clk,
+  input rst,
+  input we,
+  input [31:0] addr,
+  input [data_width-1:0] din,
+  input [bank_sel_width-1:0] bank_sel,
+  output [data_width-1:0] dout
+);

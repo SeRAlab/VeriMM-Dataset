@@ -1,0 +1,7 @@
+Design a circuit that serves as a tap for power management in an integrated circuit, generating two outputs: 'tap' and 'tap_bar'. The module's behavior varies based on the states of the input signals VPWR and VGND, producing specific logic levels or undefined states (x) for the outputs. It outputs LOW on 'tap' when VPWR is HIGH and VGND is LOW, with 'tap_bar' producing the inverse condition. The circuit also handles various conditions when the inputs are in an indeterminate state (x), ensuring proper functionality in scenarios involving power supply fluctuations.
+module top_module(
+    input wire VPWR,
+    input wire VGND,
+    output wire tap,
+    output wire tap_bar
+);

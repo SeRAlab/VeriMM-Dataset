@@ -1,0 +1,6 @@
+Design a pointer register module that manages two separate data files, one containing 12-bit identifiers (`lbidfile`) and another containing 16-bit offsets (`ofsfile`). This module allows for the reading and writing of data based on control signals. When the write enable (`we`) signal is active, the module updates the contents of the specified memory locations with new data (`lbidw` and `offs`). Additionally, it retrieves values from the memory files based on input pointers (`p0` and `p1`) and provides a request signal for program counter updates when a specific condition is met. The outputs are synchronous with the clock, ensuring stable operation during data transactions.
+module top_module(clk, 
+	p0, p1, pw, 
+	lbid0, lbid1, lbidw, 
+	ofs0, ofs1, ofsw, 
+	we, pc_update_req);

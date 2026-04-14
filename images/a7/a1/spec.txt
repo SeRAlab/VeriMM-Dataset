@@ -1,0 +1,15 @@
+Implement a Verilog module for an 8-bit bidirectional shift register. The register should shift its value left or right on every positive clock edge based on the dir input.
+
+Time 0ns: clk = 0, dir = 0, d = 8'bxxxxxxxx, q = 8'bxxxxxxxx.
+Time 5ns: clk = 1, dir = 1, d = 8'b10101010, q = 8'bxxxxxxxx.
+Time 10ns: clk = 0, dir = 1, d = 8'b10101010, q = 8'b01010101.
+Time 15ns: clk = 1, dir = 1, d = 8'b11001100, q = 8'b00101010.
+Time 20ns: clk = 0, dir = 1, d = 8'b11001100, q = 8'b00010101.
+Time 25ns: clk = 1, dir = 0, d = 8'b00011011, q = 8'b00101010.
+Time 30ns: clk = 0, dir = 0, d = 8'b00011011, q = 8'b01010100.
+
+module top_module (
+	input clk,
+	input dir,
+	input [7:0] d, 
+	output reg [7:0] q);

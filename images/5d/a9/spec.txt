@@ -1,0 +1,10 @@
+Design a 32-bit arithmetic logic unit (ALU) that performs various operations based on a 3-bit control signal. The ALU can conduct addition, subtraction, and bitwise operations like AND, XOR, and OR on two 32-bit input data values, `data1` and `data2`. The operation is triggered on the rising edge of a clock signal, producing a 32-bit output. The module also generates an output flag for carry and checks if the final output is zero. If an invalid control signal is received, the outputs are reset to zero.
+module top_module(
+    input [31:0] data1,
+    input [31:0] data2,
+    input [2:0] ctrl,
+    input clk,
+    output reg oCarry,
+    output reg oZero,
+    output reg [31:0] out
+);

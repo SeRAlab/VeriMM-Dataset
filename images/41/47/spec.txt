@@ -1,0 +1,6 @@
+Design a 4-to-16 line decoder circuit. The module takes a 4-bit input, `in`, and activates one of the 16 outputs in `out` based on the value of `in`. Specifically, when `in` matches one of the binary values from `0001` to `1111`, the corresponding output line is set high (active), while the remaining outputs are low. The outputs are registered, capturing the active line on the rising edge of the clock signal. This decoder can be utilized for address decoding or control signal generation in digital systems.
+module top_module(
+    input [3:0] in,
+    input clk,           // Add clk input
+    output reg [15:0] out
+);

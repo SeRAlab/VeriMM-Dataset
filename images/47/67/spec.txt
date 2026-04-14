@@ -1,0 +1,11 @@
+Design a pipeline register for an instruction-fetch to instruction-decode (IF/ID) stage in a processor. This module captures the fetched instruction (`instr_F`) and the next program counter value (`npc_F`) on the rising edge of the clock, unless the reset signal is asserted, in which case it initializes its outputs to zero. Additionally, if a stall condition is detected (`Stall_D`), the module holds the current values of the outputs (`instr_D` and `npc_D`), preventing any updates, thereby facilitating control flow management within a pipelined architecture.
+module top_module(
+    input clk,
+    input [31:0] instr_F,
+    input Stall_D,
+    input PCSrc_D,
+    input [31:0] npc_F,
+    output reg [31:0] instr_D,
+    output reg[31:0] npc_D,
+	 input reset
+    );

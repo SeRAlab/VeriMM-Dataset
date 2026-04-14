@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit shift register with parallel load and serial output. The shift register takes in a 4-bit parallel input (data_in) and loads it into the register based on the load signal (load). It shifts the data out serially through the serial output (data_out). The shifting operation is controlled by a clock signal (clk) and a reset signal (reset).
+
+Module name:  
+   shift_register_4bit  
+
+Input ports:
+   clk: Clock signal used for synchronous operation.
+   reset: Reset signal used to initialize the shift register.
+   load: Control signal for parallel load operation.
+   data_in: 4-bit parallel input to be loaded into the register.
+
+Output ports:
+   data_out: Serial output representing the shifted data.
+
+Implementation:
+On the positive edge of the clock signal (clk) or the positive edge of the reset signal (reset), the module updates the register.
+If the reset signal (reset) is high, the register is set to 0.
+If the reset signal (reset) is low, indicating normal operation, the module checks the load signal (load).
+If the load signal (load) is high, the register is loaded with the parallel input (data_in).
+If the load signal (load) is low, the data is shifted out serially through the serial output (data_out).
+
+Give me the complete code.
+`timescale 1ns / 1ps
+module shift_register_4bit (clk, reset, load, data_in, data_out);
+   input clk, reset, load;
+   input [3:0] data_in;
+   output data_out;

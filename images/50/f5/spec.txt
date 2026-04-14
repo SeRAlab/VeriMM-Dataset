@@ -1,0 +1,11 @@
+Design a register-based circuit that updates a 32-bit output, `q`, based on specific control signals and the state of a 33-bit ALU input. The module operates on the rising edge of the clock and can be reset to zero. It responds to a `state_fetch` signal combined with `qs0` and `qs1` to determine how to manipulate the output: maintaining its current value, rotating the bits left while inserting the inverse of the ALU's most significant bit, rotating bits right while introducing the least significant bit of the ALU, or loading the entire 32 bits of the ALU output directly into `q`.
+module top_module(input wire	     state_fetch,
+
+   input wire	     qs0,
+   input wire	     qs1,
+
+   input wire [32:0] alu,
+   output reg [31:0] q,
+
+   input wire	     clk,
+   input wire	     reset);

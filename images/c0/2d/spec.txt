@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+    
+Implement a module to handle the write-back phase in a processor's pipeline, specifically in the context of memory operations. Its primary functions include:
+
+Storing the data read from memory along with its validity status.
+Holding the destination register identifier for the data read from memory.
+Propagating the read data, its validity, and the destination register identifier to subsequent stages of the pipeline.
+
+This module plays a crucial role in ensuring that data fetched from memory is correctly written back to the register file, thereby completing the execution of load instructions. It acts as a buffer that temporarily holds the data read from memory and its associated control signals during memory stalls, ensuring the integrity of data transfer within the processor's pipeline.
+
+Module name:  
+	a25_write_back
+
+Input ports:
+	i_clk (input): The clock signal. It is used to synchronize the internal operations of the module with the rest of the system.
+	i_mem_stall (input): A signal indicating a stall condition in the memory stage. When asserted, it prevents the update of internal registers to handle memory access delays.
+	i_mem_read_data (input, 32 bits): The data read from memory. This data is intended to be written back to the register file.
+	i_mem_read_data_valid (input): A signal indicating the validity of the data read from memory. It ensures that only valid data is written back to the register.
+	i_mem_load_rd (input, 11 bits): The identifier of the destination register for the data read from memory.
+	i_daddress (input, 32 bits): The memory address from which data was read. This input is currently stored but not utilized in the output interface.
+	i_daddress_valid (input): A signal indicating the validity of the memory address. This input is not directly used in the current module's logic.
+Output ports:
+	o_wb_read_data (output, 32 bits): The data to be written back to the register file, sourced from i_mem_read_data.
+	o_wb_read_data_valid (output): A signal indicating the validity of the writeback data, sourced from i_mem_read_data_valid.
+	o_wb_load_rd (output, 11 bits): The identifier of the destination register for the writeback data, sourced from i_mem_load_rd.
+
+
+Implementation:
+The a25_write_back module is designed to handle the write-back phase of a processor's memory operation. It is a critical component in the execution pipeline, particularly in the context of load instructions where data fetched from memory needs to be written back to the processor's register file. The module operates synchronously with the system clock (i_clk) and incorporates logic to manage data under conditions of memory stalls (i_mem_stall).
+
+Give me the complete code.
+

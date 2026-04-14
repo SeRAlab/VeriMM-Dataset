@@ -1,0 +1,7 @@
+Design a transition detector that identifies changes in a 32-bit input signal. The module operates in three states: IDLE, DETECT, and HOLD. In the IDLE state, the output is reset to zero, and the detector is ready to transition to the DETECT state upon detecting a change in the input (i.e., the input is not equal to 0xFFFFFFFF). In the DETECT state, the module captures the inverted values of the input and combines them with the existing output. If the input returns to 0xFFFFFFFF, it transitions to the HOLD state, where the output remains unchanged until another reset occurs. The output is a 32-bit register that reflects detected transitions in the input.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] in,
+    output reg [31:0] out
+);

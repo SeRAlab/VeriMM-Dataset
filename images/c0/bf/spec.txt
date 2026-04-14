@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+    
+Implement a module to count the number of '1's (ones) in two separate 64-bit input vectors, labeled `B` and `R`. It outputs two 7-bit counts, `cntB` and `cntR`, representing the number of ones in each respective input vector. This module can be utilized in systems requiring bit population count, such as error detection/correction schemes, data compression algorithms, or any application where the density of binary information is relevant.
+
+Module name:  
+	RB_cnt
+
+Input ports:
+	clk (input): A clock signal that drives the sequential logic of the module, ensuring that the counting operation is synchronized with the system clock.
+	RST (input): A synchronous reset signal. When asserted (1), it resets the output counts cntB and cntR to 0, ensuring the module can start counting from a known state.
+	B (input, [63:0]): A 64bit vector representing the first binary sequence whose ones are to be counted.
+	R (input, [63:0]): A 64bit vector representing the second binary sequence whose ones are to be counted.
+Output ports:
+	cntB (output, [6:0]): A 7bit output representing the count of ones in the input vector B.
+	cntR (output, [6:0]): A 7bit output representing the count of ones in the input vector R.
+
+
+Implementation:
+The RTL module RB_cnt is designed to count the number of '1's in two 64-bit input vectors, B and R, and output these counts as 7-bit wide signals, cntB and cntR, respectively. The module operates synchronously with a clock signal clk and can be asynchronously reset using the RST signal. The design employs both combinational and sequential logic to achieve its functionality.
+Combinational Logic:
+The core of the module's combinational logic is found within the always block that triggers on any change of its inputs (always @()). This block is responsible for partitioning each 64-bit input vector (B and R) into eight 8-bit segments. Each segment's bits are then summed to produce an 8-bit count (although, due to a coding oversight, these are incorrectly declared as 4-bit registers, which should be corrected to at least 8 bits to avoid overflow). These partial sums are stored in intermediate registers (cntB_p00_d to cntB_p07_d for B and cntR_p00_d to cntR_p07_d for R). Subsequently, the partial sums for each vector are aggregated to produce a total count of '1's present in each 64-bit vector. These totals are stored in cntB_d and cntR_d.
+Sequential Logic:
+The sequential logic is encapsulated within the always block that triggers on the positive edge of the clock signal (always @(posedge clk)). This block checks the state of the RST signal. If RST is asserted (RST = 1), the output registers cntB_q and cntR_q are asynchronously reset to 0. If RST is not asserted, the total counts calculated by the combinational logic (cntB_d and cntR_d) are transferred to these output registers, making the counts available at the module's outputs (cntB and cntR) through continuous assignment statements.
+
+Give me the complete code.
+

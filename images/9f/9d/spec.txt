@@ -1,0 +1,7 @@
+Design a synchronous counter that counts up to 15, with a comparator that checks if the count has reached or exceeded a fixed value of 10. The module also includes a priority encoder that outputs a 2-bit encoded indication of the highest priority condition among the counter state and the comparator result. When the reset signal is active, the counter resets to zero, and the encoder output also resets. The counter output is a 4-bit wide value, the comparator output signals when the counter meets or exceeds the comparison threshold, and the 2-bit priority output indicates the state of the counter and comparator, allowing for systematic control logic based on the highest priority detected condition.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    output reg [3:0] counter_out,
+    output reg comp_out, // Output from comparator module
+    output reg [1:0] pos  );

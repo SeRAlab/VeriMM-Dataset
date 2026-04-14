@@ -1,0 +1,11 @@
+Design a display controller module that manages a 4-digit seven-segment display. It utilizes a binary counter that increments on each clock cycle, and based on the two most significant bits of the counter, it activates one of four anodes while outputting corresponding binary data to the cathodes. The module resets to an idle state when the reset signal is active, ensuring the display shows no activity during initialization. This implementation allows for cycling through four different inputs for display purposes, effectively multiplexing the inputs for visual representation.
+module top_module(
+    input wire clk,
+    input wire rst,
+    input wire [7:0] in0,
+    input wire [7:0] in1,
+    input wire [7:0] in2,
+    input wire [7:0] in3,
+    output reg [3:0] anode,
+    output reg [7:0] cathode
+    );

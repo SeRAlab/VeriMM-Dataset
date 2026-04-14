@@ -1,0 +1,8 @@
+Design a clock gating circuit that controls the propagation of a clock signal. The `clk_out` signal will only receive the `clk_in` signal when either `clock_en` or `test_mode` is asserted, but only if `FPGA_SOURCE` is not defined, in which case `clk_out` is always enabled. This module optimizes power consumption by selectively allowing the clock to propagate based on the active conditions, making it suitable for use in FPGA designs.
+module top_module(
+  input   clk_in,
+  input   test_mode,
+  input   clock_en,
+  input   FPGA_SOURCE,
+  output  clk_out
+);

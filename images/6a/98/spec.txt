@@ -1,0 +1,3 @@
+The module implements a rounding mechanism for floating-point numbers, processing inputs for exponent and fraction parts, while managing potential overflow conditions. It operates on the rising edge of the clock and uses a combination of shift and increment signals to adjust the fraction and exponent values accordingly. The module determines if it should round up the fraction based on specific bit checks and conditions. The outputs include the final fraction result, exponent result, total result, and an overflow indication that signals when a rounding operation exceeds the representable range. The module also resets its outputs to zero when the reset signal is activated.
+module top_module(clk,res,shift,incre,
+  exp_result,fra_result,result,overflow);

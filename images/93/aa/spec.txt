@@ -1,0 +1,6 @@
+Design a 4-bit input decoder that outputs a 16-bit wide signal controlling an array of LEDs. The circuit takes a 4-bit `SystemVal` input and, upon the positive edge of the `clk` signal, sets the corresponding single bit in the 16-bit `led` output high based on the value of `SystemVal`. Each value from 0 to 15 uniquely lights up one LED, effectively creating a visual representation of the `SystemVal` in a binary format across the LED array.
+module top_module(
+input clk,
+input [3:0]SystemVal,
+output reg [15:0]led
+    );

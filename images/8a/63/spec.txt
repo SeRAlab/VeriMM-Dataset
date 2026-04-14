@@ -1,0 +1,6 @@
+Design a two-bit wide output decoder with a 4-bit wide input. The module performs two operations based on a 2-bit select signal (sel): when sel is 00, it outputs the two's complement of the lower two bits of in_data; when sel is 01, it performs a left shift on in_data, effectively discarding the least significant bit. For any other values of sel, the output defaults to 00.
+module top_module(
+    input [3:0] in_data,
+    input [1:0] sel,
+    output reg [1:0] out_data
+);

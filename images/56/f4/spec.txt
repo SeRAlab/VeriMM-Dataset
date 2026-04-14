@@ -1,0 +1,7 @@
+Implement a temperature conversion module that captures a 12-bit Celsius temperature input on each rising clock edge, with an active reset signal to initialize the temperature to zero. The module converts the Celsius input to Fahrenheit, calculating the Fahrenheit equivalent and storing the upper ten bits of the result in a 16-bit output register. This design effectively creates a temperature sensor interface that facilitates temperature data conversion and output for further processing or display.
+module top_module(
+    input clk,
+    input reset,
+    input [11:0] temp_input,
+    output reg [15:0] temp_output
+);

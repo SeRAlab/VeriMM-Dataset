@@ -1,0 +1,18 @@
+Please act as a professional Verilog designer.
+
+Implement a module of a 4-bit binary counter that counts up or down based on the control signal count_dir. The counting can be controlled using the input signal enable. The counter resets to 0 when the reset signal (rst_n) is active.
+
+Module name:
+    binary_counter
+Input ports:
+    rst_n: Reset signal (active low)
+    clk: Clock signal
+    enable: Signal to enable counting
+    count_dir: Signal to control count direction (1 for up, 0 for down)
+Output ports:
+    count: 4-bit output representing the current counter value
+
+Implementation:
+If the reset signal is active (!rst_n), the counter is reset to 0 by assigning the value 4'b0000 to the output register (count). If the enable signal is 1, the counter counts up or down based on the count_dir signal. If the count_dir signal is 1, the counter counts up; if it is 0, the counter counts down. If the enable = 0, the counter will stop, and the output register (count) remains unchanged.
+
+Give me the complete code.

@@ -1,0 +1,9 @@
+Design a dual-port RAM module that allows simultaneous read and write operations. This memory block is capable of storing 1024 words, each 8 bits wide, accessed through a common address space. The module is designed to operate with a clock input and includes separate enable signals for reading and writing. When read enable is active, the data at the specified address is output on 'q'. When write enable is active, the input data is written to the memory at the provided address. This setup is useful in applications requiring concurrent access to memory, such as in data buffering or processing tasks.
+module top_module(
+    input clk,
+    input rd_en,
+    input wr_en,
+    input [9:0] addr,
+    input [7:0] data,
+    output reg [7:0] q
+);

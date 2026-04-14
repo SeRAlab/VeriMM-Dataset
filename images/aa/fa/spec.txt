@@ -1,0 +1,7 @@
+Design a clock generator for audio applications that produces two clock signals: `bclk`, which is the inverted value of the second least significant bit of an 8-bit counter, and `wclk`, which corresponds to the most significant bit of the same counter. The module uses an 8-bit counter that decrements on every positive edge of the master clock input (`mclk`), and it outputs the current counter value on `cnt256_n`. This module is useful for generating timing signals necessary for audio processing.
+module top_module(
+    input mclk,
+    output bclk,
+    output wclk,
+    output [7:0] cnt256_n
+);

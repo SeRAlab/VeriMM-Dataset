@@ -1,0 +1,9 @@
+Design a dual-port RAM module capable of simultaneous read and write operations. The module allows two independent write addresses (wa1 and wa2) with selective byte enables (wbe) to update specific bytes of the data inputs (din1 and din2) on the rising edge of the clock, based on the provided write enable signals (we1 and we2). The read address (ra) enables fetching the 32-bit data word from the memory, which is outputted to both dout1 and dout2, allowing access to the same data from different ports. This design supports efficient memory management in applications requiring concurrent data access.
+module top_module(
+    input wire clk,
+    input wire [7:0] ra, wa1, wa2,
+    input wire [3:0] wbe,
+    input wire [31:0] din1, din2,
+    input wire we1, we2,
+    output reg [31:0] dout1, dout2  // Change output from wire to reg
+);

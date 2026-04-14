@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+
+Implement a module of a 6-bit synchronous counter with enable signal and load signal. The counter increments only when the enable signal is high. When the load signal is active, the counter loads a preset value (preset_val). The counter resets to 0 when the reset signal (rst) is active.
+
+Module name:
+    counter_enable_load_6                
+Input ports:
+    rst: Reset signal (active high)
+    clk: Clock signal
+    enable: Signal to enable counting (1 for enable, 0 for disable)
+    load: Signal to load preset value (active high)
+    preset_val: 6-bit value to load into the counter
+Output ports:
+    count: 6-bit output representing the current count value
+
+Implementation:
+If the reset signal is active (rst), the counter is reset to 0 by assigning the value 6'b000000 to the output register (count). If load is high, the counter loads the preset value. If enable is high, the counter increments on each positive clock edge.
+
+Give me the complete code.

@@ -1,0 +1,10 @@
+
+Create a 4-channel DMA controller that can handle read and write requests. The controller should have the following inputs and outputs:
+- Inputs:
+  - clk: Clock signal
+  - rst: Reset signal
+  - req: 4-bit request signal (req[3:0] for channels 0 to 3)
+  - ack: 4-bit acknowledge signal (ack[3:0] for channels 0 to 3)
+- Outputs:
+  - grant: 4-bit grant signal (grant[3:0] for channels 0 to 3)
+The controller should grant access to the highest priority channel that has a request. When a channel is granted, its grant signal should be high until the corresponding acknowledge signal is received. If multiple requests are received at the same time, the highest priority (lowest channel number) should be granted first.

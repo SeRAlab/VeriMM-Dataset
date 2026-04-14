@@ -1,0 +1,7 @@
+Design a pseudo-random number generator (PRNG) that produces an 8-bit random output based on a linear feedback shift register (LFSR) architecture. Upon receiving a clock pulse, the module evaluates a reset condition; if asserted, it initializes a 100-bit shift register and sets the output to a provided seed value. If not in reset, it shifts bits through the register while generating new bits based on XOR feedback from specific positions of the shift register. The resulting 8-bit output is derived from selected bits of the shift register, ensuring that the output exhibits pseudo-random characteristics influenced by the initial seed and the shifting process.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] seed,
+    output reg [7:0] q
+);

@@ -1,0 +1,12 @@
+Implement a register file with 32 thirty-two-bit registers, capable of reading and writing data based on specified addresses. When the reset signal is asserted (negedge), all registers are initialized to zero. On the rising edge of the clock, the module outputs the contents of the registers at addresses specified by addra and addrb. If the enc signal is high, it writes the value of datac to the register at address addrc, allowing for dynamic updates to the register contents during operation.
+module top_module(
+    input clock,
+    input reset,
+    input [4:0] addra,
+    output reg [31:0] dataa,
+    input [4:0] addrb,
+    output reg [31:0] datab,
+    input enc,
+    input [4:0] addrc,
+    input [31:0] datac
+);

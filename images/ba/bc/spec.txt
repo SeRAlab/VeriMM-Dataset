@@ -1,0 +1,9 @@
+Design a synchronous memory module that interfaces with an external memory block. The module has a clock input (clk), an enable signal (en), and a write enable signal (we) to control memory operations. It accepts a 12-bit address (addr) to access specific memory locations and an 8-bit data input (din) for writing data into the memory. The output (dout) provides the read data from the memory, allowing data to be retrieved from the designated address when enabled. The functionality is geared towards storage applications, where data can be written to and read from a memory array based on the control signals.
+module top_module(
+    input clk,
+    input en,
+    input we,
+    input [11:0] addr,
+    input [7:0] din,
+    output reg [7:0] dout
+);

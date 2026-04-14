@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+
+Implement a 16-bit Register with parallel input and output. The register captures the input data on each clock cycle if the enable signal is high.
+
+Module name:
+    reg16
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    en: Enable signal. If high, the register captures the input data.
+    data_in: 16-bit parallel input.
+
+Output ports:
+    data_out: 16-bit parallel output representing the contents of the register.
+
+Implementation:
+The module implements a 16-bit register using a register and an always block. The register captures the input data on each positive edge of the clock signal if the enable signal is high. If the reset signal is high, the register is reset to zero.
+
+Give me the complete code.
+
+module reg16(
+    input clk,
+    input rst,
+    input en,
+    input [15:0] data_in,
+
+    output [15:0] data_out
+);

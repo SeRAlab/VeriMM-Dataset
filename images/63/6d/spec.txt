@@ -1,0 +1,10 @@
+Design a hazard detection unit for a pipelined processor. This module identifies read-after-write hazards by monitoring the instruction execution stages. When the memory read signal (ID_EX_MEMR_i) indicates that the previous instruction is in the memory stage and its destination register (ID_EX_RD_i) matches any source register of the current instruction (RS1_i or RS2_i), it generates control signals to prevent writing to the program counter (PCWrite_o) and to the instruction fetch/decode stage (IF_ID_Write_o). Additionally, it asserts a bubble signal (BubbleSignal_o) to introduce pipeline stalls, thereby avoiding hazards and maintaining correct instruction execution flow.
+module top_module(
+	ID_EX_MEMR_i,
+	RS1_i,
+	RS2_i,
+	ID_EX_RD_i,
+	PCWrite_o,
+	IF_ID_Write_o,
+	BubbleSignal_o
+);

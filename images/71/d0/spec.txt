@@ -1,0 +1,5 @@
+Design a circuit that implements a Fletcher checksum algorithm for error detection. The module processes an input array of 'n' data words, where 'n' is defined as a parameter, and calculates a 32-bit checksum. The circuit computes two running sums, `sum1` and `sum2`, which are derived from both the original and bitwise complemented values of the data words. The final checksum is produced by inverting the sum of these two accumulators, providing a robust way to verify data integrity in communication systems.
+module top_module(
+  input [n-1:0] data,
+  output reg [31:0] checksum  // Changed to reg to allow assignment in always block
+);

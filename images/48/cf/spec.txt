@@ -1,0 +1,18 @@
+Please act as a professional verilog designer.
+
+Implement a 10-bit Johnson counter, and the operation of the similar 4-bit Johnson counter example is as follows: 0000, 0001, 0011, 0111, 1111, 1110, 1100, 1000.
+
+Module name:  
+    Johnson_counter_10               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the counter.
+Output port:
+    Q: 10-bit register representing the current Johnson counter value.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the register value is updated.
+If the reset signal (rst_n) is low, indicating a reset condition, the register value (Q) is set to 0.
+Otherwise, the register value is shifted right by one bit with the inverted MSB feedback to the LSB.
+
+Give me the complete code.

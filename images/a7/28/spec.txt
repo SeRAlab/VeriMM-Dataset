@@ -1,0 +1,6 @@
+Design a circuit that functions as a 2-to-1 multiplexer for clock signals. It takes two clock inputs (clk[0] and clk[1]) and outputs one of them (clk_out) based on the value of the select signal (sel). If sel is 0, clk_out will reflect clk[0]; if sel is 1, it will reflect clk[1]. Additionally, the design updates the output on the rising edge of the selected clock, ensuring that clk_out synchronously follows the selected input clock signal. Note that the design includes a parameter to allow for flexibility in the number of input clock signals, although it currently only utilizes two of them.
+module top_module(
+  input [n-1:0] clk,
+  input sel,
+  output reg clk_out // Changed to reg type
+);

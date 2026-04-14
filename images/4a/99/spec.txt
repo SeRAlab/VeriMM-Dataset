@@ -1,0 +1,9 @@
+Design a 10-element FIFO (First-In, First-Out) memory buffer that allows for data input and output operations. The module utilizes a clock signal for synchronization and includes a synchronous reset to initialize the pointers and count. It has control signals for write enable (wr_en) and read enable (rd_en), with corresponding outputs indicating if the buffer is empty or full. Data is written to the memory array when wr_en is asserted and the buffer is not full, while data is read and output when rd_en is asserted and the buffer is not empty.
+module top_module(input clk,
+   input srst,
+   input wr_en,
+   input rd_en,
+   input [9:0] data_in,
+   output reg [9:0] data_out,  // Changed output to reg
+   output empty,
+   output full);

@@ -1,0 +1,7 @@
+Design a simple synchronous RAM module with a depth of 64 entries, each 8 bits wide. The module allows writing data to a specified address when the write enable (we) signal is active on a clock edge. It also outputs the stored data from a specified read address on each clock cycle. The module captures data from the `data` input when writing and provides the output `q` based on the `read_addr` input, effectively functioning as a small read/write memory.
+module top_module(
+	input [7:0] data,
+	input [5:0] read_addr, write_addr,
+	input we, clk,
+	output reg [7:0] q
+);

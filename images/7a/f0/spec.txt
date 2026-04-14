@@ -1,0 +1,9 @@
+Design a circuit for LED control that interfaces with various control signals. The module takes a read signal, a write signal, a reset signal, and a chip enable signal, along with 8 bits of data input. When the write signal is active (low), the incoming data is stored; upon chip enable being inactive (low), the LEDs output the inverted stored data. If chip enable is active, the LEDs are driven high. The module also supports reading the stored data when the read signal is low, driving the data line as high impedance otherwise. Additionally, activating the reset signal initializes both the stored data and LEDs to known states.
+module top_module(
+    input  wire read_n,
+    input  wire write_n,
+    input  wire reset_n,
+    input  wire ce_n,
+    input  wire [7:0] data,
+    output reg [7:0] leds  // Change output to reg
+);

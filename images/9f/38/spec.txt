@@ -1,0 +1,10 @@
+Design a circuit that incorporates a 4-bit shift register, a 3-bit adder, and an AND gate. The shift register captures a serial input bit and outputs a 4-bit value, updating on the rising edge of the clock while held in reset. The adder takes the 4-bit value from the shift register and adds it to a 3-bit external input, producing a 3-bit output. Additionally, the circuit performs a bitwise AND operation between the shift register output and the adder's output, resulting in a 4-bit output from the AND operation.
+module top_module( 
+    input clk,                  // System clock
+    input reset,                // Synchronous active-high reset
+    input serial_in,            // Serial input for the shift register
+    input [2:0] external_in,    // External 3-bit input for the adder
+    output [3:0] shift_reg_out, // 4-bit output from the shift register
+    output [2:0] adder_out,     // 3-bit output from the adder
+    output [3:0] and_out        // 4-bit output from the AND module
+);

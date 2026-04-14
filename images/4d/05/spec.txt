@@ -1,0 +1,9 @@
+Design a circuit that combines a barrel shifter and a multiplexer for 16-bit signals with parity generation. The module takes two 16-bit inputs and a 4-bit shift amount; it allows for a left or right shift of the first input based on the shift amount. A select (sel) signal determines whether the output will be the shifted first input or the second input. Additionally, the circuit computes the parity of the chosen output, producing a single parity output bit that reflects the even or odd nature of the resultant bit pattern.
+module top_module(
+    input wire [15:0] in1,
+    input wire [15:0] in2,
+    input wire [3:0] shift_amt,
+    input wire sel,
+    output wire [15:0] out,
+    output wire parity
+);

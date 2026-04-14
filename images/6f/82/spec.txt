@@ -1,0 +1,7 @@
+Implement an on-chip trace memory module designed to provide 64-bit wide data storage with a depth of 512 entries. The module supports synchronous read and write operations controlled by chip selection, clock enable, and reset signals. When write operations are enabled by chipselect and write signals, data can be written to the specified address, while read operations retrieve data from the same address. The memory initializes from a specified hex file, allowing for pre-defined loading of data. This design is suitable for applications requiring temporary data storage during processing, such as debugging or trace logging in digital circuits.
+module top_module(
+  input clk, reset, reset_req, clken, chipselect, write,
+  input [8:0] address, byteenable,
+  input [63:0] writedata,
+  output reg [63:0] readdata
+);

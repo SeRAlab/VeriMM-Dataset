@@ -1,0 +1,13 @@
+Develop an instruction fetch to instruction decode (IF-ID) pipeline register for a digital processor. This module captures and holds the current instruction and the next program counter (pcNext) value on the falling edge of the clock while also allowing for various enabling and resetting conditions. It features reset and debug functionalities, where it can initialize the outputs to zero or selectively clear the instruction output based on control signals. When both debugEnable is asserted and notEnable is negated, it enables the capture of the incoming instruction and pcNext values while providing the option to clear the instruction output.
+module top_module(
+    input clock,
+    input reset,
+    input debugEnable,
+    input debugReset,
+    input notEnable,
+    input clear,
+    input[31:0] instruction,
+    input[7:0] pcNext,
+    output reg[31:0] instructionOut,
+    output reg[7:0] pcNextOut
+);

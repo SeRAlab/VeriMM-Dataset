@@ -1,0 +1,12 @@
+Design a 8-register file with 32-bit wide registers that supports simultaneous reading and writing operations. The module allows a write operation to occur on the positive edge of the clock when the write enable signal is asserted, storing the provided data into the specified register. Concurrently, when the read enable signal is asserted, it retrieves data from two specified registers, outputting the results on read_data1 and read_data2. This circuit serves as a fundamental component in digital systems, enabling temporary data storage and retrieval in applications like CPU architectures or digital signal processing.
+module top_module(
+    input clk,
+    input write_en,
+    input [2:0] write_reg,
+    input [31:0] write_data,
+    input read_en,
+    input [2:0] read_reg1,
+    input [2:0] read_reg2,
+    output reg [31:0] read_data1,
+    output reg [31:0] read_data2
+);

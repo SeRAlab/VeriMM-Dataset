@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+
+Implement a module of a 4-bit up/down counter. The counter should count up when the `UP` signal is high and count down when the `DOWN` signal is high. If both `UP` and `DOWN` signals are high, the counter should hold its current value. The counter should reset to 0 when the `RST` signal is high.
+
+Module name:
+    counter
+
+Input ports:
+    CLK: Clock input
+    RST: Active high reset signal
+    UP: Signal to count up
+    DOWN: Signal to count down
+
+Output ports:
+    COUNT: 4-bit output representing the current count
+
+Implementation:
+The counter module uses an always block to update the value of the counter based on the clock signal, reset signal, and the UP and DOWN control signals. The always block triggers on the positive edge of the clock signal (posedge CLK) or the positive edge of the reset signal (posedge RST). It checks if the reset signal is active and sets the counter value (COUNT) to 0. If both the UP and DOWN signals are high, it holds the current counter value. If the UP signal is high and the DOWN signal is low, it increments the counter value by 1. If the DOWN signal is high and the UP signal is low, it decrements the counter value by 1.
+
+Give me the complete code.

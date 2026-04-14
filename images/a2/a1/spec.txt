@@ -1,0 +1,10 @@
+Implement a Verilog module for a simple washing machine controller with four states: Off, Wash, Rinse, and Spin. Use the following one-hot state encoding: OFF=4'b0001, WASH=4'b0010, RINSE=4'b0100, SPIN=4'b1000. The controller should follow the sequence Off -> Wash -> Rinse -> Spin -> Off. Derive state transition and output logic equations by inspection assuming a one-hot encoding. Implement only the state transition logic and output logic (the combinational logic portion) for this state machine.
+
+module washing_machine_controller (
+  input clk, 
+  input start, 
+  input [3:0] state, 
+  output reg [3:0] next_state, 
+  output reg washing, 
+  output reg rinsing, 
+  output reg spinning);

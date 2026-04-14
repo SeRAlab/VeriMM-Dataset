@@ -1,0 +1,9 @@
+Develop a pseudo-random binary sequence (PRBS) generator that operates on a clock and reset signal. It utilizes two input signals, `a` and `b`, directing the selection of `b` or `a` based on the control signal `sel_b1`. The module maintains a 7-bit shift register that shifts and updates its contents to produce a PRBS output, with specific feedback logic based on tapped bits to ensure randomness. The output `prbs` is generated from the processed state of the shift register, incorporating conditional XOR operations to enhance the sequence's randomness characteristics. The design effectively combines multiplexing and feedback mechanisms to generate a complex binary sequence.
+module top_module(
+    input clk,
+    input reset,
+    input a,
+    input b,
+    input sel_b1,
+    output reg [6:0] prbs
+);

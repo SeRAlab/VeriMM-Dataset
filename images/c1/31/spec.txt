@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform an addition operation between two inputs: a multi-bit data input (`din`) and a smaller, possibly single-bit increment value (`incr`). The module to handle a specific data width for the `din` input, which is parameterizable through `ADDER_DATA_WIDTH`, and a smaller width for the `incr` input, defined by `INCR_DATA_WIDTH`. The result of this addition is output through the `sum` port.
+
+This module can be utilized in various applications within a digital system, such as counter implementations, address calculations in memory management units, or any scenario requiring the addition of a small increment to a larger data value. Its parameterizable nature allows for flexibility in adapting to different data widths, making it a versatile component in system design.
+
+Module name:  
+	tlu_addern_32
+
+Input ports:
+	din [ADDER_DATA_WIDTH1:0]: This is the primary data input port of the module. It accepts a binary number of width defined by the ADDER_DATA_WIDTH parameter. This input represents the base value to which the increment will be added.
+	incr [INCR_DATA_WIDTH1:0]: This input port accepts the increment value, which is a binary number of width defined by the INCR_DATA_WIDTH parameter. This value is added to the din input to produce the sum.
+Output ports:
+	sum [ADDER_DATA_WIDTH1:0]: This output port presents the result of adding the incr input to the din input. The width of this output matches that of the din input, ensuring that the full range of possible addition results can be represented.
+
+
+Implementation:
+The tlu_addern_32 module is a Verilog implementation designed to perform an addition operation between two inputs: a data input din and an increment value incr. The module is parameterized to support flexibility in data width, primarily focusing on a 33-bit data input and a 1-bit increment input by default. However, these parameters can be adjusted to accommodate different data sizes, making the module versatile for various applications.
+
+Give me the complete code.
+

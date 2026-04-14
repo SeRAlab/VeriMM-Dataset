@@ -1,0 +1,8 @@
+Design a shift register capable of both parallel loading and shifting operations. The module accepts an 8-bit input data and a control signal to determine the mode of operation. When the reset signal is low, the register initializes to zero. In parallel load mode (when select is high), it loads the input data into the register and outputs it while also calculating the XOR of the loaded data and the register's current data. In shift mode (when select is low), the module performs a circular shift to the right on the register's content, preserving the most significant bit and loading it back into the least significant bit position, while generating an XOR output between the shifted out bit and the least significant bit of the input data.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data,
+  input select,
+  output reg [7:0] q
+);

@@ -1,0 +1,10 @@
+Design a module that converts a 16-bit binary input into Binary-Coded Decimal (BCD) format. The module has an enable signal; when enabled, it extracts each decimal digit from the input value, distributing the resulting BCD digits across five 4-bit output signals (D1 to D5). If the enable signal is not active, all output digits default to the BCD representation of 0xF (i.e., 1111 in binary), effectively indicating an inactive state. This functionality is essential for displaying numerical values in a format suitable for seven-segment displays or similar applications.
+module top_module(
+	input [15:0] to_display,
+	input enable,
+	output [3:0] D5,	
+	output [3:0] D4,	
+	output [3:0] D3,	
+	output [3:0] D2,	
+	output [3:0] D1	
+);

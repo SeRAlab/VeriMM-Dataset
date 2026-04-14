@@ -1,0 +1,14 @@
+Design a FIFO (First In, First Out) data buffer that interfaces with AXI streaming. The module supports a 40-bit data width and has a capacity for storing up to 1024 data entries. It accepts input data and a valid signal while providing readiness feedback. On each clock cycle, it manages read and write operations through internal pointers, ensuring that data can be added or removed as needed. The module also tracks the total number of data items, along with the counts of written and read data for monitoring purposes. It generates output signals to indicate when data is available for reading and when the buffer can accept new data.
+module top_module(
+  input wire s_axis_aresetn,
+  input wire s_axis_aclk,
+  input wire s_axis_tvalid,
+  input wire [39:0] s_axis_tdata,
+  output wire s_axis_tready,
+  output wire m_axis_tvalid,
+  output wire [39:0] m_axis_tdata,
+  output wire [31:0] axis_data_count,
+  output wire [31:0] axis_wr_data_count,
+  output wire [31:0] axis_rd_data_count,
+  input wire m_axis_tready // Added this missing input
+);

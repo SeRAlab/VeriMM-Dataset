@@ -1,0 +1,18 @@
+Design a register stage for a pipeline processor, specifically the EX/MEM stage. This module captures and stores intermediate values such as the ALU output, program counter, and relevant control signals during the execution stage of instruction processing. On the rising edge of the clock signal, it transfers data from the execution stage while also handling a reset condition to clear stored values. It ensures that control signals and data are appropriately passed along to the next stage in a pipelined architecture, facilitating the correct sequencing of operations in a processor.
+module top_module(
+    input clk, reset,
+    input ZERO_EX,
+    input [31:0] ALU_OUT_EX,
+    input [31:0] PC_Branch_EX,
+    input [31:0] REG_DATA2_EX_FINAL,
+    input [1:0] WB_EX,
+    input [2:0] M_EX,
+    input [4:0] RD_EX,
+    output reg ZERO_MEM,
+    output reg[31:0] ALU_OUT_MEM,
+    output reg[31:0] PC_Branch_MEM,
+    output reg[31:0] REG_DATA2_MEM_FINAL,
+    output reg [1:0] WB_MEM,
+    output reg [2:0] M_MEM,
+    output reg [4:0] RD_MEM
+    );

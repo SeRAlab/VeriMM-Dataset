@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as a 2-to-1 multiplexer, a fundamental digital logic component that selects one of the two input data signals based on the state of a selection signal and forwards the selected input to its output. This module is parameterized with a `WIDTH` parameter, allowing it to be configured for various data widths, making it versatile for different data sizes in digital systems. Its primary function to facilitate conditional data routing, which is essential in numerous digital design applications such as data path multiplexing, conditional operations, and as part of more complex combinational and sequential circuits within a broader system context.
+
+Module name:  
+	Mux2
+
+Input ports:
+	sel (input, single bit): The selection signal. It determines which input (in0 or in1) is routed to the output. A value of 0 selects in0, while a value of 1 selects in1.
+	in0 (input, WIDTH1:0 bits): The first input data port. It represents one of the two data signals that can be selected and routed to the output. The width of this port is determined by the WIDTH parameter.
+	in1 (input, WIDTH1:0 bits): The second input data port. It represents the other data signal that can be selected and routed to the output. Like in0, its width is determined by the WIDTH parameter.
+Output ports:
+	out (output, WIDTH1:0 bits): The output data port. It carries the data signal selected by the sel input. The width of this port matches that of the input ports, as defined by the WIDTH parameter.
+
+
+Implementation:
+The module presented, named Mux2, is a parameterized 2-to-1 multiplexer (mux) with a generic width, WIDTH, which is by default set to 32 bits. This multiplexer is a fundamental digital logic component that selects one of the two input data signals, in0 or in1, based on the state of the selection signal, sel, and forwards the selected input to its output, out. The operation of this module is purely combinational, meaning its output is directly determined by its current inputs without involving any internal state or memory elements.
+The core logic of the Mux2 module is encapsulated in a single line of Verilog code:
+verilog
+assign out = (sel) ? in1 : in0;
+
+This line employs a conditional operator (?), often referred to as a ternary operator, which is a compact form of expressing a two-way conditional logic. The operation can be interpreted as follows: if sel is true (logic high or 1), then out is assigned the value of in1; otherwise (sel is false or 0), out is assigned the value of in0. This simple yet effective logic enables the Mux2 module to perform data selection based on the sel signal.
+The parameterization of the module with WIDTH allows for flexibility in the bit-width of the inputs and output, making the module reusable for different data widths. This parameterization is a powerful feature in Verilog that promotes code reusability and scalability within digital design projects.
+
+Give me the complete code.
+

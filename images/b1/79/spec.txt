@@ -1,0 +1,6 @@
+Design a 16-bit to 32-bit sign extension and zero-extension module. The module takes a 16-bit input, `imm_16`, and based on a 2-bit control signal, `EXTop`, it produces a 32-bit output, `extout`. If `EXTop` is 00, it zero-extends `imm_16` by appending 16 zeros; if 01, it zero-fills the upper 16 bits; if 10, it sign-extends `imm_16` by replicating the sign bit (bit 15) into the upper 16 bits. If `EXTop` is set to 11, it outputs a constant 32-bit value of 0x1234 (0001001000110100 in binary).
+module top_module(
+    input wire[15:0] imm_16,
+    input wire[1:0] EXTop,
+    output wire[31:0] extout
+    );

@@ -1,0 +1,7 @@
+Implement a circuit that combines a Johnson counter and a barrel shifter with a bitwise AND operation. The Johnson counter generates a specific sequence based on its state, cycling through a defined set of values. The barrel shifter adjusts the counter's output based on a 2-bit SHIFT input: if SHIFT is `01`, it performs a right shift; if `10`, a left shift; and if `00`, it holds the value unchanged. The shifted result is then ANDed with a 4-bit input, DATA_IN, with the final output being the shifted counter value. This functionality allows for both counting and data manipulation in a single module, making it useful for applications requiring sequence generation and data processing.
+module top_module(
+    input clk,
+    input [3:0] DATA_IN,
+    input [1:0] SHIFT,
+    output reg [3:0] Q
+);

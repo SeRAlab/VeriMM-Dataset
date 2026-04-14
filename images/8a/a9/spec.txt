@@ -1,0 +1,6 @@
+Design a 4-bit barrel shifter that allows for variable left or right shifting of an input vector A based on the 4-bit control input B. The output C reflects the adjusted value of A after shifting, depending on the binary value of B, which dictates how many positions the bits in A should be shifted. The case statement defines the shifting logic for values of B ranging from 0 (no shift) to 15 (shifting back to the original position), effectively enabling circular shifting for the specified input.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    output reg [3:0] C  // Changed from wire to reg
+);

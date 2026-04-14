@@ -1,0 +1,11 @@
+Design a FIFO (First-In, First-Out) buffer with a depth of four 8-bit data entries. The module accepts 8-bit input data, a push control signal to write data into the buffer, a pop control signal to read data from the buffer, a reset signal to initialize the buffer state, and a clock signal for synchronizing operations. It outputs the data being read as well as status indicators for empty and full conditions. When the reset is activated, both read and write pointers are reset, and the buffer is marked as empty. Data can be pushed into the buffer if it is not full and can be popped from the buffer if it is not empty, ensuring that the oldest data is always removed first.
+module top_module(
+	input [7:0] d_in,
+	input push_cb,
+	input pop_cb,
+	input rst,
+	input clock,
+	output reg [7:0] d_out,
+	output reg empty_cb,
+	output reg full_cb
+);

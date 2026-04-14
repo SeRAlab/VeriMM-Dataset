@@ -1,0 +1,8 @@
+Design a 4-bit synchronous counter with load capability. The counter increments its value on each positive edge of the clock signal, unless the reset signal is active, in which case it resets to zero. If the parallel load signal is high, the counter will load a specified 4-bit value from the `load_input` instead of incrementing, allowing for flexible initialization or setting.
+module top_module(
+  input clk,
+  input reset,
+  input parallel_load,
+  input [3:0] load_input,
+  output reg [3:0] count
+);

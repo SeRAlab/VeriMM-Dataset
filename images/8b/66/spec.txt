@@ -1,0 +1,9 @@
+Design a shift register capable of loading an 8-bit input and shifting its contents either left or right based on a control signal. The module features inputs for clock, reset, data to load, and shift direction, with an output reflecting the current state of the shift register. Upon reset, the register clears to zero; otherwise, it can load new data or shift its contents left or right on the clock's negative edge, allowing for versatile data manipulation within digital systems.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data_in,
+  input [1:0] shift_direction,
+  input load,
+  output [7:0] data_out
+);

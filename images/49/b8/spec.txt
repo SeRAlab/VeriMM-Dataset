@@ -1,0 +1,15 @@
+Design a simple output register module that functions as a read/write memory interface for hexadecimal values. It has a 2-bit address input which targets specific functionalities, outputting a 7-bit data value on `out_port` and a 32-bit read data output. When enabled by `chipselect`, a write operation can occur, updating `data_out` with the lower 7 bits of the `writedata` signal when `write_n` is low and `address` is zero. Upon reset, `data_out` initializes to the value 127. The `readdata` output is tied to the contents of `data_out` when the appropriate conditions are met, facilitating data retrieval.
+module top_module(
+                    
+                     address,
+                     chipselect,
+                     clk,
+                     reset_n,
+                     write_n,
+                     writedata,
+
+                    
+                     out_port,
+                     readdata
+                  )
+;

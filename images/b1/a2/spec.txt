@@ -1,0 +1,8 @@
+Design a circuit that performs an 8-bit addition using a carry-lookahead adder, followed by a barrel shift operation. The module takes two 8-bit inputs, `a` and `b`, computes their sum, and then shifts the result left or right based on a 5-bit `shift_amount` input. The final output is a 16-bit value that includes a signed overflow indicator in the most significant bit, and an additional output, `zero_flag`, which signals whether the shifted result is zero. This module effectively combines arithmetic and bit manipulation functionalities.
+module top_module(
+    input [7:0] a,
+    input [7:0] b,
+    input [4:0] shift_amount,
+    output [15:0] final_output,
+    output zero_flag
+);

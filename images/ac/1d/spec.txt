@@ -1,0 +1,11 @@
+Design a register file that supports reading and writing operations for a configurable number of registers. Each register is n bits wide, with a total of r registers addressed by m write addresses and k read addresses. The circuit features asynchronous reset functionality to clear all registers to zero. On each clock pulse, if the `write_en` signal is asserted, data from `data_in` is stored into the specified register at `write_addr`. If the `read_en` signal is asserted, the value from the register at `read_addr` is output as `data_out`.
+module top_module(
+  input [n-1:0] data_in,
+  input [m-1:0] write_addr,
+  input [k-1:0] read_addr,
+  input reset,
+  input write_en,
+  input read_en,
+  input clk, // Added clk as input
+  output reg [n-1:0] data_out // Changed data_out to output reg
+);

@@ -1,0 +1,15 @@
+Design a circuit that implements a multi-port register bank with shift and load functionality across three 16-bit segments (t[0:15], t[16:31], t[32:39]) and a single bit (t[-1]). It utilizes input clocks (clockta, clocktb, clocktc) to control the loading and shifting of data based on specific control signals (tab, taa, trb). On a reset signal (_0_t), all output segments are initialized to zero. The module can shift data to the left or right and load data from an input bus (k), effectively managing multiple sets of data with specified conditions for updating based on the incoming clock signals.
+module top_module(
+	input clk_sys,
+	input _0_t,
+	input taa,
+	input tab,
+	input trb,
+	input clockta,
+	input clocktb,
+	input clocktc,
+	input t_1_d,
+	input [0:39] k,
+	input m_1,
+	output reg [-1:39] t
+);

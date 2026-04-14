@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform bit selection operations based on a 3-bit input selector (`bsel`). It generates two sets of 4-bit outputs (`bs_out_high` and `bs_out_low`) that are determined by the value of the input selector. This module can be utilized within a larger system, such as an Arithmetic Logic Unit (ALU), where conditional bit manipulation is required. The primary function of this module to facilitate bit-wise operations that are contingent on the `bsel` input, enabling dynamic selection between different bit patterns.
+
+Module name:  
+	alu_bit_select
+
+Input ports:
+	bsel [2:0]: A 3bit input selector that determines the output bit patterns. It is a wire data type, indicating that it is used for combinational logic.
+Output ports:
+	bs_out_high [3:0]: A 4bit output that represents the high bit selection result. The output pattern is influenced by the bsel input, specifically when the most significant bit (MSB) of bsel is high.
+	bs_out_low [3:0]: A 4bit output that represents the low bit selection result. Similar to bs_out_high, its pattern is determined by the bsel input, but it is relevant when the MSB of bsel is low.
+
+
+Implementation:
+The RTL module named alu_bit_select is designed to perform a specific bit manipulation task based on a 3-bit input selector (bsel). The module generates two 4-bit outputs (bs_out_high and bs_out_low) which are determined by the combination of the input selector bits. This module is purely combinational, meaning its outputs are directly determined by its current inputs without any internal state or memory.
+The core logic of the module is built around bitwise operations, specifically AND operations and negations (NOT). The input selector bsel is used to conditionally set or clear bits in the output vectors bs_out_high and bs_out_low. The differentiation between these two outputs is determined by the most significant bit (MSB) of bsel (bsel[2]), where bs_out_high is affected when bsel[2] is high, and bs_out_low is affected when bsel[2] is low.
+The logic for each bit in the output vectors is as follows:
+For bs_out_low, the bits are set based on the negation of bsel[2] and specific combinations of the other bits in bsel.
+For bs_out_high, the bits are set based on bsel[2] being high and the same specific combinations of the other bits in bsel.
+This design allows for 8 different combinations of outputs based on the 3-bit input selector, providing a versatile bit manipulation capability.
+
+Give me the complete code.
+

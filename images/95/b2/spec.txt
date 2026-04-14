@@ -1,0 +1,9 @@
+Design a D-type flip-flop with asynchronous set and reset capabilities. The module captures the input data (D) on the rising edge of the clock (CLK) while prioritizing the asynchronous reset (RESET_B) and set (SET_B) signals. When RESET_B is low, the output Q is set to LOW, and Q_B is set to HIGH. Conversely, when SET_B is low, Q is set to HIGH, and Q_B is set to LOW. If both SET_B and RESET_B are high, the output Q follows the input D, while Q_B is always the inverse of Q.
+module top_module(
+    input wire D,
+    input wire SET_B,
+    input wire RESET_B,
+    input wire CLK,
+    output reg Q,
+    output reg Q_B
+    );

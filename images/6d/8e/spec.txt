@@ -1,0 +1,10 @@
+Design a dual-port RAM module that allows simultaneous read and write operations. The RAM has a 16-bit data width and supports separate addresses for reading and writing, each 11 bits wide. The module accepts a clock signal for synchronization, a data input for writing, and control signals for enabling writes and reads. When the write enable signal is active, data is stored at the specified write address, while the read enable signal controls accessing data from the specified read address. The output provides the read data on demand, allowing for flexible memory utilization in digital systems.
+module top_module(
+    input clk,
+    input [15:0] data_in,
+    input [10:0] write_addr,
+    input write_en,
+    input [10:0] read_addr,
+    input read_en,
+    output reg [15:0] data_out
+);

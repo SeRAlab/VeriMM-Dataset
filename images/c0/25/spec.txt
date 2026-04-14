@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to generate clock signals specifically tailored for UART (Universal Asynchronous Receiver/Transmitter) communication. Its primary functions include:
+
+Generating a tick signal (`uart_tick`) that can be used to drive UART transmission or reception at a standard baud rate.
+Producing a 16 times faster tick signal (`uart_tick_16x`) than the standard UART tick. This faster tick can be utilized for oversampling in UART receivers to improve data integrity and synchronization.
+
+The module plays a crucial role in ensuring precise timing for UART operations, enabling reliable serial communication between devices. It is particularly useful in systems where UART communication is critical for data exchange, and precise timing is required to maintain synchronization and data integrity.
+
+Module name:  
+	uart_clock
+
+Input ports:
+	clock: A singlebit input signal that serves as the primary clock source for the module. The entire operation of the uart_clock module is synchronized to the rising edge of this clock signal.
+Output ports:
+	uart_tick: A singlebit output signal that represents the UART tick. This signal is intended to mark the intervals at which UART data bits should be sampled or transmitted, effectively setting the baud rate for UART communication.
+	uart_tick_16x: A singlebit output signal that indicates a tick occurring at a rate 16 times faster than the uart_tick. This faster tick is essential for implementing oversampling techniques in UART receivers, which can help in achieving more reliable data reception.
+
+
+Implementation:
+The uart_clock module is designed to generate clock ticks for UART communication, specifically a tick for the UART baud rate and a tick for 16 times the baud rate. This is achieved through a combination of sequential and combinational logic within the module, operating under the assumption that the input clock frequency is known and constant.
+
+Give me the complete code.
+

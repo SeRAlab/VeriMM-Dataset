@@ -1,0 +1,7 @@
+Design a hazard detection unit for a pipelined processor architecture that identifies data hazards to enhance instruction execution efficiency. The module outputs a signal indicating whether a data hazard exists based on the addresses of source and destination registers involved in load and store operations. It checks if the current instruction's source registers are being written to by earlier instructions that may not yet be committed, particularly focusing on load-use hazards and jump/register hazards. This hazard detection is crucial for triggering appropriate pipeline control mechanisms to stall or bypass instructions as necessary, ensuring correct program execution without data inconsistencies.
+module top_module(
+         PCSrc, if_id_rs_addr, if_id_rt_addr,
+         id_ex_RegWrite, id_ex_MemRead, id_ex_write_addr,
+         ex_mem_MemRead, ex_mem_write_addr,
+         DataHazard
+       );

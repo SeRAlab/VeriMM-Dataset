@@ -1,0 +1,11 @@
+Design a synchronous FIFO (First-In, First-Out) buffer that enables data storage and retrieval with control for writing and reading operations. The module features input signals for clock, reset, write enable, and read enable, as well as data input and output lines. The FIFO buffer has a defined maximum depth and data width, with internal pointers for managing read and write operations. It includes logic for updating these pointers on clock edges, while also checking for buffer fullness and emptiness, making it suitable for applications where orderly processing of data streams is required.
+module top_module(
+  input clk, // clock signal
+  input rst, // reset signal
+  input wen, // write enable signal
+  input ren, // read enable signal
+  input [DATA_WIDTH-1:0] din, // data input
+  output [DATA_WIDTH-1:0] dout, // data output
+  output full, // full signal
+  output empty // empty signal
+);

@@ -1,0 +1,17 @@
+The design implements a dual-port RAM module combined with a 3-to-1 multiplexer and a bitwise OR operation functionality. It features a true dual-port RAM that allows simultaneous read and write operations based on enable signals, where data can be written to or read from specified addresses. Additionally, it includes a multiplexer that selects one of three 8-bit inputs based on a 2-bit control signal for output. The module further computes the bitwise OR of the data read from the RAM and the multiplexer output, providing this result as an output. Overall, this module serves as a memory interface with additional data processing capabilities, suitable for applications requiring both data storage and conditional data manipulation.
+module top_module(
+    input clk,
+    input rst_n,
+    input write_en,
+    input [3:0] write_addr,
+    input [7:0] write_data,
+    input read_en,
+    input [3:0] read_addr,
+    output reg [7:0] read_data,
+    input [7:0] mux_input_a,
+    input [7:0] mux_input_b,
+    input [7:0] mux_input_c,
+    input [1:0] mux_ctrl,
+    output reg [7:0] mux_output,
+    output reg [7:0] bitwise_or_output
+);

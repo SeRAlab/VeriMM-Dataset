@@ -1,0 +1,7 @@
+Design a circuit that performs either addition or subtraction on two 16-bit signed inputs, `a` and `b`, based on the control signal `add_sub`. When `add_sub` is high, the module adds the inputs, with overflow conditions resulting in fixed outputs of 32767 (if overflow occurs when both inputs are positive) or -32768 (if overflow occurs when both inputs are negative). If `add_sub` is low, the module subtracts `b` from `a`, similarly managing underflow scenarios in the same manner by outputting 32767 or -32768 as necessary.
+module top_module(
+    input signed [15:0] a,
+    input signed [15:0] b,
+    input add_sub,
+    output reg signed [15:0] out
+);

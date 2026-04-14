@@ -1,0 +1,14 @@
+Design a module that interfaces with a Wishbone bus to control an 8-bit LED output. It receives input data to update the LED states based on write operations and provides an acknowledgment signal. When data is written (indicated by `I_wb_we`) on the rising edge of the clock and when the strobe signal (`I_wb_stb`) is active, the module updates the internal LED value. It outputs the current LED state on the `O_leds` line and includes a reset functionality to clear the LED values to zero when the `I_reset` signal is asserted.
+module top_module(
+        
+        input I_wb_clk,
+        input[7:0] I_wb_dat,
+        input I_wb_stb,
+        input I_wb_we,
+        output reg O_wb_ack,
+        output reg[7:0] O_wb_dat,
+        
+        input I_reset,
+        
+        output[7:0] O_leds
+    );

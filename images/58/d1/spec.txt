@@ -1,0 +1,21 @@
+Design a digital drum sound generator and Ethernet interface module. The module processes four ADC inputs representing drum sounds, averaging their values to create an overall drum sound output. It allows selection of different drum sounds based on a set of switch inputs. Additionally, it interfaces with an Ethernet PHY to transmit drum sound data when valid receive signals are detected, ensuring synchronization with the receive clock. The module also outputs the current states of switches and buttons for further interaction.
+module top_module(
+    input clk_in,
+    input rstn_in,
+    input adc_a_data,
+    input adc_b_data,
+    input adc_c_data,
+    input adc_d_data,
+    input [3:0] switches,
+    input [3:0] buttons,
+    input [3:0] eth_phy_rxd,
+    input eth_phy_rx_clk,
+    input eth_phy_rx_dv,
+    input eth_phy_rx_er,
+    output reg eth_phy_tx_clk,
+    output reg eth_phy_crs,
+    output reg eth_phy_col,
+    output reg [3:0] switches_out,
+    output reg [3:0] buttons_out,
+    output reg [3:0] eth_phy_tx_data // Changed to output for sending data
+);

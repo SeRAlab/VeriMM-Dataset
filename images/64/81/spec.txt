@@ -1,0 +1,8 @@
+Create a circuit that detects rising and falling edges of a digital input signal `a`. It uses a two-bit state machine to maintain the necessary history of the input signal across clock cycles. The module outputs a high signal on `rise` when a rising edge is detected and a high signal on `down` when a falling edge is detected, while also resetting states and outputs upon assertive reset. The output signals are generated sequentially based on transitions in the input signal's state, ensuring accurate edge detection.
+module top_module(
+  input               clk,
+  input               rst_n,
+  input               a,
+  output reg          rise,
+  output reg          down
+);

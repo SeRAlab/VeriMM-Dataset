@@ -1,0 +1,9 @@
+Design a 4-to-1 multiplexer utilizing full adders for selection and logic operations. The module accepts four 4-bit inputs and uses a 2-bit selection signal to choose one of these inputs as its output. In the first stage, it selects the appropriate input based on the selection signal. In the second stage, the selected input's bits are inverted and then added back to the original selected bits, utilizing two 4-bit addition operations to determine the final output. This design effectively combines multiplexing with bitwise operations and addition.
+module top_module(
+    input [3:0] in0,
+    input [3:0] in1,
+    input [3:0] in2,
+    input [3:0] in3,
+    input [1:0] sel,
+    output reg [3:0] out
+);

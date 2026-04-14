@@ -1,0 +1,9 @@
+Design a circuit that compares two 8-bit data inputs. On each clock cycle, when a reset (rst) is not asserted, the module sequentially loads data1 and data2 into internal registers and counts bytes until all have been processed. Once all bytes are loaded, it checks for equality between the two sets of data and sets the output 'eq' accordingly, which indicates whether the inputs are equal. The output 'done' signals that the comparison process has completed, enabling subsequent actions.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] data1,
+  input [7:0] data2,
+  output reg eq,
+  output reg done
+);

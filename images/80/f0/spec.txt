@@ -1,0 +1,7 @@
+Develop a circuit that functions as a counter and signal generator for graphical output. The module keeps track of a 16-bit count that increments on each clock cycle, resetting to zero when it reaches 65530. The outputs include an 8-bit value for x position (limited to a maximum of 160), a 7-bit value for y position (capped at 120), and a static color output set to black (000) regardless of the counter's state. This design could be utilized in a simple graphics system or display controller.
+module top_module(
+    input clk, resetn, enable,
+    output [7:0] x_out,
+    output [6:0] y_out,
+    output [2:0] color_out
+);

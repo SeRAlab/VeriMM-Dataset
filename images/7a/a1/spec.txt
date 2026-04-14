@@ -1,0 +1,13 @@
+Design a Verilog module that implements a priority encoder. The input is a 4-bit binary vector, and the output is a 2-bit binary code representing the highest priority input bit that is set to 1.
+
+Initial state: y = 2'b00
+Time 0ns: a = 4'b0000, y = 2'b00.
+Time 10ns: a = 4'b0001, y = 2'b00.
+Time 20ns: a = 4'b0010, y = 2'b01.
+Time 30ns: a = 4'b0100, y = 2'b10.
+Time 40ns: a = 4'b1000, y = 2'b11.
+Time 50ns: a = 4'b1010, y = 2'b11.
+
+module priority_encoder (
+	input [3:0] a,
+	output reg [1:0] y);

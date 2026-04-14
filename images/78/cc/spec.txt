@@ -1,0 +1,16 @@
+Design a synchronous circuit that functions as both a read/write memory and a multiplexer. The module includes an 8-word RAM (4 bits each) controlled by a clock and an active-low reset signal. When the write enable signal is active, data can be stored in the RAM at a specified address. When the read enable signal is active, the module selects one of four inputs or the stored RAM value based on a 2-bit multiplexer selection input, outputting it as a 4-bit wide signal.
+module top_module(
+    input clk,
+    input rst_n,
+    input write_en,
+    input [7:0] write_addr,
+    input [3:0] write_data,
+    input read_en,
+    input [7:0] read_addr,
+    input [3:0] mux_in_0,
+    input [3:0] mux_in_1,
+    input [3:0] mux_in_2,
+    input [3:0] mux_in_3,
+    input [1:0] mux_sel,
+    output reg [3:0] out
+);

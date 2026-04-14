@@ -1,0 +1,7 @@
+Design a 4-bit Linear Feedback Shift Register (LFSR) that generates pseudo-random sequences. The module takes a clock signal, a reset signal, and an enable signal as inputs. Upon receiving a reset, the LFSR initializes to a non-zero state (4'b0001). When the enable signal is active, the LFSR shifts its contents left, while the new bit is computed as the XOR of the most significant and least significant bits, effectively creating a feedback loop. The current state of the LFSR is output as a 4-bit register, making it suitable for applications requiring random number generation or sequence generation.
+module top_module(
+  input clk,
+  input reset,
+  input enable,
+  output reg [3:0] lfsr_out
+);

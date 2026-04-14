@@ -1,0 +1,9 @@
+Design a circuit that determines the maximum value among four 8-bit inputs (A, B, C, and D). On each rising edge of the clock, it first compares inputs A and B to find the larger value, then compares this result with input C to update the temporary maximum, and finally compares the result with input D to obtain the overall maximum. The computed maximum value is stored as an 8-bit output, providing a sequential maximum-finding functionality.
+module top_module(
+    input clk,                // Added clk input
+    input [7:0] A,
+    input [7:0] B,
+    input [7:0] C,
+    input [7:0] D,
+    output reg [7:0] max
+);

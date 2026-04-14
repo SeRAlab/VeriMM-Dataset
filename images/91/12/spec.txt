@@ -1,0 +1,27 @@
+Please act as a professional Verilog designer.
+
+Implement a module for a 3-bit shift register with a synchronous clear operation. The shift register should shift its contents to the right on every positive edge of the clock signal clk. It should also have a synchronous clear signal clr, which sets the register contents to 0 when asserted.
+
+Module name:
+    shift_register
+
+Input ports:
+    clk: Clock signal.
+    clr: Synchronous clear signal (active high).
+    d: Serial input data.
+
+Output ports:
+    q: 3-bit output representing the register contents.
+
+Implementation:
+The shift_register module shifts its contents to the right on every positive edge of the clock signal clk, with the serial input data d entering the most significant bit. When the clear signal clr is asserted, the register contents q are set to 0 on the next positive edge of clk.
+
+Give me the complete code.
+
+module shift_register(
+    input clk,
+    input clr,
+    input d,
+    
+    output reg [2:0] q
+);

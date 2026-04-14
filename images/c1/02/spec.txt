@@ -1,0 +1,34 @@
+Please act as a professional verilog designer.
+    
+Implement a module appears to function as an instruction buffer or decoder for a microprocessor or microcontroller, specifically tailored for an embedded system. Its primary role to fetch, decode, and prepare instructions for execution, handling immediate values, register addresses, and operation codes. It also manages interrupt signals and conditional branching, contributing to the control flow within the processor. The module to interface with an instruction memory or bus (via the Wishbone bus signals), decode the fetched instruction, and generate control signals for the execution stage. It also includes logic to handle stalls and interrupts, ensuring correct operation sequencing and response to external events.
+
+Module name:  
+	aeMB_ibuf
+
+Input ports:
+	gclk: Global clock signal (input, 1 bit). Synchronizes the module's operations.
+	grst: Global reset signal (input, 1 bit). Resets the module's internal state when asserted.
+	gena: Global enable signal (input, 1 bit). Enables the module's operation when asserted.
+	oena: Output enable signal (input, 1 bit). Controls the output stage of the module.
+	rBRA: Branch signal (input, 1 bit). Indicates whether a branch instruction is being processed.
+	rMSR_IE: Interrupt enable flag (input, 1 bit). Controls the module's response to interrupts.
+	rMSR_BIP: Breakpoint interrupt pending flag (input, 1 bit). Indicates a pending breakpoint interrupt.
+	iwb_dat_i: Instruction Wishbone data input (input, 32 bits). Carries instruction data from the instruction memory or bus.
+	iwb_ack_i: Instruction Wishbone acknowledge input (input, 1 bit). Acknowledges the receipt of instruction data.
+	sys_int_i: System interrupt input (input, 1 bit). Signals an external interrupt to the processor.
+Output ports:
+	rIMM: Immediate value (output, 16 bits). Extracted immediate value from the instruction.
+	rRA, rRD, rRB: Register addresses (output, 5 bits each). Specify the source and destination registers for the instruction.
+	rALT: Alternate field (output, 10 bits). Part of the instruction specifying additional operation details.
+	rOPC: Operation code (output, 6 bits). Specifies the operation to be performed by the instruction.
+	rSIMM: Signextended immediate value (output, 32 bits). The immediate value signextended for operations requiring a 32bit immediate.
+	xIREG: Extended instruction register (output, 32 bits). Holds the decoded instruction for execution.
+	rSTALL: Stall signal (output, 1 bit). Indicates that the module is stalling the processor due to a longlatency operation or other conditions.
+	iwb_stb_o: Instruction Wishbone strobe output (output, 1 bit). Signals a request for instruction data from the memory or bus.
+
+
+Implementation:
+The aeMB_ibuf module appears to be a part of a microprocessor or microcontroller, specifically handling instruction buffering, decoding, and possibly some aspects of interrupt handling. The module is designed to operate synchronously with a global clock (gclk) and can be reset through a global reset signal (grst). It also features enable (gena) and output enable (oena) signals to control its operation.
+
+Give me the complete code.
+

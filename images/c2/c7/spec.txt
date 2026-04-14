@@ -1,0 +1,13 @@
+
+You have been tasked with designing a module for a Gray code decoder. The module should take in a Gray code input and output the corresponding binary code. The input and output should be of the same width, which is given as a parameter. 
+
+The module should have two ports: `gin` and `bout`. `gin` is an input port of width `width`, which takes in the Gray code. `bout` is an output port of width `width`, which outputs the corresponding binary code. 
+
+The module should use a reg `breg` of width `width`, which stores the binary code. The module should also use an integer `i` for iteration. 
+
+The output `bout` should be calculated using the following steps:
+- The MSB of `breg` should be set equal to the MSB of `gin`.
+- For each bit position from `width-2` to `0`, the corresponding bit of `breg` should be set equal to the XOR of the current bit of `gin` and the next bit of `breg`.
+
+Design the module `gray_decoder` to implement this functionality. 
+

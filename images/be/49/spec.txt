@@ -1,0 +1,7 @@
+Design a circuit that counts consecutive one bits in a 4-bit input data. On each rising edge of the clock, the module checks the input bits starting from the least significant bit (LSB). If the LSB is high, it counts it as one; if the next bit is also high, it increments the count to two, and so forth, until the count reaches three for three consecutive high bits. The count output resets to zero upon receiving a reset signal. The output is a 3-bit number representing the maximum count of consecutive ones detected in the provided 4-bit data.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] data,
+  output reg [2:0] count
+);

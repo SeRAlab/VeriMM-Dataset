@@ -1,0 +1,11 @@
+Design a memory interface module that facilitates data reading operations. It utilizes a 5-bit address input to select a specific memory location and outputs a 16-bit data value from that location when the read signal is active. The module also employs a clock and reset functionality, although they are not explicitly used in the data path operations. The output assignments connect the address and data inputs to the appropriate outputs to provide the requested read data to the slave device.
+module top_module(
+   input clk,
+   input reset,
+   input   [4:0]slave_address,
+   input        slave_read,
+   output [15:0]slave_readdata,
+   
+   output [4:0]a,
+   input  [15:0]d
+);

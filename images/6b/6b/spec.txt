@@ -1,0 +1,6 @@
+Design a message collection module that accumulates 64 bits of data into a 512-bit wide output buffer upon receiving a start signal. When activated, the system takes two 32-bit inputs, `a` and `b`, and concatenates them to the least significant portion of the `message` register, effectively shifting out the oldest data. The `reset` input clears the `message` register to zero when asserted, while the operation is synchronized to the positive edge of the clock signal.
+module top_module(
+    clk, reset, start,  
+    a, b,               
+    message             
+);

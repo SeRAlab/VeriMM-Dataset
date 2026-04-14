@@ -1,0 +1,9 @@
+Design a 4-bit up/down counter with load functionality. The counter can be reset to zero, loaded with a specified value, counted up, or counted down based on the input control signals. When the reset signal is asserted, the output is initialized to zero. If the load signal is active, the counter will take the input value from `data_in`. When `count_up` is asserted, the counter increments by one, and when `count_down` is asserted, it decrements by one.
+module top_module(
+    input load,
+    input reset,
+    input count_up,
+    input count_down,
+    input [3:0] data_in,
+    output reg [3:0] count_out
+);

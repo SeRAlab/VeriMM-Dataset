@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+
+Implement an 8-bit Shift Register module that shifts data to the left on each clock cycle. The shifted data is stored in an 8-bit register named "shift_reg". The module also has an input port for serial data input named "serial_in".
+
+Module name:  
+    shift_register
+                 
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    serial_in: 1-bit input signal representing the serial data input.
+
+Output ports:
+    shift_reg: 8-bit output register representing the current shifted data.
+
+Implementation:
+State and Shift Register Operation:
+The module includes a register, shift_reg, with a width of 8 bits, which represents the current shifted data.
+The shift_reg register is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the shift_reg register is cleared to 0.
+On each clock cycle, the shift_reg register shifts its data to the left and the LSB is updated with the serial_in data.
+
+Give me the complete code.
+
+module shift_register(
+  input clk,
+  input rst_n,
+  input serial_in,
+  output reg [7:0] shift_reg
+);

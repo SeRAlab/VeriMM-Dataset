@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+    
+Implement a module to evaluate branch conditions and generate branch execution signals based on the current instruction opcode, operand, and condition codes. It plays a critical role in the control flow mechanism of a processor, determining whether a branch instruction should be taken or not. This module supports various branch conditions such as equality, inequality, less than, less than or equal to, greater than, and greater than or equal to. It is tailored for use within a microprocessor or microcontroller, specifically within the execution or instruction decode stage, contributing to the dynamic flow of program execution based on runtime conditions.
+
+Module name:  
+	aeMB2_brcc
+
+Input ports:
+	opd_of [31:0]: A 32bit input operand, likely representing an immediate value or a result from a previous computation, used in evaluating branch conditions.
+	ra_of [4:0]: A 5bit input representing the "ra" register operand, possibly used for specific branch instructions or conditions.
+	rd_of [4:0]: A 5bit input representing the "rd" register operand, used in determining the condition code for conditional branches.
+	opc_of [5:0]: A 6bit opcode input specifying the current instruction's operation code, used to identify branch instructions and their types.
+	gclk: The global clock signal, used for synchronizing the module's operations.
+	grst: The global reset signal, used to initialize or reset the module's state.
+	dena: A signal indicating whether the module is enabled and should perform its operation in the current cycle.
+	iena: An input enable signal, its specific role within this module is not explicitly defined but could be related to enabling internal operations or conditions.
+	gpha: A phase indicator or control signal, its specific role within this module is not explicitly defined but could be related to multiphase operations or clocking schemes.
+Output ports:
+	bra_ex [1:0]: A 2bit output signal indicating the result of the branch condition evaluation. The specific meaning of each bit is determined by the internal logic, typically indicating whether a branch should be taken and potentially additional state or condition information.
+
+
+Implementation:
+The aeMB2_brcc module is designed to evaluate branch conditions and generate branch execution signals based on the inputs it receives. The module operates in the context of a processor's execution unit, specifically handling branch-related instructions. The core functionality revolves around determining whether a branch should be taken or not, based on the opcode of the instruction (opc_of), the result of the operation (opd_of), and the specifics of the branch instruction encoded in the rd_of and ra_of registers.
+
+Give me the complete code.
+

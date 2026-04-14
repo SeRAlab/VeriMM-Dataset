@@ -1,0 +1,23 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit binary counter that counts from 0 to 15 and then wraps around. The counter should have an enable signal to start/stop the counting.
+
+Module name:  
+    binary_counter
+
+Input ports:
+    CLK: Clock signal
+    RST: Reset signal
+    EN: Enable signal
+
+Output ports:
+    COUNT: 4-bit output count value
+
+Implementation:
+The module uses a 4-bit register to hold the current count value. On every positive edge of CLK or RST, if RST is active, COUNT is set to 0. If EN is active and RST is not active, COUNT is incremented by 1. If COUNT reaches 15, it wraps around to 0.
+
+Give me the complete code.
+
+module binary_counter (CLK, RST, EN, COUNT);
+input CLK, RST, EN;
+output reg [3:0] COUNT;

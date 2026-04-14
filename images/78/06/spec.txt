@@ -1,0 +1,8 @@
+Design a simple calculator that performs basic arithmetic operations: addition, subtraction, multiplication, and division, based on a 2-bit operation selector (`op`). Inputs `num1` and `num2` are 8-bit wide numbers, and the output is the 8-bit `result` of the selected operation. The module also includes an `overflow` output that indicates if the result exceeds the 8-bit capacity for addition and multiplication, or if an error occurs during division (specifically division by zero).
+module top_module(
+  input [1:0] op,
+  input [7:0] num1,
+  input [7:0] num2,
+  output reg [7:0] result,
+  output reg overflow
+);

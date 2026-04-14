@@ -1,0 +1,10 @@
+Design a synchronous SRAM (Static Random-Access Memory) module that interfaces with a clock input, allowing for read and write operations. The module features a 10-bit address space that supports 1024 72-bit wide memory locations. Upon a rising edge of the clock, it writes the input data to the specified write address if the write enable signal (wren) is asserted. During read operations, if the read enable signal (rden) is active, it provides the stored data at the specified read address as output; otherwise, it outputs zero.
+module top_module(
+    input clock,
+    input [71:0] data,
+    input [9:0] rdaddress,
+    input rden,
+    input [9:0] wraddress,
+    input wren,
+    output [71:0] q
+);

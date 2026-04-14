@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+    
+Implement a module to serve as a multiplexer for FIFO (First-In, First-Out) queues in a communication or data processing system. Its primary function to manage data flow between a generic FIFO interface and multiple endpoint-specific FIFOs based on the current endpoint (`currEndP`) being addressed. This module enables the selection of one out of several FIFO endpoints for both transmission (Tx) and reception (Rx) purposes, effectively routing data to or from the correct endpoint FIFO based on operational requirements. It plays a crucial role in systems where data from different sources or destinations must be managed concurrently, ensuring that data integrity is maintained and that the correct FIFO is accessed at any given time.
+
+Module name:  
+	fifoMux
+
+Input ports:
+	currEndP [3:0]: A 4bit input specifying the current endpoint FIFO to be accessed. This signal determines which of the endpoint FIFOs (EP0 to EP3) is selected for read or write operations.
+	TxFifoREn: A signal that enables read operations from the transmission FIFO. When asserted, data is read from the selected Tx endpoint FIFO.
+	RxFifoWEn: A signal that enables write operations to the reception FIFO. When asserted, data is written to the selected Rx endpoint FIFO.
+	TxFifoEP0Data [7:0], TxFifoEP1Data [7:0], TxFifoEP2Data [7:0], TxFifoEP3Data [7:0]: 8bit data inputs from each of the Tx endpoint FIFOs.
+	TxFifoEP0Empty, TxFifoEP1Empty, TxFifoEP2Empty, TxFifoEP3Empty: Signals indicating whether each of the Tx endpoint FIFOs is empty.
+	RxFifoEP0Full, RxFifoEP1Full, RxFifoEP2Full, RxFifoEP3Full: Signals indicating whether each of the Rx endpoint FIFOs is full.
+Output ports:
+	TxFifoEP0REn, TxFifoEP1REn, TxFifoEP2REn, TxFifoEP3REn: Signals to enable read operations from the respective Tx endpoint FIFOs.
+	TxFifoData [7:0]: The 8bit data output to the generic Tx FIFO interface, sourced from the selected Tx endpoint FIFO.
+	TxFifoEmpty: A signal indicating whether the selected Tx endpoint FIFO is empty.
+	RxFifoEP0WEn, RxFifoEP1WEn, RxFifoEP2WEn, RxFifoEP3WEn: Signals to enable write operations to the respective Rx endpoint FIFOs.
+	RxFifoFull: A signal indicating whether the selected Rx endpoint FIFO is full.
+
+
+Implementation:
+The RTL module fifoMux is designed to interface with multiple FIFOs (First-In-First-Out memory queues) dedicated to transmit (Tx) and receive (Rx) operations across different endpoints (EP0, EP1, EP2, EP3). The module's primary function is to multiplex and demultiplex data streams to and from these FIFOs based on the current endpoint (currEndP) being serviced. This is crucial in systems where multiple data channels operate over a shared physical interface, requiring dynamic routing of data to the appropriate channel.
+
+Give me the complete code.
+

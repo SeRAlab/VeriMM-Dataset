@@ -1,0 +1,42 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as an interface between two subsystems operating at potentially different clock domains, indicated by `ckmb` and `ckdr`. It facilitates data read and write operations across these domains by adapting address, data, and control signals accordingly. The primary functions include:
+
+Handling read and write requests from an IO interface, translating these requests into signals suitable for a secondary interface (possibly a memory or another IO interface).
+Managing data and address translation, including data width adaptation from a 32-bit IO interface to a 256-bit secondary interface.
+Generating appropriate mask signals for write operations based on byte enable inputs.
+Synchronizing read and write operations across different clock domains.
+Providing ready signals to indicate the completion of read and write operations.
+
+Module name:  
+	adapter
+
+Input ports:
+	ckmb: Clock input for the module's primary operations.
+	ckdr: Clock input for operations related to the secondary domain.
+	reset: Asynchronous reset signal.
+	IO_Addr_Strobe: Strobe signal indicating an address is being provided for a read or write operation.
+	IO_Read_Strobe: Strobe signal indicating a read operation.
+	IO_Write_Strobe: Strobe signal indicating a write operation.
+	IO_Address: 32bit address for the current IO operation.
+	IO_Byte_Enable: 4bit signal indicating which bytes of the IO data are valid for write operations.
+	IO_Write_Data: 32bit data to be written during write operations.
+	page: 4bit page number, extending the address space.
+	dbg_out: 3bit debug output, purpose within the module not explicitly defined.
+	srdat: 256bit data read from the secondary interface.
+	srdy: Signal indicating readiness of data from the secondary interface.
+Output ports:
+	srd: Signal to initiate a read operation on the secondary interface.
+	swr: Signal to initiate a write operation on the secondary interface.
+	sa: 29bit address for the secondary interface, derived from IO_Address and page.
+	swdat: 256bit data to be written to the secondary interface.
+	smsk: 32bit mask for write operations on the secondary interface.
+	IO_Ready: Signal indicating the module is ready for a new IO operation.
+	IO_Read_Data: 32bit data read from the secondary interface, to be passed back to the IO interface.
+
+
+Implementation:
+The RTL module named adapter serves as an interface between two distinct clock domains, represented by ckmb and ckdr, and facilitates data communication between an IO interface and a memory subsystem. The module is designed to handle both read and write operations, indicated by IO_Read_Strobe and IO_Write_Strobe signals, respectively. The core functionality of this module is to adapt IO operations into memory operations, which involves address translation, data masking, and data buffering.
+
+Give me the complete code.
+

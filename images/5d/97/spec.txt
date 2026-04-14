@@ -1,0 +1,12 @@
+Design a multi-stage accumulator circuit that processes incoming data inputs to compute sums. The module accepts 8-bit data values and, upon receiving valid inputs while being ready to process, it stores each data input in a register until four values are accumulated. Once four values are collected, it computes their sum and stores it in a separate register. The module can repeat this process for multiple sets of inputs, controlling output validity based on the internal state. The design also signals readiness for input via the `ready_a` output, allowing for synchronous operation with other parts of the system.
+module top_module(
+    input               clk         ,   
+    input               rst_n       ,
+    input       [7:0]   data_in     ,
+    input               valid_a     ,
+    input               ready_b     ,
+ 
+    output              ready_a     ,
+    output  reg         valid_b     ,
+    output  reg [9:0]   data_out
+);

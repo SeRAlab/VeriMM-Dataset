@@ -1,0 +1,8 @@
+Design a circuit that converts differential input signals into single-ended outputs. The module takes two input signals, I and IB, along with control signals for bias termination and buffer enablement. It outputs O and OB based on the state of the differential inputs and control parameters, such as IBUFDISABLE and DQS_BIAS. The circuit includes logic to manage high-impedance states and handle various scenarios, ensuring proper output condition whether the inputs are valid, floating, or invalid (x-state). The purpose of this design is to enable effective signal conditioning for high-speed data applications, particularly suited for devices from the 7-series families, while allowing for low-power operation and configurable output standards.
+module top_module(
+    input I,
+    input IB,
+    input IBUFDISABLE,
+    output O,
+    output OB
+);

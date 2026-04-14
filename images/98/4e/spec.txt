@@ -1,0 +1,12 @@
+Design a simple arithmetic calculator that performs basic operations on two 8-bit input values, `a` and `b`. The module is controlled by a clock signal and a reset signal; when reset is low, the output is set to zero. On the rising edge of the clock, if any of the operation control signals (`add`, `sub`, `mul`, or `div`) are high, the calculator computes the corresponding operation and outputs the 16-bit result in `c`. The operations supported include addition, subtraction, multiplication, and division.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] a,
+  input [7:0] b,
+  input add,
+  input sub,
+  input mul,
+  input div,
+  output reg [15:0] c
+);

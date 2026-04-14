@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+
+Implement a module of an 8-bit shift register that shifts left when the shift_left signal is high and shifts right when the shift_right signal is high. The register holds its value when both signals are low. The register is loaded with a parallel input value when the load signal is high.
+
+Module name:
+    shift_register_8                
+Input ports:
+    clk: Clock signal
+    rst: Reset signal (active high)
+    shift_left: Signal to control left shift
+    shift_right: Signal to control right shift
+    load: Signal to control parallel load
+    data_in: 8-bit parallel input data
+Output ports:
+    data_out: 8-bit output representing the current register value
+
+Implementation:
+If the reset signal is active (rst), the register is cleared to 0. If the load signal is high, the register is loaded with the parallel input value (data_in). If shift_left is high, the register shifts left by one bit on each positive clock edge. If shift_right is high, the register shifts right by one bit on each positive clock edge.
+
+Give me the complete code.

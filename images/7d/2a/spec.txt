@@ -1,0 +1,6 @@
+Design a circuit that uses a clock signal to control the assignment of specific bits in an 8-bit output register based on a 4-bit input signal. The circuit continuously generates a clock waveform and updates the output register, "thing," such that when the 4-bit input `sig` matches specific values (0000 or 0010), corresponding bits in `thing` are set to HIGH. In the case of `sig` matching 0011, an attempt is made to set a non-existent 9th bit, which suggests a potential design issue. If `sig` does not match any specified cases, the output remains unchanged.
+module top_module(
+  input clk,
+  input [3:0] sig,
+  output reg [7:0] thing
+);

@@ -1,0 +1,9 @@
+Design a digital edge detection module that identifies rising and falling edges of a single input signal, 'data', while utilizing a configurable time window for signal recognition. The module operates synchronously with a clock and can be reset. When a rising edge is detected, indicated by 'data' transitioning from LOW to HIGH, the 'rise' output is asserted for one clock cycle if within the specified delay. Similarly, when a falling edge is detected (data transitioning from HIGH to LOW), the 'fall' output is asserted under the same conditions. The time window parameter controls how long the module waits before it can trigger edge detections again, while maintaining internal counters to track the number of clock cycles since the last edge detection.
+module top_module(
+    input clk,
+    input reset,
+    input data,
+    input [3:0] time_window,
+    output reg rise,
+    output reg fall
+);

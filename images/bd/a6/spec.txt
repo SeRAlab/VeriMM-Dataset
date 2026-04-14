@@ -1,0 +1,12 @@
+Design a circuit that performs arithmetic operations on two 8-bit inputs, A and B, based on the state of four input buttons (btnU, btnL, btnR, btnD). When btnU is pressed, it multiplies A and B; when btnL is pressed, it divides A by B; btnR adds A and B; and btnD subtracts B from A. The result (Z) is a 16-bit output. Additionally, the circuit drives a 7-segment display output (SSEG_CA) to present the least significant 4 bits of the result, with SSEG_AN indicating which segment is active, primarily setting the first segment to active. This design serves as a simple calculator capable of basic arithmetic operations with visual output on a 7-segment display.
+module top_module(
+    input [7:0] A, 
+    input [7:0] B, 
+    output reg [15:0] Z, 
+    output reg [7:0] SSEG_CA, 
+    output reg [3:0] SSEG_AN, 
+    input btnU, 
+    input btnL,
+    input btnR,
+    input btnD
+    );

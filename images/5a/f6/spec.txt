@@ -1,0 +1,12 @@
+Design a clock gating module that controls the clock signals for instruction and data tightly coupled memory (ITCM and DTCM) based on activity states and a core stop signal. When the reset signal is inactive, the module monitors the ITCM and DTCM activity inputs to determine whether to enable or disable the respective clock signals (clk_itcm and clk_dtcm). If the core_cgstop signal is asserted, both clocks are turned off, and the associated logic signals (itcm_ls and dtcm_ls) indicate low power states. The functionality optimizes power usage by selectively gating clocks based on memory activity, thereby improving overall system efficiency.
+module top_module(
+    input clk,
+    input rst_n,
+    input core_cgstop,
+    input itcm_active,
+    input dtcm_active,
+    output reg clk_itcm,
+    output reg clk_dtcm,
+    output reg itcm_ls,
+    output reg dtcm_ls
+);

@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as a critical component in the pipeline of a processor, specifically transitioning between the Execute (EX) stage and the Memory (MEM) stage. Its primary function to latch and transfer control signals, ALU results, and other relevant data from the Execute stage to the Memory stage. This module plays a pivotal role in handling pipeline stalls, flushes, and conditional operations (like MOVN and MOVZ instructions in MIPS architecture) that depend on the outcome of the ALU operation or external conditions. It ensures the correct execution flow and data integrity across pipeline stages, accommodating stalls and flushes that may occur due to hazards or control dependencies.
+
+Module name:  
+	EXMEM_Stage
+
+Input ports:
+	clock: A clock signal that triggers the latching of data from the EX stage to the MEM stage.
+	reset: A signal to reset the pipeline stage, clearing all outputs to their default states.
+	EX_Flush, EX_Stall, M_Stall: Control signals indicating whether the current instruction should be flushed or if there's a stall in the EX or MEM stages, respectively.
+	EX_Movn, EX_Movz, EX_BZero: Signals indicating the execution of MOVN or MOVZ instructions and whether the ALU result is zero, respectively.
+	Various control signals (EX_RegWrite, EX_MemtoReg, etc.) indicating the operations to be performed in the memory stage, such as register writeback, memory read/write operations, and special operations like reverse endian and LLSC (Load Linked/Store Conditional).
+	Data signals (EX_RestartPC, EX_ALU_Result, EX_ReadData2, EX_RtRd): These include the ALU result, data to be written to memory, and the target register identifiers, among others.
+Output ports:
+	Control signals for the MEM stage (M_RegWrite, M_MemtoReg, etc.) corresponding to the input EX stage control signals, adjusted for any stalls, flushes, or conditional operations.
+	Data signals for the MEM stage (M_RestartPC, M_ALU_Result, M_ReadData2, M_RtRd): Latched values from the EX stage to be used in the MEM stage.
+
+
+Implementation:
+The EXMEM_Stage module is a critical component in a pipelined processor architecture, specifically designed to handle the transition of data and control signals from the Execute (EX) stage to the Memory (MEM) stage. This module is primarily built using sequential logic, with the core functionality being driven by the positive edge of the clock signal. The module's behavior is also influenced by several control signals such as reset, EX_Flush, EX_Stall, and M_Stall, which are essential for implementing pipeline control mechanisms like flushing and stalling.
+
+Give me the complete code.
+

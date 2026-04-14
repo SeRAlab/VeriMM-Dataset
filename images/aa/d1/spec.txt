@@ -1,0 +1,10 @@
+Design a Booth multiplier circuit that performs signed multiplication of two 8-bit input values, `a` and `b`. The module operates on the rising edge of a clock signal and resets its internal state when the `rst` signal is asserted. A `start` signal initiates the multiplication process, during which the circuit uses a combination of an accumulator, multiplicand, and a bit-shifting approach to generate a 16-bit result. The output `done` indicates the completion of the multiplication operation, and the final product is stored in the `result` output.
+module top_module(
+    input clk,
+    input rst,
+    input start,
+    input [7:0] a,
+    input [7:0] b,
+    output reg done,
+    output reg [15:0] result
+);

@@ -1,0 +1,7 @@
+Implement a metastability hardening circuit that synchronizes an asynchronous input signal, `signal_src`, to a clock domain defined by `clk_dst`. On a rising edge of `clk_dst`, if the reset signal, `rst_dst`, is asserted, both the internal signal, `signal_meta`, and the output `signal_dst` are set to LOW. Otherwise, the circuit updates `signal_meta` with the value of `signal_src`, and then the output `signal_dst` is updated with the value of `signal_meta`. This design helps mitigate the effects of metastability and ensures reliable signal transition in a synchronous system.
+module top_module(
+  input            clk_dst,      
+  input            rst_dst,      
+  input            signal_src,   
+  output reg       signal_dst    
+);

@@ -1,0 +1,10 @@
+Develop an Avalon bus interface module designed to handle specific audio control operations. This module facilitates read and write transactions over an Avalon bus, utilizing a clock signal for synchronization and reset functionality. On a read request to designated memory addresses, it will return specific pre-defined data; for example, it provides a fixed value for an audio FIFO address and increments a counter for a right audio data address. The module simultaneously manages acknowledgment signals to indicate the transaction status by asserting `bus_ack` for read or write operations. Additionally, the design includes a sub-module (`EBABWrapper`) for bus operations, which interacts with the main bus signals and supports the overall functionality.
+module top_module(
+   input rst, clk,
+   input [31:0] bus_addr,
+   input [3:0] bus_byte_enable,
+   input bus_read, bus_write,
+   input [31:0] bus_write_data,
+   output reg bus_ack,
+   output reg [31:0] bus_read_data
+);

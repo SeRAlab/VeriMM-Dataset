@@ -1,0 +1,9 @@
+Design a circuit that functions as a data selector and counter. The module receives two 8-bit inputs and a selection signal; it outputs a computed sum based on the selected input and a counter value that increases with each clock cycle. The counter is reset when the reset signal is asserted. When the select signal is high, the module outputs the second input added to twice the counter value; otherwise, it outputs the first input added to twice the counter value.
+module top_module(
+    input clk,
+    input [7:0] data_in1,
+    input [7:0] data_in2,
+    input select,
+    input reset,
+    output reg [7:0] sum_out
+);

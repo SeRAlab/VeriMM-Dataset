@@ -1,0 +1,7 @@
+Design a circuit that performs unsigned multiplication of two 4-bit inputs, a multiplier and a multiplicand, producing an 8-bit product. The multiplication is executed sequentially on the rising edge of the clock, where the multiplier is loaded into a register and a product register is initialized to zero. The circuit checks each bit of the multiplier, and if a bit is set, it adds the multiplicand shifted by the corresponding bit position to the product register. The resulting product is then assigned to the output.
+module top_module(
+    input clk,                      // Added clk input
+    input [3:0] multiplier,
+    input [3:0] multiplicand,
+    output reg [7:0] product
+);

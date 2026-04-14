@@ -1,0 +1,10 @@
+Design a VGA synchronization generator that produces horizontal and vertical sync signals for a VGA display. The module uses a clock input to generate pixel counters (HorizontalCounter and VerticalCounter) that track the current pixel position on the screen. It outputs VGA horizontal sync (vga_h_sync) and vertical sync (vga_v_sync) signals based on defined sync widths, as well as flags to indicate the current display area (inDisplayArea) along with the counter values for the active display region (CounterX and CounterY). The design adheres to standard VGA timing parameters, ensuring proper synchronization for rendering images on the screen.
+module top_module(
+input wire clk,
+input wire reset,
+output reg vga_h_sync,
+output reg vga_v_sync,
+output reg [10:0] CounterX,
+output reg [10:0] CounterY,
+output reg inDisplayArea
+    );

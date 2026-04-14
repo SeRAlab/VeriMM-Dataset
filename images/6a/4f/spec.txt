@@ -1,0 +1,6 @@
+Design a 16-bit binary counter with synchronous active-high reset functionality. The counter increments its value based on the enabled channels indicated by the `ena` output, allowing for selective incrementing by different weights (16, 8, 2, and 1) depending on the state of `ena[3]`, `ena[2]`, and `ena[1]`. When the `reset` signal is asserted, the counter is reset to zero. The current count value is available on the output `q`.
+module top_module(
+    input clk,
+    input reset,   // Synchronous active-high reset
+    output [3:1] ena,
+    output [15:0] q);

@@ -1,0 +1,6 @@
+Design a sign-extended and zero-extended converter for a 16-bit immediate value. When the ExtSel signal is high, the module performs sign extension of the 16-bit input, replicating the most significant bit (MSB) to fill the upper 16 bits of a 32-bit output. When ExtSel is low, it performs zero extension, padding the upper 16 bits with zeros.
+module top_module(
+    input [15:0]imm16,
+    input ExtSel,
+    output [31:0]imm32
+);

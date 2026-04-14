@@ -1,0 +1,13 @@
+Design a circuit that integrates an adder/subtractor and a shift register with additional functionality for bitwise operations. The module takes two 16-bit inputs (A and B) and performs either addition or subtraction based on a control signal (C), outputting the result on a 16-bit signal (Q). It also includes a 4-bit shift register that can load data from a 4-bit input (data_in) or shift its contents to the right by one bit, depending on the shift and load control signals. Additionally, it computes the bitwise AND of the lower 4 bits of the sum and the shift register output, storing this result for subsequent operations. The entire operation is synchronized to a clock with a synchronous reset to initialize the outputs to zero.
+module top_module(
+    input clk,              // Clock input
+    input reset,            // Synchronous active-high reset
+    input [15:0] A,         // 16-bit input A
+    input [15:0] B,         // 16-bit input B
+    input C,                // Control input for add/subtract operation
+    output [15:0] Q,        // 16-bit output Q
+    input shift,            // Shift input of the shift register
+    input load,             // Load input of the shift register
+    input [3:0] data_in,    // Data input of the shift register
+    output reg [3:0] out    // Output of the shift register
+);

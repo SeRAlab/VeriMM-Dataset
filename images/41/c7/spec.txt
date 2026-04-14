@@ -1,0 +1,8 @@
+Design a 4-bit up/down counter with load capability. The counter increments its value by one when the UP_DOWN signal is high and decrements by one when the signal is low, triggered on the rising edge of the clock. If the RESET signal is asserted, the counter resets to zero. Additionally, if a non-zero value is provided at the LOAD input, the counter will load that value and set COUNT accordingly, thus overriding the increment or decrement operation.
+module top_module(
+    input [3:0] LOAD,
+    input UP_DOWN,
+    input CLK,
+    input RESET,
+    output reg [3:0] COUNT
+);

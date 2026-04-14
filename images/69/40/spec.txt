@@ -1,0 +1,15 @@
+Design a control logic module that determines the selection of various sources based on specific input signals and a three-bit algorithm selector. The module generates control signals (`use_prevprev1`, `use_internal_x`, `use_internal_y`, `use_prev2`, `use_prev1`) by evaluating input conditions and the corresponding algorithm selection. It utilizes a combinatorial approach where, based on the selected algorithm, specific bits in an 8-bit hot signal (derived from `alg_I`) dictate which previous or internal sources to use, thereby enabling flexible routing of data or signals through the system based on the current operational context.
+module top_module(
+	input 		m1_enters,
+	input 		m2_enters,
+	input 		c1_enters,
+	input 		c2_enters,
+    
+    input [2:0] alg_I,
+    
+	output reg	use_prevprev1,
+	output reg	use_internal_x,
+	output reg	use_internal_y,    
+	output reg	use_prev2,
+	output reg	use_prev1    	
+);

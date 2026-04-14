@@ -1,0 +1,15 @@
+Implement a Verilog module with the following description: DMA controller module with inputs and outputs. It includes logic for sprite and DMC DMA operations and CPU pause functionality.
+module top_module(input clk, input ce, input reset,
+                     input odd_cycle,               
+                     input sprite_trigger,          
+                     input dmc_trigger,             
+                     input cpu_read,                
+                     input [7:0] data_from_cpu,     
+                     input [7:0] data_from_ram,     
+                     input [15:0] dmc_dma_addr,     
+                     output [15:0] aout,            
+                     output aout_enable,            
+                     output read,                   
+                     output [7:0] data_to_ram,      
+                     output dmc_ack,                
+                     output pause_cpu);

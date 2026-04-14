@@ -1,0 +1,10 @@
+This module implements a simple data memory block intended for use in a digital system that requires reading and writing 32-bit data values. It features input control signals for read and write operations, with a clock signal to manage synchronous writing. The memory is organized as an array of 128 bytes (8 bits each), and the 32-bit data input is written across four consecutive memory locations on the negative edge of the clock when the write signal is active. For read operations, when the read signal is asserted, the module outputs the 32-bit value from the specified address, assembling it from the four individual 8-bit memory segments. This design serves as a basic RAM interface allowing efficient data storage and retrieval based on the provided address inputs.
+module top_module(
+    input CLK,
+    input wire [31:0] DAddr,  
+    input wire [31:0] DataIn,
+    input RD,             
+    input WR,              
+    
+    output wire [31:0] DataOut
+);

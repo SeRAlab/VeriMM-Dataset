@@ -1,0 +1,7 @@
+Implement a 16-bit Gray code counter that sequentially generates Gray code values on the rising edge of the clock signal. The module resets the counter to zero when the reset input is asserted. The output is divided into two 8-bit outputs: `out_hi` outputs the higher 8 bits of the Gray code, while `out_lo` outputs the lower 8 bits. The Gray code is computed using the formula that involves XORing the count value with its right-shifted version, ensuring that only one bit changes at a time in successive counts.
+module top_module(
+  input clk,
+  input reset,
+  output reg [7:0] out_hi,
+  output reg [7:0] out_lo
+);

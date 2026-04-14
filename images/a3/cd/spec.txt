@@ -1,0 +1,9 @@
+Design a binary counter that operates based on clock signals and control inputs. The module features inputs for resetting, loading a specific value, and controlling the counting direction (increment or decrement). It has a parameterized width, allowing the counter to be configured for n bits, and includes an optional feature to reset the count to zero when it reaches a specified modulo value. The counter's output is continuously updated to represent the current count, which either increments or decrements depending on the control signal while supporting asynchronous reset and load operations.
+module top_module(
+  input clk,
+  input rst,
+  input ctrl,
+  input load,
+  input [n-1:0] val,
+  output reg [n-1:0] out
+);

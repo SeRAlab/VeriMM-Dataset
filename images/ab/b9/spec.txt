@@ -1,0 +1,15 @@
+Design a 4-bit random number generator capable of selecting one of six input data lines based on a 3-bit select signal. The module contains a 6-to-1 multiplexer to choose the desired 4-bit input, based on the selection, and shifts the selected value into a shift register on each clock cycle. The shift register functions to manipulate the output, which can be reset asynchronously and loaded with new data when enabled. The output is synchronized to the clock and reflects the current state of the shift register, allowing for dynamic random number generation.
+module top_module(
+    input clk,
+    input rst,  // Async active-high reset to zero
+    input load,
+    input ena,
+    input [2:0] sel,
+    input [3:0] data0,
+    input [3:0] data1,
+    input [3:0] data2,
+    input [3:0] data3,
+    input [3:0] data4,
+    input [3:0] data5,
+    output reg [3:0] q
+);

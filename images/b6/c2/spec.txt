@@ -1,0 +1,9 @@
+Design a 4-bit up/down counter with configurable counting behavior. The counter increments or decrements its value based on the 'dir' input, with the direction set to decrement when 'dir' is high and increment when low. The counting operation can also be configured by the 'ctrl' input; if 'ctrl' is high, it alters the count by 1, while if 'ctrl' is low, it increments or decrements by 2. The counter resets to zero upon receiving a reset signal. The current count value is output as a 4-bit wide signal.
+module top_module(
+    input clk,
+    input reset,
+    input dir,
+    input ce,
+    input ctrl,
+    output reg [3:0] out
+);

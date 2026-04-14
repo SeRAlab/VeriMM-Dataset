@@ -1,0 +1,11 @@
+Design a 2-to-1 multiplexer with additional validation and reset functionality. The module selects between two 4-bit inputs (in0 and in1) based on the selector signal. If the selector is 0, it outputs in0 if valid_bit0 is asserted; otherwise, it outputs zero. If the selector is 1, it outputs in1 if valid_bit1 is asserted, otherwise, it outputs zero. The output validity is indicated by valid_bit_out, which is set based on the input validity and is reset when the reset_L signal is low. The data_out is also reset to zero when reset_L is low, ensuring controlled output during resets.
+module top_module(
+	input selector,
+	input reset_L,
+	input [3:0] in0,
+	input [3:0] in1,
+	input valid_bit0,
+	input valid_bit1,
+	output reg valid_bit_out,
+	output reg [3:0] data_out
+	);

@@ -1,0 +1,7 @@
+Design a circuit that acts as a control unit to sample the least significant bit (LSB) of an 8-bit shift register input on the rising edge of a clock signal, while incorporating a reset functionality. When reset is low, the module initializes the shift register with a specific value (0x33) and sets the output `a_i` and the flag `set_a_i_flag` to zero. On each subsequent clock cycle, the module sets `set_a_i_flag` high, indicating that the LSB of the shift register should be latched into the output `a_i` on the next clock cycle, provided the reset is not activated.
+module top_module(
+  input clk,
+  input rst_n,
+  input [7:0] shreg,
+  output reg a_i
+);

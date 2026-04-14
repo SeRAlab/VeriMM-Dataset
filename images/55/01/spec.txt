@@ -1,0 +1,7 @@
+Design a hardware module that implements the SHA-256 cryptographic hash function. The module takes a 512-bit input data and processes it through a series of steps including message padding, parsing, and a set of 64 iterative operations to compute a 256-bit output digest. It utilizes internal registers to store intermediate values and maintains clocked reset functionality to initialize the hash state to standard constants upon reset. The design aims to facilitate secure data integrity through a robust hashing mechanism suited for various applications in digital security.
+module top_module(
+  input wire i_clk,
+  input wire i_reset,
+  input wire [511:0] i_data,
+  output reg [255:0] o_digest
+);

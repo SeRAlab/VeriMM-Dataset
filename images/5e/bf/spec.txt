@@ -1,0 +1,8 @@
+Design a 3-to-64 line decoder that takes three select inputs (sel2, sel1, sel0) and activates one of its 64 output lines based on the binary value represented by the select inputs. The outputs are registered, meaning the selected line is only updated on the positive edge of a clock signal. The decoder ensures that when specific combinations of the select signals are active, a corresponding single output in the 64-bit wide output will be set to high (1), with all other outputs remaining low (0).
+module top_module(
+    input clk,
+    input sel2,
+    input sel1,
+    input sel0,
+    output reg [63:0] out
+);

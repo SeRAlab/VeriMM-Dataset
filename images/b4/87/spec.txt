@@ -1,0 +1,6 @@
+Design a 2-to-4 priority encoder with enable functionality. When the enable signal is asserted, the module outputs a one-hot encoding of the priority determined by the 2-bit selection input (sel). The highest priority input corresponding to sel values will dictate which bit of the 16-bit output is set to high, while all other bits are low. If the enable signal is not asserted, the output defaults to a low state.
+module top_module(
+    input [1:0] sel,
+    input enable,
+    output reg [15:0] out
+);

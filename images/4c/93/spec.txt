@@ -1,0 +1,9 @@
+Design a digital filter that averages nine 8-bit input values when a valid input signal is received. The module, which operates on a rising clock edge or a falling reset signal, sums the specified inputs and computes their average, outputting the result as 'dout' while indicating that the output is valid with 'dout_valid'. If the reset signal is asserted, it initializes all outputs and internal registers to zero, ensuring proper operation after reset.
+module top_module(
+    input clk, resetn, din_valid,
+    input [7:0] din00, din01, din02,
+    input [7:0] din10, din11, din12,
+    input [7:0] din20, din21, din22,
+    output reg [7:0] dout,
+    output reg dout_valid
+    );

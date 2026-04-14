@@ -1,0 +1,16 @@
+module top_module(q, d, clk, enable, reset);parameter
+        width = 32,
+        reset_value = 0;
+ 
+    output [(width-1):0] q;
+    reg    [(width-1):0] q;
+    input  [(width-1):0] d;
+    input                clk, enable, reset;
+ 
+    always@(posedge clk) begin
+      if ((reset == 1'b0) && (enable == 1'b1))
+        q <= d;
+      if (reset == 1'b1)
+          q <= reset_value;
+    end
+endmodule

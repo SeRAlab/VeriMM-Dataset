@@ -1,0 +1,13 @@
+Design a control register module capable of managing two 8-bit registers (uCR and sCR) based on input signals. The module features a clock-controlled update mechanism where a reset signal initializes the registers to predetermined values. It supports writing to either register based on the write enable signal (`we`) and a bank select signal (`bank`). Additionally, it incorporates a functionality to conditionally set a specific bit in the selected register using the `setCRY` and `CRY` signals. The current output (`curr_out`) and read output (`read_out`) can reflect the selected register based on the bank selection and ureg status.
+module top_module(
+	reset,
+	clk,
+	in,
+	curr_out,
+	read_out,
+	we,
+	bank,
+	ureg,
+	CRY,
+	setCRY
+);

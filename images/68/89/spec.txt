@@ -1,0 +1,7 @@
+Design a digital implementation of a second-order Infinite Impulse Response (IIR) filter. The filter takes a signed input signal and processes it to produce two signed output signals. It uses predefined fixed-point coefficients to weigh the contributions from past input and output samples, allowing for complex frequency response characteristics. The filter maintains state information across clock cycles, with reset capabilities to initialize internal registers. This module is suitable for applications in digital signal processing tasks, such as audio processing or communications systems, where signal filtering is essential.
+module top_module(
+  input clk,
+  input rst,
+  input signed [n-1:0] in,
+  output reg signed [m-1:0] out // changed to reg type to allow assignment
+);

@@ -1,0 +1,8 @@
+Design a signed 4-bit Booth multiplier that operates on two signed 4-bit inputs, 'a' and 'b', to produce an 8-bit signed output 'out'. The module employs Booth's algorithm for efficient multiplication, using a clock signal to synchronize operations. It initializes internal registers on the first clock cycle and subsequently performs iterative addition and shifting based on the state of the multiplier and accumulator. The 'done' signal indicates when the multiplication process is complete, allowing the output to be read when the multiplier has finished computation.
+module top_module(
+  input clk,
+  input signed [3:0] a,
+  input signed [3:0] b,
+  output reg signed [7:0] out,
+  output reg done
+);

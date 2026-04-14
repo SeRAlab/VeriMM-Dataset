@@ -1,0 +1,7 @@
+This module serves as a controller for converting ADC inputs into phase current values, particularly for a motor drive application. It takes two signed 18-bit inputs (adc_0 and adc_1) and processes them to derive two corresponding 18-bit outputs (phase_currents_0 and phase_currents_1). The module first applies a zero offset adjustment to the ADC values and then calculates an intermediate value based on a defined unit current. It multiplies the adjusted ADC values with this unit current to generate raw current data, which is then conditioned based on specific overflow conditions to ensure that the output remains within valid limits. This provides a way to translate raw ADC data into usable phase current signals for further control in a power electronic system.
+module top_module(
+           adc_0,
+           adc_1,
+           phase_currents_0,
+           phase_currents_1
+          );

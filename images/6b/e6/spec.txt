@@ -1,0 +1,9 @@
+Design a 128-bit wide write buffer for DDR memory. This module allows for writing 16-bit data to specific locations in the buffer based on a 3-bit address input, with the write operation controlled by a write-enable signal. The buffer is reset to zero upon receiving a reset signal and updates its contents on the negative edge of the clock when the write-enable signal is active, directing data to one of eight predefined 16-bit sections within the 128-bit buffer according to the specified address.
+module top_module(
+    input clk,
+    input reset,
+    input [15:0]data,
+    input [2:0]addr,
+    input we,
+    output reg [127:0]buffer
+);

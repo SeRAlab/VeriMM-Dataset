@@ -1,0 +1,12 @@
+Design a circuit that functions as a 32-bit comparator with specific output behavior based on the comparison results of two input 32-bit numbers, `a` and `b`. The circuit operates on the rising edge of a system clock and resets validity when a reset signal is asserted. It determines if `a` is greater than, equal to, or less than `b` (ignoring the sign bits), and accordingly outputs a constant value of `32'h3f800000` (representing 1.0 in IEEE 754 format) when `a` is greater than `b`, or `32'h00000000` (representing 0.0) otherwise. The output validity is controlled by an input signal, allowing for conditional communication of valid comparison results.
+module top_module(
+	input sys_clk,
+	input alu_rst,
+
+	input [31:0] a,
+	input [31:0] b,
+	input valid_i,
+
+	output [31:0] r,
+	output reg valid_o
+);

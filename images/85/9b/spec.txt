@@ -1,0 +1,18 @@
+Implement the Verilog module based on the following description.
+Module X implements the boolean function w = a ^ b.
+
+// Module Y can be described by the following simulation waveform: 
+
+If a = 1, b = 0, then w = 1.
+If a = 0, b = 1, then w = 1.
+If a = 0, b = 0, then w = 0.
+If a = 1, b = 1, then w = 0.
+
+// Now consider a top-level that uses two X submodules and two Y submodules. The first input of all four submodules is connected to input 'a', and the second input of all four submodules is connected to 'b'. The output of the first X submodule is connected to a two-input OR, along with the output of the first Y submodule. The second pair of X and Y submodules is similarly connected to an AND gate. The output of the OR and the AND is connected to a NOR, whose output is 'w'.
+
+// Implement this circuit in Verilog.
+
+module top_module(
+    input a,
+    input b,
+    output w);

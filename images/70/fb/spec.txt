@@ -1,0 +1,6 @@
+Design a circuit that functions as a 4x4 keypad scanner combined with a 4-bit left shift register. The module detects which key is pressed from the column inputs and stores the key state in a 4-bit register. Upon each clock cycle, it shifts the pressed keys left by one position and outputs the concatenation of the shifted keys and the current key state into an 8-bit output. This allows for tracking both the current and previously pressed keys in a left-shifted format.
+module top_module(
+    input clk,
+    input [3:0] col,
+    output reg [7:0] out
+);

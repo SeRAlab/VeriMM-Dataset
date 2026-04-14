@@ -1,0 +1,9 @@
+Design a digital timer circuit that counts elapsed time in minutes and seconds, with a 60-second and 10-minute limit. The timer can be reset asynchronously using the `rst` signal. On each clock pulse, the timer increments the least significant second register until it reaches 9, at which point it rolls over and increments the next second’s place. This pattern continues until 59 seconds are reached, at which point the timer resets, increments the minutes, and rolls over appropriately after reaching 59 minutes. The output consists of separate registers for minutes and seconds, making it suitable for simple timing applications.
+module top_module(
+    input clk,
+    input rst,
+	 output reg [2:0] min1,
+    output reg [3:0] min0,
+    output reg [2:0] sec1,
+    output reg [3:0] sec0
+    );

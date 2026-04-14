@@ -1,0 +1,9 @@
+Design a 4-bit shift register with load and shift capabilities. The register is synchronized to a clock signal and can be reset to zero. On the positive edge of the clock, if the reset is asserted, the output is cleared. If the load enable signal is active, the register loads the 4-bit input data. If the shift enable signal is active, the register shifts its contents to the right and incorporates a new bit, specified by the reg_in signal from the left. The 4-bit output reflects the current state of the register.
+module top_module(
+    input clk,
+    input reset,
+    input shift_en,
+    input load_en,
+    input [3:0] data_in,
+    output [3:0] data_out
+);

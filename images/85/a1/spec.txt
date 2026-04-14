@@ -1,0 +1,9 @@
+Design a 3-bit up/down counter with asynchronous load functionality. The counter increments or decrements its value based on the UP_DOWN input while incorporating a CARRY_IN for arithmetic operations. When the LOAD signal is active, the counter loads a specified value from LOAD_VAL instead of modifying the current count. The output is updated on every positive edge of the clock, ensuring the counter operates reliably and retaining the previous state across clock cycles.
+module top_module(
+    input CLK,
+    input LOAD,
+    input [2:0] LOAD_VAL,
+    input UP_DOWN,
+    input CARRY_IN,
+    output reg [2:0] Q
+);

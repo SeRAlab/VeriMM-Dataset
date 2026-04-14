@@ -1,0 +1,34 @@
+Please act as a professional verilog designer.
+    
+Implement a module primarily functions as a shift register tailored for Ethernet PHY management operations, specifically for the MDIO interface. It to facilitate the configuration and management of Ethernet physical layer devices. The module supports operations such as writing to and reading from PHY registers. Key functionalities include:
+
+Data Serialization: Converts parallel data inputs into a serial data stream for MDIO transactions.
+Operation Encoding: Encodes the operation type (read or write) and the target PHY and register addresses into the serial stream.
+Data Latching: Captures and latches incoming serial data into a parallel format, enabling the system to read data from PHY registers.
+Link Failure Detection: Specifically checks for link failure status by interpreting the latched data from a designated register.
+
+Module name:  
+	eth_shiftreg
+
+Input ports:
+	Clk (input): The system clock input. It drives the timing of data serialization and latching operations.
+	Reset (input): Activehigh reset signal. Initializes the internal shift register and control signals.
+	MdcEn_n (input): Activelow enable signal for the MDIO interface. Controls when the module should perform operations.
+	Mdi (input): The MDIO data input. Serial data from the PHY is received through this port.
+	Fiad (input [4:0]): PHY address. Specifies the target PHY device for the operation.
+	Rgad (input [4:0]): Register address. Specifies the target register within the PHY device.
+	CtrlData (input [15:0]): Control data to be written to the PHY register during write operations.
+	WriteOp (input): Operation type selector. When high, indicates a write operation; when low, indicates a read operation.
+	ByteSelect (input [3:0]): Controls the loading of data into the shift register based on the operation phase.
+	LatchByte (input [1:0]): Controls the latching of the serial data into the parallel output register.
+Output ports:
+	ShiftedBit (output): The most significant bit of the shift register. Represents the current bit to be transmitted during serial data operations.
+	Prsd (output [15:0]): The parallel data output. Holds the data read from the PHY register after a complete read operation.
+	LinkFail (output): Indicates a link failure condition based on specific register data.
+
+
+Implementation:
+The RTL module presented is designed to function within an Ethernet context, specifically for managing data communication and configuration tasks. The module's primary role is to serialize or deserialize data for transmission or reception through an MII (Media Independent Interface). This is achieved through a shift register mechanism, controlled by various inputs that dictate the operation mode (read, write, or configuration) and the data to be processed.
+
+Give me the complete code.
+

@@ -1,0 +1,6 @@
+Design a 3-to-8 decoder with a two-stage pipeline. The module accepts a 3-bit input `select` and generates an 8-bit output `out` where only one bit corresponds to the binary representation of the `select` input, indicating which output is active. The design includes two registers, `pipeline1` and `pipeline2`, to store intermediate states, providing a level of timing and synchronization. The output `out` is continuously updated on the positive edge of the clock based on the value stored in `pipeline1`, ensuring that the decoded output is stable and correctly synchronized with the clock signal.
+module top_module(
+    input clk,
+    input [2:0] select,
+    output reg [7:0] out
+);

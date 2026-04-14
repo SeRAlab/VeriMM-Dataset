@@ -1,0 +1,10 @@
+Design a clock generation module that produces multiple clock signals from a 24 MHz input clock (`CLK_24M`). The module includes the generation of a 12 MHz clock (`CLK_12M`), a 68 kHz clock (`CLK_68KCLK`), and a 6 MHz clock (`CLK_6MB`). It also yields a 1 MHz clock (`CLK_1MB`) that is derived from the CLK_3M signal, modulated by a flip-flop driven by the 12 MHz clock. The module incorporates a reset functionality (`nRESETP`) to initialize the clock divider state and ensure proper operation. The design effectively generates and manages different clock frequencies for use in synchronous circuits.
+module top_module(
+	input CLK_24M,
+	input nRESETP,
+	output CLK_12M,
+	output reg CLK_68KCLK = 1'b0,	
+	output CLK_68KCLKB,
+	output CLK_6MB,
+	output reg CLK_1MB
+);

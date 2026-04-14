@@ -1,0 +1,8 @@
+Design a simple synchronous data memory module with 64 entries, each 32 bits wide. The module supports write operations controlled by a write enable signal (`we`) and outputs the stored data from a given address (`addr`) on a clock edge. When the clock signal rises, if `we` is high, it writes the input data (`wdata`) to the specified address in memory. The output data (`rdata`) is continuously updated to reflect the contents of the memory at the specified address, providing read access to the memory.
+module top_module(
+	input         clk  ,
+	input         we   ,
+	input  [31:0] addr ,
+	input  [31:0] wdata,
+	output reg [31:0] rdata
+);

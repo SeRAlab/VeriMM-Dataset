@@ -1,0 +1,6 @@
+Design a memory arbiter that resolves multiple memory requests based on their corresponding priority values. The module takes in 'n' request signals and 'm' priority signals, evaluates them, and determines which request should be selected based on the highest priority. It ensures that among concurrent requests, the one with the highest priority is chosen, and in the event of ties, the request with the smallest index is favored. The output 'sel' indicates the successful selection of a request for further processing.
+module top_module(
+  input [n-1:0] req,
+  input [m-1:0] pri,
+  output reg sel
+);

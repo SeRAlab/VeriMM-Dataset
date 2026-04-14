@@ -1,0 +1,9 @@
+Design a 40-bit adder/subtractor module that performs arithmetic operations based on a control signal. The module has a clock input (Sclk) and two 40-bit wide inputs (a and b), with an additional input (add_sub) to select between addition and subtraction. When the adder_en signal is high, the module executes the selected operation on the rising edge of the clock, storing the result in a temporary register (temp), which is continuously assigned to the output (sum). If adder_en is low, the previous value in temp is retained, effectively keeping the output unchanged.
+module top_module(
+    input Sclk,
+	input [39:0] a,
+    input [39:0] b,
+    input add_sub,
+	input adder_en,
+    output [39:0] sum
+    );

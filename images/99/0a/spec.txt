@@ -1,0 +1,8 @@
+Design a circuit that performs a specific data transposition operation on a 256-bit input (dataa) when triggered by a clock signal (clk) and an in_select control signal. When in_select equals 3, the module rearranges portions of the input data into a 512-bit output (result) according to a predefined mapping, effectively organizing 16 separate 16-bit segments from the input to specified positions in the output. The module also includes a reset functionality to initialize the output to zero.
+module top_module(
+	input [255:0] dataa,
+	input clk,
+	input [1:0] in_select,
+	output reg [511:0] result,
+	input reset
+	);

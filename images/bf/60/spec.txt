@@ -1,0 +1,9 @@
+Design a 4-bit up counter with load and reset functionality. The counter increments on each clock cycle, with a wrap-around condition that sets the output to zero when the maximum count (15) is reached, while also asserting a wrap_around signal. It can be reset to zero or loaded with a 4-bit input value when the respective control signals are activated.
+module top_module(
+  input clk,
+  input reset,
+  input load,
+  input [3:0] data_in,
+  output reg [3:0] count_out,
+  output reg wrap_around
+);

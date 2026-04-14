@@ -1,0 +1,11 @@
+Design a module that integrates multiple functionalities: it includes an 8-bit register with synchronous reset, an edge detector for input signals, and a simple counter that progresses during specific state transitions. The register captures the 8-bit input data on the rising edge of the clock and resets to a predefined value when the reset signal is active. The edge detector generates a signal indicating a rising edge on the least significant bit of the input. The module manages state transitions between IDLE, COUNT, and RESET states for the counter, which increments until a preset value is reached before returning to the IDLE state. Additionally, the final output combines the current counter value with the edge detection result.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input [7:0] d, // 8-bit input for the register
+    input [7:0] in, // 8-bit input for the edge detector
+    output [7:0] q, // 8-bit output from the register
+    output [7:0] edge_out, // 8-bit output from the edge detector
+    output reg [3:0] counter_out, // 4-bit output from the counter
+    output [7:0] final_output // 8-bit output from the functional module
+);

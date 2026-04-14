@@ -1,0 +1,11 @@
+Implement the Verilog module based on the following description.
+You are given a 6-bit input vector input_bits[5:0]. We want to know some relationships between each bit and its neighbour:
+(1) and_left: Each bit of this output vector should indicate whether both the corresponding input bit and its neighbour to the left are '1'. For example, and_left[4] should indicate if input_bits[4] and input_bits[5] are both 1. Since input_bits[5] has no neighbour to the left, the answer is obvious so we don't need to know and_left[5].
+(2) or_right: Each bit of this output vector should indicate whether any of the corresponding input bit and its neighbour to the right are '1'. For example, or_right[2] should indicate if either input_bits[2] or input_bits[1] are 1. Since input_bits[0] has no neighbour to the right, the answer is obvious so we don't need to know or_right[0].
+(3) xor_cycle: Each bit of this output vector should indicate whether the corresponding input bit is different from its neighbour to the left. For example, xor_cycle[4] should indicate if input_bits[4] is different from input_bits[5]. For this part, treat the vector as wrapping around, so input_bits[5]'s neighbour to the left is input_bits[0].
+
+module relation_check (
+	input [5:0] input_bits,
+	output [4:0] and_left,
+	output [5:1] or_right,
+	output [5:0] xor_cycle);

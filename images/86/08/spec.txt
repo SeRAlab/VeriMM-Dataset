@@ -1,0 +1,13 @@
+Implement a simulated FIFO (First-In-First-Out) buffer for a UART system. The module features a data input clock and reset signal, managing a 64-bit wide FIFO storage. It provides outputs indicating the empty and full status of the FIFO, as well as the data being read. On each clock cycle, if the reset signal is low, the FIFO and its usage counter are reset. If the FIFO is not full and a read command is given, it outputs the oldest byte of data and adjusts the usage counter accordingly. Conversely, when there's no read command, it shifts in a new byte, thus maintaining the FIFO structure.
+module top_module(
+    // inputs:
+    clk,
+    fifo_rd,
+    rst_n,
+
+    // outputs:
+    fifo_EF,
+    fifo_rdata,
+    rfifo_full,
+    rfifo_used
+);

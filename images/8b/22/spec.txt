@@ -1,0 +1,8 @@
+Design a 2-to-1 multiplexer that selects between two 16-bit inputs, in0 and in1, based on a single select signal (sel). The multiplexer also includes an enable signal (en); when en is low, the output (out) is held at zero regardless of the select signal. When en is high, if sel is 0, the output takes the value of in0, and if sel is 1, the output reflects in1. If sel is neither 0 nor 1, the output defaults to zero.
+module top_module(
+  input en,
+  input [15:0]in0,
+  input [15:0]in1,
+  input  sel,
+
+  output reg[15:0] out);

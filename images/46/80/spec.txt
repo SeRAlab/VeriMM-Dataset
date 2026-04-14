@@ -1,0 +1,6 @@
+Design a 3-bit priority encoder that encodes the highest-priority active input signal from an 8-bit input bus. On each rising edge of the clock, the module captures the input signals, and based on the first encountered high bit in a descending order (from the least significant to the most significant), it outputs a corresponding 3-bit binary representation of the position of that signal. If no input is active, the output retains its previous state.
+module top_module(
+    input clk,                // Added clock input
+    input [7:0] in,
+    output reg [2:0] out
+);

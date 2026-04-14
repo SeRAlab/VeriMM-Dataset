@@ -1,0 +1,8 @@
+Design a dual-function 8-bit shift register with D flip-flop capabilities. The circuit has a synchronous reset and a control input that allows for selecting between two modes: when 'select' is high, it shifts the current contents of the shift register to the left and fills the least significant bit with the input 'd'; when 'select' is low, it captures the input 'd' into the D flip-flop, holding it for output. The output 'q' is determined based on the 'select' signal, providing either the shifted register value or the D flip-flop value.
+module top_module(
+    input clk,
+    input reset,            // Synchronous reset
+    input [7:0] d,
+    input select,           // Control input to choose between shift register and D flip-flop
+    output [7:0] q
+);

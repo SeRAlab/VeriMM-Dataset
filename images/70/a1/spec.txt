@@ -1,0 +1,9 @@
+Design a 32-bit wide RAM model with a depth of 2048 entries. The module allows for writing data to a specified address when the write enable signal is active and the write clock is high. Simultaneously, it supports reading data from any valid address, outputting the value stored at the read address. If the read address exceeds the array depth, the output is set to an undefined state. This module serves as a basic memory storage component within a digital system.
+module top_module(
+  input [31:0] data,
+  input [23:0] rdaddress,
+  input [23:0] wraddress,
+  input wrclock,
+  input wren,
+  output reg [31:0] q
+);

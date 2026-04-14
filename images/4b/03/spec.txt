@@ -1,0 +1,7 @@
+Design a pulse generation circuit that produces a single pulse output (out) in response to a rising edge on the input signal (in) while synchronized to a clock (clk). The circuit maintains its state using a simple two-state machine, transitioning from an idle state (S0) to an active state (S1) on detecting a high input, and returns to the idle state after the pulse is generated. The output is low when in state S0 or after the pulse has been generated in state S1, allowing for a clean pulse generation in applications requiring a one-shot response to an input trigger. The circuit also includes an active-low reset (rst_n) to clear the state and output.
+module top_module(
+					output reg out,
+					input in,
+					input clk,
+					input rst_n
+    );

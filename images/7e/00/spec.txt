@@ -1,0 +1,6 @@
+Implement a 16-stage pipelined Johnson counter that produces a serial binary output. On the rising edge of the clock, if the reset (rst_n) is low, the counter stages (Q1 to Q16) are initialized to zero. Otherwise, the output of the last stage (Q16) is inverted and shifted through each successive stage, creating a unique sequence of outputs. The final output (Q) is taken from the last stage, Q16, reflecting the current state of the counter. This design is useful for applications requiring a simple counting mechanism with a known pattern.
+module top_module(
+  input                clk,
+  input                rst_n,
+  output reg  [15:0]   Q
+);

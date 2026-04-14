@@ -1,0 +1,11 @@
+Design a 100-bit shift register with the capability to load data, shift left, and shift right based on a 2-bit control input. The module includes a separate 8-bit register that can also be loaded. The output consists of the current state of the shift register, the 8-bit register, and the result of a bitwise AND operation between the lower 8 bits of the shift register and the 8-bit register. The shifting and loading operations are clock-driven, providing flexibility in data manipulation for various digital applications.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena, // 2-bit input to choose direction and shift/hold
+    input [99:0] data, // 100-bit input to shift register
+    output reg [99:0] q, // 100-bit output from shift register
+    input [7:0] d, // 8-bit input to register
+    output reg [7:0] q_reg, // 8-bit output from register
+    output reg [7:0] and_output // 8-bit output from functional module
+);

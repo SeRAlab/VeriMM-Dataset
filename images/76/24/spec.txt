@@ -1,0 +1,6 @@
+Create a 3-to-1 multiplexer with 16-bit wide inputs. Depending on the value of the 2-bit `sel` input, the module outputs one of the three 16-bit inputs: `alu_in` when `sel` is 00, `mem_in` when `sel` is 01, `cntrl_in` when `sel` is 10, and outputs 0 when `sel` is 11.
+module top_module(
+input [1:0] sel,
+input [15:0] alu_in, mem_in, cntrl_in,
+output [15:0] mux16_out
+);

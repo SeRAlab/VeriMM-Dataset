@@ -1,0 +1,8 @@
+Design a three-bit Gray code counter that operates on the positive edge of a clock signal. Upon receiving a reset signal, the counter and the Gray code output are initialized to zero. When the load signal is activated, it sets the counter to a given three-bit input value and calculates its corresponding Gray code. In normal operation (when load is not active), the counter increments on each clock cycle, and the output reflects the current counter value converted to Gray code format by applying the appropriate transformation.
+module top_module(
+  input clk,
+  input reset,
+  input load,
+  input [2:0] data,
+  output reg [2:0] gray_code
+);

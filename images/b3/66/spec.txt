@@ -1,0 +1,10 @@
+Design a simple 8-bit calculator that performs basic arithmetic operations such as addition, subtraction, multiplication, and division based on a two-bit operation code. The module takes two 8-bit operands as inputs and uses a clock signal for operation synchronization. Upon a reset signal, it clears the output result and indicates that the result is invalid. When a valid operation occurs, the computed result is outputted along with a valid flag to confirm its availability.
+module top_module(
+  input clk,
+  input reset_n,
+  input [7:0] operand1,
+  input [7:0] operand2,
+  input [1:0] operation,
+  output reg [7:0] result,
+  output reg valid
+);

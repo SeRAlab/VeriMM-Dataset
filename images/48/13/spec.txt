@@ -1,0 +1,9 @@
+Design a synchronous circuit that detects the start of a frame signal (sof), generating a corresponding frame position output when activated. The system includes three cascaded 7-bit counters that increment based on the clock and a start of data signal (sod), effectively creating a timing mechanism for the frame position. Upon detecting a change in the sof signal, the module captures the current counts from the counters and produces an 8-bit high frame position and a 7-bit low frame position, signifying readiness via a frame_pos_ready signal. This design is suitable for applications requiring precise tracking of frame indices in a timed sequence.
+module top_module(
+    input clock,
+    input reset,
+    input load,
+    input enable,
+    output reg [6:0] count,
+    output reg tc
+);

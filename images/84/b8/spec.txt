@@ -1,0 +1,9 @@
+Design a register file that supports read and write operations for a configurable number of registers. It utilizes `n` address bits to select from `k` registers, each capable of storing `m` bits of data. On the positive edge of the write enable signal (`wr_en`), data from `data_in` is written to the register addressed by `addr_w`. Similarly, on the positive edge of the read enable signal (`rd_en`), data from the register addressed by `addr_r` is outputted through `data_out`. This module facilitates data storage and retrieval in a memory-like structure, commonly used in processors and digital systems.
+module top_module(
+  input [n-1:0] addr_r,
+  input [n-1:0] addr_w,
+  input [m-1:0] data_in,
+  input wr_en,
+  input rd_en,
+  output reg [m-1:0] data_out // Change wire to reg
+);

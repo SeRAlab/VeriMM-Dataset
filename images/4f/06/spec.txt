@@ -1,0 +1,10 @@
+Design a synchronous 8-bit calculator module that performs basic arithmetic operations based on the input operation selection. It accepts two 8-bit numbers (num1 and num2) and a 2-bit operation code (op) to determine whether to add, subtract, multiply, or divide the numbers. The calculator also features reset and clear functionalities to initialize or reset the result to zero, respectively. The operation results are updated on the rising edge of the clock, and the final result is output as an 8-bit value.
+module top_module(
+    input clk,
+    input rst,
+    input clear,
+    input [1:0] op,
+    input [7:0] num1,
+    input [7:0] num2,
+    output reg [7:0] result
+);

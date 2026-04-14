@@ -1,0 +1,8 @@
+Design a stack-based memory module that implements a Last-In-First-Out (LIFO) storage system. It allows for data input through the `data_in` signal, enabling writing of new data to the top of the stack when `write_en` is asserted. Conversely, it supports reading the most recently written data when `read_en` is asserted, with automatic management of the stack's top index. The module has a defined depth and a data width of `n`, ensuring that values stored in the stack can be accessed in the order they were added, while outputting zeros when attempting to read from an empty stack.
+module top_module(
+  input [n-1:0] data_in,
+  input write_en,
+  input read_en,
+  input clk,           // Added clock input
+  output reg [n-1:0] data_out  // Changed to reg to hold value in always block
+);

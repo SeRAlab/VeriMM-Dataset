@@ -1,0 +1,11 @@
+Design a 4-bit shift register with an asynchronous reset and a loading feature. On the rising edge of the clock, if the reset signal is high, the output is cleared to zero. If the load signal is active, the register initializes its output with the concatenated values of inputs d, c, b, and a. Otherwise, it performs a left shift operation, moving its current value left and inserting the value of input a into the least significant bit position.
+module top_module(
+    input [3:0] a,
+    input [3:0] b,
+    input [3:0] c,
+    input [3:0] d,
+    input clk,
+    input load,
+    input rst,
+    output reg [3:0] q
+);

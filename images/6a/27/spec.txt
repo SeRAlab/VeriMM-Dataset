@@ -1,0 +1,7 @@
+Design a data loading logic module that extracts a byte from a 32-bit input based on a 2-bit ALU selection signal, where different ALU values correspond to different byte positions in the input. The module also incorporates a sign extension feature controlled by the Sign input, where if Sign is 0, the extracted byte is sign-extended to form a 32-bit word, and if Sign is 1, the byte is zero-extended. Finally, based on the DT input, the output can either be the sign-extended or zero-extended word or the original 32-bit data directly, facilitating flexible data manipulation for various purposes like memory operations or arithmetic processing.
+module top_module(
+						input wire [31:0] D,
+						input wire [1:0] ALU,
+						input wire DT,Sign,
+						output reg [31:0] ND
+						);

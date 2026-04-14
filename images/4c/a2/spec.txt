@@ -1,0 +1,10 @@
+Design a circuit that incorporates a 2-to-1 multiplexer, an absolute value computation, and a reset mechanism. The multiplexer selects between two 1-bit inputs (a and b) based on the select signal (S), while the reset signal (areset) initializes the output to zero. The absolute value module computes the absolute value of a 4-bit binary input; if the input's most significant bit indicates a negative number, it negates the binary value and adds one to produce the absolute value. Finally, the circuit provides a final output that reflects the absolute value unless the reset is active, in which case it outputs zero.
+module top_module(
+    input a,
+    input b,
+    input S,
+    input areset,
+    input [3:0] binary,
+    output reg [3:0] abs_val,
+    output reg [3:0] final_output   // Change wire to reg
+);

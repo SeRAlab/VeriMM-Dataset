@@ -1,0 +1,9 @@
+Design a signed 8-bit multiplier that computes the product of two signed 8-bit inputs (multiplier and multiplicand) clocked by a rising edge. The module utilizes iterative bit-wise multiplication, where it shifts and adds partial products based on the current state of the multiplier. A reset input initializes the internal states, including the bit counter and sum. The product is output as a signed 16-bit value, with a 'done' signal indicating the completion of the multiplication process once all bits of the multiplier have been processed.
+module top_module(
+    input clk,
+    input reset,
+    input signed [7:0] multiplier,
+    input signed [7:0] multiplicand,
+    output reg signed [15:0] product, // Changed from wire to reg
+    output reg done
+);

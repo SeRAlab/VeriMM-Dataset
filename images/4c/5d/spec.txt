@@ -1,0 +1,8 @@
+Design a shift register memory block with serial input and output capabilities. The module captures a single-bit serial input (si) on the rising edge of a clock (clk), shifting it into an n-bit wide shift register, where n is configurable (defaulting to 8). Upon a reset signal (rst), the contents of the shift register are cleared. The module outputs the least significant bit (LSB) of the shift register as the serial output (so) while providing a parallel output (po) that reflects the current state of the entire shift register. This functionality allows for serial-to-parallel data conversion and temporary data storage.
+module top_module(
+  input si, // serial input signal
+  input clk, // clock signal
+  input rst, // reset signal
+  output so, // serial output signal
+  output reg [n-1:0] po // parallel output signal
+);

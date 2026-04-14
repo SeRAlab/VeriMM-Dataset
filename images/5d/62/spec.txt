@@ -1,0 +1,5 @@
+Design a vending machine controller that manages dispensing two types of products based on coin insertion and product selection. The module allows for the insertion of a coin and the selection of either product 1 or product 2 via buttons. It tracks the inventory of each product, initializing with 10 units each. When a coin is detected, it enables the selection of products; if the corresponding button is pressed and the product is available, it decrements the inventory count and activates the dispense output for the selected product. The dispense signals are momentarily asserted and automatically reset to indicate the dispensing action. The system also resets the coin insertion flag when no selection buttons are pressed.
+module top_module(
+    input wire clk, coin, button1, button2,
+    output reg dispense1, dispense2
+);

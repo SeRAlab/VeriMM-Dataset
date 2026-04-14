@@ -1,0 +1,8 @@
+Design a shift register comparator that captures incoming serial data at each clock cycle and compares it to a predefined 8-bit parallel data input. When the reset signal is activated, the shift register is cleared and the match output is set to LOW. During normal operation, the module shifts the serial data into the register and checks for equality with the parallel data. If a match is detected, the output signal `match` is set to HIGH; otherwise, it remains LOW.
+module top_module(
+    input clk,
+    input reset,
+    input serial_data,
+    input [7:0] parallel_data,
+    output reg match
+);

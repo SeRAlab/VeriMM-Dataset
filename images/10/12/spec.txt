@@ -1,0 +1,12 @@
+Design a packet filter that checks if an incoming packet meets certain criteria. The filter should accept packets based on a predefined source IP address, destination IP address, and protocol type. The filter will have the following inputs: 
+- src_ip: 8-bit source IP address
+- dest_ip: 8-bit destination IP address
+- protocol: 2-bit protocol type (00 for TCP, 01 for UDP, 10 for ICMP, 11 for other)
+
+The filter will produce one output:
+- accept: 1-bit signal, high if the packet is accepted, low otherwise.
+
+The specific criteria for accepting a packet are:
+- If src_ip is 8'hAA and dest_ip is 8'hBB with protocol 00 (TCP), accept the packet.
+- If src_ip is 8'hCC and dest_ip is 8'hDD with protocol 01 (UDP), accept the packet.
+- For all other combinations, do not accept the packet.

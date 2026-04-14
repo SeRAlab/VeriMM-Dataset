@@ -1,0 +1,7 @@
+Design a Phase-Locked Loop (PLL) that generates a clock output signal (out_clk) synchronized to a reference clock (ref_clk) with a configurable output frequency. The module employs feedback from the output clock (fb_clk) to control its voltage-controlled oscillator (VCO), which adjusts its frequency based on the phase difference computed between the reference clock and the feedback clock. The PLL features a loop filter implemented through a phase accumulator that modulates the VCO frequency, ensuring stability and minimizing phase error. Upon reset, the system initializes internal states, and during operation, it continuously aligns the output frequency (f_out) based on the provided reference frequency (f_ref) and the specified dividers (n and m).
+module top_module(
+  input ref_clk,
+  input fb_clk,
+  input reset,
+  output out_clk
+);

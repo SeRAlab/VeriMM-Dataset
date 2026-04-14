@@ -1,0 +1,7 @@
+Design a circuit that interfaces with an OV7670 VGA camera to process incoming 8-bit pixel data and convert it into a 16-bit RGB format. The module captures data pairs from the camera when the 'active' signal is high and combines these pairs into a single RGB output. It utilizes a stateful mechanism to store the first and second bytes of data and outputs the RGB value after receiving two pairs of data. The output is updated on each positive edge of a doubled clock signal, facilitating conversion from 8-bit to 16-bit color representation effectively.
+module top_module(
+    input active,
+    input clk_x2,
+    input [7:0] data,
+    output reg [15:0] rgb // Changed to reg to allow assignment in always block
+);

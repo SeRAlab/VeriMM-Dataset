@@ -1,0 +1,13 @@
+Design a finite state machine (FSM) based LCD controller that manages the initialization and writing process to an LCD display. The module receives an 8-bit data input alongside control signals for reset, start operation, and read/write selection. Upon activation, it transitions through states to enable the LCD and send the provided data while providing a completion signal (oDone) once the operation is finished. The LCD is set to write mode, and the finite state logic ensures that the timing and control of the enable (LCD_EN) signal are managed appropriately for the display to process data correctly.
+module top_module(
+    input [7:0] iDATA,
+    input iRS,
+    input iStart,
+    input iCLK,
+    input iRST_N,
+    output reg oDone,
+    output [7:0] LCD_DATA,
+    output reg LCD_RW,
+    output reg LCD_EN,
+    output reg LCD_RS
+);

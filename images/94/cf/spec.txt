@@ -1,0 +1,15 @@
+Implement a Verilog module with the following description: This code is a video fetcher module. It includes input/output signals, registers, and combinational logic for controlling data transfer. It handles fetching video data from RAM and writing it to a line buffer.
+module top_module(
+	input					RST_I,
+	input					CLK_I_25MHZ,
+	input					VSYNC_I,
+	input					VFEN_I,
+	output	[12:0]	RAM_ADR_O,
+	output				RAM_CYC_O,
+	output				RAM_STB_O,
+	input					RAM_ACK_I,
+	input		[15:0]	RAM_DAT_I,
+	output	[ 5:0]	LB_ADR_O,
+	output	[15:0]	LB_DAT_O,
+	output				LB_WE_O
+);

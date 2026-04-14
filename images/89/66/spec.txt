@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+
+Implement a module of a 6-bit synchronous binary counter with enable and preset signals. The counter increments by 1 only when the enable signal is high. The counter can be preset to a specific value when the preset signal is high. The counter resets to 0 when the reset signal (rst) is active.
+
+Module name:
+    binary_counter_preset_6
+Input ports:
+    rst: Reset signal (active high)
+    clk: Clock signal
+    enable: Signal to enable counting (1 for enable, 0 for disable)
+    preset: Signal to preset a specific value (1 for preset, 0 for no preset)
+    preset_value: 6-bit value to preset the counter when preset is high
+Output ports:
+    count: 6-bit output representing the current count value
+
+Implementation:
+If the reset signal is active (rst), the counter is reset to 0 by assigning the value 6'b000000 to the output register (count). If preset is high, the counter is set to the value of preset_value. If enable is high and preset is low, the counter increments by 1 on each positive clock edge.
+
+Give me the complete code.

@@ -1,0 +1,12 @@
+Design a pipeline register module for an instruction fetch (IF) stage in a CPU. This module captures the program counter (if_pc) and instruction (if_is) signals on the rising edge of a clock signal, unless a reset (rst) is active, in which case it initializes the output signals (id_pc and id_is) to zero. The module also incorporates control logic to prevent data capture when the stl_mm signal indicates a stall condition, ensuring that outputs are only updated when valid data is available. This functionality is essential for maintaining proper data flow in a pipelined processor architecture.
+module top_module(
+    input   wire[31:0]  if_pc,
+    input   wire[31:0]  if_is,
+    input   wire        rst,
+    input   wire        clk,
+    output  reg[31:0]  id_pc,
+    output  reg[31:0]  id_is,
+
+    input   wire        stl_mm,
+    input   wire        mmif_ok
+);

@@ -1,0 +1,30 @@
+Please act as a professional Verilog designer.
+
+Implement a 32-bit register with an enable and asynchronous clear feature.
+
+Module name:
+    register_32bit
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    clr_n: Active-low clear signal to initialize the register.
+    en: Enable signal to update the register value.
+    d: 32-bit input data to store in the register.
+Output port:
+    q: 32-bit register representing the current stored value.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the clear signal (clr_n), the register value is updated.
+If the clear signal (clr_n) is low, the register value (q) is set to 0.
+If the enable signal is high, the register value (q) is set to the input data (d).
+Otherwise, the register value remains unchanged.
+
+Give me the complete code.
+
+module register_32bit(
+   input                clk,
+   input                clr_n,
+   input                en,
+   input [31:0]         d,
+ 
+   output reg [31:0]    q
+);

@@ -1,0 +1,9 @@
+Implement a synchronous FIFO (First In, First Out) memory with read and write operations. The module utilizes a memory array to store 36-bit wide data, allowing data to be written when the enable signal (ENB) is active and the write enable signal (E) is asserted. The write pointer is incremented on each clock cycle to track the next available memory location for writing data from the input (din). Simultaneously, the read pointer is updated when the read operation is executed, providing access to the currently stored data at the read address output (DOUTB). This design serves as a basic FIFO buffer for managing data flow in digital systems.
+module top_module(DOUTB,
+    clk,
+    ENB,
+    E,
+    Q,
+    ADDRB,
+    ADDRA,
+    din);

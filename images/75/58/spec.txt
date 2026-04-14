@@ -1,0 +1,9 @@
+Design a synchronous 2-to-1 multiplexer with a reset functionality. The module outputs one of two 32-bit input data signals, `in1` or `in2`, based on the selection input `sel`. When the `rst` signal is asserted, the output is set to zero. On the rising edge of the clock, if `rst` is low, the output will follow `in1` if `sel` is high, or `in2` if `sel` is low.
+module top_module(
+    input rst,
+    input sel,
+    input clk,                 // Added clk input
+    input [31:0] in1,
+    input [31:0] in2,
+    output reg [31:0] out
+);

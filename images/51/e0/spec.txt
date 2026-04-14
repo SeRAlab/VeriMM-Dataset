@@ -1,0 +1,21 @@
+Design a circuit that functions as a configurable 8-channel output selector with an optional inversion feature. It accepts eight signed 16-bit inputs and controls the selection of outputs based on the enable signal and the inverse signal. When the enable signal is asserted, the outputs o_1 to o_6 are selected from either a set of reordered inputs (based on the inverse signal) or passed through directly from the inputs depending on the current state of inverse. The first input (i_0) and the last input (i_7) are always passed directly to outputs o_0 and o_7, respectively. This module effectively serves as a specialized multiplexer with added functionality for input reordering and selection based on control signals.
+module top_module(
+    enable,
+    inverse,
+    i_0,
+    i_1,
+    i_2,
+    i_3,
+    i_4,
+    i_5,
+    i_6,
+    i_7,
+    o_0,
+    o_1,
+    o_2,
+    o_3,
+    o_4,
+    o_5,
+    o_6,
+    o_7
+);

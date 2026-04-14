@@ -1,0 +1,10 @@
+Design a circuit that functions as a combination of a 2-to-1 multiplexer and an arithmetic unit. The multiplexer selects between two 8-bit inputs, d1 and d2, based on the sel signal, and outputs the selected value to 8 D flip-flops, which store the output in register q upon the negative edge of the clock or reset condition. Additionally, the module computes the sum of d1 and d2, continuously updating the sum output whenever there is a change in the add operation. This design serves to both switch input signals and perform addition, providing flexibility in data handling and arithmetic operations.
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] d1,
+    input [7:0] d2,
+    input sel,
+    output reg [7:0] q,
+    output reg [7:0] sum
+);

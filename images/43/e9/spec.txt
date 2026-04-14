@@ -1,0 +1,13 @@
+Design a 16-bit register that serves as a programmable counter. On a rising edge of the clock, if the reset signal is active, it initializes the output to zero. If the reset is not active and cchld is low, the module will either load incoming data into the counter when the enable signal is asserted, or it will hold a value from the rn input if loopen is active. If neither condition is met but the pcen signal is high, the counter increments its current value by 1.
+module top_module(
+	input clk,
+	input cchld,
+	input pcen,
+	input loopen,
+	input reset,
+	input enable,
+	
+	
+	input [15:0] rn,
+	input [15:0] incoming_data,
+	output reg [15:0] pc );

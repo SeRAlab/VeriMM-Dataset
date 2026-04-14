@@ -1,0 +1,9 @@
+Design a synchronous binary counter with both binary and Gray code outputs. The counter increments or decrements its value based on the control signal 'ctrl' when enabled by the 'en' signal. It resets to zero when the 'rst' signal is high. The binary count is stored in a register, and the Gray code is computed by applying a specific transformation to the binary value. This module is parameterized to support counters of varying bit widths, defined by the 'bits' parameter.
+module top_module(
+  input clk,
+  input rst,
+  input en,
+  input ctrl,
+  output [bits-1:0] binary_count,
+  output [bits-1:0] gray_count
+);

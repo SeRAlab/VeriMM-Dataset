@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module performs a specific combinational logic function known as an AND-OR-INVERT (AOI) operation. This particular configuration is a triple three-input AND gate followed by an OR gate and then an inverter at the output. The module to provide a compact and efficient implementation of this logic function, which is commonly used in digital circuits for optimizing gate-level implementation and reducing propagation delays. Its role within a broader system could be as part of a larger logic circuit, where minimizing the number of logic levels and gates is crucial for achieving desired speed and power characteristics.
+
+Module name:  
+	bw_u1_aoi311_4x
+
+Input ports:
+	c1, c2, c3: These are singlebit input ports intended to be the inputs of the first AND operation. Their role is to provide the conditions that are simultaneously checked (ANDed together) before being considered in the OR operation with other inputs.
+	b, a: These are also singlebit input ports. They are directly involved in the OR operation along with the output of the AND operation involving c1, c2, and c3. They represent additional conditions that, if any is true (logically high), will influence the final output after inversion.
+Output ports:
+	z: This is a singlebit output port that presents the result of the AOI operation. It is the inverted result of the OR operation that combines the output of the AND gate (c1 & c2 & c3) with the direct inputs a and b.
+
+
+Implementation:
+The provided RTL module, named bw_u1_aoi311_4x, implements a specific type of combinational logic circuit known as an AND-OR-INVERT (AOI) gate. This particular configuration is a 3-1-1 AOI, indicating it has three AND inputs, followed by a single OR level, and finally an INVERT at the output. The module is designed to operate with a 4x drive strength, as suggested by the suffix in its name, although the drive strength aspect is more of a physical design consideration and is not directly represented in the RTL code.
+The logic function implemented by this module can be expressed as:
+\[ Z = \overline{(C1 \land C2 \land C3) + A + B} \]
+This expression indicates that the inputs C1, C2, and C3 are first ANDed together. Separately, inputs A and B are considered as individual conditions that can independently influence the output. The results of the AND operation and the individual states of A and B are then ORed together. Finally, the output of this OR operation is inverted to produce the final output Z.
+This module does not contain any sequential logic elements (like flip-flops or latches), meaning its output is purely a function of its current inputs. The absence of clock signals further confirms its combinational nature. The output Z will immediately reflect changes in the inputs due to the direct mapping of input conditions to the output through combinational logic gates.
+
+Give me the complete code.
+

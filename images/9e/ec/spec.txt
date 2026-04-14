@@ -1,0 +1,6 @@
+Design a data masking circuit that processes an 8-bit input based on a 2-bit mask. The module outputs data according to the specified mask: 00 outputs the original data, 01 retains only the upper nibble with the lower nibble zeroed out, 10 shifts the lower nibble to the upper half while zeroing out the original upper nibble, and 11 performs a bitwise AND with a mask to retain only the upper four bits of the input.
+module top_module(
+  input [7:0] data_in,
+  input [1:0] mask_in,
+  output reg [7:0] data_out
+);

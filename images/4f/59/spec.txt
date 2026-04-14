@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+
+Implement a 16-bit Synchronous Counter with a loadable value and an enable signal. The counter increments its value on each clock cycle when the enable signal is active, and it can be loaded with a new value when the load signal is active.
+
+Module name:
+    loadable_counter
+
+Input ports:
+    clk: Clock signal.
+    rst: Synchronous reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    en: Enable signal. Defined as 1 for enabling counting and 0 for disabling counting.
+    load: Load signal. Defined as 1 for loading a new value and 0 for normal operation.
+    load_value: 16-bit input representing the value to load into the counter.
+
+Output ports:
+    count: 16-bit output representing the current value of the counter.
+
+Implementation:
+The module implements a 16-bit counter using a register and an always block. On the positive edge of the clock, the module updates the counter.
+If the reset signal (rst) is high, the counter (count) is set to 0. If the load signal is high, the counter is loaded with the new value. If the enable signal is high, the counter increments its value.
+
+Give me the complete code.

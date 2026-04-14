@@ -1,0 +1,6 @@
+Design a configurable up/down counter module with a width of 11 bits, capable of counting within specified limits. The counter increments or decrements based on a 2-bit input signal, `count_up`, with two modes: counting up by 2 when `count_up` is 10, or counting down by 2 when `count_up` is 01. The counter has a reset functionality to clear its value, and it operates only when enabled. The counting operation is constrained by defined limits to prevent overflow or underflow, with the upper limit set to 800 minus the defined board width of 80. This module is particularly suited for applications requiring controlled counting in digital systems.
+module top_module(
+	input clk, enable, reset,
+	 input [1:0] count_up,
+	output reg [WIDTH-1:0] count
+);

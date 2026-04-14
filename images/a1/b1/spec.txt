@@ -1,0 +1,11 @@
+Design a 36-bit wide, 256-entry First-In-First-Out (FIFO) memory buffer. The module supports asynchronous read and write operations controlled by separate request signals (rdreq for reading and wrreq for writing) while providing status indicators for whether the FIFO is empty or full. It includes logic to manage internal read and write pointers, as well as maintaining a count of the number of entries currently stored. Upon a valid read request, the module outputs the oldest data entry, while a valid write request stores new data at the next available position in the memory. The module also outputs the number of words currently in use.
+module top_module(
+    input clock,
+    input [35:0] data,
+    input rdreq,
+    input wrreq,
+    output empty,
+    output full,
+    output reg [35:0] q, // Changed from wire to reg
+    output [7:0] usedw
+);

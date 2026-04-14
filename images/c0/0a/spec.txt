@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+    
+Implement a module to simulate a simple memory device within a digital system. It interfaces with a bus, likely a Wishbone bus given the naming conventions used for the inputs and outputs, to perform read and write operations. The primary functions of this module include:
+
+Memory Read: Responding to read requests from the bus by providing the data stored at the requested address.
+Memory Write: Accepting data from the bus and writing it to the specified memory address when a write operation is requested.
+Acknowledgment: Signaling the completion of read or write operations to the bus controller.
+Stall Handling: Indicating to the bus controller that it can proceed without waiting, as this module does not require stalling.
+
+This module plays a crucial role in systems requiring memory storage and retrieval operations, acting as a bridge between the processing unit and the memory storage, within the constraints of the Wishbone bus protocol or a similar interface.
+
+Module name:  
+	memdev
+
+Input ports:
+	i_clk (input, single bit): The clock signal. All operations within the module are synchronized to the rising edge of this clock.
+	i_wb_cyc (input, single bit): Cycle signal indicating an active bus cycle; not explicitly used in this module.
+	i_wb_stb (input, single bit): Strobe/input enable signal indicating a valid transfer.
+	i_wb_we (input, single bit): Write enable signal indicating whether the current operation is a write (1) or read (0).
+	i_wb_addr (input, AW1:0 bits): The address bus specifying the memory address for the current read or write operation.
+	i_wb_data (input, DW1:0 bits): The data bus for write operations, carrying the data to be written to memory.
+Output ports:
+	o_wb_ack (output, single bit, registered): Acknowledge signal indicating the completion of a read or write operation.
+	o_wb_stall (output, single bit, wire): Stall signal indicating if the module is ready for another operation; always 0 in this module, indicating no stall.
+	o_wb_data (output, DW1:0 bits, registered): The data bus for read operations, carrying the data read from memory.
+
+
+Implementation:
+The RTL module presented is designed to simulate a simple memory device interface using the Wishbone protocol, a popular bus architecture for connecting different components in embedded systems. The module is parameterized with two parameters, AW (Address Width) and DW (Data Width), allowing for customization of the memory address space and data size. The core functionality of this module revolves around reading from and writing to a memory array, with operations synchronized to the rising edge of a clock signal (i_clk).
+
+Give me the complete code.
+

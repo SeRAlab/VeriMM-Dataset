@@ -1,0 +1,13 @@
+Design a vending machine controller that operates based on button inputs and a quarter insertion. The state machine has three states: WAIT, INSERTED, and DISPENSED. In the WAIT state, it listens for button presses corresponding to products A, B, or C. Upon a button press, it transitions to the INSERTED state, where it awaits a quarter. If a quarter is inserted, it transitions to the DISPENSED state, allowing the specified product to be dispensed based on the last selected button. The machine outputs signals to dispense the correct product and indicates when dispensing occurs. The controller also includes a reset functionality that initializes the system to its default state.
+module top_module(
+  input clk,
+  input reset,
+  input quarter,
+  input button_a,
+  input button_b,
+  input button_c,
+  output reg dispense,    // Changed to reg
+  output reg product_a,   // Changed to reg
+  output reg product_b,   // Changed to reg
+  output reg product_c    // Changed to reg
+);

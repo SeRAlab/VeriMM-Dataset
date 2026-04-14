@@ -1,0 +1,7 @@
+Design a register that captures a 32-bit wide data value from the input (`wdata`) upon the falling edge of the clock (`clk`) when the write enable signal (`we`) is high. The output (`send_ena`) holds the captured value or retains its previous value if `we` is low, allowing for flexible data storage in Ethernet transmission scenarios.
+module top_module(
+	input clk,
+	input [31:0]wdata,
+	input we,
+	output reg [31:0]send_ena = 32'b0
+);

@@ -1,0 +1,9 @@
+Implement a 4-to-2 priority encoder that outputs the index of the highest or lowest set input bit based on a priority selection signal. The module captures a 4-bit input and, upon receiving a clock pulse, processes this input while handling reset conditions. If at least one input bit is set, the module indicates valid output; otherwise, the output is invalid. The design features a selectable priority mode: if the priority signal is high, it encodes the highest set input; if low, it encodes the lowest set input, effectively managing multiple active inputs according to the specified priority.
+module top_module(
+    input clk,
+    input rst,
+    input [3:0] in,
+    input prior,
+    output [1:0] out,
+    output valid
+);

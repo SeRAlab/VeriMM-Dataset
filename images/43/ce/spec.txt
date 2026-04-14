@@ -1,0 +1,8 @@
+Design a circuit that performs both addition and subtraction on two 4-bit inputs, A and B. The operation is selected by the 'sub' input signal: when 'sub' is low, the module computes the sum of A and B, and when 'sub' is high, it computes the difference A - B. The module also checks for overflow conditions: if the result of addition exceeds the maximum value of 15 or if the result of subtraction yields a negative value, it indicates an overflow on the output signal. The final sum, regardless of the operation, is output as a 4-bit value.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input sub,
+    output [3:0] sum,
+    output reg overflow  // Change net to reg for overflow
+);

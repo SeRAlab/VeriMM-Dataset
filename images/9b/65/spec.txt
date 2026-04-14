@@ -1,0 +1,9 @@
+Design a simple 2-stage pipeline module that processes a 3-bit input vector. The module takes a 3-bit vector as input and retains its value in the first stage. The values are then transferred to a second stage on the rising edge of a clock signal, producing a 3-bit output vector. Additionally, individual bits from the first stage are output as separate wires (o2, o1, o0) for further external use, reflecting the values from the first stage of the pipeline.
+module top_module(
+    input wire clk,        // Add the clk input
+    input wire [2:0] in_vec,
+    output wire [2:0] out_vec,
+    output wire o2,
+    output wire o1,
+    output wire o0
+);

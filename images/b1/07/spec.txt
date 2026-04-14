@@ -1,0 +1,12 @@
+Design a dual-port RAM module that allows simultaneous read and write operations for two different memory addresses. The RAM has a depth of 64 locations, each supporting 16-bit wide data. The module accepts two address inputs (address_a and address_b) and enables writing data (data_a and data_b) to the corresponding addresses when wren_a or wren_b are asserted high. The outputs (q_a and q_b) continuously provide the data stored at the specified addresses, with updates occurring on the rising edge of the clock signal. This module is ideal for applications requiring quick data access from two separate sources or entities in the same clock cycle.
+module top_module(
+	address_a,
+	address_b,
+	clock,
+	data_a,
+	data_b,
+	wren_a,
+	wren_b,
+	q_a,
+	q_b
+);

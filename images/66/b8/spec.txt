@@ -1,0 +1,10 @@
+Design a circuit that functions as a register interface for reading and writing data in a 128-bit wide register, referred to as a "shifter." The module operates based on clock signals and resets, utilizing a 7-bit write pointer to sequentially store 16-bit input data into specific sections of the register when a write operation is triggered with the appropriate address and active select signal. On read operations, the data is shifted out while adhering to the conditions defined by the input signals, specifically outputting concatenated 16-bit segments from the register. If the read signal is not active or the select condition is not met, the output defaults to zero. The module is specifically designed to respond to a designated address (0xB80038) in conjunction with a control signal.
+module top_module(
+	input	clk,
+	input	reset,
+	input	[23:1] address_in,
+	input	[15:0] data_in,
+	output	[15:0] data_out,
+	input	rd,
+	input	sel_akiko	// $B8xxxx
+);

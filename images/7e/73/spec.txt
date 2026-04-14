@@ -1,0 +1,8 @@
+Design a 2-to-1 multiplexer with an additional synchronization element. The module selects between inputs `a` and `b` based on the `sel` signal, with the output updated on the rising edge of a clock signal. The output is controlled by an intermediate stage that temporarily holds the result of the selection before it is latched, adding a layer of synchronization to the output signal.
+module top_module(
+    input a,
+    input b,
+    input sel,
+    input clk,          // Added clk input
+    output reg out
+);

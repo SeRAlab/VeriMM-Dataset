@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform read and write operations on a memory array. Its primary function to store 33-bit wide data entries and allow for their retrieval based on a 7-bit address. This module could be part of a larger system where discrete cosine transform (DCT) coefficients are stored and retrieved, as suggested by the name IDCT (Inverse Discrete Cosine Transform) and the initial memory content path hinting at a use case related to image or video processing. The module supports synchronous write operations on the falling edge of the clock and asynchronous read operations.
+
+Module name:  
+	bw_r_idct_array
+
+Input ports:
+	we (input): A 1bit wide signal that enables the write operation. When high, it allows data to be written to the memory array.
+	clk (input): The clock signal, a 1bit wide input that synchronizes the write operations. The module performs write operations on the falling edge of this clock.
+	wr_data (input): A 33bit wide input data bus that carries the data to be written into the memory array when a write operation is enabled.
+	addr (input): A 7bit wide address bus that specifies the location in the memory array where data is to be written or read from.
+	dec_wrway_y (input): A 4bit wide input that is present in the module but not used in the current implementation. Its intended use might be for future enhancements or specific configurations.
+	way (input): A 2bit wide input that is also present but not utilized in the current implementation. Similar to dec_wrway_y, it could be reserved for future use or specific operational modes.
+Output ports:
+	rd_data (output): A 33bit wide output data bus that carries the data read from the memory array based on the address specified by addr.
+
+
+Implementation:
+The RTL module bw_r_idct_array is designed to perform read and write operations on a memory array with a size of 512 elements, where each element is 33 bits wide. The module operates on the negative edge of the clock signal, making it a synchronous design that relies on the falling edge of the clock for its operations. This design choice can be beneficial in certain scenarios where it is necessary to avoid the peak power consumption times that coincide with the rising edge of the clock in a system.
+
+Give me the complete code.
+

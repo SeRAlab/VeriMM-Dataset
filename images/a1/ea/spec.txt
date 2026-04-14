@@ -1,0 +1,29 @@
+Please act as a professional Verilog designer.
+
+Implement a debouncer module that debounces a noisy input signal and outputs a clean signal. The debouncing should be done with a 16-bit counter.
+
+Module name:
+    debouncer
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    noisy_in: Noisy input signal.
+
+Output ports:
+    clean_out: Debounced output signal.
+
+Implementation:
+The module includes a 16-bit counter register and a flip-flop to store the clean output.
+The counter increments when the noisy input is high and resets when the noisy input is low.
+When the counter reaches its maximum value, the clean output is set high.
+If the noisy input goes low before the counter reaches the maximum value, the counter is reset, and the clean output remains low.
+
+Give me the complete code.
+
+module debouncer(
+  input clk,
+  input rst_n,
+  input noisy_in,
+  output reg clean_out
+);

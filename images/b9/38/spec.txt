@@ -1,0 +1,8 @@
+Design a floating-point multiplier that computes the product of two 32-bit floating-point numbers following the IEEE 754 standard. The module takes two inputs, `afl` and `bfl`, representing the floating-point operands, and produces a 32-bit output `fl` as their product. The design first extracts the sign, exponent, and mantissa from both inputs, performs the multiplication of the mantissas, and adjusts the exponent accordingly. The module handles cases where either operand is zero and normalizes the result to ensure it adheres to floating-point format. The design manages multiple pipelines to break down the computations while maintaining synchronization with the clock and reset signals.
+module top_module(
+	input			clk,
+	input			rstn,
+	input	    [31:0]	afl,
+	input	    [31:0]	bfl,
+	output	reg [31:0]	fl
+	);

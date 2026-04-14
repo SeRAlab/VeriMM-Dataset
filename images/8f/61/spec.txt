@@ -1,0 +1,9 @@
+Design a serial transmitter module that transmits an 8-bit parallel data input (`txdata`) over a single serial line (`tx`). The module operates under a clock (`clk`) and can be reset via `reset_`. Upon enabling transmission with `tx_enable`, the transmitter starts to send data, beginning with a start bit, followed by the 8 bits of `txdata`, and ending with a stop bit. The output `tx_ready` indicates when the transmitter is idle and ready for a new byte. The transmission follows a state machine with states for idle, start, data, and stop, timing the bit sending using the `baud` input signal.
+module top_module(
+    clk,
+    reset_,
+    baud,
+    txdata,
+    tx_enable,
+    tx_ready,	   
+    tx);

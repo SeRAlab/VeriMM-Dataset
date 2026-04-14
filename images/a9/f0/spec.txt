@@ -1,0 +1,9 @@
+Design a scratchpad memory block with a configurable depth of 1024 locations and a width of 16 bits for each memory location. The module features a clock input for synchronous operation and a reset input to initialize the output. When the write enable signal is active, it allows data to be written to the specified memory address; otherwise, it reads data from the specified address to the output. The design serves as a simple random-access memory capable of storing and retrieving data based on clock edges and control signals.
+module top_module(
+  input clk,
+  input rst,
+  input write_en,
+  input [depth_width-1:0] address,
+  input [width-1:0] data_in,
+  output reg [width-1:0] data_out
+);

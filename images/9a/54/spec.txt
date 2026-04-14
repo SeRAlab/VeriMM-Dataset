@@ -1,0 +1,7 @@
+Design a circuit that counts the number of times the least significant nibbles (4 bits) of two 8-bit input signals, `a` and `b`, match after each clock cycle. The module maintains two 4-bit shift registers to hold the current and previous nibbles of the inputs, and increments a 3-bit output counter each time the nibbles are equal. This functionality allows for tracking the matching events between the two inputs over multiple clock cycles.
+module top_module(
+    input [7:0] a,
+    input [7:0] b,
+    input clk,           // Added clk input
+    output reg [2:0] count
+);

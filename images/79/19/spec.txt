@@ -1,0 +1,28 @@
+Implement a Verilog module with the following description: Wishbone interface module with control.
+module top_module(
+`ifdef DEBUG
+    output reg [2:0] cnt,
+    output           op,
+`endif
+
+    
+    input             wb_clk_i,
+    input             wb_rst_i,
+    input      [15:0] wb_dat_i,
+    output reg [15:0] wb_dat_o,
+    input      [19:1] wb_adr_i,
+    input             wb_we_i,
+    input      [ 1:0] wb_sel_i,
+    input             wb_stb_i,
+    input             wb_cyc_i,
+    output reg        wb_ack_o,
+
+    
+    output            sram_clk_,
+    output reg [20:0] sram_addr_,
+    inout      [31:0] sram_data_,
+    output reg        sram_we_n_,
+    output reg [ 3:0] sram_bw_,
+    output reg        sram_cen_,
+    output            sram_adv_ld_n_
+  );

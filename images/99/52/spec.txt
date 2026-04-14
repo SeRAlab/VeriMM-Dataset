@@ -1,0 +1,8 @@
+Design a circuit that functions as a dual 4-bit counter with load capability and provides the XOR of both counters as output. The module has a clock input to synchronize operations and includes a load signal to initialize both the up and down counters with a 4-bit input (D). The up counter increments on each clock cycle when the up_down signal is high, wrapping around to zero upon reaching its maximum value, while the down counter decrements when up_down is low, wrapping around to its maximum value upon reaching zero. The final output is the bitwise XOR of the current values of the two counters.
+module top_module(
+    input clk,
+    input load,
+    input up_down,
+    input [3:0] D,
+    output [3:0] OUT
+);

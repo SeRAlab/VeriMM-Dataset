@@ -1,0 +1,7 @@
+Develop an 8-bit universal counter that operates in four distinct modes controlled by two select inputs (S1, S0). In the first mode (00), the counter holds its current value. In the second mode (01), it counts up from a specified start value (BeginCount) to an end value (EndCount), resetting to BeginCount when the end is reached and signaling a terminal count. The third mode (10) allows the counter to count down from EndCount to BeginCount, also resetting to EndCount when the beginning is reached and indicating a terminal count. Finally, in the fourth mode (11), the counter loads a parallel input value (P) directly into the counter output (Q). The counter can be reset asynchronously, initializing to BeginCount and setting the terminal count output low.
+module top_module(
+    input CLOCK, Reset, S1, S0,
+    input [7:0] P, BeginCount, EndCount,
+    output reg [7:0] Q,
+    output reg TerminalCount
+);

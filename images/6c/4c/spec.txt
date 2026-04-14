@@ -1,0 +1,9 @@
+Design a write-back module for a CPU that determines the value to be written back to the register file during the execution stage. It takes data from either memory (ReadDataW) or the ALU result (ALUResultW), chosen based on the MemToRegW control signal, and outputs this value as ResultW. Additionally, it forwards the register address (WriteRegW1) and the register write enable signal (RegWriteW1) through to the outputs (WriteRegW2 and RegWriteW2, respectively) for the next stage of execution.
+module top_module(
+    output [31:0] ResultW,
+    output [4:0] WriteRegW2,
+    output RegWriteW2,
+    input [31:0] ReadDataW, ALUResultW,
+    input [4:0] WriteRegW1,
+    input MemToRegW, RegWriteW1
+    );

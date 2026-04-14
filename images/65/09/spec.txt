@@ -1,0 +1,7 @@
+Design a D flip-flop that utilizes a T flip-flop configuration. The circuit takes a data input (d) and a clock input (clk), generating an output (q) that holds the last state. The T input for the T flip-flop is derived from the XOR of the data input and the current output state, enabling toggling behavior based on the data value. The flip-flop also features an active high synchronous reset (rst) that allows the output to be asynchronously set to low when asserted.
+module top_module(
+    input clk,    // Clocks are used in sequential circuits
+    input rst,    // Added active high synchronous reset input
+    input d,      // Data input
+    output reg q  // Single-bit output stored in a register with active high synchronous reset
+);

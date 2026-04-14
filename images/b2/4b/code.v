@@ -1,0 +1,15 @@
+module top_module(
+    input clk,
+    input reset,
+    output reg [1:0] q
+);
+
+    always @(posedge clk) begin
+        if (reset) begin
+            q <= 2'b00;  // Synchronous reset to the initial state
+        end else begin
+            q <= q + 1;  // Increment the counter
+        end
+    end
+
+endmodule

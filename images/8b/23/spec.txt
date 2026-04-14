@@ -1,0 +1,11 @@
+Implement a stack data structure that supports push and pop operations for 4-bit wide data. The module features an 8-entry memory array to store the data. It includes control signals for push and pop actions, with a clock input to synchronize operations and an active-low reset. The module outputs the top element of the stack when popping and manages full and empty status flags to prevent overflows and underflows. When the stack is full, further push operations are ignored, and when it is empty, pop operations do not return any data, ensuring safe data handling.
+module top_module(
+    input Clk,
+    input RstN,
+    input [3:0] Data_In,
+    input Push,
+    input Pop,
+    output reg [3:0] Data_Out,
+    output reg Full,
+    output reg Empty
+);

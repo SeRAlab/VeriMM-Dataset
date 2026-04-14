@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+
+Implement a module for an 8-bit register with enable and synchronous reset. The register should store the input data when the enable signal is high. When the reset signal is active (rst_n = 0), the register should reset to 0.
+
+Module name:
+    reg_with_enable
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst_n: Reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    en: Enable signal. When high, the register stores the input data.
+    data_in: 8-bit input data to be stored in the register.
+
+Output ports:
+    data_out: 8-bit output representing the stored value.
+
+Implementation:
+On every positive clock edge, if the reset signal (rst_n) is low, the register value (data_out) should be set to 0. If the reset signal is high and the enable signal (en) is high, the register should store the input data (data_in).
+
+Give me the complete code.

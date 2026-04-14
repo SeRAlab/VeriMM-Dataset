@@ -1,0 +1,11 @@
+Design an integrated module that combines a 4-bit counter and a 4-bit adder/subtractor circuit, allowing for flexible output selection. The module features an asynchronous, active-high reset and enable functionality for the counter, which increments on each clock cycle when enabled. The adder/subtractor computes the result of either adding or subtracting the inputs A and B based on the 'sub' control signal. Additionally, the output 'Q' will display the maximum value between the current counter value and the adder/subtractor result, depending on the 'select' input. This design facilitates dynamic operations combining counting and arithmetic functionality with result selection.
+module top_module(
+    input clk,
+    input reset,      // Asynchronous active-high reset
+    input enable,     // Asynchronous counter enable
+    input [3:0] A,    // 4-bit input for the adder-subtractor circuit
+    input [3:0] B,    // 4-bit input for the adder-subtractor circuit
+    input sub,        // Selects between addition and subtraction
+    input select,     // Selects between counter and adder-subtractor circuit output
+    output [3:0] Q    // Final output from the active module
+);

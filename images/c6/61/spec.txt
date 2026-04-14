@@ -1,0 +1,17 @@
+
+
+You have been tasked with designing a clock gating module for a register file in a processor. The module will have a clock input (`CLK`), an enable input (`EN`), a test enable input (`TE`), and an enable clock output (`ENCLK`). The module should only allow the clock signal to pass through to the output when both `EN` and `TE` are high. 
+
+Design a Verilog module that meets the following specifications:
+
+- The module should be named `register_file_clock_gate`.
+- The module should have the following inputs: 
+  - `CLK`: a single-bit input that represents the clock signal.
+  - `EN`: a single-bit input that represents the enable signal.
+  - `TE`: a single-bit input that represents the test enable signal.
+- The module should have the following output:
+  - `ENCLK`: a single-bit output that represents the enable clock signal.
+- When `EN` is low, `ENCLK` should be low regardless of the value of `TE`.
+- When `EN` is high and `TE` is low, `ENCLK` should be low.
+- When both `EN` and `TE` are high, `ENCLK` should be equal to `CLK`.
+

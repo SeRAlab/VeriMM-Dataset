@@ -1,0 +1,30 @@
+Please act as a professional Verilog designer.
+
+Design a module for an 8-bit binary counter. The counter should have an enable signal and a synchronous reset. When enabled, the counter should increment by 1 on each rising edge of the clock. If the reset signal is active, the counter should reset to 0.
+
+Module name:
+    binary_counter
+
+Input ports:
+    clk: Clock signal.
+    rst: Synchronous reset signal.
+    en: Enable signal.
+
+Output ports:
+    count: 8-bit output signal representing the current count value.
+
+Implementation:
+Declare the module binary_counter with input and output ports as specified.
+Declare an 8-bit register to hold the count value.
+Inside an always block, sensitive to the positive edge of the clk signal, implement the logic for counter increment and synchronous reset.
+If the reset signal is active, set the count register to 0.
+If the enable signal is active and the reset signal is not, increment the count register by 1.
+
+Give me the complete code.
+
+module binary_counter(
+    input clk,
+    input rst,
+    input en,
+    output reg [7:0] count
+);

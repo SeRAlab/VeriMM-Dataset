@@ -1,0 +1,7 @@
+Design a clock gating module with enable functionality for a D flip-flop. The module controls the propagation of the clock signal based on the enable (EN) and test enable (TE) signals. When EN is asserted, both the internal data register (D) and the clock output enabling signal (ENCLK) are set to LOW. Otherwise, the output of G, which is the logical AND of TE and EN, is sampled on the rising edge of the clock; this determines the state of D and subsequently the ENCLK output, effectively enabling or disabling the clock signal based on the input conditions.
+module top_module(
+    input CLK,
+    input EN,
+    input TE,
+    output reg ENCLK
+);

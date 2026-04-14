@@ -1,0 +1,4 @@
+Design a soft reset generator that outputs a reset signal for a specified duration based on a clock input. The module counts clock cycles using a 51-bit counter, and for the first three cycles (when the count is 0, 1, or 3), the output reset_soft is asserted HIGH. After these counts, the reset_signal transitions to LOW, allowing for a temporary reset during system initialization or recovery processes.
+module top_module(
+	input wire clk,
+	output reg reset_soft);

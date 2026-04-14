@@ -1,0 +1,8 @@
+Implement a Verilog module for a finite state machine that controls a simple elevator. The elevator has three states: Ground Floor, First Floor, and Second Floor. Use the following one-hot state encoding: GROUND=3'b001, FIRST=3'b010, SECOND=3'b100. The elevator should move up or down based on the input signals up and down. Derive state transition and output logic equations by inspection assuming a one-hot encoding. Implement only the state transition logic and output logic (the combinational logic portion) for this state machine.
+
+module elevator_controller (
+  input up, 
+  input down, 
+  input [2:0] state, 
+  output reg [2:0] next_state, 
+  output reg [1:0] floor);

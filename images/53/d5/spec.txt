@@ -1,0 +1,11 @@
+Design a 16-bit up/down counter with asynchronous reset and preset functionality. The counter increments or decrements its value based on a direction input when enabled. A low signal on the reset input initializes the count to zero and indicates that the counter is at zero through the Zero output. When the preset signal is active, the counter takes the value from the specified preset value input. The module continuously outputs the current count and whether the count is zero.
+module top_module(
+    input Reset_n_i,
+    input Clk_i,
+    input Preset_i,
+    input Enable_i,
+    input Direction_i,
+    input [15:0] PresetVal_i,
+    output reg [15:0] Count_o,
+    output reg Zero_o
+);

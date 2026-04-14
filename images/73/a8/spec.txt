@@ -1,0 +1,7 @@
+Design a traffic light controller that manages a three-state traffic signal system. This module utilizes a finite state machine to cycle through green, yellow, and red lights based on a clock signal and reset functionality. The green light is activated for 10 time units, followed by 2 time units of yellow, and then 8 time units of red, with appropriate outputs managed by the state transitions. When in the green state, the green output is high while the red output is low, and during the red state, the red output is high while the green output is low. The controller resets to the green state upon receiving a reset signal.
+module top_module(
+  input clk,
+  input reset,
+  output reg green,
+  output reg red
+);

@@ -1,0 +1,13 @@
+Design a circuit that implements a T flip-flop that selects from six different 4-bit data inputs based on a 3-bit select signal. The selected input is determined by a priority encoder which translates the select signal into a corresponding 4-bit output. Additionally, the T flip-flop toggles its output based on a derived T input that depends on a data input; the output changes state when the clock signal is high and the condition for toggling is satisfied. The design is suited for applications needing controlled data selection and state management through edge-triggered toggling.
+module top_module(
+    input clk,    // Clocks are used in sequential circuits
+    input d,      // Data input
+    input [2:0] sel, // Select input to choose between 6 data inputs
+    input [3:0] data0, // Six 4-bit data inputs
+    input [3:0] data1,
+    input [3:0] data2,
+    input [3:0] data3,
+    input [3:0] data4,
+    input [3:0] data5,
+    output reg [3:0] q // 4-bit output from the selected data input stored in a T flip-flop
+);

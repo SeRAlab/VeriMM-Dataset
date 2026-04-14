@@ -1,0 +1,10 @@
+Design a circuit that functions as a synchronous 4-bit counter with an XOR operation. The counter increments on each clock cycle and resets to zero when it reaches the value of seven (4'b0111). When this threshold is reached, it computes the XOR of two input signals, a and b, and holds the result until the next reset occurs. There is also an asynchronous reset option, allowing the counter to be reset regardless of the clock state, which clears both the counter and the XOR output when activated. The output 'out' reflects the XOR result on each clock cycle after it is computed.
+module top_module(
+    input clk,
+    input reset,
+    input async_reset,
+    input a,
+    input b,
+    output reg out,
+    output reg [3:0] q
+);

@@ -1,0 +1,7 @@
+Design a Phase-Locked Loop (PLL) that generates a controlled output clock signal from an input clock, ensuring frequency scaling based on defined parameters. The PLL operates in three states: IDLE, LOCK, and RESET. In the IDLE state, the PLL waits for an enable signal to transition to the LOCK state, where it engages in synchronization operations to produce a stable output clock. Upon receiving a reset signal, the PLL safely transitions to the RESET state before returning to IDLE, ensuring reliable operation during initialization and clock adjustment. The multiplication and division parameters (N and M) facilitate targeted output frequency generation, aimed to achieve a specific frequency of 100 MHz.
+module top_module(
+  input clk_in,
+  input rst_n,
+  input en,
+  output clk_out
+);

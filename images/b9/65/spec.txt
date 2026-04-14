@@ -1,0 +1,6 @@
+Design a priority encoder that takes an 8-bit input and outputs a 3-bit address indicating the highest-priority active input bit. The output also includes a valid signal to indicate if any input bits are active. The encoder identifies the highest bit set in the input by processing both complemented and shifted versions of the input and determining the corresponding address based on the highest active line. If none of the inputs are active, the valid output signal will be LOW.
+module top_module(
+  input logic [7:0] li,
+  output logic [2:0] addr_lo,
+  output logic v_lo
+);

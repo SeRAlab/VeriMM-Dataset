@@ -1,0 +1,10 @@
+Design a pipeline for data input and output processing in a synchronous system. This module receives an 8-bit data input along with validity and readiness signals and outputs the same data when both input is valid and the downstream component is ready. The design ensures that the output data is propagated correctly and provides a backpressure warning when the downstream component signals that it is not ready to accept new data. The module effectively manages data flow between components in a clocked environment, facilitating handshaking between upstream and downstream connections.
+module top_module(
+    input clk,
+    input reset_n,
+    input in_valid,
+    input [7:0] in_data,
+    output reg out_valid,
+    output reg [7:0] out_data,
+    input out_ready
+);

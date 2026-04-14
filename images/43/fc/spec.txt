@@ -1,0 +1,7 @@
+Design a 4x upsampler that processes an 18-bit signed input signal and outputs the same width signal at a sampled rate, controlled by clock enable signals. The module uses a 2-bit counter to track sampling intervals and only outputs the input data when a specific sample clock enable is activated and the counter is set to zero, effectively introducing a 4x upsampling effect. The logic is resettable and provides appropriate zero outputs for the other sampling periods, ensuring proper timing and data integrity in the upsampled output.
+module top_module(input clk,
+                   input sam_clk_en,
+                   input sym_clk_en,
+                   input reset,
+                   input signed [17:0] data_in,
+                   output reg signed [17:0] data_out);

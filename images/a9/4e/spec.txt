@@ -1,0 +1,12 @@
+Design a 32-entry register file that provides read and write capabilities for 32-bit wide data. The module allows for two simultaneous read operations identified by rs1_i and rs2_i, outputting the corresponding data from the general-purpose registers. If either input register address is zero, it returns a constant zero. The module features a write enable signal (w_en) that, on the rising edge of the clock, writes data (w_data) to the register specified by rd_i, enabling dynamic data storage and retrieval in a synchronous manner.
+module top_module(
+    input wire       clk,   
+    input wire[4:0]  rs1_i, 
+    input wire[4:0]  rs2_i, 
+    input wire[4:0]  rd_i,  
+    input wire       w_en,  
+    input wire[31:0] w_data, 
+    
+    output wire[31:0] rs1_o, 
+    output wire[31:0] rs2_o  
+    );

@@ -1,0 +1,16 @@
+Design a value buffering circuit that captures and stores four 64-bit input values on the rising edge of a clock signal. The module outputs the buffered values in two formats: the "down" outputs provide the stored inputs directly, while the "up" outputs shift the buffered values such that each output corresponds to the next input in a circular fashion. Specifically, c0_up outputs the value from c1_in, c1_up outputs the value from c2_in, c2_up outputs the value from c3_in, and c3_up outputs the latest c0_in, effectively creating a rotating buffer of the inputs.
+module top_module(
+	clk,
+	c0_in,
+	c1_in,
+	c2_in,
+	c3_in,
+	c0_up,
+	c1_up,
+	c2_up,
+	c3_up,
+	c0_down,
+	c1_down,
+	c2_down,
+	c3_down
+);

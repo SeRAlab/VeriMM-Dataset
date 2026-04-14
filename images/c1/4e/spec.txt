@@ -1,0 +1,35 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform equivalence resolution based on a set of input conditions and control signals. Its primary functions include:
+
+Monitoring and responding to specific combinations of input signals to perform data and address manipulation.
+Generating control and data signals for external use, based on the internal logic and state transitions dictated by the input signals.
+Managing internal counters and flags to track and control the module's operation through various states.
+
+This module plays a critical role in systems where decision-making is based on the equivalence of certain conditions and where the manipulation of data and addresses based on these conditions is required. It could be part of a larger system involving data processing, control flow management, or specialized computation units requiring dynamic reconfiguration based on input signals.
+
+Module name:  
+	equivalence_resolver
+
+Input ports:
+	clk (input): The clock signal driving the module's synchronous operations.
+	rst (input): Asynchronous reset signal to initialize the module's state.
+	datavalid (input): Signal indicating when the data inputs are valid and should be processed.
+	A, B, C, D (input): Control signals dictating the module's operation based on their combinations.
+	fp, fn (input): Flags used in decisionmaking within the module.
+	p, hp, np, tp (input, [address_bit1:0]): Address inputs used for various address manipulations and conditions.
+	dp, dd (input, [data_bit1:0]): Data inputs used for data manipulation and storage.
+Output ports:
+	h_we, t_we, n_we, d_we (output reg): Write enable signals for different types of data or address manipulations.
+	h_waddr, t_waddr, n_waddr, d_waddr (output reg, [address_bit1:0]): Write addresses for different operations.
+	h_wdata, t_wdata, n_wdata (output reg, [address_bit1:0]): Write data for address manipulation operations.
+	d_wdata (output reg, [data_bit1:0]): Write data for data manipulation operations.
+	HCN, DAC, DMG, CLR, O (output): Control signals generated based on the module's internal logic and state.
+	EOC (output reg): End of cycle signal indicating the completion of a processing cycle.
+
+
+Implementation:
+The Verilog module equivalence_resolver is designed to perform a specific set of operations based on the input signals it receives, including resolving equivalences under certain conditions. The module operates on a clock (clk) and can be reset (rst). It processes data when datavalid is high, indicating that the inputs A, B, C, D, fp, fn, and the addresses and data inputs (p, hp, np, tp, dp, dd) are valid and ready for processing.
+
+Give me the complete code.
+

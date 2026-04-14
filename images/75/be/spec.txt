@@ -1,0 +1,7 @@
+Design a clock generation module that produces a derived output clock signal (clk_out) based on an input clock (clk_in) and a frequency division factor (freq_div). The module utilizes a phase-locked loop (PLL) to synchronize and lock the input clock, ensuring stability. It counts clock cycles and toggles the output clock when the counter reaches the specified division value. Additionally, it generates a locked signal to indicate when the PLL is synchronized, adjusting the threshold dynamically based on the frequency division parameter. This module is useful for creating clock signals at lower frequencies while maintaining phase alignment with a reference clock.
+module top_module(
+  input clk_in,
+  input [31:0] freq_div,
+  output reg clk_out,
+  output reg locked
+);

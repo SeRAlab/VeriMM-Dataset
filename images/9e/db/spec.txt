@@ -1,0 +1,11 @@
+The module implements a combinational logic circuit that functions as a controlled OR gate with power-good signaling. It takes three inputs: A1, A2 (both are inputs to an AND gate), and B1 (the input to an OR gate), producing a single output X. The output X becomes the result of OR'ing the output of the AND gate (A1 AND A2) with B1. Additionally, it incorporates power management features using a power-good circuit (specifically, a power-good buffer) that ensures the output X is valid only when the power supply (VPWR) and ground (VGND) are properly provided, enhancing reliability in power-sensitive applications.
+module top_module(
+    X   ,
+    A1  ,
+    A2  ,
+    B1  ,
+    VPWR,
+    VGND,
+    VPB ,
+    VNB
+);

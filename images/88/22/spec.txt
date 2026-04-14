@@ -1,0 +1,14 @@
+Design a two-bit comparator that evaluates the equality and greater-than relationships between two 2-bit inputs, A and B. The module outputs a signal EQ indicating if A is equal to B, which is determined by checking if the difference between A and B yields zero. Additionally, the GT output signifies if A is greater than B, determined by examining the most significant bit of the difference, or falling back to the least significant bit if necessary. This design enables quick comparisons for 2-bit binary numbers in digital circuits.
+module top_module(
+    //# {{data|Data Signals}}
+    input  [1:0] A   ,
+    input  [1:0] B   ,
+    output EQ  ,
+    output GT  ,
+
+    //# {{power|Power}}
+    input  VPB ,
+    input  VPWR,
+    input  VGND,
+    input  VNB
+);

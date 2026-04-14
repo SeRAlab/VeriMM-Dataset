@@ -1,0 +1,7 @@
+Design a 16-bit signed Booth multiplier that computes the product of two 16-bit inputs, A and B, while considering an additional control input, C, for determining the signed nature of the operands. If C is set to 1, the operands are treated as negative numbers if their most significant bit is 1; otherwise, they are treated as positive. The output P is a 32-bit result of the multiplication, which is adjusted based on the sign of the inputs and involves shifting and adding/subtracting operations according to Booth's algorithm. The design shifts B in each iteration to facilitate this multiplication process effectively.
+module top_module(
+    input [15:0] A,
+    input [15:0] B,
+    input C,
+    output reg [31:0] P
+);

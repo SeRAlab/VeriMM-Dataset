@@ -1,0 +1,8 @@
+Design a fetch controller module that manages the flow of instructions based on two input signals: `WF_dispatch_i` and `fetch_valid`. The `wr` output is directly driven by the `WF_dispatch_i` input, signaling when to write. The `inst_buff_rd` and `wave_reserve_valid` outputs are both asserted when `fetch_valid` is high, indicating that the instruction buffer should read the data and that the wave reserve is valid for processing. This module effectively coordinates instruction fetching and processing states in a larger system.
+module top_module(
+	WF_dispatch_i, 
+	fetch_valid, 
+	wr, 
+	inst_buff_rd, 
+	wave_reserve_valid
+);

@@ -1,0 +1,12 @@
+Design a slave finite state machine (FSM) for handling read and write operations in a master-slave communication protocol. The FSM operates based on a clock signal and is reset asynchronously. It features three states: IDLE, READ_WAIT, and WRITE_WAIT. In the IDLE state, the FSM transitions to READ_WAIT or WRITE_WAIT based on the incoming read or write requests, respectively. While in the READ_WAIT or WRITE_WAIT states, it awaits a signal from the master indicating that the read or write operation has completed. During these wait states, the FSM generates appropriate read and write request signals, as well as a waitrequest signal to indicate that it is busy. The design enables controlled read and write operations, facilitating coordination between the master and slave components.
+module top_module(
+  input master_read_done_token,
+  input master_write_done_token,
+  input slave_clk,
+  input slave_read,
+  input slave_reset_n,
+  input slave_write,
+  output reg slave_read_request,
+  output reg slave_waitrequest,
+  output reg slave_write_request
+);

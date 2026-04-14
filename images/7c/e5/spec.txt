@@ -1,0 +1,29 @@
+Please act as a professional Verilog designer.
+
+Implement a 32-bit parallel-in serial-out (PISO) shift register.
+
+Module name:
+    PISO_shift_reg
+Input ports:
+    clk: Clock signal for synchronous operation.
+    rst_n: Active-low reset signal to initialize the shift register.
+    load: Load signal to parallel load the data.
+    data_in: 32-bit input data to be loaded in parallel.
+Output port:
+    data_out: 1-bit output representing the serial data.
+
+Implementation:
+On every rising edge of the clock signal (clk), if the reset signal (rst_n) is low, the shift register is set to 0.
+If the load signal is high, the shift register is loaded with the 32-bit input data.
+Otherwise, the shift register shifts left by one bit, and the most significant bit (MSB) is shifted out to data_out.
+
+Give me the complete code.
+
+module PISO_shift_reg(
+   input                clk ,
+   input                rst_n,
+   input                load,
+   input  [31:0]        data_in,
+ 
+   output reg           data_out  
+);

@@ -1,0 +1,9 @@
+Design a circuit that functions as a register for switch input values, controlled by an address bus. The module accepts an 8-bit address and an 8-bit switch value, updating the data bus with the switch value when the address matches a predefined base address (0x80) and a write enable signal indicates that the bus should be updated. Upon reset, the data bus is cleared. The bus output is either the stored switch value or high-impedance (three-state) when not enabled, effectively allowing selective access to the switch data based on the system's address and control signals.
+module top_module(
+    input CLK,
+    input RST,
+    input [7:0] BUS_ADDR,
+    input [7:0] SWITCH_VALUE,
+    output [7:0] BUS_DATA,
+    input       BUS_WE 
+    );

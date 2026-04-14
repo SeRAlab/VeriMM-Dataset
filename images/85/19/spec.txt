@@ -1,0 +1,9 @@
+Design a shift register that functions as an 8-bit storage element capable of either loading parallel data or shifting serially. Upon the rising edge of the CLK signal, if the LOAD signal is active, the module captures the 8-bit input DATA_IN into the register and outputs it on Q. If LOAD is inactive, the register shifts left by one bit, inserting the serial input SER_IN at the least significant bit position, and outputs the current register value on Q. The least significant bit of the register is also made available as the SER_OUT output.
+module top_module(
+    input CLK,
+    input LOAD,
+    input [7:0] DATA_IN,
+    input SER_IN,
+    output reg SER_OUT,
+    output reg [7:0] Q
+);

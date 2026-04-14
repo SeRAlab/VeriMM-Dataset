@@ -1,0 +1,15 @@
+module top_module(
+  input clk,
+  input reset,
+  input enable,
+  output reg [3:0] count_out
+);always @(posedge clk) begin
+    if (reset) begin
+      count_out <= 4'b0000;
+    end
+    else if (enable) begin
+      count_out <= count_out + 1;
+    end
+  end
+
+endmodule

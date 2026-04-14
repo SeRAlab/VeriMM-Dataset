@@ -1,0 +1,11 @@
+Design a 6-to-1 multiplexer with a special feature. The module selects one of the six 4-bit data inputs (data0 to data5) based on a 3-bit selection input (sel). For selection values 0 to 5, it outputs the corresponding data input. When sel is 6 or 7, it computes the bitwise AND of the least significant 2 bits of all six data inputs and replicates this 2-bit result to form a 4-bit output.
+module top_module( 
+    input [2:0] sel, 
+    input [3:0] data0,
+    input [3:0] data1,
+    input [3:0] data2,
+    input [3:0] data3,
+    input [3:0] data4,
+    input [3:0] data5,
+    output reg [3:0] out
+);

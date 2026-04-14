@@ -1,0 +1,27 @@
+Please act as a professional Verilog designer.
+
+Implement a module of a 4-bit parallel load register. The register should load a 4-bit data input into its contents on each positive edge of the clock signal when the load enable signal is high. When the reset signal is active, the register should reset its contents to 0.
+
+Module name:  
+    parallel_load_register
+
+Input ports:
+    CLK: Clock input
+    RST: Active high reset signal
+    LOAD_EN: Load enable signal
+    D: 4-bit data input
+
+Output ports:
+    Q: 4-bit output representing the contents of the register
+
+Implementation:
+The parallel load register module uses an always block to update the contents of the register based on the clock signal, reset signal, and load enable signal.
+The always block triggers on the positive edge of the clock signal (posedge CLK) or the positive edge of the reset signal (posedge RST). It checks if the reset signal is active (RST) and sets the register contents (Q) to 0. If the load enable signal (LOAD_EN) is high, it loads the data input (D) into the register.
+
+Give me the complete code.
+
+module parallel_load_register(CLK, RST, LOAD_EN, D, Q);
+input CLK, RST, LOAD_EN;
+input [3:0] D;
+output [3:0] Q;
+reg [3:0] Q;

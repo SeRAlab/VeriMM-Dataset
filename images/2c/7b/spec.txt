@@ -1,0 +1,6 @@
+
+Design an interrupt controller that manages multiple interrupt requests (IRQ). The controller should support a maximum of 4 interrupt signals (irq[3:0]). The controller will have a single output signal irq_out that indicates which interrupt (if any) is currently being serviced. The controller should follow these rules:
+1. When an interrupt request is received, it will be acknowledged and sent out on irq_out.
+2. If multiple requests are received simultaneously, the controller should prioritize them based on their order (irq[0] has the highest priority).
+3. The controller should have an input signal enable that must be high for the interrupts to be processed.
+4. A reset signal is also provided to clear any active interrupts and reset the output.

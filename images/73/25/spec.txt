@@ -1,0 +1,12 @@
+Design a synchronous D flip-flop with enable and reset features. The module samples the input `d` on the rising edge of the clock (`clk`) when `data_en` is high and takes the value of `q_wire`, which is derived from an internal D flip-flop instance. The output `q` is set to logic low when `reset` is activated, and to logic high when `set` is activated. The notifier input provides functionality to deal with potential timing or operational issues by propagating a high-impedance state when necessary. The module incorporates power supply and ground handling through `vpwr` and `vgnd`, ensuring proper operational conditions.
+module top_module(
+    input wire reset,
+    input wire set,
+    input wire d,
+    input wire data_en,
+    input wire notifier,
+    input wire vpwr,
+    input wire vgnd,
+    output reg q,
+    input wire clk
+);

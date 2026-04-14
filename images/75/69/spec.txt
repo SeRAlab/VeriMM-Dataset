@@ -1,0 +1,17 @@
+Design a JTAG interface module for the Cyclone IV FPGA that facilitates boundary-scan and test access. It accepts external inputs such as test mode select (TMS), test clock (TCK), and test data input (TDI), and routes the appropriate signals to various user-defined outputs, including test data output (TDO) and user-specific control signals like shift, clock, update, and run/idle commands. The purpose of this module is to streamline communication and control during JTAG operations, providing the necessary connections for testing and debugging the FPGA.
+module top_module(
+    input tms, 
+    input tck,
+    input tdi, 
+    input tdoutap,
+    input tdouser,
+    output tdo,
+    output tmsutap,
+    output tckutap,
+    output tdiutap,
+    output shiftuser,
+    output clkdruser,
+    output updateuser,
+    output runidleuser,
+    output usr1user
+);

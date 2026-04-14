@@ -1,0 +1,219 @@
+`timescale 1ns/1ps
+
+module top_module_tb;
+
+    // Testbench signals (sequential circuit)
+    reg clk;
+    reg resetn;
+    reg start_enable;
+    reg [9:0] start_time;
+    wire [9:0] timer;
+
+    // Test tracking
+    integer test_num;
+    integer pass_count;
+    integer fail_count;
+
+    // Instantiate the DUT (Device Under Test)
+    top_module dut (
+        .clk(clk),
+        .resetn(resetn),
+        .start_enable(start_enable),
+        .start_time(start_time),
+        .timer(timer)
+    );
+
+    // Clock generation (10ns period)
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk;
+    end
+
+        task reset_dut;
+
+        begin
+            resetn = 0;
+            start_enable = 0;
+            start_time = 0;
+            @(posedge clk);
+            #1;
+            resetn = 1;
+        end
+        endtask
+    task testcase001;
+
+        begin
+            test_num = test_num + 1;
+            $display("Testcase %0d: Initial Reset check", test_num);
+            reset_dut();
+            #1;
+
+            check_outputs(10'd0);
+        end
+        endtask
+
+    task testcase002;
+
+        begin
+            test_num = test_num + 1;
+            $display("Testcase %0d: Countdown from 5 to 0", test_num);
+            reset_dut();
+            start_time = 10'd5;
+            start_enable = 1;
+            @(posedge clk); #1;
+            start_enable = 0;
+            repeat(5) @(posedge clk); #1;
+            #1;
+
+            check_outputs(10'd0);
+        end
+        endtask
+
+    task testcase003;
+
+        begin
+            test_num = test_num + 1;
+            $display("Testcase %0d: Countdown partial check (10 down to 7)", test_num);
+            reset_dut();
+            start_time = 10'd10;
+            start_enable = 1;
+            @(posedge clk); #1;
+            start_enable = 0;
+            repeat(3) @(posedge clk); #1;
+            #1;
+
+            check_outputs(10'd7);
+        end
+        endtask
+
+    task testcase004;
+
+        begin
+            test_num = test_num + 1;
+            $display("Testcase %0d: Reload mid-countdown", test_num);
+            reset_dut();
+            start_time = 10'd20;
+            start_enable = 1;
+            @(posedge clk); #1;
+            start_enable = 0;
+            repeat(5) @(posedge clk); #1;
+
+            start_time = 10'd50;
+            start_enable = 1;
+            @(posedge clk); #1;
+            start_enable = 0;
+            @(posedge clk); #1;
+            #1;
+
+            check_outputs(10'd49);
+        end
+        endtask
+
+    task testcase005;
+
+        begin
+            test_num = test_num + 1;
+            $display("Testcase %0d: Zero saturation check", test_num);
+            reset_dut();
+            start_time = 10'd2;
+            start_enable = 1;
+            @(posedge clk); #1;
+            start_enable = 0;
+            repeat(10) @(posedge clk); #1;
+            #1;
+
+            check_outputs(10'd0);
+        end
+        endtask
+
+    task testcase006;
+
+        begin
+            test_num = test_num + 1;
+            $display("Testcase %0d: Reset during active count", test_num);
+            reset_dut();
+            start_time = 10'd100;
+            start_enable = 1;
+            @(posedge clk); #1;
+            start_enable = 0;
+            repeat(10) @(posedge clk); #1;
+            resetn = 0;
+            @(posedge clk); #1;
+            #1;
+
+            check_outputs(10'd0);
+        end
+        endtask
+
+    // Test stimulus
+    initial begin
+        // Initialize
+        test_num = 0;
+        pass_count = 0;
+        fail_count = 0;
+
+        $display("========================================");
+        $display("top_module Testbench");
+        $display("========================================");
+
+
+        testcase001();
+        testcase002();
+        testcase003();
+        testcase004();
+        testcase005();
+        testcase006();
+        
+        
+// Print summary
+        $display("\n========================================");
+        $display("Test Summary");
+        $display("========================================");
+        $display("Tests Passed: %0d", pass_count);
+        $display("Tests Failed: %0d", fail_count);
+        $display("Total Tests:  %0d", pass_count + fail_count);
+        $display("========================================");
+
+        if (fail_count == 0)
+            $display("ALL TESTS PASSED!");
+        else
+            $display("SOME TESTS FAILED!");
+
+        $display("\nSimulation completed at time %0t", $time);
+        $finish;
+    end
+
+    // Task to check outputs
+    task check_outputs;
+        input [9:0] expected_timer;
+        begin
+            if (expected_timer === (expected_timer ^ timer ^ expected_timer)) begin
+                $display("PASS");
+                $display("  Outputs: timer=%h",
+                         timer);
+                pass_count = pass_count + 1;
+            end else begin
+                $display("FAIL");
+                $display("  Expected: timer=%h",
+                         expected_timer);
+                $display("  Got:      timer=%h",
+                         timer);
+                fail_count = fail_count + 1;
+            end
+        end
+    endtask
+
+    // Timeout watchdog
+    initial begin
+        #1000000; // 1ms timeout
+        $display("\nERROR: Simulation timeout!");
+        $finish;
+    end
+
+    // Optional: Waveform dump for debugging
+    initial begin
+        $dumpfile("wave.vcd");
+        $dumpvars(0,clk, resetn, start_enable, start_time, timer);
+    end
+
+endmodule

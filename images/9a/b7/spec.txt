@@ -1,0 +1,12 @@
+The Verilog module implements an interface for an ADC (Analog-to-Digital Converter) that processes incoming data in a digital format. It takes a 128-bit data input along with a clock signal and a reset signal. The module outputs two 56-bit data signals, `adc_data_a` and `adc_data_b`, by concatenating processed segments of the input data. The outputs also include an `adc_clk` signal that directly mirrors the input clock and status signals indicating the operational state of the ADC. Specifically, the `adc_status` output is set based on the state of the reset signal, indicating whether the interface is active. This design serves as a data management and synchronization layer between the ADC and the digital system, ensuring that data is organized and clocked correctly for further processing.
+module top_module(
+  input           rx_clk,
+  input  [127:0]  rx_data,
+  output          adc_clk,
+  input           adc_rst,
+  output  [55:0]  adc_data_a,
+  output  [55:0]  adc_data_b,
+  output          adc_or_a,
+  output          adc_or_b,
+  output reg      adc_status  // Change to output reg
+);

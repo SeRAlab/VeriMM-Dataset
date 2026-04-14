@@ -1,0 +1,12 @@
+Design a 16-bit wide source multiplexer for an ALU. This module selects one of several input data sources based on the 8-bit control signal ALU_Src1. The inputs include data from various sources such as received data, immediate values, and specific registers, allowing for flexible selection. The output, Src1, will reflect the chosen input value based on the case determined by ALU_Src1, with a default output of zero if the control signal does not match any predefined conditions.
+module top_module(
+    input [15:0] data_rx,
+    input [15:0] imm3,
+    input [15:0] imm8,
+    input [15:0] data_IN,			
+    input [15:0] data_SP,
+    input [15:0] data_T,
+    input [15:0] data_pc,
+    input [7:0] ALU_Src1,
+    output reg [15:0] Src1
+    );

@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer. Your task is to create a Verilog module that implements a current source and a current sink. 
+A current source is a type of circuit that generates a constant current, while a current sink is a circuit that can absorb a constant current. 
+In this task, you will create a module that can act as both a current source and a current sink.
+
+Your module should have the following inputs and outputs:
+
+Inputs: 
+- enable: a signal that enables the current source/sink
+- i_set: a signal that sets the value of the constant current
+- i_in: a signal that provides the input current (for the current sink)
+Outputs: 
+- i_out: a signal that provides the output current (for the current source)
+- i_sunk: a signal that provides the amount of current sunk (for the current sink)
+
+Your module should implement the following functionality:
+
+- If the enable signal is low, the module should not generate any current.
+- If the enable signal is high, the module should generate a constant current equal to the value of i_set.
+- If the value of i_in is less than the value of i_set, the module should act as a current sink and absorb the difference between i_set and i_in. The amount of current sunk should be provided on the i_sunk output.
+- If the value of i_in is greater than the value of i_set, the module should act as a current source and provide a current equal to the difference between i_in and i_set. The amount of current sourced should be provided on the i_out output.
+
+To implement the current source and sink, you should use Verilog code to define the behavior of the module based on the input signals. 
+You should use conditional statements and assign statements to calculate the output currents based on the input currents and the enable signal. 
+Finally, you should use the output currents to drive the output signals.

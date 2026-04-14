@@ -1,0 +1,11 @@
+Design a register file consisting of multiple registers, where the number of registers is defined by parameter 'n' and each register has a width defined by parameter 'w'. The module supports writing data to a specified register when the write enable signal (wr_en) is active on the rising edge of the clock. It allows simultaneous read operations from two different registers based on the addresses provided (addr1 and addr2) when the read enable signal (rd_en) is asserted. If rd_en is not active, the outputs for data1 and data2 will be driven low, enabling flexible storage and retrieval of data in a digital circuit.
+module top_module(
+  input clk,
+  input wr_en,
+  input rd_en,
+  input [addr_width-1:0] addr1,
+  input [addr_width-1:0] addr2,
+  input [w-1:0] data_in,
+  output [w-1:0] data1,
+  output [w-1:0] data2
+);

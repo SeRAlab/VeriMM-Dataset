@@ -1,0 +1,9 @@
+Design a dual-edge-triggered D flip-flop with asynchronous set and reset functionality. The module uses a multiplexer to select between the input D or the reset condition, based on the state of the RESET_B and SET_B inputs. When SET_B is low, the flip-flop's output Q is set to high, and when RESET_B is low, Q is set to low. Furthermore, the output Q has an inverted output Q_N, which represents the complement of Q. This design allows for synchronous control of the flip-flop while enabling immediate response to set and reset signals independent of the clock state.
+module top_module(
+  input D,
+  input SET_B,
+  input RESET_B,
+  input CLK,
+  output reg Q,
+  output Q_N
+);

@@ -1,0 +1,8 @@
+Design a 4-bit multiplier that takes two 4-bit inputs, M and N, and produces an 8-bit output, P, representing the product of M and N. The module utilizes a shift-and-add multiplication approach, controlled by a 3-bit state machine that progresses through each stage of the multiplication process. The result is stored in a temporary register (prod_reg), and an overflow indicator, E, is set based on the most significant bit of the resultant product. The multiplication occurs synchronously on the positive edge of the clock signal, allowing for sequential accumulation of partial products while shifting bits as necessary.
+module top_module(
+    input [3:0] M,
+    input [3:0] N,
+    input clk,            // Added the clock input
+    output reg [7:0] P,
+    output reg E
+);

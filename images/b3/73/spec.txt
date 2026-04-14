@@ -1,0 +1,12 @@
+Design a dual-port RAM module that supports simultaneous read and write operations. The module uses a clock signal to synchronize data access, allowing two independent addressable ports (addr1 and addr2) to read from and write to different memory locations. Each port has its own write enable signal (write_en1 and write_en2) to control write operations. The memory is organized as 16 words, with each word being 8 bits wide, providing flexibility for data storage and retrieval in applications requiring concurrent access to a shared memory resource.
+module top_module(
+  input clk,
+  input write_en1,
+  input write_en2,
+  input [ADDR_WIDTH-1:0] addr1,
+  input [ADDR_WIDTH-1:0] addr2,
+  input [m-1:0] data_in1,
+  input [m-1:0] data_in2,
+  output reg [m-1:0] data_out1,
+  output reg [m-1:0] data_out2
+);

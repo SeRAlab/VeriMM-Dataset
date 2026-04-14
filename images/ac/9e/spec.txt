@@ -1,0 +1,7 @@
+Develop a signed multiplier that takes two 8-bit signed inputs, `a` and `b`, and produces a 16-bit signed output, `p`. The behavior of the multiplication is controlled by a 4-bit control signal, `ctrl`, which allows for various modifications to the standard product of `a` and `b`, such as adding or subtracting offsets. The module also implements saturation logic to cap the output `p` at the maximum and minimum values representable by a 16-bit signed number, ensuring that the result does not overflow or underflow beyond the typical signed range.
+module top_module(
+   input [7:0] a,
+   input [7:0] b,
+   input [3:0] ctrl,
+   output reg signed [15:0] p
+);

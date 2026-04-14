@@ -1,0 +1,8 @@
+Design a 4-bit arithmetic unit capable of performing addition or subtraction based on a mode control signal. The module takes two 4-bit inputs (`in_a` and `in_b`) and produces a 4-bit output (`out`). When the `mode` signal is low, it adds the inputs, and when high, it subtracts them. The design includes a stage-based state machine to manage the computation process across multiple cycles, allowing for the registration of intermediate values. It also monitors for overflow conditions, indicating when the result exceeds the representable range of a signed 4-bit output.
+module top_module(
+    input [3:0] in_a,
+    input [3:0] in_b,
+    input mode,
+    output reg [3:0] out,
+    output reg overflow  // Changed from wire to reg
+);

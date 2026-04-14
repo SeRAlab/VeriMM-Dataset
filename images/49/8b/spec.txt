@@ -1,0 +1,8 @@
+Design a memory testing block capable of performing read and write operations based on control signals. The module features an addressable memory array with an adjustable size determined by the parameters, enabling it to write a test pattern to all memory locations when the write enable signal is active, and to read from specified addresses, comparing the output data with a predefined pattern. The module includes a flag to indicate the success or failure of the read operation, asserting high when data matches and low otherwise. It utilizes control signals to manage memory operations, reinforcing its role as a versatile tool for memory verification and debugging in hardware systems.
+module top_module(
+  input [n-1:0] addr,
+  input [m-1:0] data,
+  input [k-1:0] control,
+  output reg [m-1:0] data_out, // Changed to 'reg'
+  output reg flag // Changed to 'reg'
+);

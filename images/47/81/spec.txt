@@ -1,0 +1,14 @@
+Design a simple Avalon-compatible memory-mapped I/O interface. The module features a 2-bit address input which selects specific control behavior, a chip select for activation, and a write control signal to determine when data is written to an internal register. On a write cycle to address 0, the module captures the 32-bit data input and holds it in an internal register. It also provides a readback mechanism that outputs the stored data when address 0 is accessed. Furthermore, an output signal indicates when the module is selected based on the address input.
+module top_module(
+  // inputs:
+  input [1:0] address,
+  input chipselect,
+  input clk,
+  input reset_n,
+  input write_n,
+  input [31:0] writedata,
+
+  // outputs:
+  output reg out_port,  // Changed to 'reg' for output
+  output reg [31:0] readdata  // Changed to 'reg' for output
+);

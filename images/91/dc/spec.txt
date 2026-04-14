@@ -1,0 +1,7 @@
+Design a fixed-point arithmetic unit that performs basic operations on two signed fixed-point numbers. The module takes two inputs, `num1` and `num2`, and a 2-bit control signal `ctrl` that selects one of the following operations: addition, subtraction, multiplication, or division. The result of the selected operation is outputted as `result`, allowing for precise computations with specified integer and fractional bit widths.
+module top_module(
+  input signed [integer_bits+fractional_bits-1:0] num1,
+  input signed [integer_bits+fractional_bits-1:0] num2,
+  input [1:0] ctrl,
+  output signed [integer_bits+fractional_bits-1:0] result
+);

@@ -1,0 +1,9 @@
+Design a versatile module that implements a combined functional unit capable of performing two distinct operations based on the input `select` signal. When `select` is `0000`, it acts as a barrel shifter, shifting the 16-bit input `A` either left or right depending on the most significant bit of `B`. If `select` is `0001`, it functions as a 4-to-16 decoder, decoding the inverted input `B` to generate a 16-bit output with only one bit set high corresponding to the value of `B`. The results of both operations are reflected in the output registers `shift_left` and `shift_right` for the shifter, and `out` for the decoder, allowing for flexible data manipulation within a digital design.
+module top_module(
+    input [15:0] A,
+    input [3:0] B,
+    input [3:0] select,
+    output reg [15:0] shift_left,
+    output reg [15:0] shift_right,
+    output reg [15:0] out
+);

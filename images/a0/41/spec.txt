@@ -1,0 +1,10 @@
+Create a timer circuit that counts down from a specified 32-bit value and signals completion when the count reaches zero. The module has a state machine that operates in three states: IDLE, COUNTING, and LOADING. In the IDLE state, it waits for a start or load signal; upon receiving a load signal, it sets the count to a new value, while the start signal initiates the countdown from the set value. When counting, it decrements the count on each clock cycle and outputs the current count. Once the count reaches zero, it asserts a done signal and returns to the IDLE state. The circuit is also capable of resetting to its initial state via the rst input.
+module top_module(
+    input clk,
+    input rst,
+    input start,
+    input load,
+    input [31:0] value,
+    output reg done,
+    output reg [31:0] out
+);

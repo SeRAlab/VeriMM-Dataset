@@ -1,0 +1,9 @@
+Design a finite state machine (FSM) that controls a traffic light system, incorporating pedestrian safety. The FSM has five states: all lights red, green pedestrian, red pedestrian, green cars, and yellow cars. The machine changes states based on inputs from a pedestrian button and a traffic sensor, ensuring that when the pedestrian button is pressed, the pedestrian light is activated while cars are halted. When the traffic sensor detects vehicles, it transitions to green for cars. After the green period for cars, it switches to yellow before returning to the all-red state to complete the cycle, facilitating safe interaction between pedestrians and vehicular traffic.
+module top_module(
+  input clk,
+  input reset,
+  input pedestrian_button,
+  input traffic_sensor,
+  output reg green_light,
+  output reg pedestrian_light
+);

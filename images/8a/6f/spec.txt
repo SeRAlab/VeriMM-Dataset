@@ -1,0 +1,11 @@
+Design a circuit that functions as a 4-to-1 multiplexer combined with a 4-bit barrel shifter. The multiplexer selects one of four 4-bit inputs (in_0 to in_3) based on a 2-bit selection signal (sel) to output a corresponding value. Additionally, it performs shifting operations on a 4-bit input based on a 2-bit shift control signal, allowing for left and right shifts, as well as both arithmetic and logical signed shifts. The module produces the output based on the active operation at any given time.
+module top_module(
+    input [3:0] in_0,
+    input [3:0] in_1,
+    input [3:0] in_2,
+    input [3:0] in_3,
+    input [1:0] sel,
+    input [3:0] in,
+    input [1:0] shift,
+    output reg [3:0] out
+);

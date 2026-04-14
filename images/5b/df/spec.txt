@@ -1,0 +1,6 @@
+Design a circuit that calculates the next power of two for a given 4-bit input number. The module takes a 4-bit number, increments it by one in a combinational block, and then processes it in a sequential block to prepare the result. The output is a 5-bit value that represents the next power of two greater than or equal to the input number. The design utilizes a staged approach for computation, where it first computes an intermediate stage and then derives the final result using a method to round up to the nearest power of two.
+module top_module(
+    input [3:0] num,
+    input clk,                    // Added clk input
+    output reg [4:0] result
+);

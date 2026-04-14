@@ -1,0 +1,28 @@
+Please act as a professional Verilog designer.
+
+Create a module that implements an 8-bit register with enable and asynchronous reset. The module loads the input data into the register on the rising edge of the clock if the enable signal is high. If the reset signal is high, the register is reset to 0.
+
+Module name:
+    register_8bit
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    reset: Active-high asynchronous reset signal.
+    enable: Enable signal to control the loading of data.
+    data: 8-bit input data to be loaded into the register.
+
+Output ports:
+    q: 8-bit output signal representing the current value of the register.
+
+Implementation:
+The register is defined as reg [7:0] q. On each rising edge of the clock, if reset is high, q is set to 0. If enable is high, q captures the value of data.
+
+Give me the complete code.
+
+module register_8bit(clk, reset, enable, data, q);
+
+    input clk;
+    input reset;
+    input enable;
+    input [7:0] data;
+    output [7:0] q;

@@ -1,0 +1,8 @@
+Design a 4-bit shift register capable of parallel loading data, shifting left, and shifting right. When the `parallel_load` signal is asserted, the register loads the input data directly. If `shift_left` is active, the contents of the register are shifted left, with the most significant bit (MSB) wrapping around to the least significant bit (LSB). Conversely, if `shift_right` is asserted, the register shifts right, with the LSB wrapping around to the MSB. The output provides the current value of the shift register after any operations.
+module top_module(
+    input shift_left,
+    input shift_right,
+    input parallel_load,
+    input [3:0] data_in,
+    output [3:0] out
+);

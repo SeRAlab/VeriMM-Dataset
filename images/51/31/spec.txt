@@ -1,0 +1,9 @@
+Design a shift register with parallel load capability. This module accommodates an 8-bit wide input, allowing simultaneous loading of data when the load signal is asserted. Upon a clock edge, if the reset signal is low, the register initializes to zero. When the load signal is inactive, the register shifts its contents either left or right based on the direction input. The output reflects the current state of the register, making it suitable for applications requiring data storage and manipulation through serial shifts.
+module top_module(
+    input clk,
+    input reset,
+    input load,
+    input direction,
+    input [N-1:0] data_in,
+    output [N-1:0] data_out
+);

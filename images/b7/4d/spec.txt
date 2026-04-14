@@ -1,0 +1,6 @@
+Design a sign-extension unit that takes an input of 16 bits and produces a 32-bit output. When the ExtSel signal is high and the most significant bit of the input (datain) is 1, the upper 16 bits of the output (result) will be filled with 1s to extend the sign. If ExtSel is low or the most significant bit of the input is 0, the upper 16 bits will be set to 0, effectively sign-extending or zero-padding the input accordingly.
+module top_module(
+    input [15:0] datain,
+    input ExtSel,
+    output reg [31:0] result
+    );

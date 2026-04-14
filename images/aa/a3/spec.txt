@@ -1,0 +1,8 @@
+Design a barrel shifter capable of performing variable left or right shifts on a 32-bit input data signal. The module accepts a 32-bit data input, a 5-bit shift amount to determine the number of positions to shift, and uses a clock signal for synchronization. When the reset signal is active, the output is set to zero. Depending on the shift amount, the module either left shifts the input (for positive amounts) or performs an arithmetic right shift (for negative amounts), efficiently allowing for both types of bit manipulation within a single circuit design. The resulting shifted data is provided as the output.
+module top_module(
+  input clk,
+  input reset,
+  input [31:0] data_in,
+  input [4:0] shift_amount,
+  output [31:0] data_out
+);

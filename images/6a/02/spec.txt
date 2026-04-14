@@ -1,0 +1,11 @@
+Design a timer circuit that counts down from a specified value upon receiving a start signal. The timer operates in three states: IDLE, RUNNING, and STOPPED. In the IDLE state, it can load a new count value and transitions to RUNNING when the start signal is activated. While RUNNING, the timer decrements the counter on each clock cycle until it reaches zero, at which point an interrupt signal is triggered, and the state returns to IDLE. The STOPPED state allows the timer to pause, resuming to RUNNING with a start signal or resetting to IDLE with a reset command. The timer resets or clears on receiving a reset signal and can load a new value when the load input is high.
+module top_module(
+    input clk,
+    input rst,
+    input start,
+    input stop,
+    input reset,
+    input load,
+    input [31:0] value,
+    output interrupt
+);

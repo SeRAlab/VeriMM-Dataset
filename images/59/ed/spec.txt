@@ -1,0 +1,13 @@
+The Verilog code defines a module called `ITU_656_Decoder`, which implements a decoder for video data following the ITU-R BT.656 standard. It processes an 8-bit input data stream to extract and format YCbCr color components, managing synchronization and data validity across a clock-driven architecture. The design incorporates various control signals and registers to handle active video detection, frame validation, and conversion from RGB-like input values to the YCbCr format. The outputs include the position on the display (`oTV_X`, `oTV_Y`), the processed YCbCr values (`oYCbCr`), a data valid signal (`oDVAL`), and a data continuity indicator. The decoder also supports a swap feature for Cb and Cr channels, enabling flexibility in video processing tasks.
+module top_module(
+  input [7:0] iTD_DATA,
+  input iSwap_CbCr,
+  input iSkip,
+  input iRST_N,
+  input iCLK_27,
+  output [9:0] oTV_X,
+  output [9:0] oTV_Y,
+  output [31:0] oTV_Cont,
+  output [15:0] oYCbCr,
+  output oDVAL
+);

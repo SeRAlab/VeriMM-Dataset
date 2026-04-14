@@ -1,0 +1,7 @@
+Design a 16-bit counter-based prescaler that resets under certain conditions. The module increments a counter on each rising edge of the main clock (io_mainClk) until it reaches a specified limit (io_limit). When the counter equals the limit, it sets the output (io_overflow) high, indicating an overflow condition. The counter can be cleared asynchronously by the io_clear input, and it can also be reset to zero by an external system reset signal (resetCtrl_systemReset).
+module top_module(
+      input   io_clear,
+      input  [15:0] io_limit,
+      output  io_overflow,
+      input   io_mainClk,
+      input   resetCtrl_systemReset);

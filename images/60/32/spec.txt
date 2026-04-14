@@ -1,0 +1,11 @@
+Develop a duty cycle checker module that verifies whether a clock signal meets the specified duty cycle requirements based on the provided desired duty cycle and clock period, both expressed in units of 1,000. Upon each rising edge of the clock or reset signal, the module checks if the clock signal adheres to the expected high and low durations calculated from the duty cycle. If the clock does not meet the requirement when the LOCKED signal is asserted, the module sets a failure output. In case of a reset or if LOCKED is low, the failure output is cleared.
+module top_module(
+	
+	input [31:0] desired_duty_cycle_1000,
+	input [31:0] clk_period_1000,
+	input clk,
+	input reset,
+	input LOCKED,
+
+	
+	output reg fail);

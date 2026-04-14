@@ -1,0 +1,9 @@
+Design a dual-port RAM module that allows simultaneous read and write operations. The module writes data to a specified memory address when the write enable signal (wren) is active, using a 5-bit wide address input for identifying the write address. The module outputs the data stored at another specified address, defined by the read address input, whenever accessed. Both read and write operations are synchronized with the clock signal, making it suitable for applications requiring fast memory access in digital circuits.
+module top_module(
+  input            clock,
+  input   [31:0]   data,
+  input   [4:0]    wraddress,
+  input   [4:0]    rdaddress,
+  input            wren,
+  output  [31:0]   q
+);

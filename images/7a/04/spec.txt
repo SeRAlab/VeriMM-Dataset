@@ -1,0 +1,25 @@
+Please act as a professional Verilog designer.
+
+Implement an 8-bit register with asynchronous clear and synchronous load signals.
+
+Module name:
+    register_8bit
+
+Input ports:
+    CLK: Clock signal
+    CLR: Asynchronous clear signal
+    LOAD: Synchronous load signal
+    D: 8-bit input data
+
+Output ports:
+    Q: 8-bit output data
+
+Implementation:
+When CLR is high, the register should reset to 0. When LOAD is high, the value of D should be loaded into the register at each positive edge of the clock signal.
+
+Give me the complete code.
+
+module register_8bit (CLK, CLR, LOAD, D, Q);
+input CLK, CLR, LOAD;
+input [7:0] D;
+output reg [7:0] Q;

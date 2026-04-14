@@ -1,0 +1,11 @@
+Design a module that performs the addition of two 12-bit exponent values (Exp_X and Exp_Y) and outputs the result as a 13-bit value (Exp_Add). The module includes mechanisms to register the computed exponent and to detect if an underflow condition occurs when the sum exceeds a specified limit (either 127 or 1023, depending on the context). The underflow status is stored in a separate register and indicated by the output signal underflow_f. The module uses a clock for synchronization and supports reset and load operations for its registers.
+module top_module(
+    input wire clk,
+    input wire rst,
+    input wire load_a,
+    input wire load_b,
+    input wire [11:0] Exp_X,
+    input wire [11:0] Exp_Y,
+    output wire [12:0] Exp_Add,
+    output wire underflow_f
+);

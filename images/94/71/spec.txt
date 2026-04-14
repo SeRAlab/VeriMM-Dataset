@@ -1,0 +1,6 @@
+Design a circuit that translates the input from a 4-bit switch (`sw`) into a decrementing output (`x_out`) based on a clock signal (`clk`). The circuit utilizes a frequency divider to create a slower clock signal (`clk_out`) from the original clock. Every time the divided clock signal toggles, the current value (`xx`), initialized to 256, is decremented by the value of the switch input. The output is a 10-bit wide signal that reflects the decremented value of `xx`, producing a controllable countdown effect based on the switch input over time.
+module top_module(
+    input clk,
+    inout [3:0]sw,
+    output [9:0]x_out
+);

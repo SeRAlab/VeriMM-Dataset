@@ -1,0 +1,8 @@
+Design a synchronous RAM module with a memory size of 1024 words, each 32 bits wide. The module has a clock input, write enable signal, data input for writing, data output for reading, and a 32-bit address input to access specific memory locations. The RAM only responds to addresses where the upper bits (bits 15 to 12) are zero; otherwise, the output is set to zero. On the rising edge of the clock, if the write enable signal is active, it stores the input data at the specified address. Simultaneously, it retrieves data from the memory based on the lower 12 bits of the address, providing this data at the output when requested.
+module top_module(
+    input wire clk,
+
+    input wire [31:0] data_i,
+    output wire [31:0] data_o,
+    input wire [31:0] addr_i,
+    input wire we_i);

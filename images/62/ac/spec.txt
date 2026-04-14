@@ -1,0 +1,9 @@
+Design a module for managing MDIO (Management Data Input/Output) interface communications in Ethernet PHY devices. This module utilizes a state machine to transition between IDLE and ACQUIRE states for processing incoming MDIO signals. When the preamble condition is met, it enters the ACQUIRE state to read specific data from the MDIO inputs, which includes selecting speed and duplex mode settings for the PHY based on incoming data patterns. The module outputs two bits for speed selection and a single bit for duplex mode, effectively controlling the operation mode of the connected device based on the incoming MDIO data.
+module top_module(
+
+  mdio_mdc,
+  mdio_in_w,
+  mdio_in_r,
+
+  speed_select,
+  duplex_mode);

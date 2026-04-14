@@ -1,0 +1,15 @@
+Design a write data FIFO (First In, First Out) memory module that facilitates data storage and retrieval. It features a 2-bit address input for selecting the memory location, a chip select signal for device activation, a clock signal for synchronizing data operations, and a reset signal that initializes the stored data on a low state. The module allows writing 9 bits of data into its memory when the write enable signal is low, and it outputs the currently stored data through `out_port` while also enabling a read operation that always returns zero except when the specified address is accessed. This behavior controls data flow for applications requiring temporary storage and retrieval operations in digital systems.
+module top_module(
+                                        
+                                         address,
+                                         chipselect,
+                                         clk,
+                                         reset_n,
+                                         write_n,
+                                         writedata,
+
+                                        
+                                         out_port,
+                                         readdata
+                                      )
+;

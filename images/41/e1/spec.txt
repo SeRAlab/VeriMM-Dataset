@@ -1,0 +1,8 @@
+Design a FIFO (First In, First Out) data buffer with a control mechanism for data flag signaling. This module features a dual-port system allowing for data input and output operations. It maintains a queue of up to 8 entries of 9-bit data. The design includes write and read operations controlled by an address input: writing to the queue occurs when the address is set to 00, reading occurs on 01, and the status of a data flag is accessed with address 10. The data flag indicates when the FIFO is full or empty, simplifying the management of data flow. The module resets its internal pointers and counts upon receiving an active low reset signal.
+module top_module(
+  input [1:0] address,
+  input clk,
+  input [8:0] in_port,
+  input reset_n,
+  output reg [31:0] readdata
+);

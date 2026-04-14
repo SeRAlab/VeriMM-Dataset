@@ -1,0 +1,19 @@
+
+You are tasked with designing a Verilog module that takes in four inputs and produces one output. The inputs are as follows:
+- `empty` (1-bit): indicates whether a first-in-first-out (FIFO) buffer is empty
+- `ge2_free` (1-bit): indicates whether at least two spaces in the FIFO buffer are free
+- `ge3_free` (1-bit): indicates whether at least three spaces in the FIFO buffer are free
+- `input_tm_cnt` (2-bit): indicates the number of items in the FIFO buffer (00 = empty, 01 = 1 item, 10 = 2 items, 11 = 3 items)
+
+The output is as follows:
+- `fifo_cnt_inc` (5-bit): indicates the number of items to be added to the FIFO buffer
+
+Your task is to design a Verilog module that implements the following logic:
+- If the FIFO buffer is empty, `fifo_cnt_inc` should be set to the value of `input_tm_cnt[1:0]`
+- If there are at least three free spaces in the FIFO buffer and `input_tm_cnt` is 3, `fifo_cnt_inc` should be set to 2
+- If there are at least two free spaces in the FIFO buffer and `input_tm_cnt` is 2 or 3, `fifo_cnt_inc` should be set to 1
+- If there is at least one item in the FIFO buffer, `fifo_cnt_inc` should be set to 0
+- If none of the above conditions are met, `fifo_cnt_inc` should be set to a 5-bit value where all bits are 1.
+
+Your Verilog module should be self-contained and no more than 200 lines of code.
+

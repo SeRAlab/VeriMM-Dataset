@@ -1,0 +1,9 @@
+Design a digital circuit that computes a summation of terms based on a 32-bit input signal, "term_hits." The module consists of multiple stages, utilizing several instances of "trigterm" that progressively process the input to generate intermediate sums. The first stage aggregates paired inputs, followed by two mid-level computations that handle the summation of smaller groups. Finally, the circuit produces a final output that indicates if a hit (represented by the "hit" signal) occurs based on the cumulative results of these summations. This design is aimed at efficiently computing a hierarchical sum from multiple input signals in a sequential manner, suitable for applications requiring aggregative operations.
+module top_module(
+    input  wire [31:0] term_hits,
+    input  wire        clk,
+    input  wire        wrenb,
+    input  wire        din,
+    output wire [3:0] dout_pair,
+    output wire [7:0] pair_sum
+);

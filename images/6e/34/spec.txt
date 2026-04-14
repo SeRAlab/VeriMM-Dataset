@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+
+Implement a module for an 8-bit register with load and clear functionality. The register loads a new value from an 8-bit input on a positive clock edge if the load signal is high. If the clear signal is asserted (active high), the register value is set to 0 regardless of the load signal.
+
+Module name:  
+    register_8bit      
+
+Input ports:
+    clk: Clock signal.
+    clr: Clear signal (active high).
+    load: Load signal.
+    d: 8-bit data input.
+
+Output ports:
+    q: 8-bit data output.
+
+Implementation:
+The register_8bit module updates its value on the positive edge of the clock signal clk. If the clear signal clr is asserted, the register is set to 0. If clr is not asserted and the load signal is high, the register loads the value from the data input d. The output q is the current value of the register.
+
+Give me the complete code.
+
+module register_8bit(
+    input clk,
+    input clr,
+    input load,
+    input [7:0] d,
+    
+    output reg [7:0] q
+);

@@ -1,0 +1,6 @@
+Design a circuit that implements a right-shifting operation on a 4-bit output based on a clock signal and a reset condition. The module uses a counter to track clock cycles, and upon reaching a specified threshold defined by the `count` input, it shifts the 4-bit `led_n` output to the right by one position. If `led_n` becomes zero, it resets it back to 8. The operation is synchronous to the clock and incorporates an active-low reset functionality, allowing for controlled shifting of the output.
+module top_module(
+    input clk, reset_n,
+    input [31:0] count,
+    output reg [3:0] led_n   
+);

@@ -1,0 +1,10 @@
+Design a 32-bit counter module that can be asynchronously reset, loaded with a specific value, or incremented on each clock cycle. The output `q` represents the current count value. If the `aset` input is high, the counter resets to zero. If `sload` is high, the counter loads the value from `data`. When both `cnt_en` and `clk_en` are high, the counter increments the current value of `q` with each rising edge of the `clock`.
+module top_module(
+  input [31:0] data,
+  input clock,
+  input clk_en,
+  input cnt_en,
+  input aset,
+  input sload,
+  output reg [31:0] q
+);

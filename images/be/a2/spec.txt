@@ -1,0 +1,7 @@
+Design a circuit that functions as a bus holder, capturing and retaining an 8-bit input value while synchronizing with a clock signal. The module stores the input, `bus_in`, on the rising edge of the clock unless a reset signal is asserted, in which case it clears the stored value to zero. The `bus_out` output continuously reflects the current stored value, effectively holding the last captured input until the next clock event or reset occurs.
+module top_module(
+  input [7:0] bus_in,
+  input clk,
+  input reset,
+  output [7:0] bus_out
+);

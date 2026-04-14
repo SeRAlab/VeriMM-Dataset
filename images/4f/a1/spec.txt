@@ -1,0 +1,13 @@
+Design a SNES joypad interface that manages button input state through a state machine. The module captures button presses from the controller using clock and reset signals, transitioning through WAIT, LATCH, and READ states. During LATCH, it activates a latch signal, and in READ, it reads button states into a 16-bit register based on the index. The module outputs specific button data based on a two-bit selection input, allowing for multiplexing button states. It effectively interfaces between a gaming controller and a digital system for input processing.
+module top_module(
+  input  wire        clock,
+  input  wire        reset,
+  
+  input  wire  [1:0] button_sel,
+  output wire  [3:0] button_data,
+  output reg  [15:0] button_state,
+  
+  input  wire        controller_data,
+  output wire        controller_latch,
+  output wire        controller_clock
+);

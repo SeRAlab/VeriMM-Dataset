@@ -1,0 +1,8 @@
+Design a 4-to-2 priority encoder with enable functionality. The module takes a 4-bit input (I) and an enable signal (Ein). When Ein is high, it outputs a 2-bit code (Y) corresponding to the index of the highest-order bit set in I, prioritizing the bits from I[3] down to I[0]. If all input bits are low while Ein is high, the module indicates that no valid input is present by asserting an output signal (Eout). Additionally, a group signal (GS) is generated when any input is active, indicating that the encoder is active and processing a valid input.
+module top_module(
+    input [3:0] I,
+    input Ein,
+    output reg [1:0] Y,
+    output reg GS,
+    output reg Eout
+);

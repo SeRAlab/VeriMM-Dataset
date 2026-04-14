@@ -1,0 +1,10 @@
+Implement a finite state machine (FSM) that manages a bus request process. The FSM has four states: IDLE, BBUSY, BWAIT, and BFREE. It grants bus access via the output signal 'gnt' when a request (req) is received and transitions between states based on the completion of the request (done) and a delay signal (dly). In the IDLE state, it waits for a request; in the BBUSY state, it remains busy until the request is completed, possibly waiting if a delay is indicated; in the BWAIT state, it continues to grant access until the delay clears; and in the BFREE state, it can return to IDLE or go back to BBUSY if a new request comes in. The machine is reset by an external reset signal (rst_n).
+module top_module(
+	output reg gnt,
+	output reg [1:0] state,
+	input dly,
+	input done,
+	input req,
+	input clk,
+	input rst_n
+);

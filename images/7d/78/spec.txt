@@ -1,0 +1,7 @@
+Design a circuit that functions as a combinational processing unit capable of performing either addition/subtraction or shifting operations based on control signals. The module takes two 16-bit inputs, A and B, and uses a 4-bit selector, SEL, where the least significant bit (SEL[0]) determines whether to execute addition or subtraction and the most significant bit (SEL[1]) selects the output between the result of the adder/subtractor and the barrel shifter. The output, 'result', will provide either the arithmetic result of A and B or the shifted result, effectively implementing a dual-function unit where operations can be easily selected.
+module top_module(
+    input [15:0] A,
+    input [15:0] B,
+    input sub,
+    output [15:0] out
+);

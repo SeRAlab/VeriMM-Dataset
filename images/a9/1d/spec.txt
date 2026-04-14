@@ -1,0 +1,9 @@
+Design a module that performs logical operations on a 4-bit input. It computes the AND, OR, and XOR results of the input bits and generates the corresponding outputs. The module also derives the positions of the least significant NOT output for each operation (AND, OR, XOR) to control further logic. It constructs an 8-bit final output combining specific selections derived from the NOT outputs based on their positions. Additionally, it detects the highest active bit position in the input and stores it in a 2-bit register, allowing easy reference of where the first '1' appears in the input vector.
+module top_module(
+    input [3:0] in,
+    output out_and,
+    output out_or,
+    output out_xor,
+    output reg [1:0] pos,
+    output [7:0] final_output
+);

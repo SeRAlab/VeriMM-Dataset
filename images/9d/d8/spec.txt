@@ -1,0 +1,7 @@
+This module implements a key processing circuit that conditionally permutes a 64-bit input key based on the value of a select signal. When the select input is high (1), it rearranges the key bits according to a specific permutation pattern, resulting in a temporary processed key. Regardless of the select signal, the key is then split into two 28-bit output components: `lefto` and `righto`, which represent the left and right halves of the processed key. This design is typically utilized in cryptographic applications where key transformation and segmentation are essential for secure data processing.
+module top_module(
+    input select,
+    input [63:0] key,
+    output reg [27:0] lefto,
+    output reg [27:0] righto
+);

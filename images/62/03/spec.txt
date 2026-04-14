@@ -1,0 +1,9 @@
+Design a shift register that can shift data left or right based on a control signal. It accepts an 8-bit input on each clock cycle, with the ability to reset the register to zero. The register keeps track of the number of shifts performed and indicates when a total of seven shifts have been completed through a shift_done output. The output reflects the current state of the shift register, maintaining either the left or right-shifted value depending on the shift_control signal.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data_in,
+  input shift_control,
+  output [7:0] data_out,
+  output shift_done
+);

@@ -1,0 +1,9 @@
+Design a GPIO controller that manages the input and output of 8 GPIO pins. The controller should have the following functionalities: 
+- A 3-bit input `mode` that determines the operation mode of the GPIO pins: 
+  - `000`: All pins output low 
+  - `001`: All pins output high 
+  - `010`: Pins output data from the `data_in` input 
+  - `011`: Pins reflect the state of `data_in` with an inversion 
+  - `100`: Pins output from a shift register controlled by `shift_enable` and `data_in` 
+- A 1-bit `shift_enable` input that allows shifting data through the GPIO pins when in the shift register mode. 
+The controller should have an output `gpio_out` representing the state of the GPIO pins.

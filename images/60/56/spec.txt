@@ -1,0 +1,10 @@
+Develop a motor control module for a stepper motor that processes step signals to increment a step counter, determines motor direction, and generates a PWM output for an H-bridge driver. The module divides the motor's revolution into a specified number of steps per revolution and toggles two output signals, Aplus and Aminus, based on the current step count and the desired direction of rotation. It also produces a PWM signal whose duty cycle is controlled by an input PWM value, effectively enabling speed modulation of the motor.
+module top_module(
+  input step,
+  input direction,
+  input pwm,
+  input clk,                // Added clk input for clock signal
+  output reg Aplus,         // Changed output to reg for Aplus
+  output reg Aminus,        // Changed output to reg for Aminus
+  output pwm_out
+);

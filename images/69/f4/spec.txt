@@ -1,0 +1,8 @@
+Implement a delay module that captures an input signal, `data_in`, and provides a delayed output signal, `data_out`. On each rising edge of the clock signal `clk`, the module updates `data_out` to the value of `data_in` from the previous clock cycle. The module also generates a `valid_out` signal that indicates whether the delayed data has changed. If the module is reset, both outputs and the internal delayed data are set to LOW. This design effectively serves as a data pipeline element with synchronization features, ensuring that signal transitions are well-controlled and easily detected.
+module top_module(
+   input clk,
+   input reset,
+   input data_in,
+   output reg data_out,
+   output reg valid_out
+   );

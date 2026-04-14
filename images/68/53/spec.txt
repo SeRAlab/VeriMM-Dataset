@@ -1,0 +1,6 @@
+Design a clock divider circuit that generates a modified clock output, `clk_out`, with a frequency determined by the input `period`. The circuit uses a counter to track the number of clock cycles and toggles the `clk_out` signal every half of the specified `period`. When the reset signal `rst_n` is asserted low, both the counter and `clk_out` are reset to zero. The design enables dynamic adjustment of the output clock frequency based on the `period` input while ensuring proper operation during reset conditions.
+module top_module(
+    input clk, rst_n,
+    input [10:0] period,
+    output reg clk_out
+    );

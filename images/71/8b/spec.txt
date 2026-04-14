@@ -1,0 +1,9 @@
+Design a 32-bit shift register with load and reset capabilities. On a positive clock edge, if the reset signal is high, the register is cleared to zero. If the load_data signal is asserted, the register is loaded with the input data (in_data). Otherwise, the contents of the register are shifted left by one bit, with the most significant bit (MSB) being wrapped around to the least significant bit (LSB) position. The module provides two outputs: shift_out, which reflects the current state of the register, and parallel_out, which outputs the loaded data when load_data is asserted, otherwise it outputs the current content of the register.
+module top_module(
+  input clk,
+  input reset,
+  input load_data,
+  input [31:0] in_data,
+  output reg [31:0] shift_out,
+  output reg [31:0] parallel_out
+);

@@ -1,0 +1,7 @@
+Design a digital Infinite Impulse Response (IIR) filter that processes incoming signals based on specified coefficients. The filter accepts multiple input signals and produces multiple output signals by implementing a difference equation involving two poles and two zeros. The module operates on a clock signal and includes a reset function to initialize internal registers. Upon each clock cycle, if the reset is not active, the filter calculates new output values using previous input and output states, effectively applying the IIR filter's recursive characteristics to the input data.
+module top_module(
+  input clk,
+  input reset,
+  input [n-1:0] in,
+  output [m-1:0] out
+);

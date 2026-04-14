@@ -1,0 +1,8 @@
+Design an up/down counter that increments or decrements its output based on the control signals. The counter has an input for clock (`clk`), a direction (`up_down`), and a load signal (`load`). When `load` is active, the counter outputs the value specified by the 3-bit input `D`. If `load` is not active, the counter increments the output `Q` by 1 when `up_down` is high and maintains its current value when `up_down` is low. The module effectively manages counting in both directions while allowing for preset values via the load feature.
+module top_module(
+    input clk,
+    input up_down,
+    input load,
+    input [2:0] D,
+    output reg [2:0] Q
+);

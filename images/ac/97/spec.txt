@@ -1,0 +1,14 @@
+Design a module that simulates the behavior of a bird in a simple game. The module tracks the vertical position of the bird and its velocity, adjusting its position based on user input (fly button) and gravitational effects. When the fly button is pressed, the bird's velocity is set to a negative value for upward movement; otherwise, gravity increases the velocity, causing the bird to fall. The bird's position resets under certain conditions, such as when the game is lost or reset. Additionally, the module monitors its coordinates to determine if the bird is visible on the screen, producing an output signal to indicate its presence.
+module top_module(
+		input wire fresh,
+		input wire [9:0] x,
+		input wire [8:0] y,
+		input wire fly_button,
+		input wire RESET,
+		input wire START,
+		input wire Lose,
+		input wire game_status,
+		input wire [31:0] clkdiv,
+		output reg is_bird,
+		output reg [8:0] bird_y
+	 );

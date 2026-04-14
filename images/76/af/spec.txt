@@ -1,0 +1,10 @@
+This module implements a 32-bit wide flip-flop with additional control features. It captures input data (`io_input_0_data`) on the rising edge of a clock signal, but only if the enable signal (`io_input_0_enable`) is asserted. The flip-flop also has a reset functionality, allowing it to initialize to a specified value (`io_input_0_init`) when the reset signal is active or reset to this value if the dedicated reset input (`io_input_0_reset`) is triggered. The output (`io_output_data`) reflects the current stored value of the flip-flop, which can be set to either the initialized value or the input data based on the control signals. This design is useful in applications requiring storage with flexible initialization and control features.
+module top_module(
+  input         clock,
+  input         reset,
+  input  [31:0] io_input_0_data,
+  input  [31:0] io_input_0_init,
+  input         io_input_0_enable,
+  input         io_input_0_reset,
+  output [31:0] io_output_data
+);

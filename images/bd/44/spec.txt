@@ -1,0 +1,10 @@
+Design a 4-to-1 multiplexer that selects one of four 4-bit input data lines (A, B, C, D) based on a 2-bit select signal (SEL). The multiplexer has an enable input (EN) that must be high for any of the inputs to be actively passed to the output (Y); if EN is low, the output is high impedance (4'bZ). When EN is high, the selected input corresponding to the SEL value is outputted, while the inactive inputs are effectively disconnected from the output.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [3:0] C,
+    input [3:0] D,
+    input [1:0] SEL,
+    input EN,
+    output reg [3:0] Y
+);

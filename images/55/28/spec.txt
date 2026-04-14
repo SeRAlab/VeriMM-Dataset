@@ -1,0 +1,8 @@
+Design a hexadecimal to 7-segment display driver that accepts a 16-bit input value and outputs the corresponding 7-segment display encoding for each of the four hexadecimal digits. The module utilizes a clock signal for multiplexing between the digits, displaying one digit at a time with a refreshing mechanism controlled by a clock divider. The outputs include a 7-bit representation of the segment activations (a_to_g) for displaying values 0-15 (hexadecimal) and a 4-bit enable signal (an) to activate the appropriate display segment. A clear signal (clr) allows for resetting the clock divider, ensuring proper functionality upon initialization.
+module top_module(
+	input wire [15:0] x,
+	input wire clk,
+	input wire clr,
+	output reg [6:0] a_to_g,
+	output reg [3:0] an
+);

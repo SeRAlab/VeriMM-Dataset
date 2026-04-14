@@ -1,0 +1,8 @@
+Design a divider circuit that computes the quotient and remainder of two 8-bit unsigned integers (dividend and divisor) on the rising edge of a clock signal. The module takes an 8-bit input for the dividend and another 8-bit input for the divisor, processing them through a bit-wise iterative division algorithm. The resulting quotient is stored and updated, while the final remainder is also output at the end of the operation. The circuit continuously updates the remainder as it performs left shifts and comparisons with the divisor, effectively implementing binary long division.
+module top_module(
+    input [7:0] div, // dividend
+    input [7:0] dvr, // divisor
+    input clk,
+    output reg [7:0] quotient, // quotient
+    output reg [7:0] remainder // remainder
+);

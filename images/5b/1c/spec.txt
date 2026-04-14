@@ -1,0 +1,28 @@
+Implement the Verilog module based on the following description.
+Consider this Verilog module "alu_module":
+
+// module alu_module (
+//     input [3:0] a,
+//     input [3:0] b,
+//     input [1:0] op,
+//     output reg [3:0] result
+// );
+
+// always @(*) begin
+//     case (op)
+//         2'b00: result <= a + b;
+//         2'b01: result <= a - b;
+//         2'b10: result <= a & b;
+//         2'b11: result <= a | b;
+//     endcase
+// end
+
+// endmodule
+
+// Create a hierarchical Verilog design where the ALU logic is in a submodule, and that submodule is instantiated in this code. Create the submodule called "top_alu_module".
+
+module top_alu_module(
+    input [3:0] a,
+    input [3:0] b,
+    input [1:0] op,
+    output reg [3:0] result);

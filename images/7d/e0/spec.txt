@@ -1,0 +1,11 @@
+Design a Profibus master-slave communication interface that can transmit and receive data between devices. The module operates in a state machine that manages the transmission of an 8-bit data payload along with a CRC for error-checking. When valid transmission data is provided, it shifts the data into a register, computes the CRC, and transitions through states for sending the start, data, and CRC frames. It also facilitates receiving data by allowing the master to shift in bits from the receiver, compute the CRC, and validate the received message. The interface has control signals indicating when it is ready to transmit or receive data, effectively supporting serial communication in a Profibus network.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] tx_data,
+  input tx_valid,
+  input rx_ready,
+  output reg tx_ready,
+  output reg [7:0] rx_data,
+  output reg rx_valid
+);

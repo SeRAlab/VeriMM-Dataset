@@ -1,0 +1,8 @@
+Create a pattern storage and retrieval module that utilizes three dual-port RAM blocks to store and output patterns for a 12 LED setup, each with 8 bits of color data. The module writes data to the selected RAM block based on the control signals and updates the currently selected pattern through a clock-driven stepping mechanism. On each clock cycle, if the step signal is asserted, the address for reading from the RAM blocks increments, allowing cyclic access to stored patterns, and shifts between RAM blocks after completing a full cycle through available patterns. The output reflects the currently selected LED pattern based on the stored data.
+module top_module(
+    input clka,
+    input wea,
+    input [7:0] addra,
+    input [71:0] dina,
+    output reg [71:0] douta
+);

@@ -1,0 +1,6 @@
+Design a module that aligns a 16-bit input number into a specific format, which includes extracting the significand, exponent, and sign bit for further processing. The significand (a_m) is formed by keeping the most significant bit as 1 and appending zeros to the least significant bits. The exponent (a_e) is calculated by subtracting 15 from the middle 5 bits of the input, and the sign bit (a_s) is taken directly from the most significant bit of the input. This is suitable for preparing data for floating-point representation or similar applications.
+module top_module(
+  input [15:0] input_a,
+  output [15:0] a_m,
+  output [5:0] a_e,
+  output a_s);

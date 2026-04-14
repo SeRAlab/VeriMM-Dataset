@@ -1,0 +1,6 @@
+Design a sequential circuit that converts a 4-bit binary input into a 4-bit hexadecimal output. The circuit captures the binary input on the positive edge of a clock signal, temporarily stores it in an intermediate register (`stage1`), then passes it to another register (`stage2`), which ultimately drives the output. This effectively implements a double-register pipeline for synchronous data transfer, ensuring stable output on the clock edges.
+module top_module(
+    input wire clk,          // Added clk input
+    input [3:0] binary,
+    output reg [3:0] hex
+);

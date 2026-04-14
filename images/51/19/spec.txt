@@ -1,0 +1,6 @@
+Implement a 16-bit wide custom counter with load and reset functionality. When the clock signal's positive edge is detected, the counter will reset to zero if the reset input is high. If the load input is high, it will load the value from `loadValue`. The counter increments on every clock cycle, and upon reaching its maximum value (all bits high), it wraps around to zero. Additionally, a flag output indicates when the counter has reached its maximum value.
+module top_module(
+   input         clock, reset, load,
+   input [15:0]  loadValue,
+   output [15:0] count,
+   output        flag);

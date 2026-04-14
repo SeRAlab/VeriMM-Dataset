@@ -1,0 +1,11 @@
+Design a memory-mapped I/O (MMIO) interface module that allows read and write access to a set of 80 bits representing keys. The module utilizes a 6-bit address input to control access to three specific regions within the 80-bit register: the first 32 bits, the second 32 bits, and the upper 16 bits of the last 16 bits. On a negative clock edge, when the reset is not asserted, the module can write new data into these key regions or read data from them based on the values of the write and read control signals. The output data reflects the accessed key segments, ensuring that appropriate portions of the 80-bit register are either updated or retrieved as specified by the address input.
+module top_module( 
+	input clk_i,
+	input reset_i,
+	input [5:0] addr_i,	
+	input write_i,
+	input read_i,
+	input [31:0] data_i,
+	output reg [31:0] data_o,
+	output [79:0] keys
+	);

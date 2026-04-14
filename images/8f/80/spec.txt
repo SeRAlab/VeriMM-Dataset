@@ -1,0 +1,23 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit shift register with parallel load. The shift register should shift right on the rising edge of the clock signal when the enable signal is high. When the load signal is high, the shift register should load the input data.
+
+Module name:
+    shift_register
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    en: Enable signal that controls the shifting operation.
+    load: Load signal to load the input data.
+    data_in: Input data signal of size 4 bits.
+
+Output ports:
+    data_out: Output data signal of size 4 bits.
+
+Implementation:
+Shift Register:
+The module includes a register, shift_reg, to store the output data signal.
+On the positive edge of clock signal (clk), the module updates the register. If the reset signal (rst) is high, the shift register (shift_reg) is set to 0. If the load signal is high, the shift register (shift_reg) is updated with the input data signal (data_in). If the enable signal (en) is high and the load signal is low, the shift register (shift_reg) shifts right by 1 bit.
+
+Give me the complete code.

@@ -1,0 +1,7 @@
+Design a circuit that performs arithmetic operations and selects outputs based on control signals. The module takes two 4-bit inputs, performs addition and subtraction to generate sum and difference, and uses a 2-to-1 multiplexer to select between the two inputs based on the control signal. It further employs a 4-to-1 multiplexer to choose between the calculated sum and difference, determined by a separate select signal, thus allowing flexible output based on various combinations of the control signals. The final output is a 4-bit value representing either the sum or difference of the inputs or one of the original inputs.
+module top_module( 
+    input [3:0] in0, 
+    input [3:0] in1, 
+    input sel,
+    input ctrl,
+    output [3:0] out );

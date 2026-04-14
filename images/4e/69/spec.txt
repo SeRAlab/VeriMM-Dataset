@@ -1,0 +1,8 @@
+Design a simple finite state machine (FSM) with three states, represented by a 2-bit state variable. It transitions through states 00 → 01 → 10 and loops back to 00. On a clock signal's rising edge, the FSM updates its current state, and upon a reset, it initializes to state 00 while asserting the event and pending signals to LOW. When in state 10, the module triggers `myevent` to HIGH, indicating a significant condition, and when in state 01, it sets `myevent_pending` to HIGH, signaling an event is pending. The module effectively monitors state transitions and emits signals based on its current state for external use.
+module top_module(
+    input clk,
+    input reset,
+    output reg [1:0] state,
+    output reg myevent,
+    output reg myevent_pending
+);

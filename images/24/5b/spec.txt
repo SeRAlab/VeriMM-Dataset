@@ -1,0 +1,11 @@
+
+Design a Verilog module for a simple Flash memory cell that can be programmed (set to 1), erased (set to 0), and read. The memory cell should have the following inputs:
+- `clk`: Clock signal
+- `reset`: Asynchronous reset signal
+- `program`: Signal to program the cell
+- `erase`: Signal to erase the cell
+
+The output should be:
+- `data`: The current state of the memory cell (0 or 1)
+
+The memory cell should respond to the `program` signal on the rising edge of the clock when `erase` is low, and should respond to the `erase` signal on the rising edge of the clock when `program` is low. The `reset` signal should clear the memory cell to 0 asynchronously.

@@ -1,0 +1,8 @@
+Design a finite impulse response (FIR) filter that processes input signals. The module takes a clock signal, a reset signal, an input sample (`x_in`), and filter coefficients (`coeff_in`). On a clock edge, if reset is activated, it initializes registers for input samples and coefficients to zero. Otherwise, it shifts the input samples and coefficients in their respective registers, updating the current input sample and coefficient. The output (`y_out`) is the summation of the products of the input samples and corresponding coefficients, yielding a filtered output that reflects the characteristics dictated by the provided coefficients.
+module top_module(
+    input clk,
+    input rst,
+    input signed [15:0] x_in,
+    input signed [19:0] coeff_in,
+    output signed [31:0] y_out
+);

@@ -1,0 +1,13 @@
+Design a Memory Buffer Register (MBR) that captures data inputs based on control signals. This 16-bit wide register outputs data from either the accumulator (ACC), memory register (MR), data register (DR), or random access memory (RAM), depending on the status of control signals C11, C17, C18, and C3, respectively. The output is updated with the selected input on the rising edge of the clock signal, enabling synchronization with the system clock.
+module top_module(
+    input clk,
+    input C11,  
+    input C3,   
+    input C17, 
+    input C18, 
+    input [15:0] ACC_output,
+    input [15:0] MR_output,
+    input [15:0] DR_output,
+    input [15:0] RAM_output,
+    output reg [15:0] MBR_output
+    );

@@ -1,0 +1,11 @@
+Design a synchronous register file with a configurable number of registers and data widths. The module features a clock input for timing, a write enable signal to control data writing, and separate read and write address inputs. When the write enable signal is asserted, it writes the provided data to the specified register. At each clock cycle, it simultaneously outputs the data from two registers specified by the read address inputs. The register file can accommodate multiple registers, enabling parallel access for efficient data storage and retrieval in computing applications.
+module top_module(
+  input clk,
+  input wr_en,
+  input [n-1:0] wr_addr,
+  input [m-1:0] wr_data,
+  input [n-1:0] rd_addr1,
+  input [n-1:0] rd_addr2,
+  output reg [m-1:0] rd_data1,
+  output reg [m-1:0] rd_data2
+);

@@ -1,0 +1,27 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit shift register with synchronous load.
+
+Module name:  
+    shift_reg   
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    load: Synchronous load signal. Defined as 1 for load and 0 for load signal inactive.
+    data: 4-bit input data to be loaded when load is active.
+
+Output ports:
+    q: 4-bit output representing the current state of the shift register.
+
+Implementation:
+The module shifts the stored value to the right on each positive edge of the clock signal. If the load signal is active, the stored value is loaded with the input data synchronously.
+
+Give me the complete code.
+
+module shift_reg(
+    input clk,
+    input load,
+    input [3:0] data,
+
+    output [3:0] q
+);

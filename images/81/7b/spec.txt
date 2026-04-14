@@ -1,0 +1,5 @@
+Create a circuit that counts the number of consecutive nibbles (4-bit groups) in a 16-bit input that are entirely composed of zeros. The module operates in several stages: it first fetches the upper 4 bits as a starting point, then reorganizes the input into four separate nibbles. It proceeds to check each nibble for a zero value, incrementing a counter for each complete zero nibble detected. Finally, the module outputs the sum of the fetched upper nibble and the count of zero nibbles, providing a total count of zero representations within the input.
+module top_module(
+    input [15:0] in,
+    output reg [3:0] out   // Changed to 'reg' to allow assignment in always block
+);

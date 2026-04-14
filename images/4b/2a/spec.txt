@@ -1,0 +1,9 @@
+Design a channel signal processing module that performs the addition of a Binary Phase Shift Keying (BPSK) signal and Additive White Gaussian Noise (AWGN). This module is synchronized with a clock signal (CLK) and operates when the enable input (en) is high. When enabled, it computes the sum of the BPSK and AWGN inputs, providing the result as a 17-bit wide output (BPSK_AWGN), while also setting the output status (en_status) to indicate that processing is active. If not enabled, the output values are reset to zero, effectively disabling the output.
+module top_module(
+    input CLK,
+    input en,
+    input [15:0] BPSK,
+    input [15:0] AWGN,
+    output reg en_status = 0,
+    output reg [16:0] BPSK_AWGN = 0
+);

@@ -1,0 +1,7 @@
+Design a circuit that selects a 4-bit bank address based on burst length configurations. It uses two input signals to determine the burst length—2-burst or 4-burst—and extracts the appropriate bits from an 8-bit address input. For a 2-burst configuration, it outputs the least significant two bits of the address, while for a 4-burst and default 8-burst configurations, it outputs the second and third least significant bits. This module effectively manages address selection for different burst lengths in a memory system.
+module top_module(
+  input lio_buscfg_brstlen2_sr,
+  input lio_buscfg_brstlen4_sr,
+  input [7:0] m_cdq_haddr_sr,
+  output reg [3:0] ibnk_sel_s
+);

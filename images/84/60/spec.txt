@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) for detecting a specific 8-bit bit pattern (10110101) from a serial input data stream. The module includes a clocked state transition mechanism that shifts new data into a shift register and transitions through four states: idle (S0), detecting the first bit (S1), detecting the second bit (S2), and confirming the complete pattern (S3). Upon successfully detecting the complete pattern, an output pulse is generated. The FSM resets upon detecting invalid conditions during the pattern recognition process, ensuring it maintains the integrity of the detection logic.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data,
+  output reg pulse
+);

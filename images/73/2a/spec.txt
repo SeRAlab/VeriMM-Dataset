@@ -1,0 +1,14 @@
+Design a JTAG to AXI FIFO interface module that facilitates data transfer between JTAG and AXI protocols. This module outputs data and control signals while managing write operations to a FIFO buffer. It incorporates registers to hold and update write data, burst count, and state signals based on clock cycles and control signals. The design includes a mechanism for acknowledging readiness from the AXI interface and synchronizing data outputs, enhancing communication efficiency. Additionally, it monitors FIFO write operations and maintains proper count tracking, serving as an intermediary data handler in a system-on-chip (SoC) architecture.
+module top_module(
+    output out,
+    output [31:0] m_axi_wdata,
+    output reg [7:0] gc0_count_d1_reg,
+    input aclk,
+    output s_dclk_o,
+    input Q,
+    input m_axi_wready,
+    input [7:0] burst_count_reg,
+    input tx_fifo_wr,
+    input tx_fifowren_reg,
+    input [31:0] tx_fifo_dataout_reg
+);

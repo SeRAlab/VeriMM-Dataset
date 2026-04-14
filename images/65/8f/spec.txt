@@ -1,0 +1,10 @@
+Design a simple arithmetic calculator that performs basic operations: addition, subtraction, multiplication, and division on two 8-bit inputs (in1 and in2). The operation is controlled by a 2-bit input (op), where each value corresponds to a specific arithmetic function. The circuit is synchronized with a clock signal and includes a reset mechanism that initializes the outputs and internal state. Upon a clock edge, if reset is not activated, the result of the selected operation is stored in a 16-bit register and the least significant 8 bits are outputted while setting a valid signal to indicate that the output is ready.
+module top_module(
+    input clk,
+    input reset,
+    input [1:0] op,
+    input [7:0] in1,
+    input [7:0] in2,
+    output reg [7:0] out,
+    output reg valid
+);

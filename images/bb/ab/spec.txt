@@ -1,0 +1,12 @@
+Design a FIFO (First-In, First-Out) buffer capable of storing up to 16 bytes of data, with 8-bit wide data inputs and outputs. The module includes capabilities for writing and reading data on clock edges, with proper handling of the buffer's empty and full states. It maintains a count of the current number of items in the buffer, and utilizes read and write pointers to manage data flow efficiently. The output signals indicate when the buffer is empty or full, ensuring smooth operation during read and write operations. The design is resettable and operates under a clock signal to synchronize data transfers.
+module top_module(
+  input clk,
+  input rst_n,
+  input fifo_rd,
+  input fifo_wr,
+  input [7:0] fifo_data_in,
+  output fifo_empty,
+  output fifo_full,
+  output reg [7:0] fifo_data_out,  // Changed from wire to reg
+  output reg [3:0] fifo_count
+);

@@ -1,0 +1,10 @@
+Design a memory protection module that allows reading from a designated memory region while safeguarding against unauthorized access. This module includes an 8-bit wide memory array with a specified size and starting address for protection. It outputs the data located at the requested address if the read enable signal is active and the address falls within the protected range. If these conditions are not met or if a reset signal is received, the output is set to zero. The circuit ensures proper synchronization with a clock signal for reliable operations.
+module top_module(
+  input clk,
+  input rst,
+  input read_en,
+  input [7:0] addr,
+  input [7:0] data_in,
+  output reg [7:0] data_out, // Changed to reg type
+  output read_ok
+);

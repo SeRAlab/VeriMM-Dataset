@@ -1,0 +1,12 @@
+Design a pixel writer circuit that manages the process of writing pixel data based on a Z-buffering scheme. The circuit operates using a finite state machine (FSM) with three states: a wait state, a Z-buffer read state, and a pixel write state. In the wait state, the circuit checks for the write request while handling the discard condition. If Z-buffering is enabled, it transitions to the Z-buffer read state to acknowledge readiness. Once the Z-buffer acknowledges the read, and if the Z-check passes, the circuit moves to the pixel write state, during which it asserts a write signal. An acknowledgment output is generated after the pixel has been written, transitioning back to the wait state for further operations. This module effectively coordinates pixel writing while incorporating Z-buffer functionality to ensure proper rendering in graphics applications.
+module top_module(
+  input clk_i,
+  input rst_i,
+  input write_i,
+  input discard_pixel,
+  input zbuffer_enable_i,
+  input z_ack_i,
+  input fail_z_check,
+  output reg write_o,
+  output reg ack_o
+);

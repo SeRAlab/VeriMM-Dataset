@@ -1,0 +1,15 @@
+Design a forwarding multiplexer for a CPU pipeline to resolve data hazards. The module selects appropriate values for two output signals, D1 and D2, based on the control inputs ForwardRSD and ForwardRTD, which indicate which data to forward based on the current state of the pipeline. Each forwarding control signal corresponds to various potential data sources, such as ALU results, memory outputs, or program counter values, allowing the module to efficiently select the up-to-date data to be utilized without requiring unnecessary stalls in the pipeline.
+module top_module(
+	 input [2:0] ForwardRSD,
+	 input [2:0] ForwardRTD,
+	 input [31:0] PC8_E,
+	 input [31:0] PC8_M,
+	 input [31:0] result_W,
+	 input [31:0] result_WD,
+	 input [31:0] Data1,
+	 input [31:0] Data2,
+	 input [31:0] ALUout_M,
+	 input [31:0] MDout_M,
+	 output [31:0] D1,
+	 output [31:0] D2
+    );

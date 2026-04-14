@@ -1,0 +1,7 @@
+Design a byte generator that appends an even parity bit to an 8-bit input data. On each clock cycle, if the reset signal is asserted, the output is reset to zero. Otherwise, the most significant bit of the 9-bit output indicates the even parity of the 8-bit input, while the lower 8 bits of the output directly mirror the input data.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data_in,
+  output reg [8:0] byte_out
+);

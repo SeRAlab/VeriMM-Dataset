@@ -1,0 +1,15 @@
+Design a circuit for a 4-bit up/down counter with arithmetic capabilities. This module can perform addition or subtraction with an input value, controlled by a select signal. It has the ability to load a specified value into the counter, increment or decrement based on the UP_DOWN signal, and manage carry-in conditions. Additionally, it sets overflow and carry-out flags during arithmetic operations, helping to monitor potential overflow conditions and transitions between counter limits. The current count value is outputted, allowing for tracking of the counter's state.
+module top_module(
+    input CLK,
+    input [3:0] a,
+    input [3:0] b,
+    input sub,
+    input UP_DOWN,
+    input LOAD,
+    input [2:0] LOAD_VAL,
+    input CARRY_IN,
+    output reg cout,
+    output reg overflow,
+    output reg [3:0] Q,
+    output reg [2:0] counter_out
+);

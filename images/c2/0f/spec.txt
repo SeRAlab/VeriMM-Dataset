@@ -1,0 +1,31 @@
+
+
+You are tasked with designing a verilog module that implements a shift register with a parallel load functionality. The shift register should have a configurable number of bits and should be able to be loaded with a given data value in parallel. The module should have the following inputs and outputs:
+
+Inputs:
+- `clk`: the clock signal
+- `load`: a control signal that enables parallel loading of the shift register
+- `data_in`: the data to be loaded into the shift register in parallel
+- `shift`: a control signal that enables shifting of the shift register
+
+Outputs:
+- `data_out`: the output of the shift register
+
+You should use the following template for your module:
+
+```
+module shift_register #(parameter WIDTH = 8) (
+    input clk,
+    input load,
+    input [WIDTH-1:0] data_in,
+    input shift,
+    output reg [WIDTH-1:0] data_out
+);
+
+// your code here
+
+endmodule
+```
+
+Your task is to complete the module by implementing the shift register with parallel load functionality. The shift register should shift the data in the `data_out` output every clock cycle when the `shift` signal is high. When the `load` signal is high, the shift register should load the data in `data_in` into the shift register in parallel, i.e., the data should appear in `data_out` on the next clock cycle.
+

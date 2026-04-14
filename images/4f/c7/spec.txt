@@ -1,0 +1,11 @@
+Design a 32-depth, 16-bit wide FIFO (First In, First Out) memory buffer. The circuit manages write and read operations through control signals `wr_en` and `rd_en`. When `wr_en` is asserted, the module stores incoming 16-bit data on the rising edge of the clock, using a write address pointer to track the current write location. The read operation, controlled by `rd_en`, retrieves data from the FIFO using a separate read address pointer. The design also includes status flags, `rd_empty` and `wr_full`, to indicate when the FIFO is empty or full, respectively. The module resets its state upon receiving a reset signal, ensuring proper initialization of all pointers and flags.
+module top_module(
+  input                clk,
+  input                reset,
+  input [15:0]         wr_data,
+  input                wr_en,
+  input                rd_en,
+  output reg [15:0]    rd_data,
+  output reg           rd_empty,
+  output reg           wr_full
+);

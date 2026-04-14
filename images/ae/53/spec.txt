@@ -1,0 +1,11 @@
+Design a synchronous trigger system that reacts to a clock and a synchronization input. The module captures a data input (`din`) and generates a 5-bit trigger output based on the state of a state register (`evreg`), which consists of sequence detection and control signals. When `sync` is asserted, it shifts the incoming data into the state register and generates specific control signals (`syn`, `rst`, `trg`, `rsr`) based on the decoded state. The output `trigger_out` consolidates these control signals into a single vector, while `direct_in` provides immediate access to the current state of the `din` input, effectively allowing for more complex event-driven logic in subsequent stages of the circuit design.
+module top_module(
+	input clk,
+	input sync,
+	input reset,
+
+	input din,
+	
+	output [4:0]trigger_out,
+	output direct_in
+);

@@ -1,0 +1,8 @@
+Design a circuit that performs 4-bit addition and subtraction based on a control signal. The module takes two 4-bit inputs, A and B, and a signal SUB that determines the operation. If SUB is low, the output OUT is the sum of A and B. If SUB is high, the circuit computes A minus B by inverting B and adding 1 to it (two's complement). Additionally, it produces a carry-out (COUT) flag indicating if the result is negative based on the sign bit of the output.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input SUB,
+    output [3:0] OUT,
+    output COUT
+);

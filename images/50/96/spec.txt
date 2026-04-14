@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+
+Create a Verilog module to implement a D flip-flop with asynchronous reset and enable. The flip-flop should store the value of the input signal "d" on the rising edge of the clock signal "clk" when the enable signal "en" is high. If the reset signal "rst_n" is low, the flip-flop should reset its output "q" to 0.
+
+Module name:  
+    d_ff
+
+Input ports：
+    clk: Clock signal.
+    rst_n: Reset signal (active low).
+    en: Enable signal.
+    d: Data input signal.
+
+Output ports：
+    q: Output signal.
+
+Implementation:
+Declare the module d_ff with input and output ports as specified in the ports statement.
+Declare a register q to store the current output value.
+Inside an always block, sensitive to the positive edge of the clk signal and the negative edge of the rst_n signal, implement the logic for storing the input value and resetting.
+In the reset condition (~rst_n), set the q register to 0, indicating the flip-flop is reset.
+On every rising edge of the clk, if the enable signal en is high, store the value of d in q.
+
+Give me the complete code.
+
+module d_ff(
+    input clk,
+    input rst_n,
+    input en,
+    input d,
+    output reg q
+);

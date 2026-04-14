@@ -1,0 +1,8 @@
+Design a circuit for performing various arithmetic and logic operations on two 8-bit inputs, `a` and `b`. The module selects the operation to execute based on a 3-bit `op` input, which can perform addition, subtraction, bitwise operations (AND, OR, XOR, NOT), and bit shifts (left and right). An additional control signal `sel` determines whether the output is the result of the selected operation or simply the value of input `a`. This module effectively functions as an 8-bit ALU, capable of executing a range of operations conditional on the provided inputs.
+module top_module(
+    input [7:0] a,
+    input [7:0] b,
+    input [2:0] op,
+    input sel,
+    output reg [7:0] out   // Change output to reg type
+);

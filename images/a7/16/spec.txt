@@ -1,0 +1,11 @@
+Design a control module that generates a 6-bit stall signal in response to reset and various stall requests from different stages of a processing pipeline. When `rst` is asserted, the stall signal is set to zero; otherwise, based on which stage requests a stall (fetch, decode, execute, or memory), the output stall signal is configured to indicate a specific stall condition with a corresponding binary value. This module effectively coordinates the flow of operations by managing the stalling of different stages as required by the inputs.
+module top_module(
+    input wire 			rst,
+
+	input wire			stall_req_from_if,
+	input wire			stall_req_from_id,
+	input wire			stall_req_from_ex,
+	input wire			stall_req_from_me,
+
+	output reg[5:0]		stall
+);

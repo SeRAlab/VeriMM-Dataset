@@ -1,0 +1,9 @@
+Design a circuit that integrates both a shift register and a decoder. The module accepts a clock signal, control signals for shifting left or right, a parallel load input, and two bits (A and B) that determine the behavior of the decoder. On each clock cycle, if the control signal is low, it shifts the shift register to the right; if high, it shifts left. If the shift input is active, the shift register is loaded with the parallel_load value. The decoder uses the state of the bits A and B to determine which position in its output to drive LOW based on the current value of the shift register, ultimately producing a 16-bit output Y that is the bitwise negation of the decoder's output.
+module top_module(
+    input clk,
+    input [2:0] parallel_load,
+    input shift,
+    input control,
+    input A, B,
+    output reg [15:0] Y
+);

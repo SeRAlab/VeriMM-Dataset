@@ -1,0 +1,12 @@
+Implement a simple data register module that captures and holds the input signals on the rising edge of the clock. It takes four input signals: two 4-bit data inputs (dataA_d and dataB_d), a 2-bit control input (sum10), and a 2-bit reset input (reset_L_d). The module produces four corresponding output signals (dataA_dd, dataB_dd, sum10_d, and reset_L_dd), which represent the latched versions of the inputs, effectively allowing for synchronized data storage.
+module top_module(
+        input [3:0] dataA_d,
+        input [3:0] dataB_d,
+        input [1:0] sum10,
+        input clk,
+        input reset_L_d,
+        output reg [3:0] dataA_dd,
+        output reg [3:0] dataB_dd,
+        output reg [1:0] sum10_d,
+        output reg [1:0] reset_L_dd
+    );

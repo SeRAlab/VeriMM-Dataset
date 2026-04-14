@@ -1,0 +1,7 @@
+Design a circuit for computing the parity of an 8-bit input data stream. This module takes an 8-bit data input, data_in, and, on each positive clock edge, updates the parity value by performing a bitwise XOR operation between the current parity state and the incoming data bits. When the reset_n signal is asserted low, both the parity state and the output, parity_out, are reset to zero. The parity_out signal indicates the overall parity, calculated by XORing the bits of the 4-bit parity register, effectively determining whether the total number of '1' bits received is odd or even.
+module top_module(
+    input clk,
+    input reset_n,
+    input [7:0] data_in,
+    output reg parity_out
+);

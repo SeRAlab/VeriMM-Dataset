@@ -1,0 +1,15 @@
+Design a control module for raster interrupt functionality in a video display system. This module responds to specific address commands to read from and write to registers that configure raster line settings and control raster interrupts. It features an 8-bit register for raster line and control signals, enabling or disabling raster interrupt signals based on input control signals. Additionally, it provides output data depending on the read operations, maintaining an active low output enable signal (oe_n) while offering a mechanism to monitor the status of raster interrupt operations.
+module top_module(
+    input wire clk,
+    input wire rst_n,
+    input wire [7:0] zxuno_addr,
+    input wire zxuno_regrd,
+    input wire zxuno_regwr,
+    input wire [7:0] din,
+    output reg [7:0] dout,
+    output reg oe_n,
+    output wire rasterint_enable,
+    output wire vretraceint_disable,
+    output wire [8:0] raster_line,
+    input wire raster_int_in_progress
+    );

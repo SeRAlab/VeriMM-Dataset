@@ -1,0 +1,7 @@
+Design a circuit that counts the number of consecutive '1's in an 8-bit input data stream. On each positive clock edge, the module resets the count if the reset signal is asserted. If the input data is all '1's, it sets the output count to 8; if all '0's, the count resets to 0. For any other input, if the most significant bit is '1', it increments a temporary count and updates the output count accordingly. If the most significant bit is '0', it also resets both counters, indicating that the consecutive count has been broken.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data,
+  output reg [3:0] count
+);

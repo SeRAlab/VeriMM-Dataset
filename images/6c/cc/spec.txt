@@ -1,0 +1,9 @@
+Design a digital circuit that integrates a shift register and a 256-to-1 multiplexer to produce a 4-bit output. The shift register is controlled by a clock and a synchronous active-high reset, initializing to a specific state and shifting its bits on each clock cycle. The multiplexer selects one of the 256 four-bit sections from a 1024-bit input vector based on an 8-bit select input. The circuit combines the outputs from the shift register and the multiplexer through control logic, generating a new 4-bit value based on the condition of the select signal. Finally, the resulting selected output undergoes an addition operation with the shift register output, producing a 4-bit final output for further utilization.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input d,          // 1-bit input for the shift register
+    input [1023:0] in,// 1024-bit input vector for the multiplexer
+    input [7:0] sel,  // Select input to choose between the shift register and the multiplexer
+    output [3:0] q    // 4-bit output from the final functional module
+);

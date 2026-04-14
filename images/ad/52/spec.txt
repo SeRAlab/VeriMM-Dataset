@@ -1,0 +1,12 @@
+Design a BCD (Binary-Coded Decimal) down counter that decrements its value on each clock cycle when the 'decrease' signal is asserted. The counter holds a value within the range defined by the 'limit' input, and when this limit is reached, it resets to a specified 'start_value' while generating a 'borrow' signal to indicate that a wrap-around condition has occurred. The counter can be initialized with a provided 'init_value' at reset or when the 'restart' signal is active. The module is implemented to ensure correct down-counting behavior and to handle wrap-around operations effectively.
+module top_module(
+  output reg [3:0]value,  
+  output reg borrow,  
+  input clk,
+  input rst_n, 
+  input decrease,  
+  input [3:0]init_value,  
+  input [3:0]start_value,
+  input [3:0]limit,  
+  input restart
+);

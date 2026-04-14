@@ -1,0 +1,8 @@
+Implement a single-port random-access memory (RAM) with a 32-bit data width and a 10-bit address space. The module uses a clock signal to synchronize read and write operations. When the write enable signal (we) is active, the input data is stored in the specified RAM address, and on every clock cycle, the data stored at that address is also outputted. This design effectively enables simultaneous reading of data while allowing for updates to the memory location.
+module top_module(
+    input clk,
+    input [31:0] data,
+    input we,
+    input [9:0] addr,
+    output reg [31:0] out
+);

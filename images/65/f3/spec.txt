@@ -1,0 +1,8 @@
+Design a binary counter system that increments its count on the positive edge of an external SPI clock. It has a 4-bit output, Q, representing the current count and an additional 4-bit register, wr_pntr_gc_reg, that acts as a write pointer, incrementing by 2 each time E is high, wrapping around when it reaches 15 (4'b1111). The module also includes a reset functionality, activated by the AR input, which sets both Q and wr_pntr_gc_reg to 0. The ram_full_fb_i_reg output signals when the read pointer, rd_pntr_bin_reg, matches the write pointer, indicating that the buffer is full.
+module top_module(ram_full_fb_i_reg,
+    Q,
+    wr_pntr_gc_reg,
+    rd_pntr_bin_reg,
+    E,
+    ext_spi_clk,
+    AR);

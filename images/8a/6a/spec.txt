@@ -1,0 +1,9 @@
+Design a Mealy state machine that processes two input signals (in1 and in2) and transitions through five distinct states (A, B, C, D, and E) based on these inputs, with the current state encoded as a 5-bit value. The machine resets to state A upon a reset signal and outputs a value based on the current state and input signals: it maintains an output of zero in state A, outputs in2 in state B, and continues to evolve in states C and D, ultimately producing an output that is the logical OR of in1 and in2 when it reaches state E. This design is particularly useful for applications requiring sequential logic control that responds dynamically to changing input conditions.
+module top_module(
+  input clk,
+  input reset,
+  input in1,
+  input in2,
+  output reg out,
+  output reg [4:0] state
+);

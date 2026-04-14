@@ -1,0 +1,6 @@
+The module implements a 2-bit-wide, 4-way binary adder specifically designed for 8-bit inputs, producing a 9-bit result. It calculates the sum of the input vectors `in1` and `in2` by processing them in pairs of bits, handling carry propagation between these bit pairs to ensure accurate addition. The design operates through the use of multiple 'AND' and 'XOR' gates to generate intermediary sums and carry bits, and finally aggregates the results from the smaller calculations into a single 9-bit output, `res`. The purpose of this module is to perform efficient binary addition while managing carry-outs across groups of bits.
+module top_module(
+    input  [7:0] in1,
+    input  [7:0] in2,
+    output [8:0] res
+    );

@@ -1,0 +1,10 @@
+Design a simple 4-bit wide buffer module that stores input data and control signals on the rising edge of a clock. The module takes 32-bit inputs for Read_Data and ResALU, and a 5-bit input for Write_Reg, along with control signals MemtoReg and RegWrite. It outputs the stored values as Sal_RD, SResALU, Sal_WR, and the control signals as SMemtoReg and SRegWrite, effectively enabling data and control signal retention for subsequent operations in a synchronous system.
+module top_module(
+	input [31:0]Read_Data,ResALU,
+	input[4:0]Write_Reg,
+	input MemtoReg,RegWrite,
+	input clk,
+	output reg[31:0]Sal_RD, SResALU,
+	output reg[4:0]Sal_WR,
+	output reg SMemtoReg,SRegWrite
+);

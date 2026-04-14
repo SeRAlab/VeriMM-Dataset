@@ -1,0 +1,8 @@
+Design a load-use hazard detector that identifies potential data hazards in a pipeline. It compares the destination register of an executing instruction (EX_rt) with the source registers of a subsequent instruction (ID_rs and ID_rt). If EX_rt is non-zero, the instruction is set to write back to a register (indicated by EX_ramtoreg), and matches either ID_rs or ID_rt, the output (load_use_hazard) will signal a potential hazard, enabling mitigation strategies in the pipeline.
+module top_module(
+    input [4:0] ID_rs,
+    input [4:0] ID_rt,
+    input [4:0] EX_rt,
+    input EX_ramtoreg,
+    output load_use_hazard
+);

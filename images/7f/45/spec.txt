@@ -1,0 +1,14 @@
+Design a 4-bit synchronous register similar to the 74HC161. It captures the input data `cpu_d` on the rising edge of the `Ncpu_romsel` signal when `cpu_rw` is LOW (indicating a write operation). The stored data is then available at the outputs `hc161_out0` to `hc161_out3`, representing each of the 4 bits of the register. This module serves to temporarily hold data for a CPU-like architecture where control signals determine data flow into the register.
+module top_module( 
+		
+		
+ 
+ 
+							input  wire [3:0] cpu_d
+							, input  wire cpu_rw
+							, input  wire Ncpu_romsel
+							, output wire hc161_out0
+							, output wire hc161_out1
+							, output wire hc161_out2
+							, output wire hc161_out3
+							);

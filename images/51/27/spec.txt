@@ -1,0 +1,11 @@
+Design a motor control module that integrates pulse-width modulation (PWM) for speed control, direction control for a DC motor, and step control for a stepper motor. The module generates a PWM signal based on a duty cycle input while managing the motor's direction through control signals (stop, clockwise, counterclockwise, and brake) outputting appropriate direction signals. Additionally, it handles stepping for a stepper motor by cycling through a sequence of step outputs based on a specified step size. The power supply inputs are passed directly to the output, indicating the power supply's role in the overall operation of the system.
+module top_module(
+  input clk,
+  input duty_cycle,
+  input [1:0] control_signals,
+  input [1:0] power_supply,
+  input step_size,
+  output pwm_signal,
+  output [1:0] direction_signals,
+  output stepper_signals
+);

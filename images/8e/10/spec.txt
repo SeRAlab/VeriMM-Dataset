@@ -1,0 +1,8 @@
+Design a control logic module for an Arithmetic Logic Unit (ALU) that decodes function codes and operation modes. The module takes a 5-bit function code (FUNCT) and a single-bit ALU operation signal (ALU_Op) as inputs to generate a 3-bit ALU control signal (ALU_Ctrl), which specifies the ALU operation to perform. Additionally, it provides control signals for flag management: a two-bit signal (Flag_Write) indicating which status flags should be written to, and a single-bit signal (No_Write) indicating whether flag writing should be disabled. The output signals are conditioned on the values of the inputs to support specific arithmetic functions and conditions.
+module top_module(
+input [4:0] FUNCT,
+input ALU_Op,
+output reg [2:0] 	ALU_Ctrl,
+output reg [1:0] 	Flag_Write,
+output reg 	No_Write
+);

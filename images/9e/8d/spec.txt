@@ -1,0 +1,8 @@
+Design a 3-bit counter controlled by an FSM (Finite State Machine) that transitions through three states (S0, S1, S2) on each clock cycle, incrementing the output count `q` from 001 to 011. The counter resets to 000 when the reset signal is high and stops counting unless the enable signal is asserted. Additionally, the module outputs a `cycle_end` signal that signifies the transition back to the S0 state from S2, indicating that one complete count cycle has been achieved.
+module top_module(
+  input clk,
+  input reset,
+  input enable,
+  output reg[2:0] q,
+  output reg cycle_end
+);

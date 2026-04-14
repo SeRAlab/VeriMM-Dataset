@@ -1,0 +1,6 @@
+Design a binary priority decoder that identifies the highest priority active input from a set of inputs, where the priority is determined by a set of priority bits. The module has n input signals, and based on the given priority bits, it generates a one-hot output indicating which input has the highest priority. The decoder employs bitwise operations to encode the priorities, sort them, and create a masked signal that only activates the highest priority input. The output is guaranteed to be a valid one-hot encoded value, ensuring that only one output line is asserted at any time.
+module top_module(
+  input [n-1:0] in,
+  input [n-1:0] priority_bits,
+  output out
+);

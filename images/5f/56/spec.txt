@@ -1,0 +1,5 @@
+The IDEXreg module serves as an intermediate register in a pipelined processor architecture, specifically designed to hold data between the instruction decode and execution stages. It captures various inputs including instruction details, control signals, and data buses on the rising edge of the clock, assuming no data hazards are present. The module outputs the necessary control signals and extracted fields from the instruction, such as destination register identifiers and immediate values, thereby facilitating the seamless progression of data and control flow in the execution pipeline. This design enables improved performance and efficiency by ensuring that critical values are readily available for subsequent processing stages.
+module top_module(clk,instructionin,datahazard,DatabusAin,DatabusBin,immin,PCplusin,
+RegDstin,RegWrin,ALUSrc1in,ALUSrc2in,ALUFunin,Signin,MemWrin,MemRdin,MemtoRegin,
+RegDstout,RegWrout,ALUSrc1out,ALUSrc2out,ALUFunout,Signout,MemWrout,MemRdout,MemtoRegout,
+shamt,Rsout,Rtout,Rdout,DatabusAout,DatabusBout,immout,PCplusout);

@@ -1,0 +1,24 @@
+
+
+You are given a Verilog module called `arriaiigz_ena_reg` which is a register with enable and asynchronous clear and preset signals. The module has five input ports and one output port. The input ports are:
+- `d`: Data input
+- `clk`: Clock input
+- `clrn`: Asynchronous clear input
+- `prn`: Asynchronous preset input
+- `ena`: Enable input
+
+The output port is:
+- `q`: Register output
+
+The module has the following functionality:
+- When the `clrn` input is asserted (i.e., `clrn` = 0), the register output `q` is set to 0.
+- When the `prn` input is asserted (i.e., `prn` = 0), the register output `q` is set to 1.
+- When the `ena` input is asserted (i.e., `ena` = 1), the register is enabled and can store data.
+- When the `ena` input is deasserted (i.e., `ena` = 0), the register is disabled and cannot store data.
+- When the `clrn` input is asserted (i.e., `clrn` = 0), the register is cleared and cannot store data.
+- When the `prn` input is asserted (i.e., `prn` = 0), the register is preset to 1 and can store data.
+- When the `d` input changes, the register stores the new value if the `ena` input is asserted.
+- The register is sensitive to the rising edge of the `clk` input.
+
+Your task is to implement the `arriaiigz_ena_reg` module using Verilog.
+

@@ -1,0 +1,15 @@
+Implement the Verilog module based on the following description.
+Create an 8-bit parallel in serial out (PISO) shift register. The register loads a parallel input when the load signal is high. On each clock cycle, when the load signal is low, it shifts out data serially on the data_out signal. The register resets to zero when the reset signal is high.
+
+// Signals are defined as below:
+// (1) clk: The clock signal.
+// (2) reset: Resets the register to zero. Active high.
+// (3) load: Loads parallel input data when high.
+// (4) data_in: The 8-bit parallel input data.
+// (5) data_out: The serial output data.
+module piso_shift_register(
+    input clk,
+    input reset,
+    input load,
+    input [7:0] data_in,
+    output reg data_out);

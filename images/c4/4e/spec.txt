@@ -1,0 +1,23 @@
+Please act as a professional Verilog designer. Your task is to create a Verilog module that implements a reset synchronizer. 
+A reset synchronizer is a digital circuit that is used to synchronize the reset signal in a design. 
+When an asynchronous reset signal is used in a design, it is important to synchronize it with the clock signal to prevent metastability. 
+A reset synchronizer consists of a flip-flop and a chain of two or more delay elements.
+
+Your module should have the following inputs and outputs:
+
+Inputs: 
+- async_reset: the asynchronous reset signal
+- clk: the clock signal
+
+Outputs:
+- sync_reset: the synchronized reset signal
+
+Your module should implement the following functionality:
+
+- The async_reset signal should be synchronized with the clk signal.
+- The synchronized reset signal should be low for a specified number of clock cycles after the async_reset signal goes high.
+- The number of clock cycles for which the sync_reset signal should be low should be configurable.
+
+To implement the reset synchronizer, you should use Verilog code to define the flip-flop and the delay elements. 
+You should then use these elements to connect the async_reset signal to the flip-flop and to the delay chain. 
+Finally, you should use the delay chain to generate the sync_reset signal.

@@ -1,0 +1,11 @@
+Design a circuit that functions as a multiplexer and a minimum value comparator. The multiplexer takes a 3-bit input vector where the select line determines which of the three bits to output, directing the chosen bit to three separate output ports. Additionally, the circuit compares four unsigned 8-bit input values (a, b, c, d) and outputs the minimum value among them as an 8-bit result. The design effectively combines selection functionality with minimum value retrieval, enabling versatile data handling and decision-making processes.
+module top_module(
+    input wire [2:0] vec, // 3-bit input for the multiplexer
+    input wire select, // Select input for the multiplexer
+    input [7:0] a, b, c, d, // 4 unsigned 8-bit input values for the functional module
+    output wire [2:0] outv, // 3 output ports for the selected bit from the multiplexer
+    output wire o2,
+    output wire o1,
+    output wire o0,
+    output wire [7:0] min // 8-bit output representing the minimum value among the four input values
+);

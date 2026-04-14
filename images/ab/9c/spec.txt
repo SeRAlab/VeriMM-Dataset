@@ -1,0 +1,6 @@
+Design a circuit that implements an 8-bit adder with overflow detection. The module takes two 8-bit inputs, A and B, and outputs a 9-bit result, C, on the rising edge of the clock. If the reset signal is activated, the output is set to zero. The sum of A and B is calculated, and if this sum exceeds 255, the module wraps around by subtracting 256 and sets the most significant bit (C[8]) to 1 to indicate overflow; otherwise, C[8] is set to 0.
+module top_module(
+  input clk, rst,
+  input [7:0] A, B,
+  output reg [8:0] C
+);

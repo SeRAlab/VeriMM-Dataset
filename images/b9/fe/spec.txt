@@ -1,0 +1,8 @@
+Design a control register block that receives a set of control signals and outputs configuration signals. It features a synchronous reset that initializes the configuration register to zero and supports loading the control signals into the register when a load condition is met. The module operates on the positive edge of the clock, allowing for the dynamic updating of configuration settings, ultimately providing an 8-bit output that reflects the stored control inputs.
+module top_module(
+  input [n-1:0] ctrl,
+  input clk,           // Added clock input
+  input reset,        // Added reset input
+  input load,         // Added load input
+  output [m-1:0] cfg
+);

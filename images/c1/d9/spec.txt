@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform normalization on a floating-point number represented by a sign bit, an exponent, and a fraction. Its primary function to adjust the fraction and exponent of the input floating-point number to ensure that the fraction is normalized, meaning the most significant bit (MSB) of the fraction is 1, except for the case when the fraction is zero. This normalization process is crucial in floating-point arithmetic operations, as it maintains the precision of the calculations. The module also handles special cases such as zero inputs and overflow in the exponent.
+
+In the broader system context, this module could be a critical component of a floating-point arithmetic unit, digital signal processing (DSP) systems, or any application requiring high-precision floating-point computations.
+
+Module name:  
+	fm_3d_norm
+
+Input ports:
+	i_s (input, 1 bit): The sign bit of the input floatingpoint number. A value of 0 represents a positive number, and a value of 1 represents a negative number.
+	i_e (input, 5 bits): The exponent of the input floatingpoint number, represented in an unsigned format.
+	i_f (input, 17 bits): The fraction (or mantissa) of the input floatingpoint number, with an implied leading bit according to the IEEE 754 standard for floatingpoint numbers.
+Output ports:
+	o_b (output, 22 bits): The normalized output consisting of the sign bit, the adjusted exponent, and the normalized fraction. The output is structured as follows: the MSB is the sign bit, followed by a 5bit exponent, and a 16bit fraction.
+
+
+Implementation:
+The RTL module fm_3d_norm is designed to perform normalization on a floating-point number represented by a sign bit (i_s), an exponent (i_e), and a fraction (i_f). The output (o_b) is a normalized floating-point number with a specific format. The module employs a combination of combinational logic to achieve this functionality, without any explicit sequential elements (like flip-flops or latches), indicating that the output is solely dependent on the current inputs.
+The normalization process involves adjusting the fraction and exponent of the input floating-point number to ensure that the fraction's most significant bit (MSB) is 1 (except for the case when the fraction is zero). This process is crucial for maintaining the precision and standard form of floating-point numbers.
+Key Operations:
+Carry Detection: The module checks if the MSB of the fraction (i_f[16]) is set, which influences the normalization process.
+Zero Detection: It determines if the input fraction is zero, which is a special case in normalization.
+Priority Encoding (f_prenc): This function scans the fraction from the MSB to LSB to find the first '1'. The output is the number of left shifts needed to normalize the fraction (except when the fraction is zero or the MSB is already set).
+Increment/Decrement Calculation (f_incdec): Depending on whether a carry is detected, the exponent is either incremented (if carry is set) or decremented by the amount determined by the priority encoder. Special handling is included for the maximum exponent value (5'h1f).
+Left Shift: The fraction is left-shifted based on the value from the priority encoder, aligning the first '1' of the fraction to the MSB position.
+Output Composition: The normalized sign, exponent, and fraction are concatenated to form the output.
+
+Give me the complete code.
+

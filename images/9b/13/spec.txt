@@ -1,0 +1,10 @@
+Implement a Verilog module for a simple digital lock with four states: Locked, Unlocked, Input1, and Input2. Use the following one-hot state encoding: LOCKED=4'b0001, UNLOCKED=4'b0010, INPUT1=4'b0100, INPUT2=4'b1000. The lock should move to the Unlocked state when the correct sequence of inputs is detected. Derive state transition and output logic equations by inspection assuming a one-hot encoding. Implement only the state transition logic and output logic (the combinational logic portion) for this state machine.
+
+module digital_lock (
+  input clk, 
+  input reset, 
+  input key1, 
+  input key2, 
+  input [3:0] state, 
+  output reg [3:0] next_state, 
+  output reg unlocked);

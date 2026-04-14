@@ -1,0 +1,9 @@
+Design a simple vending machine controller that manages the item dispensing process based on coin inputs. The module accepts a reset signal, coin input, and dispense command, and controls the output signals for item dispensed and change returned. The module counts quarters received and tracks the state between idle and dispensing an item. When sufficient coins (a total of at least 4 quarters) are inserted and the dispense command is activated, the controller transitions to the dispense state, outputs that an item has been dispensed, calculates the change, and resets to the idle state for further transactions.
+module top_module(
+    input wire clock, // Added clock input
+    input wire reset,
+    input wire coin,
+    input wire dispense,
+    output reg item_dispensed,
+    output reg [2:0] change // Change should be a 3-bit output
+);

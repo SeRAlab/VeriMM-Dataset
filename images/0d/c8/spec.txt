@@ -1,0 +1,12 @@
+
+Design a Verilog module that implements a simplified version of the ChaCha20 stream cipher's quarter round function. The module should take four 32-bit input words and produce four 32-bit output words. The output should be calculated using the following operations:
+- x0 = x0 + x1
+- x3 = (x3 XOR x0) << 16 | (x3 XOR x0) >> (32 - 16)
+- x2 = x2 + x3
+- x1 = (x1 XOR x2) << 12 | (x1 XOR x2) >> (32 - 12)
+- x0 = x0 + x1
+- x3 = (x3 XOR x0) << 8 | (x3 XOR x0) >> (32 - 8)
+- x2 = x2 + x3
+- x1 = (x1 XOR x2) << 7 | (x1 XOR x2) >> (32 - 7)
+
+The module should also have a clock input for synchronizing the operations.

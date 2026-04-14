@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform specific logical operations based on the combinations of its three input signals (INA, INB, INC). Its primary function to decode these inputs into four distinct output signals (TWOPOS, TWONEG, ONEPOS, ONENEG), each representing a unique logical condition derived from the inputs. This module can be utilized within a larger digital system for tasks such as signal decoding, control logic, or as part of a more complex decision-making circuitry. The outputs can be interpreted as indicators or triggers for subsequent operations, making the `DECODER` a fundamental building block in digital logic design and implementation.
+
+Module name:  
+	DECODER
+
+Input ports:
+	INA, INB, INC: These are singlebit input ports (input data type) that serve as the primary signals for the decoding operation. Each of these inputs can either be high (1) or low (0), and their combination determines the state of the output signals.
+Output ports:
+	TWOPOS: This singlebit output (output data type) goes high when INA and INB are high, and INC is low, indicating a specific condition or state as defined by the input combination.
+	TWONEG: This singlebit output goes high when INA and INB are low, and INC is high, representing another unique state as determined by the input signals.
+	ONEPOS: This singlebit output is high in two scenarios: when INA is high, INB is low, and INC is low; or when INA is low, INB is high, and INC is low. It signifies a condition where exactly one of the inputs INA or INB is high while INC is low.
+	ONENEG: Similar to ONEPOS, this output is high in two scenarios: when INA is low, INB is high, and INC is high; or when INA is high, INB is low, and INC is high. It indicates a condition where exactly one of the inputs INA or INB is high while INC is high.
+
+
+Implementation:
+The provided RTL module, named DECODER, is a purely combinational logic design that does not incorporate any sequential logic elements such as flip-flops or latches. This means the outputs of the module are directly determined by the current values of its inputs without any dependency on previous states. The module takes three input signals (INA, INB, INC) and generates four output signals (TWOPOS, TWONEG, ONEPOS, ONENEG). The logic implemented within this module can be understood as a form of decoding, where the combination of the input signals is used to determine the activation of the output signals based on specific conditions.
+TWOPOS Output Logic: This output is asserted (1) when all three inputs INA, INB, and the inverse of INC are asserted. This implies that TWOPOS will be high only when INA and INB are high, and INC is low. The double negation used in the assignment of TWOPOS is redundant and can be simplified, as it does not alter the logic.
+TWONEG Output Logic: This output is asserted when all inputs are in their inverse states with respect to the TWOPOS condition, specifically when INA and INB are low, and INC is high. Similar to TWOPOS, the double negation in its assignment is redundant.
+ONEPOS Output Logic: This output is asserted in two conditions: either when INA is high, INB is low, and INC is low, or when INA is low, INB is high, and INC is low. Essentially, ONEPOS is high when exactly one of the inputs INA or INB is high while INC remains low.
+ONENEG Output Logic: This output is the inverse condition of ONEPOS, where it is asserted when exactly one of INA or INB is low while INC is high.
+The logic implemented in this module can be visualized as a decoder that translates specific combinations of binary input signals into distinct output signals, each representing a unique condition based on the input combination.
+
+Give me the complete code.
+

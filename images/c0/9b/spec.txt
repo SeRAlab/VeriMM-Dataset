@@ -1,0 +1,36 @@
+Please act as a professional verilog designer.
+    
+Implement a module implements a First-In-First-Out (FIFO) memory queue with parameterizable depth and data width. Its primary functions include:
+
+Data Storage: Temporarily stores data in a sequential manner, allowing for data to be written into and read from the memory array based on the FIFO principle.
+Flow Control: Provides mechanisms to prevent data overwriting (through the `full` signal) and underflow (through the `empty` signal), ensuring reliable data handling in producer-consumer scenarios.
+Reset Capability: Allows for the FIFO to be asynchronously reset, clearing its contents and resetting its pointers, making it ready for a fresh sequence of operations.
+
+This module to be a versatile component in digital systems requiring temporary, sequential data storage and retrieval, such as in buffering data streams or inter-process communication in hardware designs.
+
+Module name:  
+	fifo
+
+Input ports:
+	clock: The system clock input (1bit). The FIFO operations are synchronized to the rising edge of this clock.
+	resetn: Asynchronous reset input (1bit, active low). When asserted, it resets the FIFO's pointers and output data.
+	write_enb: Write enable signal (1bit). When high, it allows data to be written into the FIFO, provided it is not full.
+	read_enb: Read enable signal (1bit). When high, it allows data to be read from the FIFO, provided it is not empty.
+	data_in: Data input port ([WIDTH1:0] bits). This is the data to be written into the FIFO when write operations are enabled.
+Output ports:
+	data_out: Data output port ([WIDTH1:0] bits). This port outputs the data read from the FIFO.
+	empty: Empty flag (1bit). This signal is high when the FIFO is empty, indicating that no read operations should be attempted.
+	full: Full flag (1bit). This signal is high when the FIFO is full, indicating that no further write operations should be performed.
+
+
+Implementation:
+The RTL module presented is a First-In, First-Out (FIFO) memory buffer, designed to store and retrieve data in a sequential manner, ensuring that the first piece of data written into the FIFO is the first one read out. This FIFO is parameterized, allowing for adjustments in data width and depth according to specific requirements. The module operates under the control of an external clock signal and supports synchronous reset, write, and read operations.
+Combinational Logic:
+Empty and Full Flags: The module calculates empty and full flags using combinational logic. The empty flag is asserted when the write and read pointers are equal, indicating that no data is stored in the FIFO. Conversely, the full flag is asserted when the difference between the write and read pointers equals the depth of the FIFO, indicating that the FIFO cannot accept more data. This logic ensures that data integrity is maintained by preventing overwrites and underflows.
+Sequential Logic:
+Pointer Management: The module uses two pointers, write_ptr and read_ptr, both of which are incremented upon a successful write or read operation, respectively. These pointers are managed by sequential logic that responds to the rising edge of the clock signal. If a reset is asserted (resetn is low), both pointers are reset to zero, effectively clearing the FIFO's state.
+  
+Data Write and Read Operations: Upon a write enable (write_enb) signal and when the FIFO is not full, data is written to the memory array at the location pointed to by write_ptr. Similarly, upon a read enable (read_enb) signal and when the FIFO is not empty, data is read from the memory array at the location pointed to by read_ptr. These operations are also governed by sequential logic, ensuring that they occur synchronously with the clock signal.
+
+Give me the complete code.
+

@@ -1,0 +1,11 @@
+Design a buzzer control module that generates a square wave audio output for a buzzer. The module takes a main clock input and a reset signal, using a counter to toggle a binary clock signal (`b_clk`) based on a specified division factor (`note_div`). When the counter reaches the `note_div` value, it resets and toggles the clock signal, which influences the audio outputs. Both `audio_left` and `audio_right` are set to distinct values based on the state of `b_clk`, producing an alternating audio signal suitable for sound generation.
+module top_module(
+
+low_clk,
+clk, 
+rst_n, 
+note_div, 
+audio_left, 
+audio_right, 
+
+);

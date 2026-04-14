@@ -1,0 +1,7 @@
+Design a circuit that implements an 8-bit partial product generator for multiplication, supplemented with a carry-lookahead logic to produce a 16-bit sum when the multiplication control signal is active. If the control signal `mul` is asserted, it outputs the computed sum of the partial products; otherwise, it outputs a constant zero. This design essentially functions as a multiplier that can compute the product of two 8-bit inputs, `a` and `b`, while also managing carry propagation efficiently across the bits.
+module top_module(
+    input [7:0] a,
+    input [7:0] b,
+    input mul,
+    output [15:0] result
+);

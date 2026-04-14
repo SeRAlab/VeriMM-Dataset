@@ -1,0 +1,10 @@
+Design a control unit for a pipelined processor that manages the enabling and clearing of various stages based on installation signals. When the `IF_IDInstall` signal is active, it disables the program counter (PC) and the instruction fetch/decode stage, while clearing the ID/EX pipeline register. When the `ID_EXInstall` signal is active, it similarly disables the ID/EX stage and clears the EX/MEM pipeline register. In the absence of both installation signals, the output signals enable the PC, IF-ID, and ID-EX stages, maintaining a normal operational state for the processor pipeline.
+module top_module(
+    input wire IF_IDInstall,
+    input wire ID_EXInstall,
+    output reg PCEnable,
+    output reg IF_IDEnable,
+    output reg ID_EXEnable,
+    output reg ID_EXClear,
+    output reg EX_MEMClear
+);

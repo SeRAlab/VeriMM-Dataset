@@ -1,0 +1,5 @@
+Implement a 32-bit wide instruction memory module that retrieves and outputs a MIPS instruction based on a 32-bit read address input. The memory is structured as an array of 8-bit wide bytes, and the module concatenates four consecutive bytes from this memory to form a complete instruction, effectively treating the read address as pointing to the least significant byte of the instruction. The output instruction reflects the data stored in memory starting from the specified read address, allowing for the execution of MIPS instructions in a larger processor design.
+module top_module(
+	output reg [31:0] instruction,
+	input [31:0] readAddress
+);

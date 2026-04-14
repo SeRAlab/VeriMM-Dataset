@@ -1,0 +1,23 @@
+Please act as a professional Verilog designer.
+
+Create a shift register that can shift its contents either left or right based on a control signal. The shift register should be 8 bits wide and have an asynchronous reset. When the reset signal is asserted, the shift register should be cleared to 0.
+
+Module name:  
+    shift_register
+
+Inputs:
+    rst_n: Reset signal (active low).
+    clk: Clock signal.
+    shift: Control signal (1 for right shift, 0 for left shift).
+    data_in: Serial input data.
+
+Outputs:
+    q: 8-bit output representing the contents of the shift register.
+
+Registers and Wires:
+    reg [7:0] shift_reg: 8-bit register to store the contents of the shift register.
+
+Implementation:
+The shift register should shift its contents based on the value of the shift control signal on every positive edge of the clock. If shift is 1, the register should shift right, with data_in being shifted into the most significant bit. If shift is 0, the register should shift left, with data_in being shifted into the least significant bit. If the reset signal is asserted, the register should be cleared to 0.
+
+Give me the complete code.

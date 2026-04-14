@@ -1,0 +1,11 @@
+Design a 4-bit shift register with additional loading and shifting capabilities. The module allows for asynchronous reset, loading of new data, and conditional shifting either to the right or left based on input signals. When the load signal is activated, the shift register stores the 4-bit input data. If the shift_enable signal is high, the register shifts its contents in the specified direction, wrapping around the bits. The output reflects the current state of the register, while an additional output indicates when the register is full, specifically when all bits are set to 1.
+module top_module(
+    input clk,
+    input areset,
+    input load,
+    input shift_right,
+    input shift_enable,
+    input [3:0] data_in,
+    output [3:0] data_out,
+    output full
+);

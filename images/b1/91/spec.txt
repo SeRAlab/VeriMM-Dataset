@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+
+Implement a module for a 12-bit register with asynchronous clear and enable. The register should store the input data when the enable signal is high. When the clear signal is high, the register should be set to 0 immediately, regardless of the clock signal.
+
+Module name:  
+    async_register
+
+Input ports：
+    clk: Clock signal.
+    clr: Asynchronous clear signal.
+    en: Enable signal.
+    data_in: 12-bit input data.
+
+Output ports：
+    data_out: 12-bit register output.
+
+Implementation:
+Declare the module async_register with input and output ports as specified in the ports statement.
+Declare a register data_out to hold the current value of the register.
+Inside an always block, sensitive to the positive edge of the clk signal and the asynchronous clear signal, implement the logic for clearing, enabling, and storing data.
+If the clear signal is high, set the data_out register to 0 immediately.
+If the enable signal is high and the clear signal is low, store the input data in the data_out register.
+
+Give me the complete code.
+
+module async_register(
+    input clk,
+    input clr,
+    input en,
+    input [11:0] data_in,
+    output reg [11:0] data_out
+);

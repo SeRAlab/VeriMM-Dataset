@@ -1,0 +1,59 @@
+
+
+You are tasked with designing a Verilog module that generates a pulse of a specified width when a trigger signal is received. The module should have the following inputs and outputs:
+
+Inputs:
+- `clk`: a 50MHz clock signal
+- `trigger`: a 1-bit trigger signal that goes high for a single clock cycle when the pulse is to be generated
+- `pulse_width`: a 16-bit value that specifies the width of the pulse in clock cycles
+
+Outputs:
+- `pulse`: a 1-bit signal that goes high when the pulse is being generated
+
+Design the module and write a testbench to verify its functionality. Use the following template for your testbench:
+
+```
+module pulse_gen_tb();
+
+reg clk = 0;
+reg trigger = 0;
+reg [15:0] pulse_width = 0;
+wire pulse;
+
+pulse_gen dut(
+  .clk(clk),
+  .trigger(trigger),
+  .pulse_width(pulse_width),
+  .pulse(pulse)
+);
+
+always #10 clk = ~clk;
+
+initial begin
+  $dumpfile("pulse_gen_tb.vcd");
+  $dumpvars(0, pulse_gen_tb);
+
+  //-- Test case 1: pulse_width = 10
+  pulse_width = 10;
+  #100 trigger = 1;
+  #10 trigger = 0;
+  #100 $display("Test case 1: pulse_width = %d, pulse = %d", pulse_width, pulse);
+
+  //-- Test case 2: pulse_width = 20
+  pulse_width = 20;
+  #100 trigger = 1;
+  #10 trigger = 0;
+  #100 $display("Test case 2: pulse_width = %d, pulse = %d", pulse_width, pulse);
+
+  //-- Test case 3: pulse_width = 30
+  pulse_width = 30;
+  #100 trigger = 1;
+  #10 trigger = 0;
+  #100 $display("Test case 3: pulse_width = %d, pulse = %d", pulse_width, pulse);
+
+  $finish;
+end
+
+endmodule
+```
+

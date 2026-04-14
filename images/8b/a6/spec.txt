@@ -1,0 +1,9 @@
+Design a UART (Universal Asynchronous Receiver-Transmitter) transmitter that converts an 8-bit data input into a serial bit stream. The module operates with a clock signal and begins transmission upon receiving a start signal while ready. It transitions through states to send a start bit, followed by each data bit serially, and concludes with a stop bit. The output `tx` represents the serial data line, while `done` indicates the completion of the transmission process. The design incorporates a state machine to manage the different stages of transmission accurately.
+module top_module(
+    input sys_clk,
+    input [7:0] data_in,
+    input start,
+    input ready,
+    output reg tx,
+    output reg done
+);

@@ -1,0 +1,15 @@
+Design a multi-channel counter module that supports three separate 32-bit counters (counter0, counter1, counter2) with the ability to reset, increment, and load specified values based on control signals. The module features three distinct clock inputs (clk0, clk1, clk2) for independently updating each counter, and a write enable signal to allow loading of a new value into the selected counter. It outputs the least significant bit of each counter through separate output signals and provides a composite output that reflects the value of the selected counter or the sum of all three when appropriate. Overall, it acts as a configurable counter system useful for timing and counting events in various applications.
+module top_module(
+    input clk,
+    input rst,
+    input clk0,
+    input clk1,
+    input clk2,
+    input counter_we,
+    input [31:0] counter_val,
+    input [1:0] counter_ch,
+    output reg counter0_OUT,
+    output reg counter1_OUT,
+    output reg counter2_OUT,
+    output reg [31:0] counter_out
+);

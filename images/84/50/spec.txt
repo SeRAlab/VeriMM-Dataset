@@ -1,0 +1,7 @@
+Design a flip-flop based register that serves as an instruction latch in a pipelined processor architecture. The module captures a provided 8-bit instruction code at the rising edge of the clock signal, while the Reset input allows the register to be asynchronously cleared to zero. When Reset is low, the output is set to zero; otherwise, the module outputs the current instruction code, facilitating the transfer of instructions between the instruction fetch and decode stages.
+module top_module(
+	input Clk,
+	input Reset,
+	input [7:0] Instruction_Code,
+	output reg [7:0] IF_ID_Instruction_Code
+    );

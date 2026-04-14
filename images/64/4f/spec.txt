@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+
+Implement a D flip-flop module with asynchronous reset. The flip-flop should capture the input value on the rising edge of the clock and reset to 0 when the reset signal is high.
+
+Module name:
+    d_ff_async_reset
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    reset: Asynchronous reset signal. Defined as 1 for reset and 0 for normal operation.
+    d: Input value to be captured on the rising edge of the clock.
+
+Output ports:
+    q: Output representing the captured value.
+
+Implementation:
+The module includes a register, q, which is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the positive edge of the reset signal (posedge reset).
+On reset, indicated by reset being high, q is cleared to 0.
+On every rising edge of the clock, if reset is not high, q captures the value of d.
+
+Give me the complete code.

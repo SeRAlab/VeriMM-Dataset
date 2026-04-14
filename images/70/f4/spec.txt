@@ -1,0 +1,7 @@
+Design a FIFO (First In, First Out) buffer with a configurable data width and depth, allowing for the storage and retrieval of data in a sequential order. The module utilizes clock and asynchronous reset signals to manage read and write operations. When data is written, it is stored in a memory array until the buffer is full, while read operations retrieve data until it is empty. The design includes mechanisms to track the full and empty states, ensuring that data integrity is maintained during operations. The parameters WIDTH and DEPTH facilitate flexibility in the data size and number of storage entries.
+module top_module(
+    input clk,
+    input reset_n,
+    input [WIDTH-1:0] din,
+    output reg [WIDTH-1:0] dout  // Changed output from wire to reg
+);

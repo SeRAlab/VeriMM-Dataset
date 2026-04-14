@@ -1,0 +1,6 @@
+Design a circuit that generates a 16-bit password composed of an 8-bit random number and an 8-bit counter. The higher 8 bits of the password are set to the value of `random_num`, while the lower 8 bits are managed by an incrementing counter that resets to 11 upon reaching 255. The module also incorporates a clock divider, toggling a secondary clock signal (`div_clk`) every 11 cycles of the primary clock, which is used to control the updating of the counter.
+module top_module(
+input clk,
+input [7:0]random_num,
+output reg [15:0]password
+    );

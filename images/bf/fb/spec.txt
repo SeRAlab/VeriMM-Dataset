@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a 2-to-1 multiplexer with an inversion operation on its outputs. Its primary role within a digital system to select one of the two input signals based on the state of the selection signal and then invert the selected input before providing it as output. This module can be utilized in various digital circuits where conditional negation based on dynamic selection is required, such as in control logic, data path units, or conditional signal processing blocks.
+
+Module name:  
+	bw_u1_muxi21_2x
+
+Input ports:
+	d0 (input): This is the first data input port of the multiplexer. It is a singlebit input that represents one of the two binary values to be selected and inverted.
+	d1 (input): This is the second data input port of the multiplexer. Similar to d0, it is a singlebit input that represents the alternative binary value to be selected and inverted.
+	s (input): This is the selection input port of the multiplexer. It is a singlebit input that determines which of the two data inputs (d0 or d1) is to be selected. When s is low (0), d0 is selected; when s is high (1), d1 is selected.
+Output ports:
+	z (output): This is the output port of the multiplexer. It provides the inverted value of the selected input data. It is a singlebit output that reflects the negated value of either d0 or d1, depending on the state of the s input.
+
+
+Implementation:
+The RTL module presented, named bw_u1_muxi21_2x, is designed to function as a 2-to-1 multiplexer with an inverted output. This module is purely combinational, meaning it does not contain any sequential logic elements like flip-flops or latches; its output is directly determined by its current inputs. The module takes three input signals (d0, d1, and s) and produces one output signal (z). The functionality can be succinctly described by the equation z = s ? ~d1 : ~d0, which indicates that the output z is the bitwise NOT of input d1 when select signal s is high (1), and the bitwise NOT of input d0 when select signal s is low (0).
+
+Give me the complete code.
+

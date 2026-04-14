@@ -1,0 +1,10 @@
+Design a 5-to-1 multiplexer that selects one of five 32-bit input data lines based on a 3-bit selector input. The multiplexer operates as follows: when the selector is `000`, it outputs `data_0`; `001`, it outputs `data_1`; `010`, it outputs `data_2`; `011`, it outputs `data_3`; and `100`, it outputs `data_4`. The selector values `101` to `111` are not defined in this implementation and will default to undefined behavior.
+module top_module(
+    input wire [2:0] selector,
+    input wire [31:0] data_0,
+    input wire [31:0] data_1,
+    input wire [31:0] data_2,
+    input wire [31:0] data_3,
+    input wire [31:0] data_4,
+    output wire [31:0] mux_iord_out
+);

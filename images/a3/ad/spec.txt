@@ -1,0 +1,8 @@
+Design a circuit that performs exponentiation operations on a given signed mantissa (Q) and exponent (E). The module shifts the mantissa left or right based on the exponent's value, handling potential overflow and underflow conditions. If the exponent (E) is non-negative, it performs a left shift, while a negative exponent results in a right arithmetic shift. The overflow and underflow flags indicate if the shifted value exceeds the 32-bit limit or if there is significant precision loss, respectively. Finally, the result is adjusted by adding a bias of 127 to the exponent and concatenating it with the shifted mantissa.
+module top_module(
+    input signed [22:0] Q,
+    input signed [8:0] E,
+    output reg overflow_flag,
+    output reg underflow_flag,
+    output reg signed [31:0] result
+);

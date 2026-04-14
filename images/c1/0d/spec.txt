@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform error checking and correction (ECC) on a 64-bit data input (`d`) using an 8-bit parity input (`p`). Its primary functions include:
+
+Error Detection: It detects whether there is an error in the input data based on the provided parity bits.
+Error Correction: It corrects single-bit errors in the input data, outputting the corrected bits through the `q` output.
+Error Classification: It classifies errors into correctable errors (`ce`), uncorrectable errors (`ue`), and no error (`ne`) based on the input data and parity bits.
+
+This module plays a crucial role in ensuring data integrity in systems where data corruption can occur due to various reasons, such as electrical noise or transmission errors. It is particularly useful in memory systems, communication systems, and any application requiring high reliability.
+
+Module name:  
+	zzecc_exu_chkecc2
+
+Input ports:
+	d[63:0]: A 64bit data input vector. This is the primary data on which ECC operations are performed.
+	p[7:0]: An 8bit parity vector used for error checking and correction.
+	vld: A valid signal indicating whether the input data (d) and parity (p) are valid and should be processed.
+Output ports:
+	q[6:0]: A 7bit output vector representing the corrected version of specific bits of the input data or parity information, depending on the ECC scheme.
+	ce: A correctable error flag that indicates whether a correctable error has been detected and corrected.
+	ue: An uncorrectable error flag that indicates whether an error has been detected that cannot be corrected with the given ECC scheme.
+	ne: A no error flag indicating whether the data is errorfree or if any detected error is outside the scope of correction.
+
+
+Implementation:
+The RTL module zzecc_exu_chkecc2 is designed to perform error checking and correction based on a specific ECC (Error Correcting Code) scheme. This module takes a 64-bit data input (d), an 8-bit parity input (p), and a validity flag (vld). It outputs a 7-bit corrected code (q), along with flags indicating correctable error (ce), uncorrectable error (ue), and no error (ne).
+
+Give me the complete code.
+

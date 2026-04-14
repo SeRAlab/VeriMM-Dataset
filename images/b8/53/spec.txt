@@ -1,0 +1,7 @@
+Design a 3-to-8 decoder that outputs a single HIGH signal on one of the eight output lines based on the 3-bit `select` input, provided that the `enable` input is asserted. If `enable` is not asserted, all outputs are LOW. The outputs are represented as a 16-bit wide vector, where only one of the lower 8 bits is set to HIGH corresponding to the `select` input value, while the rest remain LOW.
+module top_module(
+    input [3:0] in,
+    input enable,
+    input [2:0] select,
+    output reg [15:0] out
+);

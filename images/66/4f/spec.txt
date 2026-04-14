@@ -1,0 +1,6 @@
+Design a circuit that computes the arithmetic operation of the one's complement of an 8-bit input followed by adding it to the original input. The module first inverts the input to generate the one's complement and stores it in an intermediate stage. Then, on the positive edge of the clock, it adds the inverted value to the original input to produce a new result, which is output as an 8-bit value. This design implements a basic mathematical operation that can be useful for applications requiring two's complement conversion or subtraction in digital systems.
+module top_module(
+    input [7:0] in,
+    input clk,            // Added clk input as it was missing
+    output reg [7:0] out
+);

@@ -1,0 +1,8 @@
+Design a single-port RAM with configurable address and data widths. The module has an input clock signal to synchronize operations, a write enable signal for data storage, and inputs for specifying the address and the data to be written. It contains a memory array capable of holding a specified number of 8-bit data words based on the parameter k. On the rising edge of the clock, if write enable is asserted, the data input is stored at the designated address; otherwise, the data from that address is outputted.
+module top_module(
+  input clk,
+  input we,
+  input [n-1:0] addr,
+  input [m-1:0] din,
+  output reg [m-1:0] dout // Change 'wire' to 'reg'
+);

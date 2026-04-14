@@ -1,0 +1,26 @@
+module top_module(
+  input A,
+  input LOWLVPWR,
+  input VPWR,
+  input VGND,
+  input VPB,
+  output X
+);wire A_VPB, A_VGND, A_LOWLVPWR, A_VPWR;
+  wire LOWLVPWR_VPB, LOWLVPWR_VGND, LOWLVPWR_VPWR;
+  wire VPWR_VPB, VPWR_VGND;
+  wire VGND_VPB;
+  
+  assign A_VPB = A & VPB;
+  assign A_VGND = A & VGND;
+  assign A_LOWLVPWR = A & LOWLVPWR;
+  assign A_VPWR = A & VPWR;
+  assign LOWLVPWR_VPB = LOWLVPWR & VPB;
+  assign LOWLVPWR_VGND = LOWLVPWR & VGND;
+  assign LOWLVPWR_VPWR = LOWLVPWR & VPWR;
+  assign VPWR_VPB = VPWR & VPB;
+  assign VPWR_VGND = VPWR & VGND;
+  assign VGND_VPB = VGND & VPB;
+  
+  assign X = (A_VPB & LOWLVPWR_VGND) | (A_VPB & LOWLVPWR_VPWR) | (A_VPB & VPWR_VGND) | (A_VPB & VGND_VPB) | (A_VGND & LOWLVPWR_VPB) | (A_VGND & LOWLVPWR_VPWR) | (A_VGND & VPWR_VPB) | (A_LOWLVPWR & VPWR_VPB) | (A_VPWR & LOWLVPWR_VGND) | (A_VPWR & LOWLVPWR_VPB) | (A_VPWR & VGND_VPB) | (A_VPWR & VPWR_VPB) | (LOWLVPWR_VPB & VGND_VPB) | (LOWLVPWR_VPB & VPWR_VGND) | (LOWLVPWR_VGND & VPWR_VPB) | (VPWR_VPB & VGND_VPB) | (A & LOWLVPWR & VPWR & VGND & VPB);
+  
+endmodule

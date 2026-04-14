@@ -1,0 +1,6 @@
+Design a 1024-bit wide barrel shifter combined with a multiplexer that allows for flexible bit shifting and selection. The module takes a 1024-bit input vector and an 8-bit select signal. It utilizes the select input to determine how many bits to shift and then selects a 4-bit output from the resulting shifted data. The shifting logic rearranges the bits based on the values of the higher bits in the select signal, while the lower bits select the specific 4 bits from the shifted output, effectively enabling a dynamic and configurable data processing mechanism.
+module top_module(
+    input [1023:0] in, // 1024-bit input vector
+    input [7:0] sel, // 8-bit select input
+    output [3:0] out // 4-bit output from the selected input
+);

@@ -1,0 +1,7 @@
+Design a 2-to-1 multiplexer for selecting a register destination. When the control signal RegDstE is high, the output WriteRegE is driven by RdE; when RegDstE is low, the output is driven by RtE. This module helps in determining which register should be written to based on the control signal, commonly used in instruction executions in processors.
+module top_module(
+    input [4:0]  RtE,
+    input [4:0]  RdE,
+    input 	       RegDstE,
+    output [4:0] WriteRegE
+    );

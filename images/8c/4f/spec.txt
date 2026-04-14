@@ -1,0 +1,33 @@
+Please act as a professional verilog designer.
+
+Implement a module for a 4-bit shift register with parallel load and serial shift capabilities. The shift register should have a mode control signal that determines whether to load data in parallel or shift data serially. When the mode signal is 0, the register should load the 4-bit input data in parallel. When the mode signal is 1, the register should shift the data to the right, with a new bit coming in from the serial input.
+
+Module name:  
+    shift_register
+
+Input ports：
+    clk: Clock signal.
+    rst_n: Reset signal (active low).
+    mode: Mode control signal.
+    parallel_in: 4-bit parallel input data.
+    serial_in: Serial input data.
+
+Output ports：
+    q: 4-bit output data.
+
+Implementation:
+Declare the module shift_register with input and output ports as specified in the ports statement.
+Declare a 4-bit register q to hold the output value.
+Inside an always block, sensitive to the positive edge of the clk signal and the negative edge of the rst_n signal, implement the logic for parallel load and serial shift.
+In the reset condition (~rst_n), set the q register to 0. Otherwise, check the mode signal. If mode is 0, load the parallel_in data into the q register. If mode is 1, shift the q register to the right and load the serial_in data into the most significant bit.
+
+Give me the complete code.
+
+module shift_register(    
+    input clk,
+    input rst_n,
+    input mode,
+    input [3:0] parallel_in,
+    input serial_in,
+    output reg [3:0] q
+);

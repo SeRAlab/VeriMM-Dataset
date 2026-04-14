@@ -1,0 +1,13 @@
+Design a 2-entry FIFO (First-In, First-Out) buffer with control signals for reading, writing, and status indicators. The module utilizes two 8-bit wide data storage elements to hold data written from the input `wr_data`. It manages read and write operations with pointers (`wr_ptr` and `rd_ptr`) to track the current position for writing and reading. The design includes outputs for `empty`, `full`, `almost_empty`, and `almost_full` to signal buffer status conditions, and it resets the buffer state upon the active low `reset_n` signal. Data can be written to the buffer when not full and read when not empty, effectively controlling data flow in a structured manner.
+module top_module(
+  input clk,
+  input wr,
+  input rd,
+  input reset_n,
+  input [7:0] wr_data,
+  output reg [7:0] rd_data,  // Changed from wire to reg
+  output empty,
+  output full,
+  output almost_empty,
+  output almost_full
+);

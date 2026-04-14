@@ -1,0 +1,10 @@
+Design a timer circuit that counts clock cycles up to a specified timer count value. When enabled, it increments a 32-bit running count with each clock cycle. If the running count reaches the predefined timer count, it sets two outputs: `timer_count_done` to indicate that the timer has completed its count, and `timer_interrupt` to signal an interrupt condition. The timer can be reset to zero using the reset input, which also clears both output signals. Additionally, the `timer_interrupt` can be cleared independently with the `timer_interrupt_clear` input.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] timer_count,
+    input timer_enable,
+    input timer_interrupt_clear,
+    output reg timer_count_done,
+    output reg timer_interrupt
+);

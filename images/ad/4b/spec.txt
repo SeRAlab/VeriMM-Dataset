@@ -1,0 +1,34 @@
+Please act as a professional verilog designer.
+
+Implement a 16-bit Shift Register with Parallel Load. The shift register can shift left, shift right, or load a parallel input value. It includes a reset signal to clear the register.
+
+Module name:  
+    shift_reg
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    load: Load signal. Defined as 1 to load the parallel input value.
+    shift_left: Shift left control signal. Defined as 1 to shift left.
+    shift_right: Shift right control signal. Defined as 1 to shift right.
+    data_in: 16-bit parallel input data.
+
+Output ports:
+    data_out: 16-bit output representing the current value of the shift register.
+
+Implementation:
+The module includes a 16-bit register to store the data value. On the positive edge of the clock signal (clk) or the positive edge of the reset signal (rst), the module updates the data value.
+If the reset signal (rst) is high, the data register is set to 0. If the load signal is high, the data register is loaded with the parallel input value (data_in). If the shift_left signal is high, the data register shifts left by one bit. If the shift_right signal is high, the data register shifts right by one bit.
+
+Give me the complete code.
+
+module shift_reg(
+    input clk,
+    input rst,
+    input load,
+    input shift_left,
+    input shift_right,
+    input [15:0] data_in,
+
+    output [15:0] data_out
+);

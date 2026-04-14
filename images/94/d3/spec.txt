@@ -1,0 +1,8 @@
+Design a binary counter-based multiplier that computes various products of two 32-bit inputs, a and b, based on a 4-bit counter. When the reset signal is high, the counter resets and the product is initialized to the straightforward multiplication of a and b. On subsequent clock cycles, the counter increments and, based on its value, selects different multiplications of a and b, manipulating the second operand through shifting or division. This allows the module to compute a range of products dynamically, depending on the counter's state, effectively enabling a configurable multiplication operation.
+module top_module(
+    input clk, // clock input for binary counter
+    input reset, // reset input for binary counter
+    input [31:0] a, // 32-bit input for multiplier
+    input [31:0] b, // 32-bit input for multiplier
+    output reg [31:0] product // 32-bit output from multiplier
+    );

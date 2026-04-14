@@ -1,0 +1,14 @@
+The module implements a finite state machine (FSM) designed to control the communication with a MAX6682 temperature sensor via an SPI interface. It manages the initiation and completion of SPI transmissions while handling the reception of two bytes of data. The FSM transitions through various states based on the clock and reset signals, with states that control the chip select signal (MAX6682CS_n_o), manage read/write operations (SPI_Write_o and SPI_ReadNext_o), and store received data in Byte0 and Byte1 registers. Upon completion of the data exchange, the FSM indicates that the operation is done with the SPI_FSM_Done output, and it resets its internal state on either a reset or after finishing the transmission process.
+module top_module(
+  input Reset_n_i,
+  input Clk_i,
+  input SPI_FSM_Start,
+  input SPI_Transmission_i,
+  input [7:0] SPI_Data_i,
+  output reg [7:0] Byte0,
+  output reg [7:0] Byte1,
+  output reg MAX6682CS_n_o,
+  output reg SPI_Write_o,
+  output reg SPI_ReadNext_o,
+  output reg SPI_FSM_Done
+);

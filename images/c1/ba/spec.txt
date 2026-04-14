@@ -1,0 +1,38 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as a central hub for managing data transfers between different components of a digital system, such as the CPU, RAM, ROM, and peripheral devices. It to facilitate communication over a bus by directing data to and from the CPU based on the current operation, address space, and selected device. The module supports different operational modes and devices, making it versatile for various system configurations. Its primary functions include:
+
+Decoding address spaces to select between RAM, ROM, and peripheral devices.
+Managing read and write operations between the CPU and the selected device.
+Handling special functions like interrupt clear and sound latch operations based on specific address triggers.
+
+This module plays a crucial role in ensuring efficient and orderly data flow within the system, thereby enabling the CPU to interact seamlessly with memory units and peripherals.
+
+Module name:  
+	bus_manager
+
+Input ports:
+	rst50: Reset signal.
+	clk50: System clock signal.
+	clk_per: Peripheral clock signal.
+	cpu_data_out: Data output from the CPU.
+	ROM_data_out: Data output from the ROM.
+	RAM_data: Data from the RAM.
+	jt_data_out: Data output from a peripheral device.
+	sw_sel: 2bit switch for selecting operational modes or configurations.
+	sound_latch: Data for sound operations.
+	addr: 16bit address bus from the CPU.
+	cpu_vma: CPU valid memory address signal.
+	cpu_rw: CPU read/write control signal.
+Output ports:
+	clear_irq: Signal to clear an interrupt request.
+	cpu_data_in: Data input to the CPU.
+	RAM_cs: RAM chip select signal.
+	opm_cs_n: OPM (Operator Memory) chip select signal (active low).
+
+
+Implementation:
+The bus_manager module is designed to manage data transactions between a CPU and various memory or peripheral devices, including ROM, RAM, a sound latch, and an external device interfaced through jt_data_out. The module operates based on input signals such as the CPU's address bus (addr), read/write control signal (cpu_rw), and a valid memory address signal (cpu_vma). Additionally, it uses a switch (sw_sel) to select between different operational modes or configurations, potentially supporting different hardware setups or game configurations.
+
+Give me the complete code.
+

@@ -1,0 +1,9 @@
+Design a RAM module that supports both read and write operations. The module consists of a 2048x4-bit memory array, specified by a 12-bit address input Q, where the upper 10 bits (Q[11:2]) select the RAM row and the lower 2 bits (Q[1:0]) specify the column within that row. A write operation occurs on the rising edge of the clock when the RAM is not full (indicated by ram_full_fb_i_reg) and tmp_ram_rd_en is active, allowing data input din to be stored. For a read operation, when tmp_ram_rd_en is asserted, the data from the corresponding memory location is retrieved and assigned to the output dout.
+module top_module(
+    input clk,
+    input ram_full_fb_i_reg,
+    input tmp_ram_rd_en,
+    input [11:0] Q,
+    input [8:0] din,
+    output reg [8:0] dout // Changed output to reg
+);

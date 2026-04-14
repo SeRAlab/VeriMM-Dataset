@@ -1,0 +1,12 @@
+Design a small, synchronous read/write cache memory module with a storage capacity of 2048 words, where each word is 32 bits wide. The module accepts a clock signal and a reset signal, along with input addresses for reading and writing data. When the write signal is active, it stores the input data at the specified address; concurrently, it updates the output data line to reflect the value stored at that address. This architecture allows for efficient data retrieval and storage in applications requiring quick access to frequently used data.
+module top_module(
+    
+     input           clk_i
+    ,input           rst_i
+    ,input  [ 10:0]  addr_i
+    ,input  [ 31:0]  data_i
+    ,input           wr_i
+
+    
+    ,output [ 31:0]  data_o
+);

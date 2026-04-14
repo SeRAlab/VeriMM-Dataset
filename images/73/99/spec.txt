@@ -1,0 +1,8 @@
+Design a synchronous register with asynchronous reset functionality. When the reset (rst) signal is asserted, the output q is set to LOW regardless of clock or enable signals. On the rising edge of the clock (clk), if the reset is not active and the enable (en) signal is asserted, the register captures the data input (d) and updates the output q accordingly. This design allows for controlled data storage while ensuring the ability to reset the register state quickly and independently of the clock signal.
+module top_module(
+                     input      rst,
+                     input      clk,
+                     input      en,
+                     input      d,
+                     output reg q
+                     );

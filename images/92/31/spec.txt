@@ -1,0 +1,9 @@
+Design a synchronous first-in, first-out (FIFO) memory buffer that accepts 8-bit wide data. The buffer can hold up to 16 entries, controlled by read and write enable signals. A reset input initializes the buffer, setting the head and tail pointers to zero, and indicating that the buffer is empty. When the write enable signal is activated, data is written into the buffer at the head position, and the head pointer increments, wrapping around when full. Conversely, when the read enable signal is activated, data is read from the tail position, with the tail pointer incrementing and also wrapping around. The module provides an output for the data read from the buffer, while managing full and empty status conditions.
+module top_module(
+    input clk,
+    input rst,
+    input wr_en,
+    input rd_en,
+    input [7:0] data_in,
+    output reg [7:0] data_out
+);

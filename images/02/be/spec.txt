@@ -1,0 +1,5 @@
+Design a simple NVMe controller state machine that controls the state transitions for processing commands. The state machine has the following states: IDLE, PROCESSING, and COMPLETE. The state transitions occur based on the input signals: 'start' (1 bit) to begin processing and 'done' (1 bit) to indicate completion. The state transitions are defined as follows:  
+- From IDLE to PROCESSING on 'start' = 1.  
+- From PROCESSING to COMPLETE on 'done' = 1.  
+- From COMPLETE to IDLE on 'start' = 0.  
+Additionally, the output should indicate the current state in a 2-bit encoded form (00 for IDLE, 01 for PROCESSING, 10 for COMPLETE).

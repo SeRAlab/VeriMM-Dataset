@@ -1,0 +1,12 @@
+Design a processing element that operates with an asynchronous active-low reset and a clock signal. This module samples two 8-bit inputs, pel_sw and pel_tb, based on enable signals en_sw and en_tb, storing their values in output registers nxt_sw and nxt_tb, respectively. Upon clock edges, if reset is inactive, it updates the respective outputs; otherwise, it resets the outputs to zero. Additionally, it calculates the absolute difference between nxt_sw and nxt_tb, providing it as an output ad, which can be used for further processing or decision-making in a larger system.
+module top_module(
+  input  wire       rst_n,
+  input  wire       clk,
+  input  wire       en_sw,
+  input  wire       en_tb,
+  input  wire [7:0] pel_sw,
+  input  wire [7:0] pel_tb,
+  output reg  [7:0] nxt_sw,
+  output reg  [7:0] nxt_tb,
+  output wire [7:0] ad
+);

@@ -1,0 +1,8 @@
+Design a 4-bit synchronous counter with load functionality. The module counts upwards on each clock cycle, while also allowing for a reset and loading of a new value. When the reset input is high, both internal count registers are set to zero. If the load input is active, the counter loads the provided 4-bit data input into the first register. During normal operation (when neither reset nor load is active), the counter increments the value in the first register and transfers it to the second register, which serves as the output. The current count output reflects the value in the second register.
+module top_module(
+    input clk,
+    input reset,   // Synchronous active high reset
+    input load,    // Synchronous load
+    input [3:0] data_in,
+    output reg [3:0] count
+);

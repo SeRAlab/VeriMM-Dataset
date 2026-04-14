@@ -1,0 +1,8 @@
+Design a circuit that generates random 16-bit numbers on each clock cycle while providing two 8-bit outputs representing the upper and lower bytes of the generated number. Additionally, based on a 2-bit counter that increments with each clock cycle, the circuit produces a composite 16-bit output that reorders or duplicates the upper and lower bytes according to specific patterns. The reset input initializes the circuit state, while the clock signal synchronizes all operations.
+module top_module(
+    input wire clk,
+    input wire reset,
+    output reg [7:0] out_hi,
+    output reg [7:0] out_lo,
+    output reg [15:0] final_out
+);

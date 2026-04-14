@@ -1,0 +1,13 @@
+Design a 256-to-1 multiplexer that selects one of eight 8-bit input data vectors based on a 4-bit select signal. The selected input vector is then processed by inverting its bits, followed by feeding the inverted bits into a NAND gate to generate the output. The final output will be HIGH if the NAND gate returns LOW, meaning at least one of the bits in the selected input vector is HIGH; otherwise, the output will be LOW.
+module top_module(
+    input [3:0] sel,
+    input [7:0] in0,
+    input [7:0] in1,
+    input [7:0] in2,
+    input [7:0] in3,
+    input [7:0] in4,
+    input [7:0] in5,
+    input [7:0] in6,
+    input [7:0] in7,
+    output reg out
+);

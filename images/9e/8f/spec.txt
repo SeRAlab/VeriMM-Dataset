@@ -1,0 +1,11 @@
+Design a circuit that implements a 4-bit shift register, with additional functionality for resetting, loading, and enabling shifting based on two input signals, `a` and `b`. The module features an asynchronous active-high reset, allowing the register to be set to zero independently of the clock. The shift register can be loaded with a 4-bit input when the `load` signal is high, and it can shift left or right based on the values of `a` and `b` when `ena` is asserted. Additionally, it includes an AND gate that outputs the logical conjunction of inputs `a` and `b`, which is subsequently used to update the output `q` by performing a bitwise AND operation with the current state of the shift register.
+module top_module(
+    input clk,
+    input a,
+    input b,
+    input areset,  // async active-high reset to zero
+    input load,
+    input ena,
+    input [3:0] data,
+    output reg [3:0] q
+);

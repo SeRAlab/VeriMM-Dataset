@@ -1,0 +1,6 @@
+Design a 4-to-2 priority encoder that outputs the position of the highest-priority active input signal from a 4-bit input vector. The output Y will indicate which of the inputs I[3:0] is the highest priority; if both I[1] and I[0] are active, the output Y will reflect their position. If neither group has active signals, the output will default to 00. The functionality is clock-driven, updating the outputs on the positive edge of the clock signal.
+module top_module(
+    input [3:0] I,
+    input clk,            // Added `clk` input
+    output reg [1:0] Y
+);

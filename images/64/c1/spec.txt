@@ -1,0 +1,25 @@
+Please act as a professional Verilog designer.
+
+Design a module that implements a 4-bit ring counter. The ring counter shifts its bits to the left on each rising edge of the clock, and the last bit is shifted into the first bit.
+
+Module name:
+    ring_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    reset: Synchronous reset signal.
+
+Output ports:
+    q: 4-bit output signal representing the counter value.
+
+Implementation:
+The output q is defined as reg [3:0] q and initialized to 4'b0001 using the initial statement. The value of q is updated on the rising edge of the clock: q <= {q[2:0], q[3]}.
+If the reset signal is high, q is reset to 4'b0001: if (reset) q <= 4'b0001.
+
+Give me the complete code.
+
+module ring_counter(clk, reset, q);
+
+    input clk;
+    input reset;
+    output [3:0] q;

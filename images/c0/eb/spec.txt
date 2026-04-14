@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module to implement a parameterizable, synchronous resettable D flip-flop with scan capabilities. Its primary functions include:
+
+Data Storage: Temporarily storing data bits (`din`) presented at its input based on the clock (`clk`) signal's rising edge.
+Synchronous Reset: Resetting the stored data to a predefined state (`0`) synchronously with the clock signal when the reset (`rst`) input is asserted.
+Scan Chain Integration: Allowing for the insertion of test data (`si`) directly into the flip-flop's output (`q`) when scan enable (`se`) is asserted, facilitating testing and debugging processes in complex integrated circuits.
+
+This module plays a crucial role in digital systems, especially in applications requiring precise control over data storage and retrieval, as well as in testability features through scan chains in larger digital designs.
+
+Module name:  
+	dffr_s
+
+Input ports:
+	din [SIZE1:0]: Data input port. A vector of size SIZE that represents the data to be stored in the flipflop upon a clock edge.
+	clk: Clock input. A positive edgetriggered signal that controls the timing of data storage and reset operations.
+	rst: Reset input. A synchronous signal that, when asserted, causes the flipflop to reset its stored value to 0.
+	se: Scan enable input. A control signal that, when asserted, enables the scan operation, allowing si to be stored into the flipflop instead of din.
+	si [SIZE1:0]: Scan data input. A vector of size SIZE that represents the test data to be inserted into the flipflop when se is asserted.
+Output ports:
+	q [SIZE1:0]: Data output port. A vector of size SIZE that represents the current stored data in the flipflop.
+	so [SIZE1:0]: Scan output. This is directly connected to the flipflop's output (q) and can be used to chain multiple flipflops together in a scan chain.
+
+
+Implementation:
+The RTL module presented, named dffr_s, is designed to implement a parameterizable register with optional scan chain insertion capability. This module is versatile, catering to both synthesis-time configuration for scan-chain inclusion (for testability) and runtime configuration for register behavior. The core functionality of this module is to store and update data based on the clock (clk) signal, with the ability to asynchronously reset (rst) the stored value to zero. Additionally, the module supports scan testing through the scan enable (se) input, allowing for serial data input (si) and output (so) for test purposes.
+
+Give me the complete code.
+

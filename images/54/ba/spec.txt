@@ -1,0 +1,28 @@
+Please act as a professional Verilog designer.
+
+Implement a Frequency Divider module that divides an input clock signal by 4. The module should output a clock signal that is four times slower than the input clock signal.
+
+Module name:
+    freq_divider
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+
+Output ports:
+    clk_out: Output clock signal.
+
+Implementation:
+The module includes a register, counter, with a width of 2 bits, representing the current count value.
+The counter register is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the counter register is cleared to 0.
+On each clock cycle, the counter value is incremented by 1.
+The output clock signal is toggled whenever the counter reaches 3 (2'b11).
+
+Give me the complete code.
+
+module freq_divider(
+  input clk,
+  input rst_n,
+  output reg clk_out
+);

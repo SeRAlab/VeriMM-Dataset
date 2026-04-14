@@ -1,0 +1,11 @@
+module sr_latch (
+    input s,
+    input r,
+    output q,
+    output q_bar
+);
+
+assign q = ~(r | q_bar);
+assign q_bar = ~(s | q);
+
+endmodule

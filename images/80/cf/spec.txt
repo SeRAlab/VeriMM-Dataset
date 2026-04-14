@@ -1,0 +1,8 @@
+Design a quadrature encoder counter that increments or decrements a count based on two input signals (quadA and quadB) that represent the quadrature signal phases. The module captures and delays the states of these inputs to determine when to update the count based on their changes. When enabled, the count will increment if quadA leads quadB in the sequence, or decrement when quadB leads quadA. The count value is an 8-bit register, resettable, that reflects the current position based on the encoder inputs.
+module top_module(
+    input clk, 
+    input reset,
+    input quadA, 
+    input quadB, 
+    output reg [7:0] count
+);

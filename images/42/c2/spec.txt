@@ -1,0 +1,10 @@
+Design a 4-bit up/down barrel shifter with a clock, reset, and control inputs. The module allows for shifting the input A based on the value of the 2-bit B selector. When control is high, the module increments the internal count; when low, it decrements it. The output Q can either directly reflect the input A, shift A left or right by one bit with the carry-out from the operation, or present the current count value or its complement based on the control signal. The carry-out (COUT) indicates overflow conditions for the count, depending on whether the count reaches its maximum or minimum value.
+module top_module(
+    input clk,
+    input reset,
+    input control,
+    input [3:0] A,
+    input [1:0] B,
+    output [3:0] Q,
+    output COUT
+);

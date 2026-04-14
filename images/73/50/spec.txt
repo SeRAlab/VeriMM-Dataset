@@ -1,0 +1,8 @@
+Design a 4-bit barrel shifter that can perform circular shifting operations based on a 2-bit control input. The module takes a 4-bit input and shifts its bits left or right circularly according to the control signals: when ctrl=00, the output remains the same; ctrl=01 performs a left circular shift; ctrl=10 performs a right circular shift; and ctrl=11 shifts the bits to the right by two positions. The output is synchronized with a clock and resets to zero when the reset signal is deactivated.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] in,
+  input [1:0] ctrl,
+  output reg [3:0] out
+);

@@ -1,0 +1,10 @@
+Design a serial peripheral interface (SPI) state machine that manages data transmission between a master and slave device. The module has three operational states: IDLE, TRANSMIT, and RECEIVE. In the IDLE state, it waits for the slave select (ssel) signal to indicate a transmission. Upon receiving data on the master output slave input (MOSI) while ssel is active, it transitions to the TRANSMIT state, where it samples the input data as necessary. If the sample signal is asserted, it then moves to the RECEIVE state, where it captures the incoming data on MOSI and asserts a write signal (wr) before returning to the IDLE state. The primary function is to facilitate and control the data exchange in a synchronous manner, ensuring organized communication in SPI protocols.
+module top_module(
+  input clk,
+  input rst,
+  input mosi,
+  input ssel,
+  input sample,
+  output miso,
+  output wr
+);

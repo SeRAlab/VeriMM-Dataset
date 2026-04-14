@@ -1,0 +1,15 @@
+Design a rectangular touch detection circuit that monitors the position of a touch or drawing input represented by the `tor_x` and `tor_y` signals. The module activates the `outtd` output when the specified conditions are met: the touch coordinates must fall within a defined rectangular area (bounded by x1, x2 for horizontal and y1, y2 for vertical ranges) and only if `clcount` equals 1. The output signifies whether a touch event occurred within the defined rectangle on each positive edge of the clock signal.
+module top_module(
+	input wire clk,
+
+	input wire switch,
+	input wire [1:0]clcount,
+	input wire [7:0]enable,
+
+	input wire [9:0]tor_x,
+	input wire [8:0]tor_y,
+
+	
+	output reg outtd
+	
+	);

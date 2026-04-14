@@ -1,0 +1,17 @@
+module memory_bram(clk, we, addr, DIN, DOUT);
+input clk;
+input we;
+input [3:0] addr;
+parameter MEM_SIZE = 256;
+input [MEM_SIZE-1 :0] DIN;
+output [MEM_SIZE-1 :0] DOUT;
+reg [3:0] read_addr;
+reg [MEM_SIZE - 1:0] bram [15:0];
+always @(posedge clk) begin
+	if ( we ) begin
+		bram[addr] <= DIN;
+	end
+   read_addr <= addr;
+end
+assign DOUT = bram[read_addr];
+endmodule

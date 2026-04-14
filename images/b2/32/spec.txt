@@ -1,0 +1,10 @@
+Design a 4-to-1 multiplexer utilizing a 16-entry lookup table (LUT). The module selects one of the four input signals (I0, I1, I2, I3) based on the two selection bits (S0, S1) and outputs the chosen signal (O). The LUT is populated by replicating the four input signals across all 16 entries, although only the first four are used for the selection. This design allows for flexible extension and integration into larger digital systems that may require a multiplexing operation.
+module top_module(
+    input I0,
+    input I1,
+    input I2,
+    input I3,
+    input S0,
+    input S1,
+    output reg O  // Changed to 'reg' to allow assignments in always block
+);

@@ -1,0 +1,10 @@
+Design a frame buffer module that stores 16-bit pixel data in an array of memory. This module writes data to the memory when the load signal is asserted, using the provided write address to specify the location. On each clock cycle when not loading, it outputs a pixel value based on the current VGA horizontal and vertical synchronization inputs, effectively allowing the retrieval of pixel data to be displayed on a screen at the coordinates corresponding to these sync signals.
+module top_module(
+    input clk,
+    input [15:0] write_address,
+    input [15:0] data_in,
+    input load,
+    input [10:0] vga_h,
+    input [10:0] vga_v,
+    output reg pixel_out
+);

@@ -1,0 +1,5 @@
+Design a 4-to-8 decoder that takes a 4-bit input signal (SEL) and produces an 8-bit output (OUT). The output corresponds to a specific bit being set based on the input value, with the following functionality: when SE|L is 0 to 7, only one of the output bits from the least significant position is activated, while inputs 8 to F produce a decreasing pattern of active high bits, culminating in all bits high at input 9. The functionality also includes a default case that drives the output to zero if any unsupported input is detected.
+module top_module(
+    input [3:0] SEL,
+    output reg [7:0] OUT  // Change to 'reg' to allow assignment in always block
+);

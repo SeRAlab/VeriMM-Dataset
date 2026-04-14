@@ -1,0 +1,8 @@
+Design a circuit that counts clock cycles and generates three output signals based on this count, with reset functionality. The module counts up on each rising edge of the clock, resetting to zero when the reset signal is low. Outputs `a_out` and `b_out` are both driven by a combinatorial logic that assigns values based on the count state; they output values of 0, 1, or 2 depending on whether the count is 0, 1, or greater than 1, respectively, and they are synchronized with the clock for updates. Output `c_out` also follows a similar logic, producing values of 0, 1, or 2 based on the count, but does so without clock synchronization, updating based on combinational logic. Overall, this module combines sequential and combinational logic to produce varying outputs based on a clock-driven counter.
+module top_module(
+    input wire clk,
+    input wire resetn,
+    output wire [3:0] a_out,
+    output wire [3:0] b_out,
+    output wire [3:0] c_out
+    );

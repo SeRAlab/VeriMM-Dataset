@@ -1,0 +1,7 @@
+Design a control unit that decodes a 6-bit operation code (Op_i) to produce control signals for a digital system. The module generates three outputs: a jump signal (jump_o), a branch signal (branch_o), and an 8-bit multiplexer control signal (mux8_o), all derived from the corresponding 10-bit encoded output. Based on the value of Op_i, different combinations of these control signals are activated, enabling functionality such as branching and jumping in a processor's instruction set while selecting the appropriate multiplexer input. The default case ensures that safe operation occurs if Op_i does not match any specified instruction.
+module top_module(
+   Op_i,
+	 branch_o,
+	 jump_o,
+	 mux8_o
+);

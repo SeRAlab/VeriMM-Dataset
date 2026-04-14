@@ -1,0 +1,12 @@
+Design a sequential digital circuit that operates as an accumulator with multiple stages of data storage and accumulation. The module receives an 8-bit data input and, upon validation and readiness signals, sequentially stores incoming data across four registers, performing incremental additions at each stage to generate a 10-bit output. Upon receiving valid input data, it calculates the accumulated results through established registers and updates the output while managing valid and ready signals for handshaking between the data producers and consumers. The circuit is capable of reset, initializing all registers and outputs to zero, ensuring controlled operation in a synchronous clock environment.
+module top_module(
+    input               clk         ,   
+    input               rst_n       ,
+    input       [7:0]   data_in     ,
+    input               valid_a     ,
+    input               ready_b     ,
+ 
+    output              ready_a     ,
+    output  reg         valid_b     ,
+    output  reg [9:0]   data_out
+);

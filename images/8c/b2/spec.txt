@@ -1,0 +1,7 @@
+Design a circuit that integrates a synchronous resettable register, a shift register, and a functional module for summation. Upon receiving a clock signal and an active reset, the circuit initializes the registers—setting the main register `reg_q` to a predefined value while simultaneously resetting the shift register `shift_q` to zero. During normal operation, the main register employs a series of T flip-flop-like behavior using XOR logic to update its state based on the input data `d`. The shift register captures the output of the main register, shifting its contents on each clock cycle. The circuit combines the values of the main and shift registers, outputting their sum as an 8-bit output `q`.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input [7:0] d,    // 8-bit input for the register
+    output [7:0] q    // 8-bit output from the functional module
+);

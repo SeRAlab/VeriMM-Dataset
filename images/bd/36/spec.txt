@@ -1,0 +1,45 @@
+Design a circuit that acts as a memory bus controller connecting a master interface to two slave devices. The module facilitates read and write operations by routing control signals and data from the master to the selected slave based on the read/write requests. It supports acknowledgment signals for address recognition and provides output data from selected slaves when requested by the master. The configuration allows simultaneous access to two slave devices, where the master can write to either slave, while it can read back data from both, ensuring that only one read request is processed at a time.
+module top_module(
+    // unused
+    input wire clk,
+    input wire reset,
+
+    // Master
+    input wire m_wr_rs,
+    input wire m_rq_cyc,
+    input wire m_rd_rq,
+    input wire m_wr_rq,
+    input wire [21:35] m_ma,
+    input wire [18:21] m_sel,
+    input wire m_fmc_select,
+    input wire [0:35] m_mb_write,
+    output wire m_addr_ack,
+    output wire m_rd_rs,
+    output wire [0:35] m_mb_read,
+
+    // Slave 0
+    output wire s0_wr_rs,
+    output wire s0_rq_cyc,
+    output wire s0_rd_rq,
+    output wire s0_wr_rq,
+    output wire [21:35] s0_ma,
+    output wire [18:21] s0_sel,
+    output wire s0_fmc_select,
+    output wire [0:35] s0_mb_write,
+    input wire s0_addr_ack,
+    input wire s0_rd_rs,
+    input wire [0:35] s0_mb_read,
+
+    // Slave 1
+    output wire s1_wr_rs,
+    output wire s1_rq_cyc,
+    output wire s1_rd_rq,
+    output wire s1_wr_rq,
+    output wire [21:35] s1_ma,
+    output wire [18:21] s1_sel,
+    output wire s1_fmc_select,
+    output wire [0:35] s1_mb_write,
+    input wire s1_addr_ack,
+    input wire s1_rd_rs,
+    input wire [0:35] s1_mb_read
+);

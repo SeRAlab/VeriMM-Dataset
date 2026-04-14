@@ -1,0 +1,10 @@
+Design a deserializer module that captures a specified number of bits from an input stream based on a frame size defined by the user. The module operates on the rising edge of the clock signal, storing each incoming bit sequentially in a 32-bit output register until the specified frame size is reached, at which point it signals completion through a dedicated output. The module includes reset functionality to clear the output and counter, and it enables operation only when an enable signal is asserted. This design is suitable for applications requiring the conversion of serialized data into parallel format.
+module top_module(
+	clk, 		
+	enable, 	
+	reset, 		
+	framesize, 	
+	in, 		
+	out, 		
+	complete	
+);

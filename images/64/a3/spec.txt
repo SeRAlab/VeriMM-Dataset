@@ -1,0 +1,17 @@
+Design a module for processing incoming data through an input port, which interacts with a clock and reset signal. The module takes a 2-bit input for distinguishing operation modes and a 48-bit channel input carrying specific data. It generates a request output and provides status outputs indicating hits on two address spaces. When active, based on the 2-bit input, it either clears registers and indicates no hits or checks conditions on the channel input to set hit flags and update address and payload registers accordingly. This design effectively serves as an interface for managing data requests and responses in a system.
+module top_module(
+  input         clka,
+  input         rsta,
+
+  input  [1:0]  diff_pair_din,
+  input  [47:0] channel_din,
+
+  output reg    request_dout, // Changed from wire to reg
+
+  output        x_hit_dout,
+  output        y_hit_dout,
+
+  output [3:0]  x_addr_dout,
+  output [3:0]  y_addr_dout,
+  output [39:0] payload_dout
+);

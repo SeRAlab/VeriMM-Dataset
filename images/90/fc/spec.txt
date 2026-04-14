@@ -1,0 +1,14 @@
+Design a coin mechanism control module that manages two coin counters and their associated lockout signals. The module initializes counters and lockouts during a reset signal and increments the respective counter based on coin insertion events detected by the nCOUNTOUT signal. It also allows for the setting and resetting of counters and lockouts through a memory-mapped interface specified by the M68K_ADDR input. Additionally, it outputs debug messages to track the status of counters and lockouts when they are reset or set, while transferring relevant data to a main processor through a designated output.
+module top_module(
+	input nRESET,
+	input nCOUNTOUT,
+	input [3:1] M68K_ADDR,
+	input M68K_ADDR_7,
+	output reg COUNTER1,
+	output reg COUNTER2,
+	output reg LOCKOUT1,
+	output reg LOCKOUT2,
+	input [15:0] PBUS,
+	input PCK2B,
+	output reg [15:0] G
+);

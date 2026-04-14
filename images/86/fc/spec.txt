@@ -1,0 +1,9 @@
+Design a sequential interstage buffer that manages control signals across multiple stages of a processing pipeline. It takes a 4-bit input, `id_control_signals`, and propagates these signals through three stages: execution (ex), memory (mem), and write-back (wb). On each positive edge of the clock, if the reset signal is asserted, all output control signals are set to LOW. Otherwise, it updates the execution control signals with the input, while passing those values down to the memory and write-back control signals in a cascading manner.
+module top_module(
+  input clock,
+  input [3:0] id_control_signals,
+  input reset,
+  output reg [3:0] ex_control_signals,
+  output reg [3:0] mem_control_signals,
+  output reg [3:0] wb_control_signals
+);

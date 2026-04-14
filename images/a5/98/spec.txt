@@ -1,0 +1,7 @@
+Design a control unit for an ALU that generates a 3-bit control signal based on the ALU operation selection and the instruction input. The module utilizes a 2-bit input `ALUop` to dictate basic operations directly (AND or OR) and, in the absence of a specific `ALUop`, interprets a 6-bit instruction code to allow for other operations such as ADD, SUB, SLT, and NOR. The control signal effectively directs the ALU's behavior during computations based on the provided inputs.
+module top_module(
+    input [1:0] ALUop,
+    input [5:0] instru,
+    input clk,
+    output reg [2:0] contALU
+    );

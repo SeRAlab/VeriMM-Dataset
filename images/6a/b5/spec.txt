@@ -1,0 +1,7 @@
+Design a circuit that functions as a digital decoder with an enable signal and a glitch signal (gs) for invalid inputs. The circuit takes a 4-bit input; when the enable input is high, it decodes the 4-bit value into a specific 4-bit output according to a defined mapping for the values 0 to 9, while outputs 0 through 9 correspond to binary representation in a specific order. If the input is outside this range or if the enable signal is low, the output is set to all ones (4'b1111) and gs is activated, indicating a problem or invalid input.
+module top_module(
+    input [3:0] in,
+    input enable,
+    output reg [3:0] out,
+    output reg gs
+    );

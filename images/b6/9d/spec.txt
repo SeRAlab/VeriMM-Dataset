@@ -1,0 +1,11 @@
+Design a circuit that captures and tags event-related data based on external inputs. The module uses a clock signal to monitor changes in `delta_channels` and `strobe_channels` and updates a 47-bit output data register accordingly. When `delta_channels` changes, it stores the current value of an internal timer and sets the data format with specific flags to indicate the event type and timer status. Similarly, if `strobe_channels` is active or the timer is zero with `counter_operate`, it updates the output to reflect the strobe event. Additionally, the module includes functionality to reset the timer and drive a `ready` signal to signify when the data is ready for processing. The primary purpose of this module is to function as an event tagger for timestamping events in a digital system.
+module top_module(
+    input [3:0] strobe_channels,
+    input [3:0] delta_channels,
+    input clk,
+    input reset_counter,
+    input capture_operate,
+    input counter_operate,
+    output reg ready,         // Changed to reg
+    output reg [46:0] data    // Changed to reg
+);

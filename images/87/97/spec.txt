@@ -1,0 +1,16 @@
+Design a circuit that operates as a conditional state setter with an overflow indicator. The module takes five inputs (A1, A2, A3, B1, B2) to perform a logical AND operation, producing an output X which holds the result of this operation when enabled or resets to LOW when the reset signal is active. Additionally, it includes an overflow output that indicates if the result of the AND operation exceeds the value of 1, allowing for detection of multiple active inputs. This functionality is suited for scenarios where synchronizing input conditions and monitoring overflow conditions is required.
+module top_module(
+    input  A1, 
+    input  A2, 
+    input  A3, 
+    input  B1, 
+    input  B2, 
+    input  reset, 
+    input  enable, 
+    input  VPB, 
+    input  VPWR, 
+    input  VGND, 
+    input  VNB, 
+    output X,
+    output overflow
+);

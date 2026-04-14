@@ -1,0 +1,11 @@
+Design a controller for a 7-segment display driver that sequentially outputs data to the display based on a clock signal and enable control. The module captures three 8-bit inputs: Unidades, Decenas, and Estado, and cyclically selects one of these inputs for display, represented as an 8-bit output (Anodo). On each clock pulse, if enabled and not in reset, it transitions through states—first showing Unidades, then Decenas, and finally Estado—while keeping track of the current state using two 4-bit registers. The output also provides a 4-bit signal (Seleccion) indicating the active display input, allowing for easy integration with multi-digit display systems.
+module top_module(
+		input wire clk_disp, rst,
+		input wire Disp_Enable,
+		input wire [7:0] Unidades,
+		input wire [7:0] Decenas,
+		input wire [7:0] Estado,
+		output reg [7:0] Anodo,
+		output wire [3:0] Seleccion,
+		output wire Catodo
+    );

@@ -1,0 +1,8 @@
+Design a 128-word by 32-bit RAM module with synchronous write and read capabilities. On the rising edge of the clock (clka), if the write enable signal (wea) is asserted, data (dina) is written to the address specified by addra. Regardless of the write operation, the output (douta) is updated to reflect the contents of the addressed memory location. This module provides basic memory storage functionality for use in digital circuits.
+module top_module(
+    input wire clka,
+    input wire wea,
+    input wire [6:0] addra,
+    input wire [31:0] dina,
+    output reg [31:0] douta  // Changed 'wire' to 'reg'
+);

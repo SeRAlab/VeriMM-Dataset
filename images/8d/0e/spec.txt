@@ -1,0 +1,9 @@
+Design a quadrature encoder that tracks the position and direction of a rotating shaft using two input signals (a and b). The module outputs a 32-bit count which increments or decrements based on the sequence of input signal transitions, indicating movement in either direction (dir). The counting direction is determined by specific state transitions of the two input signals, while the count can be reset to zero using an external reset signal. This functionality is essential for applications requiring precise position sensing and motion detection.
+module top_module(
+    input clk,
+    input reset,
+    input a,
+    input b,
+    output dir,
+    output [31:0] count
+    );

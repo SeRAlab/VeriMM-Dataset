@@ -1,0 +1,7 @@
+Design a floating-point arithmetic unit that supports addition, subtraction, multiplication, and division operations on 32-bit IEEE 754 single-precision floating-point numbers. The module takes two operands and a 2-bit select signal to determine the operation: 00 for addition, 01 for subtraction, 10 for multiplication, and 11 for division. It extracts the sign, exponent, and mantissa from the inputs, executes the corresponding arithmetic operation while managing the sign and exponent adjustments, and outputs the result as a 32-bit floating-point number. Additionally, the module includes calculated logic for rounding the final result to adhere to standard representation.
+module top_module(
+  input [31:0] operand1,
+  input [31:0] operand2,
+  input [1:0] sel,
+  output [31:0] result
+);

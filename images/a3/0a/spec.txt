@@ -1,0 +1,13 @@
+Design an audio data generation module to interface with the CS4344 audio DAC. The module generates Serial Data Input (SDIN), Serial Clock (SCLK), and Left-Right Clock (LRCK) signals based on an input clock (Clk). It implements a pulse-width modulation (PWM) technique to control the SDIN signal based on a counter, altering the LRCK state every specified clock cycle to indicate audio frame changes. The SCLK signal toggles based on the PWM output, facilitating proper timing for serial data transmission. An internal counter and parameters ensure synchronization with a set audio frequency, making it suitable for audio playback applications.
+module top_module(  
+                               
+    
+    
+	    input Clk,   
+
+    
+		output reg SDIN,							   
+        output reg SCLK,                    
+		output reg LRCK,
+		output  MCLK
+		);

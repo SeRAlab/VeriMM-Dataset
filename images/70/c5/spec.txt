@@ -1,0 +1,9 @@
+Design a circuit that converts a 32-bit wide parallel input signal into a serial output. When the enable signal is high and the system is not in reset, the module outputs each bit of the input signal sequentially on every clock cycle, starting from the highest bit. It utilizes a counter to track the number of bits transmitted and indicates when the entire 32-bit signal has been sent by asserting a completion signal. If the enable signal is low or the system is reset, the output is set to low, and the counter is reset.
+module top_module(
+    input wire enable_pts, 
+    input wire reset_pts, 
+    input wire SD_CLK, 
+    input wire [31:0] signal_in, 
+    output reg signal_out, 
+    output reg parallel_complete
+    );

@@ -1,0 +1,9 @@
+Design a circuit that features a 100-bit wide register implemented with a loadable feature, alongside a barrel shifter and a multiplexer. The module accepts a clock signal, a reset signal, and various control inputs that determine the behavior of shifting data left or right based on the 'ena' input, while performing conditional loading of input data. The output can be selected between two inputs (A and B) based on the 'SEL' signal. When 'load' is asserted, the register captures the 'data' input on a clock edge; otherwise, it shifts the contents based on the enable signals. The design allows flexibility in manipulating 100-bit wide data through controlled shifting and selection.
+module top_module(
+    input clk,
+    input reset,
+    input [99:0] data,
+    input [1:0] ena,
+    input load,
+    input A, B, SEL,
+    output reg [99:0] q);

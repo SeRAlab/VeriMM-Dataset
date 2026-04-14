@@ -1,0 +1,17 @@
+Implement a bus arbitrator that selects one of several 16-bit data sources to drive a shared data bus based on control signals. When the read signal (RD) is active, it prioritizes the memory output (memOut). If RD is not asserted, it selects among various sources including program counter output (pcOut), stack pointer output (spOut), I/O output (ioOut), logical operation output (orOut), or register outputs (raOut) depending on the active enable signals (E_PC, E_SP, E_IP, E_OR, E_R0, E_RN). If none of the conditions are met, it defaults to outputting zero.
+module top_module(
+    output[15:0] dataBus,
+    input RD,
+    input E_PC,
+    input E_SP,
+    input E_IP,
+    input E_OR,
+    input E_R0,
+    input E_RN,
+    input [15:0] pcOut,
+    input [15:0] memOut,
+    input [15:0] orOut,
+    input [15:0] spOut,
+    input [15:0] raOut,
+    input [15:0] ioOut
+    );

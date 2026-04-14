@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+
+Implement a 16-bit Johnson counter. The module operates on the rising edge of the clock signal "clk" and uses a synchronous design. The Johnson counter generates a sequence where each bit is the inverse of the previous bit shifted one position to the left.
+
+Module name:
+    johnson_counter_16bit
+
+Input ports:
+	clk: Clock signal.
+	rst_n: Reset signal (active low).
+
+Output ports:
+	johnson_out: 16-bit Johnson counter output.
+
+Implementation:
+The module should update the register value according to the Johnson counter logic on each clock cycle. When the reset signal is asserted, the Johnson counter should reset to all zeros.
+
+Give me the complete code.
+
+module johnson_counter_16bit(
+	input clk,
+	input rst_n,
+	output reg [15:0] johnson_out
+);

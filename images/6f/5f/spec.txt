@@ -1,0 +1,8 @@
+Design a 4096-word, 16-bit wide synchronous memory block. The module allows writing data to a specified address on the positive edge of the clock signal when the write enable (wren) is activated. Regardless of the write operation, the memory outputs the data stored at the specified address to the output register (q) every clock cycle.
+module top_module(
+  input [11:0] address,
+  input clock,
+  input [15:0] data,
+  input wren,
+  output reg [15:0] q
+);

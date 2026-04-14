@@ -1,0 +1,10 @@
+Design a divider module that performs both signed and unsigned division operations based on the value of the 'sign' input. When 'divider_begin' is asserted, the module computes the quotient and remainder of the 32-bit inputs 'a' and 'b'. If 'sign' equals 1, the operation is signed division; if 'sign' equals 2, it is unsigned division. The results are concatenated into a 64-bit output 'z', where the upper 32 bits hold the remainder and the lower 32 bits hold the quotient. The module also outputs 'divider_end' as a signal that indicates when both 'a' and 'b' are zero, represented by a logical high.
+module top_module(
+    input divider_begin,
+    input [1:0]sign,
+    input [31:0]a,
+    input [31:0]b,
+    output[63:0]z,  
+    output divider_end
+
+);

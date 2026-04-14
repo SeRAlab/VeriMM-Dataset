@@ -1,0 +1,9 @@
+Design a Bluetooth communication interface module that handles data transmission and reception. The module receives a clock signal and a reset signal, along with incoming data and a validity flag. Upon a valid input signal, it captures the incoming data into an 8-bit register and marks it as valid for transmission. The transmission process is controlled by reset conditions and the validity of the input. For receiving data, the module outputs the received data and its validity upon being triggered appropriately. This functionality allows for the interface with Bluetooth hardware components, enabling wireless data communication.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] data_in,  // Changed to 8-bit input
+  input valid_in,
+  output reg [7:0] data_out,  // Changed to reg type
+  output reg valid_out        // Changed to reg type
+);

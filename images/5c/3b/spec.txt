@@ -1,0 +1,9 @@
+Design a circuit that functions as a bidirectional I/O interface with edge logic capabilities. The module controls signals for output pads based on input signals such as data and enable (oe), where `pad_up` outputs high when both data and oe are asserted, and `pad_dn_l` is a logical complement when data is low and oe is active. Additionally, it manages the state of a power-on reset (`por`) signal by inverting the active-low `por_l` input. It also determines whether to output a data signal to the core based on the bsr_mode and se flags, either forwarding `bsr_data_to_core` or `rcvr_data` accordingly. The design is suitable for CMOS technology applications where control over power states and bidirectional data flow is essential.
+module top_module(
+   // Outputs
+   to_core, por, pad_up, bsr_up, pad_dn_l, bsr_dn_l,
+
+   // Inputs
+   data, oe, bsr_mode, por_l,
+   bsr_data_to_core, se, rcvr_data
+   );

@@ -1,0 +1,29 @@
+Design a USB interface controller for a Nios II system. The module manages communication between the main processor and a USB device using control and data signals. It features inputs for clock, reset, address, chip select, read, write, and write data signals. The controller outputs read data, interrupts, and control signals for USB operations, including reset, address, chip select, read, and write signals. It also manages bidirectional data transfer through the OTG_DATA line, ensuring proper timing and state management during USB transactions. The IRQ output indicates changes in interrupt states based on external USB events.
+module top_module(
+    // Inputs
+    input clk,
+    input reset,
+
+    input [1:0] address,
+    input chipselect,
+    input read,
+    input write,
+    input [15:0] writedata,
+
+    input OTG_INT0,
+    input OTG_INT1,
+
+    // Bidirectionals
+    inout [15:0] OTG_DATA,
+
+    // Outputs
+    output reg [15:0] readdata,
+
+    output irq,
+
+    output reg OTG_RST_N,
+    output reg [1:0] OTG_ADDR,
+    output reg OTG_CS_N,
+    output reg OTG_RD_N,
+    output reg OTG_WR_N
+);

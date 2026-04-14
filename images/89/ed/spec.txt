@@ -1,0 +1,9 @@
+Design a 40-bit digital counter that counts upwards from a loaded value, incrementing on each clock cycle while being able to reset and enable/disable counting based on control inputs. The counter has a maximum predefined threshold (41'b00000000000000000000000000001100101101000000101111111111111111000 in decimal) and will reset to 0 if the loaded value exceeds this limit. The output signals include a 40-bit count output and a signal indicating when the counter has reached its maximum value, without exceeding it. This module is intended for use cases requiring a controlled counting mechanism with load and threshold functionality.
+module top_module(
+  input   clock,
+  input   reset,
+  input   io_enable,
+  input [39:0] load_val,
+  output  io_done,
+  output [39:0] count_out
+);

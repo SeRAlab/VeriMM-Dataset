@@ -1,0 +1,10 @@
+Design a direction controller that processes directional input signals (left, right, up, down) at a controlled clock rate. The module uses a clock and reset signal to sample button presses, updating the 8-bit direction output accordingly every 5 million clock cycles, which represents a debouncing mechanism for the input buttons. It incorporates a last state register to prevent multiple triggers from a single button press, ensuring that each valid directional input sets the output to a unique value corresponding to the direction pressed. If no buttons are active, the direction output defaults to zero.
+module top_module(
+    input clk,
+    input rst,
+    input left,
+    input right,
+    input up,
+    input down,
+    output reg [7:0] direction
+);

@@ -1,0 +1,25 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit shift register with parallel load and shift right functionality.
+
+Module name:
+    shift_reg
+
+Input ports:
+    D: 4-bit parallel input
+    CLK: Clock signal
+    RST: Reset signal
+    LOAD: Load signal
+
+Output ports:
+    Q: 4-bit output
+
+Implementation:
+The module loads the 4-bit parallel input into the register on the positive edge of the clock signal if the load signal is active. Otherwise, it shifts the register contents to the right.
+
+Give me the complete code.
+
+module shift_reg (D, CLK, RST, LOAD, Q);
+input [3:0] D;
+input CLK, RST, LOAD;
+output reg [3:0] Q;

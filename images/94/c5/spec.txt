@@ -1,0 +1,39 @@
+Please act as a professional verilog designer.
+
+Implement an 8-bit register file with 4 registers and read and write capabilities. The register file should support two read ports and one write port. It should also have a reset signal to clear all the registers.
+
+Module name:  
+    reg_file   
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high reset signal.
+    we: Write enable signal.
+    waddr: 2-bit write address.
+    wdata: 8-bit write data.
+    raddr1: 2-bit read address for read port 1.
+    raddr2: 2-bit read address for read port 2.
+
+Output ports:
+    rdata1: 8-bit read data from read port 1.
+    rdata2: 8-bit read data from read port 2.
+
+Implementation:
+The register file is implemented as an array of 8-bit registers.
+On reset, all registers are cleared to 0.
+If the write enable signal (we) is high, the data at wdata is written to the register specified by waddr on the positive edge of the clock.
+The read data from the register specified by raddr1 and raddr2 is available on rdata1 and rdata2 respectively.
+
+Give me the complete code.
+
+module reg_file(
+    input                 clk,
+    input                 rst,
+    input                 we,
+    input       [1:0]     waddr,
+    input       [7:0]     wdata,
+    input       [1:0]     raddr1,
+    input       [1:0]     raddr2,
+    output   reg [7:0]    rdata1,
+    output   reg [7:0]    rdata2
+);

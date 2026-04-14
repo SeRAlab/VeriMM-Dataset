@@ -1,0 +1,5 @@
+Design a configurable physical layer interface module that converts and manages signal control between two sets of pins. It captures incoming clock and control signals (c_ck, c_ncs, c_se, c_so) and outputs corresponding control and status signals (p_ck, p_ncs, p_se, p_so) while optionally enabling these operations based on an enable signal (c_en). The module includes functionality to buffer and synchronize data inputs and outputs via registers, utilizing both positive and negative clock edges to maintain signal integrity across the interface. Specifically, it processes a 4-bit and an 8-bit input set, providing a dual-path output mechanism for seamless data transfer between components.
+module top_module(
+    c_ck, c_ncs, c_se, c_so, c_si, c_en,
+    p_ck, p_ncs, p_se, p_so, p_si
+);

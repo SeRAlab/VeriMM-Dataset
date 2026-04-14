@@ -1,0 +1,9 @@
+Create a 4-bit adder that can also perform a bitwise XOR operation based on the selection signal. When the selection signal (sel) is high, the module outputs the result of A XOR B. When sel is low, it computes the sum of A and B. The output is updated on the rising edge of the clock and reset to zero when the reset signal (rst) is active.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input sel,
+    input rst,
+    input clk,     // Added clk input
+    output reg [3:0] C   // Changed output to reg type to allow assignment in always block
+);

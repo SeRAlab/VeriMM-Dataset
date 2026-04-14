@@ -1,0 +1,9 @@
+Implement a synchronous data processing module that generates an 8-bit output based on a 4-bit control signal and an 8-bit input. The module features active-low reset functionality. Depending on the control value, it performs various operations on the input data: it can shift the bits left or right, invert the bits, or set the output to all ones. The output state and the status of the operation are indicated through a 4-bit status signal, which reflects the specific operation performed.
+module top_module(
+  input clk,
+  input [7:0] data_in,
+  input [3:0] control,
+  input rst_n,
+  output [7:0] data_out,
+  output [3:0] status
+);

@@ -1,0 +1,15 @@
+Design a quadrature decoder that interprets two input signals (quadA_i and quadB_i) from a rotary encoder to determine the direction and count of rotational movement. The module produces a directional output (direction_o) indicating the clockwise or counter-clockwise motion, a count pulse output (count_pulse_o) that increments with each state change in the input signals, and an error output (error_o) indicating any discrepancies between current and previous states. The operation is synchronized with a clock (clk), can be enabled or reset through dedicated inputs, and tracks the previous states of the inputs to facilitate accurate decision-making regarding transitions.
+module top_module(
+  direction_o,
+  count_pulse_o,
+  error_o,
+  clk,
+  enable_i,
+  reset_i,
+  quadA_i,
+  quadB_i,
+  quadA,
+  quadA_old,
+  quadB,
+  quadB_old
+);

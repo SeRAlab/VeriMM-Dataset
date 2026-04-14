@@ -1,0 +1,4 @@
+Design a state-holding circuit that can be used to control two output signals, foo and bar, based on input conditions. When the load signal is asserted, the circuit sets foo to the value of data and drives bar to a constant HIGH. Conversely, if the drain signal is activated, bar is set to LOW while foo retains its previous state. The outputs are updated on the rising edge of the clock, making this design suitable for synchronous operations that require controlled state transitions and latching behavior for the foo and bar outputs.
+module top_module(input wire load, drain,
+	    input wire clk, data,
+	    output reg foo_nxt, bar_nxt);

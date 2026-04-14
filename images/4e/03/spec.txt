@@ -1,0 +1,14 @@
+Design a FIFO (First In, First Out) buffer with the capability to read and write data. The buffer has a depth of 32 entries and can store data consisting of 6 bits from input I1 and 1 bit from input I2. The module utilizes clock signals to synchronize data transfers, where `rd_en` enables reading from the buffer. The output signals indicate the status of the buffer, including whether it is empty or full. The module also includes control signals that manage the read and write pointers, track the count of stored entries, and provide output data accordingly. Overall, this FIFO generator facilitates reliable data storage and retrieval in a synchronized manner.
+module top_module(
+  input clk,
+  input rd_en,
+  input [5:0] I1,
+  input [0:0] I2,
+  output reg empty,
+  output reg [0:0] E,
+  output reg [0:0] O1,
+  output reg O2,
+  output reg ENB,
+  output reg [5:0] O3,
+  output reg [1:0] Q
+);

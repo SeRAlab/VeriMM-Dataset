@@ -1,0 +1,9 @@
+Develop a control module for displaying a sentence comprised of multiple 32-bit words, where the total length of the sentence can be up to 256 bits (8 words). The module outputs the currently displayed word based on the `currentWordIndex`, which starts at 7 (pointing to the last word). It allows navigation through the words using `nextWord` and `prevWord` inputs, decrementing or incrementing the index respectively on each clock cycle. The module produces a 32-bit output for `currentWord` derived from the appropriate segment of the input `sentence`, and provides a 3-bit `wordIndex` as a reverse index indicating the position of the displayed word from the start of the sentence.
+module top_module(
+    input wire clk,
+    input wire [255:0] sentence,
+    input wire nextWord,
+    input wire prevWord,
+    output wire [31:0] currentWord,
+    output wire [2:0] wordIndex
+    );

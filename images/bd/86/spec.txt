@@ -1,0 +1,13 @@
+Design a synchronous module that operates as a conditional signal selector and edge detector. The module takes two input signals, `a` and `b`, and based on two selection inputs (`sel_b1` and `sel_b2`), it produces an output (`out_always`) that is either `a` or `b`. Additionally, it detects rising and falling edges of the input signal `a` and sets the `rise` and `fall` flags accordingly. The final output combines the `out_always` signal with the logical XOR of the rise and fall conditions. The entire module is reset asynchronously with `rst_n` and is clocked by `clk`. This design can be used in applications requiring signal selection and edge detection for further processing or control logic.
+module top_module(
+  input               a,
+  input               b,
+  input               sel_b1,
+  input               sel_b2,
+  input               clk,
+  input               rst_n,
+  output reg          out_always,
+  output reg          rise,
+  output reg          fall,
+  output              final_output
+);

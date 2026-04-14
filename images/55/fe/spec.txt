@@ -1,0 +1,7 @@
+Design a Moore-type state machine with three states represented by a 2-bit output. The state transitions depend on a single input bit and a clock signal, with the machine resetting to state C (00) upon reset. In state C, if the input bit is 0, it transitions to state B (01); in state B, it remains or transitions to state A (10) based on the input. In state A, it can move back to state B upon receiving a 0 input. The primary purpose of this module is to react to the input bit while maintaining a specific state behavior based on previous states.
+module top_module(
+  input wire clk,
+  input wire reset,
+  input wire input_bit,
+  output reg [1:0] state
+);

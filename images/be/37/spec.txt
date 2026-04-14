@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+
+Implement the design of a 8-bit shift register with parallel load and serial output functionality. The shift register includes a clock signal (clk), reset signal (rst_n), load signal (load), and serial input signal (si). The shift register takes an 8-bit parallel input (pi) and produces an 8-bit parallel output (po) along with a serial output (so).
+
+Module name:
+    shift_reg_8bit
+
+Input ports:
+    clk: Chip clock signal.
+    rst_n: Active-low reset signal. Defined as 0 for chip reset and 1 for reset signal inactive.
+    load: Load signal to load the shift register with a specific value.
+    si: Serial input signal.
+    pi: 8-bit parallel input.
+
+Output ports:
+    po: 8-bit parallel output.
+    so: Serial output signal.
+
+Implementation:
+Data bit control:
+On every positive edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the shift register (reg_r) is updated.
+If the reset signal (rst_n) is low, indicating a reset condition, the shift register (reg_r) is reset to 0.
+If the load signal (load) is high, the shift register (reg_r) is loaded with the parallel input value (pi).
+If the load signal (load) is low, the shift register (reg_r) shifts left by one bit and the serial input signal (si) is shifted into the least significant bit position.
+
+Give me the complete code.

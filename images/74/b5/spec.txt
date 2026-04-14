@@ -1,0 +1,18 @@
+Design a 16x32 register file that allows for the storage and retrieval of 32-bit wide data across 16 different registers. The module supports write operations through the WEN_A signal, which controls writing data input (W_DA) into a specific register identified by the WA_A input address. Data can be read from three registers simultaneously, determined by the addresses RA_A, RA_B, and RA_C, with the outputs GRF_X, GRF_Y, and GRF_Z providing the corresponding 32-bit data from each accessed register.
+module top_module(
+	input	wire					CLK, 
+	input	wire					WEN_A,
+
+	input	wire		[31:0]		W_DA,		
+
+
+	input	wire		[3:0]		RA_A,
+	input	wire		[3:0]		RA_B,
+	input	wire		[3:0]		RA_C,
+
+	input	wire		[3:0]		WA_A,
+
+	output	wire		[31:0]		GRF_X,
+	output	wire		[31:0]		GRF_Y,
+	output	wire		[31:0]		GRF_Z
+);

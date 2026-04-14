@@ -1,0 +1,7 @@
+Develop a circuit for echo cancellation that takes a current input signal and a delayed reference input signal. It utilizes a delay line to store the delayed version of the reference input and outputs the difference between the current input and the delayed signal. This effectively removes echoes from the input signal, allowing for clearer audio or data transmission. The module design is parameterized for a flexible word size, defined by the input parameter `n`.
+module top_module(
+  input clk, // Added clock input
+  input [n-1:0] in,
+  input [n-1:0] rin,
+  output [n-1:0] out
+);

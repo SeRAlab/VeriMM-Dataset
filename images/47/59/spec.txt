@@ -1,0 +1,19 @@
+Design a UART GPIO interface module that facilitates communication between UART signals and GPIO pins. The module routes the incoming UART transmit signal (io_uart_txd) to the output for the TX GPIO pin, while the RX GPIO pin receives an incoming UART signal (io_pins_rxd_i_ival) for its RX output (io_uart_rxd). In addition, it manages GPIO control signals such as output value, output enable, input enable, pull-up enable, and drive strength for both TX and RX pins, ensuring proper signal direction and functionality according to typical GPIO operations.
+module top_module(
+  input   clock,
+  input   reset,
+  input   io_uart_txd,
+  output  io_uart_rxd,
+  input   io_pins_rxd_i_ival,
+  output  io_pins_rxd_o_oval,
+  output  io_pins_rxd_o_oe,
+  output  io_pins_rxd_o_ie,
+  output  io_pins_rxd_o_pue,
+  output  io_pins_rxd_o_ds,
+  input   io_pins_txd_i_ival,
+  output  io_pins_txd_o_oval,
+  output  io_pins_txd_o_oe,
+  output  io_pins_txd_o_ie,
+  output  io_pins_txd_o_pue,
+  output  io_pins_txd_o_ds
+);

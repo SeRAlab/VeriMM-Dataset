@@ -1,0 +1,9 @@
+Design a circuit that implements a Manchester encoding and decoding scheme for a 4-bit wide input data and identifier. The module encodes the `data_in` and `id_in` inputs into a 32-bit `encoded_out` signal that includes start and stop bits. The encoding alternates the output bits based on the input values to facilitate synchronous transmission. On the decoding side, the module checks for valid start and stop bits, subsequently decoding the Manchester encoded input `encoded_in` back into `data_out` when conditions are met, ensuring that the identifier matches before outputting the data. This serves as a communication protocol to transmit and receive data securely over a medium.
+module top_module(
+  input [3:0] data_in,
+  input [3:0] id_in,
+  input clk,
+  output reg [31:0] encoded_out,  // Changed to reg type
+  input [31:0] encoded_in,
+  output reg [3:0] data_out
+);

@@ -1,0 +1,10 @@
+Design a signed 8-bit arithmetic calculator that performs addition, subtraction, multiplication, and division based on a 2-bit operation selector. The module accepts two signed 8-bit inputs, 'a' and 'b', along with a clock and reset signal. On each positive clock edge, it computes the result according to the selected operation and detects overflow conditions for addition, subtraction, and multiplication. If division is selected and the divisor is zero, it signals an overflow. The output is provided as a signed 8-bit value, while an overflow flag indicates if the operation resulted in an overflow condition.
+module top_module(
+    input clk,
+    input rst,
+    input [1:0] op,
+    input signed [7:0] a,
+    input signed [7:0] b,
+    output reg signed [7:0] out,
+    output reg overflow
+);

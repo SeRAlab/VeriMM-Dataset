@@ -1,0 +1,7 @@
+Design a 32-bit synchronous up-counter that increments its count value on each positive clock edge when enabled. The counter can be reset to zero asynchronously when the reset input is asserted. If the enable signal is low, the count value remains unchanged. The design is parameterized to support different bit widths by modifying the SIZE parameter.
+module top_module(
+  input clk, 
+  input reset,
+  input enable = 1,
+  output reg [SIZE-1:0] count
+);

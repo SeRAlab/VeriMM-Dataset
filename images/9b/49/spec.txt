@@ -1,0 +1,8 @@
+Construct an 8-bit wide simple register that captures and outputs data on the rising edge of a clock signal. When the reset signal is activated, the output is set to zero; otherwise, when the enable signal is asserted, the register loads data from the `data_in` input. This module serves as a fundamental storage element in digital circuits, enabling controlled data storage and transmission based on clock and control signals.
+module top_module(
+    input               clk,        // main clock
+    input               rst,        // main reset
+    input       [7:0]   data_in,    // input data
+    input               enable,     // enable signal
+    output reg  [7:0]   data_out    // output data
+    );

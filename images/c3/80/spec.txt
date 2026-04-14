@@ -1,0 +1,16 @@
+
+You are tasked with designing a verilog module that performs a specific function. The module should have the following inputs:
+- `clock`: a clock signal
+- `reset_n`: an active-low reset signal
+- `data_in`: a 32-bit input data signal
+- `write_en`: a write enable signal
+- `address`: a 5-bit address signal
+- `data_out`: a 32-bit output data signal
+
+The module should have the following functionality:
+- On the rising edge of the clock signal, if the reset signal is low, the output data signal should be set to 0.
+- If the write enable signal is high, the input data signal should be written to the memory location specified by the address signal.
+- On the rising edge of the clock signal, if the write enable signal is low, the output data signal should be set to the data stored in the memory location specified by the address signal.
+
+Assume that the memory has a capacity of 32 words, and that the memory is initialized with all 0s.
+

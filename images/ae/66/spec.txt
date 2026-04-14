@@ -1,0 +1,7 @@
+Design a dual-port RAM module that operates on a rising clock edge and can be reset asynchronously. The module contains a memory array capable of storing multi-bit data, specifically 64 entries of 512 bits each. Upon receiving a 'signal', it allows data from the `data_rx` input to be written into the memory locations, utilizing a write counter to track where to store the incoming data. The output `data_out` provides access to specific bits from one of the memory locations, determined by parameters `m` and `n`. The reset functionality initializes the memory to zero, while normal operation facilitates the continuous storage and retrieval of data in a configurable manner.
+module top_module(
+	input clk,
+	input reset,
+	input signal,
+	input [7:0] data_rx,
+	output reg [7:0] data_out);

@@ -1,0 +1,7 @@
+Design a 5-bit Fibonacci linear feedback shift register (LFSR) that generates a pseudo-random sequence of binary values. The LFSR is clocked by 'clk' and has an active-low reset 'rst_n'. When reset is low, the LFSR initializes its state to '11111'. On each rising edge of the clock, the register shifts its bits while computing the next state through the feedback mechanism, which is derived from the XOR of the fifth and second bits. The current state is output on 'data', providing the evolving sequence of bits based on the LFSR calculation.
+module top_module(
+  input  clk,
+  input  rst_n,
+
+  output [4:0] data
+);

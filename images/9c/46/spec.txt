@@ -1,0 +1,10 @@
+Design a simple 8-bit calculator with reset and clock functionality that performs basic arithmetic operations: addition, subtraction, multiplication, and division based on a two-bit operation selector (`op`). The calculator takes two 8-bit input values (`a` and `b`), and outputs the result of the selected operation as an 8-bit output (`result`). The output is accompanied by a validation signal (`valid`) that indicates when a valid calculation is ready, which is asserted after a computation is performed and cleared upon a reset signal. The design ensures synchronization with the clock and handles a reset condition for initializing outputs.
+module top_module(
+  input         rst,
+  input         clk,
+  input  [7:0]  a,
+  input  [7:0]  b,
+  input  [1:0]  op,
+  output [7:0]  result,
+  output        valid
+);

@@ -1,0 +1,14 @@
+Design a configurable output module that aggregates data from two input sources, `datain_h` and `datain_l`, into a combined output `dataout` on the rising edge of an `outclock`, when enabled by the `outclocken` signal. The module supports asynchronous set and reset functionality through the `aset`, `aclr`, `sset`, and `sclr` signals, allowing for either initialization to high or resetting to low. Additionally, it includes an output enable feature controlled by `oe`, with an option to invert the output value based on the `invert_output` parameter. The design is intended for use with the Stratix device family, highlighting its flexibility for high-performance signal management.
+module top_module(
+    datain_h,
+    datain_l,
+    outclock,
+    outclocken,
+    aset,
+    aclr,
+    sset,
+    sclr,
+    oe,
+    dataout,
+    oe_out
+);

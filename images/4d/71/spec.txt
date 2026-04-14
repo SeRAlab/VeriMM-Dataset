@@ -1,0 +1,12 @@
+Design a shift register comparator circuit that shifts in a 16-bit input (DATA_IN) on a positive clock edge when the LOAD signal is asserted. The circuit compares the shifted value against two 16-bit inputs (a and b) to determine if they are equal and if the shifted value is greater than or equal to b. The outputs include the shifted value, a signal indicating equality (eq), and a signal indicating whether the shifted value is greater than or equal to b (greater_eq). The comparator can reset to zero on the reset signal, ensuring clean initial conditions for operation.
+module top_module(
+    input clk,
+    input reset,
+    input [15:0] DATA_IN,
+    input LOAD,
+    input [15:0] a,
+    input [15:0] b,
+    output [15:0] DATA_OUT,
+    output eq,
+    output greater_eq
+);

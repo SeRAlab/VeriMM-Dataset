@@ -1,0 +1,15 @@
+Design a UART receiver module that operates based on a baud clock input and a reset signal. The module receives serial data via RX_DATA, processes the incoming bits to assemble an 8-bit data byte into RX_BUFFER, and handles optional parity checking. It maintains a state machine to control the data sampling process, where it transitions through various states to detect the start of data transmission, collect bits until a complete byte is received, and check for parity errors if enabled. The output signals FRAME, READY, and PARITY_ERR indicate the completion of a data frame, the readiness of the received data, and any detected parity error, respectively.
+module top_module(
+RESET_N,
+BAUD_CLK,
+RX_DATA,
+RX_BUFFER,
+
+RX_WORD,
+RX_PAR_DIS,
+RX_PARITY,
+PARITY_ERR,
+
+FRAME,
+READY
+);

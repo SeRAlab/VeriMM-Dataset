@@ -1,0 +1,8 @@
+The provided Verilog module, `erx_remap`, functions as an address remapping unit for packets in a communication system. It accepts an incoming access signal and a wide packet input, processing the address based on specified remapping modes, selection patterns, and base addresses. The module supports both static and dynamic remapping of addresses, where static remapping is defined by a pattern matched against the input selection, and dynamic remapping adjusts the address based on a column identifier and base value. The processed output includes an updated access signal and a remapped packet that reconfigures the address while preserving other packet data. This design is essential for managing address translation in systems requiring flexible routing of data packets, such as in network-on-chip (NoC) architectures.
+module top_module(
+   
+   emesh_access_out, emesh_packet_out,
+   
+   clk, emesh_access_in, emesh_packet_in, remap_mode, remap_sel,
+   remap_pattern, remap_base
+   );

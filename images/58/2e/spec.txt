@@ -1,0 +1,8 @@
+Design a baud rate generator that produces a clock signal (baud_clk_o) for UART communication. The module counts clock cycles based on the input baud rate register value (uart_brr_i), resetting the count when the reset signal (rst_i) is asserted or when the generator is disabled (enable_i). When the count reaches the value specified by uart_brr_i, it outputs a high signal on baud_clk_o, indicating that the baud rate condition has been met. This module enables the generation of a specific baud rate clock necessary for serial communication in embedded systems.
+module top_module(
+						clk_i,
+						rst_i,
+						enable_i,
+						uart_brr_i,
+						baud_clk_o
+);

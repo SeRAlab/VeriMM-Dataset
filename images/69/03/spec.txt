@@ -1,0 +1,12 @@
+Design a sequential circuit that monitors two inputs, `a` and `b`, to detect simultaneous rising and falling edges, generating signals for rising (`rise`) and falling (`down`) conditions. The circuit maintains a state machine with three states to differentiate between rising, falling, and stable conditions, updating the previous input status accordingly. Additionally, it implements a multiplexer controlled by `sel_b1` to output either `a` or `b` for `out_always`. The final output (`final_out`) combines the selected input with the detection signals, ensuring that it is asserted only when either a rise or a fall has been detected. The design incorporates reset logic to initialize the state and outputs to a defined condition.
+module top_module(
+  input               clk,
+  input               rst_n,
+  input               a,
+  input               b,
+  input               sel_b1,
+  output reg          out_always,
+  output reg          rise,
+  output reg          down,
+  output reg          final_out
+);

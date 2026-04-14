@@ -1,0 +1,10 @@
+Design a circuit that processes various input signals to generate a three-bit output based on specific conditions. The module takes a primary input A and a SLEEP control signal, along with power and ground references (VPWR, VGND, VPB, VNB). It produces a three-bit output X, where each bit represents an inverted signal conditionally based on the state of A and SLEEP. Specifically, if A is high, VPWR is inverted; if SLEEP is active, VPB is inverted; and if VGND is active, VNB is inverted. This functionality allows for controlled power management in response to the input states, making it suitable for low-power applications.
+module top_module(
+    input A,
+    input SLEEP,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB,
+    output X
+);

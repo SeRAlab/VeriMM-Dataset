@@ -1,0 +1,9 @@
+Design an 8-bit up/down counter that increments or decrements based on an input control signal. The counter is clock-driven and supports loading values for both incrementing and decrementing operations. When the reset signal is active, the counter initializes to zero for the up counter and fifteen for the down counter. The `up_down` input determines the counting direction: if high, the counter increments from the last loaded value, and if low, it decrements. The final count value is the sum of the up and down counters, resulting in an effective count range of 0 to 15 in increments or decrements based on the control signals provided.
+module top_module(
+    input clk,
+    input up_down,
+    input load_up,
+    input load_down,
+    input reset,
+    output reg [7:0] count
+);

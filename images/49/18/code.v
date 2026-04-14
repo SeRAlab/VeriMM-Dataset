@@ -1,0 +1,35 @@
+module top_module(
+    i_data0,
+    o_data0
+);// Port mode declarations:
+  input   [31:0] i_data0;
+  output  [31:0] o_data0;
+
+  //Multipliers:
+
+  wire [31:0]
+    w1,
+    w2048,
+    w2047,
+    w16,
+    w15,
+    w16376,
+    w18423,
+    w3840,
+    w22263;
+
+  assign w1 = i_data0;
+  assign w16 = w1 << 4;
+  assign w1 = i_data0;
+  assign w2048 = w1 << 11;
+  assign w2047 = w2048 - w1;
+  assign w16376 = w2047 << 3;
+  assign w18423 = w2047 + w16376;
+  assign w15 = w16 - w1;
+  assign w3840 = w15 << 8;
+  assign w22263 = w18423 + w3840;
+
+  assign o_data0 = w22263;
+
+  //multiplier_block area estimate = 6449.88962775735;
+endmodule

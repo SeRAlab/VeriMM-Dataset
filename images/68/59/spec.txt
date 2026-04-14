@@ -1,0 +1,7 @@
+Design a pattern detector that identifies a specific sequence of data based on incoming 8-bit signals. The module counts the number of consecutive zeros and ones it receives, utilizing a shift register to store the last 8 incoming bits. If the detector counts four consecutive zeros followed by four consecutive ones, while ensuring the earlier bits in the shift register are zeros, the output signal indicates that the desired pattern has been detected. The operation is synchronized with a clock signal, and all counting and detection activities can be reset with an external reset signal.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] data_in,
+    output reg pattern_detected
+);

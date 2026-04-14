@@ -1,0 +1,7 @@
+Design a control unit that manages a state machine for processing temperature data. The module transitions through three states: "loadValues," where it signals to load values; "compare," where it indicates to compare the data; and "waitSensor," where it idles until the temperature sensor is ready. The outputs control loading and comparing operations based on the current state, and the system synchronizes its state changes with a clock signal, ensuring proper timing for the transitions and output signals.
+module top_module(
+	input clk,
+	input tempReady,
+	output reg load,
+	output reg compareData
+    );

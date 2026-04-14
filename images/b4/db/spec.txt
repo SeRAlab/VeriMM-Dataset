@@ -1,0 +1,8 @@
+Design a SPI (Serial Peripheral Interface) state machine that operates on a clock signal, enabling data communication between a master and a slave device. The state machine defines four operational states: IDLE, TRANSFER, RECEIVE, and DONE. In the IDLE state, it waits for the slave select signal (ssel) to initiate the transfer. The TRANSFER state manages the data being sent, and upon detecting a low master input, it transitions to the RECEIVE state, where it captures the incoming data on the master output, slave input line (mosi). Once the slave select signal goes high, the machine transitions to the DONE state, indicating the end of the communication cycle, before reverting back to IDLE. The module includes control logic to manage the mosi and miso signals accordingly based on the current state.
+module top_module(
+  input clk, // clock signal
+  input rst, // reset signal
+  input mosi, // master output, slave input signal
+  input ssel, // slave select signal
+  output reg miso // master input, slave output signal
+);

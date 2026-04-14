@@ -1,0 +1,7 @@
+Design a magnitude comparator that compares two 3-bit inputs, `a` and `b`. The module outputs the greater of the two values as `comparison_result`, and indicates which input was selected through `input_selected`. If `a` is greater than `b`, `comparison_result` is set to `a` and `input_selected` is `00`. If `b` is greater than `a`, `comparison_result` is set to `b` and `input_selected` is `01`. If both inputs are equal, it outputs `a` and uses the `select` input to determine `input_selected`. This module can be useful for selecting the maximum value from two inputs based on their magnitude.
+module top_module(
+    input [2:0] a, b,
+    input [1:0] select,
+    output reg [2:0] comparison_result,
+    output reg [1:0] input_selected
+);

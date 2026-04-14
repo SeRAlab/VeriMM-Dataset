@@ -1,0 +1,13 @@
+Design a decrementing counter module with reset and load capabilities. The counter operates on a clock signal and can be reset to zero or loaded with a specific value. When enabled, it decrements its value until it reaches zero, at which point it outputs a "ready" signal. The counter's output is a word-sized value, allowing for an 8-bit wide counter system, configurable through parameters. The module ensures that when loaded, it starts counting down from the specified input value rather than continuously decrementing from its current value.
+module top_module(
+	
+	input  iReset,
+	input  iClk,
+
+	input  iLoad,
+	input  iEnable,
+	input  [WORDSIZE-1:0] iCounter,
+	output [WORDSIZE-1:0] oCounter,
+
+	output oReady
+);

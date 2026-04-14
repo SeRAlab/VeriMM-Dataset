@@ -1,0 +1,13 @@
+Design a dual-port memory module comprised of two separate block RAMs: one for storing state information (6 bits) and another for larger data (128 bits). It operates with a clock signal and supports both write and read operations for each memory type, controlled by individual write-enable and read-enable signals. The address input allows for selection of memory locations, while the outputs provide the corresponding stored state and data values. The module is tailored for applications requiring efficient management of states and corresponding data in a single integrated memory structure.
+module top_module(
+  input clk,
+  input state_we_in,
+  input state_re_in,
+  input [31:0] addr_in,
+  input [5:0] state_in,
+  input data_we_in,
+  input data_re_in,
+  input [127:0] data_in,
+  output reg [5:0] state_out,
+  output reg [127:0] data_out
+);

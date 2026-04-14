@@ -1,0 +1,8 @@
+Design a signed 4-bit Booth's multiplier that computes the product of two signed 4-bit inputs, `multiplier` and `multiplicand`. This module processes the multiplication operation on the rising edge of the clock, utilizing a reset signal to initialize the product to zero and load the input values. The multiplier is iteratively shifted and evaluated, with actions taken based on the two least significant bits of the shifted multiplier: if they are `01`, the multiplicand is added to the product; if they are `10`, the multiplicand is subtracted. The resulting product, which has 8 bits of width to accommodate the signed output, is continuously updated and provided at the output.
+module top_module(
+  input signed [3:0] multiplier,
+  input signed [3:0] multiplicand,
+  input clock,
+  input reset,
+  output signed [7:0] product
+);

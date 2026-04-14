@@ -1,0 +1,3 @@
+Design a hazard detection and control unit for a pipelined processor. This module prevents data hazards by controlling the flow of instructions: it disables writing to the program counter and instruction fetch when a load-use hazard is detected (i.e., when there's a memory read that conflicts with upcoming instruction reads). Additionally, it manages instruction fetching and flushing based on the state of the program counter selector, ensuring correct execution flow by enabling or disabling instruction writes and flushing instructions in the pipeline as necessary according to the generated control signals.
+module top_module(IDtoEX_RegRt,IDtoEX_MemRead,IFtoID_RegRs,IFtoID_RegRt,
+              PCWrite,IFDWrite,IFD_Flush,IDEX_Flush,PCSrc);

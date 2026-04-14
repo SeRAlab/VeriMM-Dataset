@@ -1,0 +1,33 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform data width conversion with optional rounding. It takes an input signal of a certain bit width (`IWID`) and outputs a signal of a potentially different bit width (`OWID`). The module supports both truncation and rounding operations based on the input parameters. This functionality is crucial in digital signal processing (DSP) applications, data compression, and wherever data width adjustments are necessary to match interface specifications or to optimize resource utilization.
+
+The module can operate in several modes depending on the relationship between the input width (`IWID`), output width (`OWID`), and the shift parameter (`SHIFT`):
+Direct copy when input and output widths are equal.
+Truncation or rounding when reducing the bit width.
+The module supports an optional shift operation before truncation or rounding, allowing for more flexible data manipulation.
+
+Module name:  
+	convround
+
+Input ports:
+	i_clk (input, wire): The clock signal. The module performs its operations on the rising edge of this clock.
+	i_ce (input, wire): Clock enable signal. The module only performs operations when this signal is high, allowing for conditional processing based on external control logic.
+	i_val (input, wire, signed [(IWID1):0]): The input value to be converted. It is a signed integer with a bit width defined by the parameter IWID.
+Output ports:
+	o_val (output, reg, signed [(OWID1):0]): The output value after conversion. It is a signed integer with a bit width defined by the parameter OWID.
+
+
+Implementation:
+The Verilog module convround is designed to perform data width conversion with optional rounding. It takes a signed input i_val of width IWID and outputs a potentially rounded, signed value o_val of width OWID. The module operates on the rising edge of an input clock i_clk and is enabled by an input signal i_ce. The parameter SHIFT determines how many bits are discarded (shifted) from the least significant side of i_val before rounding or truncation occurs.
+The module's behavior is determined by comparing the input width (IWID), output width (OWID), and the shift amount (SHIFT). Four distinct operational modes are defined using conditional compilation (generate-if constructs), each tailored to specific relationships between these parameters:
+Equal Widths (IWID == OWID): Directly assigns the input value to the output upon each clock cycle when enabled, without any modification.
+  
+Truncation Without Rounding (IWID-SHIFT == OWID): Discards the least significant SHIFT bits from i_val and assigns the result to o_val. This mode does not perform rounding; it merely truncates the input to fit the output width.
+  
+Rounding to Nearest (IWID-SHIFT-1 == OWID): This mode is intended for scenarios where the output width is one bit less than the input width minus the shift amount. It rounds the input value to the nearest representable output value. If the least significant bit to be kept (first_lost_bit) is 1, the value is rounded up by adding 1 to the truncated value, unless the truncated value is zero.
+  
+General Rounding: This is the most complex mode, designed for cases where the output width is smaller than the input width minus the shift amount by more than one bit. It considers not only the first lost bit but also any other lost bits (other_lost_bits). If any of these bits are 1, or if the first lost bit is 1 and the least significant bit of the truncated value (last_valid_bit) is 1, the value is rounded up by adding 1 to the truncated value.
+
+Give me the complete code.
+

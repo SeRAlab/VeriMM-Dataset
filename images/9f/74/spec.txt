@@ -1,0 +1,11 @@
+Design a versatile 4-input multiplexer combined with a 4-bit adder/subtractor. The module takes in four 4-bit inputs (A, B, C, D) and selects one of them based on a 2-bit select signal. The selected input is then either added to or subtracted from the input B, depending on the state of the M control signal (addition when M=0, subtraction when M=1). The module also includes overflow detection logic to indicate when the result exceeds the representable value, outputting this status through the overflow signal V. The final output S provides the result of the addition or subtraction operation.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [3:0] C,
+    input [3:0] D,
+    input [1:0] select,
+    input M,
+    output reg [3:0] S,
+    output reg V
+);

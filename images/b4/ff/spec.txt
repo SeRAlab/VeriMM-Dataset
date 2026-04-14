@@ -1,0 +1,7 @@
+Design a memory arbiter that manages access requests from multiple sources. It takes an n-bit input signal representing request lines and a clock signal, while also responding to a reset signal. Upon each clock cycle, if reset is not active, the arbiter identifies the highest priority request amongst the input signals and grants access accordingly by updating its internal state. The output indicates which request has been granted access to the shared resource, ensuring that only one request is served at any time to maintain orderly access.
+module top_module(
+  input [n-1:0] REQ,
+  input CLK,
+  input RST,
+  output GRANT
+);

@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+
+Implement an up counter. The module counts from 0 to 255 on each rising edge of the clock. The counter can be reset to 0 synchronously.
+
+Module name:  
+    up_counter    
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    reset: Synchronous reset signal.
+
+Output ports:
+    count: 8-bit output data representing the current count value.
+
+Implementation:
+The register is defined as reg [7:0] count and initialized to 0 using the initial statement. On the rising edge of the clock, if the reset signal is active (reset == 1), the counter is set to 0. Otherwise, the counter is incremented by 1: count <= count + 1.
+
+Give me the complete code.
+
+module up_counter(clk, reset, count);
+
+    input  clk;  
+    input  reset;  
+    output  [7:0] count;

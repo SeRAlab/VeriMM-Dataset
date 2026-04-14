@@ -1,0 +1,12 @@
+Design a SPI (Serial Peripheral Interface) slave module that communicates with a master device using an 8-bit data format. The module captures data on the MOSI line synchronized with the clock signal (SCK) and indicates completion of the transfer via a done signal. When the slave select (SS) signal is active, the module stores incoming data from the din input, shifts it in bit by bit on each rising edge of the clock, and outputs the collected data on the dout signal after eight clock cycles. The MISO line outputs the most significant bit of the shift register during the transfer, and various internal registers maintain the state of relevant signals and data throughout the operation. The module also handles reset conditions to initialize internal states appropriately.
+module top_module(
+    input clk,
+    input rst,
+    input ss,
+    input mosi,
+    output miso,
+    input sck,
+    output done,
+    input [7:0] din,
+    output reg [7:0] dout
+);

@@ -1,0 +1,13 @@
+Design a Wishbone bus interface module that supports both read and write operations. This module takes various inputs, including a clock signal, reset signal, and Wishbone control signals, to manage data transactions. It contains a state machine that acknowledges incoming requests, handles data reading and writing, and maintains an output acknowledgment signal. The module features specific address mapping for interrupt generation and manages internal registers to store the address and data for operations. Upon reset, the module initializes its registers to zero and clears acknowledgment and interrupt outputs. When a write operation is detected, it stores the given address and data, whereas, for a read operation, it outputs the stored address.
+module top_module(
+  input             clk,
+  input             rst,
+  input             i_wbs_cyc,
+  input             i_wbs_stb,
+  input      [31:0] i_wbs_adr,
+  input      [31:0] i_wbs_dat,
+  input             i_wbs_we,
+  output reg [31:0] o_wbs_dat,
+  output reg        o_wbs_ack,
+  output reg        o_wbs_int
+);

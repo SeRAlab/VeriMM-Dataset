@@ -1,0 +1,10 @@
+Design a module that combines a 4-bit shift register and a 4-bit binary counter, along with an 8-bit output for their combined sum. The shift register shifts in new data from the 4-bit input `d` when the enable signal is high, while the counter increments on each clock cycle until it overflows. Both components support synchronous active-high reset functionality to initialize their states. The output `q` reflects the current value of the shift register, `counter_q` shows the current count value, and `sum` provides the concatenated result of the shift register and counter outputs.
+module top_module(
+    input clk,
+    input reset,            // Synchronous active-high reset
+    input [3:0] d,          // 4-bit input for the shift register
+    input enable,           // Active high enable for the shift register
+    output [3:0] q,         // 4-bit output from the shift register
+    output [3:0] counter_q, // 4-bit output from the binary counter
+    output [7:0] sum        // 8-bit output from the functional module
+);

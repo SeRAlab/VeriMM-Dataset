@@ -1,0 +1,12 @@
+Design a first-in, first-out (FIFO) memory buffer that operates via clock signals, allowing data to be written and read in a sequential manner. The module supports writing and reading operations controlled by write enable (WEN) and read enable (REN) signals. It includes a reset functionality to initialize pointers and status flags, and it tracks the full and empty states of the buffer. The FIFO can handle a configurable depth and width for data storage, making it suitable for temporarily holding data in various applications such as buffering between different clock domains or processes.
+module top_module(
+    input CLK,
+    input RESET,
+    input WEN,
+    input REN,
+    input valid,
+    input [WIDTH-1:0] Data_in, // Changed to a single input
+    output reg [WIDTH-1:0] Data_out, // Changed to reg type
+    output [DEPTH-1:0] Full_out,
+    output [DEPTH-1:0] Empty_out
+);

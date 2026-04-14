@@ -1,0 +1,7 @@
+Design a versatile cryptographic module capable of performing encryption, decryption, and hashing operations on input data. The module accepts a 64-bit input, a 128-bit key, and a control signal that determines the specific operation: a value of 0 triggers encryption, 1 triggers decryption, and 2 triggers hashing, generating a 64-bit output. The implementation details of each operation are encapsulated in separate functions, ensuring a modular approach to cryptographic functionality.
+module top_module(
+  input [n-1:0] in,
+  input [k-1:0] key,
+  input ctrl,
+  output reg [m-1:0] out // Change to reg type as out needs to be assigned in always block
+);

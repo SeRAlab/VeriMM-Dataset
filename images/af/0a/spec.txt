@@ -1,0 +1,12 @@
+Design a circuit that interfaces with an external device using a read signal and transfers an 8-bit data input to an output register. The module receives a clock signal, a receive signal (rxf_n_in), and an 8-bit data input (d_in). It generates control signals for reading the data based on the state of the receive signal and manages data flow using a delayed read approach. The output register (d_out) holds the received data, while the first four bits of this output are reflected on a set of LEDs. Additionally, it ensures that the write signal is always disabled and forwards the receive signal to another output. Overall, this module functions as a data receiver with a simple control logic for reading data on specific conditions.
+module top_module(
+    input clk,
+	 input rxf_n_in,
+	 input[7:0] d_in,
+	 output rxf_n_out,
+	 output rd_n_out,
+	 output wr_n_out,
+	 output rd_n_buf,
+	 output reg[7:0] d_out,
+	 output[3:0] led
+    );

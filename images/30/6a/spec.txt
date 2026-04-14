@@ -1,0 +1,9 @@
+
+Design a simple Kalman filter in Verilog that estimates the position of a moving object. The filter should take in a noisy measurement of the position and an estimated previous position, and output a new estimated position. The Kalman filter equations to be implemented are:
+1. Prediction step:
+   - Predicted state: x' = x + v * dt (where v is the velocity, assumed constant)
+   - Predicted covariance: P' = P + Q (process noise covariance)
+2. Update step:
+   - Kalman gain: K = P' / (P' + R) (measurement noise covariance)
+   - Updated state: x = x' + K * (z - x') (where z is the measurement)
+   - Updated covariance: P = (1 - K) * P'

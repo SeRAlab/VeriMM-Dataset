@@ -1,0 +1,10 @@
+Design a multi-channel mutex memory interface that allows writing data into a specific channel based on the provided address and write strobe signal. It utilizes a simple RAM structure to store 11-bit input data across four channels, selected via a 2-bit channel control signal (Q). The module ensures data is written to the correct channel when the write strobe is active and manages the current channel state with clocked logic, outputting the 9 least significant bits of the selected channel's data to the output.
+module top_module(
+    input [10:0] Data_In,
+    input [3:0] Mutex_Addr_I_reg,
+    input [31:23] Mutex_Wr_Data_I_reg,
+    input Write_Strobe,
+    input [1:0] Q,
+    input S0_AXI_ACLK,
+    output reg [8:0] D
+);

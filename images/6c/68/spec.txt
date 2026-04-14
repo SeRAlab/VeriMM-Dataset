@@ -1,0 +1,10 @@
+Design a non-restoring divider capable of performing division of two n-bit binary numbers. This module takes in a clock signal, a start signal, a dividend, and a divisor, and outputs the quotient and remainder once the division is complete. The division process is initiated when the start signal is asserted, transitioning the state from idle to operational phases where it repeatedly subtracts the divisor from the dividend, updating the quotient and remainder accordingly, until the division is complete. The output signals indicate when the operation is done, with the final results available in the quotient and remainder registers.
+module top_module(
+  input clk,
+  input start,
+  input [n-1:0] dividend,
+  input [n-1:0] divisor,
+  output reg done,
+  output reg [n-1:0] quotient,
+  output reg [n-1:0] remainder
+);

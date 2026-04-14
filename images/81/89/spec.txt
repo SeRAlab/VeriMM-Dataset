@@ -1,0 +1,7 @@
+Design a PWM (pulse-width modulation) generator module that produces two independent PWM signals with adjustable duty cycles. The module takes a 1 MHz clock input and two 12-bit wide duty cycles as inputs. It maintains a 15-bit counter that increments with each clock cycle up to 20,000, effectively creating a period of 20 milliseconds. The outputs, `pwm_out[0]` and `pwm_out[1]`, are set high based on whether the counter value is less than the respective duty cycle values, allowing for varying pulse widths to control devices like servos or motors.
+module top_module(
+    input clk_1m,
+    input [11:0] pwm_duty0,
+    input [11:0] pwm_duty1,
+    output [1:0] pwm_out
+    );

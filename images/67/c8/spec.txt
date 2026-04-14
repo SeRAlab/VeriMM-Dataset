@@ -1,0 +1,9 @@
+Design a module that functions as an 8-bit Arithmetic Logic Unit (ALU) capable of performing various binary operations such as addition, subtraction, bitwise AND, OR, and XOR based on a 3-bit operation code (op). The ALU takes two 8-bit inputs (a and b) and outputs the result of the selected operation to a result register, which is updated based on a write enable signal (reg_write) and a 5-bit register address (reg_addr). The ALU supports both arithmetic and logical operations, allowing for flexibility in data processing in a digital system.
+module top_module(
+  input [2:0] op,
+  input [7:0] a,
+  input [7:0] b,
+  input [4:0] reg_addr,
+  input reg_write,
+  output reg [7:0] result  // Change wire to reg
+);

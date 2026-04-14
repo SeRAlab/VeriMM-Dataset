@@ -1,0 +1,10 @@
+Design a synchronous 4-bit up counter with load and enable functionality. The counter increments its value on each clock cycle when enabled, and it can reset to zero or load a new value from `data_in` based on the reset and load signals respectively. It also features a carry-out signal that indicates when the counter has reached its maximum value (15). The current count is output through the `count` signal, allowing for easy monitoring or use in other circuits.
+module top_module(
+    input clk,
+    input reset,
+    input enable,
+    input load,
+    input [3:0] data_in,
+    output reg [3:0] count,
+    output reg carry_out
+);

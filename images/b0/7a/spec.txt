@@ -1,0 +1,9 @@
+Design a configurable edge-triggered latch with the capability to output data based on the clock signal and an external control signal. The module has a data input (d), a clock input (clk), a set/reset signal (sr), a reset value (srval), and a high pass control signal (pass_high). When the clock is high, the latch captures the input data; when low, it captures data as well but from a different path. Additionally, if the set/reset signal is activated, it overrides the data input by loading a predetermined value. The final output (q) selects between the outputs of the high or low clock states based on the pass_high signal, facilitating versatile behavior in data sampling and state retention.
+module top_module(
+    input wire d,
+    input wire clk,
+    input wire sr,
+    input wire srval,
+    input wire pass_high,
+    output wire q
+);

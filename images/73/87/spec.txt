@@ -1,0 +1,10 @@
+Design a finite state machine (FSM) that detects a specific sequence of data inputs. The module monitors four 8-bit data inputs (data1, data2, data3, and data4) and transitions through a series of states (IDLE, S1, S2, S3) based on the presence of predefined patterns: `data1` should match `8'b10101010` to move to state S1, `data2` should match `8'b01010101` to transition to S2, `data3` again checks for `8'b10101010` for progression to S3, and finally, `data4` must match `8'b01010101` to return to IDLE while asserting a match signal. The FSM is controlled by a clock and can be reset, ensuring it maintains predictable behavior in recognition of the sequence.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data1,
+  input [7:0] data2,
+  input [7:0] data3,
+  input [7:0] data4,
+  output reg match
+);

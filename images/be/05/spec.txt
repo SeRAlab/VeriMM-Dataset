@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Construct a synchronous 4-bit up/down counter with enable and reset signals.
+
+Module name:
+    updown_counter
+
+Input ports:
+    CLK: Input clock signal
+    RST: Reset signal
+    EN: Enable signal
+    UP_DOWN: Control signal to determine count direction (1 for up, 0 for down)
+
+Output ports:
+    COUNT: 4-bit output count
+
+Implementation:
+The counter increments or decrements on the positive edge of CLK based on the value of UP_DOWN. If RST is active, the counter resets to 0. The counter operates only when EN is active.
+
+Give me the complete code.
+
+module updown_counter (CLK, RST, EN, UP_DOWN, COUNT);
+input CLK, RST, EN, UP_DOWN;
+output reg [3:0] COUNT;

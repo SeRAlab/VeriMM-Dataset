@@ -1,0 +1,10 @@
+Develop a UART transmitter module that serially sends out data over a TX line. The module, upon enabling and data readiness signals, transitions through states to transmit a start bit, followed by each bit of the input data, and finally a stop bit. It utilizes parameters for data width and maintains states for idle, transmitting, and completion, while controlling the read signal to indicate when data is being processed. The module is resettable and operates synchronously with a clock input.
+module top_module(
+  input                       CLK,
+  input                       RST,
+  input                       EN,
+  input   [DATAWIDTH - 1 : 0] DATA,
+  input                       DATARDY,
+  output                      READ,
+  output                      TX
+);

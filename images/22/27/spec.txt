@@ -1,0 +1,11 @@
+
+Create a simple 2-bit branch predictor that predicts whether the next branch will be taken or not based on the current branch outcome. The predictor will use a 1-bit saturating counter for each branch to make the prediction. The state transitions are as follows:
+- If the prediction is "taken" and the actual outcome is "taken," stay in the same state (strongly taken).
+- If the prediction is "taken" and the actual outcome is "not taken," move to "weakly taken."
+- If the prediction is "not taken" and the actual outcome is "not taken," stay in the same state (strongly not taken).
+- If the prediction is "not taken" and the actual outcome is "taken," move to "weakly not taken."
+The 2-bit counter states can be represented as:
+00 - strongly not taken
+01 - weakly not taken
+10 - weakly taken
+11 - strongly taken

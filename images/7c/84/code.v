@@ -1,0 +1,21 @@
+module top_module(clk, res, x, y, en, out);input clk, res, en;
+    input [31:0] x, y;
+    reg [7:0] exp_x, exp_y;
+    output reg [7:0] out;
+    
+    always @(posedge clk)
+    begin
+      exp_x = x[30:23];
+      exp_y = y[30:23];
+      begin
+      if(en)
+        out = exp_y;
+      else
+        out = exp_x;
+      end
+      begin
+      if(!res)
+        out = 0;
+      end
+    end
+endmodule

@@ -1,0 +1,9 @@
+Design a shift register with both serial and parallel loading capabilities. The circuit has an 8-bit register that shifts data on each positive clock edge. When the load signal is high, the most significant bit is filled with the input data while the existing bits shift right. If the parallel_load signal is asserted, the entire register is loaded with new data from the parallel_data_in input. Otherwise, the register performs a serial shift, moving the bits to the right and introducing new data from the data_in input at the least significant bit position. The most significant bit of the register is output as serial_out.
+module top_module(
+    clk,
+    load,
+    data_in,
+    parallel_load,
+    parallel_data_in,
+    serial_out
+);

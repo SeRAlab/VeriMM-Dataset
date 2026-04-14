@@ -1,0 +1,13 @@
+Design a 32-bit barrel shifter integrated with a 4-bit shift register, capable of performing variable shifts based on a given shift amount. The module includes an asynchronous reset and supports loading new register data. The barrel shifter allows for both logical and arithmetic shifts, outputting the shifted result and a zero flag that indicates if the output is zero. Additionally, the shift register provides a 4-bit output and can operate in an enabling mode, cycling through its values with each clock cycle, allowing for flexible data manipulation in digital signal processing or general-purpose computation applications.
+module top_module(
+  input clk,
+  input areset, // Async active-high reset to zero
+  input load,
+  input ena,
+  input [31:0] data_in, // 32-bit input data for the barrel shifter
+  input [4:0] shift_amount, // 5-bit shift amount input for the barrel shifter
+  output [31:0] data_out, // 32-bit output of the barrel shifter
+  output zero_flag, // Flag indicating whether the shifted output is zero
+  input [3:0] reg_data_in, // 4-bit input data for the shift register
+  output reg [3:0] q // 4-bit output of the shift register
+);

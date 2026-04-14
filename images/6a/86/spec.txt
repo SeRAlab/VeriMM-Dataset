@@ -1,0 +1,13 @@
+Design a circuit that performs a magnitude comparison between two 3-bit inputs, `a` and `b`, generating a result indicating which input is larger. This functionality is implemented as a magnitude comparator, which outputs a 3-bit comparison result encoded as follows: `001` if `a > b`, `010` if `a < b`, and `100` if both are equal. Based on a 2-bit `select` input, the circuit can choose to pass the comparison results directly or set them to zero. The comparison results then control a 4-output decoder that activates one of the outputs (`Y0` through `Y3`) corresponding to the magnitude relationship detected. Finally, the circuit generates a 2-bit `final_output` by combining specific outputs of the decoder. This module effectively integrates comparison, selection, and decoding functionalities for multiple digital signal processing applications.
+module top_module(
+    input clk,
+    input [2:0] a, b,
+    input [1:0] select,
+    output reg Y0,
+    output reg Y1,
+    output reg Y2,
+    output reg Y3,
+    output reg [2:0] comparison_result,
+    output reg [1:0] input_selected,
+    output reg [1:0] final_output
+);

@@ -1,0 +1,10 @@
+Design a delay buffer circuit that processes a one-bit input signal with configurable delay and operational modes. The module features a clocked operation where it can either bypass the input directly to the output, implement a specified delay for signal transmission, or use a mixed mode that allows for either the input to be bypassed or delayed based on additional bypass settings. The output will follow the input signal with a specified delay, defined by the `delay` input, while also allowing for reset functionality.
+module top_module(
+    input data_in,
+    input clk,
+    input rst,
+    input [2:0] delay,
+    input [1:0] bypass,
+    input [1:0] mode,
+    output reg data_out
+);

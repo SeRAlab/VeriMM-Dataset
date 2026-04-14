@@ -1,0 +1,7 @@
+Design a synchronous binary counter that increments its count based on transitions detected in the upper 31 bits of a 32-bit input. The counter resets to zero when the reset signal is activated and captures the current input value on every rising clock edge. Upon detecting an increase in the significant bits of the input compared to the previous input, the counter increments its value by one. The 8-bit output portrays the current count value.
+module top_module(
+    input clk,
+    input reset,           // Synchronous active-high reset
+    input [31:0] in,       // 32-bit input for the transition detector module
+    output reg [7:0] count // 8-bit output representing the count
+);

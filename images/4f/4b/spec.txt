@@ -1,0 +1,26 @@
+Design a four-way set associative cache module with 64 entries, each capable of storing 64-bit data. The module handles read (RD) and write (WR) requests while managing state through a clock and reset signals. It provides outputs to indicate read validity, absence of hits, and output data, along with MMU flags for read operations. The cache does not seem to process actual memory transactions or store data (as indicated by constant zero outputs), suggesting that this implementation may serve as a placeholder or for simulation purposes rather than functioning as a fully operational cache system.
+module top_module(
+		
+		input wire iCLOCK,
+		input wire inRESET,
+		input wire iRESET_SYNC,
+		
+		input wire iREMOVE,
+		
+		
+		input wire iRD_REQ,
+		output wire oRD_BUSY,		
+		input wire [31:0] iRD_ADDR,		
+		
+		output wire oRD_VALID,
+		output wire oRD_HIT,
+		input wire iRD_BUSY,		
+		output wire [63:0] oRD_DATA,
+		output wire [23:0] oRD_MMU_FLAGS,
+		
+		input wire iWR_REQ,
+		output wire oWR_BUSY,
+		input wire [31:0] iWR_ADDR,	
+		input wire [511:0] iWR_DATA,
+		input wire [255:0] iWR_MMU_FLAGS
+	);

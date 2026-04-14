@@ -1,0 +1,17 @@
+Implement a Verilog module based on the following description.
+The following diagram is a Moore machine implementation of a security gate controller. Implement in Verilog using one-hot encoding. Resets into state Gate_Closed and reset is asynchronous active-high.
+
+The state machine has the following states and their corresponding outputs:
+1. state Gate_Closed (gate_open = 0).
+2. state Gate_Open (gate_open = 1).
+
+State transitions:
+1. From state Gate_Closed: If open_signal = 1, then transition to state Gate_Open. If open_signal = 0, then transition to state Gate_Closed.
+2. From state Gate_Open: If close_signal = 1, then transition to state Gate_Closed. If close_signal = 0, then transition to state Gate_Open.
+
+module security_gate_controller (
+        input clk,
+        input areset,
+        input open_signal,
+        input close_signal,
+        output reg gate_open);

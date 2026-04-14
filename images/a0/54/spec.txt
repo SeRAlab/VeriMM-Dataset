@@ -1,0 +1,6 @@
+Design a circuit that extends a 16-bit immediate value to a 32-bit width. If the most significant bit of the 16-bit input signal is high and the control signal (Ctr) is activated, the extension will be sign-extended by prepending 16 ones; otherwise, it will be zero-extended by prepending 16 zeros. This functionality is commonly used in processing architectures to accommodate larger data sizes without loss of information.
+module top_module(
+input Ctr,
+input [15:0]imm_16,
+output reg[31:0]imm_32
+);

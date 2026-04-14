@@ -1,0 +1,12 @@
+Design a dual-port random-access memory (RAM) module that allows simultaneous read and write operations on two separate addresses. The module utilizes an 12-bit address space for each port and features an 8-bit wide data bus. On each clock cycle, if write enable signals are asserted for either port, the corresponding data is written to the specified memory location. Regardless of write operations, the module always outputs the data stored at the accessed addresses, allowing for concurrent access by two different processes.
+module top_module(
+    address_a,
+    address_b,
+    clock,
+    data_a,
+    data_b,
+    wren_a,
+    wren_b,
+    q_a,
+    q_b
+);

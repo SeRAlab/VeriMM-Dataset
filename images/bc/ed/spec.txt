@@ -1,0 +1,15 @@
+Design a simple UART interface module that connects input and output signals for serial communication. The module defines inputs for receiving data (RxD) and a control signal (CTSn) while providing outputs for transmitting data (TxD) and another control signal (RTSn). The design directly assigns the transmitted data from acia_tx to m_txd and the received data from m_rxd to acia_rx, effectively facilitating the data exchange between the UART interface and the associated ACIA (Asynchronous Serial Interface Adapter).
+module top_module(
+  (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 <interface_name> RxD" *)
+  input m_rxd, 
+  (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 <interface_name> TxD" *)
+  output m_txd, 
+  (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 <interface_name> RTSn" *)
+  output m_rtsn, 
+  (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 <interface_name> CTSn" *)
+  input m_ctsn, 
+
+  input acia_tx,
+  output acia_rx
+  
+);

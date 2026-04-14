@@ -1,0 +1,9 @@
+Design a data path synchronization module that introduces a delay ("postponer") for various signal inputs related to a bus interface. The module takes multiple control and data signals, including address, transaction type, size, and write data, and outputs them with a specified delay. This functionality is essential to ensure that the signals remain synchronized and stable in a system where timing and sequence of operations are critical. The parameters allow for configurable widths for address and data buses, accommodating different system requirements.
+module top_module(
+   
+   hsel_d, hready_ba_d, hwrite_d, hmastlock_d, haddr_d, htrans_d, 
+   hsize_d, hburst_d, hwdata_d, hmaster_d, 
+   
+   hsel, hready_ba, hwrite, hmastlock, haddr, htrans, hsize, hburst, 
+   hwdata, hmaster
+   ) ;

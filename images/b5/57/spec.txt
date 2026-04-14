@@ -1,0 +1,10 @@
+Design a Mealy state machine with four states (S0, S1, S2, S3). It takes three inputs (a, b, c) and operates on the clock signal, resetting to S0 when activated. The state transitions depend on the input values: from S0, it transitions to either S1 or S2, from S1 to S0 or S3 based on input b, from S2 to S3 or back to S0 depending on input c, and remains in S3 unless reset. The outputs (out1 and out2) are determined by the current state, where different combinations of output are generated depending on whether the machine is in S0, S1, S2, or S3, indicating its operational status based on input conditions.
+module top_module(
+  input clk,
+  input reset,
+  input a,
+  input b,
+  input c,
+  output reg out1,
+  output reg out2
+);

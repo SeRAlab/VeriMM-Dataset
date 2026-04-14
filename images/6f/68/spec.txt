@@ -1,0 +1,8 @@
+Design a 2-stage shift register with reset and enable functionality. On the rising edge of the clock, if the reset signal is active, both stages are cleared to zero. If the enable signal is asserted, the first stage captures the input data, and the second stage receives the value of the first stage. When the enable signal is not asserted, the first stage holds its previous value while the second stage performs a left shift operation on the value of the first stage. The output reflects the current value of the first stage.
+module top_module(
+    input clk,
+    input rst,
+    input ena,
+    input [15:0] data_in,
+    output reg [15:0] data_out
+);

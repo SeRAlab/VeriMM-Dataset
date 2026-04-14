@@ -1,0 +1,9 @@
+Design a main decoder for a simplified instruction set architecture. This module takes a 6-bit opcode input and generates a set of control signals for various operations such as memory accesses, branching, and ALU operations. Based on the opcode, it assigns specific values to control signals like `regwrite`, `regdst`, `alusrc`, `branch`, `memwrite`, `mem2reg`, `jump`, and `aluop`, thus determining how subsequent operations should be executed in the processor. This functionality is crucial for directing the flow of data and control within the CPU.
+module top_module(
+    input [5:0] op,
+    output mem2reg, memwrite,
+    output branch, alusrc,
+    output regdst, regwrite,
+    output jump,
+    output [1:0] aluop
+    );

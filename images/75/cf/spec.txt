@@ -1,0 +1,10 @@
+Design a 16-bit register with load and increment functionality. The module outputs a 16-bit value stored in `q`, which can be initialized to a default value (`def`) on reset, loaded with a new value (`d`) when the `load` signal is asserted, or incremented by one when the `inc` signal is asserted, all synchronized to the rising edge of the clock (`CLK`). If the active-low reset (`RSTN`) is triggered, the register is reset to its default value.
+module top_module(
+  output reg [15:0] q,
+  input [15:0] def,    
+  input [15:0] d,
+  input load,
+  input inc,
+  input CLK,
+  input RSTN
+  );

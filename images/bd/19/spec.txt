@@ -1,0 +1,5 @@
+Develop a module that implements the Fletcher checksum algorithm for error detection across multiple data blocks. The design accepts an input data stream divided into 'n' blocks, each containing 8 bits, and computes a 16-bit checksum by maintaining two sums, s1 and s2. The sums are updated in nested loops that process each block, ensuring the final checksum is a combination of the last computed sums s1[n-1] and s2[n-1]. This module assists in verifying data integrity by providing a simple and efficient method for generating checksums.
+module top_module(
+  input [n*8-1:0] data,
+  output reg [15:0] checksum
+);

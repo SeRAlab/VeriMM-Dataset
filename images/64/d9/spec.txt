@@ -1,0 +1,10 @@
+Design a circuit that combines a priority encoder with a shift register to generate a 4-bit output. The module features an asynchronous active-high reset, a loading mechanism for external data, and an enable signal that allows for shifting operations. The priority encoder processes a 4-bit input to determine which bit is highest; based on this output, the resulting value can either be the current state of the shift register or a modified version of it, influenced by the encoder's output. The final 4-bit output, `q`, reflects the result of these operations, allowing for complex data manipulation in a single module.
+module top_module(
+    input clk,
+    input areset,      // Asynchronous active-high reset to zero
+    input load,
+    input ena,
+    input [3:0] data,
+    input [3:0] in,    // Input for the priority encoder
+    output [3:0] q     // Final 4-bit output
+);

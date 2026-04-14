@@ -1,0 +1,7 @@
+Design a clock gating module that controls the propagation of an input clock signal based on enable (en) and trigger enable (te) signals. When the enable signal is high, the output (enclk) will reflect the state of the trigger enable signal, effectively allowing or blocking the clock signal based on its state. Otherwise, when the enable signal is low, the output will be set to low, thus disabling the clock output regardless of the trigger enable. This design helps in reducing dynamic power consumption by selectively gating the clock signal.
+module top_module(
+  input clk,
+  input en,
+  input te,
+  output reg enclk
+);

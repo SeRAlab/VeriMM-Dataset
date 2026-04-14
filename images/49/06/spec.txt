@@ -1,0 +1,44 @@
+Please act as a professional verilog designer.
+
+Implement a synchronous FIFO, FIFO bit width and depth can be configured(parameter DEPTH = 16, parameter WIDTH = 8). The synchronous FIFO structure is divided into several parts. The first part is the RAM, which is used for data storage. Instantiate RAM as a submodule, The RAM ports are input clk, input wen, input [$clog2(DEPTH)-1:0] waddr, input [WIDTH-1:0] wdata, input ren, input [$clog2(DEPTH)-1:0] raddr, output reg [WIDTH-1:0] rdata. The second part is the data write controller. The third part is the data read controller. The method of empty and full judgment is to generate empty and full signals by comparing the read and write pointers. The read and write pointers increment on every read or write operation respectively, and wrap around upon reaching the end.
+
+Module name:  
+    sync_fifo  
+
+Input ports:
+	clk: Clock signal used for synchronous operations.
+	rstn: Reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+	winc: Write increment signal. Used to trigger write operations.
+	rinc: Read increment signal. Used to trigger read operations.
+	wdata: Write data input. The width [WIDTH-1:0] is configurable and represents the data to be written into the FIFO.
+
+Output ports:
+wfull: Write full signal. Indicates if the FIFO is full and cannot accept further write operations.
+rempty: Read empty signal. Indicates if the FIFO is empty and cannot provide any data for read operations.
+rdata: Read data output. The width [WIDTH-1:0] is configurable and represents the data read from the FIFO.
+
+Parameter:
+	WIDTH = 8
+	DEPTH = 16
+
+Implementation:
+The module implements a synchronous FIFO using a RAM module and additional logic for managing read and write pointers.
+RAM:
+The module instantiates a RAM module named "RAM" with configurable depth and width.
+The RAM module has a clock input (clk) for synchronous operations.
+The RAM module has separate address inputs for write (waddr) and read (raddr) operations.
+The RAM module has a write enable input (wen) and a write data input (wdata).
+The RAM module has a read enable input (ren) and a read data output (rdata).
+The RAM module stores data in a two-dimensional array, RAM_MEM, with a size of DEPTH by WIDTH.
+Write and Read Pointers:
+The module includes logic to manage write and read pointers for synchronous operation.
+The write and read pointers are represented by binary registers, waddr_bin and raddr_bin, respectively.
+The write and read pointers are incremented based on the write and read increment signals (winc and rinc), respectively.
+The write pointer is incremented on the positive edge of the clock (posedge clk) and reset to 0 on reset (~rstn).
+The read pointer is incremented on the positive edge of the clock (posedge clk) and reset to 0 on reset (~rstn).
+Full and Empty Signals:
+The module compares the current write and read pointers (waddr_bin and raddr_bin) to determine if the FIFO is full or empty.
+The wfull output is set to 1 when the next write pointer is equal to the read pointer.
+The rempty output is set to 1 when the write pointer is equal to the read pointer.
+
+Give me the complete code.

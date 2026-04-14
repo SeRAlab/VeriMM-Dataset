@@ -1,0 +1,9 @@
+Design a 4-tap Finite Impulse Response (FIR) filter that processes a 16-bit input signal. The module employs a series of delay flip-flops to store previous input values, applying specific coefficients to the current input and delayed values for filtering. Specifically, it multiplies the input by constants (-17, 4, -10, and 3) to generate intermediate signals, which are then summed to produce the output. The filter operates under the control of a clock and reset signals, and the state is updated only when the enable signal is asserted. This configuration allows for variable filtering based on the input signal.
+module top_module(
+    input clk,
+    input rst,
+    input  [15:0] in,
+    output [15:0] out,
+
+    input enable
+);

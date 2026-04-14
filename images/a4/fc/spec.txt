@@ -1,0 +1,10 @@
+Design a 4-bit arithmetic calculator capable of performing addition, subtraction, multiplication, and division based on a 2-bit operation selector. The module takes two 4-bit inputs, `a` and `b`, and produces four 4-bit outputs for the results of addition (`add_out`), subtraction (`sub_out`), multiplication (`mul_out`), and division (`div_out`). Operation selection is managed by the `op` input, where `00` corresponds to addition, `01` to subtraction, `10` to multiplication, and `11` to division. Special handling is included for the division operation to prevent division by zero, returning a default value of zero in such cases.
+module top_module(
+    input [3:0] a, 
+    input [3:0] b, 
+    input [1:0] op, 
+    output reg [3:0] add_out, 
+    output reg [3:0] sub_out, 
+    output reg [3:0] mul_out, 
+    output reg [3:0] div_out
+);

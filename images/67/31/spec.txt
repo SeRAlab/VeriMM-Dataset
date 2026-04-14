@@ -1,0 +1,28 @@
+Design a memory-write-back control module that manages data signals during the write-back phase of a processor pipeline. It captures control signals such as write-back enable, branch, memory read, and memory write, along with relevant computational results and addresses from the execution stage. The module outputs these signals on the rising edge of the clock unless a flush signal is active, which resets the outputs to default values, effectively clearing any data and disabling write operations. This module thereby facilitates data consistency and proper operation in the pipeline by coordinating the flow of information needed for final write-back to the registers or memory.
+module top_module(
+  input clk,
+  input flush,
+
+  
+  input [1:0] WB,
+  output reg [1:0] WB_Out,
+  
+  input [2:0] M,
+  output reg Branch, MemWrite, MemRead,
+  
+  
+  input [63:0] Adder_Result,
+  output reg [63:0] Adder_Result_Out,
+  
+  input comp,
+  output reg comp_Out,
+  
+  input [63:0] ALU_Result,
+  output reg [63:0] ALU_Result_Out,
+  
+  input [63:0] Forward_B_Mux_Result,
+  output reg [63:0] Forward_B_Mux_Result_Out,
+  
+  input [4:0] rd,
+  output reg [4:0] rd_out
+);

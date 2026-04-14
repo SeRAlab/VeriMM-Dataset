@@ -1,0 +1,7 @@
+Design a 16-entry register file with 32-bit wide registers that enables concurrent read and write operations. On the rising edge of the clock, if the reset signal is active, all registers are initialized to zero; otherwise, if the regWrite signal is asserted, the data provided on writeData is written to the specified writeReg. The module allows for reading data from two registers simultaneously, specified by readReg1 and readReg2, with their values output on readData1 and readData2, respectively.
+module top_module(
+    input clk, reset, regWrite,
+    input [3:0] writeReg, readReg1, readReg2,
+    input [31:0] writeData,
+    output [31:0] readData1, readData2
+);

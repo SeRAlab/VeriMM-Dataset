@@ -1,0 +1,14 @@
+Design a circuit that implements a round function of the BLAKE2 cryptographic hash algorithm. The module takes four 64-bit input values (a, b, c, d) and two message block inputs (m0, m1) and performs a series of arithmetic and bitwise operations, including addition and permutation, to produce four transformed outputs (a_prim, b_prim, c_prim, d_prim). The output values are derived through a series of mixing operations that incorporate both the inputs and message blocks, adhering to the BLAKE2 algorithm's structure for secure hashing.
+module top_module(
+                input wire [63 : 0]  a,
+                input wire [63 : 0]  b,
+                input wire [63 : 0]  c,
+                input wire [63 : 0]  d,
+                input wire [63 : 0]  m0,
+                input wire [63 : 0]  m1,
+
+                output wire [63 : 0] a_prim,
+                output wire [63 : 0] b_prim,
+                output wire [63 : 0] c_prim,
+                output wire [63 : 0] d_prim
+               );

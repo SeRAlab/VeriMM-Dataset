@@ -1,0 +1,15 @@
+Design a three-input AND-OR-Invert (AOI) logic gate with a primary output Y. The module takes three inputs (A1, A2, A3) and one additional input (B1). It directly outputs A1 as Y1 and generates Y2 as A2 AND NOT A3, while Y3 is A3 AND NOT A2. The output Y is determined by the value of B1; if B1 is LOW (0), Y outputs Y1, otherwise, it outputs a HIGH only if either Y2 or Y3 is HIGH, implementing a form of conditional logic based on the combination of inputs. This structure is typically used in digital circuits for performing complex logic operations efficiently.
+module top_module(
+    //# {{data|Data Signals}}
+    input  A1  ,
+    input  A2  ,
+    input  A3  ,
+    input  B1  ,
+    output Y   ,
+
+    //# {{power|Power}}
+    input  VPB ,
+    input  VPWR,
+    input  VGND,
+    input  VNB
+);

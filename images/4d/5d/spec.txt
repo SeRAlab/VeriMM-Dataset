@@ -1,0 +1,11 @@
+Design a D flip-flop with an asynchronous set input. The module captures the value of the D input on the rising edge of the CLK signal, while also allowing the Q output to be asynchronously set high when the SET input is triggered. The module includes power control signals (SLEEP_B, KAPWR) and ground/power connections (VGND, VPWR), ensuring proper function in various power states. The flip-flop ensures that the Q output reflects the state of D under normal operation, with the capability to override this behavior and set the output directly via the SET signal.
+module top_module(
+    input D,
+    input CLK,
+    input SET,
+    input SLEEP_B,
+    input KAPWR,
+    input VGND,
+    input VPWR,
+    output reg Q
+);

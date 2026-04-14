@@ -1,0 +1,8 @@
+Design a 4-bit Serial-In Parallel-Out (SIPO) shift register. The module takes a clock signal and a serial input (DIN). When the LOAD signal is high, it loads the serial input directly into the shift register. Otherwise, on each clock cycle, it shifts the current register contents to the left and inserts the new serial input bit (DIN) at the least significant bit position. The module outputs the current register value (Q) and its bitwise inverse (QBAR).
+module top_module(
+    input CLK,
+    input DIN,
+    input LOAD,
+    output reg [3:0] Q,
+    output reg [3:0] QBAR
+);

@@ -1,0 +1,6 @@
+Design a circuit that interleaves 64 bits of input data and 8 bits of control signals into a 73-bit output. The output alternates segments of 8 bits taken from the input data with corresponding control signals based on the input `ctrl_in`. Specifically, for each 8-bit slice of `data_in`, a control signal from `ctrl_in` is inserted between these slices, culminating in an output format that combines both data and control signals in a structured manner. The final output also includes an additional bit set to LOW.
+module top_module(
+    input  wire [63:0] data_in,
+    input  wire [7:0]  ctrl_in,
+    output wire [72:0] data_out
+);

@@ -1,0 +1,24 @@
+
+
+You are given a Verilog module that implements a CRC (Cyclic Redundancy Check) algorithm. The module has an input clock signal `clk` and two internal registers `crc` and `sum`, both of which are 64 bits wide. The module also instantiates a submodule `sub` which takes two 16-bit inputs and produces two 32-bit outputs. The module has the following behavior:
+
+- On the first clock cycle, `crc` is initialized to `64'h00000000_00000097` and `sum` is initialized to `64'h0`.
+- On each subsequent clock cycle, `crc` and `sum` are updated according to the CRC algorithm. Specifically, the most significant bit of `crc` is XORed with the 2nd and 0th bits of `crc`, and the result is shifted left by one bit. The same operation is performed on `sum`, but the result is XORed with the outputs of the `sub` module instead of being shifted.
+- After 90 clock cycles, the value of `sum` is checked against the expected value `64'he396068aba3898a2`. If the values do not match, the simulation is stopped.
+
+Write Verilog code that implements the `sub` module used in the given module. The `sub` module should have the following interface:
+
+```
+module sub (
+   input [15:0] in1,
+   input [15:0] in2,
+   output [31:0] out1,
+   output [31:0] out2
+   );
+```
+
+The `sub` module should perform the following operation:
+
+- `out1` should be the bitwise AND of `in1` and `in2`.
+- `out2` should be the bitwise OR of `in1` and `in2`.
+

@@ -1,0 +1,8 @@
+Design a 16-bit wide arithmetic operation module that selects between different calculations based on a 2-bit select signal. The module computes the sum of inputs `a` and `b`, the sum of inputs `a` and `c`, and also provides the result of subtracting `b` from `a`. Depending on the value of the `sel` input, the module outputs a 11-bit wide result from either the first sum, the second sum, or performs the subtraction operation, defaulting to an undefined state for any other select value.
+module top_module(
+  input [15:0]       a,
+  input [15:0]       b,
+  input [15:0]       c,
+  input [1:0]      sel,
+  output reg [15:0] res
+  );

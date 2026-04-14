@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Design a simple edge detector that detects rising edges on an input signal. The detector outputs a high signal for one clock cycle when it detects a rising edge.
+
+Module name:  
+    edge_detector   
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    signal_in: Input signal to be monitored for rising edges.
+
+Output ports:
+    edge_detected: Output signal indicating the detection of a rising edge.
+
+Implementation:
+The output signal is updated based on the value of the input signal and a delayed version of the input signal. If the delayed signal is low and the current signal is high, a rising edge is detected, and the output signal is set high for one clock cycle.
+
+Give me the complete code.
+
+module edge_detector(
+    input clk,
+    input rst_n,
+    input signal_in,
+
+    output reg edge_detected
+);

@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement a module for a simple 4-bit down-counter. The counter should decrement its value on every positive edge of the clock signal clk. If the reset signal rst_n is asserted low, the counter should reset to 15. The counter should also have an enable signal en, which allows the counter to decrement only if en is high.
+
+Module name:  
+    down_counter      
+
+Input ports:
+    clk: Clock signal.
+    rst_n: Reset signal (active low).
+    en: Enable signal.
+
+Output ports:
+    count: 4-bit output count value.
+
+Implementation:
+The down_counter module decrements a 4-bit count value on each positive edge of the clock signal clk, but only if the enable signal en is high. If the reset signal rst_n is asserted low, the counter resets to 15. The count value is synchronized with the clock.
+
+Give me the complete code.
+
+module down_counter(
+    input clk,
+    input rst_n,
+    input en,
+    
+    output reg [3:0] count
+);

@@ -1,0 +1,11 @@
+Implement a Verilog module for a binary up/down counter with four states: Idle, CountUp, CountDown, and Done. Use the following one-hot state encoding: IDLE=4'b0001, COUNTUP=4'b0010, COUNTDOWN=4'b0100, DONE=4'b1000. The counter should count up or down to a specified limit and then move to the Done state. Derive state transition and output logic equations by inspection assuming a one-hot encoding. Implement only the state transition logic and output logic (the combinational logic portion) for this state machine.
+
+module binary_updown_counter (
+  input clk, 
+  input reset, 
+  input up, 
+  input [3:0] limit, 
+  input [3:0] state, 
+  output reg [3:0] next_state, 
+  output reg [3:0] count, 
+  output reg done);

@@ -1,0 +1,12 @@
+Design a dual-port RAM module that allows simultaneous read and write operations. It supports two independent data inputs (data_in1 and data_in2) and corresponding write enable signals (write_en1 and write_en2). Users can specify addresses (address1 and address2) to access memory locations, with a memory depth of 256 and a data width of 8 bits. On each rising edge of the clock, the module writes data to the memory when enabled, and always outputs the contents of the specified addresses on data_out1 and data_out2, enabling concurrent access for efficient data handling.
+module top_module(
+  input [width-1:0] data_in1,
+  input [width-1:0] data_in2,
+  input [depth-1:0] address1,
+  input [depth-1:0] address2,
+  input write_en1,
+  input write_en2,
+  input clock,
+  output reg [width-1:0] data_out1, // Changed to reg
+  output reg [width-1:0] data_out2  // Changed to reg
+);

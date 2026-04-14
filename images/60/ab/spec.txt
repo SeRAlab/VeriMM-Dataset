@@ -1,0 +1,8 @@
+Design a 4-bit shift register with the ability to load in parallel or shift data serially. Upon receiving a clock pulse, the register resets to 0 when the reset signal is active. If the reset is not active, if the parallel input signal is asserted, the register loads the value of next_data. Otherwise, it performs a serial shift, moving the current data to the left and inputting serial_in at the least significant bit. The output reflects the full 4-bit register state.
+module top_module(
+    input clk,
+    input rst,
+    input serial_in,
+    input parallel_in,
+    output serial_out
+);

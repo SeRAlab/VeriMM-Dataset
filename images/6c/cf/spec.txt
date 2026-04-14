@@ -1,0 +1,9 @@
+Design a 4-bit adder with overflow detection. This module takes two 4-bit binary inputs, A and B, and combines them to produce a 5-bit output, C, representing the sum. The adder operates on the positive edge of a clock signal (CLK) and resets to zero on a negative edge of a reset signal (RST). The module includes logic to detect overflow, which occurs if the most significant bit (MSB) of the sum exceeds the maximum value representable by the input bits. The resultant sum and overflow status are output through the signals C and OV, respectively.
+module top_module(
+  input [3:0] A,
+  input [3:0] B,
+  input CLK,
+  input RST,
+  output [4:0] C,
+  output OV
+);

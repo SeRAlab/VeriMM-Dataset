@@ -1,0 +1,21 @@
+Design a control and status register module for a CPU, facilitating debug operations. This module processes read and write transactions to specific addresses, allowing configuration of interrupt enable registers and single-step debugging modes. It outputs current states for interrupt enabling, read data, and various monitoring signals, integrated with a clock and reset functionalities to ensure state coherency in the presence of debug access. The module also distinguishes between different register addresses and modifies internal states based on incoming signals, enabling effective communication with the CPU's control logic during debug sessions.
+module top_module(
+  // inputs:
+  address,
+  clk,
+  debugaccess,
+  monitor_error,
+  monitor_go,
+  monitor_ready,
+  reset_n,
+  write,
+  writedata,
+
+  // outputs:
+  oci_ienable,
+  oci_reg_readdata,
+  oci_single_step_mode,
+  ocireg_ers,
+  ocireg_mrs,
+  take_action_ocireg
+);

@@ -1,0 +1,7 @@
+Design a bidirectional I/O buffer module that manages 16 pins and interfaces between input and output modes based on a control signal controlled by a clock and reset. When reset is active, all pins are configured as inputs. The module uses an array of I/O buffers to handle the data flow in both directions, allowing selective read and write operations on the pins based on the pin direction control signals. Additionally, it outputs the status of the first four input pins to an LED array, providing a visual indication of the input states.
+module top_module(
+    input clk,
+    input reset,
+    inout [15:0] pin,
+    output reg [3:0] ledg
+);

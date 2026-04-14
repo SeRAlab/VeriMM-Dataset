@@ -1,0 +1,8 @@
+Design a UART (Universal Asynchronous Receiver-Transmitter) transmitter module that serially sends an 8-bit data word over a single line. The module operates in various states, including IDLE, START, DATA, and STOP, managing data transmission based on a clock input and a valid data input signal. Upon reception of new data indicated by `rx_i_v`, it transitions to START, preparing the data for transmission. During the DATA state, it transmits each bit of the data serially while keeping track of the bit position, and it concludes the transmission by entering the STOP state. The output lines indicate the transmitted bit (`tx_o`) and signal when data is valid (`tx_o_v`).
+module top_module(
+               input               clk_i,
+               input [7:0]         rx_i,
+               input               rx_i_v,
+               output              tx_o,
+               output              tx_o_v
+               );

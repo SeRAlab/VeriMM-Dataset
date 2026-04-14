@@ -1,0 +1,7 @@
+Design a 2-to-1 multiplexer that takes two parallel inputs, `mux_in0` and `mux_in1`, each `MuxLen + 1` bits wide, and outputs one of them based on the `mux_sel` input. When `mux_sel` is high (1), the output `mux_out` will reflect the value of `mux_in1`; otherwise (when `mux_sel` is low (0)), it will output the value of `mux_in0`. This module allows for dynamic selection between two data sources in digital circuits.
+module top_module(
+  input [MuxLen:0] mux_in0,
+  input [MuxLen:0] mux_in1,
+  input mux_sel,
+  output reg [MuxLen:0] mux_out  // Change to 'reg' type
+);

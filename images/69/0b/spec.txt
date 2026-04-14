@@ -1,0 +1,9 @@
+Design a memory protection module that allows read and write operations to specific address ranges in a 64KB memory space. The module includes a write enable signal to control data writing, while restricting writes to certain address ranges: 0-4095, 8192-12287, and 16384-20479. If a write is attempted outside these ranges, the module will ignore the write and set the memory at that address to zero. Upon a reset signal, the output data is cleared to zero, and the module outputs data from the specified address on the rising edge of the clock.
+module top_module(
+  input clk,
+  input rst,
+  input [15:0] addr,
+  input [7:0] data_in,
+  input write_en,
+  output reg [7:0] data_out
+);

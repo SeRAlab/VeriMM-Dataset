@@ -1,0 +1,15 @@
+Design a DRAM controller capable of managing read and write operations to a dynamically addressed memory. It utilizes a global clock signal (gclk) to synchronize actions, controlling write enable (wea) based on the write signal (W) and a counter to ensure proper timing for write operations. The module determines the address for read or write through multiplexing of input address signals (D_addr_W for writes and D_addr_R for reads) and outputs data read from the memory (DRAM_R) and data intended for writing (ddataout). Overall, this controller interfaces with the DRAM to facilitate both data storage and retrieval based on control signals.
+module top_module(
+		input gclk,
+		input W,
+		input [7:0] D_addr_W,
+		input [7:0] DRAM_W,
+		input R,
+		input [7:0] D_addr_R,
+		output [7:0] DRAM_R,
+		
+		output reg wea,
+		output [7:0] daddr,
+		output [7:0] ddataout,
+		input [7:0] ddatain
+    );

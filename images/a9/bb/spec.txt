@@ -1,0 +1,6 @@
+Design a circuit that computes the parity bit for an 8-bit input data word. The module counts the number of '1' bits in the input data and generates an output parity signal (P) indicating whether the total number of '1' bits is odd or even. Specifically, the module divides the 8-bit input into two groups, sums the counts from each group, and then computes the parity based on the accumulated sums. The output is active low, meaning P will be HIGH if there is an even number of '1' bits and LOW for an odd number.
+module top_module(
+    input [7:0] D,
+    input clk,          // Added the clk input
+    output reg P
+);

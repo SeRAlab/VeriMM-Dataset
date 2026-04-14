@@ -1,0 +1,10 @@
+Develop a FIFO buffer with an 8-bit wide data input that allows writing and reading operations. The buffer can hold up to 64 entries, indicated by full and empty flags. On a clock edge, if a write signal is asserted and the buffer is not full, data will be stored in the buffer. Conversely, when reading from the buffer is permitted, data is retrieved from the buffer at the read pointer. The module also tracks how many entries are currently in use and provides status outputs for buffer full, buffer empty, and the count of used entries.
+module top_module(
+  input clk,
+  input [7:0] fifo_wdata,
+  input fifo_wr,
+  output fifo_FF,
+  output reg [7:0] r_dat,  // Changed to reg
+  output wfifo_empty,
+  output [5:0] wfifo_used
+);

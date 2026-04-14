@@ -1,0 +1,10 @@
+Design a simple calculator that performs basic arithmetic operations on two signed 8-bit inputs, `a` and `b`. The module is equipped with a 2-bit control signal, `op`, that selects the operation to execute: 00 for addition (producing an 8-bit sum), 01 for subtraction (producing an 8-bit difference), 10 for multiplication (resulting in a 16-bit product), and 11 for division (yielding an 8-bit quotient). The outputs are updated based on the selected operation combinatorially.
+module top_module(
+    input signed [7:0] a,
+    input signed [7:0] b,
+    input [1:0] op,
+    output reg signed [7:0] sum,
+    output reg signed [7:0] difference,
+    output reg signed [15:0] product,
+    output reg signed [7:0] quotient
+);

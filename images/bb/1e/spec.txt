@@ -1,0 +1,14 @@
+Design an audio mixer circuit that processes four audio input samples and their respective volume settings. The module takes in 8-bit audio samples and 7-bit volume control values for each of the four inputs. It adjusts the samples according to their volume levels, potentially saturating them at max amplitude if the volume control indicates, then sums these adjusted samples to produce left and right DAC data outputs. The summation occurs on the rising edge of the provided clock signal, resulting in a 15-bit wide output intended for stereo audio applications.
+module top_module(
+  input   clk,        //bus clock
+  input  [7:0] sample0,    //sample 0 input
+  input  [7:0] sample1,    //sample 1 input
+  input  [7:0] sample2,    //sample 2 input
+  input  [7:0] sample3,    //sample 3 input
+  input  [6:0] vol0,      //volume 0 input
+  input  [6:0] vol1,      //volume 1 input
+  input  [6:0] vol2,      //volume 2 input
+  input  [6:0] vol3,      //volume 3 input
+  output reg  [14:0]ldatasum,    //left DAC data
+  output reg  [14:0]rdatasum    //right DAC data
+);

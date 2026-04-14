@@ -1,0 +1,22 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit shift register that shifts left on each positive edge of the clock signal. The register resets to 4'b0000 when the reset signal is active.
+
+Module name:
+    shift_register
+
+Input ports:
+    CLK: Clock signal
+    RST: Reset signal
+
+Output ports:
+    Q: 4-bit output
+
+Implementation:
+On every positive edge of CLK or RST, if RST is active, Q is set to 4'b0000. Otherwise, Q shifts left by one position, inserting a 0 at the least significant bit.
+
+Give me the complete code.
+
+module shift_register (CLK, RST, Q);
+input CLK, RST;
+output reg [3:0] Q;

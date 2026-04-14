@@ -1,0 +1,8 @@
+Design a clock gating circuit that controls the output clock signal ENCLK based on the inputs EN (enable), TE (test enable), and RESET. When RESET is asserted, ENCLK is driven low. If EN is low, ENCLK is also driven low, effectively disabling the clock signal. If TE is asserted high, ENCLK will be set to high regardless of the CLK input. Otherwise, ENCLK follows the value of the CLK signal on its rising edge, allowing for selective enabling and disabling of clock signals to save power in the circuit.
+module top_module(
+    input CLK,
+    input EN,
+    input TE,
+    input RESET,
+    output reg ENCLK
+);

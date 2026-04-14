@@ -1,0 +1,9 @@
+Design a seven-segment display driver that controls the display output based on a 4-bit input value and a 3-bit select index. The module activates one of four digits by producing a specific enable signal for the corresponding digit using the `sidx` input. It converts the 4-bit `val` input into an appropriate 8-bit segment representation, illuminating the correct segments to display numbers (0-9) or the letter 'A' on the selected digit. When the `enable` input is low, all digits and segments are turned off.
+module top_module(
+    input clk,
+    input enable,
+    input [3:0] val,
+    input [2:0] sidx,
+    output reg [7:0] digit,
+    output reg [7:0] segment
+);

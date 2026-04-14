@@ -1,0 +1,9 @@
+Design a circuit that serves as an 8-bit wide comparator. The module compares two 8-bit input values, `a` and `b`, and produces a single-bit output `op` that indicates whether the two inputs are equal. The comparison is performed on the rising edge of the clock signal, and the output is updated only when the control enable (`ce`) signal is active. If the clear (`clr`) signal is asserted, the output is reset to LOW.
+module top_module(
+  input [(8 - 1):0] a,
+  input [(8 - 1):0] b,
+  output [(1 - 1):0] op,
+  input clk,
+  input ce,
+  input clr
+);

@@ -1,0 +1,7 @@
+Design a sequential circuit that processes a 16-bit input to produce an 8-bit output based on the comparison of its upper and lower bytes. When the reset signal is activated, both byte registers and the output are initialized to zero. On each clock cycle, the circuit extracts the upper (bits 15 to 8) and lower (bits 7 to 0) bytes from the input. It then checks if these two bytes are equal; if they are, the XOR output is set to 0x00, and if they are not, it is set to 0xFF. The final output selects the lower byte when the XOR output indicates inequality; otherwise, it chooses the upper byte. This implementation incorporates both sequential and combinational logic to facilitate the desired byte manipulation and output selection.
+module top_module(
+    input wire clk,
+    input wire reset,
+    input wire [15:0] in,
+    output reg [7:0] final_output
+);

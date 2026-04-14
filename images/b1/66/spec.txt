@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit synchronous binary down-counter with parallel load capability. The counter should count down from a given value when the enable signal is active. If the load signal is active, the counter should load the value from an input port (load_val) instead of counting down.
+
+Module name:  
+    down_counter_4bit  
+
+Input ports:
+    clk: Chip clock signal.
+    rst_n: Active-low reset signal. Defined as 0 for chip reset and 1 for reset signal inactive.
+    en: Enable signal to allow counting.
+    load: Load signal to load the counter value.
+    load_val: 4-bit input value to be loaded into the counter.
+
+Output ports:
+    count: 4-bit count value.
+
+Implementation:
+Counter logic:
+On every positive edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the count register is updated.
+If the reset signal (rst_n) is low, indicating a reset condition, the count register is set to 0.
+If the load signal (load) is active, the counter loads the value from the load_val input.
+If the enable signal (en) is active and the load signal is inactive, the counter decrements by 1.
+If the count value reaches 0, it wraps around to 15 on the next decrement.
+
+Give me the complete code.

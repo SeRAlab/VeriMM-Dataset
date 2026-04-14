@@ -1,0 +1,5 @@
+Design a 4-bit wide input-to-output converter that maps specific input values to defined output states. The functionality is based on grouping the input values, where each pair of inputs in a range corresponds to a single output value. For example, inputs 0 through 1 output 1, inputs 3 through 4 output 2, and so forth, ultimately mapping the highest input value of 15 to an output of 8. This creates a quantization effect, effectively reducing the input range while maintaining a clear relationship between inputs and outputs.
+module top_module(
+    input [3:0] in,
+    output reg [3:0] out  // Change wire to reg since we are assigning in an always block
+);

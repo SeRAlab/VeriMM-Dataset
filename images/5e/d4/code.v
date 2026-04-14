@@ -1,0 +1,1 @@
+module top_module(input c3, c2, c1, c0, output o);assign o = (~c3 & ~c2 & ~c1 & ~c0)|(~c3 & ~c2 & ~c1 & c0)|(~c3 & c2 & c1 & c0)|(c3 & c2 & ~c1 & ~c0);endmodule

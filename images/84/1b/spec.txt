@@ -1,0 +1,6 @@
+Design a UART receiver module that captures serial data input from a single serial line (ser_in) and converts it into an 8-bit parallel output (rx_data). The module operates based on a clock (clock) and a reset signal (reset). It utilizes a control signal (ce_16) to facilitate sampling at a 16 times rate of the data bits, while managing synchronization and timing through internal counters. As data is received, it counts the number of bits, saves the incoming data into a buffer (data_buf), and indicates when new data (new_rx_data) is available after completing the reception of 8 bits. The design is structured to ensure reliable data acquisition while handling potential synchronization issues during the serial input process.
+module top_module(
+	clock, reset,
+	ce_16, ser_in, 
+	rx_data, new_rx_data 
+);

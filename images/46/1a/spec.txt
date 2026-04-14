@@ -1,0 +1,8 @@
+Design a 3-to-8 line decoder with pipelined output. The module takes three input bits (A, B, C) and generates an 8-bit output (Y) such that only one of the output lines is asserted high based on the binary value represented by the inputs. The design employs two stages: the first stage decodes the inputs into a 3-bit intermediate signal, which is then latched on the rising edge of the clock to produce the final 8-bit output in the second stage. This pipelining allows for improved signal stability and synchronization with the clock.
+module top_module(
+    input A,
+    input B,
+    input C,
+    input clk,        // Added clk input
+    output reg [7:0] Y
+);

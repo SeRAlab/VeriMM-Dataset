@@ -1,0 +1,6 @@
+Design a 4-to-1 digit selector that outputs a 4-bit result based on a 4-bit ring input. The module takes a 16-bit count input and uses the ring input to select one of the four 4-bit segments of the count (bits 15:12, 11:8, 7:4, or 3:0) for output. The output digit corresponds to the segment indicated by the active bit in the ring input, effectively functioning as a multi-way selector or multiplexer for 4-bit groups within the 16-bit count.
+module top_module(
+    input [15:0] count,
+    input [3:0] ring,
+    output [3:0] digit
+    );

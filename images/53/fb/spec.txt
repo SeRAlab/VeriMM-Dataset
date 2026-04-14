@@ -1,0 +1,14 @@
+Design a 4-to-1 multiplexer controlled by user inputs and a slow clock signal. The module reads four input signals (INPUT1 to INPUT4) and selects one to output (Z) based on a two-bit selection signal (select). The selection is modified by push buttons (PB_UP and PB_DOWN) when both switches (SW6 and SW7) are high, with SW14 acting as a qualifier for the button presses. The selection can increment or decrement within the range of 0 to 3, allowing for the dynamic control of the chosen input based on user interaction.
+module top_module(
+    input SLOW_CLOCK,
+    input PB_UP,
+    input PB_DOWN,
+    input SW6,
+    input SW7,
+    input SW14,
+    input INPUT1,
+    input INPUT2,
+    input INPUT3,
+    input INPUT4,
+    output Z
+    );

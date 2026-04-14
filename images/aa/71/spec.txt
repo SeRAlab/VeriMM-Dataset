@@ -1,0 +1,9 @@
+Design a 16-bit adder circuit that computes the sum of two 16-bit operands, `operand1` and `operand2`, along with an optional input carry, `carry_in`. The result of the addition is output as `sum`, and any overflow is indicated by the `carry_out` signal. The addition process is pipelined through five clock cycles to allow for staged processing of the results, ensuring that the output is synchronously updated on the rising edge of the clock signal.
+module top_module(
+    input [15:0] operand1,
+    input [15:0] operand2,
+    input carry_in,
+    input clk,                // Added clock signal as input
+    output [15:0] sum,
+    output carry_out
+);

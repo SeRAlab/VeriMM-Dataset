@@ -1,0 +1,8 @@
+Design a 5-stage pipeline register rotator that captures a 100-bit input data stream on a load signal and subsequently shifts the data through a series of registers on each clock cycle. The output can be selected from any of the pipeline stages based on a 2-bit enable input (ena), allowing the user to retrieve data from different stages: reg1, reg2, reg4, or reg5. The sequential nature of the design supports data processing in applications requiring delayed feedback or staged data propagation.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output reg [99:0] q
+);

@@ -1,0 +1,11 @@
+
+Design a 16-bit DRAM cell controller that handles the read and write operations. The controller should have the following inputs:
+- clk: Clock signal
+- we: Write enable signal (active high)
+- addr: 4-bit address input (for selecting one of the 16 cells)
+- data_in: 16-bit data input for writing
+- data_out: 16-bit data output for reading
+
+The controller should store the data in a 16-bit register array, and on a rising edge of the clock:
+- If `we` is high, write `data_in` to the selected address.
+- If `we` is low, output the data stored at the selected address onto `data_out`.

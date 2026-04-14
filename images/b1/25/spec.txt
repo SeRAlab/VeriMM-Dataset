@@ -1,0 +1,9 @@
+The module implements a synchronous storage element with additional processing capabilities. It features a register that either captures the 32-bit input signal or a logically right-shifted version of that input, based on a select signal. The register resets synchronously and has an active low reset, setting the output to zero when triggered. Additionally, the module checks if the input value is greater than or equal to 100, providing this information as a single-bit output. Overall, this module acts as a conditional data processor and storage element, suitable for applications requiring input manipulation and status signaling.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] in,
+    input select,
+    output [31:0] out,
+    output [0:0] high_input
+);

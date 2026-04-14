@@ -1,0 +1,8 @@
+Design a 4-bit shift register that operates on the rising edge of a clock signal. When the load signal is asserted, the input value is loaded into the shift register and marked as valid. If load is not asserted, the register shifts left, dropping the least significant bit and appending a zero at the least significant position, while maintaining the valid output signal. The current state of the shift register is continuously outputted.
+module top_module(
+    input clk,
+    input [3:0] in,
+    input load,
+    output reg [3:0] out,
+    output reg valid
+);

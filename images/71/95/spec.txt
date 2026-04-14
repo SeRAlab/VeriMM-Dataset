@@ -1,0 +1,10 @@
+Design a clock generator module that produces a toggling clock output (`clk_0`) based on a given count limit. The module operates with an enable (`en`) signal and a reset (`rst`) signal. When enabled, it counts up from a specified initial value (`count`) until it reaches the provided limit (`limit`), at which point it toggles the clock output and sets a `done` signal to indicate completion. If the count exceeds the limit or if it is not enabled, the module will reset to its initial count and output a low clock signal. The module is designed to provide a controlled clock signal based on an adjustable counting mechanism.
+module top_module(
+    input clk,
+    input en,
+    input rst,
+    input [31:0] limit,
+    input [31:0] count,
+    output reg clk_0,
+    output reg done
+);

@@ -1,0 +1,9 @@
+Design a 32-bit multiplexer with integrated zero output functionality. The module selects between three inputs: the main input 'a', and two forwarded inputs 'forward1' and 'forward2', based on control signals 'use1' and 'use2'. If the 'iszero' signal is asserted, the output is set to zero; otherwise, it follows 'use1' or 'use2' to determine which forwarded input to output. This design is useful for implementing forwarding in a pipelined architecture, allowing dynamic selection of operands based on the current state of execution.
+module top_module(
+    a,
+    forward1,
+    forward2,
+    out,
+    use1,
+    use2,
+    iszero);

@@ -1,0 +1,26 @@
+Design a pixel buffer for a video system that interfaces with SRAM. This module manages read and write operations by controlling address and data lines. It outputs data to and from a 16-bit SRAM interface based on the control signals of read and write, while also indicating when valid data is available. The module uses a clock signal to synchronize operations and incorporates reset functionality to initialize states for reading and writing. The buffer gate controls SRAM behavior using enables and write signals, facilitating data transfer under specified conditions.
+module top_module(
+	
+	clk,
+	reset,
+
+	address,
+	byteenable,
+	read,
+	write,
+	writedata,
+
+	
+	SRAM_DQ,
+
+	
+	readdata,
+	readdatavalid,
+
+	SRAM_ADDR,
+	SRAM_LB_N,
+	SRAM_UB_N,
+	SRAM_CE_N,
+	SRAM_OE_N,
+	SRAM_WE_N	
+);

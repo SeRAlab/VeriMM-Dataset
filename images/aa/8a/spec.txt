@@ -1,0 +1,13 @@
+Design a reset controller that manages multiple reset signals for a processing system. It generates a master reset signal (`mb_reset`) and various peripheral and interconnect reset signals based on input conditions. When any of the reset inputs (external, auxiliary, or debug system reset) are asserted, or if the DCM (Digital Clock Manager) is not locked, the module asserts all reset outputs. Conversely, when all conditions are satisfied (i.e., they are inactive and DCM is locked), the reset outputs are deasserted, enabling the normal operation of the system.
+module top_module(
+  input slowest_sync_clk,
+  input ext_reset_in,
+  input aux_reset_in,
+  input mb_debug_sys_rst,
+  input dcm_locked,
+  output reg mb_reset,
+  output reg [0:0]bus_struct_reset,
+  output reg [0:0]peripheral_reset,
+  output reg [0:0]interconnect_aresetn,
+  output reg [0:0]peripheral_aresetn
+);

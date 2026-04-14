@@ -1,0 +1,6 @@
+Design a 2-to-4 decoder with pipelined stages for input signals A and B. The module outputs one active high signal among four outputs (Y0 to Y3) based on the value of A, effectively translating the 2-bit input A into a corresponding single active output. The design incorporates two pipeline stages to synchronize input signals at positive clock edges, ensuring that the outputs reflect the state of A with reduced timing hazards. The signals B is not utilized in the current output logic but could potentially be integrated for additional functionality.
+module top_module(
+    input wire clk,          // Added clk input
+    input wire [1:0] A, B,
+    output reg [3:0] Y0, Y1, Y2, Y3
+);

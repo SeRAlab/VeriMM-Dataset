@@ -1,0 +1,10 @@
+Design a 16-bit shift register with configurable width for shifting operations. The module allows for data loading upon a specified signal and supports both left and right shifting functionalities. On a reset signal, the register is cleared to zero, while the clock triggers state transitions. The `WIDTH` parameter controls how many bits are shifted during the operations, allowing for variable shift behavior. The current state of the shift register is outputted on `data_out`.
+module top_module(
+    input clk,
+    input reset,
+    input load,
+    input shift_left,
+    input shift_right,
+    input [15:0] data_in,
+    output [15:0] data_out
+);

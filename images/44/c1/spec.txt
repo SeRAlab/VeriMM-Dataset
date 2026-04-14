@@ -1,0 +1,24 @@
+Implement the Verilog module based on the following description.
+Given the follow state machine with 1 input and 2 outputs (the outputs are given as "(out1, out2)"):
+
+The state machine has the following states and their corresponding outputs: 
+1. state A (out1 = 0, out2 = 0).
+2. state B (out1 = 1, out2 = 0).
+3. state C (out1 = 0, out2 = 1).
+4. state D (out1 = 1, out2 = 1).
+
+State transitions:
+1. From state A: If in = 0, then transition to state B. If in = 1, then transition to state C.
+2. From state B: If in = 0, then transition to state D. If in = 1, then transition to state A.
+3. From state C: If in = 0, then transition to state A. If in = 1, then transition to state D.
+4. From state D: If in = 0, then transition to state C. If in = 1, then transition to state B.
+
+Suppose this state machine uses one-hot encoding, where state[0] through state[3] correspond to the states A through D, respectively. The outputs are zero unless otherwise specified.
+
+Write Verilog implementing the state transition logic and output logic portions of the state machine (but not the state flip-flops). You are given the current state in state[3:0] and must produce next_state[3:0] and the two outputs. Derive the logic equations by inspection assuming a one-hot encoding.
+module top_module (
+        input in,
+        input [3:0] state,
+        output reg [3:0] next_state,
+        output reg out1,
+        output reg out2);

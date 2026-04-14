@@ -1,0 +1,8 @@
+Design a circuit to count tenths of a second using a clock signal. The module increments a 17-bit counter on each clock cycle when a hundredth of a second has passed, and it resets this counter once it reaches a value of 2 (indicating that two hundredths have passed). The output signal indicates when a tenth of a second has been completed, which occurs when the counter reaches 2 and a hundredth of a second has been detected. Additionally, the circuit has a reset functionality to clear the counter when activated.
+module top_module(
+input CLK,
+input RESET,
+input hundredth_of_second_passed,
+output tenth_of_second_passed,
+output reg [16:0] counter
+);

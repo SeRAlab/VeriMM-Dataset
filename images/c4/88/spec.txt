@@ -1,0 +1,19 @@
+
+
+You have been tasked with designing a verilog module for a Shift Register that shifts input data by 1 bit to the left on every clock cycle. Your module should have the following inputs and outputs:
+
+Inputs:
+- `Clock`: a clock signal
+- `Data`: a 32-bit input data
+- `Enable`: a signal that enables the shift operation
+
+Outputs:
+- `Shifted_Data`: a 32-bit output data that is shifted by 1 bit to the left on every clock cycle
+
+Implement the module `Shift_Register_Left` using the provided code snippet as a starting point. Your module should meet the following requirements:
+- The module should use an initial block to initialize a `newClock` signal to 0.
+- The module should use an always block to toggle the `newClock` signal every 125 time units.
+- The module should use an always block triggered by the rising edge of the `newClock` signal.
+- If `Enable` is high, the module should shift `Data` by 1 bit to the left on every rising edge of `newClock` and assign the result to `Shifted_Data`.
+- If `Enable` is low, the module should assign `Data` to `Shifted_Data`.
+

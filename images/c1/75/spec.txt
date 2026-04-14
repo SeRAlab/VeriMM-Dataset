@@ -1,0 +1,38 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a configurable timer with a specific focus on generating a flag and overflow signals based on the input conditions and configurations. Its primary functions include:
+
+Counting: It counts up from a specified start value until an overflow occurs.
+Controlled Execution: The timer's operation can be started or stopped based on control signals.
+Flag Generation: It generates a flag signal upon overflow, which can be cleared manually.
+Overflow Detection: It detects when the count exceeds its maximum value based on the counter and multiplier widths, signaling an overflow.
+
+This module can be utilized in systems requiring precise timing mechanisms, such as in digital signal processing, communication systems, or any application that requires timing and control based on specific conditions.
+
+Module name:  
+	jt51_timer
+
+Input ports:
+	clk (input): The clock signal. It drives the timing of the module's operations.
+	rst (input): The reset signal. When asserted, it initializes the module's internal state.
+	start_value (input[counter_width1:0]): The initial value from which the counter starts counting.
+	load (input): When asserted, loads the start_value into the counter.
+	clr_flag (input): Clears the flag when asserted.
+	set_run (input): Starts the timer when asserted.
+	clr_run (input): Stops the timer when asserted.
+Output ports:
+	flag (output reg): A flag that is set when the counter overflows and can be cleared manually.
+	overflow (output reg): Indicates when the counter has overflowed.
+
+
+Implementation:
+The jt51_timer module is designed to function as a timer with a configurable counter width (counter_width) and multiplier width (mult_width). It operates based on an input clock signal (clk) and can be reset (rst). The module's primary functionality revolves around counting operations, flag setting, and overflow detection, controlled by various input signals and internal logic.
+Sequential Logic:
+Reset and Flag Control: The module uses edge-triggered sequential logic to reset the flag and run signals on a positive edge of the clock or when their respective reset conditions (clr_flag, rst for the flag, and clr_run, rst for the run) are met. The flag is set when an overflow occurs, indicating that the timer has reached its maximum count and restarted.
+Counter and Multiplier Update: The core counting mechanism is implemented using sequential logic that updates the cnt (counter) and mult (multiplier) registers. On receiving a load signal, the counter is loaded with a start_value, and the multiplier is reset. If the run signal is active, the counter and multiplier are updated based on the overflow condition. If an overflow occurs, the counter and multiplier are reinitialized; otherwise, they are incremented.
+Combinational Logic:
+Overflow and Next Value Calculation: The module calculates the next value of the counter and multiplier, along with detecting an overflow condition, using combinational logic. This is achieved by adding 1 to the concatenated cnt and mult values and checking if the result exceeds the maximum value that can be represented by their combined widths.
+Initialization Value Calculation: The initialization value for the counter and multiplier (init) upon loading or overflow is calculated using combinational logic, setting the multiplier part to zero and the counter part to the start_value.
+
+Give me the complete code.
+

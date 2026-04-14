@@ -1,0 +1,11 @@
+Construct a circuit that performs 4-bit addition or subtraction with overflow detection. The circuit takes two 4-bit inputs, A and B, and based on the control signals Add or Sub, it either adds or subtracts these inputs. The output is a 4-bit result, O, while a separate output, V, indicates overflow conditions: it asserts when the result exceeds the maximum representable value (15) for addition or goes below zero for subtraction. The operation is synchronous with a clock signal and can be reset asynchronously.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] A,
+  input [3:0] B,
+  input Add,
+  input Sub,
+  output reg [3:0] O, // Changed to reg to allow assignment in always block
+  output reg V        // Changed to reg to allow assignment in always block
+);

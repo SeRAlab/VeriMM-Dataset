@@ -1,0 +1,9 @@
+Design a 64-bit shift register with parallel load and serial shifting capabilities. The shift register captures input data on the falling edge of the load signal; if load_l is low, it loads the data from d_in into the register. When load_l is high, if the shift_l signal is low, it performs a left shift, introducing a serial input bit, ser_in, into the least significant position, and outputs the current state of the shift register. When shift_l is high, it outputs the current value of the shift register without modification.
+module top_module(
+    input ck,
+    input ser_in,
+    input [63:0] d_in,
+    input shift_l,
+    input load_l,
+    output reg [63:0] d_out
+);

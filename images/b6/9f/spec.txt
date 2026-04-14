@@ -1,0 +1,11 @@
+Design a digital circuit that implements a DC filter to process a 16-bit data input. The module continuously updates a DC offset based on the incoming data and a specified coefficient, allowing it to filter out this offset from the data stream. When the DC filter is enabled, the circuit outputs the filtered data by subtracting the computed DC offset from the input data, along with a corresponding valid signal. If the filter is not enabled, the module outputs the input data adjusted by a specified offset. This design facilitates the removal of low-frequency noise or drift from the signal, ensuring cleaner data for further processing.
+module top_module(
+  input clk,
+  input valid,
+  input [15:0] data,
+  output reg valid_out,            // Change to reg
+  output reg [15:0] data_out,     // Change to reg
+  input dcfilt_enb,
+  input [15:0] dcfilt_coeff,
+  input [15:0] dcfilt_offset
+);

@@ -1,0 +1,7 @@
+Design a circuit that controls an 8-bit LED output based on a chip enable (ce) signal and a read/write (rw) control signal. When ce is LOW, all LED outputs are turned OFF. When ce is HIGH and rw is LOW, the LED outputs reflect the value of the incoming 8-bit data. If ce is HIGH and rw is HIGH, the current state of the LEDs remains unchanged. This module effectively serves as a simple LED driver that can set or clear the LED states based on control inputs.
+module top_module(
+    input ce,
+    input [8:1] data,
+    input rw,
+    output reg [8:1] leds
+);

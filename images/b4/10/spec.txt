@@ -1,0 +1,7 @@
+Design an arithmetic logic unit (ALU) capable of performing three operations on two signed 8-bit inputs, A and B, based on a 2-bit op_code input. The ALU can execute addition (with an optional carry input), bitwise XOR, and decrementing A by 1. It incorporates synchronous reset functionality, clearing the output and internal carry flag on a reset signal, and it outputs a carry-out signal when performing addition or decrement operations. The operations are triggered on the rising edge of the clock signal, ensuring reliable operation in a synchronous design.
+module top_module(
+  input signed [7:0] A, B,
+  input [1:0] op_code,
+  input reset, clk, Cin,
+  output reg Cout,
+  output reg signed [7:0] out);

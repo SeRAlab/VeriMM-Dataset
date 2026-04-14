@@ -1,0 +1,28 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit shift register with a parallel load. The shift register should have a clock input (clk), a reset input (reset), a load input (load), a 4-bit data input (data_in), and a 4-bit output (data_out). When the load signal is active (load = 1), the shift register should load the value of data_in. Otherwise, on each positive edge of the clock signal, the contents of the shift register should shift left by one bit.
+
+Module name:
+    ShiftRegister
+
+Input ports:
+    clk: Clock signal.
+    reset: Synchronous reset signal.
+    load: Load control signal.
+    data_in: 4-bit data input.
+
+Output ports:
+    data_out: 4-bit data output.
+
+Implementation:
+The module uses a 4-bit register `data_out` to store the current value. The always block triggers on the positive edge of the clock signal. If the reset signal is active, `data_out` is set to 0. If the load signal is active, `data_out` is set to `data_in`. Otherwise, the contents of `data_out` are shifted left by one bit.
+
+Give me the complete code.
+
+module ShiftRegister (
+    input clk,
+    input reset,
+    input load,
+    input [3:0] data_in,
+    output reg [3:0] data_out
+);

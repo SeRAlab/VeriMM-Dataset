@@ -1,0 +1,8 @@
+Design a random number generator (RNG) that produces a 10-bit output. The generator operates on a clock and has reset and next signal inputs. Upon reset, the module initializes its internal state variables with preset values combined with an external seed. When the next signal is activated, it shifts the internal state values and applies specific XOR operations to generate a new output. The output number is derived from one of the internal state variables, providing a pseudo-random sequence of numbers based on the internal state transformation.
+module top_module(
+    input clk,
+    input rst,
+    input next,
+    input [31:0] seed,
+    output reg [9:0] num
+  );

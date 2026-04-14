@@ -1,0 +1,10 @@
+Design a simple arithmetic calculator that operates on two 8-bit signed inputs, A and B, and performs various operations based on a 3-bit operation code (OP). The operations include addition, subtraction, multiplication, division, and modulus. The calculator is synchronous and triggered on the rising edge of a clock signal, with an asynchronous reset feature. It produces a 7-bit signed output (RESULT) and a ready flag (RDY) to indicate when the calculation is complete. The module also implements saturation logic to handle overflow and underflow conditions within the signed 8-bit output range.
+module top_module(
+    input CLK,
+    input RST_N,
+    input signed [7:0] A,
+    input signed [7:0] B,
+    input [2:0] OP,
+    output reg RDY,
+    output reg signed [7:0] RESULT
+);

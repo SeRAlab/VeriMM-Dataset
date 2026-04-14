@@ -1,0 +1,8 @@
+Develop a single-port RAM module with synchronous read and write capabilities. The module accepts a clock signal, an address input, data input, and a write enable signal. When the clock signal has a rising edge and the write enable signal is asserted (we=1), it writes the provided data to the specified address in memory. Regardless of the write enable status, it also outputs the data stored at the given address at every clock cycle, allowing for simultaneous read and write operations. The memory is parameterized to support different address and data widths, with a depth determined by the address width.
+module top_module(
+  input clock,
+  input [addr_width-1:0] addr,
+  input [data_width-1:0] data,
+  input we,
+  output reg [data_width-1:0] out
+);

@@ -1,0 +1,9 @@
+Design a 4-bit carry-save adder that takes three 4-bit inputs (a, b, and c) and produces a 4-bit sum (s) and a carry-out (c_out). The module uses parallel bitwise operations to compute partial products and group generates to efficiently calculate the final sum and carry outputs. The resulting sum and carry values are updated on the rising edge of a clock signal, enabling fast arithmetic operations suitable for high-speed digital circuits.
+module top_module(
+    input [3:0] a,
+    input [3:0] b,
+    input [3:0] c,
+    input clk,            // Added the input clk signal
+    output reg [3:0] s,
+    output reg [3:0] c_out
+);

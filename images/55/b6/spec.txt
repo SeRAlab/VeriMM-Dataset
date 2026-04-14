@@ -1,0 +1,9 @@
+Design a 4-to-1 address multiplexer with a 16-bit output. This module selects one of four 16-bit input addresses (addr0, addr1, addr2, addr3) based on a 2-bit selection signal (addr_sel) that is captured on the negative edge of a clock signal (clk). The selected address is then assigned to the output (a). The design ensures that the selection is updated synchronously with the negative edge of the clock, allowing for controlled address routing in a digital circuit.
+module top_module(
+    output [15:0] a,
+    input 	      clk,
+    input [1:0]       addr_sel,
+    input [15:0]      addr0,
+    input [15:0]      addr1,
+    input [15:0]      addr2,
+    input [15:0]      addr3);

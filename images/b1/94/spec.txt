@@ -1,0 +1,11 @@
+Design a 10-bit addressable memory controller that implements a read/write operation for an 8-bit RAM. The module features inputs for clock, reset, enable, write, and read signals, along with a 10-bit address and an 8-bit data input. On the rising edge of the clock, if the reset signal is active, the data output is set to zero. If enabled, the controller allows writing data to the specified address when the write signal is high, or reading data from the specified address when the read signal is high. The memory consists of 1024 locations, enabling flexible data storage and retrieval.
+module top_module(
+  input clk,
+  input rst,
+  input en,
+  input wr,
+  input rd,
+  input [9:0] addr,
+  input [7:0] data_in,
+  output reg [7:0] data_out
+);

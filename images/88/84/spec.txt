@@ -1,0 +1,7 @@
+Design a 4-bit binary counter with load functionality. The counter increments its value on each clock pulse when enabled (en) and resets to zero (4'b0000) upon a reset signal. When the load signal is activated, the counter's value is set to the provided 4-bit input (data_in). The module also generates a carry_out signal that indicates when the counter overflows from its maximum value (4'b1111) back to zero. The current counter value is available on the data_out output.
+module top_module(
+    input clk, en, reset, load,
+    input [3:0] data_in,
+    output [3:0] data_out,
+    output reg carry_out  // Change carry_out to reg type
+);

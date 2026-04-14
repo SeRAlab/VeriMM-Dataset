@@ -1,0 +1,8 @@
+Design a synchronous 8-bit register that stores an 8-bit input value based on a load signal. When the reset signal is activated, the register is cleared to zero. On the rising edge of the clock, if the load signal is high, the register captures and holds the incoming data; if the load signal is low, the register retains its previous value. The stored value can be retrieved from the output, data_out, allowing for data storage and transfer in a digital circuit.
+module top_module(
+    input [7:0] data_in,
+    input load,
+    input reset,
+    input clock,
+    output reg [7:0] data_out
+);

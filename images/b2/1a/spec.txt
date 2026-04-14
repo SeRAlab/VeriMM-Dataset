@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+
+Implement a 12-bit BCD (Binary-Coded Decimal) counter that counts from 000 to 999.
+
+Module name:  
+    BCD_counter             
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the counter.
+Output port:
+    Q: 12-bit register representing the current BCD count value.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the counter value is updated.
+If the reset signal (rst_n) is low, indicating a reset condition, the counter value (Q) is set to 000.
+Otherwise, the counter increments by 1 on each clock cycle and resets to 000 when it reaches 999.
+
+Give me the complete code.
+
+module BCD_counter(
+   input                clk,
+   input                rst_n,
+
+   output reg [11:0]     Q
+);

@@ -1,0 +1,8 @@
+Design a multi-bit binary adder/subtractor with a configurable width defined by the parameter WIDTH. The module takes two inputs, `a` and `b`, and performs addition or subtraction based on the `sub_enable` signal, which inverts the second operand `b` when asserted. An additional input, `carry_in`, allows for handling carry from a previous calculation, and the output includes both the resulting sum or difference (`res`) and a `carry_out` signal indicating an overflow condition from the most significant bit. This design efficiently computes the results through a generate loop, implementing ripple-carry logic with bitwise operations.
+module top_module(
+  input [WIDTH-1 : 0] a,
+  input [WIDTH - 1 : 0] b,
+  input sub_enable,
+  input carry_in,
+  output [WIDTH - 1 : 0] res,
+  output carry_out);

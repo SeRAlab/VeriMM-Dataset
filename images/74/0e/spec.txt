@@ -1,0 +1,9 @@
+Design a 4-bit adder/subtractor with overflow detection capabilities. The module accepts two 4-bit inputs, A and B, and can perform either addition or subtraction based on the SUB control input. An optional carry-in (CIN) can be specified for the addition operation. The output is a 4-bit sum, and an overflow signal is generated to indicate whether the operation resulted in an overflow condition, which is analyzed differently for addition and subtraction. The overflow logic for addition detects when the result wraps around from a positive to a negative value, while for subtraction, it checks if the result is less than zero.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input SUB,
+    input CIN,
+    output reg [3:0] sum,
+    output reg overflow
+);

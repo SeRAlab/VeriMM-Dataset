@@ -1,0 +1,23 @@
+Implement the Verilog module based on the following description.
+Given the state-assigned table shown below, implement the logic functions T[1] and z.
+
+The state machine has the following states and their corresponding outputs:
+1. state t[2:0] = 000 (z = 0).
+2. state t[2:0] = 001 (z = 1).
+3. state t[2:0] = 010 (z = 0).
+4. state t[2:0] = 011 (z = 1).
+5. state t[2:0] = 100 (z = 1).
+
+State transitions:
+1. From state t[2:0] = 000: If g = 0, then transition to state t[2:0] = 001. If g = 1, then transition to state t[2:0] = 010.
+2. From state t[2:0] = 001: If g = 0, then transition to state t[2:0] = 011. If g = 1, then transition to state t[2:0] = 100.
+3. From state t[2:0] = 010: If g = 0, then transition to state t[2:0] = 001. If g = 1, then transition to state t[2:0] = 000.
+4. From state t[2:0] = 011: If g = 0, then transition to state t[2:0] = 100. If g = 1, then transition to state t[2:0] = 010.
+5. From state t[2:0] = 100: If g = 0, then transition to state t[2:0] = 000. If g = 1, then transition to state t[2:0] = 011.
+
+module fsm_example3 (
+  input clk,
+  input g,
+  input [2:0] t,
+  output reg T1,
+  output reg z);

@@ -1,0 +1,18 @@
+Implement the Verilog module based on the following description.
+The following is the state transition table for a Moore state machine with one input, one output, and three states. Use the following one-hot state encoding: D=3'b001, E=3'b010, F=3'b100. Derive state transition and output logic equations by inspection assuming a one-hot encoding. Implement only the state transition logic and output logic (the combinational logic portion) for this state machine.
+
+The state machine has the following states and their corresponding outputs: 
+1. state D (out = 0).
+2. state E (out = 1).
+3. state F (out = 0).
+
+State transitions:
+1. From state D: If in = 0, then transition to state E. If in = 1, then transition to state F.
+2. From state E: If in = 0, then transition to state F. If in = 1, then transition to state D.
+3. From state F: If in = 0, then transition to state D. If in = 1, then transition to state E.
+
+module top_module (
+  input in,
+  input [2:0] state,
+  output reg [2:0] next_state,
+  output reg out);

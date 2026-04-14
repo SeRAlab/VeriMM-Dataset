@@ -1,0 +1,8 @@
+Design a Hamming Code encoder and decoder circuit that takes a k-bit input data word, applies error correction encoding, and can correct single-bit errors in the received data. The module has a reset and enable signal to control its operation. Upon enabling, it calculates parity bits and concatenates them with the input data to form a 7-bit output code word. During decoding, it calculates the syndrome to detect single-bit errors and attempts to correct them, outputting the corrected k-bit data word. The design is parameterized to allow flexibility in input length while maintaining a fixed output length corresponding to the Hamming(7,4) code.
+module top_module(
+  input [k-1:0] in,
+  input rst,
+  input en,
+  input clk,
+  output reg [n-1:0] out // Change from wire to reg since we'll be assigning values in always block
+);

@@ -1,0 +1,9 @@
+Develop a low-pass filter circuit that synchronizes various reset signals to a common clock domain. It combines external and internal reset inputs to control the filter's behavior, ensuring that the filter resets properly when any reset signal is active. The circuit utilizes a 16-bit shift register to implement the filtering operation, where it accumulates the value of a synchronized clock signal while removing the oldest value in order to smooth the input signal over time. The output is a 5-bit representation of the filtered value, providing a reduced noise signal suitable for further processing within the system.
+module top_module(
+  input wire slowest_sync_clk,
+  input wire dcm_locked,
+  input wire ext_reset_in,
+  input wire mb_debug_sys_rst,
+  input wire aux_reset_in,
+  output reg [4:0] lpf_int // Changed to reg to resolve compilation error
+);

@@ -1,0 +1,14 @@
+Design a dual-port synchronous RAM module that supports independent read and write operations for two separate data outputs. The module utilizes two 14-bit address inputs (addra and addrb) for addressing 16,384 locations of 8-bit wide memory, allowing simultaneous access by providing separate clock inputs (clka for port A and clkb for port B). Input signals (dina and dinb) facilitate writing data into the respective memory banks based on the write enable signals (wea for port A and web for port B), while output signals (douta and doutb) deliver the read data, contingent on the enable signal (ena) being active.
+module top_module(
+    output reg [7:0] douta,
+    output reg [7:0] doutb,
+    input clka,
+    input clkb,
+    input [13:0] addra,
+    input [13:0] addrb,
+    input [7:0] dina,
+    input [7:0] dinb,
+    input wea,
+    input web,
+    input ena
+    );

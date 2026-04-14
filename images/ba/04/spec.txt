@@ -1,0 +1,9 @@
+Design a flip-flop circuit with asynchronous set and reset capabilities. The module samples the input D on the negative edge of the clock (CLK_N) while allowing for immediate responses to active-low signals on SET_B and RESET_B. When SET_B is asserted, the output Q is set high (1) and Q_N low (0). Conversely, when RESET_B is asserted, Q is set low (0) and Q_N high (1). If neither control signal is active, the current value of D is latched to Q, with Q_N being the inverse of Q.
+module top_module(
+    output reg Q,
+    output reg Q_N,
+    input D,
+    input CLK_N,
+    input SET_B,
+    input RESET_B
+);

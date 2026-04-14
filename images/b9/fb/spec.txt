@@ -1,0 +1,8 @@
+Design a Mealy state machine with three states (A, B, and C) that produces an output based on inputs x and y as well as the current state. The machine resets to state A with the output LOW when the reset signal is activated. In state A, if input x is HIGH, it transitions to state B and outputs HIGH; otherwise, it remains in state A with output LOW. In state B, if input y is HIGH, it moves to state C and outputs LOW; if y is LOW, it remains in state B with output HIGH. In state C, if x is HIGH, the machine returns to state A with output LOW; if x is LOW, it transitions to state B, also outputting LOW.
+module top_module(
+  input clk,
+  input reset,
+  input x,
+  input y,
+  output reg out
+);

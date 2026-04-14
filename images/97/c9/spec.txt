@@ -1,0 +1,10 @@
+Design a memory interface for a digital system that allows data to be written to and read from a memory array. The module includes a clock and reset signal, a 10-bit address input for specifying memory locations, and a write enable signal to control data writing. Upon a rising clock edge, if the reset signal is active, the write address is cleared; otherwise, if write enable is asserted, data is written to the specified memory location. When the read enable signal is active, the module outputs the data stored at the specified address. The memory comprises 1024 entries, each capable of holding 9 bits. The output data is limited to 8 bits.
+module top_module(
+    input clk,
+    input reset,
+    input [9:0] address,
+    input write_enable,
+    input [8:0] write_data,
+    input read_enable,
+    output reg [8:0] read_data  // Changed from wire to reg
+);

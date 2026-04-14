@@ -1,0 +1,6 @@
+Design a synchronous double-port RAM module that allows simultaneous read and write operations on two separate ports. The module features two clock inputs, one for each port, along with chip enable signals to control access. Port A serves as the read interface, outputting data from the memory array based on the address provided when enabled, while Port B handles write operations, storing input data to the specified address if write enable is asserted. The memory has a parameterized address width (aw) and data width (dw), allowing for flexible configurations, and it initializes all memory locations to zero at startup.
+module top_module(
+   // Generic synchronous double-port RAM interface
+   clk_a, ce_a, addr_a, do_a,
+   clk_b, ce_b, we_b, addr_b, di_b
+   );

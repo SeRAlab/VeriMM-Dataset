@@ -1,0 +1,8 @@
+Design a partial product generator that computes an adjusted output based on several control signals. The module takes a 16-bit input, `md`, and modifies it based on the `zero`, `double`, and `negation` control signals. If `negation` is asserted, it inverts `md`; if `zero` is high, it outputs zero instead of the modified value. The output `pp` is generated such that when `double` is activated, it right shifts the potentially negated modified value, effectively doubling it, while retaining the sign bit. In the case `double` is not activated, it simply provides the potentially negated modified value directly. Overall, this module is designed to facilitate the generation of partial products in a multiplication operation within an arithmetic unit.
+module top_module(
+input	[15:0]md,		
+input	zero,
+input	double,
+input	negation,
+output	[16:0]pp 
+);

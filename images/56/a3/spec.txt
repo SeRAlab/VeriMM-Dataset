@@ -1,0 +1,11 @@
+Design a negative register that performs bitwise negation and subtraction of an input value. On every positive edge of the clock, if the asynchronous reset (arst) or synchronous reset (srst) signals are asserted, the output register z and the zero flag lz are reset to zero. When enabled (en), if the load signal (ld) is high, the module negates the input data d and stores it in z. If ld is low, the module subtracts the input data d from the current value of z. The output lz indicates whether the value of z is zero. This module can be used in arithmetic operations where negative values need to be handled.
+module top_module(
+    input clk,
+    input en,
+    input arst,
+    input srst,
+    input ld,
+    input [width-1:0] d,
+    output reg lz,                 // Change to output reg
+    output reg [width-1:0] z       // Change to output reg
+);

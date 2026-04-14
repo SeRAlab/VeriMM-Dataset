@@ -1,0 +1,9 @@
+Design a SPI (Serial Peripheral Interface) state machine that operates in two states: IDLE and ACTIVE. In the IDLE state, the machine awaits the chip select (ss_in) signal to transition to the ACTIVE state when ss_in is low. During the ACTIVE state, it generates a clock signal (sclk), samples the incoming data (data_in), and sends out the most significant bit using the Master Out Slave In (mosi) line while also capturing incoming data through the Master In Slave Out (miso) line. The state machine counts the number of bits processed and returns to the IDLE state after handling eight bits. Active outputs like ss_out and data_out reflect the state and data being transmitted or received, adhering to SPI protocol timing and data flow conventions.
+module top_module(
+  input rst,
+  input clk,
+  input ss_in,
+  input data_in,
+  output ss_out,
+  output data_out
+);

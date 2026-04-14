@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+    
+Implement a module to interface with a VGA display by generating the necessary synchronization signals and pixel data for displaying images. Its primary functions include:
+
+Generating horizontal and vertical synchronization signals (`VGA_HS` and `VGA_VS`) according to the VGA timing specifications.
+Producing RGB pixel data (`VGA_R`, `VGA_G`, `VGA_B`) to be displayed on the screen.
+Calculating the read address (`read_addr`) for fetching pixel data from an external memory or another source.
+Dividing the input clock frequency to match the VGA timing requirements.
+
+This module plays a crucial role in systems requiring visual output, such as video games, graphical user interfaces, or any application that needs to display images or text on a VGA monitor.
+
+Module name:  
+	vga_controller
+
+Input ports:
+	reset_n: A negative logic reset signal. When low, it initializes the module's internal registers.
+	clk_50: The input clock signal, typically at 50 MHz, used to derive the module's timing.
+	SW[8:0]: A 9bit input used for configuration or control, affecting the module's behavior or output.
+	pixel[2:0]: A 3bit input representing the pixel color data to be displayed.
+	read_data[2:0]: A 3bit input representing the color data fetched from an external memory or source.
+Output ports:
+	VGA_R[3:0], VGA_G[3:0], VGA_B[3:0]: 4bit outputs for each of the red, green, and blue color channels, respectively, driving the VGA display's color intensity.
+	LEDR[9:0]: A 10bit output, primarily for debugging or status indication, reflecting the state of SW and reset_n.
+	VGA_VS, VGA_HS: Output signals for vertical and horizontal synchronization with the VGA display.
+	read_addr[10:0]: An 11bit output specifying the address from which pixel data should be read.
+
+
+Implementation:
+The RTL module presented is designed to control a VGA (Video Graphics Array) display by generating the necessary synchronization signals and pixel data for displaying an image. The module operates with a 50 MHz input clock and outputs VGA signals including red, green, and blue color channels (VGA_R, VGA_G, VGA_B), horizontal and vertical synchronization signals (VGA_HS, VGA_VS), and an address signal for reading pixel data (read_addr). The module also interfaces with switches (SW) and LEDs (LEDR) for additional functionality and debugging.
+
+Give me the complete code.
+

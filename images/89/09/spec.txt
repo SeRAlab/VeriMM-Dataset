@@ -1,0 +1,7 @@
+Design a register module that serves as an intermediate storage unit between the instruction fetch (IF) and instruction decode (ID) stages of a pipelined processor. It captures and holds the program counter (PC) value, the instruction that was fetched, and the PC increment value from the IF stage on the rising edge of the clock, provided that the write-enable signal is active. The module also features an asynchronous reset, which clears the outputs to zero, and a flush signal that, when activated, resets the outputs and loads a specific default instruction value. This design effectively facilitates data transfer during pipeline operations while managing state transitions due to control signals.
+module top_module(
+    input  wire i_clk, i_resetn, i_we, i_flush,
+    input  wire [31:0] i_if_p4, i_if_pc, i_if_instr,
+    output reg  [31:0] o_id_p4, o_id_pc, 
+    output reg [31:0] o_id_instr
+);

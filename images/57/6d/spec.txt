@@ -1,0 +1,9 @@
+Design a circuit that implements a combined rotator and shift register architecture. The rotator can either load a 100-bit input data or perform rotation based on the enable signals, rotating left or right. Additionally, it features a 3-bit shift register that receives a serial input. The output consists of 3 bits derived from a logical OR operation between specific bits from the rotator's output and the shift register's output. This design allows for flexible data manipulation through simultaneous rotation and shifting operations.
+module top_module(
+    input clk,                 // Clock for the rotator
+    input load,                // Synchronous load for the rotator
+    input [1:0] ena,           // Enable for the rotator
+    input [99:0] data,         // Input data for the rotator
+    input d,                   // Serial input for the shift register
+    output reg [2:0] q         // Output from the functional module
+);

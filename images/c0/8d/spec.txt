@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module to simulate the behavior of a RAM (Random Access Memory) block with configurable data and address sizes, as well as an optional pipelining feature. Its primary functions include:
+
+Writing Data: It accepts data along with a write address and a write enable signal, allowing the data to be stored at the specified address in the memory.
+Reading Data: It outputs data from a specified read address, controlled by a read enable signal. The read operation can be configured to be either pipelined or non-pipelined, based on the `PIPELINED` parameter.
+Pipelining Support: The module can be configured to introduce a one-clock-cycle delay between the read command and the data output, which is a common requirement in high-performance systems to improve throughput and timing.
+
+This module can be utilized in a variety of systems requiring memory storage and retrieval functionalities, such as caches, buffer memories, or any application-specific memory storage needs within a digital system.
+
+Module name:  
+	openhmc_ram
+
+Input ports:
+	clk (input wire): The clock signal that synchronizes the module's operations.
+	wen (input wire): Write enable signal. When high, it allows data to be written to the memory at the address specified by waddr.
+	wdata (input wire [DATASIZE1:0]): The data to be written into the memory when wen is high.
+	waddr (input wire [ADDRSIZE1:0]): The write address where wdata will be stored when wen is high.
+	ren (input wire): Read enable signal. When high, it allows data to be read from the memory at the address specified by raddr.
+	raddr (input wire [ADDRSIZE1:0]): The read address from which data will be output when ren is high.
+Output ports:
+	rdata (output wire [DATASIZE1:0]): The data output from the memory. The data corresponds to the address specified by raddr when ren is high. In pipelined mode, the output is delayed by one clock cycle.
+
+
+Implementation:
+The RTL module presented, openhmc_ram, is designed to function as a RAM (Random Access Memory) with configurable data width, address size, and an option for pipelining. The module's primary purpose is to store and retrieve data based on the addresses provided, with the capability to handle both read and write operations synchronously with the clock signal. The design incorporates both combinational and sequential logic elements to achieve its functionality.
+
+Give me the complete code.
+

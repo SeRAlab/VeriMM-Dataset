@@ -1,0 +1,10 @@
+Design a low-power, isolated latch that captures input data (D) and holds it until the power conditions are favorable. The module includes power and ground controls (VPWR, VGND) to enable operation only when powered correctly, while a sleep signal (SLEEP_B) is monitored to manage low-power states. The latch output (Q) is set to LOW when the ground (VGND) is zero, ensuring safe operation during power transitions or in low-power modes. The design emphasizes resilience against faulty conditions and maintains data integrity in low-power applications.
+module top_module(
+    input D,
+    input SLEEP_B,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB,
+    output Q
+);

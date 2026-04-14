@@ -1,0 +1,7 @@
+Design a 16-bit arithmetic and logic unit (ALU) capable of performing addition, subtraction, and bitwise AND operations on two 16-bit inputs. The module takes two 16-bit inputs, `a` and `b`, and a 2-bit operation selector, `op`. Depending on the value of `op`, the output `result` is a 32-bit wide signal that represents either the sum, difference, or bitwise AND of the inputs, with the most significant 16 bits filled with zeros. If an invalid operation code is provided, the output defaults to zero.
+module top_module(
+    input [15:0] a,
+    input [15:0] b,
+    input [1:0] op, // Select between addition, subtraction, and bitwise AND
+    output reg [31:0] result // Changed to reg since we're assigning in an always block
+);

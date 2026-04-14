@@ -1,0 +1,5 @@
+Design a control signal generator for a MIPS processor. This module decodes a 32-bit instruction to generate control signals required for various operations. It identifies the instruction type based on the opcode and function fields to signal branching, jumping, memory operations (read/write), register destination selection, register writing, and ALU source type. Specifically, it outputs specific control signals for arithmetic operations, load/store instructions, and conditional branches.
+module top_module(
+	input [31:0] instr,
+	output branch, jump, MemToReg, MemWrite, RegDst, RegWrite, ALUSrc
+);

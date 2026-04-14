@@ -1,0 +1,7 @@
+Design a clock frequency divider that takes an input clock signal and generates a divided output clock, based on a 4-bit division factor. It allows division by any value from 1 to 15, as determined by the `div_factor` input. The output clock toggles when a counter, which increments on each clock edge, reaches the specified division factor, effectively resulting in a slower output clock signal. The design includes a reset capability to initialize the output clock and counter to a known state.
+module top_module(
+  input clk,
+  input rst,
+  input [3:0] div_factor,
+  output reg clk_out
+);

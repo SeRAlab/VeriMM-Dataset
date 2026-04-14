@@ -1,0 +1,14 @@
+Design a circuit module featuring a 5-input look-up table (LUT) combined with a synchronous flip-flop implementation. The circuit computes the logical AND of the five input signals (in0 to in4) and uses this result as input to the first flip-flop (q0). On every positive edge of the clock, the output of each flip-flop is updated: q0 captures the output of the LUT, and subsequent flip-flops (q1 to q3) shift the value through the pipeline, allowing for state retention and propagation. The module also includes an active-low reset functionality, which sets all outputs to LOW when triggered, ensuring a clear state in the absence of clock signals.
+module top_module(
+  input in0,
+  input in1,
+  input in2,
+  input in3,
+  input in4,
+  input clk,
+  input reset,
+  output reg q0,
+  output reg q1,
+  output reg q2,
+  output reg q3
+);

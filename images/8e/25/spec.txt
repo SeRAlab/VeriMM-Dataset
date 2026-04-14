@@ -1,0 +1,11 @@
+Design a simple arithmetic calculator that performs operations on two 8-bit operands based on a 2-bit opcode input. The operations include addition, subtraction, multiplication, and division. The module provides an 8-bit wide result output and two status flags: overflow (ovf) indicating if the result exceeded 255 during arithmetic operations, and underflow (unf) for division operations that go below zero. The calculator resets its internal registers and flags when a reset signal is asserted, operates on the rising edge of a clock signal, and outputs the results as a concatenation of the lower and upper 8 bits of a 16-bit temporary result.
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] operand1,
+    input [7:0] operand2,
+    input [1:0] opcode,
+    output [7:0] result,
+    output ovf,
+    output unf
+);

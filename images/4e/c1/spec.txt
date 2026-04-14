@@ -1,0 +1,8 @@
+Design a dynamic saturation control module that outputs a value while enforcing upper and lower saturation limits. The module takes three signed inputs: `up` (upper limit), `u` (current value), and `lo` (lower limit). It compares the current value against the limits and clamps it within the specified range. If `u` exceeds the upper limit, the output `y` is set to `up`, and if it falls below the lower limit, it is set to `lo`. The module also provides an output `sat_mode` to indicate when saturation conditions are active, allowing downstream components to respond appropriately.
+module top_module(
+           up,
+           u,
+           lo,
+           y,
+           sat_mode
+          );

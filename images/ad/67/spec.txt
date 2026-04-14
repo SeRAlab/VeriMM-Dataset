@@ -1,0 +1,9 @@
+Design a Mealy state machine that manages four states based on two input signals, `in1` and `in2`, along with a clock and reset signal. The machine transitions between states according to specified conditions, producing outputs `out1` and `out2`. Initially, upon reset, the state is set to S0, where both outputs are LOW. The machine progresses to S1 and S2 based on the input `in1`, where `out1` becomes HIGH in state S2, and state S3 is reached when `in2` is LOW. In S3, both outputs are HIGH. The machine loops back to S0 when `in2` is HIGH, allowing for continuous operation based on the input signals.
+module top_module(
+  input in1,
+  input in2,
+  input clk,
+  input reset,
+  output reg out1,
+  output reg out2
+);

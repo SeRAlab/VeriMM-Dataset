@@ -1,0 +1,8 @@
+Design a 32-bit wide data memory module with a capacity of 32 entries. This module supports write operations controlled by a write enable signal (WE) and a clock input (clk), allowing data to be stored in memory when WE is high by writing the value from the WD input to the location specified by the address A (using the upper bits for indexing). The module outputs the value stored at the specified address A through RD, while also implementing a mechanism to clear the output to zero if the address corresponds to a particular "head" location during a read operation when WE is low. This design effectively facilitates data storage and retrieval while incorporating simple management of write conditions and output control.
+module top_module(
+    input [31:0] A,
+    input [31:0] WD,
+    input  WE,
+    output reg [31:0] RD,  // Changed from wire to reg
+    input  clk
+);

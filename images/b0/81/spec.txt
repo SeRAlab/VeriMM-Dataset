@@ -1,0 +1,20 @@
+Please act as a professional Verilog designer.
+
+Implement a debouncer for a noisy input signal. The debouncer outputs a stable high signal only if the input remains high for a specified number of clock cycles.
+
+Module name:
+    debouncer
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high synchronous reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    signal_in: Noisy input signal to be debounced.
+    stable_count: Number of clock cycles the input signal must remain stable to be considered debounced.
+
+Output ports:
+    signal_out: Debounced output signal.
+
+Implementation:
+The debouncer is triggered on the positive edge of the clock signal (posedge clk).
+If the reset signal is asserted (rst == 1), the debouncer is reset.
+A counter is used to count the number of consecutive cycles the input signal remains stable.

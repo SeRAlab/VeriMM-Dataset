@@ -1,0 +1,8 @@
+Design a module that processes input signals to generate a final output based on parity bit generation and falling edge detection. The module computes the parity bit from an 8-bit input by XORing its bits, and monitors a 32-bit counter that increments with each clock cycle, resetting when requested. A falling edge condition is detected when the counter reaches its maximum value. The final output is produced by XORing the computed parity bit with the falling edge signal, providing a combined result that reflects both input parity and clock behavior.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] in,
+    input [31:0] in2,
+    output final_output
+);

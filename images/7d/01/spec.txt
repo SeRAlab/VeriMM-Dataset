@@ -1,0 +1,7 @@
+Design a finite impulse response (FIR) filter capable of processing signed 16-bit input signals. The module supports clock and reset functionality, where the input signal is stored in a buffer which shifts on each clock cycle. The filter coefficients are predefined and multiply with the corresponding delayed input samples to produce the output, which is the sum of these products. Upon reset, both the input and output buffers clear, ensuring the filter starts afresh. The filter is configurable for eight taps based on the defined parameter.
+module top_module(
+  input clk,
+  input rst,
+  input signed [15:0] in,
+  output reg signed [15:0] out // Changed from wire to reg
+);

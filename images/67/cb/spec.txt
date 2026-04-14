@@ -1,0 +1,8 @@
+Design a priority encoder module that encodes the highest-priority active input from two 4-bit input signals (a and b) based on a control signal (c). The module includes a clock input for synchronization. If inputs a and b are equal, the module directly encodes the value of a. Otherwise, it utilizes a 3:4 decoder to interpret the combined input of a, b, and c, identifying which input has the highest priority. The encoded output is a 3-bit value representing the active input's index, resulting in a deterministic encoding based on the given priority logic.
+module top_module(
+    input clk,
+    input [3:0] a,
+    input [3:0] b,
+    input c,
+    output reg [2:0] encoded_output
+);

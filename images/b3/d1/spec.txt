@@ -1,0 +1,9 @@
+Develop a VGA synchronization signal generator that produces horizontal and vertical sync signals based on a provided clock and reset input. This module maintains horizontal and vertical position counters for pixel tracking, generating sync pulses according to standard VGA timing parameters. It outputs the horizontal sync (h_sync) and vertical sync (v_sync) signals, ensuring they adhere to specified pulse widths and porch timings, thus enabling proper synchronization for VGA display operation.
+module top_module(
+  input clk,
+  input rst,
+  input [9:0] h_count,
+  input [9:0] v_count,
+  output reg h_sync,
+  output reg v_sync
+);

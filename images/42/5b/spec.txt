@@ -1,0 +1,11 @@
+Design a circuit that acts as a variable-width barrel shifter and multiplexer. The module receives four 32-bit inputs (A, B, C, D) and selects one of them based on the two select signals (SEL0 and SEL1). After selecting the input, the circuit performs a left or right shift operation on that selected input, dictated by the value of the shift_amount input; a positive shift_amount indicates a left shift, while a negative shift_amount indicates a right shift. The final output is a 32-bit result of the shifted data.
+module top_module(
+    input [31:0] A,
+    input [31:0] B,
+    input [31:0] C,
+    input [31:0] D,
+    input [4:0] shift_amount,
+    input SEL0,
+    input SEL1,
+    output reg [31:0] Y
+);

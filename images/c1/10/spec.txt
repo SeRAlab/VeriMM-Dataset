@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module to serve as a programmable interval timer (PIT) with a prescaler functionality. Its primary functions include:
+
+Prescaling: It divides the input clock frequency (`bus_clk`) by a programmable divisor to generate a lower frequency output signal (`prescale_out`). This is crucial for applications requiring different timing intervals or lower clock rates than the system clock.
+Synchronization: It provides synchronization capabilities through the `counter_sync` output, which can be derived from either an external synchronization input (`ext_sync_i`) or an internal synchronization signal (`cnt_sync_o`), depending on whether the module operates in slave mode (`pit_slave`).
+Reset Handling: It supports both asynchronous and synchronous reset mechanisms to ensure proper initialization and controlled operation under varying conditions.
+
+Module name:  
+	pit_prescale
+
+Input ports:
+	async_rst_b: Asynchronous reset input (active low). Used to reset the module's internal counters immediately, regardless of the clock signal.
+	sync_reset: Synchronous reset input (not used in the provided code, but typically used for resetting the module in synchronization with the bus_clk).
+	bus_clk: System clock input. The primary clock signal driving the module's operations.
+	cnt_sync_o: Internal synchronization signal input. Used as a synchronization source when not in slave mode.
+	ext_sync_i: External synchronization signal input. Used as a synchronization source when in slave mode (pit_slave = 1).
+	pit_slave: Slave mode selector. Determines the source of the synchronization signal (counter_sync).
+	divisor: 4bit input specifying the division factor for the prescaler. Determines the output frequency of prescale_out based on predefined values.
+Output ports:
+	prescale_out: Prescaled output signal. Its frequency is a division of the input bus_clk based on the value of divisor.
+	counter_sync: Synchronization output signal. Reflects either ext_sync_i or cnt_sync_o based on the mode of operation.
+
+
+Implementation:
+The RTL module named pit_prescale is designed to function as a programmable interval timer (PIT) with a prescaler feature. The module's primary purpose is to generate a prescaled output signal (prescale_out) based on a given divisor and to synchronize counters based on external and internal synchronization signals. The module is parameterized to allow flexibility in its application, specifically through COUNT_SIZE, DECADE_CNTR, and NO_PRESCALE parameters. The core logic of the module is divided into combinational and sequential parts, which together dictate the module's behavior.
+
+Give me the complete code.
+

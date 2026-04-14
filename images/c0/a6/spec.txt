@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a parameterizable, synchronous D flip-flop with an active-low synchronous set. Its primary role within a digital system to store and update data based on the clock (`clk`) signal, with the ability to set the output to a predefined value under specific conditions. This module is versatile due to its parameterizable nature, allowing it to handle single-bit or multi-bit signals based on the `SIZE` parameter. It is particularly useful in digital systems requiring state retention, synchronization, or initialization to known states under certain conditions.
+
+Module name:  
+	dffsl_ns
+
+Input ports:
+	din [SIZE1:0]: Data input port. It is a vector with a width defined by the SIZE parameter. This port receives the data that the module will store or output upon the next positive edge of the clock, provided the set condition is not met.
+	clk: Clock input. It is a singlebit input that triggers the storage or update of the data present at the din input into the module's internal register. The data is updated on the rising edge of this clock signal.
+	set_l: Activelow synchronous set input. It is a singlebit input that, when driven low, forces the module's output to a predefined value regardless of the din input. This allows for synchronous initialization or resetting of the module's output under specific conditions.
+Output ports:
+	q [SIZE1:0]: Data output port. It is a vector with a width defined by the SIZE parameter. This port outputs the data stored in the module's internal register. The output can either be the data from the din input, captured on the rising edge of the clock, or a predefined value if the set_l input is active (low).
+
+
+Implementation:
+The RTL module presented, named dffsl_ns, is designed to implement a parameterizable D flip-flop with synchronous load and an active-low set. The module's functionality is governed by both combinational and sequential logic elements, which work in tandem to achieve the desired behavior. The core of this module revolves around the manipulation of digital signals in response to clock edges, input data, and control signals.
+
+Give me the complete code.
+

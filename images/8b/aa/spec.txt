@@ -1,0 +1,6 @@
+Design a module that converts a 32-bit integer input into a 32-bit floating-point representation following the IEEE 754 format. The module extracts the sign bit and calculates the exponent and fraction components based on the magnitude of the integer. It constructs the floating-point output using proper alignment of the fraction based on leading zeros. Additionally, it outputs a signal indicating if there was any precision loss during the conversion, specifically if the least significant bits of the fraction were discarded when normalizing. The result is a compact and efficient mechanism for integer to floating-point conversion with precision tracking.
+module top_module(
+  input[31:0]  d,
+  output[31:0] a,
+  output       p_lost
+);

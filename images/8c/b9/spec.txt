@@ -1,0 +1,9 @@
+Design an arithmetic module that performs basic operations on two 8-bit inputs, `a` and `b`, based on a 2-bit control signal. The module supports addition, subtraction, multiplication, and division. It operates on the rising edge of the clock, resetting the output to zero when the `rst` signal is high. Depending on the value of the `ctrl` signal, the module will compute the corresponding arithmetic operation and output the result in an 8-bit `result` register.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] a,
+  input [7:0] b,
+  input [1:0] ctrl,
+  output reg [7:0] result
+);

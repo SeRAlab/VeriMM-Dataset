@@ -1,0 +1,19 @@
+
+
+You have been hired by a company that designs and manufactures digital circuits. Your first task is to design a Verilog module that implements a D flip-flop with asynchronous set and clock enable. The module should have the following inputs and outputs:
+
+- `CLK`: a clock input
+- `D`: a data input
+- `SET`: an asynchronous set input
+- `SLEEP_B`: a clock enable input
+- `NOTIFIER`: an output that should be set high whenever the flip-flop is set by the `SET` input
+
+The module should behave as follows:
+
+- When `SET` is high, the output `Q` should be set to 1, regardless of the value of `D`.
+- When `SET` is low and `SLEEP_B` is high, the output `Q` should follow the input `D` on the rising edge of `CLK`.
+- When `SLEEP_B` is low, the output `Q` should remain constant, regardless of the values of `D`, `SET`, and `CLK`.
+- Whenever the flip-flop is set by the `SET` input, the `NOTIFIER` output should be set high for one clock cycle.
+
+Write a Verilog module that implements the D flip-flop with asynchronous set and clock enable, as described above. Your module should be self-contained, i.e., it should not reference any external modules. Your code should be no longer than 200 lines of Verilog.
+

@@ -1,0 +1,9 @@
+Design a 4-bit binary counter with load, reset, and up/down counting capabilities. The counter increments when the up_down signal is high and decrements when it is low. Upon receiving a reset signal, the counter resets to zero. If the load signal is activated, the counter takes a predetermined value to initialize its count. The current count value is output to a 4-bit register.
+module top_module(
+    input clk,
+    input rst,
+    input load,
+    input up_down,
+    input [3:0] in, // Added input for loading value
+    output reg [3:0] out
+);

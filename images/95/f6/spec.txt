@@ -1,0 +1,13 @@
+Design a control unit for a microprocessor that interprets opcode signals to generate various control signals. The module takes 6-bit opcode and function code inputs, producing outputs that dictate the operation of the processor including signals for writing to registers, specifying the source of ALU operands, determining the register destination, controlling memory read/write operations, and enabling branching and jumping behavior. Specifically, it generates control signals for operations like register-type instructions (R-type), load/store instructions, branch instructions, and jump instructions, facilitating proper execution of these operations based on the provided inputs.
+module top_module(
+	input	[5:0]	Op,
+	input	[5:0]	Funct,
+	output			Jump,
+	output			MemtoReg,
+	output			MemWrite,
+	output			Branch,
+	output	[5:0]	ALUControl,
+	output			ALUSrc,
+	output			RegDst,
+	output			RegWrite
+);

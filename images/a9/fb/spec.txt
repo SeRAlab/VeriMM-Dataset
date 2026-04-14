@@ -1,0 +1,16 @@
+Design a pipeline register for a memory write-back (MEM/WB) stage in a processor's architecture. This module captures and holds signals related to memory and register write operations during the clock cycle: it stores control signals for memory data selection (MemtoReg) and register writing (RegWrite), as well as the outputs from the ALU and data input, while also tracking the destination register. The register is synchronized with a clock signal and features an asynchronous reset functionality, ensuring that it initializes to a known state when reset is active. The design facilitates efficient data flow and timing control within a pipelined processor, particularly in managing the transition of computed results and control signals from the ALU to the register file.
+module top_module(
+input clock,reset,
+input [4:0] phasecounter,
+
+input MemtoReg, RegWrite,
+
+input [15:0] ALUResult,data,
+
+input [2:0] des,
+
+output reg out_MemtoReg, out_RegWrite,
+output reg [15:0] out_ALUResult,out_data,
+output reg [2:0] out_des
+
+);

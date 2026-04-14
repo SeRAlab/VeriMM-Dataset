@@ -1,0 +1,7 @@
+Design a register that serves as the Instruction Fetch to Instruction Decode (IFID) stage in a pipeline processor. This module captures the program counter (pc_i) and instruction (inst_i) inputs on the rising edge of the clock when not stalled. It features control signals for pipeline hazards and flushing: if a flush is indicated, it resets the instruction output (inst_o) to zero; if there is a hazard detected, the current instruction is retained; otherwise, it updates with the new instruction. The resulting outputs are the program counter (pc_o) and the instruction (inst_o) for subsequent stages in the pipeline.
+module top_module(
+	clk_i, stall_i,
+	pc_i, inst_i,
+	pc_o, inst_o,
+	Hazard_i, Flush_i,
+);

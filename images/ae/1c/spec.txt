@@ -1,0 +1,8 @@
+Design a synchronous multiplication circuit with two 13-bit input operands, A and B, producing two 27-bit outputs, Y and Z. The circuit computes the product Y as the sum of A shifted left based on the active bits of B and computes Z as the two's complement of A, also shifted accordingly. The operation is controlled by a clock signal, and the results are updated on each positive edge of the clock. The circuit effectively implements a binary multiplier with an additional functionality to compute the negation of A based on the bits of B.
+module top_module(
+    input clk,
+    input [12:0] A,
+    input [12:0] B,
+    output [26:0] Y,
+    output [26:0] Z
+);

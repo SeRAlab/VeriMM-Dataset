@@ -1,0 +1,17 @@
+Design a FIFO (First-In-First-Out) queue that handles the storage and retrieval of data, optimized for cache miss scenarios. This module features a configurable depth of 16 entries and a data width of 32 bits. On receiving valid input data, it enqueues the data into the FIFO while managing read and write pointers, as well as a count of current entries. When the system is ready and the FIFO is not empty, it dequeues the data, allowing the data to be processed. Additionally, the module manages signals indicating when the queue is empty, the validity of the read pointer, and the output data, ensuring proper synchronization with the provided clock and reset signals.
+module top_module(
+  input clk_i,
+  input reset_i,
+  input v_i,
+  input ready_o,
+  input yumi_i,
+  input yumi_op_i,
+  input scan_not_dq_i,
+  input read_write_same_addr,
+  input v_r,
+  output reg empty,
+  output reg rptr_valid,
+  output reg enque,
+  output reg v_o,
+  output reg yumi_o
+);

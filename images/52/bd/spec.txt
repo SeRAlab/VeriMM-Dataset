@@ -1,0 +1,9 @@
+Design a digital vending machine controller that manages user interactions for selecting and purchasing products. The module operates with a finite state machine consisting of three states: IDLE, SELECT, and DISPENSE. It accepts coin inputs and allows users to make selections for two products with predefined prices. Upon receiving sufficient coins, the machine transitions to dispense the selected product and provides change based on the amount inserted. The module includes mechanisms for resetting the state and handling coin insertion, selection, and dispensing of products while maintaining the balance of inserted coins.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] coin,
+  input [3:0] selection,
+  output reg dispense,
+  output reg [3:0] change
+);

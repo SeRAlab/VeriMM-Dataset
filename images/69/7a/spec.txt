@@ -1,0 +1,6 @@
+Design a 4-bit up/down counter that increments or decrements its value based on a control signal. The counter resets to zero when the reset signal is active. When the up_down signal is high, the counter increments its value, wrapping back to zero upon reaching the maximum count of 15 (4'b1111). When up_down is low, the counter decrements its value, wrapping to 15 upon reaching zero (4'b0000). The current count is output on a 4-bit output line.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input up_down,    // Control signal to increment or decrement
+    output [3:0] q);

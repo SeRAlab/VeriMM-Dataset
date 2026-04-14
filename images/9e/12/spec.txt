@@ -1,0 +1,6 @@
+Construct an 8-bit barrel shifter that performs left or right shifting based on the value of an 8-bit input B. When B is positive, the module shifts the input A left by B positions, effectively multiplying A by 2 for each shift. When B is negative, it shifts A right by the absolute value of B positions, effectively dividing A by 2 for each bit shifted. If B is zero, the module outputs A unchanged.
+module top_module(
+    input [7:0] A,
+    input signed [7:0] B, // Changed B to signed to correctly handle shifts.
+    output reg [7:0] result
+);

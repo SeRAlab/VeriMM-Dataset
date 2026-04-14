@@ -1,0 +1,11 @@
+Design a dual-purpose D latch circuit that operates with asynchronous set functionality and incorporates low-power options. The latch captures the input data (D) when enabled by a gating signal that toggles every 5 time units, allowing it to function in both normal and low-power states, as indicated by the SLEEP_B and power input signals (KAPWR, VGND, VPWR). The asynchronous set (SET_ASYNC) allows immediate state changes regardless of the gating mechanism, making this latch suitable for situations requiring quick data storage and control in synchronous designs.
+module top_module(
+    input wire D,
+    input wire SET_ASYNC,
+    input wire SLEEP_B,
+    input wire NOTIFIER_REG,
+    input wire KAPWR,
+    input wire VGND,
+    input wire VPWR,
+    output reg Q
+);

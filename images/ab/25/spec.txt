@@ -1,0 +1,6 @@
+Design a clock control module that operates based on an input clock signal and an enable signal. When the enable signal (`ena`) is asserted, the module generates an output clock signal (`outclk`) that toggles every two clock cycles of the input clock (`inclk`). Specifically, on the first rise of `inclk`, `outclk` follows `inclk`, and on the second rise, `outclk` is set to the inverse of `inclk`, effectively creating a divided clock output with a frequency half that of the input clock. When `ena` is low, the output clock is held low, and the internal counter is reset.
+module top_module(
+    input ena,
+    input inclk,
+    output reg outclk
+);

@@ -1,0 +1,12 @@
+Design a 14-bit wide, 256-depth FIFO (First-In, First-Out) memory buffer. This module accepts data input for writing along with control signals to read and write data. It tracks the number of elements stored in the buffer, indicating when it is almost full, full, or empty. On a write request, if the buffer is not full, data is stored at the head position and the count of stored items is incremented. On a read request, if the buffer is not empty, the data at the tail position is output, and the count is decremented. The design efficiently handles wrap-around conditions for both head and tail pointers.
+module top_module(
+    input clock,
+    input [13:0] data,
+    input rdreq,
+    input wrreq,
+    output almost_full,
+    output empty,
+    output full,
+    output reg [13:0] q,  // Changed from wire to reg
+    output [7:0] usedw
+);

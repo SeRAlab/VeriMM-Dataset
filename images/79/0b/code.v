@@ -1,0 +1,1 @@
+module top_module(input wire x,y,g,output wire sum);assign sum = x^y^g;endmodule

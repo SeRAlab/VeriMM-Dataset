@@ -1,0 +1,18 @@
+Design a circuit that functions as a simple CPU control unit, which manages the flow of data and instructions through a microprocessor. The module includes state machines to control memory requests (`nMREQ`), input/output requests (`nIORQ`), read (`nRD`) and write (`nWR`) operations, and refresh signals (`nRFSH`). It utilizes clock signals for state progression and resets to initialize the CPU's registers, directing memory addresses through the `cpu_addr` output based on the current state and cycle of operations. The design orchestrates timing and control signals essential for executing microprogrammed instructions, making it a fundamental component of a microprocessor architecture.
+module top_module(
+	input         reset,
+	input         clk_neg,
+	input         clk_pos,
+	input         ce_n,
+	input         ce_p,
+	output [15:0] cpu_addr,
+	output  [7:0] cpu_dout,
+	input   [7:0] cpu_din,
+	output reg    nMREQ,
+	output reg    nIORQ,
+	input         nINT,
+	output reg    nRD,
+	output reg    nWR,
+	output reg    nM1,
+	output reg    nRFSH
+);

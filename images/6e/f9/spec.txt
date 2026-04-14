@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit Johnson counter. The module generates a 4-bit Johnson sequence on each rising edge of the clock. The counter can be reset to 0 synchronously.
+
+Module name:  
+    johnson_counter    
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    reset: Synchronous reset signal.
+
+Output ports:
+    q: 4-bit output data representing the current Johnson sequence.
+
+Implementation:
+The register is defined as reg [3:0] q and initialized to 0 using the initial statement. On the rising edge of the clock, if the reset signal is active (reset == 1), the register is set to 0. Otherwise, the value of the register is left-shifted by 1 bit and the inverted value of the most significant bit (q[3]) is inserted into the least significant position: q <= {q[2:0], ~q[3]}.
+
+Give me the complete code.
+
+module johnson_counter(clk, reset, q);
+
+    input  clk;  
+    input  reset;  
+    output  [3:0] q;

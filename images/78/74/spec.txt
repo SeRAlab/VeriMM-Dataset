@@ -1,0 +1,17 @@
+Design a dual-source memory interface multiplexing module that selects between two data sources based on the address space and control signals. Specifically, it reads from either a main memory or an exception handling memory depending on the address indicated by `pmem_adr_o` and tracks read/write operations using counters for each source. The module produces appropriate outputs for data (`pmem_dat_i`), acknowledgment (`pmem_ack_i`), and stall conditions (`pmem_stall_i`). The selection logic ensures that main memory is accessed when the address matches a specific range and the read/write counters are aligned, and switches to the exception memory when necessary. This design serves as an intermediary to manage memory operations in a processor system, handling multiple data paths efficiently.
+module top_module(
+  input clk,
+  input rst,
+  input [31:0] pmem_adr_o,
+  input pmem_cyc_o,
+  input pmem_stb_o,
+  input [31:0] pmain_dat_o,
+  input [31:0] pexc_dat_o,
+  input pmain_ack_o,
+  input pexc_ack_o,
+  input pmain_stall_o,
+  input pexc_stall_o,
+  output reg [31:0] pmem_dat_i,
+  output reg pmem_ack_i,
+  output reg pmem_stall_i
+);

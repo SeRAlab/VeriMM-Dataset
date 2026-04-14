@@ -1,0 +1,8 @@
+Design a 4-bit synchronizer module that captures and synchronizes four separate input bits (Q_reg_reg) on a rising clock edge (m_aclk) while providing a reset functionality. The output (out) directly reflects the synchronized values of the input register. Additionally, a 2-input LUT generates a single output (D) based on the last two bits of the synchronized output, effectively combining Q_reg[2] and Q_reg[3]. The module uses FDCE flip-flops for state capturing, ensuring that output synchrony is maintained with respect to the clock and reset signals.
+module top_module(
+    out,
+    D,
+    Q_reg_reg,
+    m_aclk,
+    reset
+);

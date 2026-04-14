@@ -1,0 +1,9 @@
+Design a shift register that supports left and right shifting operations for an 8-bit wide data register. The module has inputs for clock (clk), active-low reset (rstn), a load signal (load) to initialize the register with a given 8-bit value (LD), and a direction signal (dir) to determine the shifting operation. When dir = 0, the register performs a left shift, while dir = 1 allows for a right shift. The output (cout) reflects the least significant bit (LSB) when shifting left and the most significant bit (MSB) when shifting right. The register initializes to zero on reset and can load a new value when the load signal is activated.
+module top_module(
+input clk,
+input rstn,
+input load, 
+input dir,
+input [7:0] LD,
+output cout
+);

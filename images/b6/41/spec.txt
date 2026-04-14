@@ -1,0 +1,10 @@
+Design a synchronous first-in-first-out (FIFO) memory buffer with a depth of 16 and a data width of 64 bits. The module includes control signals for read and write operations, as well as indicators for empty and full states. When write enable (wr_en) is asserted and the buffer is not full, incoming data (din) is stored in the memory, and a write pointer (wr_ptr) is incremented. Similarly, when read enable (rd_en) is asserted and the buffer is not empty, data is retrieved from the memory and output to dout, while a read pointer (rd_ptr) is incremented. The module also incorporates an active reset (rst) to clear the pointers and reset the count of stored elements. The output signal wr_rst_busy indicates if a write operation is currently in progress.
+module top_module(wr_rst_busy,
+    dout,
+    empty,
+    full,
+    rd_en,
+    wr_en,
+    clk,
+    din,
+    rst);

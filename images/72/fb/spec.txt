@@ -1,0 +1,11 @@
+Design a module that acts as an up/down counter with an additional summation feature. The counter increments or decrements based on the `up_down` input signal and resets upon receiving a reset signal. It also computes a sum of the current count and the provided 3-bit input value when a condition is met. The output can either present the current count or the sum depending on the state of the `select` input, with the outputs being tri-stated based on this select logic.
+module top_module(
+  input clk,
+  input reset,
+  input up_down,
+  input [2:0] value,
+  input slowena,
+  input select,
+  output reg [3:0] count,
+  output reg [3:0] sum
+);

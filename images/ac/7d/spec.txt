@@ -1,0 +1,5 @@
+Design a module that implements a non-linear transformation within a 128-bit input state for cryptographic applications. The module takes a 128-bit input (`inDataState`), partitions it into four 32-bit segments, and processes the first two segments (inA0 and inA1) using bitwise operations, including XOR and AND with negated values of the other segments. The transformed results (`inA0new` and `inA1new`) are combined with the unchanged segments (`inA2` and `inA3`) to produce a 128-bit output (`outDataState`). This design is likely part of a larger cryptographic function, contributing to the non-linearity necessary for secure data transformation.
+module top_module(
+	input wire [127:0] inDataState,
+	output wire [127:0] outDataState
+);

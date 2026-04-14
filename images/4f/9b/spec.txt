@@ -1,0 +1,10 @@
+Design a programmable 8-bit shift register with load and shift functionalities. The module takes input signals for a clock, reset, load, and shift operations, along with an 8-bit parallel input and a data input. When the reset signal is active, the shift register is cleared to zero. If the load signal is activated, the register captures the 8-bit parallel input. The shift operation right-shifts the current content of the register by one bit, filling the most significant bit with zero. The current content of the shift register is outputted as data_out, allowing for both loading new data and shifting processes.
+module top_module(
+  input clk,
+  input reset,
+  input load,
+  input shift,
+  input [7:0] data_in,
+  input [7:0] parallel_in,
+  output [7:0] data_out
+);

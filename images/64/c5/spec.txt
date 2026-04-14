@@ -1,0 +1,8 @@
+Design a 4-bit shift register that supports both loading and shifting operations. When the LOAD_EN signal is high, it captures the 4-bit input DATA_IN and stores it in the internal register. When LOAD_EN is low and SHIFT_EN is high, it performs a circular shift operation to the right, moving each bit of the stored data one position to the right and wrapping the least significant bit back to the most significant position. The current value of the register is continuously output as DATA_OUT.
+module top_module(
+    input [3:0] DATA_IN,
+    input SHIFT_EN,
+    input LOAD_EN,
+    input CLK,
+    output [3:0] DATA_OUT
+);

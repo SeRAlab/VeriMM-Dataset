@@ -1,0 +1,9 @@
+Design a 4-to-1 multiplexer that selects one of four 32-bit input signals based on the 2-bit control input ALUSrcB. The output will be in0 when ALUSrcB is 00, 32'd4 when ALUSrcB is 01, in2 when ALUSrcB is 10, and in3 when ALUSrcB is 11. The selection process is controlled by the ALUSrcB signal, allowing for flexible input routing in a digital circuit.
+module top_module(
+	input clk,
+	input [1:0]ALUSrcB,
+	input [31:0]in0,
+	input [31:0]in2,
+	input [31:0]in3, 
+	output wire[31:0]out
+);

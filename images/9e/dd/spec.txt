@@ -1,0 +1,7 @@
+Design a memory arbiter that manages access requests from multiple devices. The arbiter utilizes a round-robin scheduling mechanism to grant access based on input signals for read and write operations. When a read or write request is received, it evaluates the active requests while ensuring only one requester is granted access at a time. The grant output indicates which requester is allowed to access the memory, ensuring fair access among the n requesters while handling both read and write requests.
+module top_module(
+  input mem_rd,
+  input mem_wr,
+  input [n-1:0] req,
+  output grant
+);

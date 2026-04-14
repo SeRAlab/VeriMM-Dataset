@@ -1,0 +1,21 @@
+The provided Verilog code implements a simple GPIO controller with a Wishbone slave interface, enabling communication with an external bus. Its primary function is to manage 14 output LEDs and read an 8-bit switch input, allowing the LEDs to be updated based on external data or switch states. The module supports write operations to set the LED states and provides the current switch value upon request. Additionally, it detects a push button press and generates a non-maskable interrupt (NMI) signal based on this input, utilizing a tick signal to help debounce the button press. The design incorporates state management for the NMI functionality and ensures safe resets of all outputs and internal registers.
+module top_module(
+    // Wishbone slave interface
+    input         wb_clk_i,
+    input         wb_rst_i,
+    input         wb_adr_i,
+    output [15:0] wb_dat_o,
+    input  [15:0] wb_dat_i,
+    input  [ 1:0] wb_sel_i,
+    input         wb_we_i,
+    input         wb_stb_i,
+    input         wb_cyc_i,
+    output        wb_ack_o,
+
+    // GPIO inputs/outputs
+    output reg [13:0] leds_,
+    input      [ 7:0] sw_,
+    input             pb_,
+    input             tick,
+    output reg        nmi_pb
+  );

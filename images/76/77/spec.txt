@@ -1,0 +1,19 @@
+Create a Verilog module for a simple FSM with four states (X1, Y1, Z1, W1) and one input signal (F). Use one-hot state encoding where X1=4'b0001, Y1=4'b0010, Z1=4'b0100, W1=4'b1000. The FSM has an output signal (out) which depends on the current state and input.
+
+The FSM has the following states and their corresponding outputs:
+1. state X1 (out = ~F).
+2. state Y1 (out = F).
+3. state Z1 (out = 1).
+4. state W1 (out = 0).
+
+State transitions:
+1. From state X1: If F = 1, then transition to state Y1. If F = 0, then transition to state Z1.
+2. From state Y1: If F = 0, then transition to state Z1. If F = 1, then stay in state Y1.
+3. From state Z1: If F = 1, then transition to state W1. If F = 0, then stay in state Z1.
+4. From state W1: If F = 0, then transition to state X1. If F = 1, then stay in state W1.
+
+module fsm_4 (
+  input F,
+  input [3:0] state,
+  output reg [3:0] next_state,
+  output reg out);

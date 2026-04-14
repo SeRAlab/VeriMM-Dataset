@@ -1,0 +1,8 @@
+Design a circuit for an Automatic Gain Control (AGC) system that calculates the magnitude of a complex signal represented by its real and imaginary components. The module takes in two signed 16-bit inputs for the real and imaginary parts of the signal, computes the square of each, and adds the upper 16 bits of the results to provide an approximate magnitude. The final output is a signed 16-bit magnitude value, which is updated on the rising edge of the clock unless reset, in which case the output is set to zero.
+module top_module(
+    i_clk,
+    i_rst,
+    i_signalReal,
+    i_signalImag,
+    o_mag
+    );

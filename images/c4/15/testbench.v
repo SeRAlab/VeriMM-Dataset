@@ -1,0 +1,214 @@
+`timescale 1ns/1ps
+
+module top_module_tb;
+
+    // Testbench signals (combinational circuit)
+    reg [255:0] in;
+    reg [7:0] sel;
+    wire out;
+
+    // Test tracking
+    integer test_num;
+    integer pass_count;
+    integer fail_count;
+
+    // Instantiate the DUT (Device Under Test)
+    top_module dut (
+        .in(in),
+        .sel(sel),
+        .out(out)
+    );
+    task testcase001;
+
+        begin
+            test_num = 1;
+            $display("Test %0d: Select in[0] with bit set to 1", test_num);
+            in = 256'b0;
+            in[0] = 1'b1;
+            sel = 8'd0;
+            #10;
+            #1;
+
+            check_outputs(1'b1);
+        end
+        endtask
+
+    task testcase002;
+
+        begin
+            test_num = 2;
+            $display("Test %0d: Select in[0] with bit set to 0", test_num);
+            in = {256{1'b1}};
+            in[0] = 1'b0;
+            sel = 8'd0;
+            #10;
+            #1;
+
+            check_outputs(1'b0);
+        end
+        endtask
+
+    task testcase003;
+
+        begin
+            test_num = 3;
+            $display("Test %0d: Select in[255] with bit set to 1", test_num);
+            in = 256'b0;
+            in[255] = 1'b1;
+            sel = 8'd255;
+            #10;
+            #1;
+
+            check_outputs(1'b1);
+        end
+        endtask
+
+    task testcase004;
+
+        begin
+            test_num = 4;
+            $display("Test %0d: Select in[255] with bit set to 0", test_num);
+            in = {256{1'b1}};
+            in[255] = 1'b0;
+            sel = 8'd255;
+            #10;
+            #1;
+
+            check_outputs(1'b0);
+        end
+        endtask
+
+    task testcase005;
+
+        begin
+            test_num = 5;
+            $display("Test %0d: Select middle index (128)", test_num);
+            in = 256'b0;
+            in[128] = 1'b1;
+            sel = 8'd128;
+            #10;
+            #1;
+
+            check_outputs(1'b1);
+        end
+        endtask
+
+    task testcase006;
+
+        begin
+            test_num = 6;
+            $display("Test %0d: Verify isolation (other bits set)", test_num);
+            in = {256{1'b1}};
+            in[64] = 1'b0;
+            sel = 8'd64;
+            #10;
+            #1;
+
+            check_outputs(1'b0);
+        end
+        endtask
+
+    task testcase007;
+
+        begin
+            test_num = 7;
+            $display("Test %0d: Random access test (index 42)", test_num);
+            in = 256'hA5A5A5A5_5A5A5A5A_F0F0F0F0_0F0F0F0F_A5A5A5A5_5A5A5A5A_F0F0F0F0_0F0F0F0F;
+            sel = 8'd42;
+
+
+
+            #10;
+            #1;
+
+            check_outputs(in[42]);
+        end
+        endtask
+
+    task testcase008;
+
+        begin
+            test_num = 8;
+            $display("Test %0d: Data transparency check", test_num);
+            in = 256'b0;
+            sel = 8'd10;
+            in[10] = 1'b1;
+            #5;
+            if (out !== 1'b1) $display("Subtest A failed");
+            in[10] = 1'b0;
+            #5;
+            #1;
+
+            check_outputs(1'b0);
+        end
+        endtask
+
+    // Test stimulus
+    initial begin
+        // Initialize
+        test_num = 0;
+        pass_count = 0;
+        fail_count = 0;
+
+        $display("========================================");
+        $display("top_module Testbench");
+        $display("========================================");
+
+
+        testcase001();
+        testcase002();
+        testcase003();
+        testcase004();
+        testcase005();
+        testcase006();
+        testcase007();
+        testcase008();
+        
+        
+// Print summary
+        $display("\n========================================");
+        $display("Test Summary");
+        $display("========================================");
+        $display("Tests Passed: %0d", pass_count);
+        $display("Tests Failed: %0d", fail_count);
+        $display("Total Tests:  %0d", pass_count + fail_count);
+        $display("========================================");
+
+        if (fail_count == 0)
+            $display("ALL TESTS PASSED!");
+        else
+            $display("SOME TESTS FAILED!");
+
+        $display("\nSimulation completed at time %0t", $time);
+        $finish;
+    end
+
+    // Task to check outputs
+    task check_outputs;
+        input expected_out;
+        begin
+            #1; // Small delay for combinational logic to settle
+            if (expected_out === (expected_out ^ out ^ expected_out)) begin
+                $display("PASS");
+                $display("  Outputs: out=%b",
+                         out);
+                pass_count = pass_count + 1;
+            end else begin
+                $display("FAIL");
+                $display("  Expected: out=%b",
+                         expected_out);
+                $display("  Got:      out=%b",
+                         out);
+                fail_count = fail_count + 1;
+            end
+        end
+    endtask
+
+    // Timeout watchdog
+    initial begin
+        #1000000; // 1ms timeout
+        $display("\nERROR: Simulation timeout!");
+        $finish;
+    end
+
+endmodule

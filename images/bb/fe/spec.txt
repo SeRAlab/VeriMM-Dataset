@@ -1,0 +1,12 @@
+Design a pixel data processing module that functions as a bitplane shifter for a graphical display system. The module employs a clock-driven shift register architecture to load and shift 16-bit pixel data based on various operational modes: super high resolution, high resolution, and low resolution. The shift register can be loaded with parallel input data and shifts the data according to specific scrolling values, enabling pixel manipulation in one, two, or four pixel increments depending on the selected resolution mode. The module outputs a delayed pixel value which is intended to smooth the pixel output for display, ensuring proper timing and synchronization in image rendering.
+module top_module(
+	input 	clk28m,		   		//35ns pixel clock
+	input	c1,
+	input	c3,
+	input	load,				//load shift register
+	input	hires,				//high resolution select
+	input	shres,				//super high resolution select (takes priority over hires)
+	input	[15:0] data_in,		//parallel load data input
+	input	[3:0] scroll,		//scrolling value
+	output	out					//shift register out
+);

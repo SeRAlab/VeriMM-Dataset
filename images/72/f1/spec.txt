@@ -1,0 +1,8 @@
+Design a circuit that takes a 3-bit input vector and produces three separate output signals (o0, o1, o2) based on the values of each bit of the input. Each output signal corresponds to a specific decoding pattern derived from the input vector: o0 is activated when the input indicates an odd index, o1 is activated with a distinct pattern based on an even index incremented by one, and o2 further modifies the even index signal. Additionally, the original input vector is directly output as a separate 3-bit wide signal (outv). This module can be viewed as a decode and output driver for a 3-bit input with a focus on providing specific patterned outputs.
+module top_module(
+    input wire [2:0] vec,
+    output wire [2:0] outv,
+    output wire o2,
+    output wire o1,
+    output wire o0
+);

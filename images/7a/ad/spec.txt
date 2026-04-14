@@ -1,0 +1,9 @@
+Design a clock gating module that manages the output enable and clock signals based on input conditions. It takes an input clock signal (`inclk`) and an enable signal (`ena`), along with reset signals (`devpor` and `devclrn`). The module generates an output enable signal (`enaout`) and a gated clock output signal (`outclk`). The output enable is asserted when the respective enable signal is active and not in a reset state. The gated clock signal is derived from the input clock and the output enable, effectively allowing clock signals to flow only when conditions are met. This design is useful for power management in digital circuits by reducing unnecessary clock operations.
+module top_module(
+  inclk,
+  ena,
+  devpor,
+  devclrn,
+  enaout,
+  outclk
+);

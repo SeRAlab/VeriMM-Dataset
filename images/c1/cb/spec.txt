@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module is a parameterizable, scan-enabled D flip-flop with synchronous reset. Its primary functions include:
+
+Data Storage: It temporarily stores data on the rising edge of the clock signal.
+Scan Testing: Incorporates scan testing functionality through the `se` (scan enable) input, allowing for easier testing and debugging of integrated circuits by shifting in test data.
+Synchronous Reset: Provides the ability to reset the stored data to a known state synchronously with the clock signal.
+
+This module plays a crucial role in digital designs, especially in sequential logic circuits, where it can be used for implementing memory elements, registers, and state machines. Its scan testing capability is vital for Design for Testability (DFT) strategies, ensuring the manufacturability and reliability of complex ICs.
+
+Module name:  
+	dffrl_s
+
+Input ports:
+	din [SIZE1:0]: Data input port. A vector of width SIZE that represents the data to be stored in the flipflop upon a clock edge.
+	clk: Clock input. The rising edge of this signal triggers the storage of data or the reset operation.
+	rst_l: Synchronous reset input, active low. When asserted, it causes the flipflop to reset the output to zero synchronously with the clock.
+	se: Scan enable input. When high, it enables the scan test mode, allowing si to be shifted into the flipflop instead of din.
+	si [SIZE1:0]: Scan data input. This is the test data that is shifted into the flipflop when scan mode is enabled.
+Output ports:
+	q [SIZE1:0]: Data output port. This vector of width SIZE represents the current state or data stored in the flipflop.
+	so [SIZE1:0]: Scan data output. In this module, it is directly connected to the output q, allowing the observation of the flipflop's state during scan testing.
+
+
+Implementation:
+The RTL module presented, named dffrl_s, is designed to implement a parameterizable, scan-capable D flip-flop with synchronous reset and scan enable functionalities. The module's primary function is to store and output a bit or a vector of bits, based on the parameter SIZE, which dictates the width of the data input (din), output (q), scan input (si), and scan output (so). This design allows for both normal operation and scan-based testing, making it versatile for various digital integrated circuit applications.
+
+Give me the complete code.
+

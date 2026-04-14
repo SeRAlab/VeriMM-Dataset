@@ -1,0 +1,10 @@
+Design an audio codec module that processes audio signals based on configuration settings. It accepts a 16-bit audio input and, upon receiving a clock signal, either compresses or decompresses the audio data while validating the output signal. The module features parameters for sample rate, bit rate, channels, and audio format, although it currently bypasses actual compression/decompression logic and simply outputs the input audio unchanged. The `valid_out` signal indicates when valid audio data is available on the output.
+module top_module(
+  input clk,
+  input rst,
+  input [15:0] audio_in,
+  input [7:0] config_data,
+  input config_en,
+  output [15:0] audio_out,
+  output reg valid_out // Changed to reg type
+);

@@ -1,0 +1,9 @@
+Design a signed arithmetic calculator that performs basic operations on two 8-bit signed inputs, `a` and `b`, based on a 2-bit operation selector `op`. Upon the rising edge of the clock, and when not in reset, the module executes one of four operations: addition, subtraction, multiplication, or division, with the results stored in a temporary register. The result is continuously output as an 8-bit signed value.
+module top_module(
+  input clk,
+  input rst,
+  input signed [7:0] a,
+  input signed [7:0] b,
+  input [1:0] op,
+  output signed [7:0] result
+);

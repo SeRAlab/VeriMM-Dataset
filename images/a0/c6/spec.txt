@@ -1,0 +1,10 @@
+Design a vending machine controller that processes product selection and monetary transactions. It accepts two-bit button inputs to select one of four products, as well as inputs for the amount of money inserted and the product's price. When a valid button is pressed, the controller checks if sufficient funds are available; if so, it updates total money received, increments the number of products dispensed, calculates the change to return, and identifies the selected product. If insufficient funds are provided, it returns the entire amount as change and defaults to dispensing no product. The outputs reflect the total money collected, the count of products dispensed, the change to be returned, and the specific product selected.
+module top_module(
+    input [1:0] button,
+    input [7:0] money,
+    input [7:0] price,
+    output [1:0] product,
+    output [7:0] change,
+    output [7:0] total_money,
+    output [1:0] num_dispensed
+    );

@@ -1,0 +1,8 @@
+Design a module that converts color data into a format suitable for memory storage based on the specified color depth. The module takes a 2-bit input representing the color depth (either 8 or 16 bits) and a 32-bit color value, alongside a 2-bit input to indicate the least significant bits (x_lsb). It outputs a 32-bit memory value (mem_o) and a 4-bit select signal (sel_o) that determines which part of the memory is being written to. For 8-bit color depth, it selects the corresponding byte based on x_lsb, while for 16-bit color depth, it differentiates between the high and low words based on the least significant bit of x_lsb. If no specific conditions are met, it defaults to a full 32-bit value.
+module top_module(
+    input  [1:0]  color_depth_i,
+    input  [31:0] color_i,
+    input  [1:0]  x_lsb_i,
+    output [31:0] mem_o,
+    output [3:0]  sel_o
+);

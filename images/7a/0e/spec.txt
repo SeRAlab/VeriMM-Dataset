@@ -1,0 +1,30 @@
+Please act as a professional Verilog designer.
+
+Implement an Edge Detector module that detects rising edges of an input signal and outputs a pulse signal when a rising edge is detected.
+
+Module name:
+    edge_detector
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    sig_in: Input signal for edge detection.
+
+Output ports:
+    pulse_out: Output pulse signal.
+
+Implementation:
+The module includes a register, sig_in_d, to store the delayed version of the input signal.
+The sig_in_d register is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the sig_in_d register is cleared to 0.
+On each clock cycle, the sig_in_d register is updated with the current value of sig_in.
+The output pulse signal is high for one clock cycle when the current value of sig_in is 1 and the previous value of sig_in_d was 0 (rising edge detected).
+
+Give me the complete code.
+
+module edge_detector(
+  input clk,
+  input rst_n,
+  input sig_in,
+  output reg pulse_out
+);

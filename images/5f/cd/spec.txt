@@ -1,0 +1,10 @@
+Design a finite state machine (FSM) that determines the next state outputs based on a 3-bit current state (cs) and two input signals (Extra and Loop). The module produces a 3-bit next state output (ns) and three control signals (fetch, exec1, exec2). The conditions for the next state and control signals are defined using combinational logic, where ns[1] and ns[0] are driven by specific combinations of the current state and input signals, while the fetch, exec1, and exec2 outputs indicate various operation modes depending on the current state configurations.
+module top_module(
+    input [2:0] cs,
+    input Extra,
+    input Loop,
+    output [2:0] ns,
+    output fetch,
+    output exec1,
+    output exec2
+);

@@ -1,0 +1,10 @@
+Design a circuit for handling and encoding interrupt requests in a microprocessor environment. The module accepts an 8-bit input representing an interrupt number and a signal indicating whether an interrupt is detected. If an interrupt is detected, the module outputs an encoded interrupt number (offset by one) and either a dynamically calculated offset or a fixed vector number depending on compile-time configuration settings. Specifically, it generates an EIC (External Interrupt Controller) offset and vector based on defined parameters related to the interrupt handling scheme, ensuring compatibility with specified MIPS32 architecture guidelines. The module also sets a shadow set output that is always zero, indicating the absence of shadow registers in this configuration.
+module top_module(
+    input      [  7 : 0 ] irqNumber,
+    input                 irqDetected,
+    
+    output     [ 17 : 1 ] EIC_Offset,
+    output     [  3 : 0 ] EIC_ShadowSet,
+    output     [  7 : 0 ] EIC_Interrupt,
+    output     [  5 : 0 ] EIC_Vector
+);

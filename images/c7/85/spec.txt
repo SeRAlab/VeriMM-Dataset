@@ -1,0 +1,37 @@
+
+
+You are tasked to design a verilog module for a D-latch with the following specifications:
+- The module should have the following inputs and outputs:
+  - Input D: the data input.
+  - Input EN: the enable input.
+  - Input RST: the reset input.
+  - Output Q: the output.
+- The D-latch should operate on the rising edge of the enable input.
+- When the reset input is high, the output should be set to 0.
+- When the enable input is low, the output should hold its previous value.
+- When the enable input is high, the output should be set to the value of the data input.
+
+Use the following code snippet as a reference for your implementation:
+```
+module d_latch (
+  input D,
+  input EN,
+  input RST,
+  output Q
+);
+
+  reg Q_reg;
+
+  always @ (posedge EN) begin
+    if (RST) begin
+      Q_reg <= 1'b0;
+    end else begin
+      Q_reg <= D;
+    end
+  end
+
+  assign Q = Q_reg;
+
+endmodule
+```
+

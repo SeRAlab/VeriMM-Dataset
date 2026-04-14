@@ -1,0 +1,17 @@
+Please act as a professional verilog designer.
+
+Create a module for a 6-bit Johnson counter. The counter shifts a '0' through a 6-bit register on every positive edge of the clock signal when the enable signal (enable) is high. The counter resets to the initial state 6'b000001 when the reset signal (reset) is active.
+
+Module name:  
+    johnson_counter_6bit               
+Input ports:
+    reset: Reset signal (active high)
+    clk: Clock signal
+    enable: Signal to enable counting
+Output ports:
+    count: 6-bit output representing the current count value
+
+Implementation:
+If the reset signal is active (reset), the counter is reset to the initial state 6'b000001 by assigning this value to the output register (count). If the enable signal (enable) is high, the counter shifts the bits to the left on each positive clock edge, with the least significant bit (LSB) being filled with the inverted most significant bit (MSB).
+
+Give me the complete code.

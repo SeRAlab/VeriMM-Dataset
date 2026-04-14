@@ -1,0 +1,15 @@
+Please act as a professional verilog designer.
+
+Create a module for a 16-bit register with load enable. The module should have a clock input, a load enable input, a 16-bit data input, and a 16-bit output. When the load enable signal is asserted, the output should be updated with the value of the data input on the rising edge of the clock. Otherwise, the output should retain its previous value.
+
+Module name:
+    reg16
+Input ports:
+    clk: a 1-bit clock input
+    load: a 1-bit load enable input
+    d: a 16-bit data input
+Output ports:
+    q: a 16-bit output representing the stored value
+
+Implementation:
+The module uses an always block triggered by the rising edge of the clock signal. Inside the always block, there is an if statement to check the load enable signal. If the load enable signal is asserted, the output is set to the value of the data input. Otherwise, the output retains its previous value.

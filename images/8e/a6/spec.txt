@@ -1,0 +1,7 @@
+Design a module for counting the number of '1's in a 32-bit input. The circuit uses a clock and a reset signal, where upon reset it initializes the count to zero. On each clock cycle, if not in reset, it shifts the current count left by one bit and adds the total number of '1's from the incoming input. This results in the output being a 6-bit register that represents the cumulative count of '1's detected in the input data stream.
+module top_module(
+  input clk,
+  input rst,
+  input [31:0] in,
+  output reg [5:0] count
+);

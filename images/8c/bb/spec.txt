@@ -1,0 +1,9 @@
+Design a binary adder capable of adding two 8-bit inputs along with a carry-in bit. The module computes the sum and provides a carry-out signal to indicate if there's an overflow beyond the 8-bit result. Additionally, it includes an overflow flag to signal if the final sum exceeds 255. The addition is performed in a staged manner over eight sequential stages, ensuring that carry calculations from each stage are taken into account for the final output.
+module top_module(
+    input [7:0] input1,
+    input [7:0] input2,
+    input carry_in,
+    output [7:0] sum,
+    output carry_out,
+    output overflow_flag
+);

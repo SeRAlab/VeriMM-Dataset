@@ -1,0 +1,18 @@
+Please act as a professional Verilog designer. Your task is to create a Verilog module that implements clock buffer drivers. 
+A clock buffer driver is a type of digital circuit that receives a clock signal and produces a buffered version of that signal. 
+This module should have the following inputs and outputs:
+
+Inputs: 
+- clk_in: the input clock signal
+- en: an enable signal that is used to enable or disable the clock buffer driver
+
+Outputs: 
+- clk_out: the buffered output clock signal
+
+Your module should implement the following functionality:
+- When the enable signal is high (en=1), the buffered output signal (clk_out) should be identical to the input clock signal (clk_in).
+- When the enable signal is low (en=0), the buffered output signal (clk_out) should be held low.
+
+To implement the module, you should use Verilog code to define a D flip-flop that receives the input clock signal and the enable signal. 
+The state of the D flip-flop should be determined by the enable signal: when the enable signal is high, the output of the D flip-flop should be the input clock signal; when the enable signal is low, the output of the D flip-flop should be held low. 
+Finally, you should use an output buffer to amplify the output signal.

@@ -1,0 +1,9 @@
+Design a module that serves as a simple audio data interface, enabling the transfer of audio input and output signals. It takes a 32-bit audio input and a valid signal to indicate when the input data is valid. When both the input data is valid and the output is ready to receive data, it transfers the input audio data to the output and asserts valid output and ready input flags. If the output is not ready, it deasserts the output valid signal, and if the audio input is not valid, it deasserts the input ready flag. This module effectively acts as a bridge between audio input source and output sink, managing flow control in the data transfer process.
+module top_module(
+    input [31:0] audio_in_data,
+    input audio_in_valid,
+    output reg audio_in_ready,
+    output reg [31:0] audio_out_data,
+    output reg audio_out_valid,
+    input audio_out_ready
+);

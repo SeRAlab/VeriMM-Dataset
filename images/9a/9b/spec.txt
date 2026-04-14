@@ -1,0 +1,20 @@
+Please act as a professional Verilog designer.
+
+Implement a 3-bit Johnson counter with an asynchronous reset. The counter should generate a sequence of Johnson codes on each positive clock edge. If the reset signal is high, the counter should reset to the initial Johnson code immediately, regardless of the clock signal.
+
+Module name:
+    johnson_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+
+Output ports:
+    johnson_code: Output 3-bit Johnson code value.
+
+Implementation:
+Johnson Code Logic:
+The module includes a 3-bit register, johnson_code, to store the current Johnson code value.
+On the positive edge of the clock signal (clk), the module shifts the bits of the register and complements the last bit. If the reset signal (rst) is high, indicating a reset condition, the Johnson code register is set to the initial Johnson code value (3'b000) immediately.
+
+Give me the complete code.

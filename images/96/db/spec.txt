@@ -1,0 +1,5 @@
+Design a circuit that functions as a no-operation (NOP) instruction handler. When the flush input is asserted (set to 1), it outputs a predefined NOP opcode (16'b1000100000000000). If flush is not asserted (set to 0), it simply forwards the value of the inst_in input to inst_out, effectively allowing a transparent pass-through of the instruction data when not flushing.
+module top_module(
+	input [15:0] inst_in,
+	input flush,
+	output reg [15:0] inst_out);

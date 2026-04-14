@@ -1,0 +1,15 @@
+Design a top-level module that integrates a synchronous 8-bit register with asynchronous reset, alongside a 4-bit input processor. The module captures an 8-bit input `d` on the rising edge of `clk` and outputs the registered value `q`. It directly passes the 4-bit input `vec` to the output `outv`, while also generating two 2-bit vectors: `outv1` (comprising the first and third bits of `vec`) and `outv2` (composed of the second and fourth bits of `vec`). Additionally, the individual bits of `vec` are outputted as `o0`, `o1`, `o2`, and `o3`. The final output `q` is derived from a bitwise OR operation between `reg_q` and an expanded version of `outv`, creating a versatile data-handling module suitable for various digital applications.
+module top_module( 
+    input clk,
+    input reset,          // Asynchronous reset for the register
+    input [7:0] d,        // 8-bit input for the register
+    input wire [3:0] vec, // 4-bit input for the other module
+    output [7:0] q,       // 8-bit output from the register
+    output wire [3:0] outv, // 4-bit output from the other module
+    output wire [1:0] outv1, // 2-bit output containing the first and third bits of the 4-bit input vector
+    output wire [1:0] outv2, // 2-bit output containing the second and fourth bits of the 4-bit input vector
+    output wire o3,       // Output for the second bit of the second 2-bit output vector
+    output wire o2,       // Output for the first bit of the second 2-bit output vector
+    output wire o1,       // Output for the second bit of the first 2-bit output vector
+    output wire o0        // Output for the first bit of the first 2-bit output vector
+);

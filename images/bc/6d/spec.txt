@@ -1,0 +1,12 @@
+Design a register file for a digital system that supports reading and writing 32-bit wide registers. The circuit has a clock input and an initialization signal, allowing it to reset all non-zero registers to zero. It reads the values from two registers specified by 5-bit read address inputs and outputs their contents. On the falling edge of the clock, if the write operation is enabled and the target register is not the zero register, it stores the provided 32-bit input data into the designated register. This design allows for simultaneous read and write operations in a register file typically used in processors.
+module top_module(
+    input clk,
+    input init,
+    input writeOp,
+    input [4:0] readReg1,
+    input [4:0] readReg2,
+    input [4:0] writeReg,
+    input [31:0] writeData,
+    output [31:0] readData1,
+    output [31:0] readData2
+    );

@@ -1,0 +1,7 @@
+Design a bridge module for interfacing between a 32-bit data bus and an 8-bit data bus. It takes a 4-bit select input to determine which byte of the 32-bit input data corresponds to the 8-bit output. The module outputs 32 bits to the 32-bit bus based on the selected byte from the 8-bit bus input, handling both read and write operations. It also generates a corresponding 2-bit address for the 8-bit interface from a given 32-bit address, thus facilitating communication between a wider bus and a narrower one by managing byte-level access.
+module top_module(
+    wb_32_sel_i,
+    wb_32_dat_i, wb_32_dat_o, wb_32_adr_i,
+
+    wb_8_dat_i, wb_8_dat_o, wb_8_adr_i
+);

@@ -1,0 +1,8 @@
+Design a shift register circuit capable of storing and shifting an 8-bit value. The module has a reset function that clears the register to zero and a load function that allows an external input to be loaded into the register. On each clock cycle, if neither reset nor load is active, the contents of the register are shifted left by one position, with the most significant bit wrapping around to become the least significant bit. The output provides the most significant bit of the shift register.
+module top_module(
+  input clk,
+  input reset,
+  input load,
+  input data_in,
+  output reg [7:0] data_out
+);

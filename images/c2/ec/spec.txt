@@ -1,0 +1,33 @@
+
+
+You have been hired by a company to design a new module for their system. The module should be able to take in a data signal and output a processed signal. The module should also have power inputs for various voltage levels. You must design a verilog module that meets these requirements.
+
+Your module should be named `data_processing_module` and should have the following inputs and outputs:
+
+**Inputs:**
+- `data_in` (1 bit)
+- `power_in` (4 bits)
+
+**Outputs:**
+- `data_out` (1 bit)
+
+The `power_in` input is a 4-bit signal that represents the following power inputs:
+- `power_in[0]` represents `VPB`
+- `power_in[1]` represents `VPWR`
+- `power_in[2]` represents `VGND`
+- `power_in[3]` represents `VNB`
+
+Your module should perform the following operations on the `data_in` signal:
+- If `data_in` is 0, `data_out` should be 0.
+- If `data_in` is 1, `data_out` should be 1.
+
+However, the output should only be valid if the power inputs are correct. The power inputs should be valid if:
+- `VPB` is high (1)
+- `VPWR` is high (1)
+- `VGND` is low (0)
+- `VNB` is low (0)
+
+If the power inputs are not valid, the output should be X (undefined).
+
+Your module should be contained within 200 lines of verilog code.
+

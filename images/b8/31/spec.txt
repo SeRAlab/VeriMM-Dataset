@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit synchronous binary counter with enable and synchronous reset.
+
+Module name:
+    sync_binary_counter
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high synchronous reset signal to initialize the counter.
+    en: Enable signal to control the counter.
+Output port:
+    count: 4-bit register representing the current count value.
+
+Implementation:
+On every rising edge of the clock signal (clk), if the reset signal (rst) is high, the counter value is reset to 0.
+If the enable signal (en) is high and the reset signal (rst) is low, the counter increments by 1 on each clock cycle.
+
+Give me the complete code.
+
+module sync_binary_counter(
+   input                clk,
+   input                rst,
+   input                en,
+
+   output reg [3:0]     count
+);

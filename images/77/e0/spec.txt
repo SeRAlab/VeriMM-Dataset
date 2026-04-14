@@ -1,0 +1,19 @@
+Design a complex processor that performs arithmetic operations on complex number inputs received over a streaming interface. The module processes real and imaginary parts of the input complex numbers by first scaling them and applying transformations, specifically doubling and then further multiplying by three. It generates valid outputs when a clock enable signal is active and asserts the output validity signal when data is ready to be sent. The final results are provided through output ports for both the real and imaginary components, each extended to 25 bits to accommodate potential overflow from the arithmetic operations. Overall, this module is intended for use in applications involving complex signal processing or data manipulation.
+module top_module(
+    input clk,
+    input rst,
+    input ce,
+    input s_axis_data_tvalid,
+    output s_axis_data_tready,
+    input s_axis_data_tlast,
+    input signed [15:0] s_axis_data_tdata_xn_re_0,
+    input signed [15:0] s_axis_data_tdata_xn_im_0,
+    input s_axis_config_tvalid,
+    output s_axis_config_tready,
+    input [0:0] s_axis_config_tdata_fwd_inv,
+    output m_axis_data_tvalid,
+    input m_axis_data_tready,
+    output m_axis_data_tlast,
+    output signed [24:0] m_axis_data_tdata_xn_re_0,
+    output signed [24:0] m_axis_data_tdata_xn_im_0
+);

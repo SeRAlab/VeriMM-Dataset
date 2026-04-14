@@ -1,0 +1,7 @@
+Design a 4-bit Booth multiplier circuit that performs signed multiplication of two 4-bit inputs, A and B, producing an 8-bit output P. The module utilizes a state machine mechanism to iteratively adjust the product based on the least significant bits of B while performing shifts and additions based on the Booth's algorithm. This allows the multiplier to efficiently handle both positive and negative values, with the output reflecting the final computed product after a fixed number of cycles based on the bit-width of the inputs.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input clk,               // Added clk input
+    output reg [7:0] P      // Changed assignment of P to reg type
+);

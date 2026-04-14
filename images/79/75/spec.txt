@@ -1,0 +1,19 @@
+Design a decoder module that interprets a 32-bit instruction input, extracting various control signals for a processor. The module outputs relational signals for writing data to registers, special function registers, and handling memory loads, as well as generating a program counter enable signal based on the instruction and a zero condition input. It further includes outputs for selecting source registers and an immediate value, essential for decoding and facilitating operations within a processing pipeline.
+module top_module(
+        input           iAZERO,
+        input  [31:0]   iINST,
+        
+        output          oWRDTA,
+        output          oWRGPR,
+        output          oWRSFR,
+        output          oWRMLR,
+        output [1:0]    oSGPRI,
+        output [2:0]    oSAOUT,
+        output          oUAZRO,
+        output          oUIMMB,
+        output          oPCJEN,
+        output [3:0]    oSREGA,
+        output [3:0]    oSREGB,
+        output [3:0]    oSSFRR,
+        output [7:0]    oIMMBV
+    );

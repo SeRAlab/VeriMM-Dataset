@@ -1,0 +1,18 @@
+Design a circuit that acts as a data mediating unit with a memory buffer to store and manage two input values simultaneously. It features two write controls (wr0 and wr1) for inserting data into an internal memory array. The module can determine when to push data to an adder based on the availability of distinct read addresses, effectively allowing for concurrent read and write operations. Additionally, it has a mechanism to signal the end of file (eof) while reading data sequentially. The outputs facilitate the transfer of selected values to an adder and a downstream component.
+module top_module(
+    input clk,
+    input rst,
+    input wr0,
+    input [LOG2_INTERMEDIATOR_DEPTH - 1:0] row0,
+    input [65:0] v0,
+    input wr1,
+    input [LOG2_INTERMEDIATOR_DEPTH - 1:0] row1,
+    input [65:0] v1,
+    output wire push_to_adder,
+    output wire [LOG2_INTERMEDIATOR_DEPTH - 1:0] row_to_adder,
+    output wire [65:0] v0_to_adder,
+    output wire [65:0] v1_to_adder,
+    output wire push_to_y,
+    output wire [65:0] v_to_y,
+    output reg eof
+);

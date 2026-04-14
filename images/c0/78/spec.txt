@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+    
+Implement a module to compute a 16-bit Cyclic Redundancy Check (CRC) value based on the input data stream. CRC is a popular error-detecting code used to detect accidental changes to raw data in digital networks and storage devices. The primary function of this module to generate a CRC value that can be used for error checking purposes. In a broader system context, this module can be integrated into communication protocols, data storage systems, or any application requiring data integrity verification.
+
+Module name:  
+	CRC_16
+
+Input ports:
+	BITVAL (input): A singlebit input representing the current bit of the data stream for which the CRC is being calculated. Its data type is a single bit.
+	Enable (input): A singlebit input that enables the CRC calculation when high (1). The CRC calculation is paused when this input is low (0). Its data type is a single bit.
+	CLK (input): The clock input signal. The CRC calculation is synchronized to the rising edge of this clock signal. Its data type is a single bit.
+	RST (input): The reset input signal. When high (1), it initializes the CRC register to 0, effectively resetting the CRC calculation. Its data type is a single bit.
+Output ports:
+	CRC (output reg): A 16bit output register that holds the current value of the CRC calculation. Its data type is a 16bit register.
+
+
+Implementation:
+The RTL module presented is designed to compute a 16-bit CRC (Cyclic Redundancy Check) value based on a serial input bit stream. The module operates synchronously with a clock signal (CLK) and can be reset asynchronously using a reset signal (RST). The computation of the CRC value is enabled by an Enable signal. The core logic of the module revolves around a 16-bit shift register (CRC) and a combinational logic block that determines the feedback for the shift register based on the current input bit (BITVAL) and the most significant bit of the shift register (CRC[15]).
+Sequential Logic:
+The module's sequential logic is primarily governed by the always block that triggers on the positive edge of the CLK or the positive edge of the RST signal. This design choice ensures that the CRC computation is synchronized with the clock signal while allowing an immediate reset of the CRC value to 0 upon activation of the RST signal.
+Within the always block, the CRC register's behavior is conditional. Upon reset (RST = 1), the CRC register is cleared (set to 0). Otherwise, if the Enable signal is high, the module proceeds with the CRC computation for the current clock cycle.
+Combinational Logic:
+The core of the CRC computation lies in the combinational logic that calculates the feedback bit (inv) used in the shift register operation. The feedback bit is determined by XORing the current input bit (BITVAL) with the most significant bit of the CRC register (CRC[15]). This operation is fundamental to the CRC algorithm, as it introduces the necessary non-linearity and ensures that the CRC value is sensitive to each bit of the input bit stream.
+The shift register operation is then performed with specific bits (CRC[11] and CRC[5]) being XORed with the feedback bit (inv) before being shifted. This operation is in accordance with the polynomial used for the CRC computation, which dictates which bits of the CRC register should influence the feedback mechanism.
+
+Give me the complete code.
+

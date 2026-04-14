@@ -1,0 +1,7 @@
+Design a module that performs a conditional addition of a round key to a 128-bit input. When the enable signal is asserted, the module outputs the result of a bitwise XOR operation between the input data (`ip`) and the round key (`ip_key`). If the enable signal is not asserted, the module outputs the original input data unchanged. This functionality is typically utilized in cryptographic algorithms such as the Advanced Encryption Standard (AES).
+module top_module(
+input [127:0] ip,
+input [127:0] ip_key,
+input enable,
+output [127:0] op
+);

@@ -1,0 +1,7 @@
+Design a 3-to-4 line multiplexer with an enable input. When the enable signal is active, the multiplexer outputs a four-bit wide signal where one bit is driven by the corresponding bit of a three-bit input based on the 2-bit select signal. If the select signal is 00, the least significant bit of the output is set to the first bit of the input; for 01, the second bit of the input is placed in the second least significant position; for 10, the third bit of the input is directed to the third position; for 11, all output bits are set to LOW. If the enable signal is LOW, all output bits will also be LOW regardless of the input or the select signal.
+module top_module(
+  input [2:0] data_in,
+  input enable,
+  input [1:0] select,
+  output reg [3:0] data_out
+);

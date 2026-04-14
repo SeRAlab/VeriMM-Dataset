@@ -1,0 +1,10 @@
+Design a 4-to-1 multiplexer that selects one of four 4-bit wide input signals based on a 2-bit selection signal. The module captures the selected input on a combinatorial level in the first stage and outputs the result on the rising edge of a clock signal in the second stage. The result is a synchronized output reflecting one of the four inputs, determined by the selection bits.
+module top_module(
+    input [3:0] in0,
+    input [3:0] in1,
+    input [3:0] in2,
+    input [3:0] in3,
+    input [1:0] sel,
+    input clk, // Added clk input to resolve the error
+    output reg [3:0] out
+);

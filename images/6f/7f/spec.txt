@@ -1,0 +1,24 @@
+Design a bus arbiter circuit that manages read and write requests from two devices competing for access to a shared DRAM. The module operates based on a clock input, alternating between handling requests from the first device (using addr1 and req_read1) and the second device (using addr2, data_in2, req_read2, and req_write2). It outputs appropriate data back to each device (data1 for the first device and data_out2 for the second) and indicates when data is valid and when a write is complete. The arbiter ensures that only one device is actively communicating with the DRAM at any time, controlled by a busy flag and maintaining state with the current_device register. The functionality can switch modes with a compile-time directive to allow for direct pass-through of data if desired.
+module top_module(
+    input clk,
+
+    input [23:0] addr1,
+    output reg [31:0] data1 = 0,
+    input req_read1,
+    output data_valid1, 
+
+    input [23:0] addr2,
+    input [31:0] data_in2,
+    output reg [31:0] data_out2 = 0,
+    input req_read2,
+    input req_write2,
+    output data_valid2, 
+    output write_complete2,
+
+    output reg [23:0] dram_addr,
+    output reg [31:0] dram_data_in, 
+    output reg dram_req_read,
+    output reg dram_req_write,
+    input [31:0] dram_data_out,
+    input dram_data_out_valid,
+    input dram_write_complete);

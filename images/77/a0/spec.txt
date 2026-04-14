@@ -1,0 +1,13 @@
+Design a game logic module for a simple paddle ball game. The module manages the paddle's position, which can move left or right based on button inputs. It initializes the paddle at a central starting position on the screen and regulates its movement while ensuring it stays within the screen boundaries. The module also detects collision events, specifically between the ball and the paddle or the bottom of the screen, updating the game state accordingly. If the ball falls past the paddle, the player loses a life, and the game ends if all lives are depleted. Additionally, it handles the ball's movement and reversal of direction upon collisions with the paddle or screen edges.
+module top_module(
+    input clk,
+    input reset,
+    input [1:0] btn,
+    input [9:0] pixel_x,
+    input [9:0] ball_x_in, // renamed input to avoid conflict
+    input [9:0] ball_y_in, // renamed input to avoid conflict
+    output reg [9:0] paddle_x,
+    output reg [9:0] ball_x, // added to store ball position
+    output reg [9:0] ball_y, // added to store ball position
+    output reg game_over
+);

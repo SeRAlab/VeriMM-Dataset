@@ -1,0 +1,7 @@
+Design a 32-bit byte swap pipeline that processes an input value through three stages of transformation. Initially, the module accepts a 32-bit input and, during each clock cycle, performs a byte swap operation on the data. In the first stage, it initializes the shift register with the input; in the second stage, it swaps the first and last bytes; and in the final stage, it reorganizes the byte order for the entire 32-bit output. The output is then made available at the end of the pipeline while the module resets to begin processing the next input upon the activation of a reset signal.
+module top_module(
+    input [31:0] in,
+    input clk,
+    input reset,
+    output reg [31:0] out
+);

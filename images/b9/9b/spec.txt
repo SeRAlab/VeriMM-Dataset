@@ -1,0 +1,9 @@
+Design a 4-bit shift left register with parallel load capability. On a positive clock edge, if the reset signal is asserted, the output will be cleared to zero. If the parallel load signal is active, the register will load the input_data directly. Otherwise, if the shift signal is enabled, the register will perform a left shift operation, moving all bits left and inserting a zero into the least significant bit position.
+module top_module(
+    input clk,
+    input reset,
+    input parallel_load,
+    input shift,
+    input [3:0] input_data,
+    output reg [3:0] output_data
+);

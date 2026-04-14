@@ -1,0 +1,9 @@
+Design a circuit that integrates a 4-bit ripple carry adder and a 3-to-8 priority encoder. When the Select input is high, the module outputs a fixed ZERO for the sum; otherwise, it computes the sum of inputs A and B (4 bits). Simultaneously, the priority encoder evaluates the 4-bit input C to generate an 8-bit output based on the highest order bit set in C, effectively prioritizing the input signal and indicating its position as an output.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [3:0] C,
+    input Select,
+    output [3:0] Sum,
+    output reg [7:0] priority_out
+);

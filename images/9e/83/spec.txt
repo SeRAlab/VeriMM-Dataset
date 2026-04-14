@@ -1,0 +1,7 @@
+Design a buffer module with conditional input and output behavior. The module takes an input signal (I) and two control signals (IBUFDISABLE and INTERMDISABLE). If IBUFDISABLE is deactivated (0), the output follows the input; if IBUFDISABLE is active (1), the output is driven to a predetermined value based on the chip configuration (represented by SIM_DEVICE), specifically set to HIGH for a 7-series device. The module also includes parameters to control features like low power operation and I/O standard compliance, allowing for flexibility in usage across different designs.
+module top_module(
+    input I,
+    input IBUFDISABLE,
+    input INTERMDISABLE,
+    output O
+);

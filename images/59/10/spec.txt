@@ -1,0 +1,7 @@
+Design a module that performs multiplication of two n-bit wide inputs, A and B, with selectable operation mode. When the control signal (ctrl) is set to 0, the module carries out unsigned multiplication, accumulating the result through bitwise shifts and additions. When ctrl is set to 1, it performs signed multiplication using Verilog's built-in signed arithmetic, producing a product that is properly formatted for both signed and unsigned inputs. The resulting product is output as a 2n-bit wide value, accommodating for potential overflow in multiplication.
+module top_module(
+  input [n-1:0] A,
+  input [n-1:0] B,
+  input ctrl,
+  output reg [2*n-1:0] P
+);

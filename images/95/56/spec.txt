@@ -1,0 +1,5 @@
+Design a clock gating circuit that controls the enabling of a clock signal based on several input conditions. The module outputs ENCLK, which is driven low upon a reset or when the enable (EN) signal is not asserted. When EN is active, if the toggle enable (TE) signal is high, ENCLK will also be set low, effectively disabling clock propagation. If both EN is high and TE is low, ENCLK will produce the inverted version of the clock signal, allowing clock operation only when explicitly enabled and not toggled off. This approach enhances power efficiency by preventing unnecessary clock transitions.
+module top_module(
+  input CLK, EN, TE, RESET,
+  output reg ENCLK
+);

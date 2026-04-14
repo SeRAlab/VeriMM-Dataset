@@ -1,0 +1,9 @@
+Design a circuit that functions as a simple arithmetic calculator capable of performing both addition and subtraction on two 4-bit inputs (A and B), with operation selection controlled by a single-bit input (op). On the rising edge of the clock signal (clk), if op is 0, the circuit outputs the sum of A and B; if op is 1, it outputs the difference. The module also includes an overflow detection mechanism, which sets an overflow output flag if the result exceeds the maximum representable value of 4 bits (15).
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input op,
+    input clk,
+    output reg [3:0] result,
+    output reg overflow
+);

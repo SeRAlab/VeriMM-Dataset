@@ -1,0 +1,26 @@
+Please act as a professional Verilog designer.
+
+Implement a module for a 4-bit shift register with parallel load. The module should shift the data to the left on each clock cycle. It should also have a load signal to load 4-bit parallel data into the register.
+
+Module name:  
+    shift_reg               
+Input ports:
+	clk: Clock input for synchronization.
+	rst_n: Active-low reset signal.
+	load: Load signal for parallel data.
+	parallel_in[3:0]: 4-bit parallel input data.
+Output ports:
+	serial_out: Serial output data.
+
+Implementation:
+Use a synchronous process to shift the data to the left on each clock cycle. If the load signal is high, load the parallel data into the register.
+
+Give me the complete code.
+
+module shift_reg(
+    input               clk         ,   
+    input               rst_n       ,
+    input               load        ,
+    input       [3:0]   parallel_in ,
+    output  reg         serial_out
+);

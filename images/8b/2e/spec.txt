@@ -1,0 +1,6 @@
+Design a circuit that rounds a 16-bit input number to the nearest power of two based on its least significant byte. The module takes a clock input and a 16-bit number. At each rising clock edge, it evaluates the least significant 8 bits of the input. Depending on specific values (e.g., 1, 2, 4, 8, 16, 32, 64, or 128), it adjusts the least significant byte of the input number to the corresponding power of two while keeping the most significant byte unchanged. The output is a 16-bit rounded number reflecting this adjustment.
+module top_module(
+    input clk,
+    input [15:0] input_num,
+    output reg [15:0] rounded_num  // Changed to reg
+);

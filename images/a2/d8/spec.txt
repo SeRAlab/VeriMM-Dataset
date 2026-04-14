@@ -1,0 +1,9 @@
+Design a 16-bit barrel shifter that allows for configurable shifting of input data based on the select lines `ena`. The module has inputs for clock (`clk`), an asynchronous load control signal (`load`), and a 2-bit enable control (`ena`) to determine the type of shift operation—circular shifts to the right or left. The shifted data is stored in a shift register, and upon loading, both the shift register and output (`q`) are initialized with the provided data. Additionally, the design computes the modulo-8 of the least significant three bits of the shift register and outputs the inverted result as `final_output`.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [15:0] data,
+    output reg [15:0] q,
+    output wire [2:0] final_output
+);

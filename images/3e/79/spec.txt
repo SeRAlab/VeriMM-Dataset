@@ -1,0 +1,9 @@
+
+Create a Verilog module that implements a basic version of the ChaCha20 stream cipher's quarter round function. The module should take four 32-bit input words and produce four 32-bit output words as a result of the quarter round transformation. The function is defined as follows:
+```
+a = a + b; d = d ^ a; d = d <<< 16;
+c = c + d; b = b ^ c; b = b <<< 12;
+a = a + b; d = d ^ a; d = d <<< 8;
+c = c + d; b = b ^ c; b = b <<< 7;
+```
+Your task is to implement this function in Verilog and create a testbench that checks its correctness.

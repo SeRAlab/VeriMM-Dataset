@@ -1,0 +1,8 @@
+Design a digital audio delay line that captures and outputs microphone input samples based on a variable delay setting. The module uses a clock signal to store incoming audio samples in a memory buffer, allowing the selection of a delay determined by a two-bit input (`varDelay`). The output, `SPEAKER_OUT`, provides the delayed audio sample. Additionally, the module includes a 7-segment display output (`seg`) that indicates the selected delay setting with specific binary patterns for each possible delay value. The design incorporates a circular buffer mechanism and utilizes a counter for memory addressing, making it suitable for real-time audio processing applications.
+module top_module(
+    input clk, 
+    input [1:0] varDelay,  
+    input [11:0] MIC_in, 
+    output reg [11:0] SPEAKER_OUT, 
+    output reg [6:0] seg 
+    );

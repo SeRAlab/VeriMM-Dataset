@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to interface with ARINC 429 data bus signals, specifically for receiving data. ARINC 429 is a data transfer standard for aircraft avionics. It operates by receiving serial data streams from the ARINC 429 bus, decoding them, and then outputting the data in a parallel format along with a write enable signal to indicate the validity of the received data. The module supports different data speeds and includes parity checking functionality. It plays a crucial role in the broader system context by serving as a bridge between the physical layer of the ARINC 429 bus and the digital logic or processing units that require the bus data in a more accessible format.
+
+Module name:  
+	a429_rx_iface
+
+Input ports:
+	clk2M: A clock input signal (assumed to be 2 MHz based on the name) that drives the internal logic of the module.
+	reset: A reset signal that initializes the module's internal state to a known condition.
+	enable: An enable signal that activates the module's operation.
+	speed: A 2bit input that determines the speed of the ARINC 429 bus (high speed or low speed).
+	a429_in_a and a429_in_b: Differential input signals from the ARINC 429 bus. These are used to decode the serial data.
+	parcheck: A signal that enables or disables parity checking for the received data.
+Output ports:
+	data: A 32bit output that holds the decoded ARINC 429 data word.
+	wr_en: A write enable signal that indicates when the data output holds a valid ARINC 429 word.
+
+
+Implementation:
+The a429_rx_iface module is designed to interface with ARINC 429 data bus signals, specifically for receiving data. It operates with a 2 MHz clock (clk2M) and can be reset or enabled through external signals. The module supports two data rates (high and low) as determined by the speed input, and it can handle two ARINC 429 input lines (a429_in_a and a429_in_b). Additionally, it includes a parity check feature (parcheck) to ensure data integrity. The module outputs the received 32-bit data (data) and a write enable signal (wr_en) to indicate valid data reception.
+
+Give me the complete code.
+

@@ -1,0 +1,10 @@
+Design a synchronous module that performs arithmetic operations on two 32-bit inputs, a and b, with the ability to either add or subtract based on a control signal (sub). Upon receiving each clock cycle, it stores the inputs, computes the sum or difference, and outputs the result. The module also detects changes in the least significant bit of the modified inputs (a_dif and b_dif) to set a rise output flag, indicating a specific transition based on the XOR of the shifted input values. This module can be utilized in digital systems requiring arithmetic calculations and rise detection functionalities.
+module top_module(
+  input clk,
+  input rst_n,
+  input [31:0] a,
+  input [31:0] b,
+  input sub,
+  output reg rise,
+  output reg [31:0] sum
+);

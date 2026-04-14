@@ -1,0 +1,14 @@
+Design a signal splitter module that operates on a 16-bit input. On each rising edge of the clock, it separates the 16-bit input into four 4-bit outputs: two high nibbles (i_high1, i_high0) and two low nibbles (i_low1, i_low0). Additionally, the module takes four 4-bit inputs (o_high1, o_low1, o_high0, o_low0) and combines them into a 16-bit output. This design is effective for organizing and processing multi-bit signals in a modular fashion, potentially for applications such as communication systems or data processing units where bit manipulation is required.
+module top_module(
+    input clk,
+    input [15:0] in,
+    output reg [3:0] i_high1,
+    output reg [3:0] i_low1,
+    output reg [3:0] i_high0,
+    output reg [3:0] i_low0,
+    input [3:0] o_high1,
+    input [3:0] o_low1,
+    input [3:0] o_high0,
+    input [3:0] o_low0,
+    output reg [15:0] out
+);

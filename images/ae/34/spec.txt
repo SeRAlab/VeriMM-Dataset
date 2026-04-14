@@ -1,0 +1,6 @@
+Design a memory data extraction module that supports various data sizes (byte, halfword, and word) from a 32-bit memory output. The module takes a 32-bit memory output and an address to determine which portion of the data to load based on the specified size. It can load data as unsigned or signed values, using the LoadUnsigned control signal. For a byte-sized load, it extracts the appropriate 8 bits; for a halfword-sized load, it extracts 16 bits; and for a word-sized load, it simply outputs the entire 32 bits. The output result is formatted accordingly, ensuring proper sign extension for signed data types.
+module top_module(input  [31:0] MemOut,
+                    input  [1:0]  MemSize,
+                    input         LoadUnsigned,
+                    input  [31:0] Address, 
+                    output reg [31:0] Result);

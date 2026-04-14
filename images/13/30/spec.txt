@@ -1,0 +1,6 @@
+Design a Verilog module to implement a simplified version of the ChaCha20 quarter round function. The module should take four 32-bit input words (a, b, c, d) and produce four 32-bit output words as the result of the quarter round operation. The output should be computed as follows:  
+1. a += b; d ^= a; d = (d << 16) | (d >> (32 - 16));  
+2. c += d; b ^= c; b = (b << 12) | (b >> (32 - 12));  
+3. a += b; d ^= a; d = (d << 8) | (d >> (32 - 8));  
+4. c += d; b ^= c; b = (b << 7) | (b >> (32 - 7));  
+The module should have clock and reset signals to ensure proper sequential operation.

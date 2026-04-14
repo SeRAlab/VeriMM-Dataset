@@ -1,0 +1,11 @@
+Implement the Verilog module based on the following description.
+You are given an 8-bit input vector data_in[7:0]. We want to know some relationships between each bit and its neighbour:
+(1) left_and: Each bit of this output vector should indicate whether both the corresponding input bit and its neighbour to the left are '1'. For example, left_and[6] should indicate if data_in[6] and data_in[7] are both 1. Since data_in[7] has no neighbour to the left, the answer is obvious so we don't need to know left_and[7].
+(2) right_or: Each bit of this output vector should indicate whether any of the corresponding input bit and its neighbour to the right are '1'. For example, right_or[4] should indicate if either data_in[4] or data_in[3] are 1. Since data_in[0] has no neighbour to the right, the answer is obvious so we don't need to know right_or[0].
+(3) xor_wrap: Each bit of this output vector should indicate whether the corresponding input bit is different from its neighbour to the left. For example, xor_wrap[6] should indicate if data_in[6] is different from data_in[7]. For this part, treat the vector as wrapping around, so data_in[7]'s neighbour to the left is data_in[0].
+
+module bitwise_comp (
+	input [7:0] data_in,
+	output [6:0] left_and,
+	output [7:1] right_or,
+	output [7:0] xor_wrap);

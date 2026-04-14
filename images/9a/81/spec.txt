@@ -1,0 +1,14 @@
+Design a fetch module responsible for managing the program counter (PC) in a processor. It updates the PC on each clock cycle unless a stall or busy signal is present. If a jump signal is asserted, the PC is set to a specified jump address; if a branch signal is active, it updates the PC to a branch address. In the absence of these control signals, the PC increments by 4, indicating the next instruction address. Additionally, the module always assigns a fixed access size of 0, sets the read/write signal low, and enables output on each clock cycle. The initial PC is set to a starting address, providing a defined entry point for execution.
+module top_module(
+    input clk,
+    input stall,
+    input busy,
+    input [31:0] j_addr,
+    input jump,
+    input [31:0] br_addr,
+    input branch,
+    output reg [31:0] pc,
+    output reg [2:0] access_size,
+    output reg rw,
+    output reg enable
+);

@@ -1,0 +1,7 @@
+Design a fixed-point arithmetic unit capable of performing addition, subtraction, multiplication, and division on signed fixed-point numbers. The module takes two signed fixed-point inputs of a specified format (with a defined number of bits for the integer and fractional parts), and a control signal to select the desired operation. The output is a signed fixed-point result that reflects the operation specified by the control signal. This design enables efficient arithmetic processing in applications requiring fixed-point calculations.
+module top_module(
+  input signed [n+m-1:0] x,
+  input signed [n+m-1:0] y,
+  input [1:0] ctrl,
+  output reg signed [n+m-1:0] z // Changed to 'reg' type
+);

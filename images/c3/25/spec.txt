@@ -1,0 +1,20 @@
+
+
+You are tasked with designing a module that receives data and outputs it on a read port. The module should have the following inputs and outputs:
+
+Inputs:
+- `address` (2-bit): address of the data to be read
+- `clk` (1-bit): clock signal
+- `in_port` (1-bit): input data
+- `reset_n` (1-bit): reset signal
+
+Outputs:
+- `readdata` (32-bit): output data
+
+The module should have the following behavior:
+- On reset (`reset_n` low), `readdata` should be set to 0.
+- On each positive edge of the clock (`clk`), the data on `in_port` should be read.
+- If the `address` is 0, the data read from `in_port` should be output on `readdata`.
+
+Write a Verilog module that implements the above behavior.
+

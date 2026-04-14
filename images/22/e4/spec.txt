@@ -1,0 +1,13 @@
+
+Create a 2-channel DMA controller that can handle data transfer requests from two different peripherals. The controller should have the following inputs:
+- `req1`: Request signal from channel 1
+- `req2`: Request signal from channel 2
+- `clk`: Clock signal
+- `reset`: Asynchronous reset signal
+
+The controller should output:
+- `ack1`: Acknowledge signal for channel 1
+- `ack2`: Acknowledge signal for channel 2
+- `active_channel`: Indicates which channel is currently being serviced (0 for channel 1, 1 for channel 2)
+
+The controller should prioritize channel 1 over channel 2 when both requests are received at the same time. Each channel should be acknowledged for one clock cycle before moving to the next channel.

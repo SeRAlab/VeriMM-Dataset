@@ -1,0 +1,7 @@
+Design a circuit that functions as a parity counter, which computes the parity of an 8-bit input and maintains a count of clock cycles. The module features an asynchronous active-high reset that initializes the counter. The output is an 8-bit signal constructed by concatenating a 4-bit difference between the current counter value and the parity result with the current counter value. The parity is determined by taking the bitwise XOR of the input, which indicates whether the number of high bits in the input is odd or even.
+module top_module(
+    input clk,
+    input reset,      // Asynchronous active-high reset
+    input [7:0] in,   // 8-bit input for the parity generator
+    output [7:0] out  // 8-bit output from the system
+);

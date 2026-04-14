@@ -1,0 +1,7 @@
+Design a control unit for a processor that generates output signals based on the opcode and function code of an instruction. When the opcode is zero, the module enables register writing (RegWrite = 1) and determines the ALU control signal (ALUCntl) based on the function code, mapping specific function codes to unique ALU operations. If the opcode is not zero, it disables register writing (RegWrite = 0) and sets the ALU control signal to zero. This indicates that the module manages ALU operation and register writing based on the instruction type.
+module top_module(
+    input [5:0] Op,
+    input [5:0] Func,
+    output reg RegWrite,
+    output reg [3:0] ALUCntl 
+    );

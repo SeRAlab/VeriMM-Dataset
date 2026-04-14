@@ -1,0 +1,9 @@
+Design a dual-port RAM module that allows simultaneous read and write operations on a memory array. The memory has a size of 1024 words, each 8 bits wide. Two independent ports facilitate writing data into memory when their respective write enable signals are asserted and reading data when their respective read enable signals are active. The outputs return the data stored in the specified addresses if read operations are enabled; otherwise, they output zero.
+module top_module(
+  input clk,
+  input we1, we2,
+  input re1, re2,
+  input [addr_width-1:0] addr1, addr2,
+  input [m-1:0] data_in1, data_in2,
+  output reg [m-1:0] data_out1, data_out2
+);

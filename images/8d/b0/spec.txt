@@ -1,0 +1,10 @@
+Design a circuit that performs a combination of arithmetic and shift operations on 16-bit inputs. The module accepts two 16-bit inputs, a control signal to determine addition or subtraction, a signed 4-bit input for shift amount, and a reset signal. It first computes the result of either adding or subtracting the two inputs based on the control signal, then shifts the result by a specified number of bits using a barrel shifter. The final output is stored in a register that can be reset to zero, ensuring that the output is updated on the positive edge of a clock signal.
+module top_module(
+    input [15:0] in0,
+    input [15:0] in1,
+    input ctrl,
+    input signed [3:0] SHIFT,
+    input RESET,
+    input clk, // Added clk input
+    output reg [15:0] q
+);

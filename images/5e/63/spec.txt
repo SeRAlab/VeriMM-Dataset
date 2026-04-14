@@ -1,0 +1,8 @@
+Design a 4-bit up/down counter with asynchronous reset and enable functionality. The counter increments or decrements its output based on the up_down input; when up_down is high, it counts upward until it wraps around to zero upon reaching its maximum value. Conversely, when up_down is low, it counts downward and wraps around to the maximum value when it reaches zero. The counting operation occurs on the rising edge of the clock, and the counter can be reset to zero asynchronously when the rst signal is asserted. The enable signal allows the counting to operate only when it is active.
+module top_module(
+    input clk,
+    input rst,
+    input up_down,
+    input enable,
+    output reg [3:0] out
+);

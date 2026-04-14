@@ -1,0 +1,13 @@
+Design a circuit that performs parallel loading, shifting, and accumulating of input data. The module accepts an 8-bit input and a shift amount, and on receiving a valid signal, it loads the data into a shifting register while simultaneously accumulating the input values. It uses an internal counter to track the number of accumulations and, once it reaches a count of 7, it outputs the accumulated value along with the contents of the shift register as a combined 10-bit output. Additionally, the circuit manages valid and ready signals to coordinate input readiness and output validity, and it resets its registers upon a reset signal.
+module top_module(
+    input               clk         ,
+    input       [7:0]   data_in     ,
+    input       [2:0]   shift_amount,
+    input               valid_a     ,
+    input               ready_b     ,
+    input               reset       ,
+    
+    output              ready_a     ,
+    output  reg         valid_b     ,
+    output  reg [9:0]   data_out
+);

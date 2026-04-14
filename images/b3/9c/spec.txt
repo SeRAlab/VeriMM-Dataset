@@ -1,0 +1,16 @@
+Implement the Verilog module based on the following description.
+We want to create an 8-bit register that:
+
+// (1) captures the input data 'd' on a rising edge of the clock when the 'enable' input is high,
+// (2) retains its value when 'enable' is low,
+// (3) provides an asynchronous reset signal to set the register to zero.
+
+// The register value is output on 'q[7:0]'. The reset signal is active high asynchronous.
+
+module top_module(
+    input wire clk,
+    input wire reset,
+    input wire enable,
+    input wire [7:0] d,
+    output reg [7:0] q
+);

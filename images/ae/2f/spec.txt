@@ -1,0 +1,9 @@
+Design a 4-bit binary counter with additional control features. The counter increments its value on each clock cycle, and can be asynchronously reset to a specified initial value when the reset signal is active. If the load signal is asserted, the counter loads the specified initial value. The counter also wraps around to the initial value when it reaches a predefined maximum value, allowing it to function as a bounded counter.
+module top_module(
+  input clk,
+  input rst,
+  input load,
+  input [3:0] init_value,
+  input [3:0] max_value,
+  output reg [3:0] count
+);

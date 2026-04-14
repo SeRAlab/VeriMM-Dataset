@@ -1,0 +1,7 @@
+Design a write-back block for a digital circuit that outputs an 8-bit wide value. Upon receiving a clock pulse, if the reset signal is low, the output will be set to the value of the 8-bit input (ans_dm); otherwise, it will be reset to zero. The module stores the temporary result (ans_wb_temp) and updates the output (ans_wb) synchronously on the positive edge of the clock signal.
+module top_module(
+    output reg [7:0] ans_wb,
+    input [7:0] ans_dm,
+    input clk,
+    input reset
+    );

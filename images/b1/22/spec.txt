@@ -1,0 +1,9 @@
+Design a 3-bit binary up/down counter that counts based on the mode input. When in "up" mode (mode=1), it increments the count and wraps back to zero upon reaching the maximum value of 7 (3'b111), indicating that the maximum count has been reached. Conversely, in "down" mode (mode=0), it decrements the count and wraps back to 7 upon reaching the minimum value of 0 (3'b000), indicating that the minimum count has been reached. The counter can be reset to zero with the reset input, which also clears the max and min indicators.
+module top_module(
+  input clk,
+  input reset,
+  input mode,
+  output reg [2:0] q,
+  output reg max_reached,  // Changed to reg
+  output reg min_reached    // Changed to reg
+);

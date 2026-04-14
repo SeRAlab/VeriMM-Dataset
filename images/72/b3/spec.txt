@@ -1,0 +1,7 @@
+Implement a Clarke transformation circuit that converts three-phase current inputs into two orthogonal components, alpha and beta currents. The module takes in the signed 18-bit phase currents and computes the alpha current as 2/3 times the difference between two of the phase currents, and the beta current based on a specific weighted sum of the phase currents, effectively transforming the three-phase system into a two-axis representation for further processing in control algorithms or signal analysis.
+module top_module(
+    input signed [17:0] phase_currents_0,
+    input signed [17:0] phase_currents_1,
+    output signed [17:0] alpha_current,
+    output signed [17:0] beta_current
+);

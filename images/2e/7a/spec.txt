@@ -1,0 +1,12 @@
+
+Design an 8-channel DMA controller that can read from multiple memory locations and write to multiple peripheral devices. The controller should have the following inputs: 
+- `start`: a signal to initiate the DMA transfer.
+- `channel_sel`: a 3-bit select signal to choose one of the 8 channels.
+- `mem_addr`: a 16-bit memory address from where to read data.
+- `peripheral_addr`: a 16-bit address for the peripheral device.
+
+The output should be:
+- `data_out`: the 16-bit data read from the memory.
+- `done`: a signal indicating that the transfer is complete.
+
+When `start` is high, the DMA controller should read the data from the `mem_addr` location, and then write it to the `peripheral_addr` location corresponding to the selected channel. After the transfer, it should set `done` to high for one clock cycle.

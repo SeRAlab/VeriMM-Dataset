@@ -1,0 +1,6 @@
+Design a module that generates a new address for use in a program counter jump operation. The output address combines the upper 4 bits from the provided PC4 input with the 26-bit shifted value of the addr input (shifted left by 2 bits), while ensuring the last two bits are always set to zero. This is typical in MIPS architecture for jump instructions, where the target address is formed by combining the current program counter's top bits with a modified offset.
+module top_module(
+    input [31:0] PC4,
+    input [31:0] addr,
+    output wire [31:0] address
+);

@@ -1,0 +1,10 @@
+Design a simple arithmetic calculator that performs basic operations on two 8-bit input values based on a 2-bit operation selector. The calculator supports addition, subtraction, multiplication, and division, with the result being output as an 8-bit value. The module also includes a clock and reset capability, where upon reset, the output is set to zero and a valid signal is asserted low, indicating no valid operation. When the clock triggers, the selected arithmetic operation is executed, and the valid signal is asserted high to indicate that a result is available.
+module top_module(
+    input clk,
+    input rst,
+    input [1:0] op,
+    input [7:0] in1,
+    input [7:0] in2,
+    output reg [7:0] out,
+    output reg valid
+);

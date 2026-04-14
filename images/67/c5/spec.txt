@@ -1,0 +1,7 @@
+Design a 64-bit output counter that operates in two modes based on the select input. In LFSR mode, it generates a pseudo-random sequence using a 6-bit linear feedback shift register (LFSR), updating its output Q with the concatenated value of the LFSR. In Register mode, it performs a circular shift operation between two 32-bit registers reg1 and reg2, also updating Q with the concatenated values of the two registers. The counter is reset asynchronously and controlled by a clock signal.
+module top_module(
+  input                clk,
+  input                rst_n,
+  input                select,
+  output reg  [63:0]   Q
+);

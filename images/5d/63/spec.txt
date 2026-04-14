@@ -1,0 +1,9 @@
+Design a system with two 8-bit shift registers. The first shift register can be loaded with data on a load signal, shifting its contents left on each clock cycle otherwise. The second shift register is reset synchronously and also shifts left on each clock cycle. The module outputs the bitwise OR of both shift registers, allowing for combined data manipulation and analysis based on the contents of both registers at any given clock cycle.
+module top_module(
+    input clk,
+    input reset,            // Synchronous reset for second shift register
+    input load,             // Load input for first shift register
+    input [7:0] data_in_1,  // Data input for first shift register
+    input [7:0] data_in_2,  // Data input for second shift register
+    output [7:0] functional_output // Output from functional module (OR of both shift registers)
+);

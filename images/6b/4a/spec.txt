@@ -1,0 +1,10 @@
+Design a binary stack module, which serves as a storage structure with push and pop functionality. It has a parameterized data width and stack size, allowing for the storage of multiple entries. On the rising edge of the clock, if reset is activated, it clears the stack top pointer. When the push signal is high, it adds data to the stack if there is space available, and when the pop signal is high, it removes the top data entry if the stack is not empty. The module also outputs the most recently added value and indicates whether the stack is empty.
+module top_module(
+    input clk,
+    input rst,
+    input push_i,
+    input pop_i,
+    input [dw-1:0] data_i,
+    output [dw-1:0] data_o,
+    output empty_o
+);

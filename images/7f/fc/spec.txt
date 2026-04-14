@@ -1,0 +1,10 @@
+Design a FIFO buffer controller that manages read operations on a FIFO queue based on a clock signal and an active-low reset. The module tracks the number of bytes left in the FIFO and responds to read requests by decrementing this count, while also handling conditions for FIFO empty and full statuses. The output signals indicate if the FIFO is empty (fifo_EF), whether it is full (rfifo_full), and provide the number of entries currently used in the FIFO (rfifo_used). The architecture includes provisions for initializing the FIFO with new content, although in this simulation, the new content and the number of bytes are preset to zero.
+module top_module(
+    input clk,
+    input fifo_rd,
+    input rst_n,
+    output fifo_EF,
+    output [7:0] fifo_rdata,
+    output rfifo_full,
+    output [5:0] rfifo_used
+);

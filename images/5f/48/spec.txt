@@ -1,0 +1,8 @@
+Design a 1024-word by 32-bit memory module with synchronous write capabilities. On the rising edge of the clock, if write_enable is asserted, the module stores the incoming data (data_in) at the specified address. Regardless of the write_enable signal, the output (data_out) continuously reflects the content of the memory at the given address, facilitating both read and write operations based on the clock signal.
+module top_module(
+    input [9:0] address,
+    input clock,
+    input [31:0] data_in,
+    input write_enable,
+    output reg [31:0] data_out  // Change 'output' to 'output reg'
+);

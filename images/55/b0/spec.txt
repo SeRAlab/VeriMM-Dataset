@@ -1,0 +1,8 @@
+Design a 64x16-bit RAM module that supports both read and write operations. The module has a 6-bit input address, allowing access to 64 memory locations. If the input enable signal is activated, the output will be high-impedance, indicating the memory is not driving the output. If the write signal is asserted, data from the input is stored in the specified memory location. If neither the enable nor write signals are active, the module outputs the data from the addressed memory location. The module introduces a parameterized delay for operations to simulate timing behavior typical in memory circuits.
+module top_module(
+  input [5:0] i_addr,
+  input i_enable_x,
+  input i_write_x,
+  input [15:0] i_data,
+  output reg [15:0] o_data
+);

@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module to compute the Cyclic Redundancy Check (CRC) for Ethernet frames, specifically using a 32-bit polynomial. The primary function of this module to generate a CRC value based on the input data stream and to check this value against a predefined correct CRC value to detect any errors. This module plays a crucial role in ensuring data integrity in Ethernet communication systems by detecting accidental alterations to raw data.
+
+Module name:  
+	eth_crc
+
+Input ports:
+	Clk (input): The clock signal. It is used to synchronize the operations of the CRC calculation and the updating of the internal CRC register.
+	Reset (input): A synchronous reset signal. When asserted (1), it initializes the internal CRC register to 32'hffffffff.
+	Data ([3:0] input): A 4bit wide input data bus. Represents a nibble (halfbyte) of the Ethernet frame data for which the CRC is being calculated.
+	Enable (input): An enable signal. When asserted (1), it allows the module to update the CRC based on the current input data nibble.
+	Initialize (input): An initialization signal. When asserted (1), it resets the internal CRC register to 32'hffffffff, similar to the Reset signal but controlled by the system logic.
+Output ports:
+	Crc ([31:0] output): The current 32bit CRC value. It is updated every clock cycle based on the input data when the Enable signal is asserted.
+	CrcError (output): A signal indicating a CRC mismatch. It asserts (1) when the calculated CRC does not match the expected CRC value (32'hc704dd7b).
+
+
+Implementation:
+The RTL module presented, named eth_crc, is designed to calculate the Cyclic Redundancy Check (CRC) for Ethernet frames, specifically using a 32-bit polynomial. This module is a critical component in ensuring data integrity in Ethernet communication by detecting accidental changes to raw data. The design employs both combinational and sequential logic to perform its operations, which are orchestrated by the clock (Clk) and reset (Reset) signals.
+Combinational Logic:
+The core of the module's combinational logic is encapsulated in the calculation of the CrcNext signal. This signal represents the next state of the CRC calculation based on the current state (Crc) and the input data (Data). The calculation is performed bitwise for each of the 32 bits of the CRC value. The logic for each bit in CrcNext involves a combination of the current CRC value, the input data, and the Enable signal. The Enable signal acts as a gate, determining whether the CRC calculation should proceed or be paused. This allows for controlled processing of data chunks, aligning with the data flow of Ethernet frames.
+The logic expressions for each bit in CrcNext are derived from the polynomial used for the CRC calculation, which dictates how input data bits influence the CRC's evolution. These expressions involve XOR operations, reflecting the polynomial division process inherent to CRC calculations.
+Sequential Logic:
+The sequential aspect of the module is governed by the always block, which is triggered on the rising edge of the Clk or the Reset. This block is responsible for updating the Crc register with the value of CrcNext unless a reset or initialize condition is met. Upon a reset or initialize (Initialize) signal, the Crc register is set to 0xffffffff, representing the initial condition for the CRC calculation as per Ethernet standards.
+The decision to reset or initialize the CRC value to 0xffffffff ensures that the module starts with a known state, crucial for the accuracy of CRC calculations. The distinction between a reset and initialize operation is subtle, with both leading to the same initial state but potentially triggered under different conditions or phases of operation.
+
+Give me the complete code.
+

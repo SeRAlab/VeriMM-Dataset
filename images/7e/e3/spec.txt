@@ -1,0 +1,9 @@
+Develop a keypad interface that detects key presses from a 4x4 matrix keypad. The module uses a clock and reset signal to manage its operation. When a key is pressed (indicated by a row and column input), it shifts the corresponding value in an internal register to reflect the pressed state. It signals that a key has been pressed and outputs the row number of the detected key. Upon reset, the module initializes the key state to unpressed, ensuring no erroneous inputs are registered.
+module top_module(
+	input clk,
+	input rst,
+	input [3:0] row,
+	input [3:0] column,
+	output reg key_pressed,
+	output reg [3:0] key
+);

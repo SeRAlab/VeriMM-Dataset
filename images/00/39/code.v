@@ -1,0 +1,15 @@
+module siso_shift_reg (
+    input clk,
+    input reset,
+    input serial_in,
+    output reg [3:0] serial_out
+);
+    
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            serial_out <= 4'b0000;
+        end else begin
+            serial_out <= {serial_out[2:0], serial_in};
+        end
+    end
+endmodule

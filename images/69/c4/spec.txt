@@ -1,0 +1,6 @@
+Design a one-shot pulse generator that produces a high output pulse for a specified duration in time units, defined by the parameter `pulse_width`. Upon receiving a rising edge on the `trigger` input, the circuit initializes an 8-bit counter to zero and sets the `pulse` output high. The counter then increments on each clock cycle until it reaches the defined `pulse_width`, at which point the `pulse` output is driven low, effectively creating a single pulse with a controlled width in response to the trigger signal.
+module top_module(
+  input trigger,
+  input clk,         // Added clk input
+  output reg pulse   // Changed pulse to reg type
+);

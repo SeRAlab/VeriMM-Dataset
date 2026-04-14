@@ -1,0 +1,9 @@
+Design a signed magnitude comparator for 4-bit signed inputs A and B. The circuit compares the two inputs and produces three outputs: 'eq' (equal), 'lt' (less than), and 'gt' (greater than). On each clock cycle, it registers the values of A and B and then evaluates the conditions to determine their relational status: it sets 'eq' high if A equals B, 'lt' high if A is less than B, and 'gt' high if A is greater than B.
+module top_module(
+    input signed [3:0] A,
+    input signed [3:0] B,
+    input clk,          // Add clk input to the module
+    output eq,
+    output lt,
+    output gt
+);

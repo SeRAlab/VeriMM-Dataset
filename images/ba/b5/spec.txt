@@ -1,0 +1,7 @@
+Design a synchronous circuit that implements an 8-bit shift register and a 4-bit binary counter. The circuit takes a clock and a reset signal as inputs. Upon reset, the counter and the shift register are initialized to zero. On each clock cycle, the counter increments, and the most significant bit of the input data (`d`) is shifted into the shift register. The output drives a 7-segment display, which shows digits 0 to 9 based on the value of the counter. Additionally, for any counter state beyond 9, the display shows a blank. The output also incorporates the shifted value adjusted by the counter's value, allowing for dynamic updates on the 7-segment display as the count and shift register change.
+module top_module(
+    input clk,              // Clock input
+    input reset,            // Synchronous active-high reset
+    input [7:0] d,          // 8-bit input for the shift register
+    output reg [6:0] seg     // 7-segment display output
+);

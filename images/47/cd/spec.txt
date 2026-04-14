@@ -1,0 +1,6 @@
+Design a zero-to-one counter that increments its output each time a rising edge of the clock is detected, specifically when the input transitions from all zeros (0x0000) to all ones (0xFFFF). The module maintains a history of the input signal over four clock cycles to detect this condition, storing the current and past inputs in a register array. The output is a 4-bit value representing the count of such transitions.
+module top_module(
+    input clk,
+    input [15:0] in,
+    output [3:0] out
+);

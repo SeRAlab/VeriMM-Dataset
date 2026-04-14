@@ -1,0 +1,6 @@
+Design a register file that consists of 31, 32-bit wide registers, where each register can be accessed via specified read and write addresses. The module supports synchronous resetting and writing of data based on a clock signal. When a reset signal is asserted, all registers are cleared to zero. On a rising clock edge, if the write address is not zero and the load/store signal (L_S) is high, the provided data is written to the selected register. Outputs provide the data from the registers corresponding to input addresses A and B, returning zero if the read address is zero.
+module top_module(input clk,rst,L_S,
+                     input [4:0] R_addr_A,R_addr_B,Wt_addr,
+							input [31:0] Wt_data,
+							output [31:0] rdata_A,rdata_B
+    );

@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit Johnson counter.
+
+Module name:
+    JohnsonCounter_4bit
+Input ports:
+    clk: Clock signal for synchronous operation.
+    rst_n: Active-low reset signal to initialize the counter.
+Output port:
+    count: 4-bit register representing the current counter value.
+
+Implementation:
+On every rising edge of the clock signal (clk), if the reset signal (rst_n) is low, the counter (count) is set to 4'b0000.
+Otherwise, the counter shifts left by one bit and the LSB is the inverted MSB of the previous value.
+
+Give me the complete code.
+
+module JohnsonCounter_4bit(
+   input                clk,
+   input                rst_n,
+ 
+   output reg [3:0]     count  
+);

@@ -1,0 +1,9 @@
+Design a binary data converter module that adjusts the output width based on an input size signal. The module accepts a 64-bit input, wherein if the size input equals 4, it outputs a zero-padded 64-bit version of the lower 4 bits of the input data. If the size input is different from 4, it outputs the full 64-bit input unchanged. Additionally, it signals the output size as either 4 or 64 depending on the input size. This effectively serves as a format converter to adapt data between different bit-width representations.
+module top_module(
+  input clk,
+  input rst_l,
+  input [63:0] data_in,
+  input size_in,
+  output [63:0] data_out,
+  output size_out
+);

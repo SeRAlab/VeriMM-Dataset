@@ -1,0 +1,8 @@
+Design a flip-flop-based storage element that operates with additional control signals for conditional operations. The module captures the state of the input 'd' on the rising edge of the clock signal 'clk' when the 'sce' (set control enable) input is high. Moreover, if the 'scd' (set clear disable) input is activated, it forces the output 'q' to low regardless of other inputs. This functionality effectively allows the module to act like a conditional set/reset flip-flop, providing flexibility in data storage and control within digital circuits.
+module top_module(
+    input  clk,
+    input  d,
+    output reg q,  // Changed to reg type to hold state
+    input  scd,
+    input  sce
+);

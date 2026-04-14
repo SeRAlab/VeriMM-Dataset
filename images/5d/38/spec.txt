@@ -1,0 +1,8 @@
+Design a circuit that functions as a priority encoder with an integrated D flip-flop. The module processes an 8-bit input to identify the highest priority active input, outputting a 3-bit binary code corresponding to that input. The output is updated on the rising edge of the clock signal and is reset synchronously; when reset is active, it outputs zero. Additionally, the output of the priority encoder is stored in a D flip-flop, which introduces a one-clock-cycle delay before reflecting the priority encoder's output. This design effectively allows for priority signal detection while also ensuring synchronization through the D flip-flop.
+module top_module(
+    input clk,
+    input reset,       // Synchronous active-high reset
+    input [7:0] in,    // 8-bit input for the priority encoder
+    output reg [2:0] pe_out,  // 3-bit output from the priority encoder
+    output reg q       // Output from the D flip-flop delayed by one clock cycle
+);

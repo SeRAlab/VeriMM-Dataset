@@ -1,0 +1,8 @@
+Design a synchronous register with a specified width (default 8 bits) that captures input data on the rising edge of the clock signal. The register can be reset to a predefined value (default 0) when the reset signal is asserted. If the reset is not active and the write signal is high, the module will update its output with the input data. This implementation acts as a storage element in digital circuits, providing data retention and control via reset and write operations.
+module top_module(
+                      input [WIDTH-1:0] data_in, 
+                      input write, 
+                      input clk, 
+                      input reset,
+                      output reg [WIDTH-1:0] data_out
+                    );

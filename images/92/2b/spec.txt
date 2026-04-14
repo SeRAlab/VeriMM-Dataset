@@ -1,0 +1,11 @@
+This module implements a control path for isolation and reset functionalities within a digital system. It selectively generates isolation signals for different components based on the operating mode, either from reset signals or manual overrides in test mode. Specifically, it outputs an isolation signal for the core and JTAG, which depends on the selection between the normal operational signals and a test override. Additionally, the module determines the program counter vector based on whether the boot ROM is enabled, setting it to a predefined address depending on the input state. The overall design purpose is to facilitate proper isolation and initialization sequences during different operational conditions, enhancing testability and robustness in power management.
+module top_module(
+  input aon_io_moff_corerst, 
+  input aon_io_jtagpwd, 
+  input test_mode, 
+  input test_iso_override, 
+  input aon_io_bootrom, 
+  output aon_iso, 
+  output jtagpwd_iso, 
+  output reg [31:0] pc_rtvec
+);

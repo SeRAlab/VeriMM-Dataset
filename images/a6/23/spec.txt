@@ -1,0 +1,9 @@
+Design a 4-bit binary counter with additional functionality. The counter increments its value on each rising edge of the clock when the enable signal is high. It resets to zero when the reset signal is activated. Instead of the default counting sequence, it can also load a new value when the load signal is triggered by taking the inverted value of the current count, providing a way to set the counter to a different state based on its complement. The outputs include the current count value (q) and its inverted form (q_bar).
+module top_module(
+  input clk,
+  input rst,
+  input en,
+  input load,
+  output reg [3:0] q,
+  output reg [3:0] q_bar
+);

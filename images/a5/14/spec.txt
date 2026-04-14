@@ -1,0 +1,8 @@
+Design a 4-bit shift register with asynchronous reset and load capabilities. The module has an active-high reset that clears the register to zero, a load control to input data when enabled, and a shift functionality that allows the register to shift the stored bits one position to the right on each clock cycle when enabled. The output reflects the value of the register, allowing for parallel access to the shifted or loaded data.
+module top_module(
+    input clk,
+    input areset,  // async active-high reset to zero
+    input load,
+    input ena,
+    input [3:0] data,
+    output reg [3:0] q);

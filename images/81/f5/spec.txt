@@ -1,0 +1,8 @@
+Develop a 4-bit arithmetic unit capable of performing addition or subtraction based on a control signal, Sub. The module computes the sum or difference of two 4-bit inputs, A and B, and outputs the 4-bit result. It also detects arithmetic overflow conditions during these operations: for addition, it checks if a carry occurs out of the most significant bit when both inputs are positive or both are negative, and for subtraction, it identifies overflow when the signs of the inputs differ from the result. The outputs are the computed result and a single overflow indicator.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input Sub,
+    output [3:0] Sum,
+    output Overflow
+);

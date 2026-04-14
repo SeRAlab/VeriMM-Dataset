@@ -1,0 +1,11 @@
+Implement the Verilog module based on the following description.
+You are given an 8-bit input vector a[7:0]. We want to perform some operations on the input vector: 
+// (1) out_sum: Each bit of this output vector should indicate the sum of the corresponding input bit and its neighbour to the right modulo 2. For example, out_sum[2] should indicate if a[2] + a[1] is 1. Since a[0] has no neighbour to the right, the answer is obvious so we don't need to know out_sum[0]. 
+// (2) out_and: Each bit of this output vector should indicate whether both the corresponding input bit and its neighbour to the left are '1'. For example, out_and[6] should indicate if a[6] and a[7] are both 1. Since a[7] has no neighbour to the left, the answer is obvious so we don't need to know out_and[7]. 
+// (3) out_xor: Each bit of this output vector should indicate whether the corresponding input bit is different from its neighbour to the left. For example, out_xor[6] should indicate if a[6] is different from a[7]. For this part, treat the vector as wrapping around, so a[7]'s neighbour to the left is a[0].
+
+module top_module (
+	input [7:0] a,
+	output [6:0] out_sum,
+	output [6:0] out_and,
+	output [7:0] out_xor);

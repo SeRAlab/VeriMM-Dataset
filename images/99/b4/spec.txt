@@ -1,0 +1,6 @@
+Develop a circuit that counts the occurrences of the bit pattern '111' in a 255-bit input vector. It utilizes a 3-bit shift register to track the last three bits of the input stream and increments a counter (8 bits wide) whenever the shift register matches '111'. The input is continuously shifted right, with a '0' being added at the least significant position on each clock cycle, and the current count is output as an 8-bit value.
+module top_module(
+    input clk,
+    input [254:0] in,
+    output reg [7:0] out
+);

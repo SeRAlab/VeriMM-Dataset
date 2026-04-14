@@ -1,0 +1,10 @@
+Design a cross-domain signal synchronization module that facilitates the reliable transfer of signals between two clock domains, A and B. The module includes inputs from both domains (CLK_A_SEND and CLK_B_SEND) and outputs synchronously received signals (CLK_A_RECV and CLK_B_RECV) for each domain, ensuring that signals are clocked correctly within their respective domains. The design utilizes flip-flops to synchronize the incoming signals with the respective clock edges and generates an error output (ERR) that indicates a mismatch in the signal states between the two domains, helping to detect potential signal integrity issues.
+module top_module(
+    input CLK_A,        // Clock for domain A
+    input CLK_A_SEND,   // Signal from domain A to domain B
+    output CLK_A_RECV,  // Signal from domain B received in domain A 
+    input CLK_B,        // Clock for domain B
+    input CLK_B_SEND,   // Signal from domain B to domain A
+    output CLK_B_RECV,  // Signal from domain A received in domain B
+    output ERR          // Error output
+);

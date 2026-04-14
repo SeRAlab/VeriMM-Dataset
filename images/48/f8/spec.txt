@@ -1,0 +1,7 @@
+Design a clock generation circuit for VGA systems that counts clock cycles from a primary input clock, `clk`. It has a clear input, `clr`, to reset the count. The output `dclk` produces a clock signal derived from the second least significant bit of the count (`q[1]`), while `segclk` generates a signal from the most significant bit (`q[17]`). This module effectively divides the input clock frequency to create the necessary timing signals for VGA applications.
+module top_module(
+	input wire clk,		
+	input wire clr,		
+	output wire dclk,		
+	output wire segclk	
+	);

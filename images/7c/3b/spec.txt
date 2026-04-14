@@ -1,0 +1,9 @@
+The module implements a digital circuit that combines a 4-to-16 decoder and a 4-bit multiplier with shift-and-add logic. The 2-bit `sel` input selects one of four unique outputs from the decoder, which generates a corresponding 16-bit signal. The chosen output from the decoder is further processed to set the 8-bit `product` output based on the active bits of the 4-bit input `b`. The multiplication is executed on the `a` input using a shift-and-add method, accumulating the results based on the 1's in `b`. The output `out` directly reflects the current state of the decoder's output.
+module top_module(
+    input clk,
+    input reset,
+    input [1:0] sel, // 2-bit input for the decoder
+    input [3:0] a, b, // 4-bit inputs for the multiplier
+    output reg [7:0] product, // 8-bit output from the multiplier
+    output reg [15:0] out // 16-bit output from the decoder
+);

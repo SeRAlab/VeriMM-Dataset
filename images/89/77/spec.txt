@@ -1,0 +1,12 @@
+Design a 256-depth, 72-bit wide FIFO (First-In-First-Out) memory module. It operates with an asynchronous reset and clock input, allowing data to be written and read based on appropriate requests. The module tracks the fullness and emptiness of the buffer, signaling when it is almost full, empty, or full. Upon receiving a write request, it stores the incoming 72-bit data if space is available, and upon a read request, it outputs the oldest data in the queue if not empty. The read and write pointers manage the current positions for data retrieval and storage, respectively, ensuring a smooth data flow while preventing overflows and underflows.
+module top_module(
+    aclr,
+    clock,
+    data,
+    rdreq,
+    wrreq,
+    almost_full,
+    empty,
+    full,
+    q
+);

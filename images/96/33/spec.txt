@@ -1,0 +1,8 @@
+Design a synchronized 8-depth FIFO (First-In-First-Out) buffer. This module accepts a write signal to input 8-bit data and stores it in memory until the buffer is full. Data can be read when the read signal is activated, provided the buffer is not empty. The module maintains write and read pointers, tracking the current position for writing and reading data, and uses flags to indicate full and empty states of the buffer. The output of the module is the last read data, and it asserts a read signal when there are elements available for reading.
+module top_module(
+    input clk,
+    input wr,
+    input [7:0] din,
+    output rd,
+    output reg [7:0] dout // Change dout to reg type
+);

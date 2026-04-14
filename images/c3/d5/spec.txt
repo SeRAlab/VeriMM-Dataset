@@ -1,0 +1,16 @@
+
+
+You are tasked with designing a module that takes in four input signals and produces a single output signal. The inputs are `empty`, `free2`, `free3`, and `tm_count`, and the output is `fifocount_inc`. 
+
+The `empty` input is a single-bit signal that is high when the FIFO is empty. The `free2` and `free3` inputs are also single-bit signals that are high when there are two or three free spaces in the FIFO, respectively. The `tm_count` input is a two-bit signal that indicates the number of items currently in the FIFO. 
+
+The `fifocount_inc` output is a five-bit signal that represents the number of items that should be added to the FIFO. The value of `fifocount_inc` is determined by the following rules:
+
+- If the FIFO is empty (`empty` is high), `fifocount_inc` should be set to the value of the two least significant bits of `tm_count`.
+- If there are three free spaces in the FIFO (`free3` is high) and `tm_count` is equal to 3, `fifocount_inc` should be set to 2.
+- If there are two free spaces in the FIFO (`free2` is high) and `tm_count` is greater than or equal to 2, `fifocount_inc` should be set to 1.
+- If there is at least one item in the FIFO (`tm_count` is greater than or equal to 1), `fifocount_inc` should be set to 0.
+- Otherwise, `fifocount_inc` should be set to a five-bit signal where all bits are high.
+
+Write a verilog module that implements this functionality. 
+

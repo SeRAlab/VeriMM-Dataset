@@ -1,0 +1,9 @@
+Design a UART (Universal Asynchronous Receiver-Transmitter) receive module. It processes incoming serial data by detecting start and stop bits to synchronize data reception. The module captures an 8-bit data byte from the serial input while ensuring that the data is valid by checking the stop bit. Upon successful reception of a complete byte, it sets the `rx_full` output to indicate the data is ready and provides the received byte on `rx_data`. An acknowledgment signal (`ack`) is also included, which is asserted when the received data is valid. The design includes state management using a finite state machine to transition through IDLE, START, DATA, and STOP states based on the received input signal.
+module top_module(
+  input clk,
+  input reset,
+  input rxd,
+  output reg ack,
+  output reg [7:0] rx_data,
+  output reg rx_full
+);

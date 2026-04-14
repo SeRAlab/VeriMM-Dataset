@@ -1,0 +1,9 @@
+Design a circuit that acts as a write interface for a 32-bit RAM block in an AXI-compatible environment. When the write enable signal (web) is asserted, the module captures the input data and address, sets the busy flag, and proceeds to write the data to the specified memory location on the next clock edge. After completing the write operation, it sets the done signal to indicate the operation's conclusion and clears the busy flag. The design features a simple state control for managing the write process to ensure data is correctly written to the RAM.
+module top_module(
+    input s_axi_aclk,
+    input [31:0] s_axi_wdata,
+    input [11:0] addra,
+    input web,
+    output reg done,
+    output reg busy
+);

@@ -1,0 +1,9 @@
+Design a simple digital circuit that operates as a selectable register with an active-low reset and enable signals. The circuit captures the value on input D based on the clock signal (CLK). When RESET_B is low, the output Q is reset to 0. If RESET_B is high and the enable signal (EN) is asserted, the output Q is assigned the value of D if SEL is high; otherwise, Q is assigned the logical negation of D. Thus, the design implements a register with dual functionality controlled by the SEL signal, enabling either direct or inverted data storage based on the input conditions.
+module top_module(
+    input  D      ,
+    output Q      ,
+    input  RESET_B,
+    input  CLK    ,
+    input  EN     ,
+    input  SEL
+);

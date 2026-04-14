@@ -1,0 +1,9 @@
+Design a register file that contains eight 8-bit registers, where each register can be read from and written to based on control signals. The module initializes the registers to specific values upon a reset signal, storing alternating patterns: even-indexed registers are set to 8'b01010101, while odd-indexed registers are set to 8'b00001010. The module reads data from the register specified by the `rSrc` input and outputs it as `srcData`. If the `write_reg` input is asserted, the data on the `writeData` input is written to the register specified by the `rDest` input. This module serves as a fundamental memory storage unit for a digital system, enabling both storage and retrieval of data values.
+module top_module(
+		input [2:0] rSrc,
+		input [2:0] rDest,
+		input write_reg,
+		input [7:0] writeData,
+		input reset,
+		output reg [7:0] srcData
+    );

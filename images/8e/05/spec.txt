@@ -1,0 +1,5 @@
+Implement a simple interrupt handling module that generates an interrupt output signal. The module has an input for an external interrupt request (intrIn) and an output (intr) that signals when an interrupt is asserted. The interrupt is registered on the positive edge of a clock signal (clk). If the reset signal (rst) is high, the interrupt state is cleared. When the acknowledgment signal (ack) is asserted, the interrupt state is also cleared. Otherwise, the module accumulates the interrupt requests, maintaining the state if either the external interrupt (intrIn) is asserted or if the previous state is already set.
+module top_module(
+	intrIn, intr,
+	ack, clk, rst
+);

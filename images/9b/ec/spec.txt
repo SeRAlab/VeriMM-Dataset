@@ -1,0 +1,4 @@
+Design a programmable 8-bit wide program counter. It loads a new address when the loadAddr signal is asserted, using the value provided at inAddr. If loadAddr is not asserted, it increments the current address on every negative edge of the clock. The counter resets to 0 when the rst signal is asserted, ensuring the output addr reflects either the reset state or the next address based on the operational conditions defined by loadAddr.
+module top_module(input clk, rst, loadAddr,
+                      input [7:0] inAddr,
+                      output reg [7:0] addr);

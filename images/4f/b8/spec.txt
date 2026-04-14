@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+
+Implement a debouncer circuit to remove noise from a noisy input signal. The output signal should be stable if the input remains stable for a specified duration.
+
+Module name:  
+    debouncer  
+
+Input ports:
+	clk: Clock signal for synchronization.
+	reset: Active-high synchronous reset signal.
+	noisy_in: Noisy input signal.
+
+Output ports:
+    clean_out: Debounced output signal.
+
+Implementation:
+Shift Registers:
+The module includes two shift registers, shift_reg1 and shift_reg2, to store intermediate values.
+On the positive edge of clock signal (clk) and if the reset signal (reset) is high, both shift registers are set to zero.
+If the reset signal (reset) is low, the noisy input signal (noisy_in) is shifted into shift_reg1, and shift_reg1 is shifted into shift_reg2.
+Output Assignment:
+The debounced output signal (clean_out) is assigned the value of shift_reg2.
+
+Give me the complete code.

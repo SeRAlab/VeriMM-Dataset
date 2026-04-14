@@ -1,0 +1,10 @@
+Design a circuit that detects rising and falling edges of a 4-bit input signal. The module includes a clock input and an active-low reset for synchronization. The outputs indicate whether a rising or falling edge has occurred in the least significant bit (LSB) of the input data. Additionally, it provides LED control signals to visually represent the edge detections. The circuit utilizes registers to store the previous and current states of the input signal and employs a D flip-flop configuration to facilitate edge detection logic.
+module top_module(
+  input               clk, // Clock signal
+  input               rst_n, // Active low reset
+  input [3:0]         data_in, // 4-bit input signal
+  output reg          rise_detect, // Rising edge detection output
+  output reg          fall_detect, // Falling edge detection output
+  output reg          led_rise, // LED for rising edge detection
+  output reg          led_fall // LED for falling edge detection
+);

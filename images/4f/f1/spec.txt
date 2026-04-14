@@ -1,0 +1,11 @@
+This Verilog module implements a control data multiplexer that generates an 8-bit control data output based on a 6-bit byte counter and other input signals. It selects specific values to output for different byte counts, providing control information such as reserved multicast addresses, MAC address bytes, and a pause timer value. The output, `ControlData`, is updated on the rising edge of the `MTxClk` clock signal or reset to zero when `TxReset` is asserted. This functionality is essential for managing the transmission of control data in networking applications, effectively assembling control frames based on various operational parameters.
+module top_module(
+  input [5:0] ByteCnt,
+  input DlyCrcEn,
+  input [1:0] DlyCrcCnt,
+  input [47:0] MAC,
+  input [15:0] TxPauseTV,
+  input MTxClk,
+  input TxReset,
+  output reg [7:0] ControlData
+);

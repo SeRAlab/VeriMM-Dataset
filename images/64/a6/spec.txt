@@ -1,0 +1,11 @@
+Design a circuit that acts as a simple switch-controlled data reader. It takes a 10-bit input from `in_port` and uses a 2-bit address input to select which data to read. The selected data is stored in a 32-bit `readdata` output, updated on the rising edge of the clock signal, with asynchronous reset functionality. When the address is 00, the data is read from the input port; otherwise, the output remains unchanged. This module effectively functions as a controlled data latch for specific input data based on the address signal.
+module top_module(
+  // inputs:
+  address,
+  clk,
+  in_port,
+  reset_n,
+
+  // outputs:
+  readdata
+);

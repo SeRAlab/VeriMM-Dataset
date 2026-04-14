@@ -1,0 +1,11 @@
+Design a simple arithmetic calculator that processes two 8-bit input numbers based on a 2-bit operation code. The operations include addition, subtraction, multiplication, and division. The module uses a clock to synchronize operations and incorporates a reset signal for initializing the results and status indicators. It outputs an 8-bit result, a flag for overflow conditions, and a zero flag to indicate if the result is zero. The design manages overflow conditions appropriately for each arithmetic operation and handles division by zero by setting the result to a predefined error value.
+module top_module(
+  input clk,
+  input reset,
+  input [1:0] op,
+  input [7:0] num1,
+  input [7:0] num2,
+  output reg [7:0] result,
+  output reg overflow,
+  output reg zero
+);

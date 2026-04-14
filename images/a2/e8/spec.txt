@@ -1,0 +1,16 @@
+Design a module for instruction fetching in a digital system, functioning as an interface between the CPU and memory. It manages the process of retrieving instructions based on the provided address and read command. The module checks for alignment errors in the address and handles bus errors while controlling a busy signal during instruction fetching operations. State control is implemented using an IDLE and WAIT state to synchronize read operations with incoming data readiness. The output includes the fetched instruction data, while the module ensures to retain the last valid instruction in case of delays or errors during fetch operations.
+module top_module(
+    input wire clk,
+    input wire nrst,
+    input wire [31:0] addr,
+    input wire rd_cmd,
+    output wire [31:0] instr_dat,
+    output wire busy,
+    output wire err_align,
+    output wire err_bus,
+    output reg [31:0] o_IAddr,
+    output reg o_IRdC,
+    input wire [31:0] i_IData,
+    input wire i_IRdy,
+    input wire i_IErr
+);

@@ -1,0 +1,8 @@
+Design a 2-bit signed Booth multiplier that takes two 2-bit signed inputs, A and B, and produces a 4-bit signed product P. The module uses the Booth algorithm to perform multiplication, utilizing control signals to adjust the product based on the least significant bits of the multiplier. The output F indicates an overflow condition during the multiplication process. The design includes shift operations and arithmetic adjustments to generate the final product efficiently.
+module top_module(
+    input signed [1:0] A,
+    input signed [1:0] B,
+    input clk,             // Added clk input
+    output reg signed [3:0] P,
+    output reg F
+);

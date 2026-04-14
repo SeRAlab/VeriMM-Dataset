@@ -1,0 +1,7 @@
+Implement a Mealy state machine that transitions between three states based on the input signal and produces an output based on the current state. In this design, the state machine starts in State1 and outputs a LOW signal. It transitions to State2 upon receiving a HIGH input, where it outputs a HIGH signal, and remains in that state if the input stays HIGH. If the input becomes LOW while in State2, it advances to State3, continuing to output HIGH. In State3, if the input signal goes HIGH, it transitions back to State1, otherwise, it remains in State3. The machine is reset to State1 on a reset signal.
+module top_module(
+  input clk,
+  input rst,
+  input in,
+  output reg out  // Change from wire to reg to hold the output state
+);

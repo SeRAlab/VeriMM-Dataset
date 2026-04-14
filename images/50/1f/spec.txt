@@ -1,0 +1,7 @@
+Design a circuit that toggles an active state on a specified condition while controlling an LED based on an external input. This module uses a clock signal to increment a 24-bit counter, toggling the 'active' flag when the counter reaches its maximum value, effectively creating an active low signal with a periodic toggle. The LED output is driven by the logical conjunction of an input signal (PIN_14) and the 'active' state, ensuring that the LED is illuminated when both conditions are satisfied. The module also includes a constant low output for USB power control (USBPU).
+module top_module(
+    input CLK,
+    input PIN_14,
+    output LED,
+    output USBPU  
+);

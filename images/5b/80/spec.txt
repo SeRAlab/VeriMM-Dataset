@@ -1,0 +1,8 @@
+Design a digital speed measurement module that calculates the speed based on a time interval and a switch input. The module increments a count value at every positive edge of a 'times_count' signal and, when activated by the 'switch', computes the speed as the difference between the current and previous count values. It also generates an output to indicate that the speed is being displayed. If the switch is off, both the speed and display output are reset to zero. The module integrates two clock domains with inputs for clock and counting events, effectively measuring speed over time.
+module top_module(
+	input	clk_1,
+	input	times_count,
+	input	switch,
+	output	reg [9:0]	speed,
+	output	reg	dig_show
+);

@@ -1,0 +1,15 @@
+Design an arbiter module that controls access to a shared resource for two input channels. It outputs a ready signal for the selected input, based on whether the input is valid and whether the output is ready. The module prioritizes input 0 over input 1; when both inputs are valid, it chooses input 0. The output includes a valid signal and the bits from the selected input channel, while indicating which input was chosen for access.
+module top_module(
+  input   clock,
+  input   reset,
+  output  io_in_0_ready,
+  input   io_in_0_valid,
+  input   io_in_0_bits,
+  output  io_in_1_ready,
+  input   io_in_1_valid,
+  input   io_in_1_bits,
+  input   io_out_ready,
+  output  io_out_valid,
+  output  io_out_bits,
+  output  io_chosen
+);

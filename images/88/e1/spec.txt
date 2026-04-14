@@ -1,0 +1,7 @@
+Design a binary-coded decimal (BCD) adder that takes two 4-bit BCD inputs, `a` and `b`, along with a carry-in signal. The module computes the BCD sum of these inputs. If the result exceeds the maximum BCD value of 9, it adjusts the sum by adding 6 (0110 in binary) to ensure the output remains a valid BCD digit. The module also signals a carry-out when this adjustment is made, indicating that the sum has exceeded 9 and there is a need for a carry in the next significant digit.
+module top_module(
+	input [3:0]a,b,
+	input carry_in,
+	output reg [3:0]sum,
+	output reg carry_out
+	);

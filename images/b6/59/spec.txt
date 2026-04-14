@@ -1,0 +1,7 @@
+Design a clock gating circuit that controls when the output clock (ENCLK) is enabled based on the status of the enable signals (EN and TE). The output clock is activated on the rising edge of the clock (CLK) when both EN and TE are high, but only when there is a transition in the enable signal (from low to high). This functionality allows for power savings by only enabling the clock when necessary, based on specific conditions.
+module top_module(
+  input CLK,
+  input EN,
+  input TE,
+  output reg ENCLK  // Changed to output reg
+);

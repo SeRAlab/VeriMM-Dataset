@@ -1,0 +1,10 @@
+Design a system that manages a circular point counter based on directional inputs (east and west) with a reset functionality. The module updates the output point value on the rising edge of a clock, where the point can increase or decrease by one or two based on conditions related to external select inputs (choose_1). The point wraps around when reaching the boundaries (0 to 15), and it resets to zero upon activation of the reset signal. This functionality could be utilized in applications requiring a controlled bidirectional counter with feedback options.
+module top_module(
+    input new_clk,
+	 input rst,
+    input east,
+    input west,
+	 input [4:0] choose_1,
+	 input [4:0] choose_2,	 
+    output reg [4:0] point
+    );

@@ -1,0 +1,6 @@
+Design a circuit that computes a video memory address based on scaled pixel coordinates. The module accepts a clock signal and 12-bit inputs for both pixel column and pixel row, which it divides by 2 to produce reduced 9-bit values. These scaled values are then concatenated into an 18-bit output, vid_addr, representing the address in video memory for the corresponding pixel location, effectively halving the resolution of the input pixel coordinates.
+module top_module(
+input clk_s,
+input [11:0] pixel_column,
+input [11:0] pixel_row,
+output reg [17:0] vid_addr);

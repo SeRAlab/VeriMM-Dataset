@@ -1,0 +1,7 @@
+Design a circuit that operates as a 512-bit register with an additional functionality of a shifting operation. Upon receiving a positive clock edge, if the load signal is asserted, the output `q` is loaded with the 512-bit input `data`. If the load signal is not asserted, the output `q` performs a complex transformation involving bitwise operations and shifting. Specifically, the output is updated to reflect a combination of circular left shifts and bitwise negations, allowing for manipulation of the stored data over successive clock cycles.
+module top_module(
+    input clk,
+    input load,
+    input [511:0] data,
+    output reg [511:0] q
+);

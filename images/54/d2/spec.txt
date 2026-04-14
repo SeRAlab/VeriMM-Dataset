@@ -1,0 +1,10 @@
+Develop a digital circuit designed as a data acquisition interface that samples input data from an ADC and communicates it through a synchronous serial protocol. The module continuously generates a clock signal for ADC operations and controls the framing of serial data transmission via an SSP interface. It collects 8 bits of data from the ADC on each clock cycle, shifting previously collected data and preparing it for output. The design maintains multiple control signals for power management, although they are fixed low in this implementation. Overall, the module serves as a bridge between analog data input and digital data communication, ensuring proper synchronization and data integrity.
+module top_module(
+    pck0, ck_1356meg, ck_1356megb,
+    pwr_lo, pwr_hi, pwr_oe1, pwr_oe2, pwr_oe3, pwr_oe4,
+    adc_d, adc_clk,
+    ssp_frame, ssp_din, ssp_dout, ssp_clk,
+    cross_hi, cross_lo,
+    dbg,
+    xcorr_is_848, snoop, xcorr_quarter_freq 
+);

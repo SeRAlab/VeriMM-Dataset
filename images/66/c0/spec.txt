@@ -1,0 +1,10 @@
+Design a simple multiply-accumulate (MAC) unit with reset, clear, and enable functionalities. The module registers and produces a 16-bit output, Z, which, upon a reset signal, is set to zero. When enabled, it either clears the current value of Z and replaces it with the product of two 8-bit inputs, A and B, or, if the clear signal is not active, adds the product of A and B to the current value of Z on each clock cycle.
+module top_module(
+    input  wire        clk,
+    input  wire        rst,
+    input  wire        clr,
+    input  wire        ena,
+    input  wire [ 7:0] A,
+    input  wire [ 7:0] B,
+    output reg  [15:0] Z
+);

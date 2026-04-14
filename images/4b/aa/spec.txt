@@ -1,0 +1,7 @@
+Design a positive edge detector for a 16-bit input data signal. On each rising edge of the clock, the module detects changes from low to high in the data signal compared to its previous state. When the reset signal is asserted, the previous data and edge-detected outputs are cleared to zero. Otherwise, the module captures the current data and computes the edge detected output by performing a bitwise AND operation between the current data and the negation of the previous data, thereby identifying the newly transitioned bits.
+module top_module(
+  input clk,
+  input reset,
+  input [15:0] data,
+  output reg [15:0] edge_detected
+);

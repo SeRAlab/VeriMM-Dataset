@@ -1,0 +1,8 @@
+Design a rising-edge counter that increments a 32-bit count register on the rising edges of the clock signal, while providing control through reset, start, and stop inputs. When reset is activated, the counter resets to zero. If the start signal is high, the counter also initializes to zero. The counting only occurs when the start signal is active, and the stop signal halts the counting process, retaining the current count value in the output register. This module effectively counts the number of rising edges detected during the specified operation.
+module top_module(
+    input clk,
+    input reset,
+    input start,
+    input stop,
+    output reg [31:0] count
+);

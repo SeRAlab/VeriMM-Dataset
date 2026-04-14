@@ -1,0 +1,7 @@
+Design a circuit for a random number generator (RNG) utilizing a linear feedback shift register (LFSR). It produces an `w`-bit random number on each clock cycle, which is constrained to lie between 0 and a specified maximum value, `max_val`. The module features a reset input that initializes the LFSR and output to zero. The LFSR generates random bits based on a defined feedback polynomial, while the output random number is derived from these bits through a modulus operation.
+module top_module(
+  input clk,
+  input rst,
+  input [w-1:0] max_val,
+  output reg [w-1:0] rand_num
+);

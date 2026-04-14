@@ -1,0 +1,11 @@
+Design a synchronous sequential circuit with a reset functionality that captures and retains control signal states over multiple clock cycles. The module takes three input control signals (aumentar, disminuir, and seleccion), which are sampled at each positive clock edge. These signals are preserved across four registers (pas1 through pas4). When the input signals remain stable across the four stages, the outputs (au, dis, and sel) will be set to the stable values of the corresponding signals, indicating that they have been consistently asserted. The reset input allows the circuit to return to an inactive state, clearing all registers and output states. This design ensures signal stability before final output representation, acting as a form of signal debouncing or synchronization mechanism.
+module top_module(
+    input wire aumentar,
+    input wire disminuir,
+    input wire seleccion,
+	 input wire clk,
+	 input reset,
+    output reg au,
+    output reg dis,
+    output reg sel
+    );

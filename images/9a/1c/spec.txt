@@ -1,0 +1,8 @@
+Create a light control system that dynamically adjusts the brightness of an output signal based on ambient light conditions. The module incorporates an analog-to-digital converter (ADC) functionality where it reads the ambient light level and compares it to a predefined brightness level. A pulse width modulation (PWM) signal is generated to control the brightness output, with the duty cycle modulated according to the lesser of the ambient light reading and the desired brightness level. The system includes a reset capability to initialize values. This design effectively manages lighting based on environmental conditions, allowing for energy-efficient brightness adjustments.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] ambient_light,
+  input [7:0] brightness_level,
+  output reg [7:0] brightness
+);

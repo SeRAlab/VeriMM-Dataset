@@ -1,0 +1,2 @@
+Design a 6-bit program counter that updates its value based on the clock and control signals. On a reset signal, it initializes to zero. When the `jmp_in` signal is activated, it loads a new address specified by `jmp_addrs`. If `pc_en_in` is asserted and neither reset nor jump conditions are active, the counter increments its current value by one with each clock cycle. This functionality allows for both sequential and jump-based address generation in a program flow.
+module top_module(input [5:0]jmp_addrs,input clk,rst,pc_en_in,jmp_in,output reg [5:0] addrs);

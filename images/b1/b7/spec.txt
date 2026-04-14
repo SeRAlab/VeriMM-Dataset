@@ -1,0 +1,8 @@
+Design a register file with 32 registers, where each register is 32 bits wide. The module allows for reading from two registers specified by inputs r1 and r2, outputting their contents as rdata1 and rdata2, respectively. If either r1 or r2 is 0, it outputs 0 instead of the register value. The module supports writing new data to a specified register w when RegWrite is asserted, provided w is not 0. On a positive clock edge, or when reset (rst) is activated, all registers are cleared to zero. This component is integral for storing and retrieving data in a pipelined processor architecture.
+module top_module(
+    input clk, rst,
+    input RegWrite, 
+    input [4:0] r1, r2, w, 
+    input [31:0] wdata, 
+    output [31:0] rdata1, rdata2
+);

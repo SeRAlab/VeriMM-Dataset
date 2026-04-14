@@ -1,0 +1,8 @@
+Design a register file with 32 registers, each 32 bits wide, used for storing and retrieving data. The circuit allows for writing to a specific register when the write enable signal (we3) is active, synchronized to the clock's positive edge. The module outputs the contents of two registers identified by the read addresses (ra1 and ra2), ensuring that if a read address is zero, it outputs a constant zero instead. This functionality supports operations in a digital system such as a CPU, functioning as a small, high-speed storage unit for intermediate data.
+module top_module(
+	input         clk,
+	input         we3,
+	input  [4:0]  ra1, ra2, wa3,
+	input  [31:0] wd3,
+	output [31:0] rd1, rd2
+);

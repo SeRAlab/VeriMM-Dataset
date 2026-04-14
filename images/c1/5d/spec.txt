@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module to control a piezoelectric transducer (referred to as "Piezo" in the context of this module). Its primary functions include generating a signal to drive the piezo based on input parameters, acknowledging write operations, and managing the timing of the piezo signal based on a configurable duration. This module plays a crucial role in systems requiring precise control over piezoelectric elements, such as in acoustic applications, precision positioning systems, or haptic feedback mechanisms.
+
+Module name:  
+	Piezo_Driver
+
+Input ports:
+	clock: A clock signal (input, single bit). This signal is essential for the sequential logic within the module, driving the timing and state transitions.
+	reset: A reset signal (input, single bit). When asserted, it initializes the module's internal state, including counters and control flags.
+	data: A 25bit input data bus. The lower 24 bits (data[23:0]) specify the duration for which the piezo signal should be active or inactive, while the most significant bit (data[24]) enables or disables the piezo output.
+	Write: A write enable signal (input, single bit). When asserted, it indicates that new data is available on the data input for the module to process.
+Output ports:
+	Ack: An acknowledgment signal (output, single bit, registered). This signal is asserted in the cycle following a write operation to indicate that the write has been successfully processed.
+	Piezo: The piezo control signal (output, single bit, registered). This signal drives the piezoelectric transducer based on the configured parameters and timing.
+
+
+Implementation:
+The Piezo_Driver module is designed to control a piezoelectric transducer (referred to as "Piezo" in the module) based on input parameters. It operates synchronously with an external clock signal and can be reset or reconfigured through its inputs. The module's primary functions include setting the duration for which the Piezo signal is active and enabling or disabling the Piezo output. The core logic of the module is encapsulated within an always block that triggers on the rising edge of the clock signal, ensuring synchronous operation.
+Sequential Logic:
+Counter (count): A 24-bit counter increments with each clock cycle until it matches a comparison value. It resets to 0 either when the module is reset or when it equals the comparison value, creating a cyclic timer whose period is defined by the comparison value.
+Comparison Value (compare): This 24-bit value determines the cycle period of the count. It can be updated on a write operation, allowing dynamic adjustment of the Piezo signal's active duration.
+Enable Flag (enabled): A single-bit flag that enables or disables the Piezo output. It is updated on a write operation with the most significant bit of the input data.
+Combinational Logic:
+Piezo Signal Toggle: The Piezo output toggles (changes state) when the counter matches the comparison value, provided the Piezo is enabled and the module is not in reset. This creates a square wave with a frequency determined by the comparison value.
+Acknowledgment Signal (Ack): An acknowledgment signal that indicates a successful write operation. It is asserted (set high) in the clock cycle following a write operation and deasserted following a reset.
+
+Give me the complete code.
+

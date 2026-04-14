@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a multipurpose, configurable flip-flop or latch within a digital integrated circuit (IC) design. Its primary role to store a single bit of data and provide controlled data output based on the input signals and configuration. This module is versatile and can be used in various parts of a digital system, including but not limited to, data storage, shift registers, and state machines. The ability to select between different data inputs dynamically and to optionally override the stored data with a scan data input (`sd`) underlines its utility in both normal operation and in test modes (e.g., for scan-based testing).
+
+Module name:  
+	zsoffm2_prim
+
+Input ports:
+	ck (input): The clock input signal. The positive edge of this signal triggers the sampling and potential update of the internal storage (q_r).
+	d0 (input): The primary data input. This is one of the potential bits to be stored in the flipflop, selected when s is low.
+	d1 (input): The secondary data input. This is the alternative bit to be stored, selected when s is high.
+	s (input): The select signal for choosing between d0 and d1 inputs.
+	se (input): The scan enable input. When high, it allows the sd input to override the normal data inputs (d0 or d1) and be stored in the flipflop.
+	sd (input): The scan data input. This is the data bit to be stored when the scan enable (se) is high.
+Output ports:
+	q (output): The primary output of the module, reflecting the current state of the internal storage (q_r).
+	so (output): The scan output, which in this design is tied directly to the internal storage (q_r) and thus mirrors the q output. This can be useful in daisychaining flipflops for scan testing.
+
+
+Implementation:
+The zsoffm2_prim module is a versatile digital logic component designed for applications requiring dynamic data selection and output serialization under clocked conditions. It integrates both combinational and sequential logic elements to perform its functions, governed by a synchronous positive edge-triggered clock signal (ck). The module's primary functionality revolves around selecting one of two data inputs (d0 or d1) based on the state of a select signal (s), with an additional capability to override this selection with a scan data input (sd) when in scan mode (se).
+
+Give me the complete code.
+

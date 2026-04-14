@@ -1,0 +1,8 @@
+Design a pipelined rotational shift register capable of rotating a 100-bit input data either to the left or right based on control signals. The module includes a loading mechanism to initialize the shift register with the input data, while two enable signals facilitate left and right rotations. The output is updated on each clock cycle, providing the result of the most recent rotation or the loaded data, effectively allowing dynamic manipulation of bit positions in the stored data for applications such as data buffering or graphical transformations.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output reg [99:0] q
+);

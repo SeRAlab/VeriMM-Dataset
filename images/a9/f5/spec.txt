@@ -1,0 +1,7 @@
+Design a control unit for an Arithmetic Logic Unit (ALU) that determines the specific ALU operation based on the inputs provided. The module takes a 2-bit ALU operation code (`aluOp`) and two sets of 6-bit instruction codes (`instructionCodeLowBits` and `instructionCodeHighBits`). It decodes these inputs to produce a 4-bit output (`aluOperation`) that specifies the ALU function to execute, such as addition, subtraction, logical operations, or shifts, following a defined mapping for each instruction type. The ALU operations include shift left logical (SLL), shift right logical (SRL), addition (ADD), and others, accommodating both R-type and immediate-type operations according to the specified ALU operation codes.
+module top_module(
+	input [1:0] aluOp,
+	input [5:0] instructionCodeLowBits,
+	input [5:0] instructionCodeHighBits,
+	output reg [3:0] aluOperation
+   );

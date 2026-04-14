@@ -1,0 +1,8 @@
+This module implements a dual-edge triggered register system known as an Input Double Data Rate (IDDR) register. It captures a single input signal, `datain`, on both the rising and falling edges of the `inclock` signal, producing two separate output signals: `dataout_h` from the rising edge and `dataout_l` from the falling edge. The `aclr` signal serves as an asynchronous clear, resetting `dataout_h` and `neg_reg_out` to low when active, ensuring reliable initialization of the outputs. This design allows for effective sampling of data at both clock edges, making it suitable for high-speed data communication applications where capturing data on both edges of the clock can enhance throughput.
+module top_module(
+    inclock,
+    datain,
+    aclr,
+    dataout_h,
+    dataout_l
+);

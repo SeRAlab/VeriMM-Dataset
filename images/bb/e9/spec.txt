@@ -1,0 +1,14 @@
+Design a flip-flop circuit that operates under specific control signals and power conditions. The module has a main data input (D) and control inputs (DE, SCD, SCE) that, along with power supply signals (VPWR, VGND, VPB, VNB), determine the output state of Q and its complement Q_N. On the rising edge of the clock (CLK), if all inputs are low, the outputs are set to low (Q=0, Q_N=1); if all inputs are high, the outputs are set to high (Q=1, Q_N=0). If the inputs do not meet these conditions, the outputs produce indeterminate states (Q and Q_N both as unknown). This functionality suggests a conditional latch mechanism augmented by power management features, emphasizing low power operation.
+module top_module(
+    input  wire D,
+    input  wire DE,
+    input  wire SCD,
+    input  wire SCE,
+    input  wire VPWR,
+    input  wire VGND,
+    input  wire VPB,
+    input  wire VNB,
+    output reg  Q,
+    output reg  Q_N,
+    input  wire CLK
+);

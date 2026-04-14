@@ -1,0 +1,6 @@
+Design a finite state machine (FSM) that detects a specific binary sequence (1010) in a stream of input signals. The module has a configurable input width defined by the parameter `n`, allowing it to process up to `n` bits, while the output signal goes HIGH only when the sequence has been fully recognized. The FSM transitions through three states (IDLE, MATCH1, MATCH2) based on the current input, producing an output signal that indicates successful detection of the specified sequence.
+module top_module(
+  input clk, // Added clock input
+  input [n-1:0] in,
+  output reg out // Changed 'out' to be of type 'reg' since it is driven in an always block
+);

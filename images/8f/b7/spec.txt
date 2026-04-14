@@ -1,0 +1,7 @@
+Design a circuit that performs a 31-bit addition or subtraction operation based on a control signal. The module takes a 31-bit input Q_reg and a 7-bit input Q, extending both to 32 bits by adding a zero at the most significant bit. The operation (addition or subtraction) is controlled by the FSM_exp_operation_A_S signal. The result of this operation is stored in a 33-bit wire, from which the most significant bit represents the carry-out status, and the least significant four bits provide the final 4-bit output S. This design facilitates arithmetic operations in a finite state machine context, allowing for carry-out detection and selective output of the operation's result.
+module top_module(S,
+    Q_reg,
+    Q,
+    FSM_exp_operation_A_S,
+    FSM_selector_B,
+    DI);

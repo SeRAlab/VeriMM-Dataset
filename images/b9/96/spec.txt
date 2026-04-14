@@ -1,0 +1,8 @@
+Design a Mealy state machine that outputs a signal z based on the inputs x and y in a three-state operation. The machine transitions through an IDLE state, a WAIT state, and an OUTPUT state in response to the input signals. When in the IDLE state, if x is high, the machine moves to the WAIT state. In the WAIT state, if y is high, it transitions to the OUTPUT state, asserting z high. The OUTPUT state continues to assert z while conditions on x and y are maintained, but reverts to IDLE based on specific input transitions. The design includes a reset functionality that initializes the state to IDLE.
+module top_module(
+  input clk,
+  input reset,
+  input x,
+  input y,
+  output reg z
+);

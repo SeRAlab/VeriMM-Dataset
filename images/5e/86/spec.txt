@@ -1,0 +1,8 @@
+Design a 24-bit wide first-in, first-out (FIFO) memory module with a depth of 512 entries, which includes functionalities for data input, output, and comparison. It features a clock and reset input, with the ability to write data on each clock cycle unless the FIFO is full, and read data unless it is empty. The module also compares the most recently read data with a specific earlier entry in the FIFO (offset by 24 entries) and outputs a comparison result as a boolean indicator. Upon reset, both the read and write pointers are initialized to zero, flushing the FIFO state.
+module top_module(
+  input wire clk,
+  input wire rst,
+  input wire [23:0] din,
+  output reg [23:0] dout,
+  output reg comp
+);

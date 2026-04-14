@@ -1,0 +1,10 @@
+Design a synchronous digital circuit that processes a 5-bit input and generates a 6-bit output based on specific control signals. The module features a reset signal that initializes internal state variables upon activation. On each clock cycle, the module updates its internal registers using a series of logical operations influenced by the input data, control signals L and K, and an additional comparison flag COMPLS6. The resulting output is comprised of the internal states, providing a mechanism for potentially encoding or transforming the input data based on the defined logical interactions, making it suitable for applications involving data manipulation or encoding within a larger digital design.
+module top_module(
+    input clk,  
+    input reset,
+    input [4:0] data_in,
+    input [4:0] L,
+    input K,
+    input COMPLS6,
+    output [5:0] data_out
+    );

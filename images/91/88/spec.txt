@@ -1,0 +1,8 @@
+Design a signed 8-bit Wallace tree multiplier that computes the product of two signed 8-bit inputs, `a` and `b`, and produces a 16-bit signed output, `result`. The module employs a pipelined architecture to enhance performance, where the inputs are captured into registers on the rising edge of a clock signal. It utilizes multiple stages to generate partial products and sums, taking into account a control signal that determines the sign-extension behavior of `b`. The final result is obtained by combining the partial sums from three stages of multiplication, providing efficient multiplication while maintaining support for signed arithmetic operations.
+module top_module(
+    input signed [7:0] a,
+    input signed [7:0] b,
+    input signed_ctrl,
+    input clk, // Added clk input
+    output signed [15:0] result
+);

@@ -1,0 +1,13 @@
+Design a module that implements a complex signal processing circuit featuring two 2-to-1 multiplexers, XOR operations, and signal inversion. It selects between two 4-bit input signals (a and b) based on two select inputs (sel_b1 and sel_b2). The selected input undergoes an XOR operation with input a, producing a new output that is then processed to generate both bitwise inverted and logical inverted outputs. Finally, the module uses a clock-controlled mechanism to choose between these two processed outputs based on a selection signal (sel_out), providing a registered output that can toggle between the logical inversion and the bitwise inversion of the XOR output.
+module top_module(
+    input clk,
+    input [3:0] a,
+    input [3:0] b,
+    input sel_b1,
+    input sel_b2,
+    input sel_out,
+    output reg out_always,
+    output [3:0] out_xor,
+    output [3:0] out_xor_inv,
+    output out_logical_inv
+);

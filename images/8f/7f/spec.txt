@@ -1,0 +1,7 @@
+Design a single-port RAM module that supports reading from and writing to a memory location defined by the `address` input. The module has parameters to configure the number of address bits (n), the data width (m), and the depth of the memory (256 locations), facilitating flexible storage solutions. When the `write_en` signal is asserted, the `data_in` is written to the specified memory address; regardless of the write operation, the current value at that address is output through `data_out`.
+module top_module(
+  input wire [n-1:0] address,
+  input wire [m-1:0] data_in,
+  input wire write_en,
+  output reg [m-1:0] data_out  // changed wire to reg
+);

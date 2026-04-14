@@ -1,0 +1,7 @@
+Design a 8-to-3 priority encoder that produces a binary output corresponding to the highest-priority active input bit. When multiple input bits are high, the encoder prioritizes the lowest bit position. The output `Y` reflects which input is asserted, and the `EN` signal indicates if any input is active (active-low). If no inputs are active, `Y` holds its previous value while `EN` asserts high. This module is useful for situations where it’s necessary to identify the most significant active input among several options.
+module top_module(
+    input [7:0] I,
+    input clk,            // Added clock input
+    output reg EN,
+    output reg [2:0] Y   // Changed Y to reg type
+);

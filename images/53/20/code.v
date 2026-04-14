@@ -1,0 +1,1 @@
+module top_module(input ina,input inb,input cin,output sum,output cout);assign {cout,sum}=ina+inb+cin;endmodule

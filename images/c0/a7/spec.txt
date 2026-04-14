@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module performs a specific combinational logic function known as an AND-OR-INVERT (AOI) operation. This particular module to implement a 3-input AND gate followed by a 2-input AND gate, with the outputs of these gates OR'ed together and then inverted. The primary function of this module to provide a compact and efficient way to execute this specific logic operation, which is commonly used in digital circuits for implementing complex logic functions, optimizing gate count, and improving speed by reducing the number of logic levels.
+
+In a broader system context, the AOI logic can be used in various applications, including arithmetic circuits, control logic, and data path elements, where minimizing the delay and area is crucial. The specific naming (`bw_u1_aoi32_2x`) suggests that this module might be part of a larger library of optimized logic gates designed for high-speed and/or low-power applications, possibly indicating a specific technology or design methodology focus (e.g., "bw" could imply bit-width, "u1" a specific unit or version, and "2x" might denote a performance or size variant).
+
+Module name:  
+	bw_u1_aoi32_2x
+
+Input ports:
+	b1, b2, b3: These are singlebit (1'b) input ports that serve as the inputs to the 3input AND gate. These inputs are part of the logic that gets OR'ed and then inverted to produce the output z.
+	a1, a2: These are singlebit (1'b) input ports that serve as the inputs to the 2input AND gate. Similar to b1, b2, and b3, the output of this AND gate contributes to the OR operation before inversion to determine the output z.
+Output ports:
+	z: The output port of the module. It is a singlebit (1'b) output that represents the inverted result of the OR operation between the outputs of a 3input AND gate and a 2input AND gate. The output is active low due to the inversion.
+
+
+Implementation:
+The RTL module bw_u1_aoi32_2x is designed to implement a specific combinational logic function, which is a type of logic circuit whose output is a pure function of the present input only. This module does not contain any sequential logic elements like flip-flops or latches, meaning its output changes immediately in response to changes in its inputs without any notion of clock cycles or timing constraints inherent to its operation.
+The core functionality of this module is to realize an AND-OR-INVERT (AOI) logic gate structure, specifically a 3-2 AOI configuration. This configuration is a compound logic gate combining three AND gates and one OR gate, followed by a NOT gate (inverter) at the output. The logic operation performed by the module can be described by the Boolean expression:
+\[ Z = \overline{(B1 \cdot B2 \cdot B3) + (A1 \cdot A2)} \]
+Where:
+\(B1\), \(B2\), and \(B3\) are inputs to the first AND gate.
+\(A1\) and \(A2\) are inputs to the second AND gate.
+The outputs of these AND gates are then OR'ed together.
+Finally, the result of the OR gate is inverted to produce the output \(Z\).
+This type of logic gate configuration is particularly useful in digital circuits for reducing the number of gates and delay, as it combines multiple operations into a single module. It is often used in situations where the inverted output of an OR operation is needed, as it can be more area and power-efficient than using separate gates to achieve the same logic function.
+
+Give me the complete code.
+

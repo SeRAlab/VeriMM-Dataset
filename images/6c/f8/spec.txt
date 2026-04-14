@@ -1,0 +1,11 @@
+Design a register file that supports the storage and retrieval of 32 registers, each 32 bits wide. The module allows for writing to a selected register when a write command is asserted, effectively storing incoming data while resetting to zero during a reset condition. It provides combinational read access to two registers simultaneously, with Register 0 always outputting zero. Additionally, it supports an external interface for reading and outputting all register states collectively through a parallel input and output format, accommodating a wider data bus for efficient communication with other circuit components.
+module top_module(
+   input  clock,
+   input  reset,
+   input  [4:0]  ReadReg1, ReadReg2, WriteReg,
+   input  [31:0] WriteData,
+   input  RegWrite,
+   output [31:0] ReadData1, ReadData2,
+   input	 [991:0] registers_in,
+   output [991:0] registers_out
+);

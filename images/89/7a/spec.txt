@@ -1,0 +1,10 @@
+Design a 6-bit counter that increments under specific conditions. The counter resets to zero when a reset signal is asserted, when the start signal is low while in the initial state, or when the edge_go signal is activated. If the offset_increase signal is asserted and none of the reset conditions are active, the counter increments by one on each rising edge of the clock signal. This module is intended for use in applications that require a controlled incrementing offset value based on specific state and control signals.
+module top_module(
+	input resetn, 
+	input startn,
+	input [5:0] current_state,
+	input edge_go,
+	input offset_increase,
+	input clk,
+	
+	output reg [5:0] offset);

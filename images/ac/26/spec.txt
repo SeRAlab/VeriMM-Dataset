@@ -1,0 +1,5 @@
+Design a circuit that acts as a priority decoder for three different input enable signals (i_en, d_en, c_en) associated with their respective addresses (i_addr, d_addr, c_addr). The circuit grants access based on the highest priority input that is enabled, with i_en having the highest priority, followed by d_en, and then c_en. It generates an output enable signal (o_en) that indicates any active request, an output address (o_addr) that selects the address of the enabled input, and a 2-bit muxcode indicating which input was granted. The grant signals (i_grnt, d_grnt, c_grnt) are also output, indicating whether each corresponding input is granted based on the active states.
+module top_module(i_en, i_addr, i_grnt,
+            d_en, d_addr, d_grnt,
+            c_en, c_addr, c_grnt,
+            o_en, o_addr, muxcode);

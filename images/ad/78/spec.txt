@@ -1,0 +1,15 @@
+Design a control module that manages two distinct states based on input signals. The module utilizes `wave_kc_in` to toggle the output state of `wavegener_state_out` and generates the `wavegener_wea_out` signal by applying a logical AND between the toggled state and `wave_wea_in`. Simultaneously, it monitors the `spec_kc_in` signal; if `search_en_in` is asserted, it sets `wavefft_state_out` to LOW, otherwise it toggles its state on each rising edge of `spec_kc_in`. The output `wavefft_wea_out` is derived by ANDing `wavefft_state_out` with both `wave_wea_in` and the negation of `search_en_in`. Thus, this module effectively functions as a state controller for two wave generation processes with enable and disable logic.
+module top_module(
+    input wave_kc_in,
+    input spec_kc_in,
+    
+    input wave_wea_in,
+    
+    input search_en_in,
+    
+    output wire wavegener_wea_out,
+    output reg wavegener_state_out = 1'b1,
+    
+    output wire wavefft_wea_out,
+    output reg wavefft_state_out = 1'b1
+    );

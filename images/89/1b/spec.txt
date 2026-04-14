@@ -1,0 +1,7 @@
+Design a circuit that drives a seven-segment display to represent decimal digits (0-9) based on a 4-bit binary input. It uses a clock signal for synchronization and has a reset functionality that initializes the display to represent the digit "1." The circuit maps each 4-bit input representing a decimal digit to the appropriate 7-segment output configuration, allowing visual representation of numbers on the display. When the input is outside the range of 0-9, it defaults to a predefined segment pattern, ensuring robust behavior.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] input_binary,
+    output reg [6:0] output_segments
+);

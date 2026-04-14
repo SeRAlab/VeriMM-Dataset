@@ -1,0 +1,15 @@
+Design a dual-port RAM module that facilitates simultaneous read and write operations from two separate ports. It features two independent clock inputs, enabling separate control and timing for each port. Each port can write to or read from the same 16x8-bit memory array based on the provided address and enable signals. When the write enable signal is activated for a port, data is written to the specified address; when the read enable signal is active, the data at the given address is output. This design allows for efficient data handling in applications requiring concurrent memory access.
+module top_module(
+    input clk1, // clock input for port 1
+    input clk2, // clock input for port 2
+    input we1, // write enable input for port 1
+    input we2, // write enable input for port 2
+    input re1, // read enable input for port 1
+    input re2, // read enable input for port 2
+    input [3:0] addr1, // address input for port 1
+    input [3:0] addr2, // address input for port 2
+    input [7:0] data1, // data input for port 1
+    input [7:0] data2, // data input for port 2
+    output reg [7:0] q1, // data output for port 1
+    output reg [7:0] q2 // data output for port 2
+);

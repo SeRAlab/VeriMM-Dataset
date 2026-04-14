@@ -1,0 +1,10 @@
+Develop a digital circuit module that functions as a display controller for a 7-segment display. It takes a 3-bit input value and a state signal to determine the displayed number, allowing for two input modes: a direct input via `value_input` or a play value through `value_play`, depending on the state. It uses a clock and reset signal for synchronization, controlling the display output (seg) to represent decimal values 0 through 7 on the 7-segment display. Additionally, it manages a 'current tube' tracking mechanism, updating the display segments accordingly and indicating active segments using a separate output (`ds`) that highlights the current segment being controlled, ensuring visual feedback on which segment corresponds to the current value.
+module top_module(
+			input [2:0]value_input,
+			input clk,
+			input rst,
+			output reg[7:0]ds,
+			output reg[7:0]seg,
+			input state,
+			input [2:0]value_play
+			);

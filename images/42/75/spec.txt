@@ -1,0 +1,26 @@
+Design a register file for a pipelined processor stage, specifically the instruction decode (ID) to execute (EX) stage. The module captures various inputs such as the program counter, data inputs, immediate values, and control signals at the rising edge of the clock or when reset is asserted. On reset, all output values are cleared to zero, while under normal operation, it forwards the input signals to the corresponding outputs, preserving data integrity as it transitions from one pipeline stage to the next. This functionality supports efficient data handling and minimizes latency in the execution phase of instruction processing.
+module top_module(
+    // Input
+    input Clk,
+    input Reset,
+    input [31:0] PCIn,
+    input [31:0] DataIn1,
+    input [31:0] DataIn2,
+    input [4:0] rsIn,
+    input [31:0] ImmediateIn,
+    input [4:0] rtIn,
+    input [2:0] WBIn,
+    input [1:0] MIn,
+    input [4:0] EXIn,
+
+    // Output
+    output reg [31:0] PCOut,
+    output reg [31:0] DataOut1,
+    output reg [31:0] DataOut2,
+    output reg [4:0] rsOut,
+    output reg [31:0] ImmediateOut,
+    output reg [4:0] rtOut,
+    output reg [2:0] WBOut,
+    output reg [1:0] MOut,
+    output reg [4:0] EXOut
+);

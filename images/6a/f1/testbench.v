@@ -1,0 +1,253 @@
+`timescale 1ns/1ps
+
+module top_module_tb;
+
+    // Testbench signals (sequential circuit)
+    reg clk;
+    reg inta;
+    reg [7:0] intv;
+    reg rst;
+    wire [2:0] iid;
+    wire intr;
+
+    // Test tracking
+    integer test_num;
+    integer pass_count;
+    integer fail_count;
+
+    // Instantiate the DUT (Device Under Test)
+    top_module dut (
+        .clk(clk),
+        .inta(inta),
+        .intv(intv),
+        .rst(rst),
+        .iid(iid),
+        .intr(intr)
+    );
+
+    // Clock generation (10ns period)
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk;
+    end
+
+        task reset_dut;
+
+        begin
+            rst = 1;
+            inta = 0;
+            intv = 8'h00;
+            @(posedge clk);
+            #2 rst = 0;
+            @(posedge clk);
+            #1;
+        end
+        endtask
+    task testcase001;
+
+        begin
+            test_num = 1;
+            $display("Testcase 001: Check Reset State");
+            reset_dut();
+            intv = 8'b0000_0000;
+            inta = 0;
+            @(posedge clk);
+            #1;
+            #1;
+
+            check_outputs(3'd0, 1'b0);
+        end
+        endtask
+
+    task testcase002;
+
+        begin
+            test_num = 2;
+            $display("Testcase 002: Single Interrupt (Bit 0)");
+            reset_dut();
+            intv = 8'b0000_0001;
+            inta = 0;
+            @(posedge clk);
+            #1;
+            #1;
+
+            check_outputs(3'd0, 1'b1);
+        end
+        endtask
+
+    task testcase003;
+
+        begin
+            test_num = 3;
+            $display("Testcase 003: Single Interrupt (Bit 7)");
+            reset_dut();
+            intv = 8'b1000_0000;
+            inta = 0;
+            @(posedge clk);
+            #1;
+            #1;
+
+            check_outputs(3'd7, 1'b1);
+        end
+        endtask
+
+    task testcase004;
+
+        begin
+            test_num = 4;
+            $display("Testcase 004: Priority Check (Bit 7 and Bit 0)");
+            reset_dut();
+            intv = 8'b1000_0001;
+            inta = 0;
+            @(posedge clk);
+            #1;
+            #1;
+
+            check_outputs(3'd7, 1'b1);
+        end
+        endtask
+
+    task testcase005;
+
+        begin
+            test_num = 5;
+            $display("Testcase 005: Priority Check (Bit 4, 3, 2)");
+            reset_dut();
+            intv = 8'b0001_1100;
+            inta = 0;
+            @(posedge clk);
+            #1;
+            #1;
+
+            check_outputs(3'd4, 1'b1);
+        end
+        endtask
+
+    task testcase006;
+
+        begin
+            test_num = 6;
+            $display("Testcase 006: Remove all interrupts");
+            reset_dut();
+            intv = 8'b0000_1100;
+            @(posedge clk);
+            intv = 8'b0000_0000;
+            @(posedge clk);
+            #1;
+            #1;
+
+            check_outputs(3'd0, 1'b0);
+        end
+        endtask
+
+    task testcase007;
+
+        begin
+            test_num = 7;
+            $display("Testcase 007: Acknowledge Pulse");
+            reset_dut();
+            intv = 8'b0100_0000;
+            @(posedge clk);
+            inta = 1;
+            @(posedge clk);
+            #1;
+            #1;
+
+            check_outputs(3'd6, 1'b1);
+            inta = 0;
+        end
+        endtask
+
+    task testcase008;
+
+        begin
+            test_num = 8;
+            $display("Testcase 008: High Priority bit appearing after Low Priority bit");
+            reset_dut();
+            intv = 8'b0000_0010;
+            @(posedge clk);
+            intv = 8'b1000_0010;
+            @(posedge clk);
+            #1;
+            #1;
+
+            check_outputs(3'd7, 1'b1);
+        end
+        endtask
+
+    // Test stimulus
+    initial begin
+        // Initialize
+        test_num = 0;
+        pass_count = 0;
+        fail_count = 0;
+
+        $display("========================================");
+        $display("top_module Testbench");
+        $display("========================================");
+
+
+        testcase001();
+        testcase002();
+        testcase003();
+        testcase004();
+        testcase005();
+        testcase006();
+        testcase007();
+        testcase008();
+        
+        
+// Print summary
+        $display("\n========================================");
+        $display("Test Summary");
+        $display("========================================");
+        $display("Tests Passed: %0d", pass_count);
+        $display("Tests Failed: %0d", fail_count);
+        $display("Total Tests:  %0d", pass_count + fail_count);
+        $display("========================================");
+
+        if (fail_count == 0)
+            $display("ALL TESTS PASSED!");
+        else
+            $display("SOME TESTS FAILED!");
+
+        $display("\nSimulation completed at time %0t", $time);
+        $finish;
+    end
+
+    // Task to check outputs
+    task check_outputs;
+        input [2:0] expected_iid;
+        input expected_intr;
+        begin
+            if (expected_iid === (expected_iid ^ iid ^ expected_iid) &&
+                expected_intr === (expected_intr ^ intr ^ expected_intr)) begin
+                $display("PASS");
+                $display("  Outputs: iid=%h, intr=%b",
+                         iid, intr);
+                pass_count = pass_count + 1;
+            end else begin
+                $display("FAIL");
+                $display("  Expected: iid=%h, intr=%b",
+                         expected_iid, expected_intr);
+                $display("  Got:      iid=%h, intr=%b",
+                         iid, intr);
+                fail_count = fail_count + 1;
+            end
+        end
+    endtask
+
+    // Timeout watchdog
+    initial begin
+        #1000000; // 1ms timeout
+        $display("\nERROR: Simulation timeout!");
+        $finish;
+    end
+
+    // Optional: Waveform dump for debugging
+    initial begin
+        $dumpfile("wave.vcd");
+        $dumpvars(0,clk, inta, intv, rst, iid, intr);
+    end
+
+endmodule

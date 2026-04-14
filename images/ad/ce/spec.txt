@@ -1,0 +1,8 @@
+Design a branch predictor utilizing a 2-bit saturating counter mechanism. This module predicts whether the next branch instruction will be taken based on previous outcomes. It updates its state based on a clock signal, reset condition, and input signal indicating whether the last branch was taken. The internal state transitions are defined by a finite state machine that influences the output prediction, effectively enabling early decision-making in control flow, thus improving instruction pipeline efficiency in a processor.
+module top_module( 
+    input clock, 
+    input reset, 
+    input enable, 
+    input taken_i, 
+    output reg prediction_o 
+);

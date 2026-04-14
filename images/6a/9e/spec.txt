@@ -1,0 +1,13 @@
+Design a forwarding unit for a digital circuit that selectively outputs data based on multiple control signals. The module takes two 16-bit inputs, `one` and `two`, and assesses four control signals (one_A, one_B, two_A, two_B) to determine which input to forward to the outputs `outA` and `outB`. If `one_A` or `two_A` is asserted, `outA` is assigned the corresponding input; similarly, if `one_B` or `two_B` is asserted, `outB` receives the appropriate input. In cases where both inputs for a given output are selected, it forwards the second input along with a forward signal indicating that forwarding took place. If none of the conditions are met, it outputs zero for both outputs and asserts no forwarding.
+module top_module(
+    input [15:0] one,
+    input [15:0] two,
+    input one_A,
+    input one_B,
+    input two_A,
+    input two_B,
+    output reg [15:0] outA,
+    output reg [15:0] outB,
+    output reg forwarda,
+    output reg forwardb
+);

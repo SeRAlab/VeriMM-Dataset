@@ -1,0 +1,6 @@
+Design a 16-bit barrel shifter that takes a 16-bit input 'A' and a 4-bit shift value to produce a right circular shift on the input. The output 'Y' will reflect the original bits of 'A' shifted right based on the value of 'shift'; for instance, if 'shift' is 4'b0001, the output will be the least significant bit of 'A' moved to the most significant position while all other bits are shifted right. The module utilizes a combinational always block that evaluates the desired output based on different shift cases, allowing for shifts from 0 to 15 positions in a circular manner.
+module top_module(
+    input [15:0] A,
+    input [3:0] shift,
+    output reg [15:0] Y
+);

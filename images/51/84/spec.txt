@@ -1,0 +1,6 @@
+Design a digital circuit that converts YCbCr color space values into RGB format. The module takes 8-bit inputs for the luminance (Y) and chrominance (Cb and Cr) components, with operations performed on the rising edge of a clock signal. The inputs are adjusted by subtracting an offset to manage color range, then scaled using fixed-point multipliers based on standard transformation constants. The resultant products are summed to generate intermediate red, green, and blue values. Finally, the outputs are saturated to ensure they remain within the valid RGB range of 0 to 255, and the resulting 8-bit RGB outputs are produced based on these calculations.
+module top_module(
+    y, cb, cr,
+    red, green, blue,
+    clk
+);

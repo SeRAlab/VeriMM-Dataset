@@ -1,0 +1,11 @@
+Design a register file that supports simultaneous read and write operations for a specified number of registers. The module has parameters to define the number of registers (n) and the width of each register (w). When the clock signal rises and write enable (wr_en) is asserted, it updates the contents of the specified registers with the input data (data_in). Simultaneously, if read enable (rd_en) is asserted, it retrieves the data from the addressed registers (addr1 and addr2) and outputs it on data_out1 and data_out2. The implementation allows for efficient data storage and retrieval in digital systems, making it suitable for applications such as data buffering or temporary storage in a processor.
+module top_module(
+  input clk,
+  input wr_en,
+  input rd_en,
+  input [2:0] addr1, // log2(8) = 3
+  input [2:0] addr2, // log2(8) = 3
+  input [7:0] data_in, // 8 bits for width
+  output reg [7:0] data_out1, // 8 bits for width
+  output reg [7:0] data_out2 // 8 bits for width
+);

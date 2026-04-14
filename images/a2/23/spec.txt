@@ -1,0 +1,9 @@
+Design a motion control circuit for a ZigZag alien character. This module outputs a 3-bit motion direction based on input conditions, including enabling the motion, whether it can move left or right, and a reset condition. The motion can be one of four states: NO_MOTION, LEFT, RIGHT, or DOWN. The module prioritizes horizontal movement when possible; it opts to move right if no obstruction exists, otherwise it will move down. If already moving left or right, it assesses available directions, occasionally defaulting to no motion based on the given conditions. The design ensures that motion changes only occur on clock edges when enabled.
+module top_module(
+    input clk,
+    input reset,
+    input enable,
+    input canLeft,
+    input canRight,
+    output reg [2:0] motion
+    );

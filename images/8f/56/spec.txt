@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement a module for a 3-bit binary up-counter with asynchronous reset and enable functionality. The counter increments by 1 on each positive clock edge when the enable signal is high. If the reset signal is asserted (active high), the counter value is asynchronously reset to 0.
+
+Module name:  
+    up_counter_3bit      
+
+Input ports:
+    clk: Clock signal.
+    rst: Asynchronous reset signal (active high).
+    en: Enable signal.
+
+Output ports:
+    count: 3-bit output for the current counter value.
+
+Implementation:
+The up_counter_3bit module increments the counter value on the positive edge of the clock signal clk when the enable signal en is high. If the reset signal rst is asserted, the counter is asynchronously reset to 0. The counter value is a 3-bit wide signal.
+
+Give me the complete code.
+
+module up_counter_3bit(
+    input clk,
+    input rst,
+    input en,
+    
+    output reg [2:0] count
+);

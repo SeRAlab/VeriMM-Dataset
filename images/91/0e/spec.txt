@@ -1,0 +1,25 @@
+Please act as a professional Verilog designer.
+
+Implement a 32-bit Linear Feedback Shift Register (LFSR) with feedback taps at positions 32, 31, 30, and 10. 
+
+Module name:  
+    LFSR_counter               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the LFSR.
+Output port:
+    Q: 32-bit register representing the current LFSR value.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the LFSR value is updated.
+If the reset signal (rst_n) is low, indicating a reset condition, the LFSR value (Q) is set to 32'h1.
+Otherwise, the next value of the LFSR is determined by the XOR combination of the feedback taps and then right shifted.
+
+Give me the complete code.
+
+module LFSR_counter(
+   input                clk ,
+   input                rst_n,
+ 
+   output reg [31:0]    Q  
+);

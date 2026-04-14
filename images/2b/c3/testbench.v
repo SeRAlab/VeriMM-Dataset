@@ -1,0 +1,170 @@
+`timescale 1ns/1ps
+
+module ADC_Decoder_tb;
+
+    // Testbench signals (combinational circuit)
+    reg [23:0] binary_input;
+    wire [31:0] decimal_output;
+
+    // Test tracking
+    integer test_num;
+    integer pass_count;
+    integer fail_count;
+
+    // Instantiate the DUT (Device Under Test)
+    ADC_Decoder dut (
+        .binary_input(binary_input),
+        .decimal_output(decimal_output)
+    );
+    task testcase001;
+
+        begin
+            test_num = 1;
+            binary_input = 24'h000000;
+            $display("Test %0d: Binary Input = %h", test_num, binary_input);
+            #1;
+
+            check_outputs(32'h00000000);
+        end
+        endtask
+
+    task testcase002;
+
+        begin
+            test_num = 2;
+            binary_input = 24'hFFFFFF;
+            $display("Test %0d: Binary Input = %h", test_num, binary_input);
+            #1;
+
+            check_outputs(32'h00FFFFFF);
+        end
+        endtask
+
+    task testcase003;
+
+        begin
+            test_num = 3;
+            binary_input = 24'hAAAAAA;
+            $display("Test %0d: Binary Input = %h", test_num, binary_input);
+            #1;
+
+            check_outputs(32'h00AAAAAA);
+        end
+        endtask
+
+    task testcase004;
+
+        begin
+            test_num = 4;
+            binary_input = 24'h555555;
+            $display("Test %0d: Binary Input = %h", test_num, binary_input);
+            #1;
+
+            check_outputs(32'h00555555);
+        end
+        endtask
+
+    task testcase005;
+
+        begin
+            test_num = 5;
+            binary_input = 24'h800000;
+            $display("Test %0d: Binary Input = %h", test_num, binary_input);
+            #1;
+
+            check_outputs(32'h00800000);
+        end
+        endtask
+
+    task testcase006;
+
+        begin
+            test_num = 6;
+            binary_input = 24'h123456;
+            $display("Test %0d: Binary Input = %h", test_num, binary_input);
+            #1;
+
+            check_outputs(32'h00123456);
+        end
+        endtask
+
+    task testcase007;
+
+        begin
+            test_num = 7;
+            binary_input = 24'hABCDEF;
+            $display("Test %0d: Binary Input = %h", test_num, binary_input);
+            #1;
+
+            check_outputs(32'h00ABCDEF);
+        end
+        endtask
+
+    // Test stimulus
+    initial begin
+        // Initialize
+        test_num = 0;
+        pass_count = 0;
+        fail_count = 0;
+
+        $display("========================================");
+        $display("ADC_Decoder Testbench");
+        $display("========================================");
+
+
+        testcase001();
+        testcase002();
+        testcase003();
+        testcase004();
+        testcase005();
+        testcase006();
+        testcase007();
+        
+        
+// Print summary
+        $display("\n========================================");
+        $display("Test Summary");
+        $display("========================================");
+        $display("Tests Passed: %0d", pass_count);
+        $display("Tests Failed: %0d", fail_count);
+        $display("Total Tests:  %0d", pass_count + fail_count);
+        $display("========================================");
+
+        if (fail_count == 0)
+            $display("ALL TESTS PASSED!");
+        else
+            $display("SOME TESTS FAILED!");
+
+        $display("\nSimulation completed at time %0t", $time);
+        $finish;
+    end
+
+    // Task to check outputs
+    task check_outputs;
+        input [31:0] expected_decimal_output;
+        begin
+            #1; // Small delay for combinational logic to settle
+            if (expected_decimal_output === (expected_decimal_output ^ decimal_output ^ expected_decimal_output)) begin
+                $display("PASS");
+                $display("  Outputs: decimal_output=%h",
+                         decimal_output);
+                pass_count = pass_count + 1;
+            end else begin
+                $display("FAIL");
+                $display("  Expected: decimal_output=%h",
+                         expected_decimal_output);
+                $display("  Got:      decimal_output=%h",
+                         decimal_output);
+                fail_count = fail_count + 1;
+            end
+        end
+    endtask
+
+    // Timeout watchdog
+    initial begin
+        #1000000; // 1ms timeout
+        $display("\nERROR: Simulation timeout!");
+        $finish;
+    end
+
+endmodule

@@ -1,0 +1,7 @@
+Design an 8-bit arithmetic module that performs two operations based on the value of the select signal (SEL). When SEL is 0, the module computes the sum of inputs A and B, capping the result at 255 to handle overflow. When SEL is 1, it computes the difference A - B, outputting zero if A is less than B. This module effectively functions as a simple arithmetic unit that supports both addition with overflow handling and conditional subtraction.
+module top_module(
+    input [7:0] A,
+    input [7:0] B,
+    input SEL,
+    output reg [7:0] C
+);

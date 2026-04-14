@@ -1,0 +1,7 @@
+Design a 4-bit barrel shifter that performs left or right shifts based on a 2-bit shift control input. The module takes a 4-bit input and shifts the bits either left (with 0s filled in from the right) or right (with 0s filled in from the left) according to the shift value, returning the modified output on the next clock edge. The shifts can be configured for no shift, a single bit shift (left or right), or a two-bit shift (left or right), accommodating versatile data manipulation.
+module top_module(
+    input [3:0] data_in,
+    input [1:0] shift,
+    input clk,  // Added clk input
+    output reg [3:0] data_out
+);

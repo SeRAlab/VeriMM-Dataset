@@ -1,0 +1,6 @@
+Design a module for channel equalization that performs a convolution operation on an input signal with a given impulse response and subsequently normalizes the resulting signal. The module accepts a signed input signal of length `n` and a signed channel impulse response of length `m`, computing the convolution to produce an intermediate result. It then normalizes this result by dividing it by itself, which may be intended to adjust the amplitude or compensate for scaling. The final equalized output signal is provided as a signed output of length `n`.
+module top_module(
+  input signed [n-1:0] x,
+  input signed [m-1:0] h,
+  output signed [n-1:0] y
+);

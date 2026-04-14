@@ -1,0 +1,7 @@
+Design a watchdog timer that monitors a specified timeout period. The timer increments a 32-bit counter on each clock cycle. If the counter reaches the defined timeout value, it asserts a watchdog signal (wdt) indicating a timeout event; otherwise, the signal remains deasserted. The functionality supports a reset input that clears the counter and the watchdog signal. This module is essential for applications requiring reliability, ensuring that a system can detect and respond to anomalies or failures within a predefined timeframe.
+module top_module(
+  input clk,
+  input rst,
+  input [31:0] timeout,
+  output wdt
+);

@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module to serve as an interface for sound data handling within a digital system, particularly in scenarios where sound data needs to be latched and held until it is explicitly read. Its primary function to capture and temporarily store an 8-bit sound data value, making it available for retrieval upon request. This module plays a crucial role in systems where sound data synchronization with other processes or hardware components is necessary, ensuring that sound data can be reliably accessed and processed in a controlled manner.
+
+Module name:  
+	SOUND_LATCH
+
+Input ports:
+	enable: A singlebit input signal that enables the latching functionality. When low, the output dout is forced to 0, effectively disabling the data output.
+	clk: The clock input signal. It is used to synchronize the data latching and output operations within the module.
+	rd_n: A singlebit input signal, active low, indicating a read operation. When low, it triggers the module to output the currently latched data on the next positive edge of the sample signal.
+Output ports:
+	dout: An 8bit output signal that holds the latched sound data. The value of dout is updated based on the input signals and the internal logic of the module.
+
+
+Implementation:
+The SOUND_LATCH module is designed to interface with a sound system, specifically to latch and output an 8-bit data value based on specific control signals. The module operates synchronously with a clock signal and responds to read and enable controls. The core functionality revolves around capturing and outputting data under certain conditions, dictated by the enable and rd_n signals.
+
+Give me the complete code.
+

@@ -1,0 +1,11 @@
+Design a FIFO (First-In-First-Out) buffer that translates 19-bit wide data input into 8-bit wide output suitable for a lower-level interface. The module accepts data along with control signals indicating readiness and state of the data stream. It manages the state of data retrieval based on start-of-frame (SOF) and end-of-frame (EOF) signals, iterating through the incoming data to generate two 8-bit output segments. The design includes handshaking logic, asserting a readiness signal based on the conditions of input and output readiness, while ensuring that data is consumed in the correct sequence and maintaining synchronization between the source and destination.
+module top_module(input clk, input reset, input clear,
+   input [18:0] f19_data,
+   input f19_src_rdy_i,
+   output f19_dst_rdy_o,
+
+   output reg [7:0] ll_data,
+   output ll_sof_n,
+   output ll_eof_n,
+   output ll_src_rdy_n,
+   input ll_dst_rdy_n);

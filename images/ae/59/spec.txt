@@ -1,0 +1,8 @@
+Design a shift register with controllable input options. The module has a reset and clock input; on a negative edge of reset, the output A_par resets to zero. On each rising edge of the clock, the output can be modified based on the 2-bit selector input (sel): if sel is 00, the output retains its current value; if sel is 01, the most significant bit (MSB_in) is shifted in from the left; if sel is 10, the least significant bit (LSB_in) is shifted in from the right; and if sel is 11, the output directly takes the value of the 4-bit input I_par.
+module top_module(
+    input rstn, clk,
+    input MSB_in, LSB_in,
+    input [3:0] I_par,
+    input [1:0] sel,
+    output reg [3:0] A_par
+);

@@ -1,0 +1,10 @@
+
+Design a 4-channel DMA (Direct Memory Access) controller that allows for the transfer of data from memory to peripherals. The controller should have the following inputs:
+- `start` (1-bit): Signal to initiate a transfer.
+- `channel_req` (4-bit): Indicates which channel (0-3) is requesting the DMA transfer.
+- `ack` (1-bit): Acknowledge signal from the peripheral.
+- `data_in` (8-bit): Data input to be transferred.
+The outputs should include:
+- `data_out` (8-bit): Data output after transfer.
+- `channel_busy` (4-bit): Indicates if a channel is currently busy (1 for busy, 0 for free).
+- `done` (1-bit): Signal to indicate that the transfer is complete. The controller should allow for one transfer at a time across the channels and should cycle through them based on requests.

@@ -1,0 +1,11 @@
+Design a 100-bit wide rotation register that can perform both right and left rotations based on the `ena` input. When the `load` signal is high, the module loads the `data` input into the first register. On the rising edge of the `clk`, if `load` is low, the register performs operations based on the `ena` signal: 
+- `00` and `11` trigger right rotation for the registers, 
+- while `01` and `10` trigger left rotation. 
+The output `q` reflects the state of the third register after each operation. This design facilitates sequential data manipulation with configurability for directional rotation.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output reg [99:0] q
+);

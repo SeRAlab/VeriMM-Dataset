@@ -1,0 +1,8 @@
+Design a 3-bit priority encoder that takes three binary inputs A2, A1, and A0. The module outputs an enable signal (EN) and a 3-bit binary output (Y) that indicates the highest priority active input. When no inputs are active (i.e., all are LOW), EN is set to LOW and Y is set to 000. If any of the inputs are HIGH, EN is asserted HIGH, and Y reflects the binary equivalent of the highest-priority active input, with A2 having the highest priority and A0 the lowest.
+module top_module(
+    input A2,
+    input A1,
+    input A0,
+    output reg EN,  // Changed to reg type
+    output reg [2:0] Y
+);

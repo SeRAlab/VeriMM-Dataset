@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+
+Implement a module of a 4-bit loadable counter. The counter can be loaded with a specified value when the load signal (ld) is active. The counter increments on the rising edge of the clock when the enable signal (en) is active. The counter resets to 0 when the reset signal (rst_n) is active.
+
+Module name:  
+    loadable_counter               
+Input ports:
+    rst_n: Reset signal (active low)
+    clk: Clock signal
+    en: Signal to enable counting
+    ld: Signal to load a specific value
+    load_value: 4-bit value to be loaded into the counter
+Output ports:
+    out: 4-bit output representing the current count value
+
+Implementation:
+If the reset signal is active (!rst_n), the counter is reset to 0 by assigning the value 4'b0000 to the output register (out). If the ld signal is 1, the counter is loaded with the specified value (load_value). If the en signal is 1 and ld is 0, the counter increments on the rising edge of the clock.
+
+Give me the complete code.

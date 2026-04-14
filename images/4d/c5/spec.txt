@@ -1,0 +1,23 @@
+Implement a Verilog module based on the following description.
+The following diagram is a Moore machine implementation of a washing machine controller. Implement in Verilog using one-hot encoding. Resets into state Idle and reset is asynchronous active-high.
+
+The state machine has the following states and their corresponding outputs: 
+1. state Idle (running = 0).
+2. state Wash (running = 1).
+3. state Rinse (running = 1).
+4. state Spin (running = 1).
+
+State transitions:
+1. From state Idle: If start = 0, then transition to state Idle. If start = 1, then transition to state Wash.
+2. From state Wash: If done_wash = 0, then transition to state Wash. If done_wash = 1, then transition to state Rinse.
+3. From state Rinse: If done_rinse = 0, then transition to state Rinse. If done_rinse = 1, then transition to state Spin.
+4. From state Spin: If done_spin = 0, then transition to state Spin. If done_spin = 1, then transition to state Idle.
+
+module top_module (
+        input clk,
+        input areset,
+        input start,
+        input done_wash,
+        input done_rinse,
+        input done_spin,
+        output reg running);

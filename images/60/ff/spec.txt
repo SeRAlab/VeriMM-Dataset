@@ -1,0 +1,10 @@
+Design a 4-bit wide shift register that captures input data on the rising edge of a clock signal, while enabling synchronous reset functionality. When the reset signal is activated, all output registers (q0, q1, q2, q3) are set to zero. Upon each clock cycle, the current 4-bit input (data_in) is moved into the first register (q0), and the contents of the previous registers shift to the next position (q1 gets q0, q2 gets q1, and q3 gets q2). This effectively creates a 4-stage, serial-in parallel-out shift register.
+module top_module(
+    data_in,
+    shift_clk,
+    reset,
+    q0,
+    q1,
+    q2,
+    q3
+);

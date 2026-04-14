@@ -1,0 +1,9 @@
+Design a dual-port register file that stores 16-bit wide data in two separate synchronous RAM blocks, each of which can hold a depth determined by the specified data register width. The module has control signals for read and write operations, driven by a clock and reset. On the rising edge of the clock, if the read/write control signal is high, it writes the input data to both RAM blocks at the location specified by the destination address from the control input. The outputs provide the data read from both RAM blocks based on the respective address inputs. This functionality supports simultaneous read and write operations for efficient data handling in digital circuits.
+module top_module(
+    input CLK,
+    input RST,
+    input [6:0] CNTRL_bus_in,
+    input [15:0] D_bus_in,
+    output reg [15:0] ADDR_bus_out,
+    output reg [15:0] B_data_out
+    );

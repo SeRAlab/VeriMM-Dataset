@@ -1,0 +1,10 @@
+Design a write-back multiplexer that selects one of four 32-bit input signals (muxin_a, muxin_b, muxin_c, muxin_d) based on the control signals from the rfwb_op input. The output (muxout) is determined by a 2-bit selection derived from rfwb_op, with an additional option that increments the selected input by 8. The module includes a clock and reset functionality, where the selected output is registered into muxreg on the positive edge of the clock if wb_freeze is not asserted. Additionally, a valid flag (muxreg_valid) indicates whether the write-back operation output is valid based on the least significant bit of rfwb_op.
+module top_module(
+    // Clock and reset
+    clk, rst,
+
+    // Internal i/f
+    wb_freeze, rfwb_op,
+    muxin_a, muxin_b, muxin_c, muxin_d,
+    muxout, muxreg, muxreg_valid
+);

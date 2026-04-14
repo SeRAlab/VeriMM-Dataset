@@ -1,0 +1,9 @@
+Design a 32-bit barrel shifter that performs left shifts based on the specified shift amount, with the capability to carry out the operation in multiple stages. The module takes a 32-bit input and a 5-bit shift amount, and produces a 32-bit output which represents the input data after being shifted left by the specified amount. Additionally, it includes a zero flag output that indicates whether the resulting data is zero after the shift operation. The shifting process is synchronized with a clock and reset signal, ensuring controlled advancement through stages of computation.
+module top_module(
+  input [31:0] data_in,
+  input [4:0] shift_amount,
+  input clk,
+  input reset,
+  output reg [31:0] data_out,
+  output reg zero_flag
+);

@@ -1,0 +1,15 @@
+
+
+You are tasked with designing a module that performs a basic encryption algorithm on an input data stream. The module should include a shift register that stores the last 8 bits of data input, and a 16-bit key that is XORed with the input data. The output of the module should be the result of the XOR operation.
+
+The module should have the following inputs and outputs:
+- `input wire clk`: the clock signal
+- `input wire rst`: the reset signal
+- `input wire [7:0] data_in`: the input data stream
+- `input wire [15:0] key`: the encryption key
+- `output wire [7:0] data_out`: the encrypted output data stream
+
+The module should have the following behavior:
+- On the rising edge of the clock signal, if the reset signal is high, the shift register should be cleared and the output data should be set to 0.
+- Otherwise, the input data should be XORed with the key, and the result should be stored in the shift register. The output data should be the value of the shift register.
+

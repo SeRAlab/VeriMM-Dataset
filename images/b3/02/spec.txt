@@ -1,0 +1,9 @@
+Design a priority encoder that converts an 8-bit input into a 3-bit output based on the highest order active bit, only when a request signal is not asserted and the module is currently in operation. The output represents the index of the highest priority input bit set to high, with the most significant bit prioritized. The module also includes a work status signal to indicate when it is actively processing a request. When a new request is registered, the output is reset to zero.
+module top_module(
+	input wire [7:0] in,
+	input wire pe_request,
+	input clock,
+	output reg [2:0] out,
+	output reg pe_work
+
+  );

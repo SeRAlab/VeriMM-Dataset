@@ -1,0 +1,14 @@
+This module implements a priority-based binary-coded decimal (BCD) multiplexer with an integrated binary to BCD conversion feature. The circuit takes four 4-bit inputs (A, B, C, D) and outputs the highest priority input among them based on a predefined encoding scheme. It also accepts a binary input and converts it to BCD, which can then be displayed in a seven-segment format based on the selection signal (S). The module cycles through three display digits, generating enable signals (EN1, EN2, EN3) for each digit while updating the output to either the selected BCD digit or the highest priority input. This design is particularly useful for applications requiring numeric display of multi-source data and information priority management.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [3:0] C,
+    input [3:0] D,
+    input [1:0] S,
+    input [3:0] binary_in,
+    input clk,
+    output reg [6:0] seven_segment_out,
+    output reg EN1,
+    output reg EN2,
+    output reg EN3
+);

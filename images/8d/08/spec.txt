@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement a 32-bit LFSR (Linear Feedback Shift Register) with a polynomial tap configuration for generating pseudo-random numbers.
+
+Module name:  
+    lfsr_32bit               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the LFSR.
+    seed: 32-bit seed value to initialize the LFSR.
+Output port:
+    Q: 32-bit register representing the current value of the LFSR.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the LFSR value is updated.
+If the reset signal (rst_n) is low, the LFSR value (Q) is set to the seed value.
+Otherwise, the LFSR shifts right by 1 bit, and the new most significant bit is calculated using the XOR of specific bit positions as defined by the polynomial taps.
+
+Give me the complete code.
+
+module lfsr_32bit(
+   input                clk ,
+   input                rst_n,
+   input  [31:0]        seed,
+ 
+   output reg [31:0]    Q  
+);

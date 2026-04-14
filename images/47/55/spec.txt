@@ -1,0 +1,14 @@
+Implement a memory interface module that handles read and write operations for a simple memory array (256 x 32 bits) based on control signals. The module uses two pointers for read and write operations, which are updated on the rising edge of an input clock signal (aclk). When an active reset is triggered, both pointers are initialized to zero. On the enable signals (ENA_I and ENB_I), the module reads data from the specified memory location pointed to by RD_PNTR and writes data to the location pointed to by WR_PNTR from a FIFO input. Additionally, it captures incoming FIFO data on another clock signal (s_dclk_o) when a specific condition (p_20_out) is met. The module outputs the read data and a delayed enable signal, supporting data transfer operations in a synchronous manner.
+module top_module(
+    input wire ENA_I,
+    input wire ENB_I,
+    input wire POR_A,
+    input wire [7:0] RD_PNTR,
+    input wire [7:0] WR_PNTR,
+    input wire s_dclk_o,
+    input wire aclk,
+    input wire p_20_out,
+    input wire [31:0] rx_fifo_data_o_reg,
+    output reg [31:0] D,
+    output reg ENB_dly_D
+);

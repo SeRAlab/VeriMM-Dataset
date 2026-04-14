@@ -1,0 +1,7 @@
+Design a buffer module that conditionally outputs a signal based on the states of two control inputs: 'enable' and 'sleep'. When 'sleep' is high, the output 'X' retains its last value regardless of 'A' or 'enable'. If 'sleep' is low and 'enable' is high, the input signal 'A' is passed to the output 'X'. When both 'sleep' is low and 'enable' is low, the output 'X' continues to hold its last value. This module effectively serves as a controlled latch that can either pass input or maintain its state under specific conditions.
+module top_module(
+    input A,
+    input enable,
+    input sleep,
+    output reg X
+);

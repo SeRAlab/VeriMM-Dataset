@@ -1,0 +1,7 @@
+Develop a circuit that converts an 8-bit binary number to its equivalent Gray code representation. Upon receiving a reset signal, the output is initialized to zero. On each positive clock edge, if not in reset, the module computes the Gray code by applying the formula for each bit, with the most significant bit (MSB) being copied directly from the binary input and each subsequent bit computed as the XOR of adjacent bits from the binary input.
+module top_module(
+  input wire clk,
+  input wire reset,
+  input wire [7:0] bin,
+  output reg [7:0] gray
+);

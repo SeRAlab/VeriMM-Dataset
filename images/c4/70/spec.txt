@@ -1,0 +1,18 @@
+
+
+You are tasked with designing a Verilog module to implement a simple RAM model. The module should have the following inputs and outputs:
+
+Inputs:
+- `data`: 32-bit input data to be written to memory
+- `rdaddress`: 24-bit read address
+- `wraddress`: 24-bit write address
+- `wrclock`: write clock signal
+- `wren`: write enable signal
+
+Outputs:
+- `q`: 32-bit output data read from memory
+
+The RAM model should have a depth of 2048 and each memory location should be 32 bits wide. The RAM model should be able to read and write data on the rising edge of the write clock signal. If the write enable signal is high, the input data should be written to the memory location specified by the write address. If the read address matches a valid memory location, the output data should be the data stored in that location. If the read address does not match any valid memory location, the output data should be `32'dX`.
+
+Design the Verilog module to implement this RAM model.
+

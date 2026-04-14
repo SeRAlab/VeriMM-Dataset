@@ -1,0 +1,7 @@
+Design a synchronous 4-bit adder module that performs addition on two 4-bit inputs, A and B, when enabled. The module uses a clock signal to synchronize operations and includes a reset feature that clears the sum and carry-out registers to zero. On each positive clock edge, if reset is asserted, the sum (S) and carry-out (Cout) are set to zero; otherwise, if enabled, the module computes the sum of the inputs A and B, updates the sum register with this result, and calculates the carry-out based on the addition logic. The outputs include the 4-bit sum and a 1-bit carry-out signal indicating an overflow from the most significant bit.
+module top_module(
+    input clk, reset, enable,
+    input [3:0] A, B,
+    output [3:0] S,
+    output Cout
+);

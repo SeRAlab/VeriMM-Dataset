@@ -1,0 +1,11 @@
+Design a FIFO (First-In, First-Out) buffer that interfaces data from a 9-bit wide input to GMII (Gigabit Media Independent Interface) for transmission. The module features control signals for read enable and a system reset, manages data flow with read and write pointers, and monitors the buffer state, indicating when it is empty. It can output data on a GMII clock when enabled, while simultaneously managing potential underflow conditions by regulating the read pointer and FIFO count. The design facilitates a seamless transfer of data to a GMII interface, accommodating up to 4096 entries while ensuring synchronization with the user-defined read clock.
+module top_module(
+    input sys_rst,
+    input rd_en,
+    input rd_clk,
+    output reg [8:0] dout,
+    output reg empty,
+    output reg gmii_tx_en,
+    output reg [7:0] gmii_txd,
+    output reg gmii_tx_clk
+);

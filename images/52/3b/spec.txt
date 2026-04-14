@@ -1,0 +1,8 @@
+Design a circuit that determines the validity of access-related status bits for a memory management unit. The output, AD_bit_not_ok, becomes HIGH when a store request (r_req_store) is made, but the dirty bit (pte_d) is not set, or when the accessed bit (pte_a) is not set. This module helps in managing the state of page table entries by signaling if the access conditions are not met.
+module top_module(
+	input r_req_store,
+	input pte_a,
+	input pte_d,
+
+	output AD_bit_not_ok
+	);

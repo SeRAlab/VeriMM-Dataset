@@ -1,0 +1,9 @@
+Design a 3-to-1 multiplexer with asynchronous reset and a clock-enable signal. The module takes a 3-bit input data signal, a selection signal (sel), and under clock and reset conditions, it outputs one of the data bits based on the value of sel. If reset is asserted, the internal data register and output are set to zero. If enable is high, the input data is loaded into the register, and the output is determined by the selector; it outputs the most significant bit (data_reg[2]) when sel is low, and it outputs one of the lower bits (data_reg[sel-1]) when sel is high.
+module top_module(
+    input [2:0] data_in,
+    input sel,
+    input clk,
+    input reset,
+    input enable,
+    output reg out
+);

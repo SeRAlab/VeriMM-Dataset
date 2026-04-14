@@ -1,0 +1,11 @@
+Design a clock data recovery module that incorporates a delay line for the incoming data signal (dqs_in) to produce a synchronized output (dqs_out). The module creates a 1/4 cycle delay of dqs_in using a series of registers, ensuring that dqs_out remains in phase with the original input signal. Additionally, on each positive edge of the strobe signal, the module optionally passes the input serial data (si) to the output (so) when the select enable signal (se) is active. This design effectively manages data timing and transfer in high-speed communication interfaces.
+module top_module(
+	// inputs in alphabetical order
+	dqs_in,
+	lpf_out,
+	se,
+	si,
+	strobe,
+	//outputs in alphabetical order
+	dqs_out,
+	so          );

@@ -1,0 +1,8 @@
+Design a clock gating module that controls the propagation of a clock signal based on two input control signals, SCE (Signal Clock Enable) and GATE (Gate). The module effectively generates a gated clock output, GCLK, which is derived from the CLK input but disabled when either SCE is asserted or GATE is asserted. It incorporates delayed versions of the input signals to synchronize with the clock and includes logic to ensure the output clock is only active when the power supply, VPWR, is present. This design optimizes power consumption in digital circuits by selectively enabling clock signals.
+module top_module(
+    input SCE,
+    input GATE,
+    input CLK,
+    input VPWR,
+    output reg GCLK
+);

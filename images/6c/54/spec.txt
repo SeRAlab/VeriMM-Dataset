@@ -1,0 +1,9 @@
+Design a dataflow control node that synchronizes the transfer of valid data based on input signals. It takes a clock and reset signal, along with a valid input and a stall input, to control the output signals for valid data and stall conditions. When reset is active, both output signals are deactivated. On the rising edge of the clock, if valid_in is asserted and stall_in is not asserted, valid_out will be activated, and stall_out will remain low. Conversely, if valid_in is not asserted or stall_in is activated, valid_out will be deactivated, and stall_out will be set high, facilitating data flow control in a pipeline or data processing system.
+module top_module(
+    input clock,
+    input resetn,
+    input valid_in,
+    output valid_out,
+    input stall_in,
+    output stall_out
+);

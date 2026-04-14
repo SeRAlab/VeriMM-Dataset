@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a timer within an AVR-like microcontroller architecture. Its primary roles include counting time intervals based on the input clock signal and prescaler settings, generating an interrupt request (`irq`) upon overflow, and providing an interface for reading from and writing to the timer's control and count registers via IO operations. This module is crucial for tasks that require precise timing, such as scheduling events, measuring time intervals, and generating periodic interrupts within the broader system context.
+
+Module name:  
+	avr_io_timer
+
+Input ports:
+	clk: Clock input signal (1bit). The rising edge of this signal drives the timing and state transitions within the module.
+	rst: Reset input signal (1bit). Used to initialize or reset the module's internal state.
+	io_re: IO read enable signal (1bit). When high, it allows reading data from the module's internal registers.
+	io_we: IO write enable signal (1bit). When high, it allows writing data to the module's internal registers.
+	io_a: IO address input (2bit). Specifies the internal register being accessed for read or write operations.
+	io_di: IO data input (8bit). The data to be written into the specified register.
+Output ports:
+	io_do: IO data output (8bit). The data read from the specified register.
+	irq: Interrupt request output (1bit). Goes high to signal an overflow event.
+
+
+Implementation:
+The avr_io_timer module is designed to function as a timer with configurable prescaler and overflow interrupt capabilities, closely resembling a simplified version of timers found in AVR microcontrollers. It operates based on an input clock (clk) and reset signal (rst), and interfaces with external modules through IO read (io_re), write (io_we), address (io_a), data input (io_di), and data output (io_do). The module generates an interrupt (irq) upon overflow, which can be enabled or disabled through configuration.
+
+Give me the complete code.
+

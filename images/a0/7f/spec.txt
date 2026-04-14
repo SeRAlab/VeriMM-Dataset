@@ -1,0 +1,12 @@
+Design a 3-to-1 multiplexer capable of selecting one of eight 32-bit data inputs based on a 3-bit selector. The module handles the selection in a hierarchical manner, where the first two bits of the selector determine which of four inputs (Data_0 to Data_3) to choose, while the last bit dictates whether to output from the first group (A1) or a second group of inputs (Data_4 to Data_6). The output is a single 32-bit value (Data_out) that reflects the selected input based on the state of the selector.
+module top_module(
+    input wire    [2:0]     selector, 
+    input wire    [31:0]    Data_0, 
+    input wire    [31:0]    Data_1, 
+    input wire    [31:0]    Data_2, 
+    input wire    [31:0]    Data_3, 
+    input wire    [31:0]    Data_4, 
+    input wire    [31:0]    Data_5, 
+    input wire    [31:0]    Data_6, 
+    output wire   [31:0]    Data_out
+);

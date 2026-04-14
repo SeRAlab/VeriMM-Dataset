@@ -1,0 +1,6 @@
+Design a circuit that calculates the modular 6 result of the sum of two 3-bit inputs, `in` and `sum`. The circuit adds the two inputs and, based on the outcome, maps specific values to a 3-bit output, `out`, using a case statement. Particularly, if the resulting sum falls within the range of 6 to 11 (inclusive), the output will cycle through values 0 to 5, while values above 11 will produce the raw output of the auxiliary register. This effectively implements a modulus operation with specialized output behavior for certain ranges.
+module top_module(
+	input		[2:0]	in, 
+	input		[2:0]	sum,
+	output	reg [2:0]	out	
+);

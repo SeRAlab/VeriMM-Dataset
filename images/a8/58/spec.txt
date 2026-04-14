@@ -1,0 +1,9 @@
+Design a 16-register file with 32-bit wide registers, which allows for reading and writing operations. The module features two output registers, reg1 and reg2, that provide the values of registers specified by inputs src1 and src2. On a reset signal, it initializes each register with its index value. On the negative edge of the clock, if the write_back_enable signal is active, it updates the register designated by dest_wb with the value of result_wb, facilitating data storage and retrieval for a digital system.
+module top_module( 
+  input clk, rst,
+  input[3:0] src1, src2, dest_wb, 
+  input[31:0] result_wb, 
+  input write_back_enable,
+  output reg [31:0] reg1, reg2,
+  output [31:0] R0,R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,R11
+);

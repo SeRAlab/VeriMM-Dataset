@@ -1,0 +1,7 @@
+Design a circuit that implements a finite impulse response (FIR) filter for processing input symbols. The circuit takes an N-bit input symbol vector 'r' and a coefficient vector 'c' of length L to generate an N-bit output 'e'. It utilizes a tapped delay line to store previous input samples and applies the tap weights for multiplication and accumulation, effectively filtering the input signal. The filter updates its state on the rising edge of a clock signal, shifting old samples in the delay line while inserting the latest input.
+module top_module(
+  input [N-1:0] r,
+  input [L-1:0] c,
+  output reg [N-1:0] e, // Change output to reg type
+  input clk // Add clk input
+);

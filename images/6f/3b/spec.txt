@@ -1,0 +1,28 @@
+Please act as a professional Verilog designer.
+
+Design a module for a 4-bit shift register with parallel load and serial output. The module has a 4-bit parallel input (P), a 1-bit clock input (clk), a 1-bit load input (load), and a 1-bit serial output (Q). When the load signal is asserted, the parallel input P should be loaded into the shift register on the next clock edge. On each subsequent clock edge, the register should shift right by 1 bit and the serial output Q should provide the right-most bit of the register.
+
+Module name:
+    shift_register
+
+Input ports:
+    P: 4-bit parallel input.
+    clk: 1-bit clock input.
+    load: 1-bit load input.
+
+Output ports:
+    Q: 1-bit serial output.
+
+Implementation:
+Declare the module shift_register with input and output ports as specified in the ports statement.
+Use an always block, sensitive to the rising edge of the clock.
+Inside the always block, check if the load signal is asserted and load the value of P into the register if it is. Otherwise, shift the register right by 1 bit and assign the right-most bit of the register to the serial output Q.
+
+Give me the complete code.
+
+module shift_register(
+    input [3:0] P,
+    input clk,
+    input load,
+    output reg Q
+);

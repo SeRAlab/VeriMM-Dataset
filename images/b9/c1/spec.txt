@@ -1,0 +1,7 @@
+Design a 32-bit multiplier module that selectively multiplies two inputs, B_In and C, based on the control signals MUL_HiLo, LD_MUL, and U. When LD_MUL is asserted, the module computes the product of the sign-extended inputs op1 and op2, which are derived from B_In and C with sign-extension depending on the signal U. The output, B_Out, can either output the lower (MUL[31:0]) or upper (MUL[63:32]) 32 bits of the 64-bit product, controlled by the MUL_HiLo signal. This allows for flexible multiplication output based on the desired bit-width.
+module top_module(
+    input [31:0] B_In,
+    input [31:0] C,                    
+    input MUL_HiLo, LD_MUL, U,
+    output [31:0] B_Out                    
+);

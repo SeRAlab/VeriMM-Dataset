@@ -1,0 +1,6 @@
+Design a 16-bit to 32-bit sign and zero extension module. The module takes a 16-bit immediate value (`imm`) and a 2-bit operation code (`EOp`) to determine how to extend the value. Depending on the value of `EOp`, the immediate is conditionally concatenated with either zero-filled or sign-extended bits to produce a 32-bit output. Specifically, `EOp` dictates whether to sign-extend (EOp=00 or 11) or zero-extend (EOp=01 or 10), and for EOp=11, the resulting output is also left-shifted by two bits.
+module top_module(
+    input [15:0] imm,
+    input [1:0] EOp,
+    output reg [31:0] ext
+    );

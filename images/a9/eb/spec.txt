@@ -1,0 +1,8 @@
+Design a circuit that combines a synchronous 4-bit binary counter with the functionality of an XOR gate. The module, upon receiving clock and reset signals, counts from 0 to 15 and loops back to 0 upon reaching the limit. The output, `out_comb`, is determined by whether the counter's value is even or odd; if the counter is even, the output is the result of an XOR operation between inputs `a` and `b`, and if odd, it outputs the current value of the counter. This design effectively combines counting and logical operations based on the state of the counter.
+module top_module(
+    input a,
+    input b,
+    input clk,
+    input reset,      // Synchronous active-high reset
+    output reg out_comb // Output from the functional module that combines the XOR gate and the counter
+);

@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform a specific arithmetic or logical operation on two 2-bit inputs, `A` and `B`, and produce a 2-bit output, `C`. The precise nature of the operation is determined by the logic implemented within the module. Given the logic expressions for `c0` and `c1`, it appears that the module is not implementing a standard arithmetic addition or subtraction but rather a specialized function defined by the combination of input bits. The function could be part of a larger system where such specific operations are required, possibly in applications like custom digital signal processing, encryption algorithms, or other specialized digital logic circuits where unique operations on bit patterns are necessary.
+
+Module name:  
+	f3_add
+
+Input ports:
+	A [1:0]: A 2bit input vector. Each bit (a1, a0) represents a component of the first operand in the operation. The significance of each bit is determined by its position and the logic that utilizes it.
+	B [1:0]: A 2bit input vector similar to A. Each bit (b1, b0) represents a component of the second operand in the operation.
+Output ports:
+	C [1:0]: A 2bit output vector. Each bit (c1, c0) represents a component of the result produced by the module's operation on inputs A and B.
+
+
+Implementation:
+The RTL module presented, named f3_add, is designed to perform a specific combinational logic operation on two 2-bit inputs, A and B, and produce a 2-bit output, C. This module does not contain any sequential logic elements such as flip-flops or latches, meaning its output is purely a function of its current inputs without any dependency on previous input states. The logic is implemented using bitwise operations and logical conditions that are evaluated to produce the output based on the current state of the inputs.
+The core functionality of f3_add seems to be a specialized form of addition or a bitwise operation that does not directly map to standard arithmetic or logical operations. The output C is determined by a series of logical conditions applied to the bits of inputs A and B. These conditions are expressed through a combination of AND (&), OR (|), and NOT (~) operations, which are fundamental to digital logic design.
+The logic for each bit of the output (c0 and c1) is defined separately, with each bit's logic being a disjunction (|, logical OR) of several conjunctions (&, logical AND) of the input bits and their negations. This indicates that each output bit is set to '1' if any of the conditions specified for it are true. The conditions are carefully crafted to reflect the specific functionality intended by the designer, which appears to be a custom logic operation rather than a general-purpose arithmetic or bitwise function.
+
+Give me the complete code.
+

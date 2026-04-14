@@ -1,0 +1,10 @@
+Design a 4-bit pipelined carry-select adder that performs addition on two 4-bit inputs, num1 and num2, with a carry-in cin. The module uses a clock and reset signal to manage its operation. On each clock cycle, if not in reset, it computes the sum and carry-out by generating two partial sums (one for carry-in 0 and another for carry-in 1) to accelerate the addition process. The final sum and carry-out outputs are updated based on these computations, allowing for increased speed in multi-cycle addition operations.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] num1,
+  input [3:0] num2,
+  input cin,
+  output reg [3:0] sum,
+  output reg cout
+);

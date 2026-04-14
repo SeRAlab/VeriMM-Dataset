@@ -1,0 +1,24 @@
+This Verilog module implements a finite state machine (FSM) designed to interface with an Analog-to-Digital Converter (ADC). The FSM manages operations for reading from and writing to the ADC based on input control signals (read and write) and the ADC's status signals (busy, data ready, end of conversion, and end of sequence). It defines three primary states: IDLE, WRITE, and READ. In the IDLE state, the FSM checks the ADC’s status and responds to read/write requests. The WRITE state handles data transmission to the ADC, while the READ state retrieves data from the ADC when it is ready. The output includes a valid signal to indicate successful communication and an output data register to store the received ADC data.
+module top_module(
+	// User Interface
+	input 			       clk,
+	input 			       rst,
+	input 			       rd,
+	input 			       wr,
+	input	       [6:0]   addr,
+	input          [15:0]  data_in,
+	output	reg    [15:0]  data_out,
+	output	reg		       valid,
+	// XADC ports
+    input                  jtaglocked,
+	input 			       busy,
+	input 			       drdy,
+	input 			       eoc,
+	input                  eos,
+	input          [4:0]   channel,
+	input          [15:0]  dout,
+	output 	reg            dwe,
+	output 	reg            den,
+	output 	reg    [6:0]   daddr,
+	output 	reg    [15:0]  din
+);

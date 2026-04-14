@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a D-type flip-flop with enable (`en`) and scan-enable (`se`) functionalities, parameterized by size (`SIZE`). This module is primarily used in digital integrated circuits for temporary data storage and synchronization purposes. It plays a crucial role in implementing state machines, data buffers, and registers within a broader system context. The inclusion of scan-enable (`se`) functionality allows for easier testing and debugging by enabling a shift-register mode of operation during scan tests, which is essential for Design for Testability (DFT) strategies.
+
+Module name:  
+	dffe_s
+
+Input ports:
+	din [SIZE1:0]: Data input port. A vector of size SIZE that represents the data to be stored in the flipflop when the enable (en) signal is high.
+	en: Enable input. A singlebit signal that, when high, allows the data at din to be loaded into the flipflop at the next positive clock edge.
+	clk: Clock input. A singlebit signal that triggers the data storage operation on its positive edge.
+	se: Scanenable input. A singlebit signal that, when high, enables the scan operation mode, allowing data to be shifted in through si.
+	si [SIZE1:0]: Scan data input port. A vector of size SIZE that represents the data to be shifted into the flipflop during scan operations when se is high.
+Output ports:
+	q [SIZE1:0]: Data output port. A vector of size SIZE that holds the current state of the flipflop. It outputs the stored data or the shiftedin scan data depending on the mode of operation.
+	so [SIZE1:0]: Scan data output port. A vector of size SIZE that is directly connected to the q output, allowing the shifted data to be observed or chained to another scan element.
+
+
+Implementation:
+The RTL module presented, named dffe_s, is designed to function as a parameterizable, edge-triggered D flip-flop with enable (en), scan enable (se), and scan input (si) features, alongside a standard clock (clk) input. The module's primary purpose is to store and update data (din) based on the clock signal, with additional functionalities for testability through scan chains. The parameter SIZE allows for scalability, enabling the module to handle single or multiple bits of data as specified by the user.
+
+Give me the complete code.
+

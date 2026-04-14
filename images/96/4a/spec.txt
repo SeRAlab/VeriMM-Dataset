@@ -1,0 +1,11 @@
+Develop a digital circuit module that produces an output Y based on the values of inputs A1, A2, and the active low input B1_N, while also considering power supply parameters (VPWR, VGND, VPB, VNB). The circuit computes intermediary signals Y1 and Y2, with Y1 representing the combination of A1 and A2 when B1_N is low, and Y2 being the negation of the conjunction of A1, A2, and B1_N. A conditional assignment routes the output Y3, which is driven by Y1 if VPWR is high, into a standard cell (O21BAI). The final output Y is determined based on VGND's value, providing flexibility based on supply conditions. This design implements a logic function that combines elements of conditional logic and tri-state outputs, typically used in digital processing systems.
+module top_module(
+    Y   ,
+    A1  ,
+    A2  ,
+    B1_N,
+    VPWR,
+    VGND,
+    VPB ,
+    VNB
+);

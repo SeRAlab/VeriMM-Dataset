@@ -1,0 +1,7 @@
+Implement a circuit for edge detection on a 16-bit data signal. The module captures the current and previous values of the input data on the rising edge of the clock and detects changes between these two consecutive samples. When a change is detected (i.e., the previous and current values differ), it outputs the result of a bitwise XOR operation between the current and previous data, indicating the edges of the signal. The circuit is resettable, clearing all outputs when the reset signal is low.
+module top_module(
+  input clk,
+  input reset,
+  input [15:0] data,
+  output reg [15:0] edge_detected
+);

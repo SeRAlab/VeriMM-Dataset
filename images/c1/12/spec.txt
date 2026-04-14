@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a configurable vector shift register. It to shift data through a series of registers, each holding a value of a specified width (`DATA_W`). The number of stages or registers in the shift register is determined by the `REGS` parameter. This module can be utilized in various applications within a digital system, such as data buffering, serial-to-parallel conversion, timing adjustment, or as a basic element in digital filters and FIFOs. The module also supports synchronous reset functionality, allowing the contents of the shift register to be reset to a predefined value (`RESET_VAL`) upon activation of the reset signal.
+
+Module name:  
+	vector_sr
+
+Input ports:
+	clk_i: Input port of type wire. This is the clock input to the module. It is used to synchronize the shifting operation and the reset functionality of the shift register.
+	rst_i: Input port of type wire. This is the reset input to the module. When asserted (rst_i = 1), it initializes all the registers in the shift register to the RESET_VAL.
+	data_i: Input port of type wire with a width of DATA_W1:0. This port is used to input data into the shift register. The data presented on this port is shifted into the register chain at each positive clock edge when the reset is not asserted.
+Output ports:
+	data_o: Output port of type wire with a width of DATA_W1:0. This port outputs the data from the first stage of the shift register. It represents the current output of the shift register.
+
+
+Implementation:
+The vector_sr module is designed to function as a shift register with a configurable number of stages (REGS) and data width (DATA_W). The module's primary purpose is to sequentially shift input data (data_i) through a series of registers, outputting the shifted data from the first stage (data_o). This process is synchronized with the rising edge of a clock signal (clk_i) and can be reset with a reset signal (rst_i), which initializes all stages to a predefined reset value (RESET_VAL). The module leverages both combinational and sequential logic to achieve its functionality, as detailed below:
+Sequential Logic: The core of the module is built around sequential logic, specifically D-type flip-flops represented by the reg type in Verilog. These flip-flops store the data bits being shifted through the register stages. On each rising edge of the clock signal (clk_i), the contents of each register are updated. If the reset signal (rst_i) is asserted, all registers are set to the RESET_VAL. Otherwise, each register takes the value of the next register in the sequence, with the last register taking the input data (data_i). This sequential process ensures that data is shifted through the register stages in a synchronized manner.
+Combinational Logic: The module employs combinational logic to handle the conditional assignment of register values based on the reset signal and to manage the shifting logic that determines whether a register should hold the input data or the value from the next register in the sequence. Additionally, combinational logic is used to directly pass the input data to the output (data_o) when REGS is set to 0, bypassing the shift register functionality entirely.
+
+Give me the complete code.
+

@@ -1,0 +1,11 @@
+The module implements a counter for a FIFO (First-In-First-Out) buffer, producing a 5-bit output that specifies the increment value based on the status of various control signals. It uses a combinational logic block that evaluates the inputs—`empty`, `ge2_free`, `ge3_free`, and `input_tm_cnt`—to determine the appropriate increment for the FIFO count. Depending on the conditions set by these inputs, the output `fifo_cnt_inc` will indicate how much the FIFO counter should be increased, with specific increment values assigned for different combinations, including handling empty states and queue availability. This design facilitates controlled data flow in a buffered system by managing FIFO increments dynamically.
+module top_module(
+    // inputs:
+    empty,
+    ge2_free,
+    ge3_free,
+    input_tm_cnt,
+
+    // outputs:
+    fifo_cnt_inc
+);

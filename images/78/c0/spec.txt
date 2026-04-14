@@ -1,0 +1,7 @@
+Design a random number generator using a linear feedback shift register (LFSR). The module takes a clock signal, a reset signal, and a seed value to initialize the LFSR. On each clock cycle, if the reset is active, the LFSR is set to the provided seed; otherwise, it updates its state based on feedback from its current bits. The output `rand_num` reflects the current state of the LFSR, thus providing a pseudo-random binary number. The generator is parameterized to create random numbers of a specified bit width (defaulted to 8 bits).
+module top_module(
+  input clk,
+  input reset,
+  input [n-1:0] seed,
+  output reg [n-1:0] rand_num
+);

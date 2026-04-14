@@ -1,0 +1,8 @@
+Design a module that calculates the Euclidean distance between two 64-bit inputs representing the coordinates of two cities (citya and cityb) in a 2D space. The module utilizes a CORDIC-based square root calculator to obtain the distance, which is computed as the square root of the sum of the squares of the differences in the x and y coordinates. Upon receiving valid input signals, it computes the differences, generates the necessary input for the square root operation, and outputs the 32-bit distance value along with a valid output signal indicating that the result is ready. The design incorporates state registers to manage valid data and ensure synchronous operation with a reset capability.
+module top_module(
+    input aclk,
+    input s_axis_cartesian_tvalid,
+    output m_axis_dout_tvalid,
+    input [23:0] s_axis_cartesian_tdata,
+    output [15:0] m_axis_dout_tdata
+);

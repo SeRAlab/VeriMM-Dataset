@@ -1,0 +1,11 @@
+Design a synchronous calculator module capable of performing basic arithmetic operations: addition, subtraction, multiplication, and division on two 8-bit inputs. The operation is determined by a 2-bit control input `op`, with each operation updating an output result and flags for overflow and zero status. The module also includes a reset functionality to initialize all outputs to zero. The division operation handles a zero divisor separately to avoid undefined behavior, ensuring robust operation in all scenarios.
+module top_module(
+    input clk,
+    input rst,
+    input [1:0] op,
+    input [7:0] in1,
+    input [7:0] in2,
+    output reg [7:0] result,
+    output reg overflow,
+    output reg zero
+);

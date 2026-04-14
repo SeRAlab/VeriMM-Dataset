@@ -1,0 +1,14 @@
+Design a Verilog module that implements a 4-bit synchronous binary counter with a synchronous reset. When 'reset' is high, the counter resets to 0 on the next clock edge.
+
+Initial state: counter = 4'b0000
+Time 0ns: clock = 0, reset = 0, counter = 4'b0000.
+Time 10ns: clock = 1, reset = 0, counter = 4'b0001.
+Time 20ns: clock = 0, reset = 0, counter = 4'b0001.
+Time 30ns: clock = 1, reset = 0, counter = 4'b0010.
+Time 40ns: clock = 0, reset = 0, counter = 4'b0010.
+Time 50ns: clock = 1, reset = 1, counter = 4'b0011.
+
+module sync_counter (
+	input clock,
+	input reset,
+	output reg [3:0] counter);

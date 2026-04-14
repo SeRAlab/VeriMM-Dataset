@@ -1,0 +1,10 @@
+Design a datapath module that processes input coordinates and generates color output based on a timing delay. The module takes 8-bit and 7-bit inputs for coordinates `x` and `y`, respectively, alongside a 20-bit delay signal. It includes a clock and an active-low reset signal. On each clock cycle, a 4-bit counter increments, and based on the delay value, it assigns a 3-bit color output; it outputs a color of `0` for delays below 830,000 and `1` otherwise. Additionally, the module computes two output coordinates, `xout` and `yout`, by adding the lower two bits and upper two bits of the counter to the respective inputs, facilitating dynamic adjustments of the coordinates over time.
+module top_module(
+	input [7:0] x,
+	input [6:0] y,
+	input [19:0] delay_q,
+	input clk,
+	input resetn,
+	output reg [2:0] colourout,
+	output [7:0] xout,
+	output [6:0] yout);

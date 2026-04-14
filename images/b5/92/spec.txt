@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit up/down counter with enable. The counter should count up when the direction signal is high and count down when it is low, on each positive edge of the clock. It should only count when enable is high.
+
+Module name:
+    up_down_counter
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the counter.
+    en: Enable signal to allow counting.
+    dir: Direction signal to determine count direction (1 for up, 0 for down).
+Output port:
+    count: 4-bit counter representing the current count value.
+
+Give me the complete code.
+
+module up_down_counter(
+   input                clk,
+   input                rst_n,
+   input                en,
+   input                dir,
+
+   output reg [3:0]     count
+);

@@ -1,0 +1,9 @@
+Design a simple 4-bit arithmetic calculator that performs basic operations. When the clock signal transitions on the positive edge and the reset is not asserted, the module takes two 4-bit inputs (a and b) and an operation code (op) to determine the arithmetic operation to execute. It supports four operations based on the value of op: addition (op=00), subtraction (op=01), multiplication (op=10), and division (op=11), with the result stored as an 8-bit output. The output is cleared to zero when the reset is asserted.
+module top_module(
+  input  wire           clk,
+  input  wire           rst_n,
+  input  wire [3:0]     a,
+  input  wire [3:0]     b,
+  input  wire [1:0]     op,
+  output reg  [7:0]     result
+);

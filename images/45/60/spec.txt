@@ -1,0 +1,14 @@
+Design a D-type flip-flop with asynchronous control inputs. This module captures the input D on the rising edge of the CLK signal while allowing for set and clear functionalities through the SCD and SCE inputs. It includes an active-low asynchronous SET_B input, which forces the output Q to high when asserted. The module utilizes a two-bit state representation to manage transitions based on the control signals, ensuring robust state management and generating complementary outputs Q and Q_N. This design is suited for applications requiring latch behavior with additional control mechanisms.
+module top_module(
+    input CLK,
+    input D,
+    input SCD,
+    input SCE,
+    input SET_B,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB,
+    output reg Q,
+    output reg Q_N
+);

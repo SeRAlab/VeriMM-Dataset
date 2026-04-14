@@ -1,0 +1,11 @@
+Design a memory interface module that supports read and write operations for a 32-bit wide memory array with a depth of 1024 entries. The module includes logic to handle read and write-enable signals, with operations being clock-driven and resettable. When the read enable (`read_en`) is asserted, the data at the specified address is output to `data_out`, with a corresponding `done` signal indicating the completion of the read operation. If the write enable (`write_en`) is asserted, the input data (`data_in`) is stored at the specified address in memory, also signaling completion through the `done` output. The module effectively functions as a synchronous read/write memory interface, managing both operations through the clock and reset controls.
+module top_module(
+  input clock,
+  input reset,
+  input read_en,
+  input write_en,
+  input [31:0] address,
+  input [width-1:0] data_in,
+  output reg [width-1:0] data_out, // Change wire to reg
+  output done
+);

@@ -1,0 +1,7 @@
+Design a simple 4-word RAM module that can store and retrieve 4-bit data. The module has a write-enable signal (wr) to control writes to the memory. On the rising edge of the clock (clk), if wr is asserted, the input data (din) is written to the specified address (addr) in memory. If wr is not asserted, the data at the specified address is read and outputted to dout. The memory consists of 4 locations, each capable of holding 64 bits, allowing for the storage of multiple 4-bit inputs.
+module top_module(
+input wr,  
+input clk,
+input [3:0] addr, din,
+  output reg [3:0] dout  
+);

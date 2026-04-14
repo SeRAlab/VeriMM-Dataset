@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as a program counter in a digital system, typically within a microprocessor or microcontroller architecture. Its primary function to keep track of the processor's position in the program code by holding the address of the next instruction to be executed. This module plays a crucial role in sequencing the execution of instructions, ensuring that the processor executes instructions in the correct order unless explicitly modified by control signals or branching instructions.
+
+The module to increment its count with each clock cycle, provided certain conditions are met, and it can be reset or enabled/disabled based on external control signals. This functionality is essential for the controlled execution of program instructions, facilitating conditional execution, loops, and program flow control.
+
+Module name:  
+	PC
+
+Input ports:
+	clk (input): This is the clock input of the module. It is a singlebit signal that drives the synchronous operations within the module, including the incrementing of the program counter. The positive edge of this clock signal triggers the update of the internal counter.
+	rst (input): This is the reset input, also a singlebit signal. When asserted (1), it asynchronously resets the program counter to 0, effectively setting the program's execution to its starting point.
+	EP (input): Enable Program counter (EP) is a singlebit control signal. When high (1), it allows the current value of the program counter to be output; when low (0), the output is forced to 0. This can be used to disable the program counter output without affecting its internal value.
+	CP (input): Counter Plus (CP) is a singlebit control signal. When high (1), it enables the program counter to increment on the next positive clock edge, provided the module is not being reset.
+Output ports:
+	PC_OUT (output): This is a 4bit output signal representing the current value of the program counter. The actual output value is dependent on the state of the EP signal; it outputs the counter value when EP is high and 0 when EP is low.
+
+
+Implementation:
+The RTL module presented is designed to function as a Programmable Counter (PC) with a 4-bit output. The module's operation is governed by both combinational and sequential logic elements, which together enable it to perform its counting function under specific conditions dictated by its inputs: clk (clock), rst (reset), EP (Enable Output), and CP (Count Enable).
+Sequential Logic:
+The core of the module is built around a sequential logic circuit that utilizes a 4-bit register (PC_OUT_r) to hold the current count value. This register is updated on the rising edge of the clk signal, making the counter synchronous with the system clock. The sequential logic is further divided into two main operations based on the input signals:
+Reset Operation (rst): When the rst signal is asserted (high), the counter's internal register (PC_OUT_r) is asynchronously reset to 0 (4'h0). This operation ensures that the counter can be set to a known state at any point during operation, independent of the clock signal.
+Count Operation (CP): If the rst signal is not asserted and the CP (Count Enable) signal is asserted, the counter increments its value by 1 on each rising edge of the clock. This operation is the primary function of the counter, allowing it to count upwards from 0 to 15 (4'hF), after which it wraps back to 0 due to the 4-bit size limitation.
+Combinational Logic:
+The module employs combinational logic to control the output of the counter (PC_OUT) based on the EP (Enable Output) signal. The output is directly connected to the internal register (PC_OUT_r) through an assign statement, which is a continuous assignment in Verilog. This means the output will always represent the current value of the internal register whenever EP is asserted. If EP is not asserted, the output is forced to 0 (4'h0), effectively disabling the counter output.
+
+Give me the complete code.
+

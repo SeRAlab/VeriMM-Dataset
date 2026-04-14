@@ -1,0 +1,11 @@
+Design a sensor interface module that reads and converts analog signals from temperature, pressure, and humidity sensors to digital values using specified calibration factors. The output signals for each sensor are selectable based on a 2-bit selection input, allowing the user to obtain the corresponding digital reading from one of the sensors at any given time. The module utilizes sequential logic to perform the conversions and selections on rising clock edges, facilitating digitization of sensor data and isolation of the outputs based on the selected sensor.
+module top_module(
+  input clk,                   // Added clock input
+  input [7:0] temp,
+  input [7:0] press,
+  input [7:0] humid,
+  input [1:0] sensor_select,   // Added sensor_select input
+  output reg [7:0] temp_out,
+  output reg [7:0] press_out,
+  output reg [7:0] humid_out
+);

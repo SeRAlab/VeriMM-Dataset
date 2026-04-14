@@ -1,0 +1,9 @@
+Design a cache set module for a LEGv8 architecture that manages a small cache with 16 entries. The module checks if the incoming tag matches the stored tag for a given index, determining the hit status based on a valid bit. If the cache entry is valid and the tags match, the output indicates a cache hit; otherwise, it indicates a miss. Additionally, if a write signal is asserted, the module updates the cache with a new tag and sets the valid bit. This functionality ensures efficient data retrieval and management within a cache memory system.
+module top_module(
+    input        rst,
+    input [4:0]  Index,
+    input [56:0] In_Tag,
+    input        Write,
+
+    output reg hit_status
+    );

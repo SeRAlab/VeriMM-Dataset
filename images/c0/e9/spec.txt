@@ -1,0 +1,33 @@
+Please act as a professional verilog designer.
+    
+Implement a module to simulate the behavior of a dual-port RAM (Random Access Memory) with synchronous read and write operations. It serves as a fundamental storage element in digital systems, capable of storing and retrieving data based on address inputs. This module is particularly useful in applications requiring separate read and write operations or simultaneous access to different memory locations. Its primary functions include:
+
+Writing data to a specified memory address when the write enable signal is active.
+Reading data from a specified memory address independently of the write operation, through two distinct ports, allowing for simultaneous read operations at different addresses.
+
+This module can be integrated into larger digital systems such as processors, data buffers, or any application requiring temporary data storage and retrieval with fast access times.
+
+Module name:  
+	fm_cmn_bram_01
+
+Input ports:
+	clk (input): The clock input signal. It synchronizes the read and write operations of the RAM.
+	we (input): Write enable signal. When high (1), it allows data to be written to the RAM at the address specified by a.
+	a (input, [P_RANGE1:0]): Write address input. It specifies the address in the RAM where the data should be written.
+	dpra (input, [P_RANGE1:0]): DualPort Read Address. It specifies the address from which data is to be read independently of the write operation or the address specified by a.
+	di (input, [P_WIDTH1:0]): Data input. The data to be written to the RAM at the address specified by a.
+Output ports:
+	spo (output, [P_WIDTH1:0]): Single Port Output. It outputs the data read from the address specified by a.
+	dpo (output, [P_WIDTH1:0]): DualPort Output. It outputs the data read from the address specified by dpra.
+
+
+Implementation:
+The RTL module fm_cmn_bram_01 is designed to simulate the behavior of a simple dual-port RAM (Random Access Memory) with synchronous read and write operations. The module is parameterized to allow flexibility in defining the width and depth of the memory. The core logic of the module is encapsulated within two always blocks, each triggered by the rising edge of the clock signal (clk), indicating the use of synchronous logic for both reading from and writing to the memory.
+Write Operation:
+The write operation is controlled by the write enable signal (we). When we is asserted (1), the data input (di) is written into the memory location addressed by a. Concurrently, the same data (di) is driven onto the single-port output (spo), effectively providing immediate feedback of the written data. This behavior mimics a write-through cache where writes to the memory are immediately visible to the read port addressing the same location.
+Read Operation:
+The module supports separate read addresses for its two ports. For the single-port output (spo), the read address is the same as the write address (a). If we is deasserted (0), spo outputs the data stored at the memory location addressed by a. This ensures that spo reflects the most recent write operation to the same address, if any, or the pre-existing data otherwise.
+For the dual-port output (dpo), the read address (dpra) is independent of the write address (a). The data at the memory location addressed by dpra is always driven onto dpo at every clock cycle, regardless of the write enable signal. This allows for simultaneous read and write operations to different memory locations.
+
+Give me the complete code.
+

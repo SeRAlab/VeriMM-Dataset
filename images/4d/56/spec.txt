@@ -1,0 +1,10 @@
+Design a clock divider module that generates multiple enable signals based on a given clock input. It uses an 18-bit counter to produce several outputs: `logic_en` and `logic_en_1`, which are activated based on specific conditions of the counter's bits, controlling different stages of logic; `display_en`, which indicates when the display should be enabled; and `pix_en`, which is a simple pixel enable signal that is active when the counter's least significant bits are low. This module effectively divides the input clock frequency to produce varying enable signals for different timing requirements in a digital circuit.
+module top_module(
+	input wire clk,		
+	input wire rst,		
+	output wire logic_en, 
+	output wire logic_en_1, 
+	output wire pix_en,		
+	output wire display_en 
+	
+	);

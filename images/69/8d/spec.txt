@@ -1,0 +1,4 @@
+Develop a packet generation module that outputs a 36-bit data stream based on a specified length input. It includes a state machine that tracks the current packet state, generating a Start of Frame (SOF) and End of Frame (EOF) signal. The module transitions through states to construct and output data, where the first state creates a header with sequence information, the second state outputs the sequence number, and subsequent states send unique data. The module is controlled by clock signals, and it resets or clears upon activation, effectively allowing flexibility in packet generation for data communications. The output readiness is indicated by the `src_rdy_o` signal, which is always asserted, while packet processing depends on the `dst_rdy_i` signal from the destination.
+module top_module(input clk, input reset, input clear,
+   input [15:0] len,
+   output [35:0] data_o, output src_rdy_o, input dst_rdy_i);

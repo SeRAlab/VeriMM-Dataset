@@ -1,0 +1,11 @@
+Design a synchronous shift-register-based FIFO (First-In-First-Out) buffer with a depth of 4 and data width of 8 bits. The module allows valid data input through a separate `input_axis_tvalid` signal and signals readiness with `input_axis_tready`. It stores incoming data in a circular buffer, managing the read and write pointers (head and tail) to ensure proper data flow. The output signals `output_axis_tvalid`, `output_axis_tlast`, and `output_axis_tuser` indicate the validity and characteristics of the data being read. The module also tracks the number of elements currently stored in the FIFO using the `count` output, ensuring that the buffer does not overflow or underflow during operation.
+module top_module(
+  input clk, rst,
+  input [7:0] input_axis_tdata,
+  input input_axis_tvalid, input_axis_tlast, input_axis_tuser,
+  output reg input_axis_tready,
+  output reg [7:0] output_axis_tdata,
+  output reg output_axis_tvalid, output reg output_axis_tlast, output reg output_axis_tuser,
+  input output_axis_tready,
+  output reg [2:0] count
+);

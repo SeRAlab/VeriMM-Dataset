@@ -1,0 +1,18 @@
+Implement the Verilog module based on the following description.
+Module M implements the boolean function z = (x & y).
+
+// Module N can be described by the following simulation waveform: 
+
+If x = 1, y = 1, then z = 1.
+If x = 0, y = 1, then z = 0.
+If x = 0, y = 0, then z = 0.
+If x = 1, y = 0, then z = 0.
+
+// Now consider a top-level that uses two M submodules and two N submodules. The first input of all four submodules is connect to input 'r', and the second input of all four submodules is connected to 's'. The output of the first M submodule is connected to a two-input XOR gate, along with the output of the first N submodule. The second pair of M and N submodules is similarly connected to an OR gate. The output of the XOR and the OR is connected to an AND, whose output is 'z'.
+
+// Implement this circuit in Verilog.
+
+module top_module(
+    input r,
+    input s,
+    output z);

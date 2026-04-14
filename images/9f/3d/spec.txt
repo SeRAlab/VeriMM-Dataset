@@ -1,0 +1,7 @@
+Design a 4-bit wide circuit that performs a bitwise OR operation between two 4-bit inputs, `a` and `b`. The result of the OR operation is first stored in a temporary register (`stage1_out`) on the positive edge of the clock and then transferred to a second register (`stage2_out`) on the next clock cycle. Finally, the output `out` reflects the value from `stage2_out`, effectively implementing a two-stage clocked pipeline for the bitwise OR operation.
+module top_module(
+    input [3:0] a,
+    input [3:0] b,
+    input clk, // Added clk input
+    output reg [3:0] out
+);

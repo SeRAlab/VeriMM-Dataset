@@ -1,0 +1,8 @@
+Design a read-only memory (ROM) module that outputs 16-bit data based on a provided 9-bit address input. Upon a clock signal's positive edge, if the reset is inactive, it retrieves the data from a pre-initialized memory array and assigns that data to the output. The output address is also held, reflecting the input address. If the reset is active, both the data and address outputs reset to zero. The ROM is populated with random data upon initialization, allowing it to serve as a source of variable data for other components in the system.
+module top_module(
+    input clk,
+    input rst_n,
+    input [8:0] addr_in,
+    output reg [15:0] data_out,
+    output reg [8:0] addr_out
+);

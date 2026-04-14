@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+
+Implement a module for a D Flip-Flop with synchronous reset. The flip-flop should store the value of the input D on the positive edge of the clock signal and reset the output Q to zero when the reset signal is high on the positive edge of the clock.
+
+Module name:
+    d_ff_sync_reset
+
+Input ports：
+    clk: Clock signal.
+    rst: Synchronous reset signal.
+    d: Data input.
+
+Output ports：
+    q: Data output.
+
+Implementation:
+Declare the module d_ff_sync_reset with input and output ports as specified in the ports statement.
+Declare an output register q to hold the output value.
+Inside an always block, sensitive to the positive edge of the clock, implement the flip-flop logic.
+If the reset signal is high, set the output value to zero.
+If the reset signal is low, store the value of the input D on the positive edge of the clock.
+
+Give me the complete code.
+
+module d_ff_sync_reset(
+    input clk,
+    input rst,
+    input d,
+    output reg q
+);

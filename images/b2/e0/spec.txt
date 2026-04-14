@@ -1,0 +1,12 @@
+Design a circuit that implements a combination of a 3-bit shift register and an 8-to-1 multiplexer. The shift register captures a single bit input (d) on each clock cycle when not in reset, while the multiplexer selects one of the four 8-bit input signals (input2, input3, input4, or the contents of the shift register) based on the state of two select lines (sel_b1 and sel_b2). The final output, q, reflects the selected data from the multiplexer.
+module top_module(
+    input clk,
+    input reset,
+    input d,
+    input [7:0] input2,
+    input [7:0] input3,
+    input [7:0] input4,
+    input sel_b1,
+    input sel_b2,
+    output [7:0] q
+);

@@ -1,0 +1,6 @@
+Design a hazard detection unit for a pipelined CPU architecture. This module analyzes control signals, including memory read and branch conditions, to manage the instruction flow. Specifically, it determines when to allow writing to the program counter and instruction memory, and it decides when to stall or flush the pipeline to avoid data hazards caused by dependencies between instructions. In particular, if a branch is taken (indicated by inPCSrc), it permits writing to the program counter and propagates the necessary signals to write to instruction memory while flushing the pipeline. Conversely, if a memory read operation potentially conflicts with identified instruction dependencies, it disables program and instruction memory writes, preventing hazards. Overall, the unit is essential for maintaining the correct operation of a pipelined processor by ensuring safe execution of instructions without data conflicts.
+module top_module(
+input inMemRead,inPCSrc,
+input [4:0] inID_EXRt,inIF_IDRs,inIF_IDRt,inRegRtMEM,
+output reg outPCWrite,outIF_IDWrite,outIF_Flush,outEX_Flush,outStall
+    );

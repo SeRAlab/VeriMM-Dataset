@@ -1,0 +1,4 @@
+Design a control signal generator for a memory interface. The module outputs control signals based on read (RE) and write (WE) request inputs. The RW output reflects the write operation, while mem_OE is asserted low for read operations, and mem_WE is asserted low for write operations. The mem_CE output is low when either read or write is active, and other outputs like mem_ADV, mem_WAIT, mem_UB, mem_LB, and mem_CRE are statically set to low, indicating no advanced signals or specific chip enable actions are required. This design ensures proper interfacing between a controller and a memory device by generating the necessary control signals.
+module top_module(
+input RE, input WE, output RW,
+output mem_OE, output mem_WE, output mem_CE, output mem_ADV, output mem_WAIT, output mem_UB, output mem_LB, output mem_CRE);

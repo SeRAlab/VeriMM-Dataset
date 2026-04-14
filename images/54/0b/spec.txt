@@ -1,0 +1,9 @@
+Implement a color correction circuit that adjusts the RGB values based on predefined coefficients and output thresholds. The module takes 16-bit input values for red (R), green (G), and blue (B) channels, computes intermediate values (R_int, G_int, B_int) through linear transformations, and then normalizes the results to ensure that the output RGB values (R_out, G_out, B_out) remain within defined minimum and maximum thresholds. The design utilizes two combinational logic blocks for the calculations and clamping of the color values, ensuring that the outputs stay within the specified range.
+module top_module(
+    input [15:0] R,
+    input [15:0] G,
+    input [15:0] B,
+    output reg [15:0] R_out,
+    output reg [15:0] G_out,
+    output reg [15:0] B_out
+);

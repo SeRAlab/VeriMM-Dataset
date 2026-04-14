@@ -1,0 +1,9 @@
+Design a basic calculator module that performs arithmetic operations—addition, subtraction, multiplication, and division—on signed 32-bit integer inputs. The operations are selected via a 2-bit control signal (`op`), with the current operation executed on the rising edge of the clock. Upon a reset signal (`rst_n`), the module initializes its output and valid status. If division is attempted with a divisor of zero, the valid flag will not be set. The output will reflect the result of the selected operation, with a valid signal indicating the successful computation.
+module top_module(
+  input clk,
+  input rst_n,
+  input [1:0] op,
+  input signed [31:0] data_in,
+  output reg valid,
+  output reg signed [31:0] data_out
+);

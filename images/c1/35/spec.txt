@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a specialized flip-flop with asynchronous set and reset capabilities, along with scan enable (SE) functionality for testability purposes. Its primary role within a digital system to store a single bit of data, with the ability to asynchronously set or reset the stored value. The inclusion of scan enable and scan data inputs allows for easier integration into test and verification environments, facilitating the testing of internal states within a larger integrated circuit (IC).
+
+Module name:  
+	zsoffasr_prim
+
+Input ports:
+	ck (input): The clock input. The positive edge of ck triggers the evaluation and potential update of the stored bit, based on the conditions of other inputs.
+	d (input): Data input. This is the primary data bit to be stored in the flipflop during normal operation (when SE is disabled).
+	r_l (input): Asynchronous reset input, active low. When asserted (0), it forces the output q to 0 regardless of other inputs.
+	s_l (input): Asynchronous set input, active low. When asserted (0), it forces the output q to 1 regardless of other inputs, except when r_l is also asserted.
+	se (input): Scan enable input. When high, it enables the scan operation mode, allowing the scan data (sd) to be loaded into the flipflop.
+	sd (input): Scan data input. This is the data bit to be stored in the flipflop when the scan enable (se) is high.
+Output ports:
+	q (output): The primary output of the flipflop, representing the stored data bit.
+	so (output): Scan output, which is a function of the stored data q and the scan enable signal se. It outputs the value of q when se is low, indicating normal operation, and forces a high output when se is high, indicating scan mode.
+
+
+Implementation:
+The RTL module zsoffasr_prim is designed to implement a specialized form of a sequential logic element, specifically a flip-flop with asynchronous set and reset capabilities, scan insertion for testability, and an additional output for scan or normal mode operation. The module's behavior is governed by a combination of sequential and combinational logic, as detailed below:
+Sequential Logic: The core functionality of the module is centered around the always block, which is sensitive to the positive edge of the clock (ck), the negative edge of the reset (r_l), and the negative edge of the set (s_l). This block dictates how the internal state (q) is updated based on the inputs. The sequential logic ensures that the state of the flip-flop can be asynchronously set or reset, and synchronously updated based on the data input (d) or scan data input (sd) under control of the scan enable (se).
+Asynchronous Reset and Set: Upon a negative edge on the reset input (r_l), the flip-flop's state (q) is immediately set to 0, indicating a high priority for the reset operation. Similarly, a negative edge on the set input (s_l) forces the state to 1, although in the given code, there seems to be a mistake as it assigns r_l instead of a logic high value (1'b1), which likely is an error.
+Scan Enable (SE) Logic: When scan enable (se) is high, the module enters a test mode where the state (q) is updated based on the scan data input (sd) instead of the regular data input (d). This feature is crucial for facilitating testing and debugging of integrated circuits by allowing an external test pattern to be shifted into the flip-flop.
+Data Input Logic: In normal operation (when se is low), the state (q) is updated with the value of the data input (d) at the rising edge of the clock, provided the reset and set conditions are not met. This behavior is typical of a D flip-flop, forming the basis of synchronous digital designs.
+Output Logic: The module provides two outputs, q and so. The q output directly reflects the internal state of the flip-flop. The so output is a combinational logic output that is high when either the internal state q is high or the scan enable (se) is low, indicating that it can be used to observe the flip-flop state or ensure a default high output in non-scan mode.
+
+Give me the complete code.
+

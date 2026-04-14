@@ -1,0 +1,8 @@
+Design a multiplexing circuit that selectively routes one of four input data streams (tx3_in, tx2_in, tx1_in, tx0_in) to two output streams (rx3_out, rx2_out, rx1_out, rx0_out) based on a 3-bit selection signal (selectRoute). The reset signal initializes all outputs to LOW, while on each clock cycle, the circuit outputs specific inputs depending on the value of selectRoute. Notably, routes are defined for particular select values, allowing for customization of the output based on the selected input sources. The design accommodates a parameterized width for the data bus, set by N.
+module top_module(
+	input clock,
+	input reset_l,
+	input [2:0] selectRoute,
+	input [N-1:0] tx3_in, tx2_in, tx1_in, tx0_in,
+	output reg [N-1:0] rx3_out, rx2_out, rx1_out, rx0_out
+);

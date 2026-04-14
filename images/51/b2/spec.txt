@@ -1,0 +1,18 @@
+Create a Verilog module for a simple FSM with three states (U, V, W) and two input signals (A, B). Use one-hot state encoding where U=3'b001, V=3'b010, W=3'b100. The FSM has an output signal (out) which depends on the current state and inputs.
+
+The FSM has the following states and their corresponding outputs:
+1. state U (out = A ^ B).
+2. state V (out = A & B).
+3. state W (out = A | B).
+
+State transitions:
+1. From state U: If A = 1, then transition to state V. If A = 0, then transition to state W.
+2. From state V: If B = 1, then transition to state W. If B = 0, then transition to state U.
+3. From state W: If A = 0, then transition to state V. If A = 1, then transition to state U.
+
+module fsm_3 (
+  input A,
+  input B,
+  input [2:0] state,
+  output reg [2:0] next_state,
+  output reg out);

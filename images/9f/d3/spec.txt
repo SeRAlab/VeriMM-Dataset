@@ -1,0 +1,12 @@
+Design a register module that serves as a temporary storage element for data in a pipelined processor architecture. It captures the results from the ALU and memory, along with control signals during the positive edge of the clock, and subsequently outputs them on the negative edge of the clock. This dual-edge functionality allows for effective synchronization of the data as it moves between different pipeline stages, ensuring data integrity and timing correctness in the processing flow. The module interfaces with the ALU and memory components and facilitates writing back to registers based on the provided control signals.
+module top_module(clk,
+								result_alu_in,
+								result_mem_in,
+								dir_wb_in,
+								sel_wb_in,
+								reg_wr_in,
+								result_alu_out,
+								result_mem_out,
+								dir_wb_out,
+								sel_wb_out,
+								reg_wr_out);

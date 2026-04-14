@@ -1,0 +1,12 @@
+Design a circuit that functions as a 6-to-1 multiplexer with an additional feature of selectively shifting the input data. The module takes six 4-bit inputs and a 3-bit selector to choose one of the inputs as the output. The 2-bit `shift_amount` controls how the input data is processed, allowing for different shifting operations on each input's lower two bits before selection. Depending on the shift amount, the bits can be rotated or truncated, modifying the bit arrangement of the selected input, ensuring flexibility in data manipulation.
+module top_module(
+    input [2:0] sel, 
+    input [3:0] data0,
+    input [3:0] data1,
+    input [3:0] data2,
+    input [3:0] data3,
+    input [3:0] data4,
+    input [3:0] data5,
+    input [1:0] shift_amount,
+    output reg [3:0] out
+);

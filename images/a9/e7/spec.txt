@@ -1,0 +1,9 @@
+Design a synchronous sequential circuit with a state register that processes a 5-bit signed input x. On each rising edge of the clock, if the reset signal is active, the circuit resets its outputs y and ym1, along with the flag yval. If xval is asserted, it captures the current state of y into ym1 and sets yval to low. Otherwise, it updates the output y by adding the right-shifted value of x to the previous state ym1, while setting yval to high to indicate valid output. This module essentially acts as a configurable state machine for processing and updating a value based on external and internal signals.
+module top_module(
+                  input clk,
+                  input [4:0] x,
+                  input xval,
+                  input rst,
+                  output reg [4:0] y,
+                  output reg yval
+                  );

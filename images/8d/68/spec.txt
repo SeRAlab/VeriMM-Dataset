@@ -1,0 +1,8 @@
+Design a circuit that implements a vertical paddle positioning system for a ball game. The module receives the current position of a ball (BALL_H and BALL_V) and generates a paddle position (POSITION) based on the ball's vertical location. Upon receiving a clock pulse, if a reset is triggered, the paddle is set to the lowest position (0). If the ball is above a certain height (greater than 32) and below another (less than 432), the paddle is positioned dynamically according to the ball's vertical position minus a fixed offset (32). The paddle position is further adjusted by shifting right to fit within an 8-bit width output.
+module top_module(
+    CLOCK, 
+    RESET,
+    POSITION,
+    BALL_H,
+    BALL_V
+);

@@ -1,0 +1,7 @@
+Design a circuit that converts a 32-bit fixed-point input into an 8-bit unsigned integer output. The module takes a clock and reset signal, shifts the 32-bit input right by 16 bits, and outputs the least significant 8 bits of the resulting value. This effectively extracts the upper 16 bits of the input and provides them as an 8-bit representation, enabling compatibility with systems that require 8-bit unsigned integers.
+module top_module( 
+  input         clock, 
+  input         reset, 
+  input  [31:0] io_input, 
+  output [7:0]  io_output 
+);

@@ -1,0 +1,9 @@
+Design a circuit that drives a four-digit 7-segment display based on a 16-bit input value. The module takes a clock signal and a clear signal as inputs. It uses a clock divider to create a timing signal that cycles through each of the four digits, selecting which digit to display every 5.2 ms. The selected 4-bit segment of the input value is decoded to drive the 7-segment display, generating the appropriate signals for segment activation. Additionally, the display's digit select lines are controlled to enable the currently active digit while disabling others. The overall functionality allows for dynamic visualization of the binary input value across the 7-segment displays.
+module top_module(
+    input  [15:0] x,
+    input  clk,
+    input  clr,
+    output reg [6:0] a_to_g,
+    output reg [3:0] an,
+    output wire dp
+);

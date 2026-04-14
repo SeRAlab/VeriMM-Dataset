@@ -1,0 +1,9 @@
+Design a synchronous register with set and reset functionality. On the rising edge of the clock, the register output `q` is set to HIGH when the set input is activated and the reset input is inactive. Conversely, when the reset input is activated and the set input is inactive, the output `q` is reset to LOW. If both set and reset inputs are activated simultaneously, the output is also set to LOW. If neither set nor reset is active, the output follows the `data` input. The module also generates the complement output `q_n`.
+module top_module(
+    input clk,
+    input data,
+    input set,
+    input reset,
+    output reg q,
+    output reg q_n
+);

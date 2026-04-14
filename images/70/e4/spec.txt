@@ -1,0 +1,15 @@
+Design a branch and jump control logic unit for a processor. This module takes a combination of immediate values, an ALU result, and a program counter as inputs, and based on the condition code (I_cB), it computes the next program counter (O_output_pc). For conditional branches (I_cB values 0 to 4), it calculates the branch target address using the ALU result and a sign-extended immediate value. For jump operations (I_cB values 5 and 6), it either constructs a jump address from the immediate value or uses data from a specified source register. The output is either the calculated branch target address or the jump address, ensuring proper control flow in the execution of instructions.
+module top_module(
+           input [25:0] I_imm26,
+           input [15:0] I_imm16,
+           input [31:0] I_alu,
+           input [31:0] I_pc,
+           
+           
+           input [2:0] I_cB,
+           
+           input [31:0] O_rs_data, 
+           
+           
+           output [31:0] O_output_pc
+       );

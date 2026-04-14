@@ -1,0 +1,7 @@
+Design a 32-bit wide data selector that retrieves a specified 32-bit segment from a 1024-bit input data stream based on a 5-bit read address. The segment selected is determined by multiplying the read address by 32 to calculate the starting bit position within the input data, effectively allowing access to any of the 32 segments of the 1024-bit input.
+module top_module(
+    input clk,
+    input [1023:0]idata,
+    input [4:0]raddr,
+    output [31:0] rdata
+    );

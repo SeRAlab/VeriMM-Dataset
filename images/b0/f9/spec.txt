@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+
+Implement a 16-bit Synchronous Counter with Enable and Reset functionality. The counter should increment by 1 on each clock cycle when the enable signal is high. If the reset signal is high, the counter should reset to zero.
+
+Module name:  
+    sync_counter   
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    en: Enable signal. Defined as 1 for enabling the counter and 0 for disabling it.
+
+Output ports:
+    count: 16-bit output representing the counter value.
+
+Implementation:
+The module includes a register, count, to store the counter value.
+On the positive edge of the clock signal (clk) or the positive edge of the reset signal (rst), the module updates the register.
+If the reset signal (rst) is high, indicating a reset condition, the register (count) is set to 0. If the reset signal (rst) is low and the enable signal (en) is high, the register (count) is incremented by 1.
+
+Give me the complete code.

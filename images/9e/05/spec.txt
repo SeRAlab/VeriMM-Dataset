@@ -1,0 +1,8 @@
+Implement a program counter (PC) circuit that updates its value on the rising edge of the clock signal. When the reset input is low, the PC will update to a new address based on whether a branch condition is met; if `is_branch` is true, it sets the PC to `newPC`, otherwise, it increments the current PC by 4. If the reset input is high, the PC is set to zero, effectively initializing it.
+module top_module(
+	input	clk,
+	input	reset,		
+	input is_branch, 	
+	input [31:0] newPC, 
+	output reg [31:0] PC
+);

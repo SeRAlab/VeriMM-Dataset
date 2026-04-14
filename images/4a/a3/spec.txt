@@ -1,0 +1,10 @@
+Design a dual-port FIFO memory block capable of storing 256 words, each 256 bits wide. It utilizes two clock signals: one for writing and one for reading. The write operation occurs on the rising edge of the `wr_clk` signal, storing data from the input `din` into the memory until it is full. The read operation, triggered by the `rd_clk`, retrieves data from the FIFO to the output `DOUTB` as long as it is not empty. The module maintains pointers to track the write and read positions and includes flags to indicate when the FIFO is empty or full, ensuring efficient data management in synchronous applications.
+module top_module(output reg [255:0]DOUTB,
+    input tmp_ram_rd_en,
+    input rd_clk,
+    input [0:0]Q,
+    input I1,
+    input wr_clk,
+    input [8:0]O2,
+    input [8:0]I2,
+    input [255:0]din);

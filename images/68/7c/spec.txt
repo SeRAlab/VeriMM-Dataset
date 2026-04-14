@@ -1,0 +1,26 @@
+Please act as a professional Verilog designer.
+
+Implement a D Flip-Flop with synchronous reset. The module stores the input data (d) on each rising edge of the clock if the reset signal is low. If the reset signal is high, the output is reset to 0.
+
+Module name:
+    d_flip_flop
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    reset: Reset signal to initialize the output to 0.
+    d: Input data to be stored.
+
+Output ports:
+    q: Output signal representing the stored data.
+
+Implementation:
+The output is defined as reg q and initialized to 0 using the initial statement. On each rising edge of the clock, if the reset signal is high, the output is reset to 0; otherwise, the output is assigned the value of the input data: q <= d.
+
+Give me the complete code.
+
+module d_flip_flop(clk, reset, d, q);
+
+    input clk;
+    input reset;
+    input d;
+    output q;

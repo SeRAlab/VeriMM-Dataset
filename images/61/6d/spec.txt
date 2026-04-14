@@ -1,0 +1,11 @@
+Implement the Verilog module based on the following description.
+You are given a 22-bit input vector input_vec[21:0]. We want to know some relationships between each bit and its neighbour:
+(1) output_and: Each bit of this output vector should indicate whether both the corresponding input bit and its neighbour to the left are '1'. For example, output_and[20] should indicate if input_vec[20] and input_vec[21] are both 1. Since input_vec[21] has no neighbour to the left, the answer is obvious so we don't need to know output_and[21].
+(2) output_or: Each bit of this output vector should indicate whether any of the corresponding input bit and its neighbour to the right are '1'. For example, output_or[3] should indicate if either input_vec[3] or input_vec[2] are 1. Since input_vec[0] has no neighbour to the right, the answer is obvious so we don't need to know output_or[0].
+(3) output_xor: Each bit of this output vector should indicate whether the corresponding input bit is different from its neighbour to the left. For example, output_xor[20] should indicate if input_vec[20] is different from input_vec[21]. For this part, treat the vector as wrapping around, so input_vec[21]'s neighbour to the left is input_vec[0].
+
+module bitwise_operation (
+	input [21:0] input_vec,
+	output [20:0] output_and,
+	output [21:1] output_or,
+	output [21:0] output_xor);

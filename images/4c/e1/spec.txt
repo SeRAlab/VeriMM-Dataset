@@ -1,0 +1,7 @@
+Design a circuit that combines two 8-bit input words, `in_hi` and `in_lo`, into a single 16-bit output while also calculating and appending a parity bit to the result. The output will be a 17-bit value where the first 16 bits represent the merged word and the last bit is the parity bit indicating the evenness or oddness of the number of set bits in the merged word. This module effectively serves as a word merger with parity generation for error detection in digital communication or storage systems.
+module top_module(
+    input wire [7:0] in_hi,
+    input wire [7:0] in_lo,
+    output reg [16:0] out,
+    output reg parity_bit
+);

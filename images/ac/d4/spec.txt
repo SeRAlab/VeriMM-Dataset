@@ -1,0 +1,7 @@
+Design a circuit that implements a delayed assignment based on the input signal 'a' and the clock signal 'clk'. The module monitors the input 'a', and upon detecting a change, assigns the value of 'a' to 'b' and resets a 4-bit delay counter. On each positive edge of the clock, if the delay counter reaches 10, the output 'c' is updated with the value of 'a'. Otherwise, the counter increments by 1, creating a delay of 10 clock cycles before 'c' reflects the value of 'a'. This effectively introduces a timing delay in responding to changes in input 'a'.
+module top_module(
+    input a,
+    input b,
+    input clk,         // Added clk input declaration
+    output reg c
+);

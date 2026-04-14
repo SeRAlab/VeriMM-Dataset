@@ -1,0 +1,9 @@
+Design a circuit that functions as a 256-to-1 multiplexer and a 16-bit Johnson counter. The multiplexer selects a 4-bit output from a 1024-bit input vector based on a provided 8-bit select signal, while the Johnson counter generates a unique 16-bit sequence based on feedback from its previous state. The outputs are combined to provide a final output which includes a delayed version of the multiplexer output and the current state of the counter, ensuring synchronized timing with the clock signal while being reset synchronously when triggered.
+module top_module(
+  input                clk,
+  input                reset,      // Synchronous active-high reset
+  input  [7:0]         sel,        // Select input to choose between multiplexer and counter
+  input  [1023:0]      in,         // 1024-bit input vector for the multiplexer
+  output [3:0]         out,        // 4-bit output of the multiplexer
+  output reg [15:0]    Q          // 16-bit output of the Johnson counter
+);

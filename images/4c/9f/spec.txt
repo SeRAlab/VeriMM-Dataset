@@ -1,0 +1,2 @@
+Implement a hazard detection unit that prevents pipeline stalls in a CPU by asserting a stall signal when there is a potential data hazard. The module checks if the previous instruction in the pipeline reads from memory and if its destination register matches either the source registers of the current instruction. If a match is detected, the stall output is asserted, indicating that the pipeline must be stalled to resolve the hazard.
+module top_module(input wire EX_MemRead,input wire [4:0] rs,input wire [4:0] rt,input wire [4:0] EX_rt,output reg Stall);

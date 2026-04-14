@@ -1,0 +1,16 @@
+Implement the Verilog module based on the following description.
+Create an 8-bit bidirectional shift register with synchronous load. The register can shift left or right by 1 bit, determined by the direction signal. When the load signal is high, the register loads data instead of shifting.
+
+// Signals are defined as below:
+// (1) load: Loads the register with data[7:0] instead of shifting. Active high.
+// (2) ena: Enables the shifting of data. Active high.
+// (3) direction: Determines the shifting direction. 1 for right, 0 for left.
+// (4) data: The 8-bit data input to be loaded.
+// (5) q: The contents of the register.
+module top_module(
+    input clk,
+    input load,
+    input ena,
+    input direction,
+    input [7:0] data,
+    output reg [7:0] q);

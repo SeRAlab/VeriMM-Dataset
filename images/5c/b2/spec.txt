@@ -1,0 +1,13 @@
+Design a 32-entry register file capable of storing 32-bit wide data words. It includes three address inputs (addrA, addrB, addrC) to read from and one address (addrC) to write to, based on the write enable signal (we). On the rising edge of the clock, the module updates the registers: if reset is activated, all registers are cleared to zero; otherwise, if we is high, data is written to the register specified by addrC. The module simultaneously provides outputs for the contents of registers specified by addrA, addrB, and addrC.
+module top_module(
+    input [4:0] addrA,
+    input [4:0] addrB,
+    input [4:0] addrC,
+    input [31:0] data,
+    input clk,
+    input reset,
+    input we,
+    output reg [31:0] outA,
+    output reg [31:0] outB,
+    output reg [31:0] outC
+);

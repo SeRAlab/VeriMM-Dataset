@@ -1,0 +1,8 @@
+This module implements a synchronous 9-bit by 9-bit multiplier, enabling the multiplication of two 9-bit input values, A and B, producing an 18-bit output, Z. The design includes a clock (CLK) and reset (RST) for controlling operations; upon receiving a reset signal, the internal register (ra) is set to zero, and on each rising edge of the clock, it captures the value of A. The multiplication itself is performed by an instantiated component named MULT9X9, which computes the product of the registered value ra and the direct input B, outputting the result to Z.
+module top_module(
+    input  wire        CLK,
+    input  wire        RST,
+    input  wire [ 8:0] A,
+    input  wire [ 8:0] B,
+    output reg [17:0] Z
+);

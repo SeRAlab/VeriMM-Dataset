@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as a bridge between the Avalon interface and the Wishbone interface, two popular bus protocols used in FPGA and ASIC designs for interconnecting cores and peripherals. The primary function of this module to translate Avalon bus transactions into Wishbone bus transactions and vice versa. This enables components designed for one bus protocol to seamlessly operate with components designed for the other, facilitating a more flexible and modular system design. The module supports both read and write operations, including handling byte enables for partial word accesses, which is crucial for efficient memory and peripheral access in embedded systems.
+
+Module name:  
+	fm_avalon_wb
+
+Input ports:
+	clk_core: Clock input. The module operates on the rising edge of this clock.
+	rst_x: Active low reset signal. Resets the module's internal state.
+	i_av_adr: Avalon address input. Specifies the address for read or write operations.
+	i_av_be: Avalon byte enable input. Specifies which bytes of the data bus are valid for write operations and should be updated during read operations.
+	i_av_r: Avalon read request input. Indicates a read operation when high.
+	i_av_w: Avalon write request input. Indicates a write operation when high.
+	i_av_wd: Avalon write data input. The data to be written during write operations.
+	i_ack: Acknowledge input from the Wishbone interface. Indicates that the current transaction has been completed.
+	i_rd: Read data input from the Wishbone interface. The data returned from a read operation.
+Output ports:
+	o_av_rd: Avalon read data output. The data returned from a read operation.
+	o_av_wait: Avalon wait output. Indicates that the Avalon master should wait before initiating a new transaction.
+	o_req: Request output to the Wishbone interface. Indicates an ongoing transaction.
+	o_wr: Write enable output to the Wishbone interface. Indicates if the current transaction is a write operation.
+	o_adrs: Address output to the Wishbone interface. Specifies the address for the current transaction.
+	o_be: Byte enable output to the Wishbone interface. Specifies which bytes of the data bus are valid for the current transaction.
+	o_wd: Write data output to the Wishbone interface. The data to be written in the current transaction.
+
+
+Implementation:
+The RTL module fm_avalon_wb serves as an interface between an Avalon bus and a Wishbone bus, facilitating communication between the two by translating Avalon transactions into Wishbone transactions and vice versa. This module is parameterized to support different data widths, address widths, and byte enable (BE) widths, making it versatile for various system configurations.
+
+Give me the complete code.
+

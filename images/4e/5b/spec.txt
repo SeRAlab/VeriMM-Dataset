@@ -1,0 +1,12 @@
+Develop a simple 4-state finite state machine that cycles through four different states, with each state corresponding to one of four 7-bit input values (in0, in1, in2, in3). Depending on the current state, the machine outputs a specific input value to a seven-segment display (sseg) and also controls an anode signal (an) and a decimal point signal (dp) for display usage. The state transitions occur on the rising edge of the clock, with a reset feature indicated by the resetload signal to initialize the state. This module is suitable for applications involving visual outputs, such as driving a 7-segment display in a digital device.
+module top_module(
+    input clk,
+    input resetload,
+    input [6:0] in0,    
+    input [6:0] in1,
+    input [6:0] in2,
+    input [6:0] in3,
+    output reg [3:0] an,
+    output reg [6:0] sseg,
+    output reg dp
+    );

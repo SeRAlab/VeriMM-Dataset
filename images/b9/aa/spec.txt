@@ -1,0 +1,7 @@
+Design a circuit that implements a digital integrator with interpolation capability. The module takes a signed 18-bit input (`d_in`) along with a strobe signal to update its last input value and calculate the difference from the current input. This difference is then accumulated over time, allowing for interpolation across multiple clock cycles. The output (`d_out`) is a signed 18-bit value derived from the accumulated sum, effectively providing a higher precision output based on the input signal's changes while enabling smoother transitions. This functionality is suitable for applications such as digital signal processing where signal smoothing and interpolation are required.
+module top_module(
+	input clk,
+	input  [17:0] d_in,
+	input strobe,
+	output [17:0] d_out
+);

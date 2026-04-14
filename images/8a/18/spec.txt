@@ -1,0 +1,6 @@
+Design a 32-bit counter module that increments its count value by a specified value (inc_value) on each positive clock edge, given that it is enabled. The counter is reset to zero upon a low reset signal. It also ensures that the count wraps around to zero if adding the increment would exceed the maximum representable value of a 32-bit integer, preventing overflow.
+module top_module(
+  input rst, clk, enable,
+  input [31:0] inc_value,
+  output reg [31:0] count
+);

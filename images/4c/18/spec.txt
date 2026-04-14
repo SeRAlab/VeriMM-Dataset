@@ -1,0 +1,8 @@
+Design a module that controls a 7-segment LED display driver. The module takes a 24-bit input data and, based on a timer that counts clock cycles, sequentially displays different 4-bit segments of the input data on the LED. It achieves this by toggling the LED control bits to select which segment is active and transforming the selected segment value into a corresponding 8-bit representation for display. The output signals are inverted to drive active-low display configurations, effectively allowing for dynamic multiplexing of up to six segments based on the timer values. Additionally, a reset input initializes the timer and ensures proper operation upon startup.
+module top_module(
+    output [7 : 0] LED_out_rev,
+    output [5 : 0] LED_ctrl_rev,
+    input clk,
+    input rst,
+    input [23 : 0] data_in
+    );

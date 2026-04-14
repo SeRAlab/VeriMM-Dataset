@@ -1,0 +1,6 @@
+Design a keypad scanner that detects active columns in a 4x4 keypad matrix and outputs the corresponding active row. The module's operation is synchronized with a clock signal, utilizing pipeline registers to stabilize the output rows. When a specific pattern is detected on the column inputs, it registers the appropriate row in the output. If none of the column patterns match the predefined states, the output rows default to low. This design enables the identification of key presses in a keypad application by scanning the columns and outputting the activated rows accordingly.
+module top_module(
+    input clk,
+    input [3:0] col,
+    output reg [3:0] row
+);

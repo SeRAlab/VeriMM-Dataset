@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+    
+Implement a module to interface with DDR (Double Data Rate) memory components or systems. Its primary functions include:
+
+Delay Selection Management: It manages the selection of delay values for interfacing with DDR memory by adjusting the delay based on the input `delay_sel_val`. This is crucial for timing adjustments and to ensure data integrity during high-speed memory operations.
+Reset Calibration Control: It handles the reset calibration process through a two-stage synchronization of the reset signal (`rst_calib1`). This is essential for ensuring that the system is correctly calibrated and synchronized after a reset, especially in the context of high-speed memory operations where timing precision is critical.
+
+This module plays a critical role in ensuring that the interfacing with DDR memory is optimized for performance and reliability, making it a vital component in systems requiring high-speed memory access.
+
+Module name:  
+	ddr_infrastructure
+
+Input ports:
+	clk_int: A clock input signal (type: input). This clock signal is essential for timing the operations within the module, including signal synchronization and delay selection updates.
+	rst_calib1: A reset calibration signal (type: input). This signal is used to initiate the calibration process, ensuring that the module and, by extension, the memory interface is correctly synchronized.
+	delay_sel_val: A 5bit input signal (type: input [4:0]). This signal represents the delay selection value that is to be applied for DDR memory interfacing. Adjusting this value allows for finetuning of the memory operation timing.
+Output ports:
+	delay_sel_val1_val: A 5bit output signal (type: output [4:0]). This signal outputs the currently applied delay selection value, providing visibility into the operational state of the module.
+	dbg_delay_sel: A 5bit debug signal (type: output [4:0]). This signal mirrors the delay_sel_val1_val output for debugging purposes, allowing for realtime monitoring of the delay selection.
+	dbg_rst_calib: A debug reset calibration signal (type: output). This signal provides a debug view of the reset calibration status, indicating whether the module is in a calibrated state.
+
+
+Implementation:
+The ddr_infrastructure module is designed to interface with a DDR (Double Data Rate) memory component, providing essential control and debugging functionalities. The module operates with a single clock input (clk_int) and utilizes both the rising and falling edges of this clock for its internal operations, a characteristic often seen in DDR systems to maximize data throughput.
+
+Give me the complete code.
+

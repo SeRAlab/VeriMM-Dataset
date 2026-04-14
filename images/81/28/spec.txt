@@ -1,0 +1,6 @@
+Design a random number generator (RNG) utilizing a linear feedback shift register (LFSR) structure. The module outputs an 'w'-bit wide random number, where 'w' is set to 8 by default. The RNG is synchronized with the input clock signal and reset by an active high reset signal; upon reset, it initializes the LFSR to zero. On each clock cycle, it calculates a feedback bit based on several bits of the LFSR, shifts the bits, and incorporates the feedback to generate a new pseudo-random number sequence. The current state of the LFSR is made available as the output 'rand_num'.
+module top_module(
+  input clk,
+  input rst,
+  output reg [w-1:0] rand_num
+);

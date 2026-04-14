@@ -1,0 +1,6 @@
+Design a three-bit majority filter that stabilizes an input signal, rxIN, by sampling it over three clock cycles. The module utilizes a shift register to hold the last three sampled values of rxIN (rxLock) and outputs a HIGH (rxOUT) if at least two of the three stored values are HIGH, thereby effectively filtering out noise and unreliable input changes. The filtering process occurs on the rising edge of clockIN, ensuring synchronous operation.
+module top_module(
+	input clockIN,
+	input rxIN,
+	output wire rxOUT
+);

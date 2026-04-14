@@ -1,0 +1,9 @@
+Design a 4-bit up/down counter with load capability. This module takes a clock signal, a reset signal, a load control input, and a direction signal to manage counting operation. When reset is activated, the counter initializes to zero. If the load signal is high, the counter loads the value from the 4-bit input data. When counting, if the direction signal is high, the counter increments; if low, it decrements. The current value of the counter is output through the `count` signal, which is driven by one of the internal registers.
+module top_module(
+    input clk,
+    input reset,
+    input load,
+    input direction,
+    input [3:0] data_in,
+    output reg [3:0] count
+);

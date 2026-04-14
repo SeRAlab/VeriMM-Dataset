@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform debouncing and filtering of a set of 8 input switches. In digital systems, especially those involving human interaction through mechanical switches, debouncing is crucial to ensure that only clean, bounce-free signals are processed. This module takes the raw, potentially noisy switch inputs and outputs stable, debounced signals. It achieves this by incrementing or decrementing counters associated with each switch input based on the switch's state, thereby filtering out the noise caused by the mechanical bouncing of the switches. The module operates synchronously with a system clock and includes a reset functionality to initialize or clear its internal state.
+
+Module name:  
+	Switch_Filter
+
+Input ports:
+	clock: A standard input clock signal that drives the module's operation. It is of type input and is a single bit (1'b0 or 1'b1).
+	reset: A synchronous reset signal that, when asserted (1'b1), initializes the module's internal counters and outputs. It is of type input and is a single bit.
+	switch_in: An 8bit input vector representing the raw states of 8 switches. Each bit corresponds to a switch, where 1'b1 indicates the switch is pressed, and 1'b0 indicates it is not pressed.
+Output ports:
+	switch_out: An 8bit output vector representing the debounced states of the 8 switches. Each bit corresponds to a switch, where 1'b1 indicates the switch is considered stably pressed, and 1'b0 indicates it is considered not pressed. This output is of type output reg since its value is updated within procedural blocks.
+
+
+Implementation:
+The Switch_Filter module is designed to filter the input from an 8-bit switch (switch_in), producing a filtered 8-bit output (switch_out). This filtering process is governed by a combination of sequential and combinational logic, operating under the control of a clock signal (clock) and a reset signal (reset). The core functionality of this module is to debounce each bit of the switch_in signal, ensuring that transient changes do not affect the output immediately. This is achieved through the use of counters for each bit of the input signal.
+
+Give me the complete code.
+

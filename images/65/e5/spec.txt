@@ -1,0 +1,6 @@
+Design a 8-to-3 priority encoder that outputs the position of the highest-priority active input bit from an 8-bit input. The module captures the input value on the rising edge of a clock signal and checks the bits in descending order of priority (from bit 7 to bit 0). The output is a 3-bit representation of the highest-priority bit's position, where the most significant bit (7) corresponds to the highest priority. If no input bits are active, the output will reflect the last active position determined.
+module top_module(
+    input clk,              // Added clk input
+    input [7:0] in,
+    output reg [2:0] pos
+);

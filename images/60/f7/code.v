@@ -1,0 +1,1 @@
+module top_module(input CIN, output COUT);assign COUT = CIN;endmodule

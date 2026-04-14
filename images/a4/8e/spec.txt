@@ -1,0 +1,7 @@
+Design a circuit that performs a 2-bit increment operation on the input signal IN, outputting the result as OUT. It also includes a synchronous reset (RST) functionality that sets the Not_Equal_3 output to indicate whether the input IN is not equal to the value '2' whenever there is a positive clock edge (CLK). If RST is asserted, Not_Equal_3 is reset to LOW; otherwise, it reflects the comparison result between IN and the constant '2'.
+module top_module(
+    input     wire     [1:0]       IN,
+    input     wire                 CLK, RST,
+    output    wire     [1:0]       OUT,
+    output    reg                 Not_Equal_3
+);

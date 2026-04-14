@@ -1,0 +1,8 @@
+Design a circuit that implements a signed 4-bit multiplier, producing an 8-bit signed output. The module takes two 4-bit signed inputs, A and B, and outputs their product as an 8-bit signed result. It uses a temporary register to hold the intermediate product value, which is stored upon the clock's rising edge. Additionally, the circuit includes an overflow detection mechanism that checks if the sign bit of the product differs from the subsequent bit, indicating potential overflow conditions. The final output retains only the lower 4 bits of the result.
+module top_module(
+    input signed [3:0] A,
+    input signed [3:0] B,
+    input clk, // Added missing clk input
+    output reg signed [7:0] PRODUCT,
+    output OVERFLOW
+);

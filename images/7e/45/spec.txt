@@ -1,0 +1,18 @@
+Design a 3-address register file that can store and retrieve 8-bit data across two sets of registers (high and low) for eight different addresses. The module accepts three address inputs (AddrA, AddrB, AddrC) for reading from specific registers and two data inputs (DIH, DIL) for writing to the high and low registers, respectively. The circuit allows writing to the registers on the rising edge of the clock when chip enable (CEN) is active and the respective write enable signals (WEH for high, WEL for low) are asserted. It outputs the contents of the registers specified by the address inputs on DOAH, DOAL (for AddrA), DOBH, DOBL (for AddrB), and DOCH, DOCL (for AddrC).
+module top_module(
+    input  [2:0] AddrA,
+    input  [2:0] AddrB,
+    input  [2:0] AddrC,
+    input  [7:0] DIH,
+    input  [7:0] DIL,
+    input        clk,
+    input        CEN,
+    input        WEH,
+    input        WEL,
+    output [7:0] DOAH,
+    output [7:0] DOAL,
+    output [7:0] DOBH,
+    output [7:0] DOBL,
+    output [7:0] DOCH,
+    output [7:0] DOCL
+);

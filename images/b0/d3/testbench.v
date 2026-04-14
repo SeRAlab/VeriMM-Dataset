@@ -1,0 +1,181 @@
+`timescale 1ns/1ps
+
+module top_module_tb;
+
+    // Testbench signals (combinational circuit)
+    reg [7:0] hrm1;
+    reg [7:0] hrm2;
+    reg [7:0] minm1;
+    reg [7:0] minm2;
+    reg s;
+    wire [7:0] hr_out;
+    wire [7:0] min_out;
+
+    // Test tracking
+    integer test_num;
+    integer pass_count;
+    integer fail_count;
+
+    // Instantiate the DUT (Device Under Test)
+    top_module dut (
+        .hrm1(hrm1),
+        .hrm2(hrm2),
+        .minm1(minm1),
+        .minm2(minm2),
+        .s(s),
+        .hr_out(hr_out),
+        .min_out(min_out)
+    );
+    task testcase001;
+
+    begin
+        test_num = test_num + 1;
+        $display("Test %03d: Selecting Input Pair 1 (s=0)", test_num);
+        s = 0;
+        hrm1  = 8'h12; minm1 = 8'h34;
+        hrm2  = 8'h56; minm2 = 8'h78;
+        #1;
+
+        check_outputs(8'h12, 8'h34);
+    end
+        endtask
+
+    task testcase002;
+
+    begin
+        test_num = test_num + 1;
+        $display("Test %03d: Selecting Input Pair 2 (s=1)", test_num);
+        s = 1;
+        hrm1  = 8'h12; minm1 = 8'h34;
+        hrm2  = 8'h56; minm2 = 8'h78;
+        #1;
+
+        check_outputs(8'h56, 8'h78);
+    end
+        endtask
+
+    task testcase003;
+
+    begin
+        test_num = test_num + 1;
+        $display("Test %03d: Boundary values with s=0", test_num);
+        s = 0;
+        hrm1  = 8'hFF; minm1 = 8'hFF;
+        hrm2  = 8'h00; minm2 = 8'h00;
+        #1;
+
+        check_outputs(8'hFF, 8'hFF);
+    end
+        endtask
+
+    task testcase004;
+
+    begin
+        test_num = test_num + 1;
+        $display("Test %03d: Boundary values with s=1", test_num);
+        s = 1;
+        hrm1  = 8'hFF; minm1 = 8'hFF;
+        hrm2  = 8'h00; minm2 = 8'h00;
+        #1;
+
+        check_outputs(8'h00, 8'h00);
+    end
+        endtask
+
+    task testcase005;
+
+    begin
+        test_num = test_num + 1;
+        $display("Test %03d: Pattern check s=0", test_num);
+        s = 0;
+        hrm1  = 8'hAA; minm1 = 8'h55;
+        hrm2  = 8'hCC; minm2 = 8'h33;
+        #1;
+
+        check_outputs(8'hAA, 8'h55);
+    end
+        endtask
+
+    task testcase006;
+
+    begin
+        test_num = test_num + 1;
+        $display("Test %03d: Pattern check s=1", test_num);
+        s = 1;
+        hrm1  = 8'hAA; minm1 = 8'h55;
+        hrm2  = 8'hCC; minm2 = 8'h33;
+        #1;
+
+        check_outputs(8'hCC, 8'h33);
+    end
+        endtask
+
+    // Test stimulus
+    initial begin
+        // Initialize
+        test_num = 0;
+        pass_count = 0;
+        fail_count = 0;
+
+        $display("========================================");
+        $display("top_module Testbench");
+        $display("========================================");
+
+
+        testcase001();
+        testcase002();
+        testcase003();
+        testcase004();
+        testcase005();
+        testcase006();
+        
+        
+// Print summary
+        $display("\n========================================");
+        $display("Test Summary");
+        $display("========================================");
+        $display("Tests Passed: %0d", pass_count);
+        $display("Tests Failed: %0d", fail_count);
+        $display("Total Tests:  %0d", pass_count + fail_count);
+        $display("========================================");
+
+        if (fail_count == 0)
+            $display("ALL TESTS PASSED!");
+        else
+            $display("SOME TESTS FAILED!");
+
+        $display("\nSimulation completed at time %0t", $time);
+        $finish;
+    end
+
+    // Task to check outputs
+    task check_outputs;
+        input [7:0] expected_hr_out;
+        input [7:0] expected_min_out;
+        begin
+            #1; // Small delay for combinational logic to settle
+            if (expected_hr_out === (expected_hr_out ^ hr_out ^ expected_hr_out) &&
+                expected_min_out === (expected_min_out ^ min_out ^ expected_min_out)) begin
+                $display("PASS");
+                $display("  Outputs: hr_out=%h, min_out=%h",
+                         hr_out, min_out);
+                pass_count = pass_count + 1;
+            end else begin
+                $display("FAIL");
+                $display("  Expected: hr_out=%h, min_out=%h",
+                         expected_hr_out, expected_min_out);
+                $display("  Got:      hr_out=%h, min_out=%h",
+                         hr_out, min_out);
+                fail_count = fail_count + 1;
+            end
+        end
+    endtask
+
+    // Timeout watchdog
+    initial begin
+        #1000000; // 1ms timeout
+        $display("\nERROR: Simulation timeout!");
+        $finish;
+    end
+
+endmodule

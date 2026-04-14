@@ -1,0 +1,9 @@
+Design a synchronous SPI (Serial Peripheral Interface) state machine that facilitates data transmission and reception. The module has states for IDLE, TRANSMIT, RECEIVE, and DONE, controlling the MOSI (Master Out Slave In), MISO (Master In Slave Out), chip select (CS), and clock (SCLK) signals based on inputs and internal state transitions. It initiates data transmission when CS is asserted and subsequently sends out an 8-bit data word bit by bit on the MOSI line while simultaneously receiving data on the MISO line. Upon completion of the data exchange, the module correctly toggles the CS signal and returns to the IDLE state.
+module top_module(
+  input clk,
+  input rst,
+  input mosi,
+  output reg miso,  // Change to reg type
+  output reg cs,    // Change to reg type
+  output reg sclk    // Change to reg type
+);

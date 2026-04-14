@@ -1,0 +1,12 @@
+Design a power ground control module that manages voltage and ground signals. It accepts a clock signal, reset signal, enable flag, and 4-bit inputs for voltage and ground levels. On a rising clock edge, if reset is active, both outputs are set to zero. If enabled, it validates the voltage and ground inputs, allowing values between 0 and 15 to pass through to the outputs; otherwise, it sets the outputs to zero while signaling an error condition. When disabled, the module also outputs zero for both voltage and ground. The module is intended for applications requiring controlled and error-checked signal management within specified ranges.
+module top_module(
+    input clk,
+    input rst,
+    input enable,
+    input [3:0] voltage,
+    input [3:0] ground,
+    output reg [3:0] voltage_out,
+    output reg [3:0] ground_out,
+    output reg voltage_error,
+    output reg ground_error
+);

@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module to select between two 8-bit data inputs (`d0` and `d1`) based on the state of a clock signal (`clk`) and output the selected data through an 8-bit output port (`io`). This module can be utilized in systems where data multiplexing is required based on a clock signal, effectively serving as a data selector that toggles between two data sources at the granularity of clock cycles. It can be particularly useful in applications requiring data alignment, switching, or conditional data forwarding based on timing or control signals.
+
+Module name:  
+	my_oddrx8
+
+Input ports:
+	clk: A singlebit input signal serving as the clock or control signal for the data selection process. Its state (0 or 1) determines which data input is forwarded to the output.
+	d0: An 8bit data input port. When the clk signal is high (1), the data present on d0 is selected and passed to the output port io.
+	d1: An 8bit data input port. When the clk signal is low (0), the data present on d1 is selected and passed to the output port io.
+Output ports:
+	io: An 8bit output port that presents the selected data based on the state of the clk input. The data from either d0 or d1 is forwarded to this port depending on the clock signal's state.
+
+
+Implementation:
+The RTL module my_oddrx8 is designed to switch its output io between two 8-bit input signals d0 and d1 based on the state of the input clock signal clk. This module does not incorporate any explicit sequential logic elements like flip-flops or latches in its implementation; instead, it relies on combinational logic to achieve its functionality. The core logic is encapsulated within an always block that is sensitive to any changes in the signals it encompasses, denoted by the always@() construct.
+
+Give me the complete code.
+

@@ -1,0 +1,7 @@
+Design a delay buffer that shifts its output every clock cycle when enabled. This module takes a single input and outputs a 6-bit wide signal, where each bit corresponds to a delayed version of the input. The delays are implemented using tri-state buffers with variable delays defined by parameters, allowing for configurable delay times for different output bits. On each positive edge of the clock, if the enable signal is active, the output is shifted left, introducing a 0 at the least significant bit and retaining the delayed values for the remaining bits.
+module top_module(
+  input  clk,
+  input  en,
+  input  i,
+  output reg [6:1] o
+);

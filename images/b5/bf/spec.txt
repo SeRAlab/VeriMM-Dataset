@@ -1,0 +1,5 @@
+Design a module that acts as an audio data buffer and processor for incoming microphone data. It accepts a clock signal, reset, microphone data, an enable signal, and a trigger for data input. When enabled, it stores incoming microphone samples into a 256-entry buffer. If triggered by the dataIn signal, it begins processing the buffered audio samples, sequentially outputting them via the 16-bit dataOut signal. The module supports a reset functionality to clear the buffer index and output data, effectively managing audio data flow through the system.
+module top_module(
+  input clk, rst, micData, enable, dataIn,
+  output reg [15:0] dataOut
+);

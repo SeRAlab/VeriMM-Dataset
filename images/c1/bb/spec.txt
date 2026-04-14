@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module primarily functions as a storage element for the memory address that to be accessed or manipulated within a digital system, typically a computer or a microcontroller unit (MCU). Its role within the broader system context to hold the address of the memory location that the processor intends to read from or write to. This module is crucial for the operation of the memory subsystem, acting as a bridge between the processing unit and the memory by holding the address of the current memory operation commanded by the processor.
+
+Module name:  
+	MAR
+
+Input ports:
+	clk (input, 1 bit): This is the clock input to the module. It is a digital signal that oscillates between a high and a low state, providing the timing signal for the module's operations. The positive edge (rising edge) of this clock signal triggers the update of the internal register.
+	LM (input, 1 bit): This is the Load Memory Address Register signal. When this signal is low (0), it enables the loading of the address into the MAR_r register from the PC_IN input. This signal controls when the address update occurs.
+	PC_IN (input, 4 bits): This is the Program Counter Input. It represents the address that is to be loaded into the Memory Address Register (MAR_r). This input is provided by another part of the system, typically the program counter or a similar control logic unit.
+Output ports:
+	MAR_OUT (output, 4 bits): This is the Memory Address Register Output. It provides the current value stored in the MAR_r register, representing the memory address to be accessed. This output is connected to the memory subsystem or other components that require the address for their operation.
+
+
+Implementation:
+The RTL module presented, named MAR, is designed to function as a Memory Address Register within a digital system, possibly a microprocessor or a microcontroller architecture. The module is implemented using Verilog, a hardware description language (HDL), which allows for the description of digital circuits in a textual form. The primary function of this module is to latch and hold the address value that is to be used for accessing memory, under a specific control signal condition.
+
+Give me the complete code.
+

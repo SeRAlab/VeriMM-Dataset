@@ -1,0 +1,25 @@
+Design a 6-to-2 multiplexer that selects between six pairs of input signals: `out_ack_reset` and `packet_drop_signal`. The selection is driven by a 3-bit input `sel`, which determines which pair of signals is forwarded to the output. Each pair corresponds to a specific value of `sel`, allowing the circuit to output either `out_ack_reset_out` or `packet_drop_signal_out` based on the selected pair. If `sel` falls outside the 0 to 5 range, both outputs default to LOW.
+module top_module(
+    input       [2:0] sel,
+	 
+	 input out_ack_reset_0,
+	 input packet_drop_signal_0,
+	 
+	 input out_ack_reset_1,
+	 input packet_drop_signal_1,
+	 
+	 input out_ack_reset_2,
+	 input packet_drop_signal_2,
+
+	 input out_ack_reset_3,
+	 input packet_drop_signal_3,
+	 
+	 input out_ack_reset_4,
+	 input packet_drop_signal_4,
+	 
+	 input out_ack_reset_5,
+	 input packet_drop_signal_5,
+	 
+	 output out_ack_reset_out,
+	 output packet_drop_signal_out
+);

@@ -1,0 +1,8 @@
+Design a register-based interface circuit for reading and writing data. The module includes a control register, data register, and status register, each 8 bits wide. It uses a clock signal for synchronous operations and an active-low reset to initialize registers to zero. When the `enable` signal is high and `direction` is high, it writes the input `wdata` to the appropriate register based on the 32-bit `addr`. When `direction` is low, it outputs the content of the specified register to `rdata`, allowing for read operations. The module also updates certain bits of the `status_reg` to indicate readiness or state.
+module top_module(input  [7:0] wdata, 
+           output reg [7:0] rdata, 
+           input  [31:0] addr, 
+           input  direction, 
+           input  enable,
+           input  clk,
+           input  rst_n);

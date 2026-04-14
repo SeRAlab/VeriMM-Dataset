@@ -1,0 +1,10 @@
+Design a circuit that serves as a register and counter controller with selectable outputs. It features two 8-bit registers (reg1 and reg2) and a 4-bit counter. On a positive clock edge and during a synchronous active-high reset, the registers are initialized to a specific value. Based on the select input, the circuit can either update reg1 or reg2 with new values, or increment the counter. The output q_active represents the currently active module, either one of the registers or the counter based on the select signal. The module also computes a 16-bit result by combining the two registers, although the additional addition operation does not change the value.
+module top_module(
+    input clk,
+    input reset,   // Synchronous active-high reset
+    input [7:0] d1, // 8-bit input for the first register
+    input [7:0] d2, // 8-bit input for the second register
+    input select, // Select input to choose between the two registers and the counter
+    output [7:0] q_active, // 8-bit output from the active module
+    output [15:0] result // 16-bit output from the functional module
+);

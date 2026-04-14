@@ -1,0 +1,6 @@
+Design a digital signal processing module that generates a 32-bit sample output consisting of a packet number and a counter value, synchronized to a clock input. Upon the assertion of the "run" signal, the module resets the counter and increments the packet number. The counter increments with each clock cycle while the run signal is active and a strobe condition is met, determined by a decimation factor input. The module provides a strobe output signal that indicates when the counter has reached the specified decimation value, enabling downstream processing stages to synchronize with the data output.
+module top_module(input clk, input reset,
+   input run,
+   input [7:0] decim,
+   output strobe,
+   output reg [31:0] sample);

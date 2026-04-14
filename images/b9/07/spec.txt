@@ -1,0 +1,12 @@
+The provided Verilog code describes a versatile digital module that combines a 100-bit rotator and a 6-bit Johnson counter, along with a mechanism to selectively output their results based on control signals. It creates a 100-bit rotational shift operation governed by the `ena[0]` signal while a Johnson counter operates under `ena[1]`, facilitating circular counting over 64 states. The module also includes a functional processing path where the output can be the bitwise OR of the rotator's output and the Johnson counter, determined by the `select` signal. Additionally, on a rising clock edge, the contents of the outputs `q` and `counter_out` can be loaded with new data, reset, or updated with the current operational outputs, as directed by the `load` and `reset_n` inputs. Overall, it operates as a specialized data processing unit that allows for controlled shifting, counting, and functional computation within a synchronous design.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    input reset_n,
+    input select,
+    output reg [99:0] q,
+    output reg [5:0] counter_out,
+    output reg [99:0] functional_out
+);

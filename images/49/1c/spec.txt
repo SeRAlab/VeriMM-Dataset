@@ -1,0 +1,6 @@
+Design a 32-bit wide multiplexer that selects its output based on several control signals. The primary function is to choose between different input sources (R2, extend, and shift_num) for a potential ALU operation or to signal specific conditions like a syscall. When AluSrc is high, it selects the extend value; if the shift control signal is active, it uses shift_num instead. If ComBranch is asserted, the output is zero; otherwise, it passes the selected value. In the case of a syscall, the output is set to 10, overriding other selections.
+module top_module(
+R2, extend, shift_num,
+AluSrc, shift, ComBranch, syscall,
+Y
+    );

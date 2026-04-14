@@ -1,0 +1,8 @@
+Design a bidirectional data port that allows the transfer of 8-bit data based on a clock and reset signal. When the reset is activated, the output is set to zero. If the direction control is high, the 8-bit input data is passed directly to the output. If the direction control is low, the 8-bit input data is output in reversed order, effectively creating a reversible data flow for data manipulation in a digital circuit.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data_in,
+  input direction_control,
+  output reg [7:0] data_out
+);

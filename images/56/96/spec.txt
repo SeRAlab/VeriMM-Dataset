@@ -1,0 +1,6 @@
+Design a 4-to-2 priority encoder with pipelined stages. The module takes a 4-bit input and, upon detecting the highest priority active input, outputs a 2-bit position corresponding to it. The design utilizes three sequential stages to capture the input and calculate the active position. The final output indicates which input (from 0 to 3) is the highest priority, with the output reflecting the position of the highest active input in a clocked manner, thus improving timing and reducing propagation delays.
+module top_module(
+    input clk,            // Added clk input declaration
+    input [3:0] in,
+    output reg [1:0] pos
+);

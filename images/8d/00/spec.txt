@@ -1,0 +1,9 @@
+Design a 4-bit up/down counter that can count in either direction based on the input signal. The counter increments when the direction signal is high and decrements when it is low. It features a synchronous reset that sets the count to zero, and a load feature that allows presetting the counter to a specified 4-bit value. The counter wraps around; it resets to zero when the maximum count (15) is exceeded and wraps to maximum when decremented from zero.
+module top_module(
+  input clk,
+  input reset,
+  input direction,
+  input load,
+  input [3:0] data,
+  output reg [3:0] count
+);

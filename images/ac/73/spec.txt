@@ -1,0 +1,5 @@
+Design a bus hold block that maintains the last valid state of the input signal. When the input `in` is either 0 or 1, it updates the output `out` and stores the current state in `prev_state`. If the input `in` transitions to an unknown state (x), the circuit will hold the last known valid state on the output. This design ensures signal integrity in situations where input may be temporarily invalid, effectively preventing data corruption on shared buses.
+module top_module(
+  input in,
+  output reg out  // Changed from wire to reg
+);

@@ -1,0 +1,15 @@
+Design a communication module that manages handshaking signals between multiple systems. This module takes several input signals including clock signals, data inputs, and readiness flags from two interconnected systems. It generates output readiness signals based on the state of these inputs to control the flow of data and ensure synchronization. Specifically, the module uses a state machine to indicate when it's ready to send or receive data by adjusting the output flags `ready2_0_o` and `ready2_1_o`, allowing for coordinated communication without data loss or misalignment, making it essential for reliable data transfer in a digital system.
+module top_module(
+  input clk,
+  input data,
+  input ready0,
+  input ready1,
+  input clk2_i,
+  input data2_i,
+  input ready2_0,
+  input ready2_1,
+  input clk_i,
+  input data_i,
+  output reg ready2_0_o,  // Changed to reg
+  output reg ready2_1_o   // Changed to reg
+);

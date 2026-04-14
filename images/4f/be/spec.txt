@@ -1,0 +1,8 @@
+Design a digital potentiometer module that simulates the behavior of an adjustable resistor. It takes a wiper position input and, based on a clock signal, updates the resistance output. The module uses an n-bit representation for the resistance value, where n is set to 8. Upon receiving a reset signal, it initializes the wiper position and resistance to zero. The output resistance is derived from a resistor ladder network, which is controlled by the specified wiper position, thereby enabling dynamic adjustment of resistance values in response to the wiper input.
+module top_module(
+  input [n-1:0] in,
+  input clk,
+  input rst,
+  input [n-1:0] wiper_pos,
+  output reg [n-1:0] resistance
+);

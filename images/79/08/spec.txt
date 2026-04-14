@@ -1,0 +1,7 @@
+Design a 32-bit wide dual-port FIFO (First In, First Out) memory with read and write capabilities. This module handles read operations on a clock edge, outputting data from a circular buffer while managing the read pointer and tracking the number of data entries with a count. It allows for writing data to the FIFO, increments the write pointer, and updates the data count until the memory is full. Additionally, the module generates a status signal based on the data count, indicating whether the FIFO is empty, full, or has available space, and provides the current read data and the write pointer's representation through the output signals.
+module top_module(rd_data_count,
+    rd_clk,
+    Q,
+    WR_PNTR_RD,
+    wr_pntr_bin_reg,
+    S);

@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a module of a 8-bit shift register. The shift register should shift its contents to the right by one bit on each positive edge of the clock signal. If the reset signal is high, the shift register should reset all its bits to 0. Additionally, the module should have an input for a serial bit to be shifted into the most significant bit (MSB) of the register.
+
+Module name:  
+    shift_register  
+                 
+Input ports:
+    CLK: Clock input
+    RST: Active high reset signal
+    Serial_in: Serial input bit to be shifted into the register
+
+Output ports:
+    Data_out: 8-bit output representing the current contents of the shift register
+
+Implementation:
+The shift_register module uses an always block to update the register contents based on the clock signal and reset signal. The always block triggers on the positive edge of the clock signal (posedge CLK) or the positive edge of the reset signal (posedge RST). It checks if the reset signal is active (RST) and sets the register contents (Data_out) to 0. Otherwise, it shifts the contents of the register to the right by one bit and shifts in the Serial_in bit to the MSB.
+
+Give me the complete code.
+
+module shift_register(CLK, RST, Serial_in, Data_out);
+input CLK, RST, Serial_in;
+output [7:0] Data_out;
+reg [7:0] Data_out;

@@ -1,0 +1,7 @@
+Design a circuit that converts a 32-bit signed binary input into its Binary-Coded Decimal (BCD) representation. The module operates synchronously with a clock and is resettable. Upon each clock cycle, it processes each bit of the input, accumulating a BCD equivalent in a 40-bit wide output. The conversion uses a shifting mechanism and adjustments to ensure that the resulting BCD values are valid, specifically by adding 6 to nibbles that exceed the decimal value of 9. The resultant BCD format allows for easier human interpretation of the numerical data.
+module top_module(
+    input clk,
+    input reset,
+    input signed [31:0] in,
+    output [39:0] out
+);

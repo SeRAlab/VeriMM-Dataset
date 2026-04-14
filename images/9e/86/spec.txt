@@ -1,0 +1,8 @@
+Design a FIFO (First In, First Out) controller that manages the increment of the FIFO count based on various conditions. The controller takes inputs indicating whether the FIFO is empty, and the availability of two different resources (ge2 and ge3), as well as a two-bit count of current items in the FIFO. The output is a 5-bit value that specifies how much to increment the FIFO count: if the FIFO is empty, it outputs the current item count; if ge3 is free and the item count is at maximum capacity (3), it increments by 2; if ge2 is free and the count is at least 2, it increments by 1; if there's at least one item, it increments by 0; otherwise, it indicates a full condition with a value of 5'b11111.
+module top_module(
+  input empty,
+  input ge2_free,
+  input ge3_free,
+  input [1:0] input_tm_cnt,
+  output reg [4:0] fifo_cnt_inc
+);

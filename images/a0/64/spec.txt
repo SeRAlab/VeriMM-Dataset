@@ -1,0 +1,7 @@
+Design a sensor interface module that processes an incoming 12-bit sensor signal. On each rising edge of the clock, if the reset signal is activated, the output is set to zero. When not in reset, the upper 4 bits of the 16-bit output are set to zero while the lower 12 bits are assigned the value of the sensor signal, effectively creating a simple data formatting buffer.
+module top_module(
+    input clk,
+    input reset,
+    input [11:0] sensor_signal,
+    output reg [15:0] output_signal
+);

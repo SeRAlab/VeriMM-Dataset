@@ -1,0 +1,8 @@
+Design a circuit for synchronizing a 4-bit asynchronous input signal using a clock signal. The module includes an asynchronous reset to clear the synchronization stage and a synchronous reset to clear the final output. The first always block captures the input signal on the rising edge of the clock while respecting the asynchronous reset, and the second always block outputs the synchronized signal, also on the clock's rising edge, while following the synchronous reset logic. This ensures reliable transitions of the input data into the synchronized output, mitigating issues related to metastability.
+module top_module(
+  input [3:0] Q, // Asynchronous input signal
+  input clk, // Input clock
+  input rst, // Asynchronous reset signal
+  output reg [3:0] D, // Synchronous output signal
+  input rst_sync // Synchronous reset signal
+);

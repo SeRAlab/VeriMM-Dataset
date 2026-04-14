@@ -1,0 +1,13 @@
+Implement a forwarding logic unit for a pipelined processor architecture that determines the appropriate forwarding paths for two source registers, `ex_rs` and `ex_rt`. The module generates two forward control signals, `forwardA` and `forwardB`, which indicate which register value should be forwarded to avoid data hazards in the execution stage. It checks for write enables (`mem_regWrite`, `wb_regWrite`) and compares the write addresses (`mem_regAw`, `wb_regAw`) against the source registers to ensure correct data is provided for continued execution without stalling. The outputs are coded as 2-bit signals, where different values specify whether to forward from memory stage, write-back stage, or to use the original values.
+module top_module(
+    input [4:0] ex_rs,
+    input [4:0] ex_rt,
+    input [4:0] mem_regAw,
+    input [4:0] wb_regAw,
+    input       mem_regWrite,
+    input       wb_regWrite,
+    input clk,
+    output reg [1:0] forwardA,
+    output reg [1:0] forwardB
+
+);

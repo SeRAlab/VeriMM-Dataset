@@ -1,0 +1,9 @@
+Design a simple calculator module capable of performing four basic arithmetic operations: addition, subtraction, multiplication, and division on two 8-bit inputs, `a` and `b`. The operation to be performed is selected via a 2-bit `op` input, where `op` = 00 corresponds to addition, 01 to subtraction, 10 to multiplication, and 11 to division. The computation is triggered on the rising edge of the `clk`, with the result stored in an 8-bit wide output `result`, and a `valid` signal set high upon completion of the operation to indicate that the output is ready for use.
+module top_module(
+    input [7:0] a,
+    input [7:0] b,
+    input [1:0] op,
+    input clk,
+    output reg [7:0] result,
+    output reg valid
+);

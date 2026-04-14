@@ -1,0 +1,7 @@
+Design a circuit that performs a left shift operation on a signed 32-bit integer input (ivalue) based on a specified shift amount, using a clock signal for synchronization. The output (ovalue) is also a signed 32-bit integer that reflects the result of the shift. Additionally, the design includes overflow handling: if the input is negative but the output becomes positive, it sets the output to the minimum negative value. Conversely, if the input is positive and the output becomes negative, it sets the output to the maximum positive value.
+module top_module(
+    input signed [31:0] ivalue,
+    input [4:0] amount,
+    input clk,
+    output reg signed [31:0] ovalue
+);

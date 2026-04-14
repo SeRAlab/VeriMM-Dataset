@@ -1,0 +1,7 @@
+Design a sliding window mechanism that tracks the maximum value from the most recent 8 samples of a 32-bit input signal. The circuit utilizes a shift register array to store incoming data, and on each clock cycle, it shifts the previous values, discarding the oldest and incorporating the new input. When a reset signal is asserted, all stored values are cleared. The output is a 16-bit signal representing the maximum value of the least significant 16 bits from the stored inputs. This module is suitable for applications requiring real-time peak detection in a sequence of digital signals.
+module top_module(
+    input wire clk,
+    input wire reset,
+    input wire [31:0] in_signal,
+    output reg [15:0] out_signal
+);

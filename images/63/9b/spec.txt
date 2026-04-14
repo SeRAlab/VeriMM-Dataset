@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Design a dual-port RAM with 16 words of 8-bit data. The RAM should have two separate read ports and one write port. The write operation should occur on the rising edge of the clock signal, and the read operations should provide the data at the specified addresses immediately.
+
+Module name:
+    dual_port_ram_8x16
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low asynchronous reset signal.
+    write_en: Write enable signal.
+    write_addr: 4-bit address for writing data.
+    write_data: 8-bit data to be written.
+    read_addr1: 4-bit address for the first read port.
+    read_addr2: 4-bit address for the second read port.
+
+Output ports:
+    read_data1: 8-bit data read from the first read port.
+    read_data2: 8-bit data read from the second read port.
+
+Implementation:
+The RAM should have 16 words, each 8-bits wide. The write operation should occur on the rising edge of the clock signal if the write enable signal is high. The read operations should be combinatorial, providing the data at the specified read addresses immediately. The reset signal should asynchronously clear all memory locations to zero.
+
+Give me the complete code.

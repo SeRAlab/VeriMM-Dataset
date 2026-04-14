@@ -1,0 +1,10 @@
+Design a circuit that functions as an input isolation buffer with power management. The module takes an input signal A and a sleep signal SLEEP; when SLEEP is asserted, it isolates the output X from the input. Otherwise, the output X reflects the input A, after being processed by an OR gate that combines the inputs A and SLEEP. The output is also ensured to have a valid power state through a power-good module that references supply (VPWR) and ground (VGND) connections, allowing for proper operation in low-power scenarios.
+module top_module(
+    X    ,
+    A    ,
+    SLEEP,
+    VPWR ,
+    VGND ,
+    VPB  ,
+    VNB
+);

@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement a module for an 8-bit loadable counter with enable control. The counter increments its value on every rising edge of the clock if the enable signal is high. If the load signal is high, the counter loads the value from the data input (d) instead of incrementing.
+
+Module name:  
+    loadable_counter     
+
+Input ports:
+    clk: Clock signal for synchronous operations.
+    rst_n: Reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    enable: Enable signal for the counter.
+    load: Load control signal.
+    d: 8-bit data input for loading the counter.
+
+Output ports:
+    q: 8-bit output representing the current count.
+
+Give me the complete code.
+
+module loadable_counter(
+    input clk,
+    input rst_n,
+    input enable,
+    input load,
+    input [7:0] d,
+    output [7:0] q
+);

@@ -1,0 +1,6 @@
+Implement a 4-to-2 priority encoder that takes a 4-bit input signal, D, and produces a 2-bit output signal, Y, representing the binary value of the highest-priority active input. The encoder prioritizes inputs from D[3] to D[0], where a higher bit has greater priority. The output Y will indicate the index of the highest set bit; if no bits are set, Y defaults to 0. The output Y is registered to synchronize with a clock edge, ensuring stable output.
+module top_module(
+    input [3:0] D,
+    input clk,       // Added clk input to fix the error
+    output reg [1:0] Y
+);

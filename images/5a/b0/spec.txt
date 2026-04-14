@@ -1,0 +1,11 @@
+Design a sequential circuit that performs a multi-step arithmetic addition of four signed 25-bit inputs, combining them into a single signed output. It captures the input values on each clock cycle, applies two stages of addition to compute the sum of the two pairs of inputs followed by the overall sum, and normalizes the result to fit within an 8-bit output range. If the result exceeds 255 or is negative, it clamps the output to either 255 or 0, respectively. The module includes an input/output interface that also processes a 16-bit data input, storing it through multiple clock cycles before outputting it.
+module top_module(
+  input clk,
+  input signed [24:0] data_1,
+  input signed [24:0] data_2,
+  input signed [24:0] data_3,
+  input signed [24:0] data_4,
+  output reg [7:0] data_p,
+  input [15:0] ddata_in,
+  output reg [15:0] ddata_out  // Changed to reg type
+);

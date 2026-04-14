@@ -1,0 +1,8 @@
+Design a synchronous random-access memory (RAM) module with 16 addresses, each capable of storing 16 bits. On each positive edge of the clock, the module reads data from the memory location specified by the 4-bit read address input and provides it on the read data output. Additionally, when a write enable signal is active, the module allows writing 16-bit data to the memory location specified by the same address input.
+module top_module(
+    input clock,
+    input wr_en,                // Added write enable input
+    input [3:0] rd_addr,
+    input [15:0] wr_data,
+    output reg [15:0] rd_data
+);

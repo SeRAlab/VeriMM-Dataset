@@ -1,0 +1,9 @@
+Design a 4-bit calculator module that performs addition or subtraction on two 4-bit inputs, A and B, based on the control signals MODE and SEL_ADD. When SEL_ADD is high, the module adds A and B; when SEL_ADD is low, it subtracts B from A. The MODE control signal dictates whether to include overflow information in the result. The module outputs a 5-bit RESULT, which includes overflow if applicable, and a separate OVERFLOW signal that indicates whether an overflow occurred during the operation.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [1:0] MODE,
+    input SEL_ADD,
+    output reg [4:0] RESULT,  // Change wire to reg
+    output reg OVERFLOW        // Change wire to reg
+);

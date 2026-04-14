@@ -1,0 +1,12 @@
+Implement a simple memory-mapped I/O controller with an 8-bit LED output. When a write operation is detected on the AVS interface, the lower 8 bits of the incoming data are written to the LED register. On read operations, the module outputs a 128-bit data bus where the upper 120 bits are zeroed, and the lower 8 bits represent the current state of the LED. The module also incorporates reset functionality to initialize the LED state, ensuring it starts at zero when the reset signal is asserted.
+module top_module(
+		input  wire [7:0]   avs_s0_address,     
+		input  wire         avs_s0_read,        
+		output reg  [127:0] avs_s0_readdata,    
+		input  wire         avs_s0_write,       
+		input  wire [127:0] avs_s0_writedata,   
+		output wire         avs_s0_waitrequest, 
+		input  wire         clock_clk,          
+		input  wire         reset_reset,        
+        output reg  [7:0]   led                 
+    );

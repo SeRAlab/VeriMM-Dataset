@@ -1,0 +1,21 @@
+Implement the Verilog module based on the following description.
+This is a sequential circuit with a decrement and enable signals. Read the simulation waveforms to determine what the circuit does, then implement it.
+
+Time 0ns: clk = 0, rst = 1, en = 1, q = x.
+Time 5ns: clk = 1, rst = 1, en = 1, q = 0.
+Time 10ns: clk = 0, rst = 1, en = 1, q = 0.
+Time 15ns: clk = 1, rst = 0, en = 1, q = 3.
+Time 20ns: clk = 0, rst = 0, en = 1, q = 3.
+Time 25ns: clk = 1, rst = 0, en = 0, q = 3.
+Time 30ns: clk = 0, rst = 0, en = 0, q = 3.
+Time 35ns: clk = 1, rst = 0, en = 1, q = 2.
+Time 40ns: clk = 0, rst = 0, en = 1, q = 2.
+Time 45ns: clk = 1, rst = 0, en = 1, q = 1.
+Time 50ns: clk = 0, rst = 0, en = 1, q = 1.
+Time 55ns: clk = 1, rst = 1, en = 1, q = 0.
+
+module decrement_enable (
+	input clk,
+	input rst,
+	input en,
+	output reg [2:0] q);

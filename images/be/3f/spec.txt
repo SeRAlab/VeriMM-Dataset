@@ -1,0 +1,12 @@
+Design a dual-port RAM module that allows simultaneous read and write operations. It features two write enable signals (we1 and we2) and two 16-bit address inputs (addr1 and addr2), each corresponding to 18-bit data inputs (data1 and data2). On the rising edge of the clock, if we1 is asserted, data1 is written to the memory at addr1. If we2 is asserted and we1 is not, data2 is written to addr2. The module outputs the values stored at addr1 and addr2 through out1 and out2, respectively, thereby enabling concurrent access to the memory for reading and writing.
+module top_module(
+    input clk,
+    input we1,
+    input we2,
+    input [17:0] data1,
+    input [17:0] data2,
+    input [15:0] addr1,
+    input [15:0] addr2,
+    output reg [17:0] out1,
+    output reg [17:0] out2
+);

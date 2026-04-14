@@ -1,0 +1,6 @@
+Create a synchronous circuit that combines a linear feedback shift register (LFSR) and a binary counter to generate a 6-bit output. Upon receiving a reset signal, the LFSR is initialized, and the binary counter starts from zero. The LFSR is implemented as a Johnson counter, cycling through states based on its feedback logic. The binary counter operates in an up/down counting manner; it increments until it reaches a maximum value, at which point it starts decrementing until it reaches zero. The output `q` is determined by the state of the active counter: when it is zero, `q` directly reflects the binary counter; otherwise, it outputs the bitwise negation of the binary counter concatenated with two leading zeros.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    output [5:0] q
+);

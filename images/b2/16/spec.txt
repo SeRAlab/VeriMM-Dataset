@@ -1,0 +1,11 @@
+Design a forwarding unit that resolves data hazards in a pipelined processor architecture. The unit determines appropriate control signals for the ALU inputs based on the status of registers in the execution and memory stages. Specifically, it checks if the results from the EX stage should forward to the ID stage for either of the source registers (reg1 and reg2). If the values are valid for forwarding, it assigns specific codes to the ALU inputs (ALUselA and ALUselB) that indicate which source of data to use, avoiding stale data and ensuring correct computations during instruction execution.
+module top_module(
+    input EX_MEM_regwrite,
+    input [4:0] EX_MEM_writereg,
+    input [4:0] ID_EX_reg1,
+    input [4:0] ID_EX_reg2,
+    input MEM_WB_regwrite,
+    input [4:0] MEM_WB_writereg,
+    output [1:0] ALUselA,
+    output [1:0] ALUselB
+    );

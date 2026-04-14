@@ -1,0 +1,12 @@
+Design a 4-register file with 8-bit wide registers. The module allows for two sources (src1 and src2) to read data from any of the four registers, while enabling one register (designated by dst) to be written with new data (ip) on a clock edge if the write enable (we) is active. Upon receiving a reset signal (rst), all registers are cleared to zero. The outputs (op1 and op2) reflect the contents of the registers specified by src1 and src2, respectively.
+module top_module(
+    input [1:0] src1,
+    input [1:0] src2,
+    input [1:0] dst,
+    input [7:0] ip,
+    input clk,
+    input rst,
+    input we,
+    output [7:0] op1,
+    output [7:0] op2
+    );

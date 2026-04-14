@@ -1,0 +1,15 @@
+Design a synchronous memory module that supports both read and write operations. It accepts an 8-bit write address and a 4-bit write data input, allowing data storage in a small memory array consisting of 8 registers. When the `write_en` signal is high, data is written to the specified address, and when `read_en` is asserted, it retrieves data from a specified read address. The module also processes a 4-bit input signal, shifting its bits left by one position to combine with the original input based on the write enable condition. The outputs include the original input, the multiplexed result, and the bitwise AND of the read data and the multiplexed output, providing a versatile interface for both data storage and manipulation.
+module top_module(
+    input clk,
+    input rst_n,
+    input write_en,
+    input [7:0] write_addr,
+    input [3:0] write_data,
+    input read_en,
+    input [7:0] read_addr,
+    output reg [3:0] read_data,
+    input [3:0] in,
+    output [3:0] out1,
+    output [3:0] out2,
+    output [3:0] and_output
+);

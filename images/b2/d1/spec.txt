@@ -1,0 +1,7 @@
+Design a module that performs various bitwise shifting operations on a 32-bit input value. The module takes a 32-bit input and generates four outputs: a left shift (unsigned) by 5 bits, a right shift (signed) by 10 bits, a right shift (unsigned) by 15 bits, and a left shift (unsigned) by 20 bits. Each output corresponds to a specific shift function implemented in an instantiated `shifter` module, enabling flexible manipulation of the input data for applications such as arithmetic operations or signal processing.
+module top_module(
+    input [31:0] value,
+    input [4:0] shift_amount,
+    input [1:0] shift_func,
+    output reg [31:0] c_shift
+);

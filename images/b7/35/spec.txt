@@ -1,0 +1,6 @@
+Design a programmable 8-bit program counter that increments its value on each clock pulse. If a branch is indicated by the `take_branch` signal, the `pc` value will be adjusted by adding a specified `immediate` value to it. The counter will reset to zero when the `rst_general` signal is high.
+module top_module(input wire pb_clk_debounced,
+            input wire rst_general,
+            input wire [7:0] immediate, 
+            input wire [7:0] take_branch,
+            output reg [7:0] pc);

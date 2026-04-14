@@ -1,0 +1,11 @@
+Design a sequential circuit that checks multiple input conditions based on three pairs of 3-bit inputs (a, b, c, d) and a 2-bit input (e). Upon receiving a clock edge, if the circuit is not in reset, it compares the values of a and b, c and d, and validates conditions on e, setting the output y to HIGH if all conditions are met; otherwise, y is set to LOW. This module effectively serves as a comparator circuit with specific matching criteria for digital inputs.
+module top_module(
+    input [2:0] a,
+    input [2:0] b,
+    input [2:0] c,
+    input [2:0] d,
+    input [1:0] e,
+    input clk,
+    input rst,
+    output reg y
+);

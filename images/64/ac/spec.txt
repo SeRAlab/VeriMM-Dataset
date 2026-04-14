@@ -1,0 +1,9 @@
+Design a dual-function module that operates either as a register or a binary counter based on a select input. When the reset signal is active, the register initializes to a specific value (0x34) and captures an 8-bit input on the negative edge of the clock. Simultaneously, on the positive edge of the clock, the module can act as a 4-bit binary counter, which resets to zero if either the reset signal is active or select is high. The module will output the result of an AND operation between the register's output and the counter's current value, while the counter's output is provided when select is low; otherwise, it outputs zero.
+module top_module( 
+    input clk, 
+    input reset,      // Synchronous active-high reset
+    input [7:0] d,    // 8-bit input for the register
+    input select,     // Select input to choose between register and counter
+    output [3:0] counter_out, // 4-bit output from the counter
+    output [7:0] and_out    // 8-bit output from the functional module
+);

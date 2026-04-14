@@ -1,0 +1,8 @@
+Design a cryptographic processing module capable of performing encryption, decryption, or hashing operations on input data. This module takes a data block of configurable size (64 bits) and a key of configurable size (128 bits) as inputs, and utilizes a mode selector to determine the operation: when mode_select is 0, it encrypts the input data using the provided key; when mode_select is 1, it decrypts the data; and for any other value, it performs a hashing operation. The output is the processed data block along with a status signal indicating the success of the operation, providing a framework for secure data handling within various applications.
+module top_module(
+  input [n-1:0] data_in,
+  input [k-1:0] key_in,
+  input mode_select,
+  output [n-1:0] data_out,
+  output status
+);

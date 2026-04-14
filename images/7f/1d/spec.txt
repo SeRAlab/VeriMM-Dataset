@@ -1,0 +1,11 @@
+Design a synchronous FIFO (First-In-First-Out) memory module that can store and retrieve data. It accepts a clock signal and supports reset, write enable, and provides data output. The FIFO has a depth of 16 and a word size of 8 bits. When write_en is asserted and the FIFO is not full, data is written to the next available location. Conversely, when read_en is asserted and the FIFO is not empty, data is read from the front, shifting remaining data accordingly. The module includes signals to indicate when the FIFO is full or empty and manages the read and write operations based on these conditions.
+module top_module(
+  input clk,
+  input reset,
+  input write_en,
+  input [word_size-1:0] data_in,
+  output read_en,
+  output [word_size-1:0] data_out,
+  output full,
+  output empty
+);

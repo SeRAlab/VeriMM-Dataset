@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as an interface or wrapper for a Wishbone bus slave device. Its primary function to facilitate communication between the slave device and the Wishbone bus master. It does so by handling read and write operations initiated by the master, translating address and data signals to a format suitable for the slave device, and managing acknowledgment signals to ensure proper synchronization and data transfer integrity.
+
+In a broader system context, this module acts as a bridge that adapts generic Wishbone bus operations (characterized by the standard signals such as `stb_i`, `we_i`, `adr_i`, etc.) to a potentially custom interface expected by the slave device (represented by signals like `wr_out`, `rd_out`, `addr_out`, `data_out`, and `data_in`). This enables seamless integration of various slave devices into a Wishbone-based system, enhancing modularity and flexibility in system design.
+
+Module name:  
+	wb_slv_wrapper
+
+Input ports:
+	rst_i: Reset input (active high). When asserted, it initializes the internal state of the module.
+	clk_i: Clock input. Serves as the timing reference for all synchronous operations within the module.
+	stb_i: Strobe input (active high). Indicates an active transaction on the Wishbone bus.
+	we_i: Write enable input (active high). Distinguishes between read (0) and write (1) operations.
+	adr_i[31:0]: Address input. Specifies the target address for the current read or write operation.
+	dat_i[31:0]: Data input. Contains the data to be written to the slave device during write operations.
+	data_in[31:0]: Data input from the slave device. Contains the data read from the slave device during read operations.
+Output ports:
+	ack_o: Acknowledge output (active high). Indicates the completion of a read or write operation.
+	dat_o[31:0]: Data output. Holds the data read from the slave device, to be sent back to the Wishbone bus master.
+	rst, clk: Reset and clock outputs, directly passed through from rst_i and clk_i inputs.
+	wr_out: Write output (active high). Indicates a write operation to the slave device.
+	rd_out: Read output (active high). Indicates a read operation from the slave device.
+	addr_out[7:0]: Address output. Specifies the target address for the current operation on the slave device, derived from adr_i.
+	data_out[31:0]: Data output. Contains the data to be written to the slave device during write operations, derived from dat_i.
+
+
+Implementation:
+The RTL module presented, wb_slv_wrapper, is designed to act as a wrapper for interfacing with a Wishbone bus, a popular bus architecture used in embedded systems for connecting different components. The module facilitates both read and write operations to a peripheral device, translating Wishbone signals to a simpler interface and vice versa. The module's logic can be dissected into combinational and sequential parts, each serving distinct roles in the operation of the module.
+
+Give me the complete code.
+

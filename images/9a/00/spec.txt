@@ -1,0 +1,9 @@
+Design a circuit that implements a dual-function counter system. It features a 4-bit binary counter that increments on each clock cycle, resetting to zero when the RST signal is asserted. Additionally, it includes an asynchronous counter that can be cleared to zero using the CLR signal or loaded with external 4-bit data when the LD signal is active, also incrementing otherwise. The module outputs a 5-bit result, Q, computed as the sum of the binary counter and the asynchronous counter, allowing for a combined counting functionality.
+module top_module(
+    input CLK,
+    input RST,
+    input CLR,
+    input LD,
+    input [3:0] DATA,
+    output reg [4:0] Q
+);

@@ -1,0 +1,6 @@
+Design a 4-to-16 binary decoder with a registered output. The module takes a 4-bit input (A) and produces a 16-bit output (Y), where only one bit is set to LOW corresponding to the binary value of the input, while all other bits are HIGH. The output is updated on the positive edge of the clock signal, utilizing a series of registers (Y1, Y2, Y3, Y4) to create a pipeline effect for the output. The implementation ensures that the output reflects the decoded value after a delay of four clock cycles.
+module top_module(
+    input [3:0] A,
+    input clk,  // Added clk input
+    output reg [15:0] Y
+);

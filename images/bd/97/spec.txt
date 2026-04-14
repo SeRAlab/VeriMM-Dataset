@@ -1,0 +1,27 @@
+Design a control module for a static RAM (SRAM) interface that manages read and write operations based on specified control signals. The module utilizes a finite state machine to transition between states for initiating memory operations, utilizing input signals for RAM operations, data to be stored, and addresses. It outputs the necessary control signals to enable SRAM, set read or write operations, and direct data transactions, facilitating communication with a Memory Management Unit (MMU). When triggered, the module can either write data to the specified address or read data from SRAM, outputting the retrieved data as necessary while ensuring proper timing and control synchronization via a 50 MHz clock.
+module top_module(
+    input wire clk50,
+    input wire rst,
+    
+    //Input
+    //Control
+    input wire[2:0] ramOp_i,
+    input wire[31:0] storeData_i,
+    input wire[21:0] ramAddr_i,
+    
+    //Data from SRAM
+    input wire[31:0] ramData_i,
+    
+    //Output
+    //Control
+    output wire[21:0] ramAddr_o,
+    output wire sramEnable_o,
+    output wire writeEnable_o,
+    output wire busEnable_o,
+    output wire[31:0] writeData_o,
+    output wire readEnable_o,
+    
+    //Data to MMU
+    output wire[31:0] ramData_o
+    
+    );

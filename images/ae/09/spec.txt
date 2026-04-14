@@ -1,0 +1,7 @@
+Design a circuit that reverses a 4-bit input value and counts the number of leading zeros in that reversed value. The module takes a 4-bit input, B, and outputs the reversed bits as a 4-bit output, R. Additionally, it produces a 2-bit output, LZ, representing the count of leading zeros in the reversed output. The functionality is divided into pipelined stages that perform the bit reversal and leading zero counting separately, with results registered on the rising edge of a clock signal.
+module top_module(
+    input [3:0] B,
+    input clk,                // Added clock input
+    output reg [3:0] R,
+    output reg [1:0] LZ
+);

@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+
+Implement a module for a 5-bit register with enable. The register should load the input data into the register on the positive edge of the clock signal clk when the enable signal en is high. The register should have a synchronous reset signal rst, which sets the register value to 0 when asserted.
+
+Module name:  
+    register_with_enable      
+
+Input ports:
+    clk: Clock signal.
+    rst: Synchronous reset signal (active high).
+    en: Enable signal.
+    data: 5-bit input data.
+
+Output ports:
+    q: 5-bit output representing the current register value.
+
+Implementation:
+The register_with_enable module loads the input data into the register on the positive edge of the clock signal clk when the enable signal en is high. When the reset signal rst is asserted, the register value is set to 0 on the next positive edge of clk. The register value is a 5-bit binary number.
+
+Give me the complete code.
+
+module register_with_enable(
+    input clk,
+    input rst,
+    input en,
+    input [4:0] data,
+    
+    output reg [4:0] q
+);

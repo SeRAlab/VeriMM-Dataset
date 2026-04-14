@@ -1,0 +1,7 @@
+Develop a pattern detection circuit that identifies the occurrence of the specific 3-bit sequence '101' within an incoming data stream. The circuit utilizes a shift register to store the last three bits received and checks for matches against the predefined pattern. Upon detection, it generates an output indicating the position of the pattern match through a two-bit position signal. The design leverages priority encoding to determine which match has occurred, effectively allowing for real-time monitoring of the input stream for the specified pattern.
+module top_module(
+    input clk,
+    input [7:0] in,
+    input d,
+    output reg [1:0] pos
+);

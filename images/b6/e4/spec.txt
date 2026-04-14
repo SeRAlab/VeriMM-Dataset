@@ -1,0 +1,11 @@
+Design a left/right shift register with the ability to load a value, control the shift amount, and preserve the sign bit for arithmetic operations. The module shifts either left or right based on the `i_right` input, where the amount to shift is determined by the `i_shamt` input and the state is centered around a clock signal. The `i_load` signal allows loading of the initial configuration. The `o_done` output indicates when the desired shift operation is complete, while the `o_q` output provides the resulting shifted value, incorporating the sign bit if necessary.
+module top_module(
+   input wire 	    i_clk,
+   input wire 	    i_load,
+   input wire [4:0] i_shamt,
+   input wire 	    i_shamt_msb,
+   input wire 	    i_signbit,
+   input wire 	    i_right,
+   output wire 	    o_done,
+   input wire 	    i_d,
+   output wire 	    o_q);

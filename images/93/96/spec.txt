@@ -1,0 +1,8 @@
+Design a digital circuit that performs 32-bit multiplication using two 16-bit multiplicative partial products. The module accepts two 32-bit input operands and a clock signal, along with an active-low reset. It utilizes two separate instances of a multiplier component to generate partial results from the lower and upper halves of the input operands. The final result is computed by summing the outputs of these partial products on the rising edge of the clock when the reset signal is inactive, and it resets the output to zero when the reset is active.
+module top_module(
+    input [31:0] A_mul_src1,
+    input [31:0] A_mul_src2,
+    input clk,
+    input reset_n,
+    output reg [31:0] A_mul_cell_result
+);

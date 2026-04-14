@@ -1,0 +1,26 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit synchronous down-counter with load and enable. The counter should decrement by 1 on each positive edge of the clock when enable is high. If load is high, the counter should load a 4-bit input value on the next positive edge of the clock.
+
+Module name:
+    synchronous_down_counter
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Synchronous reset signal to initialize the counter.
+    load: Signal to load the input value into the counter.
+    en: Enable signal to allow counting.
+    D: 4-bit input value to be loaded when load is high.
+Output port:
+    Q: 4-bit register representing the current count value.
+
+Give me the complete code.
+
+module synchronous_down_counter(
+   input                clk,
+   input                rst,
+   input                load,
+   input                en,
+   input      [3:0]     D,
+
+   output reg [3:0]     Q
+);

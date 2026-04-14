@@ -1,0 +1,13 @@
+Develop a UART transmitter module that serially transmits data based on a baud clock. The module manages transmission start and stop signals, includes support for optional parity bit generation, and ensures data integrity through a defined state machine. Upon receiving a start signal, it initializes the transmission by sending a low start bit, followed by the data bits from a provided 8-bit buffer. It calculates and appends a parity bit if enabled, and signals completion of the transmission through a dedicated output. The UART_TX also handles reset conditions to clear its state and output values.
+module top_module(
+BAUD_CLK,
+RESET_N,
+TX_DATA,
+TX_START,
+TX_DONE,
+TX_STOP,
+TX_WORD,
+TX_PAR_DIS,
+TX_PARITY,
+TX_BUFFER
+);

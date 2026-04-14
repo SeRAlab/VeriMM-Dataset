@@ -1,0 +1,8 @@
+Implement a circuit that combines a 4-stage shift register, a rising edge capture mechanism, and a multiplication operation. The shift register receives an 8-bit input and shifts its values on each clock cycle, while the capture register collects the most recent bit from a 32-bit input at each rising edge of the clock. When not reset, the final shifted value from the register is multiplied by the captured 32-bit value, and the result is output as a 32-bit product. The module operates with synchronous active-high reset functionality, ensuring all registers are cleared upon reset.
+module top_module(
+    input clk,      // Clock input
+    input reset,    // Synchronous active-high reset
+    input [7:0] d,  // 8-bit input for the shift register
+    input [31:0] in, // 32-bit input for the rising edge capture module
+    output [31:0] out // 32-bit output from the functional module
+);

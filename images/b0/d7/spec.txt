@@ -1,0 +1,9 @@
+Design a 2-bit conditional multiplier that operates on a 32-bit input number based on a 2-bit selection signal. When the reset signal is active, the output resets to zero. If the selection signal is zero, the result is also zero. If it equals one, the output directly corresponds to the input number. If the selection is two, the result is the input number left-shifted by one (effectively multiplying by 2). For a selection of three, the result is the input number left-shifted by one plus the input number (effectively multiplying by 3). This module clocks the operations on the rising edge of the clock signal, ensuring output is synchronized with the clock cycle.
+module top_module(
+    input resetn_2b,
+    input clk_2b,
+    input[31:0] source_number_2b_0,
+    input[1:0] source_number_2b_1,
+
+    output reg[63:0] result_2b
+);

@@ -1,0 +1,9 @@
+Design a synchronous FIFO (First-In-First-Out) buffer with a depth of 8 and a width of 32 bits. The module allows for data input (din) on a write enable signal (we) when the buffer is not full, and outputs data (dout) on a read enable signal (re) when the buffer is not empty. It manages its internal state with pointers for the head and tail of the queue, resetting the state on a reset signal (rst). The FIFO maintains the conditions of being full or empty, ensuring reliable data storage and retrieval in a controlled fashion.
+module top_module(
+    input clk,
+    input rst,
+    input we,
+    input din,
+    output reg re,
+    output reg [31:0] dout
+);

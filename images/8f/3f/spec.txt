@@ -1,0 +1,13 @@
+Design a circuit that functions as a 4-input AND gate with an inverted input. The module takes a negated input A_N and performs a logical AND operation with three additional inputs (B, C, and D). It includes power-good functionality to ensure reliable operation by monitoring the power supply levels using the sky130_fd_sc_hdll__udp_pwrgood_pp module, generating an output signal pwrgood_pp0_out_X. The final output X is buffered from this power-good output, enhancing stability in environments where power integrity is a concern.
+module top_module(
+    X,
+    A_N,
+    B,
+    C,
+    D,
+    pwrgood_pp0_out_X,
+    VPWR,
+    VGND,
+    VPB,
+    VNB
+);

@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a register file with dual-port access capabilities, designed to store and retrieve 32-bit data words. Its primary objectives include:
+
+Writing Data: Storing 32-bit data words into specific locations within the register file, indexed by a 7-bit address. This operation is clocked and occurs on the rising edge of the clock signal when the write enable (`we`) signal is asserted.
+Reading Data: Providing simultaneous read access to any two locations within the register file. One read port outputs the data at the address specified by the same address used for writing (`a`), while the other read port outputs data from an independently specified address (`dpra`). This allows for flexible data retrieval without disturbing the write operations.
+
+This module is likely to be a critical component within a larger digital system, such as a processor or a digital signal processing (DSP) unit, where fast and efficient access to a set of registers is essential for operational performance.
+
+Module name:  
+	rf_dist_cm4
+
+Input ports:
+	a [6:0]: 7bit address input for writing data. Specifies the location within the register file where the data should be written.
+	d [31:0]: 32bit data input to be written into the register file at the location specified by a.
+	dpra [6:0]: 7bit address input for the second read port. Specifies the location within the register file from which data should be read independently of the write or first read operation.
+	clk: Clock input. The write operation is triggered on the rising edge of this clock signal.
+	we: Write enable signal. When asserted (1), it enables the writing of data into the register file at the address specified by a.
+Output ports:
+	spo [31:0]: 32bit output data from the first read port. This port outputs the data stored at the address specified by a, allowing for the reading of the data just written if desired.
+	dpo [31:0]: 32bit output data from the second read port. This port outputs the data stored at the address specified by dpra, enabling independent read access to the register file.
+
+
+Implementation:
+The RTL module rf_dist_cm4 is designed to function as a register file with a dual-port memory interface, enabling both read and write operations. The module is implemented using Verilog, a hardware description language used for modeling electronic systems. The core functionality of this module revolves around its ability to store 32-bit data values in a memory array and provide access to these values through specific operations dictated by the input signals. The logic within the module can be categorized into combinational and sequential parts, as detailed below:
+
+Give me the complete code.
+

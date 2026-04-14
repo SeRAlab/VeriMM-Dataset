@@ -1,0 +1,14 @@
+Develop a graphics rendering module for a 2D game display. The module determines the RGB color output based on the pixel coordinates (xpixel, ypixel) in relation to the positions of a ball and two paddles. If the pixel is within the bounds of the ball, it assigns specific vibrant colors (e.g., white) to highlight the ball. Additionally, it sets the colors for the areas to the left and below certain thresholds, providing a gradient effect based on vertical position. This functionality can be leveraged in games to visually represent active objects on the screen.
+module top_module(
+    input [9:0] xpixel,
+    input [9:0] ypixel,
+	input [9:0] ball_x,
+    input [9:0] ball_y,
+    input [9:0] paddle_one_x,
+    input [9:0] paddle_one_y,
+    input [9:0] paddle_two_x,
+    input [9:0] paddle_two_y,
+    output [2:0] red,
+    output [2:0] green,
+    output [1:0] blue
+    );

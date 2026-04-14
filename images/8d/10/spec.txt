@@ -1,0 +1,8 @@
+Design a standard register with enable functionality. This module captures and stores an input data signal when the `ld` (load) signal is high on the rising edge of the clock, producing an output `z` that reflects the stored value. It features an additional output, `lz`, which indicates whether the register has been loaded or retains its previous state, with the output indicating a change in state only if the current value deviates from the previous value. The register width can be parameterized, defaulting to 8 bits.
+module top_module(
+  input clk,
+  input ld,
+  input [width-1:0] d,
+  output lz,
+  output [width-1:0] z
+);

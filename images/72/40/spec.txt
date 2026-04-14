@@ -1,0 +1,8 @@
+Design a timer module for a game system that operates based on the current game state. It counts down from a specified `game_time` (60 seconds) while in the GAME state, outputting the timer value in BCD format through two outputs, BCD0 and BCD1. The timer resets to the initial game time in states that indicate a new game or after a player wins, and it holds the value during the MENU state. If the timer is not in the GAME state, it outputs a default value of 10 on the BCD outputs. The module uses a clock and reset signal to manage the timer progression.
+module top_module(
+	input clk,
+	input rst,
+	input [2:0] state,
+	output [3:0] BCD0,
+	output [3:0] BCD1
+);

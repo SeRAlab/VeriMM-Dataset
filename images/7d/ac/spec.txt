@@ -1,0 +1,10 @@
+Design a control module for a shift register with an adjustable width, specified by the parameter WIDTH (default 170 bits). When the 'start' signal is asserted, the module sets a load signal to allow data from the 'din' input to be loaded into the shift register on the next clock cycle. If the 'reset' signal is not active, the shift register contents are initialized to zero. On subsequent clock cycles, the shift register shifts its contents to the left by one bit, appending a zero to the least significant bit. The 'clk_sr' output is controlled by the 'start' signal, effectively generating a clock signal for the shift register operation. The module outputs the current contents of the shift register through 'din_sr'.
+module top_module(
+    input [WIDTH-1:0] din,
+    input clk,
+    input rst,
+    input start,
+    output reg clk_sr,
+    output reg [WIDTH-1:0] din_sr,
+    output reg load_sr
+    );

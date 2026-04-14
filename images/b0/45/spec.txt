@@ -1,0 +1,26 @@
+Please act as a professional Verilog designer.
+
+Design a module for a 4-bit binary counter with synchronous reset. The module has a 1-bit clock input (clk), a 1-bit synchronous reset input (reset), and a 4-bit output (Q). When the reset is asserted, the output Q should be set to 0 on the next clock edge. On each rising edge of the clock, the counter should increment by 1.
+
+Module name:
+    binary_counter
+
+Input ports:
+    clk: 1-bit clock input.
+    reset: 1-bit synchronous reset input.
+
+Output ports:
+    Q: 4-bit output.
+
+Implementation:
+Declare the module binary_counter with input and output ports as specified in the ports statement.
+Use an always block, sensitive to the rising edge of the clock.
+Inside the always block, check if the reset is asserted and set the output Q to 0 if it is. Otherwise, increment Q by 1 on the rising edge of the clock.
+
+Give me the complete code.
+
+module binary_counter(
+    input clk,
+    input reset,
+    output reg [3:0] Q
+);

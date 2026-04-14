@@ -1,0 +1,18 @@
+Please act as a professional verilog designer.
+
+Implement an 8-bit Linear Feedback Shift Register (LFSR) with the feedback polynomial x^8 + x^6 + x^5 + x^4 + 1.
+
+Module name:  
+    LFSR_8               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the register.
+Output port:
+    Q: 8-bit register representing the current value of the LFSR.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the register value is updated.
+If the reset signal (rst_n) is low, indicating a reset condition, the register value (Q) is set to a predefined non-zero seed value.
+Otherwise, the register value (Q) is shifted to the right by one position, and the feedback bit is calculated based on the specified polynomial and added to the most significant bit position.
+
+Give me the complete code.

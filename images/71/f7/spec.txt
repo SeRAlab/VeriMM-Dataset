@@ -1,0 +1,7 @@
+Design a circuit that functions as a 4-bit adder/subtractor with overflow detection. It takes two 4-bit inputs, A and B, and a control input, sub, to determine the operation (addition or subtraction). The module also accepts a carry-in, Cin. The output is a 4-bit result, Y, along with a carry-out, Cout, and an overflow flag, OVF. For addition, it verifies if the result exceeds 4 bits, while for subtraction, it checks if the result is less than -8, indicating an overflow condition.
+module top_module(
+  input [3:0] A, B,
+  input sub, Cin,
+  output reg [3:0] Y,  // Changed output type from wire to reg
+  output reg Cout, OVF
+);

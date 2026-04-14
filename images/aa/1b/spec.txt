@@ -1,0 +1,6 @@
+Design a control signal generator that determines when to initiate an operation based on the instruction type and the status of a busy signal. The module outputs a high signal (StartD) when the instruction decoded from InstrD indicates a multiplication or division operation (RType commands for MULT, MULTU, DIV, or DIVU) and the BusyE signal is low. If BusyE is high, the output is forced low, indicating that the operation cannot start.
+module top_module(				
+  input [31:0] InstrD,			
+  input        BusyE,			
+  output       StartD			
+  );

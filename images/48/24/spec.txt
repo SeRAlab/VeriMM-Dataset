@@ -1,0 +1,8 @@
+Design a synchronous RAM module with 128 locations, each 32 bits wide. On a rising edge of the clock, if the DMWr signal is asserted, the input data (din) is written to the memory location specified by the index. The module always outputs the data stored at the specified index (dout), allowing for concurrent read and write operations.
+module top_module(
+    input clk,
+    input DMWr,
+    input[6:0] index,
+    input[31:0] din,
+    output[31:0] dout
+);

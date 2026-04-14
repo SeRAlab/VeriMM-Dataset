@@ -1,0 +1,8 @@
+The module implements a multi-stage edge detection circuit for a single input signal 'a'. It captures rising and falling edge events on the input signal by using a series of delayed versions of 'a' to determine transitions: a rising edge is detected when 'a' changes from low to high, while a falling edge is identified when 'a' transitions from high to low. The outputs 'rise' and 'down' are registered accordingly, while the module operates synchronously with a clock signal and an active-low reset. This design is useful in digital systems where edge-triggered events need to be monitored for further processing.
+module top_module(
+  input               clk,
+  input               rst_n,
+  input               a,
+  output reg          rise,
+  output reg          down
+);

@@ -1,0 +1,9 @@
+Design a simple music generator module that toggles a music signal based on a clock input and count value, with the ability to stop the music based on a state input. When the `rst` signal is high, the music output is set to HIGH and the count is reset. If the current state is STOP or if the count value is set to zero, the music output remains HIGH. Otherwise, a counter increments on each clock cycle until it reaches a threshold (defined by `cnt_val - 5000`), at which point the music output toggles its state. The module operates in a 100 MHz clock domain, aiming to generate sound or music by changing the output at specific intervals.
+module top_module(
+    input wire         clk_100MHz,
+    input wire         rst,
+    input wire  [1:0] state,
+    input wire  [17:0] cnt_val,
+    
+    output reg         music
+    );

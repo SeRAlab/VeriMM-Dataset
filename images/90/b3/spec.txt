@@ -1,0 +1,28 @@
+Please act as a professional Verilog designer.
+
+Implement an 8-bit Shift Register with Serial In and Parallel Out. The register should shift its contents to the right on each clock cycle, with a new bit being shifted in from a serial input. It also has a reset signal to clear the register.
+
+Module name:  
+    shift_register  
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    serial_in: Serial input bit to be shifted into the register.
+
+Output ports:
+    parallel_out: 8-bit output representing the current contents of the register.
+
+Implementation:
+The module includes an 8-bit register to store the contents. On the positive edge of the clock signal (clk) or the positive edge of the reset signal (rst), the module updates the contents of the register.
+If the reset signal (rst) is high, the register is cleared to 0. If the reset signal (rst) is low, the contents of the register are shifted right by one bit, and the serial input bit (serial_in) is shifted into the most significant bit position.
+
+Give me the complete code.
+
+module shift_register(
+    input clk,
+    input rst,
+    input serial_in,
+
+    output [7:0] parallel_out
+);

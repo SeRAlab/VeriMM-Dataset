@@ -1,0 +1,6 @@
+Design a circuit that performs different operations on a 4-bit input based on a 2-bit selection signal. When sel=00, it outputs the upper two bits of the input followed by two zeros. For sel=01, it performs a bitwise AND with the mask 1100, effectively clearing the lower two bits. With sel=10, it executes a bitwise OR with the mask 0011, setting the lower two bits to 1 regardless of the input. Lastly, when sel=11, it applies a bitwise XOR with the mask 1010.
+module top_module(
+    input [3:0] in,
+    input [1:0] sel,
+    output reg [3:0] out
+);

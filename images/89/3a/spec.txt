@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+
+Implement a 1-bit D flip-flop with asynchronous reset. The flip-flop should capture the value of the D input on the rising edge of the clock signal and output it on the Q output.
+
+Module name:
+    d_flip_flop
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    d: Data input to be captured by the flip-flop.
+
+Output ports:
+    q: Output of the flip-flop, reflecting the captured value.
+
+Implementation:
+The module includes a 1-bit register, q, which is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the q register is cleared to 0.
+On every rising edge of the clock, the value of d is captured and assigned to q.
+
+Give me the complete code.

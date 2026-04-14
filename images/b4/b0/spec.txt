@@ -1,0 +1,18 @@
+Implement the Verilog module based on the following description.
+We want to create a 16-bit shift register that:
+
+// (1) shifts right on a rising edge of the clock,
+// (2) loads parallel input data 'd' on a rising edge of the clock when the 'load' input is high,
+// (3) shifts in 'si' when 'load' is low,
+// (4) provides an asynchronous reset signal to set the register to zero.
+
+// The register value is output on 'q[15:0]'. The reset signal is active high asynchronous.
+
+module top_module(
+    input wire clk,
+    input wire reset,
+    input wire load,
+    input wire [15:0] d,
+    input wire si,
+    output reg [15:0] q
+);

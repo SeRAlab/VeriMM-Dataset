@@ -1,0 +1,6 @@
+Design a control unit module for a processor that decodes instruction opcodes and function codes to generate control signals for various operations. The module takes a 2-bit opcode, a 6-bit function code, and a 4-bit register identifier as inputs and outputs control signals for writing to registers, memory operations, ALU operations, and instruction branching. It includes a state decoding mechanism that determines control signals based on the input values, enabling functionalities such as ALU operation selection and register writes. Additionally, it features conditions for special operations based on specific function codes, provides feedback on whether a write operation should occur, and manages program counter (PC) operations based on the register identifier.
+module top_module(input [1:0] op,input [5:0] funct,input [3:0]rd,
+                    output reg [1:0] flagw,output wire pcs,output wire regw,
+                    output wire memw,output wire memtoreg,output wire alusrc,
+                    output wire [1:0] immsrc,output wire [1:0] regsrc,output reg[1:0] alucontrol ,output wire nowrite
+                    );

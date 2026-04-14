@@ -1,0 +1,18 @@
+Design a write-back stage for a memory subsystem in a pipelined processor architecture. This module takes inputs for memory write enable, write address, and write data, and outputs these signals to the write-back stage (wb) when the system is not busy and there is no memory stall. It also resets the outputs to zero on reset and ensures that write operations are disabled during busy states.
+module top_module(
+    
+    input wire clk_in,
+    input wire rst_in,
+    input wire rdy_in,
+    
+    input wire mem_we,
+    input wire[31:0] mem_w_addr,
+    input wire[31:0] mem_w_data,
+    input wire busy_in,
+    
+    output reg wb_we,
+    output reg[31:0] wb_w_addr,
+    output reg[31:0] wb_w_data,
+    
+    input wire mem_stall
+);

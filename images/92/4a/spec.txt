@@ -1,0 +1,10 @@
+Develop a barrel shift register that allows for both loading data and performing serial shifts. Upon receiving a clock pulse, if the load signal is active, the module loads an 8-bit input data value into the shift register and sets the shift count based on the 5-bit shift amount input. If the load signal is inactive, the module shifts the contents of the register left by one position while inserting a new serial input bit, controlled by the shift count. The module outputs the shifted value and also provides a functional output, which is the sum of the original and shifted register values.
+module top_module(
+    input clk,
+    input load,
+    input [7:0] serial_in,
+    input [7:0] data_in,
+    input [4:0] shift_amount,
+    output [7:0] shifted_value,
+    output [7:0] functional_output
+);

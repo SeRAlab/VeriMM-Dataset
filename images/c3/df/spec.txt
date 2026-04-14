@@ -1,0 +1,27 @@
+Please act as a professional Verilog designer. Your task is to create a Verilog module that implements a register file. 
+A register file is a type of digital circuit that is used to store and access a set of registers. 
+The inputs to the circuit are the read and write enable signals, the register address, and the write data. 
+The outputs are the read data from the selected register.
+Your module should have the following inputs and outputs:
+
+Inputs: 
+- a set of n-bit write data signals (write_data)
+- a set of m-bit register address signals (reg_addr)
+- a read enable signal (read_en)
+- a write enable signal (write_en)
+
+Outputs: 
+- a set of n-bit read data signals (read_data)
+
+The module should also have the following parameters:
+- n: the number of bits in the write data and read data signals
+- m: the number of registers in the register file
+
+Your module should implement the following functionality:
+
+- When the write enable signal is high, the circuit should write the write data to the selected register specified by the register address signals.
+- When the read enable signal is high, the circuit should read the data from the selected register specified by the register address signals and output it as the read data signals.
+
+To implement the register file, you should use Verilog code to define the storage elements (registers) as an array of n-bit vectors. 
+You should then use the read and write enable signals to control the write and read operations on the selected register. 
+Finally, you should use the selected register's data as the output read data signals.

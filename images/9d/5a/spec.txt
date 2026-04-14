@@ -1,0 +1,12 @@
+Design a 32-bit instruction decoder that extracts specific fields from a given instruction. The module outputs the operation code (op), source register (rs), target register (rt), destination register (rd), shift amount (sa), function code (funct), immediate value (imm), and jump address (jadr) by partitioning the input instruction according to their respective bit positions defined in a standard instruction format. This structure enables the utilization of the instruction in further processing within a CPU.
+module top_module(
+	input [31:0] instruction,
+	output [5:0] op,
+	output [4:0] rs,
+	output [4:0] rt,
+	output [4:0] rd,
+	output [4:0] sa,
+	output [5:0] funct,
+	output [15:0] imm,
+	output [25:0] jadr
+);

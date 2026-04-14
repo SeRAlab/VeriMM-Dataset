@@ -1,0 +1,5 @@
+Design a circuit that converts a 24-hour format hour input into a 12-hour format output, while also indicating whether the time is in the AM or PM period. The module takes an 8-bit input representing hours (ranging from 0 to 23) and outputs an 8-bit value for the 12-hour format. It sets the AM/PM output signal to 0 for AM times (00:00 to 11:59) and to 1 for PM times (12:00 to 23:59). Special handling is included for both the input hour 0, converting it to 12 AM, and hour 12, maintaining it as 12 PM.
+module top_module( input [7:0] hours,
+                    output reg am_pm,
+                    output reg [7:0]twelve_hour_out
+    );

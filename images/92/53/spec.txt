@@ -1,0 +1,5 @@
+Design a testbench for validating an ASCII print functionality within a synchronous reset environment. When the reset signal is inactive (reset=0), the module will output a formatted string of printable ASCII characters to a simulation console using `$fwrite`. Additionally, if certain conditions are defined (`STOP_COND`), it will terminate execution with `$finish` when the reset is inactive. The module primarily serves for testing purposes and utilizes conditional compilation directives to include or exclude debug features based on the synthesis and simulation configurations.
+module top_module(
+  input   clock,
+  input   reset
+);

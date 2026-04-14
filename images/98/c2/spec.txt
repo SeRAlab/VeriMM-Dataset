@@ -1,0 +1,7 @@
+Design a shift register that can perform both left and right shifting operations based on a control signal. The module accepts an n-bit input and shifts the stored data in the register either left (when ctrl=1) or right (when ctrl=0) with each positive clock edge. The most significant bit (MSB) for the left shift is filled by the input's MSB, while the least significant bit (LSB) for the right shift is filled by the input's LSB. The output reflects the current state of the shift register, allowing for dynamic data manipulation.
+module top_module(
+  input clk, // Added clk input
+  input [n-1:0] in,
+  input ctrl,
+  output [n-1:0] out
+);

@@ -1,0 +1,36 @@
+Design a multi-source data arbiter that receives input data from several different sources and outputs a single 8-bit value, `D`. The arbiter prioritizes the inputs based on enable signals for each source (`l_rom_e`, `u_rom_e`, `u_ram_e`, `ram_e`, `pio8255_e`, `io_e`, `fdc_e`). It selects the first enabled source in the specified order: local ROM, upper ROM, upper RAM, standard RAM, PIO, I/O, and FDC. If none of the inputs are enabled, the output defaults to 8'd255, ensuring that the system can handle scenarios where no sources are active.
+module top_module(
+		
+		input wire clock_i,
+
+		
+		output wire [7:0] D,
+		
+		
+		input [7:0] l_rom,
+		input l_rom_e,
+		
+		
+		input [7:0] u_rom,
+		input u_rom_e,
+
+		
+		input [7:0] ram,
+		input ram_e,
+
+		
+		input [7:0] eram,
+		input u_ram_e,
+		
+		
+		input [7:0] pio8255,
+		input pio8255_e,
+		
+		
+		input [7:0] io,
+		input io_e,
+		
+		
+		input [7:0] fdc,
+		input fdc_e
+	);

@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+    
+Implement a module to encode interrupt signals into a single vector that identifies the highest-priority active interrupt. Its primary functions include:
+
+Interrupt Encoding: Converts a set of parallel interrupt signals into a single encoded output (`int_vect`) that represents the highest-priority interrupt. The priority is determined by the position of the interrupt signal, with lower indices having higher priority.
+Interrupt Request Flagging: Generates an interrupt request signal (`int_request`) indicating the presence of at least one active interrupt.
+Interrupt Storage (Optional): If configured, stores the state of interrupt signals across clock cycles until they are acknowledged and processed. This feature can be enabled or disabled through a parameter.
+
+This module plays a crucial role in systems requiring interrupt management, such as microcontrollers, embedded systems, or any digital system that needs to prioritize and handle multiple interrupt sources efficiently.
+
+Module name:  
+	int_encoder
+
+Input ports:
+	rst: A reset signal. When asserted, it initializes the internal state of the module.
+	int_sig_in: A vector of interrupt signals. The size of this vector is determined by the VECTOR_INT_TABLE_SIZE parameter. Each bit represents an individual interrupt signal.
+	executed: A signal indicating that the currently highestpriority interrupt has been processed.
+Output ports:
+	int_request: A signal that indicates whether there is at least one active interrupt. It is asserted when there's an active interrupt and deasserted otherwise.
+	int_vect: An encoded vector representing the highestpriority active interrupt. The width of this output depends on the VECTOR_INT_TABLE_SIZE parameter.
+Parameter ports:
+	VECTOR_INT_TABLE_SIZE: Determines the size of the interrupt vector and thus the number of interrupts the module can handle.
+	STORE_INTERUPTS: A string parameter ("TRUE" or "FALSE") that controls whether the module stores the state of interrupts across clock cycles.
+
+
+Implementation:
+The RTL module presented is designed to encode interrupt signals into a vector that identifies the highest-priority interrupt. This module is parameterizable and can be adapted to handle different sizes of interrupt vectors through the VECTOR_INT_TABLE_SIZE parameter. It also features an option to store interrupts until they are explicitly cleared, controlled by the STORE_INTERUPTS parameter. The module operates on the rising edge of the system reset (rst) and the interrupt signals (int_sig_in), as well as on the completion of interrupt handling (executed).
+
+Give me the complete code.
+

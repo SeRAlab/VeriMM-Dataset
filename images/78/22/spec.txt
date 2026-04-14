@@ -1,0 +1,25 @@
+Please act as a professional Verilog designer.
+
+Implement a 8-bit shift register.
+
+Module name:  
+    Shift_register             
+Input ports:
+    clk: Clock signal.
+    rst_n: Active-low reset signal.
+    data_in: Serial data input.
+Output port:
+    Q: 8-bit output register representing the shift register state.
+
+Implementation:
+The shift register shifts its bits to the left and inserts the data_in bit at the least significant bit on the rising edge of the clock signal. If the reset signal (rst_n) is low, the register is reset to 00000000.
+
+Give me the complete code.
+
+module Shift_register(
+   input                clk,
+   input                rst_n,
+   input                data_in,
+
+   output reg [7:0]     Q
+);

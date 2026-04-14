@@ -1,0 +1,7 @@
+Design a priority arbiter circuit that manages multiple input signals to produce a controlled output based on defined priority levels. This module accepts `n` input signals and uses `k` priority signals to determine which `m` output signals are activated. It employs combinational logic to evaluate input conditions and priority settings, generating enable signals for outputs. The outputs reflect the highest priority input among the specified inputs, allowing for efficient resource allocation in digital systems by minimizing conflicts among competing signals.
+module top_module(
+  input [n-1:0] in,
+  input [k-1:0] pri,
+  output reg [m-1:0] out,
+  output reg [k-1:0] en
+);

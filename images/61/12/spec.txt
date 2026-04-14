@@ -1,0 +1,2 @@
+Design a 16-bit to 32-bit immediate value extender. The module interprets a 16-bit input immediate value (Imm16) and extends it to 32 bits (Imm32) based on the 2-bit control signal (ExtendI). The possible operations include zero-padding (ExtendI=00 or 10), sign-extending (ExtendI=01 or 11), and optional left shifting of the sign-extended value by 2 bits when ExtendI=11. This functionality is useful in applications like instruction decoding in processors.
+module top_module(input [15:0] Imm16,input [1:0] ExtendI,output reg [31:0] Imm32);

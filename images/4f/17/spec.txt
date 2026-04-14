@@ -1,0 +1,20 @@
+Implement the Verilog module based on the following description.
+This is a sequential circuit with a load signal. Read the simulation waveforms to determine what the circuit does, then implement it.
+
+Time 0ns: clk = 0, rst = 1, load = 0, d = x, q = x.
+Time 5ns: clk = 1, rst = 1, load = 0, d = x, q = 0.
+Time 10ns: clk = 0, rst = 1, load = 0, d = x, q = 0.
+Time 15ns: clk = 1, rst = 0, load = 1, d = 5, q = 0.
+Time 20ns: clk = 0, rst = 0, load = 1, d = 5, q = 5.
+Time 25ns: clk = 1, rst = 0, load = 0, d = x, q = 5.
+Time 30ns: clk = 0, rst = 0, load = 0, d = x, q = 5.
+Time 35ns: clk = 1, rst = 0, load = 1, d = 3, q = 5.
+Time 40ns: clk = 0, rst = 0, load = 1, d = 3, q = 3.
+Time 45ns: clk = 1, rst = 0, load = 0, d = x, q = 3.
+
+module load_reg (
+	input clk,
+	input rst,
+	input load,
+	input [2:0] d,
+	output reg [2:0] q);

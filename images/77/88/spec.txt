@@ -1,0 +1,6 @@
+Develop a data transformer module that processes a 32-bit input signal on the rising edge of a clock. The module extracts and conditionally modifies specific bits from the input: if the most significant 8 bits are all ones (0xFF), it sets the first 8 bits of the output to 0xFF and the last 8 bits to 0x00; if the least significant 8 bits are all zeros (0x00), it sets the first 8 bits to 0x00 and the last 8 bits to 0x0F. For all other inputs, it directly outputs the first 8 bits from the input and the last 8 bits unchanged. The resulting 16-bit output concatenates these two modified 8-bit values.
+module top_module(
+    input clk,
+    input [31:0] data_in,
+    output [15:0] data_out
+);

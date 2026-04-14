@@ -1,0 +1,13 @@
+Design a status control module that manages two status flags, Z and F, based on inputs and clock operations. This module has a clock input and receives various control signals, including a branch operation selector and a load instruction. It outputs a 2-bit status vector (STAT) composed of the Z and F flags. The BRANCH output determines the branching condition based on the combination of the BRANCH_OP input and the values of Z and F. The module supports different loading mechanisms to update the Z and F flags depending on the LOAD signals. Overall, this design functions as a status manager for control logic in a processor or state machine.
+module top_module(
+    input CLK,
+    input [2:0] BRANCH_OP,
+    input [1:0] LOAD,
+    input BIT,
+    input ZIn,
+	input FIn,
+    input [1:0] STATIN,
+
+    output [1:0] STAT,
+    output BRANCH
+    );

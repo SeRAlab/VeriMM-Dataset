@@ -1,0 +1,5 @@
+The Verilog module generates a sine and cosine wave output based on a clock signal. It takes a reset input to initialize the sine and cosine values, initializing the cosine to a specific amplitude (15'd15000) and the sine to zero. The module uses a rotating state mechanism where the current sine value is updated by adding the scaled cosine value, while the cosine value is recalculated by subtracting the scaled sine value. This design effectively implements a digital oscillator capable of producing sine and cosine waveforms, suitable for applications in digital signal processing or waveform generation.
+module top_module( input  clk,
+                  input  reset,
+                  output signed [15:0] sine_out ,   
+                  output signed [15:0] cos_out  );

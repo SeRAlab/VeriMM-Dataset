@@ -1,0 +1,9 @@
+Design a circuit that performs signed division of two 4-bit numbers. The module takes two 4-bit inputs, `d` (divisor) and `D` (dividend), and outputs a 4-bit quotient `qout`. It operates on the rising edge of a clock signal and allows for a reset (`rst`) to initialize the state of internal registers. When the `start` signal is asserted, it initializes the divisor and begins the division process by comparing the current state with the divisor and adjusting the remainder accordingly. The quotient is constructed over multiple clock cycles, ultimately providing the lower 4 bits of the quotient as output.
+module top_module(
+    input rst,
+    input start,
+    input [3:0] d,
+    input [3:0] D,
+    input clk,
+    output [3:0] qout
+);

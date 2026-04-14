@@ -1,0 +1,8 @@
+Design a digital circuit that integrates an 8-bit shift register, a 4-bit binary counter, and an addition module. Upon receiving a synchronous active-high reset signal, the shift register is initialized to a specific value, while the counter resets to zero. The shift register captures an 8-bit input on each clock cycle when enabled, shifting in new data bits. The binary counter increments with each clock cycle, and its value is added to the current state of the shift register to produce an 8-bit result. The final outputs are the current value of the counter and the sum from the addition module, effectively combining data storage, counting, and arithmetic functionalities in a cohesive design.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input [7:0] d, // 8-bit input for the flip-flop module
+    output [3:0] counter_q, // 4-bit output from the counter module
+    output [7:0] result_q // 8-bit output from the addition module
+);

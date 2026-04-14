@@ -1,0 +1,8 @@
+Design a synchronous 8-bit counter that can be reset, loaded with a specific value, and counts in incrementing order. On the rising edge of the clock, if the reset signal is high, the counter will reset to zero. If the load signal is active, the counter will load the provided 8-bit value; otherwise, it will increment by one on each clock cycle. The counter wraps around back to zero upon reaching its maximum value of 255, effectively serving as a modulo-256 counter with the ability to load a new initial value.
+module top_module(
+    input clk,
+    input rst,
+    input load,
+    input [7:0] load_value,
+    output reg [7:0] count
+);

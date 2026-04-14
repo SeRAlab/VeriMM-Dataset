@@ -1,0 +1,10 @@
+Design a circuit that evaluates a test expression against specified minimum and maximum thresholds. The module takes a clock signal, a reset signal, and a previous configuration status to control the output. Upon a rising edge of the clock, if the reset is active, the output is set to LOW. If the previous configuration is invalid, it also sets the output to LOW. If the test expression is within the defined range (inclusive of min and max), the output is set to HIGH; otherwise, it remains LOW. This module ensures that the output reflects whether the test expression is valid based on the defined boundaries and conditions.
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] min,
+    input [7:0] max,
+    input [31:0] test_expr,
+    input prevConfigInvalid,
+    output reg out
+);

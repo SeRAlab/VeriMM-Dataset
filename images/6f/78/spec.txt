@@ -1,0 +1,12 @@
+Design a motor control module that manages both an H-bridge and a stepper motor. The module outputs a PWM signal based on the input PWM value, allowing for control over motor speed. It selects its H-bridge outputs based on a control signal, enabling forward and reverse motion or stopping. Additionally, it handles stepping for a stepper motor, updating its position based on a step signal and direction input, while cycling through a predefined number of steps to establish its position output. This design facilitates the precise control of motor actions in applications such as robotics and automation.
+module top_module(
+  input pwm, // PWM signal
+  input clk, // clock signal for PWM
+  input [1:0] in, // input signals for H-bridge
+  input ctrl, // control signal for H-bridge
+  input step, // step signal for stepper motor
+  input dir, // direction signal for stepper motor
+  output reg pwm_out, // PWM output signal
+  output reg [1:0] out, // output signals for H-bridge
+  output reg [3:0] stepper_out // output signals for stepper motor
+);

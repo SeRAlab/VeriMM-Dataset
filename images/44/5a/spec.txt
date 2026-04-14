@@ -1,0 +1,15 @@
+Design a memory module with 32 addressable locations, each capable of storing 32-bit data words. The module supports both data and instruction writes: it reads data from the specified address on any clock cycle, allows writing data to a specific address when the write enable signal is active, and enables instruction storage upon the rising edge of the write instruction signal. The outputs include the data at a given address and the functionality to store instructions separately.
+module top_module(
+	input clk         , 
+	input [4:0] address     , 
+	input [31:0] data        , 
+	input we          , 
+	
+	
+	output wire [31:0] data_out,     
+	
+	
+	input write_ins,
+	input [4:0] ins_address,
+	input [31:0] ins
+);

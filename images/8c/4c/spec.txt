@@ -1,0 +1,8 @@
+Design a register to store a 16-bit input value from one clock cycle to the next, functioning as part of a pipelined architecture. The module captures the input value, `In`, on the rising edge of the clock when `InEnable` is high, and resets to zero when the `reset` signal is asserted. The stored value is output as `Out`, allowing for data transfer between stages in a processor pipeline.
+module top_module(
+  input clock,
+  input reset,
+  input [15:0] In,
+  input InEnable,
+  output [15:0] Out
+);

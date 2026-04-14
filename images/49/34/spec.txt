@@ -1,0 +1,9 @@
+Design a parameterized register with a width of N bits (defaulting to 16 bits) that can selectively load input data based on input and output masking signals. The module features a clock, enable (en), and reset (rst) signals, allowing the register to load new values on the rising edge of the clock when enabled. The input masking (inMask) determines which half of the input data is loaded into the register, whereas the output masking (outMask) controls which parts of the register can be updated during the load operation. The register initializes to zero when reset is active, while the output always reflects the currently stored value.
+module top_module(
+    input wire clk,
+    input wire[N-1:0] in,
+    output wire[N-1:0] out,
+    input wire en,
+    input wire rst,
+    input wire[1:0] inMask,
+    input wire[1:0] outMask);

@@ -1,0 +1,6 @@
+Design a counter module that combines a 12-bit shift register and a 4-bit binary counter. On the rising edge of the clock, if the reset signal is LOW, the shift register is initialized to a specific value (0x5A5) and the counter is reset to zero. If the reset is HIGH, the last bit of the shift register is shifted out, and the counter increments by one. The current value of the counter is output as a 4-bit signal, allowing for counting operations while simultaneously managing a shifting data register.
+module top_module(
+  input clk,
+  input reset,
+  output reg [3:0] count
+);

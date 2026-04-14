@@ -1,0 +1,21 @@
+Implement the Verilog module based on the following description.
+Given the state-assigned table shown below, implement the logic functions Q[0] and v.
+
+The state machine has the following states and their corresponding outputs: 
+1. state q[1:0] = 00 (v = 1).
+2. state q[1:0] = 01 (v = 0).
+3. state q[1:0] = 10 (v = 1).
+4. state q[1:0] = 11 (v = 0).
+
+State transitions:
+1. From state q[1:0] = 00: If b = 0, then transition to state q[1:0] = 01. If b = 1, then transition to state q[1:0] = 10.
+2. From state q[1:0] = 01: If b = 0, then transition to state q[1:0] = 11. If b = 1, then transition to state q[1:0] = 00.
+3. From state q[1:0] = 10: If b = 0, then transition to state q[1:0] = 01. If b = 1, then transition to state q[1:0] = 11.
+4. From state q[1:0] = 11: If b = 0, then transition to state q[1:0] = 00. If b = 1, then transition to state q[1:0] = 10.
+
+module fsm (
+  input clk,
+  input b,
+  input [1:0] q,
+  output reg Q0,
+  output reg v);

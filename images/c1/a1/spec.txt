@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a synchronous resettable flip-flop. Its primary role to store a single bit of data and change its output (`DOUT`) in response to a clock (`CLK`) signal, with the ability to asynchronously reset the output to a known state (`0`) upon activation of a reset (`RST`) signal. This module is fundamental in digital circuits for implementing memory elements, state machines, and various forms of sequential logic. It serves as a building block in larger digital systems, where data storage and synchronization to a clock signal are required.
+
+Module name:  
+	FLIPFLOP
+
+Input ports:
+	DIN (Data Input): A singlebit input signal that represents the data to be stored in the flipflop at the next rising edge of the clock signal, provided the reset signal is not asserted.
+	RST (Reset): A singlebit input signal used to asynchronously reset the output of the flipflop. When RST is high (1), the output DOUT is reset to 0 regardless of the clock signal or data input.
+	CLK (Clock): A singlebit input signal that triggers the storage of the input data (DIN) into the flipflop. The data is stored at the rising edge of the clock signal if the reset signal is not asserted.
+Output ports:
+	DOUT (Data Output): A singlebit output signal that represents the current state of the flipflop. It changes in response to the clock signal, based on the input data signal, unless the reset signal is asserted, in which case it is reset to 0.
+
+
+Implementation:
+The RTL module presented is designed to implement a basic flip-flop, a fundamental sequential logic element in digital circuits. This flip-flop is sensitive to the positive edges of two signals: a reset signal (RST) and a clock signal (CLK). The primary function of this module is to store a single bit of data (DIN) and output this bit (DOUT) in a controlled manner, dictated by the CLK and RST signals.
+
+Give me the complete code.
+

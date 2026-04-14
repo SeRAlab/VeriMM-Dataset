@@ -1,0 +1,12 @@
+Design a simple vending machine control circuit that responds to button inputs A, B, C, and D to dispense corresponding products. It operates in a finite state machine with four states: idle, A_pressed, B_pressed, and C_pressed. When a button corresponding to a product is pressed, the state transitions to indicate which product was selected. Once a quarter is inserted, the machine dispenses the selected product by asserting the appropriate output signal (productA, productB, or productC) and returns to the idle state. The module does not respond to input D, effectively ignoring it.
+module top_module(
+    input A,
+    input B,
+    input C,
+    input D,
+    input quarter,
+    output reg productA,
+    output reg productB,
+    output reg productC,
+    output reg productD
+);

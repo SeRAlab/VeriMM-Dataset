@@ -1,0 +1,10 @@
+Design a shift register combined with a simple combinational logic circuit. The module implements a 3-bit shift register that shifts in a single data input (d) on the rising edge of the clock (clk). It performs various logic operations—specifically producing outputs for a two-level AND-OR, OR-AND, and XOR-AND circuits from a 4-bit input (in). The three outputs (out_and, out_or, out_xor) reflect these combinational operations, while an additional output (sum) provides the 8-bit sum of the shift register contents and the results of the combinational circuit. This module serves as a versatile building block for digital designs requiring data shifting and simple logical operations.
+module top_module(
+    input clk,          // Clock input
+    input d,            // Input for shift register
+    input [3:0] in,     // Input for combinational circuit
+    output out_and,     // 2-level AND-OR circuit output
+    output out_or,      // 2-level OR-AND circuit output
+    output out_xor,     // 2-level XOR-AND circuit output
+    output [7:0] sum    // Sum of shift register and combinational circuit outputs
+);

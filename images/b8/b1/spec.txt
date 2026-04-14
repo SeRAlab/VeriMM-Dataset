@@ -1,0 +1,7 @@
+Design a 3-bit priority encoder with pipelined stages that takes two 8-bit input signals and outputs the position of the highest priority active bit. It first latches the inputs on the rising edge of the clock and then sequentially processes each input through three stages: identifying the highest active bit from each input and then determining the minimum of those two results to provide the final output. The output effectively indicates the position of the highest active bit among the two 8-bit inputs, ensuring that the encoder operates synchronously with the clock for reliable data flow.
+module top_module(
+    input clk,
+    input [7:0] in1,
+    input [7:0] in2,
+    output reg [2:0] pos 
+);

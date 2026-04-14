@@ -1,0 +1,14 @@
+Design a write-back (WB) module that captures and manages the results of computation in a digital system. The module operates on the negative edge of the clock, clocking multiple input signals such as read/write control (RW), destination address (DA), mode (MD), and various data inputs (F, Data, VxorN). Based on the value of the mode (MD), it determines the output BUS_D: selecting between the F input, the Data input, or the VxorN signal (outputting in a 1-bit format). The module provides output signals for the clocked RW and DA, thus enabling controlled data flow in a larger data processing architecture.
+module top_module(
+	input 		CLOCK,
+	input 		RESET,
+	input 		RW,
+	input [4:0] DA,
+	input [1:0] MD,
+	input 		VxorN,
+	input [31:0]F,
+	input [31:0]Data,
+	output[31:0]BUS_D,
+	output		RW_out,
+	output[4:0] DA_out
+	);

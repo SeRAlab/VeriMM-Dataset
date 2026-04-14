@@ -1,0 +1,7 @@
+Implement a circuit that reverses every pair of bits in a 16-bit input vector on each positive clock edge, while also providing a reset functionality. Specifically, when the reset signal is activated, the output vector is cleared to zero. Otherwise, for each pair of bits in the input vector, the first bit of the pair is exchanged with the second in the output, effectively rearranging the bits: input bits at positions 0 and 1 are swapped with output bits at the same positions, input bits at positions 2 and 3 are swapped next, and so on, up to the 16-bit width.
+module top_module(
+  input clk,
+  input reset,
+  input [15:0] input_vector,
+  output reg [15:0] output_vector
+);

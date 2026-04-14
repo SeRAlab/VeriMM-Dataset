@@ -1,0 +1,5 @@
+Design a threshold comparator that processes two 32-bit wide counters, `counter` and `counter_down`, influenced by `count_sw` and `thresh_sw` control signals. When enabled by `count_sw`, the counters increment or decrement based on the clock signal. The module compares these counters against dynamically adjustable thresholds, producing various output signals that indicate relational states (greater than, less than, equal, etc.) between the counters and their respective thresholds, along with indicators for zero and maximum states for each counter. Additionally, outputs are generated for both the positive and negative comparisons, with signed interpretations for more versatile comparisons.
+module top_module(input count, count_sw, thresh_sw,
+    output gtu, gts, ltu, lts, geu, ges, leu, les, zero, max,
+    output gtu_n, gts_n, ltu_n, lts_n, geu_n, ges_n, leu_n, les_n, zero_n, max_n
+);

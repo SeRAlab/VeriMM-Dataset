@@ -1,0 +1,22 @@
+Develop a pipeline register for a CPU's instruction decode to execute (ID_EX) stage. The module captures various input signals such as instruction addresses, data operands, and control signals on the rising edge of the clock, and outputs them for use in the execute stage. This design enhances the separation and organization of the datapath, allowing for smoother and more efficient instruction processing in a pipelined architecture.
+module top_module(
+    input clk,
+    input [4:0]in_EX,
+    input [2:0]in_M,
+    input [1:0]in_WB,
+    input [31:0]in_add,
+    input [31:0]in_Dato1,
+    input [31:0]in_Dato2,
+    input [31:0]in_Extend,
+    input [4:0]in_b20_16,
+    input [4:0]in_b15_11,
+    output reg[31:0]ou_add,
+    output reg[31:0]ou_Dato_1,
+    output reg[31:0]ou_Dato_2,
+    output reg[31:0]ou_Extend,
+    output reg[4:0]ou_b20_16,
+    output reg[4:0]ou_b15_11,
+    output reg[4:0]ou_EX,
+    output reg[2:0]ou_M,
+    output reg[1:0]ou_WB
+);

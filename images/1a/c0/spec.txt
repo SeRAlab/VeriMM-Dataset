@@ -1,0 +1,10 @@
+Design a SPI (Serial Peripheral Interface) controller that functions as a master device. The SPI controller should handle the following signals:
+- `clk`: System clock input.
+- `reset`: Asynchronous reset input.
+- `start`: Signal to initiate a SPI transaction.
+- `MOSI`: Master Out Slave In for transmitting data.
+- `MISO`: Master In Slave Out for receiving data.
+- `SCLK`: Serial clock output for signaling.
+- `CS`: Chip select output to select the slave device.
+
+The controller should shift out data on `MOSI` and shift in data on `MISO` in a synchronous manner with the `SCLK` signal. The controller should be able to handle 8 bits of data per transaction. When the `start` signal is asserted, the controller should begin the SPI transaction, shifting data out on the `MOSI` line and shifting data in from the `MISO` line for 8 clock cycles. The `CS` signal should be held low during the transaction.

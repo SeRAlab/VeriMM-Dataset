@@ -1,0 +1,9 @@
+Design a circuit that generates a memory address based on input parameters for a specific data strand configuration. The module takes a clock and an active-low reset signal, along with three 16-bit inputs: `strand_offset`, `strand_idx`, and `strand_length`. On each clock rising edge, if reset is not active, the module calculates the address by adding `strand_offset` to either `strand_idx` (if it is less than `strand_length`) or `strand_idx` adjusted by the `strand_length` offset otherwise. The generated address is a 24-bit output, allowing for flexibility in memory addressing within defined constraints.
+module top_module(
+    clk,
+    rst_n,
+    strand_offset,
+    strand_idx,
+    strand_length,
+    addr
+);

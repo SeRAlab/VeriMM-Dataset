@@ -1,0 +1,6 @@
+Design a debounce circuit for a push button input. The module takes a clock signal and a button input, providing a stable debounced button output. It utilizes a finite state machine (FSM) with three states: IDLE, PRE_DEBOUNCE, and DEBOUNCE. In the IDLE state, the circuit transitions to PRE_DEBOUNCE upon button activation. If the button remains active, it stays in PRE_DEBOUNCE; otherwise, it moves to DEBOUNCE, where a counter is utilized to measure the duration of the button press before ultimately updating the debounced output and returning to the IDLE state. This ensures that only valid button presses are registered, eliminating erroneous signals caused by mechanical bounce.
+module top_module(
+  input clk,
+  input button,
+  output reg debounced_button
+);

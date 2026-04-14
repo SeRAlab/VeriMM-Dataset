@@ -1,0 +1,8 @@
+Develop a barrel shifter that performs both logical left and right shifts on a 32-bit input data based on a specified 5-bit shift amount. The shifter is clocked, with a synchronous reset that initializes the output to zero. If the shift amount is zero, the output remains unchanged. When the most significant bit of the shift amount is high, the data is shifted left; otherwise, it is shifted right by the specified number of positions determined by the lower four bits of the shift amount. The shifted result is available at the output as `shifted_data`.
+module top_module(
+  input clk,
+  input reset,
+  input [31:0] data,
+  input [4:0] shift_amt,
+  output [31:0] shifted_data
+);

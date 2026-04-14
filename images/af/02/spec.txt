@@ -1,0 +1,4 @@
+Design a branch control unit that determines the source for updating the program counter based on various branch conditions. The module takes a 3-bit input to specify the branch type and evaluates input flags (zero and sign flags) to generate control signals for BEQ (branch if equal), BNQ (branch if not equal), BLT (branch if less than), and BGT (branch if greater than). Depending on the value of the branch input, the output `pc_src` is set to true for specific branch conditions or defaults to false when there's no valid branch, effectively controlling the flow of execution in a processor.
+module top_module(input [2:0] branch_in,
+	 input zero_flag, sign_flag,
+	 output reg pc_src);

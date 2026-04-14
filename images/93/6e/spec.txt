@@ -1,0 +1,6 @@
+Design a circuit that functions as a serial data output shift register. It takes an 8-bit parallel input and, upon receiving a read-load signal (rdld), loads this input into an internal register. On every falling edge of the clock signal, if the rdld signal is not asserted, it shifts the contents of the register to the right while outputting the most significant bit (MSB) to the output. This allows for serial transmission of the data stored in the register.
+module top_module(
+  output out,
+  input [7:0] parallelin,
+  input rdld,
+  input clk);

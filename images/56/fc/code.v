@@ -1,0 +1,4 @@
+module top_module(cin,extcin);input  cin; 
+output [31:0] extcin;
+	
+	assign extcin = {{31{cin}}, cin};endmodule

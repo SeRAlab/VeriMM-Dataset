@@ -1,0 +1,8 @@
+Create a pipelined, one-bit wide, 2-to-1 multiplexer. The selection input, sel_b1, is stored in a pipeline register that updates on the rising edge of the clock signal. The output, out_always, reflects the value of either input a or b based on the value of the pipeline register; when sel_b1 is high, output b is selected, and when low, output a is selected.
+module top_module(
+    input a,
+    input b,
+    input sel_b1,
+    input clk,            // Added clk input
+    output reg out_always
+);

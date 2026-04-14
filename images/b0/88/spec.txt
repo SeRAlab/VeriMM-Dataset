@@ -1,0 +1,17 @@
+Design a debouncing circuit for multiple touchpad inputs, which synchronizes incoming signals with the clock, ensuring stable outputs. The module contains registers to hold the history of the pad inputs and a counter to track the number of clock cycles. After accumulating the history, the circuit determines if any pad has been continuously touched for a specified number of cycles, thereby asserting the `pad_touched` signal. Additionally, it synchronizes a reset signal and each pad's state for reliable processing in digital systems. This is particularly useful in avoiding false triggers in touch-sensitive applications.
+module top_module(
+	input clock, 
+	input reset, 
+	input c_pad,
+	input d_pad,
+	input e_pad,
+	input f_pad,
+	input g_pad,
+	output reg reset_sync,
+	output reg c_pad_sync,
+	output reg d_pad_sync,
+	output reg e_pad_sync,
+	output reg f_pad_sync,
+	output reg g_pad_sync,
+	output reg pad_touched   // Change output to reg to allow assignment
+	);

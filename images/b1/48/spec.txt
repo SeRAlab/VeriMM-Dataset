@@ -1,0 +1,7 @@
+Develop a bit pattern detector that monitors a 4-bit data input stream. The module shifts in new data bits on each rising edge of the clock while maintaining a 4-bit shift register. Upon detecting the specific bit pattern "1010" within the shift register, it asserts the output signal z to HIGH; otherwise, it keeps z LOW. The operation can be reset to its initial state by asserting the reset input, which clears the shift register and the output signal.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] data,
+  output reg z
+);

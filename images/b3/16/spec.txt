@@ -1,0 +1,16 @@
+Design a 2-entry FIFO (First-In, First-Out) buffer with control signals for read and write operations. The module allows data to be written into and read from the FIFO based on clock signals while providing status indicators for almost full and almost empty states. It efficiently manages read and write addresses to support data flow, ensuring that it does not underflow (read from empty) or overflow (write to full). The FIFO also includes a reset feature for initialization or recovery from errors.
+module top_module(
+  // inputs:
+  input clk,
+  input rd,
+  input reset_n,
+  input wr,
+  input [43:0] wr_data,
+
+  // outputs:
+  output almost_empty,
+  output almost_full,
+  output empty,
+  output full,
+  output reg [43:0] rd_data // Change to reg since rd_data is driven in always block
+);

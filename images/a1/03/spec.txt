@@ -1,0 +1,17 @@
+Design a DDR3 memory controller that facilitates read and write operations on a memory array. The module has inputs for control signals such as row, column, and bank addresses along with data inputs and outputs, indicating data being written and read from memory. It utilizes an internal memory array to store data, and depending on the control signals (RAS, CAS, and WE), it either outputs data from the specified memory location or writes data into that location. The controller also manages various status signals for data transmission and helps facilitate synchronous operations in alignment with the clock signal, ensuring proper timing for DDR memory operations.
+module top_module(
+  input clk,
+  input rst_n,
+  input [12:0] addr,
+  input [2:0] ba,
+  input ras_n,
+  input cas_n,
+  input we_n,
+  input [15:0] dq,
+  output [15:0] dq_i,
+  output [15:0] dq_o,
+  output [1:0] dqs_i,
+  output [1:0] dqs_o,
+  output [3:0] dm_i,
+  output [3:0] dm_o
+);

@@ -1,0 +1,14 @@
+Design a Serial Peripheral Interface (SPI) controller that facilitates data transmission between a master and a slave device. The module operates in three states: IDLE, TRANSFER, and COMPLETE. It receives input signals including clock (clk), reset (rst_n), the slave select signal (ss), and master-out slave-in (mosi), while producing a master-in slave-out (miso) output. Upon activation by the slave select signal, the controller shifts in data from the mosi line based on the specified data length and tracks the number of bits transferred using a bit counter. Once the transfer is complete, it indicates validity of the received data through the data_valid output and provides the captured data via the data_out output. This module is essential for enabling communication with SPI-compatible devices in a compact and efficient manner.
+module top_module(
+    input clk,
+    input rst_n,
+    input sclk,
+    input ss,
+    input mosi,
+    output miso,
+    input [15:0] data_in,
+    output [15:0] data_out,
+    input [1:0] data_length,
+    input data_ready,
+    output reg data_valid  // Changed from wire to reg
+);

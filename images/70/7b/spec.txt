@@ -1,0 +1,17 @@
+Design a single variable counter module that tracks a count value based on specified inputs. When enabled, the counter increments its value starting from `io_input_start`, adding a specified `io_input_stride` and `io_input_gap` with each clock cycle. The counter will reset to `io_input_start` if a reset signal is active or if `io_input_reset` is asserted. It will adhere to a maximum value defined by `io_input_max`, either saturating at this maximum or wrapping back to the start depending on the `io_input_saturate` option. Additionally, the module provides outputs indicating the current count value, a count value that does not wrap, a done signal when the maximum count is reached, an extended done signal when saturation occurs, and a flag for saturation.
+module top_module(
+  input         clock,
+  input         reset,
+  input  [31:0] io_input_start,
+  input  [31:0] io_input_max,
+  input  [31:0] io_input_stride,
+  input  [31:0] io_input_gap,
+  input         io_input_reset,
+  input         io_input_enable,
+  input         io_input_saturate,
+  output [31:0] io_output_count_0,
+  output [31:0] io_output_countWithoutWrap_0,
+  output        io_output_done,
+  output        io_output_extendedDone,
+  output        io_output_saturated
+);

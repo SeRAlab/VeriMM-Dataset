@@ -1,0 +1,6 @@
+Design a signal modifier module that processes a 16-bit input based on a 2-bit control signal. The control signal determines the operation to perform: when the control is 00, it outputs the original input; when 01, it outputs the bitwise negation of the input; when 10, it performs a left shift by 2 bits; and when 11, it performs a right shift by 2 bits, filling the vacated bits with zeros. The module effectively enables various transformations of a 16-bit signal based on the specified control inputs.
+module top_module(
+    input [15:0] in,
+    input [1:0] ctrl,
+    output [15:0] out
+);

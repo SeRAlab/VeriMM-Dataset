@@ -1,0 +1,7 @@
+Design a memory mapper circuit that translates a 16-bit upper address space into a 22-bit memory address based on specific range selections. The module takes an output from a data line and two control signals, one for lower address bits and one for a read signal. It determines the appropriate memory range using a combination of fixed ranges and control bits from the upper address input. The output address is constructed from predefined range values depending on the state of specific bits in the upper address, while the memory range values can be dynamically updated based on the lower address input, effectively allowing the mapping of different memory banks.
+module top_module(
+    input SDRD0,
+    input [1:0] SDA_L,
+    input [15:0] SDA_U,
+    output [21:0] MA
+);

@@ -1,0 +1,8 @@
+Design a clock generator that produces a configurable frequency and duty cycle square wave signal. The module takes a reset signal, an enable signal, a frequency input, and a duty cycle percentage as inputs. It maintains an internal counter to track time and toggles the output clock (clk) at the specified frequency, while adjusting the duty cycle by controlling the duration of the high state based on the input duty parameter. The clock output is reset to a low state when the reset signal is activated.
+module top_module(
+  input rst,
+  input en,
+  input [15:0] freq,
+  input [15:0] duty,
+  output reg clk
+);

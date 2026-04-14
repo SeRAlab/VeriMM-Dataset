@@ -1,0 +1,9 @@
+The given Verilog code describes a circuit designed for a wireless communication system, functioning as both a transmitter and receiver for sending and receiving 4-bit data. The transmitter section converts the input data into a serial format by shifting the bits out over a specified number of clock cycles using a counter. The output is managed through a radio frequency (RF) signal, represented by `rf_out`. In contrast, the receiver section implements a matched filter followed by a demodulation process to reconstruct the data from the incoming RF signal (`rf_in`). This section accumulates incoming bits until sufficient data is available for demodulation, ultimately outputting the received 4-bit data through `data_out`. The combination of these functionalities allows the module to facilitate basic wireless data transmission and reception.
+module top_module(
+  input clk,
+  input rst,
+  input [3:0] data_in,
+  input rf_in,
+  output reg [3:0] data_out,
+  output rf_out
+);

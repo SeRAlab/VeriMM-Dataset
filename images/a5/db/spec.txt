@@ -1,0 +1,18 @@
+Design a memory multiplexing unit that coordinates read and write operations between a CPU and a PPU (Picture Processing Unit) for managing program and character data in a system. The module accepts both program and character addresses alongside respective read and write signals, and it generates outputs indicating the active memory address, read and write operations. Depending on the state of the read/write signals, it routes the appropriate address to the memory and enables reading or writing of 8-bit data from either the CPU or the PPU. Separately, it saves the state of program read and write signals for proper handling of concurrent operations, ensuring seamless memory access control through a clock enable signal.
+module top_module(
+  input clk,
+  input ce,
+  input [21:0] prg_addr,
+  input prg_read,
+  input prg_write,
+  input [7:0] prg_din,
+  input [21:0] chr_addr,
+  input chr_read,
+  input chr_write,
+  input [7:0] chr_din,
+  output [21:0] memory_addr,
+  output memory_read_cpu,
+  output memory_read_ppu,
+  output memory_write,
+  output [7:0] memory_dout
+);

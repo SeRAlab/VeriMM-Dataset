@@ -1,0 +1,13 @@
+Design a barrel shift up-down counter that supports various data manipulation modes. The module takes a 4-bit input, `data_in`, and allows for shifting and rotating operations based on control signals. Using the `shift` input, the user can specify the type of operation (standard shift or rotate) and the direction (left or right). Additionally, the module features a reset input to initialize the count and a selection input to decide whether to load the count with `data_in` or reset it to zero. The output is a 4-bit register, `count`, which reflects the result of the operations performed on the shifted data.
+module top_module(
+    input clk,
+    input reset,
+    input select,
+    input [3:0] data_in,
+    input [1:0] shift,
+    input shift_right,
+    input shift_left,
+    input rotate_right,
+    input rotate_left,
+    output reg [3:0] count
+);

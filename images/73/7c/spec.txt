@@ -1,0 +1,9 @@
+Design a memory module that functions as a simple RAM with an 8-bit addressable width and a 32-bit data bus. On the rising edge of the clock, it allows writing 32-bit data into a specified address (addr_wr) if the write signal is active. It also retrieves and outputs the 32-bit data stored at a given address (addr) on the same clock edge, making it suitable for applications that require read and write operations in a synchronous manner.
+module top_module(
+    input clk,
+    input [7:0] addr,
+    output reg [31:0] data,
+	 input write,
+	 input [7:0] addr_wr,
+	 input [31:0] data_in
+    );

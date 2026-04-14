@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module implements a specific logic function, namely an OR-AND-Invert (OAI) gate with two OR inputs and one AND input, followed by an inverter. This type of gate is a compound logic gate combining OR, AND, and NOT operations. The primary function of this module to perform a complex logic operation that is commonly required in digital circuits, particularly in situations where space and power efficiency are crucial. In a broader system context, such modules are instrumental in implementing complex logic functions efficiently, contributing to the overall optimization of digital integrated circuits in terms of speed, area, and power consumption.
+
+Module name:  
+	bw_u1_oai221_2x
+
+Input ports:
+	c1, c2: These input ports are part of the first OR operation within the module. They are digital signals and contribute to one of the conditions that determine the output. If either c1 or c2 is high (logical 1), this part of the condition is satisfied.
+	b1, b2: Similar to c1 and c2, these inputs are part of the second OR operation. They also are digital signals. If either b1 or b2 is high, this condition contributes to determining the output.
+	a: This is a single digital signal input that directly contributes to the AND operation within the module. For the AND condition to be satisfied, a must be high.
+Output ports:
+	z: This is the single output port of the module. It is a digital signal (binary, either 0 or 1) that represents the result of the module's logic operation. The output is active low, meaning that a logical 0 represents a true condition as per the logic function implemented by the module.
+
+
+Implementation:
+The RTL module presented, bw_u1_oai221_2x, implements a specific combinational logic function using basic logical operations. The module's primary function is realized through an OR-AND-Invert (OAI) structure, specifically a two-level logic gate configuration that culminates in an inverted output. This particular configuration is known as an OAI221, indicating two inputs for the first OR gate (c1, c2), two inputs for the second OR gate (b1, b2), and one input directly into the AND gate (a), followed by an inverter to produce the output (z).
+The logic operation can be dissected as follows:
+First Level (OR Gates): There are two OR operations at the first level. The first OR operation takes two inputs, c1 and c2, and produces an intermediate result. Similarly, the second OR operation processes inputs b1 and b2.
+Second Level (AND Gate): The outputs of the first-level OR operations along with input a are then fed into an AND gate. This gate logically ANDs the results of the OR operations with input a, effectively creating a condition where all three criteria must be met for the AND gate to output a high signal.
+Inverter: Finally, the output of the AND gate is inverted. If the AND gate outputs a high signal (indicating all conditions are met), the inverter will output a low signal, and vice versa.
+This module does not contain any sequential logic elements (like flip-flops or latches), indicating that its output is purely combinational and directly dependent on the current state of its inputs without any memory or state retention capabilities.
+
+Give me the complete code.
+

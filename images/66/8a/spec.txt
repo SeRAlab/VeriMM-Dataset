@@ -1,0 +1,12 @@
+Design a synchronous 32-bit adder module that processes addition requests. It operates with a state machine that transitions through three states: IDLE, ADD, and WAIT. In the IDLE state, it waits for valid input requests (req_valid) and, upon receiving them, stores the input values (req_0 and req_1) while signaling that it is ready for processing (req_ready). In the ADD state, it performs the addition of the two stored inputs and sets the result as valid (res_valid). Finally, in the WAIT state, it waits for the external acknowledgment (res_ready) before returning to the IDLE state, effectively managing input and output readiness to ensure proper operation in a synchronous environment.
+module top_module(
+    input clk,
+    input rst,
+    input req_valid,
+    input [31:0] req_0,
+    input [31:0] req_1,
+    output reg req_ready,
+    output reg res_valid,
+    input res_ready,
+    output reg [31:0] res_0
+);

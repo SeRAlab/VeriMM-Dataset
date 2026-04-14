@@ -1,0 +1,9 @@
+Design a synchronous circuit that functions as a 2-to-1 multiplexer with input register capabilities. It selects between two 4-bit inputs, in_a and in_b, based on the value of the select signal (sel) when the enable signal (en) is asserted, and stores the selected value in an output register (out) at every positive edge of the clock (clk). If enabled, when sel=0, the circuit outputs in_a, and when sel=1, it outputs in_b, ensuring that the data transfer occurs on the clock transition, providing stability and synchronization in the signal flow.
+module top_module(
+  input sel,
+  input clk,
+  input en,
+  input [3:0] in_a,
+  input [3:0] in_b,
+  output reg [3:0] out
+);

@@ -1,0 +1,26 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit synchronous counter with an enable signal. The module increments the counter by 1 on the rising edge of the clock if the enable signal is high. If the reset signal is high, the counter is reset to 0.
+
+Module name:
+    sync_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    enable: Enable signal to control the counter.
+    reset: Synchronous reset signal.
+
+Output ports:
+    count: 4-bit output of the counter.
+
+Implementation:
+The output count is defined as reg [3:0] count and initialized to 0 using the always block. On each rising edge of the clock, if reset is high, count is set to 0. If enable is high, count is incremented by 1: count <= count + 1.
+
+Give me the complete code.
+
+module sync_counter(clk, enable, reset, count);
+
+    input clk;
+    input enable;
+    input reset;
+    output [3:0] count;

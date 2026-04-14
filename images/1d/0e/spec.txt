@@ -1,0 +1,23 @@
+Design a 2-bit branch predictor with the following states: 
+- 00: Strongly not taken
+- 01: Weakly not taken
+- 10: Weakly taken
+- 11: Strongly taken
+
+The predictor should take two inputs: 
+1. clk (clock)
+2. branch_out (1 for taken and 0 for not taken)
+
+The predictor output should be the predicted state (2 bits) based on the current state and the branch outcome. The state transitions should follow these rules:
+- From 00: 
+  - 0 -> 00 (stay)
+  - 1 -> 01 (to weakly not taken)
+- From 01:
+  - 0 -> 00 (to strongly not taken)
+  - 1 -> 10 (to weakly taken)
+- From 10:
+  - 0 -> 01 (to weakly not taken)
+  - 1 -> 11 (to strongly taken)
+- From 11:
+  - 0 -> 10 (to weakly taken)
+  - 1 -> 11 (stay)

@@ -1,0 +1,13 @@
+Design a dual-port memory system that can either read from a small RAM or output from an additional functional module based on a selection signal. The module features an active-high synchronous reset and incorporates input data processing, where an 8-bit RAM is used to store data at specified addresses, controlled by write-enable signals. When the select signal is high, the output is sourced from the functional module that retrieves values based on detected input signals. The circuit includes logic for detecting certain characteristics in a 32-bit input signal, and it combines both reading and writing capabilities, allowing dynamic data manipulation depending on operational states.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input [7:0] write_data, // 8-bit input for the RAM module
+    input [7:0] write_addr, // Address input for the RAM module
+    input write_en, // Write enable input for the RAM module
+    input [31:0] in, // Input signal for the input signal detection module
+    input select, // Select input to choose between RAM module and functional module
+    input [7:0] read_addr, // Address input for the functional module
+    input read_en, // Read enable input for the functional module
+    output reg [7:0] read_data // 8-bit output from the active module
+);

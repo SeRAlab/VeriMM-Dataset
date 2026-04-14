@@ -1,0 +1,17 @@
+The module implements a FIFO (First In, First Out) interface with capabilities to read and write data, manage synchronization across two clock domains, and handle specific control signals. It features a 3-bit address input that allows selecting different data outputs, including FIFO data and a count of the elements in the FIFO. The module also includes control logic for forcing the FIFO to an empty state based on specific conditions and generates a read enable signal for the FIFO when appropriate. Consequently, this design serves as a bridge for data transfer between a bus and a FIFO structure while ensuring data consistency and synchronization between the bus clock and USB clock signals.
+module top_module(
+  input [2:0] address, 
+  input writeEn, 
+  input strobe_i,
+  input busClk, 
+  input usbClk, 
+  input rstSyncToBusClk, 
+  input fifoSelect,
+  input [7:0] fifoDataIn,
+  input [7:0] busDataIn, 
+  output reg [7:0] busDataOut,
+  output reg fifoREn,
+  output reg forceEmptySyncToUsbClk,
+  output reg forceEmptySyncToBusClk,
+  input [15:0] numElementsInFifo
+  );

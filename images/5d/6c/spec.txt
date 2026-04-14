@@ -1,0 +1,8 @@
+Design a sequential circuit that implements a priority-based output selection based on the comparison of two 4-bit inputs, A and B. This module includes a 4-bit magnitude comparator that determines the relationship between A and B, generating a 3-bit comparison output (cmp_out). Based on this comparison, a 4-to-1 multiplexer functionality is realized where, on the positive edge of the clock, if the reset signal is inactive, the output Y is set to the value of A. If the reset signal is active, the output Y is selected from predefined values (C, D, or A) depending on whether A is greater than, less than, or equal to B, respectively. This design could be used in applications requiring conditional data routing based on input magnitudes.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] A,
+    input [3:0] B,
+    output reg Y
+);

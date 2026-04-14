@@ -1,0 +1,8 @@
+Design a memory interface module that facilitates read and write operations to a synchronous memory block. It features an 8-bit wide data bus and supports up to 1024 addresses. The module allows writing data to a specified address when the write enable signal (wea) is active, and it outputs the data stored at a specified address when read, driven by the clock signal (clka). The output data (douta) reflects the contents read from memory, effectively allowing data storage and retrieval in a configurable memory architecture.
+module top_module(
+  input clka,
+  input wea,
+  input [9:0] addra,
+  input [7:0] dina,
+  output [7:0] douta
+);

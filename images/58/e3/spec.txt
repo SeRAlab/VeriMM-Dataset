@@ -1,0 +1,18 @@
+Implement the Verilog module based on the following description.
+Module I implements the boolean function v = ~(m & n).
+
+// Module J can be described by the following simulation waveform: 
+
+If m = 1, n = 1, then v = 0.
+If m = 0, n = 1, then v = 1.
+If m = 0, n = 0, then v = 1.
+If m = 1, n = 0, then v = 1.
+
+// Now consider a top-level that uses two I submodules and one J submodule. The first input of all three submodules is connected to input 'p', and the second input of all three submodules is connected to 'q'. The output of the first I submodule is connected to a two-input XOR gate with the output of the J submodule. The second I submodule's output is connected to an OR gate with the XOR gate's output. The final output 'v' is the result of this OR gate.
+
+// Implement this circuit in Verilog.
+
+module top_module(
+    input p,
+    input q,
+    output v);

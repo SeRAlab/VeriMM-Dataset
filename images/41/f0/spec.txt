@@ -1,0 +1,22 @@
+Design a quad SPI FIFO interface module that manages the interaction between a FIFO buffer and a SPI interface. The module monitors the FIFO's full and empty states, updating output flags accordingly, and counts the incoming data when it is not empty. It incorporates error detection during read operations based on the acknowledgment signals and read/write control. Additionally, it facilitates data output on the SPI interface based on an enable signal while updating internal state variables in response to both the system clock and external SPI clock. This module is essential for proper data handling and error management in a quad SPI communication environment.
+module top_module(
+    input s_axi_aclk,
+    input ext_spi_clk,
+    input rx_fifo_reset,
+    input [27:0] ce_out_i_reg,
+    input ip2Bus_RdAck_core_reg_reg,
+    input Bus_RNW_reg,
+    input [7:0] p_5_in,
+    input rx_fifo_empty_i_reg,
+    input spiXfer_done_int,
+    input scndry_out,
+    input [0:0] E,
+    input [7:0] Q,
+    output reg [7:0] out,
+    output reg Rx_FIFO_Full_Fifo_d1_reg,
+    output reg ram_full_fb_i_reg,
+    output reg [3:0] icount_out_reg,
+    output reg Receive_ip2bus_error0,
+    output reg Rx_FIFO_Full_Fifo,
+    output reg [24:0] IP2Bus_Data_reg
+    );

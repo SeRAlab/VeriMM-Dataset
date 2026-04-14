@@ -1,0 +1,7 @@
+Design a 4-bit binary counter that increments its value on each positive clock edge when the enable signal is active. The counter has a reset input that, when set to '1111', resets the count to '0000'. It wraps around back to '0000' after reaching its maximum value of '1111' (15 in decimal). The counter works only if the enable signal is also '1111', ensuring that the counting operation is controlled and conditional.
+module top_module(
+  input clk,
+  input [3:0] reset,
+  input [3:0] enable,
+  output reg [3:0] count
+);

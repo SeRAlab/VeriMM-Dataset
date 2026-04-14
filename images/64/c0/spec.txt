@@ -1,0 +1,11 @@
+Design a four-input signed adder with pipelined processing stages. It takes four signed 25-bit inputs and adds them together in a sequence of three clocked stages to generate an 8-bit output `data_p`. The output is subjected to saturation logic to ensure it stays within the range of an 8-bit unsigned value, where values greater than 127 are clamped to 255 and those less than -128 are set to 0. Additionally, the module simply passes through a 16-bit input `ddata_in` to produce a corresponding `ddata_out`, providing a standardized output without modification.
+module top_module(
+  input clk,
+  input signed [24:0] data_1,
+  input signed [24:0] data_2,
+  input signed [24:0] data_3,
+  input signed [24:0] data_4,
+  output reg [7:0] data_p,
+  input [15:0] ddata_in,
+  output reg [15:0] ddata_out
+);

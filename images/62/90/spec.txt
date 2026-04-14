@@ -1,0 +1,12 @@
+Design a VGA controller that generates horizontal and vertical synchronization signals (hsync and vsync) for a video display. The module counts pixel and line positions based on a clock input and resets when necessary. It defines a valid display area and outputs the corresponding pixel coordinates (x_ptr and y_ptr). The controller also drives the RGB color output based on whether the current pixel falls within the valid range, allowing for the display of grayscale colors. The module implements key VGA timing parameters including horizontal pixels and vertical lines, horizontal front and back porches, and vertical front and back porches.
+module top_module(
+    input clk,
+    input reset,
+    output vsync,
+    output hsync,
+    output [2:0] VGA_R,
+    output [2:0] VGA_G,
+    output [1:0] VGA_B,
+    output [9:0] x_ptr,
+    output [9:0] y_ptr
+);

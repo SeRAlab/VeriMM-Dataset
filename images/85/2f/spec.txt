@@ -1,0 +1,18 @@
+Implement a Verilog module based on the following description.
+The following diagram is a Moore machine implementation of a traffic light controller. Implement in Verilog using one-hot encoding. Resets into state Red and reset is asynchronous active-high.
+
+The state machine has the following states and their corresponding outputs: 
+1. state Red (z = 1).
+2. state Green (z = 0).
+3. state Yellow (z = 0).
+
+State transitions:
+1. From state Red: If x = 0, then transition to state Green. If x = 1, then transition to state Red.
+2. From state Green: If x = 0, then transition to state Yellow. If x = 1, then transition to state Green.
+3. From state Yellow: If x = 0, then transition to state Red. If x = 1, then transition to state Yellow.
+
+module top_module (
+        input clk,
+        input areset,
+        input x,
+        output reg z);

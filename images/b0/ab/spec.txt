@@ -1,0 +1,11 @@
+Implement a register file stage in a pipelined microprocessor architecture that facilitates the write-back phase of instruction execution. The module captures relevant data such as the ALU result, memory read data, and control signals, enabling the processor to update the register state. On a clock edge, if reset is active, it initializes the internal register to zero. Otherwise, it populates the register with the provided data and control signals for the write-back operation, outputting a combined 37-bit value that can be used in subsequent stages of the pipeline.
+module top_module(
+  input clock,
+  input reset,
+  input [15:0] ex_alu_result,
+  input [15:0] mem_read_data,
+  input write_back_en,
+  input [2:0] write_back_dest,
+  input write_back_result_mux,
+  output [36:0] RegMemToWBOut
+);

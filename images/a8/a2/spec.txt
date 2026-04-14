@@ -1,0 +1,10 @@
+Design a circuit that performs data shifting based on the `shift_direction` input while maintaining a count of shifts. The module takes a 16-bit input (`data_in`) and two control signals: a clock (`clk`) and a reset (`rst`). On a rising clock edge, if the reset is active, it initializes the stored values. If shifting left (indicated by `shift_direction` = 4'b0001), the module shifts the current value left and loads the upper bits from `data_in`, while incrementing a shift count. Conversely, for a right shift (4'b0010), it shifts the current value right and loads the lower bits from `data_in`, decrementing the count. If no shift is indicated, the `data_in` is directly passed to the output. The output includes the shifted data, the current shift count, and a computed XOR of the shifted data and shift count, providing an additional functionality that can be useful for various data manipulation tasks.
+module top_module(
+    input clk,
+    input rst,
+    input [3:0] shift_direction,
+    input [15:0] data_in,
+    output reg [15:0] shifted_data_out,
+    output reg [3:0] count_out,
+    output reg xor_out
+);

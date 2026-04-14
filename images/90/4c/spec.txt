@@ -1,0 +1,6 @@
+Design a control unit for an Arithmetic Logic Unit (ALU) that decodes operation codes into corresponding ALU control signals. The module takes a 4-bit ALU operation code (`ALUop`) and a 6-bit function code (`FuncCode`) as inputs. When `ALUop` equals `4'b1111`, it maps specific `FuncCode` values to 4-bit ALU control outputs for various arithmetic and logical operations. For other values of `ALUop`, the output directly reflects the input, allowing for flexibility in control signal selection. The resulting 4-bit output (`ALUCtrl`) determines which operation the ALU will perform based on the input specifications.
+module top_module(
+	output [3:0] ALUCtrl,
+	input  [3:0] ALUop,
+	input  [5:0] FuncCode
+);

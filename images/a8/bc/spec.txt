@@ -1,0 +1,9 @@
+Design a 32-bit Arithmetic Logic Unit (ALU) capable of performing various operations based on a 4-bit control signal (ALUCtr). The ALU can execute addition, subtraction, bitwise AND, OR, and XOR operations, as well as left and right shifts dictated by a portion of the instruction input. Additionally, it includes a conditional output (movz) that indicates when the second input is zero. The resulting computation is output as ALUResult, allowing for flexible integration into larger digital systems.
+module top_module(
+    input [31:0] A1,
+    input [31:0] A2,
+    input [3:0] ALUCtr,
+	 input [31:0] Instr,
+	 output movz,
+    output [31:0] ALUResult
+    );

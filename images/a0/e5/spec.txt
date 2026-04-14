@@ -1,0 +1,7 @@
+Design a synchronous circuit that computes the parity of a 3-stage pipelined input data stream. The module takes an 8-bit input and, upon each clock cycle, shifts the input through three pipeline registers. The output indicates the overall parity bit derived from performing a bitwise XOR operation on the data in the three registers, with the final output asserted to LOW for even parity and HIGH for odd parity. The circuit includes a reset functionality to initialize all registers and the output to zero.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data_in,
+  output reg parity_out
+);

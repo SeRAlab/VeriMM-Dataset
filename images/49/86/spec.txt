@@ -1,0 +1,15 @@
+Design a parallel input/output (PIO) module that interfaces with an external bus, allowing data to be written to and read from a specified address. The module has a 2-bit address input to select the register, supports chip selection and write enable signals, and operates on a clock signal while being reset asynchronously. The output port reflects the data stored in the internal register, while the read data output reflects the contents of the register when accessed at address 0. When the chip is selected and write is enabled, the module updates the internal register with new data provided via the write data input.
+module top_module(
+                    
+                     address,
+                     chipselect,
+                     clk,
+                     reset_n,
+                     write_n,
+                     writedata,
+
+                    
+                     out_port,
+                     readdata
+                  )
+;

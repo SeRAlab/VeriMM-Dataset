@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+
+Design a 32-bit ALU (Arithmetic Logic Unit) that supports addition, subtraction, AND, and OR operations. The operation to be performed is selected using a 2-bit control signal.
+
+Module name:
+    alu_32bit
+
+Input ports:
+    a: 32-bit input A.
+    b: 32-bit input B.
+    control: 2-bit control signal (00 for addition, 01 for subtraction, 10 for AND, 11 for OR).
+
+Output ports:
+    result: 32-bit result of the operation.
+    zero: Flag indicating if the result is zero.
+
+Implementation:
+The module uses an always block to perform the selected operation based on the control signal. The zero flag is set high if the result of the operation is zero.
+
+Give me the complete code.
+
+module alu_32bit(
+    input wire [31:0] a,
+    input wire [31:0] b,
+    input wire [1:0] control,
+    output reg [31:0] result,
+    output wire zero
+    );

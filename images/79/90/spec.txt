@@ -1,0 +1,7 @@
+Design a control register block with a set of flip-flops that store control signals. The module features a parameterized number of control inputs (n) and data inputs (m). On the positive edge of the write enable (we) signal, the control signals are latched into the flip-flops. The output is derived by performing a bitwise AND operation between the stored control signals and the input data signals. This allows selective transmission of data signals based on the state of the control signals, effectively implementing a controlled data gating mechanism.
+module top_module(
+  input [n-1:0] ctrl,
+  input [m-1:0] data,
+  input we,
+  output [m-1:0] out
+);

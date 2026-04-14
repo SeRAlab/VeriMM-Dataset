@@ -1,0 +1,8 @@
+Design a 4-bit barrel shifter with a reset functionality. The module accepts a 4-bit input A and a 2-bit input B that determines the number of bit positions to shift. When the control signal C is high, the input A is shifted right by B positions, and the vacated bits are filled with zeros from the left. Conversely, when C is low, A is shifted left by B positions, filling the vacated bits from the right with zeros. The output S provides the resultant shifted value, which resets to zero when areset is high.
+module top_module(
+    input [3:0] A,
+    input [1:0] B,
+    input C,
+    input areset,
+    output [3:0] S
+);

@@ -1,0 +1,8 @@
+Design a pulse generator that produces a high pulse output for a specific duration based on an input clock and a run signal. When the run signal is active, the module counts clock cycles up to 25,000,000, at which point it sets the pulse output high for one clock cycle before resetting the count to zero. If either the reset or counterReset signals are asserted, the count is cleared, and the pulse output is held low. This module is useful for generating timing signals or specific pulse widths in digital circuits.
+module top_module(
+	input clock,
+	input reset,
+	input run,
+	input counterReset,
+	output reg pulse
+	);

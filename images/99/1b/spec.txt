@@ -1,0 +1,23 @@
+Design a flip-flop based stage of a pipeline, specifically an execution to memory (EX_MEM) register in a CPU architecture. This module captures key control signals and data results from the execution stage during the positive edge of the clock signal, and resets them asynchronously when reset is activated, effectively storing the current state to be used in the subsequent memory stage. It includes signals for branching, jumping, reading and writing to memory, writing back to the register, and transferring data from the arithmetic logic unit (ALU), making it critical for maintaining correct operation and data flow in a pipelined processor design.
+module top_module(
+				input wire clk, rst, 
+				input wire branch, 
+				input wire jump, 
+				input wire MemRead, 
+				input wire MemWrite, 
+				input wire RegWrite, 
+				input wire MemtoReg, 
+				input wire [31:0] alu,
+				input wire [31:0] readdata2, 
+				input wire [4:0] mux,
+
+				output reg branch_out,
+				output reg jump_out,
+				output reg MemRead_out,
+				output reg MemWrite_out,
+				output reg RegWrite_out,
+				output reg MemtoReg_out,
+				output reg [31:0] alu_out,
+				output reg [31:0] readdata2_out, 
+				output reg [4:0] mux_out
+			);

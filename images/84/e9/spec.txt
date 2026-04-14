@@ -1,0 +1,8 @@
+Design a 4-bit binary counter with state machine control that can operate in three modes: IDLE, COUNTING, and LOADING. The module increments the counter on each clock pulse while in the COUNTING state, resets to IDLE on a reset signal, and loads a new value into the counter from the `data_in` input when in the LOADING state. The output, `count`, reflects the current value of the counter register, enabling effective tracking and control of counted values across different operational states.
+module top_module(
+  input clk,
+  input reset,
+  input load,
+  input [3:0] data_in,
+  output reg [3:0] count
+);

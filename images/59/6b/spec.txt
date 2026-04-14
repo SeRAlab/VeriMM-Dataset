@@ -1,0 +1,26 @@
+Please act as a professional Verilog designer.
+
+Implement a 3-bit up/down counter with synchronous reset. The counter should have a clock input (clk), a reset input (reset), an up/down control input (up_down), and a 3-bit output (count). When the up_down input is high (1), the counter should count up. When the up_down input is low (0), the counter should count down. When the reset signal is active (reset = 1), the counter should reset to 0 on the next clock edge.
+
+Module name:
+    UpDownCounter
+
+Input ports:
+    clk: Clock signal.
+    reset: Synchronous reset signal.
+    up_down: Up/Down control signal.
+
+Output ports:
+    count: Current count value.
+
+Implementation:
+The module uses a 3-bit register `count` to store the current count value. The always block triggers on the positive edge of the clock signal. If the reset signal is active, the `count` register is set to 0. If the up_down signal is high, the `count` register is incremented. If the up_down signal is low, the `count` register is decremented.
+
+Give me the complete code.
+
+module UpDownCounter (
+    input clk,
+    input reset,
+    input up_down,
+    output reg [2:0] count
+);

@@ -1,0 +1,6 @@
+Design a circuit that converts a 13-bit floating-point number into an 8-bit signed magnitude representation. The module extracts the exponent and fraction from the input. It generates underflow (oUF) and overflow (oOF) flags based on the extracted exponent and fraction values. If there is an underflow or overflow condition, the output magnitude is set to the fraction; otherwise, it computes the magnitude by right-shifting the fraction based on the exponent. The most significant bit of the output magnitude is set as the sign bit from the input, resulting in an 8-bit signed magnitude output.
+module top_module(
+		input wire [12:0] iFp,
+		output wire [7:0] oSmag,
+		output wire oUF, oOF
+	);

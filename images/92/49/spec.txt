@@ -1,0 +1,6 @@
+Develop a circuit that converts a 16-bit linear input representation into a 10-bit mantissa and a 3-bit exponent for a floating-point format. The module distinguishes between negative and positive numbers; for negative values, it directly assigns the upper bits of the input to the mantissa and sets the exponent to a predefined value. For positive inputs, it evaluates the leading bits to determine the correct normalized values for the mantissa and corresponding exponent, effectively shifting the binary points and adjusting the representation accordingly.
+module top_module(
+  input      [15:0] lin,
+  output reg [9:0] man,
+  output reg [2:0] exp
+);

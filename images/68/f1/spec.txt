@@ -1,0 +1,12 @@
+Design a synchronous FIFO (First In, First Out) buffer with a 64-bit wide data width and a depth of 16 entries. It supports write and read operations controlled by `wr_en` and `rd_en` signals, respectively. The module utilizes a clock signal for synchronization and includes reset functionality to initialize the buffer state. The outputs indicate the current status of the FIFO: `empty` when there are no entries, `full` when the buffer is at capacity, and `valid` to signal that the output data is valid when read. When writing data, it stores the input in the memory and updates the head, while the read operation retrieves the oldest data and moves the tail pointer.
+module top_module(
+  input clk,
+  input [63:0] din,
+  input rst,
+  input wr_en,
+  input rd_en,
+  output reg [63:0] dout, // Changed to reg type
+  output empty,
+  output valid,
+  output full
+);

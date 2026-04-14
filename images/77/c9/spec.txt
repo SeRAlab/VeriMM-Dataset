@@ -1,0 +1,8 @@
+Design a simple memory block with 64 bytes, where each byte is 8 bits wide. The memory supports write operations when the write enable (we) signal is asserted and is triggered on the rising edge of the clock signal (clk). The input address (addr) determines which memory location to write to or read from; specifically, the lower 6 bits of the address are used to select the memory location. The module outputs the value stored at the addressed location (dout) after every clock cycle, regardless of whether a write operation occurs.
+module top_module(
+  input clk,
+  input [15:0] addr,
+  input [7:0] din,
+  input we,
+  output reg [7:0] dout  // Changed 'output' to 'output reg'
+);

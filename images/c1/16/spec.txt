@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module to generate a gated clock signal based on the input clock (`rclk`) and an enable signal (`en`). This module plays a crucial role in power management within a digital integrated circuit (IC) design by allowing parts of the circuit to be selectively turned off to save power when they are not in use. The gated clock output (`clk`) is used to drive the clock input of downstream flip-flops or other synchronous elements, effectively stopping their operation when the enable signal is deasserted. This technique is commonly used in clock gating, a widely adopted method for reducing dynamic power consumption in digital ICs.
+
+Module name:  
+	bw_mckbuf_1p5x
+
+Input ports:
+	rclk (input): This is the reference clock input to the module. It is a singlebit signal (input) that serves as the base clock for the gated clock output. The rclk signal is expected to be a periodic clock signal that drives the synchronous elements in the system.
+	en (input): This is the enable signal for the module. It is a singlebit signal (input) that controls the gating of the rclk signal. When en is high (1), the rclk signal is passed through to the output; when en is low (0), the output is disabled (ideally, it would be held low to prevent any clock pulses from passing through).
+Output ports:
+	clk (output): This is the gated clock output of the module. It is a singlebit signal (output) that carries the gated version of the rclk signal, controlled by the en signal. The clk output is used to drive the clock inputs of downstream synchronous elements, allowing for selective disabling of their operation to save power.
+
+
+Implementation:
+The RTL module bw_mckbuf_1p5x is designed to function as a simple gated clock buffer. It takes two inputs: a reference clock (rclk) and an enable signal (en). The module outputs a clock signal (clk) which is essentially the reference clock gated by the enable signal. This means that the output clock signal is active or present only when the enable signal is high (1). When the enable signal is low (0), the output clock is inactive or low (0), effectively stopping the clock.
+This module employs purely combinational logic, as it does not contain any storage elements like flip-flops or latches. The output is directly determined by the current values of the inputs without any dependency on past input states. The logical operation used here is a simple AND operation between the rclk and en signals. This operation ensures that the output clock signal (clk) follows the reference clock (rclk) only when the enable signal (en) is asserted.
+
+Give me the complete code.
+

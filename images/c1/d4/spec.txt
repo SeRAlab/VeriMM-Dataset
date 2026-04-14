@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform a specific encoding operation based on its current state and the input data signal `d_in`. It transitions through various states upon each clock cycle, depending on the input data and the `enable_i` signal. The primary function of this module to encode the input data `d_in` into a 2-bit output `d_out` according to a predefined state machine logic. This module can be utilized within a larger digital system where data encoding is required, such as in communication systems, data compression algorithms, or any application needing dynamic data encoding based on state machine logic.
+
+Module name:  
+	encoder
+
+Input ports:
+	clk (input): The clock signal. It is essential for the sequential logic of the module, driving the state transitions and the output data updates.
+	rst (input): The reset signal. When asserted (0), it asynchronously resets the module's state to the initial state (3'b000).
+	enable_i (input): The enable signal. It allows the module to perform its encoding operation when high (1). When low (0), the module resets its state to the initial state and disables the encoding operation.
+	d_in (input): The data input signal. It is a singlebit input that influences the module's state transitions and the resulting encoded output.
+Output ports:
+	valid_o (output reg): A signal indicating whether the output data d_out is valid. It mirrors the enable_i signal, indicating validity when the module is enabled.
+	d_out (output [1:0]): The 2bit encoded output data. Its value is determined by the current state of the module and the input data d_in. When enable_i is low, d_out is forced to 2'b00.
+
+
+Implementation:
+The RTL module presented is an encoder that operates based on a state machine logic. It takes a single-bit input d_in and produces a 2-bit output d_out based on the current state and the input. The module is clocked (clk) and has a reset (rst) input for initialization. The operation of the module is also conditional on an enable signal (enable_i). The encoder's behavior is determined by a combination of combinational and sequential logic elements that work together to achieve the desired state transitions and output encoding.
+
+Give me the complete code.
+

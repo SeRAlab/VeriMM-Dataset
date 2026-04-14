@@ -1,0 +1,10 @@
+Design a circuit that performs an 8-bit adder-subtractor operation based on a control signal. The module takes two 8-bit inputs, A and B, and a carry-in input (CIN). When the SUB input is high, the circuit computes the difference (A - B - CIN); otherwise, it computes the sum (A + B + CIN). The result, limited to 8 bits, is provided at the output SUM, and an overflow flag (OVF) is generated to indicate if the operation exceeded the range of 8 bits. The module updates its registers on the rising edge of the clock, ensuring synchronization in its operation.
+module top_module(
+    input [7:0] A,
+    input [7:0] B,
+    input CIN,
+    input SUB,
+    input clk,           // Added clk input
+    output reg [7:0] SUM,
+    output reg OVF
+);

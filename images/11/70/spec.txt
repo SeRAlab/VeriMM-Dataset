@@ -1,0 +1,14 @@
+
+Design a simple WiFi state machine in Verilog that transitions between the following states: 
+1. IDLE
+2. SCAN
+3. CONNECT
+4. DISCONNECT
+
+The state machine should respond to the following inputs:
+- `start_scan`: When asserted, the FSM should transition from IDLE to SCAN.
+- `connect`: When asserted in SCAN state, it should transition to CONNECT.
+- `disconnect`: When asserted in CONNECT state, it should transition to DISCONNECT.
+- Once in DISCONNECT state, it should return to IDLE state on the next clock cycle.
+
+Assume a clock input `clk` and a reset input `reset` that resets the state to IDLE.

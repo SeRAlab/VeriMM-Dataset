@@ -1,0 +1,9 @@
+Design a synchronous RAM module with a 10-bit addressable memory space and a 24-bit wide data bus. The module features a clock input to synchronize read and write operations. When the write enable signal is active, it stores the incoming data at the specified write address. Regardless of the write operation, the data stored at the specified read address is outputted on the data_out signal at the positive edge of the clock.
+module top_module(
+    input clk,
+    input [23:0] data_in,
+    input [9:0] write_addr,
+    input [9:0] read_addr,
+    input write_en,
+    output reg [23:0] data_out
+);

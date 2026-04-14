@@ -1,0 +1,9 @@
+Design a 4-bit adder/subtractor with overflow detection. The module takes two 4-bit inputs, A and B, and a control input Cn. When Cn is low, the circuit performs the addition of A and B; when Cn is high, it effectively subtracts B from A by adding the bitwise negation of B. The output, S, holds the result, and the output V indicates whether an overflow occurred during the operation, which is calculated based on the sign bits of the inputs and the result.
+module top_module(
+    input clk,         // Add clock input
+    input [3:0] A,
+    input [3:0] B,
+    input Cn,
+    output reg [3:0] S,
+    output reg V
+);

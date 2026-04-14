@@ -1,0 +1,20 @@
+Design a control unit for a basic processor architecture that interprets a 6-bit instruction and generates control signals for various operations. The module identifies instruction types such as R-format, load word (lw), store word (sw), branch equal (beq), jump (j), and immediate additions (addi, subi). It outputs control signals for register destination selection, ALU source input selection, memory operations (reading and writing), register writing, branching, jumping, and flushing the instruction fetch stage. The design utilizes combinational logic to evaluate instruction bits and conditions, ensuring the processor executes the appropriate actions based on the input instruction and comparison results.
+module top_module(
+
+	input					[5:0]		Inst,
+	input									Compare,
+	input					[5:0]		Fn,
+
+
+	output	wire	[1:0]		RegDst,
+	output	wire					ALUSrc,
+	output	wire	[1:0]		MemtoReg,
+	output	wire					RegWrite,
+	output	wire					MemRead,
+	output	wire					MemWrite,
+	output	wire					Branch,
+	output	wire	[1:0]		ALUOp,
+	output	wire					Jump,
+	output	wire					Jr,
+	output	wire					FlushIF
+    );

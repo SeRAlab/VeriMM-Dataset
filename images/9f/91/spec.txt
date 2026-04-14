@@ -1,0 +1,8 @@
+Design a simple parallel input/output (PIO) interface that allows data transfer between an 8-bit input port and a 32-bit internal register. The module features reset functionality and is clock-driven. Upon receiving a reset signal, it initializes the stored data and output to zero. When the address input is set to '00', it writes the 8-bit input data to a 32-bit register. When the address input is '01', it outputs the current value of the 32-bit register through the readdata output. This design effectively facilitates basic read and write operations based on specified addresses.
+module top_module(
+  input [1:0] address,
+  input clk,
+  input [7:0] in_port,
+  input reset_n,
+  output reg [31:0] readdata
+);

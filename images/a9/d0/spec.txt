@@ -1,0 +1,20 @@
+Please act as a professional Verilog designer.
+
+Implement a 3-bit ring counter with a synchronous reset. The counter should generate a sequence of ring codes on each positive clock edge. If the reset signal is high, the counter should reset to the initial ring code on the next positive clock edge.
+
+Module name:
+    ring_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+
+Output ports:
+    ring_code: Output 3-bit ring code value.
+
+Implementation:
+Ring Code Logic:
+The module includes a 3-bit register, ring_code, to store the current ring code value.
+On the positive edge of the clock signal (clk) or the positive edge of the reset signal (rst), the module updates the ring code register. If the reset signal (rst) is high, indicating a reset condition, the ring code register is set to the initial ring code value (3'b001). If the reset signal (rst) is low, the ring code register is updated to the next value in the ring code sequence.
+
+Give me the complete code.

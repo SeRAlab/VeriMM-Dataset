@@ -1,0 +1,14 @@
+Design a dual-port random-access memory (RAM) module that allows simultaneous read and write operations from two independent ports. Each port can input a 12-bit address and a 16-bit data value, with separate control signals to enable writing and outputting data. Upon the rising edge of the clock, if the write enable signal is activated for either port, data will be stored at the specified address in memory. When the output enable signal is active for a port, the corresponding data will be read from the memory and passed to the output. This design facilitates concurrent data access and manipulation, enhancing performance in applications requiring rapid memory operations.
+module top_module(
+  input [11:0] address_port1,
+  input [11:0] address_port2,
+  input [15:0] data_in_port1,
+  input [15:0] data_in_port2,
+  input clock,
+  input write_enable_port1,
+  input write_enable_port2,
+  input output_enable_port1,
+  input output_enable_port2,
+  output reg [15:0] data_out_port1,
+  output reg [15:0] data_out_port2
+);

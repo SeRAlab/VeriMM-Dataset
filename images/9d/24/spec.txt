@@ -1,0 +1,7 @@
+Design a synchronous reset signal generator that operates based on an input reset signal. The module captures the input reset signal in a synchronized fashion, using a two-stage flip-flop (the `rst_sync` register) to eliminate any metastability issues. When the synchronized reset signal transitions from low to high, it generates a one-clock-cycle pulse on the `rst_out` output. Additionally, the circuit ensures that `rst_out` remains high only for one clock cycle when the reset condition is met, providing a clean and reliable reset signal to downstream circuits.
+module top_module(
+  input rst_in,
+  input clk,
+  input rst_width,
+  output reg rst_out  // Changed to reg type
+);

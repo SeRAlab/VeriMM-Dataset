@@ -1,0 +1,7 @@
+Design a circuit that converts a 4-bit binary input into its corresponding 4-bit Gray code output. The module utilizes a clock signal to synchronize its operations and indicates the validity of the output through a valid signal, which is set to high when the Gray code output changes from one clock cycle to the next. The most significant bit (MSB) of the Gray code is directly taken from the MSB of the binary input, while the remaining bits are computed using XOR logic between adjacent bits of the binary input.
+module top_module(
+    input clk,
+    input [3:0] bin,
+    output reg [3:0] gray,
+    output reg valid
+);

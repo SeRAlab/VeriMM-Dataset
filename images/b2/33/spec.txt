@@ -1,0 +1,7 @@
+Design a state transition circuit for a finite state machine (FSM) that manages write operations. The module takes a 2-bit input `WSTATE`, representing the current state, and produces a 2-bit output `next_WSTATE`, specifying the next state based on the current state. The FSM has two defined states: `WIDLE`, which indicates no manual write burst, and `WCB0`, which represents the first of four manual write bursts. When in the `WIDLE` state, the next state transitions to `WCB0`. If currently in the `WCB0` state, the outgoing next state remains in the same state, effectively enabling writing operation tracking.
+module top_module(/*AUTOARG*/
+   // Outputs
+   next_WSTATE,
+   // Inputs
+   WSTATE
+   );

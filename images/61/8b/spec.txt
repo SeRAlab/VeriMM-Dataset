@@ -1,0 +1,15 @@
+Implement the Verilog module based on the following description.
+Build a 4-bit logical shift register with synchronous load and clear. The shifter can shift only left by 1 bit.
+
+// Signals are defined as below:
+// (1) load: Loads shift register with data[3:0] instead of shifting. Active high.
+// (2) ena: Chooses whether to shift. Active high. 
+// (3) clr: Clears the register to 0. Active high.
+// (4) q: The contents of the shifter.
+module top_module(
+    input clk,
+    input load,
+    input ena,
+    input clr,
+    input [3:0] data,
+    output reg [3:0] q);

@@ -1,0 +1,17 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit synchronous binary counter with load and enable signals. The counter should increment by 1 on each positive edge of the clock when the enable signal is asserted. If the load signal is asserted, the counter should load the value provided on the input data bus.
+
+Module name:
+    sync_counter
+Input ports:
+    clk: a 1-bit clock signal
+    reset: a 1-bit synchronous reset signal
+    enable: a 1-bit enable signal
+    load: a 1-bit load signal
+    data: a 4-bit input data bus
+Output ports:
+    q: a 4-bit output representing the current count value
+
+Implementation:
+The module uses an always block that is triggered on the positive edge of the clock. Inside the always block, if the reset signal is asserted, the counter is reset to 0. If the load signal is asserted, the counter is set to the value on the data bus. Otherwise, if the enable signal is asserted, the counter is incremented by 1.

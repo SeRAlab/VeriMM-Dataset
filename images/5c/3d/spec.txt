@@ -1,0 +1,9 @@
+Design a circuit that integrates a shift register and an up counter, both of 4 bits, with asynchronous reset and parallel load capabilities. The shift register loads data from `data_in` or shifts its content while incorporating the least significant bit from input `d`. The up counter also loads from `data_in` or counts upwards on each clock cycle. The final output `q` is produced by performing a bitwise AND operation between the current values of the shift register and the up counter, effectively combining their functionalities in a synchronized manner.
+module top_module(
+    input clk,
+    input reset,
+    input ld,
+    input data_in,
+    input [3:0] d,
+    output reg [3:0] q
+);

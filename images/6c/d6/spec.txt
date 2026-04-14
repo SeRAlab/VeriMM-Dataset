@@ -1,0 +1,10 @@
+Design a synchronous 4-bit adder that adds two 4-bit inputs, `a` and `b`, along with a carry-in bit, `cin`. The module outputs a 4-bit sum and a carry-out signal. It features a reset input, `rst`, which clears the sum register and carry-out on activation. The sum is calculated on the rising edge of the clock and incorporates overflow detection by checking the fifth bit of the addition. The output sum reflects the computed result, while the overflow signal indicates if the addition exceeded the 4-bit capacity.
+module top_module(
+    input clk,
+    input rst,
+    input [3:0] a,
+    input [3:0] b,
+    input cin,
+    output reg [3:0] sum,  // Changed to reg to allow assignments in always block
+    output reg cout        // Changed to reg to allow assignments in always block
+);

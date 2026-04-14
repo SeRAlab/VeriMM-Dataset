@@ -1,0 +1,9 @@
+Design a frame completion interrupt generator module that monitors the vertical size of an image stream. It takes in a clock signal and signals indicating the start (tuser) and end (tlast) of frames. The module counts the number of valid vertical lines received in the current frame and compares this count against a specified value (img_vsize). An output interrupt signal (FrmCmp_Irq) is generated when the count matches img_vsize, indicating that the frame has been completely processed. The design ensures proper synchronization and resetting of the count based on the tuser and tlast signals.
+module top_module(
+	(*mark_debug="true"*)input                   s_axis_aclk     ,
+	(*mark_debug="true"*)input                   s_axis_tlast    ,
+	(*mark_debug="true"*)input                   s_axis_tuser    ,
+	(*mark_debug="true"*)input[11:0]			 img_vsize		 ,
+	(*mark_debug="true"*)output                  FrmCmp_Irq      
+		
+);

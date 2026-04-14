@@ -1,0 +1,6 @@
+Design a sign extension unit that takes a 16-bit immediate value and produces a 32-bit output based on the specified extension operation. The module selects one of three extension types based on the 2-bit ExtOp input: for ExtOp = 00, it sign-extends the 16-bit input; for ExtOp = 01, it zero-extends the 16-bit input by prepending 16 zeros; and for ExtOp = 10, it zero-extends by appending 16 zeros to the input.
+module top_module(
+    input [15:0] imm16,
+    output reg [31:0] imm32,
+    input [1:0] ExtOp
+    );

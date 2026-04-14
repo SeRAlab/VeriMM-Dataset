@@ -1,0 +1,20 @@
+Please act as a professional Verilog designer.
+
+Implement an 8-bit shift register with parallel load capability. The module has a load signal that, when asserted, loads an 8-bit input value into the shift register. If the load signal is not asserted, the shift register shifts its contents to the right by one bit on each clock cycle. The module provides an 8-bit output that represents the current contents of the shift register.
+
+Module name:
+    shift_register
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    load: Signal to load the 8-bit input data into the shift register.
+    data_in: 8-bit input data to be loaded into the shift register.
+
+Output ports:
+    data_out: 8-bit output representing the current contents of the shift register.
+
+Implementation:
+The data_out register is triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by !rst_n, the data_out register is cleared to 0.
+If the load signal is asserted (load == 1), the data_out register is updated with the input data (data_in). Otherwise, the contents of the shift register shift to the right by one bit on each clock cycle.

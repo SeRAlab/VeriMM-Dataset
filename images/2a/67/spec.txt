@@ -1,0 +1,12 @@
+
+Design a simple PCIe request handler that receives requests and produces responses. The module should have:
+- An input signal `request` (1 bit) that indicates when a PCIe request is made.
+- An input signal `data_in` (8 bits) that carries the request data.
+- An output signal `ack` (1 bit) that acknowledges the request.
+- An output signal `data_out` (8 bits) that carries the response data.
+- A clock signal `clk` and a reset signal `rst`.
+
+The logic should work as follows:
+- On reset, `ack` should be low and `data_out` should be 0.
+- When `request` is high, the module should acknowledge the request (`ack` goes high) and output the `data_in` on `data_out` after one clock cycle.
+- The `ack` signal should return low after one clock cycle of being high.

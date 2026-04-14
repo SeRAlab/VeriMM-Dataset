@@ -1,0 +1,7 @@
+Implement an Adler-32 checksum generator within a circuit. The module takes an n-bit input and produces a 16-bit output that represents the computed checksum based on the Adler algorithm. It initializes the checksum values and updates them on the rising edge of the enable signal, resetting when the reset signal is active. The module computes the checksum by maintaining two intermediate registers for the sum, while ensuring the values remain within the bounds defined by a modulo operation. Additionally, it provides a mechanism to verify if the current checksum matches the output.
+module top_module(
+  input [n-1:0] in,
+  input rst,
+  input en,
+  output reg [15:0] out
+);

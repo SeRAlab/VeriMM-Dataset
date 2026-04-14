@@ -1,0 +1,10 @@
+Design a memory-based encryption and decryption module with an 8-bit data width. The module uses an 8-bit key and processes the data at specified memory addresses. On a clock pulse, when the 'start' signal is asserted, it first encrypts the incoming 'data_in' using either bitwise negation or XOR with the key based on the least significant bit of the key. The result is stored in the memory at the specified address. Upon the next clock pulse, the module decrypts the data from that address, again depending on the key's least significant bit, outputting either the negated or key-XORed value. The module includes reset functionality to clear outputs and hold memory values.
+module top_module(
+  input clk,
+  input rst,
+  input start,
+  input [7:0] key,
+  input [7:0] address,
+  input [7:0] data_in,
+  output reg [7:0] data_out
+);

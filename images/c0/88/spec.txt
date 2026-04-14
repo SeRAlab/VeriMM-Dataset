@@ -1,0 +1,31 @@
+Please act as a professional verilog designer.
+    
+Implement a module to implement a FIFO buffer with parameterizable depth and data width. Its primary functions include:
+
+Data Storage: Temporarily storing data entries in a sequential manner, allowing for data to be written into and read from the buffer based on the FIFO principle.
+Flow Control: Providing signals to indicate the full and empty states of the FIFO, enabling external control logic to manage data flow efficiently.
+Data Count Tracking: Offering an output that indicates the number of data entries currently stored in the FIFO, which aids in monitoring the buffer's status.
+
+This module plays a crucial role in systems requiring temporary storage and sequential processing of data, such as in communication interfaces, data buffering between asynchronous processes, or in handling bursty data inputs.
+
+Module name:  
+	mfifo
+
+Input ports:
+	i_wstrobe (1 bit): Write strobe signal. When high, it indicates that valid data is present on i_dt and should be written into the FIFO, provided the FIFO is not full.
+	i_dt (WIDTH bits): Data input port. This port carries the data to be written into the FIFO on a positive edge of i_wstrobe.
+	i_renable (1 bit): Read enable signal. When high, it enables reading data from the FIFO, provided the FIFO is not empty.
+	clk (1 bit): Clock input. The FIFO operations are synchronized to the rising edge of this clock signal.
+	rst_x (1 bit): Active low reset signal. When low, it initializes the FIFO's internal counters and status.
+Output ports:
+	o_full (1 bit): Full indicator. This signal goes high when the FIFO is full and cannot accept more data.
+	o_empty (1 bit): Empty indicator. This signal goes high when the FIFO is empty and there is no data to read.
+	o_dt (WIDTH bits): Data output port. This port outputs the data read from the FIFO.
+	o_dnum (RANGE+1 bits): Data count output. This signal indicates the number of data entries currently stored in the FIFO.
+
+
+Implementation:
+The RTL module presented is designed to implement a parameterizable FIFO (First-In, First-Out) memory buffer. This FIFO is capable of storing and retrieving data elements based on the clock (clk) signals, with the ability to parameterize the width (WIDTH) of the data and the depth (DEPTH) of the FIFO. The FIFO operates on a synchronous reset (rst_x) and uses a clock signal (clk) for its operations. The module interfaces include signals for writing data (i_wstrobe, i_dt), reading data (i_renable, o_dt), and status signals (o_full, o_empty, o_dnum).
+
+Give me the complete code.
+

@@ -1,0 +1,10 @@
+Design a simple 8-bit calculator capable of performing four basic arithmetic operations: multiplication, subtraction, addition, and division, selected by a 2-bit operation input. The module takes two 8-bit inputs, `num1` and `num2`, and produces an 8-bit output `result`. It also includes an overflow detection mechanism, setting the `overflow` output when the result exceeds the 8-bit limit (255) after operations. The calculator is synchronous, with results updated on the rising edge of the clock, and it has a reset functionality to clear outputs.
+module top_module(
+  input clk,
+  input reset,
+  input [1:0] op,
+  input [7:0] num1,
+  input [7:0] num2,
+  output reg [7:0] result,
+  output reg overflow
+);

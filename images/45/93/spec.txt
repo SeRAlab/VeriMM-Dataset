@@ -1,0 +1,11 @@
+Design a circuit that processes a binary vector (bv) based on a valid signal (bv_valid), utilizing a clock (clk) for synchronization. When bv_valid is asserted, the module checks the least significant bit of the binary vector; if it is set, it outputs the original vector (bv) and the current count. If the least significant bit is not set, it shifts the vector right by a specified range (defined by range_end) and increments the count by that range. Additionally, the module manages valid output signals (bv_out_valid) and ensures that outputs are reset to zero when bv_valid is deasserted. This implementation effectively creates a counting mechanism that acts upon the state of the input vector, adjusting the output as necessary.
+module top_module(
+reset,
+clk,
+bv_valid,
+bv,
+count,
+bv_out_valid,
+bv_out,
+count_out
+);

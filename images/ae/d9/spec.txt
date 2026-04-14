@@ -1,0 +1,7 @@
+Design a Moore state machine-based sequence detector that monitors a 2-bit input signal, `ain`, and produces a single output, `yout`, based on its current state. The module transitions through a series of six defined states in response to the input and a clock signal. It resets to the initial state (S0) on a reset signal. The output signals are determined by specific states: `yout` is set according to predefined conditions, including toggling its value in state S3. As the state machine processes the input combinations, it moves to next states that depend on the input encountered. This module effectively detects specific input sequences and provides an output indicative of these detected patterns.
+module top_module(
+    input clock,
+    input [1:0] ain,
+    input reset,
+    output reg yout
+    );

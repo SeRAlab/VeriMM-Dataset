@@ -1,0 +1,16 @@
+Design a translation lookaside buffer (TLB) module that manages address translations in a virtual memory system. It receives a virtual address and attempts to match it with stored entries to produce a corresponding physical address, indicating a TLB hit when a match occurs. If no match is found, and both virtual memory (vm_enable) and enable signals are active, it flags that translation is required. The module also provides functionality to flush and reset the TLB entries, with the ability to store new translations once they are complete. The TLB can hold up to four entries and uses a state machine to manage lookup and translation processes efficiently.
+module top_module(
+	input clk,
+	input reset,
+	input flush,
+
+	input vm_enable,
+	input enable,
+	input [31:0] virtual_address,
+	output reg [31:0] physical_address,
+
+	output reg tlb_hit,
+	output reg translation_required,
+	input [31:0] translated_address,
+	input translation_complete
+);

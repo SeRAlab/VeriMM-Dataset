@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) for detecting a specific bit pattern (101) in a sequential data stream. The module utilizes a 3-bit shift register to store incoming data as it shifts in new bits on each clock cycle. Upon detecting the full pattern while in the IDLE state, it transitions to STATE1, sets a detected output high, and then moves to STATE2 before returning to IDLE. The module resets both the state and shift register to their initial conditions when the reset signal is activated. The primary purpose is to signal when the specified pattern is detected in the input data stream.
+module top_module(
+  input clk,
+  input reset,
+  input data,
+  output reg detected
+);

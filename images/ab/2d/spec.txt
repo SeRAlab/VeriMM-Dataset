@@ -1,0 +1,9 @@
+Design a 256x8 static RAM module with a write-enable feature and address tagging. The module operates on the rising edge of the clock, resetting its address register, data output (doq), and tag validity (tag_v) when rst is high. On each clock cycle, if tag_v is asserted, it outputs the data stored at the specified address; otherwise, it stores incoming data at the address specified by addr if tag_v is set, enabling updates to the memory. This design allows for conditional data reading and writing based on the validity of the tag, facilitating controlled access to the memory array.
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] di,
+    input [7:0] addr,
+    output reg [7:0] doq,
+    output reg tag_v
+);

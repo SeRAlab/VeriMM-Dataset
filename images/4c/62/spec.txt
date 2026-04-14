@@ -1,0 +1,7 @@
+Design a simple 8-bit wide calculator capable of performing four arithmetic operations based on a 2-bit operation code (op). The operations include addition, subtraction, multiplication, and division. The inputs consist of two 8-bit numbers (num1 and num2), and the module outputs the 8-bit result of the selected operation. Specifically, when op is 00, it performs addition; for 01, it performs subtraction; for 10, it multiplies num1 with num2 and captures the upper 8 bits of the result; and for 11, it divides the upper 8 bits of the multiplication result by num2, returning 0 if the divisor is zero.
+module top_module(
+    input [1:0] op,
+    input [7:0] num1,
+    input [7:0] num2,
+    output [7:0] result
+);

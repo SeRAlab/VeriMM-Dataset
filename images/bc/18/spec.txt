@@ -1,0 +1,8 @@
+Design a pulse generator that produces a single pulse output for a specified duration when triggered. The module takes in a clock signal, a trigger input, a reset input, and an 8-bit wide duration value. Upon receiving a trigger, it starts counting down from the specified duration, keeping the output pulse high during the countdown. If reset is activated, the module will clear the counter and reset the output to low. The output goes low once the countdown completes or a reset occurs. This functionality makes it suitable for timing applications where precise pulse generation is required.
+module top_module(
+  input wire clk,
+  input wire in_trigger,
+  input wire in_reset,
+  input wire [7:0] pulse_duration,
+  output reg out_pulse  // Change to reg type
+);

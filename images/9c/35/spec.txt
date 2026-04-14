@@ -1,0 +1,10 @@
+Design a 32-bit Arithmetic Logic Unit (ALU) that performs various arithmetic and logical operations based on the ALUOP control signals. The ALU supports addition, subtraction, and bitwise OR operations, with the output determined by the ALUOP inputs. It also provides several comparison outputs, including equality, greater than, less than, and not equal, allowing for conditional logic based on the comparison results. Additionally, a separate flag for signed less than unsigned comparisons is included, enhancing the unit’s functionality for both signed and unsigned operations.
+module top_module(
+    input [31:0] ALU_A,
+    input [31:0] ALU_B,
+    input [1:0] ALUOP,
+	 input sltiu,
+    output reg[31:0] ALU_C,
+    output ALU_ZERO,G, L, G_E, L_E, NE,
+	 output less
+    );

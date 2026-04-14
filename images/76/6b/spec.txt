@@ -1,0 +1,8 @@
+Design a module that integrates a 2-to-4 multiplexer and a 4-to-16 decoder. The multiplexer selects one of the four 1-bit inputs based on a 2-bit select signal, while the decoder generates a 16-bit output, indicating one of the 16 outputs based on a 2-bit selection input, provided an enable signal is active. The final output combines the results from the multiplexer and the decoder, ensuring that the output reflects the selected input either from the multiplexer or the decoder based on the conditions defined.
+module top_module(
+    input [1:0] sel, // 2-bit select input for the multiplexer
+    input [3:0] in, // 4-bit input for the multiplexer
+    input enable, // Enable input for the decoder
+    input [1:0] select, // 2-bit select input for the decoder
+    output [3:0] out // 4-bit output
+);

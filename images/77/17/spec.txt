@@ -1,0 +1,8 @@
+Design a basic arithmetic calculator that performs addition, subtraction, multiplication, and division on two 8-bit inputs (a and b) based on a 2-bit operation selection (op). The module includes functionalities to reset its output, as well as to determine overflow, underflow, and whether the result is negative. On receiving a reset signal, the module clears the result and status flags. During operation, the result is computed according to the specified operation, with division handling a zero denominator and overflow conditions.
+module top_module(
+  input clk, rst,
+  input [1:0] op,
+  input [7:0] a, b,
+  output reg [7:0] result,
+  output reg overflow, underflow, negative
+);

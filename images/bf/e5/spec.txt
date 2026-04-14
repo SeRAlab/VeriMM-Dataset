@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a 2-to-1 multiplexer with a parameterizable data width. Its primary objective to select between two input data signals based on a selection signal and output the chosen data. This module is a fundamental building block in digital systems, used in various applications such as data routing, function implementation, and resource sharing. The ability to parameterize the size of the inputs and output makes this module versatile and adaptable to different data widths, enhancing its utility in a broad system context where data paths of varying sizes may need to be multiplexed.
+
+Module name:  
+	dp_mux2es
+
+Input ports:
+	in0 [SIZE1:0]: The first input data port of the multiplexer. It is a vector with a width defined by the parameter SIZE. This input will be selected when the sel signal is low (0).
+	in1 [SIZE1:0]: The second input data port of the multiplexer. It has the same width as in0, defined by SIZE. This input will be selected when the sel signal is high (1).
+	sel: The selection input signal. It is a singlebit input that determines which of the two data inputs (in0 or in1) is forwarded to the output. A low value (0) selects in0, while a high value (1) selects in1.
+Output ports:
+	dout [SIZE1:0]: The output data port of the multiplexer. It outputs the data selected by the sel signal. The width of this port is defined by the parameter SIZE, matching the width of the input data ports.
+
+
+Implementation:
+The RTL module dp_mux2es is designed as a 2-to-1 multiplexer with a parameterizable data width, denoted by the SIZE parameter. This multiplexer selects between two input data signals, in0 and in1, based on the value of the selection signal sel, and outputs the selected data through dout. The module is purely combinational, as it does not contain any clocked elements or maintain internal state across clock cycles.
+The core logic of the module is encapsulated within an always block that is sensitive to changes in the sel, in0, and in1 signals. This ensures that any change in these signals will trigger the evaluation of the logic within the block. The selection mechanism is implemented using a case statement on the sel signal. There are two explicit cases:
+When sel is 1 (1'b1), dout is assigned the value of in1.
+When sel is 0 (1'b0), dout is assigned the value of in0.
+Additionally, a default case is defined to handle any unexpected values of sel. In this case, if in0 and in1 are equal, dout is assigned the value of in0 (or in1, since they are equal). If in0 and in1 are not equal, dout is assigned a value of all 'x', which represents an indeterminate state in Verilog. This default case is somewhat unconventional for a binary selection signal like sel, as sel is expected to be either 0 or 1 in typical scenarios. The inclusion of this default case adds robustness to the design by defining behavior for unexpected conditions.
+
+Give me the complete code.
+

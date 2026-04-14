@@ -1,0 +1,8 @@
+Design a pulse generator that produces a pulse signal for a specified duration, controlled by a clock signal. The module takes an input clock (clk), a reset signal, an enable signal, and a 12-bit duration value. When enabled and upon the rising edge of the clock, the generator increments a count until it reaches the specified duration, during which it outputs a high pulse signal. If the duration is met or if the module is reset or disabled, the pulse output is set to low, and the count resets. This design is useful for generating timed pulse signals in various digital applications.
+module top_module(
+  input clk,
+  input reset,
+  input enable,
+  input [11:0] duration,
+  output reg pulse
+);

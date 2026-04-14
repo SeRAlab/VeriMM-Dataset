@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a First-In-First-Out (FIFO) memory buffer, specifically tailored for use within a USB host controller context, although its application can be generalized to any system requiring FIFO functionality. Its primary functions include:
+
+Data Buffering: Temporarily storing data bytes that are either incoming from or outgoing to a USB device, ensuring smooth data flow even when the rates of data production and consumption differ.
+Flow Control: Providing mechanisms to prevent data overflow and underflow through full and empty flags, ensuring reliable data communication.
+Synchronization: Aligning data streams between different clock or processing domains within the USB host system by serving as an elastic buffer.
+
+Module name:  
+	usbh_fifo
+
+Input ports:
+	clk_i: Clock input (type: input). The primary clock signal that synchronizes the FIFO's operations.
+	rst_i: Reset input (type: input). A signal that initializes the FIFO's internal state, clearing the buffer and resetting pointers when asserted.
+	data_i: Data input (type: input, 8 bits). The bytewide data to be pushed into the FIFO.
+	push_i: Push control input (type: input). A signal that, when asserted, indicates that the data on data_i should be stored into the FIFO.
+	pop_i: Pop control input (type: input). A signal that, when asserted, indicates that data should be read from the FIFO.
+	flush_i: Flush control input (type: input). A signal to clear the FIFO's contents and reset its state when asserted.
+Output ports:
+	full_o: Full flag output (type: output). A signal that indicates the FIFO is full and cannot accept more data.
+	empty_o: Empty flag output (type: output). A signal that indicates the FIFO is empty and contains no data to be read.
+	data_o: Data output (type: output, 8 bits). The bytewide data being read from the FIFO.
+
+
+Implementation:
+The usbh_fifo module is a Verilog implementation of a First-In-First-Out (FIFO) memory buffer, designed to operate within a USB host context. This FIFO is parameterizable in terms of data width (WIDTH) and depth (DEPTH), making it versatile for various data buffering needs. The module interfaces with external logic through control signals (push_i, pop_i, flush_i), data signals (data_i, data_o), and status signals (full_o, empty_o). The core functionality revolves around managing data flow into and out of the FIFO, ensuring data integrity and proper synchronization under different operational scenarios.
+
+Give me the complete code.
+

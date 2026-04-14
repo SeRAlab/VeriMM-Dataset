@@ -1,0 +1,10 @@
+Design a simple binary calculator capable of performing addition and subtraction operations on two 4-bit operands. The module utilizes a clock and reset mechanism to synchronize operations; upon receiving a reset signal, it initializes the result and overflow indicators to zero. When the reset is not active, the operation is determined by a single-bit control signal: if the signal is low, the module sums the two operands and checks for overflow beyond the maximum 4-bit value (15), and if the signal is high, it subtracts the second operand from the first while checking for underflow below zero. The results and overflow status are updated on the rising edge of the clock.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] operand1,
+    input [3:0] operand2,
+    input operation,
+    output reg [3:0] result,
+    output reg overflow
+);

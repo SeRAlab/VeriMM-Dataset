@@ -1,0 +1,5 @@
+Design a thermometer display module that converts a binary input value into a one-hot encoded output representation. The input `value` is a multi-bit signal with a width defined by `LOGWORD`, which corresponds to the maximum value that can be represented. The output `gauge` will have a width of `WORD`, providing a visual representation of the input's value as a one-hot encoded signal. Each bit of the output represents whether the corresponding level has been reached. The additional logic shifts the one-hot value based on the position of the highest active bit in the input value, indicating the level of activation in a thermometer-like fashion.
+module top_module(
+  input [LOGWORD-1:0] value,
+  output reg [WORD-1:0] gauge  // Change wire to reg, so it can be assigned in always block
+);

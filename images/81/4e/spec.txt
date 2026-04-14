@@ -1,0 +1,20 @@
+Design a digital interface module for a digital-to-analog converter (DAC) configuration. This module takes a clock input and manages the transfer of data between a source DAC and a destination DAC. It includes control and status signals, with the status output containing a predefined RP_ID in its upper 8 bits. On each clock cycle, it enables the source DAC and transfers 32-bit data, overflow status, and validity signals from the source DAC to the destination DAC, effectively acting as a data handler or bridge between two DACs.
+module top_module(
+
+  clk,
+
+  
+  control,
+  status,
+
+  
+  src_dac_en,
+  src_dac_ddata,
+  src_dac_dunf,
+  src_dac_dvalid,
+
+  dst_dac_en,
+  dst_dac_ddata,
+  dst_dac_dunf,
+  dst_dac_dvalid
+);

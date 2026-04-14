@@ -1,0 +1,9 @@
+Design a D flip-flop with additional control signals for data enable and power management. The flip-flop samples the input D on the rising edge of the CLK signal when DATA_EN is asserted. If DATA_EN is deasserted and VPWR is high, the output Q is reset to low, while if VGND is asserted, Q is set to high, providing a mechanism for explicit control over the output state during specific conditions. This structure allows for flexible operation in digital circuits, particularly in power-sensitive designs.
+module top_module(
+    input wire D,
+    input wire DATA_EN,
+    input wire VPWR,
+    input wire VGND,
+    input wire CLK,
+    output reg Q
+);

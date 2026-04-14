@@ -1,0 +1,8 @@
+Design a 2-to-1 multiplexer with a reset functionality and a clock input. The multiplexer selects between two 2-bit input data signals, `dataIn0` and `dataIn1`, based on the value of the `selector` signal; when `selector` is 0, the output takes the value of `dataIn0`, and when it is 1, it takes the value of `dataIn1`. The selected output is captured and transferred to `dataOut` on the rising edge of the `clk` signal, unless the `reset` signal is high, in which case `dataOut` is set to zero.
+module top_module(
+    output reg [1:0]dataOut,
+    input [1:0]dataIn0,
+    input [1:0]dataIn1,
+    input selector,
+    input clk,
+    input reset);

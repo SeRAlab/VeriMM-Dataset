@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+
+Design a 3-bit synchronous counter with an up/down control signal. When the control signal is high, the counter counts up; when the control signal is low, the counter counts down.
+
+Module name:
+    UpDownCounter
+
+Input ports:
+    clk: Clock signal.
+    rst: Synchronous reset signal (active high).
+    up_down: Control signal for counting direction (1 for up, 0 for down).
+
+Output ports:
+    count: 3-bit output representing the counter value.
+
+Implementation:
+The counter is a simple 3-bit register that either increments or decrements its value on each positive edge of the clock signal, based on the value of the up_down signal. The counter resets to zero on the assertion of the reset signal.
+
+Give me the complete code.
+
+module UpDownCounter (
+    input clk,
+    input rst,
+    input up_down,
+    output reg [2:0] count
+);

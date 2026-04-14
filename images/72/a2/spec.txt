@@ -1,0 +1,14 @@
+Design a synchronous SRAM controller that manages read and write operations to a SRAM memory module. The controller uses a clock signal to synchronize data transfers and operates based on a reset and a write enable signal. When write_enable is high, data from the input is stored in the SRAM, while the data bus is placed in the appropriate state to transmit this data. Conversely, when write_enable is low, the controller reads data from the SRAM into the output. It also controls chip enable and output enable signals to manage access to the SRAM, ensuring it functions correctly during reset conditions.
+module top_module(
+    input clk,
+    input reset,
+    input write_enable,
+    input [15:0] address,
+    input [15:0] data_in,
+    output reg [15:0] data_out,
+    output reg sram_ce_n,
+    output reg sram_oe_n,
+    output reg sram_we_n,
+    output reg [15:0] sram_addr,
+    inout [15:0] sram_dq
+);

@@ -1,0 +1,10 @@
+
+Design a simple interrupt controller that allows a processor to handle multiple interrupt requests. The controller should have the following inputs:
+- `irq`: A 4-bit input that represents 4 different interrupt requests.
+- `ack`: A 1-bit input that signifies acknowledgment from the processor.
+
+The controller should have the following outputs:
+- `int_out`: A 4-bit output that indicates which interrupt has been acknowledged.
+- `int_active`: A 1-bit output that indicates if any interrupt is currently active.
+
+The controller should prioritize interrupts such that the highest priority interrupt (the least significant bit) is handled first. When an interrupt is acknowledged, it should be cleared from the active interrupts.

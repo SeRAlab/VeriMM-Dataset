@@ -1,0 +1,10 @@
+Design a 32-bit counter module that is controlled via a bus interface. The counter increments its value on each write operation directed to a specific address (0x1000) within the address space, while managing its state through a simple finite state machine. It starts in an idle state and transitions to a waiting state upon a valid write, where it checks for address repetition to trigger the increment operation. The module incorporates reset functionality to initialize the count and state. Additionally, it provides a signal indicating the bus access based on the address range to facilitate communication with other components in the system.
+module top_module(
+    input wire          BUS_CLK,
+    input wire          BUS_RST,
+    inout wire  [31:0]  BUS_ADD,
+    inout wire  [31:0]  BUS_DATA,
+    input wire          BUS_RD,
+    input wire          BUS_WR,
+    output reg  [31:0]  count
+);

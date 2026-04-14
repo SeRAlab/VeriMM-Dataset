@@ -1,0 +1,8 @@
+Design a 4-bit universal shift register that supports different shift operations and parallel loading based on a mode selector. The module takes a clock signal for synchronous operation, a reset signal to initialize the register, a 2-bit MODE input to determine the operation (serial right shift, serial left shift, or parallel load), and a 4-bit DATAIN input for data manipulation. The current state of the shift register is available on the DATAOUT output. When the reset signal is activated, the register clears to zero.
+module top_module(
+  output reg [3:0] DATAOUT,
+  input clock,
+  input reset,
+  input [1:0] MODE,
+  input [3:0] DATAIN
+);

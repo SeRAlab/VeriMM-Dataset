@@ -1,0 +1,9 @@
+Design a 4-bit pipelined ripple carry adder that computes the sum of two 4-bit inputs, A and B, with an input carry, Cin. The design is structured in three pipeline stages to process the inputs and produce a 4-bit sum output and a carry-out signal, Cout. In the first stage, the inputs are registered for stable processing. The second stage performs the addition using a series of full adders, propagating carry from one bit to the next. The final stage outputs the calculated sum and carry-out, effectively allowing for increased throughput in systems requiring multiple consecutive additions.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input Cin,
+    input clk,  // Added clk input
+    output reg [3:0] Sum,
+    output reg Cout
+);

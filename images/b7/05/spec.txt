@@ -1,0 +1,8 @@
+Implement a 4-bit shift register that operates on the rising edge of the clock signal. When the load signal is asserted, the shift register captures the 4-bit input data and subsequently shifts this data through four stages, with the final output being the value from the last register stage. When the load signal is not asserted, the register performs a right shift operation, effectively discarding the least significant bit and inserting a zero into the most significant bit position. The module includes a valid output that indicates when new data is present after a load operation.
+module top_module(
+    input clk,
+    input [3:0] in,
+    input load,
+    output reg [3:0] out,
+    output reg valid
+);

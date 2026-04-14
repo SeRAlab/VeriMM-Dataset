@@ -1,0 +1,6 @@
+Design a configurable synchronous register module that operates based on a clock signal and incorporates asynchronous reset and set functionalities. The module can hold a width of 32 bits (modifiable) and supports an enable signal to load data from an input. It has parameters to define reset and set values, enabling it to yield specific outputs when triggered by the reset or set signals. The module effectively manages its output based on various conditions: it resets to a predefined value, sets to a logic high state, or loads new data when enabled, ensuring robust control over data storage within digital circuits.
+module top_module(
+    input Clock, Reset, Set, Enable,
+    input [Width-1:0] In,
+    output reg [Width-1:0] Out
+);

@@ -1,0 +1,14 @@
+Design a dual-port RAM module that allows simultaneous read and write operations on two separate clock domains, clk_a and clk_b. Each port can write to and read from a 16-bit addressable memory space using 9-bit data words. The module includes enable and write enable signals for each port to control access to the memory, ensuring that data can be written or read based on the specified conditions. The memory operates in a "write first" mode, meaning that writes to the same address are immediately reflected in subsequent reads.
+module top_module(
+    input wire clk_a,
+    input wire clk_b,
+    input wire [13:0] addr_a,
+    input wire [13:0] addr_b,
+    input wire [8:0] din_a,
+    input wire [8:0] din_b,
+    input wire we_a,
+    input wire we_b,
+    input wire en,
+    output reg [8:0] dout_a,
+    output reg [8:0] dout_b
+);

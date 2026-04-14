@@ -1,0 +1,12 @@
+module parallel_load_register(
+    input clk,
+    input load,
+    input [7:0] data_in,
+    output reg [7:0] data_out
+    );
+    
+    always @(posedge clk) begin
+        if (load)
+            data_out <= data_in;
+    end
+endmodule

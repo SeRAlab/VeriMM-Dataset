@@ -1,0 +1,10 @@
+Design a FIFO (First-In-First-Out) buffer capable of storing up to 32 entries of 30-bit wide data. The module features asynchronous clear and operates on a clock edge. It includes inputs for read and write requests and manages data flow by updating the output and the count of used words in the buffer. When a write request is received and the buffer is not full, new data is written, and when a read request is made and the buffer is not empty, data is read from the front of the buffer. The module maintains the state of the buffer using registers to track the number of entries currently in use and the most recent output data.
+module top_module(
+    aclr,
+    clock,
+    data,
+    rdreq,
+    wrreq,
+    q,
+    usedw
+);

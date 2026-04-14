@@ -1,0 +1,6 @@
+Design a module that serves as a data forwarding unit and memory interface for a CPU. This module takes inputs from an execution stage of a CPU pipeline, such as the result of an ALU operation and control signals for writing back to the register file. It conditionally forwards data from the write-back stage based on a control signal and checks for routing conflicts using the destination register address. The module also manages memory read/write operations by outputting the appropriate data address, data read signals, and handle resets. It ensures that the pipeline can continue to operate smoothly even in the presence of stalls, maintaining data integrity and flow between different stages of the CPU.
+module top_module(rst, clk, cpu_stall, ex_c_rfw, ex_c_wbsource, ex_c_drw,
+		ex_alu_r, ex_rfb, ex_rf_waddr, ex_jalra, ex_rt,
+		wb_wdata, p_c_rfw, p_c_wbsource, p_alu_r, dmem_data,
+		p_rf_waddr, p_jalra, dmem_addr, dmem_drw, dmem_in,
+		p_dout);

@@ -1,0 +1,12 @@
+Design a 16-bit arithmetic and logic unit (ALU) that performs various operations based on a control signal. The ALU supports operations including bitwise AND, OR, addition, subtraction, set less than (slt), and various shifts (logical and arithmetic). The output is selected based on the 8-bit control input, and the module also generates status flags for negative (n), zero (z), carry (c), and overflow (v) conditions. This design can be integrated into larger digital systems requiring arithmetic and logical computations.
+module top_module(
+    input clk,
+    input [15:0] a,
+    input [15:0] b,
+    input [7:0] ctrl,
+    output reg [15:0] out,  // Change 'wire' to 'reg'
+    output n,
+    output z,
+    output c,
+    output v
+);

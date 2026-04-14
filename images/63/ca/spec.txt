@@ -1,0 +1,10 @@
+Design a dual-port RAM module that supports simultaneous read and write operations. The module allows data to be written to a specified address in memory when write enable (wr_ena) is asserted, and it allows data to be read from a specified address when read enable (rd_ena) is asserted. It is parameterized by depth, indicating the number of memory locations (1024), and width, specifying the size of each memory location in bits (8). The memory is implemented as a register array, facilitating efficient data storage and retrieval in digital systems.
+module top_module(
+  input clk, // Added clock input
+  input wr_ena,
+  input [log2(depth)-1:0] wr_addr,
+  input [width-1:0] wr_data,
+  input rd_ena,
+  input [log2(depth)-1:0] rd_addr,
+  output reg [width-1:0] rd_data // Changed output to reg type
+);

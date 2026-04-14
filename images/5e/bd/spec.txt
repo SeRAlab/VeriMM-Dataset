@@ -1,0 +1,7 @@
+Design a three-port register file with asynchronous reset functionalities. The module allows simultaneous read and write operations, supporting two write addresses (ADDR_IN1 and ADDR_IN2) with corresponding data inputs (D_IN1 and D_IN2) and write enable signals (WE1 and WE2). It has three output addresses (ADDR_OUT1, ADDR_OUT2, and ADDR_OUT3) to access stored data in a memory array of configurable size and width (depth and data_width parameters). On every positive clock edge, if reset is low, all registers are cleared; otherwise, the specified data is written to the chosen addresses while the specified outputs reflect the current values stored in the memory array.
+module top_module(CLK, rst_n,
+                     ADDR_IN1, D_IN1, WE1,
+                     ADDR_IN2, D_IN2, WE2,
+                     ADDR_OUT1, ADDR_OUT2, ADDR_OUT3,
+                     D_OUT1, D_OUT2, D_OUT3
+                     );

@@ -1,0 +1,16 @@
+Design a GPIO (General Purpose Input/Output) controller module compatible with the AXI interface. The module allows for reading and writing 12-bit data to a memory array through the AXI protocol. It generates a read response with valid data based on incoming read address and readiness signals. Upon a valid write command, it updates the memory at the specified address and drives the 4-bit `gpio_io_t` output with the least significant bit of the written data. Additionally, the module has an active low reset input to initialize the GPIO output.
+module top_module(
+    input s_axi_aclk,
+    input s_axi_aresetn,
+    input s_axi_arvalid,
+    input [2:0]s_axi_araddr,
+    input s_axi_rready,
+    output [11:0]s_axi_rdata,
+    output s_axi_rvalid,
+    input s_axi_awvalid,
+    input [2:0]s_axi_awaddr,
+    input s_axi_wvalid,
+    input [11:0]s_axi_wdata,
+    input s_axi_bready,
+    output reg [3:0]gpio_io_t
+);

@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+
+Implement a module for detecting a specific sequence. The 1-bit input signal seq_in is continuously input, triggered by clk. When "seq_in" changes from 1 to 0 to 1 to 0 (1010), this is considered as a "sequence_detected". The indicating signal seq_out should be 1 at the end of the sequence, and then return to 0 until the corresponding sequence appears again. For example, if seq_in is 10101010(8 cycles), the seq_out is 00001001.
+
+Module name:  
+    sequence_detect
+
+Input ports：
+    clk: Clock signal.
+    rst_n: Reset signal (active low).
+    seq_in: One-bit input signal.
+
+Output ports：
+    seq_out: Output signal indicating the presence of the sequence.
+
+Implementation:
+Declare the module sequence_detect with input and output ports as specified.
+Declare a register state to keep track of the current state of the sequence detection process.
+Inside an always block, sensitive to the positive edge of the clk signal and the negative edge of the rst_n signal, implement the logic for sequence detection and output generation.
+In the reset condition (~rst_n), set the state register to the initial state and set the seq_out output to 0, indicating no sequence. Continue the detection process for the remaining states. For each state, check the value of seq_in and transition to the next state accordingly. If the current state satisfies the last state of a "sequence", set seq_out to 1, indicating the end of a sequence. Otherwise, set seq_out to 0.
+
+Give me the complete code.
+
+module sequence_detect(    
+    input clk,
+    input rst_n,
+    input seq_in,
+    output reg seq_out
+);

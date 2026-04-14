@@ -1,0 +1,9 @@
+Design a circuit for an unsigned non-restoring divider that performs division of N-bit wide unsigned integers. This module takes two inputs: a dividend and a divisor, along with clock and reset signals. On each clock edge, the module computes the quotient and remainder by executing a series of bit-shifts and comparisons, effectively implementing a division algorithm over multiple cycles. The results of the division are available as outputs, with the quotient and remainder being stored and updated in internal registers throughout the operation. The circuit handles cases where the divisor may be larger than the dividend as well.
+module top_module(
+  input [N-1:0] dividend,
+  input [N-1:0] divisor,
+  input clk,
+  input rst,
+  output reg [N-1:0] quotient,
+  output reg [N-1:0] remainder
+);

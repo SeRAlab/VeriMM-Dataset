@@ -1,0 +1,7 @@
+Design a circuit that functions as a 100-bit shift register with load and enable options for left and right shifting. The module takes a clock input and a load signal to initialize the register with the provided data. When the load signal is inactive, the enable inputs (ena[0] for left shift and ena[1] for right shift) determine the shifting direction of the contents within the shift register. The output is driven by a multiplexer that selects between the current state of the shift register or its shifted versions based on the enable signals. The design allows for flexible data manipulation and storage in parallel or serial form.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output reg [99:0] q);

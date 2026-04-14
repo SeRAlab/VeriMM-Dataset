@@ -1,0 +1,6 @@
+Design a glitch-free multiplexer that selects one of multiple input clock signals based on a selection input. The module incorporates multiple flip-flops that hold the state of each input clock and outputs the selected clock signal without introducing glitches during selection changes. The output clock (`clk_out`) is driven by the currently selected input clock (`clk_in[sel]`), ensuring smooth transitions between input clock sources. This design is particularly useful in clock domain crossing situations to maintain signal integrity.
+module top_module(
+  input [n-1:0] clk_in,
+  input [log2(n)-1:0] sel,
+  output reg clk_out
+);

@@ -1,0 +1,18 @@
+Please act as a professional Verilog designer.
+
+Implement a 5-bit Gray code counter. The module generates a 5-bit Gray code sequence based on the current value of a 5-bit binary counter.
+
+Module name:
+    gray_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Synchronous reset signal to initialize the counter to 5'b00000.
+
+Output ports:
+    gray: Output signal representing the current Gray code value.
+
+Implementation:
+The counter is defined as reg [4:0] bin and initialized to 5'b00000. On each rising edge of the clock, if rst is asserted, bin is reset to 5'b00000. Otherwise, bin is incremented by 1. The Gray code output is generated as gray = bin ^ (bin >> 1).
+
+Give me the complete code.

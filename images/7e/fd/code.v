@@ -1,0 +1,1 @@
+module top_module(input w_ACTION, output w_PARA_ACTION);assign w_PARA_ACTION = ~w_ACTION;endmodule

@@ -1,0 +1,8 @@
+This module implements a cryptographic block capable of performing encryption, decryption, or hashing based on the selected mode of operation. It takes an n-bit input signal, a k-bit key, and an l-bit initialization vector, processing them through corresponding algorithms for AES encryption and decryption or SHA-256 hashing. The output reflects the operation selected: ciphertext from encryption, plaintext from decryption, or a hash value for input data, facilitating secure data handling and integrity verification in digital systems.
+module top_module(
+  input [n-1:0] in,
+  input [k-1:0] key,
+  input [l-1:0] iv,
+  input [1:0] mode,
+  output reg [n-1:0] out // Change output to reg type
+);

@@ -1,0 +1,19 @@
+Please act as a professional Verilog designer.
+
+Design a Verilog module for an 8-bit shift register with parallel load and shift left functionality. The module should have an enable signal to control the shifting operation and a load signal to load the parallel input into the register.
+
+Module name:
+    shift_register_8bit
+
+Input ports:
+    clk: Chip clock signal.
+    reset: Synchronous reset signal.
+    enable: Enable signal for shifting operation.
+    load: Signal to load parallel input.
+    data_in: 8-bit parallel input data.
+
+Output ports:
+    q: 8-bit output of the shift register.
+
+Implementation:
+On the rising edge of the clock signal (clk), if the reset signal is active, the register is reset to zero. If the load signal is active, the 8-bit parallel input data is loaded into the register. If the enable signal is active, the register shifts its contents left by one bit.

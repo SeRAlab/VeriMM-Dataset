@@ -1,0 +1,6 @@
+Design a pipelined priority encoder for an 8-bit input that outputs a 3-bit position indicator of the highest order bit set to '1'. The module captures the input across three clock cycles using registers and produces the position of the highest bit, indicating which input signal is active. If no input signals are active, it outputs zero. The pipeline allows it to handle changes in input values over successive clock cycles, with validation logic ensuring that the output reflects the highest active bit across the sampled input states.
+module top_module(
+    input clk,          // Added clk input
+    input [7:0] in,
+    output reg [2:0] pos
+);

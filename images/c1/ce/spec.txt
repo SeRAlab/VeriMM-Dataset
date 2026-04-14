@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to introduce a programmable delay to a digital signal. It achieves this by sequentially passing the input signal through a series of registers (stages), effectively delaying the signal's propagation by a number of clock cycles equal to the number of stages. This module can be utilized in various digital signal processing applications where phase alignment, signal synchronization, or timing adjustments are required. It is a versatile component in digital design, allowing for adjustable delay lines within a broader system context.
+
+Module name:  
+	registerDelay
+
+Input ports:
+	clk (input wire): The clock input. It is the timing reference for the data shifting through the delay stages.
+	rst (input wire): The reset input. When asserted (1), it initializes the delay registers to zero, effectively clearing the delay line.
+	enable (input wire): The enable signal. When asserted (1), it allows the data to be shifted into the delay line on the rising edge of the clock. When deasserted (0), the data shifting is paused.
+	d (input wire [(DATA_WIDTH1):0]): The data input. It represents the signal to be delayed, with a width defined by the DATA_WIDTH parameter.
+Output ports:
+	q (output wire [(DATA_WIDTH1):0]): The delayed data output. It outputs the signal that has been delayed by the number of stages specified by the STAGES parameter.
+
+
+Implementation:
+The RTL module presented is designed to implement a register-based delay line, capable of delaying an input signal by a configurable number of clock cycles. The module is parameterized to allow for flexibility in terms of data width (DATA_WIDTH) and the number of delay stages (STAGES). This design leverages both combinational and sequential logic to achieve its functionality.
+
+Give me the complete code.
+

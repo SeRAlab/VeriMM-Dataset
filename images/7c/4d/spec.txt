@@ -1,0 +1,6 @@
+Design a 4-bit up/down counter with asynchronous reset functionality. The counter increments its value when the 'up' input is high and the 'dn' input is low, and decrements when 'dn' is high and 'up' is low, within the range of 0 to 15. When the counter is reset (n_rst low), it initializes to zero. The module also provides two output signals: out1, which is the inverted least significant bit of the counter, and out2, which mirrors the least significant bit.
+module top_module(
+    input clk, n_rst, up, dn,
+    output [3:0] cnt,
+    output out1, out2
+);

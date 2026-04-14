@@ -1,0 +1,6 @@
+Design a pseudo-random number generator that produces a 64-bit output based on the given clock and reset signals. The module utilizes a linear feedback shift register (LFSR) approach to generate new state values from three initial seeds (s1, s2, s3) through a series of bitwise operations and shifts. On each clock cycle, when not reset, the module updates its internal state and calculates the new urn value by XORing the processed states of s1, s2, and s3. When reset, it initializes the seeds and output to predetermined values, ensuring a consistent starting point for random number generation.
+module top_module(
+    input clk,
+    input rst,
+    output [63:0] urn
+    );

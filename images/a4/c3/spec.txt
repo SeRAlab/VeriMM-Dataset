@@ -1,0 +1,8 @@
+Design a circuit that provides the second input to an ALU. If the `aluSrc` control signal is active, the output will be set to the external data (`ext_data`); otherwise, it will take the value of `rt_data`. Additionally, if the `aluZeroinput` control signal is asserted, the output will be overridden to zero, ensuring that the appropriate value is sent as `alu_input2` based on these control conditions.
+module top_module(
+    input [31:0] ext_data,
+    input [31:0] rt_data,
+    input aluSrc,
+    input aluZeroinput,
+    output [31:0]alu_input2
+);

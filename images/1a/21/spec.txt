@@ -1,0 +1,12 @@
+
+Create a 4-channel DMA controller that allows data transfer from one device to another. The DMA controller should have the following inputs: 
+- `req` (4 bits): Request signals from 4 devices
+- `ack` (4 bits): Acknowledge signals from the DMA controller
+- `start`: A signal to start the DMA transfer
+- `clk`: Clock signal
+- `reset`: Reset signal
+
+The outputs should be:
+- `grant` (4 bits): Grant signals to the devices indicating which device has been granted access for data transfer
+
+The DMA controller should grant access based on priority; the device with the highest priority (lowest bit index) should be granted access first. If multiple devices request access simultaneously, the one with the highest priority should be served first.

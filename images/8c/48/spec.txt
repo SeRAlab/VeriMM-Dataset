@@ -1,0 +1,9 @@
+Create a Verilog module as per the following description. Assume signals are positive clock/clk edge triggered unless otherwise specified.
+You have a 30-bit input vector u[29:0]. Perform the following operations:
+// (1) out_or4: Each bit of this output vector should indicate whether any of the corresponding input bit and its neighbor to the right are '1'. For example, out_or4[28] should indicate if u[28] or u[29] are 1. Since u[29] has no neighbor to the right, we don't need to know out_or4[29].
+// (2) out_xor4: Each bit of this output vector should indicate whether the corresponding input bit is different from its neighbor to the right. For example, out_xor4[28] should indicate if u[28] is different from u[29]. Since u[29] has no neighbor to the right, we don't need to know out_xor4[29].
+
+module top_module (
+	input [29:0] u,
+	output [28:0] out_or4,
+	output [28:0] out_xor4);

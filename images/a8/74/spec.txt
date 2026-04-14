@@ -1,0 +1,8 @@
+Design a 4-bit binary counter capable of counting from 0 to 9, featuring a finite state machine to manage different operational states (IDLE, COUNTING, RESET). The counter increments its value on each clock pulse while monitoring for a reset signal. Once the count reaches 10 (binary 1001), it asserts a 'done' signal and flags an 'overflow' condition, returning to the IDLE state. The system provides a seamless reset functionality, ensuring that all outputs are cleared when the reset signal is activated.
+module top_module(
+  input clk,
+  input reset,
+  output reg [3:0] count,
+  output reg done,
+  output reg overflow
+);

@@ -1,0 +1,9 @@
+Design a LIFO (Last In, First Out) stack with configurable data width and depth. The stack supports input and output operations controlled by write enable (wr_en) and read enable (rd_en) signals, respectively. On a clock's rising edge, if reset (rst) is activated, the stack's indices and count reset to zero. When writing data, if the stack is not full, the input data (din) is stored in memory at the current top index, which then increments. When reading data, if the stack is not empty, the output (dout) retrieves data from the current bottom index, which then increments, effectively allowing for the last written data to be the first one read.
+module top_module(
+  input clk,
+  input rst,
+  input [data_width-1:0] din,
+  input wr_en,
+  input rd_en,
+  output reg [data_width-1:0] dout  // Change to reg type
+);

@@ -1,0 +1,16 @@
+The given Verilog code implements the address control logic for a memory-mapped I/O interface in the context of the LC-3 microprocessor architecture. It essentially decodes specific address inputs to determine control signals for peripheral devices such as a keyboard status register (KBSR), keyboard data register (KBDR), data status register (DSR), and data register (DDR). The module uses a finite state machine (FSM) to manage state transitions based on control inputs like memory I/O enable (MIO_EN) and read/write (R_W) signals. It generates outputs that control data flow and state loading for the specified registers, enabling proper interaction between the CPU and I/O devices.
+module top_module(
+		input						clk,
+		input			[15:0]	ADDR,
+		input						MIO_EN,
+		input						R_W,
+		
+		output	reg[1:0]		INMUX,
+		output	reg			MEM_EN,
+		output	reg			LD_KBSR,
+		output	reg			LD_DSR,
+		output	reg			LD_DDR,
+		output	reg			RD_KBDR,
+		output	reg			R
+		
+    );

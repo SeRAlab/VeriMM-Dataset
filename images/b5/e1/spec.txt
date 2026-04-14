@@ -1,0 +1,7 @@
+Design a synchronous FIFO (First In, First Out) memory with reset functionality. This module manages a depth of 16 storage locations, each capable of holding an 8-bit wide data word. It has separate control signals for reading (rd) and writing (wr) data. Upon reset, the read and write pointers, as well as the count of stored elements, are initialized. When writing is active, the input data is stored in memory at the current write pointer, which is then incremented. When reading is enabled, the data at the current read pointer is output, and the read pointer is incremented. The module effectively facilitates data buffering in a structured manner, ensuring sequential access to stored information.
+module top_module(
+    input reset, clk,
+    input rd, wr,
+    input [7:0] data_in,
+    output reg [7:0] data_out
+    );

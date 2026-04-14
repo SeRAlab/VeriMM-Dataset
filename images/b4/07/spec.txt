@@ -1,0 +1,13 @@
+Design a dual-clock FIFO (First In, First Out) memory buffer that interfaces with separate write and read clocks. The module allows data input (din) of 36 bits width and outputs concatenated data (dout) of 72 bits width when read. It includes signals to indicate when the FIFO is full, empty, or nearing full (prog_full when the count is at least 900). The write and read functionalities are controlled by write (wr_en) and read (rd_en) enable signals, respectively. The FIFO can store up to 1024 entries and wraps around using circular addressing for both read and write operations. The module resets its pointers and count on a reset signal (rst).
+module top_module(
+  input rst,
+  input wr_clk,
+  input rd_clk,
+  input [35:0] din,
+  input wr_en,
+  input rd_en,
+  output reg [71:0] dout,  // Changed to reg type
+  output full,
+  output empty,
+  output prog_full
+);

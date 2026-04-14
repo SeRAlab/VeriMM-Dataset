@@ -1,0 +1,10 @@
+
+Design a Stop-and-Wait flow control protocol in Verilog. The protocol should have a sender and a receiver. The sender sends a packet and waits for an acknowledgment (ACK) from the receiver before sending the next packet. The system should handle a time-out situation where if the sender does not receive an ACK within a given time, it will retransmit the last packet. The inputs to the system include:
+- `send`: a signal to indicate when the sender is ready to send a packet.
+- `ack`: an acknowledgment signal from the receiver.
+- `timeout`: a signal indicating a timeout condition.
+
+The outputs should include:
+- `packet_out`: the packet being sent.
+- `ack_out`: an output signal to indicate the sender received an acknowledgment.
+- `retransmit`: a signal to indicate that the sender is retransmitting the last packet.

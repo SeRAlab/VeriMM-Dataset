@@ -1,0 +1,8 @@
+Design a clock gate circuit that controls the propagation of a clock signal (CLK) based on enable (EN) and test enable (TE) signals along with a reset (RESET) functionality. When RESET is activated, the output ENCLK is set to LOW. If EN is LOW, ENCLK is also output as LOW. When both EN and TE are HIGH, the output ENCLK mirrors the CLK signal, effectively gating the clock. If TE is LOW, ENCLK retains its previous state, creating a mechanism to pause clock transitions when desired.
+module top_module(
+    input CLK,
+    input EN,
+    input TE,
+    input RESET,
+    output reg ENCLK
+);

@@ -1,0 +1,6 @@
+Design a Verilog module that calculates the European call option pricing using the Black-Scholes formula. The inputs are the stock price (S), strike price (K), risk-free interest rate (r), time to expiration (T), and volatility (σ). The output should be the calculated option price (C). The formula for the Black-Scholes model is:  
+C = S * N(d1) - K * e^(-rT) * N(d2)  
+where:  
+d1 = (ln(S/K) + (r + (σ²)/2) * T) / (σ * sqrt(T))  
+d2 = d1 - σ * sqrt(T)  
+N(x) is the cumulative distribution function of the standard normal distribution. For simplicity, you can implement an approximation of N(x) as a lookup table.

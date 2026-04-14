@@ -1,0 +1,7 @@
+Design a fixed-priority arbitration circuit that manages requests from multiple sources. The module has an equal number of request inputs and grant outputs, determined by the parameter REQ_NUM, allowing up to four concurrent requests. The circuit prioritizes requests such that if a higher-priority request (at a lower index) is active, it overrides the grants for all lower-priority requests. Upon the rising edge of the clock or when reset is asserted, it grants access to the highest priority request present while maintaining the state of lower priority grants as inactive if a higher one is active. This design ensures deterministic access control in systems requiring prioritization among competing requests.
+module top_module(
+  clk,
+  rst_n,
+  req,
+  grant
+  );

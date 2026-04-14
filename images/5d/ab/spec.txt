@@ -1,0 +1,6 @@
+Design a 3-bit priority encoder that evaluates an 8-bit input signal. The module outputs a binary representation of the highest-priority active bit from the input. The priority is defined such that bits are prioritized from the most significant to the least significant (bits 7 to 0), with the output reflecting the index of the highest priority active bit as a 3-bit binary value. The design employs a clocked sequential logic approach where the input and output states are stored across three clock cycles for stabilization before decoding, ensuring that the output accurately represents the active input at the time of the clock edge.
+module top_module(
+    input clk,
+    input [7:0] I,
+    output reg [2:0] O
+);

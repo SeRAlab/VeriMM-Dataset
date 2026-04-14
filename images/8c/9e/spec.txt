@@ -1,0 +1,8 @@
+Create a memory buffer module designed to store and retrieve 16-bit data values. The module features a 64-entry memory array, indexed by a 6-bit address. It incorporates a read/write capability controlled by the RW signal: when RW is high, the input data (din) is written to the specified memory location (didx) on the rising clock edge; when RW is low, the module outputs the content of the addressed memory location to di, effectively enabling data read operations.
+module top_module(
+	input wire clk, 
+	input wire [15:0] din, 
+	input wire [5:0] didx, 
+	input wire RW,
+	output reg [15:0] di
+);

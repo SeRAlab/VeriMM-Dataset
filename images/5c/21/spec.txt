@@ -1,0 +1,12 @@
+Design a module to manage and assign signal values for a peripheral interface, specifically for a Quad Serial Peripheral Interface (QSPI). The module sets the `reset_periph` and `slowclk` signals to fixed states, and routes various QSPI control and data lines between the device under test (DUT) and an external QSPI interface. It assembles the data output from four QSPI data signals and their corresponding output enable signals into wider buses, while also connecting the input signals from the QSPI interface back to the DUT. Additionally, it connects the serial clock signal, ensuring proper communication between components while maintaining control over peripheral and data interfaces.
+module top_module(
+  input wire [3:0] qspi_ui_dq_i,
+  output wire qspi_cs,
+  output wire [3:0] qspi_ui_dq_o,
+  output wire [3:0] qspi_ui_dq_oe,
+  output wire dut_io_pads_qspi_dq_0_i_ival,
+  output wire dut_io_pads_qspi_dq_1_i_ival,
+  output wire dut_io_pads_qspi_dq_2_i_ival,
+  output wire dut_io_pads_qspi_dq_3_i_ival,
+  output wire qspi_sck
+);

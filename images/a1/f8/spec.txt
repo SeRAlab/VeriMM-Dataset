@@ -1,0 +1,9 @@
+Design a 64-bit wide flip-flop register with reset capability. This module captures and holds the input data (io_in) when io_enable is asserted high, while its output (io_out) updates with the previous output value on each positive clock edge. Upon reset, the register initializes to a predefined value (io_init). If io_enable is low, the output retains its previous state, thereby functioning as a state-holding element in sequential logic circuits.
+module top_module(
+  input         clock,
+  input         reset,
+  input  [63:0] io_in,
+  input  [63:0] io_init,
+  output [63:0] io_out,
+  input         io_enable
+);

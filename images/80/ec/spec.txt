@@ -1,0 +1,5 @@
+Design a clock gating circuit that controls the generation of an enabled clock signal (ENCLK) based on the input enable (EN) and test enable (TE) signals. When the reset signal (RST) is activated, the circuit sets both the internal state (D) and the output (ENCLK) to LOW. In normal operation, ENCLK will be HIGH when both EN and TE are HIGH, effectively reducing power consumption by disabling the clock signal when not needed.
+module top_module(
+    input CLK, EN, TE, RST,
+    output reg ENCLK
+);

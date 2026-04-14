@@ -1,0 +1,7 @@
+Design a circuit that converts a 4-bit binary input to its corresponding 4-bit Gray code representation while allowing for directional output selection. The module features a clock (CLK) and reset (RESET) control signals. On a positive clock edge, it captures the binary input and computes the Gray code based on the previous binary value, storing it in internal registers. In addition, it has a direction control signal (DIR) that enables the user to choose which of the last two computed Gray code and binary values to output, facilitating data flow in either direction.
+module top_module(
+    input RESET, DIR, CLK,
+    input [3:0] binary,
+    output reg [3:0] gray,
+    output reg [3:0] binary_out
+);

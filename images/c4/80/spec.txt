@@ -1,0 +1,29 @@
+
+
+You have been tasked with designing a clock gating circuit for a register adder that operates on 13-bit binary numbers. The circuit should have the following inputs and outputs:
+
+- `CLK` : a clock signal
+- `EN` : an enable signal
+- `TE` : a transparent enable signal
+- `ENCLK` : an output signal representing the gated clock
+
+You are given the following Verilog code snippet as a starting point:
+
+```
+module SNPS_CLOCK_GATE_HIGH_RegisterAdd_W13 ( CLK, EN, ENCLK, TE );
+  input CLK, EN, TE;
+  output ENCLK;
+
+  TLATNTSCAX2TS latch ( .E(EN), .SE(TE), .CK(CLK), .ECK(ENCLK) );
+initial $sdf_annotate("FPU_PIPELINED_FPADDSUB_ASIC_fpu_syn_constraints_clk10.tcl_GATED_syn.sdf"); 
+ endmodule
+```
+
+Your task is to complete the design of the clock gating circuit by writing Verilog code that implements the following behavior:
+
+- When `EN` is low, `ENCLK` should be low, regardless of the state of `CLK`.
+- When `EN` is high and `TE` is low, `ENCLK` should be the same as `CLK`.
+- When `EN` and `TE` are both high, `ENCLK` should be high, regardless of the state of `CLK`.
+
+Your solution should be a Verilog module that implements the clock gating circuit and satisfies the above requirements. Your module should be no more than 200 lines of Verilog code.
+

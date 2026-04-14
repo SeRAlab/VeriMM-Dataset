@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform a simple yet critical function within a digital system: incrementing a 48-bit input value by 1. This module is fundamental in applications requiring arithmetic operations, counters, or any system that necessitates sequential progression of numerical values. The module also provides an overflow indication, which is crucial for detecting when the incremented value exceeds the maximum representable value in a 48-bit signed number representation, signaling potential arithmetic overflow conditions.
+
+Module name:  
+	zzinc48
+
+Input ports:
+	in [47:0]: A 48bit input vector representing the value to be incremented. This input accepts a binary number in the range of 0 to 2^481.
+Output ports:
+	out [47:0]: A 48bit output vector representing the incremented value. This output provides the result of adding 1 to the input value, wrapping around if the input value is at its maximum (2^481).
+	overflow: A singlebit output signal that indicates an overflow condition. The overflow occurs when incrementing the input value results in a transition from the highest positive number to a negative number in a signed number representation. Specifically, it flags true (1) when the input is the maximum positive value for a 47bit signed number (since the most significant bit is used for sign in signed representations) and the output wraps around to a negative number.
+
+
+Implementation:
+The zzinc48 module is a simple yet elegant piece of RTL (Register Transfer Level) code designed to perform a specific arithmetic operation: incrementing a 48-bit input value by 1. This module is purely combinational, meaning it does not contain any sequential elements like flip-flops or latches, and its output is directly dependent on its current input.
+
+Give me the complete code.
+

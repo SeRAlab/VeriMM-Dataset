@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+
+Implement a module for a D flip-flop with asynchronous reset. The D flip-flop should capture the value of the data input d on the rising edge of the clock signal clk and output it on q. If the reset signal rst is asserted (active high), the output q should be reset to 0 regardless of the clock signal.
+
+Module name:  
+    d_flip_flop
+
+Input ports：
+    clk: Clock signal.
+    rst: Reset signal (active high).
+    d: Data input signal.
+
+Output ports：
+    q: Data output signal.
+
+Implementation:
+Declare the module d_flip_flop with input and output ports as specified in the ports statement.
+Declare a register q to hold the output value.
+Inside an always block, sensitive to the positive edge of the clk signal and the positive edge of the rst signal, implement the logic for data capture and reset.
+In the reset condition (rst), set the q register to 0. Otherwise, capture the value of d on the rising edge of clk and assign it to q.
+
+Give me the complete code.
+
+module d_flip_flop(    
+    input clk,
+    input rst,
+    input d,
+    output reg q
+);

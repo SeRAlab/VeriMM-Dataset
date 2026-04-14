@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+
+Implement an 8-bit shift register with both left and right shift capabilities.
+
+Module name:  
+    shift_register
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for chip reset and 1 for reset signal inactive.
+    shift_left: Control signal to enable left shift.
+    shift_right: Control signal to enable right shift.
+    data_in: Data input signal with a data width of 8 bits.
+
+Output ports:
+    data_out: Data output signal with a data width of 8 bits.
+
+Implementation:
+On the positive edge of the clock signal (clk) or the falling edge of the reset signal (rst_n):
+If the reset signal (rst_n) is low, the data output (data_out) is set to 0.
+If the reset signal (rst_n) is high:
+- If shift_left is high, the data is shifted left by one position.
+- If shift_right is high, the data is shifted right by one position.
+- If both shift_left and shift_right are low, the data remains unchanged.
+
+Give me the complete code.

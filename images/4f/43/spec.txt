@@ -1,0 +1,10 @@
+Design a program counter (PC) that updates its output according to specific control signals. The counter captures a 32-bit input value, pc_i, upon the rising edge of a clock signal, clk_i, but only if the reset signal, rst_i, is inactive and the pcEnable_i is asserted. If start_i is not asserted, the counter outputs zero, effectively resetting its value. The stall_i signal indicates when to hold the current output without any updates. This module facilitates sequential control within a synchronous digital system, ensuring precise management of the program flow.
+module top_module(
+	input				clk_i,
+	input				rst_i,
+	input				start_i,
+	input				stall_i,
+	input               pcEnable_i,
+	input	 [31:0]		pc_i,
+	output	reg [31:0]	pc_o
+);

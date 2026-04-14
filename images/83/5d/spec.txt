@@ -1,0 +1,7 @@
+Design a memory access extension circuit that selects and outputs a specific portion of a 32-bit input data based on a 4-bit memory read signal. The module supports both signed and unsigned loading options, where it sign-extends or zero-extends the selected data byte(s) or half-word according to the control signals. Depending on the value of the `MemRead` signal, it retrieves data from byte or half-word positions within the input and adjusts the output accordingly, allowing for efficient data manipulation in a memory interface for digital systems.
+module top_module(
+	input wire [31:0] Data,
+	input wire LoadSigned,
+	input wire [3:0] MemRead,
+	output wire [31:0] Out
+);

@@ -1,0 +1,6 @@
+Design a 4-bit up counter with functionality for counting and loading preset values. This counter operates on the rising edge of the clock signal. It features an active-low reset input that clears the count to zero, an enable signal to allow counting or loading of a new value, and a load signal which, when asserted, sets the counter to the specified input data. When not loading, the counter increments its value from 0 to 15 (0xF) and wraps back to 0, providing an output representing the current count.
+module top_module(
+    input clk, reset_n, enable, load,
+    input [3:0] data_in,
+    output reg [3:0] data_out
+);

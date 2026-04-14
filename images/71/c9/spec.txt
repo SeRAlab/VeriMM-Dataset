@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement an 8-bit shift register that shifts left on each positive edge of the clock signal and loads a parallel input value when a load signal is active.
+
+Module name:
+    shift_register
+
+Input ports:
+    CLK: Input clock signal
+    LOAD: Load signal
+    D: 8-bit parallel input data
+
+Output ports:
+    Q: 8-bit shifted output data
+
+Implementation:
+The shift register shifts left on every positive edge of CLK. If LOAD is active, the register loads the parallel input value D. Otherwise, it shifts left by 1 bit.
+
+Give me the complete code.
+
+module shift_register (CLK, LOAD, D, Q);
+input CLK, LOAD;
+input [7:0] D;
+output reg [7:0] Q;

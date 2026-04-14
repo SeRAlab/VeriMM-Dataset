@@ -1,0 +1,11 @@
+Design a state machine that manages a 3-bit state sequence for a commutation control system. The circuit operates on a clock signal, with inputs to control enabling, resetting, advancing, direction, braking, and aligning modes. Upon reset, the state machine initializes a lookup table with specific state values. In normal operation, it advances through the states in either direction based on the control inputs, with defined transitions for breaking and aligning states. The output reflects the current state selected from the state table, providing a 4-bit wide output corresponding to the current state number.
+module top_module(
+  clk,
+  enable_i,
+  reset_i,
+  advance_i,
+  direction_i,
+  break_i,
+  align_i, 
+  state_o
+);

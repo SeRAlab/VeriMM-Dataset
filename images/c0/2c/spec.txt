@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module primarily functions as a scan latch with an inverting output. It to be a part of a scan chain used in Design for Test (DFT) methodologies, specifically for facilitating easier testing and debugging of integrated circuits (ICs) by serially shifting test data through the scan chain. The module captures the input data (`sd`) when the clock (`ck`) is not active (low) and the scan enable (`se`) is asserted, indicating the module is in scan mode. The output (`so`) is the inverted state of the internal latch (`so_l`), ensuring that the module provides an inverted feedback or output signal based on the latched value.
+
+Module name:  
+	bw_u1_scanlg_2x
+
+Input ports:
+	sd (input): This is the scan data input. It represents the data bit to be captured into the scan latch when the module is in scan mode. The data type is a singlebit binary (1'b0 or 1'b1).
+	ck (input): This is the clock input. The falling edge of ck triggers the capturing of the sd input into the internal latch when scan enable (se) is asserted. The data type is a singlebit binary.
+	se (input): Scan enable input. When asserted (1'b1), it enables the scan operation, allowing the sd input to be captured into the latch on the falling edge of ck. The data type is a singlebit binary.
+Output ports:
+	so (output): This is the scan output, which provides the inverted state of the internal latch (so_l). It is used to serially shift out the captured data to the next element in the scan chain or for observation during testing. The data type is a singlebit binary.
+
+
+Implementation:
+The RTL module bw_u1_scanlg_2x is designed to perform a specific logic operation based on the inputs sd, ck, and se. It outputs a signal so, which is the negated version of an internally maintained register so_l. The core functionality of this module revolves around the manipulation of so_l based on the conditions provided by the clock (ck), scan data (sd), and scan enable (se) inputs. The logic can be dissected into two primary pathways: combinational and sequential.
+
+Give me the complete code.
+

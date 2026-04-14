@@ -1,0 +1,12 @@
+Design a module that extracts and outputs key components from a 26-bit input signal representing VGA (Video Graphics Array) data. This module generates synchronization signals for horizontal and vertical sync (HSync and VSync), color information (Red, Green, Blue), and the current pixel's coordinates (XCoord, YCoord) while indicating whether the output is in the active video region. The design is intended for interfacing with VGA display systems, facilitating the rendering of video graphics by isolating essential timing and color data.
+module top_module(
+			input wire [25:0] VGA_SCA_RGB_Str_i,	
+            output wire      HSync,         		
+            output wire      VSync,         		
+            output wire      Red,   				
+            output wire     Green, 					
+            output wire      Blue,  				
+            output wire [9:0] XCoord,          		
+            output wire [9:0] YCoord,          		
+            output wire      ActiveVideo			
+         );

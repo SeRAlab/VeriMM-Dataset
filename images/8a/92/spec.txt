@@ -1,0 +1,11 @@
+Design a digital module that serves as a color register for an RGB pixel processing application. On each rising edge of the Pixel_clock, the module updates the output registers (red_reg, green_reg, blue_reg) with the input color values (R_input, G_input, B_input) if the change_color signal is high. If change_color is low, the current color values are retained, effectively holding the last updated color state.
+module top_module(
+    input Pixel_clock,
+	 input R_input,
+	 input G_input,
+	 input B_input,
+	 input change_color,
+    output reg red_reg=1'b0,
+    output reg green_reg=1'b0,
+    output reg blue_reg=1'b0
+    );

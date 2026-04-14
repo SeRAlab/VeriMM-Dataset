@@ -1,0 +1,11 @@
+Design a single-port synchronous RAM module with a 128-word by 32-bit memory array. It features a reset input, a chip enable, a write enable, and an output enable for controlling memory operations. On a rising clock edge, if the chip is enabled and a write operation is selected, it stores data from the input into the specified address. If the output enable is active, it drives the output with the stored data from the addressed location; otherwise, it outputs zero. The module is designed to support synchronous operations, allowing read and write functionalities based on control signals.
+module top_module(
+    input clk,
+    input rst,
+    input ce,
+    input we,
+    input oe,
+    input [6:0] addr,
+    input [31:0] di,
+    output [31:0] doq
+);

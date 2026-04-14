@@ -1,0 +1,3 @@
+Design a control module that manages the readiness signal (`rdy_`), a data input signal (`r0_din`), and a write enable signal (`r0_we_`) based on the clock (`clk`), reset (`rst_`), and enable (`ena_`) inputs. The module transitions through defined states where it initializes or disables the outputs based on the control logic. On a reset, all outputs are disabled. When enabled (`ena_` is low), the module latches the state to modify the readiness and data signals, asserting them during subsequent clock cycles. The output signals are tri-stated when not enabled, allowing for controlled access to shared resources in a larger digital system.
+module top_module(clk, rst_, ena_, rdy_,
+    r0_din, r0_we_);

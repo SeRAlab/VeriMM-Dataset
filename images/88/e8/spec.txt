@@ -1,0 +1,12 @@
+Design a circuit that functions as an accumulator, summing incoming 8-bit data inputs over a series of clock cycles. The module captures data and adds it to an internal 10-bit accumulator when both the `valid_a` signal is asserted and the `ready_b` signal is active. It counts the number of additions, and upon reaching a count of 3, it outputs the accumulated result through `data_out` while indicating the validity of this output with `valid_b`. The circuit also provides a readiness signal `ready_a`, which ensures synchronization between data input and output, allowing new data to be input only when the previous data has been processed.
+module top_module(
+    input               clk         ,   
+    input               rst_n       ,
+    input       [7:0]   data_in     ,
+    input               valid_a     ,
+    input               ready_b     ,
+ 
+    output              ready_a     ,
+    output  reg         valid_b     ,
+    output  reg [9:0]   data_out
+);

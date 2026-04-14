@@ -1,0 +1,10 @@
+Develop a digital filter module that processes a 69-bit input signal (`rcn_in`) based on predefined address ranges. The module utilizes clock and reset signals to synchronize operations. Upon each clock cycle, if reset is activated, the input and output registers are cleared, and a filtered flag is set to low. Otherwise, the module evaluates specified conditions based on bits 34 to 55 of the input signal to determine if the input falls within any of four defined ranges. If the input matches any of the filtering criteria, the output is set to zero; otherwise, it retains the input value. The module effectively identifies and filters unwanted signals based on these defined conditions while providing an indication of filtering activity through the 'filtered' output.
+module top_module(
+    input clk,
+    input rst,
+
+    input [68:0] rcn_in,
+    output [68:0] rcn_out,
+    
+    output reg filtered
+);

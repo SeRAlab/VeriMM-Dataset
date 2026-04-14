@@ -1,0 +1,7 @@
+Design a 100-bit wide rotation register that can either perform a right or left rotation of its contents based on control signals. The module has a clock input for synchronous operations and a load signal to initialize the register with new data. The enable input `ena` determines the rotation direction: if `ena` is `01`, the register rotates right by one bit; if `ena` is `10`, it rotates left by one bit; and if `ena` is `00`, the register retains its current value without any rotation. The output consistently reflects the current state of the register.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output reg [99:0] q);

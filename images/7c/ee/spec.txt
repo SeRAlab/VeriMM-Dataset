@@ -1,0 +1,8 @@
+The design implements a LED brightness controller that adjusts the brightness of an 8-bit LED output based on a clock signal, a reset, and a mode selection input. The module increments a counter on each clock edge and, depending on the 'FAST' input, either allows fast or slow counting to control the frequency of brightness updates. The brightness levels are determined by a 3-bit mode input, which can set the LEDs to specific brightness values or turn them off. When the counter reaches predefined thresholds (9 for fast mode and 99 for slow mode), the brightness is updated according to the selected mode, effectively creating a simple LED dimmer with multiple preset levels.
+module top_module(
+    input CLOCK,
+    input RESET,
+    input [2:0] MODE,
+    input FAST,
+    output reg [7:0] LED
+);

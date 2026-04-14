@@ -1,0 +1,13 @@
+Design a 32-bit wide, 512-entry dual-clock FIFO (First-In, First-Out) buffer with both write and read operations. It supports reset functionality, with separate write (`wr_clk`) and read (`rd_clk`) clocks, and includes signals to indicate when the FIFO is full or empty. The module allows data to be written when `wr_en` is asserted and read when `rd_en` is asserted, ensuring data integrity and flow control. The FIFO maintains a write data count and tracks read and write pointers to manage data flow efficiently.
+module top_module(
+  input rst,
+  input wr_clk,
+  input rd_clk,
+  input [31:0] din,
+  input wr_en,
+  input rd_en,
+  output reg [31:0] dout, // Changed output to reg type
+  output full,
+  output empty,
+  output [COUNT_WIDTH-1:0] wr_data_count // Adjusted width to COUNT_WIDTH
+);

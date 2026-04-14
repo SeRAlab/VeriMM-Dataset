@@ -1,0 +1,9 @@
+Design a finite state machine (FSM) for a vending machine that manages the process of accepting coins and dispensing a product. The module transitions through three states: IDLE (waiting for coin input), WAITING_FOR_COINS (where it accumulates coins until the required amount is met), and DISPENSING (releasing the product). The display outputs the price of the product, and the system activates the product output when the button is pressed, provided sufficient coins have been inserted. The design incorporates a reset functionality to initialize the state and counters, ensuring correct operation after a power cycle or manual reset.
+module top_module(
+  input clk,
+  input reset,
+  input coin_input,
+  input button_input,
+  output reg display_output,
+  output reg product_output
+);

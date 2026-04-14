@@ -1,0 +1,11 @@
+Design a 256x8 FIFO (First-In, First-Out) memory buffer. This module allows for the storage of up to 256 bytes of 8-bit data. It features synchronization through a clock input and can be cleared to reset the read and write pointers. The module supports reading and writing operations controlled by the read and write enable signals. The outputs indicate whether the buffer is empty or full, and data is available at the output when read operations are performed, ensuring correct handling of data flow without conflicts.
+module top_module(
+    input wire clk,
+    input wire clear,
+    input wire read_en,
+    input wire write_en,
+    input wire [7:0] data_in,
+    output reg [7:0] data_out,
+    output reg empty,
+    output reg full
+);

@@ -1,0 +1,8 @@
+Design a circuit for an image processing controller that maps 10-bit input coordinates (x, y) to an 8-bit RGB color output. Using frame clock signals, the module calculates a block number from the coordinates by extracting the upper 5 bits of x and y, then uses this block to determine the color values of memRGB, which are derived from the block's bits to form the resulting RGB output.
+module top_module(
+    input  CLK_IN,
+    input  FRAME_CLOCK,
+    input  [9:0] x,
+    input  [9:0] y,
+    output [7:0] memRGB
+    );

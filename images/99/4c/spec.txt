@@ -1,0 +1,13 @@
+Design a bridge module that handles address decoding for a memory-mapped I/O interface. It takes a 32-bit address input, PrAddr, and based on specific address ranges, it controls read and write operations to different peripherals. The module outputs data from one of three sources (rd1, rd2, rd3) or a write data input (PrWD) depending on which device is being accessed—specifically a timer, an output device, or an input device. It also generates an IRQ signal for hardware interrupts and manages write enable signals (outwe and twe) based on the addressed device and write requests.
+module top_module(
+    input [31:0]PrAddr,
+    input [31:0]PrWD,
+    output [31:0]PrRD,
+    input [31:0]rd1,
+    input [31:0]rd2,
+    input [31:0]rd3,
+    input IRQ,
+    output [5:0]HWInt,
+    input wen,
+    output outwe,
+    output twe);

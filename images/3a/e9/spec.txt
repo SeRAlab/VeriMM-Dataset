@@ -1,0 +1,12 @@
+
+Design a simple Ethernet MAC controller state machine in Verilog. The MAC controller should have the following states: IDLE, RECEIVE, and TRANSMIT. The controller should transition between states based on two inputs: `start_receive` and `start_transmit`. The state transitions are as follows:
+- From IDLE:
+  - If `start_receive` is asserted, transition to RECEIVE.
+  - If `start_transmit` is asserted, transition to TRANSMIT.
+- From RECEIVE:
+  - If `start_transmit` is asserted, transition to TRANSMIT.
+  - If `start_receive` is deasserted, remain in RECEIVE.
+- From TRANSMIT:
+  - If `start_receive` is asserted, transition to RECEIVE.
+  - If `start_transmit` is deasserted, remain in TRANSMIT.
+The output should indicate the current state of the controller.

@@ -1,0 +1,31 @@
+Please act as a professional verilog designer.
+    
+Implement a module implements a First-In-First-Out (FIFO) memory queue with a fixed depth of 4 elements. It to store and retrieve data elements in a sequential order, ensuring that the first data written into the FIFO is the first to be read out. This module is typically used in digital systems for buffering data between processes or components operating at different rates or to manage data in scenarios where the order of operations is critical.
+
+Key functions of the `fifo4` module include:
+Writing data to the FIFO queue when space is available.
+Reading data from the FIFO queue when it is not empty.
+Indicating whether the FIFO is full or empty.
+Providing the capability to reset or clear the FIFO contents.
+
+Module name:  
+	fifo4
+
+Input ports:
+	clk (input): The clock input. The FIFO operations are synchronized to the rising edge of this clock signal.
+	rst (input): The activelow reset input. When asserted, it initializes the FIFO's read and write pointers and the gray bit (gb) to their default states.
+	clr (input): The clear input. When asserted, it clears the FIFO's read and write pointers and the gray bit (gb) similar to a reset but is controlled independently.
+	din (input, [dw:1]): The data input port. It is a vector with a width of dw bits, where dw is a parameter specifying the data width. This port is used to write data into the FIFO.
+	we (input): The write enable input. When asserted, it enables writing the data present on the din port into the FIFO, provided the FIFO is not full.
+	re (input): The read enable input. When asserted, it enables reading data from the FIFO, provided the FIFO is not empty.
+Output ports:
+	dout (output, [dw:1]): The data output port. It is a vector with a width of dw bits. This port outputs the data read from the FIFO.
+	full (output): The full flag output. It indicates that the FIFO is full and cannot accept any more data writes.
+	empty (output): The empty flag output. It indicates that the FIFO is empty and contains no data to read.
+
+
+Implementation:
+The provided RTL module implements a 4-entry FIFO (First-In-First-Out) buffer with parameterizable data width (dw). The FIFO operates on a clock (clk) and can be asynchronously reset (rst). It supports clear (clr), write (we), and read (re) operations. The FIFO uses a simple but effective mechanism to manage its state, including tracking full and empty conditions.
+
+Give me the complete code.
+

@@ -1,0 +1,7 @@
+Design a 4-bit shift register with parallel load capability. When the parallel_load signal is asserted, the module loads a 4-bit input value into the shift register. On each rising edge of the clock, if parallel_load is not asserted, the shift register circularly shifts its bits to the right, with the most significant bit wrapped around to the least significant bit position. The output provides the least significant bit of the register.
+module top_module(
+    input clk,
+    input parallel_load,
+    input [3:0] in,
+    output reg out
+);

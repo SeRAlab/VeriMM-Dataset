@@ -1,0 +1,10 @@
+Design a 16-entry register file with 8-bit wide data storage. The module features a write enable (we) signal to control data input (wd) into a specified register address (wa) on the positive edge of the clock (clk). It allows reading from a specified address (ra), providing the stored data (rd) as output while also outputting the address being read (out). The register file supports both register writing and reading operations, making it suitable for temporary data storage in digital circuits.
+module top_module(
+  input clk,
+  input we,
+  input [3:0] wa,
+  input [7:0] wd,
+  input [3:0] ra,
+  output [7:0] rd,
+  output [3:0] out
+);

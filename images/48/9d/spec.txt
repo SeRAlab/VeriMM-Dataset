@@ -1,0 +1,9 @@
+Design a counting mechanism with input and output validation for data transfer. The module takes a 32-bit input count and a validity signal, managing readiness and validity for data processing across a clocked interface. It tracks the remaining count of items to be processed, setting the output valid signal when items are available, and controlling the readiness of input based on the current state. When reset, it initializes all states; otherwise, it decrements the count as items are consumed based on the readiness of the output. This functionality can be utilized in a data pipeline or buffering system where synchronization between input and output stages is critical.
+module top_module(input clk,
+		 input 	       rst,
+		 input [31:0]  in_count,
+		 input 	       in_valid,
+		 output        in_ready,
+
+		 input 	       out_ready,
+		 output        out_valid);

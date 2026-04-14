@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a dual-port memory with separate read and write capabilities, allowing for simultaneous read and write operations under different clock domains. This module is particularly useful in applications requiring high throughput and low latency access to stored data, such as in digital signal processing, video processing, and various forms of data buffering in communication systems. The primary functions of this module include:
+
+Writing data to a specified memory address upon a write enable signal under the write clock domain.
+Reading data from a specified memory address upon a read enable signal under the read clock domain.
+Temporal decoupling of read and write operations, facilitated by separate clocks, enhancing the module's flexibility in diverse system architectures.
+
+Module name:  
+	behave2p_mem
+
+Input ports:
+	wr_en (input): Write enable signal. When high, it allows data to be written to the memory at the address specified by wr_addr.
+	rd_en (input): Read enable signal. When high, it updates the read address to the value specified by rd_addr.
+	wr_clk (input): Write clock. The rising edge of this clock triggers the write operation.
+	rd_clk (input): Read clock. The rising edge of this clock triggers the update of the read address.
+	d_in (input, [width1:0]): Data input. This is the data to be written into the memory at the address specified by wr_addr.
+	rd_addr (input, [addr_sz1:0]): Read address. Specifies the memory address from which data is to be read.
+	wr_addr (input, [addr_sz1:0]): Write address. Specifies the memory address at which the input data (d_in) is to be written.
+Output ports:
+	d_out (output, [width1:0]): Data output. This port outputs the data stored at the memory address specified by rd_addr after the read address update is triggered by the rd_clk.
+
+
+Implementation:
+The behave2p_mem module is designed as a dual-port memory with separate read and write ports, each operating potentially on different clock domains (wr_clk for write operations and rd_clk for read operations). This design allows for simultaneous read and write operations to the memory array, enhancing the module's efficiency and throughput in applications requiring high-speed data access and storage. The module parameters width and depth define the bit-width of the memory's data and the number of entries in the memory array, respectively, making the module highly configurable for various application needs.
+
+Give me the complete code.
+

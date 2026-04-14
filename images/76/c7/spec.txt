@@ -1,0 +1,6 @@
+Design a PS/2 keyboard receiver module that captures and processes keypress signals from a PS/2 interface. The module takes clock and clear signals alongside the PS/2 clock (ps2c) and data (ps2d) inputs. It employs state filtering to debounce the ps2c and ps2d signals, indicating when a key is pressed or released. The primary functionality is to shift the data read from the PS/2 interface into two separate shift registers, producing a combined 16-bit output (xkey) that represents the key code corresponding to the last key pressed. The output effectively communicates detected keyboard inputs for further processing in digital systems.
+module top_module(
+    input wire clk, clr,
+	input wire ps2c, ps2d,
+	output wire [15:0] xkey
+	);

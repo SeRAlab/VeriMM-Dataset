@@ -1,0 +1,14 @@
+Design a control module for a RAM-based FIFO (First-In, First-Out) buffer. This module manages read and write operations, ensuring data integrity through full and empty flags. It utilizes a clock and reset signal to synchronize operations, as well as enable, write, and read signals to control the flow of data. The module generates write enable signals and maintains read and write addresses for the RAM, while providing status outputs for buffer conditions (full, empty) that indicate whether the buffer can accept new data or has available data to read. The internal logic makes use of head and tail pointers to track the position of the data in the FIFO structure, facilitating efficient data handling in a buffered memory arrangement.
+module top_module(
+    clock,
+    reset,
+    enable,
+    write,
+    read,
+    full,
+    empty,
+    ram_wen,
+    ram_waddr,
+    ram_raddr,
+	ram_raddr_next
+);

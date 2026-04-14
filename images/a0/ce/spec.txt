@@ -1,0 +1,7 @@
+Design a circuit that reverses the bits of a 32-bit input vector upon receiving a clock signal. When the reset signal is low, the output vector is set to zero. On each positive edge of the clock, if reset is not asserted, the module swaps the bits of the input vector so that the least significant bit becomes the most significant, and vice versa. The resultant output is a bit-reversed version of the input, effectively implementing a bit-reversing function for 32-bit data.
+module top_module(
+  input clk,
+  input reset,
+  input [31:0] in_vector,
+  output reg [31:0] out_vector
+);

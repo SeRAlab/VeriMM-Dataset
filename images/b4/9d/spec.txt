@@ -1,0 +1,8 @@
+Design a motor control block that interfaces with three types of motors: PWM, H-bridge, and stepper. The module utilizes a control signal to dynamically select which motor type is active and process corresponding control signals to generate appropriate drive signals. It is synchronized with a clock and incorporates a reset feature to initialize the control registers. Depending on the selected motor type, the output drive signals are generated from the provided control signals, enabling effective motor control for various applications.
+module top_module(
+  input [1:0] ctrl, // control signal to select the type of motor, changed to 2 bits
+  input clk, // clock signal
+  input rst, // reset signal
+  input [n-1:0] ctrl_signals, // set of signals to control the motor
+  output [m-1:0] drv_signals // set of signals to drive the motor
+);

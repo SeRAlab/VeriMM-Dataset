@@ -1,0 +1,8 @@
+Design a digital delay-locked loop (DLL) that synchronizes a local clock signal to a reference clock signal. It adjusts the phase of the local clock using a delay line composed of a configurable number of delay stages. The DLL calculates phase errors based on the relationship between the delayed local clock and the reference clock, and modifies the delay control values accordingly to achieve locking. The output signifies whether the DLL has achieved lock status, and the adjusted clock output is provided upon achieving the configuration of delay stages. This circuit is essential in high-speed digital systems for clock synchronization and recovery.
+module top_module(
+  input ref_clk,
+  input local_clk,
+  input reset,
+  output locked,
+  output reg adj_clk
+);

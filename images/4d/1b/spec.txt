@@ -1,0 +1,6 @@
+Design a dual-port register file with 32 bits of data width. The module accepts an enable signal (E), a 32-bit data input (D), and a 1-bit address input (AR) that selects one of two storage locations in the internal data array. On the rising edge of the clock (clk_IBUF_BUFG), if the enable signal is high, the incoming data is stored at the selected address. Conversely, on the falling edge of the clock, if the enable signal is low, the stored data from the selected address is output on Q. This functionality allows for synchronous data writing and asynchronous data reading depending on the enable signal and clock edges.
+module top_module(Q,
+    E,
+    D,
+    clk_IBUF_BUFG,
+    AR);

@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module performs a specific combinational logic function known as an "AND-OR-INVERT" (AOI22) operation. This module to take four input signals, perform two separate AND operations on pairs of these inputs, OR the results of these AND operations together, and finally invert the outcome. The primary function of this module to provide a compact and efficient way to implement this specific logic operation, which is commonly used in digital circuits for various purposes including logic gating, arithmetic operations, and control logic. The "8x" in the module name might suggest a specific drive strength or performance characteristic, indicating that this module is optimized for certain operational requirements such as speed or power consumption.
+
+Module name:  
+	bw_u1_aoi22_8x
+
+Input ports:
+	a1 and a2: These are input signals to one of the AND gates within the module. They are singlebit (1bit) digital signals. The AND operation is performed on these two inputs.
+	b1 and b2: These serve as input signals to the other AND gate. Similar to a1 and a2, these are also singlebit digital signals. The AND operation is performed on these two inputs as well.
+Output ports:
+	z: This is the singlebit (1bit) output signal of the module. It represents the inverted result of the OR operation between the outcomes of the two AND gates. The inversion of the OR operation's result is what characterizes the module as an ANDORINVERT logic gate.
+
+
+Implementation:
+The RTL module presented, bw_u1_aoi22_8x, implements a basic digital logic function known as an "AND-OR-INVERT" (AOI22) gate. This type of logic gate is a combination of AND gates followed by an OR gate, with the output of the OR gate being inverted. The module is purely combinational, meaning it does not have any memory elements or sequential logic; its output is directly determined by its current inputs.
+The AOI22 gate is a fundamental building block in digital logic and integrated circuit design, often used to optimize gate count, power, and performance in complex logic functions. Its structure is particularly advantageous for implementing certain logic functions with fewer transistors than a separate AND, OR, and NOT gate combination, leading to improvements in speed and power consumption.
+The module has five ports in total: one output (z) and four inputs (a1, a2, b1, b2). The operation performed by the module can be described by the boolean equation:
+\[ z = \overline{(a1 \cdot a2) + (b1 \cdot b2)} \]
+This equation signifies that the inputs a1 and a2 are ANDed together, as are the inputs b1 and b2. The results of these two AND operations are then ORed together. Finally, the result of the OR operation is inverted to produce the output z.
+
+Give me the complete code.
+

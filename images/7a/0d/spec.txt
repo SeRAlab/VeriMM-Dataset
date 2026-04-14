@@ -1,0 +1,8 @@
+Design a simple read memory interface that facilitates data storage and retrieval. The module includes a 2-entry memory array capable of holding 4-bit values, with the address input determining which entry to access. On each clock cycle, if the reset signal is inactive, the module reads the data from the specified memory location and extends it to 32 bits for output. Additionally, during the same clock cycle, it updates the memory location with the incoming 4-bit data from the input port if the reset is not triggered. Overall, this module acts as a basic memory read/write block, designed for operations in a system-on-chip environment.
+module top_module(
+  input [1:0] address,
+  input clk,
+  input [3:0] in_port,
+  input reset_n,
+  output reg [31:0] readdata
+);

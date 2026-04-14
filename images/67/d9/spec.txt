@@ -1,0 +1,9 @@
+Design a clock and data output module that operates with two clock signals. It uses a reset signal (jrst_n) to initialize its internal state. Upon receiving the appropriate clock edges, the module toggles an internal register (x1) and captures the state of this register to another internal register (x2). A derived phase signal, created from the XOR of x1 and x2, is used to control an output clock signal (tr_clk) and multiplex between two 18-bit sections of an input data bus (tw). When the phase indicates one state, it outputs the lower half of the input data; when in the opposite state, it outputs the upper half. This module serves to synchronize data output with phase-aligned clock signals.
+module top_module(
+  input clk,
+  input clkx2,
+  input jrst_n,
+  input [35:0] tw,
+  output reg tr_clk,  // Change tr_clk from wire to reg
+  output reg [17:0] tr_data
+);

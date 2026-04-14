@@ -1,0 +1,6 @@
+Design a circuit that generates an impulse signal based on a counter controlled by a 1 microsecond enable signal. The module counts from 0 to (sqX - 1) on the rising edge of the clock, resetting to zero when it reaches this value. The output impulse (imp) is asserted high when the counter equals (sqX - 1), thereby indicating the completion of a counting cycle.
+module top_module(
+		input [15:0] sqX,
+		input clk,			output imp,
+		input ce1us
+    );

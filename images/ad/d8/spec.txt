@@ -1,0 +1,11 @@
+Design a synchronous FIFO (First-In-First-Out) buffer with configurable data width (WIDTH) and depth (DEPTH). The module operates on a clock signal, allowing data to be written into and read from the buffer based on control signals for data input and output. Data is written to the buffer when the `data_in_start` signal is high and read when `data_out_end` is asserted, with appropriate management of read and write pointers along with a counter to track the number of stored data items. Output signals indicate the start and end of data output, providing feedback on the buffer state, such as when it is empty or full.
+module top_module(
+    input clk,
+    input reset,
+    input [WIDTH-1:0] data_in,
+    input data_in_start,
+    input data_in_end,
+    output reg [WIDTH-1:0] data_out,
+    output reg data_out_start,
+    output reg data_out_end
+);

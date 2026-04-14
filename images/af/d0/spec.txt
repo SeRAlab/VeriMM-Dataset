@@ -1,0 +1,7 @@
+Design a synchronous shift register module that captures a single input bit `din` and shifts it through a series of flip-flops across a specified depth. The module offers reset functionality and is designed to handle metastability by injecting randomness when the input changes, ensuring reliable operation under potentially noisy conditions. The output `dout` provides the second-last bit in the shift register, allowing for data manipulation in digital systems. If the depth is less than 3, it assigns the shifted value directly; otherwise, it shifts the register contents and captures new data on each clock edge, conditional on an active low reset signal.
+module top_module(
+  input clk,
+  input reset_n,
+  input din,
+  output dout
+);

@@ -1,0 +1,14 @@
+Implement the Verilog module based on the following description.
+Create a 7-bit binary counter with an enable and synchronous preset functionality. The counter counts up when the enable signal is high and presets to a specified value when the preset signal is high.
+
+// Signals are defined as below:
+// (1) preset: Synchronously presets the counter to a specified value. Active high.
+// (2) preset_value: The value to preset the counter to.
+// (3) ena: Enables the counter to count. Active high.
+// (4) q: The current value of the counter.
+module top_module(
+    input clk,
+    input preset,
+    input [6:0] preset_value,
+    input ena,
+    output reg [6:0] q);

@@ -1,0 +1,92 @@
+
+
+Create a Verilog module for a 2:1 MUX (multiplexer) with the following inputs and outputs:
+
+Inputs:
+- A (1-bit)
+- B (1-bit)
+- SEL (1-bit)
+
+Outputs:
+- OUT (1-bit)
+
+The module should be named "mux_2to1" and should use the following syntax:
+
+```
+module mux_2to1 (
+    input A,
+    input B,
+    input SEL,
+    output OUT
+);
+```
+
+The module should implement the following functionality:
+- If SEL is 0, the output should be equal to A.
+- If SEL is 1, the output should be equal to B.
+
+You should use the following testbench to test your module:
+
+```
+module testbench_mux_2to1;
+
+    // Inputs
+    reg A;
+    reg B;
+    reg SEL;
+    
+    // Outputs
+    wire OUT;
+
+    // Instantiate the Unit Under Test (UUT)
+    mux_2to1 uut (
+        .A(A),
+        .B(B),
+        .SEL(SEL),
+        .OUT(OUT)
+    );
+
+    initial begin
+        // Initialize Inputs
+        A = 0;
+        B = 0;
+        SEL = 0;
+
+        // Wait 100 ns for global reset to finish
+        #100;
+
+        // Test case 1 - SEL = 0
+        A = 1;
+        B = 0;
+        SEL = 0;
+        #10;
+        if (OUT !== 1'b1) $display("Test case 1 failed");
+
+        // Test case 2 - SEL = 1
+        A = 0;
+        B = 1;
+        SEL = 1;
+        #10;
+        if (OUT !== 1'b1) $display("Test case 2 failed");
+
+        // Test case 3 - SEL = 0
+        A = 0;
+        B = 1;
+        SEL = 0;
+        #10;
+        if (OUT !== 1'b0) $display("Test case 3 failed");
+
+        // Test case 4 - SEL = 1
+        A = 1;
+        B = 0;
+        SEL = 1;
+        #10;
+        if (OUT !== 1'b0) $display("Test case 4 failed");
+
+        $display("All test cases passed");
+        $finish;
+    end
+
+endmodule
+```
+

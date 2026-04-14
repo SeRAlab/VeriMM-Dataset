@@ -1,0 +1,10 @@
+Design a multi-functional logic gate module that performs a selection of four operations based on a 2-bit operation code (op) and a select signal (sel). The module computes the logical AND, OR, XOR of two inputs (a and b) and also includes a 2-to-1 multiplexer functionality. Depending on the value of op, the module outputs the result of the corresponding operation, where op=`00` outputs AND, `01` outputs OR, `10` outputs XOR, and `11` utilizes the multiplexer, selecting between inputs a and b based on sel. The output is also conditioned to ensure proper power and ground management through the vpwr and vgnd inputs.
+module top_module(
+    input  a,
+    input  b,
+    input  [1:0] op,
+    input  sel,
+    input  vpwr,
+    input  vgnd,
+    output out
+);

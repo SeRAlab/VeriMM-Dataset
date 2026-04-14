@@ -1,0 +1,8 @@
+Design a shift decade counter that integrates a 3-bit shift register and a 4-bit decade counter. On each clock cycle, if the reset signal is high, the shift register and counter are reset to zero. If `slowena` is active, the module shifts in a new bit `d` into the shift register. It also increments the decade counter up to 9 (binary 1001), rolling over to 0 afterward. The output `q` is the 4-bit binary sum of the values from the shift register and the decade counter, providing a combined representation of the shifted input and the counter state.
+module top_module(
+    input clk,
+    input slowena,
+    input reset,
+    input d, // Input for the shift register
+    output [3:0] q // Binary output from the functional module that takes in the shift register and decade counter outputs
+);

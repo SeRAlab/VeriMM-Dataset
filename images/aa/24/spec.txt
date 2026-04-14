@@ -1,0 +1,6 @@
+Design a voltage-controlled oscillator (VCO) interface that generates a square wave output signal, `vco`, based on an 8-bit voltage control input, `V_ctrl`. The output frequency of the VCO signal varies between specified minimum and maximum frequency limits (1 MHz to 10 MHz) in accordance with the voltage control signal, which ranges from 0 to 255. The module utilizes a reference clock signal (`clk`) to count cycles and toggle the state of the VCO output accordingly, ensuring that the frequency output of the VCO adapts as the voltage control input is adjusted.
+module top_module(
+  input clk, // reference clock signal
+  input [7:0] V_ctrl, // voltage control signal
+  output reg vco // VCO signal
+);

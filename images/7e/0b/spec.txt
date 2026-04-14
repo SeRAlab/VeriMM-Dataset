@@ -1,0 +1,5 @@
+Design a finite state machine (FSM) that controls a multiplication operation based on input signals. The module transitions between two states: S_Idle and S_Mul. In the S_Idle state, it signals readiness and initiates the loading of registers when 'start' is asserted. It transitions to the S_Mul state to perform multiplication, which can continue until the 'Zero' input is asserted, indicating that the operation should conclude. Outputs include 'Ready' to indicate the system's state readiness, 'Load_regs' for loading registers when ready to start, and 'Add_dec' to determine if addition should be performed during multiplication.
+module top_module(
+    input clock, reset, start, Zero,
+    output Ready, Load_regs, Add_dec
+);

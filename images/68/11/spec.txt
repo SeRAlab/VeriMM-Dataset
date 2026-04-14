@@ -1,0 +1,8 @@
+Design a traffic light controller that manages the operation of a traffic light system based on the states of a button and a sensor. The module outputs a red light or a green light, with the green state lasting for a specified number of clock cycles (10 cycles) unless interrupted by the sensor input, which forces an immediate transition to red. When the button is pressed, the controller transitions to green, allowing vehicles to pass; otherwise, the system will automatically revert to red after the green light duration. This design ensures safe and efficient traffic flow management at intersections.
+module top_module(
+    input clk,           // Added clk input
+    input button,
+    input sensor,
+    output reg red,
+    output reg green
+);

@@ -1,0 +1,11 @@
+Design a module that serves as an up counter with a BCD converter. The circuit increments a 4-bit up counter on every clock pulse and, upon reset, initializes all counters and enables the least significant digit output. It takes a 4-bit binary input and converts it into BCD format across multiple clock cycles, outputting one BCD digit at a time while enabling corresponding signal outputs for the digits. Additionally, it computes the sum of the up counter and the current BCD output, providing a combined output. This module effectively combines counting with binary-to-BCD conversion in a synchronous manner.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input [3:0] binary_in, // 4-bit binary input
+    output reg [3:0] bcd_out, // 4-bit BCD output
+    output reg EN1, // Enable signal for the least significant digit
+    output reg EN2, // Enable signal for the middle digit
+    output reg EN3, // Enable signal for the most significant digit
+    output reg [8:0] sum // Output of the sum of up counter and BCD value
+);

@@ -1,0 +1,7 @@
+Design a pipelined BCD (Binary-Coded Decimal) counter that increments up to 9 in each of its four BCD digits (0-9) and rolls over to 0 upon reaching 10. The module features a synchronous active-high reset that initializes the counter and enables, which controls the counting of each BCD digit independently. The counter utilizes a pipeline register to hold the current count during clock cycles, ensuring that updates occur sequentially on each clock edge. The outputs consist of the current count represented as a 16-bit BCD value (four 4-bit BCD digits) and a 3-bit enable signal for controlling which BCD digit to increment on each clock cycle.
+module top_module(
+    input clk,
+    input reset,   // Synchronous active-high reset
+    output reg [3:1] ena,
+    output reg [15:0] q
+);

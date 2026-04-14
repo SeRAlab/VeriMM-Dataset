@@ -1,0 +1,9 @@
+Design a register-based multiplier circuit that takes a 23-bit input (D) and a 1-bit control signal (Q) to perform multiplication via shift-and-add techniques. The output is a 46-bit register (Q_reg) that updates on the positive edge of the clock (CLK). The circuit incorporates synchronous reset functionality (AR) to clear the register, while also detecting overflow conditions based on the overflow flag (Overflow_flag_A), indicating whether the product exceeds the representable range. If an overflow is detected, the register is set to a predefined overflow state; otherwise, it stores the resulting product.
+module top_module(
+    output reg [45:0] Q_reg,
+    input [22:0] D,
+    input [0:0] Q,
+    input CLK,
+    input [0:0] AR,
+    input Overflow_flag_A
+);

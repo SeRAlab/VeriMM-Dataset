@@ -1,0 +1,11 @@
+Design a 32-register file with read and write capabilities for a digital system. This module allows for writing data to a specified register when the write enable signal is active and simultaneously outputs the contents of two different registers as specified by the read register inputs. The data written or read are 32 bits wide, and operations are synchronized with a positive clock edge, enabling reliable timing for register accesses.
+module top_module(
+    input wrEnable,
+    input [4:0] wrReg,
+    input [31:0] wrData,
+    input [4:0] rdReg1,
+    output reg [31:0] rdData1,
+    input [4:0] rdReg2,
+    output reg [31:0] rdData2,
+    input clk
+);

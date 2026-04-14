@@ -1,0 +1,25 @@
+Design a debug control unit for a processor that handles data breakpoints and tracing functionalities. This module receives various inputs from the CPU such as data and address signals along with control signals related to read and write operations. It produces outputs for address, data to be read/written, and status signals while managing debug-related conditions. The internal logic allows for setting and pulsing a breakpoint signal, which is triggered in response to specific debugger acknowledgments, while additional outputs indicate different debugging states, such as tracing and breakpoint controls.
+module top_module(
+    input [31:0] E_st_data,
+    input [31:0] av_ld_data_aligned_filtered,
+    input clk,
+    input [22:0] d_address,
+    input d_read,
+    input d_waitrequest,
+    input d_write,
+    input debugack,
+    input reset_n,
+    output [22:0] cpu_d_address,
+    output cpu_d_read,
+    output [31:0] cpu_d_readdata,
+    output cpu_d_wait,
+    output cpu_d_write,
+    output [31:0] cpu_d_writedata,
+    output dbrk_break,
+    output dbrk_goto0,
+    output dbrk_goto1,
+    output dbrk_traceme,
+    output dbrk_traceoff,
+    output dbrk_traceon,
+    output dbrk_trigout
+);

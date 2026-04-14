@@ -1,0 +1,8 @@
+Design a block RAM module that supports both read and write operations. The module uses a 2048-word memory array with each word being 12 bits wide. When the write enable signal (wea) is high, data provided at the input (dina) is written to the memory address specified by addra on the rising edge of the clock (clka). Regardless of the write operation, the module outputs the data stored at the specified address (addra) through douta on each clock cycle.
+module top_module(
+  input [10:0] addra,
+  input clka,
+  input [11:0] dina,
+  output reg [11:0] douta,
+  input wea
+);

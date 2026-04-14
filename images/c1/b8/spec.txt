@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a FIFO (First-In-First-Out) buffer with write and read capabilities. Its primary objectives include:
+
+Storing data entries in a sequential manner, allowing data to be written into the buffer and read from it in the order it was received.
+Providing flags to indicate the buffer's status, such as empty or error conditions, which could arise from overflow or underflow scenarios.
+Ensuring data integrity by managing concurrent read and write operations, with mechanisms to prevent data corruption due to overflow or underflow.
+
+This module plays a critical role in systems requiring temporary storage and sequential processing of data streams, such as in communication interfaces, data buffering between asynchronous processes, or in pipelined architectures where data throughput and synchronization are crucial.
+
+Module name:  
+	wbufifo
+
+Input ports:
+	i_clk: Input clock signal (type: input). This clock signal synchronizes the operations of the FIFO, including data writing, reading, and internal state updates.
+	i_rst: Synchronous reset signal (type: input). When asserted, it initializes the FIFO's internal states, effectively clearing the buffer.
+	i_wr: Write enable signal (type: input). When asserted, it allows data on the i_data port to be written into the FIFO on the rising edge of i_clk.
+	i_data: Data input (type: input, width: BW1). This port is used to input data into the FIFO when the i_wr signal is asserted.
+	i_rd: Read enable signal (type: input). When asserted, it allows data to be read from the FIFO on the rising edge of i_clk.
+Output ports:
+	o_data: Data output (type: output reg, width: BW1). This port outputs the data read from the FIFO.
+	o_empty_n: FIFO empty flag (type: output reg). This flag is low (0) when the FIFO is empty and high (1) otherwise.
+	o_err: Error flag (type: output wire). This flag indicates an error condition, such as overflow or underflow, depending on the read and write operations.
+
+
+Implementation:
+The RTL module presented is designed to function as a write-buffered FIFO (First In, First Out) queue with error detection capabilities. It operates on a clock (i_clk) and can be reset (i_rst). The module supports write (i_wr) and read (i_rd) operations for data of width BW bits. The FIFO's depth is parameterized by FLEN, which is derived from LGFLEN, allowing for a configurable queue size. The module outputs the data (o_data), an empty flag (o_empty_n), and an error flag (o_err) indicating overflow or underflow conditions.
+
+Give me the complete code.
+

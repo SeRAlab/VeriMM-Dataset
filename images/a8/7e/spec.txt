@@ -1,0 +1,10 @@
+Design a synchronous FIFO (First-In-First-Out) memory buffer with 1024 entries, capable of storing 32-bit wide data. The FIFO operates on a clock signal and supports both read and write operations through 'rdreq' and 'wrreq' inputs, respectively. It indicates its status with 'empty' and 'full' output signals, signaling when no data is available or when the buffer is at capacity. Data is written to the memory when a write request is made and the buffer is not full, and read from the buffer when a read request is made and data is available, ensuring proper flow control in data handling applications.
+module top_module(
+    input clock,
+    input [31:0] data,
+    input rdreq,
+    input wrreq,
+    output empty,
+    output full,
+    output reg [31:0] q
+);

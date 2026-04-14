@@ -1,0 +1,11 @@
+Design a next program counter (NPC) generator that determines the next address to be fetched during instruction execution. The module computes the next program counter (PC_In) based on several conditions: if a branch is taken and the branch target buffer (BTB) is filled, it uses the branch target; if the BTB is not filled, it defaults to the next sequential instruction. If a branch prediction fails, it adjusts the PC based on the previous PC value. Additionally, it supports jump-and-link (Jal) and jump-and-link register (Jalr) operations by selecting the appropriate target addresses. The module allows for selecting either a pre-computed PC (PCF_PRE) or the current PC plus four, providing flexible branching and jumping capabilities in the instruction flow control.
+module top_module(
+    input wire [31:0] PCF,JalrTarget, BranchTarget, JalTarget,
+    input wire BranchE,JalD,JalrE,
+    input wire PCF_SEL,
+    input wire [31:0] PCF_PRE,
+    input wire [31:0] PCE,
+    input wire BTB_FILL,
+    input wire BTB_PREFAIL,
+    output reg [31:0] PC_In
+    );

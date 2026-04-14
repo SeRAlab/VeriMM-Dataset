@@ -1,0 +1,8 @@
+Design a 4-bit wide shift register with asynchronous reset and load capabilities. The register can be reset to zero when the active-high asynchronous reset signal (areset) is asserted. On the rising edge of the clock, if the load signal is active, the input data is loaded into the first stage of the shift register, cascading through the subsequent stages. If the load signal is not active and the enable signal (ena) is asserted, the data shifts through the stages with the previous data moving into the next stage. The final output (q) reflects the contents of the last stage (q4) of the register, effectively allowing for serial or parallel data handling based on the control signals.
+module top_module(
+    input clk,
+    input areset,  // async active-high reset to zero
+    input load,
+    input ena,
+    input [3:0] data,
+    output reg [3:0] q);

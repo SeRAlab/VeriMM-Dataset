@@ -1,0 +1,7 @@
+This Verilog module implements a digital tracking loop for signal synchronization, commonly used in phase-locked loops (PLLs). It consists of a phase detector that calculates the phase difference between an input signal and a reference signal, generating a control signal through a loop filter to adjust the phase of a voltage-controlled oscillator (VCO). The VCO synthesizes a phase-shifted version of the reference signal and is used to mix with the input signal in a multiplication operation. The output of the mixer is then compared to the reference signal to compute the error, which represents the deviation in alignment. The design is structured to dynamically adjust the phase of the output signal, achieving synchronization through continuous feedback and adjustment.
+module top_module(
+  input in_signal,
+  input ref_signal,
+  input clock,
+  output reg signed[15:0] error
+);

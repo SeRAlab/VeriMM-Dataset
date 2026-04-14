@@ -1,0 +1,6 @@
+Design a circuit for generating partial products in a multiplication operation, specifically for a 64-bit input `x` and a 3-bit input `y` that selects one of eight possible operations based on its value. The output `product` is determined by the value of `y`, with each selection corresponding to different conditions: for `y` values from 0 to 3, it outputs positive shifted or unchanged versions of `x`, while for values from 4 to 6, it utilizes the negative form of `x`. The case when `y` equals 7 produces a zero output, effectively implementing a simple multiplier function.
+module top_module(
+	input [63:0] x,
+	input [2:0] y,
+	output [63:0] product
+);

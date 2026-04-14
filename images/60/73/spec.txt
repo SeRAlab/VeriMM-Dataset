@@ -1,0 +1,10 @@
+Design a circuit that integrates a given input signal over time. The module, named Integrador_theta, takes a 16-bit input (a) and a time delta (dt) while controlling operation with an enable signal. Upon receiving the enable signal, it computes the integral using a rectangular approximation, updating the output (v) to a 32-bit value that accumulates the integrated result. The circuit also manages a busy signal to indicate when it is processing the integration. The state machine within the module allows the system to transition through stages of waiting for an enable signal, performing the integration, and signaling completion before resetting upon the rst input.
+module top_module(
+    input [15:0] a,
+    input [15:0] dt,
+    input enable,
+    input rst,
+    input clk,
+    output reg [31:0] v,
+    output reg busy
+);

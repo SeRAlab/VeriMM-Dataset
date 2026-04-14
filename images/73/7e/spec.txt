@@ -1,0 +1,7 @@
+Design a signed multiplier circuit that operates on two 12-bit signed inputs (dataa and datab). On each positive edge of the clock, the circuit captures the current values of the inputs and computes their product, producing a 24-bit signed output (dataout). The design effectively buffers the inputs before performing the multiplication in a separate wire, ensuring that the output reflects the result of the most recent multiplication operation.
+module top_module(
+	input clk,
+	input signed [11:0] dataa,
+	input signed [11:0] datab,
+	output reg signed [23:0] dataout
+);

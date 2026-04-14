@@ -1,0 +1,8 @@
+Design a direction control module that processes a 4-bit input (dir) to determine the output direction and a locking signal based on clock signals and an active-low reset. On the rising edge of the clock or when the reset is activated, the module sets the direction output (dirOut) based on specific conditions of the input bits, while also managing a lock status (lockVal). The module effectively decodes the input signals to generate a three-bit direction output and indicate whether the output is locked, allowing for synchronous control in a hardware application.
+module top_module(
+		input clk,
+		input [3:0] dir,
+		input reset_n,
+		output reg lockVal,
+		output reg [2:0] dirOut
+	);

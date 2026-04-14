@@ -1,0 +1,11 @@
+Design a 2x2 FIFO (First-In-First-Out) buffer that supports storing and retrieving 32-bit wide data. The module has inputs for a clock signal, an active-low reset, write and read control signals, and a 32-bit write data input. The output includes a 32-bit read data output along with flags indicating whether the buffer is empty or full. The buffer uses two storage locations, with write and read pointers to manage data flow. On a clock cycle, when a write signal is asserted and the buffer is not full, data is stored into the buffer. Conversely, when a read signal is asserted and the buffer is not empty, data is retrieved. The module ensures proper pointer management and flag status based on the current data state.
+module top_module(
+  input clk,
+  input reset_n,
+  input wr,
+  input [31:0] wr_data,
+  input rd,
+  output [31:0] rd_data,
+  output empty,
+  output full
+);

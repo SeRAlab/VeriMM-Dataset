@@ -1,0 +1,10 @@
+Design a hazard detection unit for a pipeline processor. This module monitors signals such as memory read operations and register identifiers to prevent data hazards. If a load instruction is detected that reads from a register being used by the instruction in the following stage, the module asserts control signals to stall the pipeline by enabling PC_Write and IF_ID_Write while also indicating the need for data forwarding through the data_o output signal.
+module top_module(
+    ID_EX_MemRead,
+    IF_ID_RegisterRs,
+    IF_ID_RegisterRt,
+    ID_EX_RegisterRt,
+    PC_Write,
+    IF_ID_Write,
+    data_o
+);

@@ -1,0 +1,11 @@
+Design a register stage for an instruction fetch pipeline, commonly used in a CPU. The module captures the program counter (pc_in) and an instruction input (instr_in) on the rising edge of the clock unless a reset (rst) is active, in which case it initializes outputs to default values. It also allows for two control signals: 'ifkeep' to maintain the current outputs if active, and 'ifClear' to reset both outputs to their default states. This design enables effective instruction management between the fetch and decode stages of pipelined processing.
+module top_module(
+	input clk,
+	input rst,
+	input ifkeep,
+	input ifClear,
+    input [15:0] pc_in,
+    input [15:0] instr_in,
+    output reg [15:0] pc_out,
+    output reg [15:0] instr_out
+    );

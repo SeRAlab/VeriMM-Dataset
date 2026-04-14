@@ -1,0 +1,19 @@
+Design a memory module that functions as a data storage element within a processor architecture. It supports both reading from and writing to a block of memory through control signals. On a reset signal, the first two memory locations are initialized with a specific input, while the rest are set to zero. If the memory write enable signal is active, data from a specified input is written to the memory location determined by the lower 7 bits of the ALU output. On each clock cycle, it updates output registers based on the control signals from the execution stage, providing memory read data or forwarding signals for further processing in the next stage of execution.
+module top_module(
+	clk,
+	rst,
+	XM_MemtoReg,
+	XM_RegWrite,
+	XM_MemRead,
+	XM_MemWrite,
+	ALUout,
+	XM_RD,
+	XM_MD,
+	SW,
+	
+	MW_MemtoReg,
+	MW_RegWrite,
+	MW_ALUout,
+	MDR,
+	MW_RD
+);

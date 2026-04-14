@@ -1,0 +1,7 @@
+Design a motor control circuit that adjusts the speed of a motor based on a 4-bit voltage input and generates a warning signal if the voltage exceeds a specified threshold. When the voltage is less than 4, the motor speed is set to zero. For voltages between 4 and 6, the speed is set to a quarter (4 in binary), and for voltages between 6 and 8, the speed ramps up to maximum (15 in binary). If the voltage is 8 or higher, the motor speed remains at maximum, and a warning signal is activated to indicate an over-voltage condition.
+module top_module(
+  input [3:0] voltage,
+  input clk,
+  output [3:0] speed,
+  output warning
+);

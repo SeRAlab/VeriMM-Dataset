@@ -1,0 +1,21 @@
+Please act as a professional Verilog designer.
+
+Implement an 8-bit counter with an enable signal. The counter should increment by 1 on each positive clock edge when the enable signal is high. If the reset signal is high, the counter should reset to 0 on the next clock edge.
+
+Module name:
+    counter_with_enable
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    enable: Enable signal. Defined as 1 to increment the counter and 0 to hold the current value.
+
+Output ports:
+    count: Output 8-bit counter value.
+
+Implementation:
+Counter Logic:
+The module includes an 8-bit counter, count, to store the current counter value.
+On the positive edge of the clock signal (clk), the module increments the counter value by 1 if the enable signal is high. If the reset signal (rst) is high, indicating a reset condition, the counter value is set to 8'b00000000 on the next clock edge.
+
+Give me the complete code.

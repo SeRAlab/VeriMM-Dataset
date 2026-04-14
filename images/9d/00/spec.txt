@@ -1,0 +1,9 @@
+Develop a simple encryption and decryption module that operates on 16-bit input data and uses an 8-bit key. The design leverages a clock signal for synchronous operation and a reset signal for initializing internal states. When the 'encrypt' control signal is high, the module performs bitwise transformations on two halves of the input data by shifting and XOR operations, producing a 16-bit encrypted output. Conversely, when 'encrypt' is low, it reverses the transformation to decrypt the data. This module effectively provides a basic symmetric encryption algorithm with the functionality of swapping and modifying the data based on the provided key.
+module top_module(
+  input clk,
+  input rst,
+  input [15:0] data_in,
+  input [7:0] key,
+  input encrypt,
+  output reg [15:0] data_out // Changed to reg type
+);

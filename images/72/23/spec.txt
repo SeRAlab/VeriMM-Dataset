@@ -1,0 +1,6 @@
+Design a parallel-in serial-out (PISO) shift register. This module accepts an 8-bit input and utilizes a clock signal to control the shifting of data. When the load signal is activated, it captures the input data. On each clock cycle, if the shift signal is active, it shifts the stored data to the right, while outputting the most significant bit (MSB) to the `out` signal. The module also includes a reset functionality that clears the stored data and sets the output to LOW.
+module top_module(
+	 input [7:0] data_in,
+	 input clk,shift,load,reset,
+    output reg out
+    );

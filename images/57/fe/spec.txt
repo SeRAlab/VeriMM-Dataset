@@ -1,0 +1,6 @@
+Design a pipeline register module that captures and transfers data on the positive edge of a clock signal. It has an adjustable data width, defaulting to 8 bits. Data from the `data_in` input is stored on the rising edge of the clock and then sent to the `data_out` output, effectively allowing for synchronized data transfer through a sequential process. This module is useful in digital circuits for creating a staging mechanism in data flow, aiding in timing and synchronization in a pipeline architecture.
+module top_module(
+  input wire clk,
+  input [width-1:0] data_in,
+  output reg [width-1:0] data_out // Changed wire to reg
+);

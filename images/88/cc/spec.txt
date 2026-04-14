@@ -1,0 +1,6 @@
+Design a 16-bit unsigned division module that computes the quotient (Q) and remainder (R) of two 16-bit inputs, the numerator (N) and the denominator (D). The module implements a bitwise long-division algorithm; it shifts the remainder left, adds the next bit of the numerator, and checks if the current remainder is greater than or equal to the denominator. If so, it subtracts the denominator from the remainder and sets the corresponding bit in the quotient. The module also incorporates a zero check for the denominator to prevent division by zero, ensuring correct operation.
+module top_module(
+	output reg [15:0] Q, 
+	output reg [15:0] R, 
+	input  [15:0] N, 
+	input  [15:0] D);

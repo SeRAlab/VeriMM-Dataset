@@ -1,0 +1,27 @@
+Implement a Verilog module with the following description: Address mapping module with features.
+module top_module(
+  input CLK,
+  input [15:0] featurebits,
+  input [2:0] MAPPER,       
+  input [23:0] SNES_ADDR,   
+  input [7:0] SNES_PA,      
+  input SNES_ROMSEL,        
+  output [23:0] ROM_ADDR,   
+  output ROM_HIT,           
+  output IS_SAVERAM,        
+  output IS_ROM,            
+  output IS_WRITABLE,       
+  input [23:0] SAVERAM_MASK,
+  input [23:0] ROM_MASK,
+  output msu_enable,
+  output cx4_enable,
+  output cx4_vect_enable,
+  output r213f_enable,
+  output r2100_hit,
+  output snescmd_enable,
+  output nmicmd_enable,
+  output return_vector_enable,
+  output branch1_enable,
+  output branch2_enable,
+  output branch3_enable
+);

@@ -1,0 +1,12 @@
+Design a finite state machine (FSM) controller for a multiplication operation, which manages several enable signals based on a clock and a start multiplication input. The machine operates in four states: IDLE, STATE1, STATE2, and STATE3. In the IDLE state, it waits for the STM signal to start processing; in STATE1, it enables the high register, preparing for multiplication; in STATE2, it enables the low register and an additional register for computation; and finally, in STATE3, it enables the result register and selects the final output while returning to IDLE. The controller also features a synchronous reset capability to return to the IDLE state when needed.
+module top_module(
+    input RST, // synchronous reset signal
+    input CLK, // clock signal
+    input STM, // start multiplication signal
+    output reg ENpH, // enable Rp high
+    output reg ENpL, // enable Rp low
+    output reg ENa, // enable Ra
+    output reg ENr, // enable Rr
+    output reg SEL, // select multiplexer
+    output reg EOM // end of multiplication
+    );

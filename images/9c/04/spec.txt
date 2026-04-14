@@ -1,0 +1,9 @@
+Design a 4-register file that allows reading and writing of 4-bit data. It features two 2-bit inputs for selecting the read and write registers (rdReg and wtReg). The rw signal determines the mode: when rw=0, data is read from the register specified by rdReg and output on outBus; when rw=1 and enable is asserted, it writes the 4-bit data from inBus into the register specified by wtReg. This module effectively manages simple data storage and retrieval operations in digital systems.
+module top_module(
+  input wire [1:0] rdReg,
+  input wire [1:0] wtReg,
+  input wire       rw,
+  input wire       enable,
+  input wire [3:0] inBus,
+  output reg [3:0] outBus
+);

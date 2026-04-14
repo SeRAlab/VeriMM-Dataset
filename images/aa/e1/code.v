@@ -1,0 +1,28 @@
+module top_module(CLK, GO, port_003da58c_, port_019a462a_, RESULT, RESULT_u14, RESULT_u15, RESULT_u16, RESULT_u17, DONE);input		CLK;
+input		GO;
+input	[7:0]	port_003da58c_;
+input	[7:0]	port_019a462a_;
+output	[15:0]	RESULT;
+output	[7:0]	RESULT_u14;
+output		RESULT_u15;
+output		RESULT_u16;
+output		RESULT_u17;
+output		DONE;
+wire		simplePinWrite;
+wire		simplePinWrite_u4;
+wire	[7:0]	add;
+wire	[7:0]	simplePinWrite_u5;
+wire		simplePinWrite_u6;
+wire	[15:0]	simplePinWrite_u7;
+assign simplePinWrite=GO&{1{GO}};
+assign simplePinWrite_u4=GO&{1{GO}};
+assign add=port_003da58c_+port_019a462a_;
+assign simplePinWrite_u5=add;
+assign simplePinWrite_u6=GO&{1{GO}};
+assign simplePinWrite_u7=16'h1&{16{1'h1}};
+assign RESULT=simplePinWrite_u7;
+assign RESULT_u14=simplePinWrite_u5;
+assign RESULT_u15=simplePinWrite_u6;
+assign RESULT_u16=simplePinWrite_u4;
+assign RESULT_u17=simplePinWrite;
+assign DONE=GO;endmodule

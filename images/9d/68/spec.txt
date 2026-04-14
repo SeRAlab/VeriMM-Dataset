@@ -1,0 +1,8 @@
+Design a synchronous 4-bit counter that can be reset and loaded with external data. On each rising edge of the clock, if the reset signal is asserted, the counter will be cleared to zero. If the load signal is active, the counter will take the value from the input data. In the absence of both reset and load conditions, the counter increments its current value by one. The current count value is continuously outputted through the `count_out` signal.
+module top_module(
+    input clk,
+    input rst,
+    input load,
+    input [3:0] data_in,
+    output [3:0] count_out
+);

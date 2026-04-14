@@ -1,0 +1,5 @@
+Design a module that performs the Galois field multiplication by 2, commonly used in cryptographic applications like AES. The module takes an 8-bit input `x`, shifts it left by one (effectively multiplying by 2), and if the most significant bit (MSB) of `x` is set, it XORs the result with the constant value `0x1B` to handle the polynomial reduction characteristic of the Galois field. The final output, `d_out`, is an 8-bit result representing the multiplication by 2 in GF(2^8).
+module top_module(
+    input [7:0] x,
+    output [7:0] d_out
+    );

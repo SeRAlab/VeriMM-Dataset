@@ -1,0 +1,31 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform floating-point addition between two 64-bit IEEE 754 standard double-precision floating-point numbers. The primary functions of this module include:
+
+Handling the alignment of mantissas based on the difference in exponents.
+Adding the aligned mantissas.
+Normalizing the result if necessary.
+Handling special cases such as denormalized numbers and overflow.
+Providing the final sum as a double-precision floating-point number along with its sign and adjusted exponent.
+
+This module plays a critical role in systems requiring high-precision arithmetic operations, such as scientific computations, digital signal processing, and any application involving floating-point arithmetic.
+
+Module name:  
+	fpu_add
+
+Input ports:
+	clk: Clock signal (input, 1 bit)  The clock signal for synchronizing the module's operations.
+	rst: Reset signal (input, 1 bit)  Asynchronously resets the module's internal state when asserted.
+	enable: Enable signal (input, 1 bit)  Activates the addition operation when asserted.
+	opa, opb: Operand A and Operand B (input, 64 bits each)  The two 64bit IEEE 754 standard doubleprecision floatingpoint numbers to be added.
+Output ports:
+	sign: Sign of the result (output, 1 bit)  Indicates the sign of the resulting sum.
+	sum_2: Sum mantissa (output, 55 bits)  The mantissa part of the resulting sum, aligned and normalized as necessary.
+	exponent_2: Sum exponent (output, 11 bits)  The exponent part of the resulting sum, adjusted for any normalization or overflow.
+
+
+Implementation:
+The RTL module presented, named fpu_add, is designed to perform floating-point addition on two 64-bit IEEE 754 standard floating-point numbers. The module operates synchronously with a clock signal (clk) and includes a reset (rst) and an enable (enable) signal for controlled operation. The primary inputs are two 64-bit operands (opa and opb), and the outputs are the sign (sign), the sum (sum_2), and the exponent (exponent_2) of the result.
+
+Give me the complete code.
+

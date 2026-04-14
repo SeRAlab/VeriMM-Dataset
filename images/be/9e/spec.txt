@@ -1,0 +1,7 @@
+Develop a VGA signal generator that outputs horizontal and vertical synchronization signals (hsync, vsync) and pixel coordinates (x, y) for a 640x480 pixel display with specified front and back porches and sync pulse widths. The module generates the timing required for video display by counting clock cycles to create pixel and line intervals, resetting the counters based on the reset signal and generating a valid enable signal (ve) for active video during the display period. The coordinates are adjusted by subtracting the back porch and sync pulse widths, ensuring accurate pixel positioning within the display frame.
+module top_module(
+   
+   hsync, vsync, x, y, ve, newline, newfield,
+   
+   clk_p, rst
+   );

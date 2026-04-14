@@ -1,0 +1,11 @@
+Design a vending machine controller that accepts coin inputs (nickel, dime, quarter) and manages a balance for purchasing candies and sodas. The machine dispenses candy if the balance is 10 cents or more and soda if the balance reaches 25 cents, deducting the respective amounts upon dispensing. The module uses a clock signal for synchronous operations and includes a reset function to initialize the balance and display to zero. The current balance is visually represented as an 8-bit output.
+module top_module(
+    input clk,
+    input reset,
+    input nickel,
+    input dime,
+    input quarter,
+    output candy_dispense,
+    output soda_dispense,
+    output reg [7:0] display
+);

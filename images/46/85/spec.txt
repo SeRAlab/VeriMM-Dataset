@@ -1,0 +1,11 @@
+Design a memory block that functions as a read-write RAM. This module allows data to be written to or read from an array of 512 bytes based on clock signals. When the `hclk` clock is active and the write enable signal is high, it writes `cpu_data_in` to the address specified by `cpu_address`. The `cur_data_out` is updated on the `pixclk` clock, outputting the data from the address provided by `cur_address`, but only if the write signal is low. Additionally, `cpu_data_out` continuously reflects the data at the address identified by `cpu_address`, providing a simple interface for CPU communication.
+module top_module(
+    input hclk, 
+    input write,
+    input [8:0] cpu_address, 
+    input [7:0] cpu_data_in, 
+    input pixclk,
+    input [8:0] cur_address, 
+    output reg [7:0] cur_data_out, 
+    output reg [7:0] cpu_data_out
+    );

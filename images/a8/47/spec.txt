@@ -1,0 +1,9 @@
+Design a three-stage register circuit that sequentially captures and processes two input signals, a 14-bit signal `e` and a 32-bit signal `b`, on each clock cycle, with the ability to be reset. The first stage stores the inputs in intermediate registers, while the second and third stages further process and propagate these values, producing an output `q` which is a 14-bit signal derived from the AND operation of the second stage's output and a delayed version of the first stage's register associated with `e`. Additionally, the circuit maintains a status flag `rb` that tracks the state of the second input `b` across the clock cycles.
+module top_module(
+  input clk,
+  input reset,
+  input [13:0] e,
+  input [31:0] b,
+  output reg [13:0] q,
+  output reg rb
+);

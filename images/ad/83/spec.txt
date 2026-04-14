@@ -1,0 +1,8 @@
+Design a circuit that implements a 4-bit signed Booth multiplier. The module takes in two signed 4-bit inputs, A and B, and computes their product as an 8-bit signed output. It utilizes a sequential process that shifts and adds based on the bits of B, effectively doubling A and halving B at each clock cycle, to perform the multiplication. The circuit includes a reset functionality to initialize all registers to zero.
+module top_module(
+  input clk,
+  input reset,
+  input signed [3:0] A,
+  input signed [3:0] B,
+  output reg signed [7:0] product
+);

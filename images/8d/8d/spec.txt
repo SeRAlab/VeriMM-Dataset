@@ -1,0 +1,8 @@
+Design a 2-bit up-down counter that increments or decrements its count based on the `up_down` control signal and the clock input. When the counter reaches its maximum value (3 in decimal, represented as 2'b11) and the `up_down` signal is high, it wraps around to 0 and sets the `carry_out` signal to indicate an overflow. Conversely, when the counter is at its minimum value (0 in decimal, represented as 2'b00) and the `up_down` signal is low, it wraps around to 3 and similarly sets the `carry_out` signal. The counter can be reset to 0 at any time when the `reset` signal is asserted.
+module top_module(
+	input clk,
+	input up_down,
+	input reset,
+	output reg [1:0] count,
+	output reg carry_out
+);

@@ -1,0 +1,9 @@
+Design a circuit that processes inputs `a` and `b` using a clock signal. It generates two separate outputs: the first `q` which is assigned the value derived from the bitwise AND operation of `a` and `b`, and the second `comb_q` that outputs the value of input `e` for each bit in a 4-bit wide register. Note that there is a design conflict in the `always` blocks as both attempt to assign values to `q` on the same clock edge, which can lead to unpredictable behavior in practical implementations.
+module top_module(
+    input clk,
+    input a,
+    input b,
+    input e,
+    output  reg [3:0] q,
+    output reg [3:0] comb_q
+);

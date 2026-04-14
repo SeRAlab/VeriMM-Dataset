@@ -1,0 +1,7 @@
+Design a clock divider module that generates a divided output clock based on an input clock signal and a specified division value. When the reset signal is low, both the temporary counter for clock cycles and the output clock signal are reset to zero. On each rising edge of the input clock, the module increments a counter until it reaches the division value, at which point it toggles the output clock signal and resets the counter. This module effectively reduces the frequency of the input clock by the specified division ratio, allowing for flexible clock management in digital circuits.
+module top_module(
+    input clk,
+    input rst,
+    input [31:0] div_val,
+    output reg clk_out
+    );

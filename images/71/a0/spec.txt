@@ -1,0 +1,11 @@
+Develop a circuit that functions as a simple accumulator with additional status indicators. It takes a 4-bit input and, when enabled, adds this input to an internal register on each clock cycle with rising edge synchronization. If a reset signal is received, the internal register and status flags for parity, overflow, and underflow are reset. The circuit also toggles the parity flag with each enable operation, checks for overflow when the result exceeds the maximum 4-bit value, and checks for underflow when the result goes below the minimum 4-bit value, providing outputs for these conditions along with the accumulated data.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] data_in,
+    input enable,
+    output [3:0] data_out,
+    output parity,
+    output overflow,
+    output underflow
+);

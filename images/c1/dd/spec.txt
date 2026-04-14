@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as a digital buffer, designed to transfer a digital signal from its input to its output without modification. The primary function of this module to provide isolation between the source of the signal and its destination. This isolation can help in managing load, preventing signal degradation across long distances, or interfacing between different logic domains within a broader digital system. The parameterizable size (`SIZE`) allows for flexibility in the width of the data bus it can handle, making it adaptable to various data widths within digital systems, from single-bit signals to wider bus interfaces.
+
+Module name:  
+	dp_buffer
+
+Input ports:
+	in: This is the input port of the dp_buffer module. It is a vector with a width defined by the parameter SIZE. The in port is intended to receive the digital signal that needs to be buffered. The data type of this port is input, indicating that it receives data from outside the module.
+Output ports:
+	dout: This is the output port of the module, where the buffered signal is presented. Like the input port, it is a vector with a width defined by the parameter SIZE. The data type of this port is output, indicating that it sends data out of the module. The significance of the dout port is to deliver the buffered signal to the next stage in the digital system without altering its value.
+
+
+Implementation:
+The RTL module presented, named dp_buffer, is a straightforward design that implements a digital buffer. This module is designed to pass the input signal directly to the output without any modification, acting as a conduit for digital signals. The simplicity of this module belies its utility in various digital design contexts, such as signal routing, isolation, and timing adjustment.
+The core logic of the dp_buffer module is purely combinational, as it does not incorporate any sequential elements like flip-flops or latches. The absence of sequential logic means that the output of the module (dout) changes immediately in response to changes in the input signal (in), subject to the propagation delays inherent in the logic gates and interconnects used to implement the module in hardware.
+The module is parameterized with a SIZE parameter, which allows for the adjustment of the width of the input and output signals. This parameterization makes the dp_buffer module highly versatile, as it can be adapted to handle signals of various bit-widths, making it suitable for a wide range of applications in digital designs.
+
+Give me the complete code.
+

@@ -1,0 +1,9 @@
+Implement a Verilog module for an 8-bit up/down counter with enable and synchronous clear. The counter should have a clock input `clk`, a synchronous clear input `clear`, an enable input `en`, a control input `up_down` (1 for up, 0 for down), and an 8-bit output `Q`. When `clear` is high, `Q` should be set to 0 on the next rising edge of `clk`. When `en` is high and `up_down` is 1, `Q` should increment by 1 on the rising edge of `clk`. When `en` is high and `up_down` is 0, `Q` should decrement by 1 on the rising edge of `clk`.
+
+module counter_up_down(
+	input wire clk,
+	input wire clear,
+	input wire en,
+	input wire up_down,
+	output reg [7:0] Q
+);

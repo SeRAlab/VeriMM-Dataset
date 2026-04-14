@@ -1,0 +1,9 @@
+Design a synchronous FIFO (First-In-First-Out) buffer with a depth of 16 entries, capable of storing 8-bit data. The module includes control signals for resetting the buffer, reading from it, and writing to it. On the positive edge of the clock, data is written to the buffer when the write signal is active and the buffer is not full. Conversely, data is read from the buffer when the read signal is active and the buffer is not empty. The design monitors the head and tail pointers to manage the buffer state, ensuring proper handling of full and empty conditions.
+module top_module(
+    input reset,
+    input clk,
+    input rd,
+    input wr,
+    input [7:0] data_in,
+    output reg [7:0] data_out  // Added output for read data
+);

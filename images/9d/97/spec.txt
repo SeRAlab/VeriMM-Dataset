@@ -1,0 +1,9 @@
+Design a synchronous circuit that detects rising and falling edges of a 32-bit input signal. The module captures the input on the positive edge of the clock and maintains delayed versions of the input to identify changes in state. When a rising edge is detected (indicating a transition from low to high) or a falling edge (indicating a transition from high to low), it asserts corresponding output signals. The output state combines the previous delayed input and the edge detection results, providing a compact representation of the current condition. The module incorporates a reset feature to initialize all internal registers to zero.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] in,
+    output rise,
+    output down,
+    output [1:0] state
+);

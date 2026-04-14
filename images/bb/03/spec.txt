@@ -1,0 +1,10 @@
+The designed module serves multiple purposes, including a barrel shifter and a binary tree adder. It extracts the high and low 8 bits from a 16-bit input, providing these as separate outputs. Additionally, it counts the number of '1' bits present in a larger input tree and outputs this count as an 8-bit value. The module also features a functional aspect that sums the high bits output and the counted output, but only if both values are non-zero, thus ensuring that the output is meaningful. The overall design implements a data processing unit that can shift and add specific segments of data while integrating a counting function for binary representation.
+module top_module(
+    input [15:0] in,
+    output [7:0] out_hi,
+    output [7:0] out_lo,
+    input [254:0] in_tree,
+    output [7:0] out_tree,
+    output reg [15:0] out_sum,
+    input clk  // Added clk input here
+);

@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a receiver for LVDS (Low-Voltage Differential Signaling) data. Its primary objectives include:
+
+Deserialization: It converts serial LVDS data streams into parallel data outputs. The deserialization factor, which determines the ratio of serial to parallel conversion, is configurable.
+Synchronization and Data Alignment: It synchronizes the incoming data with the system clock and aligns the data correctly for parallel output.
+Enable-Controlled Data Capture: It captures data based on enable signals, allowing for controlled data processing and output.
+
+This module plays a critical role in systems requiring high-speed data communication with minimal noise and electromagnetic interference, typical in high-performance computing, telecommunications, and data acquisition systems.
+
+Module name:  
+	stratix_lvds_rx
+
+Input ports:
+	rx_in [number_of_channels 1 :0]: A vector input representing the serialized LVDS data streams. The width of this input is determined by the number_of_channels parameter, allowing for multiple channels of LVDS data to be received simultaneously.
+	rx_fastclk: The fast clock input used for data deserialization and internal timing. This clock is expected to run at a multiple of the data rate, determined by the deserialization factor.
+	rx_enable0 and rx_enable1: Enable signals used to control the data capture and output hold functionality. These signals allow for conditional processing of the incoming data based on external control logic.
+Output ports:
+	rx_out [REGISTER_WIDTH 1: 0]: The parallel output data port. The width of this port is determined by the REGISTER_WIDTH parameter, which is a product of the deserialization factor and the number of channels. This port outputs the deserialized and synchronized data.
+
+
+Implementation:
+The stratix_lvds_rx module is designed to deserialize LVDS (Low Voltage Differential Signaling) data streams. It operates by capturing serial data on the rx_in input pins, deserializing this data based on a configurable deserialization factor, and then outputting the deserialized parallel data on the rx_out pins. The module is parameterized, allowing for flexibility in the number of channels and the deserialization factor, making it adaptable to various data rates and interface widths.
+Sequential Logic:
+Shift Register (rx_shift_reg): At the core of the deserialization process is a shift register that captures the serial data on the negative edge of rx_fastclk. For each channel, the incoming bit is shifted into the least significant bit (LSB) position, pushing the existing bits towards the most significant bit (MSB) position. This shifting occurs over deserialization_factor clock cycles, effectively converting the serial stream into parallel data.
+Parallel Load Register (rx_parallel_load_reg): Once the shift register is fully loaded, its contents are transferred to the parallel load register on the condition that enable0_neg is high. This transfer occurs on the negative edge of rx_fastclk, ensuring that the parallel data is ready for output at a specific timing.
+Output Hold Register (rx_out_hold): To stabilize the output data and provide it synchronously with respect to rx_hold_clk, the parallel load register's contents are transferred to the output hold register on the positive edge of rx_hold_clk. This register holds the parallel data until the next update cycle.
+Combinational Logic:
+Enable Logic: The module uses rx_enable0 and rx_enable1 signals to control the data flow through the deserializer. The enable signals are synchronized to the rx_fastclk domain. Specifically, enable0_neg is derived from rx_enable0 to trigger the transfer of data from the shift register to the parallel load register. Meanwhile, rx_hold_clk is directly controlled by rx_enable1, dictating when the output hold register is updated with new data.
+
+Give me the complete code.
+

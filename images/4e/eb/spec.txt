@@ -1,0 +1,9 @@
+Design a block RAM (Random Access Memory) module that supports simultaneous read and write operations. The module operates on a clock signal, where it writes data to a specified address if the write signal is valid, and it reads data from another specified address. The width of the data bus is configurable (64 bits), and the address space is determined by a 9-bit address, allowing access to up to 512 memory locations. The output provides the data read from the specified address.
+module top_module(
+   input 		  clock,
+   input [DBITS-1:0] 	  w_data,
+   input 		  w_valid,
+   input [ABITS-1:0] 	  w_addr,
+   output reg [DBITS-1:0] r_data,
+   input [ABITS-1:0] 	  r_addr
+   );

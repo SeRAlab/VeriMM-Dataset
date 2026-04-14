@@ -1,0 +1,21 @@
+Please act as a professional Verilog designer.
+
+Design a 16-bit linear feedback shift register (LFSR) with an active-high synchronous reset (rst) signal. The LFSR generates pseudo-random sequences based on a given polynomial. The LFSR value is reset to 16'b1 when the reset signal is active.
+
+Module name:
+    lfsr
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high synchronous reset signal. Defined as 1 for reset and 0 for normal operation.
+
+Output ports:
+    out: 16-bit output signal representing the current LFSR value.
+
+Implementation:
+- The LFSR shifts right on the positive edge of the clock.
+- Feedback is taken from the XOR of bits 15, 13, 12, and 10.
+- The LFSR value is reset to 16'b1 when the reset signal is active.
+- The LFSR value is stored in a 16-bit register.
+
+Give me the complete code.

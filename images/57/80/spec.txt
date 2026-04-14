@@ -1,0 +1,20 @@
+Design a memory stage for a CPU pipeline that processes data and control signals between stages. This module accepts inputs from the ALU and control signals for loading, storing, and managing branch operations. On a clock edge, it captures the ALU output and relevant control signals if not in reset, ensuring synchronized processing. The outputs include a write-back value conditionally set based on control signals: it sets a specific value for loads, a placeholder for stores, or the ALU result otherwise. Additionally, it generates a stall signal that is currently fixed to zero, indicating no stalling is implemented.
+module top_module(
+    /* cpu global */
+    input clk_i,
+    input rst_i,
+
+    /* inter-stage */
+    input [31:0] alu_i,
+    input control_load_i,
+    input control_store_i,
+    input control_take_branch_i,
+    input do_wb_i,
+    input [4:0] wb_reg_i,
+    output stall_o,
+
+    /* to stage5 */
+    output reg do_wb_o,
+    output reg [4:0] wb_reg_o,
+    output reg [31:0] wb_val_o
+);

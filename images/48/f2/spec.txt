@@ -1,0 +1,6 @@
+Implement a 4-to-2 priority encoder that takes a 4-bit input and encodes the highest priority active input into a 2-bit output. The encoder produces a specific output based on the active bit positions in the input, with a priority scheme that favors the least significant bit (LSB) active. The output is registered, capturing the encoded value on the rising edge of a clock signal. If no input bits are high, the output defaults to 00.
+module top_module(
+    input clk,                  // Added clock input
+    input [3:0] I,
+    output reg [1:0] O
+);

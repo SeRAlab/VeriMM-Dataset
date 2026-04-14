@@ -1,0 +1,11 @@
+Design a UART (Universal Asynchronous Receiver-Transmitter) transmitter module capable of serially transmitting 8-bit data. The module includes a UART transmit signal and a busy signal indicating ongoing transmission. The transmitting process is initiated by asserting the `uart_wr_i` input, provided the module is not currently busy. It utilizes a clock derived from a 68 MHz system clock, divided down to enable a baud rate of 115200 Hz, for serial data output through the `uart_tx` line. The `shifter` register holds the data to be transmitted, and the transmission shifts out one bit at a time while managing the bit count to ensure proper framing around the data bits with start and stop conditions. The module also incorporates reset functionality to initialize all registers to a known state.
+module top_module(
+   // Outputs
+   uart_busy,   // High means UART is transmitting
+   uart_tx,     // UART transmit wire
+   // Inputs
+   uart_wr_i,   // Raise to transmit byte
+   uart_dat_i,  // 8-bit data
+   sys_clk_i,   // System clock, 68 MHz
+   sys_rst_i    // System reset
+);

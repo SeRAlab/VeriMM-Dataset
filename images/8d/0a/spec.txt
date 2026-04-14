@@ -1,0 +1,14 @@
+Design a memory module that acts as a Wishbone slave interface, capable of reading and writing 16-bit data at specified addresses. It supports address inputs up to 19 bits, allowing access to a large memory array. The module features an acknowledgment signal for indicating data availability and a write enable mechanism controlled by the combination of write and control signals. The memory content is updated based on the selected data byte lanes determined by the byte select input, enabling selective writing to the upper and lower bytes of the 16-bit memory word.
+module top_module(
+    // Wishbone slave interface
+    input         wb_clk_i,
+    input         wb_rst_i,
+    input  [15:0] wb_dat_i,
+    output [15:0] wb_dat_o,
+    input  [19:1] wb_adr_i,
+    input         wb_we_i,
+    input  [ 1:0] wb_sel_i,
+    input         wb_stb_i,
+    input         wb_cyc_i,
+    output        wb_ack_o
+  );

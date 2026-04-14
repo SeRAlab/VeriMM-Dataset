@@ -1,0 +1,7 @@
+Implement an interrupt controller that manages multiple interrupt requests (IRQs) with priority encoding. The module takes an n-bit input representing incoming IRQs and outputs an acknowledgment signal for the highest priority IRQ detected. When an IRQ is active, the controller uses a priority encoder to determine its priority level, which influences the acknowledgment output. Additionally, a state machine regulates the acknowledgment process, ensuring that only one IRQ is acknowledged at a time and handling pending IRQs appropriately. The design facilitates efficient interrupt handling in a digital system by ensuring timely responses to the highest-priority requests.
+module top_module(
+  input [n-1:0] irq,
+  input clk,               // Added clock input
+  input reset,             // Added reset input
+  output reg [n-1:0] ack   // Changed ack to reg type
+);

@@ -1,0 +1,11 @@
+
+Design a Bluetooth state machine that operates in three states: IDLE, CONNECTING, and CONNECTED. The state transitions are controlled by inputs: start_connect (to initiate connection) and connection_success (to indicate a successful connection). The state transitions are as follows:
+- IDLE -> CONNECTING (on start_connect = 1)
+- CONNECTING -> CONNECTED (on connection_success = 1)
+- CONNECTING -> IDLE (on connection_success = 0)
+- CONNECTED -> IDLE (on reset signal)
+
+The state machine should also output the current state as a 2-bit binary value, where:
+- IDLE = 00
+- CONNECTING = 01
+- CONNECTED = 10

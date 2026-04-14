@@ -1,0 +1,10 @@
+Design a circuit implementing an anti-droop Infinite Impulse Response (IIR) filter that processes signed input data with a configurable tap weight. The module operates on a clock signal and generates a filtered output by performing a multiplication of the input data and the tap weight, accumulating results over time. It features an overflow detection mechanism and can reset its state based on trigger signals. Additionally, it supports an option for pipelined registers to enhance data throughput. The output is a signed 16-bit value, which is derived from the accumulated tap values adjusted by the input.
+module top_module(
+	input clk,
+	input trig,
+	input signed [12:0] din,
+	input signed [6:0] tapWeight,
+	input accClr_en,
+	input oflowClr,
+	output reg oflowDetect = 1'd0,
+	output reg signed [15:0] dout = 16'sd0);

@@ -1,0 +1,8 @@
+Design an automatic gain control (AGC) circuit that adjusts the amplitude of an input signal based on a control gain signal. The module takes a signed 16-bit input signal and a signed 16-bit gain control value, producing a scaled output signal and an 8-bit gain value. The AGC continuously computes an error based on the input signal and the currently adjusted output, using a predefined gain constant to modify the gain dynamically. It ensures that the gain remains within a specified range, clamping it to avoid overflow or underflow. Additionally, the circuit resets the output signal and gain to default values upon receiving a reset signal.
+module top_module(
+  input signed [15:0] signal_in,
+  input signed [15:0] gain_ctrl,
+  input reset,
+  output signed [15:0] signal_out,
+  output [7:0] gain_out
+);

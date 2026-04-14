@@ -1,0 +1,9 @@
+Design a reset control unit (RCU) that manages system reset and clock signals for a digital system. The module ensures that when an external reset signal (EXTRSTn) is asserted, the SYSTEM RESET (SYSRSTn) is driven low, effectively resetting the system. It also implements a clock gating mechanism, where the output SYSCLK is enabled based on the state of the clock enable signal (clken) combined with the external clock (EXTCLK). This design is critical for power management and reliable operation by controlling when the clock is active and allowing for proper reset behavior.
+module top_module(
+  input  wire EXTRSTn,  
+  input  wire EXTCLK,   
+  input  wire rsten,    
+  input  wire clken,    
+  output wire SYSRSTn,  
+  output wire SYSCLK    
+);

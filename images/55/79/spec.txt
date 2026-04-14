@@ -1,0 +1,13 @@
+Design a SPI (Serial Peripheral Interface) slave module that facilitates communication with a master device. The module receives a clock signal (sck), a chip select signal (ss), and a data input line (mosi), while outputting data on the miso line and indicating when data transfer is complete via the done signal. It latches incoming data from the master and controls the transmission of data from the slave based on the state of the sck signal and the chip select. The module also allows for an external data input (din) to update its internal state, managing a byte-by-byte transfer across 8 clock cycles when the chip select is active.
+module top_module(
+    input clk,
+    input rst,
+    input ss,
+    input mosi,
+    output miso,
+    input sck,
+    output done,
+    input [7:0] din,
+    input din_update,
+    output [7:0] dout
+    );

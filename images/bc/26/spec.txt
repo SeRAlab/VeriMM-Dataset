@@ -1,0 +1,8 @@
+Design a circuit that functions as a multiplexer and a splitter while performing a summation operation. The module accepts three single-bit inputs (a, b, c) that are used as data sources for the multiplexer. It also takes a 16-bit input, which is divided into upper and lower 8-bit bytes. The core functionality includes summing these inputs along with the split bytes to produce a 24-bit output. The upper and lower bytes are directly passed as outputs, while the final output combines the results of the summation, with the summation incorporating both the control signals and the split input bytes.
+module top_module(
+    input wire a, b, c, // Inputs to the multiplexer
+    input wire [15:0] in, // Input to the splitter
+    output wire [7:0] out_hi, // Upper byte of the splitter output
+    output wire [7:0] out_lo, // Lower byte of the splitter output
+    output wire [23:0] final_out // Final 24-bit output from the functional module
+);

@@ -1,0 +1,8 @@
+Design a digitally controlled delay-locked loop (DLL) that generates a delayed output signal based on a reference clock and input data. The module includes a delay line that shifts input signals to create the desired delay, and employs a phase detector to compare the phase of the input data with the delayed version. The control voltage, derived from the phase detection, is low-pass filtered to stabilize the delay adjustment. The output signal, `data_out`, is taken from the end of the delay line, and the `locked` signal indicates when the loop is phase-locked, ensuring synchronization with the reference clock. This DLL can be used for applications requiring precise timing adjustments, such as data recovery or frequency synthesis.
+module top_module(
+  input clk_ref,
+  input data_in,
+  input en,
+  output reg data_out,
+  output reg locked
+);

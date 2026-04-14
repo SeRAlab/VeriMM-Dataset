@@ -1,0 +1,11 @@
+Design a synchronous first-in-first-out (FIFO) memory generator. This module allows data input (din) to be written to a memory array when the write enable (wr_en) signal is asserted, and outputs data (dout) when the read enable (rd_en) signal is asserted. The module maintains two pointers for tracking the write and read positions in the buffer, as well as flags for indicating whether the FIFO is empty or full. The design supports a depth of 1024 entries and a width of 12 bits for each entry, making it suitable for temporary data storage with defined control signals for managing memory flow.
+module top_module(
+  input [11:0] din,
+  input wr_en,
+  input rd_en,
+  input clk,
+  input srst,
+  output [11:0] dout,
+  output empty,
+  output full
+);

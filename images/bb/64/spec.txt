@@ -1,0 +1,9 @@
+Design a register file that consists of an array of k registers, each capable of storing n-bit wide data. It supports read and write operations, allowing data to be written to a selected register when enabled by the write_en signal. The module also includes a reset functionality that clears all registers when the reset signal is asserted. Data can be read from the selected register using reg_select; if the selection exceeds the available registers, it outputs zero. The design utilizes multiplexing for read operations and employs a clocked write mechanism for data storage.
+module top_module(
+  input [n-1:0] data_in,
+  input [k-1:0] reg_select,
+  input write_en,
+  input reset,
+  input clk,          // Added clock input
+  output [m-1:0] data_out
+);

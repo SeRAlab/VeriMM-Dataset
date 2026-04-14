@@ -1,0 +1,11 @@
+Design a 32-bit register file with 32 registers capable of reading and writing data. The module supports synchronous write operations, with data written to a specified register on the rising edge of the clock if the regWrite signal is asserted. It allows for simultaneous reading of two registers, with the outputs readData1 and readData2 providing the contents of the registers specified by readReg1 and readReg2, respectively. The register file is initialized to zeroes when powered on, making it suitable for applications in processors or digital systems requiring temporary data storage.
+module top_module(
+    input clk,
+    input regWrite,
+    input [4:0] readReg1,
+    input [4:0] readReg2,
+    input [4:0] writeReg,
+    input [31:0] writeData,
+    output reg [31:0] readData1, 
+    output reg [31:0] readData2
+    );

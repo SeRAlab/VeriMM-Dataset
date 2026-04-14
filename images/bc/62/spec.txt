@@ -1,0 +1,10 @@
+Design a 4-bit shift register capable of shifting in two directions with reset functionality. On each clock edge, if the reset (rst) is activated, the register clears to zero. When shifting is enabled (shift=1), the register can either shift left or right based on the direction input (dir). If shifting left, the new input data (in) enters from the least significant bit (LSB) while the most significant bit (MSB) is output as shifted_out. Conversely, if shifting right, the new input data enters from the MSB, and the LSB is output as shifted_out. If shifting is not active, the register loads the input data directly without shifting, and the shifted_out output remains zero.
+module top_module(
+    input clk,
+    input rst,
+    input shift,
+    input dir,
+    input [3:0] in,
+    output [3:0] out,
+    output [3:0] shifted_out
+);

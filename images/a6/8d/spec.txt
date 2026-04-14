@@ -1,0 +1,6 @@
+Design a 4-to-1 multiplexer that selects among four 32-bit inputs: `seq_dst`, `branch_dst`, `jump_dst`, and `jr_dst`, based on the control signals `branch`, `jump`, and `jr`. The output `PC_dst` will be equal to `seq_dst` if branch is not asserted, will select `branch_dst` if branch is asserted, will select `jump_dst` if jump is asserted, and will choose `jr_dst` if jr is asserted, effectively routing the desired destination address for the program counter based on control logic.
+module top_module(
+  seq_dst, branch_dst, jump_dst, jr_dst,
+  branch, jump, jr,
+  PC_dst
+    );

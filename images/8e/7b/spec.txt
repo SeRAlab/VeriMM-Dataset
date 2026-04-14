@@ -1,0 +1,10 @@
+Design a circuit that functions as a combined counter and shift register. The module accepts a control signal for counting direction (up_down) and a load control signal to initialize both the counter and the shift register with input data. On each clock cycle, if a reset signal is activated, it resets both the counter and the shift register to zero. If the load signal is asserted, it loads a 16-bit value into both the counter and the shift register. When the shift control signal is active, the counter increments or decrements based on the up_down input, and this updated counter value is shifted into the least significant bit of the shift register, while the existing bits are shifted left. The output of the module provides the current state of the shift register.
+module top_module(
+    input up_down,
+    input load,
+    input shift,
+    input clk,
+    input reset,
+    input [15:0] data_in,
+    output [15:0] data_out
+);

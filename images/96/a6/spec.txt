@@ -1,0 +1,8 @@
+Design a 3-stage pipeline register that captures a single-bit input `d` on the rising edge of the clock when enabled by `ena`. The `clrn` signal serves as an asynchronous reset; when asserted low, it clears the pipeline data to 0. The output `q` reflects the most recent value after it has passed through all three stages of the pipeline, effectively creating a delay of three clock cycles for the input signal.
+module top_module(
+    input clock,
+    input clrn,
+    input d,
+    input ena,
+    output q
+    );

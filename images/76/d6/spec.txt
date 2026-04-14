@@ -1,0 +1,22 @@
+Design a bus router module that routes input data from multiple ports (port0 to port4) to corresponding output ports, effectively forwarding data on each clock cycle while providing a mechanism to acknowledge readiness from port4. The module also includes a control signal that outputs a bitwise OR of all input ports, allowing for aggregated control data output. Upon reset, all output signals and the acknowledgment flag are set to zero. The design facilitates dynamic data handling in a clocked environment, ensuring synchronous operation across the ports.
+module top_module(
+    input clk,
+    input rst,
+
+    input [143:0] port0_ci,
+    input [143:0] port1_ci,
+    input [143:0] port2_ci,
+    input [143:0] port3_ci,
+    input [143:0] port4_ci,
+
+    output reg [143:0] port0_co,
+    output reg [143:0] port1_co,
+    output reg [143:0] port2_co,
+    output reg [143:0] port3_co,
+    output reg [143:0] port4_co,
+
+    input port4_ready,
+    output reg port4_ack,
+
+    output reg [143:0] control_w
+);

@@ -1,0 +1,12 @@
+
+Design an 8-channel DMA controller that transfers data from one memory location to another. The controller should have the following inputs and outputs:
+- Inputs:
+  - `start`: A signal to start the transfer.
+  - `channel_select`: A 3-bit signal to select one of the 8 channels.
+  - `src_addr`: A 16-bit source address for the DMA transfer.
+  - `dest_addr`: A 16-bit destination address for the DMA transfer.
+- Outputs:
+  - `transfer_complete`: A signal indicating that the transfer has completed for the selected channel.
+  - `data`: A 16-bit output data line carrying the data being transferred.
+  
+The controller should cycle through the channels and allow multiple transfers, indicating when each transfer is complete.

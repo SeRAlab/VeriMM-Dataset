@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+    
+Implement a module to implement a complex logic gate known as an OR-AND-INVERT (OAI) gate with three OR inputs, one AND input, and an inverter at the output. This specific configuration is often referred to as an OAI311 gate, indicated by the naming convention used in the module name. The "8x" suggests that this module might be designed with a specific drive strength or size in mind, typically to meet certain performance criteria such as speed or power consumption in a larger digital integrated circuit (IC) design.
+
+The module's role within a broader system context could vary widely, as OAI gates are fundamental building blocks in digital logic, used in a variety of applications from simple logic functions to more complex structures like arithmetic units, control logic, or timing circuits. The versatility of the OAI311 configuration allows for efficient implementation of specific logic functions, potentially reducing the overall gate count, power consumption, and improving the speed of the circuit.
+
+Module name:  
+	bw_u1_oai311_8x
+
+Input ports:
+	c1, c2, c3: These are input ports for the module, each accepting a digital signal (binary). These inputs are part of the OR operation, which is one of the inputs to the AND operation before the final inversion.
+	a, b: These are also input ports for the module, each accepting a digital signal. These inputs are directly involved in an AND operation, the result of which is ANDed with the result of the OR operation of c1, c2, c3, before being inverted to produce the output.
+Output ports:
+	z: This is the single output port of the module. It is a digital signal (binary, either 0 or 1) that represents the inverted result of the AND operation between the OR operation of inputs c1, c2, c3, and the AND operation of inputs a and b.
+
+
+Implementation:
+The RTL module bw_u1_oai311_8x implements a specific combinational logic function using basic logical operations. The core functionality of this module is to generate an output signal z based on the logical conditions applied to its input signals c1, c2, c3, b, and a. This module does not contain any sequential logic elements (like flip-flops or latches), meaning its output is purely a function of its current inputs, without any dependency on previous input states.
+The logic implemented can be dissected as follows:
+OR Operation on c1, c2, c3: The first stage of the logic combines inputs c1, c2, and c3 using an OR operation. This means if any of these inputs are high (1), the result of this operation will be high.
+AND Operation with a and b: The result of the OR operation is then ANDed with both inputs a and b. For the output of this AND operation to be high, all of the following conditions must be met: at least one of c1, c2, or c3 is high, and both a and b are high.
+Inversion of AND Result: Finally, the result of the AND operation is inverted (NOT operation). This means the output z will be high if the conditions for the AND operation are not met. In other words, z will be high if either none of c1, c2, or c3 are high, or if either a or b (or both) are low.
+This logic can be summarized by the boolean expression for z as follows:
+\[ z = \overline{(c1 + c2 + c3) \cdot a \cdot b} \]
+This expression represents a three-input OR gate followed by a three-input AND gate, with the output of the AND gate being inverted.
+
+Give me the complete code.
+

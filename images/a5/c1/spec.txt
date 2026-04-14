@@ -1,0 +1,7 @@
+Design a clock domain crossing (CDC) synchronizer circuit that ensures reliable data transfer between different clock domains. This module takes an input data signal of width 'n' and synchronizes it over 't' clock cycles to reduce the risk of meta-stability issues. It utilizes two flip-flops to store intermediate values of the input data, with the output being updated only when the synchronization conditions are met, effectively outputting the synchronized data across the specified clock cycles. The enable signal allows the output to be valid only when both the input clock and reset signals are not active, ensuring controlled data flow under varying clock states.
+module top_module(
+  input wire clk_in,
+  input wire rst_in,
+  input wire [n-1:0] data_in,
+  output reg [n-1:0] data_out
+);

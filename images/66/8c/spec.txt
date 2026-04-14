@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+
+Implement a module of a 32-bit multiplier with pipeline stages. The output result is available on the result port, and the o_en = 1 indicates the availability of the result.
+
+Module name:
+    multiplier_pipe_32bit
+Input ports:
+    clk: Clock input
+    rst_n: Active low reset signal
+    i_en: Enable signal for multiplication operation
+    mul_a: 32-bit input operand A
+    mul_b: 32-bit input operand B
+
+Output ports:
+    result: 64-bit output representing the product of mul_a and mul_b.
+    o_en: Output enable signal.
+
+Implementation:
+The module includes several registers to enable the pipeline stages and synchronize the input enable signal (i_en). These registers are controlled by the clock (clk) and reset (rst_n) signals.
+The product values for each pipeline stage are calculated by multiplying the corresponding input operands.
+The output enable signal (o_en) is updated based on the pipeline stages and synchronized with the clock (clk) and reset (rst_n) signals.
+
+Give me the complete code.

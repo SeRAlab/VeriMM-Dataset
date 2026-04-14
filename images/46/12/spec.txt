@@ -1,0 +1,10 @@
+Design a circuit that generates a valid address for a LED strip based on pixel coordinates in a vertical scan interface. The module takes a pixel clock, x and y coordinates, and a validity signal as inputs. It outputs a 10-bit address for the LED strip when the input pixel is valid, the x coordinate equals zero, and the y coordinate falls within a specified vertical range, defined by the Y_START and Y_END parameters. This effectively enables LED strip control for pixels aligned within a specific vertical band on the display.
+module top_module(
+	input			pixel_clk_i,
+	input	[11:0]	pixel_x_i,
+	input	[11:0]	pixel_y_i,
+	input			pixel_valid_i,
+
+	output	[9:0]	led_strip_address_o,
+	output			led_strip_address_valid_o
+);

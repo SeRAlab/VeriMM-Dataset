@@ -1,0 +1,10 @@
+Design a 4-bit counter with load and overflow detection features. The module increments its count on each clock pulse when enabled, can be reset to zero, and can load a specified 4-bit value. The overflow output is asserted when the counter reaches its maximum value of 15 (0xF) after either loading a new value or incrementing. This design facilitates counting and provides status indication for overflow conditions.
+module top_module(
+  input clk,
+  input reset,
+  input enable,
+  input load,
+  input [3:0] data_in,
+  output reg [3:0] q,
+  output reg overflow
+);

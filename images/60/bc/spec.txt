@@ -1,0 +1,10 @@
+Design a synchronous dual-port RAM module with a 10-bit wide address space and 16-bit wide data lines. The module features read and write enables for controlling memory access. When the clock signal (clk) has a rising edge and the write enable (wce) is asserted, data (wd) is written to the memory location specified by the write address (wa). The module also allows data to be read from the memory; when the read enable (rce) is asserted, the data at the address specified by the read address (ra) is output (rq). If read enable is not asserted, the output will be forced to zero.
+module top_module(
+    input clk,
+    input rce,
+    input [9:0] ra,
+    input wce,
+    input [9:0] wa,
+    input [15:0] wd,
+    output [15:0] rq
+);

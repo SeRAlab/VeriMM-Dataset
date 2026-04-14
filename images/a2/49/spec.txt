@@ -1,0 +1,8 @@
+Design a module for memory encryption that takes a 32-bit input data and a 32-bit encryption key, with clock and reset control signals. On each rising edge of the clock, if the reset signal is high, the module initializes the internal state and outputs to zero. If the key is zero, it simply outputs the input data. Otherwise, it performs a bitwise XOR operation on the input data with the key to encrypt it, storing the intermediate result in an internal state. The final output is then the XOR of the internal state with the key, effectively producing an encrypted output based on the provided input and key.
+module top_module(
+  input clk,
+  input reset,
+  input [31:0] data_in,
+  input [31:0] key,
+  output reg [31:0] data_out  // Changed from wire to reg
+);

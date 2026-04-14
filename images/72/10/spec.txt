@@ -1,0 +1,11 @@
+Design a memory write-back (MEM_WB) register module that stores intermediate results from the execution stage of a processor. The module features synchronous reset functionality; upon a reset signal, it clears all output registers to zero. On the rising edge of the clock, if reset is inactive, the module captures incoming data (Write Back control signals, read data, ALU results, and instruction mux outputs) and transfers these values to corresponding output registers. This setup is integral for handling data flow in pipelined CPU architectures, facilitating the transfer of processed data from the execute stage back to the write-back stage of execution.
+module top_module(input clk,
+              input reset,
+              input[1:0] WB3_in, 
+              input[31:0] ReadData_in, 
+              input[31:0] ALU2_in, 
+              input[4:0] instruction_mux2_in, 
+              output reg[1:0] WB3_out, 
+              output reg[31:0] ReadData_out, 
+              output reg[31:0] ALU2_out,
+              output reg[4:0] instruction_mux2_out);

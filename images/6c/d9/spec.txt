@@ -1,0 +1,9 @@
+Design a frequency synthesizer that can operate in either a Phase-Locked Loop (PLL) or Direct Digital Synthesis (DDS) mode, depending on the configuration. The module accepts a clock input and a reset signal, along with a frequency control word (fcw) and a reference frequency (ref_freq). It generates an output frequency (out_freq) based on the accumulated phase calculated from the input parameters. The circuit employs a phase accumulator to keep track of the phase, adjusting it with a phase increment value, and checks for frequency lock conditions. The output indicates whether the generated frequency matches the desired control word by setting the locked output high when they are equal.
+module top_module(
+  input clk,
+  input rst,
+  input [n-1:0] fcw,
+  input [31:0] ref_freq,
+  output reg [31:0] out_freq, // Changed to reg since it will be assigned in always block
+  output reg locked // Changed to reg since it will be assigned in always block
+);

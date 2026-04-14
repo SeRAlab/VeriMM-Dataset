@@ -1,0 +1,7 @@
+Design a synchronous 8-bit register with an active-high reset feature. On the rising edge of the clock, if the reset signal is asserted, the register outputs are cleared to zero, and the complementary output (qbar) is updated accordingly. If reset is not asserted, the register captures the 8-bit input data on the rising edge of the clock, while the complementary output (qbar) is simultaneously updated to reflect the inverted state of q.
+module top_module(
+    input clk, reset,
+    input [7:0] d,
+    output reg [7:0] q,
+    output reg [7:0] qbar
+    );

@@ -1,0 +1,12 @@
+Design a four-bit wide shift register that can either load a concatenated input from four data lines (A, B, C, D) or shift its current value on each clock cycle. The operation is controlled by a load signal and an asynchronous reset input. If the load signal is asserted, the shift register is loaded with the concatenated values of D, C, B, and A. When load is not asserted and the clock rises, the current value of the shift register is shifted left by one bit, inserting a zero at the least significant bit position. Additionally, based on the select signal (S), the output can either reflect the current state of the shift register or the concatenated values of inputs A and B.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [3:0] C,
+    input [3:0] D,
+    input load,
+    input clk,
+    input S,
+    input areset,
+    output reg [3:0] Q
+);

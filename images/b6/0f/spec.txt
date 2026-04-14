@@ -1,0 +1,8 @@
+Implement a 32-bit wide register named HILO that captures input data on the negative edge of the clock when the write enable (wena) signal is high. The register can be reset asynchronously to zero when the reset (rst) signal is asserted high. The current value of the HILO register is continuously output on data_out. This design is useful for storing intermediate results in a digital system, such as in a CPU for high and low parts of products in multiply operations or in various pipeline stages.
+module top_module(
+	input clk,
+	input rst,
+	input wena,
+	input [31:0] data_in,
+	output [31:0] data_out
+);

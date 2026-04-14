@@ -1,0 +1,7 @@
+Design a circuit that performs bitwise shifting operations on an 8-bit input. The module implements a shifter that allows for left shifting, logical right shifting, and arithmetic right shifting based on a 2-bit control signal. The amount of shift is determined by a 4-bit input. Specifically, when the control signal is '00', the circuit left shifts the input; when '01', it logically right shifts; and when '10', it performs an arithmetic right shift, preserving the sign bit for negative numbers. The final result is output as an 8-bit value.
+module top_module(
+  input [7:0] in,
+  input [1:0] ctrl,
+  input [3:0] shift_amt,
+  output reg [7:0] out // Change output to reg to be assigned in always block
+);

@@ -1,0 +1,12 @@
+Design a register write module that controls data input for a register based on two signals. This module receives a select signal (MEM2REG_M) to determine whether to source data from memory (memdata) or from ALU output (aludata). It also utilizes a register write enable signal (REGWR_M) to control the writing process to the register specified by the reg2wr input. The module outputs the appropriate register address (rw) and the selected data (din) while asserting the write enable (we) when applicable.
+module top_module(
+    input MEM2REG_M,
+    input REGWR_M,
+    input [4:0]reg2wr,
+    input [31:0]memdata,
+    input [31:0]aludata,
+
+    output [4:0]rw,
+    output reg [31:0]din,
+    output we
+);

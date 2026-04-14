@@ -1,0 +1,11 @@
+Design a circuit that functions as a simple register-based data receiver and storage unit. It takes an 8-bit input data from `in_port` and captures it into a 32-bit output `readdata` when the `address` input is 0. The circuit operates on the rising edge of the `clk`, provided that `reset_n` is high (not active), and initializes `readdata` to zero on reset. If the `address` is not 0, the output `readdata` is set to zero, effectively acting as an address decoder that selects the input data under specific conditions.
+module top_module(
+  // inputs:
+  address,
+  clk,
+  in_port,
+  reset_n,
+
+  // outputs:
+  readdata
+);

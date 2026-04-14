@@ -1,0 +1,9 @@
+Design a synchronous binary adder circuit capable of adding two signed 4-bit numbers. The module features a clock input for timed operation and a reset input to initialize the output to zero. Upon a rising edge of the clock, if the reset is notactive, it computes the sum of the inputs `a` and `b` along with any carry from the previous addition. The temporary sum is stored in a register, which also determines the carry-out signal if the resulting sum exceeds the capacity of a 4-bit output. The final sum is output alongside the carry-out signal, enabling proper handling of potential overflow.
+module top_module(
+    input clk,
+    input rst,
+    input signed [3:0] a,
+    input signed [3:0] b,
+    output signed [3:0] sum,
+    output carry_out
+);

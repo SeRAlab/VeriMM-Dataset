@@ -1,0 +1,7 @@
+Design a pipelined circuit that reverses the byte order of a 32-bit input. The module uses a shift register to hold each byte and processes the data in two stages: first, it captures the individual bytes from the input; second, it rearranges these bytes in reverse order. The output is a 32-bit value constructed from the shifted byte registers, thereby providing the reversed byte format. The design also includes stage management with a clock and reset to control the progression through the pipelined stages.
+module top_module(
+    input [31:0] in,
+    input clk,
+    input reset,
+    output reg [31:0] out
+);

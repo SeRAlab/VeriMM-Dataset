@@ -1,0 +1,8 @@
+
+
+You are given a Verilog module called "shifter" that implements a fixed-width shifter. The module takes in three inputs: A (a 32-bit input), B (a 32-bit input), and ctrl (a 2-bit input). The module outputs a 32-bit value called "dout". The module is composed of five instances of a "fix_shifter" module, each with a different shift width. The shifter module is designed to shift the value of B by a variable amount, depending on the value of A and ctrl.
+
+Your task is to design the "fix_shifter" module that is used in the "shifter" module. The "fix_shifter" module should take in three inputs: A (a 2-bit input), B (a 32-bit input), and ctrl (a 2-bit input). The module should output a 32-bit value called "dout". The "fix_shifter" module should shift the value of B by a fixed amount, depending on the value of A and ctrl. The shift amount should be equal to 2^A if ctrl is 2'b00, 2^(A+1) if ctrl is 2'b01, 2^(A+2) if ctrl is 2'b10, and 2^(A+3) if ctrl is 2'b11.
+
+You should implement the fix_shifter module using only combinational logic. You may not use any sequential logic, such as registers or flip-flops.
+

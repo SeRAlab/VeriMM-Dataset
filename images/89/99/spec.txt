@@ -1,0 +1,11 @@
+Design a dual-output, level-sensitive latch that captures the input D based on the state of the GATE_N signal. When GATE_N goes low, the latch takes the value of D, setting Q to D and Q_N to the inverse of D. Additionally, if VPB (bulk supply) or VNB (bulk ground) goes low, it forces the outputs to a known state—Q to LOW and Q_N to HIGH when VPB is low, and Q to HIGH and Q_N to LOW when VNB is low. This design allows robust operation in a low-power environment while ensuring presence of built-in safety states under specific conditions.
+module top_module(
+    input  D,
+    input  VPWR,
+    input  VGND,
+    input  VPB,
+    input  VNB,
+    output Q,
+    output Q_N,
+    input  GATE_N
+);

@@ -1,0 +1,14 @@
+Design a modulation control circuit that generates a modulating carrier signal based on the provided modulation type and clock signals. The module uses an ADC clock to synchronize the output signals, where `ssp_frame` is controlled according to the modulation type and the `ssp_clk_divider` value. The `ssp_din` signal reflects the state of the `after_hysteresis` input, indicating post-hysteresis conditions. The carrier signal is modulated using logical operations, such as XOR and AND, to implement different modulation schemes (e.g., BPSK and various frequency modulations). Additionally, the module controls power outputs (`pwr_oe1`, `pwr_oe3`, `pwr_oe4`) to enable or disable loads, facilitating efficient power management while maintaining the necessary modulating frequency.
+module top_module(
+    input adc_clk,
+    input ssp_clk,  // Added input for ssp_clk
+    input [3:0] mod_type,
+    input [7:0] ssp_clk_divider,
+    input after_hysteresis,
+    output reg ssp_frame,
+    output reg ssp_din,
+    output reg modulating_carrier,
+    output reg pwr_oe1,
+    output reg pwr_oe3,
+    output reg pwr_oe4
+);

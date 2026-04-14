@@ -1,0 +1,3 @@
+Design a branch unit that generates a target program counter (branchPC) for branching instructions in a processor. The module determines if a branch is taken based on various inputs: it sets branchPC to the operational value (op1) if the instruction is a return (isRet), otherwise it uses the branch target (branchTarget). The signal isBranchTaken is asserted when the conditions for an unconditional branch (isUBranch) are met, or when a conditional branch is taken based on equal (isBeq with flagsE) or greater-than (isBgt with flagsGT) conditions. This module is crucial for controlling the flow of execution in a pipelined processor design.
+module top_module(branchPC, isBranchTaken,
+		  branchTarget, op1, isRet, isUBranch, isBeq, flagsE, isBgt, flagsGT);

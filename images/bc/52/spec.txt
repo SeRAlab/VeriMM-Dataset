@@ -1,0 +1,20 @@
+Please act as a professional Verilog designer.
+
+Implement a D flip-flop with enable and synchronous reset. The flip-flop captures the input data on the rising edge of the clock when enabled.
+
+Module name:
+    d_ff
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high synchronous reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    enable: Enable signal for the flip-flop. When 1, the flip-flop captures input data on the rising edge of the clock.
+    d: Input data to be captured by the flip-flop.
+
+Output ports:
+    q: Output data of the flip-flop.
+
+Implementation:
+The flip-flop is triggered on the positive edge of the clock signal (posedge clk).
+If the reset signal is asserted (rst == 1), the output is reset to 0.
+If the enable signal is asserted (enable == 1), the input data is captured on the rising edge of the clock.

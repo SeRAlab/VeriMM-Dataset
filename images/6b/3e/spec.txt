@@ -1,0 +1,8 @@
+Design a 4-bit counter with an asynchronous active-high reset and parallel load capability, which can be loaded with a specified 4-bit value. When the counter reaches 9, it generates a carry output and wraps around to zero on the next clock cycle. Additionally, this module includes a functional component that computes an output based on an XOR operation derived from specific bits of the counter, modifying the loaded value before it is assigned to the output. The functional output updates based on the clock and reset signals, ensuring synchronous operation while incorporating logic operations that involve AND, NOT, and further XOR gate manipulations to derive the next state output.
+module top_module(
+    input clk,
+    input reset,      // Asynchronous active-high reset
+    input load,       // Active-high parallel load input
+    input [3:0] load_value, // 4-bit load value
+    output [3:0] q,  // 4-bit output from the functional module
+    output carry);

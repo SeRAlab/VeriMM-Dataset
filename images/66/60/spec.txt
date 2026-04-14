@@ -1,0 +1,7 @@
+Design a Time-to-Digital Converter (TDC) that measures the time interval between the activation of a "start" signal and the subsequent activation of a "stop" signal. This module uses a clock input to count the clock cycles while in counting mode, indicated by the "counting" flag. The measured count value is stored in an n-bit register, where n is configurable. When the "stop" signal is received, the current count is output after being right-shifted by a specified resolution, effectively scaling the output to represent the desired time measurement in clock cycles.
+module top_module(
+  input start,
+  input stop,
+  input clk,
+  output reg [n-1:0] out
+);

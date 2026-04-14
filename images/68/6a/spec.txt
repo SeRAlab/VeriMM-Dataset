@@ -1,0 +1,11 @@
+Design a dual-input, synchronized data output module that operates based on clock signals and control inputs. The module accepts two data inputs—`datainlo` and `datainhi`—and selects which one to output based on the `muxsel` signal while applying enabling and reset conditions. It utilizes several flip-flops to store and synchronize data between different stages (including the possibility for half-sampling) and ensures integrity through both active and asynchronous reset signals. Ultimately, the `dataout` provides a selected output from the synchronized data based on the `muxsel` input, allowing for dynamic changes in response to the clock and control sequences.
+module top_module(
+    input datainlo,
+    input datainhi,
+    input clk,
+    input muxsel,
+    input ena,
+    input areset,
+    input sreset,
+    output reg dataout
+);

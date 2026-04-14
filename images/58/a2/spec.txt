@@ -1,0 +1,17 @@
+Design a sequential circuit that processes multiple 2-bit input values and generates several 4-bit output results based on clock events. On the rising edge of the clock, if the reset signal is not active, the circuit computes the sums of certain intermediate output values and multiplies pairs of input values. Specifically, it assigns the outputs out0, out1, and out2 based on the results of ongoing multiplications, while also providing additional outputs out3, out4, and out5 computed directly from the input pairs. The design effectively functions as a combinational multiplication and accumulation unit, with capabilities for synchronization and reset operations.
+module top_module(
+    input clock, 
+    input reset_n, 
+    input [1:0] a_in, 
+    input [1:0] b_in,
+    input [1:0] c_in, 
+    input [1:0] d_in, 
+    input [1:0] e_in, 
+    input [1:0] f_in, 
+    output reg [3:0] out0,
+    output reg [3:0] out1,
+    output reg [3:0] out2,
+    output wire [3:0] out3,
+    output wire [3:0] out4,
+    output wire [3:0] out5
+);

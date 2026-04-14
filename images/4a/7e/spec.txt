@@ -1,0 +1,10 @@
+Design a dual timer circuit that operates with a clock and a reset signal. It features two independent 8-bit timers: a delay timer and a sound timer, both of which can be set using an 8-bit input when their respective control signals are activated. The timers count down from their set values, decrementing every time a predetermined counter reaches its maximum value, which corresponds to a set duration. The circuit resets both timers to zero when the reset signal is activated, ensuring proper initialization.
+module top_module(
+	input clk,
+	input rst,
+	input[7:0] data,
+	input set_delay,
+	input set_sound,
+	output reg[7:0] delay_timer,
+	output reg[7:0] sound_timer
+);

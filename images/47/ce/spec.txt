@@ -1,0 +1,9 @@
+Design a shift register that operates on the rising edge of the clock signal and can be reset or loaded with new data. The module has an asynchronous reset that clears the shift register, and a load signal that allows it to accept a 3-bit input. On each clock cycle, if not loaded, the shift register shifts its contents left by one bit, inserting a zero into the least significant bit. The output is determined by performing a bitwise AND operation on the two bits of the `and_input` and the least significant bit of the shift register, providing a composite signal based on these inputs.
+module top_module(
+  input clk,
+  input reset,
+  input load,
+  input [2:0] load_data,
+  input [1:0] and_input,
+  output reg out
+);

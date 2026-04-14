@@ -1,0 +1,20 @@
+Design a control module that interfaces with a Zynq processor to manage various power and data signals for connected peripherals. This module includes output pins for power sources (VDD and VBAT), a reset signal, a serial clock (SCLK) generated at half the data clock frequency, and other communication signals (SDATA and SCMD) used for data transmission. Additionally, it provides LED indicators and control signals for lighting devices. The SCLK generation uses a counter to toggle the clock signal every 20,000 clock pulses from the input, ensuring proper timing for the devices being controlled.
+module top_module(
+    // Clk Input
+    input clk_in,
+
+    // Data Pins
+    output reset,
+    output sclk, // Half the speed of data_clk, a 20,000th the speed of clk
+    output sdata,
+    output scmd,
+
+    // Power Pins
+    output vbat,
+    output vdd,
+    
+    // LED String Data Pins
+    output status_led,
+    output light_clk,
+    output light_data
+);

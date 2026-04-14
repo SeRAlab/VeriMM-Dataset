@@ -1,0 +1,9 @@
+Design a 4-bit arithmetic unit that can perform both addition and subtraction based on a control signal. When the control signal (C) is high, the module adds two 4-bit inputs, O and A, producing a sum output (S) and setting the difference output (D) to zero. When C is low, the module computes the difference, D, between O and A; if O is less than A, it adjusts the result by adding 16 to O before subtracting A, indicating a borrow with the B output set to high. This design effectively implements a simple ALU functionality for both addition and subtraction operations.
+module top_module(
+    input [3:0] O,
+    input [3:0] A,
+    input C,
+    output reg [3:0] S,
+    output reg [3:0] D,
+    output reg B
+);

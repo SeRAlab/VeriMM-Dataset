@@ -1,0 +1,8 @@
+Design a synchronous circuit that incorporates an 8-bit register and a 4-bit counter. The circuit resets to a predefined value when a reset signal is active and otherwise updates the register with an 8-bit input and increments the counter on each clock cycle. It continuously outputs the current value of the counter and also computes the maximum value between the 8-bit register and the 4-bit counter (extended to 8 bits) to provide as an output.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input [7:0] d,    // 8-bit input for the register
+    output [3:0] counter_out, // 4-bit counter output
+    output [7:0] max_out // Maximum value between the register and counter outputs
+);

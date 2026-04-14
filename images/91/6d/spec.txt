@@ -1,0 +1,21 @@
+Implement the Verilog module based on the following description.
+The following is the state transition table for a Mealy state machine with one input, one output, and four states. Use the following state encoding: P0=2'b00, P1=2'b01, P2=2'b10, P3=2'b11. Implement only the state transition logic and output logic (the combinational logic portion) for this state machine. Given the current state (state) and input (in), compute the next_state and output (out) based on the state transition table.
+
+The state machine has the following states and their corresponding outputs:
+1. state P0: If in = 0, out = 1. If in = 1, out = 0.
+2. state P1: If in = 0, out = 0. If in = 1, out = 1.
+3. state P2: If in = 0, out = 0. If in = 1, out = 1.
+4. state P3: If in = 0, out = 1. If in = 1, out = 0.
+
+State transitions:
+1. From state P0: If in = 0, then transition to state P1. If in = 1, then transition to state P2.
+2. From state P1: If in = 0, then transition to state P2. If in = 1, then transition to state P3.
+3. From state P2: If in = 0, then transition to state P0. If in = 1, then transition to state P3.
+4. From state P3: If in = 0, then transition to state P1. If in = 1, then transition to state P0.
+
+module top_module (
+  input in,
+  input [1:0] state,
+  output reg [1:0] next_state,
+  output reg out
+);

@@ -1,0 +1,31 @@
+Please act as a professional verilog designer.
+    
+Implement a module is a critical component within a pipelined processor architecture, specifically designed for the transition between the Memory Access (MEM) stage and the Write Back (WB) stage. Its primary function to safely transfer control and data signals from the MEM stage to the WB stage, ensuring correct data flow and synchronization across pipeline stages. This module plays a pivotal role in handling pipeline control signals such as stalls and flushes, which are essential for maintaining data integrity and correct execution order in the presence of hazards or control flow changes.
+
+Module name:  
+	MEMWB_Stage
+
+Input ports:
+	clock: A singlebit input signal that drives the synchronization of data transfer across pipeline stages.
+	reset: A singlebit input signal used to reset the pipeline stage's outputs to their default states.
+	M_Flush: A singlebit input signal indicating whether the current instructions in the MEM stage should be flushed (discarded).
+	M_Stall: A singlebit input signal indicating a stall condition, requiring the MEM stage to hold its current state.
+	WB_Stall: A singlebit input signal indicating a stall condition at the WB stage, requiring this stage to retain its current outputs.
+	M_RegWrite: A singlebit input signal from the MEM stage indicating whether a register write operation is to be performed.
+	M_MemtoReg: A singlebit input signal from the MEM stage indicating whether the data to be written to the register file comes from memory.
+	M_ReadData: A 32bit input signal carrying the data read from memory during the MEM stage.
+	M_ALU_Result: A 32bit input signal carrying the result of the ALU operation from the MEM stage.
+	M_RtRd: A 5bit input signal indicating the destination register address for the current instruction.
+Output ports:
+	WB_RegWrite: A singlebit output signal indicating whether a register write operation should be performed in the WB stage.
+	WB_MemtoReg: A singlebit output signal indicating whether the data to be written to the register file in the WB stage comes from memory.
+	WB_ReadData: A 32bit output signal carrying the data to be potentially written to the register file in the WB stage.
+	WB_ALU_Result: A 32bit output signal carrying the ALU result to the WB stage for potential register file writeback.
+	WB_RtRd: A 5bit output signal indicating the destination register address for the current instruction in the WB stage.
+
+
+Implementation:
+The MEMWB_Stage module is a critical component of a pipeline in a processor architecture, specifically designed to handle the transition of data from the Memory Access (MEM) stage to the Write Back (WB) stage. This module is implemented using sequential logic, primarily through the use of flip-flops that are triggered on the rising edge of the clock signal. The primary function of this module is to temporarily store the results from the MEM stage and pass them to the WB stage under certain conditions, which are governed by the control signals provided to the module.
+
+Give me the complete code.
+

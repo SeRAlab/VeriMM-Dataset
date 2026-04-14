@@ -1,0 +1,11 @@
+Design a synchronous 8-bit shift register that can shift its contents left or right based on a select input. The module features a reset functionality to initialize the shift register and an incrementing counter that cycles every 16 clock cycles, providing an output for each digit of the counter. Additionally, it generates a functional output that performs a bitwise XOR operation between the shift register's value and the counter, repeated four times to match the width, producing a modified data output. The design allows for flexible data manipulation and can be used in applications needing shift operations combined with incremental counting.
+module top_module(
+    input clk,
+    input reset,     // Synchronous active-high reset
+    input [7:0] d,   // 8-bit input for the shift register
+    input select,    // Select input for shifting left or right
+    output reg [7:0] q,  // 8-bit output from the shift register
+    output reg [3:0] ena,// Incrementer enable signal for each digit
+    output reg [3:0] c,  // Incrementer output for each digit
+    output [7:0] f    // Output from the functional module
+);

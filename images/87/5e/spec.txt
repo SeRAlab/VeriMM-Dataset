@@ -1,0 +1,8 @@
+Design a 4-bit shift register with parallel load and serial input/output functionalities. Upon the rising edge of the clock signal, if the parallel_load control is active, it loads a 4-bit input (data_in) into the first stage. Otherwise, it shifts the contents of the register through three pipeline stages, updating on each clock cycle. The least significant bit of the last pipeline stage is output as serial_out, while the first stage can accept a serial input (serial_in) when not in parallel load mode, facilitating both parallel and serial data processing.
+module top_module(
+    input clk,
+    input parallel_load,
+    input serial_in,
+    output serial_out,
+    input [3:0] data_in
+);

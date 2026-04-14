@@ -1,0 +1,10 @@
+Design a circuit that functions as a waveform controller, selecting and outputting different waveform data based on the state of an enable signal and a 2-bit wave selector. On each positive edge of the clock, if enabled, it can output a sine wave, a XOR-modified address, a fixed high value, or a specific pattern derived from the address and PWM settings, defaulting to a specific low value if none of the conditions are met.
+module top_module(
+	input enable,
+	input clk,
+	input  [1:0] wave_word,
+	input  [6:0] pwm_word,
+	input  [7:0] sinewave,
+	input  [8:0] address,
+	output reg [7:0] waveform
+);

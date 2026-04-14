@@ -1,0 +1,6 @@
+Design a 4-to-1 multiplexer that selects one of four 4-bit input data lines (D0, D1, D2, D3) based on the values of two select lines (S0 and S1). The output (Y) corresponds to the selected input, with S1 and S0 determining which input is routed to the output: D0 when both select lines are low, D1 when S0 is high and S1 is low, D2 when S0 is low and S1 is high, and D3 when both select lines are high. If the select lines are invalid, the output defaults to an undefined state (4'bX).
+module top_module(
+    input [3:0] D0, D1, D2, D3,
+    input [1:0] S0, S1,
+    output [3:0] Y
+);

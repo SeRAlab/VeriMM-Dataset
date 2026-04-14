@@ -1,0 +1,11 @@
+Design a FIFO (First-In, First-Out) memory buffer that operates on a 16-bit wide data input. It features inputs for clock signals, read requests, and write requests, along with outputs indicating whether the buffer is empty or full. The FIFO can store up to 256 data entries, with the ability to track the number of used words. Data is written to the buffer when the write request is asserted and not full, and read from the buffer when the read request is asserted and not empty. The module manages read and write pointers to ensure proper data flow and accesses while maintaining the FIFO operational characteristics.
+module top_module(
+    clock,
+    data,
+    rdreq,
+    wrreq,
+    empty,
+    full,
+    q,
+    usedw
+);

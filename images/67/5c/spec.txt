@@ -1,0 +1,7 @@
+Design a 4-bit magnitude comparator that determines if input A is less than input B. The module captures the values of A and B on the rising edge of a clock signal and, after one clock cycle, it compares the two values. If A is less than B, the output signal LT is set to high; otherwise, it is set to low. It utilizes a simple state machine to manage the sequence of operations during the comparison process.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input clk,      // Added clk input
+    output reg LT   // Changed LT to reg to allow assignment in always block
+);

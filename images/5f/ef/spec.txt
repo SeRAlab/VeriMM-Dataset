@@ -1,0 +1,13 @@
+Design a dual-function module that operates either as a 4-bit counter or as a simple RAM. The module selects the functionality based on the 'select' input: when active, it increments a 4-bit counter on each clock cycle; when inactive, it allows for reading from and writing to an 8-entry RAM, using 'write_en' and 'read_en' controls along with specified addresses and data inputs. The output 'q' directly reflects the value of the counter or the data read from RAM, depending on the select state. A synchronous active-high reset is included to initialize the counter.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input select,     // Select input to choose between counter and RAM
+    output [3:0] q,   // 4-bit output from the active module
+    input write_en,   // Write enable for the RAM
+    input [2:0] write_addr, // Write address for the RAM
+    input [3:0] write_data, // Write data for the RAM
+    input read_en,    // Read enable for the RAM
+    input [2:0] read_addr,  // Read address for the RAM
+    output reg [3:0] read_data // 4-bit output from the RAM
+);

@@ -1,0 +1,7 @@
+Design a circuit that performs multiplication of two n-bit wide input numbers, where n is parameterized to default to 8 bits. The circuit computes both unsigned and signed products using the given inputs. The output, a 2n-bit result, is conditionally selected based on a control signal: when the control signal is high, the signed multiplication result is outputted, and when low, the unsigned result is chosen. This design effectively functions as a configurable multiplier that can handle both signed and unsigned arithmetic operations based on user control.
+module top_module(
+  input [n-1:0] a,
+  input [n-1:0] b,
+  input ctrl,
+  output signed [2*n-1:0] res
+);

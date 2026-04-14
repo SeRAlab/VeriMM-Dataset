@@ -1,0 +1,9 @@
+Design a checksum calculator module that computes an 8-bit checksum based on 8-bit data inputs received on each clock cycle. The module resets its internal state upon receiving a reset signal, and it sums the incoming data when the valid input signal is high. The resulting checksum is calculated using the two's complement of the upper and lower parts of the cumulative sum. The module outputs the computed checksum and a valid output signal to indicate that a valid checksum is available.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] data_in,
+  input valid_in,
+  output [7:0] checksum_out,
+  output valid_out
+);

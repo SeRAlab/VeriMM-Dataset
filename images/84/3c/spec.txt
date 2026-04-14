@@ -1,0 +1,28 @@
+The Verilog module implements a memory mapping circuit for a system that manages access to RAM and ROM based on address lines and control signals. It utilizes the two input address lines (a15, a14) to generate a 7-bit high address, which is used to control chip select signals for four separate RAM devices and one ROM device, thus enabling or disabling them as needed. The module also generates memory operation signals such as memory output enable (memoe_n) and memory write enable (memwe_n) based on read/write requests and specific mode configurations. The design facilitates both read and write operations while dynamically selecting the appropriate memory component based on the address and mode settings, ensuring efficient memory access in the system.
+module top_module(
+
+	a15,a14, 
+
+	mreq_n, 
+	rd_n,   
+	wr_n,   
+
+	mema14,mema15, 
+	mema16,mema17, 
+	mema18,        
+
+	ram0cs_n, 
+	ram1cs_n, 
+	ram2cs_n, 
+	ram3cs_n, 
+
+	romcs_n, 
+
+	memoe_n, 
+	memwe_n, 
+
+	mode_ramro, 
+	mode_norom, 
+	mode_pg0,   
+	mode_pg1    
+);

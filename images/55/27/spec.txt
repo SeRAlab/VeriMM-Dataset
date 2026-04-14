@@ -1,0 +1,12 @@
+Design a circuit that functions as an 8-bit accumulator. It accumulates input data every clock cycle when valid_a is asserted. After receiving 8 valid inputs (indicated by counting to 7), it outputs the accumulated sum as a 10-bit value and asserts valid_b. The circuit also includes a reset functionality to initialize the accumulator and counter, and it signals when it is ready to receive more data based on the status of ready_b.
+module top_module(
+    input               clk         ,   
+    input               rst_n       ,
+    input       [7:0]   data_in     ,
+    input               valid_a     ,
+    input               ready_b     ,
+ 
+    output              ready_a     ,
+    output  reg         valid_b     ,
+    output  reg [9:0]   data_out
+);

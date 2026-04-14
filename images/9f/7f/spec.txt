@@ -1,0 +1,18 @@
+Design a VGA synchronization module that generates horizontal and vertical sync signals for a 640x480 resolution display at 60Hz, based on a 25 MHz clock. The module accepts RGB input values and outputs them only during the active video display area. When not in the active area, the RGB outputs are set to zero, effectively blanking the display. The horizontal and vertical counters track the current pixel position and ensure correct timing for sync pulses and active video intervals, with configurable sync polarities.
+module top_module(
+   input wire clk,
+
+   input wire [2:0] rin,
+   input wire [2:0] gin,
+   input wire [1:0] bin,
+
+   output reg [2:0] rout,
+   output reg [2:0] gout,
+   output reg [1:0] bout,
+
+   output reg hs,
+   output reg vs,
+
+   output wire [10:0] hc,
+   output wire [10:0] vc
+   );

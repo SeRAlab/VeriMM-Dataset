@@ -1,0 +1,4 @@
+Design a simple PCIe endpoint controller state machine that manages the IDLE, DATA, and ERROR states. The controller receives a clock signal and a reset signal, and it follows these rules: 
+- In IDLE state, if 'start' signal is high, it transitions to DATA state.
+- In DATA state, if 'complete' signal is high, it transitions to IDLE state. If 'error' signal is high, it transitions to ERROR state.
+- In ERROR state, if 'reset' signal is high, it transitions back to IDLE state.

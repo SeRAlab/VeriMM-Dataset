@@ -1,0 +1,9 @@
+Design a UART transmit module that serially sends an 8-bit data word at a defined baud rate. The module includes control for starting and stopping transmission, using a clock input to synchronize data transmission. When a start signal is received, it initializes the shifting of the data byte, prepending a start bit (LOW) and appending a stop bit (HIGH) upon transmission completion. The module shifts out the bits serially through the `tx` output line, while managing timing with a counter derived from the clock frequency and specified baud rate. The circuit also resets all internal states upon receiving a reset signal.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] data,
+  input start,
+  input stop,
+  output reg tx
+);

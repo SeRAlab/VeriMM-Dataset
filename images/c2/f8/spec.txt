@@ -1,0 +1,16 @@
+
+You are tasked with designing a module that implements a D flip-flop with synchronous reset and set inputs, and active-low outputs. The module should be named "dff_res_set" and should have the following inputs and outputs:
+- input wire clk: the clock signal
+- input wire rst: the synchronous reset signal (active-high)
+- input wire set: the synchronous set signal (active-high)
+- input wire d: the data input
+- output reg q: the output signal
+- output reg qn: the complement of the output signal
+
+The module should implement the following behavior:
+- On the rising edge of the clock signal, if the reset signal is high, the output should be set to 0 and the complement output to 1.
+- On the rising edge of the clock signal, if the set signal is high, the output should be set to 1 and the complement output to 0.
+- On the rising edge of the clock signal, if neither the reset nor the set signal is high, the output should be set to the value of the data input and the complement output to the complement of the data input.
+
+You may use any verilog constructs you wish, except for behavioral constructs (such as "always" blocks) and UDPs.
+

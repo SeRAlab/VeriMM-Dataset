@@ -1,0 +1,10 @@
+Design a UART (Universal Asynchronous Receiver-Transmitter) module that facilitates serial communication by receiving and transmitting data. The module utilizes a finite state machine to manage the different states: IDLE, RECEIVE, WAIT_FOR_STOP, and TRANSMIT. It detects incoming start bits to initiate data reception, samples and shifts in data bits into a shift register, and waits for a stop bit before preparing to transmit the received data. The transmitted data is sent one bit at a time, while control signals like tx_en, rx_en, and data_ready indicate the status of transmission and readiness of data. This module enables asynchronous data exchange between devices.
+module top_module(
+  input clk,
+  input reset,
+  input data_in,
+  output reg data_out,
+  output reg tx_en,
+  output reg rx_en,
+  output reg data_ready
+);

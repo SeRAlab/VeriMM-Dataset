@@ -1,0 +1,11 @@
+Design a circular FIFO (First-In, First-Out) memory buffer capable of storing up to 8 bytes of data, where each byte is 8 bits wide. The module features inputs for read and write enable signals, along with a clock and reset signal. Upon a reset, the FIFO initializes its pointers and status flags. When a write operation is enabled and the buffer is not full, it stores incoming data at the head pointer and updates the head index. Conversely, when a read operation is enabled and the buffer is not empty, it outputs data from the tail pointer and advances the tail index. The module also maintains status flags to indicate whether the buffer is empty or full.
+module top_module(
+    input clk,
+    input rst,
+    input wr_en,
+    input rd_en,
+    input [7:0] data_in,
+    output reg [7:0] data_out,
+    output reg empty,
+    output reg full
+);

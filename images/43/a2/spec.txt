@@ -1,0 +1,6 @@
+Design a shift register that captures incoming 8-bit data on the rising edge of a clock signal. The module shifts the previously stored data left by one position and inserts the new data at the least significant bit. A 3-bit counter tracks the number of clock cycles, and once it reaches 7, the module outputs a 3-bit signal to the LEDs, which represents the values of the most significant bit, the fourth bit, and the least significant bit from the shift register. This design effectively allows the user to visualize a specific selection of bits from the input data on three LED outputs.
+module top_module(
+    input clk,
+    input [7:0] data,
+    output reg [2:0] LED
+);

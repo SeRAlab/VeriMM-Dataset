@@ -1,0 +1,9 @@
+Design a module that processes a 4-bit input to produce several logical outputs. It computes the AND, OR, and XOR of the input bits, yielding single-bit outputs for each logical operation. Additionally, the module determines and outputs the 2-bit position of the highest set bit in the input. The module also includes combinatorial logic that generates an 8-bit `final_output` based on a combination of the previous logical results, effectively encoding their presence into a binary representation. This design effectively combines basic logic operations with bit positioning and encoding functionality.
+module top_module(
+    input [3:0] in,
+    output out_and,
+    output out_or,
+    output out_xor,
+    output reg [1:0] pos,
+    output reg [7:0] final_output // Change to reg
+);

@@ -1,0 +1,26 @@
+Please act as a professional Verilog designer.
+
+Implement an 8-bit synchronous resettable register. The module stores an 8-bit input value on the rising edge of the clock. The register value is reset to 0 when the reset signal is asserted.
+
+Module name:
+    sync_register
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    reset: Synchronous reset signal.
+    d: 8-bit data input signal.
+
+Output ports:
+    q: 8-bit output signal representing the stored value.
+
+Implementation:
+The output signal is defined as reg [7:0] q and initialized to 0 using the initial statement. On each rising edge of the clock, if the reset signal is asserted, the output is reset to 0. Otherwise, the output captures the value of the data input.
+
+Give me the complete code.
+
+module sync_register(clk, reset, d, q);
+
+    input clk;
+    input reset;
+    input [7:0] d;
+    output [7:0] q;

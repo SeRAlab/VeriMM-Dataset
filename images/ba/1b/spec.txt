@@ -1,0 +1,7 @@
+Design a circuit that performs rounding and saturation for signed fixed-point numbers. This module takes a signed input (data_in) and scales it based on a specified number of fractional bits. It round-aligns the input value and ensures that the output (data_out) remains within defined minimum (min_val) and maximum (max_val) limits. If the rounded value exceeds these specified bounds, it saturates the output to the respective limit, thereby preventing overflow and underflow in fixed-point representations.
+module top_module(
+  input signed [width-1:0] data_in,
+  input signed [width-1:0] max_val,
+  input signed [width-1:0] min_val,
+  output reg signed [width-1:0] data_out
+);

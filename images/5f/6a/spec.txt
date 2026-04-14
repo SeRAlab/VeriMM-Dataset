@@ -1,0 +1,10 @@
+Design a two-bit data sampling module that captures two input bits (bit0_r and bit1_r) on the rising edge of the rxClk signal, and outputs this data as a 2-bit vector (dq). The module includes a synchronous reset (rxReset) that initializes internal state registers. The output signal dqValid indicates when the captured data is valid, based on the enable input (bit0Enable) and the internal state of the module. This design can be utilized in communication systems for data acquisition, ensuring that data is only processed when it is both available and valid.
+module top_module(
+    input rxReset,
+    input rxClk,
+    input bit0_r,
+    input bit1_r,
+    input bit0Enable,
+    output reg [1:0] dq,
+    output reg dqValid
+);

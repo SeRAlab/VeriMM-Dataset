@@ -1,0 +1,13 @@
+Design a synchronous dual-port register module that generates a single output Q based on the clock (CLK), data inputs (D), and control signals for data selection (SCD, SCE). The module incorporates an asynchronous reset (RESET_B) that sets the output Q to zero. Depending on the control signals SCD and SCE, the module alternates between different operational modes for the input data: in one mode, it toggles between two specific data inputs, while in another mode, it counts through four data inputs cyclically. This design utilizes a state counter to track the current position within the data selection process, allowing for flexible and controlled data handling in multiple scenarios.
+module top_module(
+    Q      ,
+    CLK    ,
+    D      ,
+    SCD    ,
+    SCE    ,
+    RESET_B,
+    VPWR   ,
+    VGND   ,
+    VPB    ,
+    VNB
+);

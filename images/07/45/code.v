@@ -1,0 +1,15 @@
+module power_gating(
+    input [1:0] ctrl,
+    input [3:0] data_in,
+    output reg [3:0] data_out
+);
+    always @(*) begin
+        case(ctrl)
+            2'b00: data_out = 4'b0000;            // Power off
+            2'b01: data_out = data_in;            // Pass through
+            2'b10: data_out = ~data_in;           // Invert
+            2'b11: data_out = (data_in + 1) % 16; // Increment
+            default: data_out = 4'b0000;          // Default case
+        endcase
+    end
+endmodule

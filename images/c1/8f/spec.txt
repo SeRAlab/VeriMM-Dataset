@@ -1,0 +1,40 @@
+Please act as a professional verilog designer.
+    
+Implement a module to manage reference counting for pages in a system, likely part of a memory management or caching system. Its primary functions include:
+
+Updating Reference Counts: It can increment or set the reference counts of specific pages based on external requests.
+Page Reclamation: It identifies pages whose reference counts have dropped to zero, indicating they are no longer in use and can be reclaimed.
+Handling Data Requests: It processes requests for data, adjusting reference counts as necessary and preparing data for reclamation if its reference count reaches zero.
+
+This module plays a crucial role in efficiently managing resources within a system, ensuring that memory or cache pages are utilized effectively and reclaimed when no longer needed.
+
+Module name:  
+	llmanager_refcount
+
+Input ports:
+	clk: Clock signal for synchronizing the module's operations.
+	reset: Reset signal to initialize or reset the module's state.
+	drq_srdy: Signal indicating a data request is ready to be processed.
+	drq_start_page, drq_end_page: Start and end page addresses for the data request.
+	reclaim_drdy: Signal indicating the system is ready to process a reclaim request.
+	refup_srdy: Signal indicating a reference update request is ready.
+	refup_page: The page address for the reference update.
+	refup_count: The new reference count for the specified page.
+	ref_rd_data: The current reference count data read from memory.
+Output ports:
+	drq_drdy: Signal indicating the module is ready to accept a data request.
+	reclaim_srdy: Signal indicating a page is ready to be reclaimed.
+	reclaim_start_page, reclaim_end_page: Start and end page addresses for the page(s) to be reclaimed.
+	refup_drdy: Signal indicating the module is ready to accept a reference update request.
+	ref_wr_en: Enable signal for writing the reference count to memory.
+	ref_wr_addr: Address for the reference count write operation.
+	ref_wr_data: Data for the reference count write operation.
+	ref_rd_addr: Address for reading the reference count from memory.
+	ref_rd_en: Enable signal for reading the reference count from memory.
+
+
+Implementation:
+The llmanager_refcount module is designed to manage reference counts for pages, handling requests to update reference counts (refup), decrement reference counts and potentially reclaim pages (drq), and signal when pages are ready to be reclaimed. The module operates in a clocked environment, responding to input signals and transitioning through states based on its internal logic.
+
+Give me the complete code.
+

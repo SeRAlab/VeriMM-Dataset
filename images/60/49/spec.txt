@@ -1,0 +1,8 @@
+Design a 4-bit barrel shifter with capabilities for shifting and rotating. The module takes a 4-bit input data and provides shifted output based on three control signals: `shift_left`, `shift_right`, and `rotate_right`. If `shift_left` is high, the data is shifted left with a zero-filled bit on the right; if `shift_right` is high, it is shifted right with a zero-filled bit on the left. Additionally, if `rotate_right` is activated, the least significant bit wraps around to the most significant bit position. The resulting transformed data is output as `shifted_data`.
+module top_module(
+    input [3:0] data,
+    input shift_left,
+    input shift_right,
+    input rotate_right,
+    output reg [3:0] shifted_data
+);

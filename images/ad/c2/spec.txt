@@ -1,0 +1,10 @@
+Design a circuit to generate a write address for a power waveform based on a specified base, a write count, and a scaling factor. The module takes a clock input and computes the address incrementally by multiplying the write count by the scaling factor, then adding it to the base address. The resultant address is registered and updated on each clock cycle, ensuring that the output address reflects the latest computed value for sequential write operations.
+module top_module(
+    input                   clk             ,
+    
+    input [25:0]            pw_w_base       ,
+    input [16:0]            w_pw_en_cnt     ,
+    input [ 6:0]            pw_bl           ,
+    
+    output reg [25:0]       pw_w_addr
+);

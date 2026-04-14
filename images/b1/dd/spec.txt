@@ -1,0 +1,7 @@
+Design a circuit that outputs a 2-bit wide selection signal based on the input readiness state. When the `ready` signal is LOW, the `filter_select_out` takes the value from `filter_select_balance`. Conversely, when `ready` is HIGH, it selects the value from `filter_select_identify`.
+module top_module(
+input ready,
+input [1:0]filter_select_balance,
+input [1:0]filter_select_identify,
+output  reg [1:0] filter_select_out
+    );

@@ -1,0 +1,6 @@
+Develop an 8-bit multiplier that computes the product of two 8-bit inputs, `a` and `b`, resulting in a 16-bit output `p`. The design leverages a shift-and-add multiplication algorithm, utilizing a variable `A` to accumulate the result and a shifting strategy to progressively evaluate the bits of the multiplier `b`. The module implements a control mechanism using a 3-bit value derived from the least significant bits of `b`, allowing for both addition and subtraction of shifted values of `a`, thereby optimizing the multiplication process. The final product is output as a 16-bit wide signal.
+module top_module(
+  input wire [7:0] a,
+  input wire [7:0] b,
+  output reg [15:0] p // Change output to reg
+);

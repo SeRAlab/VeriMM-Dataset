@@ -1,0 +1,8 @@
+Design a synchronous memory module with an 8-bit address input and 32-bit data input and output. The module functions as a read/write memory: on a rising clock edge, if the memrw signal is low, it writes the value of dataw to the memory location specified by addr. The data stored at the specified address is always available at the output datar, with a delay of 100 time units, enabling both read and write operations based on the control signal.
+module top_module(
+    input [7:0] addr,
+    input [31:0] dataw,
+    input memrw,
+    output [31:0] datar,
+    input clk
+    );

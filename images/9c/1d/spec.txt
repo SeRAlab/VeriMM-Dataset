@@ -1,0 +1,7 @@
+Design a circuit that functions as a 32-bit wide register with load and reset capabilities. On the rising edge of the clock, when reset is active, the output is set to zero. When load is active, it captures the input data and stores it in the output, while also preserving the previous value in an internal register for the next clock cycle. If load is inactive, the circuit retains the last output value, allowing for data retention across clock cycles. This module effectively serves as a storage element in digital systems, facilitating data flow control and synchronizing with the clock signal.
+module top_module(
+    input clk,
+    input ld,
+    input [31:0] d,
+    output reg [31:0] q
+);

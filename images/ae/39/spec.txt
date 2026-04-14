@@ -1,0 +1,11 @@
+Design a hazard detection unit for a pipelined CPU architecture. This module determines whether to stall the pipeline by asserting a Stall signal when there is a data hazard, specifically when a load instruction in the ID/EX stage is accessing a register that is about to be read in the IF/ID stage. Additionally, the module will assert a Flush signal to discard the current instruction if a branch instruction is detected, ensuring that incorrect instructions are not processed.
+module top_module(
+	input BranchControl,
+	input ID_EX_MemRead,
+	input [4:0] ID_EX_RegisterRt,
+	input [4:0] IF_ID_RegisterRs,
+	input [4:0] IF_ID_RegisterRt,
+
+	output reg Stall,
+	output reg Flush
+);

@@ -1,0 +1,19 @@
+
+
+In digital circuit design, it is common to use pre-designed modules to simplify the design process. In this problem, you are given a Verilog code snippet for a module called "sky130_fd_sc_hd__fill_1". This module has four input ports: VPWR, VGND, VPB, and VNB. The module also instantiates another module called "sky130_fd_sc_hd__fill" and connects its input ports to the input ports of the top-level module.
+
+Your task is to implement the "sky130_fd_sc_hd__fill" module. This module has four input ports and no output ports. The input ports are:
+- VPWR: power supply voltage
+- VGND: ground voltage
+- VPB: voltage at the positive terminal of a bipolar junction transistor (BJT)
+- VNB: voltage at the negative terminal of a BJT
+
+The module should implement the following behavior:
+- If VPB is greater than VNB, set the output of the module to VPWR
+- If VPB is less than VNB, set the output of the module to VGND
+- If VPB is equal to VNB, set the output of the module to an intermediate voltage between VPWR and VGND. The exact value of this voltage is not important, as long as it is between VPWR and VGND.
+
+You can assume that the input voltages are valid and within the operating range of the circuit.
+
+Implement the "sky130_fd_sc_hd__fill" module within 200 lines of Verilog code.
+

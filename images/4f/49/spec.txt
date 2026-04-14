@@ -1,0 +1,11 @@
+Design a FIFO (First-In-First-Out) memory buffer that allows for data storage and retrieval. This module accepts a clock signal, reset signal, read and write control signals, and an 8-bit data input. It holds up to 16 entries of 8-bit wide data in its memory. The FIFO outputs a flag for "empty" when there are no items to read and a "full" flag when the buffer is at capacity. On a write operation, if the FIFO is not full, it stores the incoming data at the write pointer location and increments the pointer. During a read operation, if the FIFO is not empty, it outputs the data stored at the read pointer location and increments the pointer. The read and write pointers are reset to zero during a reset condition.
+module top_module(
+    input clk,
+    input rst,
+    input rd,
+    input wr,
+    input [7:0] data_in,
+    output reg [7:0] data_out, // Changed wire to reg
+    output empty,
+    output full
+);

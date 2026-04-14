@@ -1,0 +1,6 @@
+Design a finite state machine (FSM) that counts the rising edges of an input signal. The circuit initializes in an IDLE state and transitions to a COUNT state upon detecting a rising edge of the input signal. In the COUNT state, it increments a 3-bit count register until it reaches a maximum of 4, after which it returns to the IDLE state. The FSM resets the count upon subsequent rising edges, ensuring that it accurately tracks the number of transitions up to 4 before resetting to zero.
+module top_module(
+  input clk,
+  input in,
+  output reg[2:0] count
+);

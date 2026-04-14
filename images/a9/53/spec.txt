@@ -1,0 +1,12 @@
+Design a block memory generator capable of reading and writing 256-bit wide data words to a memory array of 512 entries. The module supports independent read and write operations controlled by separate clock signals (wr_clk for writing and rd_clk for reading). It allows writing of data at a specific address determined by O2, while the read address is specified by I2, featuring support for offset-based writing through wr_offset and reading through rd_offset. The output DOUTB provides the contents of the memory at the read address, facilitating data access based on the state of the 'select' signal which influences the read address's increment behavior.
+module top_module(
+  output reg [255:0] DOUTB,
+  input tmp_ram_rd_en,
+  input rd_clk,
+  input [0:0] Q,
+  input I1,
+  input wr_clk,
+  input [8:0] O2,
+  input [8:0] I2,
+  input [255:0] din
+);

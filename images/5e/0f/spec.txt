@@ -1,0 +1,7 @@
+Design a data loading unit that translates input data based on specified address and size parameters. The module reads a 32-bit input value and allows loading either 8-bit or 16-bit segments according to the `load_size` and `d_address` signals. It supports sign extension for the loaded data if `load_sign_ext` is activated, ensuring accurate representation of negative values. The resulting output (`d_loadresult`) is influenced by both the desired load size and the specific address, effectively extracting the appropriate subset of bits while preserving or extending the sign as required.
+module top_module(
+    d_readdatain,
+    d_address,
+    load_size,
+    load_sign_ext,
+    d_loadresult);

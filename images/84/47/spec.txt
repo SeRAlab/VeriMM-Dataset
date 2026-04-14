@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit binary counter with parallel load capability.
+
+Module name:  
+    loadable_counter      
+
+Input ports:
+    CLK: Input clock signal
+    RST: Reset signal
+    LOAD: Load enable signal
+    D: 4-bit input data to load into the counter
+
+Output ports:
+    Q: 4-bit output representing the counter value
+
+Implementation:
+The module loads the counter value from the input D when LOAD is high on the positive edge of CLK, otherwise, it increments the counter value by 1 or resets to 0 when RST is active.
+
+Give me the complete code.
+
+module loadable_counter (CLK, RST, LOAD, D, Q);
+input CLK, RST, LOAD;
+input [3:0] D;
+output reg [3:0] Q;

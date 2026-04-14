@@ -1,0 +1,8 @@
+Design a digital clock circuit that increments second, minute, and hour counters based on a clock input (CLK). The module resets the time values to zero when the RST input is high. Each second is counted via the SEC register, and upon reaching 60 seconds, it resets and increments the MIN register; similarly, upon reaching 60 minutes, it resets and increments the HOUR register, which wraps around after 24 hours. This design serves the purpose of timekeeping in a digital format.
+module top_module(
+    input CLK,
+    input RST,
+    output reg [5:0] SEC,
+    output reg [5:0] MIN,
+    output reg [4:0] HOUR
+);

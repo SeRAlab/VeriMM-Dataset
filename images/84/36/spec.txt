@@ -1,0 +1,9 @@
+Design a dual-clock synchronous data selector module that operates based on a reset signal. The module integrates two clock signals: a primary clock (clk) and a secondary clock (clkx2). It generates a derived clock signal (tr_clk) based on the XOR of two internal registers (x1 and x2), which toggle states at each rising edge of their respective clocks. The module outputs a 18-bit wide data value (tr_data), selecting either the lower or upper half of a 36-bit input (tw) depending on the state of the derived clock. Upon reset, all internal states and outputs are initialized, ensuring the module operates reliably in a reset condition.
+module top_module(
+  input clk,
+  input clkx2,
+  input jrst_n,
+  input [35:0] tw,
+  output tr_clk,
+  output reg [17:0] tr_data
+);

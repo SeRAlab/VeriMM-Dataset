@@ -1,0 +1,11 @@
+Design a 256-entry, 32-bit wide FIFO (First-In-First-Out) buffer. The module supports data writing and reading controlled by separate enable signals (wr_en and rd_en). On a write operation, if the FIFO is not full, the incoming data (din) is stored at the head pointer location, with the head pointer and element count updated accordingly. On reading, if the FIFO is not empty, data is extracted from the tail pointer location, which is then incremented, and the count is decremented. The module also provides empty and full status flags to indicate the FIFO's condition. A synchronous reset can be applied to initialize the head, tail, and count registers.
+module top_module(
+    input clk,
+    input rst,
+    input wr_en,
+    input rd_en,
+    input [31:0] din,
+    output reg [31:0] dout, // Change to reg since we are assigning it in an always block
+    output empty,
+    output full
+);

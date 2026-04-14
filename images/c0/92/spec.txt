@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module to arbitrate between two request signals based on a simple priority and state mechanism. Its primary function to grant access to a shared resource or a bus to one of two requesters at any given time, ensuring orderly access in the presence of concurrent requests. This module plays a crucial role in systems where multiple entities require access to a single resource, preventing conflicts and ensuring fair allocation of the resource based on predefined rules.
+
+Module name:  
+	arbiter_node
+
+Input ports:
+	enable: A singlebit input signal that enables the arbiter's operation. When low, the arbiter does not grant access to any requester.
+	req: A 2bit input vector representing the request signals from two entities. req[0] corresponds to the first entity, and req[1] to the second.
+	clock: The system clock signal. The arbiter's state transitions occur on the rising edge of this clock.
+	reset: A synchronous reset signal. When high, it initializes the arbiter's internal state.
+Output ports:
+	grant: A 2bit output vector where each bit corresponds to a grant signal for the respective requester. grant[0] is for the first entity, and grant[1] for the second. A high signal indicates that the respective requester has been granted access.
+	select: A singlebit output that reflects the current state of the arbiter's internal grant mechanism. It essentially indicates which requester would be prioritized if both request simultaneously.
+	valid: A singlebit output signal that indicates whether a valid grant has been issued based on the current requests and the arbiter's state.
+
+
+Implementation:
+The RTL module presented, named arbiter_node, is designed to arbitrate between two request signals based on a simple priority and state mechanism. It is a fundamental component often used in systems where multiple entities require access to a shared resource, ensuring that access is granted in an orderly and predictable manner. The module operates on the edge of a clock signal and can be reset asynchronously. Its behavior is governed by both combinational and sequential logic elements, which work together to decide which request, if any, is granted access at any given time.
+
+Give me the complete code.
+

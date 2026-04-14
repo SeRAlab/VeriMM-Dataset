@@ -1,0 +1,10 @@
+Design a simple calculator capable of performing addition and subtraction of two 8-bit inputs, `a` and `b`. The operation is controlled by the `op` signal, where `op = 0` triggers addition and `op = 1` triggers subtraction. The calculator outputs the result to `out` and indicates the validity of the output with the `valid` signal. The module resets its outputs to zero upon receiving a reset signal (`rst`) and operates synchronously with a clock (`clk`).
+module top_module(
+    input clk,
+    input rst,
+    input op,
+    input [7:0] a,
+    input [7:0] b,
+    output reg [7:0] out,
+    output reg valid
+);

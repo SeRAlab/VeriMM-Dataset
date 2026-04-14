@@ -1,0 +1,9 @@
+Design a digital circuit that performs a convolution operation on input data using a specified kernel. The module takes a clock signal, a reset signal, a 25-bit wide input data, and a 9-bit wide kernel as inputs. Upon a clock edge, if not in a reset state, it buffers the inputs and computes the convolution based on specific conditions related to the input and kernel values. The output provides the result of the convolution operation as a 9-bit data output along with a valid signal that indicates when the computed output is ready. This design is essential for implementing image processing or signal filtering applications.
+module top_module(
+    input clk,
+    input reset,
+    input [24:0] in_data,
+    input [8:0] kernel,
+    output [8:0] out_data,
+    output valid
+);

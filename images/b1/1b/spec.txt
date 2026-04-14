@@ -1,0 +1,9 @@
+Implement a memory module with a simple RAM interface that supports both read and write operations. The module accepts a 6-bit memory address (Mem_Addr) to write data into one of four 32-bit memory locations based on a write control signal (Mem_Write) and a clock signal (Clk). Upon writing, it stores the input data (dina) in the appropriate memory location specified by Mem_Addr. When writing is not active, the module uses a chip select (CS) signal to output different segments of the stored data to an 8-bit LED display, allowing for visual feedback of the memory contents based on the specific case. The design essentially functions as a simple memory controller interfacing with a RAM block and an output display.
+module top_module(
+    input [5:0] Mem_Addr,
+    input [1:0] CS,
+    input Mem_Write,
+    input Clk,
+    input [31:0] dina,
+    output reg [7:0] LED
+);

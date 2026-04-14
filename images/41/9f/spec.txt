@@ -1,0 +1,10 @@
+Implement a serial communication module that operates at a 100 MHz clock frequency. The module receives a serial input bit (Rx), manages transmission through a serial output (Tx), and indicates ongoing transmission with the 'transmit' signal. It utilizes registers to store data bytes for both transmission and display, updates LED outputs based on received data, and monitors for any reception errors. The design includes state logic to handle received data while resetting signals appropriately to maintain correct operational states and error reporting based on conditions of the received input.
+module top_module(
+    input wire CLK_100MHz,
+    input wire reset,
+    input wire Rx,
+    output wire Tx,
+    output reg transmit, // Changed to reg
+    output reg [7:0] LED, // Changed to reg
+    output reg [7:0] recv_error // Changed to reg
+);

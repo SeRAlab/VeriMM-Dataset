@@ -1,0 +1,15 @@
+Design a circuit for error detection in an Aurora lane interface. The module takes in soft and hard error signals and a lane status indicator, processing them to output channel soft error, hard error, and reset signals. On each clock cycle, it registers the incoming error signals for timing purposes. It generates a soft error signal if any of the soft error inputs are high, a hard error signal if the hard error input is high, and asserts a reset condition when the lane is down or when powered down. The system ensures accurate timing and acknowledgment of errors in the communication channel.
+module top_module(
+    // Aurora Lane Interface
+    input [1:0] SOFT_ERROR,
+    input HARD_ERROR,
+    input LANE_UP,
+
+    // System Interface
+    input USER_CLK,
+    input POWER_DOWN,
+
+    output reg CHANNEL_SOFT_ERROR,
+    output reg CHANNEL_HARD_ERROR,
+    output reg RESET_CHANNEL
+);

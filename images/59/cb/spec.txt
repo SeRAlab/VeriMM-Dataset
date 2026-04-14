@@ -1,0 +1,10 @@
+Design a module for performing bitwise operations on two 8-bit input operands, A and B. Based on a 3-bit operation selector (OP), the outputs will represent the results of the specified operation: 0 for AND, 1 for OR, 2 for XOR, and 3 for NOT (applied to A only). For any invalid operation (values outside 0-3), all outputs will be set to zero. This design acts as a basic arithmetic logic unit (ALU) for bitwise operations, isolating results based on the operation chosen.
+module top_module(
+    input [7:0] A,
+    input [7:0] B,
+    input [2:0] OP,
+    output reg [7:0] AND_out,
+    output reg [7:0] OR_out,
+    output reg [7:0] XOR_out,
+    output reg [7:0] NOT_out
+);

@@ -1,0 +1,10 @@
+Design a circuit that performs 4-bit addition or subtraction based on a mode input. When mode is set to 0, the module adds the 4-bit inputs `a` and `b`, producing a 4-bit result and generating a carry-out signal if the addition exceeds four bits. When mode is set to 1, the module subtracts `b` from `a`, similarly outputting a 4-bit result and the carry-out signal, which indicates a borrow condition on subtraction. The operation is synchronized to the clock, and both addition and subtraction operations are resettable via an asynchronous reset input.
+module top_module(
+    input clk,
+    input rst,
+    input mode,
+    input [3:0] a,
+    input [3:0] b,
+    output [3:0] result,
+    output carry_out
+);

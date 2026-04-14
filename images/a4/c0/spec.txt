@@ -1,0 +1,7 @@
+Design a 4-bit data shifter that can perform either a left shift or a rotate operation based on a control signal. When the rotate signal is low, the module performs a standard left shift, moving all bits left and wrapping the most significant bit back to the least significant position. When the rotate signal is high, it additionally XORs the shifted result with the least significant bit of the original data, effectively combining rotation and an inversion effect on the least significant bit. The design utilizes a clock to synchronize the shifting and data storage processes.
+module top_module(
+    input [3:0] data,
+    input rotate,
+    input clk,             // Added clk input
+    output reg [3:0] shifted_data
+);

@@ -1,0 +1,12 @@
+Design a data trace module that captures and formats the communication between a CPU and memory or peripherals during read and write operations. On a rising clock edge, if a write operation is detected and there is no wait signal, it constructs an address transfer message (atm) by prefixing a specific tag to the CPU address and creates a data transfer message (dtm) including a specific tag with the data being written. In case of a read operation under the same conditions, it similarly constructs an atm with a different tag and includes the read data in the dtm. If neither operation occurs, it defaults the atm and dtm to a neutral state with zeroes in the tag portion while preserving the original addresses and read data. This module functions as part of a data tracking or logging system in a digital design.
+module top_module(
+  input clk,
+  input [31:0] cpu_address,
+  input cpu_read,
+  input [31:0] cpu_readdata,
+  input cpu_wait,
+  input cpu_write,
+  input [31:0] cpu_writedata,
+  output reg [35:0] atm,
+  output reg [35:0] dtm
+);

@@ -1,0 +1,9 @@
+Design a 4-bit barrel shifter that facilitates both left and right shifting of input data based on the specified direction and amount of shift. The module takes two 4-bit inputs, A and B, along with a direction control signal (DIR) and a 2-bit shift amount (AMT). When DIR is 0, the module left-shifts input A, filling the lower bits with bits from input B, and when DIR is 1, it right-shifts input A, filling the upper bits with bits from input B. The output is updated on the rising edge of a clock signal, providing a shifted output S that reflects the operation.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input DIR,
+    input [1:0] AMT,
+    input clk,
+    output reg [3:0] S
+);

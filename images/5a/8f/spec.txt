@@ -1,0 +1,8 @@
+Design a 4-bit shift register with the capability for parallel loading. When the `parallel_load` signal is high, the module loads a 4-bit input (`data_in`) into the register. Otherwise, on each rising edge of the clock, it shifts the current contents of the register to the left and inserts the `serial_in` bit at the least significant position. The least significant bit of the register is output as `serial_out`.
+module top_module(
+    input clk,
+    input parallel_load,
+    input serial_in,
+    output serial_out,
+    input [3:0] data_in
+);

@@ -1,0 +1,11 @@
+Design a dual-function module that either computes the minimum value from four 8-bit inputs (a, b, c, d) or performs shift operations on a 100-bit register. When the `select` input is high, the module calculates the minimum of the four inputs and outputs it; when low, it can either shift the register left or right, depending on the `ena` input, or load new data into the register. The module is synchronized with a clock signal and has a synchronous reset feature that initializes the minimum output to zero.
+module top_module(
+    input clk,          // Clock input
+    input reset,        // Synchronous active-high reset
+    input select,       // Select input to choose between minimum circuit and register shift module
+    input [7:0] a, b, c, d,      // Input for the minimum circuit
+    input [1:0] ena,    // Input for register shift module to choose shift direction
+    input [99:0] data,  // Input for register shift module to load data
+    output reg [7:0] min,        // Output for the minimum circuit
+    output reg [99:0] q         // Output for the register shift module
+);

@@ -1,0 +1,9 @@
+Design a module that implements the Adler-32 checksum algorithm, which calculates a checksum based on a stream of 8-bit input data. The module operates under a clock signal and reset, managing its state through a finite state machine that transitions from IDLE to PROCESSING and CHECKSUM states. It accumulates a rolling sum and a block sum of the input data, both modulated by a prime number (65521), while also counting bytes. When the specified block size is reached or all data has been processed, it computes the final checksum and indicates validity. The computed checksum is stored in a register and can be used for error detection in data transfers or storage applications.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data_in,
+  input [31:0] data_len,
+  output reg [15:0] checksum,
+  output reg valid
+);

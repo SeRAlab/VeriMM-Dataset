@@ -1,0 +1,15 @@
+Design a circuit that interfaces a CPU with video memory, managing read and write operations based on CPU requests. The module captures CPU read and write signals, allowing the CPU to store a copy enable value at a specific address while controlling operations on video RAM (VRAM) within a defined address range. During a read operation, it fetches data from VRAM and drives the data onto the bus, while during a write operation, it prepares VRAM's address and data inputs. The module also handles enabling and disabling read/write signals, ensuring proper communication between the CPU and the VRAM during memory transactions.
+module top_module(
+    input wire clk,
+    input wire copy_in_progress,
+    input wire cpu_rd,
+    input wire cpu_wr,
+    input wire cpu_mreq,
+    output reg [7:0] copy_enable,
+    input wire [15:0] cpu_addr,
+    inout wire [7:0] cpu_data,
+    output reg back_vram_wr_low,
+    output reg back_vram_rd_low,
+    output reg [12:0] back_vram_addr,
+    output reg [7:0] back_vram_data
+);

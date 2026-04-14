@@ -1,0 +1,5 @@
+Design a Verilog module for a simple Bluetooth module state machine. The module should take a 2-bit input representing the current state of the module and a 1-bit input for the connection request. The module should output a 2-bit state based on the following state transitions:
+- From state '00' (Idle), if connection request is '1', go to state '01' (Connecting).
+- From state '01' (Connecting), if connection request is '0', go to state '10' (Connected).
+- From state '10' (Connected), if connection request is '1', go to state '00' (Idle).
+- State '11' is an invalid state and should be transitioned to '00' regardless of the connection request input.

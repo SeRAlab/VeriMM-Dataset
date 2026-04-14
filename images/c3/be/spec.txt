@@ -1,0 +1,19 @@
+
+
+You are tasked with designing a verilog module that takes in 3 data signals and 4 power signals, and outputs a single signal. The data signals are represented by a single input port `A` and a single output port `X`. The power signals are represented by input ports `VPB`, `VPWR`, `VGND`, and `VNB`. 
+
+Your module should be named `data_power_module` and should include the following:
+- A `reg` named `data_reg` that is 8 bits wide
+- A `wire` named `power_wire` that is 1 bit wide
+- A `wire` named `data_power_wire` that is 1 bit wide
+
+The `data_reg` should be assigned the value of the `A` input at the rising edge of `VPB`. The `power_wire` should be assigned the value of the `VPWR` input. The `data_power_wire` should be assigned the value of the AND operation between `data_reg` and `power_wire`.
+
+Your module should be tested with the following testbench:
+- `A` input is set to 1 for the first 5 clock cycles, then set to 0 for the next 5 clock cycles, and then set to 1 again for the last 5 clock cycles.
+- `VPB` is set to 0 for the first 10 clock cycles and then set to alternate between 1 and 0 for the remaining clock cycles.
+- `VPWR` is set to alternate between 1 and 0 for all clock cycles.
+- `VGND` and `VNB` are set to 0 for all clock cycles.
+
+Your task is to implement the `data_power_module` and ensure that it passes the provided testbench.
+

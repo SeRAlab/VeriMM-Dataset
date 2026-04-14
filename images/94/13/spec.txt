@@ -1,0 +1,8 @@
+Design a 4x4 register file with byte enable functionality, where the output comprises a 16-bit wide register, `q`. On the rising edge of a clock signal, and when the reset is not active, the module allows data input `d` to be selectively written into one of four 4-bit registers (`reg0`, `reg1`, `reg2`, `reg3`) based on the two-bit `byteena` input. If `byteena[0]` is asserted, the lower 4 bits of `d` are written to the appropriate registers; if `byteena[1]` is asserted, the higher 4 bits of `d` are written to the same registers. The output is formed by concatenating these four registers, thereby providing a structured storage mechanism with controlled access to different byte sections.
+module top_module(
+  input clk,
+  input resetn,
+  input [3:0] d,
+  input [1:0] byteena,
+  output reg [15:0] q
+);

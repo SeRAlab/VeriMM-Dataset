@@ -1,0 +1,8 @@
+Design a circuit that functions as a selector for arithmetic and concatenation operations on 16-bit inputs. Based on the 3-bit selector input (sel), the module performs specific calculations: concatenating the sum of inputs a and b with a, or the difference of a and b with b, or concatenating the sum of a and c with c, or the difference of a and c with a. Additionally, it can duplicate the value of b or c into a 32-bit result. For any invalid selection, the output is driven to an unknown state.
+module top_module(
+  input [15:0]      a,
+  input [15:0]      b,
+  input [15:0]      c,
+  input [2:0]       sel,
+  output reg [31:0] res
+  );

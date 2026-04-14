@@ -1,0 +1,9 @@
+Design a parity checker module for an n-bit wide input data signal. The module computes the parity of the input data, determined by the `parity_mode` signal, which dictates whether even or odd parity is used. It compares the calculated parity with an externally provided `parity_in` signal to produce an output flag `f`, indicating whether the received parity matches the computed parity. The module stores the input data and calculated parity across clock cycles and provides the results via the output signals `p` and `f`.
+module top_module(
+  input [n-1:0] d,
+  input parity_mode,
+  input parity_in,
+  input clk, // Add clk input
+  output p,
+  output f
+);

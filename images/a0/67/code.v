@@ -1,0 +1,19 @@
+module down_counter_4bit(
+    input clk,          // Chip clock signal.
+    input rst_n,        // Active-low asynchronous reset signal. Defined as 0 for chip reset; defined as 1 for reset signal inactive.
+    input en,           // Enable signal to decrement the counter.
+
+    output [3:0] count  // 4-bit counter output.
+);
+
+reg [3:0] count_r;
+
+//------------------------------------------------
+// Counter logic
+always @(posedge clk or negedge rst_n)
+    if (!rst_n) count_r <= 4'b1111; // Asynchronous reset to max value
+    else if (en) count_r <= count_r - 1'b1; // Decrement counter if enable is active
+
+assign count = count_r;
+
+endmodule

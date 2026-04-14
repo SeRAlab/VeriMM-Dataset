@@ -1,0 +1,8 @@
+The Verilog module implements a cascading dual-port block RAM (BRAM) configuration with two instances of BRAM, referred to as `upper_bram` and `lower_bram`. It uses a shared clock input and features separate read and write operations for each memory block. The `upper_bram` is enabled for address values starting from 32768 onwards and outputs data to the `lower_bram`, while the `lower_bram` operates for the lower address range, allowing simultaneous reading and writing operations. This design serves to create a larger and more flexible memory architecture, facilitating efficient data storage and retrieval at different address ranges within a single memory interface.
+module top_module(
+    input clk,
+    input [15:0] addr,
+    input [31:0] data_in,
+    input write_en,
+    output reg [31:0] data_out
+);

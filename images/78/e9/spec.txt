@@ -1,0 +1,11 @@
+This module implements an edge splitter circuit that detects rising and falling edges in a 16-bit input signal while providing various output signals based on the input behavior. The circuit uses a clock and an active-low reset signal to synchronize its operations. When a rising edge is detected on the least significant bit of the input (`in[0]`), it sets the `rise` output high and transitions to a state indicating a rising edge has occurred. Conversely, if the bit is low, it sets the `down` output high, indicating a falling edge. The module also separates the 16-bit input into two 8-bit outputs (`out_hi` and `out_lo`), which represent the high and low bytes of the input. Finally, it generates a combined output (`final_out`) that is the logical OR of the high byte, low byte, and the rise and down signals, providing a comprehensive representation of the input signal's status.
+module top_module(
+    input clk,
+    input rst_n,
+    input [15:0] in,
+    output reg rise,
+    output reg down,
+    output reg [7:0] out_hi,
+    output reg [7:0] out_lo,
+    output reg [7:0] final_out
+);

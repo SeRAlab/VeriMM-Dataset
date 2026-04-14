@@ -1,0 +1,28 @@
+Please act as a professional Verilog designer.
+
+Design a module for a 4-bit shift register with parallel load. The module should have a 4-bit data input (d), a clock input (clk), a load input (load), and a 4-bit data output (q). When load is high, the output should be set to the value of the data input. On each rising edge of the clock, the output should be shifted left by one bit.
+
+Module name:
+    shift_register
+
+Input ports:
+    d: 4-bit data input.
+    clk: clock input.
+    load: load input.
+
+Output ports:
+    q: 4-bit data output.
+
+Implementation:
+Declare the module shift_register with input and output ports as specified in the ports statement.
+Inside an always block, sensitive to the clock's rising edge, implement the logic for the 4-bit shift register.
+If load is high, set q to the value of the data input. Otherwise, shift q left by one bit.
+
+Give me the complete code.
+
+module shift_register(
+    input [3:0] d,
+    input clk,
+    input load,
+    output reg [3:0] q
+);

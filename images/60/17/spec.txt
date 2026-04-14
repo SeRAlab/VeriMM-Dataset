@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+
+Design a 4-bit shift register with parallel load capability. The shift register should shift its contents to the right on each rising edge of the clock signal clk. The parallel load is enabled by a load signal. When the load signal is high, the register should load the 4-bit parallel input data.
+
+Module name:
+    shift_register
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rstn: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    load: Load signal to enable parallel loading of data.
+    data_in: 4-bit parallel input data.
+
+Output ports:
+    data_out: 4-bit shift register output data.
+
+Implementation:
+The module includes a 4-bit register, data_out, to store the shift register contents.
+On the positive edge of the clock signal (clk) or the falling edge of the reset signal (rstn), the module updates the register. If the reset signal (rstn) is low, indicating a reset condition, the register (data_out) is set to 0.
+If the reset signal (rstn) is high and the load signal is high, the register (data_out) is loaded with the value of the input data signal (data_in). If the load signal is low, the register (data_out) shifts its contents to the right.
+
+Give me the complete code.

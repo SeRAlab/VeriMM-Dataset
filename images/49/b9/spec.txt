@@ -1,0 +1,13 @@
+Design a control module that generates a strobe signal based on specific input conditions. The module activates an operation when an "enable" signal is asserted and a "ready" signal is active, while also ensuring a reset condition can initialize its state. Once activated, it counts up to a specified "size" value, outputting a strobe signal for each count until the maximum is reached. When the count reaches the defined size, the activation is deactivated, stopping further strobe signals. This module effectively manages timed output for controlled processes within a digital system.
+module top_module(
+  input               clk,
+  input               rst,
+
+  input               enable,
+
+  input               ready,
+  output  reg         activate,
+  input       [23:0]  size,
+  output  reg         strobe
+
+);

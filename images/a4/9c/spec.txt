@@ -1,0 +1,10 @@
+Design a pulse generation module that utilizes a 12 MHz clock input to create several timing signals based on specific clock cycles. The module generates a synchronization pulse (Sync) every 1000 clock cycles, a pulse output (Pulse) every 2000 clock cycles, a block signal (block) every 5000 clock cycles, and a signal (P2) every 3000 clock cycles. Additionally, the module directly passes the incoming RS232 receive signal (RS232_Rx) to the transmit output (RS232_Tx), effectively relaying the data input. The design includes a reset functionality to initialize outputs and counters, ensuring reliable operation upon reset.
+module top_module(
+	input clk, // 12 MHz base clock
+	input RS232_Rx, // Receive pin for the FTDI chip
+	input resetn, // Reset the cycle
+	output reg RS232_Tx, // Transmit pin for the FTDI chip
+	output reg Pulse, // Output pin for the switch
+	output reg Sync, // Output pin for the SYNC pulse
+	output reg P2 // Output signal
+);

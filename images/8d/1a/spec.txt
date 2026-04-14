@@ -1,0 +1,7 @@
+Design a circuit that generates a one-bit enable signal (EN_OUT) based on a slow clock input (SLOWCLK) and a standard clock input (CLK). When the RESET signal is asserted, the enable signal and internal counters are reset to zero. On each rising edge of CLK, the module toggles a 2-bit internal register (cur) and asserts EN_OUT high whenever the current state of SLOWCLK matches its previous state, effectively detecting edges in the SLOWCLK signal. This functionality can be used to create a slower derived clock signal from a faster system clock.
+module top_module(
+  input CLK,
+  input SLOWCLK,
+  input RESET,
+  output reg EN_OUT
+);

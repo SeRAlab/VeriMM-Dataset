@@ -1,0 +1,6 @@
+Design a clock control circuit that acts as a clock edge detector and a signal filter. The module takes an input clock signal (`inclk`) and an enable signal (`ena`) to produce a filtered clock output (`outclk`). When `ena` is high, the circuit monitors the clock's rising edges. It uses a 2-bit state register to track transitions, generating a high output on `outclk` for one clock cycle when a rising edge is detected, effectively filtering the clock to remove unwanted glitches. When `ena` is low, the output is forced to LOW.
+module top_module(
+    input inclk,
+    input ena,
+    output outclk
+);

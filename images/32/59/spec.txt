@@ -1,0 +1,6 @@
+
+Design a simple PCIe endpoint state machine that manages the state transitions of a PCIe transaction. The state machine has the following states: IDLE, REQUEST, GRANT, and DONE. The state transitions are triggered by input signals:
+- `start`: When this signal is high, the state machine transitions from IDLE to REQUEST.
+- `grant`: When this signal is high, the state machine transitions from REQUEST to GRANT.
+- `complete`: When this signal is high, the state machine transitions from GRANT to DONE.
+The state machine should return to IDLE after DONE if the `reset` signal is activated.

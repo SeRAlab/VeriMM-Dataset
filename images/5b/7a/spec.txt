@@ -1,0 +1,8 @@
+Design a 4-bit calculator that performs basic arithmetic operations: addition, subtraction, multiplication, and division, based on a 2-bit opcode input. The module accepts two 4-bit inputs (A and B) and generates a 4-bit output (result) upon the rising edge of a clock signal. It handles overflow by capping results at 15, outputting a predefined value (4'b1111) in case of overflow or division by zero. If an invalid opcode is provided, it outputs an undefined state. The calculator efficiently evaluates operations while ensuring numerical stability and error handling.
+module top_module(
+  input [3:0] A,
+  input [3:0] B,
+  input [1:0] opcode,
+  input clk,
+  output reg [3:0] result
+);

@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+
+Implement a 10-bit linear feedback shift register (LFSR) with a given polynomial. The module operates on the rising edge of the clock signal "clk" and uses a synchronous design. The polynomial for the LFSR is x^10 + x^7 + 1.
+
+Module name:
+    lfsr_10bit
+
+Input ports:
+	clk: Clock signal.
+	rst_n: Reset signal (active low).
+
+Output ports:
+	lfsr_out: 10-bit LFSR output.
+
+Implementation:
+The module should update the register value according to the LFSR polynomial on each clock cycle. When the reset signal is asserted, the LFSR should reset to a non-zero initial value.
+
+Give me the complete code.
+
+module lfsr_10bit(
+	input clk,
+	input rst_n,
+	output reg [9:0] lfsr_out
+);

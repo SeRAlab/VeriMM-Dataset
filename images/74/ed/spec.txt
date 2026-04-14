@@ -1,0 +1,4 @@
+Develop a clock domain crossing synchronization circuit that ensures safe transfer of a reset signal (`s_axi_aresetn`) from one clock domain (`phy_tx_clk`) to another. The module captures the state of the `s_axi_aresetn` input on the rising edge of `phy_tx_clk` and outputs it as `scndry_out`, effectively synchronizing the reset signal for downstream components. This design helps prevent metastability issues that may arise when signals are transferred between different clock domains.
+module top_module(scndry_out,
+    s_axi_aresetn,
+    phy_tx_clk);

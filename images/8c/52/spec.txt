@@ -1,0 +1,6 @@
+Design an energy harvesting block that accumulates energy from a set of input signals and calculates an output voltage. The module takes an n-bit wide input and, during each clock cycle, aggregates the energy from the inputs into an energy accumulator. Once a specific count is reached, it computes the output voltage as the average energy divided by the number of inputs, capping the voltage at 255. The final output is a one-bit signal representing the calculated voltage, enabling efficient energy conversion for low-power applications.
+module top_module(
+  input clk,                             // Declare the clock input
+  input [n-1:0] in,
+  output reg [7:0] out                 // Change output type to reg
+);

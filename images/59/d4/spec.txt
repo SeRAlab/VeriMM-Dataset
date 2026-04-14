@@ -1,0 +1,10 @@
+Design a real-time clock (RTC) module that interfaces with an external microcontroller. The module captures incoming data bits from a serial input and stores them in a command shift register. When a control signal is asserted, the module can output a fixed time value along with the current value of the command register. It utilizes open-drain output for the data line, allowing multiple devices to be connected on the same bus while managing data flow based on chip select (CS) and output enable (OE) signals. Additionally, there is a test signal that toggles periodically to indicate that the module is operational.
+module top_module(
+    input XTAL,
+    input CS, OE,
+    input CLK,
+    input DATA_IN,
+    input STROBE,
+    output reg TP,
+    output reg [7:0] DATA_OUT // Open drain (is this important ?)
+);

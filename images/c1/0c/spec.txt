@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module primarily functions as a clock enable buffer. Its core objective to generate a gated clock signal based on the input clock (`rclk`), an enable signal (`en_l`), and a test mode signal (`tm_l`). This module plays a crucial role in power management and testability within a digital integrated circuit design by allowing selective clock gating and facilitating test modes of operation. In essence, it contributes to reducing power consumption by disabling the clock in certain parts of the circuit when they are not in use and enabling specific test modes for diagnostic purposes.
+
+Module name:  
+	zckenbuf_prim
+
+Input ports:
+	rclk (input): The raw clock input. This is the primary clock signal that the module gates based on the enable and test mode signals. It is of type input.
+	en_l (input): The enable signal, active low. When this signal is low, it indicates that the clock signal should be enabled (subject to the state of tm_l). It is of type input.
+	tm_l (input): The test mode signal, active low. When this signal is low, it indicates that the module should enter a test mode, affecting the gating of the clock signal. It is of type input.
+Output ports:
+	clk (output): The gated clock output. This signal is the result of gating the rclk based on the en_l and tm_l signals. It is of type output.
+
+
+Implementation:
+The zckenbuf_prim module is designed to generate a gated clock signal based on the inputs it receives. This module takes in a reference clock (rclk), an enable signal (en_l), and a test mode signal (tm_l). The output (clk) is a version of the reference clock that is conditionally enabled based on the logic involving en_l and tm_l. The module employs both combinational and sequential logic elements to achieve its functionality.
+
+Give me the complete code.
+

@@ -1,0 +1,13 @@
+Design a dual-entry FIFO (First-In-First-Out) buffer suitable for SDRAM interfacing. The module allows data to be written into or read from two memory locations based on control signals, with appropriate management of the internal entry count. It generates status signals indicating whether the FIFO is empty or full, and whether it is almost empty or almost full, facilitating smoother data flow control. The FIFO employs a clocked logic to handle read and write operations while maintaining synchronization with an active low reset signal.
+module top_module(
+  input clk,
+  input rd,
+  input reset_n,
+  input wr,
+  input [42:0] wr_data,
+  output almost_empty,
+  output almost_full,
+  output empty,
+  output full,
+  output reg [42:0] rd_data
+);

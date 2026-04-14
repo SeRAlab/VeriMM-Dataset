@@ -1,0 +1,17 @@
+Implement a Verilog module based on the following description.
+The following diagram is a Moore machine implementation of a sprinkler system controller. Implement in Verilog using one-hot encoding. Resets into state Sprinkler_Off and reset is asynchronous active-high.
+
+The state machine has the following states and their corresponding outputs:
+1. state Sprinkler_Off (sprinkler_on = 0).
+2. state Sprinkler_On (sprinkler_on = 1).
+
+State transitions:
+1. From state Sprinkler_Off: If start_sprinkler = 1, then transition to state Sprinkler_On. If start_sprinkler = 0, then transition to state Sprinkler_Off.
+2. From state Sprinkler_On: If stop_sprinkler = 1, then transition to state Sprinkler_Off. If stop_sprinkler = 0, then transition to state Sprinkler_On.
+
+module top_module (
+        input clk,
+        input areset,
+        input start_sprinkler,
+        input stop_sprinkler,
+        output reg sprinkler_on);

@@ -1,0 +1,7 @@
+Design a circuit that generates a delayed reset signal based on an asynchronous reset input. The module takes an 8-bit input 'rdelay' which specifies the number of clock cycles to wait before deasserting the reset output 'rst'. Upon receiving a low 'rstn' signal, the output 'rst' is immediately set to low and a counter is reset. As long as 'rstn' remains high and the counter has not reached 'rdelay', 'rst' remains low, and the counter increments on each clock cycle. Once the count reaches 'rdelay', 'rst' is set high, indicating that the reset condition is released.
+module top_module(
+  input clk,
+  input rstn,
+  input [7:0] rdelay,
+  output reg rst
+);

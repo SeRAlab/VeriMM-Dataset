@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform division operations on signed integers. It takes two inputs, a dividend and a divisor, and computes the quotient. The module is parameterized, allowing for flexibility in terms of the bit-width of the inputs and the precision of the quotient. The primary functions of this module include:
+
+Performing signed division operation.
+Indicating the completion of the division operation.
+Signaling an overflow condition if the quotient exceeds the representable range.
+
+This module can be utilized in digital signal processing (DSP) applications, arithmetic logic units (ALUs), or any system requiring division operations with signed integers.
+
+Module name:  
+	qdiv
+
+Input ports:
+	i_dividend [N1:0]: The dividend input port. It is a signed integer with a bitwidth defined by the parameter N.
+	i_divisor [N1:0]: The divisor input port. It is a signed integer with a bitwidth defined by the parameter N.
+	i_start: A control signal that initiates the division operation when asserted (1).
+	i_clk: The clock input. The division operation is synchronized to the rising edge of this clock signal.
+Output ports:
+	o_quotient_out [N1:0]: The quotient output port. It is a signed integer with a bitwidth defined by the parameter N. The sign of the quotient is determined by the exclusive OR (XOR) of the signs of the dividend and divisor.
+	o_complete: A signal that indicates the completion of the division operation. It is asserted (1) when the operation is complete.
+	o_overflow: A signal that indicates an overflow condition. It is asserted (1) if the computed quotient exceeds the representable range.
+
+
+Implementation:
+The RTL module presented is designed to perform division operations on signed integers with a specific focus on handling fixed-point numbers. The division process is implemented using a sequential algorithm that iteratively subtracts the divisor from the dividend and shifts the result to calculate the quotient bit by bit. This module is parameterized to support different bit widths for the dividend and divisor, as well as to adjust the precision of the quotient through the Q parameter.
+
+Give me the complete code.
+

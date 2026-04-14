@@ -1,0 +1,9 @@
+Develop a module that performs a 17-bit by 17-bit multiplication operation while introducing a delay in its data output. The module takes two 17-bit inputs (`data_a` and `data_b`) and produces a 34-bit product (`data_p`). Additionally, it includes a delay mechanism for an input data stream, where the input `ddata_in` is registered and shifted through two pipeline stages before being output as `ddata_out`. The multiplication operation utilizes an external multiply macro with a latency of 3 clock cycles, ensuring that the multiplication result is computed asynchronously to the delayed data output.
+module top_module(
+  input clk,
+  input [16:0] data_a,
+  input [16:0] data_b,
+  output [33:0] data_p,
+  input [(DELAY_DATA_WIDTH-1):0] ddata_in,
+  output [(DELAY_DATA_WIDTH-1):0] ddata_out
+);

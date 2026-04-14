@@ -1,0 +1,44 @@
+The module serves as a simulation interface designed to facilitate communication between a master control module and simulated components in a digital system. It features input signals for resetting and readiness status of the simulation and handles command, address, data, and data count transfers through various output signals. Specifically, it conveys the simulation's operational state while passing along incoming commands and associated data to the master module. The design employs standard input-output bridging and synchronizes control signals to ensure coherent data exchange, ultimately enhancing simulation capabilities by modeling a responsive environment for the master controller.
+module top_module(
+  
+  input               rst,
+  input               clk,
+
+  
+
+  output              o_sim_master_ready,
+  input               i_sim_in_reset,
+  input               i_sim_in_ready,
+
+  input   [31:0]      i_sim_in_command,
+  input   [31:0]      i_sim_in_address,
+  input   [31:0]      i_sim_in_data,
+  input   [31:0]      i_sim_in_data_count,
+
+  input               i_sim_out_ready,
+  output              o_sim_out_en,
+
+  output  [31:0]      o_sim_out_status,
+  output  [31:0]      o_sim_out_address,
+  output  [31:0]      o_sim_out_data,
+  output  [27:0]      o_sim_out_data_count,
+
+
+  
+  input               i_master_ready,
+  output  reg         o_ih_reset,
+  output  reg         o_ih_ready,
+
+  output  reg [31:0]  o_in_command,
+  output  reg [31:0]  o_in_address,
+  output  reg [31:0]  o_in_data,
+  output  reg [27:0]  o_in_data_count,
+
+  output  reg         o_oh_ready,
+  input               i_oh_en,
+
+  input   [31:0]      i_out_status,
+  input   [31:0]      i_out_address,
+  input   [31:0]      i_out_data,
+  input   [27:0]      i_out_data_count
+);

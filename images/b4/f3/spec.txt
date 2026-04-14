@@ -1,0 +1,12 @@
+Design a register-based system that captures input data from an external port and allows for data readback based on address selection. This module accepts a 10-bit input from `in_port` and uses a clock and active-low reset to control data store and retrieval. It has two internal 10-bit registers (`reg1` and `reg2`) to retain the input data for selected addresses. When triggered by the clock, the module can write data to these registers or read back the stored values or input data, determined by a 2-bit address input. The output is a 32-bit `readdata`, constructed from the selected internal data or the input port, facilitating a simple storage and retrieval mechanism for interfaced components.
+module top_module(
+                              // inputs:
+                               address,
+                               clk,
+                               in_port,
+                               reset_n,
+
+                              // outputs:
+                               readdata
+                            )
+;

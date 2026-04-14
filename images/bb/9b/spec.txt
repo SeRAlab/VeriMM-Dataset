@@ -1,0 +1,10 @@
+Design a module that interfaces between incoming signal data and a downstream processing unit. It receives two 32-bit input signals (frontend_i and frontend_q) alongside an enable signal. The module directly assigns these inputs as part of its output signals (ddc_in_i and ddc_in_q) while also managing the output sample (bb_sample) and its corresponding validity strobe (bb_strobe). The enable signal controls whether downstream processing is active, facilitating digital signal processing operations like down-conversion.
+module top_module(
+    input [31:0] frontend_i,
+    input [31:0] frontend_q,
+    input enable,
+    output reg [31:0] ddc_in_i,
+    output reg [31:0] ddc_in_q,
+    output reg [31:0] bb_sample,
+    output reg bb_strobe //high on valid sample
+);

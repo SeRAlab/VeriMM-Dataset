@@ -1,0 +1,11 @@
+Design a register module that manages data transfer based on clock and control signals. The module captures an 8-bit input data when enabled and indicates its status with a busy signal while processing, resetting its state upon receiving a reset signal. The output ready signal signifies when the data is available for further operations, while the busy signal indicates ongoing data handling. Overall, this module facilitates controlled data transmission in a data processing or communication system.
+module top_module(
+  input       i_Pclk,   
+  input       i_Enable, 
+  input       i_Reset,
+  input       i_Done,
+  input [7:0] i_Data,
+  output reg       o_Ready,
+  output reg       o_Busy,
+  output reg [7:0] o_Data
+  );

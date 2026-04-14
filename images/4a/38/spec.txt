@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+
+Implement a 5-bit ring counter. The module generates a 5-bit ring counter sequence on each rising edge of the clock signal. The counter resets to 10000 when the reset signal is high.
+
+Module name:  
+    ring_counter    
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    reset: Synchronous reset signal.
+
+Output ports:
+    count: 5-bit output representing the ring counter sequence.
+
+Implementation:
+The register is defined as reg [4:0] count and initialized to 5'b10000 using the initial statement. The value of count is generated using the ring counter logic: count <= {count[3:0], count[4]}.
+The counter is reset to 10000 when the reset signal is high: if (reset) count <= 5'b10000.
+
+Give me the complete code.

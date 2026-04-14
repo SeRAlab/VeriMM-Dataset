@@ -1,0 +1,9 @@
+Design a sequential circuit that implements a three-stage pipeline using latches. The module captures input data on the rising edge of a clock signal, allowing controlled data flow through selective latching. It employs two selection signals (DselectWire2 and DselectWire3) to determine when to pass data from one latch to the next in the pipeline. The output, dbus, represents the final state of the third latch, effectively allowing the module to hold and propagate data selectively based on the input and specified control signals.
+module top_module(
+  input clk,
+  input dbusWire1,
+  input DselectWire2,
+  input dbusWire2,
+  input DselectWire3,
+  output reg dbus
+);

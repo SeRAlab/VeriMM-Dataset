@@ -1,0 +1,10 @@
+Implement a Verilog module for a 4-bit shift register with parallel load capability. The shift register should have a clock input `clk`, an asynchronous reset input `reset`, a load input `load`, a 4-bit input `parallel_in`, a serial input `serial_in`, and a 4-bit output `data_out`. When `load` is high, the shift register should load `parallel_in` into `data_out`; otherwise, it should shift in `serial_in` on the rising edge of `clk`.
+
+module shift_register(
+	input wire clk,
+	input wire reset,
+	input wire load,
+	input wire [3:0] parallel_in,
+	input wire serial_in,
+	output reg [3:0] data_out
+);

@@ -1,0 +1,11 @@
+Design a programmable counter that updates its value based on specific control signals. This module features an input clock signal (clk) and a chip enable signal (ce) to control when the counter updates. The counter can load new values from an 8-bit data input (DIN) or a selected 8-bit offset (T) based on a 2-bit load control signal (LoadPC). The counter also adjusts its state conditionally, allowing for a basic form of branching and interrupt handling, and generates an output (JumpNoOverflow) that indicates if the new program counter value will not overflow for certain jump conditions.
+module top_module(
+    input clk,
+    input ce,
+    input [1:0] LoadPC,
+    input GotInterrupt,
+    input [7:0] DIN,
+    input [7:0] T,
+    output reg [15:0] PC,
+    output JumpNoOverflow
+);

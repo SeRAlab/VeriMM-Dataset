@@ -1,0 +1,7 @@
+Design a clock-driven counter module that counts from 0 to a specified value (`count_to`) at a reduced frequency determined by the `frequency` input. This module outputs the current count value and sets a `done` flag to indicate when the count reaches `count_to`. It features a reset functionality that allows the counter to be cleared to zero asynchronously. The counter increments only when a derived frequency signal toggles, effectively reducing the clock rate for the counting operation.
+module top_module(
+  input clk, reset,
+  input [31:0] count_to, frequency,
+  output reg [31:0] count,
+  output reg done
+);

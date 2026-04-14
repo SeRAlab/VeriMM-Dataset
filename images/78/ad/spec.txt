@@ -1,0 +1,8 @@
+Design a control signal management circuit that conditionally bypasses or modifies the outputs for register write and memory-to-register operations. When the input signal EX_Flush_i is low (0), the outputs RegWrite_o and MemtoReg_o mirror the inputs RegWrite_i and MemtoReg_i, respectively. However, when EX_Flush_i is high (1), both outputs are set to zero, effectively disabling the register write capabilities in the subsequent stages of the pipeline. This functionality is useful in a pipelined architecture to handle situations where previous instructions need to be flushed.
+module top_module(
+EX_Flush_i,
+RegWrite_i,
+MemtoReg_i, 
+RegWrite_o, 
+MemtoReg_o 
+);

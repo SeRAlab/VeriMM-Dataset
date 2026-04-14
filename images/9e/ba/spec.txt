@@ -1,0 +1,12 @@
+Design a module that generates multiple audio clock signals (mclk, bclk, lrclk1, and lrclk2) based on input commands and a primary clock signal. The mclk and bclk outputs are toggled based on their respective divisors derived from `cmd_reg1`, while lrclk1 and lrclk2 outputs are controlled by `cmd_reg2`, with their counters being reset based on the `lrclk_clear` input. The module ensures that all clock signals are synchronized with the rising edge of the input clock and can be reset asynchronously, facilitating precise timing requirements in audio processing applications.
+module top_module(
+	input			clk,
+	input			reset_n,
+	input	[31:0]	cmd_reg1,
+	input	[31:0]	cmd_reg2,
+	output			mclk,
+	output			bclk,
+	input			lrclk_clear,
+	output			lrclk1,
+	output			lrclk2
+);

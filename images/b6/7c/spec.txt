@@ -1,0 +1,11 @@
+Design a circuit that implements a 4-bit shift register with a capture functionality. Upon receiving a clock pulse, the circuit shifts the existing data in the shift register to the left and inputs new data from `shift_in` if `shift_en` is asserted. Additionally, the module captures and stores a value from `capture_in` into a separate register when `capture_en` is asserted. A reset signal clears both the shift and capture registers, setting them to zero, while the outputs `shift_out` and `capture_out` provide the current values of the shift and capture registers, respectively.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] shift_in,
+    input shift_en,
+    input capture_en,
+    input [3:0] capture_in,
+    output reg [3:0] shift_out,
+    output reg [3:0] capture_out
+);

@@ -1,0 +1,7 @@
+Design a circuit that performs basic arithmetic and logic operations on two 4-bit inputs, 'a' and 'b'. This module operates on the rising edge of a clock signal and accommodates a reset function. When reset is activated, the result is cleared to zero. The operations are determined by a 2-bit control signal 'op': when 'op' is 00, the module outputs the sum of 'a' and 'b'; when 'op' is 01, it outputs the difference; when 'op' is 10, it performs a bitwise AND operation. If 'op' is any other value, the result defaults to zero.
+module top_module(
+    input clk, reset,
+    input [3:0] a, b,
+    input [1:0] op,
+    output reg [3:0] result
+);

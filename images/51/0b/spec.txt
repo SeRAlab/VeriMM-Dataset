@@ -1,0 +1,22 @@
+Please act as a professional Verilog designer.
+
+Implement a Frequency Divider module that divides the input clock frequency by 4. The divided clock signal is named "clk_out".
+
+Module name:
+    frequency_divider
+
+Input ports:
+    clk_in: Input clock signal that needs to be divided.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+
+Output ports:
+    clk_out: Divided clock output signal.
+
+Implementation:
+The module includes a register, counter, with a width of 2 bits, which counts from 0 to 3.
+The module also includes a register, clk_out, which represents the divided clock output signal.
+The counter is incremented in the always block, triggered on the positive edge of the input clock signal (posedge clk_in) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the counter register is cleared to 0 and the clk_out register is cleared to 0.
+The clk_out signal is toggled when the counter reaches 3, effectively dividing the input clock frequency by 4.
+
+Give me the complete code.

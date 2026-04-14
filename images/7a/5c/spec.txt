@@ -1,0 +1,7 @@
+Design a 4-bit shift register that captures input data on the rising edge of the clock signal. When the load signal is asserted (high), the register stores the incoming 4-bit data into the first stage and shifts the previous stages down the line. If load is deasserted (low), the contents of the data from the subsequent stages are shifted through while presenting the last stage's data back to the register. The final output is taken from the first stage of the shift register, effectively allowing for both loading new data and serial shifting.
+module top_module(
+    input [3:0] data_in,
+    input load,
+    input clk,
+    output reg [3:0] data_out
+);

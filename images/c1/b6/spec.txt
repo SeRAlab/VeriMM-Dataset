@@ -1,0 +1,37 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as an interface adapter between a Wishbone bus and a custom bus system. The primary functions of this module include:
+
+Bus Transaction Handling: It manages read and write transactions from the Wishbone bus to the custom bus, ensuring proper data transfer and control signal management.
+Signal Translation: The module translates Wishbone protocol signals to the custom bus signals and vice versa, facilitating seamless communication between different bus architectures.
+Error and Retry Handling: Although minimally implemented, the module provides a basic framework for error signaling and retry logic, which can be expanded based on system requirements.
+
+This module plays a crucial role in systems where components or peripherals designed with different bus protocols need to communicate with each other, ensuring compatibility and extending the functionality of the system without requiring significant redesigns of existing components.
+
+Module name:  
+	wishbone2bus
+
+Input ports:
+	wb_cyc (wire): Wishbone cycle signal indicating an active bus cycle.
+	wb_stb (wire): Strobe signal indicating a valid data transfer cycle.
+	wb_we (wire): Write enable signal distinguishing between read (0) and write (1) operations.
+	wb_adr (wire [AW1:0]): Address bus specifying the target address for the current operation.
+	wb_sel (wire [SW1:0]): Byte select signals indicating which bytes of the data bus are part of the operation.
+	wb_dat_w (wire [DW1:0]): Write data bus carrying data to be written during write operations.
+Output ports:
+	wb_dat_r (wire [DW1:0]): Read data bus carrying data read from the target during read operations.
+	wb_ack (wire): Acknowledge signal indicating the completion of a successful bus cycle.
+	wb_err (wire): Error signal indicating an unsuccessful bus cycle or operation.
+	wb_rty (wire): Retry signal indicating that the current operation should be retried, statically held at 0 in this implementation.
+	bus_wen (wire): Custom bus write enable signal.
+	bus_ren (wire): Custom bus read enable signal.
+	bus_adr (wire [AW1:0]): Custom bus address signal.
+	bus_wdt (wire [DW1:0]): Custom bus write data signal.
+	bus_rdt (input wire [DW1:0]): Custom bus read data signal.
+
+
+Implementation:
+The wishbone2bus module serves as an interface between a Wishbone bus and a generic bus system. It is designed to translate Wishbone bus signals into a format that is compatible with another bus system, facilitating communication between the two. The module is parameterized, allowing for flexibility in address width (AW) and data width (DW), with the signal width (SW) being derived from the data width. This design ensures that the module can be adapted to various bus configurations and data sizes.
+
+Give me the complete code.
+

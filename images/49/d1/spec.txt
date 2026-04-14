@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) for pattern detection that monitors a 4-bit input stream in order to recognize a specific sequence, namely the binary pattern "1011." The FSM operates with a clock and a reset signal; upon reset, the machine initializes to the IDLE state. As the system receives input, it moves between states (IDLE, STATE1, and STATE2) based on the detected pattern in a shift register. When the pattern "1011" is detected, the module asserts a `done` signal, indicating successful detection, and transitions back to the IDLE state.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] in,
+  output reg done
+);

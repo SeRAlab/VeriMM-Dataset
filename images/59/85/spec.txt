@@ -1,0 +1,14 @@
+Design a multi-port RAM module that operates on a clock signal, allowing simultaneous read and write operations. The module features two separate input channels, each capable of writing (controlled by `wr_en_A` and `wr_en_B`) to designated addresses (`addr_A` and `addr_B`) in the memory array, as well as reading (controlled by `rd_en_A` and `rd_en_B`) data from those addresses. The data bus width is set at 8 bits, and the address bus width is 4 bits, enabling access to 16 different memory locations. The outputs `data_out_A` and `data_out_B` provide the data read from the respective addresses. This design is suitable for systems requiring fast access to shared memory resources.
+module top_module(
+  input clk,
+  input wr_en_A,
+  input wr_en_B,
+  input rd_en_A,
+  input rd_en_B,
+  input [addr_width-1:0] addr_A,
+  input [addr_width-1:0] addr_B,
+  input [data_width-1:0] data_in_A,
+  input [data_width-1:0] data_in_B,
+  output reg [data_width-1:0] data_out_A,
+  output reg [data_width-1:0] data_out_B
+);

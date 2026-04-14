@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-to-1 multiplexer. The multiplexer selects one of the four 1-bit input signals (I0, I1, I2, I3) based on the 2-bit select signal (SEL) and outputs it on Y.
+
+Module name:
+    mux_4to1
+
+Input ports:
+    I0, I1, I2, I3: 1-bit input signals
+    SEL: 2-bit select signal
+
+Output ports:
+    Y: 1-bit output signal
+
+Implementation:
+The mux_4to1 module uses an always block triggered on any change in the input signals or the select signal. It uses a case statement to select the appropriate input signal based on the value of the select signal (SEL) and assigns it to the output signal (Y).
+
+Give me the complete code.
+
+module mux_4to1(I0,I1,I2,I3,SEL,Y);
+input I0,I1,I2,I3;
+input [1:0] SEL;
+output Y;
+reg Y;

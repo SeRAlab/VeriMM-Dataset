@@ -1,0 +1,6 @@
+Design a glitch filter circuit that stabilizes an input signal over a specified number of clock cycles to prevent transient voltage spikes or "glitches" from affecting the output. The module utilizes a timer to evaluate the input signal's stability against a defined threshold. If the input exceeds the threshold for a certain duration, it is considered stable; otherwise, if two consecutive low readings occur after a high reading, a glitch is detected. The output will hold either the stable input value or a predefined value when a glitch is detected, effectively filtering noise and enhancing signal integrity.
+module top_module(
+  input clk,        // Add clock input to the module
+  input in,
+  output reg out    // Change output to reg type
+);

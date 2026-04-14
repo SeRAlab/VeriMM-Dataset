@@ -1,0 +1,6 @@
+Develop a circuit that implements a 32-stage shift register and a counting mechanism based on the least significant bit of the shifted input. The module takes a 255-bit wide input and shifts it through a series of registers on each clock cycle. The least significant bit of the 32nd stage is used to increment a counter, which counts how many times this bit is set to 1 during the shifting process. The final output is an 8-bit value representing the count of 1s observed in the least significant position across all stages.
+module top_module(
+    input [254:0] in,
+    input clk,            // Added the clk input
+    output [7:0] out
+);

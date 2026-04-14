@@ -1,0 +1,18 @@
+Design a hazard detection unit for a pipelined processor architecture that manages control hazards. This module monitors various inputs indicating branch instructions, jumps, and memory reads, and requires tracking register dependencies to determine if the pipeline should stall or flush operations. It produces control signals to disable the instruction fetch (PC_disenabler_o) and the instruction register (IFID_disenabler_o), as well as to enable or disable specific multiplexer paths (control_zero_mux_o) and signal a flush condition (flush_o) to maintain proper execution flow and prevent incorrect data usage.
+module top_module(
+	input mem_read_IDEX_i,
+	input reset,
+	input clk,
+	input branch_i,
+	input jmp_i,
+	input topc_i,
+	input [4:0] Rt_IDEX_i,
+	input [4:0] Rt_IFID_i,
+	input [4:0] Rs_IFID_i,
+	
+	output PC_disenabler_o,
+	output IFID_disenabler_o,
+	output control_zero_mux_o,
+	
+	output flush_o
+);

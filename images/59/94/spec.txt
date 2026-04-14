@@ -1,0 +1,8 @@
+Design a barrel shifter that selectively shifts and combines two 16-bit input values based on a direction signal and a 4-bit shift amount. The module utilizes a one-hot encoding approach to generate a shifting pattern which allows it to shift either the 'new_val' or the 'old_val' inputs depending on the 'desc' input. The result is obtained by combining shifted portions of the two inputs, providing a flexible way to manipulate and blend two 16-bit data streams based on shifting logic.
+module top_module(
+	input	desc,			
+	input	[3:0] shift,	
+	input 	[15:0] new_val,		
+	input 	[15:0] old_val,		
+	output	[15:0] out		
+);

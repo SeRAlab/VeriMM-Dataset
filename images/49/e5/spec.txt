@@ -1,0 +1,10 @@
+Design a register file with 16, 32-bit registers that supports both read and write operations. The module allows for simultaneous writing of data to two registers, controlled by a 2-bit write enable signal, and enables the selection of up to four registers for reading, producing a 128-bit output word. Data is written on the rising edge of the clock, and the selected registers for reading are output based on the read enable signals.
+module top_module(
+  input i_clk,
+  input [1:0] i_we,
+  input [3:0] i_re,
+  input [3:0] i_data_in_sel,
+  input [15:0] i_data_out_sel,
+  input [31:0] i_data_in,
+  output reg [127:0] o_data_out
+);

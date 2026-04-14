@@ -1,0 +1,7 @@
+Design a clock gating circuit that controls the propagation of the clock signal. The module outputs a clock-enable signal, `en_clk`, which follows the input clock `clk` only when both enable signals `en` and `te` are asserted. If either of these enable conditions is not met, `en_clk` outputs a LOW signal, effectively disabling the clock. This design is commonly used to reduce power consumption in digital circuits by ensuring that only enabled portions of the circuit receive the clock signal.
+module top_module(
+    input clk,
+    input en,
+    input te,
+    output reg en_clk
+);

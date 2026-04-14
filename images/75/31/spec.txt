@@ -1,0 +1,9 @@
+Develop a circuit to interface with multiple sensors, namely temperature, pressure, and humidity sensors. The module captures sensor data using a clock signal (sclk) and a chip select input (cs) to determine which sensor's output to read. It resets the sensor data if the reset signal (rst) is activated. The selected sensor's data is stored in a register and subsequently provided as a digital output, allowing for the integration of different environmental sensor readings into a single output stream. This design effectively facilitates multi-sensor data acquisition in a cohesive manner.
+module top_module(
+  input sclk,
+  input cs,
+  input rst,
+  input data_in,
+  input sda,
+  output reg [n-1:0] data_out
+);

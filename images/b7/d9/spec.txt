@@ -1,0 +1,6 @@
+Design a main control decoder for a simple processor that interprets a 6-bit operation code (op) input and generates corresponding control signals. Based on the op values, the module outputs a 7-bit main control signal and a 2-bit ALU operation code (alu_op). The specified mappings connect different opcodes to unique sets of control signals, which guide the behavior of other components in the processor, such as the ALU and memory operations. If the input op does not match any predefined cases, the outputs are set to zero, indicating an unrecognized operation.
+module top_module(
+	input [5:0] op,
+	output reg [6:0] main_control,
+	output reg [1:0] alu_op
+    );

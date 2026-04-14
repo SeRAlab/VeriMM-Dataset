@@ -1,0 +1,8 @@
+Design a circuit that incorporates a 4-to-1 multiplexer and a priority encoder. The multiplexer selects one of the four binary inputs (a, b, c, d) to conditionally output a 4-bit segment of an 8-bit input based on which selector is active, while the priority encoder outputs a 3-bit value indicating which of the selected outputs is high, prioritizing from w to z. Additionally, the circuit includes a functional module that produces an output as the bitwise XOR of the multiplexer outputs, providing a means to detect patterns based on the selected inputs.
+module top_module(
+    input a,b,c,d, // Inputs to the multiplexer
+    input [7:0] in, // Input to the priority encoder
+    output reg w, x, y, z, // Outputs from the multiplexer
+    output reg [2:0] pos, // Output from the priority encoder
+    output [7:0] out // Output from the functional module
+);

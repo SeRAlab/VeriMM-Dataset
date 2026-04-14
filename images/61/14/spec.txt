@@ -1,0 +1,10 @@
+Design a power-controlled buffer that outputs signal X based on the status of input A and the SLEEP signal. When SLEEP is inactive (i.e., 0), the buffer passes the filtered output based on A and VPWR, effectively enabling the output when the power supply is valid. When SLEEP is active (i.e., 1), the output is held low, ensuring low-power operation in sleep mode. The circuit utilizes an intermediate power-good signal to manage the output state appropriately, ensuring reliable operation under varying power conditions.
+module top_module(
+    X,
+    SLEEP,
+    A,
+    VPWR,
+    VGND,
+    VPB,
+    VNB
+);

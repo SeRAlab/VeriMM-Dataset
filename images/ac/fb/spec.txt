@@ -1,0 +1,4 @@
+Design a dual-port memory module with a bus interface for accessing pixel data. The module includes a 512-entry memory array (two banks) to store pixel cell data, providing 32-bit wide read and write operations. It responds to bus control signals for read and write operations based on specific address ranges. The read operation outputs two separate data outputs, cellData1 and cellData2, which correspond to the current data from the memory banks. The module also includes control registers for configuration, with the ability to hold the bus during operations to manage the bus flow appropriately and maintain consistency of memory access during sequential clock cycles.
+module top_module(clock, reset,
+	pixCellIx, cellData1, cellData2,
+	busAddr, busData, busOE, busWR, busHold);

@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+
+Implement a 2-bit Johnson counter. The module generates a 2-bit Johnson counter sequence on each rising edge of the clock signal. The counter resets to 00 when the reset signal is high.
+
+Module name:  
+    johnson_counter    
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    reset: Synchronous reset signal.
+
+Output ports:
+    count: 2-bit output representing the Johnson counter sequence.
+
+Implementation:
+The register is defined as reg [1:0] count and initialized to 0 using the initial statement. The value of count is generated using the Johnson counter logic: count <= {~count[0], count[1]}.
+The counter is reset to 00 when the reset signal is high: if (reset) count <= 2'b00.
+
+Give me the complete code.

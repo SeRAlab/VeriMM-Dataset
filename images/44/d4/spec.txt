@@ -1,0 +1,8 @@
+Design a finite state machine (FSM) that controls a command acknowledgment sequence. The FSM has three states: IDLE, VALID, and WAIT. In the IDLE state, it transitions to VALID upon receiving a command (`cmd`). In the VALID state, if a command acknowledgment (`cmd_ack`) is received, it transitions to WAIT, otherwise, it keeps the command buffer active. In the WAIT state, it can either remain there upon further commands or return to the IDLE state if no command is present. The `cmd_buffer` output indicates the validity of a command when in the VALID state and is cleared in other states, facilitating command processing in a controlled manner.
+module top_module(
+		input reset,
+		input clk,
+		input cmd,
+		input cmd_ack,
+		output reg cmd_buffer = 1'b0
+    );

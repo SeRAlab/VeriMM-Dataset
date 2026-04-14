@@ -1,0 +1,8 @@
+Design a module that monitors HDMI data and identifies out-of-bound conditions. The circuit receives HDMI data synchronized with a clock, and upon the start of a new frame, it resets its internal state. It limits the HDMI data values to specified ranges and detects mismatches between the limited and original data. If the incoming data goes beyond predetermined thresholds, it sets an output signal to indicate an out-of-sync condition. This module effectively ensures data integrity by validating HDMI inputs across both limited and full ranges.
+module top_module(
+  input           hdmi_clk,
+  input           hdmi_sof,
+  input           hdmi_de,
+  input   [15:0]  hdmi_data,
+  output reg      hdmi_tpm_oos
+);

@@ -1,0 +1,1 @@
+module top_module(input clk,a,output reg x) ;always @(posedge clk) x <= a ;endmodule

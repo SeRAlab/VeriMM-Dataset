@@ -1,0 +1,8 @@
+Design a 16-bit arithmetic and data selection unit that takes three 16-bit inputs (a, b, c) and a 3-bit selection signal (sel). Based on the value of sel, the module performs various operations: adding or subtracting b and c to/from a, or simply passing the values of b or c to the output. The output (res) reflects the result of these operations, with a default case providing an indeterminate state if sel is outside the defined range. This module functions as a multiplexer combined with an arithmetic logic unit (ALU) functionality.
+module top_module(
+  input [15:0]      a,
+  input [15:0]      b,
+  input [15:0]      c,
+  input [2:0]       sel,
+  output reg [15:0] res
+  );

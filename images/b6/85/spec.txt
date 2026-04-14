@@ -1,0 +1,8 @@
+Design a circuit that concatenates two 16-bit inputs into a single 32-bit output. The system shifts the input values into registers on the positive clock edge when the 'ce' (clock enable) signal is asserted. If the 'clr' (clear) signal is activated, the registers are reset to zero. The output 'y' continuously provides the concatenated result of the two 16-bit inputs, represented as a single 32-bit value.
+module top_module(
+  input [(16 - 1):0] in0,
+  input [(16 - 1):0] in1,
+  output [(32 - 1):0] y,
+  input clk,
+  input ce,
+  input clr);

@@ -1,0 +1,9 @@
+Design a finite state machine-based vending machine controller. It accepts coin inserts and allows for product selection, managing transitions through four states: IDLE, SELECTING, DISPENSING, and RESETTING. The functionality includes counting inserted coins, selecting products based on user input, dispensing the selected product if enough coins are present, and updating the display with the selected product. The module resets upon a reset signal, clearing its registers and returning to the IDLE state, ensuring the system starts fresh for the next transaction.
+module top_module(
+  input clk,
+  input reset,
+  input coin_insert,
+  input product_select,
+  output reg dispense,
+  output reg [3:0] display
+);

@@ -1,0 +1,11 @@
+Design a simple register-based output module that interfaces with an external memory or device through a 3-bit address bus and control signals. The module can store and output a single 8-bit value, which is written when the `write_n` signal is low, specifically when the address is `3'b000`. It has a reset functionality that initializes the stored value to zero. When the `chipselect` signal is active and a write operation occurs, a write strobe is generated, enabling data transfer. The module also features a read multiplexer that outputs the stored value upon request, combined with a 32-bit read data output that pads the 8-bit data with zeros. Overall, the module provides a controlled interface for writing and reading a single 8-bit data byte, emphasizing the use of synchronous design principles tied to the clock signal.
+module top_module(
+  input [2:0] address,
+  input chipselect,
+  input clk,
+  input reset_n,
+  input write_n,
+  input [31:0] writedata,
+  output reg [7:0] out_port,
+  output reg [31:0] readdata
+);

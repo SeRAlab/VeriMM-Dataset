@@ -1,0 +1,7 @@
+Design a timer counter that increments an 8-bit output register (Q) on each positive edge of a clock input (CP) until it reaches a predefined period (PERIOD). When the reset signal (RS) is asserted, the output Q is reset to zero, and a carry out signal (QCC) is also cleared. When the counter reaches the value of PERIOD-1, Q is reset to zero, and QCC is asserted to indicate a counter overflow condition. This design effectively counts pulses and generates a signal to indicate when a full period has been completed.
+module top_module(
+    input CP,
+    input RS,
+    output reg [7:0] Q,
+    output reg QCC
+);

@@ -1,0 +1,14 @@
+Design a module that integrates a 4-bit RAM and an 8-bit shift register, providing both read and write capabilities controlled by a clock and various input signals. The RAM allows for writing data at specified addresses when enabled, and retrieving data when the read signal is asserted. The shift register, which can be loaded with external data, supports left and right shifts based on the shift direction input. Additionally, the output combines the read data from the RAM with the lower four bits of the shift register using an XOR operation. This design can be used for applications requiring simple memory and data manipulation functionalities.
+module top_module(
+    input clk,
+    input reset,
+    input write_en,
+    input [7:0] write_addr,
+    input [3:0] write_data,
+    input read_en,
+    input [7:0] read_addr,
+    input [7:0] data_in,
+    input [1:0] shift_direction,
+    input load,
+    output [7:0] data_out
+);

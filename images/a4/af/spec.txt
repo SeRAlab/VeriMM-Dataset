@@ -1,0 +1,12 @@
+Design a finite state machine (FSM) for a Master AXI Read Sequencer, which manages the read address (AR) and read data (R) control signals in an AXI interface. The FSM operates in two states: DO_ADDR for sending the address and DO_DATA for receiving the data. When in the DO_ADDR state and the ar_control_done signal indicates the address transmission is complete, it transitions to the DO_DATA state to enable the read data control signal. Conversely, upon completion of read data reception, it returns to the DO_ADDR state. The circuit provides appropriate control signals to facilitate the synchronization of reading operations in a memory or peripheral interface.
+module top_module(
+    input   wire        clock,
+
+    
+    output  reg         ar_control_enable,
+    input   wire        ar_control_done,
+
+    
+    output  reg        r_control_enable,
+    input   wire       r_control_done
+);

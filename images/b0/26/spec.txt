@@ -1,0 +1,6 @@
+Design a circuit that computes the CRC-CCITT (Cyclic Redundancy Check) for a 16-bit input data stream. The module utilizes a shift register to process the incoming data and applies the CRC polynomial defined for CCITT, efficiently generating an 8-bit CRC output based on the shifted data. The result is produced at the output whenever the clock signal indicates a new data input.
+module top_module(
+    input clk,                     // Added clk input
+    input [15:0] data_in,
+    output reg [7:0] crc_out
+);

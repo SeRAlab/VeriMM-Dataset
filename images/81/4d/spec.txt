@@ -1,0 +1,7 @@
+Design a circuit that performs a 16-bit summation of two 16-bit halves from a 32-bit input when enabled. If the enable signal is high, the circuit sums the upper 16 bits and lower 16 bits of the input; it outputs the result as `data_out` and indicates overflow via the `ovf` signal if the sum exceeds 16 bits (i.e., greater than 0xFFFF). When the enable signal is low, the output is set to zero, and overflow is set to inactive.
+module top_module(
+    input [31:0] data_in,
+    input en,
+    output reg [15:0] data_out,
+    output reg ovf
+);

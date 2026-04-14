@@ -1,0 +1,8 @@
+Design a power management circuit that generates two outputs, VPWR and VGND, based on a clock signal and a reset condition. Upon a rising edge of the clock, if the reset is inactive (rst_n is low), both outputs are set to low. If the reset is active and the enable signal is high, VPWR is driven high while VGND remains low. If the enable signal is low, both outputs are set to low again. This module effectively controls power and ground signals in a system, ensuring that they are only active when the module is enabled and properly reset.
+module top_module(
+    input clk,
+    input rst_n,
+    input enable,
+    output reg VPWR,
+    output reg VGND
+);

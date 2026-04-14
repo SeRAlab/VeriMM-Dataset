@@ -1,0 +1,10 @@
+Design a simple 4-bit calculator that performs addition or subtraction based on the control signal `op`. When `op` is 0, the module adds two 4-bit inputs `a` and `b`, and when `op` is 1, it subtracts `b` from `a`. The result is provided as a 4-bit output, and an overflow flag is generated to indicate if the result exceeds the representable range for addition or if the subtraction result is negative. The operation is synchronized with a clock signal, and a reset signal initializes the internal states.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] a,
+  input [3:0] b,
+  input op,
+  output [3:0] result,
+  output overflow
+);

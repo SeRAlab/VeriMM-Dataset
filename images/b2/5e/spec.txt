@@ -1,0 +1,13 @@
+Develop a reset controller module that manages multiple reset signals for a system. The module responds to various reset inputs, including an external reset, auxiliary reset, and debug system reset, to produce a comprehensive set of reset signals for multiple components. It generates a master reset signal for the microcontroller, manages peripheral resets, and interfaces with the bus structure. The module ensures that all connected peripherals and interconnects are properly reset based on the external input conditions and the internal synchronization clock, effectively coordinating the system's power-on and operational reset sequences.
+module top_module(
+    input slowest_sync_clk,
+    input ext_reset_in,
+    input aux_reset_in,
+    input mb_debug_sys_rst,
+    input dcm_locked,
+    output reg mb_reset,
+    output reg [0:0] bus_struct_reset,
+    output reg [0:0] peripheral_reset,
+    output reg [0:0] interconnect_aresetn,
+    output reg [0:0] peripheral_aresetn
+);

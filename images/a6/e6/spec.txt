@@ -1,0 +1,9 @@
+Design a memory controller that manages read and write operations to a memory module. The controller uses a finite state machine (FSM) with four states: idle, write, read, and wait for read. In the idle state, it checks for a write-enable signal (we) to transition to either the write state (setting the memory write enable) or the read state (setting the memory read enable). During the write state, it stores incoming data in a register and asserts the write enable signal while transitioning back to idle. In the read state, it asserts the read enable, and in the wait state, it retrieves the data from memory and then returns to idle. The controller outputs the necessary control signals for memory access while handling the data flow through a register.
+module top_module(
+  input [n-1:0] addr,
+  input we,
+  input [m-1:0] data,
+  output mem_we,
+  output mem_re,
+  output [m-1:0] mem_data
+);

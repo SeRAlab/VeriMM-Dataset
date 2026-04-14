@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement a module for a D flip-flop with asynchronous reset. The flip-flop captures the value of the D input on the rising edge of the clock signal. If the reset signal is asserted (active low), the output Q is reset to 0.
+
+Module name:  
+    dff_async_reset      
+
+Input ports:
+    clk: Clock signal.
+    rst_n: Asynchronous reset signal (active low).
+    d: Data input.
+
+Output ports:
+    q: Output signal.
+
+Implementation:
+The dff_async_reset module captures the value of the D input on the positive edge of the clock signal clk. If the asynchronous reset signal rst_n is asserted low, the output Q is reset to 0 immediately. The output Q is synchronized with the clock.
+
+Give me the complete code.
+
+module dff_async_reset(
+    input clk,
+    input rst_n,
+    input d,
+    
+    output reg q
+);

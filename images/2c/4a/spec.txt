@@ -1,0 +1,13 @@
+Design a Verilog module that implements a basic state machine for a SLAM (Simultaneous Localization and Mapping) system. The state machine should have the following states:
+- State 0: Idle
+- State 1: Mapping
+- State 2: Localizing
+- State 3: Updating
+
+The state machine should transition based on the following rules:
+- From Idle (State 0), on input signal `start`, transition to Mapping (State 1).
+- From Mapping (State 1), on input signal `complete`, transition to Localizing (State 2).
+- From Localizing (State 2), on input signal `found`, transition to Updating (State 3).
+- From Updating (State 3), on input signal `done`, transition back to Idle (State 0).
+
+The module should have a reset signal to return to Idle state. The output should be the current state encoded as a 2-bit binary value.

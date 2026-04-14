@@ -1,0 +1,8 @@
+Implement a single-port RAM module that supports both read and write operations. On the rising edge of the clock, if the write enable (we) signal is high, the module will store the input data at the specified address. Conversely, when the write enable signal is low, the module will output the data stored at the specified address onto the output port. The memory is organized as an array of 1024 words, each word being 8 bits wide.
+module top_module(
+  input clk,
+  input we,
+  input [9:0] addr,
+  input [7:0] data,
+  output reg [7:0] q
+);

@@ -1,0 +1,28 @@
+Implement the Verilog module based on the following description.
+Given the following Moore state machine with 1 input (trigger) and 1 output (alarm). Unless otherwise stated in the diagram below, assume outputs are 0 and inputs are don't cares.
+
+The state machine has the following states and their corresponding outputs: 
+1. state Off (alarm=0).
+2. state On (alarm=1).
+
+State transitions:
+1. From state Off: If trigger = 1, then transition to state On. If trigger = 0, then remain in state Off.
+2. From state On: If trigger = 0, then transition to state Off. If trigger = 1, then remain in state On.
+
+At reset, the state machine starts in state "Off". Derive next-state logic equations and output logic equations by inspection assuming the following one-hot encoding is used: (Off, On) = (2'b01, 2'b10)
+
+Derive state transition and output logic equations by inspection assuming a one-hot encoding. Implement only the state transition logic and output logic (the combinational logic portion) for this state machine.
+
+Write code that generates the following equations:
+
+- Off_next -- next-state logic for state Off
+- On_next
+- alarm -- output logic
+
+module top_module(
+    input trigger,
+    input [1:0] state,    // 2-bit one-hot current state
+    output reg Off_next,
+    output reg On_next,
+    output reg alarm
+ );

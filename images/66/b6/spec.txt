@@ -1,0 +1,6 @@
+Design a combinational circuit that performs logical operations on three 4-bit inputs (a, b, c) and generates various 4-bit outputs and an 8-bit output. Specifically, the module computes the AND and OR of inputs a and b to produce outputs s1 (AND) and s2 (OR), along with their complements (s3 and s4), and additional outputs based on the control input c. It generates s5 and s6 by ANDing s1 and s2 with the negation of c, and generates s7 and s8 by ANDing s3 and s4 with c. Finally, the module combines these outputs to produce an 8-bit output, sFim, where the upper half corresponds to s5 or s7 and the lower half corresponds to s6 or s8. This design acts as a logic processing unit for specified operations between the given inputs.
+module top_module(output [3:0] s1, output [3:0] s2,output [3:0] s3,output [3:0] s4,output [3:0] s5,
+          output [3:0] s6,output [3:0] s7,output [3:0] s8,output [7:0] sFim,
+                    input  [3:0] a,
+                    input  [3:0] b,
+                    input  [3:0] c);

@@ -1,0 +1,11 @@
+Design a synchronous circuit that detects rising and falling edges of a one-bit input signal (a) while also allowing selection of one of four inputs (in[3:0]) to be output. The circuit includes edge detection logic, where the `rise` signal indicates a rising edge and the `down` signal indicates a falling edge of the input signal. The final output (out) consists of the selected input along with the rising and falling edge indicators, based on a 2-bit selector (sel) that chooses between the four available inputs. The operation is reset by an active-low reset signal (rst_n), which initializes the internal states and outputs.
+module top_module(
+    input clk,
+    input rst_n,
+    input [3:0] in,
+    input [1:0] sel,
+    input a,
+    output reg rise,
+    output reg down,
+    output reg out
+);

@@ -1,0 +1,25 @@
+Please act as a professional Verilog designer.
+
+Implement a 32-bit linear feedback shift register (LFSR) with a polynomial feedback of x^32 + x^22 + x^2 + x + 1.
+
+Module name:  
+    LFSR_32               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the LFSR.
+Output port:
+    Q: 32-bit register representing the current LFSR value.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the LFSR value is updated.
+If the reset signal (rst_n) is low, indicating a reset condition, the LFSR value (Q) is set to 32'h1.
+Otherwise, the LFSR value is shifted left by 1 bit and the feedback bit is calculated and inserted at the least significant bit position.
+
+Give me the complete code.
+
+module LFSR_32(
+   input                clk,
+   input                rst_n,
+ 
+   output reg [31:0]    Q  
+);

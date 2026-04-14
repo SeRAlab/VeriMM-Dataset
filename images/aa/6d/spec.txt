@@ -1,0 +1,7 @@
+Design a simple address decoder that produces a 32-bit output based on a one-bit address input. On a rising edge of the clock or when the reset signal is asserted low, the module sets the output `readdata` to predefined values: 32'h560F6F0F when the address is 0, 32'hADC3C2C2 when the address is 1, and defaults to zero for any other address. The reset functionality initializes the `readdata` to zero when the reset signal is low.
+module top_module(
+  input wire address,
+  input wire clock,
+  input wire reset_n,
+  output reg [31:0] readdata
+);

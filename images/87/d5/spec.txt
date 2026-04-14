@@ -1,0 +1,10 @@
+Design a simple calculator that performs basic arithmetic operations on two signed 32-bit inputs, `a` and `b`, based on a 2-bit mode selector. Depending on the selected mode, the calculator can compute the sum, difference, product, or quotient of the inputs: mode `00` computes the sum, mode `01` computes the difference, mode `10` computes the product, and mode `11` computes the quotient. The outputs for the unused operations are set to zero, ensuring that only one type of calculation is active at a time.
+module top_module(
+    input signed [31:0] a,
+    input signed [31:0] b,
+    input [1:0] mode,
+    output reg signed [31:0] sum,
+    output reg signed [31:0] difference,
+    output reg signed [31:0] product,
+    output reg signed [31:0] quotient
+);

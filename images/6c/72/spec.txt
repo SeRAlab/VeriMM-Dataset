@@ -1,0 +1,11 @@
+Design a 4-bit synchronous binary counter with load capability. The counter increments on the rising edge of the clock when both the enable (ENP) and enable toggle (ENT) signals are active. It can be cleared to zero with the active-low clear signal (CLR_n) or loaded with a preset value (D) when the load signal (LOAD_n) is low. The output (Q) reflects the current counter value, while the RCO (Ripple Carry Out) signal indicates when the counter wraps around from its maximum value (15) back to zero.
+module top_module(
+    input [3:0] D,        
+    input CLK,            
+    input CLR_n,          
+    input LOAD_n,         
+    input ENP,            
+    input ENT,            
+    output [3:0]Q,        
+    output RCO            
+);

@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a 2-to-1 multiplexer. Its primary role to select one of the two input signals based on the state of the selection signal and forward the selected input to its output. This module is fundamental in digital circuits and systems for data routing, function implementation, and control signal management. In a broader system context, it can be used for switching between different data sources, conditional data forwarding, and implementing combinational logic functions.
+
+Module name:  
+	MUXF8
+
+Input ports:
+	I0: The first input port of the module. It accepts a singlebit binary value. This input is selected when the selection signal S is low (0).
+	I1: The second input port of the module. Similar to I0, it accepts a singlebit binary value. This input is selected when the selection signal S is high (1).
+	S: The selection input port of the module. It is a singlebit binary signal that determines which input (I0 or I1) is forwarded to the output. When S is low (0), I0 is selected; when S is high (1), I1 is selected.
+Output ports:
+	O: The output port of the module. It carries the selected input signal to the next stage of the circuit. The data type of O is a singlebit binary value, indicating that this module is designed to handle binary signals.
+
+
+Implementation:
+The RTL module presented, named MUXF8, implements a fundamental digital logic component known as a 2-to-1 multiplexer (MUX). The primary function of this multiplexer is to select one of the two input signals based on the state of the selection signal and forward the selected input to the output. This module is purely combinational, meaning its output is solely dependent on its current inputs without any reliance on previous states, which distinguishes it from sequential logic that depends on past inputs and states.
+The core logic of the MUXF8 module is encapsulated within a single line of Verilog code:
+verilog
+assign O = (S)? I1 : I0;
+
+This line employs a conditional operator (S)? I1 : I0;, which is a compact representation of an if-else statement. The operation can be interpreted as follows: if the selection signal S is high (1), then the output O is assigned the value of input I1; if S is low (0), then O is assigned the value of input I0. This decision-making process is instantaneous with respect to the input changes, highlighting the combinational nature of the module.
+
+Give me the complete code.
+

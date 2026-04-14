@@ -1,0 +1,11 @@
+module logic_module (
+    input a,
+    input b,
+    input c,
+    input d,
+    output y
+);
+
+    assign y = ((a) | (b & (c | d))) ? 1'b1 : 1'b0;
+
+endmodule

@@ -1,0 +1,8 @@
+Design a pipelined arithmetic unit capable of performing both addition and subtraction on 4-bit inputs. The module takes two 4-bit inputs, `a` and `b`, and a control signal `add_sub` to determine the operation: if `add_sub` is high, the module adds `a` and `b`; if low, it subtracts `b` from `a`. The result of the operation is stored in a 4-bit output `result`, while an overflow signal is generated to indicate if the output falls outside the range representable by a 4-bit signed integer. The design implements a state-based pipeline to handle the different stages of input registration, computation, and overflow checking, ensuring functionality is synchronized in a systematic manner.
+module top_module(
+    input [3:0] a,
+    input [3:0] b,
+    input add_sub,
+    output reg [3:0] result,
+    output reg overflow
+);

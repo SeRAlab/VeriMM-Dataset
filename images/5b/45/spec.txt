@@ -1,0 +1,8 @@
+Design a circuit that incorporates an eight-bit shift register and an XOR operation. The shift register, which is cleared to the value 0x34 (or 52 in decimal) on a synchronous active-high reset, shifts its contents to the left on each clock cycle, with the least significant bit being replaced by the input signal 'a'. Additionally, the output of the module computes the bitwise AND of the current contents of the shift register and the result of the XOR operation between inputs 'a' and 'b'. The final output is thus a combination of the shifted register state and the XOR result, facilitating a functional operation that combines shifting and logical processing.
+module top_module( 
+    input clk, 
+    input reset,      // Synchronous active-high reset
+    input a,           // Input for the shift register
+    input b,           // Input for the shift register
+    output out         // Output from the functional module
+);

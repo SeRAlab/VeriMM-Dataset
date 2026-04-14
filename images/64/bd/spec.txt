@@ -1,0 +1,6 @@
+Design a 4-bit binary counter integrated with a pseudorandom number generator functionality. The counter uses a shift register of 64 bits to generate a new bit, which is derived from an XOR combination of selected bits from the register. On each clock pulse, the least significant bit of the shift register is output to a 4-bit wide output, Q, while the shift register is updated by shifting in the new XOR-generated bit. The counter resets to zero when the active-low reset signal is triggered.
+module top_module(
+  input                clk,
+  input                rst_n,
+  output reg  [3:0]    Q
+);

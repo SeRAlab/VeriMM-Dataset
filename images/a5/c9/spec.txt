@@ -1,0 +1,8 @@
+Design a 16-bit up/down counter that increments or decrements its value based on the input signal `direction`. The counter operates on the positive edge of the `clk` signal, resetting to zero when `reset` is activated. When the count reaches its maximum value of 9999 while counting up, it wraps around to zero and increments an overflow counter, which counts how many times the counter has overflowed. Conversely, when counting down and the count reaches zero, it wraps around to the maximum value of 9999, also incrementing the overflow counter. The module outputs the current overflow count as a 4-bit signal.
+module top_module(
+    input clk,
+    input reset,
+    input direction,
+    output reg [15:0] count,
+    output [3:0] overflows
+);

@@ -1,0 +1,9 @@
+Design a 4-bit up/down counter that allows counting in both directions based on input signals. The counter increments its value when the UP signal is asserted, decrements when the DOWN signal is asserted, and can be loaded with a 4-bit input value (DIN) when the LOAD signal is active. The counter wraps around from 15 to 0 when incrementing and from 0 to 15 when decrementing. The output (Q) reflects the value of the counter, which is updated through three stages of registers to ensure stable output on clock edges.
+module top_module(
+    input clk,
+    input UP,
+    input DOWN,
+    input LOAD,
+    input [3:0] DIN,
+    output reg [3:0] Q
+);

@@ -1,0 +1,7 @@
+
+Design a Verilog module that implements a simple point addition operation for elliptic curves over a finite field. The module should take two points (x1, y1) and (x2, y2) as inputs and output the resulting point (x3, y3) after performing point addition according to ECC rules. The operation should follow the formula for adding points on an elliptic curve: 
+- If (x1, y1) != (x2, y2), then the slope (m) is computed as (y2 - y1) / (x2 - x1) and new coordinates (x3, y3) can be derived from: 
+  x3 = m^2 - x1 - x2, 
+  y3 = m * (x1 - x3) - y1.
+- If (x1, y1) == (x2, y2), then the slope is computed as (3 * x1^2 + a) / (2 * y1) and the new point is calculated similarly.
+You can assume that the parameters a and p (the modulus) are given as inputs to the module.

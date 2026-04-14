@@ -1,0 +1,10 @@
+Design a pixel manager that processes pixel coordinates and an input data stream to generate an RGB pixel value. The module takes a clock signal, reset, pixel coordinates (x and y), and a 32-bit input data value. It calculates a memory address for reading pixel data based on the pixel's x-coordinate and its y-coordinate. Using a case statement, it selects one of four color components from the input data based on the two least significant bits of the x-coordinate, and outputs the corresponding 8-bit RGB value. If the x-coordinate does not match any expected values, it defaults to a zero pixel value.
+module top_module(
+	clk,
+	reset,
+	pixel_x, 
+	pixel_y,
+	din,
+	px_rgb,
+	addr_r
+   );

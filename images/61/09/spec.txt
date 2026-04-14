@@ -1,0 +1,9 @@
+Design a clock divider module that generates four different output clock signals from a 100 MHz master clock. The module produces a 3051.75 Hz logic clock and its delayed version, a 25 MHz pixel clock, and a 700 Hz display clock. Utilizing an 18-bit counter, the design employs bit masking to control the output frequencies, allowing it to set precise timing for various functional elements of a digital system. The module includes an asynchronous reset feature to initialize the counter.
+module top_module(
+	input wire clk,		//master clock: 100MHz
+	input wire rst,		//asynchronous reset
+	output wire logic_en, // logic clock: 3051.75 Hz
+	output wire logic_en_1, // logic clock delayed by one cycle
+	output wire pix_en,		//pixel clock: 25MHz
+	output wire display_en // Display clock: 700 Hz
+	);

@@ -1,0 +1,6 @@
+Design a simple SATA controller state machine that manages the state transitions between IDLE, ACTIVE, and SUSPEND states. The controller should respond to input signals to change states based on the following rules:
+- From IDLE, if the start signal is high, transition to ACTIVE.
+- From ACTIVE, if the suspend signal is high, transition to SUSPEND.
+- From SUSPEND, if the resume signal is high, transition back to ACTIVE.
+- From ACTIVE, if the stop signal is high, transition to IDLE.
+The state should be a 2-bit output representing the current state (00 for IDLE, 01 for ACTIVE, 10 for SUSPEND).

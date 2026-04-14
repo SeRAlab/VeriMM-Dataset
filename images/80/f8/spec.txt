@@ -1,0 +1,9 @@
+Design a 4-bit adder/subtractor module with overflow detection. When the 'sub' input is low, the module adds two 4-bit inputs (in0 and in1), outputting the result in the 'out' signal; when 'sub' is high, it subtracts in1 from in0. The module also monitors for overflow conditions, which are indicated by the OVF output. The design incorporates a state machine to manage the computation and overflow detection processes.
+module top_module(
+    input [3:0] in0,
+    input [3:0] in1,
+    input sub,
+    input clk,         // Added clk input
+    output reg [3:0] out,  // Changed output to reg
+    output reg OVF    // Changed output to reg
+);

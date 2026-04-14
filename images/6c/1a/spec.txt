@@ -1,0 +1,10 @@
+Design a majority gate that takes three binary inputs (a, b, c) and produces an output indicating whether the majority of the inputs are high, with an additional reset functionality. The circuit incorporates a pipeline register to handle input shifting and allows for synchronization with a clock signal. When two or more inputs are high, the output is set to high, except when all three inputs are high, in which case the output is low. The module also includes a reset feature that clears the pipeline register and output when activated. The output from the combinational logic is available both as a registered output and a direct wire assignment.
+module top_module(
+    input a, 
+    input b,
+    input c,
+    input reset,
+    input clk, // Added clk input to resolve compilation errors
+    output wire out_assign,
+    output reg out_alwaysblock
+);

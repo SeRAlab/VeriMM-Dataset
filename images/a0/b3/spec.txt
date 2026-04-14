@@ -1,0 +1,11 @@
+Design a clock-setting module that updates two 4-bit clock values, `clock_min1` and `clock_min2`, based on the input signals. On the rising edge of the `clk` signal or when `set_min` is asserted, the module captures `clock1` and `clock2` into `clock_min1` and `clock_min2`, respectively. If `set_min` is not asserted, it instead updates `clock_min1` and `clock_min2` with the values of `temp1` and `temp2`. This functionality allows for dynamic adjustment of clock settings based on user inputs.
+module top_module(
+    input clk,
+    input set_min,
+    input [3:0] clock1,
+    input [3:0] clock2,
+    input [3:0] temp1,
+    input [3:0] temp2,
+    output reg [3:0] clock_min1,
+    output reg [3:0] clock_min2
+    );

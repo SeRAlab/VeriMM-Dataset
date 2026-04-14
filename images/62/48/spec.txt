@@ -1,0 +1,12 @@
+Design a module that integrates a 3-bit shift register with combinational logic operations. The module includes a synchronous reset mechanism and shifts a single-bit input through a 3-bit register on each clock cycle. Additionally, it utilizes a 5-input decoder and performs logical operations—AND, OR, and NOR—on the decoder output based on an enable signal. The outputs include the latest bit from the shift register, as well as results from the AND, OR, and NOR operations, which are only valid when the enable signal is active. This module can serve applications requiring data shifting, decoding, and logic evaluation in digital systems.
+module top_module(
+    input clk,      // Clock input
+    input reset,    // Synchronous active-high reset
+    input d,        // 1-bit input for the shift register
+    input [4:0] in, // 5-bit input for the combinational circuit
+    input enable,   // Enable signal for the control logic module
+    output q,       // Output of the shift register
+    output out_and, // Output of a 5-input AND gate
+    output out_or,  // Output of a 5-input OR gate
+    output out_nor  // Output of a 5-input NOR gate
+);

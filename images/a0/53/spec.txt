@@ -1,0 +1,11 @@
+Design a hashing module that implements the Jenkins Hash Function. This module processes 32-bit input data and a seed value, producing a 32-bit hash output in response to valid input signals. Upon receiving a reset signal, it initializes internal registers and outputs. During operation, it manages two phases: a mixing phase where it combines input data with internal values, and a finalization phase where it derives the final hash value. The output is valid when the hashing is completed.
+module top_module(
+  input clk,
+  input rst,
+  input [31:0] data_in,
+  input valid_in,
+  input [31:0] seed_in,
+  input enable,
+  output reg [31:0] data_out,
+  output reg valid_out
+);

@@ -1,0 +1,7 @@
+Design a 4-bit binary to Gray code converter with an enable control signal and reset functionality. When the reset signal is low, all registers are cleared. Upon a rising edge of the gray control signal, the module captures the input binary value into a register. If gray_ctrl is low, it computes the Gray code by applying a bitwise XOR operation between the captured binary input and the previous binary value. If gray_ctrl is high, it computes the Gray code based on the last two Gray code values, enabling a transition between binary and Gray code formats.
+module top_module(
+    input [3:0] binary_in,
+    input gray_ctrl,
+    input rst_n,
+    output reg [3:0] gray_out
+);

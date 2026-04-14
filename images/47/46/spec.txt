@@ -1,0 +1,8 @@
+Implement a pipelined OR gate with a reset functionality. The circuit takes two inputs, a and b, and produces an output that represents the logical OR of the inputs, delayed by two clock cycles. The output is updated on the rising edge of the clock and can be reset to zero when the reset signal is activated, which clears both internal stages and the output. This design effectively provides a synchronized and staged approach to computing the OR operation, suitable for applications requiring timing control in digital logic.
+module top_module(
+    input a, 
+    input b,
+    input clk,   // Added clk input
+    input reset,
+    output reg out
+);

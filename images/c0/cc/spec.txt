@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+    
+Implement a module to interface with a bus and manage idle conditions, interrupts, and data transmission requests within a digital system. Its primary functions include:
+
+Idle Detection and Handling: It monitors the bus for idle conditions and generates specific codewords when the bus remains idle for a predefined duration.
+Interrupt Handling: It processes interrupt requests by generating a unique codeword for interrupt conditions and manages the timing of these interrupt requests.
+Data Transmission Management: It handles data transmission requests by accepting codewords and controlling the timing of their transmission based on the bus's state and external busy signals.
+
+This module plays a crucial role in ensuring efficient bus utilization, timely interrupt handling, and effective communication between components in a digital system.
+
+Module name:  
+	wbuidleint
+
+Input ports:
+	i_clk: Clock input signal (input). It synchronizes the module's operations.
+	i_stb: Strobe/input enable signal (input). Indicates when a new codeword is ready to be transmitted.
+	i_codword: Codeword to be transmitted (input, 36 bits). Contains the data or command to be sent over the bus.
+	i_cyc: Cycle indicator (input). Signifies if the system is in a specific operational cycle.
+	i_busy: Busy signal from another module (input). Indicates that the module should wait before sending more data.
+	i_int: Interrupt request signal (input). Indicates that an interrupt request has been made.
+	i_tx_busy: Transmission busy signal (input). Indicates that the transmission medium is currently busy.
+Output ports:
+	o_stb: Output strobe signal (output, reg). Indicates when the module has a codeword ready for transmission.
+	o_codword: Output codeword (output, reg, 36 bits). The codeword being sent out by the module.
+	o_busy: Module busy signal (output, reg). Indicates that the module is currently processing and cannot accept new input.
+
+
+Implementation:
+The Verilog module presented is designed to interface with a Wishbone bus, managing idle states, interrupt requests, and data transmission. The module operates on the rising edge of a clock signal (i_clk) and processes inputs such as strobe signals (i_stb), codewords (i_codword), cycle indication (i_cyc), busy flags (i_busy, i_tx_busy), and interrupt requests (i_int). It outputs a strobe signal (o_stb), codewords (o_codword), and a busy flag (o_busy) to manage communication and control flow.
+
+Give me the complete code.
+

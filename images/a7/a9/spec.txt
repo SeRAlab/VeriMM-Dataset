@@ -1,0 +1,7 @@
+Design a 2-to-1 multiplexer that selects between two 32-bit inputs: `PC_out` and `ALUOut`. The selection is controlled by the `IorD` signal; when `IorD` is high (1), the output will be `ALUOut`, and when it is low (0), the output will be `PC_out`. This module facilitates the routing of data from either the program counter or the arithmetic logic unit for further processing in a digital system.
+module top_module(
+    input [31:0] PC_out,
+    input [31:0] ALUOut,
+    input IorD,
+    output reg [31:0] out
+);

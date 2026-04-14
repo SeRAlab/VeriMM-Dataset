@@ -1,0 +1,8 @@
+Design a 256x16-bit synchronous RAM module with read and write capabilities. The module interfaces with a clock signal and features an 8-bit address input to select one of the 256 memory locations. On each rising edge of the clock, it outputs the data stored at the specified address. If the write enable signal is asserted, it writes the provided 16-bit data to the memory location indicated by the address input.
+module top_module(
+    input              iCLK,    
+    input      [7:0]   iAddr,   
+    input      [15:0]  iData,   
+    input              iWen,    
+    output reg [15:0]  oData    
+);

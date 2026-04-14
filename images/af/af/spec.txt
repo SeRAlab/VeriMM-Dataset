@@ -1,0 +1,8 @@
+Design a read counter for a FIFO (First-In-First-Out) buffer. The module generates a 12-bit output `out` that increments on each rising edge of the `rd_clk` clock when the `sel` input is high, while simultaneously updating another 12-bit output `O1` with the current value of `out`. If the input `Q` is asserted (high), both `out` and `O1` are reset to zero. This functionality allows tracking the read operation's count within the FIFO structure, facilitating controlled data flow in the buffering system.
+module top_module(
+    out,
+    O1,
+    sel,
+    rd_clk,
+    Q
+);

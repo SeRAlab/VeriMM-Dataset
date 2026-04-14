@@ -1,0 +1,6 @@
+Design a priority encoder that takes an 8-bit input signal. The module outputs a 3-bit wide binary representation of the highest bit set in the input (I) while asserting an enable (EN) signal. If at least one of the input bits is high, the output Y reflects the position of the highest set bit—lower indices being prioritized—while EN remains low. If none of the input bits are high, EN is asserted high, indicating no active input. This design is useful in applications that require encoding specific active inputs among multiple sources, allowing for efficient signal processing and control.
+module top_module(
+    input [7:0] I,
+    output reg EN,
+    output reg [2:0] Y  // Changed wire to reg
+);

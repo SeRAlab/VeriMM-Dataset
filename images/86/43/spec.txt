@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+
+Implement a 3-bit up/down counter. The module can count up or down based on a control signal. The counter increments its value on each rising edge of the clock if the control signal is high, and decrements its value if the control signal is low.
+
+Module name:
+    up_down_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    up_down: Control signal to determine counting direction.
+
+Output ports:
+    count: Output signal representing the current count value.
+
+Implementation:
+The counter is defined as reg [2:0] count and initialized to 0 using the initial statement. On each rising edge of the clock, the value of count is either incremented or decremented based on the value of the control signal: if (up_down) count <= count + 1; else count <= count - 1.
+
+Give me the complete code.
+
+module up_down_counter(clk, up_down, count);
+
+    input clk;
+    input up_down;
+    output [2:0] count;

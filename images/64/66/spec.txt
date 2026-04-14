@@ -1,0 +1,10 @@
+Design a circuit that functions as an 8-bit adder/subtractor. It takes two 8-bit inputs, A and B, along with a carry input and a control signal indicating whether to perform addition or subtraction. When the control signal (sub) is low, the module computes the sum of A and B, including the carry; when high, it computes the difference of A and B, also considering the carry input. The module outputs the calculated sum or difference and provides a borrow output to indicate if a borrow occurred during subtraction. The design also includes registers for storing intermediate values on the rising edge of the clock.
+module top_module(
+    input clk,                     // Added clk input
+    input [7:0] A,
+    input [7:0] B,
+    input carry_in,
+    input sub,
+    output reg [7:0] sum,
+    output reg borrow_out
+);

@@ -1,0 +1,13 @@
+Design a circuit that generates video signals for a VGA display, controlled by three switches representing the RGB color outputs. The module takes a clock input and a reset signal to synchronize and initialize the pixel counters. Based on a condition denoted by 'act', it assigns the color outputs (R, G, B) to the states of the input switches (sw0, sw1, sw2) when active; otherwise, it outputs low values for all color channels. The module also controls horizontal and vertical synchronization signals, essential for displaying images correctly on a VGA monitor.
+module top_module(
+    input sw0,
+    input sw1,
+    input sw2,
+    input reset,
+	 input clk,
+    output reg R,
+    output reg G,
+    output reg B,
+    output reg hSync,
+    output reg vSync
+    );

@@ -1,0 +1,23 @@
+Design a buffer module that processes and manages control signals for a memory architecture. The module receives various enable and control signals for reading and writing operations, and generates buffered output signals including valid masks and control enable signals. It specifically computes the outputs for lookup enable signals by performing logical AND operations between row and panel enable signals, facilitating memory access operations for up to 8 entries. This design ensures the correct enabling of read and write functionalities based on the combination of input signals.
+module top_module(
+   // Outputs
+   output [7:0] lkup_en_c4_buf, 
+   output [7:0] rw_dec_c4_buf,
+   output [7:0] rd_en_c4_buf, 
+   output [7:0] wr_en_c4_buf, 
+   output [7:0] rw_entry_c4_buf, 
+   output [15:0] lkup_wr_data_c4_buf, 
+   output dir_clear_c4_buf, 
+   output inval_mask_c4_buf,
+   // Inputs
+   input rd_en_c4, 
+   input wr_en_c4, 
+   input [7:0] inval_mask_c4, 
+   input [1:0] rw_row_en_c4, 
+   input [3:0] rw_panel_en_c4, 
+   input [7:0] rw_entry_c4, 
+   input [1:0] lkup_row_en_c4, 
+   input [3:0] lkup_panel_en_c4, 
+   input [15:0] lkup_wr_data_c4, 
+   input dir_clear_c4
+   );

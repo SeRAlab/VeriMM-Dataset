@@ -1,0 +1,9 @@
+Design a simple 8-bit microcontroller that executes a limited instruction set based on a clock signal. It features input for instructions (INSTR), data (DATA), and provides output (OUT) along with a status flag (FLAG). The module supports six operations: a no-operation (NOP), addition (ADD), subtraction (SUB), moving data (MOV), comparison (CMP), and halting (HLT). On a positive clock edge, if RESET is activated, the outputs are initialized, while on receiving different instruction codes, the appropriate operation modifies the OUT register and adjusts the FLAG based on the execution results.
+module top_module(
+    input CLK,
+    input RESET,
+    input [7:0] INSTR,
+    input [7:0] DATA,
+    output reg [7:0] OUT,
+    output reg FLAG
+);

@@ -1,0 +1,15 @@
+Design a dual-port RAM module that supports independent read and write operations on two different ports (Port A and Port B). Each port is 18 bits wide, allowing simultaneous access to memory for high-speed data processing. The module features separate clock signals for read and write operations, enables for both read and write ports, and conditional writing capabilities based on the operational mode (RAM or ROM). When enabled, data can be written to or read from specific addresses, providing flexible memory management in digital systems.
+module top_module(
+	input wire CLKARDCLK,
+	input wire CLKBWRCLK,
+	input wire [17:0] ADDRARDADDR,
+	input wire [17:0] ADDRBWRADDR,
+	input wire ENARDEN,
+	input wire ENBWREN,
+	input wire [17:0] DIADI,
+	input wire [17:0] DIBDI,
+	input wire WEA,
+	input wire WEBWE,
+	output wire [17:0] DOADO,
+	output wire [17:0] DOBDO
+);

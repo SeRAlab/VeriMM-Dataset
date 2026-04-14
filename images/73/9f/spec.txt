@@ -1,0 +1,12 @@
+Design a synchronous 16-entry FIFO (First-In-First-Out) buffer. It accepts a 128-bit wide input data and supports both write and read operations controlled by the wr_en and rd_en signals. The module tracks its state with indicators for full and empty conditions, and maintains a count of the stored data entries. On a reset, the module initializes its pointers and count, while on clock edges, it allows writing to the FIFO when it is not full and reading from it when it is not empty.
+module top_module(
+  clk,
+  rst,
+  din,
+  wr_en,
+  rd_en,
+  dout,
+  full,
+  empty,
+  data_count
+);

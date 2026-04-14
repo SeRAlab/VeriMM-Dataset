@@ -1,0 +1,4 @@
+Design a pipeline register for a memory stage in a processor that captures and forwards control signals and data from the execution (E) stage to the memory (M) stage. The module operates on the rising edge of the clock and incorporates a reset functionality to initialize output registers. When reset is activated, it sets all output signals—including control signals for register writing and memory operations, as well as data registers—to zero. In normal operation, it updates the output registers with the corresponding values from the execution stage inputs, allowing the processor to maintain proper data flow and control across pipeline stages.
+module top_module(clk, Reset, RegWriteE, RegWriteM, MemtoRegE,
+		 MemtoRegM, MemWriteE, MemWriteM, ALUOutE, ALUOutM,
+		 WriteDataE, WriteDataM, WriteRegE, WriteRegM);

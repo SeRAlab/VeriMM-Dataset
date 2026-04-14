@@ -1,0 +1,8 @@
+Design a circuit that acts as a data reception controller. It captures an 8-bit data packet incoming through RX_Data when the RX_Done_Sig signal is asserted, storing it in a register (rData) and outputting it via data_tx. The circuit also generates an RX_En_Sig signal, which indicates whether the data reception is currently enabled; it signals low when data is being received and high at all other times. This module synchronizes data processing with a clock input (CLK) and can be reset asynchronously using the active-low reset signal (RSTn).
+module top_module(
+  input   CLK, RSTn,
+  input RX_Done_Sig,
+  input [7:0] RX_Data,
+  output [7:0] data_tx,
+  output RX_En_Sig
+    );

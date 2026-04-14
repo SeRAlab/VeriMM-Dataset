@@ -1,0 +1,12 @@
+Design a memory-mapped slave module for a system-on-chip (SoC) architecture that interfaces with an Avalon-styled bus. This module supports read and write operations on a 32-bit register file, which includes specific handling for controlling an output LED based on write commands to designated addresses. The module maintains status signals indicating whether a read or write operation is in progress, ensuring proper data handling and wait request signaling. On reset, the internal registers are initialized, and the LED output can be toggled based on input data. The design provides responsive output data for read requests based on address decoding and allows for asynchronous operations through a wait request mechanism.
+module top_module(
+		input  wire [3:0]  avs_s0_address,     
+		input  wire        avs_s0_read,        
+		output wire [31:0] avs_s0_readdata,    
+		input  wire        avs_s0_write,       
+		input  wire [31:0] avs_s0_writedata,   
+		output wire        avs_s0_waitrequest, 
+		input  wire        clock_clk,          
+		input  wire        reset_reset,        
+		output wire        LEDR                
+	);

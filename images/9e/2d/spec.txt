@@ -1,0 +1,6 @@
+Design a 7-segment display driver that converts a 4-bit binary input (`value`) into the corresponding 7-segment output (`segments`). The output is determined by the state of an auxiliary input (`auxValue`): if `auxValue` is high, the module displays custom characters for the values 1 to 6 (P, T, R, V, H, L respectively); if `auxValue` is low, it displays standard hexadecimal digits (0-F). The outputs are appropriately encoded to illuminate the segments of a 7-segment display, translating the binary input into visual numeric or character representations.
+module top_module(
+    input wire[3:0] value,
+    input wire auxValue,
+    output reg[6:0] segments
+    );

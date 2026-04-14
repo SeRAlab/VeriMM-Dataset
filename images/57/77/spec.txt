@@ -1,0 +1,8 @@
+Design a 4-to-1 multiplexer with an enable function to select one of four input sources conditioned on the `enable` signal. When enabled, the multiplexer outputs one of the values from three pipeline registers (storing the input data over three clock cycles) or directly from the input, based on a two-bit selection signal (`sel`). If `enable` is low, the output is high-impedance ('bz), effectively disabling the output.
+module top_module(
+    input [3:0] in,
+    input [1:0] sel,
+    input enable,
+    input clk,             // Added clk input
+    output reg out         // Changed output to reg type
+);

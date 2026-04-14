@@ -1,0 +1,8 @@
+Design a digital circuit that performs a 5-second audio delay using a FIFO buffer. The module takes a push-button signal to control the delay initiation and a clock for writing data. Upon pressing the button, the delay counter is incremented, and an LED indicates the current state, wrapping around after a count of 5. On each clock cycle, the module writes incoming 12-bit audio data into a pre-defined memory array and outputs the delayed audio data from the next position in the buffer, supporting a delay of approximately 5 seconds based on the clock frequency.
+module top_module(
+    input pb_signal,
+    input clk_write,
+    input [11:0] data_in,
+    output reg [11:0] data_out,
+    output reg [4:0] led = 0
+    );

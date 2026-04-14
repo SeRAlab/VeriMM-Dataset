@@ -1,0 +1,12 @@
+Implement a 32-register bank with read and write capabilities in a synchronous reset configuration. The module allows two registers to be read simultaneously based on the inputs reg_R_addr_A and reg_R_addr_B, returning their values at rdata_A and rdata_B, respectively. A write operation can be performed to a designated register specified by reg_W_addr, using wdata, contingent upon the reg_we (register write enable) signal and with the condition that the register address is not zero. The register set is initialized to zero at startup and reset on the active high reset signal, ensuring all registers start from a known state.
+module top_module(
+            clk,
+			rst,
+			reg_R_addr_A, 
+			reg_R_addr_B, 
+			reg_W_addr, 
+			wdata, 
+			reg_we, 
+			rdata_A, 
+			rdata_B
+			);

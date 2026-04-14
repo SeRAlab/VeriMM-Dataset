@@ -1,0 +1,11 @@
+Design a synchronous 4-entry FIFO (First In, First Out) queue with an 8-bit data width. The module includes clock and reset inputs, along with push and pop control signals for managing data insertion and removal. It outputs the data at the front of the queue and provides flags to indicate when the queue is empty or full. The buffer uses two pointers to track read and write indices, ensuring data integrity during push and pop operations, which are triggered on the rising edge of the clock while respecting the FIFO order.
+module top_module(
+    input clk,
+	 input reset_n,
+    input [7:0] data_in,
+    output [7:0] data_out,
+    input push,
+    input pop,
+	 output empty,
+	 output full
+);

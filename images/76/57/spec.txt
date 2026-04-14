@@ -1,0 +1,8 @@
+Design a single-port random access memory (RAM) module with 256 addresses, each capable of storing 18-bit wide data. On the rising edge of the clock signal, if the write enable (we) signal is active, the module writes the 18-bit input data (din) to the specified address (addr) in memory. Regardless of the write enable state, the module always outputs the contents of the addressed memory location to dout, allowing for read operations.
+module top_module(
+    input clk,
+    input we,
+    input [7:0] addr,
+    input [17:0] din,
+    output reg [17:0] dout
+);

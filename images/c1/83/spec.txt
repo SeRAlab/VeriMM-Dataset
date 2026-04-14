@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a basic clock buffer or gate, with an enable control. Its primary role to selectively pass the input clock signal (`rclk`) to its output (`clk`) based on the status of the enable signal (`en`). This module is crucial in digital IC designs where dynamic control of clock signals is required, such as in clock gating for power saving, or in systems where certain components need to be activated or deactivated based on operational modes or states. It can be used in a variety of systems, including but not limited to, microprocessors, digital signal processors, and application-specific integrated circuits (ASICs), where precise control over clock signal propagation is necessary.
+
+Module name:  
+	bw_mckbuf_11x
+
+Input ports:
+	rclk (input): This is the reference clock input to the module. It is the clock signal that is to be buffered and conditionally passed to the output based on the enable signal. The data type of rclk is a singlebit binary, representing the high (1) and low (0) states of the clock signal.
+	en (input): The enable signal for the module. When en is high (1), the reference clock (rclk) is passed to the output. When en is low (0), the output is disabled (logically low in this implementation). The data type of en is also a singlebit binary.
+Output ports:
+	clk (output): This is the output clock signal of the module. It carries the reference clock signal (rclk) when the module is enabled (en = 1). If the module is disabled (en = 0), the output is low (0). The data type of clk is a singlebit binary, similar to the inputs.
+
+
+Implementation:
+The RTL module bw_mckbuf_11x is designed to function as a simple gated clock buffer. It takes two inputs: a reference clock signal (rclk) and an enable signal (en). The module outputs a single clock signal (clk). The core functionality of this module is to control the propagation of the reference clock signal based on the state of the enable signal. This is a form of combinational logic, as the output at any given time is a direct function of the current inputs, without any internal state or memory.
+The logic implemented within this module is straightforward and can be described by the following Boolean expression:
+\[ 	ext{clk} = 	ext{rclk} \land 	ext{en} \]
+This means that the output clock signal (clk) is active (or 'high') only when both the reference clock (rclk) and the enable signal (en) are active ('high'). If either rclk or en is inactive ('low'), the output clock signal will also be inactive ('low').
+It's important to note that this module does not contain any sequential logic elements, such as flip-flops or latches. The output is purely a function of the current input signals, making it a combinational logic module. However, the use of a clock signal as an input and the generation of a gated clock signal as an output places this module in the context of clock network design within digital ICs, where managing clock distribution and minimizing power consumption are critical considerations.
+
+Give me the complete code.
+

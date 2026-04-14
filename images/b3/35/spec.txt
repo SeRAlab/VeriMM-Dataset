@@ -1,0 +1,9 @@
+Design a signed 8-bit two's complement adder with overflow detection. This module takes two signed 8-bit inputs, `a` and `b`, and produces their sum on the output `sum` when a clock signal is received and reset is not active. The circuit also includes a reset mechanism that clears the output to zero and resets the overflow flag. It detects overflow by checking if the signs of the inputs are the same but differ from the sign of the resulting sum. If an overflow occurs, the `overflow` output will be set to high; otherwise, it will be low.
+module top_module(
+  input clk,
+  input reset,
+  input signed [7:0] a,
+  input signed [7:0] b,
+  output reg signed [7:0] sum,
+  output reg overflow
+);

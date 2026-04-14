@@ -1,0 +1,9 @@
+Design a module that performs both priority encoding and a barrel shifting operation on a 16-bit input word based on a 4-bit input signal. The module first determines the position of the highest set bit among the 4-bit input. It generates a flag indicating if all input bits are zero. If the input is zero, it adds the lower and upper bytes of the input word and outputs the result on both output signals. If there is a non-zero input, it directs the corresponding byte (lower or upper) to the outputs based on the highest bit position detected, while the other output is set to zero. This dual functionality allows the module to effectively process the input data while conveying relevant status information through the flag and position outputs.
+module top_module(
+    input [3:0] in,
+    input wire [15:0] in_word,
+    output wire [7:0] out_hi,
+    output wire [7:0] out_lo,
+    output reg [1:0] pos, // Priority encoder output
+    output reg flag // Priority encoder flag indicating whether input is zero or not
+);

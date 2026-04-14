@@ -1,0 +1,5 @@
+Design a Cascaded Integrator-Comb (CIC) filter that processes a digital input signal with specified parameters for decimation and staging. The filter takes an n-bit input signal and produces an m-bit output signal, applying a decimation factor R and having M stages of integration and N samples per stage. The functionality includes an integrator stage that accumulates input samples, followed by a comb stage that performs a differencing operation, ultimately outputting reduced sample rates while maintaining the signal characteristics. This design is suitable for applications in digital signal processing where efficient downsampling of data is required, such as in audio or communications systems.
+module top_module(
+  input [n-1:0] in,
+  output reg [m-1:0] out // Changed from wire to reg
+);

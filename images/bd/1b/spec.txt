@@ -1,0 +1,10 @@
+Design a circuit that performs a fine correction operation on input signals. The module takes two signed 14-bit inputs (a and b) and a signed 32-bit input (c), computes the product of a and b, adds this product to c, and outputs the result as a signed 32-bit value (d) when enabled (en). Additionally, the output e reflects the value of input a. The circuit operates synchronously with a clock signal (clk) and can be reset asynchronously using a negative logic reset (rst_n).
+module top_module(
+        input  wire               clk,
+        input  wire               rst_n,
+        input  wire               en,
+        input  wire signed [13:0] a, b,
+        input  wire signed [31:0] c,
+        output reg signed [31:0]  d,
+        output wire signed [13:0] e
+    );

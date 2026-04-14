@@ -1,0 +1,7 @@
+Design a simple calculator module that performs basic arithmetic operations based on a 2-bit operation selector. The module accepts an 8-bit input data signal and a clock signal, and it has an active-low reset. On each positive edge of the clock, if not in a reset state, it updates an internal register with the input data and executes one of four operations: addition, subtraction, multiplication, or division, based on the value of the operation selector. The result of the operation is stored in an 8-bit output register. If division is selected, the module handles a division by zero condition by outputting zero.
+module top_module(
+    input clk, rst_n, 
+    input [1:0] op, 
+    input [7:0] data_in, 
+    output reg [7:0] result
+);

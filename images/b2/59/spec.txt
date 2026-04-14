@@ -1,0 +1,10 @@
+Design a sequential circuit that performs multiple arithmetic operations on two 8-bit inputs, A and B, synchronized to a clock signal. It outputs the results of addition, subtraction, multiplication, and division in 16-bit format. The addition and subtraction results are updated on the rising edge of the clock, while the multiplication and division results are stored temporarily before being updated, ensuring organized handling of computations.
+module top_module(
+    input wire clk,
+    input wire [7:0] A,
+    input wire [7:0] B,
+    output reg [15:0] add_result,
+    output reg [15:0] sub_result,
+    output reg [15:0] mul_result,
+    output reg [15:0] div_result
+);

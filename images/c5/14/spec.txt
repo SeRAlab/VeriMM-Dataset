@@ -1,0 +1,23 @@
+
+
+You are given a Verilog module `probe_async` that implements a multiplexer with 8 inputs and 1 output. The module has an Avalon memory-mapped slave interface for control signals and an Avalon clock interface. The multiplexer selects one of the eight inputs based on the value of a control signal, and outputs the selected input. The inputs are 31-bit wide, and the output is a single bit.
+
+The module contains an asynchronous probe multiplexer with 8 probes, each of which is an instance of the `probe_mux4_async` module. Each probe mux selects one of four input bits and outputs the selected bit. The control signal is used to select the probe mux to be used for selecting the output.
+
+Your task is to implement the `probe_mux4_async` module that implements a multiplexer with 4 inputs and 1 output. The module should have the following interface:
+
+```
+module probe_mux4_async
+(
+	input clk,
+	input reset,
+	input [1:0]sel,
+	input [3:0]in,
+	output reg out
+);
+```
+
+where `clk` is the clock input, `reset` is the asynchronous reset input, `sel` is the 2-bit selection input, `in` is the 4-bit input vector, and `out` is the 1-bit output.
+
+You need to implement the module within 200 lines of Verilog code.
+

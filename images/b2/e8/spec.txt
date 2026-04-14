@@ -1,0 +1,8 @@
+Develop a circuit that performs three primary functions: a population count, a byte swapping operation, and a simple summation. The population count circuit takes a 255-bit input vector and outputs an 8-bit count representing the number of high bits. The byte swapping module processes a 32-bit input vector, rearranging the byte order and producing a 32-bit output. Finally, the functional module adds the population count output to the most significant byte of the swapped output, resulting in an 8-bit sum output.
+module top_module(
+    input [254:0] in, // 255-bit input vector for population count circuit
+    input [31:0] in_swap, // 32-bit input vector for byte swapping module
+    output [7:0] count_out, // 8-bit output from population count circuit
+    output [31:0] swap_out, // 32-bit output from byte swapping module
+    output [7:0] sum_out // 8-bit output from functional module
+);

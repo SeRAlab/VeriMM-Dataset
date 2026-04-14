@@ -1,0 +1,23 @@
+Design a module to control RGB LED outputs based on control signals and data input. The module accepts a reset signal, a clock signal, and data for LED color intensity via an Avalon bus interface. It contains registers to hold the intensity values for red, green, and blue channels, and uses control signals to enable or update these values. When enabled, the LED states are determined by comparing counters that increment with each clock cycle, allowing for PWM-style control of the LEDs based on the specified intensity. The system allows reading and writing of values through the Avalon control interface while providing real-time LED state changes in response to data inputs.
+module top_module(
+
+input					rsi_MRST_reset,	
+input					csi_MCLK_clk,
+
+
+input		[31:0]	avs_ctrl_writedata,
+output	[31:0]	avs_ctrl_readdata,
+input		[3:0]		avs_ctrl_byteenable,
+input					avs_ctrl_write,
+input					avs_ctrl_read,
+output				avs_ctrl_waitrequest,
+
+
+input		[23:0]	asi_ledf_data,
+input					asi_ledf_valid,
+
+
+output				coe_LED_R,
+output				coe_LED_G,
+output				coe_LED_B
+);

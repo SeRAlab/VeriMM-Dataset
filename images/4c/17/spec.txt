@@ -1,0 +1,9 @@
+Design a 3-stage pipelined circuit that processes a 3-bit vector input. The circuit captures the input vector 'vec' on the rising edge of a clock signal and propagates it through three pipeline stages. The final output 'outv' is the value of the vector after it has passed through all three stages, providing a delayed version of the original input. Additionally, the individual bits of the input vector are directly outputted as separate signals 'o2', 'o1', and 'o0', representing each bit of the 'vec' input.
+module top_module(
+    input wire clk,           // Added clk input
+    input wire [2:0] vec,
+    output wire [2:0] outv,
+    output wire o2,
+    output wire o1,
+    output wire o0
+);

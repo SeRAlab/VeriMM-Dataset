@@ -1,0 +1,32 @@
+Please act as a professional Verilog designer.
+
+Design a 32-bit register file with 8 registers. The register file should have two read ports and one write port. Data should be written to the register file on the positive edge of the clock when the write enable signal is high.
+
+Module name:
+    reg_file
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the registers.
+    we: Write enable signal to allow writing.
+    waddr: 3-bit address of the register to write to.
+    wdata: 32-bit data to be written to the register.
+    raddr1: 3-bit address of the first register to read from.
+    raddr2: 3-bit address of the second register to read from.
+Output ports:
+    rdata1: 32-bit data read from the first register.
+    rdata2: 32-bit data read from the second register.
+
+Give me the complete code.
+
+module reg_file(
+   input                clk,
+   input                rst_n,
+   input                we,
+   input      [2:0]     waddr,
+   input      [31:0]    wdata,
+   input      [2:0]     raddr1,
+   input      [2:0]     raddr2,
+
+   output     [31:0]    rdata1,
+   output     [31:0]    rdata2
+);

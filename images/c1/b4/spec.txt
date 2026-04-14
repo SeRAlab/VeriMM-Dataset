@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to simulate or interface with the Internal Configuration Access Port (ICAP) functionality specific to Xilinx Spartan-6 FPGAs. The primary function of this module to provide a mechanism for writing data into the FPGA's configuration memory while the FPGA is operational, enabling dynamic reconfiguration capabilities. This feature can be utilized for various purposes, including partial reconfiguration of the FPGA to adapt to new functionalities or to modify the behavior of the FPGA logic without needing a full system reset or power cycle.
+
+In a broader system context, this module could be part of a larger design that requires on-the-fly reconfiguration, such as adaptive computing systems, where the hardware configuration needs to be modified based on real-time processing requirements or to implement fault tolerance by reconfiguring around faulty logic blocks.
+
+Module name:  
+	ICAP_SPARTAN6
+
+Input ports:
+	CLK (input): The clock input. This signal is used to synchronize the data writing operations to the configuration memory.
+	CE (input): Chip Enable. This activehigh signal enables the write operation when asserted.
+	WRITE (input): Write Enable. This activehigh signal, when combined with an asserted CE, allows data to be written to the configuration memory.
+	I (input, 16 bits): Input Data. This [15:0] bus carries the data to be written into the configuration memory when a write operation is enabled.
+Output ports:
+	O (output, 16 bits): Output Data. This [15:0] bus mirrors the last data written into the module when a write operation occurs. It does not directly represent the data in the configuration memory but rather the last data passed through the module.
+	BUSY (output): Busy Signal. This signal indicates whether the module is currently busy performing a write operation. In this implementation, it is hardwired to 0, indicating that the module is never busy, which simplifies the design but might not accurately reflect the status of an actual ICAP interface.
+
+
+Implementation:
+The RTL module presented, named ICAP_SPARTAN6, is designed to interface with the Internal Configuration Access Port (ICAP) of a Spartan-6 FPGA. The module is structured to facilitate the writing of data to the ICAP, although it is simplified and does not fully implement the ICAP protocol. The primary logic components of this module can be categorized into combinational and sequential logic as follows:
+
+Give me the complete code.
+

@@ -1,0 +1,7 @@
+Design a circuit that implements a two-stage processing pipeline, where the input is a 16-bit wide signal. In the first stage, a barrel shifter shifts the input to the right by 8 bits, resulting in a 16-bit output. In the second stage, upon the rising edge of the clock, it extracts the upper 8 bits from the shifted output to form the `out_hi` and retains the lower 8 bits of the original input to form `out_lo`. Thus, the module outputs the high and low 8-bit segments as separate outputs.
+module top_module(
+    input wire clk,                // Added clk input
+    input wire [15:0] in,
+    output wire [7:0] out_hi,
+    output wire [7:0] out_lo
+);

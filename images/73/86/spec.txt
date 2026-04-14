@@ -1,0 +1,10 @@
+Design a digital circuit that performs the following functionalities: it takes two 3-bit inputs (a and b) and computes their element-wise bitwise OR output. This output is stored in an 8-bit D flip-flop (with asynchronous reset capabilities), where each bit of the flip-flop can be reset independently based on an 8-bit reset signal. Additionally, it provides a logical OR of the three bits from the OR operation as one output and a combined AND operation of the flip-flop output and OR result for the highest bit of the output register. This module effectively combines combinational and sequential logic elements to process and hold inputs while allowing selective resetting of its storage elements.
+module top_module(
+    input clk,
+    input [2:0] a,
+    input [2:0] b,
+    input [7:0] reset,      // Asynchronous reset
+    output [2:0] out_or_bitwise,
+    output out_or_logical,
+    output [7:0] q
+);

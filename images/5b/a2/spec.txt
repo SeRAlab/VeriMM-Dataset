@@ -1,0 +1,11 @@
+Design a buffer power good circuit that controls the output signal X based on several input conditions. The buffer remains active and outputs the voltage at VPB when the input A is high and the SLEEP signal is low; otherwise, it outputs a LOW state when SLEEP is high. The circuit also monitors whether the voltage VPB falls within the acceptable range defined by the power supply voltages VPWR and VNB, thereby indicating a "power good" state only when KAPWR is high and the voltage is within range. This circuit effectively ensures that the buffer is only enabled under specified power conditions.
+module top_module(
+    X,
+    SLEEP,
+    A,
+    KAPWR,
+    VPWR,
+    VGND,
+    VPB,
+    VNB
+);

@@ -1,0 +1,9 @@
+The module implements a simple RAM structure designed to store and retrieve MAC addresses. It features a write-enable input to allow data storage and outputs the stored MAC address from a selected address. The memory can accommodate up to 16 MAC addresses, each occupying 4 bytes, and includes a mechanism to read a 2-bit value from the least significant bits of the address being accessed. Specifically, upon a clock edge, if the write enable signal is asserted, the module writes 4 bits of input data along with zero padding into the corresponding memory location. The outputs include both the complete 4-byte MAC address and a specific 2-bit portion of the last accessed address.
+module top_module(
+    input s_axi_aclk,
+    input mac_addr_ram_we,
+    input [0:3] mac_addr_ram_addr,
+    input [3:0] gen_wr_b_gen_word_wide_mem_reg,
+    output [3:0] Q,
+    output [1:0] rdDestAddrNib_D_t_q_reg
+);

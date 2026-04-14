@@ -1,0 +1,9 @@
+Design a JK flip-flop with an asynchronous active-low reset. The flip-flop captures its state on the falling edge of the clock signal. It maintains its current state when both J and K inputs are low, resets the output to low when J is low and K is high, sets the output to high when J is high and K is low, and toggles its output when both J and K are high. The module also provides an inverted output signal corresponding to the current state.
+module top_module(
+    input clk, // Clock
+    input clr_n, // Active low, asynchronous reset
+    input j, // J input
+    input k, // K input
+    output reg q, // Output
+    output reg q_n // Inverted output
+);

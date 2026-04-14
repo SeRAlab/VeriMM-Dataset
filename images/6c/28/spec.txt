@@ -1,0 +1,6 @@
+Design a 7-segment display decoder for a 3-bit wide input. The module takes a 3-bit input (A) and converts it into the corresponding 7-segment display encoding for numerical representation (0 to 7). The output is registered and synchronized to a clock signal, ensuring stable display updates. The design includes two pipeline registers to latch the segment data before presenting it on the output, providing a reliable and flicker-free output to the display.
+module top_module(
+    input clk,           // Added the clk input
+    input [2:0] A,
+    output reg [6:0] SEG
+);

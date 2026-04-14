@@ -1,0 +1,14 @@
+Design a 4-bit wide module that performs multiple bitwise logical operations, including AND, OR, XOR, and NOT, based on specific enable signals. The module has inputs for two 4-bit operands and control signals that determine which operations to perform. When an enable signal for a particular operation is high, the corresponding output is calculated; otherwise, that output is set to zero. Additionally, the NOT operation provides an option to perform a bitwise inversion or logical negation of its input operand, controlled by an additional signal.
+module top_module(
+  input [n-1:0] a,
+  input [n-1:0] b,
+  input and_en,
+  input or_en,
+  input xor_en,
+  input not_en,
+  input inv_en,
+  output reg [n-1:0] and_out,
+  output reg [n-1:0] or_out,
+  output reg [n-1:0] xor_out,
+  output reg [n-1:0] not_out
+);

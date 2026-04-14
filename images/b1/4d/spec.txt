@@ -1,0 +1,10 @@
+Design a memory interface module that facilitates synchronous read and write operations for a specified memory type, with parameters defining data and address widths. The module uses a clock and reset signal to control memory access while allowing an enable signal to conditionally gate operations. It incorporates a write enable signal to determine if input data should be stored in memory, or if the module should output stored data based on the address provided. The data output is provided through a specified signal, ensuring proper communication with other system components.
+module top_module(
+  input clk, // clock signal
+  input rst, // reset signal
+  input en, // enable signal
+  input [addr_width-1:0] addr, // address signal
+  input wr_en, // write enable signal
+  input [data_width-1:0] data_in, // data input signal
+  output [data_width-1:0] data_out // data output signal
+);

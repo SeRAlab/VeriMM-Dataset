@@ -1,0 +1,5 @@
+Design a request initiator module that generates a request signal (req) based on a clock (clk) and reset (rst) while monitoring a response (res). The module maintains a counter to track the number of requests sent and expects certain data from the response signal. On each clock cycle when reset is not active, if the response is inactive (not asserted), it sets the request signal high, updates the expected data value and increments the counter. Additionally, it verifies the received response against the expected value, logging an error message if they do not match. This functionality suggests the module is used for initiating and validating data transfers in a communication or protocol interface context.
+module top_module(input  wire        clk,
+   input  wire        rst,
+   output reg  req,
+   input  wire        res);

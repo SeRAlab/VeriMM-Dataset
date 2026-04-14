@@ -1,0 +1,9 @@
+Design a 4-bit shift register with both left and right shifting capabilities. The module takes a clock signal, a reset signal, a shift input, and a data input for shifting. Upon a rising edge of the clock, if the reset signal is active, the register outputs and its internal storage are cleared. If the shift signal is active, the register performs a right shift, moving data to the right and outputting the least significant bit (LSB). Conversely, if the shift signal is inactive, it performs a left shift, inserting a new data bit from the shift input into the most significant bit (MSB) position, while outputting the most significant bit of the current state.
+module top_module(
+    input clk,
+    input reset,
+    input shift_in,
+    input shift,
+    output reg shift_out,
+    output reg [3:0] q
+);

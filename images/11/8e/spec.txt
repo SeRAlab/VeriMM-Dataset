@@ -1,0 +1,16 @@
+
+Design a 2-channel DMA controller that allows two independent data transfers. The controller should have the following inputs and outputs:
+- Inputs:
+  - `clk`: Clock signal
+  - `reset`: Active high reset signal
+  - `start_chan1`: Start signal for channel 1
+  - `start_chan2`: Start signal for channel 2
+  - `data_in_chan1`: Data input for channel 1
+  - `data_in_chan2`: Data input for channel 2
+- Outputs:
+  - `data_out_chan1`: Data output for channel 1
+  - `data_out_chan2`: Data output for channel 2
+  - `busy_chan1`: Busy indicator for channel 1
+  - `busy_chan2`: Busy indicator for channel 2
+
+The DMA controller should transfer data from `data_in_chan1` to `data_out_chan1` when `start_chan1` is asserted, and from `data_in_chan2` to `data_out_chan2` when `start_chan2` is asserted. The busy indicators should be set while the transfer is in progress.

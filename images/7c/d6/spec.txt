@@ -1,0 +1,6 @@
+Design a module for an LCD driver that takes an 8-bit data input and a 2-bit control signal to manage how the data is displayed on a 16-bit output. The control signals dictate whether the data appears at the start, end, or center of the display, or if the display should be cleared. Specifically, when ctrl=00, the data is displayed at the start; when ctrl=01, at the end; when ctrl=10, in the center; and when ctrl=11, the display is cleared. This module enables formatted data output for an LCD screen, controlling both content placement and clearing functionality.
+module top_module(
+  input [7:0] data,
+  input [1:0] ctrl,
+  output reg [15:0] display
+);

@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform a conditional 1-bit shift operation on a 32-bit input data signal. Its primary function to either pass the input data through unchanged or shift it by one bit to the right, based on the value of a control input signal. This module plays a crucial role in systems requiring dynamic data manipulation capabilities, such as in digital signal processing, data encoding/decoding, or in the implementation of arithmetic operations in digital circuits. The ability to conditionally shift data based on a control signal adds flexibility and efficiency to the broader system's data handling and processing capabilities.
+
+Module name:  
+	shift_1b
+
+Input ports:
+	i_shift (1 bit): This is a control signal that determines the operation mode of the module. When i_shift is high (1), the module performs a 1bit right shift operation on the input data. When i_shift is low (0), the input data is passed through unchanged. This input allows for dynamic control of the data manipulation process based on system requirements.
+	i_data (32 bits): This is the input data signal to be manipulated. It is a 32bit wide signal that represents the data to be either shifted or passed through based on the i_shift control signal.
+Output ports:
+	o_data (32 bits): This is the output data signal of the module. It presents the result of the conditional 1bit shift operation. If i_shift is high, o_data will contain i_data shifted right by one bit, with a 0 bit padded at the most significant bit (MSB) position. If i_shift is low, o_data will be identical to i_data.
+
+
+Implementation:
+The RTL module shift_1b is designed to perform a simple yet fundamental operation in digital signal processing: conditional bit shifting. The module takes a 32-bit input vector i_data and, based on the condition provided by the input signal i_shift, either passes the input data unchanged or shifts it by one bit to the right, inserting a 0 at the most significant bit (MSB) position. This operation is purely combinational, meaning it does not involve any storage elements like flip-flops or latches and thus does not have any internal state. The output is immediately determined by the current inputs.
+The core logic of the module is encapsulated in a single line of Verilog code using the conditional operator (?:), which is a ternary operator that evaluates to the second operand if the first operand (condition) is true, and to the third operand if the condition is false. In this case, if i_shift is true (1), the module performs the bit shift operation by concatenating the 31 least significant bits (LSBs) of i_data with a 0 at the LSB position, effectively shifting the entire vector to the right by one bit and inserting a 0 at the MSB. If i_shift is false (0), the module outputs the original i_data without any modification.
+This module does not utilize any sequential logic elements or clocked processes, making its operation purely combinational. The absence of sequential elements means that the output o_data is directly and immediately influenced by the current state of its inputs without any inherent delay apart from the propagation delay through the combinational logic.
+
+Give me the complete code.
+

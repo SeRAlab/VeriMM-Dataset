@@ -1,0 +1,7 @@
+Design a simple state register circuit that effectively manages two output signals, `sp_over_out` and `sp0_hit_out`, based on a clock and reset input. The module captures and holds the state of these signals during the positive edge of the clock (`clk_in`), resetting them to LOW (`0`) when the reset input (`rst_in`) is active. The register logic allows for controlled updates of the output states via internal state variables (`d_sp_over` and `d_sp0_hit`), which are not defined here but are presumably set externally. This module is relevant in scenarios where state management is crucial, such as in a graphics processing unit or similar digital systems.
+module top_module(
+	input	wire		clk_in,
+	input	wire		rst_in,
+	output	wire		sp_over_out,
+	output	wire		sp0_hit_out
+);

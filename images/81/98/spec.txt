@@ -1,0 +1,18 @@
+Implement the Verilog module based on the following description.
+The following is the state transition table for a Mealy state machine with one input, one output, and three states. Use the following one-hot state encoding: S0=3'b001, S1=3'b010, S2=3'b100. Derive state transition and output logic equations by inspection assuming a one-hot encoding. Implement only the state transition logic and output logic (the combinational logic portion) for this state machine.
+
+The state machine has the following states and their corresponding outputs:
+1. state S0 (out = in).
+2. state S1 (out = ~in).
+3. state S2 (out = 1).
+
+State transitions:
+1. From state S0: If in = 0, then transition to state S1. If in = 1, then transition to state S2.
+2. From state S1: If in = 0, then transition to state S2. If in = 1, then transition to state S0.
+3. From state S2: If in = 0, then transition to state S0. If in = 1, then transition to state S1.
+
+module mealy_machine_3 (
+  input in,
+  input [2:0] state,
+  output reg [2:0] next_state,
+  output reg out);

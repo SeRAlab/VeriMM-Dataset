@@ -1,0 +1,12 @@
+
+Create a Verilog module for an audio sample buffer. The module should store audio samples in a first-in-first-out (FIFO) manner. The module will have the following specifications:
+- Inputs: 
+  - `clk`: Clock input.
+  - `reset`: Active high reset.
+  - `write_enable`: Control signal to write to the buffer.
+  - `data_in`: 16-bit audio sample input.
+- Outputs:
+  - `data_out`: 16-bit audio sample output (the oldest sample).
+  - `valid`: High when `data_out` is valid (i.e., when there is at least one sample in the buffer).
+  
+The buffer should have a size of 8 samples. When the buffer is full, new samples should overwrite the oldest samples.

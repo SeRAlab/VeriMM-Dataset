@@ -1,0 +1,9 @@
+Design a signed arithmetic calculator capable of performing addition, subtraction, multiplication, and division on two 8-bit signed integers. The operation is selected using a 2-bit input signal, and the result is updated on the rising edge of the clock. The module includes reset functionality to initialize the output to zero and incorporates overflow and underflow handling to ensure the output remains within the limits of an 8-bit signed representation.
+module top_module(
+    input clk,
+    input rst,
+    input [1:0] op,
+    input signed [7:0] a,
+    input signed [7:0] b,
+    output reg signed [7:0] result
+);

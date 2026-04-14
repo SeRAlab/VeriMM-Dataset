@@ -1,0 +1,23 @@
+Please act as a professional Verilog designer.
+
+Implement a module of a 4-bit subtractor with pipelining stages. The result is available on the result port, and the o_en = 1 indicates the availability of the result.
+
+Module name:
+    subtractor_pipe_4bit
+Input ports:
+    clk: Clock input
+    rst_n: Active low reset signal
+    i_en: Enable signal for subtraction operation
+    sub_a: 4-bit input operand A
+    sub_b: 4-bit input operand B
+
+Output ports:
+    result: 4-bit output representing the difference of sub_a and sub_b.
+    o_en: Output enable signal.
+
+Implementation:
+The module includes several registers to enable the pipeline stages and synchronize the input enable signal (i_en). These registers are controlled by the clock (clk) and reset (rst_n) signals.
+The difference values for each pipeline stage are calculated by subtracting the corresponding input operands.
+The output enable signal (o_en) is updated based on the pipeline stages and synchronized with the clock (clk) and reset (rst_n) signals.
+
+Give me the complete code.

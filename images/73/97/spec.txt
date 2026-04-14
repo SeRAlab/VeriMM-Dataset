@@ -1,0 +1,11 @@
+Design a synchronous FIFO (First-In-First-Out) buffer with a data width of 8 bits and a depth of 16 entries. The module accepts inputs for clock, reset, write enable (wr_en), read enable (rd_en), and data to be written. It provides outputs for the data read from the FIFO, as well as flags indicating whether the FIFO is full or empty. The write pointer advances on a successful write, while the read pointer advances on a successful read, both controlled by the clock signal. The circuitry ensures that data can only be written when the FIFO is not full and only read when it is not empty, implementing basic FIFO storage and management functionality.
+module top_module(
+  input clk,
+  input rst,
+  input wr_en,
+  input rd_en,
+  input [width-1:0] data_in,
+  output reg [width-1:0] data_out,  // Changed to reg to hold data
+  output full,
+  output empty
+);

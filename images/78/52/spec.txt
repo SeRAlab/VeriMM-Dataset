@@ -1,0 +1,7 @@
+Develop a binary-coded decimal (BCD) to seven-segment display decoder. The module takes a 4-bit BCD input and sequentially outputs the corresponding 7-segment display encoding over a cycle controlled by a "stage" counter. On each clock cycle, it shifts through the BCD values and changes the output to match the segments required to display digits 0 to 7. The display is reset to zero when the reset signal is activated.
+module top_module(
+    input [3:0] BCD,
+    input clk,
+    input reset,
+    output reg [6:0] SEG
+);

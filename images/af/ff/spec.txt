@@ -1,0 +1,8 @@
+Design a dual-edge triggered flip-flop circuit that captures a 2-bit input signal, `d`, on the rising edge of the clock, with the captured value stored in two flip-flops (`ff1` and `ff2`). This module also includes a reset functionality to clear the stored values. The output LED displays different values based on the 2-bit `select` input: it shows the value of `ff1` when `select` is `00`, the value of `ff2` when `select` is `01`, a constant LOW when `select` is `10`, and a constant HIGH when `select` is `11`.
+module top_module(
+    input clk,
+    input d,
+    input reset,
+    input [1:0] select,
+    output reg [1:0] LED
+);

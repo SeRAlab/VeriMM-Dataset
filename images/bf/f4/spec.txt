@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module is a parameterizable, scan-enabled D flip-flop with reset and enable functionalities. It to store and update digital signals in synchronization with a clock input, making it a fundamental building block for digital circuits and systems. The module supports scan-based testing through the inclusion of scan enable (`se`) and scan input (`si`) ports, facilitating easier testing and debugging of integrated circuits by allowing the insertion of test data directly into the flip-flop chain. The parameterizable nature of the module (`SIZE`) allows it to handle single-bit or multi-bit signals, enhancing its versatility across various digital design applications.
+
+Module name:  
+	dffre_s
+
+Input ports:
+	din [SIZE1:0]: Data input port. It accepts a vector of digital signals of width SIZE to be stored in the flipflop upon the enable signal being asserted.
+	en: Enable input. When high, it allows the data at din to be loaded into the flipflop at the next positive clock edge.
+	rst: Reset input. When high, it asynchronously resets the content of the flipflop to zero, regardless of the clock signal.
+	clk: Clock input. The rising edge of this signal triggers the data storage and update mechanisms within the flipflop.
+	se: Scan enable input. When high, it enables the scan mode, allowing test data to be shifted in through si.
+	si [SIZE1:0]: Scan input port. It accepts a vector of digital signals of width SIZE to be directly loaded into the flipflop when scan mode is enabled.
+Output ports:
+	q [SIZE1:0]: Data output port. It outputs the current content of the flipflop, reflecting either the stored data or the scan input based on the mode of operation.
+	so [SIZE1:0]: Scan output port. It mirrors the content of the flipflop, facilitating the daisychaining of scan cells for serial scan testing. This output is only relevant and active when scan mode is not enabled by the NO_SCAN directive.
+
+
+Implementation:
+The RTL module presented, named dffre_s, is designed to implement a parameterizable, scan-capable D flip-flop with reset and enable functionalities. This module is versatile, catering to various digital design needs, especially in the context of testability and configurability. The core logic of the module is encapsulated within conditional compilation blocks and a sequential always block, which together define the behavior of the flip-flop under different operational modes.
+
+Give me the complete code.
+

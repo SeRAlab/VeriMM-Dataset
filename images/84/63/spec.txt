@@ -1,0 +1,22 @@
+Please act as a professional Verilog designer.
+
+Implement an 8-bit parallel in serial out (PISO) shift register.
+
+Module name:
+    piso_shift_register
+
+Input ports:
+    CLK: Clock signal
+    RESET: Asynchronous reset signal
+    LOAD: Load signal
+    DATA_IN: 8-bit parallel data input
+
+Output ports:
+    DATA_OUT: Serial data output
+
+Implementation:
+The shift register loads DATA_IN into the register when LOAD is high on the rising edge of the clock signal CLK.
+When RESET is high, the register is reset to 8'b00000000 immediately.
+On each rising edge of CLK, if LOAD is low, the register shifts right and outputs the LSB.
+
+Give me the complete code.

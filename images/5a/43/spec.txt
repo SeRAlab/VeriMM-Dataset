@@ -1,0 +1,7 @@
+Design a module that converts an 8-bit binary input (with potential signed representation) to a 3-bit decimal output. The circuit uses a clock and reset signal; upon reset, it initializes its registers. It identifies if the binary input is negative, calculates the absolute value, and then maps this value to specific ranges to produce a corresponding 3-bit output. The output represents categories of the input binary value: less than 10, between 10 and 100, and greater than or equal to 160, while also accounting for the sign to indicate if the result should be negative.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] bin,
+  output reg [2:0] dec
+);

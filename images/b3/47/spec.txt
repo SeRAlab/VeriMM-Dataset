@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+
+Implement an 8-bit Gray code counter, and the counter should generate the sequence 00000000, 00000001, 00000011, 00000010, 00000110, 00000111, 00000101, 00000100, ...
+
+Module name:  
+    gray_code_counter              
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the counter.
+Output port:
+    Q: 8-bit register representing the current count value.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the counter value is updated.
+If the reset signal (rst_n) is low, indicating a reset condition, the counter value (Q) is set to 0.
+Otherwise, the counter increments by generating the next Gray code value on each clock cycle.
+
+Give me the complete code.
+
+module gray_code_counter(
+   input                clk,
+   input                rst_n,
+
+   output reg [7:0]     Q
+);

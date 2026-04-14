@@ -1,0 +1,12 @@
+
+Design a Verilog module that simulates a simple SLAM (Simultaneous Localization and Mapping) system. The system should take in position and map updates at each clock cycle and maintain an internal state representing the current position and an array representing the map. The inputs are:
+- `clk`: clock signal
+- `reset`: reset signal
+- `position_update`: a 2-bit position input that indicates the movement direction (00: no movement, 01: move left, 10: move right, 11: move forward)
+- `map_update`: a 5-bit value representing a new obstacle detected in the map.
+
+The output is:
+- `current_position`: a 2-bit output representing the current position of the entity.
+- `map`: a 32-bit output representing the current state of the map (occupied or free).
+
+The map is represented as a 32-bit register, where each bit corresponds to a cell in the environment. The position indicates the current index of the entity in this map, and the position updates will change this index accordingly.

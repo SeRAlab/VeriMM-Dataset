@@ -1,0 +1,8 @@
+Design a module that acts as an error counter for incoming data packets. The module receives a clock signal, a reset signal, an output strobe, and a data input. It checks incoming data against expected values, counts occurrences of mismatches (errors), and shifts expected data down with each correct reception to follow a specific sequence. The output count reflects the number of errors detected, while a data register collects valid data for further processing. Additionally, a strobe signal indicates the validity of the data output. This module is ideal for systems requiring integrity checks on transmitted data.
+module top_module(
+    input CLK,
+    input RST,
+    input O_STB,
+    input [4*8-1:0] O_DAT,
+    output reg [7:0] COUNT
+);

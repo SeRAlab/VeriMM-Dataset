@@ -1,0 +1,9 @@
+Construct a circuit that combines a dual-port RAM with a shift register. The RAM stores 8 words of 4 bits each, allowing read and write operations based on specified addresses. The shift register accepts a single bit of input data and shifts it left on each clock cycle when enabled, producing a 1-bit output. Upon reset, all RAM contents and the shift register are initialized to zero. The RAM outputs the current read data, while the shift register outputs the least significant bit after shifting.
+module top_module(
+    input clk,
+    input rst_n,
+    input data_in, // Input data for the RAM and shift register
+    input shift_en, // Enable signal for the shift register
+    output reg [3:0] shift_out, // Output from the shift register
+    output reg [3:0] ram_out // Output from the RAM at the current read address
+);

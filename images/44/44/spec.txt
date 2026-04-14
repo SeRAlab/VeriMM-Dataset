@@ -1,0 +1,8 @@
+Develop a hardware trigger converter that monitors input trigger signals and generates an output based on the state of those signals. The module uses two clock inputs, wHClk_i and wLClk_i, to synchronize its operations, while maintaining state information through a finite state machine with three states: IDLE, STRIG, and LTRIG. The output signal wTrig_o will be high either when the input wTrig_i is high or when the module is in any state other than IDLE. This design effectively captures different edge conditions and maintains state management in response to dynamic trigger inputs, ensuring proper timing responses in applications like event detection or signal processing.
+module top_module(
+    input wire wHClk_i,		
+    input wire wLClk_i,		
+    input wire wTrig_i,		
+    output wire wTrig_o,		
+    input wire wReset_i      
+    );

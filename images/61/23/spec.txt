@@ -1,0 +1,22 @@
+Design a digital interface module for the DM9000A network controller. This module facilitates communication between a host and the DM9000A by managing data transfer, control signals, and providing an interrupt mechanism. It operates with a 16-bit data bus and supports read and write operations based on command signals. The module includes functionality for handling resets, generating a clock signal, and interfacing with bidirectional data lines. The output data and interrupt signals are synchronized with the host's clock and reset conditions. The design enables seamless integration of the DM9000A into larger digital systems, allowing for effective network communication.
+module top_module( // HOST Side
+                   input [15:0] iDATA,
+                   output reg [15:0] oDATA,
+                   input iCMD,
+                   input iRD_N,
+                   input iWR_N,
+                   input iCS_N,
+                   input iRST_N,
+                   input iCLK,
+                   input iOSC_50,
+                   output reg oINT,
+                   // DM9000A Side
+                   inout [15:0] ENET_DATA,
+                   output reg ENET_CMD,
+                   output reg ENET_RD_N,
+                   output reg ENET_WR_N,
+                   output reg ENET_CS_N,
+                   output ENET_RST_N,
+                   output reg ENET_CLK,
+                   input ENET_INT
+                  );

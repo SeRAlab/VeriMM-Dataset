@@ -1,0 +1,11 @@
+Design a digital circuit that functions as a gated D flip-flop. The circuit samples the input D on the positive edge of the clock signal when the GATE_N input is low, transferring the sampled value to an internal register (Q_reg). The output Q follows the value of Q_reg unless GATE_N is high, in which case Q is forced to a low state, effectively disabling the output. This design incorporates power management inputs (VPWR, VGND, VPB, VNB) to ensure appropriate operation within a power supply context.
+module top_module(
+    input D,
+    input GATE_N,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB,
+    input clk,
+    output reg Q
+);

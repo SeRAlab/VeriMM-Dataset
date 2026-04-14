@@ -1,0 +1,11 @@
+Create a clocked edge-triggered D flip-flop with a low-power and ground reference. The circuit captures the value of input D on the rising edge of the clock (CLK) when the enable input (DE) is active. The output Q maintains the last captured value, which is driven by Q_reg, and can be disconnected from Q based on the state of DE. This design allows for retention of the previous state when DE is inactive, making it suitable for conditional data storage applications.
+module top_module(
+    output Q,
+    input  CLK,
+    input  D,
+    input  DE,
+    input  VPWR,
+    input  VGND,
+    input  VPB,
+    input  VNB
+);

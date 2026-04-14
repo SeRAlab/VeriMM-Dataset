@@ -1,0 +1,11 @@
+Design a power-up control module for a CMOS camera sensor (ov5640). This module manages the power-down and reset signals of the camera by generating specified delay timings for initialization. Upon system clock reset, the module utilizes a delay counter to create a sequence where the camera is held in a powered-down state for 6ms, then released for a reset period of 2ms, and finally waits a total of 21ms before indicating completion with a 'done' signal. The outputs `cmos_pwdn` and `cmos_reset` control the power and reset of the CMOS, respectively, ensuring proper initialization of the sensor.
+module top_module(
+    
+    input               sysclk      ,       
+    input               rst_n       ,
+    
+    output              cmos_pwdn   ,
+    output              cmos_reset  ,
+    
+    output              done        
+);

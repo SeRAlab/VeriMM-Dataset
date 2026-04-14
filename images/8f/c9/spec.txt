@@ -1,0 +1,32 @@
+Please act as a professional Verilog designer.
+
+Design a Verilog module to implement a 3-to-8 binary decoder with enable signal. The decoder should convert a 3-bit binary input into an 8-bit one-hot output. If the enable signal is low, the output should be all zeros.
+
+Module name:  
+    binary_decoder_3to8
+
+Input ports:
+	clk: Clock signal for synchronous operations.
+	reset: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+	enable: Enable signal to control the decoding operation.
+	binary_in: 3-bit binary input signal.
+
+Output ports:
+    onehot_out: 8-bit one-hot output signal.
+
+Implementation:
+Decoder:
+The module includes a combinational logic block that decodes the 3-bit binary input into an 8-bit one-hot output. If the enable signal is low, the output is all zeros.
+Output Assignment:
+The output port onehot_out is assigned the decoded value based on the binary input and enable signal.
+
+Give me the complete code.
+
+module binary_decoder_3to8(
+    input           clk,
+    input           reset,
+    input           enable,
+    input   [2:0]   binary_in,
+
+    output reg [7:0] onehot_out
+);

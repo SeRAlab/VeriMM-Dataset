@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform phase modulation calculations, a critical function in digital signal processing, particularly in the context of sound synthesis or modulation-based communication systems. Its primary role to calculate a phase modulation index based on various inputs such as key code (`kc`), key fraction (`kf`), modulation depth (`mod`), and an addition/subtraction flag (`add`). This module outputs a modified key code (`kcex`) which can be used in further processing stages, such as frequency generation or waveform synthesis, contributing to the broader system's functionality by enabling dynamic sound modulation or signal processing capabilities.
+
+Module name:  
+	jt51_pm
+
+Input ports:
+	kc (7bit input): Represents the key code, a fundamental input that typically corresponds to a note or frequency value in sound synthesis systems.
+	kf (6bit input): The key fraction, providing finer resolution to the key code for more precise frequency or phase modulation.
+	mod (9bit input): Modulation depth, determining the extent of phase modulation applied to the key code.
+	add (1bit input): A flag indicating whether the operation is an addition (when high) or subtraction (when low), affecting how modulation is applied.
+Output ports:
+	kcex (13bit output): The extended key code, which is the result of applying phase modulation to the input key code based on the provided parameters.
+
+
+Implementation:
+The jt51_pm module is designed to perform a specific arithmetic operation based on its inputs: kc, kf, mod, and add. The operation involves either addition or subtraction, influenced by the add input signal, and incorporates various adjustments and modifications to the input values before arriving at the final output kcex. The module's logic can be dissected into several key stages, each responsible for a distinct part of the computation process.
+
+Give me the complete code.
+

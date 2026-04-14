@@ -1,0 +1,4 @@
+Design a pipeline register module for an instruction fetch-to-instruction decode stage in a processor. This module captures and stores the program counter value (PC+4) and the fetched instruction during the clock's rising edge. It accommodates reset conditions to initialize outputs to specific values and implements stall and branch-jump mechanisms, holding the current values of the outputs if either stall or branch-jump signals are asserted. The register outputs provide the necessary data for the instruction decode stage, allowing for smooth operation and control in a pipelined processor architecture.
+module top_module(clk,rst,if_pcplus4, stall, BJ,
+	if_instr,id_pcplus4, id_instr
+    );

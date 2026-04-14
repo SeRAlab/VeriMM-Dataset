@@ -1,0 +1,18 @@
+Design a synchronous 8-entry, 9-bit wide queue (FIFO) with a read and write pointer mechanism. This module accepts input characters and control signals to manage data storage and retrieval while providing flags for acknowledgment, full, and empty states. The queue supports write operations when new characters arrive or at the end of a line, while reads occur based on acknowledgment from the receiving side. Additionally, it maintains an occupancy tracker, offering insight into the status of the queue through output signals. The reset functionality initializes queue pointers and occupancy, ensuring reliable operation under varying inputs.
+module top_module(
+	input		clk,
+	input		reset,
+	input		nchar,
+	input		lchar,
+	input	[7:0]	char_i,
+	input		stb_i,
+	output		ack_o,
+	output	[8:0]	dat_o,
+	output		full_o,
+	output		empty_o,
+
+	output	[7:0]	occupied_tb,	
+	output	[2:0]	rp_tb,
+	output	[2:0]	wp_tb,
+	output		we_tb
+);

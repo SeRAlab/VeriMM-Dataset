@@ -1,0 +1,7 @@
+Design a state machine that filters addresses based on incoming data. The module tracks a 3-bit state variable, transitioning through a series of states upon a clock signal, starting from an initial state when a reset occurs. When the 'go' signal is asserted, the state machine evaluates the least significant bit of the input data to determine its next state. The state transitions will lead the system to reach a specific state (state 6) that indicates a match is found, which subsequently triggers the 'match' output. The 'done' output signals when the machine has reached either state 6 or state 7, indicating that the process has completed.
+module top_module(input clk,
+   input reset,
+   input go,
+   input [7:0] data,
+   output match,
+   output done);

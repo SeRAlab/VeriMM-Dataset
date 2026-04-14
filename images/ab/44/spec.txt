@@ -1,0 +1,12 @@
+Design a circuit that processes a 16-bit input by first splitting it into two 8-bit outputs: the high byte and the low byte. It employs a barrel shifter to shift the high byte based on a 3-bit selection input, allowing for right shifts of 0 to 7 bits. Furthermore, it outputs the selection bits directly, while combining the shifted high byte with the selection bits to form the final output. The module effectively acts as a binary splitter and a right-shifting multiplexer, enabling versatile data manipulation based on control signals.
+module top_module(
+    input wire [15:0] in,
+    input wire [2:0] select,
+    output wire [7:0] final_output,
+    output wire [2:0] outv,
+    output wire o2,
+    output wire o1,
+    output wire o0,
+    output wire [7:0] out_hi,
+    output wire [7:0] out_lo
+);

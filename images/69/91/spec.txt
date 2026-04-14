@@ -1,0 +1,3 @@
+Design a pipeline register for intermediate values between the execute and memory stages of a processor. This module captures control signals and data: it stores the values of `ewreg`, `em2reg`, and `ewmem`, as well as the outputs of the arithmetic operation (`ealu`) and the data being processed (`eb`) during the clock's rising edge, while allowing for a reset functionality that initializes all outputs to zero on a reset signal. The stored values are forwarded as outputs (`mwreg`, `mm2reg`, `mwmem`, `malu`, `mb`, `mrn`) to the memory stage.
+module top_module(ewreg, em2reg, ewmem, ealu, eb, ern, clock, resetn,
+                 mwreg, mm2reg, mwmem, malu, mb, mrn);

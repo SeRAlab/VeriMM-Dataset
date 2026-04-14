@@ -1,0 +1,8 @@
+Design a synchronous digital circuit that incorporates a 4-bit counter and a 3-bit shift register. The counter increments on each clock cycle and resets to zero when the reset signal is active high. The shift register captures a single bit input (d) on each clock cycle, shifting the previous values to accommodate the new input. The circuit outputs the 4-bit sum of the counter and the current value of the shift register, while also providing the current state of the shift register as a separate output.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input d, // Input for the shift register
+    output [3:0] q, // Output from the functional module
+    output [2:0] shift_register // Output from the shift register
+);

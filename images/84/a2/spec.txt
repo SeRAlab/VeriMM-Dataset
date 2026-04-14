@@ -1,0 +1,6 @@
+Design a module that drives an LED based on pulse-width modulation (PWM) signals. The module takes multiple PWM inputs and controls the LED's brightness by toggling it on or off depending on the PWM duty cycle. A counter is used to create a timing reference, updating the PWM duty cycle at each overflow. When the counter reaches the duty cycle value, the LED is turned on; otherwise, it remains off. This allows for fine control over the LED's illumination, effectively generating a variable brightness effect based on the input PWM signals.
+module top_module(
+  input [n-1:0] pwm,
+  input clk,          // Added clk input
+  output led
+);

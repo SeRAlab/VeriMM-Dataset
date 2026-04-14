@@ -1,0 +1,12 @@
+Design a module that acts as a data writer for a FIFO (First In, First Out) buffer. It triggers a write enable signal (`out_fifo_wren`) when data is valid, and combines two 8-bit input signals (`din0` and `din1`) into a single 16-bit output data bus (`out_fifo_wdata`). The module is synchronized with a clock input (`clk_108m`) and resets its outputs to zero when the reset signal (`rst_n`) is inactive.
+module top_module(
+			rst_n,
+			clk_108m,
+			
+			data_valid,
+			din0,
+			din1,
+			
+			out_fifo_wren,
+			out_fifo_wdata
+			);

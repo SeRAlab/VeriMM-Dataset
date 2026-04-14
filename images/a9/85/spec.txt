@@ -1,0 +1,7 @@
+Design a clock gating circuit that generates a gated clock signal. The output clock, ENCLK, is active (HIGH) when both the enable (EN) and test enable (TE) inputs are HIGH at the rising edge of the clock (CLK). If either EN or TE is LOW, the output ENCLK will be LOW, effectively disabling the clock signal. This design is useful for reducing power consumption in digital circuits by allowing selective clock operation based on specific control signals.
+module top_module(
+  input CLK, // clock input
+  input EN, // enable input
+  input TE, // test enable input
+  output reg ENCLK // clock gated output
+);

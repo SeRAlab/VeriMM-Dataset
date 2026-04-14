@@ -1,0 +1,25 @@
+Design a pipeline stage for the LC-3 processor that handles memory operations and control flow. This stage processes input signals, including reset, clock, stall, state, data requests, and result values, to manage read/write operations to memory. It produces outputs for data read (O_DR), result (O_Res), and control signals (memaddr, memtype, memdatawr, and memapply) based on the input data and the current state. The module includes logic for condition codes (CC) based on memory data values and controls instruction loading based on the Memtype input, allowing it to facilitate efficient pipelining in the processor's architecture.
+module top_module(
+	input			reset,
+	input			clk,
+	input			stall,
+	input		[5:0]	state,
+
+	input		[19:0]	I_DR,
+	input		[1:0]	I_WBtype,
+	input		[2:0]	I_Memtype,
+	input		[15:0]	I_Res,
+
+	output		[19:0]	O_DR,
+	output	reg	[1:0]	O_WBtype,
+	output		[15:0]	O_Res,
+
+	input		[15:0]	memdata,
+	output		[15:0]	memaddr,
+	output			memtype,
+	output		[15:0]	memdatawr,
+	output			memapply,
+
+	output	reg	[2:0]	CC,
+	output			inst_ld
+);

@@ -1,0 +1,10 @@
+Design a memory hub that functions as a combined RAM and ROM interface, capable of handling both read and write operations. The module contains four 8-bit wide RAM blocks, which together form a 32-bit wide memory space, allowing for byte-addressable writes determined by the write enable signals. Additionally, it integrates two 32-bit wide ROM blocks for storing character definitions and mathematical tables. The output `q` selects data from the RAM if the address falls within a specific range or retrieves data from ROM based on the address, providing a versatile memory solution for applications requiring both fast access to variable data and access to static data like lookup tables.
+module top_module(
+    input clk,
+    input ena,
+    input w,
+    input [3:0] wb,
+    input [13:0] a,
+    input [31:0] d,
+    output reg [31:0] q
+);

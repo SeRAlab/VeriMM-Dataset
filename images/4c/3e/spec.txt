@@ -1,0 +1,11 @@
+Design a FIFO (First-In, First-Out) buffer with an 8-bit data width and a storage capacity of 16 entries. The module features control signals for writing (`wr_en`) and reading (`rd_en`), and outputs the data (`dout`) being read, along with status indicators for buffer conditions (`full` and `empty`). The buffer operates on a clock signal (`clk`) and is asynchronously reset (`rst`) to initialize the pointers and status flags. The design ensures that data can be written to the buffer until it is full and can be read from the buffer until it is empty, appropriately managing read and write pointers to facilitate orderly data processing.
+module top_module(
+  clk,
+  rst,
+  din,
+  wr_en,
+  rd_en,
+  dout,
+  full,
+  empty
+);

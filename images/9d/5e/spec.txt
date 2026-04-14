@@ -1,0 +1,9 @@
+Design a dual-port RAM module that allows simultaneous read and write operations. It takes a 24-bit input data and a 10-bit write address; when the write enable signal is asserted, the input data is stored at the specified write address. The module also accepts a separate 10-bit read address and outputs the data stored at that address on the output bus. This design facilitates efficient memory access in applications requiring quick data retrieval and storage.
+module top_module(
+    input clock,
+    input [23:0] data_in,
+    input [9:0] wr_address,
+    input wr_en,
+    input [9:0] rd_address,
+    output reg [23:0] q
+);

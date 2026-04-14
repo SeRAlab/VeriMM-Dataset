@@ -1,0 +1,10 @@
+Design a circuit that functions as an edge-detecting multiplexer. It monitors an 8-bit input signal for changes; when a change (edge) is detected, it outputs either signal 'a' or 'b' based on the selection input 'sel_b1'. If no edge is detected, the output will depend on the selection input 'sel_b2', choosing between 'a' or 'b' accordingly. The design includes a mechanism to track the previous state of the input to determine if an edge has occurred, utilizing a clock signal for synchronous operation.
+module top_module(
+    input clk,
+    input [7:0] in,
+    input a,
+    input b,
+    input sel_b1,
+    input sel_b2,
+    output reg out_func
+);

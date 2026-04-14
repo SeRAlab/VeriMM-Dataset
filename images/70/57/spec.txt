@@ -1,0 +1,7 @@
+Design a dual 8-bit up/down counter with load capability. The module has inputs to control counting direction (up/down) and to load specific values into each counter. On each clock cycle, the counters increment or decrement based on the direction signals (UD1 and UD2) unless overridden by load signals (LD1 and LD2) which set the counters to predetermined values from LOAD_IN1 and LOAD_IN2, respectively. Additionally, the module continuously outputs the sum of the two counters and provides their current values through outputs Q1 and Q2. The counters can also be reset synchronously with the RST signal.
+module top_module(
+    input CLK, RST,
+    input UD1, LD1, input [7:0] LOAD_IN1, output reg [7:0] Q1,
+    input UD2, LD2, input [7:0] LOAD_IN2, output reg [7:0] Q2,
+    output [7:0] sum
+);

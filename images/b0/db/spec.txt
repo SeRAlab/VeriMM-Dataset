@@ -1,0 +1,6 @@
+Design a circuit that performs a summation of two 8-bit segments extracted from a 16-bit input alongside a 4-bit binary counter value. The upper 8 bits of the input are shifted down and summed together with the lower 8 bits and the value of the counter. The circuit operates on a clock-driven mechanism with a reset feature, ensuring a clean reset of the output and the counter. The final result is an 8-bit output that represents the sum of these components, which is updated on the rising edge of the clock, allowing for synchronous operation.
+module top_module(
+    input clk,
+    input reset,
+    input [15:0] in,
+    output reg [7:0] out_sum);

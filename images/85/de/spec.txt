@@ -1,0 +1,7 @@
+Design a 4-bit barrel shifter that supports shifting data left by 0, 1, or 2 positions, and provides an option for right shifting. The module takes a 4-bit input and a 2-bit shift amount to determine the number of positions to shift. If the shift amount is 00, the output remains the same as the input. For 01 and 10, it shifts left by 1 and 2 bits, respectively. For 11, it outputs the 2-bit left shifted value if the direction signal indicates left, or the original input for a right shift, maintaining the integrity of the bit positions during the operation.
+module top_module(
+    input [3:0] data_in,
+    input [1:0] shift_amount,
+    input direction_left,
+    output reg [3:0] data_out
+);

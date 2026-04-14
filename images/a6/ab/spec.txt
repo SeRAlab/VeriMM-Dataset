@@ -1,0 +1,8 @@
+Design a priority encoder capable of generating an 8-bit output based on the highest priority input among three provided inputs, with configurable priority settings. The module uses parameters to define the channel configuration and selection of priority levels. When valid is low, or no inputs are active, the encoder outputs a default signal. Depending on the selected priority configuration, it routes the output from one of three defined priority levels, allowing for dynamic adjustment of the encoder's behavior based on the pri_sel input. This architecture facilitates the efficient assignment of priority to multiple input signals in digital systems.
+module top_module(
+    input       valid,
+    input [2:0] pri_in,
+    input [3:0] ch_conf,  // declare ch_conf as input
+    input [1:0] pri_sel,   // declare pri_sel as input
+    output reg [7:0] pri_out  // output type changed to reg for compatibility with always blocks
+);

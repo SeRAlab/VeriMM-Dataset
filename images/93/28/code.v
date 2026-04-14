@@ -1,0 +1,2 @@
+module top_module(output [3:0] s1, output [3:0] s2,input [3:0] a, input [3:0] b, input[3:0]c);assign s1[3:0] = ((~(a & b) & c)) | ((a & b) & ~c);
+	assign s2[3:0] = ((~(a | b) & c)) | ((a | b) & ~c);endmodule

@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module to manage timing constraints related to precharge commands in a SDRAM (Synchronous Dynamic Random-Access Memory) system. Its primary function to ensure that precharge commands are issued safely, adhering to the timing requirements between read, write, and precharge operations. This module plays a critical role in the memory controller's operation, ensuring data integrity and optimizing memory access timings by preventing premature precharge commands that could lead to data corruption or access violations.
+
+Module name:  
+	hpdmc_banktimer
+
+Input ports:
+	sys_clk (input): The system clock input. This clock signal drives the timing and state progression within the module.
+	sdram_rst (input): The SDRAM reset signal. When asserted, it initializes the module's internal state, preparing it for operation.
+	tim_cas (input): The CAS (Column Address Strobe) latency input. Although not directly used in the provided code snippet, it suggests an intended use for timing configurations related to CAS operations.
+	tim_wr (input, [1:0]): The write recovery time input. This 2bit input specifies the timing constraint for write operations, influencing the delay before a precharge command can be safely issued.
+	read (input): The read operation signal. When asserted, it indicates that a read operation is being initiated.
+	write (input): The write operation signal. When asserted, it indicates that a write operation is being initiated.
+Output ports:
+	precharge_safe (output, reg): This signal indicates whether it is safe to issue a precharge command. It is asserted (1) when the timing constraints have been met, ensuring that precharge commands do not violate the required timing intervals between read, write, and precharge operations.
+
+
+Implementation:
+The hpdmc_banktimer module is designed to manage timing for precharge commands in a hypothetical DRAM controller context, ensuring that precharge commands are issued only when it is safe to do so after read or write operations. The module operates synchronously with a system clock (sys_clk) and can be reset (sdram_rst). It takes inputs that indicate the timing constraints for read and write operations (tim_cas, tim_wr), as well as signals indicating when read or write operations are requested. The module outputs a signal (precharge_safe) that indicates when it is safe to issue a precharge command.
+
+Give me the complete code.
+

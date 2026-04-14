@@ -1,0 +1,12 @@
+Design a circuit that performs a series of calculations based on two input ranges defined by L and U, and two additional inputs Y and Z, which are constrained between 0 and 13. The module takes a 2-bit select signal to choose between specific constant values and computes intermediate values fy and fz, derived from Y and Z respectively. It then simplifies the bounds L and U by integrating these computed values to derive new outputs Lp, Up, Yp, and Zp. The outputs reflect adjusted ranges and relationships based on the inputs, essentially functioning as a range adjustment and transformation calculator.
+module top_module(
+   input [1:0] select_ms,
+   input [3:0] L, /* -6 <= L,U <= 7 */
+   input [3:0] U,
+   input [3:0] Y, /* 0 <= Y,Z <= 13 */
+   input [3:0] Z,
+   output [3:0] Lp,
+   output [3:0] Up,
+   output [3:0] Yp,
+   output [3:0] Zp
+);

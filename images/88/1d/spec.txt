@@ -1,0 +1,15 @@
+Design a Verilog module that implements a 4-bit shift register. The register shifts left when shift_left is high and shifts right when shift_right is high. The shifting occurs on the positive edge of the clock.
+
+Time 0ns: clk = 0, shift_left = 1, shift_right = 0, data_in = 1, register = 0000.
+Time 5ns: clk = 1, shift_left = 1, shift_right = 0, data_in = 1, register = 0001.
+Time 10ns: clk = 0, shift_left = 1, shift_right = 0, data_in = 0, register = 0010.
+Time 15ns: clk = 1, shift_left = 1, shift_right = 0, data_in = 0, register = 0100.
+Time 20ns: clk = 0, shift_left = 0, shift_right = 1, data_in = 0, register = 1000.
+Time 25ns: clk = 1, shift_left = 0, shift_right = 1, data_in = 0, register = 0100.
+
+module shift_register (
+	input clk,
+	input shift_left,
+	input shift_right,
+	input data_in,
+	output reg [3:0] register);

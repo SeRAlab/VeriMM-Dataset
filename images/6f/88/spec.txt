@@ -1,0 +1,7 @@
+Design a FIFO write pointer incrementer that adjusts the write pointer based on the availability of buffer space and the input transfer message count. The module outputs a 4-bit increment value for the write pointer (`fifo_wrptr_inc`). If both the second and third general frees are available and the input transfer message count is at its maximum (3), the increment is set to 3. If only the second general free is available and the count is 2 or greater, the increment is set to 2. If the count is at least 1, the increment is set to 1. If none of these conditions are met, the increment is set to 0, effectively handling the FIFO write pointer management based on input signals.
+module top_module(
+    input ge2_free,
+    input ge3_free,
+    input [1:0] input_tm_cnt,
+    output reg [3:0] fifo_wrptr_inc
+);

@@ -1,0 +1,7 @@
+Design a 4-bit multiplier that computes the product of two 4-bit inputs, `a` and `b`, producing an 8-bit output, `product`. The design implements a shift-and-add multiplication algorithm, where partial products are generated and accumulated through a series of shifted additions. Each step involves shifting and storing intermediate values over multiple clock cycles, enabling the module to handle the multiplication of two numbers efficiently. The final product is assembled by concatenating the results of the addition operations, yielding the correct product output representing the multiplication of the initial inputs.
+module top_module(
+  input [3:0] a,
+  input [3:0] b,
+  input clk,             // Added clock input
+  output reg [7:0] product
+);

@@ -1,0 +1,8 @@
+Design a 4-bit universal shift register with various shifting and loading capabilities. The module takes a 2-bit control signal (S) to determine the operation: no shift (00), right shift (01), left shift (10), or parallel load from the input (11). On a rising clock edge, if the reset signal is high, the output is cleared to zero. Otherwise, the operation specified by S modifies the output register (Q) accordingly, enabling flexible data manipulation within a 4-bit parallel structure.
+module top_module(
+input [1:0] S,
+input [3:0] in,
+output reg [3:0] Q,
+input clk,
+input reset
+);

@@ -1,0 +1,15 @@
+Design a simple memory-mapped I/O interface capable of writing and reading a 32-bit value through a designated address space. The module has a chip select input and a write enable signal, allowing it to update its internal data register on a positive clock edge when the correct address (address 0) is selected. Upon a read operation, it will output the current value stored in the internal register through the `readdata` output. The output port will always reflect the stored data, and the entire module is reset to zero when the reset signal is asserted low. This implementation can be integrated as part of a larger Nios II processor system for basic data handling functionalities.
+module top_module(
+                           // inputs:
+                            address,
+                            chipselect,
+                            clk,
+                            reset_n,
+                            write_n,
+                            writedata,
+
+                           // outputs:
+                            out_port,
+                            readdata
+                         )
+;

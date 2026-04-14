@@ -1,0 +1,11 @@
+Design a circuit that integrates a 4-bit binary counter and an 8-bit shift register, enabling dynamic operations based on input control signals. The counter increments on each clock cycle and resets when reaching 15, while the shift register can be loaded with external data or perform a circular shift operation. Additionally, the circuit features a multiplexer functionality that selects between a bitwise OR of the counter output and register output based on the `select` signal, producing an 8-bit output known as `final_output`. This design allows for synchronous counting, data loading, and manipulation of register contents in a compact manner.
+module top_module(
+    input clk,
+    input reset,
+    input load,
+    input ena,
+    input select,
+    input [3:0] counter_out,
+    input [7:0] register_out,
+    output [7:0] final_output
+);

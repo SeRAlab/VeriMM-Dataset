@@ -1,0 +1,10 @@
+Design a sequential logic module that serves as an instruction and program counter register in a pipelined processor architecture. This module captures the current program counter (PC), the PC incremented by 4, and the fetched instruction from memory on a clock edge when the `if_id_write` signal is asserted. If `reset` is active, it initializes all output registers to zero, ensuring that the module can be reliably reset to its idle state. When not writing, the outputs are also set to zero, providing a mechanism to disable output during certain cycles.
+module top_module(
+    input clk,reset,if_id_write,
+    input [31:0]pc,pc_4,
+    instruction,
+    
+    output reg [31:0]pc_out,
+    instr_out,
+    pc_4_out
+    );

@@ -1,0 +1,14 @@
+Design a circuit that processes video color data by implementing a color space transformation. The module takes as inputs a vertical clock signal, a reset signal, a state signal, and three 8-bit color values (luma, chroma red, and chroma blue). It outputs modified versions of the chroma values (o_cr, o_cb) and retains a delayed version of the luma (o_y). The circuit performs a summation of the input chroma values with previously stored values and updates the outputs based on the state signal, demonstrating functionality similar to a filter or state machine that manages color processing in a video signal chain.
+module top_module(
+  clk_v,
+  rst_x,
+  
+  i_state,
+  i_y,
+  i_cr,
+  i_cb,
+  
+  o_y,
+  o_cr,
+  o_cb
+);

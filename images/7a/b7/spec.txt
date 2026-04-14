@@ -1,0 +1,25 @@
+Please act as a professional Verilog designer.
+
+Implement a module of a 4-bit counter. The counter should increment its value on each positive edge of the clock signal when the enable signal is high. When the reset signal is active, the counter should reset its value to 0.
+
+Module name:  
+    counter
+
+Input ports:
+    CLK: Clock input
+    RST: Active high reset signal
+    EN: Enable signal
+
+Output ports:
+    COUNT: 4-bit output representing the value of the counter
+
+Implementation:
+The counter module uses an always block to update the value of the counter based on the clock signal, reset signal, and enable signal.
+The always block triggers on the positive edge of the clock signal (posedge CLK) or the positive edge of the reset signal (posedge RST). It checks if the reset signal is active (RST) and sets the counter value (COUNT) to 0. If the enable signal (EN) is high, it increments the counter value by one.
+
+Give me the complete code.
+
+module counter(CLK, RST, EN, COUNT);
+input CLK, RST, EN;
+output [3:0] COUNT;
+reg [3:0] COUNT;

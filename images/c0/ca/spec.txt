@@ -1,0 +1,39 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as an interface adapter between a core logic block and an Avalon bus interface, which is a popular bus standard used in FPGA and ASIC designs for interfacing various components. The primary functions of this module include:
+
+Handling read (`i_av_r`) and write (`i_av_w`) requests from the core logic to the Avalon bus.
+Managing address (`i_av_adr`), byte enable (`i_av_be`), and data (`i_av_wd` for write, `o_av_rd` for read) signals for these transactions.
+Generating request (`o_req`) and write (`o_wr`) signals along with the corresponding address (`o_adrs`), byte enable (`o_be`), and data (`o_wd`) for the external component connected via the Avalon bus.
+Providing acknowledgment (`i_ack`) handling and read data retrieval (`i_rd`) with optional data restructuring (`i_rstr`).
+Implementing a state machine to manage the transaction states and ensure correct timing and sequencing of operations.
+
+Module name:  
+	fm_avalon
+
+Input ports:
+	clk_core: Clock input for synchronizing the module's operations.
+	rst_x: Active low reset signal to initialize the module's internal state.
+	i_av_adr: Address input for read/write operations, width defined by P_AVALON_ADR_WIDTH.
+	i_av_be: Byte enable signals for specifying active bytes in data operations, width defined by P_AVALON_BE_WIDTH.
+	i_av_r: Read request signal.
+	i_av_w: Write request signal.
+	i_av_wd: Write data input, width defined by P_AVALON_DATA_WIDTH.
+	i_ack: Acknowledgment input signal from the external component indicating completion of the current transaction.
+	i_rstr: Signal to indicate if read data should be restructured before being passed back.
+	i_rd: Read data input from the external component, width defined by P_INTERNAL_DATA_WIDTH.
+Output ports:
+	o_av_rd: Read data output, width defined by P_AVALON_DATA_WIDTH.
+	o_av_wait: Wait signal output to indicate that the module is not ready to accept new transactions.
+	o_req: Request signal output indicating an ongoing transaction to the external component.
+	o_wr: Write signal output indicating if the current transaction is a write operation.
+	o_adrs: Address output for the current transaction, width defined by P_INTERNAL_ADR_WIDTH.
+	o_be: Byte enable output for the current transaction, width defined by P_INTERNAL_BE_WIDTH.
+	o_wd: Write data output for the current transaction, width defined by P_INTERNAL_DATA_WIDTH.
+
+
+Implementation:
+The RTL module fm_avalon is designed to interface with an Avalon bus, a popular bus interface for FPGA and ASIC designs. It manages read and write operations, handling data transfers between the core logic and external devices or memory mapped to the Avalon bus. The module is parameterized, allowing for flexibility in address, data, and byte enable widths, making it adaptable to various design requirements.
+
+Give me the complete code.
+

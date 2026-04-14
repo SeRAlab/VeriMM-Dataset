@@ -1,0 +1,10 @@
+Design a program counter (PC) register that updates its value based on clock edges. When the reset signal is active, the PC is set to zero. If branching is enabled, the PC takes the specified branch address. If there is no branch and not stalled, the PC increments by 4, reflecting the progression to the next instruction in a typical instruction set architecture. The stall input allows for control of instruction flow, ensuring the PC does not update when the first bit of the stall signal is high.
+module top_module(
+    input wire clk,
+    input wire rst,
+    input wire [5:0] stall,
+    input wire branch_enable,
+    input wire [31:0] branch_addr,
+    output reg [31:0] pc
+
+);

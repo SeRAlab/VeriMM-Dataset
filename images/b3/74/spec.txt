@@ -1,0 +1,14 @@
+Design a synchronous data processing module that accumulates an 8-bit input (`data_in`) and produces a 10-bit output (`data_out`) based on control signals. The module features an internal accumulator (`acc`) that sums the `data_in` values whenever enabled. It includes a 4-bit shift register (`shift_reg`) to store part of the input data, which can be loaded or shifted based on the `load` and `ena` signals. The module asserts `valid_b` to indicate the readiness of the output when the accumulated value equals zero after addition, and it provides an output control signal `ready_a` based on the status of `valid_a` and `ready_b`. Overall, this design combines functionality for data accumulation, state management, and control signal generation for output readiness, suitable for use in a larger data flow system.
+module top_module(
+    input clk,
+    input rst_n,
+    input [7:0] data_in,
+    input load,
+    input ena,
+    input valid_a,
+    input ready_b,
+    output ready_a,
+    output reg valid_b,
+    output reg [9:0] data_out,
+    output reg [3:0] q
+);

@@ -1,0 +1,8 @@
+Design a finite impulse response (FIR) filter that processes a sequence of input signals using specified coefficients. The module receives a clock and reset signal, along with input data and filter coefficients. On each clock cycle, if reset is active, it initializes internal registers; otherwise, it shifts in the new input, multiplies the current input values with the coefficients, accumulates the products, and outputs the filtered result. The configuration supports a defined number of input signals and filter coefficients, providing flexibility in designing digital filtering applications.
+module top_module(
+  input clk,
+  input rst,
+  input [n-1:0] in,
+  input [m-1:0] coeff,
+  output reg out // Change output to reg type
+);

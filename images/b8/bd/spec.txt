@@ -1,0 +1,10 @@
+Design a power-gated input buffer (iso1n) with an active low sleep mode. The module has an output X that reflects the state of input A unless the device is in sleep mode, indicated by the SLEEP_B signal being LOW (active). When SLEEP_B is asserted (HIGH), the output X is driven HIGH regardless of the input A, thereby isolating the circuit to save power. The module utilizes an inverter to handle the sleep control and an OR gate to combine the active input with the sleep state. A power-good check ensures proper operation within the supplied voltage range.
+module top_module(
+    X      ,
+    A      ,
+    SLEEP_B,
+    VPWR   ,
+    VGND   ,
+    VPB    ,
+    VNB
+);

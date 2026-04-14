@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit binary up-counter with synchronous reset and enable signals.
+
+Module name:  
+    bin_counter_4bit      
+
+Input ports:
+    CLK: Clock signal
+    RST: Reset signal
+    EN: Enable signal
+
+Output ports:
+    Q: 4-bit counter output
+
+Implementation:
+The module uses a process block to describe the synchronous operation of the counter.
+On every positive edge of CLK, if RST is active, the counter is reset to 0.
+If EN is active, the counter increments by 1.
+The counter value is assigned to the output Q.
+
+Give me the complete code.
+
+module bin_counter_4bit (CLK, RST, EN, Q);
+input CLK, RST, EN;
+output reg [3:0] Q;

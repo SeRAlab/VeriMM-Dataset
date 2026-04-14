@@ -1,0 +1,9 @@
+Design a 16-bit up/down counter with reset functionality. The counter increments its value up to a specified maximum (cnt_max) when enabled (en) and counting in the upward direction (cnt_dir = 0). When counting downward (cnt_dir = 1), the counter decrements until it reaches zero, at which point it wraps around to the maximum value. The counter resets to zero when the reset signal (rst) is activated. The output (cnt_out) reflects the current count value.
+module top_module(
+    input clk,
+    input rst,
+    input en,
+    input [15:0] cnt_max,
+    input cnt_dir,
+    output reg [15:0] cnt_out
+);

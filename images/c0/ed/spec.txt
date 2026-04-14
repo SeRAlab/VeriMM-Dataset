@@ -1,0 +1,39 @@
+Please act as a professional verilog designer.
+    
+Implement a module to serve as a buffer in a system employing the Wishbone bus protocol, a popular open standard for connecting different components in embedded systems. This module primarily functions to manage read and write requests between a master device and the Wishbone bus, ensuring efficient data transfer and control flow. It supports buffering of write requests to handle scenarios where the bus or the slave device is not immediately ready to accept more data, thereby enhancing the overall throughput and performance of the system. Additionally, it manages read requests and the corresponding data reception, including acknowledgment signaling and data validity handling.
+
+Module name:  
+	a25_wishbone_buf
+
+Input ports:
+	i_clk: Clock input signal (type: input). It synchronizes the operations of the module.
+	i_req: Request signal (type: input). Indicates a new read or write request.
+	i_write: Write enable signal (type: input). Distinguishes between read (0) and write (1) operations.
+	i_wdata: Write data (type: input, 128 bits). Data to be written to the bus in write operations.
+	i_be: Byte enable (type: input, 16 bits). Specifies which bytes of the data bus are valid during write operations.
+	i_addr: Address (type: input, 32 bits). The target address for read or write operations.
+	i_accepted: Acknowledgment from the bus or slave device indicating that a previous request has been accepted (type: input).
+	i_rdata: Read data (type: input, 128 bits). Data received from the bus in read operations.
+	i_rdata_valid: Indicates if the read data (i_rdata) is valid (type: input).
+Output ports:
+	o_rdata: Output read data (type: output, 128 bits). Data to be passed to the master device following a read operation.
+	o_ack: Acknowledgment signal (type: output). Indicates that a read or write request has been successfully completed.
+	o_valid: Valid signal (type: output). Indicates that the current data or request is valid and should be processed.
+	o_write: Output write enable signal (type: output). Indicates whether the current operation is a write (1) or read (0).
+	o_wdata: Output write data (type: output, 128 bits). Data to be written to the bus in write operations.
+	o_be: Output byte enable (type: output, 16 bits). Specifies which bytes of the data bus are valid during write operations.
+	o_addr: Output address (type: output, 32 bits). The target address for read or write operations.
+
+
+Implementation:
+This RTL module, named a25_wishbone_buf, is designed to interface with a Wishbone bus, a popular bus architecture for connecting different components in a microcontroller system. The module acts as a buffer for Wishbone transactions, specifically handling both read and write requests. It is capable of buffering up to two write transactions, thereby allowing for more efficient bus utilization and potentially reducing wait times for bus access.
+Combinational Logic:
+Input Processing and Control Signals: The module generates control signals based on the inputs i_req, i_write, and the internal state of the buffer (wbuf_used_r). These control signals (push, pop, o_ack, o_valid) determine whether to buffer a new request, to forward a request from the buffer to the bus, and to acknowledge a completed transaction.
+Output Generation: The outputs o_wdata, o_write, o_addr, and o_be are generated based on the state of the buffer. If the buffer is not empty, the outputs reflect the buffered request at the read pointer (wbuf_rp_r); otherwise, they directly mirror the inputs.
+Sequential Logic:
+Buffer Management: The buffer's write pointer (wbuf_wp_r) and read pointer (wbuf_rp_r) are toggled between 0 and 1 to manage the circular buffer. The buffer's used slots counter (wbuf_used_r) is incremented or decremented based on the push and pop conditions.
+Acknowledgment Management: The ack_owed_r signal is used to track whether an acknowledgment is owed for a write request that was accepted but not immediately acknowledged due to the buffer being full.
+Read and Write Request Handling: The module distinguishes between read and write requests, buffering write requests while directly handling read requests by setting busy_reading_r and wait_rdata_valid_r flags to manage the read transaction state.
+
+Give me the complete code.
+

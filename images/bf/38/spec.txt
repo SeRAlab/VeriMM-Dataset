@@ -1,0 +1,8 @@
+Design a circuit for a simplified encryption module that encrypts a 32-bit input data stream by using a 32-bit key through the XOR operation. The module splits both the input data and key into four separate 8-bit segments, applies the XOR operation between each corresponding segment of data and key on the positive edge of the clock signal, and combines the encrypted segments to output the resulting 32-bit encrypted data. Additionally, the module incorporates a reset functionality to clear the output and temporary storage when activated.
+module top_module(
+    input clk,
+    input rst,
+    input [31:0] data_in,
+    input [31:0] key,
+    output [31:0] data_out
+);

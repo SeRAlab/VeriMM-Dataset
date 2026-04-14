@@ -1,0 +1,6 @@
+Design a combined multiplication and division module that processes two 32-bit signed inputs, `a` and `b`, based on a 3-bit mode selector. The module outputs a 32-bit result `q`, which can represent various operations: multiplication of `a` and `b`, both signed and unsigned, returning either the lower or upper bits of the product, or performing division and modulus operations, again for both signed and unsigned scenarios. The specific operation is determined by the value of `mode`, with each combination directing the output to the appropriate arithmetic operation result.
+module top_module(
+    input wire [31:0] a, b,
+    output reg [31:0] q,
+    input wire [2:0] mode
+);

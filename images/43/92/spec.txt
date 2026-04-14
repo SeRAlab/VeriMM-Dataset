@@ -1,0 +1,10 @@
+Design a circuit that functions as a shift register with additional features for detecting transitions on the least significant bit of a 32-bit input. The module incorporates a clock and reset signal for operation control. When the reset signal is activated, the shift register is initialized to zero. Upon the load signal being asserted, the input data is loaded into the shift register. If the enable signal is asserted instead, the register shifts its contents to the left and incorporates a detected transition bit from the input based on the previous clock cycle. The current state of the shift register is output as a 4-bit value.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] in,
+    input load,
+    input ena,
+    input [3:0] data,
+    output [3:0] out
+);

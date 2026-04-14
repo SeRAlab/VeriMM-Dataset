@@ -1,0 +1,13 @@
+Design a 4-bit universal shift register with clear, left shift, right shift, and parallel load functionalities. The module utilizes two mode select inputs (m0 and m1) to control its operation: when m0=0 and m1=1, it performs a right shift with the input from left_in; when m0=1 and m1=0, it performs a left shift using right_in; when both m0 and m1 are high, it loads the parallel input (p_in) into the register. Additionally, the module can be cleared, resetting its shift register to zero, while the outputs reflect the current state of the register (p_out) along with the most significant bit for left shifts (left_out) and the least significant bit for right shifts (right_out).
+module top_module(
+    input m0,
+    input m1,
+    input left_in,
+    input right_in,
+    input clr,
+    input clk,
+    input [3:0] p_in,
+    output reg left_out,
+    output reg right_out,
+    output reg [3:0] p_out
+    );

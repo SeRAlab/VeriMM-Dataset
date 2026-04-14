@@ -1,0 +1,11 @@
+Design a 4-bit barrel shifter capable of performing various shift and rotate operations based on control signals. The circuit can shift data left or right by two bits, as well as rotate the bits in either direction. The output is updated on the rising edge of a clock signal using a two-stage pipeline to enhance timing performance. This module effectively allows flexible manipulation of 4-bit input data for applications requiring bit-level adjustments.
+module top_module(
+    input [3:0] data,
+    input [1:0] shift,
+    input shift_right,
+    input shift_left,
+    input rotate_right,
+    input rotate_left,
+    input clk,             // Added clk input
+    output reg [3:0] result
+);

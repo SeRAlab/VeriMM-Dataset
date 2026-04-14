@@ -1,0 +1,8 @@
+Design a control register block that manages a set of registers based on incoming control signals. The module accepts a specified number of control signals for loading new values into the registers and produces a defined number of output signals reflecting the current register states. With a clock input, it captures and stores new register values when a load condition is met, subsequently outputting the stored values, effectively functioning as a state hold-and-output mechanism for control applications.
+module top_module(
+  input clk,                // Added clock input
+  input load,               // Added load signal input
+  input [n-1:0] ctrl,
+  input [r-1:0] new_values, // Added new_values input
+  output [m-1:0] out
+);

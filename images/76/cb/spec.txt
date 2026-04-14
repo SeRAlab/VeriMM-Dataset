@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+
+Design a D flip-flop with synchronous reset and enable. The flip-flop captures the input data on the rising edge of the clock signal if the enable signal is high. If the reset signal is active (high), the output is reset to zero on the rising edge of the clock.
+
+Module name:  
+    d_flip_flop   
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high reset signal. Defined as 1 for reset.
+    enable: Input signal to enable or disable capturing the input data.
+    d: Input data to be captured.
+
+Output ports:
+    q: Output data representing the captured value.
+
+Implementation:
+The output register is triggered on the positive edge of the clock signal (posedge clk). If the reset signal is high, the output register is cleared to 0. If the enable signal is high, the output register captures the input data on the rising edge of the clock signal.
+
+Give me the complete code.
+
+module d_flip_flop(
+    input clk,
+    input rst,
+    input enable,
+    input d,
+
+    output reg q
+);

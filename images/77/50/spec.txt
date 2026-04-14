@@ -1,0 +1,8 @@
+Design a module that calculates and verifies a checksum for a parallel data input. It takes an n-bit input `data_in` and computes its checksum by summing its bits and taking the modulo n result. The checksum is then output as `checksum_out`. The module also compares this calculated checksum with an external `checksum_in` value when the `check` signal is activated. If the checksums match, the output `error` is LOW; otherwise, it is HIGH, indicating a discrepancy in data integrity.
+module top_module(
+  input [n-1:0] data_in,
+  input check,
+  input [n-1:0] checksum_in,
+  output reg error, // Changed to reg
+  output reg [n-1:0] checksum_out // Changed to reg
+);

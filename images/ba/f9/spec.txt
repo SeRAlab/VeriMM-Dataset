@@ -1,0 +1,12 @@
+Design a circuit that functions as a data multiplexer with specific routing behaviors based on a 2-bit selection input (SW). The module takes two sets of 8-bit addresses and 23-bit data from a transmit (TX) and receive (RX) path. Depending on the value of SW, it outputs a 16-bit DATA signal constructed from either the TX or RX inputs, combining portions of the address and data signals in predetermined ways: it outputs the lower 8 bits of TX data with the full TX address for SW=0, extracts the higher bits of TX data for SW=1, combines RX data with RX address for SW=2, and outputs a zero-padded version of the higher bits of RX data for SW=3.
+module top_module(
+    input [7:0] TX_ADR,
+    input [22:0] TX_DAT,
+    input TX_OK,
+    input [7:0] RX_ADR,
+    input [22:0] RX_DAT,
+    input RX_OK,
+    input [1:0] SW,
+
+    output [15:0] DATA
+);

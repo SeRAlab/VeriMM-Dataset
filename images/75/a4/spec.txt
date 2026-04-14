@@ -1,0 +1,18 @@
+Design a simple interface module for custom mathematical operations that communicates via an Avalon interface. The module is set up to receive addresses and control signals for read and write operations from an external master, yet it always outputs fixed values: it does not process read or write requests, and it does not generate any meaningful interrupt signals. As such, it effectively serves as a placeholder or a stub for future implementation, providing no dynamic functionality at this stage.
+module top_module(
+		input  wire [7:0]  avs_s0_address,     
+		input  wire        avs_s0_read,        
+		output wire [31:0] avs_s0_readdata,    
+		input  wire        avs_s0_write,       
+		input  wire [31:0] avs_s0_writedata,   
+		output wire        avs_s0_waitrequest, 
+		input  wire        clock_clk,          
+		input  wire        reset_reset,        
+		output wire        ins_irq0_irq,       
+		output wire [7:0]  avm_m0_address,     
+		output wire        avm_m0_read,        
+		input  wire        avm_m0_waitrequest, 
+		input  wire [31:0] avm_m0_readdata,    
+		output wire        avm_m0_write,       
+		output wire [31:0] avm_m0_writedata    
+	);

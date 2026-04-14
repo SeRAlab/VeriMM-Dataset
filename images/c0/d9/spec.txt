@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+    
+Implement a module simulates a physical layer (PHY) interface for Ethernet communication. Its primary functions include generating receive (`Rx`) and transmit (`Tx`) clocks based on the selected speed, transmitting data, and indicating the status of the transmission and reception processes. This module plays a crucial role in emulating the behavior of a physical Ethernet interface, which is essential for testing and verification purposes in the absence of actual hardware. It supports different speeds, indicated by the `Speed` input, and can simulate errors and collision scenarios.
+
+Module name:  
+	Phy_sim
+
+Input ports:
+	Gtx_clk: Input clock signal. This clock is used directly as the Rx and Tx clocks when the highest speed is selected.
+	Tx_er: Input signal indicating a transmit error. This module does not simulate transmit errors, so this input does not affect the module's operation.
+	Tx_en: Input signal indicating transmit enable. When high, it indicates that data is being transmitted.
+	Txd [7:0]: 8bit input data bus for transmission data.
+	Speed [2:0]: 3bit input representing the speed selection for the PHY simulation. Different bits select different operational speeds or clock rates.
+Output ports:
+	Rx_clk: Output receive clock. Its frequency is determined by the Speed input.
+	Tx_clk: Output transmit clock. Its frequency is determined by the Speed input.
+	Rx_er: Output signal indicating a receive error. This module always drives it low, indicating no receive errors are simulated.
+	Rx_dv: Output signal indicating receive data valid. It mirrors the Tx_en input, indicating when received data is valid.
+	Rxd [7:0]: 8bit output data bus for received data. It directly mirrors the Txd input.
+	Crs: Output signal indicating carrier sense. It mirrors the Tx_en input, indicating that the medium is active.
+	Col: Output signal indicating collision. This module always drives it low, indicating no collision simulation.
+
+
+Implementation:
+The RTL module Phy_sim is designed to simulate a physical layer (PHY) interface, commonly used in networking hardware to handle data transmission and reception over a physical medium. The module is parameterized by the Speed input, which dictates the operational speed of the PHY simulation. The core functionality of this module revolves around generating clock signals, transmitting and receiving data, and managing error and control signals based on the input configurations.
+
+Give me the complete code.
+

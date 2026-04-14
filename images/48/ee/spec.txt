@@ -1,0 +1,7 @@
+Design a circuit that performs a simple encryption operation on a 32-bit input data. This module takes a clock and a reset signal and utilizes shift operations and bitwise operations to manipulate the input data. It extracts and rotates the input bits to generate intermediate values A, B, C, and D, which are then used in further combinational logic to create two temporary outputs, temp1 and temp2. Finally, it processes these temporary values to produce a modified 32-bit output, effectively applying a reversible transformation for encryption purposes.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] data_in,
+    output reg [31:0] data_out // Changed from wire to reg
+);

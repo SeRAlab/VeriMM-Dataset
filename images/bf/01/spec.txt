@@ -1,0 +1,10 @@
+Design a simple 8-bit calculator that performs basic arithmetic operations (addition, subtraction, multiplication, and division) based on the mode selected. The calculator takes two 8-bit inputs, num1 and num2, along with a mode selector to determine the operation. On the rising edge of the clock signal and when the start signal is asserted, the selected operation is executed, and the 8-bit result is stored in the output register, while a 'done' signal indicates the operation's completion. If the start signal is not asserted, the 'done' signal is deactivated.
+module top_module(
+  input clk,
+  input start,
+  input [7:0] num1,
+  input [7:0] num2,
+  input [1:0] mode,
+  output reg [7:0] result,
+  output reg done
+);

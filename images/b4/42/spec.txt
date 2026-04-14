@@ -1,0 +1,12 @@
+Design a next program counter (PC) module for a microprocessor which determines the address of the next instruction based on the operation code (op), branch conditions, and control signals. The module outputs an updated PC value on the rising edge of the clock or resets it to zero when the reset signal is low. It supports branch and jump operations, modifying the PC according to whether the branch condition is met (based on `alu_out` and the opcode) or redirecting to a target address if `PCSrc` is asserted. The next PC value is calculated by incrementing the current PC or loading a specified target address, ensuring proper instruction flow in the execution pipeline.
+module top_module(
+	 input [5:0]op,
+	 input PCSrc,
+	 input [25:0] target_address,
+    input branch,
+    input [31:0] alu_out,
+	 input [31:0] ex_imm,
+	 input clk,
+	 input rst_n,
+    output reg [7:0]pc
+    );

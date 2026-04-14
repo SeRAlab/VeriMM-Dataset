@@ -1,0 +1,8 @@
+Design a finite impulse response (FIR) filter that processes a 16-bit input data stream. When a new data signal is received, the filter applies a set of predefined coefficients to the current and six previous samples to compute the output. The result is stored in the output register `dout`, and a flag `output_data_ready` indicates when the output data has been updated. This module effectively implements a digital filter for signal processing applications, using delay elements to store past input values and combining them with associated coefficients for the filtering operation.
+module top_module(
+    input clk,
+    input new_data_rdy,
+    input [15:0] din,
+    output reg [15:0] dout,
+    output reg output_data_ready
+);

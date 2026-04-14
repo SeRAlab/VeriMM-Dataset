@@ -1,0 +1,7 @@
+This module implements a clock gating mechanism that controls the clock signal based on enabling and triggering signals. The circuit consists of a finite state machine with three states: IDLE, TRIGGERED, and ENABLED. When the EN input is high, it transitions from the IDLE state to the TRIGGERED state, asserting the ENCLK output. If the TE input is subsequently triggered while in the TRIGGERED state, the module moves to the ENABLED state, deasserting ENCLK and returning to IDLE. This design efficiently manages power consumption by enabling the clock only when necessary, based on external control signals.
+module top_module(
+  input CLK,
+  input EN,
+  input TE,
+  output reg ENCLK  // Change 'output' to 'output reg'
+);

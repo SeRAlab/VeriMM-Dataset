@@ -1,0 +1,9 @@
+Design a synchronous control module that manages data processing based on a clock signal (CLK) and a reset condition. The module outputs a "ready" signal to indicate when downstream processing can occur. It uses an input "process_input" where the most significant bit indicates whether it is too soon to process. Upon reset, it initializes state variables. When conditions are met, it updates an output count and produces a processed output signal. The processing occurs if the downstream is ready and the count is within a limit, otherwise it continues pushing data with a modified output format.
+module top_module(
+    input CLK,
+    input ready_downstream,
+    output reg ready,
+    input reset,
+    input [64:0] process_input,
+    output reg [64:0] process_output
+);

@@ -1,0 +1,6 @@
+Design a 4-bit binary counter that increments its input value and outputs the result. When the input reaches the maximum value of 15 (binary 1111), the counter wraps around to 0 and signals an overflow condition. This module continuously monitors the 4-bit input and updates the output accordingly, ensuring proper tracking of overflows during the counting process.
+module top_module(
+    input [3:0] in,
+    output reg [3:0] out,  // Change to reg because we are driving it in an always block
+    output reg overflow     // Change to reg because we are driving it in an always block
+);

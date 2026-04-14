@@ -1,0 +1,11 @@
+Design a circuit that implements a 4-entry first-in-first-out (FIFO) buffer with dual write ports and dual read outputs. The module allows writing 16-bit input data to the buffer at two simultaneously accessible write positions, controlled by separate write enable signals. On each clock cycle, the circuit outputs the data from the current tail of the buffer and the next entry, facilitating simultaneous reading of two data entries. The internal buffer uses a circular indexing scheme to manage the head and tail pointers, allowing for efficient data storage and retrieval operations.
+module top_module(
+   input clk,
+   input [15:0] inData,
+   output reg [15:0] out0,
+   output reg [15:0] out1,
+   input wr0a,
+   input wr0b,
+   input wr1a,
+   input wr1b
+);

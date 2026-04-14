@@ -1,0 +1,23 @@
+Implement a register for the execution (EXE) stage of a processor pipeline. This module captures and holds control signals and data values produced during the ALU operations. It has inputs for write-back enable signals, memory read/write enables, the ALU result, store value, and destination register address. The captured data is updated on the rising edge of the clock, unless a reset signal is asserted or a freeze condition occurs, in which case the outputs are cleared or retained as needed. This functionality supports the synchronization and management of execution stage data flow in a pipelined architecture.
+module top_module(
+		input clk,
+		input rst,
+		input WB_en_in,
+		
+		input MEM_R_EN_in,
+		input MEM_W_EN_in,
+
+		input [31:0] ALU_result_in,
+		input [31:0] ST_val_in,
+		input [4:0] Dest_in,
+
+		input freeze,
+
+		output reg WB_en,
+		
+		output reg MEM_R_EN,
+		output reg MEM_W_EN,
+		output reg [31:0] ALU_result,
+		output reg [31:0] ST_Val,
+		output reg [4:0] Dest
+	);

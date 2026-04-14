@@ -1,0 +1,38 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as a bridge between two different types of bus protocols: the Advanced High-performance Bus (AHB) and the Wishbone bus. The primary function of this module to facilitate communication between components that use the AHB protocol and those that use the Wishbone protocol, enabling them to coexist within the same system. This is crucial for systems that incorporate IP cores or components from different vendors, each possibly adhering to one of these protocols. By translating the control signals, address, data, and handshaking mechanisms from AHB to Wishbone and vice versa, the `AHB2WB` module ensures seamless interoperability between AHB masters and Wishbone slaves.
+
+Module name:  
+	AHB2WB
+
+Input ports:
+	HCLK (input): The clock input for the AHB side of the module. This clock signal synchronizes the operations on the AHB bus.
+	HRESETn (input): The activelow reset signal for the AHB side. It initializes the module to a known state upon reset.
+	HADDR (input, [31:0]): The address bus for AHB transactions. It specifies the address for read or write operations.
+	HWDATA (input, [31:0]): The write data bus for AHB transactions. It carries the data to be written to the target address.
+	HWRITE (input): The write control signal for AHB. A high level indicates a write operation; a low level indicates a read operation.
+	HSEL (input): The select signal for AHB. It indicates that the current transaction is intended for this module.
+	HTRANS (input, [1:0]): The transaction type signal for AHB. It indicates the type of the current transaction (e.g., idle, busy, nonsequential, sequential).
+	HSIZE (input, [2:0]): The size of the data transfer for AHB transactions.
+	HREADY (input): The ready signal from the AHB side. It indicates that the bus is ready for a data transfer.
+	wb_dat_i (input, [31:0]): The input data from the Wishbone bus, typically read data coming from a Wishbone slave.
+	wb_ack_i (input): The acknowledge signal from the Wishbone bus, indicating that a transaction has been completed.
+Output ports:
+	HRDATA (output, [31:0]): The read data bus for AHB transactions. It carries the data read from the target address.
+	HRESP (output): The response signal for AHB, indicating the status of the transaction (e.g., OKAY, ERROR).
+	HREADYOUT (output): The ready output signal for AHB, indicating that the module is ready for the next transaction.
+	wb_clk_o (output): The clock output for the Wishbone side, typically connected to the Wishbone bus clock.
+	wb_rst_o (output): The reset output for the Wishbone side, typically connected to the Wishbone bus reset.
+	wb_adr_o (output, [31:0]): The address output for Wishbone transactions, derived from the AHB address input.
+	wb_dat_o (output, [31:0]): The data output for Wishbone transactions, typically write data going to a Wishbone slave.
+	wb_sel_o (output, [3:0]): The byte select signals for Wishbone transactions, indicating which bytes of the data bus are active.
+	wb_we_o (output): The write enable signal for Wishbone, indicating whether the current transaction is a write.
+	wb_stb_o (output): The strobe signal for Wishbone, indicating the start of a transaction.
+	wb_cyc_o (output): The cycle signal for Wishbone, indicating that a transaction is in progress.
+
+
+Implementation:
+The RTL module AHB2WB serves as a bridge between two different bus protocols: the Advanced High-performance Bus (AHB) used in ARM architecture and the Wishbone bus protocol, commonly used in open-source hardware designs. This module translates signals and control logic from AHB to Wishbone, enabling components designed for one standard to communicate with those designed for the other. The module operates synchronously with the provided clock signal HCLK and responds to an active-low reset signal HRESETn.
+
+Give me the complete code.
+

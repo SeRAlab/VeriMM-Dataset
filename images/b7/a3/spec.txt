@@ -1,0 +1,11 @@
+Design a 4096-depth, 24-bit wide FIFO (First-In-First-Out) memory module. The module utilizes clock-driven operations to manage data input and output based on read and write enables. When the read enable signal (E) is low and the FIFO is not empty, it outputs the data from the tail pointer and updates the tail position. Conversely, when the temporary read enable (tmp_ram_rd_en) is active, and the FIFO is not full, it allows data insertion from the data input (din) at the head pointer position, updating count metrics to track the number of items in the FIFO. The module also includes status indicators for whether the FIFO is empty or full, and it maintains the internal state of the read and write pointers, facilitating sequential data processing.
+module top_module(
+  input clk,
+  input [23:0] din,
+  input tmp_ram_rd_en,
+  input [0:0] E,
+  input [0:0] Q,
+  input [8:0] count_d1_reg,
+  input [8:0] count_d1_reg_gcc,
+  output [23:0] D
+);

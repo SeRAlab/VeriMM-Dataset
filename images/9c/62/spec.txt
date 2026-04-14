@@ -1,0 +1,9 @@
+Design a 3-bit shift register with load and reset functionality. On the rising edge of the clock, if the reset signal is active, the output is set to zero. If the load signal is asserted, the register will load the inputs A and B into the most significant bits while shifting the existing bits to the right. If load is not asserted, the register shifts its contents to the right and inputs the current value of A into the least significant bit. This design enables both parallel loading of new data and serial shifting operations.
+module top_module(
+    input clk,
+    input A,
+    input B,
+    input Load,
+    input Reset,
+    output reg [2:0] Q
+);

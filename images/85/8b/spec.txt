@@ -1,0 +1,6 @@
+Design a voice activity detection (VAD) module that determines whether the input audio signal exceeds a specified threshold. It takes in signed audio and threshold values, both 16 bits wide, and extends them to account for fractional bits, allowing for fixed-point comparisons. The module outputs a boolean signal (vad), which is high (1) if the audio level meets or exceeds the threshold, indicating that there is voice activity present, and low (0) otherwise.
+module top_module(
+  input signed [num_bits-1:0] audio,
+  input signed [num_bits-1:0] threshold,
+  output reg vad
+);

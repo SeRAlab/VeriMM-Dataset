@@ -1,0 +1,14 @@
+module decoder_2to4 (
+    input wire [1:0] A,
+    output reg [3:0] Y
+);
+    always @(*) begin
+        case (A)
+            2'b00: Y = 4'b0001; // Output Y0 is high
+            2'b01: Y = 4'b0010; // Output Y1 is high
+            2'b10: Y = 4'b0100; // Output Y2 is high
+            2'b11: Y = 4'b1000; // Output Y3 is high
+            default: Y = 4'b0000; // Default case (should not occur)
+        endcase
+    end
+endmodule

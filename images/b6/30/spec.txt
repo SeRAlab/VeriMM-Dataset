@@ -1,0 +1,6 @@
+Design a Turbo encoder that processes a stream of 1024 input bits and generates 2048 output bits through two convolutional encoding stages followed by an interleaving stage. The encoder uses two states for each convolutional encoder, applying exclusive OR operations on select bits from an input buffer to produce the output. The interleaver rearranges the bits of the encoded output to improve error correction performance. Two memory elements hold the states of the convolutional encoders, effectively allowing the encoding of data in bursts while preserving the necessary temporal relationships among the input bits.
+module top_module(
+  input clk,                      // Added clk input
+  input [k-1:0] in,
+  output reg [n-1:0] out         // Changed output to reg type
+);

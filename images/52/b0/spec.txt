@@ -1,0 +1,8 @@
+Implement a binary to Gray code converter with a synchronous reset. The module takes a 4-bit binary input and outputs the corresponding 4-bit Gray code. It also includes a flag output that indicates whether the Gray code output has changed since the last clock cycle. On a reset, both the Gray code output and the flag are initialized to zero, and the previous Gray code value is also reset. The conversion is achieved by performing a bitwise XOR operation between the binary input and its right-shifted version.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] binary,
+  output reg [3:0] gray,
+  output reg flag
+);

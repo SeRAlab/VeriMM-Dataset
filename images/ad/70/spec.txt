@@ -1,0 +1,19 @@
+Design a circuit that implements a dual 3-to-1 multiplexer followed by an adder. The circuit features two separate multiplexers, each capable of selecting one among six 4-bit data inputs based on its respective select signal (sel_mux1 for the first multiplexer and sel_mux2 for the second). The outputs of these multiplexers are then summed together to produce a 4-bit output. Additionally, an overall multiplexer selection control allows the user to choose between the two multiplexers based on a single control signal, facilitating flexible data routing and output generation.
+module top_module(
+    input [2:0] sel_mux1, // Select input for the first multiplexer
+    input [2:0] sel_mux2, // Select input for the second multiplexer
+    input [3:0] data0_mux1, // Input data for the first multiplexer
+    input [3:0] data1_mux1,
+    input [3:0] data2_mux1,
+    input [3:0] data3_mux1,
+    input [3:0] data4_mux1,
+    input [3:0] data5_mux1,
+    input [3:0] data0_mux2, // Input data for the second multiplexer
+    input [3:0] data1_mux2,
+    input [3:0] data2_mux2,
+    input [3:0] data3_mux2,
+    input [3:0] data4_mux2,
+    input [3:0] data5_mux2,
+    input sel_mux, // Select input for choosing between the two multiplexers
+    output reg [3:0] out // Output of the adder, changed to reg
+);

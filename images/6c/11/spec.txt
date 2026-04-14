@@ -1,0 +1,7 @@
+Design a FIFO (First-In-First-Out) empty flag generator for a read operation. This module tracks the state of the FIFO to indicate whether it is empty by comparing the current read address in gray code with the write pointer. It utilizes a binary-to-gray conversion to maintain synchronization between read and write pointers, updating these pointers on each clock cycle when a read operation is performed. The `rd_fifo_empty` output goes LOW when the FIFO is not empty, allowing efficient management of data flow in systems requiring asynchronous read/write operations. The reset signal initializes the pointer states, ensuring proper operation after a reset event.
+module top_module(
+   
+   rd_fifo_empty, rd_addr, rd_gray_pointer,
+   
+   reset, rd_clk, rd_wr_gray_pointer, rd_read
+   );

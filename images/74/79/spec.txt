@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a 16-bit register file with 4 registers. The register file should have two read ports and one write port. The read and write operations should be synchronous. The write enable signal determines whether a write operation should occur. The register file should also have an asynchronous reset.
+
+Module name:  
+    register_file
+
+Inputs:
+    clk: Clock signal.
+    rst_n: Reset signal (active low).
+    we: Write enable signal.
+    wr_addr: 2-bit write address.
+    rd_addr1: 2-bit read address for port 1.
+    rd_addr2: 2-bit read address for port 2.
+    data_in: 16-bit data input.
+
+Outputs:
+    rd_data1: 16-bit data output for read port 1.
+    rd_data2: 16-bit data output for read port 2.
+
+Implementation:
+The register file should be reset to 0 when the reset signal is active. On the rising edge of the clock, if the write enable signal is asserted, the data input should be written to the register at the specified write address. The read data for the two read ports should be driven continuously based on the read addresses.
+
+Give me the complete code.

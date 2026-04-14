@@ -1,0 +1,13 @@
+
+Design an 8-channel DMA controller that manages data transfers from multiple peripherals to a shared memory. The controller should allow the following operations:
+1. Initiate a transfer from one of the 8 channels.
+2. Store the current channel being serviced.
+3. Allow for a transfer complete signal to be generated once the transfer is done.
+4. Support a simple round-robin scheduling for channel servicing.
+
+The following inputs are defined:
+- `start_transfer`: A signal to initiate the transfer.
+- `channel_select`: A 3-bit input to select which channel (0-7) to transfer from.
+- `transfer_complete`: An output signal that indicates when a transfer is complete.
+
+The output should indicate which channel is currently being serviced.

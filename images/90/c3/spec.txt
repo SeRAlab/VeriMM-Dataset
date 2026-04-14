@@ -1,0 +1,7 @@
+Design a decade counter that outputs a 4-bit value representing a count from 0 to 9, with a slow enable feature. Upon receiving a clock pulse, if `reset` is activated, the counter clears all registers to zero. Otherwise, when `slowena` is high, the counter increments the value stored in `q4` and cascades this value through registers `q1`, `q2`, and `q3`. The output `q` selects between the last counted value `q1` when `slowena` is active, or the current counter value `q4`, allowing for a controlled counting sequence while managing external flow conditions.
+module top_module(
+    input clk,
+    input slowena,
+    input reset,
+    output reg [3:0] q
+);

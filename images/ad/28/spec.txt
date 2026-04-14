@@ -1,0 +1,11 @@
+Design a synchronous FIFO (First-In, First-Out) memory buffer with a depth of 32 and a data width of 69 bits. It allows data to be written to the buffer when the write enable signal is active (wr_en) and data can be read from the buffer when the read enable signal is active (rd_en). The module includes overflow and underflow detection, indicating when the buffer is full or empty through the full and empty output signals. The internal state is reset asynchronously with the reset signal (rst), which also initializes the read and write pointers (head and tail) to zero. The FIFO ensures sequential data access and preserves data integrity during read and write operations based on the clock signal.
+module top_module(
+  input clk,
+  input [68:0] data_in,
+  input wr_en,
+  input rd_en,
+  input rst,
+  output reg empty,  // changed to reg
+  output reg full,   // changed to reg
+  output reg [68:0] data_out  // changed to reg
+);

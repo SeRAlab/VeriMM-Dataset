@@ -1,0 +1,8 @@
+Design a circuit that functions as a simple 2D graphical display controller, which outputs RGB color values based on specific input conditions. When the `video_mostrar` signal is high, it checks for a particular input value (`entrada` equal to `4'b0011`) and specified pixel coordinate ranges; if these conditions are met, it outputs a bright white color (RGB `3'b111`) for that pixel area. If `video_mostrar` is low, it checks for a different input value (`entrada` equal to `4'b0100`) and another set of pixel coordinates to output a blue color (RGB `3'b001`). In all other scenarios, the output is set to black (RGB `3'b000`). This module serves as part of a graphics rendering system, selectively coloring pixels based on input conditions and coordinates.
+module top_module(
+    input video_mostrar,
+    input [3:0] entrada,
+    input [9:0] pixel_x,
+    input [9:0] pixel_y,
+    output reg [2:0] salida_rgb
+    );

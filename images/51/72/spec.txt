@@ -1,0 +1,29 @@
+Design a wishbone memory interconnect module that manages communication between a master and a slave memory device. The module primarily accepts master requests and forwards them to a designated slave device if the address falls within the defined memory range. It features control signals for write enable, cycle, strobe, and data selection, while generating corresponding acknowledgment, interrupt, and data output signals based on the slave's responses. In essence, it acts as an address decoder and data router, facilitating data transactions between a master device and a specific slave memory address range.
+module top_module(
+  
+  input               clk,
+  input               rst,
+
+  
+  input               i_m_we,
+  input               i_m_stb,
+  input               i_m_cyc,
+  input       [3:0]   i_m_sel,
+  input       [31:0]  i_m_adr,
+  input       [31:0]  i_m_dat,
+  output reg  [31:0]  o_m_dat,
+  output reg          o_m_ack,
+  output reg          o_m_int,
+
+  
+  output              o_s0_we,
+  output              o_s0_cyc,
+  output              o_s0_stb,
+  output    [3:0]     o_s0_sel,
+  input               i_s0_ack,
+  output    [31:0]    o_s0_dat,
+  input     [31:0]    i_s0_dat,
+  output    [31:0]    o_s0_adr,
+  input               i_s0_int
+
+);

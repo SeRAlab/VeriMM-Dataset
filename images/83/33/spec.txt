@@ -1,0 +1,29 @@
+Please act as a professional Verilog designer.
+
+Implement an 8-bit Binary Up/Down Counter module that can count up or down based on a control signal. The counter value should be provided at an 8-bit output signal named "count".
+
+Module name:
+    binary_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    up_down: Control signal for counting direction. If up_down is 1, the counter counts up; if up_down is 0, the counter counts down.
+
+Output ports:
+    count: 8-bit output signal representing the current counter value.
+
+Implementation:
+The module includes a register, count, with a width of 8 bits to store the counter value.
+The count register is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the count register is cleared to 0.
+On each clock cycle, if up_down is 1, the count is incremented by 1; otherwise, the count is decremented by 1.
+
+Give me the complete code.
+
+module binary_counter(
+  input clk,
+  input rst_n,
+  input up_down,
+  output reg [7:0] count
+);

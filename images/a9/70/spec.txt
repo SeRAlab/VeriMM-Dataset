@@ -1,0 +1,7 @@
+Design a circuit for an automotive control system that manages the state of a computer based on specific conditions. When the input `cpu_overheated` is triggered, the module signals to shut off the computer by setting `shut_off_computer` to HIGH. Additionally, if the vehicle has not yet `arrived` at its destination, the module will allow the user to keep driving, indicated by the output `keep_driving`, which will be set to HIGH only if the `gas_tank_empty` signal is LOW, thus ensuring driving is possible only when there is available fuel.
+module top_module(
+    input      cpu_overheated,
+    output reg shut_off_computer,
+    input      arrived,
+    input      gas_tank_empty,
+    output reg keep_driving  );

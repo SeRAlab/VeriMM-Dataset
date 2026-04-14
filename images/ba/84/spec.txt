@@ -1,0 +1,7 @@
+Design a dual-port RAM module that allows simultaneous read and write operations on two independent clock domains. It features two input clocks (clk1 and clk2), enabling separate write enables (we1 and we2) and output enables (oe1 and oe2) for each port. Each port accommodates 11-bit address lines (addr1 and addr2) and 40-bit wide data inputs (data1 and data2), while providing corresponding 40-bit data outputs (q1 and q2). This design is ideal for applications requiring concurrent data access and manipulation from two different sources.
+module top_module(
+    input clk1, clk2, we1, we2, oe1, oe2,
+    input [10:0] addr1, addr2,
+    input [39:0] data1, data2,
+    output reg [39:0] q1, q2  // Changed wire to reg
+);

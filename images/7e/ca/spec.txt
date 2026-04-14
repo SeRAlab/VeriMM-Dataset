@@ -1,0 +1,8 @@
+Implement a register file that allows for reading from and writing to multiple registers. The design supports `n` registers, each `m` bits wide. When the `write_en` signal is high, data presented on `data_in` is stored in the register at the address specified by `addr`. The contents of the register at the specified address are always available on the `data_out` output for read operations. This module is suited for use in systems requiring temporary storage and manipulation of data, such as microprocessors or signal processing applications.
+module top_module(
+  input clk,              // Added clk input
+  input [n-1:0] addr,
+  input write_en,
+  input [m-1:0] data_in,
+  output reg [m-1:0] data_out
+);

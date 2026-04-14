@@ -1,0 +1,16 @@
+Design a circuit that functions as an idle inserter for a streaming data interface. This module takes input data and, based on specific control signals, regulates when data is valid and ready for processing. It recognizes special characters (idle and escape characters) and inserts an idle character (0x4D) when needed, while also managing an escape character process for data integrity. The circuit maintains synchronization between input and output streams, negating or modifying inputs when valid data transitions occur, ensuring the output remains valid and correctly formatted according to the protocol.
+module top_module(
+
+      
+      input              clk,
+      input              reset_n,
+      
+      output reg         in_ready,
+      input              in_valid,
+      input      [7: 0]  in_data,
+
+      
+      input              out_ready,
+      output reg         out_valid,
+      output reg [7: 0]  out_data
+);

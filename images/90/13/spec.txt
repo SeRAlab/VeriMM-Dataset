@@ -1,0 +1,13 @@
+Design a circuit that combines a 2-to-1 multiplexer with a 4-bit comparator. The multiplexer selects between two 4-bit inputs (in1 and in2) based on the state of two selection signals (sel1 and sel2), outputting the selected input through mux_out. The comparator evaluates two additional 4-bit inputs (comp_in1 and comp_in2), generating three outputs: eq_out indicates equality, gt_out signals that comp_in1 is greater than comp_in2, and lt_out indicates that comp_in1 is less than comp_in2.
+module top_module(
+    input [3:0] in1,    // First 4-bit input for the multiplexer
+    input [3:0] in2,    // Second 4-bit input for the multiplexer
+    input sel1,         // First select input for the multiplexer
+    input sel2,         // Second select input for the multiplexer
+    output reg [3:0] mux_out,   // 4-bit output from the multiplexer, changed to reg
+    input [3:0] comp_in1,   // First 4-bit input for the comparator
+    input [3:0] comp_in2,   // Second 4-bit input for the comparator
+    output eq_out,      // 1-bit output indicating if the two inputs are equal
+    output gt_out,      // 1-bit output indicating if the first input is greater than the second input
+    output lt_out       // 1-bit output indicating if the first input is less than the second input
+);

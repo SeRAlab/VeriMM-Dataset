@@ -1,0 +1,10 @@
+Design a synchronous priority encoder that takes 4 inputs (A, B, C, D), each 4 bits wide. The module sequentially evaluates the inputs based on their significance (from most significant bit to least significant bit) and generates two outputs, Y0 and Y1, based on which input has the highest priority. The encoding operates in a state machine fashion, with a control stage to manage the evaluation order. This design effectively routes the highest priority signal among the inputs to the outputs, enabling efficient data handling in digital systems.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [3:0] C,
+    input [3:0] D,
+    input clk,             // Added clock input
+    output reg Y0,
+    output reg Y1
+);

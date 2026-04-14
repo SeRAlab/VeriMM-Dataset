@@ -1,0 +1,12 @@
+Design a finite state machine (FSM) that cycles through five states (STATE_0 to STATE_4) based on a clock input and a reset signal. The FSM enables specific outputs based on the current state: it generates an output signal `enable_cuenta` when in STATE_4, controls `write_enable` and `write_value_reg_en` in STATE_1, and enables `read_value_reg_en` in STATE_3. Additionally, it manages LED indicators, activating `led_write` in the first three states and `led_read` in the last two states. The state transitions occur on the rising edge of `div_clock` or a reset, ensuring synchronous operation.
+module top_module(
+  input div_clock,
+  input reset,
+  output enable_cuenta,
+  output write_enable,
+  output write_value_reg_en,
+  output read_value_reg_en,
+  output led_write,
+  output led_read,
+  output [3:0] estado
+);

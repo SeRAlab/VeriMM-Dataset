@@ -1,0 +1,11 @@
+Design a parameterized shift register with 8 bits that can operate in both parallel load and shift modes. The module features a clock input for synchronous operation and a reset signal to clear the register. When parallel_load is asserted, it loads the provided load_data into an internal register. Depending on the shift_direction control signal, the shift register can perform either a left shift (inserting data_in at the least significant bit) or a right shift (inserting data_in at the most significant bit). The module provides an output for the current state of the shift register and a serial output reflecting the most significant bit.
+module top_module(
+  input clk,
+  input reset,
+  input [n-1:0] data_in,
+  input shift_direction,
+  input parallel_load,
+  input [n-1:0] load_data,
+  output [n-1:0] data_out,
+  output serial_out
+);

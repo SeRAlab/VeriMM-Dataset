@@ -1,0 +1,9 @@
+Design a GPS receiver module that processes incoming GPS data through a state machine. It synchronizes on a start bit and collects a specified number of bits (24, in this case) of data from the `gps_rx` input, storing the assembled data from satellites. Upon receiving valid satellite data, it calculates the device's geographical position and outputs the latitude, longitude, and altitude in their respective 32-bit and 16-bit registers. The system operates on a clock signal and can be reset to initialize all internal registers and state variables.
+module top_module(
+  input clk,
+  input rst,
+  input gps_rx,
+  output reg [31:0] latitude,
+  output reg [31:0] longitude,
+  output reg [15:0] altitude
+);

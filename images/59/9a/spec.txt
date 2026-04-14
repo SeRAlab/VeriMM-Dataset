@@ -1,0 +1,7 @@
+Design a slow oscillator circuit that generates a lower frequency clock output from a higher frequency input clock signal. The module includes a reset input (rstn) to initialize the state, an 8-bit output for a Gray counter (led), and a derived clock output (clk). The internal delay counter increments on each rising edge of the input clock (osc_clk) to create a slower clock signal output when the most significant bit of the delay counter (c_delay) is asserted. The Gray counter output is sent to the 8-bit 'led' output for visualization or further use.
+module top_module(
+    input rstn,
+    input osc_clk,
+    output reg [7:0] led,
+    output reg clk
+);

@@ -1,0 +1,10 @@
+Design a synchronous state merging circuit that combines two input control signals (r1 and r2) to produce a single output signal (r0) and selects one of two data inputs (a1 or a2) to generate an output data signal (a0). The module operates on the rising edge of the clock; when both r1 and r2 are low, both outputs are set to low. If r1 is high while r2 is low, r0 becomes high and a0 outputs the value of a1. Conversely, if r1 is low and r2 is high, r0 is set high, and a0 outputs the value of a2. If both r1 and r2 are high, both outputs are reset to low. This design effectively functions as a control and data selector based on the state of the input signals.
+module top_module(
+    input wire clk,    // Added clk input
+    input wire r1,
+    input wire r2,
+    input wire a1,
+    input wire a2,
+    output reg r0,
+    output reg a0
+);

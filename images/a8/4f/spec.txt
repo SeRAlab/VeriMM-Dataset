@@ -1,0 +1,31 @@
+Please act as a professional Verilog designer.
+
+Design a D flip-flop with synchronous reset and enable signals. The flip-flop should store the input data on the rising edge of the clock when enabled and reset the output when the reset signal is high.
+
+Module name:
+    d_flip_flop
+
+Input ports:
+    clk: Clock signal.
+    rst: Reset signal (active high).
+    en: Enable signal.
+    d: Data input signal.
+
+Output ports:
+    q: Data output signal.
+
+Implementation:
+The module includes a register named q.
+The q register is updated in the always block, triggered on the positive edge of the clock or the reset signal.
+When the reset signal is high, the q register is set to 0.
+When the enable signal is high, the q register is updated with the value of the data input signal on the positive clock edge.
+
+Give me the complete code.
+
+module d_flip_flop(
+  input clk,
+  input rst,
+  input en,
+  input d,
+  output reg q
+);

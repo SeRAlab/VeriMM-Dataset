@@ -1,0 +1,7 @@
+Design a Mealy state machine with overlapping states that detects a sequence of three consecutive '1's from the input data stream. The machine transitions through four states: S0 (initial state), S1 (after the first '1'), S2 (after the second '1'), and S3 (after the third '1'). It outputs a HIGH signal (dataout = 1) only when in state S3, indicating the successful detection of the three '1's in succession. The state transitions are driven by the clock signal, and the system can be reset to S0 using the reset input.
+module top_module(
+  output reg dataout,
+  input clock,
+  input reset,
+  input datain
+);

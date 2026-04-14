@@ -1,0 +1,12 @@
+Design a synchronous FIFO (First-In-First-Out) buffer with 1024 storage locations, each capable of holding 64 bits of data. The FIFO has control signals for write enable (wr_en) and read enable (rd_en), as well as an active-low reset (rst). Upon reset, the FIFO initializes its write and read pointers, the count of stored data items, and its status signals indicating whether it is empty or full. The write pointer increments upon a successful write, and the read pointer increments upon a successful read, managing the buffer's capacity while updating the empty and full status based on the current state. The module ensures that it does not underflow or overflow, maintaining robust data integrity during operations.
+module top_module(
+  output reg wr_rst_busy,
+  output reg [63:0] dout,
+  output reg empty,
+  output reg full,
+  input rd_en,
+  input wr_en,
+  input clk,
+  input [63:0] din,
+  input rst
+);

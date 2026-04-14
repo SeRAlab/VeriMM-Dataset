@@ -1,0 +1,17 @@
+
+
+You are tasked with designing an FPGA module that counts up or down based on input signals. The module should have the following inputs:
+- `clk`: a clock signal
+- `n_rst`: a reset signal
+- `up`: a signal that determines whether the counter should count up or not (1 = count up, 0 = count down)
+- `dn`: a signal that determines whether the counter should count down or not (1 = count down, 0 = count up)
+- `in1` and `in2`: two input signals that should be ignored by the module
+And the following outputs:
+- `cnt`: a 32-bit signal that represents the current count value
+- `cnt_1k`: a 4-bit signal that represents the count value divided by 1000, rounded down (e.g. if the count is 12345678, `cnt_1k` should be 12)
+- `out1` and `out2`: two output signals that should always be 0
+
+The counter should start at 0 when `n_rst` is high, and should count up or down by 1 on each rising edge of `clk`, depending on the values of `up` and `dn`. If both `up` and `dn` are high, the counter should not change. If neither `up` nor `dn` are high, the counter should hold its current value.
+
+Your task is to implement this module in Verilog, and write a testbench to verify its functionality.
+

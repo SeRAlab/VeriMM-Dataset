@@ -1,0 +1,18 @@
+Design a digital interface module for the AD9234 ADC (Analog-to-Digital Converter) that extracts and formats input data. This module takes in a 128-bit wide data input synchronized to a receive clock, uses demultiplexing to split the input data into two 64-bit output channels (adc_data_a and adc_data_b), and maintains an output status signal (adc_status) that indicates the operational state of the interface. The adc_clk output mirrors the input receive clock, and the module also provides reset functionality for initializing the adc_status signal. The architecture supports efficient data alignment and ensures the integrity of the ADC outputs through structured data mapping.
+module top_module(
+
+  
+  
+
+  rx_clk,
+  rx_data,
+
+  
+
+  adc_clk,
+  adc_rst,
+  adc_data_a,
+  adc_data_b,
+  adc_or_a,
+  adc_or_b,
+  adc_status);

@@ -1,0 +1,7 @@
+Design a module that functions as a priority encoder combined with a counter. The module takes a 4-bit input and utilizes two stages of priority encoding to determine the status of the input bits, generating a 2-bit output. On a positive clock edge, if a reset signal is asserted, the counter resets to zero. Otherwise, it increments the counter when the encoded output equals a specific value (indicating a certain input condition). The overall functionality tracks the number of active inputs, providing a mechanism to prioritize and count specific signals in the input vector.
+module top_module(
+    input [3:0] in, // 4-bit input to the priority encoder
+    input clk, // Clock input
+    input reset, // Active-high synchronous reset input
+    output reg [3:0] count // 4-bit output of the counter
+);

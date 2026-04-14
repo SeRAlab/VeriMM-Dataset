@@ -1,0 +1,13 @@
+Design a system reset controller that manages the reset signals for various subsystems based on input reset conditions. When the clock signal is active, the module produces a bus structure reset triggered by an external reset or a debug system reset, and a peripheral reset influenced by an auxiliary reset or the debug system reset. The interconnect and peripheral reset signals are asserted low upon a debug system reset, while the main reset signal also asserts low under the same condition, ensuring a coordinated reset across the entire system to maintain operational integrity.
+module top_module(
+    input slowest_sync_clk,
+    input ext_reset_in,
+    input aux_reset_in,
+    input mb_debug_sys_rst,
+    input dcm_locked,
+    output reg mb_reset,                        // Change mb_reset to a reg type
+    output reg [0:0]bus_struct_reset,
+    output reg [0:0]peripheral_reset,
+    output reg [0:0]interconnect_aresetn,
+    output reg [0:0]peripheral_aresetn
+);

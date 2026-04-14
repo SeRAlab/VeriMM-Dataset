@@ -1,0 +1,7 @@
+
+Design a PCIe endpoint controller state machine that handles three states: IDLE, READ, and WRITE. The controller should respond to input signals to transition between these states based on specific input conditions. The state transitions are as follows:
+- From IDLE to READ when the input signal `start_read` is high.
+- From IDLE to WRITE when the input signal `start_write` is high.
+- From READ to IDLE when the input signal `complete` is high.
+- From WRITE to IDLE when the input signal `complete` is high.
+- The controller should retain its state until a transition condition is met.

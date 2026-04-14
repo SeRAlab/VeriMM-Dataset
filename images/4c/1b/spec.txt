@@ -1,0 +1,16 @@
+Design a dual-entry FIFO (First-In-First-Out) buffer system for managing data flow in a tracking camera system. The module allows for writing and reading 41-bit wide data entries under control of a clock signal, with asynchronous reset capabilities. It keeps track of the number of entries to determine and signal conditions such as whether the buffer is almost full, full, almost empty, or empty. The FIFO can hold up to two entries, facilitating data storage and retrieval in a structured manner. It provides robust management of write and read operations through the control signals, ensuring efficient data handling while preventing overflow and underflow conditions.
+module top_module(
+  // inputs:
+  clk,
+  rd,
+  reset_n,
+  wr,
+  wr_data,
+
+  // outputs:
+  almost_empty,
+  almost_full,
+  empty,
+  full,
+  rd_data
+);

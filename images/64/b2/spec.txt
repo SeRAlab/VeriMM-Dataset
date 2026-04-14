@@ -1,0 +1,10 @@
+Design a register stage for a pipelined processor that captures and stores control signals, ALU results, and operands on the rising edge of the clock. This module acts as a latch for incoming data from the execution stage (EX) and prepares it for the memory access stage (MEM) by passing along the ALU result, operand, control signals, program counter, and the destination register identifier, all of which are essential for subsequent processing steps in a typical CPU pipeline.
+module top_module(
+    input clk,
+    
+    input [31:0] ALUresult,op2,ctrl,pcin2,
+    input [4:0] rd, 
+    output reg [31:0] ctrlm,y,bm,pcin3,
+    output reg [4:0] rdm
+    
+    );

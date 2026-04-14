@@ -1,0 +1,8 @@
+Design a 100-bit wide data rotator that operates on a clock signal. The module can load input data when the load signal is high and establishes a rotation mode based on the 2-bit enable input. Depending on the selected mode, the shift register can perform different rotations: maintaining the current value, rotating left by one, rotating right by one, or rotating left by two bits. The output is continuously assigned to the current value of the shift register.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output reg [99:0] q
+);

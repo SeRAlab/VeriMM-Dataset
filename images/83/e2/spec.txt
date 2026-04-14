@@ -1,0 +1,12 @@
+Design a programmable synchronous counter module that operates based on an input clock signal. The counter receives valid data indicating the period and number of cycles via `s_axis_tvalid` and `s_axis_tdata`. It keeps track of both the current count within a specified period and the cycle count, allowing the output to refresh when a complete period is reached. The module generates outputs for the current address, cycle index, and flags indicating the first and last cycles. When the period is complete but not all cycles are finished, it sets a valid output signal (`m_axis_tvalid`) to indicate the availability of `m_axis_tdata`, which reflects the latest input data. This design serves to facilitate structured timing control in digital systems, particularly for tasks requiring periodic actions or controlled sequencing.
+module top_module(
+  input clk,
+  input s_axis_tvalid,
+  input [31:0] s_axis_tdata,
+  output reg m_axis_tvalid,
+  output reg [31:0] m_axis_tdata,
+  output reg [PERIOD_WIDTH+1:0] addr,
+  output reg [N_CYCLES_WIDTH-1:0] cycle_index,
+  output reg first_cycle,
+  output reg last_cycle
+);

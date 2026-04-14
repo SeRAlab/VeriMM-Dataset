@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+    
+Implement a module to simulate the behavior of a generic static random-access memory (SRAM) with line enable functionality. Its primary functions include reading from and writing to a memory array based on the input address, data, and control signals. This module is parameterizable, allowing for adjustments in data width and address space to fit various application requirements. It can be utilized in a broader system context as a memory component for storing and retrieving data efficiently, supporting applications ranging from data buffering in communication systems to temporary storage in computational units.
+
+Module name:  
+	generic_sram_line_en
+
+Input ports:
+	i_clk (input): The clock input signal. It is a singlebit signal that drives the timing of read and write operations within the module.
+	i_write_data (input): The data to be written into the memory. It is a vector with a width defined by the DATA_WIDTH parameter, allowing for flexibility in the size of data units the memory can handle.
+	i_write_enable (input): A singlebit control signal that enables the write operation. When high (1), it allows the data present on i_write_data to be written into the memory at the address specified by i_address.
+	i_address (input): The address input, determining the specific memory location to be accessed. It is a vector with a width defined by the ADDRESS_WIDTH parameter, enabling the module to address a range of memory locations as determined by this parameter.
+Output ports:
+	o_read_data (output reg): The data read from the memory. It is a vector with a width defined by the DATA_WIDTH parameter. This output presents the data stored at the memory location specified by i_address unless a write operation is enabled, in which case it outputs zeros.
+
+
+Implementation:
+The generic_sram_line_en module is designed to simulate the behavior of a generic static random-access memory (SRAM) with a line enable feature. It is parameterized to be flexible in terms of data width and address space, making it adaptable to various memory requirements. The module operates on the rising edge of a clock signal (i_clk) and supports both read and write operations based on the input signals. The core logic of the module is encapsulated within an always block that is triggered on the positive edge of the clock.
+Combinational Logic:
+The module uses a conditional operator to determine the output data (o_read_data). If a write operation is enabled (i_write_enable is high), the output data is set to zero. Otherwise, it reads the data from the memory array (mem) at the location specified by the input address (i_address). This ensures that during a write operation, the read output does not reflect the new data being written, which simulates the behavior of some SRAMs that do not allow simultaneous read and write operations to the same address.
+Sequential Logic:
+The memory array (mem) is updated on the rising edge of the clock if the write enable signal (i_write_enable) is high. The data to be written (i_write_data) is stored in the memory location specified by the input address (i_address).
+The module includes an optional initialization block controlled by the INITIALIZE_TO_ZERO parameter. If this parameter is set to 1, the memory array is initialized to zero at the start of the simulation. This is achieved through a generate block that conditionally includes an initial block, which iterates over the entire memory array and sets each location to zero.
+
+Give me the complete code.
+

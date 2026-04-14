@@ -1,0 +1,8 @@
+Design a circuit that processes a 48-bit mantissa input (`mo`) and an 8-bit exponent input (`eo`) to produce a 23-bit mantissa output (`mout`) and an 8-bit exponent output (`eout`). When the enable signal (`EN`) is active, if the most significant bit of the mantissa (`mo[47]`) is set to 1, the output exponent (`eout`) is incremented by one and the mantissa output (`mout`) is derived from bits [46:24] of the input. If the most significant bit is 0, the exponent remains unchanged and the mantissa output is taken from bits [45:23]. When `EN` is not active, the exponent output is reset to zero, and the mantissa output is assigned the least significant 23 bits of `mo`.
+module top_module(
+input [47:0]mo,
+input [7:0] eo,
+output reg [22:0]mout,
+output reg[7:0]eout,
+input EN
+);

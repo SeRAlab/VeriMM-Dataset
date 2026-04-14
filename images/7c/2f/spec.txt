@@ -1,0 +1,6 @@
+Design a circuit that takes a 4-bit input address and produces a 16-bit output address based on that input when the read signal is active. The circuit utilizes a decoder logic to generate a corresponding output signal for each possible 4-bit input value, allowing one-hot encoding of the input, where only one of the 16 bits in the output will be high depending on the value of the input address. When the read signal is inactive, the output is set to high impedance (Z-state).
+module top_module(
+    input io_addr_read,
+    input [3:0] io_addr,
+    output [15:0] d_addr
+    );

@@ -1,0 +1,6 @@
+Design a 64-bit linear feedback shift register (LFSR) counter with asynchronous reset functionality. On the rising edge of the clock, the LFSR generates new values based on feedback from specific bits, creating a pseudorandom output sequence. The output register Q captures a subset of the LFSR's bits, specifically selected to yield a unique configuration, which can be used for applications requiring random number generation or scrambling. When reset, both the LFSR and the output Q are initialized to zero, ensuring a known starting state.
+module top_module(
+  input                clk,
+  input                rst_n,
+  output reg  [63:0]   Q
+);

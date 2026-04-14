@@ -1,0 +1,6 @@
+Design a circuit for receiving serial data via an input signal (rx) and displaying that data on a 4-bit wide output (leds). The module employs a shift register to sample the incoming serial signal at a specific baud rate (115200 bps), capturing a complete data frame of 10 bits. Once the start bit is detected, the subsequent 4 bits of data are stored and transferred to the led output, illuminating the appropriate LEDs corresponding to the received data. This functionality enables visual representation of the received serial input on a set of 4 LEDs.
+module top_module(
+  input clk,
+  input rx,
+  output reg [3:0] leds
+);

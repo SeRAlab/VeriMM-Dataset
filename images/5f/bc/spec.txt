@@ -1,0 +1,6 @@
+Design a 16-bit sign-extending unit that produces a 32-bit output based on the provided 16-bit input (IMEM) and a 6-bit opcode. The module checks if the opcode matches specific instruction types (such as immediate arithmetic and load/store instructions). If there is a match, it sign-extends the higher 16 bits of the output with the sign bit of the input; otherwise, it simply pads the output with zeros in the upper 16 bits. This functionality is essential for preparing immediate values for operations in a wider data path in a digital system.
+module top_module(
+input [15:0]IMEM,
+input [5:0]opcode,
+output [31:0]odata
+    );

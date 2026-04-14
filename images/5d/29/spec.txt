@@ -1,0 +1,10 @@
+Design a control register block that serves as a set of n (4) registers, each w (8) bits wide, with capabilities for writing and reading data. The module operates on clock edges and can be reset asynchronously. When the reset signal is activated, all registers are cleared to zero. If the write enable (wen) signal is high, data from the input (din) is written into the register specified by the selector (sel). Conversely, if the read enable (ren) signal is active, the output (dout) provides the content of the selected register; otherwise, it outputs zero. This module effectively acts as a small memory unit with multi-port access.
+module top_module(
+  input clk,
+  input rst,
+  input wen,
+  input ren,
+  input [w-1:0] din,
+  input [log2_n-1:0] sel, // Updated the input selection based on pre-calculated log2
+  output [w-1:0] dout
+);

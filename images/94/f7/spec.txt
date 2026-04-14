@@ -1,0 +1,8 @@
+Design a pipelined 4-bit signed adder that computes the sum of two 4-bit signed inputs, A and B. The adder utilizes a two-stage pipeline to improve throughput: in the first stage, it calculates the intermediate sum and carry-out based on the inputs; in the second stage, it captures these results on the rising edge of a clock signal, producing the final sum and carry-out outputs. This design enhances performance by allowing subsequent operations to commence while earlier calculations are still being processed.
+module top_module(
+    input signed [3:0] A,
+    input signed [3:0] B,
+    input clk, // Added clock input
+    output signed [3:0] sum,
+    output carry_out
+);

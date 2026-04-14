@@ -1,0 +1,21 @@
+Implement the Verilog module based on the following description.
+Build a 64-bit shift register with synchronous load. The shifter can shift left or right by 1, 8, or 16 bit positions, selected by "amount."
+
+// Signals are defined as below:
+// (1) load: Loads shift register with data[63:0] instead of shifting. Active high.
+// (2) ena: Chooses whether to shift. Active high. 
+// (3) amount: Chooses which direction and how much to shift. 
+//     (a) 3'b000: shift left by 1 bit. 
+//     (b) 3'b001: shift left by 8 bits. 
+//     (c) 3'b010: shift left by 16 bits. 
+//     (d) 3'b100: shift right by 1 bit. 
+//     (e) 3'b101: shift right by 8 bits. 
+//     (f) 3'b110: shift right by 16 bits. 
+// (4) q: The contents of the shifter.
+module top_module(
+    input clk,
+    input load,
+    input ena,
+    input [2:0] amount,
+    input [63:0] data,
+    output reg [63:0] q);

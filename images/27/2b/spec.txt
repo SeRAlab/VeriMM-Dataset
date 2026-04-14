@@ -1,0 +1,9 @@
+
+Create a Verilog module that implements a simple version of the ChaCha20 stream cipher's quarter round function. The quarter round takes 4 32-bit inputs and returns 4 32-bit outputs. The function operates as follows:
+1. Let v0, v1, v2, and v3 be the four input values.
+2. Perform the quarter round transformations as described:
+   - v0 += v1; v3 ^= v0; v3 <<<= 16;
+   - v2 += v3; v1 ^= v2; v1 <<<= 12;
+   - v0 += v1; v3 ^= v0; v3 <<<= 8;
+   - v2 += v3; v1 ^= v2; v1 <<<= 7;
+3. Output the transformed values v0, v1, v2, and v3.

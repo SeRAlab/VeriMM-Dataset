@@ -1,0 +1,13 @@
+Implement a 32-bit register with synchronous reset in Verilog. When reset is active, the register is loaded with the value 0xABABABAB. Otherwise, it retains its current value unless "load" is high, in which case it loads "data[31:0]".
+
+// Signals are defined as below:
+// (1) reset: Synchronous reset signal. Active high.
+// (2) load: Loads register with data[31:0] when high.
+// (3) data: Data input to be loaded into the register.
+// (4) q: The contents of the register.
+module top_module(
+	input clk,
+	input reset,
+	input load,
+	input [31:0] data,
+	output reg [31:0] q);

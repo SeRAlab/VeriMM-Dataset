@@ -1,0 +1,11 @@
+Design a controller for a four-digit seven-segment display decoder. The module takes four 8-bit inputs (dsp0 through dsp3) representing digits to be displayed, and utilizes a 20-bit counter to cycle through these inputs based on the clock signal. The outputs consist of an 8-bit BCD value (BCD) corresponding to the current digit selection based on the counter, and a 4-bit enable signal (BCD_c) that activates the appropriate segment of the display for each input. The state is reset asynchronously with a negative reset signal (rst_n).
+module top_module(
+    input [7:0]dsp0,
+    input [7:0]dsp1,
+    input [7:0]dsp2,
+    input [7:0]dsp3,
+    input clk,
+    output reg [7:0]BCD,
+    output reg [3:0]BCD_c,
+    input rst_n
+    );

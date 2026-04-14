@@ -1,0 +1,12 @@
+Design a dual-port RAM module that supports simultaneous read and write operations. The memory has a configurable depth of 256 words, with each word being 8 bits in width. Two independent write enables allow data to be written to different addresses concurrently. On the rising edge of the clock, if the corresponding write enable signal is active, the incoming data is stored in the specified address. The module also provides separate outputs for reading data from two addresses, allowing for parallel access to the stored information. This design is optimal for applications requiring fast data storage and retrieval in synchronized processes.
+module top_module(
+  input clk,
+  input write_en1,
+  input write_en2,
+  input [ADDR_WIDTH-1:0] addr1,
+  input [ADDR_WIDTH-1:0] addr2,
+  input [width-1:0] data_in1,
+  input [width-1:0] data_in2,
+  output [width-1:0] data_out1,
+  output [width-1:0] data_out2
+);

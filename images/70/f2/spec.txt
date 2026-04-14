@@ -1,0 +1,19 @@
+Design a datapath module that integrates a three-register file, a 16-bit arithmetic logic unit (ALU), and shift functionality for processing data. The module reads values into registers A and B based on control signals, performs arithmetic or logical operations as specified by ALU control inputs, and supports left shifting of register B. It also provides the capability to load results into a separate register C, write data back into the register file, and select outputs from either register A, B, or the ALU result. Status flags are updated based on the outcome of the ALU operations, indicating carry-out or overflow conditions. The design's overall purpose is to facilitate robust data manipulation and processing in a digital system.
+module top_module(
+    input clk,
+    input [2:0] readnum,
+    input vsel,
+    input loada,
+    input loadb,
+    input [1:0] shift,
+    input asel,
+    input bsel,
+    input [1:0] ALUop,
+    input loadc,
+    input loads,
+    input [2:0] writenum,
+    input write,
+    input [15:0] datapath_in,
+    output reg [15:0] datapath_out,
+    output reg status
+);

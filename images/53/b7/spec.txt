@@ -1,0 +1,10 @@
+Design a dual-function arithmetic module that performs either addition or multiplication on two 8-bit input data signals. When the control signal indicates addition, the module computes the sum of the two inputs and presents it as a 16-bit result with the upper 8 bits set to zero. When the control signal indicates multiplication, it computes the product of the inputs. The module also includes a ready output that signals when an operation has been completed, with a reset functionality to initialize all outputs and intermediate results to zero.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] data_in_1,
+    input [7:0] data_in_2,
+    input control_signal,
+    output reg ready_out,
+    output reg [15:0] result_out
+);

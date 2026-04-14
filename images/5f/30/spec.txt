@@ -1,0 +1,10 @@
+Design a custom module that interfaces with a clock and reset signal, taking a 3-bit column input to generate a 4-bit row output, alongside an 'OPEN' signal and a 256-bit wide data output. The module encapsulates a lower-level component called `custom`, which performs the main functionality, while it passes along internal signals for synthesis. Additionally, it includes an 8-bit debug output to facilitate monitoring and troubleshooting.
+module top_module(
+    input RESET,
+    input CLK,
+    input [2:0] COL,
+    output [3:0] ROW,
+    output OPEN,
+    output [255:0] W,
+    output [7:0] DEBUG
+);

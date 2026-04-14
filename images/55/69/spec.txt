@@ -1,0 +1,10 @@
+Develop a module for converting data from a 444 sampling format to a 422 sampling format. The functionality includes sampling the incoming 24-bit data at each clock cycle while maintaining synchronization signals. The module computes average chroma values (Cr and Cb) from the most recent three sets of 24-bit input data and conditionally assigns them to the 422 output data based on the Cr_Cb_N input signal. The output also retains the sync signal from the original input. This design effectively manages the transition between different chroma subsampling formats, facilitating compatibility in video processing systems.
+module top_module(
+  input clk,
+  input s444_de,
+  input [15:0] s444_sync,
+  input [23:0] s444_data,
+  input Cr_Cb_N,
+  output reg [15:0] s422_sync, // Change to reg for assignment in always block
+  output reg [15:0] s422_data  // Change to reg for assignment in always block
+);

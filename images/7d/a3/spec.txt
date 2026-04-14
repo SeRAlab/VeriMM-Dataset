@@ -1,0 +1,16 @@
+Develop a BCD (Binary-Coded Decimal) display control module that manages the selection and display of one out of eight 4-bit BCD digits based on a refresh counter. The module outputs the selected digit through the `ONE_DIGIT` output, which changes according to the value of the `refreshcounter`. Additionally, it indicates the active position of the display with the `position_pointer_now` output, which is set to high when the current `position_pointer` matches the `refreshcounter` under specific state conditions. This design is suitable for driving a multiplexed display system in applications that require digit cycling, such as digital clocks or counters.
+module top_module(
+input [2:0] state,					
+input [3:0] digit1,					
+input [3:0] digit2,					
+input [3:0] digit3,					
+input [3:0] digit4,					
+input [3:0] digit5,					
+input [3:0] digit6,					
+input [3:0] digit7,					
+input [3:0] digit8,					
+input [2:0] position_pointer,		
+input [2:0] refreshcounter,		
+output reg [3:0] ONE_DIGIT = 0,	
+output reg position_pointer_now=0
+);

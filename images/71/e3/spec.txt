@@ -1,0 +1,6 @@
+Design a circuit that counts the number of '1' bits in a 32-bit input value A, producing a 6-bit output B to represent the count. The counting process is performed with a pipeline architecture that utilizes shift registers to sequentially hold previous values of A and the count B across multiple clock cycles. On a positive edge of the clock, if the least significant bit of the most recent stored value of A is '1', the output count B is incremented by one; otherwise, it retains its previous value. This structure allows for efficient counting while managing data dependencies through sequential storage.
+module top_module(
+    input [31:0] A,
+    input clk,          // Added clk signal as input
+    output reg [5:0] B
+);

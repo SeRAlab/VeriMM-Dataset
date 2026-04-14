@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a parameterizable single-port RAM (Random Access Memory). It to store and retrieve data based on the address provided. The module is highly flexible due to its parameterizable address width (`AW`) and data width (`DW`), allowing it to be customized for various storage capacities and data sizes. This makes it suitable for a wide range of applications within digital systems, from simple data buffering to more complex memory storage requirements.
+
+Module name:  
+	aeMB2_sparam
+
+Input ports:
+	adr_i ([AW1:0]): The address input port. It is used to specify the memory location for both read and write operations. The width of this port is determined by the AW parameter, allowing for a variable number of addressable locations.
+	dat_i ([DW1:0]): The data input port. This port is used during write operations to specify the data to be written to the memory location addressed by adr_i. The width of this port is determined by the DW parameter, allowing for variable data sizes.
+	wre_i (1 bit): The write enable input. When high (1), it enables writing the data present on dat_i to the memory location specified by adr_i.
+	clk_i (1 bit): The clock input. This module operates on the rising edge of clk_i, performing read or write operations synchronized with the system clock.
+	ena_i (1 bit): The enable input. This signal is used to enable the module's operation, although its specific functionality is not implemented in the provided code.
+Output ports:
+	dat_o ([DW1:0]): The data output port. It outputs the data stored at the memory location specified by adr_i. The width of this port matches the DW parameter, consistent with the data input width.
+
+
+Implementation:
+The RTL module aeMB2_sparam is designed to function as a parameterizable memory block, with its size and data width being configurable through parameters. This module is capable of both reading from and writing to memory based on input signals, and it operates synchronously with a clock signal. The core logic of the module is divided into combinational and sequential parts, which are described below:
+
+Give me the complete code.
+

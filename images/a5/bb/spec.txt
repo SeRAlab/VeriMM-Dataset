@@ -1,0 +1,11 @@
+Design a forwarding unit that resolves data hazards in a pipelined processor by directing which source registers to use based on write-back control signals. It takes as inputs the register write signals and forwarded register indices from both the Memory and Execute stages. The module outputs two 2-bit control signals, MUXup_o and MUXdown_o. These signals indicate whether to select the data from the Execution, Memory, or to use the value from a previous stage, ensuring the correct values are forwarded to the next stages of the pipeline when register dependencies are detected.
+module top_module(
+    MEMWBRegWrite_i, 
+    EXMEMRegWrite_i, 
+    MEMforward_i, 
+    EXMEMforward_i, 
+    IDEX1_i,
+    IDEX2_i,
+    MUXup_o,
+    MUXdown_o
+);

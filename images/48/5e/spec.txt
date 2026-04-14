@@ -1,0 +1,8 @@
+Design a circuit that performs a variable-width, bidirectional bit shift on an 8-bit input data. The module accepts an 8-bit input (`data_in`), a 3-bit shift amount (`shift_amt`), and a direction control signal (`shift_dir`). When `reset` is activated, the output (`data_out`) is set to zero. If not reset, the circuit shifts the input to the left when `shift_dir` is high, or to the right when it is low, with the specific number of positions determined by `shift_amt`.
+module top_module(
+    input [7:0] data_in,
+    input [2:0] shift_amt,
+    input shift_dir,
+    input reset,
+    output reg [7:0] data_out
+);

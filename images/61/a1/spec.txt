@@ -1,0 +1,7 @@
+Design a synchronous delay logic circuit that generates an output signal based on a configurable delay when a 'ready' signal transitions high. The module monitors the input 'x' and, upon a rising edge of 'ready', captures its value and begins a countdown using a counter. If 'x' remains high during this countdown period specified by DELAY_CYCLES, the output 'y' is set high; otherwise, it is reset to low after the delay. The module ensures that if 'ready' goes low at any point, the output and counter are both reset, effectively controlling the timing of the output signal based on the input conditions.
+module top_module(
+    input clock,
+    input ready,
+    input x,
+    output reg y
+);

@@ -1,0 +1,12 @@
+Design a synchronous SPI module that reads data from an input port based on a specified address and outputs it in the `readdata` signal. The module features a reset mechanism that initializes the output to zero when the reset input is inactive. It utilizes a 2-to-1 multiplexer to select the data input based on the address, specifically outputting data from `in_port` when the address is zero. The reading is synchronized with the clock signal, enabling it to capture the data on rising clock edges when not in reset.
+module top_module(
+                        
+                         address,
+                         clk,
+                         in_port,
+                         reset_n,
+
+                        
+                         readdata
+                      )
+;

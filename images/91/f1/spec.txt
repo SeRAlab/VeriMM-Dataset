@@ -1,0 +1,13 @@
+Implement a 1-to-8 demultiplexer, where a 32-bit input signal is routed to one of eight 32-bit output lines based on the 8-bit selection input. For each value of the `select` input ranging from 0 to 7, the corresponding output will carry the input signal, while all other outputs will be driven to zero. If the `select` input is outside this range, all outputs will be set to zero, effectively isolating the selected output channel from the input.
+module top_module(
+    input [7:0] select,
+    input [31:0] in,
+    output reg [31:0] out0,
+    output reg [31:0] out1,
+    output reg [31:0] out2,
+    output reg [31:0] out3,
+    output reg [31:0] out4,
+    output reg [31:0] out5,
+    output reg [31:0] out6,
+    output reg [31:0] out7
+);

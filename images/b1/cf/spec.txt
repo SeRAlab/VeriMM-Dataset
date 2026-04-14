@@ -1,0 +1,7 @@
+Design a module that performs saturation processing on a 210-bit input. The circuit takes an input signal and, based on the availability of a 'ready' signal, processes the input in 21-bit segments. If an input segment exceeds the value of 127, it saturates the output for that segment to 255 (8'b01111111); otherwise, it outputs the lower 8 bits of the segment. The module also manages a 'Rdy' output, indicating when the processing is complete, and resets this output when a 'received' signal is asserted.
+module top_module(
+    input received,input[0:209] in,
+    input ready,
+    output reg[0:79] out,
+     output reg Rdy
+    );

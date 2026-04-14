@@ -1,0 +1,9 @@
+Design a 4-bit shift register with load and reset capabilities. On each clock cycle, if the reset signal is active, the register is cleared to zero. If the load signal is high, the register is loaded with the provided 4-bit input data. If neither of those conditions is met, the register shifts left by one bit, introducing a zero on the least significant bit while preserving the most significant bits. The most recent value of the shift register is available at the output.
+module top_module(
+  input clk,
+  input load,
+  input [3:0] data_in,
+  input shift_in,
+  input reset,
+  output [3:0] data_out
+);

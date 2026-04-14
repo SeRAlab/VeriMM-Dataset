@@ -1,0 +1,9 @@
+Design a traffic light controller that manages the state of a traffic light system using a finite state machine. The circuit generates outputs for red, yellow, and green lights based on the clock signal and pedestrian button input. It initializes to the red light on reset and transitions through the states of red, yellow, green, and yellow for pedestrians appropriately. The controller ensures that when the pedestrian button is pressed, the system transitions to a state that allows safe crossing while managing the light sequence efficiently.
+module top_module(
+  input clk,
+  input reset,
+  input pedestrian_button,
+  output reg red_light,
+  output reg yellow_light,
+  output reg green_light
+);

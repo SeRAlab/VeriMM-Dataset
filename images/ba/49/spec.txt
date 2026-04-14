@@ -1,0 +1,8 @@
+Create a circuit that reverses the bits of an 8-bit input data when a specific control signal is reached. The module operates on the rising edge of the clock and resets to zero when the reset input is activated. A counter tracks the number of clock cycles, and when it matches the value specified by the control input, the 8-bit data is reversed from its original order and held until the next reset or until the control count is reached again. The output is continuously updated to reflect the reversed data once the conditions are met.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data_in,
+  input [3:0] control,
+  output [7:0] data_out
+);

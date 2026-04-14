@@ -1,0 +1,7 @@
+Design a 32-bit shifter module that performs different types of shifting operations based on the specified shift_type input. The module takes a 32-bit input and a 5-bit shift_amount to determine how many positions to shift. It supports logical left shift, logical right shift, arithmetic left shift (sign-extended), and arithmetic right shift (sign-extended). The output is the resulting shifted value, allowing for versatile data manipulation suitable for arithmetic or bitwise operations in digital circuits.
+module top_module(
+  input [31:0] in,
+  input [4:0] shift_amount,
+  input [1:0] shift_type,
+  output reg [31:0] out  // Changed to reg to allow assignment in always block
+);

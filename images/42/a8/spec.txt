@@ -1,0 +1,7 @@
+Design a 4-bit shift register that operates on the rising edge of the clock signal. It allows loading a 4-bit input (data_in) into the register when the load signal is asserted. If the load signal is not asserted, the register performs a circular right shift, moving the least significant bit (LSB) to the most significant bit (MSB) position while shifting the other bits to the right. The output is updated after each clock cycle, providing serialized data output based on the current state and load condition.
+module top_module(
+    input clk,
+    input [3:0] data_in,
+    input load,
+    output reg [3:0] data_out
+);

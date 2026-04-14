@@ -1,0 +1,8 @@
+Design a data queue module that supports enqueue and dequeue operations for 32-bit wide data. The module has inputs for a clock, reset, write enable, and a dequeue signal, along with a 32-bit data input and address for storage. It stores data in a circular buffer with a maximum size of 64 entries and tracks the head and tail pointers of the queue. On a write enable signal, it adds data to the specified address and updates the count of queued items. On dequeue, it outputs the data at the current tail position, acknowledges the transaction, and updates the tail pointer circularly. The system resets its state when the reset signal is activated.
+module top_module(
+    input clk, rst, we_i, tx_pop_i,
+    input [31:0] data_i, addr_i,
+    output reg [31:0] data_o,
+    output reg tx_ack_o,
+    output reg [5:0] queued_ff
+);

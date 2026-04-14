@@ -1,0 +1,35 @@
+Please act as a professional Verilog designer.
+
+Implement a module for a 4-bit shift register with parallel load and right shift capabilities. The shift register should load the input data when `load` is asserted and shift right on each positive edge of `clk` when `load` is not asserted.
+
+Module name:
+    shift_register
+
+Input ports:
+    clk: Clock signal.
+    rst: Reset signal (active high).
+    load: Load signal for parallel data input.
+    data_in: 4-bit parallel input data.
+    serial_in: Serial input bit for right shift.
+
+Output ports:
+    q: 4-bit output representing the current register value.
+
+Implementation:
+Declare the module `shift_register` with input and output ports as specified in the ports statement.
+Declare a 4-bit register `q` to store the shift register value.
+Inside an always block, sensitive to the positive edge of the `clk` signal, implement the logic for shifting and loading.
+If `rst` is asserted, reset the `q` register to 0.
+If `load` is asserted, load the `q` register with `data_in`.
+Otherwise, shift the `q` register right and load the MSB with `serial_in`.
+
+Give me the complete code.
+
+module shift_register(
+    input clk,
+    input rst,
+    input load,
+    input [3:0] data_in,
+    input serial_in,
+    output reg [3:0] q
+);

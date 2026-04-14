@@ -1,0 +1,14 @@
+Design a dual-input switching circuit with a register to store and output data. This module captures data from two 2-bit input sources based on the select lines (sel0 and sel1) when a request signal (req) is asserted. The selected input data is then latched into internal storage and outputted as two separate signals (q0 and q1) on the next clock edge. Additionally, the module generates an acknowledgment signal (ack) confirming that the request has been processed. The design effectively functions as a controlled multiplexer with registered outputs for sequential data handling.
+module top_module(
+    input in1_0,
+    input in1_1,
+    input in2_0,
+    input in2_1,
+    input sel0,
+    input sel1,
+    output reg q0,
+    output reg q1,
+    input req,
+    output reg ack,
+    input clk // Added clk as an input to resolve errors
+);

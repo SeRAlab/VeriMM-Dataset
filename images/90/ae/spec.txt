@@ -1,0 +1,9 @@
+Design a digital circuit that determines the maximum of two 32-bit input values, 'ain' and 'bin', upon receiving a clock signal. The module outputs the greater value as 'result' and keeps track of how many times the result changes using a 'statistic' register, which is incremented on every change. The circuit also incorporates an asynchronous reset functionality that initializes the output to zero and sets the statistic register's upper bits to a fixed value while clearing the lower bits. This design serves as a maximum value comparator with a change counter.
+module top_module(
+	input                     clk      ,
+	input                     rst      ,
+	input      [31:0]         ain      ,
+	input      [31:0]         bin      ,
+	output reg [31:0]         result   ,
+	output reg [31:0]         statistic 
+);

@@ -1,0 +1,13 @@
+Design a two-entry FIFO (First In, First Out) buffer that allows for simultaneous read and write operations. The buffer is clock-driven, where data can be written when not full and read when not empty. It includes control signals for `almost_empty`, `almost_full`, `empty`, and `full` indicators to monitor its status. The module uses two 8-bit wide storage entries to hold data and manages read and write pointers along with a count of active entries to facilitate proper data flow. The design supports asynchronous reset to clear internal states.
+module top_module(
+    input clk,
+    input rd,
+    input reset_n,
+    input wr,
+    input [7:0] wr_data,
+    output almost_empty,
+    output almost_full,
+    output empty,
+    output full,
+    output reg [7:0] rd_data
+);

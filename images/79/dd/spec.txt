@@ -1,0 +1,7 @@
+Design a digital potentiometer circuit that adjusts a 7-bit resistance value based on an Up_Down control signal and an 8-bit Data input. The resistance_value increments or decrements by one unit on each rising edge of the CLK signal, depending on the state of Up_Down. Additionally, the circuit limits the resistance_value to stay within the bounds of 0 to 100. The final resistance value is output as a 7-bit signal, allowing for precise adjustments in applications such as volume control or signal attenuation.
+module top_module(
+  input Up_Down,
+  input CLK,
+  input [7:0] Data,
+  output reg [6:0] Resistance
+);

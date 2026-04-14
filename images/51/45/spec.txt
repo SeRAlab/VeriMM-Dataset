@@ -1,0 +1,10 @@
+Design a logic circuit that generates four output signals based on the states of two input control signals (captnupdt and shiftnld). The outputs are mainclk, updateclk, capture, and update. When captnupdt is high (1) and shiftnld is low (0) or both are high, mainclk is set to LOW, updateclk follows the clock input, capture is HIGH, and update is LOW. When captnupdt is low (0) and shiftnld is high (1), mainclk remains LOW, updateclk follows the clock, while capture and update are both LOW. If both inputs are LOW, mainclk takes the value of the clock input, updateclk goes LOW, capture is LOW, and update is set to HIGH.
+module top_module(
+    input clk,
+    input shiftnld,
+    input captnupdt,
+    output mainclk,
+    output updateclk,
+    output capture,
+    output update
+);

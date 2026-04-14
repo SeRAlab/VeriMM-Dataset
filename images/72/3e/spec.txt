@@ -1,0 +1,4 @@
+Design a scaling circuit for screen coordinates. This module takes a vertical position input (vp) and a horizontal position input (hp) along with a clock and reset signal, and outputs scaled vertical (vpos) and horizontal (hpos) position values by removing the lowest SCALE bits from the original inputs. The module effectively reduces the resolution of the screen coordinates, allowing for simplified coordinate handling in applications that require lower resolution outputs.
+module top_module(input clk, input reset, 
+                   input [$clog2(HEIGHT)-1:0] vp, input [$clog2(WIDTH)-1:0] hp,
+                   output [$clog2(HEIGHT)-SCALE:0] vpos, output [$clog2(WIDTH)-SCALE:0] hpos);

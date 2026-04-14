@@ -1,0 +1,9 @@
+Design a 32-entry register file that supports reading and writing 32-bit data. It has two read ports that output the contents of the registers specified by input signals readReg1 and readReg2. On the rising edge of the clock, if writeEnable is asserted, it writes the 32-bit writeData into the register specified by writeReg. This module facilitates concurrent read and write operations for registers in digital systems, making it useful for register storage in processor architectures.
+module top_module(
+	input [4:0] readReg1, readReg2,
+	input [4:0] writeReg,
+	input clk,
+	input writeEnable,
+	input [31:0] writeData,
+	output [31:0] data1, data2
+);

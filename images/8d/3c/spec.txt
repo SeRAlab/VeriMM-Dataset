@@ -1,0 +1,9 @@
+Design a synchronous state machine with six defined states (A to F) that transitions based on the input signal `x` and a system clock. On each rising edge of the clock, the machine resets to state A if the reset signal is active; otherwise, it transitions to the next state determined by the current state and the value of `x`. The output signals, Y2 and Y4, are derived from the states, specifically indicating the second and fourth bits of the current state value. This design can be utilized for controlling processes or sequences based on the state encoding and input conditions, making it suitable for applications that require stateful behavior.
+module top_module(
+  input clk,
+  input reset,
+  input x,
+  input [5:0] y,
+  output Y2,
+  output Y4
+);

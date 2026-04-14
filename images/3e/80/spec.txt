@@ -1,0 +1,5 @@
+
+Create a simple SPI controller in Verilog that interfaces with a master device. The controller should have the following inputs and outputs:
+- Input: clk (clock signal), reset (active high reset), mosi (Master Out Slave In), miso (Master In Slave Out), ss (Slave Select, active low).
+- Output: data_out (data received from the master), data_ready (asserted high when data is available).
+The SPI controller should sample the MOSI line on the rising edge of the clock when SS is low, and shift the received bits into a register. When 8 bits are received, the data_ready output should be asserted high for one clock cycle.

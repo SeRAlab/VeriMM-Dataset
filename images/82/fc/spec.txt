@@ -1,0 +1,14 @@
+Design a set-reset flip-flop (SR flip-flop) that captures input data on the rising edge of the clock (CLK) and provides an output (Q) and its complement (Q_N). This module includes asynchronous set and clear functionality through the SET_B, SCD, and SCE inputs, allowing for immediate state control regardless of the clock signal. The flip-flop is powered and grounded through external voltage supply pins (VPWR, VGND, VPB, VNB), ensuring proper operation within a specified voltage range. The overall purpose is to store binary data with additional capability for predefined resetting and setting states.
+module top_module(
+    output Q,
+    output Q_N,
+    input CLK,
+    input D,
+    input SCD,
+    input SCE,
+    input SET_B,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB
+);

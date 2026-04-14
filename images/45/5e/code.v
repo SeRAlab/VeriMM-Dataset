@@ -1,0 +1,13 @@
+module adder_8bit(
+    input [7:0] a,
+    input [7:0] b,
+    input cin,
+    output reg [7:0] sum,
+    output reg cout
+);
+
+always @(*) begin
+    {cout, sum} = a + b + cin;
+end
+
+endmodule

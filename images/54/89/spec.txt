@@ -1,0 +1,6 @@
+Design a complex opcode decoder that takes an 8-bit opcode input and a 16-bit flags input to produce a 5-bit output based on the specified mappings in the case statement. Each opcode corresponds to a specific output value, with certain outputs being contingent upon the state of specific bits in the flags input, allowing for conditional decoding. The module provides a default output for unmapped opcodes, ensuring a defined behavior for all potential input cases.
+module top_module(
+		input wire	[7:0] opcode,
+		input wire	[15:0] flags,
+		output reg	[4:0] op_decoder_out
+	);

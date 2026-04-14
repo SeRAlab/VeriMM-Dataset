@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+
+Implement an 8-bit parallel load register module that can load data when a load signal is asserted. The data should be loaded on the rising edge of the clock signal.
+
+Module name:
+    parallel_load_register
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    load: Load signal to control the loading of data into the register.
+    data_in: 8-bit input data to be loaded into the register.
+
+Output ports:
+    data_out: 8-bit output representing the current value of the register.
+
+Implementation:
+The module includes an 8-bit register, data_out, which is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the data_out register is cleared to 0.
+On every rising edge of the clock, if the load signal is asserted (load == 1), the data_in value is loaded into the data_out register.
+
+Give me the complete code.

@@ -1,0 +1,9 @@
+Design a circuit that performs 8-bit addition or subtraction based on a control signal. When the SUB input is high, the module calculates the difference between two 8-bit inputs, A and B, while managing the carry-out condition; otherwise, it computes the sum of A and B. The result is updated on each rising edge of the clock signal (CLK), and the output provides both the 8-bit result (SUM) and a carry out indicator (CARRY_OUT) to signal overflow during either operation.
+module top_module(
+    input [7:0] A,
+    input [7:0] B,
+    input SUB,
+    input CLK,
+    output reg [7:0] SUM,
+    output reg CARRY_OUT
+);

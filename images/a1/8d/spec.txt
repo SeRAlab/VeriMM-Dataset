@@ -1,0 +1,12 @@
+Design a shift register module that captures and shifts input data on a clock signal. The module consists of an 8-bit shift register that can operate in different modes based on control signals. When the clock enable (CLKEN) is active, data from the Test Data Input (TDI) or a separate DATA_IN is shifted into the register on the negative edge of the clock, depending on whether the Capture Data Register (CAPTURE_DR) signal is low. The output (TDO) reflects the last bit shifted into the register. Additionally, when the Update Data Register (UPDATE_DR) signal is high, the contents of the shift register are outputted to DATA_OUT. The design includes asynchronous reset capabilities with a negative reset signal (RESET_N) that initializes the register and output to zero.
+module top_module(
+      input CLK,
+      input RESET_N,
+      input CLKEN,
+      input TDI,
+      output TDO,
+      output reg [7:0] DATA_OUT,
+      input DATA_IN,
+      input CAPTURE_DR,
+      input UPDATE_DR
+   );

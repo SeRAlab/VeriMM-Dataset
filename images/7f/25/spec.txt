@@ -1,0 +1,9 @@
+Design a synchronous circuit that processes incoming asynchronous data signals. This module captures 4-bit asynchronous input data, generates acknowledgment signals, and produces a 2-bit output (sync_data) along with a synchronization enable signal (sync_en). The acknowledgment (async_ack) is asserted when a specific condition is met based on the input data, indicating valid data receipt. The circuit also handles reset conditions to initialize or clear outputs and tracks rising edges of an asynchronous request and specific signal patterns for proper data synchronization.
+module top_module(
+    input  wire         clk,
+    input  wire         reset,
+    input  wire  [3:0]  async_data,
+    output reg          async_ack,
+    output reg   [1:0]  sync_data,
+    output reg          sync_en
+);

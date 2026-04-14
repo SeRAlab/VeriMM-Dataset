@@ -1,0 +1,7 @@
+Design a circuit that performs signed modulo division. The module takes two signed 32-bit inputs, `a` and `b`, and produces a signed 32-bit output `result` representing the remainder of `a` divided by `b`. It also outputs an `error` signal that indicates if a division by zero has occurred (when `b` equals zero). If `b` is not zero, the result is computed, ensuring that the result is non-negative by adjusting it if necessary.
+module top_module(
+  input signed [31:0] a,
+  input signed [31:0] b,
+  output reg signed [31:0] result, // Change wire to reg for always block
+  output error
+);

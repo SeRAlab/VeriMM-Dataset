@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement a module for a 4-bit shift register with serial input and parallel output. The shift register shifts its contents to the left on each positive clock edge and shifts in a new bit from the serial input. The module also has a reset signal that clears the register to 0 when asserted.
+
+Module name:  
+    shift_register_4bit      
+
+Input ports:
+    clk: Clock signal.
+    rst: Reset signal (active high).
+    serial_in: Serial input bit.
+
+Output ports:
+    parallel_out: 4-bit parallel output.
+
+Implementation:
+The shift_register_4bit module shifts its contents to the left on each positive edge of the clock signal clk. The new bit shifted in from the left is the serial input serial_in. When the reset signal rst is asserted, the register is cleared to 0. The parallel output is a 4-bit wide signal representing the current contents of the shift register.
+
+Give me the complete code.
+
+module shift_register_4bit(
+    input clk,
+    input rst,
+    input serial_in,
+    
+    output reg [3:0] parallel_out
+);

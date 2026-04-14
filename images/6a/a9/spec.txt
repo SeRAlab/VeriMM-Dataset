@@ -1,0 +1,8 @@
+Design a button interrupt module that generates an interrupt signal based on button presses while managing state changes. The module utilizes a clock and reset signal, where the `intr` output is asserted when the button is pressed and not previously asserted, as well as when the external `inta` signal indicates an active state. The register `old_but` keeps track of the previous button state to detect rising edges of the button press. Upon reset, the interrupt signal is cleared to LOW.
+module top_module(
+    input      clk,
+    input      rst,
+    input      but_,
+    output reg intr,
+    input      inta
+  );

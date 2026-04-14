@@ -1,0 +1,9 @@
+Design a shift register capable of performing left shift operations. The module accepts a clock signal, reset input, load signal, and shift signal, along with an 8-bit input data. Upon reset, it initializes the internal storage stages to zero. When the load signal is active, it captures the input data into the first stage, while the second stage holds the previous value of the first stage. When the shift signal is active, it performs a left logical shift on the data from the second stage, updating the first stage with this shifted value, while the second stage is updated with the original first stage value. The output provides the current value of the first stage.
+module top_module(
+    input clk,
+    input rst,
+    input load,
+    input shift,
+    input [7:0] input_data,
+    output reg [7:0] output_data
+);

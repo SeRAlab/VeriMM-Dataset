@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) for detecting a specific 4-bit sequence (1010) in a data input stream. The FSM operates on a clock signal and includes a reset function to initialize its state and output. When the input data matches the target sequence, the output 'match' is asserted. The FSM uses a shift register to store incoming data and transitions through states A, B, C, and D based on the detected sequence, effectively monitoring for sequential occurrences of the 4-bit pattern while remaining responsive to a reset signal.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] data,
+  output reg match
+);

@@ -1,0 +1,9 @@
+Design a synchronous memory block with a data width of 8 bits and an address width of 16 bits, supporting read and write operations. The module uses a clock signal for timing; when enabled (en), it updates the address register with the provided address (addr) on the rising edge of the clock. If the write enable signal (we) is active, it writes the input data (din) to the memory. The output (dout) updates with the data read from memory (douta) when enabled. This functionality allows the memory block to act as a simple RAM interface in a digital system.
+module top_module(
+    input clk,
+    input en,
+    input we,
+    input [15:0] addr,
+    input [7:0] din,
+    output reg [7:0] dout
+);

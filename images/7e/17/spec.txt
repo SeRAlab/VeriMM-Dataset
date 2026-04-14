@@ -1,0 +1,8 @@
+Design a binary search module that iteratively searches for a specified 8-bit target value within a sorted array of 100 8-bit elements. The search process is clock-driven and resets upon receiving a reset signal. It maintains two pointers, `low` and `high`, to track the current range of the search, updating these pointers based on comparisons with the middle element of the current range. When the target is found, the corresponding index is output; if the target is not found or the search range is exhausted, an index of -1 is returned. This module effectively implements a binary search algorithm in hardware.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] target,
+  input [99:0] sorted_array,
+  output reg [6:0] index
+);

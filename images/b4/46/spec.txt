@@ -1,0 +1,5 @@
+Design a clock gating circuit that selectively enables the clock signal based on specific control inputs. The module has inputs for a clock (CLK), an enable signal (EN), and a test enable signal (TE). It generates an output (ENCLK) that reflects the gated clock, which is passed only when either the enable (EN) or test enable (TE) signals are active. If neither control signal is activated, the output will be low. The behavior of the output is determined during the rising edge of the clock, ensuring that the gated clock only propagates through when enabled.
+module top_module(
+  input CLK, EN, TE,
+  output reg ENCLK  // Changed to reg type
+);

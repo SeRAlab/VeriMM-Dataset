@@ -1,0 +1,26 @@
+Design a circuit module for a clamping mechanism that processes inputs related to texture coordinates and dimensions while managing data flow through a pipe interface. The circuit takes in clock and reset signals, along with various input parameters including delta values (dx, dy) and texture coordinates (tx, ty). It generates a control output (pipe_stb_o) to indicate whether the module is busy and manages acknowledgment signals between the input and output pipes. The coordinates and texture values are clamped to stay within specified resolution boundaries, ensuring no out-of-bounds values are passed on. This module is primarily used in digital graphics or image processing applications where coordinate clamping is essential for proper rendering.
+module top_module(
+    input sys_clk,
+    input sys_rst,
+
+    output busy,
+
+    input pipe_stb_i,
+    output pipe_ack_o,
+    input signed [11:0] dx,
+    input signed [11:0] dy,
+    input signed [17:0] tx,
+    input signed [17:0] ty,
+
+    input [10:0] tex_hres,
+    input [10:0] tex_vres,
+    input [10:0] dst_hres,
+    input [10:0] dst_vres,
+
+    output reg pipe_stb_o,
+    input pipe_ack_i,
+    output reg [10:0] dx_c,
+    output reg [10:0] dy_c,
+    output reg [16:0] tx_c,
+    output reg [16:0] ty_c
+);

@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+
+Implement an 8-bit Johnson counter. The module operates on the rising edge of the clock signal "clk" and uses a synchronous design. The Johnson counter cycles through a unique sequence of 8-bit values by shifting and inverting its bits.
+
+Module name:  
+    johnson_counter_8bit
+
+Input ports:
+	clk: Clock signal.
+	rst_n: Reset signal (active low).
+
+Output ports:
+	johnson_out: 8-bit Johnson counter output.
+
+Implementation:
+The module should shift the register value to the right on each clock cycle, with the new bit being the inverted version of the most significant bit. When the reset signal is asserted, the Johnson counter should reset to zero.
+
+Give me the complete code.
+
+module johnson_counter_8bit(
+	input clk,
+	input rst_n,
+	output reg [7:0] johnson_out
+);

@@ -1,0 +1,12 @@
+The module implements a control unit for handling completion signaling and error reporting in a transaction system. It features a reset and clock input to manage state transitions, acknowledges incoming transaction signals, and tracks completion status over a designated time period (50ms). The module counts up to a specific threshold while transactions are pending and resets upon transaction acknowledgment or when no pending transactions exist. Additionally, it generates an error signal if the completion counter reaches a certain value, while providing status outputs for error type and an error description that defaults to zero. Overall, it serves as a state machine to monitor transaction completions and potential errors in a DMA (Direct Memory Access) environment.
+module top_module(
+  input rstn,
+  input clk_in,
+  input tx_ack0,
+  input [127:0] tx_desc0,
+  input cpl_pending_dmawr,
+  input cpl_pending_dmard,
+  output reg [6:0] cpl_err,
+  output reg [127:0] err_desc,
+  output reg cpl_pending
+);

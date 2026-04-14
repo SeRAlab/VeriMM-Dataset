@@ -1,0 +1,9 @@
+Design a circuit that functions as a rotational encoder with priority encoding and barrel shifting capabilities. It takes an 8-bit input signal and a 100-bit data input and outputs an 8-bit result based on the configuration of the enable signal (ena) and the clock. When 'load' is asserted, it initializes the shifted data from the input data. The barrel shifter will rotate the 100-bit data left or right, depending on the enable signal, while a priority encoder determines which bit is the highest active signal in the 8-bit input. The output combines values from the shifted data and input based on the result of the priority encoder, effectively enabling complex data manipulation and encoding operations.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [7:0] in,
+    input [99:0] data,
+    output reg [7:0] out
+);

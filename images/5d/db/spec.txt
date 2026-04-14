@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+
+Implement a 3-bit binary counter with enable and asynchronous reset. The counter should increment its value on the rising edge of the clock signal when the enable signal is active and reset to zero when the reset signal is active.
+
+Module name:
+    binary_counter_3bit
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    en: Enable signal used to enable counting.
+
+Output ports:
+    q: 3-bit output of the counter, reflecting the current count value.
+
+Implementation:
+The module includes a 3-bit register, q, which is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the q register is cleared to 0.
+On every rising edge of the clock, if the enable signal is active, the value of q is incremented by 1.
+
+Give me the complete code.

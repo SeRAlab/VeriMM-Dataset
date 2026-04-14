@@ -1,0 +1,7 @@
+Design a circuit that implements a combination of a parallel-in serial-out (PISO) shift register and a 3-bit shift register. On each positive clock edge, the 3-bit shift register updates to include a new bit from the 2-bit input, effectively shifting its contents left. Simultaneously, on each negative clock edge, the PISO shift register captures 8 input bits and shifts them out to produce a serial output. The final output is a concatenation of the contents of both registers, producing an 11-bit wide output signal.
+module top_module(
+    input clk,
+    input [2:0] in,
+    input [7:0] d,
+    output [10:0] q
+);

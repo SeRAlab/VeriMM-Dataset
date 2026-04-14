@@ -1,0 +1,11 @@
+Design a circuit that functions as a 4-bit up-counter with parallel load capability and an asynchronous reset. When the reset signal is asserted high, the counter initializes to the value 8 (binary 1000). If the load signal is high, the counter loads a new 4-bit value provided at the 'load_value' input. Otherwise, the counter increments its value on each rising edge of the clock. Additionally, the module incorporates an output signal derived from a logic configuration that outputs the result of an AND operation on two inputs (a and b), implemented entirely using NAND gates, showcasing a combination of sequential and combinational logic elements within a single unit.
+module top_module(
+    input clk,
+    input reset,      // Asynchronous active-high reset
+    input load,       // Active-high parallel load input
+    input [3:0] load_value, // 4-bit load value
+    input a, 
+    input b,
+    output wire out,
+    output [3:0] q // 4-bit output from the counter
+);

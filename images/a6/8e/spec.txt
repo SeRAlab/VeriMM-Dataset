@@ -1,0 +1,10 @@
+Design a synchronous RAM module with a 10-bit address space and a 16-bit data width. The module features a data input (data) for writing, an output (q) for reading, and control signals including write enable (wren) and clock enable (clken). It supports byte-level access through a 2-bit byte enable (byteena) indicating which byte of the 16-bit word to modify. On each clock cycle, if the clock enable is asserted, the module writes data to the specified address when write enable is active, and provides the data stored at that address as output. This implementation allows for flexible data storage and retrieval within the RAM, suitable for various digital applications.
+module top_module(
+    address,
+    byteena,
+    clken,
+    clock,
+    data,
+    wren,
+    q
+);

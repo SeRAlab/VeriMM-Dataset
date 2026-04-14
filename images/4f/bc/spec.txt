@@ -1,0 +1,6 @@
+Design a 16-entry register file that operates on 8-bit wide data. It features two read ports and one write port, allowing simultaneous read operations on registers indexed by ra1 and ra2, while enabling data writing to the register indexed by wa3 upon receiving a write enable signal (we3) on the rising edge of the clock. If ra1 or ra2 corresponds to the zero register (index 0), the read output will yield a constant zero, ensuring zero cannot be overwritten.
+module top_module(input  wire        clk, 
+               input  wire        we3,           
+               input  wire [3:0]  ra1, ra2, wa3, 
+               input  wire [7:0]  wd3, 			 
+               output wire [7:0]  rd1, rd2);

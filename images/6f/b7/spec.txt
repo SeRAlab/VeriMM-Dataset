@@ -1,0 +1,12 @@
+Design a bank of 32 registers that can read and write 32-bit data. The module facilitates the selection of two registers for output based on their respective indices, `RegLe1` and `RegLe2`, which provide `data1` and `data2` outputs. On a rising clock edge, if the `reset` signal is high, the registers are initialized with predefined values. If `reset` is low, writing is performed to the register specified by `RegEscr`, provided that `EscrReg` is asserted, enabling dynamic data input via `datain`. This functionality enables basic register file operations typically required in a processor or digital system.
+module top_module(
+    input [4:0] RegLe1,
+    input [4:0] RegLe2,
+    input [4:0] RegEscr,
+    input EscrReg,
+    input clk,
+    input [31:0] datain,
+    output wire [31:0] data1,
+    output wire [31:0] data2,
+    input reset
+    );

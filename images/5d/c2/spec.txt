@@ -1,0 +1,8 @@
+Design a 16-bit wide, 128-word random access memory (RAM) module with read and write capabilities. The module is controlled by a clock signal and two enable signals: `read_en` and `write_en`. When `write_en` is asserted and `read_en` is deasserted, the data input (`din`) is stored at the specified address (`addr`). Conversely, when `read_en` is asserted and `write_en` is deasserted, the data from the specified address is output (`dout`). This design effectively allows for concurrent memory operations, providing basic read and write functionalities based on the input control signals.
+module top_module(
+  input          clk,
+  input          read_en,
+  input          write_en, 
+  input  [6:0]   addr,
+  input  [15:0]  din,
+  output [15:0]  dout);

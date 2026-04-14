@@ -1,0 +1,7 @@
+Design a 16-to-4 priority encoder that accepts a 16-bit input and produces a 4-bit output based on the highest-order active input bit. When the enable signal is asserted, the module scans the input bits from the highest to the lowest; if an active input is detected, the corresponding output binary value is set, representing the position of that input. If no inputs are active, the output is set to an undefined state. Additionally, the `select` output indicates if any input is active when enabled, providing a high signal if at least one input is asserted. When disabled, the output is tri-stated.
+module top_module(
+	input wire enable,
+	input wire[15:0] in,
+	output reg[3:0] out,
+	output wire select
+);

@@ -1,0 +1,8 @@
+Design a circuit that functions as an 8-bit wide selectable arithmetic unit. It offers two operations: a bitwise XOR and an addition, based on the control signal `sel`. When `sel` is 0, the output `s` is the result of the XOR operation between inputs `a` and `b`. When `sel` is 1, `s` becomes the sum of `a` and `b`, using a two's complement adder that can indicate a carry out, which reflects an overflow condition. The output `overflow` signifies if the addition operation generated a carry, while it remains low during XOR operations.
+module top_module(
+    input [7:0] a,
+    input [7:0] b,
+    input sel,
+    output [7:0] s,
+    output overflow
+);

@@ -1,0 +1,9 @@
+Design a 4-to-1 multiplexer for selecting a next program counter (NPC) value based on a 2-bit selection input (npcsrc). The module outputs the result for npc based on the selected source: when npcsrc is 00, it outputs npc4; when npcsrc is 01, it outputs npcb; when npcsrc is 10, it outputs npcj; and for 11, it outputs npcjr. This design is essential for directing the flow of control in a processor by choosing between different potential next address values based on program requirements.
+module top_module(
+	 input [1:0] npcsrc,
+	 input [31:0] npc4,
+	 input [31:0] npcb,
+	 input [31:0] npcj,
+	 input [31:0] npcjr,
+	 output [31:0] npc
+    );

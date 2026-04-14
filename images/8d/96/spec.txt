@@ -1,0 +1,5 @@
+Design a circuit for synchronizing a single primary input signal with an external SPI clock signal. This module takes a primary input and produces two synchronized outputs. The first output, `scndry_out`, is generated through a two-stage flip-flop arrangement that ensures proper synchronization with the external clock, effectively mitigating any metastability issues. The second output, `scndry_out2`, is a registered copy of the first output clocked on the rising edge of the external SPI clock. This design enhances signal integrity and reliability in digital communication scenarios where the input signal may come from a different clock domain.
+module top_module(scndry_out,
+    scndry_out2,
+    prmry_in,
+    ext_spi_clk);

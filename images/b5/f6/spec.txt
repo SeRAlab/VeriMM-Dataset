@@ -1,0 +1,8 @@
+Design a clocked output buffer that selectively transfers a 100-bit wide input signal (in_port) to an output signal (out_port) based on an enable control signal. When the reset signal is asserted, the output is cleared to zero. If reset is not active and enable is true, the output will reflect the current value of the input upon the rising edge of the clock.
+module top_module(
+    input clk,
+    input [99:0] in_port,
+    output reg [99:0] out_port,
+    input enable,
+    input reset
+);

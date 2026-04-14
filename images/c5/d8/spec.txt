@@ -1,0 +1,51 @@
+
+
+You are tasked with designing a verilog module that implements a dynamic logic gate. The module should have two inputs, `in` and `clk`, and one output, `out`. The output should be the result of the dynamic logic gate, which is defined as follows:
+- If `in` is high (`1'b1`), `out` should be high on the next clock cycle, regardless of the previous value of `out`.
+- If `in` is low (`1'b0`), `out` should be low on the next clock cycle, regardless of the previous value of `out`.
+
+Design the verilog module that implements the dynamic logic gate, and write a testbench that verifies the functionality of the module using the provided code snippet below. The testbench should check the output of the dynamic logic gate for different input values and clock cycles.
+
+```
+module tb_dynamic_gate;
+  reg in, clk;
+  wire out;
+
+  // Instantiate the dynamic gate module here
+
+  initial begin
+    clk = 1'b0;
+    #10;
+
+    // Test case 1: in is low, out should be low on the next clock cycle
+    in = 1'b0;
+    #5;
+    assert(out === 1'b0) else $error("Test case 1 failed");
+
+    // Test case 2: in is high, out should be high on the next clock cycle
+    in = 1'b1;
+    #5;
+    assert(out === 1'b1) else $error("Test case 2 failed");
+
+    // Test case 3: in is low, out should be low on the next clock cycle
+    in = 1'b0;
+    #5;
+    assert(out === 1'b0) else $error("Test case 3 failed");
+
+    // Test case 4: in is high, out should be high on the next clock cycle
+    in = 1'b1;
+    #5;
+    assert(out === 1'b1) else $error("Test case 4 failed");
+
+    // Test case 5: in is low, out should be low on the next clock cycle
+    in = 1'b0;
+    #5;
+    assert(out === 1'b0) else $error("Test case 5 failed");
+
+    $display("All test cases passed");
+  end
+
+  always #5 clk = ~clk; // Generate a clock signal
+endmodule
+```
+

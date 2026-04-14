@@ -1,0 +1,6 @@
+Design a voltage-controlled oscillator (VCO) interface that generates a PWM signal based on an input control signal and an internal clock. The VCO operates between specified minimum (1 MHz) and maximum (2 MHz) frequencies, corresponding to voltage outputs ranging from 0V (vmin) to 1V (vmax). The module toggles a PWM output every 256 clock cycles, producing a high output (vout = 1) if the control signal is active and low (vout = 0) when inactive, effectively allowing for frequency modulation based on the control input.
+module top_module(
+  input clk,
+  input ctrl,
+  output reg vout
+);

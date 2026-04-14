@@ -1,0 +1,8 @@
+Design a bit-slicing circuit that operates on a clock signal to selectively output data based on a write enable signal. The module alternates between writing from two bits of input data; when the write data enable is active (wrdata_en), it toggles between the two bits in the wrdata input. If `odd` is true, it drives the output `dq` with the second bit (wrdata[1]); if false, it uses the first bit (wrdata[0]). When the enable signal is inactive, it sets `dq` to high-impedance (dq_oe_n is asserted) and resets the toggle state. This design is effectively a controlled data output driver that can alternate between two data inputs based on a clock and an enable signal.
+module top_module(
+    input clk,
+    input wrdata_en,
+    input [1:0] wrdata,
+    output reg dq,        // Changed output to reg type
+    output reg dq_oe_n    // Changed output to reg type
+);

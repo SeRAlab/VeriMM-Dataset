@@ -1,0 +1,7 @@
+Design a digital circuit that interfaces with the ADT7410 temperature sensor over I2C. The module facilitates communication by generating an I2C address and handling a simple state machine to read the raw temperature data from the sensor. It receives commands through the I2C clock line (i2c_scl) and manages data transmission on the I2C data line (i2c_sda), storing the temperature data in a 16-bit register. Upon receiving two bytes of temperature data, the module combines them, converts the raw sensor output into a signed integer temperature value in degrees Celsius, and outputs this value. The design includes a reset mechanism to initialize its state.
+module top_module(
+    input i2c_scl,
+    inout i2c_sda,
+    input reset,
+    output reg signed [15:0] temperature // Changed to reg to allow assignment in always block
+);

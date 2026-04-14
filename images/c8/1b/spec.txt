@@ -1,0 +1,8 @@
+
+
+You are given a Verilog module named "t". The module has a clock input "clk". Inside the module, there is an integer variable "cyc" initialized to 1 and a register "a" of size 126 bits. There is also a wire "q" which is an output of a submodule named "sub". The "sub" submodule has three inputs - "q", "a", and "clk". 
+
+The "t" module has an always block sensitive to the positive edge of "clk". Inside the always block, there are several if statements that check the value of "cyc" and assign a value to "a" accordingly. The value of "a" changes four times, and on the fourth time, if "q" is not equal to 1'b0, the simulation stops using $stop. After that, "q" is checked three more times, and if it is not equal to the expected value, the simulation stops using $stop. On the eighth cycle, if "q" is not equal to 1'b0, the simulation stops using $stop. If all the checks pass, the simulation prints "*-* All Finished *-*" and then finishes using $finish.
+
+Your task is to complete the implementation of the "sub" submodule such that it assigns the value of (a[125] & a[0]) to "q". 
+

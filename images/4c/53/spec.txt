@@ -1,0 +1,24 @@
+Design a module for error detection in a data communication system. This module, `aurora_64b66b_25p4G_ERR_DETECT`, monitors various inputs related to transmission errors, including frame integrity and buffer status. It generates two types of error signals: a HARD_ERR, indicating a severe error such as a buffer failure, and a SOFT_ERR, which signals recoverable errors based on specific conditions. The error detection logic is enabled by the ENABLE_ERR_DETECT signal and operates in synchronization with the USER_CLK. The module also provides a HARD_ERR_RESET output, reflecting the current state of the HARD_ERR signal, facilitating the reset mechanism in a larger error management system.
+module top_module(
+     
+     ENABLE_ERR_DETECT,
+     HARD_ERR_RESET,
+ 
+     
+     HARD_ERR,
+     SOFT_ERR,
+ 
+     
+     ILLEGAL_BTF,
+ 
+     
+     RX_BUF_ERR,
+     TX_BUF_ERR,
+     RX_HEADER_0,
+     RX_HEADER_1,
+     RX_HEADER_ERR,
+     RXDATAVALID_IN,
+ 
+     
+     USER_CLK
+ );

@@ -1,0 +1,12 @@
+Design a circuit for an arithmetic logic unit (ALU) that handles the processing of signed 32-bit integer input values. This module computes the absolute values of inputs `a` and `b`, assesses their signs to determine the result of a division operation, and produces an output `r` based on the signs of the inputs. The output configurations reflect different scenarios: both inputs positive yields a result of 1.0, one negative input leads to either -0.0 or +0.0, and both inputs negative results in -1.0. Additionally, the module provides a valid output signal that indicates when input values are valid for processing.
+module top_module(
+	input sys_clk,
+	input alu_rst,
+
+	input [31:0] a,
+	input [31:0] b,
+	input valid_i,
+
+	output reg [31:0] r, // Change 'wire' to 'reg'
+	output reg valid_o
+);

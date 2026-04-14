@@ -1,0 +1,11 @@
+Design a digital circuit that functions as a dual 4-bit register for storing hours. It supports two main operations: reading and writing hours. On a read operation (when leerhours is high), it sets the two registers (hour1 and hour2) based on eight input lines (lrda through lrdh), allowing for bit-level control over the stored hour values. It also resets the registers to zero when rstreghours is asserted. In a write operation (when escribirhours is high), it updates the registers with 4-bit values from input signals htens and hones, again resetting to zero if rstreghours is asserted. The registers are synchronized to the rising edge of the clock signal.
+module top_module(
+		input wire rstreghours,
+		input wire clk,
+		input wire leerhours, escribirhours,
+		input wire lrda, lrdb, lrdc, lrdd, lrde, lrdf, lrdg, lrdh,
+		input wire [3:0] htens,
+		input wire [3:0] hones,
+		output reg [3:0] hour1,
+		output reg [3:0] hour2
+    );

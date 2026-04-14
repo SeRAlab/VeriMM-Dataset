@@ -1,0 +1,29 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit Shift Register with parallel load capability.
+
+Module name:  
+    shift_register   
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    load: Load signal. Defined as 1 for loading the parallel input data and 0 for shifting the data.
+    d: 4-bit parallel input data.
+    s_in: 1-bit serial input data for shifting.
+
+Output ports:
+    q: 4-bit output representing the current state of the register.
+
+Implementation:
+The module implements a 4-bit shift register with parallel load capability using an always block. On the positive edge of the clock signal, if the load signal is active, the register loads the parallel input data. If the load signal is inactive, the register shifts its data to the right, and the serial input data is shifted into the most significant bit.
+
+Give me the complete code.
+
+module shift_register(
+    input clk,
+    input load,
+    input [3:0] d,
+    input s_in,
+
+    output [3:0] q
+);

@@ -1,0 +1,6 @@
+Design a 10-bit random number generator that produces a pseudo-random sequence based on a Linear Feedback Shift Register (LFSR) mechanism. The module resets the output to a specific value when the reset signal is asserted and continues to generate new random values on each clock cycle unless the gameover signal is active, in which case the output is set to zero. The randomness is derived from a combination of specific bits in the current state, ensuring an evolving output as long as the game is active.
+module top_module(
+	input clk, 
+	input resetn,
+	input gameover,
+	output [9:0] rand_out);

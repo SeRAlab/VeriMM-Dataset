@@ -1,0 +1,11 @@
+Design a next program counter (NPC) logic circuit for a processor, which computes the new program counter value based on various inputs. The module takes the current program counter (oldPC), a branch instruction offset (beq_imm), a jump instruction address (JumpImm), a zero flag indicator for branch decisions (beq_zero), a control signal for selecting different program counter paths (PC_sel), and additional jump control signals. Depending on the value of the PC_sel input, it can either increment the oldPC by 4 for a sequential execution or add the branch offset conditionally based on the beq_zero signal. Additionally, it can compute the newPC based on Jump instructions which may either redirect to a computed jump address or directly to a register address if specified. This functionality supports multiple branching and jumping mechanisms in a pipelined architecture.
+module top_module(
+           input [31: 0] oldPC,
+           input [15: 0] beq_imm,
+           input [25: 0] JumpImm,
+           input beq_zero,
+           input [1: 0] PC_sel,
+           input [1: 0] Jump,
+           input [31: 0] rs,
+           output reg [31: 0] newPC
+       );

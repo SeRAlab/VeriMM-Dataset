@@ -1,0 +1,7 @@
+Design a 64-bit adder that operates conditionally based on a select input. The adder takes two 32-bit inputs, A and B, and uses 16-bit sub-adders to compute the sum, allowing it to handle operations on 64-bit numbers. A 2-to-1 multiplexer is implemented to select which of the inputs A or B to use for both the low and high 16-bit segments based on the select signal. The output can be reset synchronously to zero via a reset signal, ensuring that the addition results can be controlled and initialized as needed.
+module top_module(
+    input [15:0] a,
+    input [15:0] b,
+    output [15:0] sum,
+    output carry
+);

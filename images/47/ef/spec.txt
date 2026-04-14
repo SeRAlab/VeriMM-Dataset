@@ -1,0 +1,9 @@
+Design a wavelet transform block that performs a Haar wavelet transformation on a 16-bit input signal. When the start signal is asserted, the module computes the average and difference of pairs of input samples to produce the transformed output data and coefficients. The transformation resets to zero when the reset signal is received. This module facilitates signal processing applications by allowing efficient data representation and compression through wavelet transformation.
+module top_module(
+  input clk,
+  input reset,
+  input start,
+  input [n-1:0] in_data,
+  output reg [n-1:0] out_data,
+  output reg [n-1:0] coefficients
+);

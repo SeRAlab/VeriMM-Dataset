@@ -1,0 +1,29 @@
+Please act as a professional Verilog designer.
+
+Implement a Debounce Circuit module to clean up a noisy button input. The module should have an output that indicates the stable state of the button.
+
+Module name:  
+    debounce
+                 
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    noisy_button: Noisy input signal from the button.
+
+Output ports:
+    clean_button: Cleaned and debounced output signal.
+
+Implementation:
+The module includes a shift register to sample the noisy_button input.
+The shift register is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the shift register is cleared to 0.
+The clean_button output is set when all bits in the shift register are 1 for a sufficient number of consecutive clock cycles.
+
+Give me the complete code.
+
+module debounce(
+  input clk,
+  input rst_n,
+  input noisy_button,
+  output reg clean_button
+);

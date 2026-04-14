@@ -1,0 +1,7 @@
+Design a programmable 8-bit counter that can count both up and down based on the input signal `up_down`. When `rst` is asserted, the counter resets to 0. If `up_down` is HIGH, the counter increments from 0 to 255, wrapping back to 0 when it reaches 255. If `up_down` is LOW, the counter decrements from 255 to 0, wrapping back to 255 when it reaches 0. The counter operates synchronously based on the rising edge of the `clk` signal.
+module top_module(
+  input clk,
+  input rst,
+  input up_down,
+  output reg [7:0] out
+);

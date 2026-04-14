@@ -1,0 +1,9 @@
+Design a circuit that functions as a runtime counter with enable and reset capabilities. The module counts up to a specified work time (CLP_work_time) in a 12-bit wide counter (CLP_ctr_cnt) when enabled. Upon receiving a reset signal (rst), the counter and state return to zero. The counter only increments while in an active state (state = 1), which is controlled by the enable signal and the completion of the work time. When the count reaches CLP_work_time, the state transitions back to inactive (state = 0).
+module top_module(
+input clk,
+input rst,
+input [15:0] CLP_work_time,
+input enable,
+output reg [11:0] CLP_ctr_cnt,
+output reg state
+);

@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module to divide the frequency of an input clock signal (`clk`) by a specified period (`period`). This module generates a divided clock signal (`div`) that toggles at a frequency determined by the `period` input. It is a fundamental component in digital circuits where clock management and frequency division are required, such as in timing control, baud rate generation, or creating slower clock domains within a larger digital system.
+
+Module name:  
+	SQM_CLK_DIVIDER
+
+Input ports:
+	clk: The primary clock input to the module. It is a singlebit (1'b) input that provides the base frequency which will be divided.
+	reset_n: An activelow reset signal. It is a singlebit (1'b) input used to asynchronously reset the internal state of the module, setting the output clock divider to an initial state and the internal counter to zero.
+	period: A multibit input signal of width bw bits. It specifies the period for the clock division. The output clock (div) toggles every period cycles of the input clock (clk), effectively dividing the input clock frequency by period.
+Output ports:
+	div: The divided clock output. It is a singlebit (1'b) output that represents the clock signal after division. The frequency of div is clk frequency divided by the value of period.
+
+
+Implementation:
+The SQM_CLK_DIVIDER module is designed to generate a divided clock signal (div) from an input clock (clk) based on a specified period (period). The module operates with a synchronous reset (reset_n), which ensures that the internal state is reset when the reset signal is deasserted (active low). The module's functionality is primarily governed by sequential logic, with some combinational logic to handle special cases and output assignments.
+
+Give me the complete code.
+

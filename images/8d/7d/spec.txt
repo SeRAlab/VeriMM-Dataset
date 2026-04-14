@@ -1,0 +1,10 @@
+Design a quadrature decoder that interprets two input signals A and B to determine the direction and speed of rotation for a rotary encoder. The module outputs a COUNT_ENABLE signal to indicate when counting should occur based on the changes in A and B. The DIRECTION output specifies whether the encoder is moving forward or backward, while the SPEED output provides a 4-bit representation of the speed based on a total count that varies from 0 to 109. The speed is classified into four levels, with specific ranges corresponding to each level, ensuring the total count remains within defined limits during counting operations based on the clock signal and a reset condition.
+module top_module(
+    CLOCK, 
+    RESET,
+    A, 
+    B, 
+    COUNT_ENABLE,
+    DIRECTION, 
+    SPEED
+);

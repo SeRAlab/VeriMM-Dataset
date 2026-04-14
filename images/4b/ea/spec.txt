@@ -1,0 +1,8 @@
+Design a circuit that operates as a multifunctional register with integrated counting and bitwise XOR capabilities. The module features an 8-bit input register that can hold a value, an 8-bit counter that increments on each clock cycle, and a bitwise XOR operation between the register and counter outputs, controlled by a select input. A synchronous active-high reset initializes all outputs to zero. The output is determined by a state control logic that cycles through three stages: during each stage, it either outputs the XOR result, the contents of the register, or the counter value. This allows for flexible data handling depending on the system's operational requirements.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input [7:0] d,    // 8-bit input for the register
+    input select,     // Select input to choose between register and counter
+    output reg [7:0] q    // Changed output to reg type
+);

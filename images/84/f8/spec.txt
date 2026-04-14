@@ -1,0 +1,8 @@
+Design a 16-bit barrel shifter capable of performing both left and right shifts based on the value of the S control signal. When S=0, it executes a left shift by the number of positions specified in the 4-bit input B, padding the least significant bits with zeros. Conversely, when S=1, it performs a right shift, replicating the sign bit for arithmetic shifts. If B is zero, the output remains unchanged, directly reflecting the input A. The operation is synchronized with a clock signal, ensuring the shifting occurs on the rising edge.
+module top_module(
+    input clk,
+    input [15:0] A,
+    input [3:0] B,
+    input S,
+    output reg [15:0] P
+);

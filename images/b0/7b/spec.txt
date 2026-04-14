@@ -1,0 +1,11 @@
+Design a 31-entry register file with each register having a width of 32 bits. The module supports synchronous write operations controlled by a write enable (wen) signal, where data is written to a specified register address (waddr) on the rising edge of the clock (clk). Two read addresses (raddr1 and raddr2) allow simultaneous retrieval of data from two registers, outputting the contents to rdata1 and rdata2, respectively. This structure is commonly used in processors for handling multiple data paths efficiently.
+module top_module(
+  input clk,
+  input wen,
+  input [5:0] waddr,
+  input [5:0] raddr1,
+  input [5:0] raddr2,
+  input [31:0] wdata,
+  output [31:0] rdata1,
+  output [31:0] rdata2
+);

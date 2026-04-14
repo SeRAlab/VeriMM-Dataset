@@ -1,0 +1,7 @@
+Design a simple synchronous FIFO (First-In-First-Out) queue with a depth of 4 elements for 16-bit data. The module features a clock input and control signals for writing (`wrEn`) and reading (`rdEn`). When the write enable is active, the input data is stored in the FIFO at the current write pointer location, which wraps around upon reaching the maximum depth. When the read enable is asserted, data is output from the FIFO at the current read pointer location, which also wraps around similarly. This design facilitates efficient data buffering for communication between different clock domains or processing units in digital systems.
+module top_module(
+   // Outputs
+   outData,
+   // Inputs
+   clk, inData, wrEn, rdEn
+   );

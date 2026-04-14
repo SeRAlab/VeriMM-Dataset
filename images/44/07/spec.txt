@@ -1,0 +1,6 @@
+Design a write-back stage for a pipelined processor that captures data from the memory execution stage. The module transfers the data (me_memdata), destination register (me_td), and write enable signal (me_WREG) from the memory stage to the write-back stage, while also handling reset and stall conditions. Upon a reset, it initializes all outputs to zero. During a stall, it also clears the outputs, preventing any write-back actions until the stall is lifted. This ensures data integrity and proper timing within the pipelined architecture.
+module top_module(
+	clk,rst,stall,
+	me_memdata, me_td, me_WREG,
+	wb_memdata, wb_td, wb_WREG
+    );

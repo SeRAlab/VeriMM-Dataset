@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+
+Implement a 16-bit register module that latches data on the rising edge of the clock.
+
+Module name:
+    register_16bit
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    d: 16-bit data input.
+
+Output ports:
+    q: 16-bit output representing the latched data.
+
+Implementation:
+The module includes a 16-bit register, q, which is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the q register is initialized to 0.
+On every rising edge of the clock, the q register latches the value of the input data d.
+
+Give me the complete code.

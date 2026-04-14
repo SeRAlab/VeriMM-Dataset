@@ -1,0 +1,4 @@
+Design a floating-point to integer conversion circuit. The module takes a 32-bit IEEE 754 single-precision floating-point number as input and outputs a 32-bit integer along with an overflow indicator. The input is parsed into its sign, exponent, and mantissa components, and the mantissa is adjusted based on the exponent to yield the integer representation. If the exponent indicates an overflow condition (values too large for conversion), the overflow output is asserted high. The resulting integer maintains the appropriate sign based on the input's sign bit.
+module top_module( input wire [31:0] x,
+     output wire [31:0] y,
+     output wire ovf);

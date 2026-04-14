@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that detects a specific 4-bit sequence (0101) in incoming data. The FSM transitions through four states: IDLE, STATE1, STATE2, and MATCH based on the input signal. It starts in the IDLE state and moves to STATE1 when the first bit of the sequence is detected. It continues to STATE2 with the detection of the second bit, and finally reaches the MATCH state upon detecting the third bit, where it asserts a match signal. If any expected bit is not detected at the right time, the FSM transitions back to the IDLE state. The current state is stored and output for further use. The design is intended for applications requiring sequence detection, possibly in data communication or digital signal processing.
+module top_module(
+  input clk,
+  input [3:0] in,
+  output reg match,
+  output reg [1:0] state
+);

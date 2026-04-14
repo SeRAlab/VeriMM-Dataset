@@ -1,0 +1,9 @@
+Design a 4-stage shift register that operates on 8-bit inputs with synchronous reset functionality. It can perform both left and right shifts through the `shift_left` and `shift_right` control signals, respectively. When shifting, the bits are moved between the four stages of storage, while the newly input data `d` is loaded into the first stage. The output, which is a 4-bit register `q`, is computed using a bit-wise AND operation on specific bits of the storage stages. If no shifting is selected, the input `d` is simply propagated through the stages without movement.
+module top_module(
+    input clk,
+    input reset,            // Synchronous reset
+    input [7:0] d,
+    input shift_left,       // Control signal to shift left
+    input shift_right,      // Control signal to shift right
+    output reg [3:0] q
+);

@@ -1,0 +1,7 @@
+Design a circuit that calculates an output value, `eta`, based on a 16-bit input, `t`, using a clock signal for synchronization. The module differentiates behavior based on the most significant bit of `t`: if `t[15]` is high, it initializes `eta_start` with a value dependent on the next two bits (`t[14:13]`), otherwise it adjusts it with a base value. The module also evaluates the lower 13 bits of `t` against specific thresholds to determine a value `eta_reg`, which can take on three distinct states. Finally, the output `eta` is computed as the sum of `eta_start` and `eta_reg`, effectively producing a result influenced by both the input values and designed thresholds.
+module top_module(
+                 input clk, 
+                 input reset,
+                 input [15:0] t,
+                 output reg [4:0] eta   
+    );

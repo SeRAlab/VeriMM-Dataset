@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module to generate round keys for encryption or decryption processes in cryptographic algorithms, specifically for the AES (Advanced Encryption Standard) algorithm. Its primary function to take an initial cipher key and expand it into multiple round keys that are used in different rounds of the AES algorithm. The module supports key expansion for both encryption and decryption processes, indicated by the `enc_dec` input signal.
+
+Module name:  
+	key_expander
+
+Input ports:
+	key_in [127:0]: The initial 128bit cipher key input that will be expanded into round keys.
+	g_out [31:0]: The output from the gfunction, which is a transformation applied to a word within the key expansion process.
+	round [3:0]: The current round number for which the key expansion is being performed. This is used to determine the round constant (rc) value.
+	add_w_out: A control signal indicating whether the output of the gfunction should be added to the key expansion process.
+	enc_dec: A binary signal indicating the mode of operation; 1 for encryption and 0 for decryption.
+Output ports:
+	key_out [127:0]: The 128bit round key output generated for the current round.
+	g_in [31:0]: The input to the gfunction, derived from the key input and potentially modified based on the mode of operation (encryption or decryption).
+
+
+Implementation:
+The key_expander module is designed to generate expanded keys for AES (Advanced Encryption Standard) encryption or decryption processes. It takes a 128-bit input key (key_in), a 4-bit round number (round), and a 32-bit output from a function g (g_out), and produces a 128-bit output key (key_out) and a 32-bit input for the function g (g_in). The module also takes two control signals: add_w_out, which determines a specific operation mode in key expansion, and enc_dec, which specifies whether the operation is for encryption or decryption.
+
+Give me the complete code.
+

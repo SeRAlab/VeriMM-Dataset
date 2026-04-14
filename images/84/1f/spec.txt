@@ -1,0 +1,23 @@
+Implement the Verilog module based on the following description.
+Given the state-assigned table shown below, implement the logic functions U[0] and x.
+
+The state machine has the following states and their corresponding outputs:
+1. state u[2:0] = 000 (x = 0).
+2. state u[2:0] = 001 (x = 1).
+3. state u[2:0] = 010 (x = 1).
+4. state u[2:0] = 011 (x = 0).
+5. state u[2:0] = 100 (x = 1).
+
+State transitions:
+1. From state u[2:0] = 000: If h = 0, then transition to state u[2:0] = 001. If h = 1, then transition to state u[2:0] = 010.
+2. From state u[2:0] = 001: If h = 0, then transition to state u[2:0] = 011. If h = 1, then transition to state u[2:0] = 100.
+3. From state u[2:0] = 010: If h = 0, then transition to state u[2:0] = 000. If h = 1, then transition to state u[2:0] = 001.
+4. From state u[2:0] = 011: If h = 0, then transition to state u[2:0] = 100. If h = 1, then transition to state u[2:0] = 010.
+5. From state u[2:0] = 100: If h = 0, then transition to state u[2:0] = 000. If h = 1, then transition to state u[2:0] = 011.
+
+module fsm_example4 (
+  input clk,
+  input h,
+  input [2:0] u,
+  output reg U0,
+  output reg x);

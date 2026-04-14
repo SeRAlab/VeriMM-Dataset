@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a 2-to-1 multiplexer (mux) with a 72-bit wide data path. Its primary role to select between two 72-bit input data lines (`x0` and `x1`) based on a single-bit selection signal (`sel`). The selected input is then output as a 72-bit data line (`y`). This module is crucial in digital systems where data routing or conditional data selection is required, such as in data processing units, register files, or configurable logic blocks. It enables dynamic data flow control, contributing to the flexibility and efficiency of the broader system's operation.
+
+Module name:  
+	bw_r_irf_72_2x1_mux
+
+Input ports:
+	sel (1 bit): The selection signal that determines which input data line is routed to the output. When sel is 0, x0 is selected; when sel is 1, x1 is selected.
+	x0 (72 bits): The first input data line. It is a 72bit wide bus that represents one of the potential data sources to be selected and routed to the output.
+	x1 (72 bits): The second input data line. Similar to x0, it is a 72bit wide bus and represents the alternative data source to be selected based on the sel signal.
+Output ports:
+	y (72 bits): The output data line. It carries the data from either x0 or x1, depending on the state of the sel signal. This is a 72bit wide bus, ensuring that the full data width of the inputs can be transferred without loss.
+
+
+Implementation:
+The RTL module presented, named bw_r_irf_72_2x1_mux, implements a simple 2-to-1 multiplexer (mux) for 72-bit wide data inputs. The core functionality of this module is to select one of the two 72-bit inputs (x0 or x1) based on the value of a single-bit selector (sel), and output the selected input through the 72-bit output y.
+
+Give me the complete code.
+

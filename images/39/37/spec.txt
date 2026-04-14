@@ -1,0 +1,8 @@
+
+Design an interrupt controller that handles multiple interrupt requests (IRQ) from various sources. The controller should have the following functionalities:
+1. It accepts a 4-bit input representing interrupt requests (irq[3:0]).
+2. A global enable signal (global_enable) which, when high, allows the interrupts to be processed.
+3. A 2-bit output (irq_out[1:0]) representing the highest priority interrupt request that is being serviced.
+4. It should have a reset signal (reset) to clear the current state.
+5. The controller should prioritize the interrupts such that IRQ0 has the highest priority and IRQ3 has the lowest.
+6. Once an interrupt is serviced, it should be acknowledged and removed from the request list until the next reset or new interrupt is received.

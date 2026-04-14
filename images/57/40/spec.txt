@@ -1,0 +1,12 @@
+Design a circuit that implements an I2S (Inter-IC Sound) transmitter for audio data. It receives left and right channel audio samples via two input buses (input_l_tdata and input_r_tdata), synchronizing their transmission with a clock signal (clk) and a reset signal (rst). The module outputs a serial data line (sd) while generating the necessary word select (ws) and serial clock (sck) signals for proper audio data framing. The transmitter operates in a 2-channel format, alternating between the left and right audio data while keeping track of bit and channel counts. The input_tready signal indicates when the transmitter is ready to accept new data.
+module top_module(
+    input clk,
+    input rst,
+    input [WIDTH-1:0] input_l_tdata,
+    input [WIDTH-1:0] input_r_tdata,
+    input input_tvalid,
+    output reg input_tready,
+    output reg sck,
+    output reg ws,
+    output reg sd
+);

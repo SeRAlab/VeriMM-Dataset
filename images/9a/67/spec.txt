@@ -1,0 +1,8 @@
+Develop a UART transmitter module that transmits an 8-bit data byte serially, starting with a start bit, followed by the data bits, and concluding with a stop bit. The module sets a busy flag when transmission begins, indicating that it is actively sending data, and it produces a serial output signal (TX). The output signal is active for each bit of the data, while ensuring that idle state is held high when not in transmission. The transmission is initiated by a start signal, and a clock input controls the timing of the bit transmission.
+module top_module(
+    input clk,        
+    input start,      
+    input [7:0] data, 
+    output reg busy,  
+    output reg TX     
+);

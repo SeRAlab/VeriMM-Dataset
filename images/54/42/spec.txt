@@ -1,0 +1,7 @@
+Implement a byte-reordering circuit that processes a 32-bit input serially through a 4-stage pipeline. The input is progressively reversed in byte order, with the final output reflecting the complete byte reversal of the input. Each stage of the pipeline takes the output of the previous stage, and the final output is updated on the rising edge of the clock signal, resulting in a fully reversed byte order output after four clock cycles.
+module top_module(
+    input [31:0] in,
+    input clk,                // Added clk input
+    input rst,                // Added reset input for better design practice
+    output [31:0] out
+);

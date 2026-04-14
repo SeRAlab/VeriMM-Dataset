@@ -1,0 +1,9 @@
+Design a circuit that combines a Johnson counter and a binary counter, each functioning with a synchronous reset. The 16-bit dual-port RAM stores the state of the Johnson counter, which updates based on a specific feedback mechanism on each clock cycle, while the 4-bit binary counter increments with each clock pulse. A select input determines whether the output is the current state of the Johnson counter, extended to 20 bits, or the sum of the binary counter and the Johnson counter's state. The output is a 20-bit signal that reflects either the selected counter's state or their combined value.
+module top_module(
+  input clk,
+  input reset, // Synchronous active-high reset
+  input [3:0] q, // 4-bit output from the binary counter
+  input [15:0] johnson_state, // 16-bit dual-port RAM output
+  input select, // Select input to choose between Johnson counter and binary counter
+  output reg [19:0] out // 20-bit output from the functional module
+);

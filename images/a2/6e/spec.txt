@@ -1,0 +1,9 @@
+Design a transmit FIFO buffer controller that manages the writing of data into a FIFO based on input control signals and state transitions. The module operates in a state machine manner with two states: INPUT_IDLE, where it waits for write requests, and INPUT_PKTS, where it enables write operations if data is being written. The controller outputs a write enable signal (`tx_fifo_wr_en`) to indicate whether data can be written to the FIFO, transitioning back to the INPUT_IDLE state when the control signal indicates that no more data is to be processed. The design ensures that the FIFO buffer operates efficiently with separate controls for starting and stopping data transfers based on incoming signals.
+module top_module(
+   input clk,
+   input reset,
+   input in_wr,
+   input in_ctrl,
+   output reg tx_fifo_wr_en,
+   output reg [1:0] tx_input_state_nxt
+);

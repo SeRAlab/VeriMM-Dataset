@@ -1,0 +1,34 @@
+Please act as a professional verilog designer.
+    
+Implement a module to interface with a Wishbone bus for the purpose of writing graphics data. Its primary function to facilitate the transfer of rendering data from a graphics rendering unit to memory or another peripheral connected via the Wishbone bus. The module acts as a Wishbone master, initiating write transactions based on input signals that dictate the data to be written and its destination address. It supports basic write operations with the capability to signal errors through a status output.
+
+Module name:  
+	gfx_wbm_write
+
+Input ports:
+	clk_i: Clock input. The module operates on the rising edge of this clock.
+	rst_i: Reset input. A high signal on this input asynchronously resets the module.
+	write_i: Write enable input. When high, it indicates a request to start a write operation.
+	ack_i: Acknowledge input from the Wishbone slave. Indicates that the current write operation has been accepted.
+	err_i: Error input from the Wishbone slave. Indicates an error in the current transaction.
+	render_addr_i [31:2]: The base address for the write operation, provided by the rendering unit. The two least significant bits are assumed to be zero, as the address is wordaligned.
+	render_sel_i [3:0]: Byte select signals for the write operation, indicating which bytes of the data word should be written.
+	render_dat_i [31:0]: The 32bit data word to be written to the address specified by render_addr_i.
+Output ports:
+	cyc_o: Cycle output. Indicates an active Wishbone cycle.
+	stb_o: Strobe output. Asserted together with cyc_o to indicate a valid transfer.
+	cti_o [2:0]: Cycle Type Identifier output. Indicates the type of Wishbone cycle, fixed to 000 for classic cycles.
+	bte_o [1:0]: Burst Type Extension output. Indicates the burst type, fixed to 00 as bursts are not used.
+	we_o: Write enable output. Always high, indicating write operations.
+	adr_o [31:0]: Address output. The target address for the write operation, derived from render_addr_i.
+	sel_o [3:0]: Byte select outputs. Indicates which bytes of the data word are valid for the current operation.
+	ack_o: Acknowledge output. Indicates to the rendering unit that the write request has been accepted.
+	dat_o [31:0]: Data output. The data word to be written.
+	sint_o: Error status output. Mirrors the err_i input to indicate an error status externally.
+
+
+Implementation:
+The gfx_wbm_write module is designed to interface with a Wishbone bus for the purpose of writing graphics data. It operates synchronously with a clock signal (clk_i) and can be reset (rst_i). The module's primary function is to manage the write transactions to the Wishbone bus, specifically tailored for rendering graphics data. The module handles the initiation and termination of bus cycles, data transfer, and error signaling.
+
+Give me the complete code.
+

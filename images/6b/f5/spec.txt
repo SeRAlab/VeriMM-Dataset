@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that operates as a 3-bit counter. The module features a clock input for synchronous operation and a reset input to initialize the state. Upon receiving a reset signal, the state is set to 000, and the output is LOW. On each positive clock edge, the FSM transitions through the states from 000 to 110 sequentially. When it reaches state 110, it resets to 000 and produces a HIGH output, effectively indicating the completion of a full counting cycle. This design can be utilized in applications requiring state progression with specific output signaling on reaching a terminal state.
+module top_module(
+  input clk,
+  input reset,
+  output reg [2:0] state,
+  output reg out
+);

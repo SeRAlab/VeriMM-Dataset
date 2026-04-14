@@ -1,0 +1,26 @@
+Please act as a professional Verilog designer.
+
+Implement a module of an 8-bit shift register with parallel load functionality. The shift register shifts its content to the right on every positive clock edge. If the load signal is asserted, the shift register loads the parallel input data.
+
+Module name:  
+    shift_register
+
+Input ports:
+    CLK: Clock input
+    RST: Active high reset signal
+    LOAD: Load signal
+    D: 8-bit parallel input data
+
+Output ports:
+    Q: 8-bit output representing the shift register value
+
+Implementation:
+The shift register module uses an always block triggered on the positive edge of the clock signal (posedge CLK) or the positive edge of the reset signal (posedge RST). If the reset signal is active (RST), the shift register value (Q) is set to 0. If the load signal (LOAD) is high, the shift register value is set to the parallel input data (D). Otherwise, the shift register value shifts right by one bit on every positive clock edge.
+
+Give me the complete code.
+
+module shift_register(CLK, RST, LOAD, D, Q);
+input CLK, RST, LOAD;
+input [7:0] D;
+output [7:0] Q;
+reg [7:0] Q;

@@ -1,0 +1,31 @@
+Please act as a professional Verilog designer.
+
+Implement a 32-bit synchronous binary down-counter with load and enable functionality.
+
+Module name:
+    down_counter
+Input ports:
+    clk: Clock signal for synchronous operation.
+    rst: Active-high synchronous reset signal to initialize the counter.
+    load: Load signal to parallel load the data.
+    en: Enable signal to decrement the counter.
+    load_val: 32-bit input data to be loaded in parallel.
+Output port:
+    count: 32-bit register representing the current count value.
+
+Implementation:
+On every rising edge of the clock signal (clk), if the reset signal (rst) is high, the counter (count) is set to 0.
+If the load signal is high, the counter is loaded with the 32-bit input data (load_val).
+If the enable signal (en) is high and load is low, the counter decrements by 1.
+
+Give me the complete code.
+
+module down_counter(
+   input                clk ,
+   input                rst,
+   input                load,
+   input                en,
+   input  [31:0]        load_val,
+ 
+   output reg [31:0]    count  
+);

@@ -1,0 +1,9 @@
+Develop a synchronous calculator module that performs basic arithmetic operations (addition, subtraction, multiplication, and division) on two 8-bit operands. The module utilizes a clock signal for operation coordination and an active-low reset signal to initialize the outputs. Based on the 2-bit operation selector, the module computes the result using temporary 16-bit storage during operations, ensuring the final 8-bit result is updated accordingly. The division operation provides a simplified mechanism by also using the previous calculation result.
+module top_module(
+    input clk,
+    input reset_n,
+    input [7:0] operand1,
+    input [7:0] operand2,
+    input [1:0] operation,
+    output reg [7:0] result
+);

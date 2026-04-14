@@ -1,0 +1,10 @@
+Design a circuit that captures a user-supplied 8-bit key and operates based on a clock signal. The module maintains the state of the key (inverted) upon receiving a clock pulse. When a specific address (32'h0000_7f40) is provided at the input, it outputs the inverted key; otherwise, it outputs zero. Additionally, the circuit generates an interrupt signal (IRQ_O) whenever the reset signal is inactive and the current state differs from the inverted key, indicating a change in the key state.
+module top_module(
+    input [7:0] user_key,
+	 
+	 input [31:0] ADD_I,
+	 output [31:0] DAT_O,
+	 
+	 output IRQ_O,
+	 input clk, reset
+    );

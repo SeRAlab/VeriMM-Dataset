@@ -1,0 +1,8 @@
+Design a synchronous 16-bit BCD counter with a reset functionality and controlled by three enable signals. The counter increments the least significant 4 bits (representing the units place) unless it reaches 9, in which case it rolls over to 0 and increments the next significant 4 bits (tens place), and so on, up to the most significant 4 bits (hundreds place). The module also computes the sum of the four BCD digits and outputs it as a 4-bit sum. A synchronous active-high reset is provided to initialize the counter to zero.
+module top_module(
+    input clk,
+    input reset,   // Synchronous active-high reset
+    input [2:0] ena,
+    output reg [15:0] q, // 16-bit output from the BCD counter
+    output reg [3:0] sum_output // 4-bit output from the functional module that sums the BCD digits
+);

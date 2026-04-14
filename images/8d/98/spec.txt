@@ -1,0 +1,9 @@
+Design a traffic light control system that manages the sequencing of a traffic light with green, yellow, and red signals based on a clock input. The system operates as a finite state machine where it cycles through three states: green light for 10 seconds, yellow light for 2 seconds, and red light for 8 seconds, all measured using a counter. The traffic light system can be enabled or disabled via an enable input; when disabled, all lights are turned off and the system resets to the green state. This module is intended to be used in traffic management applications to regulate vehicle flow at intersections.
+module top_module(
+    input clk,
+    input rst,
+    input enable,
+    output reg red_light,
+    output reg yellow_light,
+    output reg green_light
+);

@@ -1,0 +1,28 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit Gray Code Counter module that generates a 4-bit Gray code sequence. The counter value should be provided at a 4-bit output signal named "gray".
+
+Module name:
+    gray_code_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+
+Output ports:
+    gray: 4-bit output signal representing the current Gray code value.
+
+Implementation:
+The module includes a register, binary_count, with a width of 4 bits to store the binary counter value.
+The module also includes a register, gray, with a width of 4 bits to store the Gray code value.
+The binary_count and gray registers are updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the binary_count and gray registers are cleared to 0.
+On each clock cycle, the binary_count value is incremented by 1, and the gray value is updated to binary_count ^ (binary_count >> 1), generating the Gray code sequence.
+
+Give me the complete code.
+
+module gray_code_counter(
+  input clk,
+  input rst_n,
+  output reg [3:0] gray
+);

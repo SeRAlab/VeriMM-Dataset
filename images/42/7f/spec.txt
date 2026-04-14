@@ -1,0 +1,8 @@
+Design a circuit that serves as a 7-segment display driver for a 4-bit input, allowing dynamic representation of hexadecimal values 0 to 9 and letters A to F. When the input `x` is 10 or greater, the select signal `s` determines if the display shows a value from the range (where `x` is adjusted to fit within 0-3) or a fixed digit of '1'. The display digit is decoded into the appropriate 7-segment output configuration, while the `an` output controls the active segment, ensuring only one digit is lit at a time. The decimal point is always on, indicated by a constant signal set to high.
+module top_module(
+    input wire [3:0] x,
+    input wire s,
+    output reg [6:0] a_to_g,
+    output reg [3:0] an=4'b1111,
+    output wire dp
+    );

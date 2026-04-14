@@ -1,0 +1,8 @@
+Design a binary counter that can count up or down based on control signals. The counter has a configurable bit-width defined by parameter `n` (defaulting to 4 bits) and operates on the rising edge of the clock. It resets to zero when the reset signal (`rst`) is high. When enabled (`en`), it increments its value when `up_down` is high and decrements it when `up_down` is low. This module can be used in applications requiring counting functionality, such as timers or frequency dividers.
+module top_module(
+  input clk,
+  input rst,
+  input en,
+  input up_down,
+  output reg [n-1:0] count
+);

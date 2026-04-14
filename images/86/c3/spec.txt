@@ -1,0 +1,13 @@
+Design a 4-to-1 multiplexer that selects one of four input data signals (i_data0 to i_data3) based on four selection signals (i_select0 to i_select3). The output (o_data) reflects the chosen input, while an error signal (o_error) indicates if more than one selection signal is active, ensuring that only one input is selected at a time. The module is parameterized to allow for variable width of the input and output data signals.
+module top_module(
+    input [width - 1:0] i_data0,
+    input [width - 1:0] i_data1,
+    input [width - 1:0] i_data2,
+    input [width - 1:0] i_data3,
+    input i_select0,
+    input i_select1,
+    input i_select2,
+    input i_select3,
+    output reg [width - 1:0] o_data,
+    output reg o_error
+);

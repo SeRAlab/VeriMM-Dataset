@@ -1,0 +1,20 @@
+Implement a Verilog module for a simple elevator controller.
+The state machine has the following states and their corresponding outputs:
+1. state Idle (door_open = 1'b0).
+2. state Moving_Up (moving_up = 1'b1).
+3. state Moving_Down (moving_down = 1'b1).
+
+State transitions:
+1. From state Idle: If go_up = 1, transition to state Moving_Up. If go_down = 1, transition to state Moving_Down.
+2. From state Moving_Up: If floor_reached = 1, transition to state Idle.
+3. From state Moving_Down: If floor_reached = 1, transition to state Idle.
+
+module elevator_controller (
+        input clk,
+        input areset,
+        input go_up,
+        input go_down,
+        input floor_reached,
+        output reg door_open,
+        output reg moving_up,
+        output reg moving_down);

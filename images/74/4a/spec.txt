@@ -1,0 +1,9 @@
+Design a D-type flip-flop with asynchronous set and reset capabilities. The flip-flop samples the D input on the rising edge of the clock (CLK). If the RESET_B signal is low, the output Q is set to low and Q_B is set to high. If SET_B is low, the output Q is set to high and Q_B is set to low. If both SET_B and RESET_B are high, the output Q follows the D input, while Q_B provides the complement of the D input. This design is useful for storing a bit of data with prioritized asynchronous control signals.
+module top_module(
+    input CLK,
+    input D,
+    input SET_B,
+    input RESET_B,
+    output reg Q,
+    output reg Q_B
+);

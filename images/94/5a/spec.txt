@@ -1,0 +1,11 @@
+Design a synchronous 8-entry FIFO (First-In-First-Out) memory buffer. The circuit has input controls for resetting the buffer, pushing new 8-bit data into the FIFO, and popping data out. On a rising clock edge, if the buffer is not full and a push signal is received, data is written to the current head position, and the head pointer is advanced. Conversely, if the buffer is not empty and a pop signal is indicated, data is read from the current tail position, and the tail pointer is advanced. Outputs indicate when the FIFO is empty or full, with appropriate reset behavior to initialize the buffer and its pointers.
+module top_module(
+    input rst,
+    input push,
+    input pop,
+    input [7:0] data_in,
+    input clk,
+    output reg [7:0] data_out, // Changed to reg
+    output reg empty,          // Changed to reg
+    output reg full            // Changed to reg
+);

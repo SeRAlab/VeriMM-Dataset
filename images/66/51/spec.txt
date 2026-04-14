@@ -1,0 +1,13 @@
+Design a 16-bit wide FIFO (First-In, First-Out) memory buffer with a capacity of 4096 entries. The module allows data to be written when the `wr` signal is asserted and the clock is enabled by `clk7_en`, with input data being stored in the memory array. Data can be read from the buffer when the `rd` signal is asserted under the same clock conditions. The module tracks the status of being full or empty using pointers to both the input and output, and provides outputs to indicate these statuses, as well as an indication of whether the last read was from the end of the buffer. The reset input initializes the pointers and states to facilitate proper operation.
+module top_module(
+    input clk,
+    input clk7_en,
+    input reset,
+    input [15:0] data_in,
+    input rd,
+    input wr,
+    output reg [15:0] data_out,
+    output reg full,
+    output reg empty,
+    output reg last
+);

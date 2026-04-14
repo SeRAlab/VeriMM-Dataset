@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module to map 4-bit binary inputs to 7-bit outputs that represent the segments to be illuminated on a 7-segment display. This module acts as a lookup table (LUT) for converting hexadecimal digits (0-F) into their corresponding 7-segment display patterns. It is a crucial component in digital systems that require human-readable displays, such as digital clocks, calculators, and other electronic devices that display numerical information. The module simplifies the process of driving a 7-segment display by abstracting the conversion logic into a single, reusable component.
+
+Module name:  
+	SEG7_LUT
+
+Input ports:
+	iDIG (Input, 4 bits): This is a 4bit input port that receives the binary representation of a hexadecimal digit (0x0 to 0xF). The value on this port determines which pattern will be output to drive the 7segment display.
+Output ports:
+	oSEG (Output, 7 bits, Register): This is a 7bit output port that represents the segments of a 7segment display. Each bit corresponds to one segment of the display, where a '0' typically means the segment is on (illuminated) and a '1' means the segment is off (not illuminated), depending on the display's common anode/cathode configuration. The bit order from MSB to LSB is usually GFEDCBA, where each letter represents a specific segment of the display.
+
+
+Implementation:
+The RTL (Register Transfer Level) module named SEG7_LUT is designed to interface with a 7-segment display, which is a common electronic display device used for displaying decimal numerals and some alphabetic characters. The module translates a 4-bit binary input (iDIG) into a 7-bit output (oSEG), where each bit of the output corresponds to one of the seven segments of the display (labeled A through G). This translation is performed using a combinational logic approach, specifically through a case statement that maps each possible 4-bit input value to a specific 7-bit output pattern.
+The logic within the module is purely combinational, as the output at any given time is determined solely by the current value of the input, without any dependency on previous input values or internal states. The always @(iDIG) construct indicates that the output will be re-evaluated and potentially updated every time the input iDIG changes. This is a typical use case for combinational logic, where the output is a direct function of the input.
+The case statement within the always block enumerates all possible hexadecimal values (0 through F) that the 4-bit input iDIG can take, and assigns a corresponding 7-bit pattern to oSEG for each. These 7-bit patterns represent the segments of a 7-segment display that need to be illuminated to represent the hexadecimal digit on the display. For example, a iDIG input of 4'h1 (binary 0001) results in an oSEG output of 7'b1111001, which corresponds to the segments that need to be turned on or off to display the numeral "1" on a 7-segment display.
+
+Give me the complete code.
+

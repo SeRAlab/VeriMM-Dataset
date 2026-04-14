@@ -1,0 +1,8 @@
+Design a circuit that functions as a 4-to-2 encoder with enable and reset functionality. It accepts a 4-bit input and produces a 2-bit output corresponding to the highest active input bit when enabled. If no input bits are set, the output is zero. On reset, the output is also set to zero, overriding any input. The circuit is synchronized to a clock signal, ensuring that outputs change only on the rising edge.
+module top_module(
+    input [3:0] data_in,
+    input clk,
+    input rst,
+    input en,
+    output reg [1:0] data_out
+);

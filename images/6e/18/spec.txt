@@ -1,0 +1,4 @@
+Design a data realignment module for a 36-bit communication interface. This module manages the input and output data flow based on readiness signals and state transitions. It captures data from the input when both the source and destination are ready, holds it, and then transmits the realigned data while indicating start-of-frame (SOF) and end-of-frame (EOF) conditions. The module maintains internal state information to handle data transfers and readiness signals, ensuring the output is correctly prepared based on the current state and the given internal conditions.
+module top_module(input clk, input reset, input clear,
+    input [35:0] datain, input src_rdy_i, output dst_rdy_o,
+    output [35:0] dataout, output src_rdy_o, input dst_rdy_i);

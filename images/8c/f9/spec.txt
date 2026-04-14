@@ -1,0 +1,10 @@
+Design a VGA controller that generates horizontal and vertical synchronization signals for a VGA display, as well as manages the pixel memory address and blanking signals. The controller operates based on a clock input, maintaining horizontal and vertical counters to control timing. It outputs the VGA synchronization signals (vga_hsync, vga_vsync), a sync indicator (vga_sync), a blanking signal (vga_blank), and a memory address (mem_add) corresponding to the current pixel being processed. The design effectively orchestrates the raster scan process necessary for displaying images on a VGA-compatible monitor.
+module top_module(
+    input wire clock,
+    output reg [18:0] mem_add,
+    output reg vga_hsync,
+    output reg vga_vsync,
+    output reg vga_sync,
+    output reg vga_blank,
+    output reg vga_clock
+);

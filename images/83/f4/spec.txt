@@ -1,0 +1,12 @@
+Design a dual-purpose register component that functions as a 32-bit wide register bank with four 8-bit internal registers. It synchronously handles input data based on a control interface that includes address and control signals for read and write operations. When the specified address matches the module's address and read is enabled, it sequentially outputs data from the chosen register onto a shared bus. Address validation and control logic ensure that operations occur only when appropriate signals are asserted, with an active-high reset feature for initializing the state. The module allows for data latching and controlled output based on clock pulses, making it suitable for interfacing with external bus systems in a broader digital design.
+module top_module( 
+     input   wire         reset,       //Active Hi
+     input   wire         clock,       //System clock, should be synchronous with WcaRegbus
+     input   wire         enableIn,    //Allows input if specified.
+     input   wire  [31:0] in, 
+     
+   //Internal Interface.
+    input   wire  [11:0] rbusCtrl,  // Address and control lines(12 total) { addr[7:0], readEnable, writeEnable, dataStrobe, clkbus}
+    inout   wire  [7:0]  rbusData    // Tri-state I/O data.
+     
+);

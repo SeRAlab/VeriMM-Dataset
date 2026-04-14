@@ -1,0 +1,6 @@
+Design a circuit that functions as a load size unit to manipulate data based on a control signal. The module takes a 2-bit control input (LSControl) and a 32-bit data input (mdr), and it outputs a 32-bit result (lsOut). Depending on the value of LSControl, the module can either output the full 32-bit mdr (when LSControl is 01), extend the lower 16 bits of mdr with zeros (when LSControl is 10), or extend the lower 8 bits with zeros (when LSControl is 11). This design is suitable for data manipulation in a data processing context, such as in a processor’s load or data handling operations.
+module top_module(
+    input wire [1:0] LSControl,
+	input wire [31:0] mdr,
+	output reg [31:0] lsOut
+);

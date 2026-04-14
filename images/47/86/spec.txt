@@ -1,0 +1,30 @@
+Implement the Verilog module based on the following description.
+Given the following Moore state machine with 1 input (in) and 1 output (out). Unless otherwise stated in the diagram below, assume outputs are 0 and inputs are don't cares.
+
+The state machine has the following states and their corresponding outputs: 
+1. state A (out=0).
+2. state B (out=1).
+3. state C (out=1).
+
+State transitions:
+1. From state A: If in = 1, then transition to state B. If in = 0, then remain in state A.
+2. From state B: If in = 0, then transition to state C. If in = 1, then remain in state B.
+3. From state C: If in = 0, then remain in state C. If in = 1, then transition to state A.
+
+At reset, the state machine starts in state "A". Derive next-state logic equations and output logic equations by inspection assuming the following one-hot encoding is used: (A, B, C) = (3'b001, 3'b010, 3'b100)
+
+Write code that generates the following equations:
+
+- A_next -- next-state logic for state A
+- B_next
+- C_next
+- out -- output logic
+
+module top_module(
+    input in,
+    input [2:0] state,    // 3-bit one-hot current state
+    output reg A_next,
+    output reg B_next,
+    output reg C_next,
+    output reg out
+ );

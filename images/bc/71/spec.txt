@@ -1,0 +1,7 @@
+Design a clocked one-shot pulse generator that produces a single output pulse in response to a high input pulse. The module has a reset feature, wherein activation of the reset pin sets the internal state to the initial condition and the output to LOW. When a rising edge of the clock occurs and the input pulse is detected, it transitions through defined states; specifically, it transitions from an idle state (State0) to a state where it generates a single pulse (State1) upon the falling edge of the input. After generating the pulse, it moves to a temporary state (State2) before resetting back to the idle state (State0). This functionality ensures that the output pulse is generated only once for each valid input pulse received.
+module top_module(
+    input InputPulse,
+    input Reset,
+    input CLOCK,
+    output reg OneShot
+);

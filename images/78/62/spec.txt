@@ -1,0 +1,8 @@
+Design a circuit that synchronizes and holds a 14-bit data value based on clock signals. When a reset occurs, both the current output (`data_stand`) and a previous state register (`prev_data_stand`) are set to zero. On each rising edge of a 50 MHz clock, if a clock recovery signal is active, the module updates the output with the incoming data (from `data_rec`). If the clock recovery signal is inactive, it retains the last valid data value stored in `prev_data_stand`. This module effectively acts as a data buffer with synchronization capabilities between different clock domains.
+module top_module(
+		 input clock_recovery,
+		 input clock_50,
+		 input reset_n,
+		 input [13:0] data_rec,
+		 output reg [13:0] data_stand	
+		);

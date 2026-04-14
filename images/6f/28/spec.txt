@@ -1,0 +1,9 @@
+Design a bank register module that maintains and updates a balance based on input transactions. The module includes a clock and reset functionality, where a reset initializes the registers and balance to zero. When operating normally, if the EscrReg signal is high, the module subtracts the input data from the balance (adjusted by the low 6 bits of RegEscr); otherwise, it adds the input data to the balance. Additionally, it stores the lower 6 bits of the current balance and the last entered transaction in dedicated registers. The balance is output as data1 and the most recent transaction as data2.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] datain,
+    input EscrReg,
+    output reg [31:0] data1,
+    output reg [31:0] data2
+);

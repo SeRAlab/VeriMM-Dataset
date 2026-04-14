@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+
+Implement a module of a digital comparator. The module takes two 8-bit inputs and produces an output indicating whether the first input is less than, equal to, or greater than the second input.
+
+Module name:  
+    comparator  
+                 
+Input ports:
+    a: 8-bit input
+    b: 8-bit input
+
+Output ports:
+    lt: Output signal (1 if a < b, 0 otherwise)
+    eq: Output signal (1 if a == b, 0 otherwise)
+    gt: Output signal (1 if a > b, 0 otherwise)
+
+Implementation:
+The comparator module uses a combinational always block to compare the two inputs and set the output signals accordingly.
+The always block triggers on any change in the inputs a or b. It checks the values of a and b and sets the output signals lt, eq, and gt based on the comparison.
+
+Give me the complete code.
+
+module comparator(a, b, lt, eq, gt);
+input [7:0] a, b;
+output lt, eq, gt;
+reg lt, eq, gt;

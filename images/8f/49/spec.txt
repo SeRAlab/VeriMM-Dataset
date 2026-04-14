@@ -1,0 +1,5 @@
+Design a simple synchronous RAM module with 128 entries, where each entry is 32 bits wide. This module allows writing data into a specified memory location when the write enable signal (wP) is high at the rising edge of the clock. The read operation is performed based on the read enable signal (rP); if it is low, the output readData is driven to zero, otherwise, it outputs the data from the specified target memory location.
+module top_module(input clock, wP, rP,
+				input [31:0] target,
+				input [31:0] writeData,
+				output [31:0] readData);

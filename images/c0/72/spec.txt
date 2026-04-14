@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+    
+Implement a module to generate a phase-shifted signal (`phi_1`) in relation to an input signal (`phi_0`), based on a clock signal (`baseclk`). This module to introduce a controlled delay between the input phase signal and the output phase signal, which can be crucial in timing adjustments and synchronization tasks within digital systems, especially in systems requiring precise phase alignment or timing adjustments between different signals or subsystems.
+
+Module name:  
+	ag6502_phase_shift
+
+Input ports:
+	baseclk: This is the base clock input signal of type input. It acts as the reference timing signal for the module, triggering the evaluation and potential adjustment of the phaseshifted output signal on its positive edge.
+	phi_0: This is an input signal of type input representing the initial phase to be shifted. The module uses this signal to determine when to initiate a phase shift based on its comparison with the current output phase (phi_1).
+Output ports:
+	phi_1: This is the output signal of type output reg. It represents the phaseshifted version of the phi_0 input. The phase shift is controlled by the module's internal logic and the specified delay parameter.
+
+
+Implementation:
+The RTL module ag6502_phase_shift is designed to generate a phase-shifted signal phi_1 based on an input signal phi_0 and a base clock baseclk. The phase shift is introduced through a delay mechanism controlled by a parameter DELAY. This module employs both combinational and sequential logic to achieve its functionality.
+
+Give me the complete code.
+

@@ -1,0 +1,7 @@
+Develop a 4-bit comparator that evaluates two 4-bit input values, `in0` and `in1`, and generates a 2-bit output `result` indicating their relative sizes. When `in0` is greater than `in1`, the output is set to `2'b01`; when `in0` is less than `in1`, the output is `2'b10`; and when both values are equal, the output is `2'b00`. The comparison and output assignment occur on the rising edge of a clock signal, and the inputs are registered to synchronize the comparison process.
+module top_module(
+    input [3:0] in0,
+    input [3:0] in1,
+    input clk,             // Added clk input
+    output reg [1:0] result
+);

@@ -1,0 +1,6 @@
+Design a circuit that processes a 16-bit input and outputs two 8-bit values, where `out_hi` reflects either the higher 8 bits of the input or the shifted higher bits depending on the value of the lower 8 bits, and `out_lo` consistently provides the lower 8 bits of the input. The design includes pipeline registers for input and output storage and utilizes a barrel shifter to aid in selecting the appropriate higher 8 bits based on a condition, effectively serving as a combination of a multiplexer and a shifter in a pipelined architecture.
+module top_module( 
+    input wire clk,            // Added clk input
+    input wire [15:0] in,
+    output reg [7:0] out_hi,  // Changed output to reg type
+    output reg [7:0] out_lo );

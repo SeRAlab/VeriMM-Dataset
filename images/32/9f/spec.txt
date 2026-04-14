@@ -1,0 +1,10 @@
+
+Design a simple Ethernet MAC controller for packet transmission. The controller should have the following inputs and outputs:
+- Inputs:
+  - `start_tx`: a signal that initiates the transmission of a packet.
+  - `data_in`: a 32-bit data input representing the packet to be transmitted.
+- Outputs:
+  - `transmitting`: a signal that indicates whether a packet is currently being transmitted.
+  - `data_out`: a 32-bit output representing the transmitted packet.
+
+The transmission process activates when `start_tx` is high. The `transmitting` signal should be high during the transmission, which lasts for a fixed number of clock cycles (let's say 4 cycles). After transmission, `data_out` should hold the value of `data_in`, and `transmitting` should go low.

@@ -1,0 +1,9 @@
+Design a turn-off control circuit that manages the readiness for a system to power down. The module monitors a completion request signal and a completion status signal to determine if a turn-off action can proceed. When the reset signal is deasserted, it resets the turn-off status. If a turn-off request is made and there's no ongoing completion pending, the output indicates that it is safe to proceed with the turn-off operation. The output signal signifies when it's acceptable to turn off the system, ensuring that all necessary completions are verified before powering down.
+module top_module(
+  input clk,
+  input rst_n,
+  input req_compl_i,
+  input compl_done_i,
+  input cfg_to_turnoff_n,
+  output reg cfg_turnoff_ok_n
+);

@@ -1,0 +1,7 @@
+Design a clock gating circuit that generates an output clock enable signal, ENCLK, based on the input clock (CLK), enable signal (EN), and test enable signal (TE). The module utilizes a latch (TLATNTSCAX2TS) to control the propagation of the clock signal according to the enable conditions, effectively reducing dynamic power consumption during idle states. Additionally, it includes an initial command for SDF annotation, potentially for timing analysis in ASIC implementation.
+module top_module(
+    input E,     // Enable
+    input SE,    // Scan enable
+    input CK,    // Clock
+    output ECK   // Clock gated output
+);

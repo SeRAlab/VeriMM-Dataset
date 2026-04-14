@@ -1,0 +1,9 @@
+Implement a Verilog module for a simple 2-bit binary counter with three states: Init, Increment, and Done. Use the following one-hot state encoding: INIT=3'b001, INCREMENT=3'b010, DONE=3'b100. The counter should count up to 3 and then move to the Done state. Derive state transition and output logic equations by inspection assuming a one-hot encoding. Implement only the state transition logic and output logic (the combinational logic portion) for this state machine.
+
+module binary_2bit_counter (
+  input clk, 
+  input reset, 
+  input [2:0] state, 
+  output reg [2:0] next_state, 
+  output reg [1:0] count, 
+  output reg done);

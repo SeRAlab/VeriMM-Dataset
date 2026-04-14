@@ -1,0 +1,10 @@
+Design a register file that facilitates reading and writing 32 registers, each 32 bits wide, with additional handling for a pair of registers (hi and lo) when 'double' is asserted. The module supports synchronous reset functionality that clears all registers upon reset, enables writing to specific registers determined by the 'regWriteAddr' input, and allows for the writing of the program counter to the 31st register when a 'jal' (jump and link) signal is active. The outputs provide values from the specified source registers 'RsAddr' and 'RtAddr', and the 'regtoshow' output displays the lower 16 bits of a register determined by the 'switch' input.
+module top_module(input clk, reset, double,
+               input regWriteEn, jal,
+               input [4:0] RsAddr, RtAddr,
+               input [4:0] regWriteAddr,
+               input [63:0] regWriteData,
+               input [31:0] pc,
+               output [31:0] RsData, RtData,
+               input [4:0] switch,
+               output [15:0] regtoshow);

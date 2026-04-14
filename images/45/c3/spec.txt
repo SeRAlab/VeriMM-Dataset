@@ -1,0 +1,8 @@
+Design a circuit that combines a synchronous 4-bit counter with a 2-to-1 multiplexer and a priority encoder. The counter increments its value on each clock cycle when not reset, and provides its current count as output. The multiplexer selects between various outputs based on the `select` input: when `select` is 0, it outputs a default value of zero; when `select` is 1, it outputs the current counter value; when `select` is 2, it outputs the counter value incremented by one; and when `select` equals 3, it outputs a fixed value of 15 (4'b1111). This module effectively integrates counting and selection functionality for different applications.
+module top_module(
+    input clk,
+    input reset,      // Asynchronous active-high reset
+    output reg [3:0] counter_out, // 4-bit output from the counter
+    input select, // Select input for the multiplexer
+    output reg [3:0] q // 4-bit output from the selected input
+);

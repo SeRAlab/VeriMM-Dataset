@@ -1,0 +1,1 @@
+module top_module(input a, input b, output [1:0]mode);assign mode ={a&b,a^b};endmodule

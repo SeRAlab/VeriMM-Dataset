@@ -1,0 +1,10 @@
+Design a circuit that functions as a 3-bit delayed serial to parallel data converter with reset functionality. This module captures incoming serial data on a rising clock edge when the sync signal is asserted, shifting it into an 8-bit shift register. The output provides the value of the shifted data at a specified delay, as indicated by the 3-bit delay input, while also allowing a reset to clear the shift register to zero when required.
+module top_module(
+  input clk,
+  input sync,
+  input reset,
+  
+  input [2:0]delay,
+  input in,
+  output out
+);

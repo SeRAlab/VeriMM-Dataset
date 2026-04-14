@@ -1,0 +1,6 @@
+Create a module that performs sign-extension and zero-padding for a 16-bit immediate value based on the control signals provided. The 16-bit input `Imm` is expanded into a 32-bit output `Immediate32`. The `Ex_top` control signals dictate how the expansion occurs: with `Ex_top[0]`, the sign bit of `Imm` is replicated to the upper 16 bits if `Ex_top[0]` is 0; otherwise, those bits are filled with zeros. Additionally, if `Ex_top[1]` is set to 1, the `Imm` value is left-shifted by 16 bits, effectively padding the lower bits with zeroes. This design allows for flexible immediate value handling in various instruction formats.
+module top_module(
+input [15:0] Imm,
+input [1:0] Ex_top,
+output [31:0] Immediate32
+);

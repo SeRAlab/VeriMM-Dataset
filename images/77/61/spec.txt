@@ -1,0 +1,13 @@
+Design a pipeline stage in a processor that captures and stores the outputs of an execution unit for use in the next cycle. This module, labeled EXMEM, is responsible for latching the control signals (WB and M), the execution result, a secondary read value, and the destination register address on the rising edge of the clock. The captured values are provided through designated output ports, allowing subsequent stages of the processor to use the results and control signals for further processing.
+module top_module( input clk, 
+              input [1:0]WB,
+              input [2:0]M,
+              input[31:0] result,read_2,
+              input [4:0] Regd,             
+              output[31:0] Result,Read_2,
+              
+              
+              output [4:0]RegD,
+              output [1:0] WB_o,
+              output [2:0] M_o
+   );

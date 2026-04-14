@@ -1,0 +1,8 @@
+Design a 2-to-1 multiplexer that selects between multiple input sources based on a 2-bit control signal (op_b). The module processes four distinct input options: it passes through the 32-bit bus 'b' when op_b is 00, uses a signed version of the 9-bit 'deslocamento' when op_b is 01, selects a signed version of the 14-bit 'imediate' when op_b is 10, and constructs a 32-bit output by concatenating 27 zero bits with the 5-bit 'shift_desloc' when op_b is 11. This module is useful for data routing in processor or ALU operations where conditional selection of input values is necessary.
+module top_module(
+input[8:0] deslocamento,
+input[31:0] b,
+input[13:0] imediate,
+input[4:0] shift_desloc,
+input[1:0] op_b,
+output reg[31:0] b_select);

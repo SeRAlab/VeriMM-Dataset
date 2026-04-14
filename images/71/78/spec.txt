@@ -1,0 +1,36 @@
+Please act as a professional Verilog designer.
+
+Implement a 16-bit Register File module with 8 registers. The module should support read and write operations based on control signals. The data can be written to any of the 8 registers, and any register can be read.
+
+Module name:
+    register_file
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    we: Write enable signal. Defined as 1 to enable writing data.
+    write_addr: 3-bit input signal representing the address of the register to be written.
+    read_addr: 3-bit input signal representing the address of the register to be read.
+    data_in: 16-bit input signal representing the data to be written.
+
+Output ports:
+    data_out: 16-bit output signal representing the data read from the register.
+
+Implementation:
+The module includes an array of 8 registers, each 16 bits wide, to store the register values.
+The register values are updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, all registers are cleared to 0.
+On each clock cycle, if the write enable signal is high, the data at data_in is written to the register specified by write_addr.
+The data at the register specified by read_addr is continuously provided at data_out.
+
+Give me the complete code.
+
+module register_file(
+  input clk,
+  input rst_n,
+  input we,
+  input [2:0] write_addr,
+  input [2:0] read_addr,
+  input [15:0] data_in,
+  output [15:0] data_out
+);

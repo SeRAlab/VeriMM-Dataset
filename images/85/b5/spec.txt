@@ -1,0 +1,5 @@
+Design a synchronous 4-port RAM module with a clock, chip enable, and 4 independent write enable signals. It has a configurable address width (aw) and data width (dw), allowing simultaneous access to four different memory banks. Writing data is done in a big-endian format, where each byte is directed to a dedicated memory port based on the associated write enable bits. On each clock cycle, if chip enable is active, it updates the address register and facilitates data output, which concatenates the content of all four memory banks at the specified address, thereby providing a unified data output bus.
+module top_module(
+   // Generic synchronous 4-port RAM interface
+   clk, ce, we, addr, di, doq
+   );

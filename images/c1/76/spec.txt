@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform the "MixColumns" transformation, which is a critical operation in the AES (Advanced Encryption Standard) encryption and decryption processes. This transformation operates on the state array's columns, mixing the data to ensure diffusion across the state. The module provides two primary functionalities:
+
+Encryption Transformation (`mix_out_enc`): It applies the MixColumns operation as defined in the AES encryption algorithm. This involves matrix multiplication in the Galois Field (2^8) to mix the bytes within each column of the state.
+Decryption Transformation (`mix_out_dec`): It computes the inverse MixColumns operation necessary during the AES decryption process. This is achieved by applying a different set of operations that effectively reverse the encryption MixColumns transformation.
+
+Module name:  
+	mix_columns
+
+Input ports:
+	mix_in [31:0]: A 32bit input representing four bytes (one column) of the state array in AES. Each byte (8 bits) corresponds to one element in the column of the state matrix that is to be transformed.
+Output ports:
+	mix_out_enc [31:0]: A 32bit output representing the transformed column after applying the MixColumns operation for encryption. It contains four bytes, each corresponding to a transformed element of the input column.
+	mix_out_dec [31:0]: A 32bit output representing the transformed column after applying the inverse MixColumns operation for decryption. Similar to mix_out_enc, it contains four transformed bytes.
+
+
+Implementation:
+The mix_columns module is designed to perform the MixColumns transformation, a critical operation in the AES (Advanced Encryption Standard) encryption and decryption processes. This transformation operates on the state array, treating each column as a four-term polynomial over the finite field GF(2^8) and multiplying it modulo \(x^4 + 1\) with a fixed polynomial \(c(x)\). The module provides both encryption (mix_out_enc) and decryption (mix_out_dec) outputs based on the input state array (mix_in).
+
+Give me the complete code.
+

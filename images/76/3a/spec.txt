@@ -1,0 +1,9 @@
+Design a 4-to-1 multiplexer that selects one of three 32-bit input values (a, b, c) based on a 2-bit control signal (ctr). When ctr is 00, the output z is assigned the value of input a; when ctr is 01, z takes the value of input b; when ctr is 10, the lower 5 bits of b are concatenated with three zeros to form the output; and when ctr is 11, the output is set to input c. This allows for flexible data routing based on the control signal.
+module top_module(
+    input [31:0] a,
+    input [31:0] b,
+    input [31:0] c,
+    input [1:0] ctr,
+    
+    output [31:0] z
+    );

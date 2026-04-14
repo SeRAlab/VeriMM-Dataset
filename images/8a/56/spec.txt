@@ -1,0 +1,6 @@
+Design a 16-bit to 32-bit immediate value extension module that supports different extension operations based on a 2-bit control signal (EXTOp). When EXTOp is 00, perform sign extension of the 16-bit input by replicating the sign bit; when EXTOp is 01, perform zero extension by padding the upper 16 bits with zeros; when EXTOp is 10, position the 16-bit value to the lower half of the 32-bit output with the upper half set to zero; and when EXTOp is 11, sign extend the value and then shift the resultant 32-bit output left by 2 bits.
+module top_module(
+    input [15:0] imm,
+    input [1:0] EXTOp,
+    output reg [31:0] Ext_imm
+    );

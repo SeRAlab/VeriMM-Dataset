@@ -1,0 +1,5 @@
+Design a digital module that computes inverse trigonometric functions based on a signed 32-bit input. The module approximates arcsine, arccosine, and arctangent using Taylor series expansions. It outputs the computed value `y`, depending on the input `x`: if `x` is in the range [-1, 1], it produces the arcsine; if there's a different range check, it would compute and return the arccos (though this condition needs clarification as it is currently redundant); otherwise, it calculates and outputs the arctangent. The module thus serves as an approximate function generator for inverse trigonometric calculations.
+module top_module(
+  input signed [31:0] x,
+  output reg signed [31:0] y  // Changed to reg to allow assignment in always blocks
+);

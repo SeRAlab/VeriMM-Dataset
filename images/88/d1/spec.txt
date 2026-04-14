@@ -1,0 +1,10 @@
+Design a digital vending machine controller that processes coin inputs and product selections to dispense items and provide change. The module takes a clock and reset signal, alongside inputs for coin values and product choices. Based on the inserted coins, it updates the total amount inserted and determines the product's cost based on the selection. It dispenses the product if sufficient funds are provided and calculates any excess change, updating the output display with the current state of the transaction. The design effectively manages user interactions typical in a vending machine scenario.
+module top_module(
+    input clk,
+    input reset,
+    input [2:0] coin,
+    input [1:0] product,
+    output reg dispense,
+    output reg [2:0] change,
+    output reg [3:0] display
+);

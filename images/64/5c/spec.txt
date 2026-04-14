@@ -1,0 +1,6 @@
+Design a 16-bit to 32-bit sign-extension module. When EXTsle is high, the 16-bit input (i16) is zero-extended to create a 32-bit output (EXTOUT) by prepending 16 zeros. When EXTsle is low, the input is sign-extended, preserving the sign bit of i16, by prepending 16 copies of the most significant bit (the sign bit of the 16-bit input) to form the 32-bit output.
+module top_module(
+	input [15:0] i16,
+	input EXTsle,
+	output [31:0] EXTOUT
+    );

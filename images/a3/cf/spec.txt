@@ -1,0 +1,6 @@
+Design a 4-bit barrel shifter that shifts its output left or right based on control signals. When SHIFT_LEFT is asserted, the module shifts the current output Q to the left and fills the least significant bit with the most significant bit of the input DATA. Conversely, when SHIFT_RIGHT is asserted, it shifts the output Q to the right and fills the most significant bit with the least significant bit of the input DATA. The operation occurs on the rising edge of the CLK signal.
+module top_module(
+    input CLK, SHIFT_LEFT, SHIFT_RIGHT,
+    input [3:0] DATA,
+    output reg [3:0] Q
+);

@@ -1,0 +1,22 @@
+
+
+You are tasked with designing a Verilog module that implements a 4-bit shift register with parallel load functionality. The module should have four inputs and two outputs. The inputs are: 
+
+1. `clk`: a clock signal
+2. `reset`: a reset signal
+3. `load`: a load signal
+4. `data_in`: a 4-bit input data signal
+
+The outputs are:
+
+1. `data_out`: a 4-bit output data signal
+2. `shift_out`: a 1-bit signal that outputs the value of the most significant bit in the shift register.
+
+The module should implement the following functionality:
+
+- On the rising edge of the clock signal `clk`, if the `reset` signal is high, the shift register should be reset to all zeros.
+- On the rising edge of the clock signal `clk`, if the `reset` signal is low and the `load` signal is high, the shift register should be loaded with the value of `data_in`.
+- On the rising edge of the clock signal `clk`, if the `reset` signal is low and the `load` signal is low, the shift register should shift all bits to the left, with the most significant bit being output on the `shift_out` signal and the least significant bit being discarded. The new least significant bit should be set to zero, and the new most significant bit should be set to the value of the previous second-most significant bit. The value of the shift register should be output on the `data_out` signal.
+
+You should implement this functionality in a single Verilog module that is no more than 200 lines long.
+

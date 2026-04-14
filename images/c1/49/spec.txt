@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+    
+Implement a module aims to identify such situations and control the pipeline's flow to ensure correct program execution. It plays a crucial role in maintaining the integrity and efficiency of the processor's pipeline by preventing data hazards that could lead to stalls or incorrect computations.
+
+Module name:  
+	hazard_detection_unit
+
+Input ports:
+	decoding_op_src1 ([2:0]): A 3bit input representing the source operand 1 identifier being decoded in the current instruction. It is crucial for identifying potential readafterwrite (RAW) hazards.
+	decoding_op_src2 ([2:0]): A 3bit input representing the source operand 2 identifier being decoded in the current instruction. Similar to decoding_op_src1, it is used to detect RAW hazards.
+	ex_op_dest ([2:0]): A 3bit input representing the destination operand identifier in the execute (EX) stage of the pipeline. This input is checked against the source operands to detect hazards.
+	mem_op_dest ([2:0]): A 3bit input representing the destination operand identifier in the memory (MEM) stage of the pipeline. It is used to identify potential hazards with instructions currently accessing memory.
+	wb_op_dest ([2:0]): A 3bit input representing the destination operand identifier in the writeback (WB) stage of the pipeline. This input helps detect hazards with instructions that are about to write back their results.
+Output ports:
+	pipeline_stall_n (reg): A singlebit output that controls the pipeline's flow. When set to 0, it indicates a pipeline stall should occur to prevent a data hazard. When set to 1, it indicates normal operation without the need for stalling.
+
+
+Implementation:
+The hazard_detection_unit module is designed to detect data hazards in a pipelined processor architecture. Data hazards occur when an instruction depends on the result of a previous instruction that has not yet completed its execution, potentially leading to incorrect results or processor stalls. This module identifies such hazards and controls the pipeline's flow by asserting or deasserting the pipeline_stall_n signal.
+The module operates purely on combinational logic, as evidenced by the use of an always @ () block, which triggers on any change of its input signals. There are no sequential elements (like flip-flops or registers) being directly controlled within this module, making its operation instantaneous with respect to its inputs.
+The core logic revolves around comparing source operand identifiers from a decoding stage (decoding_op_src1 and decoding_op_src2) against destination operand identifiers in the execute (ex_op_dest), memory (mem_op_dest), and write-back (wb_op_dest) stages of the pipeline. If any source operand matches a destination operand in these stages, it indicates a potential data hazard, necessitating a pipeline stall to ensure correct program execution.
+Initially, pipeline_stall_n is set to 1 (indicating no stall). It is then conditionally set to 0 (indicating a stall) if any of the following conditions are met:
+decoding_op_src1 is non-zero and matches any of the destination operands in the execute, memory, or write-back stages.
+decoding_op_src2 is non-zero and matches any of the destination operands in the execute, memory, or write-back stages.
+The non-zero check for decoding_op_src1 and decoding_op_src2 ensures that only valid (non-zero) source operands are considered for hazard detection, as a zero value might represent an unused or irrelevant operand.
+
+Give me the complete code.
+

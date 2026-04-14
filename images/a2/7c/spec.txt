@@ -1,0 +1,6 @@
+Design a 4-to-1 multiplexer that selects between three possible program counter outputs based on a 2-bit select signal (PCSrc). When PCSrc is 0, the output PCout is set to the value of PC4; when PCSrc is 1, it selects PC4_imm; and for PCSrc values of 2 or higher, it outputs the jump address. This module facilitates the selection of the next program counter entry in a processor's control flow.
+module top_module(
+    input [31:0] PC4, PC4_imm, jump,
+    input [1:0] PCSrc,
+    output reg [31:0] PCout
+    );

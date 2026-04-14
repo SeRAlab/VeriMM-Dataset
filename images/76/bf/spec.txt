@@ -1,0 +1,6 @@
+Design a 15-bit address decoder that generates a 12-bit output based on the input address and a clock signal. On the rising edge of the clock, the module evaluates the address: if it is less than 2048 (15'h0800), the output is set to zero; if between 2048 and 4096 (15'h1000), the output corresponds directly to the lower 12 bits of the address; for addresses equal to or greater than 4096, the output is derived from the upper bits of the address, specifically the bits from address[14:3]. This functionality allows for address space mapping in memory or peripheral devices.
+module top_module(
+    input [14:0] address,
+    input clock,
+    output reg [11:0] q
+);

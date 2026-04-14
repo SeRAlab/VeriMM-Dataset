@@ -1,0 +1,7 @@
+Design a 4-bit decade counter with an asynchronous reset and an enable signal for counting. On each positive clock edge, if the reset is not asserted, the counter increments when the slowena signal is active. The counter values (0-15) are then decoded into a 16-bit output using a combinational logic decoder, which maps each count to a specific 16-bit pattern, effectively providing a unique 16-bit output corresponding to each count value. The output is updated based on the current state of the counter, allowing for a simple representation of the count in a wider data format.
+module top_module(
+    input clk,
+    input reset,       // Asynchronous reset
+    input slowena,     // Enable input for decade counter
+    output [15:0] q    // 16-bit output from 4-to-16 decoder
+);

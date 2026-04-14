@@ -1,0 +1,7 @@
+Design a circuit that performs addition of two 32-bit inputs while simultaneously implementing a parity check. The module includes a 32-bit adder that outputs the sum of inputs 'a' and 'b'. It also features a parity register that maintains the running XOR of the adder's output. The parity register is reset synchronously on a high reset signal and updated on each clock cycle. Finally, the module outputs the result of subtracting the adder's output from the current parity value, providing both the addition result and a dynamic parity check in a single design.
+module top_module(
+    input clk,
+    input reset,       // Synchronous active-high reset
+    input [31:0] a, b, // Inputs to the adder
+    output [31:0] out  // Output from the functional module
+);

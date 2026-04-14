@@ -1,0 +1,6 @@
+Design a five-stage pipeline for adding two 64-bit wide inputs. The module takes in a clock signal and two 64-bit inputs, t1_a and t1_b, and computes their sum. The result is registered through five clock cycles, with each stage storing the result from the previous stage. The final output, t6_res, provides the sum after the fifth clock cycle, effectively allowing for staged processing of addition to improve throughput.
+module top_module(
+input		ck,
+input	[63:0]	t1_a, t1_b,
+output	[63:0]	t6_res
+);

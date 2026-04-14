@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a 4-to-1 multiplexer (MUX) within a broader digital system, potentially within an Arithmetic Logic Unit (ALU) or any system requiring selection logic. Its primary objective to select one of the four input signals based on a 2-bit selection input and output the selected signal. This module is crucial for operations that require conditional data routing, enabling dynamic data flow control within digital circuits.
+
+Module name:  
+	alu_mux_4
+
+Input ports:
+	in0 (input wire): The first input signal for the multiplexer. It is a singlebit signal that can be selected for output when the selection input (sel) is 00.
+	in1 (input wire): The second input signal for the multiplexer. It is a singlebit signal that can be selected for output when the selection input (sel) is 01.
+	in2 (input wire): The third input signal for the multiplexer. It is a singlebit signal that can be selected for output when the selection input (sel) is 10.
+	in3 (input wire): The fourth input signal for the multiplexer. It is a singlebit signal that can be selected for output when the selection input (sel) is 11.
+	sel (input wire [1:0]): A 2bit selection signal that determines which of the four input signals (in0 to in3) is routed to the output. The value of sel directly maps to the input signals, with 00 selecting in0, 01 selecting in1, 10 selecting in2, and 11 selecting in3.
+Output ports:
+	out (output wire): The output signal of the multiplexer. It carries the value of one of the input signals, as determined by the sel input.
+
+
+Implementation:
+The module alu_mux_4 is designed to function as a 4-to-1 multiplexer (MUX). It selects one of the four input signals (in0, in1, in2, in3) based on the 2-bit selection input (sel) and outputs the selected input through the out signal. This module is purely combinational, meaning its output is directly determined by its current inputs without any internal state or memory.
+The selection input sel is a 2-bit signal, allowing for four possible combinations (00, 01, 10, 11), each corresponding to one of the four inputs. The logic implemented within the module decodes the sel signal and uses it to control which input signal is passed to the output.
+The core logic is implemented using a series of AND and OR gates. The AND gates are used to conditionally pass the input signals based on the sel value, while the OR gate combines these conditioned signals into a single output. The module employs inverted sel signals to facilitate the selection logic, ensuring that only the input corresponding to the sel value is passed through.
+
+Give me the complete code.
+

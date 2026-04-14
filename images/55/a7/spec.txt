@@ -1,0 +1,10 @@
+Design a circuit for a seven-segment display driver that accepts a 16-bit binary input and a clock signal to cycle through and display individual digits. The module includes a clock divider to manage the display refresh rate and allows for an active low chip clear functionality. It decodes the 4-bit segments of the 16-bit input into the corresponding seven-segment code for digits 0-9 and additional characters A, B, and C. The output includes control signals for the segments (a_to_g) and one for enabling the appropriate digit display through a common anode or cathode configuration (an). The module is intended for displaying decimal values on a 7-segment display in a user-friendly manner.
+module top_module(
+
+	 input [15:0] x,
+    input clk,
+    input clr,
+    output reg [6:0] a_to_g,
+    output reg [3:0] an,
+    output wire dp 
+	 );

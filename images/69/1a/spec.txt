@@ -1,0 +1,18 @@
+Design a circuit interfacing with an SRAM memory module, implementing a state machine for controlling read operations. The module utilizes a clock and reset inputs to manage its state transitions, facilitating a read process based on address input. The memory address is processed to configure SRAM control signals, and the data output (dout) is registered from the SRAM data bus when in the appropriate state. The circuit ensures ready status (rdy) is asserted during idle times and coordinates the activation and deactivation of SRAM control signals like chip enable (sram_ce) and output enable (sram_oe) to enable proper data reading functionality.
+module top_module(
+    input rst,
+    input clk,
+    input [23:0] addr,
+    output reg [15:0] dout,
+    output reg rdy,
+    output reg sram_clk,
+    output reg sram_adv,
+    output reg sram_cre,
+    output reg sram_ce,
+    output reg sram_oe,
+    output reg sram_lb,
+    output reg sram_ub,
+    output reg [23:1] sram_addr,
+    output reg sram_we,
+    inout [15:0] sram_data
+);

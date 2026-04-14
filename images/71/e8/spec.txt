@@ -1,0 +1,7 @@
+Implement a pulse-width modulation (PWM) generator that produces a PWM output signal based on a specified frequency determined by a 16-bit input `note`. The module divides the clock frequency using a counter that counts up to the value of `note`, resetting when it reaches this threshold. The generated PWM signal has a 50% duty cycle and toggles its state with each clock cycle when the counter resets. The circuit resets the output to LOW when the `rstn` signal is asserted or when the `note` input is zero.
+module top_module(
+    input wire clk,
+    input wire rstn,
+    input wire [15:0] note,
+    output reg pwm_out
+);

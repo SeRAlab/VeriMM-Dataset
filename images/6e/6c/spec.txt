@@ -1,0 +1,10 @@
+Design a countdown timer module that implements a Binary-Coded Decimal (BCD) counter along with a 4-to-2 priority encoder. The module features a synchronous active-high reset, which initializes the counter to 9 and the output register to a predefined BCD value. The priority encoder takes a 4-bit input and determines the position of the highest active input, while the output flags indicate when the countdown is complete. The counter decrements based on enable signals generated according to the current active position, and outputs the counter value as a 16-bit bus. The countdown halts when the counter reaches zero, setting an output flag to signal this condition.
+module top_module(
+    input clk,
+    input reset,           // Synchronous active-high reset for BCD counter
+    input [3:0] in,        // Input for the priority encoder
+    output reg [1:0] pos,  // Output of the priority encoder
+    output reg [2:0] ena,   // Enable signals for the upper three digits of the BCD counter
+    output reg zero_flag,  // Output flag indicating countdown has completed
+    output reg [15:0] q    // Output of the BCD counter
+);

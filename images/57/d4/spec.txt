@@ -1,0 +1,12 @@
+Design a combinational logic circuit that produces a single output Y based on eight input signals (A, B, C, D, E, F, G, H). The circuit first computes the logic AND of inputs A, B, and C sequentially. It also computes the logic AND of the negations of inputs D and E. An additional OR gate combines inputs F and G. The circuit then ANDs the output from the negated D and E computation with the result of the F or G operation, and finally ANDs that result with the negation of input H. The output Y is derived by negating the last AND result and effectively serves as an active-low signal since it incorporates an OR operation with a constant low signal.
+module top_module(
+    input A,
+    input B,
+    input C,
+    input D,
+    input E,
+    input F,
+    input G,
+    input H,
+    output Y
+);

@@ -1,0 +1,26 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit synchronous binary up/down counter. The module increments or decrements the counter value on each rising edge of the clock based on the value of the up_down signal. If up_down is 1, the counter increments; if up_down is 0, the counter decrements. The counter should be reset to 0 when the reset signal is high.
+
+Module name:
+    up_down_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    reset: Reset signal to initialize the counter to 0.
+    up_down: Control signal to determine counting direction.
+
+Output ports:
+    q: Output signal representing the current counter value.
+
+Implementation:
+The counter is defined as reg [3:0] q and initialized to 0 using the initial statement. On each rising edge of the clock, if the reset signal is high, the counter is reset to 0; otherwise, the counter increments or decrements based on the value of up_down: q <= (up_down) ? q + 1 : q - 1.
+
+Give me the complete code.
+
+module up_down_counter(clk, reset, up_down, q);
+
+    input clk;
+    input reset;
+    input up_down;
+    output [3:0] q;

@@ -1,0 +1,9 @@
+Implement an 8x8 dual-port register file with read and write functionalities. It has eight 8-bit wide registers for storing data, allowing data to be written to a specified register when the write enable (we) signal is high and the clock triggers an edge. Simultaneously, it enables the reading of data from a designated register based on the read address, which is outputted each time the clock signal has a positive edge.
+module top_module(
+  input      [7:0] data,       
+  input      [2:0] read_addr,  
+  input      [2:0] write_addr, 
+  input            we,         
+  input clk,
+  output reg [7:0] q           
+);

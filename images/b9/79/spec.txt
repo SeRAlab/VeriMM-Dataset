@@ -1,0 +1,17 @@
+Design a GPIO (General Purpose Input/Output) core module that interfaces with a bus protocol, using AXI signals. This module captures input signals and manages read/write acknowledgments while providing outputs for GPIO operations. It latches input signal states on the rising edge of a clock and maintains internal registers to facilitate data transfer acknowledgments, allowing for both input and output operations. The design includes signal assignments for GPIO data, transfer acknowledgments, control signals, and bus operations, ensuring reliable communication between the GPIO and the controlling bus masters.
+module top_module(
+    input s_axi_aclk,
+    input bus2ip_rnw_i_reg,
+    input [3:0] gpio_io_i,
+    input [3:0] MEM_DECODE_GEN_0_cs_out_i_reg_0,
+    output [3:0] D,
+    output [3:0] gpio_io_o,
+    output [3:0] gpio_io_t,
+    output [3:0] Q,
+    output GPIO_xferAck_i,
+    output gpio_xferAck_Reg,
+    output ip2bus_rdack_i,
+    output ip2bus_wrack_i_D1_reg,
+    output bus2ip_rnw,
+    output bus2ip_cs
+);

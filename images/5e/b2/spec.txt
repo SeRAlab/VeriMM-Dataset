@@ -1,0 +1,8 @@
+Design a circuit that performs a shift-and-add operation. The module takes a 16-bit input data and, on each clock cycle, shifts this data left by one bit while simultaneously adding it to a 16-bit register. The register is reset to zero when the reset signal is high. The module outputs the result of the addition and also provides a flag indicating whether the result exceeds 32767 (0x7FFF in hexadecimal). This design effectively combines arithmetic and data manipulation, suitable for applications like arithmetic operations in digital signal processing or simple arithmetic units in hardware.
+module top_module(
+    input wire clk,
+    input wire reset,
+    input wire [15:0] data,
+    output wire [15:0] result,
+    output wire greater_than_32767
+);

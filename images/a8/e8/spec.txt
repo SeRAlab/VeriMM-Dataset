@@ -1,0 +1,7 @@
+Design a circuit that performs a controlled arithmetic operation on an 8-bit input. The module takes a clock and reset signal, multiplying the input by a fixed constant (8'b11110000) and adding a 4-bit counter to produce a 4-bit output. Upon receiving a reset, the output and counter are initialized to zero. On the rising edge of the clock, the output is updated based on the computation while the counter increments with each cycle, effectively tracking the number of operations performed.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] in,
+    output reg [3:0] out
+);

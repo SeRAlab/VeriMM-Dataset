@@ -1,0 +1,7 @@
+Design a 32-bit wide shifter that performs various bit shifting operations based on the control input `stype`. The module can perform a logical right shift when `stype` is 00, a logical left shift when `stype` is 01, and an arithmetic right shift when `stype` is 10. If `stype` does not match any of these values, the output retains the original input value `a`. The shift amount is determined by the 5-bit input `shamt`.
+module top_module(
+input [31:0] a,
+input [4:0] shamt,
+input [1:0] stype,
+output  reg [31:0] r
+);

@@ -1,0 +1,7 @@
+Design a module that performs a 4-bit barrel shifter followed by a magnitude comparison between two shifted values. The module allows for left or right shifts of the input `a` based on the 2-bit `shift` control signal, while `b` remains unchanged. It outputs a 3-bit comparison result indicating whether `shifted_a` is greater than, less than, or equal to `b`. Based on the comparison result, the final output will either be `shifted_a`, `shifted_b`, or the bitwise OR of both. This module effectively combines shifting and comparison functionalities, suitable for applications requiring data routing based on magnitude relationships.
+module top_module(
+    input [3:0] a, b,
+    input [1:0] shift,
+    output reg [2:0] comparison_result,
+    output reg [3:0] final_output
+);

@@ -1,0 +1,7 @@
+Design a 16x16 pipelined multiplier that produces a 32-bit product. The module takes two 16-bit inputs, A and B, and utilizes a series of pipeline stages to compute the partial products based on the bits of A, shifting B accordingly for each active bit in A. Each partial product is stored in a register and then combined in a final stage to generate the output product P, allowing for improved throughput through pipelining.
+module top_module(
+    input clk,               // Added clk input
+    input [15:0] A,
+    input [15:0] B,
+    output reg [31:0] P
+);

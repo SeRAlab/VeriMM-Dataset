@@ -1,0 +1,9 @@
+Design a clocked pipeline register capable of holding and transferring data across three stages. When the enable signal (EN) is active, the input data (DATA_IN) is stored in the first register (data_reg_1) at the rising edge of the clock (CLK), while the content from the first register is passed to the second register (data_reg_2) and its content is subsequently passed to the third register (data_reg_3). The outputs provide the content of the second and third registers as DATA_OUT_1 and DATA_OUT_2, respectively, along with direct access to the original input data (DATA_IN) as DATA_OUT_3. This module facilitates staged data processing in a pipelined architecture.
+module top_module(
+  input CLK,
+  input EN,
+  input [31:0] DATA_IN,
+  output [31:0] DATA_OUT_1,
+  output [31:0] DATA_OUT_2,
+  output [31:0] DATA_OUT_3
+);

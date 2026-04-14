@@ -1,0 +1,8 @@
+Design a block memory module that operates as a synchronous RAM. It has a 4-bit address input allowing access to up to 16 memory locations, each storing 8 bits of data. The module can write data to memory when the write_enable signal is active, taking input data from the data_in line, and outputs the data stored at the specified address through data_out. It initializes the memory with predefined data values during simulation start-up. The design makes use of instantiated memory blocks to simplify the memory operations.
+module top_module(
+    input clk,
+    input [3:0] addr,
+    input [7:0] data_in,
+    input write_en,
+    output reg [7:0] data_out
+);

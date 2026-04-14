@@ -1,0 +1,9 @@
+Design a clock and data generation module that outputs a toggle signal (tr_clk) and a corresponding 18-bit data output (tr_data) based on the input clock signals. The module operates using a primary clock (clk) to keep track of the clock cycles and a secondary clock (clkx2) to sample and output data. It resets with an active-low reset signal (jrst_n), ensuring both outputs are cleared upon reset. The tr_clk signal toggles based on the phase determined by a two-bit register, while tr_data outputs either the lower or upper half of a 36-bit input data word (tw) depending on the current phase. This design can be utilized in applications requiring synchronized data output in relation to multiple clock domains.
+module top_module(
+  input clk,
+  input clkx2,
+  input jrst_n,
+  input [35:0] tw,
+  output reg tr_clk,
+  output reg [17:0] tr_data
+);

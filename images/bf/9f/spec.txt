@@ -1,0 +1,17 @@
+Please act as a professional verilog designer.
+
+Implement a module of a 8-bit up/down counter that can count up from 0 to 255 or down from 255 to 0. The direction of counting is controlled by the up_down signal. The counter counts on every positive edge of the clock signal and resets to 0 when the reset signal (rst_n) is active.
+
+Module name:  
+    up_down_counter_8bit               
+Input ports:
+    rst_n: Reset signal (active low)
+    clk: Clock signal
+    up_down: Signal to control counting direction (1 for up, 0 for down)
+Output ports:
+    count: 8-bit output representing the current count value
+
+Implementation:
+If the reset signal is active (!rst_n), the counter is reset to 0 by assigning the value 8'b00000000 to the output register (count). If the up_down signal is high, the counter increments on each positive clock edge. If the current count value (count) is equal to 8'd255 (maximum count value) when counting up, the counter wraps around and resets to 0 by assigning the value 8'b00000000 to the output register (count). If the up_down signal is low, the counter decrements on each positive clock edge. If the current count value (count) is equal to 8'd0 (minimum count value) when counting down, the counter wraps around and resets to 8'd255 by assigning the value 8'b11111111 to the output register (count).
+
+Give me the complete code.

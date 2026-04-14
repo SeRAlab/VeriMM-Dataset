@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit shift register with a synchronous load and shift capability. The shift register should load data on the rising edge of the clock signal when the load signal is active, otherwise, it should shift its content to the right.
+
+Module name:
+    shift_register
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    load: Load signal to load data into the register.
+    data: 4-bit data input to be loaded into the register.
+    shift_in: Serial input data to be shifted into the register.
+
+Output ports:
+    q: 4-bit output of the shift register, reflecting the current content.
+
+Implementation:
+The module includes a 4-bit register, q, which is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the q register is cleared to 0.
+On every rising edge of the clock, if the load signal is active, the value of data is loaded into q; otherwise, q shifts right and the shift_in value is shifted in.
+
+Give me the complete code.

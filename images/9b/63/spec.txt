@@ -1,0 +1,12 @@
+Design a circuit that performs addition and rotation on input data. This module takes two 8-bit numbers, num1 and num2, and computes their sum, which is captured in a register and outputted as sum. On each clock cycle, if the reset signal is activated, all registers are cleared. If the load signal is asserted, the input numbers are loaded into the module's internal registers. Additionally, the module can perform a rotation operation on a 100-bit input data stream, shifting the bits right when enabled by the ena signal. The rotated data is stored in a register and output as rot.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] num1,
+    input [7:0] num2,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output [7:0] sum,
+    output reg [99:0] rot
+);

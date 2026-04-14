@@ -1,0 +1,36 @@
+Please act as a professional verilog designer.
+
+Implement a synchronous FIFO (First In First Out) buffer with a depth of 16 and a bit width of 8 bits. It should include mechanisms to check if the FIFO is full or empty. The FIFO should support parallel data write and read operations.
+
+Module name:  
+    FIFO               
+Input ports:
+	clk: Clock signal for synchronous operation.
+	rst_n: Active-low reset signal.
+	write_en: Write enable signal.
+	write_data: Data to be written to the FIFO.
+	read_en: Read enable signal.
+
+Output ports:
+	read_data: Data read from the FIFO.
+	full: Signal indicating the FIFO is full.
+	empty: Signal indicating the FIFO is empty.
+
+Parameter: 
+	WIDTH = 8;
+    DEPTH = 16;
+
+Implementation:
+FIFO Buffer:
+The module includes a register array, fifo_buffer, defined as reg [WIDTH-1:0] fifo_buffer [DEPTH-1:0].
+Write Operation:
+The write pointer (write_ptr) is incremented on every write operation if the FIFO is not full.
+If the FIFO is full, no data is written.
+Read Operation:
+The read pointer (read_ptr) is incremented on every read operation if the FIFO is not empty.
+If the FIFO is empty, no data is read.
+Full and Empty Status:
+The full signal is asserted when the write pointer is one position behind the read pointer.
+The empty signal is asserted when the read and write pointers are equal.
+
+Give me the complete code.

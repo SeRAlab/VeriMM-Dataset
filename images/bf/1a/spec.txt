@@ -1,0 +1,7 @@
+Design a digital circuit that outputs a signal (DCSOUT) based on various input conditions defined by two clock signals (CLK1, CLK0) and selection signals (SEL1, SEL0), along with a mode selector (MODESEL). When MODESEL is high, DCSOUT is determined by the logical AND of the clock signals. If MODESEL is low, the output is controlled by the selection signals: if only SEL1 is high, DCSOUT reflects CLK1; if only SEL0 is high, it reflects CLK0; if both are high, it outputs the logical OR of the clock signals; and if both are low, it outputs the result of a logical XOR. Additionally, if a parameter (DCSMODE) is set to "NEG", it inverts the DCSOUT signal before outputting. This module effectively implements a configurable logic block with various operations based on input selections.
+module top_module(
+	input CLK1, CLK0,
+	input SEL1, SEL0,
+	input MODESEL,
+	output reg DCSOUT  // Changed output to reg to allow assignment in always block
+);

@@ -1,0 +1,11 @@
+Design a BCD up/down counter that increments or decrements a 4-bit count based on the state of the Up and Down inputs, utilizing a clock (Clk) and reset signal. The counter resets to zero when the reset input is high. The module converts the current count into binary-coded decimal (BCD) format, providing separate outputs for tens (BCD1) and units (BCD0) while combining them along with the count into an 8-bit BCD_output signal. This allows the representation of values from 0 to 19 in BCD format efficiently.
+module top_module(
+    input Up,
+    input Down,
+    input Clk,
+    input reset,
+    output reg [3:0] Count,
+    output reg [3:0] BCD1,
+    output reg [3:0] BCD0,
+    output reg [7:0] BCD_output
+);

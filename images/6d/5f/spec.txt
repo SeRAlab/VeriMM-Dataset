@@ -1,0 +1,8 @@
+Design a Serial UART Transmitter for transmitting 8-bit data with no parity and one stop bit (8N1). The module accepts an 8-bit input byte and a send signal as inputs. When the send signal is asserted, the module transitions through states to send the data serially, starting with a low start bit, followed by the 8 data bits in LSB-first order, and ending with a high stop bit. It provides a "tx" output signal for data transmission and a "txdone" signal to indicate the completion of the transmission, allowing for cyclic and reliable data communication.
+module top_module(
+    clk,        
+    txbyte,     
+    senddata,   
+    txdone,     
+    tx,         
+    );

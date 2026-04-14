@@ -1,0 +1,12 @@
+Design a digital circuit that integrates a 3-bit shift register, a 5-input logic gate, and a multiplexer to provide configurable output based on control signals. The shift register captures and shifts a single input bit 'd' on each clock cycle, while the multiplexer selects between the shifted output (zero-extended) or a 5-bit input based on the 'select' signal. The circuit also computes the AND, OR, and NOR operations on the 5-bit input, providing these results as separate outputs. A simple 2-to-4 decoder utilizes the most significant input bit to drive the output logic, and depending on the 'select' signal, the final output combines either the multiplexer output or the results of the logic operations, effectively allowing for modular functionality in a single design.
+module top_module(
+    input clk,
+    input reset,
+    input d,
+    input select,
+    input [4:0] in,
+    output out_and,
+    output out_or,
+    output out_nor,
+    output reg [2:0] final_output // Changed to reg type
+);

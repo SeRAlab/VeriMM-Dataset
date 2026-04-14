@@ -1,0 +1,10 @@
+Design a FIFO (First In, First Out) shift register capable of storing and managing four 8-bit data values, resulting in a total capacity of 32 bits. The circuit features input controls for enabling data loading and shifting operations, and the outputs indicate the current state of the register with signals for empty and full conditions. Data can be shifted into the register when not full, based on the clock edge and shift enable signal, while the oldest data can be shifted out when the register is full. The module efficiently manages the head and tail pointers to track data storage and retrieval, providing a structured flow of data in a queue-like manner.
+module top_module(
+    input clock,
+    input [7:0] data_in,
+    input shift_en,
+    input load_en,
+    output [31:0] data_out,
+    output empty,
+    output full
+);

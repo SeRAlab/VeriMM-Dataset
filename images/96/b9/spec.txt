@@ -1,0 +1,11 @@
+Design a 4-stage counter with load and clear capabilities. The circuit features a clock input (CLK) that shifts through four 4-bit registers (Q0 to Q3). When the clear signal (CLR) is activated, all registers reset to zero. If the load signal (LD) is asserted, the first register (Q0) is loaded with an external 4-bit data input (DATA), propagating this value through subsequent registers. In normal operation, if neither CLR nor LD are active, the first register increments by one on each clock pulse, while the rest of the registers shift their values accordingly. This design can be utilized for counting applications or to implement a simple pipeline structure.
+module top_module(
+    input CLK,
+    input CLR,
+    input LD,
+    input [3:0] DATA,
+    output reg [3:0] Q0,
+    output reg [3:0] Q1,
+    output reg [3:0] Q2,
+    output reg [3:0] Q3
+);

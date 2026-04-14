@@ -1,0 +1,11 @@
+Design a circuit that functions as a 4-to-1 multiplexer with a shift register capability. The module selects one of four 4-bit input sources (in_0 to in_3) based on the 2-bit select signal (sel) and loads the selected input into a shift register. Additionally, upon a positive edge of the shift signal, the least significant bit of the 4-bit data input (data_in) is shifted into the shift register, while the previous bits are shifted left. The current state of the shift register is output as the 4-bit wide output signal (out). This design effectively combines multiplexing with dynamic shifting functionality.
+module top_module(
+    input [3:0] data_in,
+    input [3:0] in_0,
+    input [3:0] in_1,
+    input [3:0] in_2,
+    input [3:0] in_3,
+    input [1:0] sel,
+    input shift,
+    output reg [3:0] out
+);

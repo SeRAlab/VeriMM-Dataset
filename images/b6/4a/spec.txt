@@ -1,0 +1,8 @@
+Design a module for an audio codec that encodes and decodes audio data using various formats such as MP3, AAC, or WMA. The module accepts audio data and control signals, processes them based on the selected mode (encoding or decoding), and outputs the processed audio data along with a status signal indicating any operational errors. The codec operates in real-time with a specified sampling rate, incorporating error handling to signal encoding or decoding issues through a dedicated status output.
+module top_module(
+  input [data_width-1:0] audio_data,
+  input [ctrl_width-1:0] ctrl,
+  input clk,
+  output reg [data_width-1:0] encoded_data, // Change wire to reg
+  output reg [status_width-1:0] status // Change wire to reg
+);

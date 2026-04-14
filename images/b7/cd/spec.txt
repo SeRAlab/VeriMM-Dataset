@@ -1,0 +1,6 @@
+Design a circuit that functions as a four-bit shift register coupled with a seven-segment display driver. The shift register captures a 4-bit input (D) on the rising edge of the clock (CLK) and shifts the bits upon each clock cycle, with an option to reset to zero using the CLR signal. The output from the shift register is used to determine the appropriate seven-segment display encoding for hexadecimal digits (0-F), which is selected based on the SEL input signal to control how many segments are activated. Furthermore, a control signal (CA) is provided to enable or disable the inversion of the seven-segment outputs, allowing for the display of the corresponding character in either active high or active low.
+module top_module(
+    input [3:0] D,
+    input LD, CLK, CLR, CA, SEL,
+    output reg a, b, c, d, e, f, g
+);

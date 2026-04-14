@@ -1,0 +1,9 @@
+Design a 32-bit instruction register (IR) that captures and holds input instructions during clock cycles. On a rising edge of the clock, if the reset signal is asserted (active high), the register resets to zero; otherwise, if the IRWrite signal is active, it updates the contained instruction with the incoming instruction value. The current instruction stored in the register is continuously output as Instr_o.
+module top_module(
+  input clk,
+  input rst_n,
+  input IRWrite,
+  input [31:0] Instr_i,
+  
+  output [31:0] Instr_o
+  );

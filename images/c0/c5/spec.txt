@@ -1,0 +1,36 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a watchdog timer (WDT) within a digital system, typically used to recover from software errors that cause infinite loops or system hangs. The primary objectives of this module include:
+
+Monitoring system activity and ensuring that the system operates within expected parameters.
+Providing a mechanism to reset the system (generate a power-up clear, PUC) if it becomes unresponsive due to software errors.
+Generating non-maskable interrupts (NMIs) based on specific conditions to alert the system of critical events.
+Allowing configuration of its operational parameters through a peripheral interface, including enabling/disabling the watchdog, setting the timer interval, and selecting the clock source.
+
+This module plays a critical role in enhancing system reliability and ensuring robust operation by automatically resetting the system in the event of software malfunctions.
+
+Module name:  
+	omsp_watchdog
+
+Input ports:
+	aclk_en, smclk_en: Enable signals for auxiliary and system main clock sources, respectively. Determines the clock source for the watchdog timer based on configuration.
+	dbg_freeze: Debug freeze input. When asserted, it freezes the watchdog timer count to aid in debugging.
+	mclk: Main system clock input. Used to clock the internal logic of the watchdog module.
+	nmi: Nonmaskable interrupt input. Used to synchronize external NMIs with the system clock.
+	nmie: NMI enable. Enables the generation of NMIs based on the watchdog timer configuration.
+	per_addr, per_din: Peripheral address and data inputs. Used for configuring the watchdog timer through a peripheral interface.
+	per_en: Peripheral enable signal. Enables read/write operations to the watchdog timer registers.
+	per_wen: Peripheral write enable. Determines if the operation is a read or write.
+	puc: Powerup clear signal. Used to reset the watchdog timer and its configuration.
+Output ports:
+	nmi_evt: NMI event output. Indicates when an NMI should be triggered based on the watchdog timer configuration.
+	wdtifg_set: Watchdog timer interrupt flag set. Indicates when the watchdog timer has expired.
+	wdtpw_error: Watchdog timer password error. Indicates an incorrect password was used in an attempt to write to the watchdog timer control register.
+	wdttmsel: Watchdog timer interval select. Reflects the current configuration of the timer interval.
+
+
+Implementation:
+The RTL module presented, omsp_watchdog, is designed to function as a watchdog timer, a critical component in digital systems for ensuring system reliability and preventing system hang-ups due to software errors. The module interfaces with a microcontroller or processor through a peripheral interface, allowing for configuration, control, and status reporting. The core functionality revolves around counting system clock cycles and generating a system reset or interrupt if the counter reaches a predefined threshold without being reset by software. This module incorporates several key features, including password protection for configuration registers, selectable clock sources, interrupt or reset generation modes, and debug freeze capability.
+
+Give me the complete code.
+

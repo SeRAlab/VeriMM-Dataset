@@ -1,0 +1,8 @@
+Implement a 32-bit register that captures input data on the rising edge of the clock and has the capability to reset its output to zero. The module features a load control signal that determines whether to store the input value or retain the current output. When the reset signal is low, the output is set to zero, whereas when the load signal is high and the clock is low, the output takes the value of the input. If the load signal is low during a clock cycle, the output remains unchanged.
+module top_module(
+    input [31:0] IN,
+    input Clk,
+    input Reset,
+    input Load,
+    output reg [31:0] OUT
+);

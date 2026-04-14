@@ -1,0 +1,7 @@
+Design a synchronization circuit to convert an asynchronous input signal into a synchronous output signal using a clock. The module captures the `async_in` and registers it on the rising edge of the `clk`, while also providing a reset mechanism to initialize both the internal `meta` register and the output `sync_out` to LOW. This design is useful for eliminating metastability issues that can arise when interfacing asynchronous signals with clocked systems.
+module top_module(
+    input clk,
+    input async_in,
+    input reset,
+    output reg sync_out
+    );

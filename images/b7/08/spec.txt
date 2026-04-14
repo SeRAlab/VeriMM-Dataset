@@ -1,0 +1,14 @@
+Design a synchronous resettable D-type flip-flop with additional features for controlling data input based on SCD (set control data) and SCE (set control enable). The module outputs Q and its complement Q_N. On a rising edge of the CLK signal, if RESET_B is low, the output is reset to zero. When SCD is high and SCE is low, or when SCE is high with D being low, the output is also set to zero. Conversely, when SCD is high and SCE is high, or when SCE is high with D being high, the module sets Q to one. If none of these conditions are met, the flip-flop retains its previous output state.
+module top_module(
+    Q      ,
+    Q_N    ,
+    CLK    ,
+    D      ,
+    SCD    ,
+    SCE    ,
+    RESET_B,
+    VPWR   ,
+    VGND   ,
+    VPB    ,
+    VNB
+);

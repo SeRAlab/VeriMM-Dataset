@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module to detect a specific pattern in a digital input signal and generate a pulse when this pattern is identified. Its primary function to serve as an edge or pattern detector within a digital system, which could be part of a larger signal processing or control mechanism. The module operates synchronously with a clock signal and provides a means to reset its internal state, making it suitable for systems that require precise timing and synchronization.
+
+Module name:  
+	redet
+
+Input ports:
+	rst: A synchronous reset input, active high. When asserted, it initializes the internal state of the module, ensuring a known starting condition. It is a singlebit (1'b1) input.
+	clk: The clock input. It governs the timing of the module's operations, ensuring that the internal state and output are updated synchronously with the system clock. It is a singlebit (1'b1) input.
+	din: Digital input signal. This is the data input that the module monitors to detect the specified pattern. It is a singlebit (1'b1) input.
+Output ports:
+	pls: Pulse output. This is a singlebit (1'b1) output that generates a pulse when the specified pattern is detected in the din input signal.
+
+
+Implementation:
+The provided RTL module, named redet, is designed to detect a specific sequence of inputs on the din signal in the presence of a clock signal (clk). It outputs a pulse (pls) when the sequence is detected. The module operates synchronously with the rising edge of the clock and also includes a synchronous reset (rst) functionality. The core of its operation lies in the sequential and combinational logic that manipulates and monitors the input signal over time.
+
+Give me the complete code.
+

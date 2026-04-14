@@ -1,0 +1,6 @@
+Design a digital circuit that functions as a demultiplexer (DEMUX) with parameterized select lines. It takes a single input signal and routes it to one of 2^n output lines based on n select signals. When the select input matches the index of an output, the input signal is sent to that output; otherwise, the output remains low. This configuration allows for efficient control of signal distribution to multiple destinations based on the select line combinations. The module is designed to support up to 8 output lines when n is set to 3.
+module top_module(
+  input in,
+  input [n-1:0] sel,
+  output [2**n-1:0] out
+);

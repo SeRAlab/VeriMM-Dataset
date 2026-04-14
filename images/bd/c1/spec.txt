@@ -1,0 +1,18 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit ring counter. The module generates a 4-bit sequence by rotating a single bit through a 4-bit register.
+
+Module name:
+    ring_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Synchronous reset signal to initialize the counter to 4'b0001.
+
+Output ports:
+    q: Output signal representing the current counter value.
+
+Implementation:
+The counter is defined as reg [3:0] q and initialized to 4'b0001. On each rising edge of the clock, if rst is asserted, q is reset to 4'b0001. Otherwise, q is updated to {q[0], q[3:1]}.
+
+Give me the complete code.

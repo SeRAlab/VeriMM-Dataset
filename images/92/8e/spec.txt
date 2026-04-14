@@ -1,0 +1,12 @@
+Design a FIFO (First-In-First-Out) buffer that operates on 16-bit data, enabling asynchronous writing and reading of data under control of a clock signal. The module includes inputs for clock, reset, data input, as well as control signals for reading and writing. It maintains a memory array of 2048 words and manages read and write pointers to track data flow. The outputs indicate whether the FIFO is empty or full, and a count of the number of stored entries is available. The state of the FIFO is updated synchronously during clock cycles, ensuring data integrity during simultaneous read/write operations.
+module top_module(
+    input  clk,            // bus clock
+    input  reset,          // reset
+    input  [15:0] in,      // data in
+    output reg [15:0] out, // data out
+    input  rd,             // read from fifo
+    input  wr,             // write to fifo
+    output reg empty,      // fifo is empty
+    output reg full,       // fifo is full
+    output [11:0] cnt      // number of entries in FIFO
+);

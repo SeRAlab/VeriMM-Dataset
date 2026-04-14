@@ -1,0 +1,7 @@
+Design a clock generator module that provides a divided output clock signal (clk_out) from an input clock (clk_in). The module synchronously toggles clk_out every 250,000 input clock cycles, effectively creating a clock with half the frequency of clk_in. Additionally, it contains a reset functionality, which, when activated, will reset the output clock and a "locked" status signal. The locked signal indicates when the clock generation has stabilized, becoming high after a specified period of time (when the counter reaches zero). This circuit is useful for clock management in digital systems where frequency division and synchronization are needed.
+module top_module(
+  input clk_in,
+  input resetn,
+  output reg clk_out,
+  output reg locked
+);

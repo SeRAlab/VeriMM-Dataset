@@ -1,0 +1,6 @@
+Design a combinational logic module that generates a 25-bit output based on the values of two input signals: `mask_type` and `game_type`. This module operates as a decoder, providing distinct output values for each of the four possible combinations of these two binary inputs: (0,0), (1,0), (0,1), and (1,1). When both inputs are LOW (0,0), the output is set to a specific predefined value; when they are HIGH (1,0), another value is selected; similarly, unique values are assigned for the cases of (0,1) and (1,1). This enables the circuit to provide a specific output configuration based on the input conditions, which may be utilized in scenarios like game settings or mode configurations.
+module top_module(
+    input mask_type,
+    input game_type,
+    output reg [24:0] out
+  );

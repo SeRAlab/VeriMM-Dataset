@@ -1,0 +1,11 @@
+Design a 4-bit asynchronous counter with load functionality. The counter increments its output values (Q0, Q1, Q2, Q3) on the rising edge of the clock (CLK) unless the clear signal (CLR) is activated, which resets all outputs to zero. If the load signal (LD) is asserted, the counter's outputs are directly loaded with the corresponding bits from the 4-bit data input (DATA). The counting process occurs in a cascading manner, where Q0 increments with each clock pulse, and upon reaching a count of 16 (binary 10000), it resets to 0 and increments Q1, continuing this pattern up to Q3.
+module top_module(
+    input CLK,
+    input CLR,
+    input LD,
+    input [3:0] DATA,
+    output reg [3:0] Q0,
+    output reg [3:0] Q1,
+    output reg [3:0] Q2,
+    output reg [3:0] Q3
+);

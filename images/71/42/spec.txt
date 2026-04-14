@@ -1,0 +1,10 @@
+Design a 3-bit up/down counter with control signals for reset and load. The counter increments when the up_down signal is high and decrements when it is low. Upon reaching the maximum count value of 7 (0111), it wraps around to 0 and sets the overflow flag. Conversely, when decrementing from 0, it wraps around to 7 (111) and sets the underflow flag. The reset signal initializes the count to 0 and clears both overflow and underflow states. If load is asserted, the counter maintains its current count without modification.
+module top_module(
+    input clk,
+    input reset,
+    input load,
+    input up_down,
+    output reg [2:0] count,
+    output reg overflow,
+    output reg underflow
+);

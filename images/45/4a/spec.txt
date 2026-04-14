@@ -1,0 +1,26 @@
+Please act as a professional Verilog designer.
+
+Implement a module of a 16-bit register with synchronous load. The register should load a new 16-bit value on each positive edge of the clock signal if the load signal is high. If the reset signal is high, the register should reset to 0.
+
+Module name:  
+    register_sync_load
+
+Input ports:
+    CLK: Clock input
+    RST: Active high reset signal
+    LD: Load signal to enable loading of new data
+    D: 16-bit input data to be loaded
+
+Output ports:
+    Q: 16-bit output representing the current value of the register
+
+Implementation:
+The register_sync_load module uses an always block to update the register value based on the clock signal and reset signal. The always block triggers on the positive edge of the clock signal (posedge CLK). It checks if the reset signal is active (RST) and sets the register value (Q) to 0. Otherwise, if the load signal is active (LD), it loads the new data (D) into the register.
+
+Give me the complete code.
+
+module register_sync_load(CLK, RST, LD, D, Q);
+input CLK, RST, LD;
+input [15:0] D;
+output [15:0] Q;
+reg [15:0] Q;

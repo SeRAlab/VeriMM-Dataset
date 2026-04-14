@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that counts consecutive ones in a stream of input data. The module resets on a reset signal and uses a clock to transition through states that either count a sequence of ones or store the counted value when a zero is encountered. The output is a 4-bit register representing the count of consecutive ones detected in the data input. The FSM toggles between three states: idle (no ones detected), counting (incrementing the count while ones are present), and storing (outputting the count when a zero is detected).
+module top_module(
+  input clk,
+  input reset,
+  input data,
+  output reg [3:0] count
+);

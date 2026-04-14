@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+    
+Implement a module to synchronize an asynchronous input signal (`async_dat_i`) to the clock domain of the module (`clk_i`). This is a common requirement in digital systems where signals from different clock domains or asynchronous sources need to be safely sampled and used within a synchronous system, such as in UART (Universal Asynchronous Receiver/Transmitter) communication interfaces or other mixed-signal interfaces. The module achieves this by employing a two-stage synchronization process to mitigate the risk of metastability that can occur when sampling asynchronous signals.
+
+Module name:  
+	uart_sync_flops
+
+Input ports:
+	rst_i: A synchronous reset input signal. When asserted (1), it initializes the internal flipflops to a predefined initial value. This is an activehigh signal.
+	clk_i: The clock input signal for the module. It governs the timing of the internal flipflops and synchronization process.
+	stage1_rst_i: A reset input specifically for the first stage of synchronization. When asserted, it resets the output of the first synchronization stage to the initial value. This is an activehigh signal.
+	stage1_clk_en_i: A clock enable signal for the first stage of synchronization. When asserted (1), it allows the data from the first stage to be passed to the second stage.
+	async_dat_i: The asynchronous data input signal to be synchronized. It is a vector with a width defined by the width parameter.
+Output ports:
+	sync_dat_o: The synchronized data output signal. It presents the input data (async_dat_i) synchronized to the clk_i domain. The width of this signal is also defined by the width parameter.
+
+
+Implementation:
+The uart_sync_flops module is designed to synchronize an asynchronous input signal (async_dat_i) to a clock domain defined by clk_i, using a two-stage synchronization process. This process is crucial in digital design to mitigate the risk of metastability when signals cross clock domains. The module is parameterized, allowing for customization of the synchronization process based on the width of the data (width), the propagation delay (Tp), and the initial value of the synchronized output (init_value).
+
+Give me the complete code.
+

@@ -1,0 +1,8 @@
+Design a Hamming code encoder and decoder that supports error detection and correction for a 4-bit data input. The module computes the necessary parity bits based on the input data, generating an n-bit codeword, which includes both data and parity bits. It also processes an incoming codeword to detect any errors using syndrome calculation. If an error is detected, the module identifies the erroneous bit's position and corrects it. The output includes the extracted original data and a signal indicating whether an error was detected in the received codeword.
+module top_module(
+  input [k-1:0] data_in,
+  output [n-1:0] codeword_out,
+  input [n-1:0] codeword_in,
+  output [k-1:0] data_out,
+  output error_detected
+);

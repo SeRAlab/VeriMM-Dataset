@@ -1,0 +1,7 @@
+Design a digital synchronization circuit that takes a multi-bit input and synchronizes it to an output clock, providing the synchronized output. The module uses a dual-stage flip-flop approach to mitigate metastability issues typically encountered in asynchronous inputs by capturing the input signal in two clock cycles before presenting it at the output. The reset signal allows for initialization of the internal registers, and an asynchronous clock mode can be configured to either output the synchronized data or the original input directly based on the parameter `CLK_ASYNC`.
+module top_module(
+	input [NUM_BITS-1:0] in,
+	input out_resetn,
+	input out_clk,
+	output [NUM_BITS-1:0] out
+);

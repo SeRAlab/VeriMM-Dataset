@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform a specific logical operation on its input signals and produce a single output signal. This module takes three input signals, namely `b1`, `b2`, and `a`, and generates one output signal `z`. The role of this module within a broader system context could be as a part of a larger digital logic circuit, where it might serve as a conditional inverter or a specific logic gate within a complex logic operation. Its function is crucial for scenarios where the inversion of a signal is conditional based on the logical OR of two other signals and their interaction with a third signal.
+
+Module name:  
+	bw_u1_zhoai21_1x
+
+Input ports:
+	b1 (input): This is a singlebit input signal. It represents one of the two conditions that are logically OR'ed together to interact with the third input signal a.
+	b2 (input): This is a singlebit input signal, similar to b1. It represents the second condition that is logically OR'ed with b1 to interact with the input signal a.
+	a (input): This is a singlebit input signal. It represents the third input signal whose interaction with the logical OR of b1 and b2 determines the output z.
+Output ports:
+	z (output): This is a singlebit output signal. It represents the result of the module's logical operation, which is the negation of the AND operation between a and the logical OR of b1 and b2.
+
+
+Implementation:
+The RTL module bw_u1_zhoai21_1x is designed to implement a specific combinational logic function using basic logical operations. The module takes three input signals (a, b1, b2) and produces one output signal (z). The logic implemented by the module can be dissected into two primary operations based on the expression ~((b1 | b2) & a).
+1. OR Operation: The first operation is an OR gate applied to inputs b1 and b2. This operation combines the two inputs into a single intermediate signal. The result of this operation indicates if at least one of the inputs b1 or b2 is high (1). This part of the logic is responsible for aggregating conditions or signals that might be mutually exclusive or complementary in nature.
+2. AND Operation: The second operation is an AND gate that takes the result of the OR operation (b1 | b2) and the input a, and performs a logical AND operation. This step effectively checks if both conditions are true: at least one of b1 or b2 is high, and a is also high. This part of the logic serves as a conditional gate that allows the signal to pass only if both criteria are met.
+3. NOT Operation: Finally, the output of the AND gate is inverted using a NOT operation. This inversion translates to the output z being high (1) only when the combined condition from the previous step is false. In other words, z is high when either both b1 and b2 are low, or a is low, or all are low.
+The entire logic can be summarized as implementing a specific conditional check where the output z is high only when the combined condition of inputs does not meet a specific criterion (either a is low, or both b1 and b2 are low).
+
+Give me the complete code.
+

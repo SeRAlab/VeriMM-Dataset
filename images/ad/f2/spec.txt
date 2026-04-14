@@ -1,0 +1,10 @@
+Design a Serial Peripheral Interface (SPI) module that facilitates communication between a master device and slave devices. The module features chip-select inputs (spi_csn_0, spi_csn_1) to enable or disable the device based on the active low condition, a clock input (spi_clk) for synchronizing data transfer, and a Master-Out-Slave-In (MOSI) line for sending data to the slave. The output (spi_miso) transmits data back to the master based on the direction controlled by the spi_dirn signal, which indicates whether data is being read or written. The design includes a bit counter (spi_count) to track the number of bits processed and to ensure proper data handling during the communication sequence while utilizing an I/O buffer to manage bidirectional data flow over the shared SPI data line (spi_sdio).
+module top_module(
+  input spi_csn_0,
+  input spi_csn_1,
+  input spi_clk,
+  input spi_mosi,
+  inout spi_sdio,
+  output spi_miso,
+  output spi_dirn
+);

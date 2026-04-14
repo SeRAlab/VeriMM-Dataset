@@ -1,0 +1,8 @@
+Design a decade counter that operates based on a clock input, allowing for asynchronous reset and directional counting. The module integrates a Johnson counter to generate a unique sequence and utilizes an adder to increment or decrement the Johnson counter's value based on the direction signal. The output is a 4-bit value representing the current count, which updates on the positive clock edge when enabled, or resets asynchronously when the reset signal is active. The counter can count upwards or downwards depending on the specified direction.
+module top_module(
+    input clk,               // Clock input
+    input clock_enable,      // Clock enable input
+    input reset,             // Asynchronous active-high reset
+    input direction,         // Direction input signal
+    output reg [3:0] q       // 4-bit output of the counter
+);

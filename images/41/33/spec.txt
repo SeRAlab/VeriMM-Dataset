@@ -1,0 +1,6 @@
+Design a pulse synchronization circuit that transfers a single pulse from an input clock domain to an output clock domain. The module captures rising edges of the input pulse when synchronized with the input clock, toggling an internal register. This toggled state is then synchronized with the output clock, generating a single output pulse based on the XOR of two shifted versions of the internal register state. This effectively ensures that the output pulse is aligned with the output clock while preventing metastability in a multi-clock system.
+module top_module(
+    input  wire in_clk,
+    input  wire in_pulse,
+    input  wire out_clk,
+    output wire out_pulse);

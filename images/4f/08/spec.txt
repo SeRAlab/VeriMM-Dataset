@@ -1,0 +1,7 @@
+Design a 32-bit signed multiplier that produces a 64-bit output. The module accepts two 32-bit inputs, A and B, along with a sign control input. If the sign input is high, the module handles negative numbers by negating the inputs as necessary using two's complement representation before performing multiplication. The result is computed through bit-shifting and accumulation, with an additional step to negate the final result if the inputs have opposite signs. If the sign input is low, the multiplication is performed on the inputs as they are. The output is a 64-bit wide result, Z, representing the product of the inputs.
+module top_module(
+    input sign,
+    input [31:0] A,
+    input [31:0] B,
+    output reg [63:0] Z
+    );

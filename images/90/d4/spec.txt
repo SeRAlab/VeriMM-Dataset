@@ -1,0 +1,6 @@
+Design a 4-bit priority encoder that outputs a 2-bit binary value corresponding to the highest-order active input among four inputs (I). The module also provides a 'valid' output signal indicating whether any input line is active. When an input is high, the encoder outputs its associated binary representation, and if no inputs are active, it defaults to the first encoded value. The 'valid' signal is asserted when at least one input is active, ensuring proper indication of valid encoding.
+module top_module(
+    input [3:0] I,
+    output reg valid, // Changed from wire to reg
+    output reg [1:0] encoded_value
+);

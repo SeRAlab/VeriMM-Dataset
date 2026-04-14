@@ -1,0 +1,13 @@
+The design is a module for managing memory mapping and IRQ generation in a NES (Nintendo Entertainment System) controller context. It utilizes an internal counter and control bits to determine the output addresses for program (PRG) and character (CHR) memory based on various input signals, including reset, clock, chip enable, and control bits from the MMC1 (Memory Management Controller). The module outputs the PRG memory address based on specific conditions, such as whether it is in an "unlocked" state and the value of certain control bits, thereby facilitating flexible memory access. Additionally, it provides an interrupt request (IRQ) signal generated when the counter reaches a specific value, enabling synchronization with the system's processing requirements.
+module top_module(
+    input clk,
+    input ce,
+    input reset,
+    input [15:0] prg_ain,
+    output reg [21:0] prg_aout,
+    input [13:0] chr_ain,
+    output [21:0] chr_aout,
+    input [3:0] mmc1_chr,
+    input [21:0] mmc1_aout,
+    output irq
+);

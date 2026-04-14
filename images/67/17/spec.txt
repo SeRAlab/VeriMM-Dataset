@@ -1,0 +1,8 @@
+Implement a digital filter module that operates on signed 16-bit input data to produce a filtered output. The module features a clock and reset control, enabling state management for two current and past input samples, as well as corresponding output values. When enabled, it applies a discrete-time filter based on specified coefficients, updating the internal accumulators to compute the filtered output. The filter operates through a combination of feedforward and feedback parameters, making it suitable for applications such as signal conditioning or noise reduction in digital signal processing.
+module top_module(
+    input clk,
+    input rst,
+    input en,
+    input signed [15:0] dataIn,
+    output signed [15:0] dataOut
+);

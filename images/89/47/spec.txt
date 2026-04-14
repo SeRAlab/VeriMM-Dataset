@@ -1,0 +1,12 @@
+Design a program counter (PC) register capable of managing instruction flow in a pipelined processor. The module updates the program counter based on several control signals: it can load a new value when a flush occurs, increment the current PC by 4 when not stalled, or redirect to a branch target address if a branch is asserted. It features reset functionality to initialize the counter and includes control signal output to facilitate further pipeline stages, indicating whether the pipeline should continue or stall.
+module top_module(
+  input wire clk,
+  input wire rst,
+  input wire [5:0] stall,
+  input wire flush,
+  input wire [31:0] new_pc,
+  input wire branch_flag_i,
+  input wire [31:0] branch_target_address_i,
+  output reg [31:0] pc,
+  output reg ce
+);

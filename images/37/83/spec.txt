@@ -1,0 +1,13 @@
+
+Design a simple Automatic Repeat reQuest (ARQ) error correction system using a finite state machine (FSM). The system should have the following specifications:
+1. It should take in a 5-bit data input and a 1-bit acknowledgment (ACK) signal.
+2. If the ACK signal is high (1), it means the data was received correctly; otherwise, the data should be resent.
+3. The system should keep track of up to 3 data transmissions (including the initial transmission).
+4. After 3 unsuccessful attempts, the system should go to an error state.
+5. The output should be the transmitted data and the state of the system.
+
+The states of the FSM should be:
+- IDLE: waiting for data to be sent
+- SENDING: sending data
+- WAIT_ACK: waiting for ACK
+- ERROR: maximum attempts reached

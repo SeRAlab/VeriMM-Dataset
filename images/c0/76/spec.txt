@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+    
+Implement a module primarily functions as a serial-to-parallel shift register with a configurable pipeline length. It to receive a 36-bit serial input (`shift_in`) and, over time, output these bits in parallel (`shift_out`) after a delay defined by the `PIPE_LEN` parameter. This module can be utilized in systems requiring synchronization, serialization, or timing adjustments of data streams, particularly in memory interfaces like DDR3, where precise data alignment and timing are crucial. The configurable pipeline allows for flexibility in adjusting the delay to match specific system requirements, making it a versatile component in digital design architectures.
+
+Module name:  
+	ddr3_sr36
+
+Input ports:
+	clk: A clock input signal of type wire. This signal is essential for the sequential logic inside the module, driving the shifting operation at each positive edge.
+	shift_in [35:0]: A 36bit wide serial input of type wire. This input represents the data stream to be shifted through the module's internal pipeline.
+Output ports:
+	shift_out [35:0]: A 36bit wide parallel output of type wire. This output presents the shiftedin data in parallel after being delayed by the pipeline.
+
+
+Implementation:
+The RTL module presented, named ddr3_sr36, is designed as a digital shift register with a configurable pipeline length, indicated by the parameter PIPE_LEN. This module is tailored for handling 36-bit wide data inputs and outputs, making it suitable for applications requiring parallel data processing or serialization/deserialization tasks with a 36-bit data width.
+
+Give me the complete code.
+

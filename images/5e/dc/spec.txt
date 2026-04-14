@@ -1,0 +1,19 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit binary counter with enable and synchronous reset. The counter increments its value by 1 on each clock cycle when enabled.
+
+Module name:
+    binary_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high synchronous reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    enable: Enable signal for the counter. When 1, the counter increments on each clock cycle.
+
+Output ports:
+    count: 4-bit output representing the current counter value.
+
+Implementation:
+The counter is triggered on the positive edge of the clock signal (posedge clk).
+If the reset signal is asserted (rst == 1), the counter is reset to 0.
+If the enable signal is asserted (enable == 1), the counter increments by 1 on each clock cycle.

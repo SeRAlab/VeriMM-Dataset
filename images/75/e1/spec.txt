@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit counter module that counts from 0 to 15 and then wraps around.
+
+Module name:
+    counter_4bit
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+
+Output ports:
+    count: 4-bit output representing the current count.
+
+Implementation:
+The module includes a 4-bit register, count, which is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the count register is initialized to 0.
+On every rising edge of the clock, the count is incremented by 1. When the count reaches 15, it wraps around to 0 on the next clock cycle.
+
+Give me the complete code.

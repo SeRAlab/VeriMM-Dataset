@@ -1,0 +1,14 @@
+Design a circuit that sorts four 4-bit unsorted input numbers into ascending order using a sequential sorting algorithm triggered by a clock signal. The module, activated by the `partD` input, will compare and rearrange the four input values on each clock cycle when `partD` is high. Upon completion of the sorting process, the sorted values are output as `sorted_num0` through `sorted_num3`, and the `start_display` signal is set to indicate that the sorting is complete and ready for display.
+module top_module(
+input clk, 
+input partD, 
+	input [3:0] unsorted_num0, 
+	input [3:0] unsorted_num1,
+	input [3:0] unsorted_num2,
+	input [3:0] unsorted_num3,
+   output reg [3:0] sorted_num0,
+	output reg [3:0] sorted_num1,
+	output reg [3:0] sorted_num2,
+	output reg [3:0] sorted_num3,
+	output reg start_display
+	);

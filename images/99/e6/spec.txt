@@ -1,0 +1,12 @@
+Design a dual-port random access memory (RAM) module that allows simultaneous read and write operations. The module features two write enable signals (we1 and we2) and can accept separate data inputs (din1 and din2) to write to specified memory addresses (addr1 and addr2). When the clock signal (clk) transitions positively, if the respective write enable signals are active, the module stores the incoming data at the designated addresses. Additionally, it provides outputs (dout1 and dout2) that reflect the current contents of the specified memory locations, allowing for concurrent access to two independent data streams. The memory is configured with a data width of 8 bits and a depth of 256 locations.
+module top_module(
+  input clk,
+  input we1,
+  input we2,
+  input [width-1:0] din1,
+  input [width-1:0] din2,
+  input [addr_width-1:0] addr1,
+  input [addr_width-1:0] addr2,
+  output reg [width-1:0] dout1,
+  output reg [width-1:0] dout2
+);

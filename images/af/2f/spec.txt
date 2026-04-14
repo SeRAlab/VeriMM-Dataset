@@ -1,0 +1,11 @@
+Design a forwarding logic unit for a pipelined CPU to manage data hazards. This module determines which data values should be forwarded from the results of previous instructions in the EX/MEM and MEM/WB stages to the current instruction in the ID/EX stage. It provides two output signals, forwardA and forwardB, which indicate whether the values from the EX/MEM or MEM/WB stages need to be forwarded for the source registers of the current instruction. If the destination register of a previous instruction matches a source register of the current instruction and that previous instruction is writing to a register, the appropriate forwarding signals are activated.
+module top_module(
+    rt_addr_IDEX, 
+    rs_addr_IDEX, 
+    rd_addr_EXMEM, 
+    rd_addr_MEMWB, 
+    regwrite_EXMEM, 
+    regwrite_MEMWB, 
+    forwardA, 
+    forwardB
+);

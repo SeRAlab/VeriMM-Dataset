@@ -1,0 +1,10 @@
+Design a clock management module that synchronizes and routes clock signals. It accepts a primary clock (`clk`) and a secondary fast clock (`fastclk`) as inputs, and generates two outputs: `out_clk` which is directly derived from `clk`, and `out_fastclk` which is a registered version of `fastclk`. Upon receiving a reset signal (`reset_l`), both `out_fastclk` and an internal register (`fastclk_reg`) are initialized to LOW. This module is essential for clock domain management in digital circuits where different clock rates are involved.
+module top_module(
+   // Inputs
+   clk,
+   fastclk,
+   reset_l,
+   // Outputs
+   out_clk,
+   out_fastclk
+   );

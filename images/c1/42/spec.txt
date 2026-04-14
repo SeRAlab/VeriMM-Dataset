@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+    
+Implement a module simulates a simple Static Random Access Memory (SRAM) interface. Its primary function to provide a memory storage mechanism where data can be accessed based on a memory address. The module to store and retrieve 9-bit data values from a memory array consisting of 16 locations (addresses 0 to 15). This module could be utilized within a larger digital system for storing temporary data, configuration settings, or any other information that needs to be quickly accessed based on an address. It is particularly useful in systems where a small, fast memory is required for efficient data retrieval without the complexities of dynamic memory management.
+
+Module name:  
+	SRAM
+
+Input ports:
+	CE (Chip Enable): A singlebit input signal that enables or disables the memory access. When CE is low (0), the memory is accessible, and the data corresponding to the address specified by MAR_IN is outputted on SRAM_OUT. When CE is high (1), the memory access is disabled, and SRAM_OUT is set to 9'h000.
+	MAR_IN (Memory Address Register Input): A 4bit input signal that specifies the address of the memory location to be accessed. The address range is from 0 to 15, allowing access to any of the 16 memory locations within the module.
+Output ports:
+	SRAM_OUT (SRAM Output): A 9bit output signal that presents the data stored at the memory location specified by MAR_IN. The output is valid and corresponds to the memory content only when CE is low. When CE is high, the output is 9'h000.
+
+
+Implementation:
+The provided RTL module represents a simple Static Random Access Memory (SRAM) model implemented in Verilog. The SRAM module is designed to store and provide access to a set of predefined data values based on the input address. The module's functionality is governed by both combinational and sequential logic elements, which are detailed below:
+
+Give me the complete code.
+

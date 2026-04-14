@@ -1,0 +1,14 @@
+Design a synchronous, parameterized FIFO (First-In-First-Out) buffer that operates on an 8-bit data width. The module supports push and pop operations controlled by the corresponding input signals, while incorporating reset functionality to initialize internal states. The FIFO maintains pointers for the head and tail of the queue, providing status outputs such as full, empty, almost_empty, and almost_full, along with a count of the current number of elements stored. This design is suitable for applications needing a structured way to handle data buffering in a FIFO manner.
+module top_module(
+    input rst,
+    input clk,
+    input push,
+    input pop,
+    input [7:0] d,
+    output reg [7:0] q,
+    output reg full,
+    output reg empty,
+    output reg [3:0] count,
+    output reg almost_empty,
+    output reg almost_full
+);

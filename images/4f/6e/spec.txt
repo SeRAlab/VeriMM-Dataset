@@ -1,0 +1,15 @@
+Design a parallel input/output (PIO) response module that interfaces with external components. The module utilizes two address lines to select among multiple data registers. When chipselect is active and write_n is low, it writes the 8-bit input data (writedata) to the designated data register (address 0). The circuit also implements a reset functionality that clears the data output upon receiving a reset signal. The output port (out_port) reflects the current state of the data register, while readdata provides access to the data when address 0 is selected. Overall, this module serves as a simple memory-mapped I/O interface, enabling data communication between a processor and peripheral devices.
+module top_module(
+                      // inputs:
+                       address,
+                       chipselect,
+                       clk,
+                       reset_n,
+                       write_n,
+                       writedata,
+
+                      // outputs:
+                       out_port,
+                       readdata
+                    )
+;

@@ -1,0 +1,7 @@
+Design a basic arithmetic calculator module capable of performing addition, subtraction, multiplication, and division on two 8-bit inputs, `op1` and `op2`. The operation to be performed is determined by a 2-bit `opcode`: `00` selects addition, `01` selects subtraction, `10` selects multiplication (with only the higher 8 bits of the result provided), and `11` selects division (with a check to ensure division by zero outputs zero). The result of the chosen operation is output as an 8-bit value.
+module top_module(
+    input [7:0] op1,
+    input [7:0] op2,
+    input [1:0] opcode,
+    output reg [7:0] result  // Change output to reg type
+);

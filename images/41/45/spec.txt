@@ -1,0 +1,9 @@
+Design a 5-bit scan chain shift register with input data capability. The module captures a serial input (data_in) on each clock cycle, shifting the input into the register while maintaining the previous bits, and outputs the most significant bit as data_out. In addition, it supports a scan mode where a scan_in signal can asynchronously override the register contents, shifting in the scan data instead. The reset signal initializes the register to zero. The scan_out outputs the least significant bit of the chain, facilitating serial access for testing or debugging purposes.
+module top_module(
+    input scan_in,
+    output scan_out,
+    input clk,
+    input reset,
+    input data_in,
+    output data_out
+);

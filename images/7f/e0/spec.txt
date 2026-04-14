@@ -1,0 +1,9 @@
+Design a 16-bit wide stack memory module with push and pop functionalities. The module utilizes a 4-bit stack pointer to manage an 8-entry memory array. On each positive clock edge, if the reset signal is active, the stack pointer initializes to zero and the top output is set to zero. When the push enable signal is asserted and the stack is not full, data provided on the input is stored in the current stack position, and the stack pointer increments. Conversely, when the pop enable signal is asserted and the stack is not empty, the stack pointer decrements, effectively removing the top element. The output always reflects the top element of the stack or zero if the stack is empty.
+module top_module(
+  input clk,
+  input rst,
+  input [15:0] pushd,
+  input push_en,
+  input pop_en,
+  output reg [15:0] top
+);

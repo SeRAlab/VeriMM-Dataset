@@ -1,0 +1,9 @@
+Design a one-bit wide, 2-to-1 multiplexer with synchronous reset control. When the clock signal (CLK) has a rising edge, if the reset (RST) is asserted, the output (OUT) is set to LOW. If not in reset, the output is determined by the select signal (SEL): when SEL is 0, the output is set to input A, and when SEL is 1, the output is set to input B. This device allows for controlled selection between two input signals while providing a reset functionality to manage the output state.
+module top_module(
+    input A,
+    input B,
+    input SEL,
+    input CLK,
+    input RST,
+    output reg OUT
+);

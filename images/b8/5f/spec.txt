@@ -1,0 +1,23 @@
+Design a LED controller that manages multiple RGB and single-color LEDs based on input switches and buttons. The module responds to a clock signal and a reset signal, where upon reset, all LEDs are turned off. The behavior of the LEDs is determined by the state of a 4-bit button input, which selects specific operations to assign values from a 4-bit switch input to an internal register, `led_val`. Depending on the button pressed, different combinations of the switch inputs are used to control the state of the RGB LEDs (led0 to led3) and other single-color LEDs (led4 to led7), allowing for a variety of visual outputs from the input switches.
+module top_module(
+    input  wire       clk,
+    input  wire       reset_n,
+    input  wire [3:0] sw,
+    input  wire [3:0] btn,
+    output reg        led0_r,
+    output reg        led0_g,
+    output reg        led0_b,
+    output reg        led1_r,
+    output reg        led1_g,
+    output reg        led1_b,
+    output reg        led2_r,
+    output reg        led2_g,
+    output reg        led2_b,
+    output reg        led3_r,
+    output reg        led3_g,
+    output reg        led3_b,
+    output reg        led4,
+    output reg        led5,
+    output reg        led6,
+    output reg        led7
+);

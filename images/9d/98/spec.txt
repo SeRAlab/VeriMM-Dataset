@@ -1,0 +1,11 @@
+Design a 4-bit adder circuit that operates in two modes based on the `mode` input. The module adds two 4-bit inputs, A and B, along with a carry input; it produces a 4-bit sum (C) and a carry-out output. Upon receiving a clock pulse, if the reset signal is asserted, the sum output is reset to zero; otherwise, the computed sum is stored in the output. The `mode` input allows for an addition of B or B incremented by one, enabling functionalities such as standard addition or addition with a constant to implement different arithmetic operations.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input mode,
+    input reset,
+    input carry_in,
+    input CLK,
+    output reg [3:0] C,    // Change output C to reg type
+    output wire carry_out
+);

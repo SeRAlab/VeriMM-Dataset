@@ -1,0 +1,7 @@
+Design a clock divider circuit that generates a sub-clock signal (SD_CLK) from an input clock (CLK) based on a configurable divider value (DIVIDER). The circuit utilizes an 8-bit counter that increments with each clock cycle and toggles the SD_CLK output when the counter reaches the specified DIVIDER value. Additionally, the output SD_CLK is kept in sync and resets to zero on a reset signal (RST). This module effectively takes a higher frequency clock and divides it down to a desired lower frequency clock, which can be useful in various timing applications or in generating controlled clock signals for synchronous circuits.
+module top_module(
+           input CLK,
+           input [7:0] DIVIDER,
+           input RST,
+           output reg SD_CLK
+       );

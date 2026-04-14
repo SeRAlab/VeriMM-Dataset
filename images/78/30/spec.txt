@@ -1,0 +1,11 @@
+Design a circuit that integrates a 4-bit shift register with asynchronous reset and synchronous load, a dual 8-bit splitter for 16-bit input, and an adder combining their outputs. The shift register, controlled by a clock and an asynchronous reset signal, loads data when requested and shifts its bits on each clock cycle if enabled. The 16-bit input is divided into two 8-bit segments stored in separate shift registers, which retain the recently shifted bits. Finally, the circuit sums the values from the shift register and the two splitters, outputting a 12-bit result. This module supports asynchronous reset, allowing the shift registers to clear to zero at any time.
+module top_module(
+    input clk,
+    input areset,  // async active-high reset to zero
+    input load,
+    input ena,
+    input [3:0] data,
+    input [15:0] in,
+    output wire [7:0] out_hi,
+    output wire [7:0] out_lo,
+    output wire [11:0] final_out);

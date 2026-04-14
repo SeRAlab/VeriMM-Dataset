@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a parameterizable, synchronous reset, D-type flip-flop (DFF) with an active-low reset. Its primary role to store and update digital signals upon the rising edge of a clock signal, while also providing the capability to asynchronously reset the stored value to zero when the reset signal is asserted (active low). This module is fundamental in digital design for creating memory elements, registers, and various sequential logic circuits, serving as a building block in larger digital systems where data storage, synchronization, and state management are required.
+
+Module name:  
+	dffrl_ns
+
+Input ports:
+	din [SIZE1:0]: Data Input (Vector)
+	Type: Input
+	Width: Parameterizable (SIZE)
+	Description: This port accepts the binary data input that is to be stored in the flipflop upon the next rising edge of the clock signal, provided the reset signal is not asserted.
+	clk: Clock
+	Type: Input
+	Width: 1 bit
+	Description: The clock signal synchronizes the data storage operation. The data at the din port is sampled and stored at the rising edge of this signal.
+	rst_l: Reset (Active Low)
+	Type: Input
+	Width: 1 bit
+	Description: This signal is used to asynchronously reset the stored data to zero. When asserted (logic low), irrespective of the clock signal, the output q is reset to zero.
+Output ports:
+	q [SIZE1:0]: Data Output (Vector)
+	Type: Output (Reg)
+	Width: Parameterizable (SIZE)
+	Description: This port outputs the data currently stored in the flipflop. The output data can either be the previously stored data or new data sampled from the din input, depending on the clock and reset signals.
+
+
+Implementation:
+The RTL module presented, named dffrl_ns, is designed to implement a parameterizable, synchronous reset, D flip-flop array. The core functionality of this module is to store and update a set of binary values based on the input data (din), the clock signal (clk), and the reset signal (rst_l). The parameter SIZE allows for scalability, enabling the module to handle a single bit or an array of bits as specified by the user. This flexibility makes the module versatile for various applications within digital integrated circuits, such as registers, memory elements, or any application requiring state retention across clock cycles.
+
+Give me the complete code.
+

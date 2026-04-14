@@ -1,0 +1,10 @@
+Design a synchronous 8-bit calculator that performs four basic arithmetic operations: addition, subtraction, multiplication, and division, based on a 2-bit operation selector (`op`). The module takes two 8-bit inputs, `A` and `B`, and outputs an 8-bit result along with flags for overflow and underflow conditions. The calculator detects overflow for addition and subtraction operations, as well as for multiplication, while it handles division by zero by signaling underflow. The operation is triggered on the rising edge of the clock signal, ensuring stable outputs for each operation cycle.
+module top_module(
+    input clk,
+    input [7:0] A,
+    input [7:0] B,
+    input [1:0] op,
+    output reg [7:0] result,
+    output reg overflow,
+    output reg underflow
+);

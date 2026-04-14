@@ -1,0 +1,38 @@
+Please act as a professional verilog designer.
+    
+Implement a module simulates a dual-port True Single-Port RAM (TPSRAM) with write-back capability. It to handle two separate interfaces, each with its own set of controls, including data input/output, address, write enable, strobe, reset, and clock signals. The primary functions of this module include:
+
+Storing and retrieving 32-bit data words in a memory array with addresses ranging based on the address width parameter (`AW`).
+Allowing simultaneous access from two distinct interfaces, each potentially operating on different clock domains.
+Providing initial random values to the memory array upon instantiation, simulating a power-up condition with undefined data.
+Supporting write operations on a positive clock edge when the write enable (`wre_i` or `xwre_i`) and strobe (`stb_i` or `xstb_i`) signals are asserted.
+Outputting the last accessed data based on the most recent address provided by each interface, even when no active transaction is occurring.
+
+This module can be utilized in systems requiring dual-interface memory access, such as in cache systems, dual-processor setups, or any application needing separate read/write interfaces to a shared memory resource.
+
+Module name:  
+	fasm_tpsram_wbr
+
+Input ports:
+	dat_i [DW1:0]: 32bit data input for the primary interface.
+	adr_i [AW1:0]: Address input for the primary interface, determining the memory cell to access.
+	wre_i: Write enable for the primary interface; when high, data is written to the address specified by adr_i.
+	stb_i: Strobe/input enable for the primary interface; controls the timing of read/write operations.
+	rst_i: Reset signal for the primary interface; not used in the current implementation.
+	clk_i: Clock input for the primary interface; synchronizes operations.
+	xdat_i [DW1:0]: 32bit data input for the secondary interface.
+	xadr_i [AW1:0]: Address input for the secondary interface.
+	xwre_i: Write enable for the secondary interface; functionality not implemented in the current code.
+	xstb_i: Strobe/input enable for the secondary interface.
+	xrst_i: Reset signal for the secondary interface; not used in the current implementation.
+	xclk_i: Clock input for the secondary interface.
+Output ports:
+	dat_o [DW1:0]: 32bit data output for the primary interface, reflecting the data of the last accessed address.
+	xdat_o [DW1:0]: 32bit data output for the secondary interface, reflecting the data of the last accessed address.
+
+
+Implementation:
+The RTL module fasm_tpsram_wbr is designed to simulate a dual-port RAM with write-back capability, featuring separate interfaces for two distinct sets of signals. These interfaces are differentiated by their prefixes: standard signals do not have a prefix, while the external interface signals are prefixed with 'x'. The module is parameterized with AW (Address Width) and DW (Data Width), allowing for flexibility in memory size and data width configurations.
+
+Give me the complete code.
+

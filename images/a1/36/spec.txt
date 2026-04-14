@@ -1,0 +1,14 @@
+Design a two-to-one multiplexer that outputs one of two 8-bit input signals (A or B) based on a select signal (S). When S is low, the output (Y) reflects the value of A, and when S is high, Y reflects the value of B. The module also generates the inverse of the select signal (Sbar), and two additional outputs that indicate whether the inputs A and B are equal (AeqB) or not equal (AneqB). This design is ideal for routing data between two sources while providing additional comparison functionality.
+module top_module(
+    output reg [7:0] Y,
+    output reg Sbar,
+    output reg AeqB,
+    output reg AneqB,
+    input [7:0] A,
+    input [7:0] B,
+    input S,
+    input VPWR,  // Changed to input
+    input VGND,  // Changed to input
+    input VPB,   // Changed to input
+    input VNB    // Changed to input
+);

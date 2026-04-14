@@ -1,0 +1,7 @@
+Design a digital delay line that introduces a fixed delay of a specified number of clock cycles (defined by the parameter `delay`) to an input signal. The module utilizes a shift register to store and propagate the input signal over the specified delay period. When the `rst` (reset) signal is activated, the delay line clears and initializes the shift register. On each positive clock edge, the current input signal is shifted into the register while the oldest value is outputted as `out`, effectively delaying the input signal by the designated number of clock cycles.
+module top_module(
+  input clk,
+  input rst,
+  input in,
+  output out
+);

@@ -1,0 +1,10 @@
+Design a simple calculator that performs 8-bit addition and subtraction based on the operation selection input (`op`). It utilizes a clock and reset mechanism, where on a clock edge, if the reset is activated, the result and overflow flags are cleared. For addition (when `op` is 0), it checks for overflow when the sum exceeds 255, while for subtraction (when `op` is 1), it flags overflow if the result is negative. The final result and overflow status are indicated through the `result` and `overflow` output signals, respectively.
+module top_module(
+  input clk,
+  input reset,
+  input op,
+  input [7:0] num1,
+  input [7:0] num2,
+  output reg [7:0] result,
+  output reg overflow
+);

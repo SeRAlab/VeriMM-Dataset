@@ -1,0 +1,6 @@
+Design a 4-to-2 priority encoder that encodes the highest priority active input among four inputs (ABCD) represented as a 4-bit vector into a 2-bit output (XY). The encoder identifies which input bit is set and produces a corresponding binary output indicating the position of the highest set input, with a default output of '00' if none are set. Additionally, the output is registered on the rising edge of a clock signal to ensure synchronized output behavior.
+module top_module(
+    input [3:0] ABCD,
+    input clk,                // Added clk input
+    output reg [1:0] XY
+);

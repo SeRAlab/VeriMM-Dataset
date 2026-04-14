@@ -1,0 +1,6 @@
+Design a 3-bit binary counter with an asynchronous reset function. The counter operates in three states: IDLE, COUNTING, and RESET. In IDLE, if the reset signal is active, the state transitions to RESET, otherwise, it moves to COUNTING where the counter increments on each clock pulse until it reaches 7 (3'b111), at which point it resets to IDLE. When in the RESET state, the counter is set back to 0. The counted value is output as a 3-bit vector, providing a simple yet effective counting mechanism for digital applications.
+module top_module(
+  input clk,
+  input rst,
+  output reg [2:0] count
+);

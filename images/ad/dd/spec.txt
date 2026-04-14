@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a module for a 4-bit synchronous up counter. The module should count from 0 to 15 and then wrap around to 0. It should have a clock enable signal to control when the counter increments.
+
+Module name:  
+    sync_counter               
+Input ports:
+	clk: Clock input for synchronization.
+	rst_n: Active-low reset signal.
+	clk_en: Clock enable signal.
+Output ports:
+	count[3:0]: 4-bit counter output.
+
+Implementation:
+Use a synchronous process to increment the counter on the rising edge of the clock if clk_en is high. If rst_n is low, reset the counter to 0.
+
+Give me the complete code.
+
+module sync_counter(
+    input               clk         ,   
+    input               rst_n       ,
+    input               clk_en      ,
+    output  reg [3:0]   count
+);

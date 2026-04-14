@@ -1,0 +1,8 @@
+Design a 4-bit binary counter with load and reset functionality. The counter has a clock input and can be reset to zero or loaded with an external 4-bit value. On each clock cycle, if not in reset mode, it either loads the value from `data_in` into two staging registers or increments the second stage count by one. The output `count` reflects the value stored in the first staging register, enabling the counter to provide the loaded or current count value effectively.
+module top_module(
+    input reset,
+    input load,
+    input clk,
+    input [3:0] data_in,
+    output reg [3:0] count
+);

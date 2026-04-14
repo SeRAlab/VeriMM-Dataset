@@ -1,0 +1,7 @@
+Design a 32-bit wide counter that increments based on a given input value. The counter is clock-driven and can be reset asynchronously; when the reset signal is asserted, it returns to zero. During each clock cycle, if the sum of the current counter value and the input exceeds the maximum value for a 32-bit number, the counter saturates at that maximum instead of rolling over, ensuring it never exceeds 2^32-1. The current counter value is continuously outputted.
+module top_module(
+    input wire clk,
+    input wire rst,
+    input wire [31:0] in,
+    output wire [31:0] out
+);

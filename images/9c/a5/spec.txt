@@ -1,0 +1,7 @@
+Design a priority encoder with a reset feature that processes four input signals (A, B, C, D). When activated, the module outputs a two-bit code corresponding to the highest-priority non-zero input, with priority ordered from A (highest) to D (lowest). The valid output indicates when a valid input was detected. If the reset signal is asserted, the output is set to zero, and the valid flag is deactivated.
+module top_module(
+    input [3:0] A, B, C, D,
+    input reset,
+    output [1:0] out,
+    output valid
+);

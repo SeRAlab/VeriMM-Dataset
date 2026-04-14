@@ -1,0 +1,9 @@
+Design a memory controller that facilitates read and write operations to an 8-bit wide memory array consisting of 256 locations. The controller is enabled by the chip select (cs) signal; when cs is high and the read/write (rw) signal is high, it outputs the data from the specified memory address (addr) onto dout. Conversely, when rw is low, it writes the input data (din) to the specified address in memory. The operation is synchronized with the clock (clk), ensuring data integrity during transactions.
+module top_module(
+  input clk,
+  input cs,
+  input rw,
+  input [7:0] addr,
+  input [7:0] din,
+  output reg [7:0] dout // Change to reg type
+);

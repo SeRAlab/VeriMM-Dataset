@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+    
+Implement a module to encode 8-bit binary input data into 10-bit binary output data using the 8b/10b encoding scheme. This encoding technique is widely used in digital communication systems to achieve DC balance and sufficient transitions to allow clock recovery in serial data streams. The primary functions and objectives of this module include:
+
+DC Balance: Ensuring that the number of 1s and 0s transmitted over time is balanced to prevent a DC bias in the transmitted signal.
+Clock Recovery: Providing enough transitions in the data stream to allow the receiver to recover the clock signal.
+Error Detection: The encoding scheme allows for some level of error detection by making certain code words illegal, which can be checked at the receiver.
+Special Character Support: The module supports the encoding of control characters (denoted by the `K` input) in addition to regular data characters.
+
+Module name:  
+	encoder_8b10b
+
+Input ports:
+	reset: A synchronous reset signal. When asserted (1), it initializes the module's internal state.
+	SBYTECLK: The clock signal for the module. The encoding process is synchronized to the rising edge of this clock.
+	K: A control signal indicating whether the current byte to encode is a data byte (0) or a special control character (1).
+	ebi [7:0]: An 8bit input representing the binary data or control character to be encoded.
+Output ports:
+	tbi [9:0]: A 10bit output representing the encoded data.
+	disparity: A signal indicating the running disparity after the current byte is encoded. This is used to maintain DC balance by adjusting the encoding of the next byte if necessary.
+
+
+Implementation:
+The RTL module presented is an encoder for the 8b/10b encoding scheme, widely used in high-speed communication interfaces to ensure a balanced number of ones and zeros in the transmitted data, thereby facilitating clock recovery and reducing electromagnetic interference. The module takes an 8-bit input (ebi) and generates a 10-bit encoded output (tbi), while managing the running disparity (disparity) to ensure DC balance over time.
+
+Give me the complete code.
+

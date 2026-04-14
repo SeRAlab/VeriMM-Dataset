@@ -1,0 +1,20 @@
+
+
+You are tasked with designing a register unit in Verilog that has the following inputs and outputs:
+
+Inputs:
+- `data_in`: an 8-bit input signal
+- `load`: a 1-bit control signal that determines whether the value of `data_in` should be loaded into the register
+- `clk`: a clock signal
+- `rst`: a reset signal
+
+Outputs:
+- `data_out`: an 8-bit output signal that is the value stored in the register
+
+The register unit should be implemented using a single Verilog module. The module should have a parameter `ff_sz` that determines the size of the register. The default value of `ff_sz` should be 8.
+
+The behavior of the register unit should be as follows:
+- When `rst` is low, the value of `data_out` should be set to 0.
+- When `load` is high and the rising edge of `clk` occurs, the value of `data_in` should be loaded into the register and stored in `data_out`.
+- When `load` is low and the rising edge of `clk` occurs, the value of `data_out` should remain unchanged.
+

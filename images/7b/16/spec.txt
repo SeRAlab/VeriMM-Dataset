@@ -1,0 +1,8 @@
+Design a circuit that implements a Booth multiplier for multiplying two 8-bit signed integers, A and B, producing a 16-bit output. The module operates synchronously, resetting its internal registers and output on the rising edge of the clock when a reset signal is asserted. It utilizes a state machine approach, where it generates partial products based on the least significant bits of the multiplier (B), and accumulates these products to calculate the final result. The circuit makes use of booth encoding for efficient multiplication, handling both positive and negative values through sign extension and adjustments.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] A,
+  input [7:0] B,
+  output reg [15:0] out
+);

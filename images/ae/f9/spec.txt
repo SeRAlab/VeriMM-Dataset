@@ -1,0 +1,10 @@
+Design a synchronous circuit that incorporates an 8-bit shift register and a 4-bit Johnson counter, controlled by a clock and reset signal. The module allows the loading of data into the shift register and shifting of its contents either left or right based on the specified shift direction. When the slow enable signal is active, the Johnson counter increments with each clock cycle. The outputs are concatenated and provided as a 12-bit sum for external use. The circuit initializes the shift register to a specific value and resets the sum and counter when the reset signal is activated.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] data_in,
+    input [1:0] shift_direction,
+    input load,
+    input slowena,
+    output [11:0] output_sum
+);

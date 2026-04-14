@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module primarily functions as a bit-shift unit, capable of performing logical left shift, logical right shift, and arithmetic right shift operations on 32-bit data inputs. It to be a part of a larger system, possibly a microprocessor or a digital signal processing (DSP) unit, where bit manipulation operations are essential for various computational tasks. The module selects the specific bit-shift operation based on external control signals and outputs the result of the operation.
+
+Module name:  
+	aeMB2_bsft
+
+Input ports:
+	opa_of (32 bits, input): Operand A, the 32bit data input to be shifted.
+	opb_of (32 bits, input): Operand B, specifies the number of positions to shift Operand A. Only the lower 5 bits are used since the maximum shift for a 32bit value is 31.
+	opc_of (6 bits, input): Operation code, potentially used for future expansion or control, but not directly utilized in the current module logic.
+	imm_of (2 bits, input, bits [10:9]): Immediate field, used to select the type of shift operation (logical left, logical right, or arithmetic right shift).
+	gclk (1 bit, input): Global clock signal, used to synchronize the operations within the module.
+	grst (1 bit, input): Global reset signal, asynchronously resets the internal registers to a known state.
+	dena (1 bit, input): Data enable signal, controls the execution of shift operations within the module.
+	gpha (1 bit, input): Phase signal, not directly utilized in the current module logic, potentially for future use or synchronization purposes.
+Output ports:
+	bsf_mx (32 bits, output): Bitshift operation result, outputs the result of the selected bitshift operation on Operand A.
+
+
+Implementation:
+The RTL module aeMB2_bsft is designed to perform bit shift operations on 32-bit inputs. It supports logical left shift, logical right shift, and arithmetic right shift operations based on the input parameters. The module is parameterized with AEMB_BSF to potentially enable or disable its functionality, although this feature is statically set to 1 in the given code, implying the module's functionality is always enabled.
+
+Give me the complete code.
+

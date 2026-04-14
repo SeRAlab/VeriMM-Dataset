@@ -1,0 +1,9 @@
+Design a 2-to-1 multiplexer with a pipelined selection mechanism. This module utilizes two selection signals (`sel_b1` and `sel_b2`) processed through two stages of registers to synchronize and control the output. On each clock cycle, the selection bits are shifted into a two-bit register, and based on the value of this shifted selection, the module outputs either input `a` or input `b`. If both selection signals are low, the output defaults to `b`, ensuring stable operation through pipelining.
+module top_module(
+    input a,
+    input b,
+    input sel_b1,
+    input sel_b2,
+    input clk,               // Added clk input
+    output reg out_always
+);

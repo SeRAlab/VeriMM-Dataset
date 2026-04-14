@@ -1,0 +1,8 @@
+Design a circuit that functions as a synchronous 8-bit shift register combined with a 16-to-1 multiplexer and a comparator. The shift register shifts its input left by two bits on each clock cycle, resetting to zero when the reset signal is active. The multiplexer selects one of four 4-bit inputs based on a 2-bit selector derived from the higher bits of a 64-bit input, outputting it for comparison against a specific 4-bit value (1010). The comparator generates a flag based on this comparison. Finally, the module's output consists of a 2-bit signal that incorporates the comparator output and specific bits from the shifted shift register, effectively combining the two functionalities into a singular output behavior.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input [7:0] in,   // 8-bit input for the shift register
+    input [63:0] sel, // Select input to choose from 16 4-bit inputs
+    output reg [1:0] out // 2-bit output from the functional module
+);

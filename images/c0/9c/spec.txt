@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+    
+Implement a module to synchronize an asynchronous reset signal to a given clock domain, thereby mitigating the risk of metastability that can arise when an asynchronous reset is applied directly to flip-flops within that clock domain. This module plays a critical role in digital systems where multiple clock domains intersect or where an external reset signal must be cleanly integrated into a synchronous system. Its primary function to ensure that the reset signal is aligned with the clock edges, providing a stable and predictable reset behavior across the system.
+
+Module name:  
+	omsp_sync_reset
+
+Input ports:
+	clk (input): This is the clock input to which the reset signal will be synchronized. It is a singlebit signal that orchestrates the timing of the synchronization process.
+	rst_a (input): This is the asynchronous reset input, a singlebit signal that triggers the reset process. It is external to the clock domain and hence needs synchronization.
+Output ports:
+	rst_s (output): This is the synchronized reset output, a singlebit signal that has been aligned with the clk edges. It is used to reset other elements within the same clock domain safely.
+
+
+Implementation:
+The omsp_sync_reset module is designed to synchronize an asynchronous reset signal (rst_a) to a clock domain defined by clk. This synchronization is crucial in digital designs to prevent metastability issues when an asynchronous reset signal is applied to flip-flops or registers that operate in a different clock domain. The module outputs a synchronized reset signal (rst_s) that is safe to use within the clk domain.
+
+Give me the complete code.
+

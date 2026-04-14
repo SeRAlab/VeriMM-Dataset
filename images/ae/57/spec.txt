@@ -1,0 +1,9 @@
+Design a 4-stage shift register that operates based on a clock signal (CLK) and provides functionality to load data and perform shifting operations. When LOAD is asserted, the input data (DATA_IN) is loaded into the first stage of the shift register, while subsequent stages are filled with either all ones (16'hFFFF) or all zeros (16'h0000) based on the mode input. When SHIFT is asserted, the data is shifted through the stages toward the output, with the first stage outputting the current data value to DATA_OUT. The module also maintains a shift count to keep track of the number of shifts performed.
+module top_module(
+    input CLK,
+    input SHIFT,
+    input LOAD,
+    input [15:0] DATA_IN,
+    input mode,
+    output reg [15:0] DATA_OUT
+);

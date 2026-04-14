@@ -1,0 +1,9 @@
+Design a circuit that converts a 4-bit binary number into its Binary-Coded Decimal (BCD) representation. The module takes a 4-bit binary input and, on each rising edge of a clock signal, processes the binary value through a series of steps. The BCD output, along with three enable signals (EN1, EN2, EN3), is updated sequentially over four clock cycles, allowing for adjustments based on the BCD rules (adding 3 when necessary). The enable signals indicate which stage of the conversion is currently active, facilitating the step-by-step transformation from binary to BCD.
+module top_module(
+    input [3:0] binary_in,
+    input clk,
+    output reg [3:0] bcd_out,
+    output reg EN1,
+    output reg EN2,
+    output reg EN3
+);

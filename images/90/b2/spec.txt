@@ -1,0 +1,21 @@
+Implement a Verilog module based on the following description.
+The following diagram is a Moore machine implementation of an elevator controller. Implement in Verilog using one-hot encoding. Resets into state Ground and reset is asynchronous active-high.
+
+The state machine has the following states and their corresponding outputs: 
+1. state Ground (floor = 2'b00).
+2. state First (floor = 2'b01).
+3. state Second (floor = 2'b10).
+4. state Third (floor = 2'b11).
+
+State transitions:
+1. From state Ground: If up_button = 1, then transition to state First. If up_button = 0, then transition to state Ground.
+2. From state First: If up_button = 1, then transition to state Second. If down_button = 1, then transition to state Ground. If neither, remain in First.
+3. From state Second: If up_button = 1, then transition to state Third. If down_button = 1, then transition to state First. If neither, remain in Second.
+4. From state Third: If down_button = 1, then transition to state Second. If down_button = 0, then transition to state Third.
+
+module elevator_controller (
+        input clk,
+        input areset,
+        input up_button,
+        input down_button,
+        output reg [1:0] floor);

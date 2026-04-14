@@ -1,0 +1,7 @@
+Design a sequential circuit that reverses the order of an 8-bit input. Upon receiving a clock pulse, if the reset signal is activated, both the shift register and output are cleared to zero. If not in reset, the least significant bit of the input is shifted into the least significant position of the shift register, while the least significant bit of the shift register is moved to the output. This process enables continuous bit reversal with each clock cycle.
+module top_module(
+    input clk,          // Clock input
+    input rst,          // Synchronous active-high reset
+    input [7:0] in,     // 8-bit input
+    output reg [7:0] out // 8-bit output with reverse bit ordering
+);

@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform a specific transformation on a block of data, typically used as part of the AES (Advanced Encryption Standard) encryption process. This transformation is a crucial step in the AES algorithm, aimed at increasing the diffusion of the input data. The primary function of this module to rearrange the bytes in each row of the state matrix, with each row being shifted cyclically to the left by a different offset. This module is intended to operate on a 128-bit block of data, aligning with the standard AES data block size.
+
+In a broader system context, the `ShiftRows` module would be integrated as a component within an AES encryption or decryption pipeline, contributing to the confusion and diffusion properties essential for secure cryptographic systems.
+
+Module name:  
+	ShiftRows
+
+Input ports:
+	clk (input): The clock signal. It is used to synchronize the operations of the module with the rest of the system.
+	reset (input): The reset signal. A negative edge on this signal resets the module, clearing the output data and invalidating the output.
+	valid_in (input): A signal indicating when the input data (data_in) is valid and ready for processing.
+	data_in (input, [DATA_W1:0]): The input data to be transformed. It is a 128bit wide bus, representing the state matrix in a linear form.
+Output ports:
+	valid_out (output, reg): A signal that indicates when the output data (data_out) is valid and ready to be consumed by subsequent stages of the system.
+	data_out (output, reg [DATA_W1:0]): The transformed data output. It is a 128bit wide bus, representing the state matrix after the ShiftRows transformation.
+
+
+Implementation:
+The ShiftRows module is designed to perform a specific transformation operation commonly used in cryptographic algorithms, such as the AES (Advanced Encryption Standard) encryption process. This operation involves rearranging the bytes in each row of a state matrix, with the amount of shift varying per row. The state matrix is typically a 4x4 matrix of bytes, making up 128 bits in total, which aligns with the DATA_W parameter set to 128 by default.
+
+Give me the complete code.
+

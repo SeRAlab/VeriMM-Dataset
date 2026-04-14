@@ -1,0 +1,19 @@
+Please act as a professional Verilog designer.
+
+Implement a simple dual-port RAM with asynchronous read and synchronous write. The module has separate read and write addresses, a write enable signal, and data input and output ports. The RAM has 256 8-bit locations.
+
+Module name:
+    dual_port_ram
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    wr_en: Write enable signal. When high, data is written to the RAM.
+    wr_addr: 8-bit write address.
+    rd_addr: 8-bit read address.
+    data_in: 8-bit input data to be written to the RAM.
+
+Output ports:
+    data_out: 8-bit data read from the RAM.
+
+Implementation:
+Use a 256x8 memory array. On a write operation, update the memory location specified by wr_addr with data_in on the positive edge of the clock if wr_en is high. The read operation is asynchronous and provides the data from the memory location specified by rd_addr.

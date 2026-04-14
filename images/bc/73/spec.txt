@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that operates as a binary sequence counter, triggering state transitions based on a single input, `data`. The FSM has four states, transitioning sequentially when `data` is high and holding its state when `data` is low. On encountering a low signal after being in the final state, it increments a 3-bit counter, which represents the count of completed sequences. The FSM resets the count and state when the `reset` signal is asserted. The output is the current count value reflecting the total sequence transitions.
+module top_module(
+  input clk,
+  input reset,
+  input data,
+  output reg [2:0] count
+);

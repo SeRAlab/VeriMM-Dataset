@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+
+Design a simple 8-bit shift register with a parallel load capability. The shift register should have an asynchronous reset and a load signal. When the load signal is active, the shift register loads an 8-bit input value. On each clock cycle, the register shifts its contents to the right.
+
+Module name:  
+    ShiftRegister               
+Input ports:
+    clk: Clock signal for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    load: Load signal to load the input value into the shift register.
+    data_in: 8-bit input value to be loaded into the shift register.
+
+Output ports:
+    q: 8-bit output representing the current state of the shift register.
+
+Implementation:
+Shift Register:
+The module includes a register q to hold the current state of the shift register.
+The always block triggers on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by !rst_n, the q register is cleared to 0.
+If the load signal is active, the q register is assigned the value of data_in.
+Otherwise, on each clock cycle, the q register shifts its contents to the right.
+
+Give me the complete code.

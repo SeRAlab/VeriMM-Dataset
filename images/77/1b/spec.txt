@@ -1,0 +1,8 @@
+Design a Content Addressable Memory (CAM) module that compares an `n`-bit input search key against a stored array of `N` data words, each `m` bits wide. When a match is found, it asserts the `Match` signal, providing the matched data output and the corresponding address where the match occurred. The module initializes with an array capable of holding `N` words of data and continuously checks for matches in a combinational process, outputting the matched data and address as needed.
+module top_module(
+  input [n-1:0] in,
+  output reg [m-1:0] out,
+  output reg Match,
+  output reg [k-1:0] Address,
+  output [m-1:0] Data
+);

@@ -1,0 +1,12 @@
+Design a dual-port RAM module with independent read and write capabilities. The RAM has a depth of 1024 and a width of 8 bits, allowing two simultaneous operations through separate address and data inputs for each port. When the clock signal rises, if the first write enable signal is active, data is written to the memory at the specified address for port 1. If the second write enable is active and the first one is not, data is written to the address for port 2. Both ports can read data from their respective addresses at any time, providing a flexible memory interface for concurrent access in applications such as buffering or data storage in digital systems.
+module top_module(
+  input clk,
+  input wren1,
+  input wren2,
+  input [ADDR_WIDTH-1:0] addr1,
+  input [ADDR_WIDTH-1:0] addr2,
+  input [width-1:0] din1,
+  input [width-1:0] din2,
+  output [width-1:0] dout1,
+  output [width-1:0] dout2
+);

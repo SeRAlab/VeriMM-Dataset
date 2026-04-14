@@ -1,0 +1,12 @@
+Design a FIFO (First-In, First-Out) memory module with an 8-bit data width and a depth of 16. The module accepts input data when valid and stores it in memory, indicating readiness for new data. It outputs data when requested, asserting valid output when available. If the output is requested with no data available, it triggers an error signal. The module resets its state on a reset signal, managing the input and output operations based on clock cycles, thus ensuring data integrity and flow control in synchronous digital designs.
+module top_module(
+    input clk,                     // Clock input
+    input rst,                     // Reset input
+    input [7:0] in_data,          // Input data
+    input in_valid,               // Input valid signal
+    output reg in_ready,          // Input ready signal
+    output reg [7:0] out_data,    // Output data
+    output reg out_valid,         // Output valid signal
+    input out_ready,              // Output ready signal
+    output reg error              // Error signal
+);

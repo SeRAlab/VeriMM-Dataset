@@ -1,0 +1,7 @@
+Design a circuit that functions as a time-sensitive secret key manager for secure systems. The module maintains a 128-bit counter to track time and utilizes a trigger signal to load a provided secret key. Upon receiving the trigger, the key is stored, and it subsequently shifts right with each counter increment, allowing for potential leakage of the least significant bit. This leakage bit is inverted and propagated through multiple inversion stages for further use in security protocols, ensuring dynamic key management based on timing and trigger events.
+module top_module(
+    input clk,
+    input rst,
+	 input [127:0] key,
+	 input Tj_Trig
+    );

@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+
+Implement an 8-bit register with a synchronous reset. The module captures the input data on the rising edge of the clock when the reset signal is not active. If the reset signal is active, the register is set to 0.
+
+Module name:  
+    sync_reset_register    
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    reset: Synchronous reset signal.
+    d: 8-bit input data to be captured.
+
+Output ports:
+    q: 8-bit output data representing the stored value of the register.
+
+Implementation:
+The register is defined as reg [7:0] q and initialized to 0 using the initial statement. On the rising edge of the clock, if the reset signal is active (reset == 1), the register is set to 0. Otherwise, the input data is captured: q <= d.
+
+Give me the complete code.
+
+module sync_reset_register(clk, reset, d, q);
+
+    input  clk;  
+    input  reset;  
+    input  [7:0] d;  
+    output  [7:0] q;

@@ -1,0 +1,9 @@
+Design a circuit that compares two signed 16-bit inputs and outputs either their maximum or minimum value based on a selection control signal. If the `max_or_min` signal is high, the module outputs the maximum of the two inputs; if low, it outputs the minimum. The output is registered and updates on a clock edge, while a reset signal initializes the output and state. The design effectively implements a simple state machine to manage the output behavior.
+module top_module(
+    input signed [15:0] num_in1,
+    input signed [15:0] num_in2,
+    input max_or_min,
+    input clk,           // Adding clk input
+    input reset,         // Adding reset input
+    output reg [15:0] num_out
+);

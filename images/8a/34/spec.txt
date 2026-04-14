@@ -1,0 +1,15 @@
+Design a 32-bit counter module that operates based on various control signals. The counter can be reset asynchronously using Reset_n_i, and when activated, it can count up or down depending on the Direction_i input while being incremented or decremented with each clock cycle (Clk_i) when Enable_i is high. The module allows for an optional preset value through Preset_i, where the counter is loaded with 16-bit high and low preset values (PresetValH_i and PresetValL_i). Outputs include two 16-bit signals (DH_o and DL_o) representing the high and low parts of the counter value, an Overflow_o signal indicating if there's an overflow condition, and a Zero_o signal that notifies if the counter has reached zero. The counter is initialized to zero upon reset and can indicate when overflow occurs based on the most significant bit of its internal value.
+module top_module(
+  input Reset_n_i,
+  input Clk_i,
+  input ResetSig_i,
+  input Preset_i,
+  input Enable_i,
+  input Direction_i,
+  input [15:0] PresetValH_i,
+  input [15:0] PresetValL_i,
+  output reg [15:0] DH_o,
+  output reg [15:0] DL_o,
+  output reg Overflow_o,
+  output reg Zero_o
+);

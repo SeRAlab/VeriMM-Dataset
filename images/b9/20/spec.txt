@@ -1,0 +1,13 @@
+Design a circuit that calculates the phase of a waveform, utilizing various input parameters. The module accepts clock and reset signals, as well as multiple inputs that affect the phase calculation, including constants for frequency (kc), a factor (kf), a multiplication factor (mul), and two deviation terms (dt1 and dt2). Additionally, it incorporates a signed phase modulation input (pm) and its scaling factor (pms). On the rising edge of the clock or when reset is activated, the output (pg_phase) is updated to reflect the computed phase value, which is derived from the product of the input factors combined with modulation adjustments.
+module top_module(
+    input clk,
+    input rst,
+    input [6:0] kc,
+    input [5:0] kf,
+    input [3:0] mul,
+    input [2:0] dt1,
+    input [1:0] dt2,
+    input signed [7:0] pm,
+    input [2:0] pms,
+    output reg signed [15:0] pg_phase
+);

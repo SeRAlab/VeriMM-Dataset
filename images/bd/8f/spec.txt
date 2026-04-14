@@ -1,0 +1,8 @@
+Develop a refresh period timer circuit that operates based on a clock signal. The module increments a counter, `refresh_period_time`, until it reaches a defined `REFRESH_PERIOD`. It generates a reset signal, `rst_ref_cnt`, to indicate when the counter needs to reset (when the `refresh_period_time` exceeds `REFRESH_PERIOD`). The module also includes a condition for indicating if the refresh time has been sufficiently prolonged (`its_fr_time`), dependent on a calculated value (`FORCE_REFRESH_TIME`). The timer can be enabled or disabled via the input signal `en`, and it includes asynchronous reset functionality through the `n_rst` input.
+module top_module(
+	input clk,
+	input n_rst,
+	input en,
+	output reg rst_ref_cnt,
+	output its_fr_time
+);

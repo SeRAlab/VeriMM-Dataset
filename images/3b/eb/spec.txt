@@ -1,0 +1,12 @@
+
+Design an NVMe controller status register that captures the operational state of the controller. The status register should hold 3 bits indicating the status: 
+- Bit 0: Ready (1 if the controller is ready for commands)
+- Bit 1: Error (1 if there is an error detected)
+- Bit 2: Busy (1 if the controller is currently processing a command)
+
+The controller should have an input signal to update the status based on the following conditions:
+- If the controller receives a command, it sets Busy to 1 and Ready to 0.
+- If the Busy signal is 1 and the command processing is completed, Busy is set to 0 and Ready is set to 1.
+- If an error occurs, the Error signal is set to 1, and all other states are cleared.
+
+The status register should be reset to 0 when a reset signal is applied. Implement this behavior in Verilog.

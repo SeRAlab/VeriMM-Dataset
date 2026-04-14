@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+
+Implement a 8-bit shift register with serial input and parallel output.
+
+Module name:  
+    shift_reg_8bit      
+
+Input ports:
+    CLK: Clock signal
+    RST: Reset signal
+    SI: Serial input
+
+Output ports:
+    Q: 8-bit parallel output
+
+Implementation:
+The module uses a process block to describe the synchronous operation of the shift register.
+On every positive edge of CLK, if RST is active, the shift register is reset to 0.
+Otherwise, the serial input SI is shifted into the register.
+The register value is assigned to the output Q.
+
+Give me the complete code.
+
+module shift_reg_8bit (CLK, RST, SI, Q);
+input CLK, RST, SI;
+output reg [7:0] Q;

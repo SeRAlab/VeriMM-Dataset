@@ -1,0 +1,205 @@
+`timescale 1ns/1ps
+
+module gradient_descent_tb;
+
+    // Testbench signals (sequential circuit)
+    reg clk;
+    reg [15:0] current_guess;
+    reg [15:0] function_value;
+    reg [15:0] learning_rate;
+    reg reset;
+    wire [15:0] updated_guess;
+
+    // Test tracking
+    integer test_num;
+    integer pass_count;
+    integer fail_count;
+
+    // Instantiate the DUT (Device Under Test)
+    gradient_descent dut (
+        .clk(clk),
+        .current_guess(current_guess),
+        .function_value(function_value),
+        .learning_rate(learning_rate),
+        .reset(reset),
+        .updated_guess(updated_guess)
+    );
+
+    // Clock generation (10ns period)
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk;
+    end
+
+        task reset_dut;
+
+        begin
+            reset = 1;
+            current_guess = 0;
+            function_value = 0;
+            learning_rate = 0;
+            @(posedge clk);
+            #1;
+            reset = 0;
+            @(posedge clk);
+            #1;
+        end
+        endtask
+    task testcase001;
+
+        begin
+            test_num = test_num + 1;
+            $display("Test Case %0d: Zero Gradient", test_num);
+            reset_dut();
+            current_guess = 16'h0064;
+            learning_rate = 16'h0005;
+            function_value = 16'h0000;
+            @(posedge clk);
+            #1;
+            #1;
+
+            check_outputs(16'h0064);
+        end
+        endtask
+
+    task testcase002;
+
+        begin
+            test_num = test_num + 1;
+            $display("Test Case %0d: Positive Gradient Step", test_num);
+            reset_dut();
+            current_guess = 16'h01F4;
+            learning_rate = 16'h0002;
+            function_value = 16'h0032;
+            @(posedge clk);
+            #1;
+            #1;
+
+            check_outputs(16'h0190);
+        end
+        endtask
+
+    task testcase003;
+
+        begin
+            test_num = test_num + 1;
+            $display("Test Case %0d: Negative Gradient Step", test_num);
+            reset_dut();
+            current_guess = 16'h0064;
+            learning_rate = 16'h000A;
+            function_value = 16'hFFFE;
+            @(posedge clk);
+            #1;
+
+            #1;
+
+
+            check_outputs(16'h0078);
+        end
+        endtask
+
+    task testcase004;
+
+        begin
+            test_num = test_num + 1;
+            $display("Test Case %0d: Zero Learning Rate", test_num);
+            reset_dut();
+            current_guess = 16'h03E8;
+            learning_rate = 16'h0000;
+            function_value = 16'h00FF;
+            @(posedge clk);
+            #1;
+            #1;
+
+            check_outputs(16'h03E8);
+        end
+        endtask
+
+    task testcase005;
+
+        begin
+            test_num = test_num + 1;
+            $display("Test Case %0d: Step to Zero", test_num);
+            reset_dut();
+            current_guess = 16'h0032;
+            learning_rate = 16'h0001;
+            function_value = 16'h0032;
+            @(posedge clk);
+            #1;
+            #1;
+
+            check_outputs(16'h0000);
+        end
+        endtask
+
+    // Test stimulus
+    initial begin
+        // Initialize
+        test_num = 0;
+        pass_count = 0;
+        fail_count = 0;
+
+        $display("========================================");
+        $display("gradient_descent Testbench");
+        $display("========================================");
+
+
+        testcase001();
+        testcase002();
+        testcase003();
+        testcase004();
+        testcase005();
+        
+        
+// Print summary
+        $display("\n========================================");
+        $display("Test Summary");
+        $display("========================================");
+        $display("Tests Passed: %0d", pass_count);
+        $display("Tests Failed: %0d", fail_count);
+        $display("Total Tests:  %0d", pass_count + fail_count);
+        $display("========================================");
+
+        if (fail_count == 0)
+            $display("ALL TESTS PASSED!");
+        else
+            $display("SOME TESTS FAILED!");
+
+        $display("\nSimulation completed at time %0t", $time);
+        $finish;
+    end
+
+    // Task to check outputs
+    task check_outputs;
+        input [15:0] expected_updated_guess;
+        begin
+            if (expected_updated_guess === (expected_updated_guess ^ updated_guess ^ expected_updated_guess)) begin
+                $display("PASS");
+                $display("  Outputs: updated_guess=%h",
+                         updated_guess);
+                pass_count = pass_count + 1;
+            end else begin
+                $display("FAIL");
+                $display("  Expected: updated_guess=%h",
+                         expected_updated_guess);
+                $display("  Got:      updated_guess=%h",
+                         updated_guess);
+                fail_count = fail_count + 1;
+            end
+        end
+    endtask
+
+    // Timeout watchdog
+    initial begin
+        #1000000; // 1ms timeout
+        $display("\nERROR: Simulation timeout!");
+        $finish;
+    end
+
+    // Optional: Waveform dump for debugging
+    initial begin
+        $dumpfile("wave.vcd");
+        $dumpvars(0,clk, current_guess, function_value, learning_rate, reset, updated_guess);
+    end
+
+endmodule

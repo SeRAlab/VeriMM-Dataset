@@ -1,0 +1,9 @@
+
+Design a packet filtering module that determines if a packet should be accepted or rejected based on its source IP address, destination port, and protocol type. The module should have the following inputs:
+- `src_ip`: 32-bit source IP address (input)
+- `dest_port`: 16-bit destination port (input)
+- `protocol`: 8-bit protocol type (input)
+The output should be a single bit `accept`, which indicates whether the packet is accepted (1) or rejected (0). The design should filter packets based on specific rules:
+1. Accept packets from source IP `192.168.1.1` with destination port `80` and protocol `TCP` (protocol value `6`).
+2. Accept packets from source IP `10.0.0.5` with destination port `443` and any protocol.
+3. Reject all other packets.

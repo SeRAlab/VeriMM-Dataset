@@ -1,0 +1,5 @@
+Create a digital lock system that verifies a 4-digit binary code input against a predefined set of passwords. The module utilizes a state machine to manage input states and a decoder-multiplexer to select the appropriate password based on the current state. A 32-bit adder compares the input code with the selected password, and if their sum equals zero, the output signal indicates that the lock is open. This design effectively combines state management, decoding, and arithmetic comparison to secure access control.
+module top_module( 
+    input [3:0] code, // 4-digit binary code input
+    output reg open // Output signal indicating whether the lock is open or not
+);

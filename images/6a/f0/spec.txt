@@ -1,0 +1,9 @@
+Design a 4-bit up/down counter that increments or decrements its output based on control signals. The counter functions on the rising edge of the clock. When the LOAD signal is high, it loads the value from the input to the output. When UP is asserted, the counter increments its value, wrapping around to 0 after reaching 15 (4'b1111). Conversely, when DOWN is asserted, it decrements its value, wrapping around to 15 after reaching 0 (4'b0000). This design allows for flexible counting in both directions with synchronous loading.
+module top_module(
+    input CLK,
+    input UP,
+    input DOWN,
+    input LOAD,
+    input [3:0] in,
+    output reg [3:0] OUT
+);

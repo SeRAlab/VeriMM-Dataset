@@ -1,0 +1,10 @@
+Design a signed 8-bit calculator capable of performing addition and subtraction based on the `op` input control signal. The module operates on two signed 8-bit inputs, `a` and `b`, and produces a signed 8-bit result. It also includes overflow detection for both operations, indicating if an arithmetic overflow occurs. The calculator is synchronous, resetting to zero on a low `rst_n` signal, and updates the result and overflow flags on the positive edge of the clock signal.
+module top_module(
+  input clk,
+  input rst_n,
+  input op,
+  input signed [7:0] a,
+  input signed [7:0] b,
+  output reg signed [7:0] result,
+  output reg overflow
+);

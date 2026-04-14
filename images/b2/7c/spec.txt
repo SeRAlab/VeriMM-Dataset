@@ -1,0 +1,8 @@
+Design a 100-bit shift register with load functionality. When the load signal is active, the register outputs 100 bits of input data directly. If load is inactive, the behavior of the register is determined by the 2-bit enable signal (ena); with ena set to 01, the bits are shifted right, with the least significant bit wrapping around, while with ena set to 10, the bits are shifted left with the most significant bit wrapping around. If ena is set to a value other than these, the output remains unchanged.
+module top_module(
+    input               clk,
+    input               load,
+    input       [1:0]   ena,
+    input       [99:0]  data,
+    output  reg [99:0]  q
+);

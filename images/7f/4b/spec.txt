@@ -1,0 +1,10 @@
+Design a 32-bit barrel shifter that allows for both left and right shifting of input data based on the specified direction and amount. The module has features for loading new data and resetting the shift register. Upon receiving a clock edge, if reset is asserted, the shift register clears; if load is asserted, it loads new data into the register. Depending on the value of the direction signal, the shift operation either shifts the data left or right by the specified amount. The resulting shifted data is output as a 32-bit signal.
+module top_module(
+  input clk,
+  input reset,
+  input [31:0] data,
+  input [4:0] amount,
+  input dir,
+  input load,
+  output reg [31:0] q
+);

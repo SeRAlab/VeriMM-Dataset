@@ -1,0 +1,7 @@
+Develop a shift register with the capability to load a 100-bit wide data input and perform either a right or left shift operation based on the enable signal. When the `load` signal is high, the register's output `q` is loaded with the incoming `data`. If `load` is low, the behavior of the register depends on the `ena` input: a value of `2'b01` results in a right shift (shifting all bits to the right and inserting the LSB into the MSB), while a value of `2'b10` triggers a left shift (shifting all bits to the left and moving the MSB to the LSB position). If `ena` is neither of these values, the output remains unchanged.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output reg [99:0] q);

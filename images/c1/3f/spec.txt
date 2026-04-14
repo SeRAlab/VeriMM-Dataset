@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+    
+Implement a module to simulate or interface with the memory read cycle of a Z80 microprocessor. The primary functions of this module include generating the appropriate control signals and address lines for a memory read operation. It cyclically inverts the address lines to simulate reading from different memory locations and manages the control signals to initiate and acknowledge the read operation. This module could be part of a larger system that emulates a Z80 microprocessor environment or interfaces with actual Z80 hardware for testing or development purposes.
+
+Module name:  
+	z80memr
+
+Input ports:
+	clk: A clock input signal (1bit). This signal drives the timing of the module's operations, including state transitions and control signal updates.
+Output ports:
+	a (16 bits): The address lines output. This signal represents the memory address from which data is to be read. It is cyclically inverted to simulate reading from different addresses.
+	d (8 bits): The data lines output. This port is in a highimpedance state (z) as the module does not write data to the memory in this implementation.
+	mreq (1 bit): The memory request signal. When active (low), it indicates a memory operation is requested by the module.
+	rd (1 bit): The read signal. When active (low), it indicates a read operation is being requested.
+
+
+Implementation:
+The z80memr module is designed to interface with a memory component, presumably in the context of a Z80 microprocessor environment. It generates memory request and read signals along with the address and data lines necessary for memory operations. The module operates based on a clock signal (clk) and utilizes both combinational and sequential logic to manage its internal state and outputs.
+Sequential Logic:
+The module employs a 2-bit state machine (estado) to control its operation. This state machine cycles through three states (0, 1, and 2) in a sequential manner upon each positive edge of the clock signal. The initial state is set to 2.
+The address (ra) is toggled between its value and its bitwise negation on every transition from state 2 to state 0. This ensures that the address changes on every cycle through the states, demonstrating a simple pattern of address generation.
+Combinational Logic:
+The module uses combinational logic to determine the values of the memory request (mreq) and read (rd) signals based on the current state and the clock signal. This logic ensures that mreq and rd are asserted or deasserted appropriately to signal a memory read operation.
+The data lines (d) are set to high impedance (8'bzzzzzzzz), indicating that this module does not drive the data lines and is likely designed to read data from memory rather than write to it.
+
+Give me the complete code.
+

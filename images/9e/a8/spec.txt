@@ -1,0 +1,8 @@
+Design a module that combines the functionalities of an 8-bit register and a 4-bit counter, allowing the user to select between them using a 2-bit select input. The register, when reset, initializes to a specific value (0x34) and can be loaded with an external 8-bit input. The counter increments on each clock cycle, resetting to 0 when activated. The selected output is then added to the current value of the register, resulting in a 12-bit output. This module can be utilized in applications that require combined data processing and counting operations.
+module top_module(
+    input clk,          // Clock input
+    input reset,        // Synchronous active-high reset
+    input [7:0] d,      // 8-bit input for the register
+    input [1:0] select, // Select input to choose between register and counter
+    output [11:0] q     // 12-bit output from the functional module
+);

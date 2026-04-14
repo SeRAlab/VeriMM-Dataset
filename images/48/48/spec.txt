@@ -1,0 +1,9 @@
+Design a 4-bit ripple carry adder that computes the sum of two 4-bit inputs, A and B, along with an additional carry input. The module captures the inputs on the rising edge of a clock signal, computes the sum while propagating any overflow as a carry-out output. The design uses registers to hold the intermediate values before outputting the final sum and carry-out, enabling synchronous operation.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input carry_in,
+    input clk,             // Added clk input to avoid error.
+    output [3:0] sum,
+    output carry_out
+);

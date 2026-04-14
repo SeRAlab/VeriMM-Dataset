@@ -1,0 +1,21 @@
+Please act as a professional Verilog designer.
+
+Implement a module for a 3-bit synchronous binary counter with enable and load functionality. The counter should increment its value on each clock cycle when the enable signal is high. When the load signal is high, the counter should load a specified value instead of incrementing.
+
+Module name:
+    binary_counter
+
+Input ports:
+    CLK: Clock input
+    RST: Active high reset signal
+    EN: Enable signal
+    LOAD: Load signal
+    LOAD_VAL: 3-bit input value to be loaded into the counter
+
+Output ports:
+    COUNT: 3-bit output representing the current counter value
+
+Implementation:
+The binary_counter module uses an always block to update the counter value based on the clock signal, reset signal, enable signal, and load signal. The always block triggers on the positive edge of the clock signal or the positive edge of the reset signal. It checks if the reset signal is active (RST) and sets the counter value to 000. When the load signal is active, it loads the specified value into the counter. When the enable signal is active and load signal is inactive, it increments the counter value on each clock cycle.
+
+Give me the complete code.

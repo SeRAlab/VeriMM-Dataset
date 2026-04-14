@@ -1,0 +1,9 @@
+Design a block that functions as a synchronous read-write block RAM (BRAM). It uses an `aw`-bit address width to manage memory addressing and a `dw`-bit data width for data storage. When the write enable signal (`wren_i`) is active, data (`wdin_i`) is written to memory at the specified write address (`waddr_i`). The module also supports reading data from a specified address (`raddr_i`), with the output (`rdout_o`) reflecting the stored data at that address on the next clock edge. This design allows for simultaneous read and write operations, making it suitable for applications requiring quick data access and storage.
+module top_module(
+	clk,
+	wren_i,
+	waddr_i,
+	wdin_i,
+	raddr_i,
+	rdout_o
+);

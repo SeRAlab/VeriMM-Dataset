@@ -1,0 +1,4 @@
+Develop a hazard detection unit that monitors instruction execution to prevent data hazards in a pipeline. This module assesses whether the current instructions being executed may conflict with those scheduled to write to registers by checking the opcode and register addresses. If a potential hazard is detected—meaning an instruction is trying to read a register that is concurrently being written to—this unit generates a stall signal to pause the pipeline, ensuring correct data is read.
+module top_module(input [3:0]opCode, RAddr1, RAddr2, EX_WAddr,
+                           input EX_WDataSc2, EX_RFWen,
+                           output reg stall);

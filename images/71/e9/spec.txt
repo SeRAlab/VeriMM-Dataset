@@ -1,0 +1,7 @@
+Design a 4-bit barrel shifter that accepts a 4-bit input (DIN) and a 2-bit shift control signal (SHIFT) to perform left shifts. The output (DOUT) will reflect the result of the shift operation based on the value of SHIFT, where a SHIFT of 00 produces no shift, a SHIFT of 01 performs a single left shift, a SHIFT of 10 performs a double left shift, and a SHIFT of 11 produces a left shift with the upper two bits replaced by the lower two bits of the original input. The design is clocked to ensure synchronous operation across the shifting stages.
+module top_module(
+    input [3:0] DIN,
+    input [1:0] SHIFT,
+    input clk,           // Added clock input
+    output reg [3:0] DOUT
+);

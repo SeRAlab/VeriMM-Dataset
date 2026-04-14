@@ -1,0 +1,11 @@
+The provided Verilog code represents an instruction fetch stage of a pipelined processor architecture. It generates the next instruction address based on the current program counter (PC) and controls the flow of instructions. The module includes a 32-bit program counter that increments and selects addresses based on various conditions such as branches, jumps, or register values. It handles instruction read enable signals and captures incoming instructions into a register, ensuring they are stored only when specified conditions are met. Overall, this design supports fetching instructions from memory and managing the progression of instructions through the pipeline while incorporating control for different address sources and reset functionality.
+module top_module(
+    input clk, rst, if_id_write_en, pc_write,
+    input [1:0] pc_source,
+    input pstop_i,
+    output i_read_en,
+    output [31:0] i_addr,
+    input [31:0] i_instr_in, jump_addr, branch_addr, reg_data_1,
+    output reg [31:0] IF_ID_next_i_addr,
+    output reg [31:0] IF_ID_instruction
+);

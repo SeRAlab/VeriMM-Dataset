@@ -1,0 +1,5 @@
+Design a data memory module capable of storing and retrieving 32-bit data words. The module uses a clock signal for synchronization and accepts a 12-bit address for read and write operations. When the chip select (dm_cs) and write (dm_wr) signals are active, it writes the 32-bit input data (D_In) into a designated address and the three subsequent addresses in memory. Conversely, when the chip select (dm_cs) and read (dm_rd) signals are active, it outputs the 32-bit data stored at the specified address and the three sequential addresses. If neither read nor write operations are active, the output is high-impedance (Z). This module serves as a fundamental component of a digital system's memory architecture.
+module top_module(clk,
+						Address, D_In,
+						dm_cs,dm_wr,dm_rd,
+						D_Out);

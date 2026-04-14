@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+    
+Implement a module simulates a simple ring of threads, where each thread passes a token to the next thread in the ring. This module to demonstrate or test the concept of thread or process synchronization and communication in a controlled, cyclic manner. The primary function of this module to initialize a set of threads with specific values and then, on each clock cycle, update the value of each thread based on the value of its predecessor, creating a ripple effect through the thread ring. This could serve as a foundational model for more complex systems where process synchronization and sequential data processing are required, such as in a pipeline architecture or a round-robin scheduling algorithm.
+
+Module name:  
+	thread_ring
+
+Input ports:
+	clk_i: A clock input signal (wire). This signal drives the synchronous behavior of the module, including the updating of thread values on each positive edge.
+	rst_i: A reset input signal (wire). When asserted (1), this signal initializes the thread values to their starting positions, effectively resetting the module's state.
+Output ports:
+	thrd_0_o to thrd_7_o: These are 8 output signals (wires), each representing the current value of a thread in the ring. The width of these signals is determined by the parameter THRD_W1:0, allowing for scalability in the representation of thread values.
+
+
+Implementation:
+The Verilog module thread_ring is designed to simulate a ring of threads where each thread passes a token to the next thread in the ring. This module is parameterized to allow flexibility in the number of threads (THREADS) and the width of the thread identifiers (THRD_W). The primary functionality is encapsulated within a synchronous block that responds to a positive edge of a clock signal (clk_i) or a reset signal (rst_i).
+
+Give me the complete code.
+

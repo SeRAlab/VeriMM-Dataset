@@ -1,0 +1,7 @@
+Design a state machine that cycles through four states to control a 7-segment display driver. In each state, the module selects which digit to display (from Digit 1 to Digit 4) and outputs the corresponding integer value (0 to 3) to drive the segments of the display. The current state is updated on the rising edge of the clock or asynchronously reset to the initial state on a low reset signal. The output logic maps the selected integer to the appropriate 7-segment encoding, effectively allowing the display of integers 0 through 3 sequentially.
+module top_module(
+	input clk_i,
+	input reset_n,
+	output reg [2:0] sel,
+	output reg [6:0] segments
+	);

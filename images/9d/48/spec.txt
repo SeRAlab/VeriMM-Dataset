@@ -1,0 +1,9 @@
+Design a signed multiplier circuit that computes the product of two 8-bit signed integers, referred to as the multiplier and multiplicand, and then adjusts the result using an adder output and a subtractor output. The process occurs on the rising edge of a clock signal, allowing for synchronous operation. The module resets all internal states to zero when the reset signal is activated, ensuring a clean start. The final product is a 16-bit signed value that combines the direct product of the adjusted multiplier and multiplicand with the modified outputs from the adder and subtractor.
+module top_module(
+    input clk, reset,
+    input [7:0] multiplier,
+    input [7:0] multiplicand,
+    input [7:0] adder_out,
+    input [7:0] sub_out,
+    output reg [15:0] product
+);

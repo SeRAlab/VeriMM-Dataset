@@ -1,0 +1,8 @@
+Design a circuit for encoding outputs, which takes input signals including a clock, reset, control enable, and data counts, and generates a 16-bit output along with validity and done indicators. The module shifts data based on a length parameter and manages state transitions that track the number of valid data inputs, effectively producing a serialized output when valid data is present. The done signal indicates completion of the encoding process when certain conditions are met, ensuring synchronization and proper operation during device reset and clock cycles.
+module top_module(
+   
+   data_o, valid_o, done_o,
+   
+   clk, rst, ce, cnt_output_enable, cnt_finish, cnt_output,
+   cnt_len
+   );

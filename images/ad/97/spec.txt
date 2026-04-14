@@ -1,0 +1,10 @@
+Design a 64-byte FIFO (First-In-First-Out) buffer controlled by a clock signal. The module accepts an 8-bit wide input (fifo_wdata) for writing data when fifo_wr is asserted. It maintains the number of used entries with a counter and provides output flags for indicating whether the FIFO is full or empty. On each clock cycle, the FIFO shifts its current contents and allows reading the oldest byte of data at the output (r_dat). The design also specifies indicators for buffer status through fifo_FF, wfifo_empty, and wfifo_used outputs.
+module top_module(
+    input clk,
+    input [7:0] fifo_wdata,
+    input fifo_wr,
+    output fifo_FF,
+    output [7:0] r_dat,
+    output wfifo_empty,
+    output [5:0] wfifo_used
+);

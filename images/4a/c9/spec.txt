@@ -1,0 +1,8 @@
+Design a pipelined AND gate circuit that processes two inputs over three clock cycles. In the first stage, the inputs `a` and `b` are captured. The second stage performs a bitwise AND on the inputs, and the third stage generates the final output by performing a repeated AND operation on the results of the previous stage. The output is assigned to two registers, providing a synchronized output both for the regularly updated output (`out_assign`) and the output held in an always block (`out_alwaysblock`).
+module top_module(
+    input clk,        // Added clk input
+    input a, 
+    input b,
+    output reg out_assign,
+    output reg out_alwaysblock
+);

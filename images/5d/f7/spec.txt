@@ -1,0 +1,15 @@
+Implement a Verilog module for a washing machine controller.
+The state machine has the following states and their corresponding outputs:
+1. state Idle (washing = 1'b0).
+2. state Washing (washing = 1'b1).
+
+State transitions:
+1. From state Idle: If start_washing = 1, transition to state Washing.
+2. From state Washing: If wash_done = 1, transition to state Idle.
+
+module washing_machine (
+        input clk,
+        input areset,
+        input start_washing,
+        input wash_done,
+        output reg washing);

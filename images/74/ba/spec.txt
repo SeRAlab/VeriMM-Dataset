@@ -1,0 +1,7 @@
+Design a one-shot pulse generator that produces a single pulse of a specified width when triggered by an input signal. The module accepts a trigger signal and outputs a high pulse for a duration defined by a parameter corresponding to the time constant of a resistor-capacitor (RC) circuit, influenced by two external resistors and a capacitor. It features a reset input to clear the output pulse and reset the pulse width counter. Once triggered, the output remains high for a programmable number of clock cycles before returning to low, effectively creating a monostable multivibrator behavior.
+module top_module(
+  input trig, // trigger signal
+  input rst, // reset signal
+  input clk, // system clock
+  output reg out // output pulse
+);

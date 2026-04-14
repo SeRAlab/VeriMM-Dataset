@@ -1,0 +1,14 @@
+
+Design a 4-channel DMA controller that allows data transfer between a peripheral device and memory. The controller should have the following inputs:
+- `start`: A signal to start the DMA transfer.
+- `channel_select`: A 2-bit signal to select one of the four channels (00, 01, 10, 11).
+- `mem_addr`: A 16-bit memory address where data will be transferred to/from.
+- `data_in`: A 32-bit data input from the peripheral device.
+- `clk`: A clock input.
+- `reset`: A reset signal.
+
+The outputs should be:
+- `data_out`: A 32-bit data output to the memory.
+- `done`: A signal indicating that the data transfer is complete.
+- `active_channel`: A 2-bit signal indicating the currently active channel.
+The controller should allow for one transfer operation at a time and should complete the transfer on the rising edge of the clock.

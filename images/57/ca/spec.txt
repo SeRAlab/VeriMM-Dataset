@@ -1,0 +1,8 @@
+Design a clock gating module that controls the propagation of the clock signal based on enable (EN) and toggle enable (TE) signals, while also incorporating a reset function. When RESET is asserted, the output ENCLK is driven LOW. When TE is active, ENCLK is driven HIGH. If EN is asserted while TE is not active, ENCLK outputs the state of the CLK signal. When neither EN nor TE are active, ENCLK is set to LOW, effectively gating the clock signal for power-saving purposes.
+module top_module(
+  input CLK,
+  input EN,
+  input TE,
+  input RESET,
+  output reg ENCLK
+);

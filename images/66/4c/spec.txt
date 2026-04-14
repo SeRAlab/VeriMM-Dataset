@@ -1,0 +1,6 @@
+Design a module that converts a 4-bit binary number to its Binary-Coded Decimal (BCD) representation. The module outputs two 4-bit signals: BCD_HI and BCD_LO. BCD_HI represents the higher nibble of the BCD value (which is always 0 for binary inputs between 0-15), while BCD_LO encodes the lower nibble corresponding to the input binary value. The conversion maps binary inputs 0 through 9 directly to BCD_LO, while inputs 10 through 15 adjust BCD_HI to 1 and set BCD_LO accordingly.
+module top_module(
+    input [3:0] BIN,
+    output reg [3:0] BCD_HI,
+    output reg [3:0] BCD_LO
+);

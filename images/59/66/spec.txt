@@ -1,0 +1,11 @@
+Design a 32x32 register file with synchronous write capability. The module allows for reading the data from two specified registers and writing data to a specified register on the rising edge of the clock when the write enable signal is active. Register 0 is hardwired to always store zero and cannot be modified. The outputs provide the contents of the registers addressed by r_addr1 and r_addr2.
+module top_module(
+    input clk,
+    input we,
+    input [4:0] r_addr1,
+    input [4:0] r_addr2,
+    input [4:0] w_addr,
+    input [31:0] w_data,
+    output [31:0] r_data1,
+    output [31:0] r_data2
+);

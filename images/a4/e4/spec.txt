@@ -1,0 +1,12 @@
+Design a 4-bit wide arithmetic unit that performs addition and multiplication based on a 6-bit ALU function selector. The unit operates on two 8-bit inputs, `a` and `b`, and produces an 8-bit output `s`, which represents the result of the operation. The zero flag (`z`), negative flag (`n`), and overflow flag (`v`) are also derived from the output. When the first two bits of `alufn` are `00` or `01`, the module adds `a` and a modified version of `b`, where the least significant bit is conditionally XORed with `alufn[0]`. When the selector indicates `10`, the module performs multiplication. The module resets and initializes outputs based on the clock and reset signals.
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] a,
+    input [7:0] b,
+    input [5:0] alufn,
+    output reg [0:0] z,
+    output reg [0:0] v,
+    output reg [0:0] n,
+    output reg [7:0] s
+  );

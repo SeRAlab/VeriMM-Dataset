@@ -1,0 +1,10 @@
+Design a circuit that generates a 4-bit output to increment a FIFO (First In, First Out) write pointer based on specific input conditions. The module takes two control signals, `ge2_free` and `ge3_free`, along with a 2-bit input `input_tm_cnt`. Depending on the state of these inputs, the circuit determines how much to increment the FIFO write pointer: it outputs 3 when both `ge3_free` is high and `input_tm_cnt` is `11`, outputs 2 when `ge2_free` is high and `input_tm_cnt` is `10`, and outputs 1 for a `input_tm_cnt` of `01`, while defaulting to 0 otherwise. This functionality is crucial for managing data flow into the FIFO buffer in a controlled manner.
+module top_module(
+  // inputs:
+  ge2_free,
+  ge3_free,
+  input_tm_cnt,
+
+  // outputs:
+  fifo_wrptr_inc
+);

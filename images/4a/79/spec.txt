@@ -1,0 +1,14 @@
+Design a simple, basic memory-mapped I/O interface that always returns a zero value for read requests, indicates that read data is not valid, and asserts no wait requests. This module receives address, read, and write signals, but it does not perform any operational functionality beyond providing constant zero outputs, making it suitable for use in a test environment or as a placeholder in a larger system. The module also manages interrupt signals by always returning low, indicating no active interrupts.
+module top_module(
+		input  wire [3:0]  avs_s0_address,       
+		input  wire        avs_s0_read,          
+		output wire [31:0] avs_s0_readdata,      
+		output wire        avs_s0_readdatavalid, 
+		input  wire        avs_s0_write,         
+		input  wire [31:0] avs_s0_writedata,     
+		output wire        avs_s0_waitrequest,   
+		input  wire [3:0]  avs_s0_byteenable,    
+		input  wire        clock_clk,            
+		input  wire        reset_reset,          
+		output wire        ins_irq0_irq          
+	);

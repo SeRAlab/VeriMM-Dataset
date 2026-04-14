@@ -1,0 +1,7 @@
+Design a timing control module that generates specific signal patterns based on a clock input. The module produces three outputs: `upr_mod`, `upr_gen`, and `sinhr`, each controlled by a timer counter that increments on every positive clock edge. The signals follow a predefined timing sequence, where `upr_mod` and `sinhr` are activated at different intervals, and `upr_gen` is also toggled at specific offsets. After reaching 15,000 cycles, the timer resets to initiate the sequence again. This module is essential for synchronizing operations in a timed sequence, such as in a digital communication or control system.
+module top_module(
+			input clk,
+			output reg upr_mod,
+			output reg upr_gen,
+			output reg sinhr
+			);

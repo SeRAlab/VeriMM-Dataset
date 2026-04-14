@@ -1,0 +1,10 @@
+Design a digital calculator that performs basic arithmetic operations: addition, subtraction, multiplication, and division on two 8-bit inputs (a and b) based on a 2-bit operation selector (op). The module generates an 8-bit result and a flag for overflow conditions. On a positive clock edge or a negative reset, it processes the specified operation: addition (op=00), subtraction (op=01), multiplication (op=10), and division (op=11), handling division by zero gracefully. The calculator also computes the two's complement of the second operand for the subtraction operation within a combinatorial block.
+module top_module(
+    input clk,
+    input rst_n,
+    input [1:0] op,
+    input [7:0] a,
+    input [7:0] b,
+    output reg [7:0] result,
+    output reg overflow
+);

@@ -1,0 +1,8 @@
+Design a circuit that implements an unsigned Booth multiplier for two 4-bit operands, producing an 8-bit product. The circuit processes the multiplicand and multiplier in a clock-driven manner, utilizing a state machine to handle the Booth's algorithm. It initializes registers on reset and employs arithmetic operations based on the least significant bits of the partial product (S) to control addition and subtraction of the multiplicand. The output product is updated every clock cycle until all bits have been processed, resulting in the correct multiplication of the inputs.
+module top_module(
+    input clk,
+    input rst,
+    input [3:0] multiplicand,
+    input [3:0] multiplier,
+    output reg [7:0] product
+);

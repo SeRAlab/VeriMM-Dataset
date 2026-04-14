@@ -1,0 +1,6 @@
+Design a circuit that converts a 4-bit binary input into the corresponding 7-segment display output. The module includes a synchronous pipeline with three stages that capture the input data, and it decodes the final stage value to generate the appropriate 7-segment signal corresponding to decimal digits 0 through 9. If the input is outside the valid range (0-9), it outputs a state that turns off all segments, indicating an invalid input.
+module top_module(
+    input clk,             // Added clk input
+    input [3:0] data_in,
+    output reg [6:0] seg_out
+);

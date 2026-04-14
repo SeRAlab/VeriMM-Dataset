@@ -1,0 +1,8 @@
+The module implements a simple signed arithmetic calculator that performs addition or subtraction based on the value of an operation control signal. When the input `op` is set to 0, it calculates the sum of the two 8-bit signed inputs `a` and `b`. When `op` is set to 1, it computes the difference between `a` and `b`. Additionally, the design includes logic to check for overflow and underflow conditions during each clock cycle, displaying an error message when such conditions are detected. This functionality makes the circuit suitable for applications requiring basic arithmetic operations with error-checking capabilities.
+module top_module(
+  input signed [7:0] a,
+  input signed [7:0] b,
+  input op,
+  input clk, // Added clk input
+  output reg signed [7:0] result
+);

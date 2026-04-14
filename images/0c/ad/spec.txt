@@ -1,0 +1,6 @@
+Design a WiFi module state machine that controls the connection state based on input signals. The module has two inputs: `connect` (indicates a request to connect) and `disconnect` (indicates a request to disconnect). The output `state` indicates the current state of the WiFi module, which can be IDLE, CONNECTING, CONNECTED, or DISCONNECTING. The state transitions should be as follows:  
+- From IDLE, if `connect` is asserted, transition to CONNECTING.  
+- From CONNECTING, if the connection is successful (after one clock cycle), transition to CONNECTED.  
+- From CONNECTED, if `disconnect` is asserted, transition to DISCONNECTING.  
+- From DISCONNECTING, after one clock cycle, transition back to IDLE.  
+The system should operate on a clock signal and reset to IDLE state when `reset` is asserted.

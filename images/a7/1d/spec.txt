@@ -1,0 +1,19 @@
+Create an interface module for coordinating operations related to an on-chip instrumentation, debug, and control system. The module uses a 9-bit address to select between two configuration registers, enabling write operations and status monitoring through chip selects and clock signals. It captures and manages the settings for single-step debugging mode and interrupt enable masks based on received write data. When certain conditions are met, it provides readback data regarding the status of debug features, including flags for monitoring and control signals, thereby facilitating efficient debugging and management of hardware states.
+module top_module(
+  input [8:0] address,
+  input chipselect,
+  input clk,
+  input debugaccess,
+  input monitor_error,
+  input monitor_go,
+  input monitor_ready,
+  input reset_n,
+  input write,
+  input [31:0] writedata,
+  output reg [31:0] oci_ienable,
+  output reg [31:0] oci_reg_readdata,
+  output reg oci_single_step_mode,
+  output reg ocireg_ers,
+  output reg ocireg_mrs,
+  output reg take_action_ocireg
+);

@@ -1,0 +1,8 @@
+Design a circuit that implements a delayed AND operation using a 4-bit shift register and a synchronous counter. The module accepts a clock signal, an active-high reset, a single input signal, and a 4-bit value indicating the delay in clock cycles. The input signal is delayed through the shift register and combined with the counter value using a bitwise AND operation, producing a 4-bit output. When the reset is asserted, the shift register and counter are cleared to zero, enabling a controlled delay of the input signal based on the specified delay parameter.
+module top_module(
+    input clk,
+    input reset,      // synchronous active-high reset
+    input in,         // input signal to be delayed
+    input [3:0] delay, // number of clock cycles to delay the input signal
+    output [3:0] q    // 4-bit output from the functional module
+);

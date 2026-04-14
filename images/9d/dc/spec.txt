@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+
+Implement a 2-bit binary up-down counter. The module operates on the rising edge of the clock signal "clk" and uses a synchronous design. The counter increments its value on each clock cycle when the control signal "up" is high and decrements when "up" is low. The counter resets to zero when the reset signal "rst_n" (active low) is asserted.
+
+Module name:  
+    binary_up_down_counter
+
+Input ports:
+	clk: Clock signal.
+	rst_n: Reset signal (active low).
+	up: Control signal (high for increment, low for decrement).
+
+Output ports:
+	count: 2-bit counter output.
+
+Implementation:
+The module should increment or decrement the counter value on each clock cycle based on the control signal "up". When the reset signal is asserted, the counter should reset to zero.
+
+Give me the complete code.
+
+module binary_up_down_counter(
+	input clk,
+	input rst_n,
+	input up,
+	output reg [1:0] count
+);

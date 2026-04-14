@@ -1,0 +1,8 @@
+Design a synchronous circuit that implements a 4-digit BCD counter with an optional data input from a D flip-flop. The circuit has a reset input to initiate the counter. The BCD counter increments its digits based on enable signals, adhering to BCD counting rules (0-9), and generates a sum that combines its current count with the delayed output of the D flip-flop. The final output represents a 16-bit BCD value, structuring the sum into a standard format suitable for display or further processing.
+module top_module(
+    input clk,
+    input reset,   // Synchronous active-high reset
+    input d,       // Data input signal for the D flip-flop
+    output reg [3:1] ena, // Enable signals for the BCD counter
+    output reg [15:0] q // BCD output for the final sum
+);

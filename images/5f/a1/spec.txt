@@ -1,0 +1,11 @@
+Design a 4-bit magnitude comparator that evaluates two 4-bit inputs, A and B, and produces output signals indicating their relational status. The module outputs a 2-bit indication of magnitude comparison (00 for equal, 01 for A greater than B, and 10 for A less than B) along with separate signals for less than, equal to, and greater than conditions based on a 2-bit select input. When the select input is set to 01, it activates the less_than, equal_to, and greater_than outputs; otherwise, these outputs are deactivated.
+module top_module(
+    input valid,
+    input [3:0] A,
+    input [3:0] B,
+    input [1:0] sel,
+    output [1:0] out_mode0,
+    output less_than,
+    output equal_to,
+    output greater_than
+);

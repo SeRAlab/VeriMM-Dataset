@@ -1,0 +1,10 @@
+Design a circuit that functions as a 4-bit counter with specific control features. The module increments the counter (set_m0) on each pulse of the clock (clk_d) when enabled (set_en) and a one-pulse signal (one_pulse_min) is active. When the count reaches 10 (4'd9), it resets to 0 and asserts a carry-out signal (co_m1) to indicate this overflow. Additionally, it incorporates a reset (rst) input to set the counter back to 0 immediately when activated.
+module top_module(
+    input clk_d,
+    input rst,
+    input set_en,
+    input one_pulse_min,
+    
+    output reg [3:0] set_m0,
+    output reg co_m1
+    );

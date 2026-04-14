@@ -1,0 +1,12 @@
+Design a synchronous FIFO (First-In, First-Out) buffer capable of holding 64-bit wide data items. It features an input for data loading and unloading, controlled by 'loaden' and 'unloaden' signals. The output shows the available data item and additional signals indicate whether the FIFO is empty or full, along with a count of the current items stored. The FIFO is cleared on a reset signal and operates based on clock edges, managing a circular buffer for efficient reading and writing of data.
+module top_module(
+  input clk,
+  input rstn,
+  input loaden,
+  input unloaden,
+  input [63:0] datain,
+  output reg [63:0] dataout,
+  output reg empty,
+  output reg full,
+  output reg [5:0] itemsinfifo
+);

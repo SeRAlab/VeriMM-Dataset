@@ -1,0 +1,10 @@
+Design a circuit that rearranges data from a 64-bit input stream into four 14-bit outputs, specifically designed for handling ADC samples. When the valid input signal is asserted, the module captures relevant segments of the input data and reorganizes them: `adc0_sample0` and `adc0_sample1` derive their values from different parts of the input, as do `adc1_sample0` and `adc1_sample1`. The output values correspond to specified bit manipulations of the original input, effectively enabling formatted data extraction for downstream processing.
+module top_module(
+    input [63:0] rx_tdata,
+    input rx_core_clk,
+    input rx_tvalid,
+    output reg [13:0] adc0_sample0,
+    output reg [13:0] adc0_sample1,
+    output reg [13:0] adc1_sample0,
+    output reg [13:0] adc1_sample1
+    );

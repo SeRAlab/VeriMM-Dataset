@@ -1,0 +1,9 @@
+Design a 4-bit arithmetic module that performs either addition or subtraction based on a control signal. The module takes two 4-bit inputs and uses a clock and reset mechanism to compute the result. When the reset signal is low, the output is initialized to zero. If the mode selector (mode_sel) is low, the module outputs the sum of the two inputs; if mode_sel is high, it outputs the difference. The computed result is available at the output at each rising clock edge, facilitating synchronous operation.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] in1,
+  input [3:0] in2,
+  input mode_sel,
+  output [3:0] out
+);

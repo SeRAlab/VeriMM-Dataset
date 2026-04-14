@@ -1,0 +1,8 @@
+Design a synchronous RAM module characterized by its ability to read from and write to a memory array. The module features a parameterized number of address lines (n) for selecting memory locations, a specified bit-width (width) for each data entry, and a defined memory depth (depth) that dictates the total number of storage locations. Upon the rising edge of a clock signal, if the write enable signal is active, it stores the input data at the given address; otherwise, it outputs the data stored at the specified memory address, facilitating data retrieval.
+module top_module(
+  input [n-1:0] addr,
+  input write_en,
+  input [width-1:0] data_in,
+  input clk,
+  output reg [width-1:0] data_out // Change output to reg type
+);

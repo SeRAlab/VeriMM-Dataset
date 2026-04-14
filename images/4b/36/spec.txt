@@ -1,0 +1,13 @@
+The module implements a control unit designed to manage a finite state process using clock and reset signals. It features counters to track cycles and blocks, along with control signals to indicate the operation status. Specifically, it counts up to 40 cycles at which point it can trigger a new block and track up to 65 blocks. The `gxgyrun` signal indicates when a specific operation is active based on cycle and block counts, while `counterrun1` and `counterrun2` are used to propagate the state of `gxgyrun` through consecutive clock cycles. The `finish` signal is asserted when a predetermined condition of count values is met, effectively controlling the termination of the process. Overall, this module orchestrates a time-based operation with specific control logic for managing cycles, blocks, and state transitions.
+module top_module(
+	rstn,
+	clk,
+	enable,
+	cyclecnt,
+	blockcnt,
+	newblock,
+	gxgyrun,
+	counterrun1,
+	counterrun2,
+	finish
+);

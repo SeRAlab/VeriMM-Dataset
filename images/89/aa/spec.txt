@@ -1,0 +1,10 @@
+Design a module that combines a 4-bit counter with the ability to select between its output and an external 8-bit data input. The module features asynchronous reset and enable functionality for the counter, and a control signal that determines whether to use the counter value or a constant value (8'hFF). It incorporates a 2-to-1 multiplexer that outputs either the result from the previous selection (the counter or 8'hFF) or the external data input, based on a select signal. This design facilitates flexible data manipulation based on timing conditions and input controls.
+module top_module(
+  input clk,
+  input reset,
+  input enable,
+  input control,
+  input select,
+  input [7:0] data_in,
+  output reg [7:0] q
+);

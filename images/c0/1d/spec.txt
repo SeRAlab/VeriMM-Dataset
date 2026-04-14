@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module to decode a 2-bit binary input into a 4-bit one-hot output. In essence, it translates a 2-bit binary value into a unique 4-bit output where only one of the bits is set to '1', and the rest are set to '0'. This module plays a crucial role in digital systems where binary-encoded inputs need to be converted into one-hot encoding for further processing, selection, or control operations. It can be used in applications such as address decoding, data multiplexing, or enabling specific paths in a digital circuit based on the input condition.
+
+Module name:  
+	Decoder_2to4
+
+Input ports:
+	A [1:0]: A 2bit wide input port. This port accepts binary encoded input values ranging from 2'd0 to 2'd3. The input A determines which bit in the output port B will be set to '1'.
+Output ports:
+	B [3:0]: A 4bit wide output port. This port provides the onehot encoded output corresponding to the binary value presented at the input port A. Only one of the bits in B will be set to '1' at any time, based on the value of A, with the rest being '0'.
+
+
+Implementation:
+The RTL module presented, named Decoder_2to4, is designed to implement a simple 2-to-4 line decoder using Verilog. A decoder is a combinational logic circuit that converts binary information from n input lines to a maximum of 2^n unique output lines. In this specific case, the decoder takes a 2-bit binary input and decodes it into one of four possible outputs, each represented by a 4-bit output where only one bit is set high (1) at any time, corresponding to the binary value of the input.
+The module is defined with two primary signals: a 2-bit input A and a 4-bit output B. The input A represents the binary information to be decoded, and the output B represents the decoded output lines.
+The core logic of the module is encapsulated within an always block that is sensitive to changes in the input signal A. This means that any change in the input signal A will trigger the execution of the logic inside the always block. The logic inside this block uses a case statement to decode the input A into the corresponding output B. Specifically, the case statement checks the value of A and assigns to B a 4-bit value where only one bit is set high, based on the value of A. The mapping is as follows:
+If A is 2'd0 (binary 00), B is set to 4'b0001.
+If A is 2'd1 (binary 01), B is set to 4'b0010.
+If A is 2'd2 (binary 10), B is set to 4'b0100.
+If A is 2'd3 (binary 11), B is set to 4'b1000.
+This mapping ensures that for each possible 2-bit input, a unique 4-bit output is generated where only one of the bits is high, effectively decoding the 2-bit input into one of four distinct outputs.
+
+Give me the complete code.
+

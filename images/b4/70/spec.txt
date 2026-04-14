@@ -1,0 +1,8 @@
+Design a finite state machine (FSM) for pattern detection in an 8-bit input signal. The FSM transitions between states based on specific input conditions, particularly looking for the binary pattern '1010' and then checking for subsequent specific bits to assert a match or completion. The module outputs a 'match' signal when the state corresponds to identifying the desired pattern and a 'done' signal indicating that the detection process has concluded. The FSM resets to its initial state upon receiving a reset signal.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] in,
+  output reg match,
+  output reg done
+);

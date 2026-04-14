@@ -1,0 +1,8 @@
+Design a synchronous four-bit adder with reset functionality. The module takes two 4-bit inputs, A and B, and produces a 5-bit output, SUM, which represents their sum. On the rising edge of the clock signal (CLK), if the reset (RST) input is asserted, the output SUM is cleared to zero. Otherwise, the module calculates the sum of A and B, extending both operands to 5 bits to accommodate potential carry overflow, and updates the SUM output accordingly.
+module top_module(
+	input [3:0] A,
+	input [3:0] B,
+	input CLK,
+	input RST,
+	output reg [4:0] SUM
+	);

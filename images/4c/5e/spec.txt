@@ -1,0 +1,21 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit binary up-counter with synchronous reset and enable signals. The counter should increment on the rising edge of the clock signal when the enable signal is high. The reset signal should reset the counter to zero when asserted.
+
+Module name:
+    up_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    en: Enable signal that controls the counting operation.
+
+Output ports:
+    count: Output signal representing the current counter value of size 4 bits.
+
+Implementation:
+Counter Register:
+The module includes a register, count_reg, to store the counter value.
+On the positive edge of clock signal (clk), the module updates the counter value. If the reset signal (rst) is high, the counter register (count_reg) is set to 0. If the enable signal (en) is high and the reset signal (rst) is low, the counter register (count_reg) is incremented by 1.
+
+Give me the complete code.

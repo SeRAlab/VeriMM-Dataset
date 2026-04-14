@@ -1,0 +1,1 @@
+module top_module( output reg carry, sum, input a, b, C_in);always @ (a, b, C_in) {carry, sum} = a + b + C_in;endmodule

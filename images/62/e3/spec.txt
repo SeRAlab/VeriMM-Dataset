@@ -1,0 +1,6 @@
+Design a 4-bit binary to Gray code converter with synchronous reset functionality. On each rising edge of the clock, if the reset signal is low, the output is set to zero. If the reset signal is high, the module computes the Gray code representation of the 4-bit binary input using the formula: the most significant bit remains unchanged, and each subsequent bit is the XOR of the corresponding binary bits. The result is assigned to the output "gray_out."
+module top_module(
+    input clk, rst_n,
+    input [3:0] bin_in,
+    output reg [3:0] gray_out
+);

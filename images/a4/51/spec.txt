@@ -1,0 +1,11 @@
+This Verilog module implements a finite state machine (FSM) that controls a sequence of operations for a multiplication process triggered by the STM signal. It operates with a reset (RST) and clock (CLK) input, managing eight enable signals (ENa, ENb, ENc) and a selector (SEL) for multiplexing purposes. The FSM has five states, transitioning based on the current state (Qp) and the STM signal. During each state, specific enable signals are driven high or low to control different parts of the circuitry, while the SEL signal selects inputs for multiplexer usage in a manner defined by the state. The EOM signal indicates the end of the multiplication process. This design effectively orchestrates the operation and timing of multiple channels involved in the multiplication task.
+module top_module(
+    input RST, // Reset maestro
+    input CLK, // Reloj maestro 
+    input STM, // Iniciar multiplicacion
+    output reg [7:0] ENa, // Habilitaciones Ra 
+    output reg [7:0] ENb, // Habilitaciones Rb
+    output reg [7:0] ENc, // Habilitaciones Rc
+    output reg [7:0] SEL, // Selectores Mux
+    output reg EOM // Fin de multiplicacion
+);

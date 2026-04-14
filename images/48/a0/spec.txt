@@ -1,0 +1,14 @@
+Implement the Verilog module based on the following description.
+Design a 12-bit parallel-to-serial shift register with synchronous load. The register shifts data out one bit at a time on each clock cycle when the enable signal is high. The register loads parallel data when the load signal is high.
+
+// Signals are defined as below:
+// (1) load: Loads the register with data[11:0] instead of shifting. Active high.
+// (2) ena: Enables the shifting of data. Active high.
+// (3) data: The 12-bit parallel data input to be loaded.
+// (4) q: The serial output of the register.
+module top_module(
+    input clk,
+    input load,
+    input ena,
+    input [11:0] data,
+    output reg q);

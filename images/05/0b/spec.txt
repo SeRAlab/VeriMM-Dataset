@@ -1,0 +1,6 @@
+Design a simple WiFi status controller that manages the state of a WiFi module. The module can be in one of four states: OFF, CONNECTING, CONNECTED, and DISCONNECTED. The controller takes a clock signal, a reset signal, and a signal to start connecting. The state should change based on the following logic:
+- On reset, the state should be OFF.
+- If the module is OFF and the start connect signal is high, transition to CONNECTING.
+- Once CONNECTING, after one clock cycle, transition to CONNECTED.
+- If in CONNECTED, if a disconnect signal is high, transition to DISCONNECTED.
+- If in DISCONNECTED, after one clock cycle, transition back to OFF if not reconnecting.

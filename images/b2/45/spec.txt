@@ -1,0 +1,8 @@
+Design a data store translator module that generates byte enable signals and aligns write data based on specified storage sizes and addresses. The module supports different store sizes (byte, half-word, and word). For a byte store, it selects one byte from the 32-bit input based on the 2-bit address and produces the corresponding byte enable signal. For a half-word store, it selects two bytes based on the higher address bit. For a full-word store, it keeps all bytes enabled and outputs the input data unchanged. This functionality is essential for managing data alignment during write operations in memory systems.
+module top_module(
+    input [31:0] write_data,
+    input [1:0] d_address,
+    input [1:0] store_size,
+    output reg [3:0] d_byteena, // Changed to 'reg' as outputs are driven in 'always' block
+    output reg [31:0] d_writedataout // Changed to 'reg' as outputs are driven in 'always' block
+);

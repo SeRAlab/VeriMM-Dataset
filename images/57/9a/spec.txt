@@ -1,0 +1,11 @@
+Design a register file that supports reading from and writing to a set of 32 registers, each 32 bits wide. The module allows the selection of two registers for reading based on input addresses, ReadReg1 and ReadReg2, providing the corresponding data outputs, ReadData1 and ReadData2. When the RegWrite signal is asserted on a rising clock edge, it enables writing to a specific register (identified by WriteReg) with the data provided in WriteData. If a read operation targets register 0, it returns a constant zero instead of accessing the register bank.
+module top_module(
+    input [4:0] ReadReg1,
+    input [4:0] ReadReg2,
+    input [4:0] WriteReg,
+    input [31:0] WriteData,
+    input RegWrite,
+	 input clk,
+    output [31:0] ReadData1,
+    output [31:0] ReadData2
+    );

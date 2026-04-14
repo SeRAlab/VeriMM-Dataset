@@ -1,0 +1,8 @@
+Design a digital circuit that interfaces with an SPI (Serial Peripheral Interface) communication protocol. The module operates by capturing incoming data on the MOSI line when the SCK clock signal has a rising edge, storing this data in a temporary register. The captured data is then transferred to a designated output register when the chip select (CS) signal indicates the end of a message. Additionally, the module includes a check for the rising edge of the clock and processes the MOSI data accordingly, while providing an output signal that represents a parity-like computation over the stored data. The STORE signal serves as an indicator that a complete message has been received and is ready for processing.
+module top_module(
+	input CLK,
+	input SCK,
+	input CS,
+	input MOSI,
+	output TMP,
+	output STORE);

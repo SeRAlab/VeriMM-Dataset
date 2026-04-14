@@ -1,0 +1,9 @@
+Design a data processing module that performs arithmetic operations based on incoming data. It takes a clock signal, a reset input, and a validation signal along with a 64-bit data input. Upon receiving valid data, it splits the input into different registers: the first 32 bits into `reg1`, the next 16 bits into `reg2`, and the last 16 bits into `reg3`. It multiplies `reg1` and `reg2` to produce `reg4`, and then adds `reg3` to `reg4` to create `reg5`. The module outputs a valid response signal and the computed result as a 64-bit output. On reset, all registers and outputs are cleared.
+module top_module(
+    input wire clk,
+    input wire reset,
+    input wire s_axis_ireq_tvalid,
+    input wire [63:0] s_axis_ireq_tdata,
+    output reg m_axis_iresp_tvalid,
+    output reg [63:0] m_axis_iresp_tdata
+);

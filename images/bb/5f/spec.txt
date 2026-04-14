@@ -1,0 +1,11 @@
+Design a small, synchronous Random Access Memory (RAM) module with a circular buffer behavior. It features an 8-entry RAM array capable of storing 4-bit data words. The module supports write operations when the write enable signal is asserted, storing incoming data at the specified address, and advancing the write address in a circular fashion. A read operation retrieves stored data from the RAM based on the read address, which also increments circularly when read is enabled. The final output combines the most recently written data (captured by a D flip-flop) and the data read from the RAM, providing an 8-bit output. The circuit operates under a clock signal with an active-low reset feature, ensuring synchronous operation and controlled data flow.
+module top_module(
+    input clk,
+    input rst_n,
+    input write_en,
+    input [7:0] write_addr,
+    input [3:0] write_data,
+    input read_en,
+    input [7:0] read_addr,
+    output reg [7:0] final_output
+);

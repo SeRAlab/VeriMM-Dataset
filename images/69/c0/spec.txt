@@ -1,0 +1,7 @@
+Design a circuit that implements a 100-bit wide rotating shift register. The module allows for parallel loading of data when the `load` signal is asserted. Depending on the `ena` control signals, it can either perform a right rotation (when `ena[0]` is high) or a left rotation (when `ena[1]` is high) of the stored data on each clock cycle. The output `q` continuously reflects the current state of the shift register.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output reg [99:0] q);

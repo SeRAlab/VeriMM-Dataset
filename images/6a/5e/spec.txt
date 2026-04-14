@@ -1,0 +1,15 @@
+Design a digital circuit that functions as a combination of a 6-to-1 multiplexer and a controlled adder. The module takes a 3-bit selector input to choose one of six 4-bit data inputs, and it can optionally add a 2-bit input to the selected data based on a control signal. On a clock edge, if the reset signal is asserted, the output is set to zero; otherwise, if the select input is low, the output is directly assigned the value from the multiplexer. If select is high, the output becomes the sum of the selected data and the specified additional input, extending the result to an 8-bit output.
+module top_module(
+    input [2:0] sel,
+    input [3:0] data0,
+    input [3:0] data1,
+    input [3:0] data2,
+    input [3:0] data3,
+    input [3:0] data4,
+    input [3:0] data5,
+    input [1:0] add_in,
+    input clk,
+    input reset,
+    input select,
+    output reg [7:0] out
+);

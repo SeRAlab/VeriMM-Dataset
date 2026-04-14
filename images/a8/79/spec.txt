@@ -1,0 +1,8 @@
+Design a binary counter that increments on each clock pulse and resets to zero when a reset signal is activated. The module produces a 4-bit output representing the count value and a carry signal that indicates when the count has overflowed past 9. Additionally, it converts the 4-bit count output into a 7-segment display encoding, allowing the count value (0-9) to be visually represented on a 7-segment display. When the count reaches 10 (binary 1001), the counter wraps back to zero.
+module top_module(
+  input clk,
+  input reset,
+  output reg [3:0] out,
+  output reg carry,
+  output reg [6:0] seg // Changed from wire to reg
+);

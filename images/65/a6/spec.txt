@@ -1,0 +1,9 @@
+Design a tone generator circuit that produces a square wave output to control a buzzer. The circuit uses a clock input to toggle the buzzer output based on a selected tone (B4 or B5) and a specified duration. Upon activation by a start signal, the tone is determined by the input signal, with a predefined duration setting how long the tone will be generated. When the duration expires, the tone will cease, while the buzzer will toggle its output state at intervals determined by the current tone's period. The module also includes a reset functionality to initialize all counters and the buzzer output.
+module top_module(
+    input clk,      
+    input reset,
+    input tone,     
+    input start,    
+
+    output reg buzzer
+    );

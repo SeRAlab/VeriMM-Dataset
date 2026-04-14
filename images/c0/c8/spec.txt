@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to function as a configurable counter with a programmable modulus and an optional delay on its output signal. Its primary role within a broader system could be to generate periodic signals, measure time intervals, or serve as a basic timing component in digital designs, particularly in scenarios requiring synchronization or timing adjustments. The module also incorporates a mechanism to handle invalid clock transitions, ensuring robust operation in the presence of signal integrity issues.
+
+Module name:  
+	stx_n_cntr
+
+Input ports:
+	clk: A clock input signal (1bit). This signal drives the counter's operation, with rising edges being particularly significant for the counter's progression.
+	reset: A reset input signal (1bit). When asserted, it initializes the counter and related internal states, preparing the module for a fresh counting cycle.
+	modulus: A 32bit input specifying the counter's modulus. The counter resets upon reaching this value, making the modulus define the counter's maximum count value before it wraps around.
+	time_delay: A 32bit input that specifies the delay to be applied to the counter's output signal. This allows for finetuning the timing of the output signal relative to the counter's internal state changes.
+Output ports:
+	cout: The counter's output signal (1bit). This signal reflects the state of the counter, potentially delayed by the time_delay parameter, and toggles based on the counter reaching its modulus.
+
+
+Implementation:
+The stx_n_cntr module is designed to function as a counter with a configurable modulus and a time-delayed output. It operates based on the input clock (clk), reset signal (reset), modulus value (modulus), and time delay (time_delay). The core functionality revolves around incrementing a counter on each rising edge of the clock signal until it reaches the specified modulus value, at which point it toggles the output (cout) and resets the counter. This module also incorporates logic to handle invalid clock transitions and introduces a delay to the output signal based on the time_delay input.
+
+Give me the complete code.
+

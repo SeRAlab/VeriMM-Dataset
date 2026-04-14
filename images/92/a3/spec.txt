@@ -1,0 +1,19 @@
+Implement the Verilog module based on the following description.
+We want to create a 4-bit shift register that:
+
+// (1) shifts left when 'shift_left' is high,
+// (2) shifts right when 'shift_right' is high,
+// (3) loads a 4-bit value 'data' when 'load' is high,
+// (4) holds its value when neither 'shift_left' nor 'shift_right' nor 'load' is high.
+
+// The shift register value is output on 'q[3:0]'. The reset signal is active high synchronous and sets the shift register to zero.
+
+module top_module(
+    input wire clk,
+    input wire reset,
+    input wire shift_left,
+    input wire shift_right,
+    input wire load,
+    input wire [3:0] data,
+    output reg [3:0] q
+);

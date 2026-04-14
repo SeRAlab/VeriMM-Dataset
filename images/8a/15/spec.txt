@@ -1,0 +1,7 @@
+Design a debounce circuit for a key input signal. The module monitors a key input (`key_in`) and uses a clock signal (`clk`) to filter out noise that may occur when the key is pressed or released. It maintains a counter that increments on each clock cycle if the state of `key_in` remains stable (i.e., unchanged from its previous value). Once the counter reaches 15 million clock cycles, indicating that the input has been stable for a minimal duration, it updates the output (`key_out`) to reflect the last stable state of `key_in`. This effectively ensures that the output only changes after a sustained period of stability, thereby eliminating false triggering from noise.
+module top_module( 
+    input clk, 
+
+    input key_in,
+    output reg key_out=1
+);

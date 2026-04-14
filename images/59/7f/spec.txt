@@ -1,0 +1,7 @@
+Design a module that operates as an exception program counter (EPC) for a CPU. The module stores a program counter (PC) value based on write enable (WE) and provides specific exception addresses (108, 120, 132, 144) based on a 2-bit identifier input (ID) when WE is activated. On a reset (RST), the stored PC is cleared to zero. When read enable (RE) is activated, the EPC output will reflect the last latched PC value. In the absence of these controls, the EPC outputs the current PC value, effectively allowing reading and writing of the PC under defined conditions.
+module top_module(
+    input CLK, WE, RE, RST,
+    input [1:0] ID,
+    input [31:0] PC,
+    output reg [31:0] EPC
+    );

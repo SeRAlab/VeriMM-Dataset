@@ -1,0 +1,6 @@
+Design a 16-bit barrel shifter that allows for both left and right shifts based on a 5-bit control input. The shifter's behavior depends on the most significant bit of the control input (bin[4]), which determines the direction of the shift—left for bin[4]=0 and right for bin[4]=1. The least significant 4 bits of the control input (bin[3:0]) specify the number of bit positions to shift the input (ain). The output (yout) is produced after conditionally reversing the input and performing the shifts, ensuring proper alignment and output based on the specified shift direction and count.
+module top_module(
+	 output [15:0] yout,
+	 input [15:0] ain,
+	 input [4:0] bin
+    );

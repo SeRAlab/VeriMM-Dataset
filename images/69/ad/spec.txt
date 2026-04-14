@@ -1,0 +1,11 @@
+Design a 4-bit shift register with configurable loading and shifting capabilities. The module features inputs for four 4-bit data segments (D0 to D3) and uses a 2-bit selector (SHIFT) to determine the direction of the shift operation. When LOAD is asserted, the register loads the data from D0 to D3 into the shift register. If LOAD is not asserted, the register shifts the data based on the SHIFT input: no shift (00), right shift with a zero-fill (01), left shift with a zero-fill (10), or left shift with the most significant data segment dropped (11). The current state of the shift register is output through OUT.
+module top_module(
+    input [3:0] D0,
+    input [3:0] D1,
+    input [3:0] D2,
+    input [3:0] D3,
+    input [1:0] SHIFT,
+    input LOAD,
+    input CLK,
+    output [3:0] OUT
+);

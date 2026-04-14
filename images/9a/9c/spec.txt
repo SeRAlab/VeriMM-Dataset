@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+
+Design a 4-bit parallel load register with an asynchronous reset. The register should load a new value on the rising edge of the clock signal when the load signal is high.
+
+Module name:
+    ParallelLoadRegister
+
+Input ports:
+    clk: Clock signal.
+    reset: Asynchronous reset signal.
+    load: Load signal.
+    d: 4-bit data input.
+
+Output ports:
+    q: 4-bit data output.
+
+Implementation:
+The register should load the value of the data input d on the rising edge of the clock signal when the load signal is high. If the reset signal is asserted, the output q should be reset to zero.
+
+Give me the complete code.
+
+module ParallelLoadRegister (
+    input clk,
+    input reset,
+    input load,
+    input [3:0] d,
+    output reg [3:0] q
+);

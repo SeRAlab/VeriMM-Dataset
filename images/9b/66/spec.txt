@@ -1,0 +1,11 @@
+Design a dual-port RAM module that allows both read and write operations. The module features an 8-bit address space for accessing an array of 4-bit wide memory cells. It is enabled by a clock signal and an active-low reset. When the reset is not triggered, the module can write data to the specified address on the clock's rising edge if the write enable signal is asserted. Simultaneously, if the read enable signal is active, it outputs the data stored at the given read address on the next clock cycle, offering a concurrent read and write capability.
+module top_module(
+    input clk,
+    input rst_n,
+    input write_en,
+    input [7:0] write_addr,
+    input [3:0] write_data,
+    input read_en,
+    input [7:0] read_addr,
+    output reg [3:0] read_data
+);

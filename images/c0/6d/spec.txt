@@ -1,0 +1,33 @@
+Please act as a professional verilog designer.
+    
+Implement a module to simulate a dual-port static RAM (SRAM) with write-back capability. It is intended for use in systems requiring separate read/write operations on the same memory block from two different clock domains. This module supports separate input and output ports for each clock domain, enabling simultaneous read and write operations from both domains. The primary functions include:
+
+Dual-Port Memory Access: Allowing two separate processes to access the memory simultaneously, each with its own clock domain.
+Write-Back Capability: Enabling data to be written into the memory from both clock domains.
+Initialization with Random Data: At the start, the memory is initialized with random data for simulation purposes.
+
+This module plays a crucial role in systems where data integrity and access speed are critical, such as in multi-processor or multi-controller environments within digital signal processing, networking, and embedded systems.
+
+Module name:  
+	fasm_dpsram_wbr
+
+Input ports:
+	dat_i [DW1:0]: Data input for the primary port. A 32bit wide data bus.
+	adr_i [AW1:0]: Address input for the primary port. An 8bit wide address bus.
+	wre_i: Write enable for the primary port. When high, data is written to the address specified by adr_i.
+	stb_i: Strobe input for the primary port. Enables the operation (read or write) when high.
+	rst_i: Reset input for the primary port. Not used in the current implementation.
+	clk_i: Clock input for the primary port. Operations are triggered on the rising edge.
+	xdat_i [DW1:0]: Data input for the secondary port.
+	xadr_i [AW1:0]: Address input for the secondary port.
+	xwre_i: Write enable for the secondary port.
+	xstb_i: Strobe input for the secondary port.
+	xrst_i: Reset input for the secondary port. Not used in the current implementation.
+	xclk_i: Clock input for the secondary port.
+
+
+Implementation:
+The RTL module fasm_dpsram_wbr is designed to simulate a dual-port synchronous RAM with write-back capability. It is parameterized with address width (AW) and data width (DW), allowing for flexibility in memory size and data size. The module interfaces with two separate sets of signals, one for each port, enabling simultaneous read and write operations from two different sources. The core functionality is centered around the memory array bram, which stores the data.
+
+Give me the complete code.
+

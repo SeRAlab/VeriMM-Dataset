@@ -1,0 +1,15 @@
+Design a sequential module that serves as part of a pipeline in a processor architecture, specifically handling the EXE/MEM stage. It accepts various inputs such as the program counter, ALU result, and data to be written to memory. Upon a clock edge and with a reset signal, it captures and outputs these input values, propagating control signals for operations like memory reads/writes and register writes. When the reset signal is activated, it initializes all outputs, ensuring a consistent state for subsequent operations. This module facilitates the transfer of data and control signals between the execution and memory stages of instruction processing.
+module top_module(
+	input [63:0] PC_sum1,
+	output reg [63:0] PC_sum2,
+	input [63:0] ALUResult1,
+	output reg [63:0] ALUResult2,
+	input [63:0] ReadData2in,
+	output reg [63:0] ReadData2out,
+	input clk,
+	input reset,
+	input Branch1, MemRead1, MemtoReg1, MemWrite1, RegWrite1, Zero1,
+	output reg Branch2, MemRead2, MemtoReg2, MemWrite2, RegWrite2, Zero2,
+	input [4:0] Rd1,
+	output reg [4:0] Rd2
+);

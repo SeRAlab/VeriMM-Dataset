@@ -1,0 +1,8 @@
+Develop a 4-bit up/down counter with load capability. The counter increments or decrements based on the value of the `up_down` signal when `load` is not asserted; when `load` is high, it sets the counter to the provided `input_data`. The counter is clocked on the rising edge of `clk`, and the output reflects the current counter value on `Q`. The design utilizes a dual-register structure to stabilize the output between clock cycles.
+module top_module(
+    input clk,
+    input up_down,
+    input load,
+    input [3:0] input_data,
+    output reg [3:0] Q
+);

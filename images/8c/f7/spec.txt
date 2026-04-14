@@ -1,0 +1,9 @@
+Create a shift-and-accumulate circuit designed to process input data in a synchronous manner. The module features a 3-bit shift register that captures incoming data bits when valid_input is high. Additionally, it incorporates an 8-bit accumulator that sums the current value of the shift register with its existing value each time valid_input is asserted. The final output, which is a 10-bit wide data_out, combines the contents of the accumulator and the shift register when valid_input is true, while valid_out indicates the validity of the output data. The module resets both the accumulator and shift register to zero upon receiving a reset signal.
+module top_module(
+    input clk,
+    input rst_n,
+    input valid_in,
+    input data_in,
+    output reg valid_out,
+    output reg [9:0] data_out
+);

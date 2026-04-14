@@ -1,0 +1,7 @@
+Design a 4-bit barrel shifter that takes a 4-bit input data and a 2-bit shift amount to perform logical right shifts. The output corresponds to the input data shifted based on the value of the shift signal: a shift of 0 results in no shift, a shift of 1 rotates the least significant bit to the most significant position, a shift of 2 rotates the two least significant bits to the two most significant positions, and a shift of 3 rotates the three least significant bits. The shifted result is registered on the rising edge of a clock signal, providing a synchronized output.
+module top_module(
+    input [3:0] data,
+    input [1:0] shift,
+    input clk,         // Added the clock input
+    output reg [3:0] q
+);

@@ -1,0 +1,11 @@
+Design a Moore state machine with five states (S0 to S4) that transitions based on the inputs a, b, and c and produces three output signals (out1, out2, out3). The state transitions occur on the rising edge of the clock, with the machine resetting to state S0 when the reset signal is active. In state S0, all outputs are low; state S1 activates out1 when input a is high; state S2 activates out2 when b is high and a is low; state S3 activates out3 when c is low; and state S4 enables all outputs high, remaining in this state until reset. Each state has specific input conditions that determine the next state, illustrating typical behavior for modeling sequential logic.
+module top_module(
+  input clk,
+  input reset,
+  input a,
+  input b,
+  input c,
+  output reg out1,
+  output reg out2,
+  output reg out3
+);

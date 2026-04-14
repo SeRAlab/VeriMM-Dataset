@@ -1,0 +1,7 @@
+Design a pulse-width modulation (PWM) controller that generates a PWM signal based on a 16-bit duty cycle input. The controller increments a counter at each clock cycle and compares it to the specified duty cycle value. When the counter is less than the duty cycle, the output, `pwm_out`, is driven high; otherwise, it is driven low. The counter resets after reaching its maximum value of 65535, allowing for continuous PWM signal generation. The module also incorporates a reset input to initialize the counter and output state.
+module top_module(
+    input clk,
+    input rst,
+    input [15:0] duty_cycle,
+    output pwm_out
+);

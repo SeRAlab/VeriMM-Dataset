@@ -1,0 +1,16 @@
+Design a 32-bit wide register file with read and write capabilities. This module allows for simultaneous reading from up to three different registers and a debug output, while also enabling writing to a specified register when WriteEnable is active and on the rising edge of the clock. The reset functionality clears all registers to zero, and reads from the register return zero if the read address is zero, implementing a common practice in register design to avoid unwanted reads from a non-existent register.
+module top_module(
+    input clock,
+    input clock_debug,
+    input reset,
+    input WriteEnable,
+    input [4:0] read_address_1,
+    input [4:0] read_address_2,
+    input [4:0] read_address_3,
+    input [31:0] write_data_in,
+    input [4:0] write_address,
+    input [4:0] read_address_debug,
+    output [31:0] data_out_1,
+    output [31:0] data_out_2,
+    output [31:0] data_out_3,
+    output [31:0] data_out_debug);

@@ -1,0 +1,14 @@
+Design a Serial Peripheral Interface (SPI) controller that facilitates communication with a connected device by sending and receiving data in a bit-serial format. The module utilizes a clock signal (CLK) to synchronize data transmission and reception. It features a channel selection input (CHANNEL) to specify which communication channel is active, a request signal (REQUEST) to initiate data transfers, and outputs for chip select (CS), serial clock (SCLK), and serial data output (SDO), while it listens to serial data input (SDI). The design maintains a busy signal (BUSY) to indicate whether a data transfer is in progress, and it captures the received data (CONV_RESULT) after completion of the transfer.
+module top_module(  input   CLK,
+             
+              //host interface
+              input  [ 2:0] CHANNEL,
+              output [11:0] CONV_RESULT,
+              input         REQUEST,
+              output        BUSY,
+              
+              //device interface
+              output  CS,
+              output  SCLK,
+              output  SDO,
+              input   SDI  );

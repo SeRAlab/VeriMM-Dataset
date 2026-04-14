@@ -1,0 +1,6 @@
+Design a 16-bit to 32-bit sign-extension module. The module takes a 16-bit immediate input and an extension select signal (Extsel). If Extsel is high and the most significant bit of the immediate is set (indicating a negative value in two's complement), it fills the higher 16 bits of the output with ones to preserve the sign; otherwise, it fills them with zeros. If Extsel is low, the module always outputs zeros in the upper 16 bits, effectively padding the immediate value with zeros.
+module top_module(
+ input [15:0] immediate,
+ input Extsel,
+ output [31:0] Eximmidiate 
+);

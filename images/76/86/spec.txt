@@ -1,0 +1,11 @@
+Design a control logic module for a car system that manages the activation of four output signals (md1, md2, md3, md4) based on two input signals (infL and infR) which likely represent sensor inputs indicating the presence of obstacles or proximity. The module functions as a decision-making circuit: when both inputs indicate no obstacles (LOW), it enables certain outputs indicating a forward movement; if an obstacle is detected on the left (infL HIGH), it configures outputs for a right turn; if an obstacle is detected on the right (infR HIGH), it configures outputs for a left turn; and if both inputs indicate the presence of obstacles (HIGH), it disables all outputs, indicating a stop condition.
+module top_module(
+    output reg  md1,
+    output reg  md2,
+    output reg  md3,
+    output reg  md4,
+    input   infL,
+    input   infR,
+    input   clk,
+    input   reset_n
+);

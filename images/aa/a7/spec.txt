@@ -1,0 +1,9 @@
+Design a module that combines a 4-to-2 priority encoder and a half adder. The priority encoder takes a 4-bit input and outputs the position of the highest-order '1' among the inputs. The half adder processes two additional single-bit inputs, generating a sum and carry output based on their values. The final output leverages the results from both operations: if the lowest bit of the position output is set, it adds the 4-bit input to the concatenated values of the half adder's outputs. If not, it outputs a 4-bit value with the carry bit from the half adder in the least significant position, reflecting an integration of both functionalities.
+module top_module(
+    input [3:0] in,
+    input a, b,
+    output reg [1:0] pos,
+    output reg cout,
+    output reg sum,
+    output reg [3:0] final_output
+);

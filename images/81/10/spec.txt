@@ -1,0 +1,8 @@
+Design a circuit that functions as a multiplexer for selecting a 5-bit shift amount based on a 2-bit control signal. Depending on the value of the Shift_Amt input, the output Shift_Amt_out will be assigned either the lower 5 bits of Reg_B_info, specific bits from the Imediato input, or the lower 5 bits from the MEM_out signal, effectively enabling various data sources for shift operations in a processing context.
+module top_module(
+    input wire [1:0] Shift_Amt,
+    input wire [31:0] Reg_B_info,
+    input wire [15:0] Imediato,
+    input wire [31:0] MEM_out,
+    output reg [4:0] Shift_Amt_out
+);

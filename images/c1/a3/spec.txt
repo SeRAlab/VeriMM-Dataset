@@ -1,0 +1,34 @@
+Please act as a professional verilog designer.
+    
+Implement a module to manage data output in a digital system, specifically handling the reading and outputting of byte-sized data elements. Its primary functions include:
+
+Data Output Control: It controls the output of byte-sized data (`Out_byte`) based on an internal state machine and external signals.
+Address Generation: It generates read addresses (`RdAdd`) for accessing data, incrementing the address with each cycle as needed.
+Output Validity Signaling: It signals when the output data (`Out_byte`) is valid through the `Valid_out` signal.
+End-of-Operation Indication: It indicates the completion of its operation through the `out_done` signal.
+Clock Enable Output: It generates a clock enable output signal (`CEO`) for downstream synchronization.
+
+This module operates within a broader system context, likely interfacing with memory or data buffers for data retrieval and with other system components for synchronized data processing.
+
+Module name:  
+	out_stage
+
+Input ports:
+	clk (input): The system clock signal, driving the synchronous operations of the module.
+	reset (input): A synchronous reset signal, used to initialize the module's internal state.
+	DONE (input): A signal indicating that a preceding operation (possibly data preparation or another stage) is complete and the module can begin its operation.
+	In_byte (input, [7:0]): An 8bit input data byte, presumably the data to be outputted by the module.
+Output ports:
+	RE (output, reg): A signal likely used to enable or trigger a read operation from an external data source or memory.
+	RdAdd (output, reg, [7:0]): An 8bit address used for reading data, indicating the current byte's address to be read.
+	Out_byte (output, reg, [7:0]): The 8bit data byte being outputted by the module.
+	CEO (output, reg): A clock enable output, potentially used to synchronize downstream modules or operations with the data output rate.
+	Valid_out (output, reg): A signal indicating when the Out_byte data is valid and can be used by downstream components.
+	out_done (output, reg): A signal indicating that the module has completed its operation, possibly after reaching a certain condition or processing all intended data.
+
+
+Implementation:
+The out_stage module is designed to manage data output operations in a digital system, particularly focusing on reading data from a source, processing it, and then outputting the modified data along with control signals. The module operates under the control of a clock signal (clk) and can be reset using the reset signal. Its operation is characterized by sequential and combinational logic that governs data flow and state transitions within the module.
+
+Give me the complete code.
+

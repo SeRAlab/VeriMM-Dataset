@@ -1,0 +1,1 @@
+module top_module(output reg y, input a, b, sel);always @ (a, b, sel) if (sel ==1) y = b; else y = a;endmodule

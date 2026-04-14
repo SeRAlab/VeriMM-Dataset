@@ -1,0 +1,10 @@
+Design a data alignment module for a JESD (Juxtaposed Electronic Serial Data) interface that processes incoming data. The module aligns a 32-bit data stream based on the start-of-frame (SOF) signals provided over a 4-bit input. When new data is clocked in, the module captures the incoming data and its SOF signal, and it shifts and rearranges the data bytes according to the detected SOF, ensuring correct alignment for downstream processing. The output consists of a start-of-frame indicator and aligned 32-bit data, facilitating reliable data transfer and synchronization in JESD-compliant systems.
+module top_module(
+
+  // jesd interface
+
+  rx_clk,
+  rx_ip_sof,
+  rx_ip_data,
+  rx_sof,
+  rx_data);

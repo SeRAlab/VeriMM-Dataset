@@ -1,0 +1,9 @@
+Create a color selection module that determines the color to draw on a screen based on input signals. The module takes a clock signal, a 2-bit world input indicating different color states, a 12-bit botIcon for a specific icon color, and a video_on signal to toggle drawing. When the video is off, it outputs black; when botIcon is non-zero, it outputs the color of the botIcon. Otherwise, it maps the world input to specific colors: white for 2'b00, black for 2'b01, red for 2'b10, and green for 2'b11. The output is a 12-bit color value used for pixel rendering.
+module top_module(
+        input clk,
+        input [1:0] world,
+        input [11:0] botIcon,
+        input video_on,
+        input [11:0] firstscreen,
+        output reg [11:0] drawIcon
+    );

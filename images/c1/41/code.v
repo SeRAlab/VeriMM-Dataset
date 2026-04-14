@@ -1,0 +1,27 @@
+module rf_dist_cm3(
+	a,
+	d,
+	dpra,
+	clk,
+	we,
+	spo,
+	dpo);
+input [6 : 0] a;
+input [31 : 0] d;
+input [6 : 0] dpra;
+input clk;
+input we;
+output [31 : 0] spo;
+output [31 : 0] dpo;
+reg	[31:0]		mem [95:0];
+integer i;
+initial begin
+	for (i = 0; i < 96; i = i + 1) begin
+		mem[i] <= 32'h0;
+	end
+end
+always @(posedge clk)
+	if (we) mem[a] <= #1 d;
+assign spo = mem[a];
+assign dpo = mem[dpra];
+endmodule

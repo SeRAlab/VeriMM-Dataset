@@ -1,0 +1,32 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit Shift Register module that can perform both left and right shifts. The module should have a control signal to determine the direction of the shift, and a synchronous load signal to load a new value into the register.
+
+Module name:
+    shift_register
+
+Input ports:
+    clk: Clock signal.
+    rst: Reset signal, active high.
+    load: Synchronous load signal, active high.
+    direction: Control signal; when high, perform left shift, when low, perform right shift.
+    data_in: 4-bit input signal for loading new value into the register.
+
+Output ports:
+    data_out: 4-bit output signal representing the current register value.
+
+Implementation:
+The module should use sequential logic to implement the shift register.
+The register should shift left or right based on the control signal.
+When the load signal is high, the register should load the new input value.
+
+Give me the complete code.
+
+module shift_register(
+  input clk,
+  input rst,
+  input load,
+  input direction,
+  input [3:0] data_in,
+  output reg [3:0] data_out
+);

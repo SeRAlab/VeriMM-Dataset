@@ -1,0 +1,10 @@
+Design a digital circuit implementing a 100-bit wide shift register with a rotator, a combinational NOR gate output, and a 2's complement addition function. The circuit has a reset input, a load feature that initializes the shift register with an input value, and a select line to choose between left and right rotations. Additionally, it allows for conditional addition of the NOR gate's output with either the negated shift register or the shift register itself, depending on control signals. The output is updated on the rising edge of the clock when enabled.
+module top_module(
+    input clk,
+    input reset,
+    input [99:0] in,
+    input select,
+    input load,
+    input [1:0] ena,
+    output reg [99:0] q
+);

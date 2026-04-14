@@ -1,0 +1,11 @@
+Design a data reader module that interfaces with a host system for high-definition data retrieval. It utilizes a clock and reset signal, and an enable signal to initiate data reading. The module detects the rising edge of the enable signal to reset error states and prepare for new data. Upon receiving data from the host, it checks for discrepancies compared to an internal counter, setting an error flag if the received data does not match the expected incremental value. The module ensures robust data integrity by monitoring for expected data patterns and flags errors when data mismatches occur.
+module top_module(
+    input           clk,
+    input           rst,
+
+    input           enable,
+    output  reg     error,
+
+    input           hd_read_from_host,
+    input   [31:0]  hd_data_from_host
+);

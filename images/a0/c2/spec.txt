@@ -1,0 +1,8 @@
+Design a 3-to-1 multiplexer that outputs a 32-bit wide value based on the 2-bit select input. The module takes three 32-bit inputs, A, B, and C, and uses the select lines to determine which input to pass to the output dataOut. When select is 00, the output dataOut is assigned the value of A; when select is 01, it outputs B; and when select is 10, it outputs C. Note that there seems to be a repeated condition for select = 01 which should be corrected to handle the select = 10 case properly.
+module top_module(
+	output reg dataOut,
+	input A,
+	input B,
+	input C,
+	input [1:0] select
+	);

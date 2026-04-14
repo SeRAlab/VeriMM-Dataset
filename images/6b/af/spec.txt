@@ -1,0 +1,7 @@
+Design a pseudorandom number generator (PRNG) that produces a sequence of m pseudorandom numbers, where m is specified as a parameter. The generator is clock-driven and can be reset using an external reset signal. Upon reset, the PRNG initializes its internal state using a provided seed value, and the output is reset to zero. During each clock cycle, if not in reset, the internal state is updated using a nonlinear transformation involving bitwise shifts and XOR operations. The least significant bit of the internal state is then shifted out to produce a stream of pseudorandom bits in the output register.
+module top_module(
+  input clk, // clock signal
+  input rst, // reset signal
+  input [31:0] seed, // seed value
+  output reg [m-1:0] out // sequence of pseudorandom numbers
+);

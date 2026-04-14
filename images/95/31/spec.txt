@@ -1,0 +1,7 @@
+This module implements a 16-bit wide, 3-deep shift register FIFO (First-In-First-Out) buffer. It shifts its contents on the rising edge of the clock signal when the chip enable (ce) is activated. The input data is written into the register at the first position, while the subsequent positions shift their contents to the right, effectively allowing for the output of data stored at any address specified by the input address signal (a). The output (q) reflects the value stored at the specified address within the shift register. This design is useful for temporary data storage and manipulation in digital circuits requiring FIFO behavior.
+module top_module(
+    clk,
+    data,
+    ce,
+    a,
+    q);

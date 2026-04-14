@@ -1,0 +1,11 @@
+Design a circuit that combines a 4-bit multiplier and a shift register with parallel load functionality. It utilizes Booth's algorithm for multiplication of two 4-bit inputs, A and B, producing an 8-bit output product. The shift register can be loaded with a 4-bit input D when the load (LD) signal is asserted and can be shifted left or right based on the SL and SR control signals. The output P is determined by a select signal (SEL), which decides whether to output the product extended with the least significant bit of the shift register or the most significant bit of the shift register with the remaining bits of the product.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [3:0] D,
+    input SEL,
+    input LD,
+    input SR,
+    input SL,
+    output reg [7:0] P
+);

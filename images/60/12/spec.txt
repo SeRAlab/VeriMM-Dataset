@@ -1,0 +1,10 @@
+Design a synchronous binary adder that computes the sum of two 8-bit inputs, A and B, along with a carry-in bit (cin). On the rising edge of the clock, or when reset (rst_n) is active low, the module calculates the sum and generates a carry-out (cout) if the result exceeds 8 bits. The computed sum is stored in a 9-bit output register (sum), which also provides space for the carry generated from the addition of A, B, and cin. The circuit resets all outputs to zero when rst_n is asserted low.
+module top_module(
+    input clk,
+    input rst_n,
+    input cin,
+    input [7:0] A,
+    input [7:0] B,
+    output reg [8:0] sum,
+    output reg cout
+);

@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform bitwise NOR operations on a 64-bit input vector, producing two outputs: a 32-bit NOR result (`znor32`) and a 64-bit NOR result (`znor64`). The primary function of this module to evaluate the NOR operation across different segments of the input vector, allowing for parallel processing of both a 32-bit and a 64-bit NOR operation within the same module. This dual functionality makes the module versatile, enabling it to be used in various applications where conditional logic based on the absence of all '1's in either the first 32 bits or the entire 64 bits of the input vector is required. It can serve as a fundamental building block in larger digital systems, particularly in logic circuits, control units, or any application requiring efficient bitwise NOR evaluations.
+
+Module name:  
+	zznor64_32
+
+Input ports:
+	a [63:0]: A 64bit input vector. This is the primary input to the module, representing the data on which the NOR operations will be performed. The vector is indexed from 0 to 63, allowing for individual access to each bit.
+Output ports:
+	znor64: A singlebit output that represents the result of the NOR operation performed on all 64 bits of the input vector a. If all bits in a are '0', znor64 will be '1', otherwise, it will be '0'.
+	znor32: A singlebit output similar to znor64, but it only considers the first 32 bits (bits 0 to 31) of the input vector a for the NOR operation. If all of these 32 bits are '0', znor32 will be '1'; otherwise, it will be '0'.
+
+
+Implementation:
+The RTL module zznor64_32 is designed to compute the zero-NOR (ZNOR) of two different sets of bits from a single 64-bit input vector a. The module outputs two signals: znor64 and znor32. These outputs represent the ZNOR operation over all 64 bits and the first 32 bits of the input vector, respectively.
+
+Give me the complete code.
+

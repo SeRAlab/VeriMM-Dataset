@@ -1,0 +1,8 @@
+Design a 3-to-1 multiplexer with 32-bit wide data inputs. This module selects one of three input data lines—`reg_data`, `ex_mem_data`, or `mem_wb_data`—based on a two-bit selection signal, `sel`. The output `out` will reflect the value of the selected input according to the specified selection criteria: if `sel` is `00`, output `reg_data`; if `sel` is `01`, output `mem_wb_data`; and if `sel` is `10`, output `ex_mem_data`. In case of an invalid selection, the default output will be `reg_data`.
+module top_module(
+input wire [31:0]   reg_data,
+input wire [31:0]   ex_mem_data,
+input wire [31:0]   mem_wb_data,
+input wire [1:0]    sel,
+output wire [31:0]  out
+    );

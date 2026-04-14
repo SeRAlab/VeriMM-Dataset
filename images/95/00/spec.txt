@@ -1,0 +1,7 @@
+Design a circuit that functions as a synchronous shift register combined with a rising edge detector and a bitwise AND operation. The module captures a 4-bit wide segment of the 32-bit input when a rising clock edge is detected, while simultaneously allowing for an optional reset condition. The output is the result of a bitwise AND operation between the contents of the shift register and the constant value 0x0F, effectively keeping only the lower 4 bits, which are then outputted.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] in,
+    output [3:0] out
+);

@@ -1,0 +1,9 @@
+Design a circuit that performs a combined 4-bit addition/subtraction followed by a barrel shifting operation. The module takes two 4-bit inputs, A and O, along with a control bit C to determine the operation (addition or subtraction). The resulting output from the arithmetic operation is then shifted based on a specified shift amount and direction. The output is registered on the rising edge of the clock, with an option to reset the output to zero or enable it for output, based on the OE signal. This design effectively implements an arithmetic processor with shift capabilities.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] A,
+    input [3:0] B,
+    input C,
+    output reg [3:0] q
+);

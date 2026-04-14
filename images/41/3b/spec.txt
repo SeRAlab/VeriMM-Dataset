@@ -1,0 +1,8 @@
+Design a synchronous SRAM interface that allows for read and write operations based on control signals. The module utilizes a 4K-bit SRAM component, facilitating the storage and retrieval of 16-bit data from an addressable space defined by an 8-bit address input. The write enable (WE) signal determines the operational mode, where writing occurs when WE is high, and reading happens when WE is low. The RAM is pre-initialized with a defined set of values ensuring specific data is available upon startup. The clock signal (clk) synchronizes these read and write actions, enhancing data integrity during operations.
+module top_module(
+    input clk,
+    input [15:0] wdata,
+    output reg [15:0] rdata,
+    input [7:0] addr,
+    input WE
+);

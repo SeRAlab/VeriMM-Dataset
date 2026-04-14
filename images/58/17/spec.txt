@@ -1,0 +1,25 @@
+Please act as a professional Verilog designer.
+
+Implement a 24-bit pseudo-random binary sequence (PRBS) generator based on a linear feedback shift register (LFSR) with a polynomial feedback of x^24 + x^23 + x^22 + x^17 + 1.
+
+Module name:  
+    PRBS_24               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the LFSR.
+Output port:
+    Q: 24-bit register representing the current PRBS value.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the PRBS value is updated.
+If the reset signal (rst_n) is low, indicating a reset condition, the PRBS value (Q) is set to 24'h1.
+Otherwise, the PRBS value is shifted left by 1 bit and the feedback bit is calculated and inserted at the least significant bit position.
+
+Give me the complete code.
+
+module PRBS_24(
+   input                clk,
+   input                rst_n,
+ 
+   output reg [23:0]    Q  
+);

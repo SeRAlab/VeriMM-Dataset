@@ -1,0 +1,7 @@
+Design a finite impulse response (FIR) filter that processes input samples clocked by a synchronous system. The filter has a configurable number of input samples, output samples, and filter coefficients. It shifts incoming data through a register while applying predefined coefficients to compute a weighted sum of the most recent inputs. Upon resetting, both the shift and output registers are set to zero, and the coefficients are pre-loaded with specified values. The output reflects the filtered result of the input signal based on the defined coefficients, facilitating signal smoothing or specific frequency filtering.
+module top_module(
+  input clk,
+  input rst,
+  input [n-1:0] in,
+  output reg [m-1:0] out // Changed from wire to reg
+);

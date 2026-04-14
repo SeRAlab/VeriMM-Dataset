@@ -1,0 +1,7 @@
+Design a circuit for an Automatic Gain Control (AGC) system that adjusts the gain of a signed 16-bit input signal based on feedback from its output. The module utilizes a clock signal for timing and includes an enable signal to activate the gain adjustment mechanism. When enabled, it computes the error between the input and output, applies proportional and integral control to adjust the gain value within predefined limits (gain_min and gain_max), and updates the output by multiplying the input signal by the calculated gain. If the module is disabled, it will simply pass the input through to the output while resetting internal states. The AGC system aims to maintain consistent output levels in the presence of varying input signal amplitudes.
+module top_module(
+  input clk,
+  input en,
+  input signed [15:0] in,
+  output signed [15:0] out
+);

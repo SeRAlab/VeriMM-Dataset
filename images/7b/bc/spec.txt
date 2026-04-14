@@ -1,0 +1,9 @@
+Design a simple vending machine controller that accepts 5, 10, and 25-cent coins, managing the state transitions between IDLE, ACCEPTING, and DISPENSING. The module monitors the total amount inserted and dispenses a product once the amount reaches or exceeds 50 cents. Upon dispensing, it sets the output signal `product_dispensed` to indicate a product has been released and resets the system back to the IDLE state, adjusting the current amount accordingly. The design uses a clock for synchronization and a reset input to initialize the states and amounts.
+module top_module(
+  input clk,
+  input reset,
+  input coin_5,
+  input coin_10,
+  input coin_25,
+  output reg product_dispensed
+);

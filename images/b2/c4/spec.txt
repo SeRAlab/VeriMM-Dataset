@@ -1,0 +1,6 @@
+Design a 4-bit binary counter with up and down counting functionality, controlled by the up_down input signal. When up_down is low, the counter increments from 0 to 15; upon reaching 15, it wraps back to 0 and sets the carry output high, indicating overflow. Conversely, when up_down is high, the counter decrements from 15 to 0; when it reaches 0, it wraps back to 15 and also sets the carry output high, indicating underflow. The counter can be reset to 0 with the reset input signal (rst).
+module top_module(
+  input clk, rst, up_down,
+  output reg [3:0] q,
+  output reg carry
+);

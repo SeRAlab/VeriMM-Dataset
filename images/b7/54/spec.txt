@@ -1,0 +1,9 @@
+Design a 4-bit counter capable of either incrementing or decrementing its value based on the input signal. It takes a 3-bit `index` for the amount to modify the count, and a control signal `inc_dec_b` to determine whether to add or subtract this index from the current count. The counter operates on a clock signal (`clk`) and has an active-high reset (`rst`) to clear its state. When enabled, it updates its current value according to the defined operation; otherwise, it will reset the count to zero. The output of the counter is reflected in the `count` register.
+module top_module(
+  output reg [3:0] count,
+  input [2:0] index,
+  input inc_dec_b,
+  input enable,
+  input rst,
+  input clk
+);

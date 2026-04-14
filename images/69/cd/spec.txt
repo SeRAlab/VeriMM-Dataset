@@ -1,0 +1,9 @@
+Design a testbench for a sparse matrix multiplication module. The testbench provides clock, reset, and enable signals, along with two 32-bit input data signals (din0 and din1). It verifies the functionality of the multiplication operation by simulating various test cases: when din0 is multiplied by din1 and the outputs are checked against expected values. The module is expected to produce the correct product while handling cases where the enable signal is low, ensuring that the output remains zero when multiplication is not activated.
+module top_module(
+    input clk,
+    input reset,
+    input ce,
+    input [31:0] din0,
+    input [31:0] din1,
+    output reg [31:0] dout
+);

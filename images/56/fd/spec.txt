@@ -1,0 +1,17 @@
+Design a digital circuit that performs addition on floating-point numbers represented in a specific format. The module, named `AddProcess`, takes multiple inputs including the operands, their respective opcodes, and alignment signals, and it produces an output with the resulting sum along with updated state information. It differentiates operations based on the opcode and utilizes signals for managing idle states. The module calculates the sum based on the sign and mantissa of the two inputs, handling alignment and normalization as needed, and retaining the formatted output for further processing. This design encapsulates floating-point arithmetic with conditional behaviors based on control signals.
+module top_module(
+	input [31:0] z_postAllign,
+	input [3:0] Opcode_Allign,
+	input idle_Allign,
+	input [35:0] cout_Allign,
+	input [35:0] zout_Allign,
+	input [31:0] sout_Allign,
+	input [7:0] InsTagAllign,
+	input clock,
+	output reg idle_AddState,
+	output reg [31:0] sout_AddState,
+	output reg [27:0] sum_AddState,
+	output reg [3:0] Opcode_AddState,
+	output reg [31:0] z_postAddState,
+	output reg [7:0] InsTagAdder
+    );

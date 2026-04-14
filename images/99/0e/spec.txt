@@ -1,0 +1,14 @@
+The design implements a 8-entry audio FIFO (First-In-First-Out) memory buffer that operates on clock and reset signals. It allows for configurable data input and output based on operational modes. The FIFO manages data through write and read enables, with write operations facilitated via a 32-bit input. The output can be formatted as either a 20-bit extended sequence or as the full 32-bit data based on the specified mode. The module includes status flags for "full" and "empty" states, helping to regulate data flow and prevent overflow or underflow conditions. The design is useful for audio processing applications where buffering is essential for smooth playback and data handling.
+module top_module(
+    input clk,
+    input rst,
+    input en,
+    input [1:0] mode,
+    input [31:0] din,
+    input we,
+    input re,
+    output [19:0] dout,
+    output [1:0] status,
+    output full,
+    output empty
+);

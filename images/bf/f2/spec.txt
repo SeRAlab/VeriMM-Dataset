@@ -1,0 +1,39 @@
+Please act as a professional verilog designer.
+    
+Implement a module to manage Special Function Registers (SFRs) within a microcontroller system, specifically tailored for operations related to the Watchdog Timer (WDT) and Non-Maskable Interrupt (NMI) functionalities. Its primary functions include:
+
+Watchdog Timer Control: It handles the enabling/disabling, resetting, and interrupt generation based on the WDT's status and configuration.
+Non-Maskable Interrupt Management: It manages the enabling/disabling of NMIs and flags their occurrence.
+Register Access: It facilitates reading from and writing to specific control and status registers associated with the WDT and NMI, namely IE1 (Interrupt Enable 1) and IFG1 (Interrupt Flag 1).
+
+This module plays a crucial role in ensuring system reliability and responsiveness by overseeing critical functions that prevent system lock-up and handle non-maskable interrupts, which are essential for dealing with emergency situations.
+
+Module name:  
+	omsp_sfr
+
+Input ports:
+	mclk: Main system clock input. Used to synchronize the internal operations of the module.
+	nmi_acc: Signal indicating access to a NonMaskable Interrupt. It is used to reset the NMI flag.
+	per_addr: 8bit address input for peripheral register access.
+	per_din: 16bit data input for writing to the peripheral registers.
+	per_en: Enable signal for peripheral access. It activates the module's functionality for register read/write operations.
+	per_wen: 2bit write enable signal for peripheral access, controlling high and low byte writes.
+	por: Poweron reset signal. It initializes the module's registers upon system startup.
+	puc: Peripheral Unit Controller reset signal. It resets the module's state without restarting the entire system.
+	wdtifg_clr: Signal to clear the Watchdog Timer interrupt flag.
+	wdtifg_set: Signal to set the Watchdog Timer interrupt flag.
+	wdtpw_error: Signal indicating a Watchdog Timer password error, leading to a system reset.
+	wdttmsel: Watchdog Timer mode select signal. It determines the operation mode of the WDT.
+Output ports:
+	nmie: Output signal indicating the enable status of NonMaskable Interrupts.
+	per_dout: 16bit data output for reading from the peripheral registers.
+	wdt_irq: Watchdog Timer interrupt request signal.
+	wdt_reset: Signal to reset the system based on Watchdog Timer conditions.
+	wdtie: Output signal indicating the enable status of the Watchdog Timer interrupt.
+
+
+Implementation:
+The RTL module omsp_sfr is designed to manage special function registers (SFRs) related to interrupt and watchdog timer functionalities within a microcontroller system. It interfaces with peripheral devices, handles interrupt enable and flag status, and controls the watchdog timer's operation. The module operates based on the clock signal mclk and responds to reset signals por (power-on reset) and puc (peripheral unit controller reset).
+
+Give me the complete code.
+

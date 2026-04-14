@@ -1,0 +1,12 @@
+Design a memory interface module that facilitates data transfer between two components. It accepts a data input of 128 bits width and produces a 24-bit output. The module is controlled by a clock and reset signal, managing read and write operations based on input and output stall conditions. It incorporates flow control logic to ensure data is only read when needed and allows conditional writing based on stalling. Additionally, it features a clear input to control data discarding and includes a parameterized adapter for data width adjustment, ensuring seamless integration within a broader system architecture.
+module top_module(
+    input clock,
+    input reset,
+    input [DATA_WIDTH_IN-1:0] data_in,
+    output reg read,
+    input stall_in,
+    output [DATA_WIDTH_OUT-1:0] data_out,
+    output reg write,
+    input stall_out,
+    input clear
+  );

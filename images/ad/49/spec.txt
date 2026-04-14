@@ -1,0 +1,9 @@
+Design a synchronous 8-bit binary adder with carry output. The module adds two 8-bit inputs, `a` and `b`, and produces an 8-bit sum as output. Additionally, it generates a carry output indicating if there is an overflow from the addition. The operation is triggered on the rising edge of a clock signal, and the adder can be reset asynchronously using an active-low reset signal. During a reset, the internal sum and carry outputs are initialized to zero.
+module top_module(
+    input wire clk,
+    input wire reset_n,
+    input wire [7:0] a,
+    input wire [7:0] b,
+    output wire [7:0] sum,
+    output reg carry  // Changed to reg to allow assignment in always block
+);

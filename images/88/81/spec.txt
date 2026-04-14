@@ -1,0 +1,11 @@
+Design a pipelined 6-stage multiplexer that selects one of six 4-bit data inputs based on a 3-bit select signal. The output is stabilized through a series of pipeline stages, ensuring that the selected input is propagated through each stage before being output. Each stage simply passes the value from the previous stage, effectively allowing data to flow through the pipeline, which can help in timing adjustments and improving throughput in larger systems.
+module top_module(
+    input [2:0] sel,
+    input [3:0] data0,
+    input [3:0] data1,
+    input [3:0] data2,
+    input [3:0] data3,
+    input [3:0] data4,
+    input [3:0] data5,
+    output reg [3:0] out
+);

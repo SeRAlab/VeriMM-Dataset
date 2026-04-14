@@ -1,0 +1,12 @@
+Implement a multi-functional I/O controller that processes incoming data based on a 4-bit address selection. When enabled and upon receiving a clock edge, the module reads from the `data_in` input and routes the data to `data_out` depending on the value of `addr`. Specific address conditions trigger the `valid`, `done`, and `error` output signals to indicate the status of the operation, with distinct behavior for addresses 0 to 3. The module also incorporates a reset feature, allowing it to clear all outputs to their initial states.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data_in,
+  input enable,
+  input [3:0] addr,
+  output reg [7:0] data_out,
+  output reg valid,
+  output reg done,
+  output reg error
+);

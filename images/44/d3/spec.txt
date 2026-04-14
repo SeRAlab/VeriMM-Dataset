@@ -1,0 +1,7 @@
+Design a barrel shifter that allows shifting of an 8-bit input data in both left and right directions based on a 3-bit control signal. The module takes a clock input, a 3-bit shift control where the first bit enables shifting, the second bit determines the direction, and the third bit selects between the shifted output and another source. The shift operation utilizes an embedded shift register to perform the shifting, while a 2-to-1 multiplexer manages the selection of the output data based on the control signal. The resultant shifted data is then available at the output on the rising edge of the clock.
+module top_module(
+    input clk,
+    input [2:0] shift_ctrl,
+    input [7:0] data_in,
+    output reg [7:0] data_out
+);

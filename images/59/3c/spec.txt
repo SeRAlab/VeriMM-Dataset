@@ -1,0 +1,8 @@
+Design a 4-bit binary counter that counts upwards on each positive clock edge when enabled. The counter initializes to zero upon receiving a reset signal and will indicate when it has reached its maximum value (15) by setting the output `max_reached` high. If the counter is not enabled or is reset, it holds its state and does not increment the count, ensuring proper functioning in synchronous applications.
+module top_module(
+  input clk,
+  input reset,
+  input enable,
+  output reg max_reached,
+  output reg [3:0] count
+);

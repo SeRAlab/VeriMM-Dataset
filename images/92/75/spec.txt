@@ -1,0 +1,8 @@
+Design a 3-bit shift register with parallel load capability. The module shifts its output either to the right or left based on the control signal: when control is 0, it shifts right, and when control is 1, it shifts left. The shifting operation occurs with the external input provided by `parallel_load`, where the least significant bit (LSB) or most significant bit (MSB) is loaded depending on the direction of the shift. The shifting forms part of a synchronous operation triggered by the clock edge, enabling flexible data movement within digital circuits.
+module top_module(
+    input clk,
+    input [2:0] parallel_load,
+    input shift,
+    input control,
+    output reg [2:0] out
+);

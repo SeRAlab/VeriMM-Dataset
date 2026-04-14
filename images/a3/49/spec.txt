@@ -1,0 +1,16 @@
+The given Verilog code implements a system monitor (SysMon) for managing and processing data through a finite state machine (FSM). The module operates in four states: IDLE, READ, PROCESS, and WRITE. It monitors an external signal (eoc) to initiate data reading from a specified address and processes input data (di) when in the PROCESS state. When transitioning to the WRITE state, it outputs the processed data while signaling readiness through drdy and eoc_out. The purpose of this module is to facilitate a structured flow for data acquisition and handling in applications such as sensor management or data logging, integrating features for JTAG interface status indications (jtag_busy, jtag_locked, jtag_modified) as additional control signals.
+module top_module(
+  input clk,
+  input [6:0] addr,
+  input [15:0] di,
+  input we,
+  input eoc,
+  output reg busy,
+  output reg [4:0] channel,
+  output reg [15:0] dout,
+  output reg drdy,
+  output reg eoc_out,
+  output reg [2:0] jtag_busy,  // Changed to reg
+  output reg jtag_locked,      // Changed to reg
+  output reg jtag_modified     // Changed to reg
+);

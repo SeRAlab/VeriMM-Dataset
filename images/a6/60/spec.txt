@@ -1,0 +1,8 @@
+Design a 4-bit shift register with asynchronous high-active reset and load functionality. When the asynchronous reset (areset) is activated, it sets the register to zero. If the reset is not active, the register can be loaded with a 4-bit input (data) when the load signal is high. Additionally, if the enable signal (ena) is asserted, the shift register shifts its contents left by one position, inserting a zero at the least significant bit. The most significant bit of the shift register is provided as output (q).
+module top_module(
+    input clk,
+    input areset, // async active-high reset to zero
+    input load,
+    input ena,
+    input [3:0] data,
+    output reg [3:0] q);

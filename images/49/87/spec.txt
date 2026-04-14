@@ -1,0 +1,10 @@
+Design a parallel-in serial-out shift register with load and shift enable capabilities. The circuit captures a 4-bit parallel input when the load signal is asserted and shifts in new bits from the ShiftIn input when the ShiftEn signal is active. The most significant bit of the shift register is output as ShiftOut, while the current contents of the register are available via the RegContent output. This module facilitates both parallel loading of data and serial shifting, making it suitable for data storage and transmission applications.
+module top_module(
+    input Clk,
+    input ShiftIn,
+    input [3:0] ParallelIn,
+    input load,
+    input ShiftEn,
+    output ShiftOut,
+    output [3:0] RegContent
+    );

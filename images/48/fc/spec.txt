@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit shift register with parallel load capability. The shift register should shift left on each clock cycle and load a parallel input value when the load signal is high.
+
+Module name:
+    shift_reg_4bit
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    load: Load signal. Defined as 1 to load the parallel input value and 0 for normal shift operation.
+    d: 4-bit parallel input value.
+    si: Serial input value for the shift operation.
+
+Output ports:
+    q: 4-bit output representing the current value of the shift register.
+
+Implementation:
+The module includes a register, q, which is updated in the always block, triggered on the positive edge of the clock signal (posedge clk).
+On every rising edge of the clock, if load is high, q is loaded with the value of d.
+Otherwise, q shifts left by one bit and the serial input value si is shifted into the least significant bit.
+
+Give me the complete code.

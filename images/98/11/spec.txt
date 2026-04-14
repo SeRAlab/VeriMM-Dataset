@@ -1,0 +1,7 @@
+Create a 4-bit binary adder that sums two 4-bit inputs. The module first computes the sum of inputs `a` and `b` in an initial combinational stage, storing the result in an intermediate register. Then, in a subsequent combinational stage, it adds the intermediate sum to the `sum` output. Finally, on the positive edge of the clock, it captures the final sum into the output register. Note that the design may not function correctly as intended due to potential issues with the usage of the output `sum` in its own calculation.
+module top_module(
+    input clk,          // Added clk input
+    input [3:0] a,
+    input [3:0] b,
+    output reg [3:0] sum
+);

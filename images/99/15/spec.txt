@@ -1,0 +1,7 @@
+Design a clock gating circuit that controls the propagation of the clock signal based on enable signals. The module produces an output clock signal, ENCLK, which is either the original clock, CLK, or a LOW signal depending on the state of the enable signal, EN, and a test enable signal, TE. When TE is HIGH, ENCLK follows CLK; when TE is LOW and EN is HIGH, ENCLK follows CLK; otherwise, ENCLK is set to LOW. The module also captures a 32-bit input, W, and outputs it to Y on the rising edge of ENCLK, effectively allowing W to be registered only when the clock is enabled, ensuring power savings and controlled operation in synchronous designs.
+module top_module(
+  input CLK, EN, TE,
+  input [31:0] W,
+  output reg ENCLK,
+  output reg [31:0] Y
+);

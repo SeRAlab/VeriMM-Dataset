@@ -1,0 +1,38 @@
+Implement a Verilog module with the following description: AXI4-lite to PicoRV32 adapter
+module top_module(
+	input clk, resetn,
+
+	
+
+	output        mem_axi_awvalid,
+	input         mem_axi_awready,
+	output [31:0] mem_axi_awaddr,
+	output [ 2:0] mem_axi_awprot,
+
+	output        mem_axi_wvalid,
+	input         mem_axi_wready,
+	output [31:0] mem_axi_wdata,
+	output [ 3:0] mem_axi_wstrb,
+
+	input         mem_axi_bvalid,
+	output        mem_axi_bready,
+
+	output        mem_axi_arvalid,
+	input         mem_axi_arready,
+	output [31:0] mem_axi_araddr,
+	output [ 2:0] mem_axi_arprot,
+
+	input         mem_axi_rvalid,
+	output        mem_axi_rready,
+	input  [31:0] mem_axi_rdata,
+
+	
+
+	input         mem_valid,
+	input         mem_instr,
+	output        mem_ready,
+	input  [31:0] mem_addr,
+	input  [31:0] mem_wdata,
+	input  [ 3:0] mem_wstrb,
+	output [31:0] mem_rdata
+);

@@ -1,0 +1,6 @@
+Develop a 16-bit barrel shifter that can shift the input data left by a variable amount specified by a 4-bit shift_amount input. The module performs the shift in stages, allowing for efficient parallel shifting; it first shifts the data by 8 bits if the highest bit of shift_amount is set, then by 4 bits for the next bit, and finally by 2 bits for the third bit, effectively enabling shifts of 0, 2, 4, 8, 10, 12, or 14 bits based on the combined conditions of the shift_amount signal. The final output reflects the result of the cumulative shifts.
+module top_module(
+    input [15:0] data,
+    input [3:0] shift_amount,
+    output reg [15:0] out
+);

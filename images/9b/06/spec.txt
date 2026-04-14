@@ -1,0 +1,14 @@
+Design a peripheral audio interface that manages audio data via a memory-mapped register format. This module operates on a clock signal and responds to control signals for initialization and data transactions. It features a 4-entry memory for storing audio-related data such as microphone input and control parameters, and outputs a 16-bit wide data signal. The module initializes the memory when reset or reset signals are low, updates its memory entries based on input data when the start signal is activated, and provides the stored data upon read requests when the chip select and read signals are active. If no valid operation is active, it defaults the output to zero.
+module top_module(
+  input clk,
+  input rst,
+  input reset,
+  input start,
+  input [15:0] d_in,
+  input cs,
+  input [1:0] addr,
+  input rd,
+  input wr,
+  input micData,
+  output reg [15:0] d_out
+);

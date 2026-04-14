@@ -1,0 +1,12 @@
+Design a 4-bit shift register that supports both serial and parallel data operations. The module includes a clock input for synchronization, a reset input to initialize the register to zero, and controls for shifting the bits left or right based on a direction signal. It can load data in parallel from a 4-bit input when a load signal is asserted, and it can clear its contents to zero when a clear input is activated. The module outputs the most significant bit as a serial output and provides the entire 4-bit value as a parallel output, allowing for flexible data handling in a digital circuit.
+module top_module(
+    input clk,
+    input rst,
+    input shift_dir,
+    input parallel_load,
+    input [3:0] parallel_input,
+    input serial_input,
+    input clear_input,
+    output serial_output,
+    output [3:0] parallel_output
+);

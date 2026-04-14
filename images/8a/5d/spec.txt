@@ -1,0 +1,9 @@
+Design a synchronous 8-bit XOR circuit that computes the bitwise XOR of two 8-bit inputs, a and b, when enabled. The circuit resets to zero on receiving an active-high reset signal and also utilizes a carry-lookahead mechanism to handle propagation delays, storing the carries internally. When the enable input is low, the output will be forced to zero. The output reflects the result of the XOR operation modified by any carries produced during the computation.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input [7:0] a,    // 8-bit input a
+    input [7:0] b,    // 8-bit input b
+    input enable,     // Enable input for the XOR operation
+    output reg [7:0] x // 8-bit output for the XOR operation
+);

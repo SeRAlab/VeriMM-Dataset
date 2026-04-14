@@ -1,0 +1,9 @@
+Design an HMAC (Hash-based Message Authentication Code) module that utilizes the SHA-256 hashing algorithm to generate and verify a MAC using a specified 64-bit key and a 512-bit message. Upon receiving a signal to generate the HMAC, the module processes the key and message to produce a 256-bit HMAC output. When checking the validity of an input HMAC, it compares it to the computed HMAC to indicate correctness through a boolean output. The design includes internal logic for key padding and uses XOR operations with predefined constants (IPAD and OPAD) for outer and inner key generation.
+module top_module(
+  input [63:0] key,
+  input [511:0] msg,
+  input gen_hmac,
+  input check_hmac,
+  output [255:0] hmac,
+  output hmac_ok
+);

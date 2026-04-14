@@ -1,0 +1,10 @@
+Design a circuit that functions as a controllable multiplier with a variable counter. The module takes two 4-bit inputs, A and B, and a 4-bit LOAD signal for manual input into a counter, with the counter adjusting its value based on an UP_DOWN control signal. On each clock cycle, if RESET is activated, the counter resets to zero; otherwise, it increments or decrements based on UP_DOWN. The module also computes the product of the inputs A and B using a bitwise multiplication approach, accumulating partial results based on the bits in B, and then multiplies this result with the current value of the counter to produce an 8-bit output named 'product'.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [3:0] LOAD,
+    input UP_DOWN,
+    input CLK,
+    input RESET,
+    output reg [7:0] product
+);

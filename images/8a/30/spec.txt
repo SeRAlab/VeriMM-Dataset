@@ -1,0 +1,9 @@
+Design a debounce circuit that stabilizes the outputs of input buttons and switches. The module takes a clock signal, a 5-bit button input, and an 8-bit switch input, producing debounced outputs for both buttons and switches. It utilizes a counter to filter out noise when the button states change, ensuring that changes are only registered if stable for a specified duration, thus allowing reliable button presses to be indicated through the `button_out` and `button_pulse` outputs. The switch input is passed through as `SW_OK` for subsequent usage without debouncing.
+module top_module(
+    input wire clk,
+    input wire [4:0] button,
+    input wire [7:0] SW,
+    output reg [4:0] button_out,
+    output reg [4:0] button_pulse,
+    output reg [7:0] SW_OK
+);

@@ -1,0 +1,7 @@
+Design a simple state machine with three states: IDLE, COUNT, and DONE. This module, triggered on the rising edge of a clock signal and reset on a negative edge, counts up to a predefined value (COUNT_TO_DONE) while transitioning from IDLE to COUNT. Once the count reaches this threshold, it transitions to the DONE state and asserts a 'done' signal. The output `state_out` reflects the current state, allowing external components to know the machine's status. This design is useful for implementing timing and control logic in digital circuits.
+module top_module(
+  input clock,
+  input reset,
+  output reg [1:0] state_out,
+  output reg done
+);

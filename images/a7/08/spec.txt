@@ -1,0 +1,8 @@
+Design a circuit that generates a pseudo-random number and maintains a cumulative sum of these numbers. On each rising edge of the clock, if the enable signal is active, the module updates a seed value to produce an 8-bit random number, which is then added to a 16-bit running total. The circuit also incorporates a reset functionality that reinitializes the seed and sum to their starting values when activated. The current random number and the cumulative sum are provided as outputs.
+module top_module(
+    input clk,
+    input reset,
+    input enable,
+    output reg [7:0] current_random,
+    output reg [15:0] current_sum
+);

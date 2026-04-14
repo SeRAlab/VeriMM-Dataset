@@ -1,0 +1,8 @@
+Design a circuit for LED control that facilitates bi-directional data transfer between an 8-bit bus and an array of 8 LEDs. The module activates the LEDs based on data input when both chip enable (ce_n) and write signals are asserted; if these conditions are met, the LED states are set to the complement of the input data. The LEDs are reset to their off state when the reset_n signal is low. The data bus outputs the inverted LED states unless the module is in high impedance mode, indicated by active chip enable and read signals.
+module top_module(
+    input            read_n,
+                     write_n,
+                     reset_n,
+                     ce_n,
+    inout      [7:0] data,
+    output reg [7:0] leds);

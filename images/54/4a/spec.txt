@@ -1,0 +1,12 @@
+Design a synchronous FIFO (First In, First Out) memory module that supports separate read and write clocks. This module allows data to be written to and read from a buffer of configurable depth (16 entries) and width (8 bits). The FIFO maintains status flags for full and empty states. It features a write enable (wr_en) and read enable (rd_en) mechanism, ensuring that data can only be written when the FIFO is not full and read when the FIFO is not empty. The design includes reset functionality to initialize all pointers and status indicators.
+module top_module(
+  input wr_clk,
+  input rd_clk,
+  input rst,
+  input wr_en,
+  input rd_en,
+  input [DATA_WIDTH-1:0] wr_data,
+  output reg full,
+  output reg empty,
+  output reg [DATA_WIDTH-1:0] rd_data // Changed to reg
+);

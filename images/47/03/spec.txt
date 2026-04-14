@@ -1,0 +1,14 @@
+Design a synchronous data shifting and processing module that converts a serial input stream into two parallel 16-bit outputs. It captures input signals on specific edges of a clock signal and maintains internal shift registers for managing the data flow. When the designated shift signals are triggered, the module updates the outputs and prepares the data for the left and right channels, while also providing control signals to indicate the readiness of the new data. The design ensures synchronization through additional flip-flops to manage update signals and outputs, making it suitable for applications requiring parallel data processing from a serial source.
+module top_module(
+	input clk,	
+	input ym_so,
+	input ym_sh1,
+	input ym_sh2,
+	input ym_p1,
+	output reg [15:0] left,
+	output reg [15:0] right,
+	output reg [15:0] left_exp,
+	output reg [15:0] right_exp,	
+	output            update_left,
+	output            update_right
+);

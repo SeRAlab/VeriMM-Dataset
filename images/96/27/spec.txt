@@ -1,0 +1,9 @@
+Write a Verilog module according to the following description. Assume all signals are positive clock/clk edge triggered unless otherwise specified.
+You have a 14-bit input vector n[13:0]. Perform the following operations:
+// (1) out_and2: Each bit of this output vector should indicate whether both the corresponding input bit and its neighbor to the left are '1'. For example, out_and2[12] should indicate if n[12] and n[13] are both 1. Since n[13] has no neighbor to the left, we don't need to know out_and2[13].
+// (2) out_nor2: Each bit of this output vector should indicate whether neither the corresponding input bit nor its neighbor to the left are '1'. For example, out_nor2[12] should indicate if neither n[12] nor n[13] are 1. Since n[13] has no neighbor to the left, we don't need to know out_nor2[13].
+
+module top_module (
+	input [13:0] n,
+	output [12:0] out_and2,
+	output [12:0] out_nor2);

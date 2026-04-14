@@ -1,0 +1,9 @@
+Design a modular circuit that implements a 6-bit Johnson counter along with a T flip-flop. The Johnson counter generates a sequence of states on the rising edge of the clock, which shifts the bits in a ring-like manner. The output of the Johnson counter controls a multiplexer that selects a specific 64-bit output pattern based on the current state of the counter, while the T flip-flop toggles its output based on the input signal `t_d`. The final output is computed by performing a bitwise AND operation between the selected output from the multiplexer and the output of the T flip-flop, which is then registered on the clock edge. The design handles a reset condition that initializes the counter and the final output.
+module top_module(
+    input clk,
+    input rst_n,
+    output reg [63:0] johnson_out,
+    input t_d,
+    output reg t_out,
+    output reg [63:0] final_out
+);

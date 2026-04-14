@@ -1,0 +1,8 @@
+Design a binary search algorithm implemented in hardware. The module takes a sorted array and a target value as inputs and uses a clock signal for synchronization. Upon reset, it initializes the search boundaries and sets the index output to -1. During each clock cycle, it performs comparisons to halve the search space based on the target value, ultimately outputting the index of the target in the sorted array if found, or -1 if it does not exist. The design operates iteratively until the maximum depth of the search is reached, corresponding to the logarithm of the array size.
+module top_module(
+  input clk,
+  input rst,
+  input [31:0] sorted_array,
+  input [31:0] target,
+  output reg [31:0] index
+);

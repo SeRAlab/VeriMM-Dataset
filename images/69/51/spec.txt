@@ -1,0 +1,9 @@
+Design a program counter (PC) module that updates the instruction address based on clock ticks. Upon a reset signal, it initializes the address to zero. During each clock cycle, it increments the current address by 4. Additionally, if a conditional jump is triggered (`SaltoCond` is true and `oZero` is false), the module updates the address to a new value derived from a signed extended input (`extSigno`), left-shifted by two bits. This design is intended for use in a pipeline or sequential processing architecture, enabling dynamic instruction address control.
+module top_module(
+    input clk,
+    input reset,
+    input SaltoCond,
+    input signed [31:0] extSigno,
+    input oZero,
+    output reg [31:0] direinstru
+);

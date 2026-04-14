@@ -1,0 +1,13 @@
+Design a dual-function element that serves as both a D flip-flop and a 2-to-1 multiplexer. It captures the input 'd' on the positive edge of the clock 'clk' when enabled ('en') and can asynchronously clear ('clr') or preset ('pr') its output. The module also features a multiplexer that selects between two inputs ('in0' and 'in1') based on the 'sel' signal, routing the selected input to the output 'out' while providing the stored value in 'q' from the flip-flop.
+module top_module(
+    input d,
+    input clk,
+    input clr,
+    input pr,
+    input en,
+    input sel,
+    input in0,
+    input in1,
+    output q,
+    output out
+);

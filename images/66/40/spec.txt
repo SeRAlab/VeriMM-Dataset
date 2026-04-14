@@ -1,0 +1,12 @@
+Design a register file with eight 16-bit registers for use in a digital system. This module allows for reading data from two registers identified by inputs `rs1` and `rs2`, and writing data to a register specified by `rd`. It features a synchronous reset that clears all registers, setting them to zero. The register file handles write operations when the `write_reg` input is high, transferring the value from `data_in` into the specified register. The last register written to is tracked by `rd_last`, enabling sequential operations while ensuring correct reading and writing functionality.
+module top_module(	input 			clk,	 
+						rst,	 
+			input[2:0] 		rs1,	 
+						rs2,	 
+						rd,	 
+			input[15:0]		data_in, 
+			input			write_reg,	 
+
+			output reg[15:0]	reg1data,
+						reg2data
+		);

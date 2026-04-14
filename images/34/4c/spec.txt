@@ -1,0 +1,17 @@
+
+Design a simple NVMe controller state machine that manages three states: IDLE, READ, and WRITE. The state machine should have the following inputs:
+- clk: Clock signal
+- rst: Reset signal
+- req: Request signal (1 = request to either read or write)
+- rw: Read/Write signal (1 = read, 0 = write)
+
+The outputs should be:
+- state: Current state of the controller (IDLE, READ, WRITE)
+- done: Indicates when the read or write operation is complete (1 = done)
+
+The state machine should transition as follows:
+1. From IDLE to READ if req = 1 and rw = 1.
+2. From IDLE to WRITE if req = 1 and rw = 0.
+3. From READ to IDLE when done = 1.
+4. From WRITE to IDLE when done = 1.
+5. The state machine should reset to IDLE upon receiving a reset signal (rst = 1).

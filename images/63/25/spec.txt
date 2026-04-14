@@ -1,0 +1,12 @@
+Design a basic arithmetic calculator that performs addition, subtraction, multiplication, and division on two 8-bit inputs (A and B) based on selected operations. The module includes a reset functionality and outputs the results of each operation: sum, difference, product, and quotient. The multiplication result is clamped to an 8-bit maximum, while division handles division by zero gracefully by setting the quotient to zero and indicating an overflow condition in the product. The calculator operates synchronously with a clock signal and resets all outputs to zero when activated.
+module top_module(
+  input  wire        clk,
+  input  wire        rst,
+  input  wire [7:0]  A,
+  input  wire [7:0]  B,
+  input  wire [1:0]  op_sel, // Added op_sel input
+  output reg  [7:0]  sum,
+  output reg  [7:0]  diff,
+  output reg  [7:0]  prod,
+  output reg  [7:0]  quot
+);

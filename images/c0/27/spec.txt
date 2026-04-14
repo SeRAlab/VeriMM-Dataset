@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+    
+Implement a module to simulate a dual-port Static Random-Access Memory (SRAM) with read-before-write (RBW) capability. It is parameterized with address width (`AW`) and data width (`DW`), allowing for flexibility in memory size and data size configurations. The module supports separate read and write operations on both ports, with each port having its own set of control and data signals. This module can be used in systems requiring simultaneous access to a memory block from two different sources, such as in multi-processor systems or in applications requiring a shadow memory interface.
+
+Module name:  
+	fasm_tpsram_rbw
+
+Input ports:
+	dat_i [DW1:0]: Data input for the primary port. This is the data to be written into the memory location specified by adr_i.
+	adr_i [AW1:0]: Address input for the primary port. Specifies the memory location to be accessed.
+	wre_i: Write enable for the primary port. When high, the data on dat_i is written to the address specified by adr_i.
+	stb_i: Strobe input for the primary port. Indicates a valid transaction.
+	rst_i: Reset input for the primary port. Resets the internal state.
+	clk_i: Clock input for the primary port. Synchronizes the operations.
+	xdat_i [DW1:0]: Data input for the secondary port.
+	xadr_i [AW1:0]: Address input for the secondary port.
+	xwre_i: Write enable for the secondary port.
+	xstb_i: Strobe input for the secondary port.
+	xrst_i: Reset input for the secondary port.
+	xclk_i: Clock input for the secondary port.
+
+
+Implementation:
+The RTL module fasm_tpsram_rbw is designed to simulate a dual-port RAM with read-before-write (RBW) capability. It is parameterized with address width (AW) and data width (DW), allowing for flexibility in memory size and data size. The module interfaces with two separate sets of signals, prefixed with nothing and 'x' respectively, to simulate dual-port functionality. Each port can perform read and write operations independently, driven by separate clock domains (clk_i and xclk_i).
+
+Give me the complete code.
+

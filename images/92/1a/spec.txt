@@ -1,0 +1,8 @@
+Design a 3-bit up/down counter that increments or decrements its count based on the `dir` input, which determines the counting direction. When the counter reaches its maximum value (7 in binary, or `111`) during incrementing, it wraps around to 0 and sets the `cout` output high to indicate a counter overflow. Conversely, when decrementing and the counter reaches 0, it wraps around to 7 and also sets `cout` high to indicate an underflow. The counter can be asynchronously reset to 0 with the `areset` input. The module operates on the rising edge of the `clk` signal.
+module top_module(
+  input clk,
+  input areset,
+  input dir,
+  output reg [2:0] count,
+  output reg cout
+);

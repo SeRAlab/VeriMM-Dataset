@@ -1,0 +1,9 @@
+Design a GPS receiver module that processes signals from multiple satellites to calculate and output the latitude, longitude, and altitude of a location. The module takes a clock signal and a reset signal as inputs and outputs the calculated geographical coordinates in a specified bit-width format. When reset is activated, the output registers for latitude, longitude, and altitude are initialized to zero. On each clock cycle, if not in reset, the module is intended to perform calculations based on input satellite data to update the output registers, although the specific calculation logic is not detailed in the current implementation.
+module top_module(
+  input clk,
+  input reset,
+  input [n-1:0] sat,
+  output reg [p-1:0] lat,
+  output reg [p-1:0] lon,
+  output reg [q-1:0] alt
+);

@@ -1,0 +1,7 @@
+Design a 100-bit carry-select adder that computes the sum of two 100-bit binary numbers, `a` and `b`, with an input carry `cin`. The adder is divided into two sections: the lower 50 bits are processed using a ripple carry adder (RCA) to generate intermediate sums and carry outputs, while the upper 50 bits utilize the carry output from the first section to conditionally select between two sums based on the carry. The final outputs include the 100-bit sum and the final carry-out signal. This design improves addition speed by mitigating carry propagation delays through the use of parallel processing in the first stage.
+module top_module(
+    input [49:0] a, b,
+    input cin,
+    output [49:0] s,
+    output [49:0] c
+);

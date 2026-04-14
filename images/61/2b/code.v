@@ -1,0 +1,16 @@
+module top_module(speaker,clk,en);input clk,en;
+	output speaker;
+	parameter clkdivider = 25000000/800/2;
+	reg [23:0] tone;
+	
+	always @(posedge clk)
+		tone <= tone+1;
+		
+	reg [14:0] counter;
+	always @(posedge clk)
+		if(counter==0) counter <= (tone[23] ? clkdivider-1 : clkdivider/2-1);
+		else counter <= counter-1;
+	
+	reg speaker;
+	always @(posedge clk)
+		if(counter==0) speaker <= ~speaker & ~en;endmodule

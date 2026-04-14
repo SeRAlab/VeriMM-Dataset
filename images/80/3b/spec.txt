@@ -1,0 +1,8 @@
+Design a 16x4 memory block that operates on the rising edge of the input clock signal (clka). The module allows writing to memory when the enable signal (ena) is active, storing a 4-bit input (dina) at a specified 4-bit address (addra). Additionally, it outputs the stored 4-bit value from the same address (douta) on every clock cycle, regardless of the enable signal state. This structure is useful for implementing programmable look-up tables or small RAM blocks in digital circuits.
+module top_module(
+  input wire clka,
+  input wire ena,
+  input wire [3:0] addra,
+  input wire [3:0] dina,
+  output reg [3:0] douta  // Changed from wire to reg
+);

@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement a 16-bit shift register that shifts left by 1 bit on every clock cycle, with serial data input.
+
+Module name:  
+    shift_reg               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the register.
+    data_in: Serial data input for the register.
+Output port:
+    Q: 16-bit register representing the current value of the shift register.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the register value is updated.
+If the reset signal (rst_n) is low, the register value (Q) is set to 0.
+Otherwise, the register shifts left by 1 bit, and the data_in value is placed in the least significant bit position.
+
+Give me the complete code.
+
+module shift_reg(
+   input                clk ,
+   input                rst_n,
+   input                data_in,
+ 
+   output reg [15:0]    Q  
+);

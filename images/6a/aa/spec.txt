@@ -1,0 +1,9 @@
+Design a 16-bit multiplier with pipelining capability. The module multiplies two 16-bit input numbers, `data_in1` and `data_in2`, and produces a 32-bit output, `product_out`. When the `enable_pipeline` signal is asserted, multiplication is executed in several stages through a series of partial products and accumulation, allowing for increased throughput at the cost of latency. When pipelining is disabled, it performs a direct multiplication in a single clock cycle. The module is equipped with a reset functionality to initialize all internal registers.
+module top_module(
+    input clk,
+    input reset,
+    input [15:0] data_in1,
+    input [15:0] data_in2,
+    input enable_pipeline,
+    output reg [31:0] product_out
+);

@@ -1,0 +1,21 @@
+Please act as a professional Verilog designer.
+
+Implement a 12-bit synchronous shift register with a clock input (clk), a reset input (reset), an enable input (en), and a serial input (serial_in). The current register value is available on a 12-bit output (reg_out).
+
+Module name:
+   shift_register_12bit
+
+Input ports:
+   clk: Clock signal used for synchronous operation.
+   reset: Reset signal used to initialize the register to zero.
+   en: Enable signal to control whether the register is active.
+   serial_in: Serial input data that shifts into the register.
+
+Output ports:
+   reg_out: 12-bit output representing the current register value.
+
+Implementation:
+On the positive edge of the clock signal (clk) or the positive edge of the reset signal (reset), the module checks if the reset signal (reset) is high and initializes the register value to zero.
+If the reset signal (reset) is low and the enable signal (en) is high, the module shifts the register value left by one bit and loads the serial input (serial_in) into the least significant bit.
+
+Give me the complete code.

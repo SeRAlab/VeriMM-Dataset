@@ -1,0 +1,9 @@
+Design a control circuit that manages reset and data display operations based on a clock signal. When the reset input is low, the output reset signal (`rst`) and data (`dis`) are set to their inactive states (low). When reset is high but the RX done signal indicates that data reception is incomplete (`Rx_done` is low), the output reset signal is activated. Once the RX done signal becomes high, the received data is latched into the output (`dis`), and the reset signal remains active. This module primarily acts as a data terminator that ensures proper handling of data reception and control signaling in a communication system.
+module top_module(
+	reset,
+	Bclkx16_,
+	Rx_done,
+	data,
+	rst,
+	dis
+);

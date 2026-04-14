@@ -1,0 +1,15 @@
+Implement a dual-port memory block capable of storing 4-bit wide data in two separate 4-entry memory arrays (mem_a and mem_b). Each memory port (a and b) is independently controlled by its own clock (clk_a and clk_b) and enable signals (en_a and en_b). The module allows writing data to the respective memory location based on the address inputs (addr_a and addr_b) when the write enable signals (we_a and we_b) are asserted. Data can be read from the specified addresses simultaneously for both ports, outputting the results to data_out_a and data_out_b.
+module top_module(
+    input clk_a,
+    input clk_b,
+    input en_a,
+    input en_b,
+    input [3:0] addr_a,
+    input [3:0] addr_b,
+    input [3:0] data_a,
+    input [3:0] data_b,
+    input we_a,
+    input we_b,
+    output reg [3:0] data_out_a,
+    output reg [3:0] data_out_b
+);

@@ -1,0 +1,12 @@
+Design a circuit that performs dual functions: it checks the parity of an 8-bit input and serves as a 6-to-1 multiplexer for four-bit inputs. The module first computes the parity of the 8-bit input, producing a parity bit that indicates whether the number of set bits is odd or even. Based on a 3-bit selection input `sel`, it selects one of six possible 4-bit data inputs. If the computed parity is odd, the output provides the value from the selected data input; if the parity is even, the output is set to zero. This module efficiently integrates parity checking and multiplexing functionalities into a single design.
+module top_module(
+    input [7:0] in, // 8-bit input for parity checker
+    input [2:0] sel, // 3-bit input for multiplexer selection
+    input [3:0] data0, // 4-bit input data 0 for multiplexer
+    input [3:0] data1, // 4-bit input data 1 for multiplexer
+    input [3:0] data2, // 4-bit input data 2 for multiplexer
+    input [3:0] data3, // 4-bit input data 3 for multiplexer
+    input [3:0] data4, // 4-bit input data 4 for multiplexer
+    input [3:0] data5, // 4-bit input data 5 for multiplexer
+    output reg [3:0] out // Change to reg type as out needs to be assigned in an always block
+);

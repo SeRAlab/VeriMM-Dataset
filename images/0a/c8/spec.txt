@@ -1,0 +1,11 @@
+
+Design a SPI (Serial Peripheral Interface) controller that can send and receive data. The SPI controller should have the following signals:
+- `clk`: SPI clock input
+- `reset`: Active high reset signal
+- `mosi`: Master Out Slave In (data sent from the master to the slave)
+- `miso`: Master In Slave Out (data sent from the slave to the master)
+- `ss`: Slave Select (active low, the signal used to select the slave)
+- `data_in`: 8-bit data input to be sent to the slave
+- `data_out`: 8-bit data output received from the slave
+- `start`: Signal to start the SPI transaction
+The controller should send 8 bits of data from `data_in` to the slave, then receive 8 bits of data from the slave into `data_out`. The transaction should be clocked by the `clk` signal and must handle the `reset` signal properly.

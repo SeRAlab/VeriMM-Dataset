@@ -1,0 +1,9 @@
+Design a clock divider circuit that generates four different divided clock signals from an input clock. The output signals include `clk_div2`, `clk_div4`, `clk_div8`, and `clk_div16`, which produce clock frequencies that are halved progressively from the input `clk`. The division is controlled by a reset signal; when activated, it resets the divided clock outputs to zero. Each output clock signal toggles at the positive edge of the preceding divided clock, effectively providing clock signals with frequencies of the input clock divided by 2, 4, 8, and 16 respectively.
+module top_module(
+  input clk,
+  input reset,
+  output reg clk_div2,
+  output reg clk_div4,
+  output reg clk_div8,
+  output reg clk_div16
+);

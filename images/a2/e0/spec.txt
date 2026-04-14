@@ -1,0 +1,6 @@
+Design a circuit that computes the inverse trigonometric functions (arcsine, arccosine, and arctangent) of a signed 32-bit input using a Taylor series expansion for each function. The module selects which function to compute based on a 2-bit selector input (`sel`). The results are provided as signed 32-bit outputs, where each function's computed value is right-shifted for precision adjustment according to a defined parameter. If the selector does not match any valid function, the output defaults to zero.
+module top_module(
+  input signed [31:0] x,
+  input [1:0] sel,
+  output reg signed [31:0] y
+);

@@ -1,0 +1,6 @@
+Design a specialized Arithmetic Logic Unit (ALU) that performs various arithmetic and logical operations based on a 3-bit control signal (ALUControl). The module accepts two signed 32-bit inputs (SrcA and SrcB) and computes an output (ALUResult) that can represent the sum, difference, bitwise AND, bitwise OR, bitwise AND with negation, bitwise OR with negation, and a less-than comparison. The ALU also has a Zero output that indicates whether the result is zero. The ALUControl signals define the operations: 0 for addition, 1 for subtraction, 2 for logical AND, 4 for logical OR, 5 for AND with negation of the second operand, 6 for OR with negation, and 7 for comparing the two inputs. If the ALUControl input does not match any defined case, the output is set to an unknown state.
+module top_module(input [2:0] ALUControl, 
+			input signed [31:0] SrcA, 
+			input signed [31:0] SrcB, 
+			output reg signed [31:0] ALUResult,
+			output reg Zero);

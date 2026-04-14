@@ -1,0 +1,4 @@
+Design a synchronous circuit that utilizes a reset mechanism to manage the outputs y1 and y2 based on a 4-bit input a and a clock signal clk. Both outputs are registered on the rising edge of clk, but y1 is affected by the reset signal, which sets it to zero when activated, while y2 also takes the same input a but does not react to the reset condition until the next clock cycle. This effectively creates a register for y1 that resets immediately upon a reset signal, while y2 holds its value until the next clock edge after reset is released.
+module top_module(input [3:0] a,
+                input        clk, reset,
+                output  reg [3:0] y1, y2);

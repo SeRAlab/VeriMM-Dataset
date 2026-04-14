@@ -1,0 +1,10 @@
+Design a simple 8-bit calculator that performs basic arithmetic operations: addition, subtraction, multiplication, and division based on a 2-bit operation code (op). The module uses a clock signal for synchronous operation and a reset signal to initialize internal registers. On each positive clock edge, it captures the input values for `a` and `b`, along with the selected operation, computes the result, and updates the output. The output is valid on the subsequent negative clock edge, indicating when the result is ready for use.
+module top_module(
+    input clk,
+    input rst,
+    input [1:0] op,
+    input [7:0] a,
+    input [7:0] b,
+    output reg [7:0] out,
+    output reg valid
+);

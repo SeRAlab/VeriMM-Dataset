@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement a module for an 8-bit bidirectional shift register. The shift register should be able to shift left or right based on a control signal. When shift_left is 1, the register shifts left; when shift_right is 1, the register shifts right. The data input (din) is used for shifting in new bits.
+
+Module name:
+    bidirectional_shift_reg
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst_n: Reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    din: Data input used for shifting in new bits.
+    shift_left: Control signal to shift left.
+    shift_right: Control signal to shift right.
+
+Output ports:
+    dout: 8-bit output representing the current value of the shift register.
+
+Give me the complete code.
+
+module bidirectional_shift_reg(
+    input clk,
+    input rst_n,
+    input din,
+    input shift_left,
+    input shift_right,
+    output [7:0] dout
+);

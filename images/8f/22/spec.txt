@@ -1,0 +1,10 @@
+Design a 4-bit adder/subtractor circuit that can perform addition or subtraction based on the 'sub' control input. When 'sub' is asserted (logic high), the circuit effectively computes A - B by inverting B (using two's complement) and adding it to A, while also managing carry for overflow. The operations are synchronized to a clock signal, with the ability to reset the internal state to zero using the 'rst' input. The final output includes a 4-bit result and a carry-out signal indicating overflow.
+module top_module(
+  input [3:0] A,
+  input [3:0] B,
+  input sub,
+  input clk,
+  input rst,
+  output [3:0] out,
+  output cout
+);

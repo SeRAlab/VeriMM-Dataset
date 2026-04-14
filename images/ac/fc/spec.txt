@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+
+Implement a 16-bit linear feedback shift register (LFSR) with a feedback polynomial for pseudo-random number generation. The LFSR should also have a load capability to initialize it with a seed value.
+
+Module name:  
+    lfsr 
+
+Parameters:
+    WIDTH: Width of the LFSR (default: 16)
+    POLY: Feedback polynomial (default: 16'hB400 for x^16 + x^14 + x^13 + x^11 + 1)
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Synchronous reset signal. When asserted, the LFSR is reset to a seed value.
+    load: Load enable signal. When asserted, the LFSR is initialized with the seed value.
+    seed: Seed value used to initialize the LFSR, width determined by WIDTH.
+
+Output ports:
+    lfsr_out: Output bus representing the current value of the LFSR, width determined by WIDTH.
+
+Implementation:
+LFSR Logic:
+The LFSR shifts its value left on each clock cycle, with the feedback bit determined by the feedback polynomial.
+Load Logic:
+When the load signal is asserted, the LFSR is initialized with the seed value.
+Reset Logic:
+When the reset signal is asserted, the LFSR is initialized with the seed value.
+
+Output Assignments:
+The lfsr_out output is assigned the current value of the LFSR.
+
+Give me the complete code.

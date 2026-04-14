@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+
+Implement a module for a 4-bit shift register with both left and right shift capabilities. The direction of the shift is determined by the dir input signal. If dir is 0, the register shifts left; if dir is 1, the register shifts right.
+
+Module name:  
+    shift_register    
+
+Input ports:
+    clk: Clock signal for synchronous operations.
+    rst_n: Reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    dir: Direction control signal (0 for left shift, 1 for right shift).
+    d: 4-bit data input to load into the shift register.
+
+Output ports:
+    q: 4-bit output representing the current state of the shift register.
+
+Give me the complete code.
+
+module shift_register(
+    input clk,
+    input rst_n,
+    input dir,
+    input [3:0] d,
+    output [3:0] q
+);

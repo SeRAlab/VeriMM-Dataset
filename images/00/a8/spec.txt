@@ -1,0 +1,10 @@
+Implement a simple Network Address Translation (NAT) module that translates an internal IP address to a public IP address based on a predefined mapping. The module should have the following inputs:
+- `internal_ip` (5-bit input representing the internal IP address)
+- `translate` (1-bit input to trigger the translation)
+The output should be `public_ip` (5-bit output representing the translated public IP address). If no translation is triggered, the output should be the same as the input internal IP. Define a mapping for internal IPs to public IPs as follows:
+- Internal IP 00000 -> Public IP 11111
+- Internal IP 00001 -> Public IP 11110
+- Internal IP 00010 -> Public IP 11101
+- Internal IP 00011 -> Public IP 11100
+- Internal IP 00100 -> Public IP 11011
+If the internal IP is not in the mapping, output the same internal IP.

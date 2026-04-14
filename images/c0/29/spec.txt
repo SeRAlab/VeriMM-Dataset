@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a priority encoder. Its primary role to encode a 15-bit binary input (`din`) into a 4-bit binary output (`dout`). The encoding process involves identifying the highest-order bit that is set to '1' in the input vector and representing its position in the output vector. This module is crucial in systems where the identification of the highest priority signal among multiple inputs is required, such as interrupt controllers, signal multiplexing, and various control applications within digital systems.
+
+Module name:  
+	tlu_prencoder16
+
+Input ports:
+	din [14:0]: A 15bit input vector. This is the primary input to the module, representing up to 15 individual signals with varying priorities. The bit with the highest index (14) has the highest priority, and the bit with the lowest index (0) has the lowest priority.
+Output ports:
+	dout [3:0]: A 4bit output vector. This output represents the binary encoding of the position of the highestorder '1' bit in the input vector. The encoding is such that dout corresponds to the binary representation of the highest priority signal that is active (set to '1') in the input vector.
+
+
+Implementation:
+The RTL module tlu_prencoder16 is designed to implement a priority encoder with a 15-bit input (din) and a 4-bit output (dout). A priority encoder is a combinational logic circuit that essentially scans its input for the highest-order active signal and encodes its position into a binary number at the output. In this context, the module scans the 15-bit input from the most significant bit (MSB) to the least significant bit (LSB), assigning priority to the highest-order bit that is set to '1'.
+The module employs a series of combinational logic gates to achieve its functionality, without any sequential logic elements like flip-flops or latches, making its operation purely combinational. The core of its operation lies in generating a one-hot encoded signal (onehot) based on the input din, which is then used to determine the binary encoded output dout.
+
+Give me the complete code.
+

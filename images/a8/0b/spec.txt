@@ -1,0 +1,7 @@
+Design a control unit for an FFT (Fast Fourier Transform) operation that generates start-of-packet (sop) and end-of-packet (eop) signals based on a clock-driven counter. The module utilizes a counter that increments on each clock cycle and resets when it reaches a maximum value of 1030 or when the reset signal is activated. Specifically, the output signal sink_sop indicates the beginning of a data packet when the counter is zero, while sink_eop signals the end of a data packet when the counter reaches 1023. This setup helps manage data flow for an FFT processing system by delineating packet boundaries.
+module top_module(
+	input clk,
+	input rst_n,
+	output sink_sop,
+	output sink_eop
+);

@@ -1,0 +1,7 @@
+Design a single-port, 8-byte wide APB (Advanced Peripheral Bus) slave interface that enables read and write operations to an internal RAM. The module responds to address and control signals: when `psel` is active, it asserts `pready`, indicating that it is ready to communicate. On the positive edge of the clock, if `penable` is also active, the module can either write data from `pwdata` to the specified address in RAM when `pwrite` is high, or read data from RAM into `prdata` when `pwrite` is low. The internal RAM has a size of 8 bytes and provides basic interfacing to a master device typically in a microcontroller or digital system.
+module top_module(output reg pready,
+output reg [7:0]prdata,
+input psel,penable,pclk,pwrite,
+input [7:0]pwdata,
+input [7:0]paddr
+);

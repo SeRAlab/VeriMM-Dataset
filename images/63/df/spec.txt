@@ -1,0 +1,10 @@
+Design a synchronous 4-bit register with a reset and load functionality. On a clock edge, if the reset signal is high, the register is cleared to zero. If the load_enable signal is high, the contents of the 4-bit register 'bar' are loaded into 'foo'. Additionally, if write_enable is asserted, a single bit can be written to a specific address (specified by the 2-bit adr input) in the 'foo' register. The current value of the register 'foo' is output on foo_out.
+module top_module(
+    input clk, 
+    input rst, 
+    input load_enable, 
+    input write_enable,
+    input [1:0] adr,
+    input bit_in,  // Changed input name to avoid conflict with Verilog bit type
+    output reg [3:0] foo_out
+);

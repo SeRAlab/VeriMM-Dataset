@@ -1,0 +1,8 @@
+Design a finite state machine (FSM) for detecting a specific 3-bit pattern (101) within a 10-bit input data stream. The FSM transitions through three states: IDLE, STATE1, and STATE2. In the IDLE state, it waits for the pattern to appear in the most significant bits of the input data. When it detects the first bit of the pattern, it transitions to STATE1, checking the subsequent bits while ensuring the pattern remains valid. If it reaches STATE2 and confirms the complete pattern is present, it sets the output signal "match" to high, indicating a successful detection, then returns to IDLE. The module also incorporates a reset functionality to initialize the state and output signals.
+module top_module(
+  input clk,
+  input reset,
+  input [9:0] data,
+  output reg match,
+  output reg [1:0] state
+);

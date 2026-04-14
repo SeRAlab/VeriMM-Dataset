@@ -1,0 +1,8 @@
+Design a 64-bit shift register with loading capabilities. When the load signal is high, the output register `q` is loaded with the input data. If load is low and the enable signal is high, the amount of shifting performed on `q` is determined by the 2-bit input `amount`: shifting left by 1 bit (for amount 00), shifting left by 8 bits (for amount 01), shifting right by 1 bit with sign extension (for amount 10), and shifting right by 8 bits with sign extension (for amount 11). This module effectively manages data movement and manipulation within a synchronous clock environment.
+module top_module(
+    input clk,
+    input load,
+    input ena,
+    input [1:0] amount,
+    input [63:0] data,
+    output reg [63:0] q);

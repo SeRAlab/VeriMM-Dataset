@@ -1,0 +1,28 @@
+Design a read request arbitration module that manages multiple master inputs (three in this case - m0, m1, and m2) requesting access to a shared memory resource. The module determines which master can proceed based on their read requests, generating control signals for address, selection, and acknowledgment outputs. It maintains a busy status output to indicate when any master is active in making a read request. The selected master's address and selection signals are routed to the output, while the data input and acknowledgment signals are appropriately directed based on which master is granted access, ensuring that only one master can read from memory at any given time.
+module top_module(
+   master_busy_o,
+   
+   read_request_o,
+   addr_o,
+   sel_o,
+   dat_i,
+   ack_i,
+   
+   m0_read_request_i,
+   m0_addr_i,
+   m0_sel_i,
+   m0_dat_o,
+   m0_ack_o,
+   
+   m1_read_request_i,
+   m1_addr_i,
+   m1_sel_i,
+   m1_dat_o,
+   m1_ack_o,
+   
+   m2_read_request_i,
+   m2_addr_i,
+   m2_sel_i,
+   m2_dat_o,
+   m2_ack_o
+   );

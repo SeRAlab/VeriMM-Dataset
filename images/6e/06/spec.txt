@@ -1,0 +1,10 @@
+Design a 4-bit binary counter with load and clear functionality. The counter increments on the rising edge of the clock (CP) when the mode signal (M) is high. If the clear signal (CLR_n) is low, it resets the counter output (Q) to zero. If the load signal (LD_n) is low, the counter loads a 4-bit input value (D) into its output. Additionally, the module outputs an inverted value of the most significant bit (Q[3]) as Qcc_n, indicating when the counter is in the lower half of its count range.
+module top_module(
+    input CP,
+    input M,
+    input [3:0] D,
+    input LD_n,
+    input CLR_n,
+    output reg [3:0] Q,
+    output reg Qcc_n
+);

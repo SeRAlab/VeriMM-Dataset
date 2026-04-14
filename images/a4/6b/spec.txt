@@ -1,0 +1,6 @@
+Design a serial transmitter module that converts 8-bit parallel data into a serial stream. It operates in four states: IDLE, PARITY, DATA, and DONE. In the IDLE state, it waits for valid input to begin the transmission. Upon receiving input, it calculates the parity bit and transitions to the DATA state, where it sequentially sends each bit of the data while updating the parity for error checking. The ready output signals when the transmitter is idle and prepared to start a new transmission. The module supports a control feature through the lchar_i input to manage the transmission of multiple data frames.
+module top_module(
+    input clk, reset, valid_i, lchar_i,
+    input [7:0] dat_i,
+    output reg d, s, ready_o
+);

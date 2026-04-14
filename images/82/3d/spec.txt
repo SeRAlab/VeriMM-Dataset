@@ -1,0 +1,14 @@
+Design a 2x2 crossbar switch that routes request and response signals based on specific address bit conditions. The module takes two address inputs and corresponding request and response data inputs. It directs the requests and responses to two output signals (reqA, reqB, resA, resB) according to the value of the third least significant bit of the address inputs. If this bit is zero, the corresponding request and response data from the first input are routed; otherwise, the data from the second input is used. The functionality also includes handling conditions for setting default output values based on the higher-order bits of the response data.
+module top_module(
+    input clk,
+    input [31:0] addr1,
+    input [31:0] addr2,
+    input [31:0] req1,
+    input [31:0] req2,
+    input [31:0] res1,
+    input [31:0] res2,
+    output [31:0] reqA,
+    output [31:0] reqB,
+    output [31:0] resA,
+    output [31:0] resB
+);

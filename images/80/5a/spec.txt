@@ -1,0 +1,30 @@
+Design a master interface module for an external memory or peripheral device that handles read and write operations. This module facilitates communication by converting and exporting addresses and control signals, including read, write, and data transfer parameters. It utilizes burst mode capabilities for efficient data transfer, while also managing interrupt signals and wait requests, ensuring synchronized operation with a clock and reset mechanism. The module interprets input signals, adjusts address alignment for byte management, and outputs the corresponding control signals to the external interface, effectively serving as a bridge between a processor and its memory subsystem.
+module top_module(
+    clk,
+    reset,
+
+    address,
+    read,
+    readdata,
+    readdatavalid,
+    write,
+    writedata,
+    burstcount,
+    byteenable,
+    waitrequest,
+    burstbegin,
+
+    export_address,
+    export_read,
+    export_readdata,
+    export_readdatavalid,
+    export_write,
+    export_writedata,
+    export_burstcount,
+    export_burstbegin,
+    export_byteenable,
+    export_waitrequest,
+
+    interrupt,
+    export_interrupt
+);

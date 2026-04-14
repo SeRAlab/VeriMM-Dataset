@@ -1,0 +1,23 @@
+Please act as a professional Verilog designer. Your task is to create a Verilog module that implements a pulse width modulator (PWM). 
+A PWM is a type of digital circuit used to control the amount of power delivered to a load by varying the width of the pulses of a periodic signal.
+Your module should have the following inputs and outputs:
+
+Inputs: 
+- clk: the clock signal
+- data_in: the data signal, which determines the duty cycle of the output PWM signal
+- max_count: the maximum count value for the counter
+
+Outputs: 
+- pwm_out: the output PWM signal
+
+Your module should implement the following functionality:
+
+- The counter should count from 0 to max_count on each rising edge of the clock signal.
+- When the counter value is less than data_in, the output PWM signal should be high.
+- When the counter value is greater than or equal to data_in, the output PWM signal should be low.
+- The duty cycle of the PWM signal should be determined by the value of data_in relative to the value of max_count.
+- The output PWM signal should have a frequency equal to the frequency of the clock signal.
+
+To implement the PWM, you should use Verilog code to define a counter that increments on each rising edge of the clock signal. 
+You should then use the value of data_in to determine when the output PWM signal should be high or low, and use this signal to set the output value.
+Finally, you should ensure that the output PWM signal has the correct frequency by synchronizing it with the clock signal.

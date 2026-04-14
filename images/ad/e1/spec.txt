@@ -1,0 +1,7 @@
+Design an 8-bit shift register with load functionality. When the load signal is asserted, the module captures the 8-bit input data_in into the first pipeline register. On subsequent clock cycles, if the load signal is not asserted, the register performs a left shift operation, moving the contents of the first register to the second one while inserting a zero into the least significant bit of the first register. The output data_out reflects the contents of the second pipeline register, providing the shifted data.
+module top_module(
+    input clk,
+    input load,
+    input [7:0] data_in,
+    output reg [7:0] data_out
+);

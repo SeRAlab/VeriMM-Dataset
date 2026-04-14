@@ -1,0 +1,10 @@
+Design a 4-bit comparator with synchronous reset functionality. The module compares two 4-bit inputs, A and B, and produces three output signals: `greater`, `less`, and `equal`. On each rising edge of the clock, if the reset signal is asserted, all output signals are set to LOW. When the reset is not active, the module evaluates the inputs A and B, setting `greater` to HIGH if A is greater than B, `less` to HIGH if A is less than B, and `equal` to HIGH if both inputs are equal, ensuring only one of the output flags is HIGH at any time.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] A,
+  input [3:0] B,
+  output reg greater,
+  output reg less,
+  output reg equal
+);

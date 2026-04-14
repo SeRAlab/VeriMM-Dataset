@@ -1,0 +1,6 @@
+Design a 4-to-2 priority encoder that outputs a binary representation of the highest significant input bit that is asserted (i.e., high) from the 4-bit input, `in`. The module operates on a rising clock edge and asynchronously resets the output to `00` when the reset signal is high. If multiple input bits are high, the encoder prioritizes the highest-order input bit, with the output reflecting its index. Under conditions where no inputs are asserted, the output also defaults to `00`.
+module top_module(
+  input clk, rst,
+  input [3:0] in,
+  output reg [1:0] out
+);

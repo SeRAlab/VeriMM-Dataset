@@ -1,0 +1,12 @@
+Develop a VGA color generator circuit that produces an 8-bit RGB color output based on horizontal and vertical pixel counts (h_count and v_count) from a VGA signal. The circuit uses a clock input to synchronize pixel generation and a reset input to initialize counters. The output color varies as the pixel position changes: it displays a color gradient based on the horizontal position within the visible area, while outside the active region, it outputs black. The module also handles synchronization signals, ensuring that during horizontal and vertical sync periods, the RGB outputs are driven low.
+module top_module(
+    input clk,
+    input rst,
+    input [9:0] x,
+    input [9:0] y,
+    input hsync,
+    input vsync,
+    output reg [7:0] r,
+    output reg [7:0] g,
+    output reg [7:0] b
+);

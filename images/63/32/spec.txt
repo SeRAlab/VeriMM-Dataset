@@ -1,0 +1,4 @@
+Design a 16-bit wide counter with a reset and specific counting behavior. The counter increments on the negative edge of the 'detector' signal, unless reset by the 'nCR' signal, which resets the counter to zero. The counter counts in a specific pattern, rolling over to zero when reaching the value of 9 (4'b1001) in each of its 4-bit segments. When the least significant segment overflows from 9, it resets to zero and increments the next higher segment, continuing this cascading pattern all the way to the most significant segment.
+module top_module(input detector,
+				input nCR,
+				output reg [15:0] det_counter);

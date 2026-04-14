@@ -1,0 +1,14 @@
+Design a clocked input processing module that captures the inverted values of eight input signals (ADC_0 through ADC_7) and stores them in an 8-bit wide output register (Data). Upon a rising edge of the clock or an active reset signal, the module initializes the Data register to zero. On a clock pulse, the module updates each bit of the Data output with the negated corresponding input signal.
+module top_module(
+	 input clk,
+	 input rst,
+    input ADC_0,
+    input ADC_1,
+    input ADC_2,
+	 input ADC_3,
+    input ADC_4,
+    input ADC_5,
+    input ADC_6,
+    input ADC_7,
+    output reg [7:0] Data
+    );

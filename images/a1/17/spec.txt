@@ -1,0 +1,6 @@
+Design a 12-bit address decoder. The module takes a 12-bit input address and, on the rising edge of the clock, generates an output based on specific address ranges: it outputs zero if the address is between 0 and 1023, it directly outputs the address if it is between 1024 and 2047, applies a bitwise AND with the mask 11'b11111111111 for addresses between 2048 and 3071, and performs a bitwise OR with the constant 12'b100000000000 for addresses between 3072 and 4095. This design effectively processes the address to yield a controlled output according to the specified ranges.
+module top_module(
+    input [11:0] address,
+    input clock,
+    output reg [11:0] q // Changed output to reg type
+);

@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+
+Implement an 8-bit register with enable. The module stores an 8-bit input data when the enable signal is high on each rising edge of the clock. The stored data is output through the q port.
+
+Module name:  
+    reg_8bit    
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    en: Enable signal to control the loading of data.
+    d: 8-bit data input signal.
+
+Output ports:
+    q: 8-bit output signal representing the stored data.
+
+Implementation:
+The register is defined as reg [7:0] q and is updated based on the enable signal using an always block sensitive to the rising edge of the clock.
+
+Give me the complete code.
+
+module reg_8bit(clk, en, d, q);  
+
+    input  clk;  
+    input en;  
+    input [7:0] d;  
+    output  [7:0] q;

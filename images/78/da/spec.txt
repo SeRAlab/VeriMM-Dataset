@@ -1,0 +1,10 @@
+Design a 4-to-1 multiplexer with enable functionality. The module takes four 4-bit inputs and selects one of them to output based on a 2-bit selection signal (`sel`). If the enable signal (`en`) is high, the output reflects the selected input; if `en` is low, the output is driven to zero, effectively disabling the output. The first multiplexing stage chooses between `in0` and `in1`, while the second stage selects between `in2` and `in3`, based on the least significant bit of `sel`.
+module top_module(
+    input [3:0] in0,
+    input [3:0] in1,
+    input [3:0] in2,
+    input [3:0] in3,
+    input [1:0] sel,
+    input en,
+    output [3:0] out
+);

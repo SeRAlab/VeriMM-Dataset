@@ -1,0 +1,11 @@
+Design a single-entry FIFO (First-In, First-Out) memory buffer. This module accepts input data and uses control signals to push (store) or pull (retrieve) data, operating on a clock signal. It indicates when it is full or empty through dedicated output signals. The module resets its internal memory and status flags on a reset signal, initializing it to an empty state. When the push signal is asserted, the input data is stored in the memory if not full, and when the pull signal is asserted, the data can be read output if not empty.
+module top_module(
+    input clk_i,
+    input rst_i,
+    input [g_width-1:0] data_i,
+    input push_i,
+    input pull_i,
+    output reg [g_width-1:0] data_o, // Changed to reg
+    output full_o,
+    output empty_o
+);

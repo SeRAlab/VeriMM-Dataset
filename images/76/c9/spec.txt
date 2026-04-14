@@ -1,0 +1,8 @@
+Design a digital interrupt controller that monitors an input signal and generates an output signal based on specific interrupt conditions defined by a configuration mask. The module accepts a clock signal, a reset signal, and a two-bit mask (`senceMask`) to determine the behavior of the interrupt generation. Depending on the value of `senceMask`, the module can trigger an interrupt on different signal conditions, such as low level, any change, falling edge, or rising edge. The internal state machine manages the reset and initialization sequences and transitions to a working state for evaluating the signal input against the configured interrupt conditions. The output signal (`signalOut`) reflects the result of these evaluations, indicating when an interrupt condition is met.
+module top_module(
+    input       CLK,
+    input       RESETn,
+    input [1:0] senceMask,
+    input       signalIn,
+    output reg  signalOut
+);

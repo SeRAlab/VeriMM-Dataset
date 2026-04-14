@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+
+Implement an 8-bit register with synchronous reset and enable. The register should capture the value of the input data on the rising edge of the clock signal when the enable signal is active and reset to zero when the reset signal is active.
+
+Module name:
+    register_8bit
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    en: Enable signal used to enable capturing data.
+    d: 8-bit data input to be captured by the register.
+
+Output ports:
+    q: 8-bit output of the register, reflecting the captured value.
+
+Implementation:
+The module includes an 8-bit register, q, which is updated in the always block, triggered on the positive edge of the clock signal (posedge clk).
+On reset, indicated by rst, the q register is cleared to 0.
+On every rising edge of the clock, if the enable signal is active, the value of d is captured and assigned to q.
+
+Give me the complete code.

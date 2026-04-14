@@ -1,0 +1,6 @@
+Design a FIFO write control circuit that manages the writing operation based on input triggers. The module monitors the `trigWrite` signal to detect transitions and, if `clrFifo` is asserted, sets the `sclr` output to indicate a clear operation. It generates the `writeReq` signal for one clock cycle when transitioning from the idle state. The state machine transitions between three main states: idle, request write, and acknowledgment, effectively coordinating the writing process while also handling the FIFO clear condition.
+module top_module(clk,
+				   trigWrite,
+				   clrFifo,
+				   sclr,
+				   writeReq);

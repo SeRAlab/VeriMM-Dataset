@@ -1,0 +1,11 @@
+
+
+You are given a verilog module `top` that instantiates a module `sky130_fd_sc_hd__ha`. The inputs of module `sky130_fd_sc_hd__ha` are `A`, `B`, `VPWR`, `VGND`, `VPB`, `VNB` and the outputs are `COUT` and `SUM`. The inputs are registered and the initial state of all inputs is `x`. After 20 ns, the value of `A` becomes `0` and after 40 ns, the value of `B` becomes `0`. Similarly, after every 20 ns, the values of `VGND`, `VNB`, `VPB`, and `VPWR` become `0`. After 140 ns, the values of `A`, `B`, `VGND`, `VNB`, `VPB`, and `VPWR` become `1`. After 260 ns, the values of `A`, `B`, `VGND`, `VNB`, `VPB`, and `VPWR` become `0`. After 380 ns, `VPWR` becomes `1`, after 400 ns, `VPB` becomes `1`, after 420 ns, `VNB` becomes `1`, after 440 ns, `VGND` becomes `1`, after 460 ns, `B` becomes `1`, and after 480 ns, `A` becomes `1`. Finally, after 500 ns, the values of `VPWR`, `VPB`, `VNB`, `VGND`, `B`, and `A` become `x`. 
+
+Your task is to write the `sky130_fd_sc_hd__ha` module that implements a half adder using the given inputs and outputs. A half adder is a digital circuit that takes two binary inputs `A` and `B` and produces two binary outputs `SUM` and `COUT`, where `SUM` is the sum of the inputs modulo 2, and `COUT` is the carry out. The half adder can be implemented using the following equations:
+
+```
+SUM = A ^ B
+COUT = A & B
+```
+

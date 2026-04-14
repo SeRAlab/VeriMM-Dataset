@@ -1,0 +1,9 @@
+Design a synchronous circuit that outputs a validity signal and computes a root value based on two 16-bit inputs. Upon receiving a clock pulse, if the reset signal is inactive, the module initializes its outputs to zero. If active, it sets the `data_valid` output to the most significant bit of the `start_gen` input and evaluates the higher-order bits of the `root_gen` input. If the higher-order bits exceed the lower-order bits, it increments the higher-order bits by one to produce the root value; otherwise, it directly assigns the lower-order bits as the output.
+module top_module(
+  input clk,
+  input reset_n,
+  input [15:0] start_gen,
+  input [15:0] root_gen,
+  output reg data_valid,
+  output reg [7:0] root
+);

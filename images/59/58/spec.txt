@@ -1,0 +1,10 @@
+Design a mini-scope interface controller that manages the triggering and synchronization of a mini-scope based on clock signals. This module transitions between three states: IDLE, RECORD, and DONE, with specific functionalities dictated by input signals. When in the IDLE state, activation of the start signal triggers the mini-scope and shifts the state to RECORD. In RECORD mode, upon receiving the stop signal, it deactivates the trigger and returns to IDLE. The module also counts frames when a synchronization signal transitions, maintaining a 32-bit frame count, which resets when the reset signal is asserted. Overall, it serves as an interface for managing the data acquisition process of a mini-scope, allowing for systematic control of triggering and frame counting.
+module top_module(
+    input clk,
+    input start,
+    input stop,
+	 input reset,
+    output reg miniscope_trig, 
+    input miniscope_sync,
+    output reg [31:0] frame_count = 32'd0
+    );

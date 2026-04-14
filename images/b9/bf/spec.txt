@@ -1,0 +1,8 @@
+Design a 4-bit binary counter with asynchronous reset and parallel load capabilities. The counter increments its value on each rising edge of the clock unless reset is active, which asynchronously clears the counter. When the load signal is high, it sets the counter to a specified 4-bit load value. Additionally, the circuit generates a carry output, which indicates when the counter reaches the specific value of 10 (binary 1010). The design effectively combines counting and loading functionalities into a single module, allowing for flexible control over the counter's state.
+module top_module(
+    input clk,
+    input reset,      // Asynchronous active-high reset
+    input load,       // Active-high parallel load input
+    input [3:0] load_value, // 4-bit load value
+    output [3:0] q,
+    output carry);

@@ -1,0 +1,6 @@
+Design a 4-bit up/down counter that operates based on a clock signal with reset, load, and direction control inputs. When the reset (RST) input is active, the counter resets to zero. If the load (LD) input is activated, the counter loads a 4-bit input value (LOAD_IN). In normal operation, the counter increments or decrements its value based on the up/down (UD) signal: if UD is high, it increments, and if low, it decrements. The current count is outputted on a 4-bit wide output (Q), which reflects the value of the internal counter state.
+module top_module(
+    input CLK, RST, LD, UD,
+    input [3:0] LOAD_IN,
+    output reg [3:0] Q
+);

@@ -1,0 +1,5 @@
+Design a simple car movement simulator that updates the car's position on a grid based on user input. The module takes a clock signal, reset signal, directional controls (forward, backward, left, right), and speed as inputs. It maintains the car's x and y coordinates, initially set to (364, 364), and modifies these values according to user commands while accounting for motion timing through a derived clock. The movement increments or decrements the coordinates based on the specified speed, enabling smooth simulation of directional movement in a 2D space.
+module top_module(input clk_100mhz, input rst, 
+    input forward, input backward, input left, input right, input [1:0] speed,
+
+    output reg [9:0] car_x = 364, output reg [8:0] car_y = 364);

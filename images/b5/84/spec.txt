@@ -1,0 +1,7 @@
+Design a synchronous BCD (Binary-Coded Decimal) and binary counter that increments based on a clock signal. The module features a synchronous active-high reset to initialize both counters. It has an enable input that allows the counter to operate in two modes: when enabled, the BCD count increments up to 999, at which point it resets to zero and the binary count increments. When not enabled, the module solely increments the binary count. The outputs combine both counters into a 12-bit register for downstream processing.
+module top_module(
+    input clk,
+    input reset,   // Synchronous active-high reset
+    input [3:1] ena,
+    output reg [11:0] q
+);

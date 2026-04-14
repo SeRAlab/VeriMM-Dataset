@@ -1,0 +1,8 @@
+Design a servo control system that implements a proportional-integral-derivative (PID) controller. The module takes a pulse-width modulation (PWM) input signal and a set point to regulate the output PWM signal, ensuring accurate control of the servo position. It calculates the error between the set point and input, computes the integral and derivative of the error for feedback, and generates a control signal used to determine the pulse width of the output PWM. The system resets on receiving a reset signal and operates with a clock frequency of 50 MHz to produce a PWM signal at 50 Hz, with configurable pulse width limits for precise control.
+module top_module(
+  input clk,
+  input rst,
+  input signed [15:0] pwm_in,
+  input signed [15:0] set_point,
+  output signed [15:0] pwm_out
+);

@@ -1,0 +1,10 @@
+Design a memory unit that combines multiple storage types into a single addressable space. This module features a 4KB RAM split into four banks, each capable of writing and reading 8 bits of data based on a write-enable signal and a byte-enable (wbe) selection mechanism. Additionally, it integrates two separate 2KB ROMs: one for character definitions and another for a sine/log table along with a booter and interpreter. The output data is determined by the address provided, with distinct blocks allocated for RAM (0xx), low ROM (10), and high ROM (11) segments, facilitating efficient access and manipulation of the stored data based on the control inputs.
+module top_module(
+    input clk,
+    input en,
+    input w,
+    input [3:0] wbe,
+    input [13:0] addr,
+    input [31:0] data_in,
+    output reg [31:0] data_out
+);

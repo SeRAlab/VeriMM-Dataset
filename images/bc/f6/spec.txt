@@ -1,0 +1,11 @@
+Design a D flip-flop with asynchronous reset and set functionality. The module captures the input signal D on the rising edge of the CLK signal while respecting the active-low SET_B and RESET_B control inputs. When RESET_B is low, the output Q is forced to LOW, and Q_N to HIGH, irrespective of the clock or data inputs. Conversely, when SET_B is low, Q is set to HIGH. The outputs Q and Q_N reflect the current state of the flip-flop or the results of the asynchronous controls. This design is implemented using a standard cell from the sky130 library, ensuring that it is suitable for integration within larger digital circuits.
+module top_module(
+    Q       ,
+    Q_N     ,
+    CLK     ,
+    D       ,
+    SET_B   ,
+    RESET_B ,
+    VPWR    ,
+    VGND
+);

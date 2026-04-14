@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+    
+Implement a module to implement a complex logic gate function that combines AND, OR, and INVERT operations in a specific configuration. Its primary function to perform an AND-OR-INVERT (AOI) operation on five input signals, which is a common logic function used in digital circuits for optimizing gate count and improving speed in certain contexts. This module can be utilized in various digital logic applications, including arithmetic circuits, control logic, or any system requiring a compact and efficient implementation of this specific logic combination. The "221" in the module name suggests the configuration of inputs: two pairs of inputs are first ANDed together, and another single input is considered separately; these results are then ORed together and finally inverted to produce the output. The "4x" could imply a specific performance or sizing characteristic, such as drive strength or a particular implementation focus.
+
+Module name:  
+	bw_u1_aoi221_4x
+
+Input ports:
+	c1, c2: These are digital input signals that are first ANDed together in the operation. They are part of the first pair of inputs contributing to the OR operation before inversion.
+	b1, b2: Similar to c1 and c2, these are digital input signals that are ANDed together as the second pair of inputs. The result of this AND operation also contributes to the OR operation before inversion.
+	a: This is a single digital input signal that directly contributes to the OR operation along with the results of the AND operations on b1, b2, and c1, c2.
+Output ports:
+	z: This is the single output port of the module. It is a digital signal (binary, either 0 or 1) that represents the result of the ANDORINVERT operation performed on the input signals. The output is active low due to the inversion at the final stage of the operation.
+
+
+Implementation:
+The RTL module bw_u1_aoi221_4x represents a combinational logic circuit, specifically an "AND-OR-INVERT" (AOI) gate structure. This particular module is designed to implement a complex logic function using basic logical operations: AND, OR, and NOT. The module does not contain any sequential logic elements (like flip-flops or latches), meaning its output is directly determined by its current inputs without any dependency on previous states or clock edges. This makes the module purely combinational.
+The logic function implemented by this module can be described by the Boolean expression: Z = ~((C1 & C2) | (B1 & B2) | A). This expression indicates that the output Z is the inversion of the OR operation among three terms: the AND of inputs C1 and C2, the AND of inputs B1 and B2, and the input A. The module effectively computes the NOR of these three conditions, making it useful in designs where such a logic combination is needed.
+The use of an AOI structure is common in digital logic design due to its efficiency in terms of speed and area, especially in CMOS technology. By combining the AND and OR functions into a single stage followed by an inversion, the overall gate delay and power consumption can be reduced compared to implementing the same function with separate gates.
+
+Give me the complete code.
+

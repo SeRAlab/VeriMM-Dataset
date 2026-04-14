@@ -1,0 +1,9 @@
+Design a simple arithmetic calculator capable of performing basic operations on two signed 32-bit integers, A and B. The module supports addition, subtraction, multiplication, and division, with the operation selected by a 2-bit control signal. The calculator also features a reset input to initialize the result and a flag output used to indicate division by zero. In summary, this module efficiently executes arithmetic operations based on the control signal while ensuring proper handling of edge cases such as division by zero.
+module top_module(
+    input signed [31:0] A,
+    input signed [31:0] B,
+    input [1:0] ctrl,
+    input rst,
+    output reg signed [31:0] result,
+    output reg flag
+);

@@ -1,0 +1,6 @@
+Design a memory arbiter module that manages access requests from multiple devices. It accepts a request vector as input and outputs a grant vector, allowing only one device to access the memory at a time based on a round-robin priority scheme. The module utilizes a clock-driven finite state machine to cycle through the devices, incrementing a counter to determine which device's request is currently being granted. If a device's request is active, it is granted access; otherwise, the grant output is reset to deny access. This design ensures efficient and fair memory access in systems with concurrent device requests.
+module top_module(
+  input clk, // Added clock input
+  input [n-1:0] req,
+  output reg [n-1:0] grant // Changed output to reg type for assignment in always block
+);

@@ -1,0 +1,10 @@
+Design a deserializer circuit that converts a serial input data stream into a parallel output format. The module operates based on a clock signal and includes a reset and enable functionality. When the reset signal is activated, the output is cleared, and the counter is initialized to the specified frame size, which determines the number of bits to be received. As the input data is clocked in, the module captures each bit into the output register until the designated frame size is reached, at which point it signals completion. The design uses a counter to track the received bits and indicates when the entire frame has been processed.
+module top_module(
+	clk, 		
+	enable, 	
+	reset, 		
+	framesize, 	
+	in, 		
+	out, 		
+	complete	
+);

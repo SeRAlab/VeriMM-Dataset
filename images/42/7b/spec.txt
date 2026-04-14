@@ -1,0 +1,8 @@
+Design a 4-bit wide up-counter with load functionality. The counter increments its value on each clock cycle unless a reset signal is active, in which case it initializes all internal registers to zero. If the load signal is asserted, the counter will load a new 4-bit value from the input, sequentially shifting through three stages before outputting the content of the last stage as data_out. This implementation effectively allows for both a counting operation and the ability to preset the count value, using a series of registers to buffer the counting process.
+module top_module(
+    input clk,
+    input reset,
+    input load,
+    input [3:0] data_in,
+    output reg [3:0] data_out
+);

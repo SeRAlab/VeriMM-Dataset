@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform rounding operations on floating-point numbers. Its primary function to round the mantissa of a floating-point number based on the specified rounding mode, adjust the exponent accordingly if there's an overflow in the mantissa, and output the rounded floating-point number. This module plays a crucial role in floating-point arithmetic units, particularly in the final stage of operations such as addition, subtraction, multiplication, or division, where the precision of the result might exceed the target format, necessitating rounding to fit within the desired floating-point representation.
+
+Module name:  
+	fpu_round
+
+Input ports:
+	clk (input): The clock signal, which synchronizes the rounding operation.
+	rst (input): The reset signal, which initializes the module's internal registers when asserted.
+	enable (input): This signal enables the rounding operation, although its connection or use within the module isn't explicitly defined in the provided code.
+	round_mode (input, 2 bits): Specifies the rounding mode. The encoding is as follows: 00 for round to nearest, 01 for round towards zero, 10 for round towards positive infinity, and 11 for round towards negative infinity.
+	sign_term (input): The sign bit of the floatingpoint number being rounded.
+	mantissa_term (input, 56 bits): The mantissa of the floatingpoint number to be rounded, extended to include guard, round, and sticky bits for precision.
+	exponent_term (input, 12 bits): The exponent of the floatingpoint number being rounded.
+Output ports:
+	round_out (output, 64 bits): The rounded floatingpoint number, including the sign bit, the adjusted exponent, and the rounded mantissa.
+	exponent_final (output, 12 bits): The final exponent after rounding, available as a separate output for further operations or analysis.
+
+
+Implementation:
+The RTL module fpu_round is designed to perform rounding operations on floating-point numbers, specifically targeting the mantissa and exponent components of such numbers. The module operates in a synchronous manner, driven by a positive edge-triggered clock (clk) and an active-high reset signal (rst). The core functionality of this module is to adjust the input mantissa (mantissa_term) and exponent (exponent_term) based on the specified rounding mode (round_mode), and produce a rounded floating-point number (round_out) along with the adjusted exponent (exponent_final).
+
+Give me the complete code.
+

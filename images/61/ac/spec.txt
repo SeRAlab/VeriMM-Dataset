@@ -1,0 +1,5 @@
+Design a shift register with size defined by the parameter SIZE. It operates on a clock (clk) and has an input (in) that shifts its values through the register on each clock cycle. The register also includes a configurable DELAY, allowing for a specific latency before the input affects the output. The output (out) is set based on a condition involving the first two bits of the shift register, where it maintains its current state unless the XOR of the first two bits is true, in which case it updates to the value of the first bit. This creates a dynamic mechanism to control the output based on the shifted values, effectively serving as a specialized synchronous shift register with feedback logic.
+module top_module(input in,
+                 output reg out,
+                 input clk
+                 );

@@ -1,0 +1,7 @@
+Design a module that decodes a 32-bit instruction word in the MIPS instruction format. The module extracts and outputs the opcode (6 bits), function code (6 bits), source register (5 bits), target register (5 bits), destination register (5 bits), shift amount (5 bits), and immediate value (16 bits) from the instruction. This is essential for instruction decoding in a CPU architecture, enabling subsequent processing stages such as execution and memory access.
+module top_module(
+    input [31:0] ins_d,
+    output [5:0] op_d,func_d,
+    output [4:0] rs_d,rt_d,rd_d,shamt_d,
+    output [15:0] imm_d
+    );

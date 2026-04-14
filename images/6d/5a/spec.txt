@@ -1,0 +1,8 @@
+Design a finite state machine (FSM) that transitions between three states based on an input signal x and a clock signal clk, with asynchronous reset capability. The states are defined as s1, s2, and s3, and the parity output is registered. In states s1 and s2, the parity is set to 0; in state s3, the parity output reflects the value of x, becoming 1 if x is high and 0 if x is low. The machine resets to state s1 when the reset signal is active, allowing it to process input x and update its state and parity accordingly.
+module top_module(
+    input clk,
+    input x,
+    input reset,
+    output reg parity,
+    output reg [1:0]state
+    );

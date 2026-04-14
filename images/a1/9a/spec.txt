@@ -1,0 +1,8 @@
+Implement a debouncer circuit that stabilizes a noisy switch input by capturing its state changes. The module operates on a clock signal, synchronizing the switch_input through two stages to eliminate glitches. It uses a counter to determine if the switch has been idle for a specified duration before toggling the output state. The module outputs transition signals, trans_up and trans_dn, indicating state changes when the switch is pressed or released, ensuring reliable detection of button presses without false triggering.
+module top_module(
+    input CLK,
+    input switch_input,
+    output reg state,
+    output trans_up,
+    output trans_dn
+    );

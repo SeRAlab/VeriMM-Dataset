@@ -1,0 +1,9 @@
+Design a versatile arithmetic unit that outputs a 32-bit result based on a selection input. This module takes four 16-bit inputs (a, b, c, d) and uses a 3-bit selector (sel) to determine the operation. Depending on the value of sel, the output is derived from various combinations of arithmetic operations, including addition, subtraction, and concatenation of the inputs. The functionality allows for a range of operations such as summing inputs, performing differences between pairs, and organizing the results into a specific 32-bit format through a case statement.
+module top_module(
+  input [15:0]      a,
+  input [15:0]      b,
+  input [15:0]      c,
+  input [15:0]      d,
+  input [2:0]       sel,
+  output reg [31:0] res
+  );

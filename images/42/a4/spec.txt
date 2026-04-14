@@ -1,0 +1,12 @@
+Design a UART transmission buffer that stores up to 64 bytes of data, managing the transmission sequence through a first-in-first-out (FIFO) structure. The module features control signals to indicate when data is available for transmission (`txStart`), and it outputs the data to be transmitted (`txData`). It monitors the state of the buffer, signaling when it is empty or full, using dedicated conditions based on the buffer count. The buffer supports asynchronous reset functionality to initialize its state, and operates on the positive edge of a clock signal, ensuring reliable data handling during UART communication.
+module top_module(
+    input clk,
+    input rst,
+    input dataReady,
+    input [7:0] data,
+    input txBusy,
+    output reg txStart,
+    output reg [7:0] txData,
+    output reg empty,
+    output reg full
+);

@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that counts consecutive occurrences of the binary pattern `11111111` in an 8-bit input data stream. The module has a reset input to initialize the count and state. When the module is in the reset state, it remains in that state if the reset signal is active. If `11111111` is detected in the data input, it transitions to a counting state, where it increments a 4-bit count for each consecutive detection of the pattern. If any other data is received, it resets the count back to zero. The count output reflects the number of times the pattern was detected consecutively.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data,
+  output reg [3:0] count
+);

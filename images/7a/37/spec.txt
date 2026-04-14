@@ -1,0 +1,12 @@
+Design a circuit that functions as a data accumulator, capable of storing four 8-bit input values and outputting their sum as a 10-bit value. The module operates on a clock signal and can be reset asynchronously. When both `valid_a` is asserted and `ready_b` is true, the incoming data is stored in a register array, and a counter tracks how many values have been received. Once four values are stored, the circuit computes the sum of these values, updates the output, and indicates that the output data is valid. The `ready_a` signal reflects whether the module can accept more input data.
+module top_module(
+    input               clk         ,   
+    input               rst_n       ,
+    input       [7:0]   data_in     ,
+    input               valid_a     ,
+    input               ready_b     ,
+ 
+    output              ready_a     ,
+    output  reg         valid_b     ,
+    output  reg [9:0]   data_out
+);

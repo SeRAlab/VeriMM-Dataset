@@ -1,0 +1,9 @@
+Design a vending machine controller that accepts three input buttons to dispense different snacks: a bar, chips, or soda. The module operates in three states: IDLE, DISPENSING, and RESET. In the IDLE state, the machine monitors the buttons; pressing btnA triggers a bar to be dispensed, btnB for chips, and btnC for soda, transitioning to the DISPENSING state. In the DISPENSING state, all dispense outputs are activated briefly before transitioning to the RESET state, where outputs are reset before returning to the IDLE state. The controller ensures that only one item is dispensed at a time and manages state transitions appropriately to control the dispensing process.
+module top_module(
+  input btnA,
+  input btnB,
+  input btnC,
+  output reg dispenseBar,
+  output reg dispenseChips,
+  output reg dispenseSoda
+);

@@ -1,0 +1,8 @@
+Design a synchronous counter that counts either up or down based on the Up_Down control signal, with a synchronous active-high reset. The module takes a 3-bit input to initialize the counter and outputs the next power of two based on the counter's current value. Upon reset, the counter resets to zero and the result is set to 1. When counting, if the counter output reaches zero, the result is also set to 1; otherwise, the output reflects the next power of two derived from the current counter value.
+module top_module(
+    input clk,
+    input [2:0] counter_in, // Input to the counter module
+    input Up_Down, // Control input to choose between up and down count
+    input Reset, // Synchronous active-high reset
+    output reg [4:0] result // Output from the next_power_of_two module
+);

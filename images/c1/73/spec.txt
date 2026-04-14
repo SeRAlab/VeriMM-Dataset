@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to generate a sequence of pseudo-random 64-bit numbers based on the internal state of three registers (`z1`, `z2`, `z3`). This module can be utilized in applications requiring random number generation, such as cryptographic functions, simulations, or any system requiring stochastic processes. The module operates synchronously with a clock signal and includes a reset functionality. It also features an enable control, allowing the random number generation process to be paused, and outputs a validity signal alongside the generated number to indicate when the data is valid and can be used by other components of the system.
+
+Module name:  
+	gng_ctg
+
+Input ports:
+	clk (input): The clock signal input. It is used to synchronize the module's operations.
+	rstn (input): The activelow reset signal. When asserted (0), it initializes the internal state registers (z1, z2, z3) to their predefined initial values.
+	ce (input): The clock enable signal. When high (1), it allows the module to update its internal state and generate a new random number. When low (0), the module's internal state and outputs remain unchanged.
+Output ports:
+	valid_out (output reg): A signal indicating the validity of the data on the data_out port. It is high (1) when the module is enabled and has generated a new random number.
+	data_out (output reg [63:0]): The 64bit output port that carries the generated pseudorandom number.
+
+
+Implementation:
+The RTL module presented, named gng_ctg, is designed to generate a sequence of pseudo-random 64-bit numbers based on the manipulation of internal state registers (z1, z2, z3). This design employs a combination of combinational and sequential logic to achieve its functionality, with the core operation revolving around feedback shift registers and bitwise operations.
+
+Give me the complete code.
+

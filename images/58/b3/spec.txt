@@ -1,0 +1,9 @@
+Design a sequential circuit that operates as a simple memory and data converter. It uses a clock-driven counter to generate an address that accesses a block of RAM storing ASCII values for the characters '0' to 'ÿ'. Upon reset, the RAM initializes to zero, and on each clock cycle, the counter increments, allowing retrieval of the corresponding ASCII character from RAM, which is subsequently output as both an ASCII value and as binary values in two formats: most significant bit first and least significant bit first. This module effectively combines memory retrieval with format conversion for further digital processing.
+module top_module(
+    input wire clk,
+    input wire reset,
+    output reg [7:0] address,
+    output reg [7:0] out_ascii,
+    output reg [7:0] out_bin_msb,
+    output reg [7:0] out_bin_lsb
+);

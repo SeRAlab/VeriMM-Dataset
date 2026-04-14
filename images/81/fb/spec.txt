@@ -1,0 +1,8 @@
+Design a delay-locked loop (DLL) circuit that synchronizes an output clock signal (clk_out) to a reference clock (ref_clk) based on an input clock (clk_in). The module dynamically adjusts the timing of clk_out by introducing variable delays to match the phase of clk_in with ref_clk, utilizing input signals for enabling the functionality and resetting the state. The DLL incorporates mechanisms to increment or decrement the delay based on phase comparisons, effectively managing clock alignment for robust timing operations in digital systems.
+module top_module(
+  input ref_clk,
+  input clk_in,
+  input enable,
+  input reset,
+  output reg clk_out
+);

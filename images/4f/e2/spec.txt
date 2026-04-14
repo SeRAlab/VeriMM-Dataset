@@ -1,0 +1,7 @@
+Design a clock gating module that conditionally generates an enabled clock output, ENCLK. When the enable signal (EN) is high and the clock (CLK) is active, ENCLK also becomes high, allowing the clock to pass through. If the test enable (TE) signal is asserted, ENCLK is forcibly set to low, regardless of the state of EN or CLK, effectively disabling the clock output. This design is useful for power management by controlling clock distribution in digital circuits, minimizing unnecessary power consumption when certain parts of the circuit are not in use.
+module top_module(
+    input CLK,
+    input EN,
+    input TE,
+    output ENCLK
+);

@@ -1,0 +1,8 @@
+Design a clock-based counter module that increments a 32-bit output count (cnt_o) on each positive edge of the clock while enabling start and stop control signals. When the reset (rst) signal is activated, the counter resets to zero and ceases operation. The module can operate in two modes: when the start signal is asserted without the stop signal, the counter increments; if the stop signal is asserted, counting is paused regardless of the start signal.
+module top_module(
+    input wire clk,
+    input wire rst,
+    (* mark_debug = "true" *) input wire start,
+    (* mark_debug = "true" *) input wire stop,
+    (* mark_debug = "true" *) output reg [31:0] cnt_o
+    );

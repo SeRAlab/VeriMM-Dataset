@@ -1,0 +1,9 @@
+Design a D-type flip-flop with asynchronous reset capability and enable functionality. The flip-flop captures the value of the input signal 'd' on the rising edge of the clock ('clk') when 'en_n' is active (low). If the reset signal ('reset_n') is asserted (low), the output 'q' is reset to low and 'q_n' is output as high. When the enable signal is inactive (low), the outputs retain their previous states. The module effectively provides memory storage for a single bit while allowing controlled operation through the reset and enable inputs.
+module top_module(
+    input clk,
+    input reset_n,
+    input d,
+    input en_n,
+    output reg q,
+    output reg q_n
+);

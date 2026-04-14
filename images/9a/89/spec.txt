@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a JK Flip-Flop with a synchronous reset feature. The JK Flip-Flop toggles the output based on the input signals J and K at the positive edge of the clock.
+
+Module name:  
+    jk_ff_sync_reset
+                 
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Synchronous reset signal. When 1, it resets the output to 0.
+    j: J input signal.
+    k: K input signal.
+
+Output ports:
+    q: Output signal representing the current state of the flip-flop.
+
+Implementation:
+The output q is updated in the always block, triggered on the positive edge of the clock signal (posedge clk).
+If the reset signal rst is 1, the output q is set to 0.
+If both J and K are 1, the output q toggles.
+If J is 1 and K is 0, the output q is set to 1.
+If J is 0 and K is 1, the output q is set to 0.
+
+Give me the complete code.

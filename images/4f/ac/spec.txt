@@ -1,0 +1,7 @@
+Design a module that performs selective arithmetic and bitwise operations on a 64-bit input word based on a single-bit operation selector. The module takes a 64-bit input (`i_wf_in`) and a 32-bit key (`i_wk`), then produces a modified 64-bit output (`o_wf_out`). The output will retain some bits directly from `i_wf_in`, apply XOR operations with parts of `i_wk`, and conditionally perform addition or subtraction on specific segments (8 bits and 32 bits) of the input based on the value of the operation selector (`i_op`). When `i_op` is 0, addition is performed; when it is 1, subtraction occurs, allowing for flexible manipulation of the input word's segments.
+module top_module(
+    i_op,
+    i_wf_in,
+    i_wk,
+    o_wf_out
+);

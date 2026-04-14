@@ -1,0 +1,12 @@
+Design a digital signal processing module that outputs based on the state of two active-low inputs (A1_N and A2_N) and two other inputs (B1 and B2). The output (Y) will produce a logical combination of B1 and B2 depending on the conditions dictated by A1_N and A2_N: when both A1_N and A2_N are low, Y will output the logical OR of B1 and B2; when only A1_N is low, Y will output B1; when only A2_N is low, Y will output B2; and if both A1_N and A2_N are high, Y will output zero. This effectively implements a form of conditional logic based on the two active-low control signals.
+module top_module(
+    input A1_N,
+    input A2_N,
+    input B1,
+    input B2,
+    output Y,
+    input VPB,
+    input VPWR,
+    input VGND,
+    input VNB
+);

@@ -1,0 +1,12 @@
+Design a circuit that functions as a data path interface with a simple read mechanism for a processor or controller. It has inputs for clock, reset, and an external 20-bit data port, and it outputs a 32-bit read data value. The module uses a 2-to-1 multiplexer to select between the data input from the external port and a zero-padded value based on the address signal, enabling it to read data from different sources depending on the address. Upon each clock cycle, the read data output is updated or reset based on the reset signal, which initializes the output to zero.
+module top_module(
+                        // inputs:
+                         address,
+                         clk,
+                         in_port,
+                         reset_n,
+
+                        // outputs:
+                         readdata
+                      )
+;

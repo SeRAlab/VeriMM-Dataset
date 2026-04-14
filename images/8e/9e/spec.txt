@@ -1,0 +1,11 @@
+Design a 64-bit dual-port synchronous RAM module (DPRAM) that provides independent read and write operations. The module features a configurable initialization parameter, allows for address selection through the use of two additional bits (WA7 and WA8), and optionally inverts the write clock signal. It outputs the value stored at the address specified by input A and allows data to be written to the specified address WA when the write enable (WE) signal is active and the selected conditions for WA7 and WA8 are met. This design facilitates efficient memory access for applications requiring simultaneous read/write capabilities.
+module top_module(
+  output O,
+  input DI, 
+  input CLK, 
+  input WE, 
+  input WA7, 
+  input WA8,
+  input [5:0] A, 
+  input [5:0] WA
+);

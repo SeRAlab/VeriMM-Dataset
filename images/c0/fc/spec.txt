@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform a simple hash function operation on an input data stream. Its primary function to map the input data of a specified size (`input_sz`) to an output hash value of a smaller, fixed size (`fsz`). This module finds its utility in systems where data needs to be efficiently indexed or stored, such as in hash tables, databases, or for data integrity checks. The hashing process involves folding the input data multiple times (`folds`) over the output hash size to ensure a uniform distribution of hash values.
+
+Module name:  
+	basic_hashfunc
+
+Input ports:
+	hf_in [input_sz1:0]: This is the primary input port to the module, accepting the data stream to be hashed. The size of this input is parameterizable through input_sz, allowing flexibility in accommodating different data sizes.
+Output ports:
+	hf_out [fsz1:0]: This output port presents the hash value resulting from the hashing operation. The size of this output is determined by fsz, which is calculated as the base2 logarithm of table_sz, indicating the hash value's bitwidth necessary to index into a table of size table_sz.
+
+
+Implementation:
+The basic_hashfunc module is designed to perform a simple hash function operation on an input data stream. The module is parameterized, allowing for flexibility in terms of input size (input_sz), the size of the hash table (table_sz), and consequently, the size of the hash function output (fsz), which is determined by the logarithm (base 2) of the table size. This parameterization ensures that the module can be adapted to various requirements regarding the size of the input data and the hash table.
+The core logic of the module revolves around a combinational process that folds the input data multiple times (as defined by the folds local parameter) and performs an XOR operation to generate the hash output. This process is designed to distribute the input data evenly across the hash table, aiming to minimize collisions and ensure a uniform distribution of hash values.
+
+Give me the complete code.
+

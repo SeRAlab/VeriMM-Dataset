@@ -1,0 +1,6 @@
+Design a 6-to-1 multiplexer with a 3-bit select input. The module takes a 6-bit input data signal and outputs a 4-bit value based on the select signal. The select input determines which 4-bit slice of the input data is forwarded to the output. If the selection index is out of valid range (greater than 5), the output will be forced to zero. The multiplexer also includes a priority encoding logic that alters how the select input is interpreted, thereby allowing specific data slices to be accessed depending on the select value.
+module top_module(
+    input [2:0] sel,
+    input [5:0] data,
+    output reg [3:0] out
+);

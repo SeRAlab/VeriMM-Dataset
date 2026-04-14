@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Design a 3-bit Johnson counter with an active-high synchronous reset.
+
+Module name:  
+    JohnsonCounter_3bit               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high synchronous reset signal.
+Output port:
+    q: 3-bit register representing the current state of the counter.
+
+Implementation:
+On every rising edge of the clock signal (clk), if the reset signal (rst) is high, the counter value (q) is reset to 3'b000.
+Otherwise, the counter value is shifted left by one bit, and the least significant bit is set to the complement of the most significant bit.
+
+Give me the complete code.
+
+module JohnsonCounter_3bit(
+   input                clk ,
+   input                rst ,
+ 
+   output reg [2:0]     q   
+);

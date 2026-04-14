@@ -1,0 +1,18 @@
+Design a read interface module that operates on a 16-bit chip select input and an 8-bit address input. The module supports a read operation indicated by the RD signal, outputting an 8-bit data (DQ) based on the specified address. When RD is low, the module captures and stores input data (Xin) at address 1 (Addr[7:4] = 4'h1) and routes the values from eight distinct axis data inputs (AxisDQ_1 to AxisDQ_8) based on the address to the output DQ. When RD is high, the output is placed in a high-impedance state (8'hzz). This behavior mimics a memory or register map, allowing data retrieval based on address decoding.
+module top_module(
+							CS,
+							Addr,
+							RD,
+							DQ,
+							
+							Xin,
+							AxisDQ_1,
+							AxisDQ_2,
+							AxisDQ_3,
+							AxisDQ_4,
+							AxisDQ_5,
+							AxisDQ_6,
+							AxisDQ_7,
+							AxisDQ_8
+
+    );

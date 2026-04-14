@@ -1,0 +1,5 @@
+Design a two-state branch prediction circuit. This module uses a state machine to predict whether a branch will be taken based on previous outcomes. It switches between two states, PREDICT_0 (not taken) and PREDICT_1 (taken), depending on the input signal indicating whether the last branch was taken (taken_i) and operates based on a clock signal. When enabled and the reset signal is low, the module updates its state and outputs a prediction based on the current state, where the output is high only when the state is PREDICT_1.
+module top_module(
+  input clock, reset, enable, taken_i,
+  output prediction_o
+);

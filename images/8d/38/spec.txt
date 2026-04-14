@@ -1,0 +1,9 @@
+This module implements a 4-bit magnitude comparator that evaluates the relative sizes of two 4-bit input numbers, A and B. The comparator generates three outputs: EQ, GT, and LT, which indicate whether A is equal to, greater than, or less than B, respectively. The design utilizes a synchronous state machine to control the comparison process, transitioning through different stages to ensure accurate timing of input registration and output generation. The outputs are only valid and driven when the module reaches the final stage, ensuring reliability in signaling the comparison results.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input clk,                // Added clk as an input
+    output EQ,
+    output GT,
+    output LT
+);

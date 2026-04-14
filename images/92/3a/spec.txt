@@ -1,0 +1,18 @@
+Design a register module that supports reading and writing operations for an 8-bit data value. It has an input signal to write data (`write_0d`), and it allows multiple read operations (`read_0r`, `read_1r`, `read_2r`, `read_3r`) to access the same 8-bit data output (`read_0d`, `read_1d`, `read_2d`, `read_3d`). The module employs internal registers controlled by a write enable signal (`write_0r`) to capture and hold the input data when a write operation is requested. The design includes additional logic gates for controlling the write operation and ensuring that data is consistently presented on all read data outputs.
+module top_module(
+  input write_0r,
+  output write_0a,
+  input [7:0] write_0d,
+  input read_0r,
+  output read_0a,
+  output [7:0] read_0d,
+  input read_1r,
+  output read_1a,
+  output [7:0] read_1d,
+  input read_2r,
+  output read_2a,
+  output [7:0] read_2d,
+  input read_3r,
+  output read_3a,
+  output [7:0] read_3d
+);

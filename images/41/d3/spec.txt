@@ -1,0 +1,7 @@
+Design a module that converts a single-precision floating-point number to a fixed-point representation. Upon a positive clock edge, if the reset signal is asserted, the output is set to zero. Otherwise, the module takes a 32-bit floating-point input and scales it by a factor of 2^24 to produce a 32-bit signed fixed-point output.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] float_in,
+    output reg [31:0] fixed_out
+);

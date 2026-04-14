@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a module for an 8-bit shift register that shifts its contents to the right on each positive edge of the clk signal. The register should load a new 8-bit value when the load signal is high.
+
+Module name:  
+    shift_register
+
+Input ports：
+    clk: Clock signal.
+    rst_n: Reset signal (active low).
+    load: Load signal.
+    data_in: 8-bit input data to load into the register.
+
+Output ports：
+    data_out: 8-bit output signal representing the current contents of the register.
+
+Implementation:
+Declare the module shift_register with input and output ports as specified in the ports statement.
+Declare an 8-bit register to keep track of the current contents.
+Inside an always block, sensitive to the positive edge of the clk signal and the negative edge of the rst_n signal, implement the logic for loading data and shifting.
+In the reset condition (~rst_n), set the register to 0.
+On each positive edge of the clk signal, if the load signal is high, load the new data into the register, otherwise shift the contents to the right.
+
+Give me the complete code.

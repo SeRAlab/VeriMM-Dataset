@@ -1,0 +1,26 @@
+Design a memory arbiter that manages access to shared resources between a Wishbone slave interface and a CSR (Control and Status Register) slave interface. The arbiter routes address and data signals based on the active interface; when the CSR is active, it prioritizes CSR reads and writes. It generates an acknowledgment signal for the Wishbone interface and ensures proper data integrity by allowing data to be read from either interface while maintaining distinct read/write operations. The arbiter also handles reset conditions and maintains the state of acknowledgment across clock cycles, facilitating efficient communication in a multi-master bus environment.
+module top_module(
+    input clk_i,
+    input rst_i,
+
+    // Wishbone slave
+    input  [17:1] wb_adr_i,
+    input  [ 1:0] wb_sel_i,
+    input         wb_we_i,
+    input  [15:0] wb_dat_i,
+    output [15:0] wb_dat_o,
+    input         wb_stb_i,
+    output        wb_ack_o,
+
+    // CSR slave
+    input  [17:1] csr_adr_i,
+    output [15:0] csr_dat_o,
+    input         csr_stb_i,
+
+    // CSR master
+    output [17:1] csrm_adr_o,
+    output [ 1:0] csrm_sel_o,
+    output        csrm_we_o,
+    output [15:0] csrm_dat_o,
+    input  [15:0] csrm_dat_i
+  );

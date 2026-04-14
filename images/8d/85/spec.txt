@@ -1,0 +1,8 @@
+Design a state machine that manages a warm boot sequence based on the inputs BOOT, S1, and S0. The module transitions through four defined states (STATE_0 to STATE_3) depending on the conditions of the inputs, while the output VALID indicates whether the system is in a valid state. The state transitions allow for resetting to STATE_0 when the BOOT signal is activated, with decisions made based on the combinations of S1 and S0 inputs to determine the next state. The circuit is intended for boot management functionality in a system, ensuring that the VALID output remains high while in any of the defined states.
+module top_module(
+  input BOOT,
+  input S1,
+  input S0,
+  input clk,        // Added clk input
+  output reg VALID
+);

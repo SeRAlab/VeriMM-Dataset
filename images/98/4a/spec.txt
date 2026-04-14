@@ -1,0 +1,6 @@
+Design a module that generates an output based on an 8-bit input and a clock signal. This module creates an odd parity bit for the input data, indicating whether the number of 1's in the input is odd or even. Additionally, it includes a priority encoder that identifies the highest-order bit that is set in the input, producing a 3-bit encoded output. The final output is a 10-bit wide register that combines the parity bit, the priority-encoded position, and zeroes for the remaining bits. The entire operation is synchronized to the positive edge of the clock signal.
+module top_module(
+    input [7:0] in,
+    input clk,
+    output reg [9:0] out
+);

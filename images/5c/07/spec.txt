@@ -1,0 +1,21 @@
+Design a 4-byte error detection module that monitors a range of inputs related to data transmission and alignment. When enabled, the module generates a soft error signal when any of the specified error conditions occur, such as buffer errors or misaligned data. It increments an error counter for each detected error. If the error count reaches 15, a hard error signal is asserted, indicating a critical fault. Upon receiving a hard error reset, the module clears the error signals and resets the counter. If error detection is disabled, both error signals and the counter are reset. This module enhances system reliability by tracking and categorizing errors in data communication.
+module top_module(
+    // Lane Init SM Interface
+    input ENABLE_ERROR_DETECT,
+    input HARD_ERROR_RESET,
+
+    // Global Logic Interface
+    output reg SOFT_ERROR,
+    output reg HARD_ERROR,
+
+    // MGT Interface
+    input RX_DISP_ERR,
+    input TX_K_ERR,
+    input RX_NOT_IN_TABLE,
+    input RX_BUF_STATUS,
+    input TX_BUF_ERR,
+    input RX_REALIGN,
+
+    // System Interface
+    input USER_CLK
+);

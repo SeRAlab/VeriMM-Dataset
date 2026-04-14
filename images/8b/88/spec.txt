@@ -1,0 +1,14 @@
+Design a D-type flip-flop (DFF) that incorporates gated control features and reset functionality. The output Q is updated on the rising edge of the clock (CLK) with the following behavior: if the RESET signal is low, Q is set to LOW; if GATE is activated, the output can either be set to LOW when SCD is high or updated with the value of input D when SCE is active. This structure allows for selective enabling and controlling of the stored data based on external signals, making it suitable for specific state retention applications within a digital circuit.
+module top_module(
+    input D,
+    input SCD,
+    input SCE,
+    input GATE,
+    input CLK,
+    input RESET,
+    output reg Q,  // Changed to output reg
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB
+);

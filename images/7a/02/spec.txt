@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+
+Implement a Johnson Counter module that generates a 4-bit Johnson counter sequence. The counter value is stored in a 4-bit register named "johnson_count". The counter sequence is 0000, 1000, 1100, 1110, 1111, 0111, 0011, 0001, and back to 0000.
+
+Module name:  
+    johnson_counter
+                 
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+
+Output ports:
+    johnson_count: 4-bit output register representing the current Johnson counter value.
+
+Implementation:
+State and Counter Generation:
+The module includes a register, johnson_count, with a width of 4 bits, which represents the current Johnson counter value.
+The johnson_count register is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the johnson_count register is cleared to 0.
+On each clock cycle, the johnson_count register is updated to create the Johnson counter sequence by shifting the current value to the right and updating the MSB with the complement of the previous MSB.
+
+Give me the complete code.
+
+module johnson_counter(
+  input clk,
+  input rst_n,
+  output reg [3:0] johnson_count
+);

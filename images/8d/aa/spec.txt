@@ -1,0 +1,7 @@
+Design a Mealy state machine for detecting a specific 3-bit sequence in a continuous input stream. The circuit utilizes a clock signal and a reset to manage its operation. It transitions between an IDLE state and a DETECTED state based on input data, setting the output `match` high when the first bit of the sequence (logic level '1') is received and remaining high until a '0' is detected, at which point it returns to IDLE. The design purpose is to signal when the specified sequence is recognized while managing state transitions in response to the data input.
+module top_module(
+  input clk,
+  input reset,
+  input data,
+  output reg match
+);

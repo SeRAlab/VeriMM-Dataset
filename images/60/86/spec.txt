@@ -1,0 +1,12 @@
+Design a module that combines the functionality of a half-adder and a 6-to-1 multiplexer. It takes two single-bit inputs for the half-adder and produces a sum and carry output. The module also includes a multiplexer that selects one of six 4-bit data inputs based on a 3-bit select signal. The final output is an 8-bit wide signal, composed of the selected 4-bit data from the multiplexer followed by the 1-bit sum and 1-bit carry from the half-adder. This design is intended for applications requiring both arithmetic addition and versatile data selection.
+module top_module(
+    input a, b, // Inputs for the half-adder
+    input [2:0] sel, // Select input for the multiplexer
+    input [3:0] data0, // 4-bit data inputs for the multiplexer
+    input [3:0] data1,
+    input [3:0] data2,
+    input [3:0] data3,
+    input [3:0] data4,
+    input [3:0] data5,
+    output reg [7:0] out // 8-bit output from the functional module
+);

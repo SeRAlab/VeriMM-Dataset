@@ -1,0 +1,10 @@
+
+
+You have been tasked with designing a Verilog module that implements a system ID for a System-on-Chip (SoC) design. The module should have three input ports: `address`, `clock`, and `reset_n`. The `address` port is a 32-bit input that specifies the address of the requested system ID. The `clock` port is a standard Verilog clock input, and the `reset_n` port is an active-low reset input. The module should have one output port: `readdata`, which is a 32-bit output that contains the system ID data corresponding to the input address.
+
+The system ID data should be stored in the module and should be accessible via the `address` input. Specifically, when the `address` input is equal to `32'h0`, the `readdata` output should contain the value `32'hDEADBEEF`. When the `address` input is equal to `32'h4`, the `readdata` output should contain the value `32'hCAFEBABE`. For all other values of `address`, the `readdata` output should be set to `32'h00000000`.
+
+The module should operate synchronously with the `clock` input, and should only update the `readdata` output on the rising edge of the clock. The module should also support an active-low reset input (`reset_n`), which should reset the `readdata` output to `32'h00000000`.
+
+Implement the `soc_design_SystemID` module in Verilog, following the specifications above.
+

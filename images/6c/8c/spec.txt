@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that counts consecutive ones in a stream of input data. The FSM transitions through four states based on the presence of '1's in the input: S0 represents zero consecutive '1's, S1 represents one consecutive '1', S2 represents two consecutive '1's, and S3 indicates three or more consecutive '1's. The output, 'match', is asserted high when the state is S3, signaling that three or more consecutive '1's have been detected. The state machine resets to S0 when the reset input is low. This design can be used in applications where detecting a specific sequence in digital signals is essential.
+module top_module(
+  input clk,
+  input reset,
+  input data,
+  output reg match
+);

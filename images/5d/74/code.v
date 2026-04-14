@@ -1,0 +1,1 @@
+module top_module(input wire i, output wire o);assign o = !i;endmodule

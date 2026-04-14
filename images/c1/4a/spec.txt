@@ -1,0 +1,40 @@
+Please act as a professional verilog designer.
+    
+Implement a module to manage and monitor various counters related to the reception of Ethernet frames. Its primary functions include:
+
+Tracking the number of bytes received in an Ethernet frame.
+Managing a delay CRC counter used in the processing of received frames.
+Monitoring the inter-frame gap (IFG) counter to ensure compliance with Ethernet standards.
+Providing flags for specific byte count conditions, which are crucial for the correct handling of Ethernet frames, including detection of frame length violations and support for jumbo frames.
+
+This module plays a critical role in the Ethernet receive path, ensuring that frames are received and processed according to the Ethernet protocol standards and the specific requirements of the system it is integrated into.
+
+Module name:  
+	eth_rxcounters
+
+Input ports:
+	MRxClk: The clock signal for the module. All operations are synchronized to this clock.
+	Reset: Active high reset signal that initializes the module's internal state.
+	MRxDV: Indicates the presence of valid data on the MRxD (Media Receive Data) interface.
+	StateIdle, StateSFD, StateData, StateDrop, StatePreamble: Signals indicating the current state of the Ethernet frame reception process.
+	MRxDEqD: Indicates that the received data equals the Destination address.
+	DlyCrcEn: Enables the delay CRC counter.
+	Transmitting: Indicates that the system is currently transmitting data.
+	MaxFL: The maximum frame length setting.
+	r_IFG: A signal related to the interframe gap (IFG) handling.
+	HugEn: Enables support for jumbo frames.
+Output ports:
+	IFGCounterEq24: Indicates that the IFG counter has reached 24.
+	DlyCrcCnt: The current value of the delay CRC counter.
+	ByteCntEq0 to ByteCntEq7: Flags indicating if the byte counter equals 0 to 7, respectively.
+	ByteCntGreat2: Indicates that the byte counter is greater than 2.
+	ByteCntSmall7: Indicates that the byte counter is less than 7.
+	ByteCntMaxFrame: Indicates that the byte counter has reached the maximum frame length.
+	ByteCntOut: The current value of the byte counter, possibly adjusted for CRC delay.
+
+
+Implementation:
+The eth_rxcounters module is designed to manage various counters related to Ethernet frame reception, including byte counting during frame reception, delay CRC counting, and inter-frame gap (IFG) counting. The module operates under the assumption of a synchronous design, with all operations triggered by the rising edge of the MRxClk clock signal or a system reset (Reset). The module's functionality is segmented into several key areas, each governed by a combination of combinational and sequential logic.
+
+Give me the complete code.
+

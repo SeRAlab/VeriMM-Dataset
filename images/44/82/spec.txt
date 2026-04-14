@@ -1,0 +1,10 @@
+Develop a memory unit with 4096 locations, each 64 bits wide, that supports read and write operations controlled by a clock. The module reads data from the memory at the address specified by the input Q when the read enable signal, tmp_ram_rd_en, is active. It writes data from the input din to the specified address if the memory is not full (indicated by ram_full_fb_i_reg) and not being read from (tmp_ram_rd_en is inactive). Additionally, the output signal out indicates when a write attempt is made while the memory is full.
+module top_module(
+    input clk,
+    input ram_full_fb_i_reg,
+    input tmp_ram_rd_en,
+    input [11:0] Q,
+    input [63:0] din,
+    output reg [63:0] dout, // Changed to reg type
+    input [0:0] out
+);

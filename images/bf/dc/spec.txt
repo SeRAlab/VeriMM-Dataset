@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to serialize parallel data inputs into a serial data output. This module takes a wide data input, specified by the parameter `DWIDTH`, and outputs the data one bit at a time on each rising edge of a fast clock signal. The serialization process is essential in applications where data needs to be transmitted over a single line or channel, such as in serial communication interfaces or data transmission systems. The module plays a critical role in converting parallel data into a format suitable for serial communication, thereby enabling efficient data transfer between different parts of a digital system or between different systems.
+
+Module name:  
+	serializer
+
+Input ports:
+	clk: Input wire. This is a clock input, but it is not used in the current implementation of the module. It might be reserved for future use or for synchronization purposes in a broader system context.
+	fast_clk: Input wire. This is the clock signal that drives the serialization process. The data output changes on the rising edge of this clock.
+	res_n: Input wire. This is the activelow reset signal. When asserted (low), it resets the internal bit counter (curr_bit) to 0, initializing the serialization process.
+	data_in: Input wire of width DWIDTH1:0. This is the parallel data input to be serialized. The width of this input is parameterizable, allowing for flexibility in the module's application.
+Output ports:
+	data_out: Output wire. This is the serial data output. On each rising edge of fast_clk, one bit of data_in is outputted here, starting from the least significant bit.
+
+
+Implementation:
+The RTL module presented is a serializer, designed to serialize a parallel input data stream into a serial output. The module is parameterized with DWIDTH, which allows for flexibility in the width of the input data. The core functionality of this module is to take an input data word of width DWIDTH and output it bit by bit on each rising edge of a fast clock signal, fast_clk.
+
+Give me the complete code.
+

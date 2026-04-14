@@ -1,0 +1,10 @@
+Design a system that functions as a synchronous 4-bit counter with an associated shift register and XOR operation. The module features a reset input to initialize both the counter and shift register to zero. The counter can be loaded with external 4-bit data when the LOAD signal is activated and increments on each clock cycle otherwise. The shift register shifts in the least significant bit (LSB) of the counter when the SHIFT signal is asserted. Additionally, the output Q provides the current count value from the counter. An XOR operation is performed between the current state of the shift register and the counter, although its output is not used in the current design.
+module top_module(
+    input CLK,
+    input RESET,
+    input SHIFT,
+    input LOAD,
+    input [3:0] DATA,
+    input [3:0] D,
+    output reg [3:0] Q
+);

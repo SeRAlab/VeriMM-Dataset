@@ -1,0 +1,31 @@
+Please act as a professional verilog designer.
+    
+Implement a module to interface with a VGA display, managing the display's cursor position, screen address, and internal register settings. Its primary functions include:
+
+Cursor Management: Controls the visibility and position of the cursor on the VGA display.
+Screen Address Calculation: Computes the address of the screen location to be accessed or modified.
+Register Configuration: Allows for the configuration of internal registers that determine the behavior of the cursor and screen addressing.
+
+This module plays a crucial role in the broader system context of a VGA display system, acting as a bridge between the system's core logic and the physical display, translating logical commands into visual representations on the screen.
+
+Module name:  
+	VGA_CRT
+
+Input ports:
+	CE (Clock Enable): A signal that enables the module's operation when high. Type: Input.
+	WR (Write Enable): A signal that enables writing to the internal registers or cursor control when high. Type: Input.
+	din (Data Input): An 8bit input used to provide data for internal registers or cursor control. Type: Input.
+	addr (Address Select): A signal that selects between writing to the index register or the data registers. Type: Input.
+	CLK (Clock): The system clock signal. Type: Input.
+Output ports:
+	dout (Data Output): An 8bit output that reflects the current value of the selected internal register. Type: Output.
+	oncursor (Cursor On/Off): A signal that indicates whether the cursor is on (high) or off (low). Type: Output (reg).
+	cursorpos (Cursor Position): A 12bit output that indicates the cursor's position on the screen. Type: Output (wire).
+	scraddr (Screen Address): A 16bit output that indicates the current screen address being accessed or modified. Type: Output (wire).
+
+
+Implementation:
+The VGA_CRT module is designed to interface with a VGA display, managing the cursor position, screen address, and internal register settings based on input commands. The module operates on a clock signal (CLK) and utilizes control signals (CE, WR) alongside data (din) and address (addr) inputs to manipulate its internal state and outputs. The core functionality is encapsulated within a clocked process that responds to the rising edge of CLK, ensuring synchronous operation.
+
+Give me the complete code.
+

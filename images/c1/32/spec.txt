@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform several comparison operations between two 32-bit signed integers, `A` and `B`. Its primary functions include determining if `A` is equal to `B` (`EQ`), if `A` is greater than zero (`GZ`), if `A` is less than zero (`LZ`), if `A` is greater than or equal to zero (`GEZ`), and if `A` is less than or equal to zero (`LEZ`). This module is crucial in systems requiring arithmetic comparisons, such as in control logic, decision-making processes, or any application where the relationship between two numbers or the sign of a number needs to be evaluated.
+
+Module name:  
+	Compare
+
+Input ports:
+	A [31:0]: A 32bit signed integer input. It is one of the two numbers to be compared against B.
+	B [31:0]: A 32bit signed integer input. It serves as the reference value for comparison against A.
+Output ports:
+	EQ: A singlebit output that indicates equality between A and B. It is high (1) if A equals B, and low (0) otherwise.
+	GZ: A singlebit output that signifies whether A is greater than zero. It is high if A is positive and not zero, and low otherwise.
+	LZ: A singlebit output indicating if A is less than zero. It is high if A is negative, and low otherwise.
+	GEZ: A singlebit output that denotes whether A is greater than or equal to zero. It is high if A is positive or zero, and low if A is negative.
+	LEZ: A singlebit output that shows if A is less than or equal to zero. It is high if A is negative or zero, and low if A is positive.
+
+
+Implementation:
+The Compare module is a purely combinational logic design that performs various comparison operations between two 32-bit inputs, A and B. The module outputs five signals that represent different comparison results: equality (EQ), greater than zero (GZ), less than zero (LZ), greater than or equal to zero (GEZ), and less than or equal to zero (LEZ). The design leverages bitwise and logical operations to determine these conditions without the need for arithmetic operations, making it efficient for hardware implementation.
+Equality Check (EQ): The module compares the entirety of inputs A and B using the equality operator (==). If all bits match, EQ is asserted (1), indicating that A and B are equal. Otherwise, EQ is deasserted (0).
+Greater Than Zero (GZ): To determine if A is greater than zero, the module checks two conditions: A is not zero, and the most significant bit (MSB) of A (which represents the sign in two's complement notation) is 0 (indicating a positive number). The bitwise NOT operator (~) is used on A[31] and the internally defined ZeroA signal to evaluate this condition.
+Less Than Zero (LZ): The module checks if A is less than zero by simply examining the MSB of A. In two's complement notation, a 1 in the MSB indicates a negative number. Thus, if A[31] is 1, LZ is asserted.
+Greater Than or Equal to Zero (GEZ): This condition is true if A is either greater than zero or exactly zero. Since a non-negative number in two's complement has a 0 in its MSB, the module uses the bitwise NOT operator on A[31] to assert GEZ when A is non-negative.
+Less Than or Equal to Zero (LEZ): The module asserts LEZ if A is less than or equal to zero. This is determined by checking if A is either exactly zero or negative. The logical OR operator (|) is used to combine A[31] and ZeroA, asserting LEZ if either condition is true.
+
+Give me the complete code.
+

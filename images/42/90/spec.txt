@@ -1,0 +1,6 @@
+Design a module that implements a CORDIC algorithm to compute trigonometric functions—sine, cosine, and tangent—based on a given angle input. The module takes a signed 32-bit input representing the angle and a 2-bit function selector to determine which function to calculate. The computed values are output as a signed 32-bit result. The CORDIC algorithm leverages iterative calculations with a lookup table for arctangent values and pre-computed constants to efficiently derive sine and cosine values, and it computes the tangent by dividing sine by cosine.
+module top_module(
+  input signed [31:0] angle,
+  input [1:0] function_select,
+  output reg signed [31:0] function_value // Changed to reg
+);

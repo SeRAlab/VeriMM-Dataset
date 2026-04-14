@@ -1,0 +1,11 @@
+Design a simple 32-bit memory block capable of performing basic read and write operations. The module has a 2-bit address input to select specific memory locations, and it utilizes chip select and write enable signals to control access. When the chip select signal is asserted and the write enable signal is deasserted, data can be written to the memory. Conversely, when the write enable signal is asserted, the stored data in the memory can be read and output to a read data register. Reset functionality is included, allowing the memory to clear upon reset. The module effectively serves as a small synchronous memory component in a digital system.
+module top_module(
+  input [1:0] address,
+  input chipselect,
+  input clk,
+  input reset_n,
+  input write_n,
+  input [31:0] writedata,
+  output out_port,
+  output [31:0] readdata
+);

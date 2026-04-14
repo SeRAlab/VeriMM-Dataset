@@ -1,0 +1,25 @@
+module encoder_16to4 (
+    input [15:0] I,
+    output reg [3:0] Y
+);
+    always @(*) begin
+        casez(I)
+            16'b1??????????????? : Y = 4'd0;  // I0 active
+            16'b01?????????????? : Y = 4'd1;  // I1 active
+            16'b001????????????? : Y = 4'd2;  // I2 active
+            16'b0001???????????? : Y = 4'd3;  // I3 active
+            16'b00001??????????? : Y = 4'd4;  // I4 active
+            16'b000001?????????? : Y = 4'd5;  // I5 active
+            16'b0000001????????? : Y = 4'd6;  // I6 active
+            16'b00000001??????? : Y = 4'd7;  // I7 active
+            16'b000000001?????? : Y = 4'd8;  // I8 active
+            16'b0000000001????? : Y = 4'd9;  // I9 active
+            16'b00000000001???? : Y = 4'd10; // I10 active
+            16'b000000000001??? : Y = 4'd11; // I11 active
+            16'b0000000000001?? : Y = 4'd12; // I12 active
+            16'b00000000000001? : Y = 4'd13; // I13 active
+            16'b000000000000001 : Y = 4'd14; // I14 active
+            default              : Y = 4'd15; // No active input
+        endcase
+    end
+endmodule

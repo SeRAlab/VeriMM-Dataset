@@ -1,0 +1,6 @@
+Design a synchronous module that processes input data on a clock signal while allowing for reset functionality. When the reset signal is low, the module initializes its output and internal counter. On each positive edge of the clock, if the counter is zero, it computes the sum of the lower 4 bits and the next 3 bits of the 6-bit input data, updating the 4-bit output. The counter then loads a specific value, defined by a local parameter, to control how long this behavior continues before decrementing its value on subsequent clock cycles. This design can serve as a simple arithmetic operation and state control within a larger digital system.
+module top_module(input wire clk_in
+, input wire rst
+, input wire [5:0] data_in
+, output reg [3:0] data_out
+);

@@ -1,0 +1,19 @@
+The implemented module is a multiplexer circuit that selects different data inputs based on various control signals to facilitate the routing of data within a processor. Specifically, it takes a 32-bit instruction input, `IR_D`, to extract fields for register selection, and it uses these selections (`A3_SEL` and `WD3_SEL`) to determine which register data should be forwarded as outputs (`A3`, `WD3`, and `AO_E`). Additionally, it chooses between the register file output (`RF_RT`) and an immediate extended value (`imm_ext`) for the `ALUB` output based on the `ALUB_SEL` signal. Overall, this module enables dynamic data selection for processing, which is essential for arithmetic operations and memory addressing in a pipelined architecture.
+module top_module(
+    input [31:0] IR_D,
+    input [1:0] A3_SEL,
+    output [4:0] A3,
+    input [31:0] RF_RT,
+    input [31:0] imm_ext,
+    input ALUB_SEL,
+    output [31:0] ALUB,
+    input [31:0] RDATA,
+    input [31:0] RES_ALU_W,
+    input [31:0] PC8_W,
+    input [1:0] WD3_SEL,
+    output [31:0] WD3,
+    input [31:0] RES_ALU_E,
+    input [31:0] HL_E,
+    input AO_SEL_E,
+    output [31:0] AO_E
+    );

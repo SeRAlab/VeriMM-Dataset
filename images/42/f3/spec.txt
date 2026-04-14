@@ -1,0 +1,9 @@
+Design a circuit that determines the maximum of two 32-bit input values (ain and bin) and maintains a statistic counter. On each clock cycle, if the reset is not activated, the module compares the inputs and updates the result output with the greater value. Additionally, it tracks how many times the result changes compared to the previous value, increasing a 16-bit count within a statistic register each time a new maximum is detected. On reset, the result and the count are initialized to predefined values.
+module top_module(
+	input                     clk      ,
+	input                     rst      ,
+	input      [31:0]         ain      ,
+	input      [31:0]         bin      ,
+	output reg [31:0]         result   ,
+	output reg [31:0]         statistic 
+);

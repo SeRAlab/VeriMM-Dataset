@@ -1,0 +1,12 @@
+
+Design a simple instruction pipeline consisting of three stages: Fetch (IF), Decode (ID), and Execute (EX). The pipeline should accept a 16-bit instruction as input and provide a 4-bit output based on the opcode of the instruction. The instruction format is as follows:
+- Bits [15:12]: Opcode (4 bits)
+- Bits [11:0]: Operand (12 bits)
+
+The output should be determined as follows:
+- If Opcode is 4'b0000: Output 4'b0001
+- If Opcode is 4'b0001: Output 4'b0010
+- If Opcode is 4'b0010: Output 4'b0011
+- If Opcode is 4'b0011: Output 4'b0100
+- For any other Opcode: Output 4'b0000
+The pipeline should support a clock input and a reset signal.

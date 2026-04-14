@@ -1,0 +1,7 @@
+Design a FIFO controller that determines how many words can be written to a FIFO buffer based on the availability of storage and the current input counter. The controller outputs a 4-bit increment for the write pointer, which indicates the number of entries that can be added to the FIFO. If both ge3_free is asserted and the input counter reaches 3, it allows a write of 3 entries. If ge2_free is asserted and the counter is at least 2, it permits writing of 2 entries. If the counter is at least 1, it allows writing of 1 entry. Otherwise, it allows no entries to be written.
+module top_module(
+  input wire ge2_free,
+  input wire ge3_free,
+  input wire [1:0] input_tm_cnt,
+  output reg [3:0] fifo_wrptr_inc
+);

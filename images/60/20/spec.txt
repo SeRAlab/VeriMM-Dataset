@@ -1,0 +1,7 @@
+Design a shift register with a load capability and two selectable shift modes. When the load signal is activated, the module captures the input data into the output register q. If load is not active, the module behaves according to the ena input: if ena is 2'h1, it performs a right shift operation, moving the least significant bit (LSB) into the most significant bit (MSB) position; if ena is 2'h2, it performs a left shift operation, moving the MSB into the LSB position. This allows for dynamic data manipulation based on the control inputs.
+module top_module(
+	input clk,
+	input load,
+	input [1:0] ena,
+	input [99:0] data,
+	output reg [99:0] q);

@@ -1,0 +1,12 @@
+Design a 64-bit wide, dual-port FIFO (First In, First Out) memory block with separate write and read clock domains. The module supports writing data when the `wr_clk` signal is triggered, provided the `I1` signal is asserted and the FIFO is not full. It can read from the FIFO on the rising edge of the `rd_clk`, given that `tmp_ram_rd_en` is active and there is at least one entry in the FIFO. The module also includes status output indicating when the FIFO is empty and utilizes internal pointers to manage write and read operations, along with a count of the current entries.
+module top_module(
+    dout,
+    wr_clk,
+    rd_clk,
+    I1,
+    tmp_ram_rd_en,
+    Q,
+    O2,
+    O1,
+    din
+);

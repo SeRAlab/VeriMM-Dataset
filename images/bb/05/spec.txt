@@ -1,0 +1,9 @@
+Design a power management module that controls a signal indicating whether it is safe to shut down a system. The module monitors a request for completion and a completion signal while managing a turn-off configuration input. It asserts the output signal `cfg_turnoff_ok_n` as LOW when the system is ready to turn off and no transactions are pending. On reset, it initializes its internal state to prevent any inadvertent shutdown, ensuring proper transitions based on clock cycles and external signals.
+module top_module(
+    input clk,
+    input rst_n,
+    input req_compl_i,
+    input compl_done_i,
+    input cfg_to_turnoff_n,
+    output reg cfg_turnoff_ok_n // Changed to output reg here
+);

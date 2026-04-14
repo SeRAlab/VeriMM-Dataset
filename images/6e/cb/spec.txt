@@ -1,0 +1,9 @@
+Design a circuit that functions as a synchronous serial output generator with a counter and shift register. It operates on clock edges, resetting the internal state upon a reset signal. The module allows loading data into a 4-bit counter based on the LOAD input. When the SHIFT_ENABLE signal is active, it shifts the counter value into a 4-bit shift register and outputs the least significant bit (LSB) of the shift register as SERIAL_OUT. Alternatively, when SHIFT_ENABLE is inactive, it computes the sum of the counter and the current shift register contents, outputting the LSB of this sum as SERIAL_OUT. This design effectively combines a counter, a shift register, and arithmetic addition functionality.
+module top_module(
+    input CLK,
+    input RESET,
+    input LOAD,
+    input [3:0] DATA,
+    input SHIFT_ENABLE,
+    output reg SERIAL_OUT
+);

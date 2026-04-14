@@ -1,0 +1,8 @@
+Design a 4-bit adder circuit with a carry-in and a reset feature. The module takes two 4-bit inputs, `a` and `b`, along with a carry-in bit `cin` and a reset signal. When the reset signal is active, the output `sum` is set to zero. If reset is inactive, it computes the sum of `a`, `b`, and `cin`. If the resulting sum exceeds 4 bits, it retains only the lower 4 bits for output. This module serves to add two 4-bit values possibly with a carry-in while ensuring proper output under reset conditions.
+module top_module(
+    input [3:0] a,
+    input [3:0] b,
+    input cin,
+    input reset,
+    output reg [3:0] sum
+);

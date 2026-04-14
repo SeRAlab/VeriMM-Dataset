@@ -1,0 +1,9 @@
+Design a clocked arithmetic unit capable of performing basic arithmetic operations: addition, subtraction, multiplication, and division on 32-bit inputs A and B. The operation is selected through a 2-bit control signal (CTRL). The result of the operation is output in C, and an overflow flag F is asserted if the result is negative. The module also includes an asynchronous reset functionality to initialize the outputs to zero.
+module top_module(
+  input clk, rst,
+  input [31:0] A,
+  input [31:0] B,
+  input [1:0] CTRL,
+  output reg [31:0] C,
+  output reg F
+);

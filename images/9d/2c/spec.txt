@@ -1,0 +1,7 @@
+Implement a binary to binary-coded decimal (BCD) converter that takes a 4-bit binary input and produces a 4-bit BCD output along with a signal indicating if the input is greater than nine. The design includes two stages of processing: the first stage determines if the binary input needs to be adjusted by subtracting 5 based on its value, and the second stage updates the BCD output accordingly. The converter also generates a signal to indicate whether the original binary input is greater than nine, allowing for proper identification of decimal values.
+module top_module(
+    input [3:0] binary_in,
+    input clk, // Added clk as an input
+    output reg [3:0] bcd_out,
+    output reg greater_than_nine
+);

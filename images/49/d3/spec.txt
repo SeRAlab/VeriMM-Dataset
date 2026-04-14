@@ -1,0 +1,16 @@
+Design a protocol converter for AXI (Advanced eXtensible Interface) transactions that facilitates data transfer between master and slave devices. The module includes a reset and clock input, handling both write and read operations based on control signals. When a write operation is indicated and successful, it stores incoming data and signals readiness for further transactions. For read operations, it outputs the stored data if a readiness handshake is acknowledged, while maintaining counters to track read requests and managing a skid buffer for data flow control. The design ensures proper synchronization and handshaking in the AXI protocol while maintaining state across transactions.
+module top_module(
+    input areset_d1,
+    input aclk,
+    input b_push,
+    input si_rs_bready,
+    input [1:0] m_axi_bresp,
+    input m_axi_bvalid,
+    input [8:0] in,
+    output reg si_rs_bvalid,    // Changed to reg
+    output reg cnt_read_reg_0_rep,
+    output reg [1:0] cnt_read_reg_1_rep_0,
+    output reg m_axi_bready,     // Changed to reg
+    output reg [0:0] out,
+    output reg [1:0] skid_buffer_reg_1
+);

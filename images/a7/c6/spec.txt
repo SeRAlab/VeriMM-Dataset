@@ -1,0 +1,11 @@
+Design a module that performs an up/down counting operation alongside unsigned division for 16-bit inputs. The module includes an up/down counter, which can be loaded with a specified value and incremented or decremented based on the DIR input. It also divides two 16-bit numbers (D and V) to produce a quotient and a remainder, storing the results in respective registers. The output Q combines the quotient with the counter value, while R holds the remainder. The module supports asynchronous resetting of all registers to their initial states.
+module top_module(
+    input CLK,
+    input RESET,
+    input DIR,
+    input LOAD,
+    input [15:0] D,
+    input [15:0] V,
+    output reg [15:0] Q,
+    output reg [3:0] R
+);

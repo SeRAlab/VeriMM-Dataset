@@ -1,0 +1,11 @@
+Design a UART FIFO (First-In, First-Out) interface that manages a small buffer for serial data communication. The module includes a 4-entry memory array to temporarily store 8-bit data, allowing concurrent read and write operations. The write pointer increments when data is written to the buffer and the read pointer increments when data is read, with both pointers wrapped within a 2-bit address space. It features empty and full flags, indicating whether the buffer is empty or full based on the pointer states. The module operates synchronously with a clock and incorporates a reset function to initialize the pointers, ensuring proper operation in systems requiring reliable data handling and flow control.
+module top_module(
+    input write_flag,
+    input read_flag,
+    input [7:0] data_in,
+    input clock,
+    input reset,
+    output reg [7:0] data_out,
+    output wire empty_flag,
+    output wire full_flag
+);

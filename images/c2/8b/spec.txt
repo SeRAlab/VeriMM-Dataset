@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer. Your task is to create a Verilog module that implements a watchdog timer. 
+A watchdog timer is a hardware component that is used to monitor the proper functioning of a system. 
+It is a timer that is programmed to trigger an action if it doesn't receive a "reset" signal within a certain amount of time. 
+In other words, if the system hangs or stops working, the watchdog timer will trigger a reset signal, which will restart the system.
+
+Your module should have the following inputs and outputs:
+
+Inputs: 
+- clk: the clock signal of the system
+- reset: the reset signal of the system
+- timer_duration: the duration of the timer in clock cycles
+
+Outputs: 
+- timer_reset: the reset signal triggered by the watchdog timer
+
+Your module should implement the following functionality:
+
+- When the system is working properly, the watchdog timer should be reset by a signal from the system, such as a heartbeat signal.
+- If the watchdog timer doesn't receive a reset signal within the specified duration, it should trigger a timer reset signal.
+- The timer reset signal should be active for one clock cycle and then go back to its inactive state.
+
+To implement the watchdog timer, you should use Verilog code to count the clock cycles and compare it to the timer duration. 
+If the timer duration is exceeded, you should set the timer reset signal to active for one clock cycle. 
+Otherwise, the timer reset signal should remain inactive.

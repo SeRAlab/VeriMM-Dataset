@@ -1,0 +1,8 @@
+Design a 16x2 dual-port RAM module that allows for the storage and retrieval of 2-bit data words. The memory is configured to write data on the rising edge of a clock input, controlled by a write enable signal, which can be modified by an external parameter. The module also features an option to invert the write clock and write enable signals for flexible timing control. The 2-bit output is provided based on a read address, allowing for simultaneous read and write operations. Initial values for the memory can be set through parameters at instantiation.
+module top_module(
+    input DI0, DI1,
+    input WAD0, WAD1, WAD2, WAD3,
+    input WRE, WCK,
+    input RAD0, RAD1, RAD2, RAD3,
+    output DO0, DO1
+);

@@ -1,0 +1,10 @@
+Design a voltage supply module that generates power and ground signals for a circuit. The module outputs a constant high voltage (VPWR) and ground (VGND) while controlling two other outputs, VPB and VNB, based on a given clock and reset signals. When the reset signal is active, VPB and VNB are set to low. When enabled, VPB toggles its state every two clock cycles while VNB remains low. If not enabled, both VPB and VNB are kept low. This design manages power and bias voltages in a digital circuit, providing necessary supply voltages and ground references.
+module top_module(
+  input clk,
+  input rst,
+  input enable,
+  output reg VPWR,
+  output reg VGND,
+  output reg VPB,
+  output reg VNB
+);

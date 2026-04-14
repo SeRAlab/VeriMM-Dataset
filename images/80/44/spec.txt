@@ -1,0 +1,9 @@
+Design a three-bit up/down counter that can be reset, loaded with a specific value, and incremented or decremented based on an input control. The counter operates on a clock signal, where a reset signal initializes the count to zero. When the load signal is active, the counter stores the provided three-bit input value. Depending on the state of the up/down control input, the counter either increments or decrements its value. The current count value is output through a register, effectively representing the counter's state after each clock cycle.
+module top_module(
+    input clk,
+    input rst,
+    input load,
+    input up_down,
+    input [2:0] data_in,
+    output reg [2:0] count
+);

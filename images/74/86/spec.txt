@@ -1,0 +1,11 @@
+Design a chip data parser that processes RGB pixel data from input signals. It captures 8-bit red, green, and blue values to form a 24-bit pixel representation on the rising edge of the clock. The output, `chip_data`, is derived from the pixel and alternates between the lower 12 bits and the upper 12 bits based on the clock signal. The `chip_data_enable` output is asserted when the valid signal is high, indicating the output data is ready for further processing.
+module top_module(
+    input clk,
+    input [7:0] r,
+    input [7:0] g,
+    input [7:0] b,
+    input valid,
+
+    output reg [11:0] chip_data,
+    output reg chip_data_enable
+);

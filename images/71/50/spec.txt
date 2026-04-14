@@ -1,0 +1,10 @@
+Design a 7-bit counter that tracks "year" values, with a range from 0 to 99. This module increments the counter when the aumento signal is asserted and decrements it when the disminuye signal is active, both conditioned by the EN input being set to 2. The counter resets to 0 when the reset signal is activated or when it reaches the maximum value of 99. If neither increment nor decrement signals are triggered, the counter retains its current value.
+module top_module(
+    input clk,
+    input rst,
+	 input [1:0]EN,
+    input aumento,
+    input disminuye,
+    output reg [6:0] cont_year
+	 
+    );

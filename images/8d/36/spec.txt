@@ -1,0 +1,7 @@
+Design a 2-to-4 line decoder that takes two binary inputs, A and B, and activates one of four corresponding outputs in a 16-bit output vector O, based on the value of the inputs. The output will indicate which of the four possible combinations (00, 01, 10, 11) of the inputs is active, with only one output bit set to '1' at a time while the others remain '0'. The design also incorporates a clock signal to synchronize the storage of the input values before decoding, ensuring that the output reflects stable input conditions.
+module top_module(
+    input A,
+    input B,
+    input clk,             // Added clk input
+    output reg [15:0] O    // Changed O to reg
+);

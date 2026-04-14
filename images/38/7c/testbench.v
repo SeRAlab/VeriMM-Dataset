@@ -1,0 +1,184 @@
+`timescale 1ns/1ps
+
+module nat_translation_tb;
+
+    // Testbench signals (combinational circuit)
+    reg [31:0] internal_ip;
+    wire [31:0] external_ip;
+
+    // Test tracking
+    integer test_num;
+    integer pass_count;
+    integer fail_count;
+
+    // Instantiate the DUT (Device Under Test)
+    nat_translation dut (
+        .internal_ip(internal_ip),
+        .external_ip(external_ip)
+    );
+    task testcase001;
+
+        begin
+            test_num = test_num + 1;
+            $display("Testcase %0d: Translating 192.168.1.10", test_num);
+            internal_ip = 32'hC0A8010A;
+
+            #1;
+
+
+            check_outputs(32'hCB00710A);
+        end
+        endtask
+
+    task testcase002;
+
+        begin
+            test_num = test_num + 1;
+            $display("Testcase %0d: Translating 192.168.1.20", test_num);
+            internal_ip = 32'hC0A80114;
+
+            #1;
+
+
+            check_outputs(32'hCB007114);
+        end
+        endtask
+
+    task testcase003;
+
+        begin
+            test_num = test_num + 1;
+            $display("Testcase %0d: Translating 10.0.0.5", test_num);
+            internal_ip = 32'h0A000005;
+
+            #1;
+
+
+            check_outputs(32'hCB007132);
+        end
+        endtask
+
+    task testcase004;
+
+        begin
+            test_num = test_num + 1;
+            $display("Testcase %0d: Translating 172.16.0.1", test_num);
+            internal_ip = 32'hAC100001;
+
+            #1;
+
+
+            check_outputs(32'hCB007164);
+        end
+        endtask
+
+    task testcase005;
+
+        begin
+            test_num = test_num + 1;
+            $display("Testcase %0d: Unmapped IP 8.8.8.8", test_num);
+            internal_ip = 32'h08080808;
+
+            #1;
+
+
+            check_outputs(32'h00000000);
+        end
+        endtask
+
+    task testcase006;
+
+        begin
+            test_num = test_num + 1;
+            $display("Testcase %0d: All zeros input", test_num);
+            internal_ip = 32'h00000000;
+
+            #1;
+
+
+            check_outputs(32'h00000000);
+        end
+        endtask
+
+    task testcase007;
+
+        begin
+            test_num = test_num + 1;
+            $display("Testcase %0d: All ones input", test_num);
+            internal_ip = 32'hFFFFFFFF;
+
+            #1;
+
+
+            check_outputs(32'h00000000);
+        end
+        endtask
+
+    // Test stimulus
+    initial begin
+        // Initialize
+        test_num = 0;
+        pass_count = 0;
+        fail_count = 0;
+
+        $display("========================================");
+        $display("nat_translation Testbench");
+        $display("========================================");
+
+
+        testcase001();
+        testcase002();
+        testcase003();
+        testcase004();
+        testcase005();
+        testcase006();
+        testcase007();
+        
+        
+// Print summary
+        $display("\n========================================");
+        $display("Test Summary");
+        $display("========================================");
+        $display("Tests Passed: %0d", pass_count);
+        $display("Tests Failed: %0d", fail_count);
+        $display("Total Tests:  %0d", pass_count + fail_count);
+        $display("========================================");
+
+        if (fail_count == 0)
+            $display("ALL TESTS PASSED!");
+        else
+            $display("SOME TESTS FAILED!");
+
+        $display("\nSimulation completed at time %0t", $time);
+        $finish;
+    end
+
+    // Task to check outputs
+    task check_outputs;
+        input [31:0] expected_external_ip;
+        begin
+            #1; // Small delay for combinational logic to settle
+            if (expected_external_ip === (expected_external_ip ^ external_ip ^ expected_external_ip)) begin
+                $display("PASS");
+                $display("  Outputs: external_ip=%h",
+                         external_ip);
+                pass_count = pass_count + 1;
+            end else begin
+                $display("FAIL");
+                $display("  Expected: external_ip=%h",
+                         expected_external_ip);
+                $display("  Got:      external_ip=%h",
+                         external_ip);
+                fail_count = fail_count + 1;
+            end
+        end
+    endtask
+
+    // Timeout watchdog
+    initial begin
+        #1000000; // 1ms timeout
+        $display("\nERROR: Simulation timeout!");
+        $finish;
+    end
+
+endmodule

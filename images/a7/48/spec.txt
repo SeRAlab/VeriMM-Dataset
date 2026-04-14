@@ -1,0 +1,13 @@
+Design a circuit that incorporates a 3-bit shift register and a 6-to-1 multiplexer. The shift register is updated on the rising edge of the clock and is reset synchronously when the reset input is active, storing the least significant bit of `data0`. The multiplexer selects one of the six 4-bit input data signals (`data0` to `data5`) based on a 3-bit select input, providing a 4-bit output. The final output is an 8-bit concatenation of the mux output and the shift register state.
+module top_module(
+    input clk,          // Clock input for the shift register
+    input reset,        // Synchronous active-high reset for the shift register
+    input [3:0] data0,  // Input data for multiplexer
+    input [3:0] data1,
+    input [3:0] data2,
+    input [3:0] data3,
+    input [3:0] data4,
+    input [3:0] data5,
+    input [2:0] sel,    // Select input for multiplexer
+    output [7:0] out    // 8-bit output from the functional module
+);

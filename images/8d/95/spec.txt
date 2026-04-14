@@ -1,0 +1,20 @@
+Design a Verilog module for a simple light dimmer controller using one-hot encoding. The controller should have an asynchronous active-high reset and be positive clock/clk edge triggered.
+
+States and their corresponding outputs:
+1. state Off (dimmer = 2'b00)
+2. state Low (dimmer = 2'b01)
+3. state High (dimmer = 2'b10)
+
+State transitions:
+1. From state Off: If turn_on = 1, then transition to state Low.
+2. From state Low: If increase_brightness = 1, then transition to state High. If turn_off = 1, then transition to state Off.
+3. From state High: If decrease_brightness = 1, then transition to state Low. If turn_off = 1, then transition to state Off.
+
+module top_module (
+        input clk,
+        input areset,
+        input turn_on,
+        input turn_off,
+        input increase_brightness,
+        input decrease_brightness,
+        output reg [1:0] dimmer);

@@ -1,0 +1,14 @@
+Design a circuit that operates as a 2-to-1 multiplexer for multiple 8-bit input buses, where the output is a 16-bit value. Depending on the `sel` signal, the module can either concatenate pairs of 8-bit inputs or pass through various combinations of inputs based on the 3-bit `choose` selector. If `sel` is 0, it selects from four groups of concatenated inputs, and if `sel` is 1, it produces combinations of the inputs directly, allowing flexible data selection and manipulation from eight 8-bit inputs. The output format is always 16 bits.
+module top_module(
+input [7:0] in1,
+input [7:0] in2,
+input [7:0] in3,
+input [7:0] in4,
+input [7:0] in5,
+input [7:0] in6,
+input [7:0] in7,
+input [7:0] in8,
+input [2:0] choose,
+input sel,
+output reg [15:0] out
+);

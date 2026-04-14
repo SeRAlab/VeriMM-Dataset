@@ -1,0 +1,10 @@
+Design a motor control unit that utilizes PWM for speed regulation and direction selection. The module generates a PWM output signal (`pwm_out`) based on the input speed value, alternating the output when the counter reaches the specified speed threshold. Additionally, it controls the motor direction through a 2-bit output (`motor_a_b`), setting it to a specific value depending on the `dir` input. The system resets both the counter and outputs when the reset input (`rst`) is activated, ensuring proper initialization.
+module top_module(
+  input clk,
+  input rst,
+  input pwm_in,
+  input dir,
+  input [7:0] speed,
+  output reg pwm_out,        // Changed from net to reg
+  output reg [1:0] motor_a_b // Changed from net to reg
+);

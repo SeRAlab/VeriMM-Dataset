@@ -1,0 +1,9 @@
+Design a module for rendering a graphical block in a raster graphics display based on horizontal and vertical counters, which track pixel positions. The module determines the output pixel color (represented by a 4-bit value) based on the block type and its position within defined boundaries, specifically a rectangular area defined by parameters LEFT, TOP, MAXX, and MAXY. It features logic that distinguishes between two types of blocks, applying different coloring rules depending on their coordinates and the range of the counters. The output changes based on the state of the `block` input and incorporates a simple framebuffer logic that modifies pixel outputs in specified patterns, particularly for edges and specified internal regions, while it defaults to a color indicating no drawing outside the defined area.
+module top_module(
+	input clock,
+	input [10:0] vcounter,
+	input [11:0] hcounter,
+	input [2:0] block,
+	output [4:0] sel_row, sel_col,
+	output reg [3:0] out
+);

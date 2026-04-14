@@ -1,0 +1,9 @@
+Design a state machine-based information controller that processes user authentication and sets output signals based on the login status. When a request is made, the system transitions from the initial state (S0) to the checking state (S1) where it confirms whether the entered user credentials match a stored password. If the credentials are valid, it moves to state S2, where it outputs specific control signals (writeRegP and writeRegQ) based on the most significant bit of the user input, indicating success in the authentication process. If the credentials are incorrect, it transitions to state S3, which signifies a failure in authentication while maintaining control within the defined states based on clock signals.
+module top_module(
+        clock,
+        request,
+	 	confirm,
+	 	password,
+	 	user,
+	 	writeRegP,
+	 	writeRegQ);

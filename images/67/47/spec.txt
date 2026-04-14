@@ -1,0 +1,8 @@
+Design a synchronous multiplier that takes two 8-bit inputs, A and B, and outputs their 16-bit product, P. The module operates on a clock signal and includes a reset functionality to initialize all registers to zero. On each rising edge of the clock, if reset is active, the internal and output registers are cleared; otherwise, the inputs A and B are stored in registers and their product is computed and stored, which is then assigned to the output P on the following clock edge. This design efficiently facilitates multiplication through sequential processing.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] A,
+    input [7:0] B,
+    output reg [15:0] P
+);

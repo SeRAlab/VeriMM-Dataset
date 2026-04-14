@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+    
+Implement a module to implement a dual-port RAM with optional output register and configurable read behavior. Its primary functions include:
+
+Data Storage: It stores data in a memory array, with the capacity determined by the address width (`ADDR_W`).
+Write Operation: It writes data to a specified address in the memory array when the write enable signal (`wr_i`) is asserted.
+Read Operation: It reads data from the memory array. The read operation's behavior can be configured through the `RD_MODE` parameter to either return the data at the memory address or the data being written in the same cycle.
+Output Registering: Optionally, it can register the output data (`data_o`) based on the `REG_OUT` parameter to potentially improve timing or meet specific design requirements.
+
+This module can be utilized in systems requiring RAM functionalities with flexible read and write operations, such as FIFOs, buffers, or as a general-purpose memory block within digital designs.
+
+Module name:  
+	dq_ram_infer
+
+Input ports:
+	clk_i: Clock input (wire). The rising edge of clk_i triggers the read and write operations within the module.
+	addr_i: Address input (wire, ADDR_W1:0). Specifies the memory address for both read and write operations.
+	wr_i: Write enable input (wire). When asserted (1), it enables writing the data present on data_i to the memory address specified by addr_i.
+	data_i: Data input (wire, DATA_W1:0). The data to be written to the memory address specified by addr_i when wr_i is asserted.
+
+
+Implementation:
+The dq_ram_infer module is a parameterized, dual-ported RAM with optional output register and configurable read behavior. It is designed to operate on a synchronous clock signal (clk_i). The module's primary function is to store and retrieve data based on the address provided, with an optional feature to register the output for timing or design requirements. The module's behavior is influenced by several parameters, allowing for customization to fit specific application needs.
+
+Give me the complete code.
+

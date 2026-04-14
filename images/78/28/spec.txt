@@ -1,0 +1,11 @@
+Design a synchronous 2-to-1 multiplexer for 4-bit wide inputs A and B, with reset functionality. On the rising edge of the clock, if the reset signal is asserted, the outputs (out, out_a, and out_b) are initialized to zero. When reset is deasserted, the output ‘out’ is determined by the selection signal ‘sel’: if sel is high, ‘out’ takes the value of B, while ‘out_a’ is reset to zero and ‘out_b’ reflects the value of B; if sel is low, ‘out’ takes the value of A, while ‘out_a’ reflects the value of A and ‘out_b’ is reset to zero.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input sel,
+    input clk,
+    input reset,
+    output reg [3:0] out,
+    output reg [3:0] out_a,
+    output reg [3:0] out_b
+);

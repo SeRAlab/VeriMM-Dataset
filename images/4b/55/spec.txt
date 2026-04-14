@@ -1,0 +1,5 @@
+Design a dual-port RAM module, capable of simultaneous read and write operations for two independent ports. Each port allows for separate clock signals, address inputs, and control signals (chip enable, output enable, and write enable). When active, the RAM can store 32-bit wide data at specified addresses, supporting up to 64 distinct memory locations based on the provided 6-bit address width. Data can be read from or written to the RAM using control signals that determine the operation mode for each port. The output of the read operations is tri-stated unless controlled to provide valid data.
+module top_module(
+    clka, cena_i, oena_i, wena_i, addra_i, dataa_i, dataa_o,
+    clkb, cenb_i, oenb_i, wenb_i, addrb_i, datab_i, datab_o
+);

@@ -1,0 +1,9 @@
+Implement a scratchpad memory block with adjustable depth and width parameters. It features a clock-controlled write and read functionality, allowing data to be written to or read from specific memory addresses. When the write signal is asserted, data is stored at the specified address; when the read signal is active, the data from that address is output. This module serves as a simple and efficient solution for temporary data storage in digital systems.
+module top_module(
+  input clk,
+  input wr,
+  input rd,
+  input [depth-1:0] addr,
+  input [width-1:0] din,
+  output reg [width-1:0] dout // Changed from wire to reg
+);

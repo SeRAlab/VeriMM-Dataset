@@ -1,0 +1,14 @@
+Design a circuit that serves as a simple address decoder and control signal generator. The module, PBIBox, processes a 16-bit address input to generate specific enable signals based on predefined address ranges. It outputs four signals (D1FF, D1XX, D6XX, D8XX) that assert LOW under certain conditions related to the input address, while also managing the state of DMA and external select signals. The module ensures that DMA_out and EXTSEL_out are LOW when certain input conditions are met, effectively controlling data flow and enabling responses based on the status of DMA and external signals.
+module top_module(
+    input [15:0] Addr,
+    input DMA_in,
+    output DMA_out,
+    input EXTSEL_in,
+    output EXTSEL_out,
+    input EXTCPU,
+    input EXTMEM,
+    output D1FF,
+    output D1XX,
+    output D6XX,
+    output D8XX
+    );

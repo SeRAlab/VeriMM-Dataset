@@ -1,0 +1,7 @@
+Design a signed Wallace tree multiplier that computes the product of two 8-bit signed or unsigned integer inputs, `a` and `b`, based on a control signal. The control signal determines whether the inputs are treated as signed or unsigned values. The module performs multiplication, breaking the resulting product into partial sums that are stored in an array, and then aggregates these partial sums to produce a final 16-bit output result. This implementation allows efficient computation of the multiplication operation while accommodating both signed and unsigned arithmetic.
+module top_module(
+    input signed [7:0] a,
+    input signed [7:0] b,
+    input signed_ctrl,
+    output reg signed [15:0] result
+);

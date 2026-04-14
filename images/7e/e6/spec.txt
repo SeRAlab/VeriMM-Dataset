@@ -1,0 +1,7 @@
+Design a circuit that monitors a 32-bit input data signal for the presence of "X" values, which represent unknown or undefined states in digital logic. The module continuously checks the input on the rising edge of the clock signal; if it detects that the entire 32-bit data word is equal to "X", it sets an error output high. Additionally, the error flag can be reset by an external reset signal, allowing the system to clear any detected errors safely. The design effectively acts as an error checker for digital data integrity.
+module top_module(
+  input i_clk,
+  input i_reset,
+  input [31:0] i_data,
+  output reg o_error
+);

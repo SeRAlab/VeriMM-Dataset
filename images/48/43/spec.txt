@@ -1,0 +1,8 @@
+Design a voltage regulator circuit that dynamically adjusts its output voltage based on the input voltage compared to a target voltage of 5V. The module operates synchronously with a clock signal, resetting the output to 0 when the reset signal is high. When enabled, it increments or decrements the output voltage in response to whether the input voltage is below or above the target, respectively, thus ensuring the output voltage stabilizes around the desired voltage level.
+module top_module(
+    input clk,
+    input reset,
+    input enable,
+    input [7:0] input_voltage,
+    output reg [7:0] output_voltage
+);

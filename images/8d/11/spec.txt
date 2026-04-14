@@ -1,0 +1,12 @@
+Design a finite state machine (FSM) that processes instructions to perform arithmetic operations. The FSM reads a 26-bit instruction from a ROM, which contains parameters including destination and source addresses, operation type, and a repetition count. Based on the operation code, the FSM supports addition, subtraction, cubic calculations, and multiplication using two source values, managing the results and addressing of RAM. The module also handles reset functionality, initializing all output and internal registers. The output signals indicate RAM addresses, the result of the computation, and a 'done' signal to signify task completion.
+module top_module(
+    input clk,
+    input reset,
+    input [8:0] rom_addr,
+    input [25:0] rom_q,
+    output reg [5:0] ram_a_addr,
+    output reg [5:0] ram_b_addr,
+    output reg ram_b_w,
+    output reg [10:0] pe,
+    output reg done
+);

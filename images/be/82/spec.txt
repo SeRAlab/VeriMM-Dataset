@@ -1,0 +1,9 @@
+Design a module to calculate the Fletcher checksum for error detection in data streams. The circuit takes an n-bit wide input, `data_in`, and utilizes a valid signal to trigger updates to the checksum values. Upon reset, all internal sums and the output valid flag are cleared. When `valid_in` is asserted, the module accumulates two pairs of sums (sum1, sum2 for a 16-bit checksum and sum3, sum4 for a 32-bit checksum) in an incremental manner. Once the valid input is deactivated, it computes the final checksums by applying bitwise negation to the sums to generate `checksum_16` and `checksum_32`, while indicating valid output by setting `valid_out`. Thus, the module provides mechanisms for checksum generation essential for error detection in digital communication processes.
+module top_module(
+  input [n-1:0] data_in,
+  input valid_in,
+  input reset,
+  output reg [15:0] checksum_16,
+  output reg [31:0] checksum_32,
+  output reg valid_out
+);

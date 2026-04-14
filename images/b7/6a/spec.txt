@@ -1,0 +1,23 @@
+Please act as a professional Verilog designer.
+
+Implement a module of a 16-bit adder with pipelining stages. The result is available on the result port, and the o_en = 1 indicates the availability of the result.
+
+Module name:
+    adder_pipe_16bit
+Input ports:
+    clk: Clock input
+    rst_n: Active low reset signal
+    i_en: Enable signal for addition operation
+    add_a: 16-bit input operand A
+    add_b: 16-bit input operand B
+
+Output ports:
+    result: 16-bit output representing the sum of add_a and add_b.
+    o_en: Output enable signal.
+
+Implementation:
+The module includes several registers to enable the pipeline stages and synchronize the input enable signal (i_en). These registers are controlled by the clock (clk) and reset (rst_n) signals.
+The sum values for each pipeline stage are calculated by adding the corresponding input operands.
+The output enable signal (o_en) is updated based on the pipeline stages and synchronized with the clock (clk) and reset (rst_n) signals.
+
+Give me the complete code.

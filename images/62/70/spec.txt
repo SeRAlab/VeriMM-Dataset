@@ -1,0 +1,7 @@
+Design a synchronous state machine with a reset functionality that outputs two control signals, out1 and out2, based on the current state. The machine increments its state on each clock cycle, and when the reset signal is active, both outputs are initialized to LOW. The output out1 is set to HIGH when the current state is odd, and out2 is set to HIGH when the state is even. This module effectively creates a simple alternating control signal generator based on the state's parity.
+module top_module(
+    input wire clk,        // Added missing clock input
+    input wire reset,
+    output reg out1,
+    output reg out2
+);

@@ -1,0 +1,9 @@
+Design a circuit that performs modified subtraction and two's complement operations on 32-bit inputs. The module takes a 32-bit input `i0` and concatenates four 8-bit inputs (`i1`, `i2`, `i3`, `i4`) into a 32-bit value. It subtracts this concatenated value from `i0`, and if the result is non-negative, it outputs that value. If the result is negative, it computes the two's complement of the subtracted value, effectively adding one to the inverted result, and outputs that. This design effectively handles both signed and unsigned integer operations within the context of arithmetic logic.
+module top_module(
+  output [0:31] o,
+  input [0:31] i0,
+  input [0:7] i1,
+  input [0:7] i2,
+  input [0:7] i3,
+  input [0:7] i4
+);

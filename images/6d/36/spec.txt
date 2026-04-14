@@ -1,0 +1,7 @@
+Design a signed non-restoring divider that computes the quotient of two signed 32-bit integers, `dividend` and `divisor`, across a series of clock cycles. The module initializes the `remainder` and `quotient` at the start of the operation and employs a state machine approach to repeatedly adjust the `remainder` and build the `quotient` by comparing the `remainder` with the `divisor`. The final quotient is available after 16 iterations, taking care to manage the sign of the output based on the inputs. This design effectively handles division while avoiding issues typically associated with negative numbers.
+module top_module(
+  input signed [31:0] dividend,
+  input signed [31:0] divisor,
+  input clk,  // Added clock input
+  output reg signed [31:0] quotient  // Changed output to reg
+);

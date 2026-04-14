@@ -1,0 +1,12 @@
+Design a finite state machine (FSM) controlling movement and digging behavior based on various inputs. The module transitions between different states that represent left and right movement, as well as digging actions, depending on conditions such as the ground status and bump inputs. It outputs signals to indicate whether the entity is walking left, walking right, or digging. The state transitions are governed by the clock and an asynchronous reset signal, ensuring proper initialization and response to environmental conditions.
+module top_module(
+    input clk,
+    input areset,    
+    input bump_left,
+    input bump_right,
+    input ground,
+    input dig,
+    output walk_left,
+    output walk_right,
+    output aaah,
+    output digging );

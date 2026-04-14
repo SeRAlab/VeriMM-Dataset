@@ -1,0 +1,11 @@
+Design a synchronization module that generates a status signal based on a clock input and various control signals. The module utilizes toggle logic to increment a counter based on the `toggle_en` signal, with parameters `cnt_n` and `cnt_m` defining specific counting thresholds. When synchronization is enabled via `synch_en`, it sets the output `synchroStatus` based on the counter's progress, which is either output to `syncInOut` or provided directly depending on the `opMode` signal. The `syncInOut` line is driven high-impedance (tri-state) when not in synchronization mode, providing flexibility for interfacing with other circuits.
+module top_module(
+    input clk,
+	 input synch_en,
+    input toggle_en,
+    input [1:0] cnt_n,
+    input [1:0] cnt_m,
+    input opMode,
+    output reg synchroStatus = 1'b0,
+    inout syncInOut
+    );

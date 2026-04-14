@@ -1,0 +1,31 @@
+Please act as a professional verilog designer.
+    
+Implement a module to facilitate data communication between an external device and the FPGA (Field-Programmable Gate Array) it is part of. It operates based on the DEPP (Data Exchange Parallel Port) protocol, a bidirectional communication protocol. The module's primary functions include:
+
+Address Setting: It can latch an address from the external device when the address strobe signal is active.
+Data Reception: It can receive data from the external device when the data strobe signal is active and the correct address is set.
+Data Transmission: It can transmit data to the external device, with the capability to signal when it is busy or ready for the next data transmission.
+Signal Wait Control: It generates a wait signal based on the strobe signals to manage the timing of data exchanges.
+
+Module name:  
+	deppbyte
+
+Input ports:
+	i_clk: Clock input (type: input). The primary clock signal driving the module's operations.
+	i_astb_n, i_dstb_n, i_write_n: Control signals (type: input). Active low signals for address strobe, data strobe, and write control, respectively.
+	i_depp: Data input (type: input, 8 bits). The 8bit data bus for input data from the external device.
+	i_tx_stb: Transmit strobe (type: input). Signal indicating when there is data ready to be transmitted to the external device.
+	i_tx_data: Transmit data (type: input, 8 bits). The 8bit data intended for transmission to the external device.
+Output ports:
+	o_depp: Data output (type: output, 8 bits, registered). The 8bit data bus for output data to the external device.
+	o_wait: Wait signal (type: output, wire). Signal indicating to the external device when to wait before the next operation can be performed.
+	o_rx_stb: Receive strobe (type: output, registered). Signal indicating that received data is ready to be processed.
+	o_rx_data: Receive data (type: output, 8 bits, registered). The 8bit data received from the external device.
+	o_tx_busy: Transmit busy (type: output, registered). Signal indicating whether the module is ready for the next data transmission.
+
+
+Implementation:
+The RTL module presented is designed to interface with a DEPP (Data Exchange Parallel Port) protocol, handling both input and output operations. The module operates on a synchronous clock (i_clk) and manages data transactions based on control signals and data inputs. The core functionality revolves around receiving data from an external source, processing it according to the DEPP protocol, and transmitting data back when requested. The design employs a mix of sequential and combinational logic to achieve its objectives.
+
+Give me the complete code.
+

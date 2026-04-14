@@ -1,0 +1,12 @@
+Design a circuit that uses a custom 8-input lookup table (LUT) to generate an 8-bit output based on a clock signal and an 8-bit input. The module captures a specific input bit (din[6]) to control the state of one of the output bits and routes various signals from the LUT instance to the output. The first output bit is driven by a flip-flop that samples a specific input, while the subsequent bits are derived from different outputs of the LUT, including carry outputs and other logic signals. The final output is a combination of processed data, creating a flexible logic function based on the given inputs.
+module top_module(
+    input clk,
+    input [7:0] din,
+    output lut8o,
+    output caro,
+    output carco,
+    output bo5,
+    output bo6,
+    input ff_d,
+    output ff_q
+);

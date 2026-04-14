@@ -1,0 +1,183 @@
+`timescale 1ns/1ps
+
+module top_module_tb;
+
+    // Testbench signals (combinational circuit)
+    reg [4:0] in;
+    wire [31:0] out;
+
+    // Test tracking
+    integer test_num;
+    integer pass_count;
+    integer fail_count;
+
+    // Instantiate the DUT (Device Under Test)
+    top_module dut (
+        .in(in),
+        .out(out)
+    );
+    task testcase001;
+
+        begin
+            test_num = 1;
+            $display("Test Case %0d: Positive Zero (00000)", test_num);
+            in = 5'b00000;
+            #1;
+
+            check_outputs(32'h00000000);
+        end
+        endtask
+
+    task testcase002;
+
+        begin
+            test_num = 2;
+            $display("Test Case %0d: Maximum Positive Value (01111)", test_num);
+            in = 5'b01111;
+            #1;
+
+            check_outputs(32'h0000000F);
+        end
+        endtask
+
+    task testcase003;
+
+        begin
+            test_num = 3;
+            $display("Test Case %0d: Minimum Negative Value (10000)", test_num);
+            in = 5'b10000;
+            #1;
+
+            check_outputs(32'hFFFFFFF0);
+        end
+        endtask
+
+    task testcase004;
+
+        begin
+            test_num = 4;
+            $display("Test Case %0d: Negative One (11111)", test_num);
+            in = 5'b11111;
+            #1;
+
+            check_outputs(32'hFFFFFFFF);
+        end
+        endtask
+
+    task testcase005;
+
+        begin
+            test_num = 5;
+            $display("Test Case %0d: Positive Pattern (01010)", test_num);
+            in = 5'b01010;
+            #1;
+
+            check_outputs(32'h0000000A);
+        end
+        endtask
+
+    task testcase006;
+
+        begin
+            test_num = 6;
+            $display("Test Case %0d: Negative Pattern (10101)", test_num);
+            in = 5'b10101;
+            #1;
+
+            check_outputs(32'hFFFFFFF5);
+        end
+        endtask
+
+    task testcase007;
+
+        begin
+            test_num = 7;
+            $display("Test Case %0d: Single bit positive (00001)", test_num);
+            in = 5'b00001;
+            #1;
+
+            check_outputs(32'h00000001);
+        end
+        endtask
+
+    task testcase008;
+
+        begin
+            test_num = 8;
+            $display("Test Case %0d: Negative small value (11110)", test_num);
+            in = 5'b11110;
+            #1;
+
+            check_outputs(32'hFFFFFFFE);
+        end
+        endtask
+
+    // Test stimulus
+    initial begin
+        // Initialize
+        test_num = 0;
+        pass_count = 0;
+        fail_count = 0;
+
+        $display("========================================");
+        $display("top_module Testbench");
+        $display("========================================");
+
+
+        testcase001();
+        testcase002();
+        testcase003();
+        testcase004();
+        testcase005();
+        testcase006();
+        testcase007();
+        testcase008();
+        
+        
+// Print summary
+        $display("\n========================================");
+        $display("Test Summary");
+        $display("========================================");
+        $display("Tests Passed: %0d", pass_count);
+        $display("Tests Failed: %0d", fail_count);
+        $display("Total Tests:  %0d", pass_count + fail_count);
+        $display("========================================");
+
+        if (fail_count == 0)
+            $display("ALL TESTS PASSED!");
+        else
+            $display("SOME TESTS FAILED!");
+
+        $display("\nSimulation completed at time %0t", $time);
+        $finish;
+    end
+
+    // Task to check outputs
+    task check_outputs;
+        input [31:0] expected_out;
+        begin
+            #1; // Small delay for combinational logic to settle
+            if (expected_out === (expected_out ^ out ^ expected_out)) begin
+                $display("PASS");
+                $display("  Outputs: out=%h",
+                         out);
+                pass_count = pass_count + 1;
+            end else begin
+                $display("FAIL");
+                $display("  Expected: out=%h",
+                         expected_out);
+                $display("  Got:      out=%h",
+                         out);
+                fail_count = fail_count + 1;
+            end
+        end
+    endtask
+
+    // Timeout watchdog
+    initial begin
+        #1000000; // 1ms timeout
+        $display("\nERROR: Simulation timeout!");
+        $finish;
+    end
+
+endmodule

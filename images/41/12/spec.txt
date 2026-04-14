@@ -1,0 +1,8 @@
+Design a finite state machine (FSM) that implements a simple serial data transmitter. The module accepts an 8-bit input data, a clock signal, and a reset signal, with an additional input to trigger data transmission. On the rising edge of the clock, if the reset signal is asserted, the FSM resets to the initial state; otherwise, it transitions through four states: loading the data, starting transmission by setting the output high, sending each bit of the data serially, and finally returning the output to low before resetting. The output `txd` represents the current bit being transmitted, ensuring that the module effectively serializes the input data for transmission.
+module top_module(
+    input clk,
+    input rst,
+    input send,
+    input [7:0] data,
+    output reg txd
+);

@@ -1,0 +1,6 @@
+Implement a parameterized n-to-1 multiplexer that selects one of n input signals based on the value of the sel input. When sel corresponds to one of the input indices, the output is set to the respective input value. If sel is out of the valid range, the module triggers an error display and defaults the output to zero. The design allows for flexible input size by configuring the parameter n, with the selection logic handling up to 4 inputs as defined by the parameter's default value.
+module top_module(
+  input [n-1:0] in,
+  input [clog2(n)-1:0] sel,
+  output reg out
+);

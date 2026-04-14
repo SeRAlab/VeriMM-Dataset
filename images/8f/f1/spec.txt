@@ -1,0 +1,6 @@
+Design a module that evaluates specific bit patterns in a 256-bit input vector to determine a condition of "diagonality." The module checks if certain 16-bit segments of the input (located at specific offsets) are either all zeros or all ones. If all three targeted segments meet the defined conditions concurrently, it sets an output flag, `exit_flag`, to HIGH; otherwise, it remains LOW. This functionality could be used in applications such as data validation or pattern matching within larger datasets.
+module top_module(
+    input [255:0] A_new,
+    input clk,
+    output reg exit_flag
+    );

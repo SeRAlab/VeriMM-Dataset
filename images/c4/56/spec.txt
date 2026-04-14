@@ -1,0 +1,24 @@
+
+
+You have been tasked with designing a Verilog module that implements a delay circuit with reset functionality. The module should have the following inputs and outputs:
+
+Inputs:
+- `CLK_IN`: a clock signal
+- `reset`: a reset signal
+- `enb_1_2000_0`: an enable signal
+- `Reset_1`: a reset signal that is used internally
+- `In`: a signed 32-bit input value
+
+Outputs:
+- `Out`: a signed 32-bit output value
+
+The module should implement the following functionality:
+
+1. When `reset` is high, the output `Out` should be set to 0.
+2. When `enb_1_2000_0` is high, the input `In` should be passed through to the output `Out`.
+3. When `enb_1_2000_0` is low, the output `Out` should remain constant at the value it had when `enb_1_2000_0` was last high.
+4. When `Reset_1` is high, the output `Out` should be set to 0.
+5. When `Reset_1` is low, the output `Out` should be delayed by one clock cycle before being output.
+
+Your task is to write a Verilog module that implements this functionality.
+

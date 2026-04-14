@@ -1,0 +1,7 @@
+Design a circuit to implement a modified version of Booth's algorithm for binary multiplication using a 3-bit control signal. The module takes a 3-bit input (Y) and a 64-bit input (X), where the output (P) is determined by specific cases of Y: if Y is 001, 010, 011, it directly outputs or shifts X; if Y is 100, it outputs the bitwise negation of the left-shifted X; if Y is 101 or 110, it outputs the negation of X. Additionally, the output C indicates a condition based on Y values that correspond to the need for a carry signal.
+module top_module(
+    input [2:0] Y,
+    input [63:0] X,
+    output [63:0] P,
+    output C
+);

@@ -1,0 +1,31 @@
+Please act as a professional Verilog designer.
+
+Implement a module for edge detection. The 1-bit input signal `data_in` is a continuous input, which is triggered by `clk`. The module should output `data_out` as 1 for one cycle when a rising edge (0 to 1 transition) is detected on `data_in`. For example, if `data_in` is 00110 (5 cycles), the `data_out` is 00100.
+
+Module name:
+    edge_detect
+
+Input ports:
+    clk: Clock signal.
+    rst_n: Reset signal (active low).
+    data_in: One-bit input signal.
+
+Output ports:
+    data_out: Output signal indicating the detection of a rising edge.
+
+Implementation:
+Declare the module `edge_detect` with input and output ports as specified in the ports statement.
+Declare a register `prev_data_in` to keep track of the previous state of `data_in`.
+Inside an always block, sensitive to the positive edge of the `clk` signal and the negative edge of the `rst_n` signal, implement the logic for edge detection.
+In the reset condition (`~rst_n`), set the `prev_data_in` register to 0 and set the `data_out` output to 0, indicating no edge detected.
+On each positive edge of the clock, check the value of `data_in` and `prev_data_in`. If `prev_data_in` is 0 and `data_in` is 1, set `data_out` to 1 for one cycle. Otherwise, set `data_out` to 0.
+Update `prev_data_in` with the current value of `data_in`.
+
+Give me the complete code.
+
+module edge_detect(
+    input clk,
+    input rst_n,
+    input data_in,
+    output reg data_out
+);

@@ -1,0 +1,7 @@
+Design a sequence detector that recognizes the specific binary sequence "1010". The module operates with a clock input and includes an asynchronous active-low reset. It maintains a 4-bit state variable to track the progression through states corresponding to the sequence detection. When the sequence "1010" is detected, the output signal is asserted high. The detector transitions through various states based on the input bit sequence, resetting if the expected sequence is not followed, thus ensuring robust recognition of the target pattern.
+module top_module(
+  input clk, // clock
+  input in, // input bit
+  input nreset, // async active low reset
+  output reg detected // output signal, changed to reg
+);

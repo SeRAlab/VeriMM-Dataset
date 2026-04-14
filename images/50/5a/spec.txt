@@ -1,0 +1,10 @@
+Design a shift register with 8 bits of capacity that can operate in both loading and shifting modes. On a rising clock edge, if the reset signal is high, the register will clear to zero. If the load signal is asserted, the input data will be loaded directly into the shift register, simultaneously updating the parallel output. When the shift signal is activated, the register will shift its contents to the left, inserting a zero at the least significant bit, while the most significant bit's value is sent out as the serial output. If neither the load nor shift signals are asserted, the register maintains its current state, continuing to provide the current contents via the parallel output and the most significant bit as the serial output.
+module top_module(
+    input clk,
+    input rst,
+    input load,
+    input shift,
+    input [7:0] din,
+    output [7:0] parallel_out,
+    output serial_out
+);

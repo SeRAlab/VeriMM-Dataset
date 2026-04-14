@@ -1,0 +1,7 @@
+Design a circuit that combines a 4-bit shift register and an adder with a conditional output based on the state of the most significant bits (MSBs). The module takes a 4-bit input and, on a clock edge, shifts the register while also allowing for a synchronous reset to zero. It adds the current register value to the input, and the output will be either the result of the addition or the content of the register, depending on whether both MSBs are high. This effectively creates a dynamic output based on the conditions of the underlying data, integrating functionalities of both a shift register and an adder with additional logic for selective output.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input [3:0] d,    // 4-bit input for the shift register and adder
+    output [3:0] out   // 4-bit output from the active module
+);

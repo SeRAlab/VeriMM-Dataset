@@ -1,0 +1,8 @@
+module top_module(ina,inb,out);input [31:0] ina,inb;
+  output reg [31:0] out;
+  
+  always@(ina,inb) begin
+    out = ina+inb;
+  end
+
+endmodule

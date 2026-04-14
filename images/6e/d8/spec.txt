@@ -1,0 +1,10 @@
+Design a FIFO (First-In, First-Out) buffer with a configurable data width and a fixed buffer size. It includes inputs for clock and reset signals, as well as data input and validity indication. The module stores incoming data in a circular buffer structure and manages read and write operations using head and tail pointers. Upon each clock cycle, if valid data is input and the buffer is not full, the data is written to the buffer; similarly, if there is data available, it is output, along with an indication of its validity. The design also incorporates a full flag to signal when the buffer has reached its maximum capacity.
+module top_module(
+    input clk,
+    input reset,
+    input [DATA_WIDTH-1:0] data_in,
+    input valid_in,
+    output reg [DATA_WIDTH-1:0] data_out,
+    output reg valid_out,
+    output reg full
+);

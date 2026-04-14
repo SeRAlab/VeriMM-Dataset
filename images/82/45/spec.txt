@@ -1,0 +1,19 @@
+Design a module for an online tester interface that allows for memory-mapped access to configuration and status registers. The module features control signals such as chip select (cs) and write enable (we), along with an 8-bit address and 32-bit data inputs for read and write operations. It defines a set of fixed locations for core name and version information, while generating output signals to indicate readiness, warnings, and errors. The state of the module is synchronized with a clock signal, and it resets on a negative edge trigger.
+module top_module(
+                     
+                     input wire           clk,
+                     input wire           reset_n,
+
+                     
+                     input wire           cs,
+                     input wire           we,
+
+                     
+                     input wire  [7 : 0]  address,
+                     input wire  [31 : 0] write_data,
+                     output wire [31 : 0] read_data,
+
+                     output wire          ready,
+                     output wire          warning,
+                     output wire          error
+                     );

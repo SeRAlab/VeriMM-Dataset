@@ -1,0 +1,9 @@
+Design a 6-bit wide FIFO (First-In, First-Out) buffer that supports serial input from three 2-bit wide data lines (DIA, DIB, DIC) and provides a 6-bit output (Q) for reading the stored data. The module uses two pointers, head and tail, to manage the write and read operations, respectively, while maintaining flags for the full and empty states of the FIFO. On each clock cycle, if the FIFO is not full, it will write the concatenated data from DIA, DIB, and DIC into the FIFO at the current head position. Conversely, if the FIFO is not empty, it will output the data at the current tail position. The output signal indicates whether the FIFO is full.
+module top_module(
+    input CLK,
+    input [1:0] DIA,
+    input [1:0] DIB,
+    input [1:0] DIC,
+    output reg [5:0] Q,  // Change to reg type
+    output out
+);

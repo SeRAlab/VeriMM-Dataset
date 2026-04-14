@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform a priority encoding operation on a 64-bit input vector. Its primary function to identify the position of the first '1' (least significant bit position) encountered when scanning the input vector from the least significant bit (LSB) to the most significant bit (MSB). This position is then encoded into a 6-bit output. This module can be utilized in systems requiring the identification of the highest-priority request in a set of requests represented as binary inputs, such as interrupt controllers, arbiter designs, and various other digital logic circuits where priority encoding is necessary.
+
+Module name:  
+	zzpenc64
+
+Input ports:
+	a [63:0]: A 64bit input vector. It is a wide input signal where each bit represents a potential request or condition that needs to be prioritized. The LSB is considered the lowest priority, and the MSB is the highest.
+Output ports:
+	z [5:0]: A 6bit output vector representing the position of the first '1' found in the input vector a. This output is encoded such that z=0 indicates the first bit in a is '1', and z=63 indicates the last bit in a is '1'. If no '1' is found, z remains 0, which may require additional handling to distinguish from the case where the first bit is '1'.
+
+
+Implementation:
+The Verilog module zzpenc64 is designed to implement a priority encoder for a 64-bit input vector a. The primary function of this module is to encode the input vector into a 6-bit output z, which represents the position of the first '1' encountered when scanning the input vector from the least significant bit (LSB) to the most significant bit (MSB). This type of encoder is often referred to as a "zeroth bit position encoder" because it identifies the position of the first non-zero bit in the input vector.
+The module is purely combinational, as indicated by the use of an always @ (a) block, which means the output z is updated every time there is a change in the input vector a. The logic inside the always block initializes the output z to 0 (6'b0) and then iterates through each bit of the input vector a using a for-loop. The loop runs from 0 to 63, corresponding to the indices of the bits in the input vector.
+For each iteration of the loop, the module checks if the current bit in the input vector (a[i]) is '1'. If a '1' is found, the loop updates the output z to the current index i, effectively encoding the position of the first '1' bit encountered. Due to the nature of the loop, if multiple '1's are present in the input vector, the output z will represent the position of the least significant '1', as the loop updates z upon finding the first '1' and continues to check subsequent bits without altering z unless a lower-indexed '1' is found, which is not possible due to the loop's incrementing nature.
+
+Give me the complete code.
+

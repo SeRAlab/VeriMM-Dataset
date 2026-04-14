@@ -1,0 +1,9 @@
+Design a circuit that functions as a dual 100-bit register file with adjustable behavior upon receiving clock and control signals. The module allows for loading two 100-bit inputs (data1 and data2) into internal registers (reg1 and reg2) when the load signal is activated. If the load signal is not asserted, the module can perform bit rotation operations based on the enable inputs (ena), allowing for either left (ena[0]) or right (ena[1]) rotation of the contents of both registers. The final output, q, is a bitwise OR of reg1 and reg2, providing a combined result that reflects the current state of both registers after any applicable operations.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data1,
+    input [99:0] data2,
+    output reg [99:0] q
+);

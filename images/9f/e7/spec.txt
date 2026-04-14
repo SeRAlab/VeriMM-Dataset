@@ -1,0 +1,6 @@
+Design a module for energy harvesting that takes multiple energy harvesting signals as input and converts them into an 8-bit digital output using an analog-to-digital conversion mechanism. The module controls a charging process: if the converted output exceeds the Storage Register value, the circuit indicates charging is in progress, incrementing the storage register upon clock edges. The final output reflects the current value of the storage register, facilitating efficient energy management and monitoring in energy harvesting applications.
+module top_module(
+  input [n-1:0] harvest,
+  input clk, // Added clk input
+  output reg [7:0] storage // Changed storage to be reg type and 8 bits
+);

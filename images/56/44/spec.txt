@@ -1,0 +1,10 @@
+Design a circuit that functions as an 8-bit wide, 4-to-1 multiplexer with two stages of registers for output stability. The module takes four 8-bit input signals and a 2-bit select signal. It outputs one of the four input signals based on the select value. The first stage captures the selected input based on the select signal, and the second stage, triggered by a clock edge, captures the output of the first stage, ensuring synchronized output with respect to the clock.
+module top_module(
+  input [7:0] in0,
+  input [7:0] in1,
+  input [7:0] in2,
+  input [7:0] in3,
+  input [1:0] sel,
+  input clk, // Added clk input
+  output reg [7:0] out
+);

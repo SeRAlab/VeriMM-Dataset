@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as a simple synchronous memory block within a digital system. Its primary functions include:
+
+Writing Data: It allows for 8-bit data (`d_i`) to be written into a specific memory location (`addr`) when the write enable signal (`wr`) is asserted.
+Reading Data: It outputs 8-bit data (`d_o`) from a memory location specified by `addr`. The read operation occurs on every rising edge of the clock (`clk`), including when data is written.
+
+This module can be utilized in various applications requiring temporary storage of data, such as buffering, caching, or as part of a larger memory management system within digital designs like processors, controllers, or custom logic circuits.
+
+Module name:  
+	mem
+
+Input ports:
+	clk (input): The clock signal. It is a singlebit signal that synchronizes the read and write operations of the memory module.
+	wr (input): Write enable signal. It is a singlebit signal that, when high (1), enables the writing of data into the memory at the address specified by addr.
+	addr (input): Memory address. A 10bit signal specifying the address of the memory cell to be accessed for either reading or writing operations.
+	d_i (input): Data input. An 8bit signal representing the data to be written into the memory location specified by addr when wr is high.
+Output ports:
+	d_o (output reg): Data output. An 8bit register that holds the data read from the memory location specified by addr. This data is updated on every rising edge of the clock, including during write operations.
+
+
+Implementation:
+The RTL module presented is designed to function as a simple memory unit, capable of both writing to and reading from a memory array. The core of this module is built around a synchronous design principle, leveraging the rising edge of a clock signal (clk) to dictate the timing of its operations. This design ensures that all operations within the module are synchronized with the external clock, providing a predictable and stable behavior.
+
+Give me the complete code.
+

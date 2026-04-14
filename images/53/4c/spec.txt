@@ -1,0 +1,8 @@
+Design a clock gating circuit that generates a controlled clock output (ENCLK) based on enable (EN) and test enable (TE) signals, while also responding to a reset signal (RESET). When RESET is low, the output ENCLK is set to low. On the rising edge of CLK, if EN is high and TE is low, ENCLK is set to high; otherwise, it is set to low. This functionality helps to manage clock distribution in digital circuits, reducing power consumption by disabling the clock when not needed.
+module top_module(
+    input CLK,
+    input EN,
+    input TE,
+    input RESET,
+    output reg ENCLK
+);

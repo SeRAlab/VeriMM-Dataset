@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that detects a specific sequence of scancodes representing directional inputs (Left, Up, Right, Down). The FSM transitions through four states (IDLE, LEFT, UP, RIGHT) based on a 4-bit scancode input. It starts in the IDLE state, moving to LEFT upon receiving the Left scancode, then to UP with the Up scancode, then to RIGHT with the Right scancode, and finally sets the output match high when the Down scancode is received before returning to IDLE. The module includes a reset feature to initialize the FSM's state and output.
+module top_module(
+  input clk,
+  input reset,
+  input [15:0] scancode,
+  output reg match
+);

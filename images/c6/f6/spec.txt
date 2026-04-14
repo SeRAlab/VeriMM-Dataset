@@ -1,0 +1,22 @@
+
+
+You are tasked with designing a Verilog module that can perform 12-to-1 multiplexing. The module should have one input, I, and one output, O. The input I is a 12-bit bus, and the output O is a single bit. The module should select one of the 12 input bits to be output on O, based on a select signal.
+
+Design a module named "Span12Mux_v3" that implements the 12-to-1 multiplexer using Verilog. The module should be self-contained and should not rely on any other modules. The module should be designed to be synthesizable and should not use any non-synthesizable constructs.
+
+Assume the following interface for the module:
+
+```
+module Span12Mux_v3(
+  input [11:0] I,
+  input [3:0] select,
+  output O
+);
+```
+
+The input `I` is a 12-bit bus that contains the data to be multiplexed. The input `select` is a 4-bit bus that contains the select signal. The output `O` is a single bit that contains the selected data.
+
+The select signal should be used to select one of the 12 input bits to be output on `O`. The select signal should be interpreted as a binary number, with the least significant bit corresponding to the first input bit (I[0]), and the most significant bit corresponding to the twelfth input bit (I[11]). For example, if `select` is `4'b0100`, then the third input bit (I[2]) should be output on `O`.
+
+Ensure that the module is designed to be efficient and uses the minimum number of gates possible. The module should be designed to be easily testable and should produce the correct output for all possible input combinations.
+

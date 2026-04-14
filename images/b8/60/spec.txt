@@ -1,0 +1,9 @@
+Design a clock domain crossing (CDC) synchronizer that safely transfers data and control signals from one clock domain to another. The module takes an input data signal (`data_in`), a clock signal (`clk_in`), and a reset signal (`reset_in`), and synchronizes these signals to the output clock (`clk_out`). It implements two stages of synchronization for the data input to minimize metastability, producing a synchronized `data_out`. Similarly, it synchronizes the `reset_in` signal to generate `reset_out`. The output clock signal is directly assigned from the input clock signal, ensuring coherent timing between the two domains.
+module top_module(
+  input data_in,
+  input clk_in,
+  input reset_in,
+  output reg data_out,
+  output reg clk_out,
+  output reg reset_out
+);

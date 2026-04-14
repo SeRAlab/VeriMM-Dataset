@@ -1,0 +1,12 @@
+Design a circuit that combines an adder-subtractor and a shift register within a synchronous system. The adder-subtractor takes two 4-bit inputs, A and B, and performs either addition or subtraction based on the SUB control signal, outputting a 4-bit result, SUM. Additionally, a 3-bit shift register is implemented to either load new data or perform a logical left shift on the current value, providing the shifted output, shift_out. The design includes synchronous reset capabilities for both the adder-subtractor and the shift register, ensuring a reliable state initialization.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input [3:0] A, // 4-bit input A for the adder-subtractor
+    input [3:0] B, // 4-bit input B for the adder-subtractor
+    input SUB, // 1-bit input SUB for the adder-subtractor
+    input [2:0] shift_in, // 3-bit input for the shift register
+    input load, // Load input for the shift register
+    output [2:0] shift_out, // 3-bit output from the shift register
+    output [3:0] SUM // 4-bit output from the adder-subtractor
+);

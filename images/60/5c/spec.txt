@@ -1,0 +1,8 @@
+Design a block RAM (random access memory) module that allows for both reading and writing operations. The module has a synchronous write feature controlled by the 'we' signal; when 'we' is high, it writes the input data 'din' to the memory location indexed by 'addr' on the rising edge of the clock. Regardless of the write operation, it continuously outputs the data stored at the specified address to 'dout' during each clock cycle. The memory consists of 5778 locations, each capable of holding 12 bits of data.
+module top_module(
+  input wire clk,
+  input wire we,
+  input wire [12:0] addr,
+  input wire [11:0] din,
+  output reg [11:0] dout
+);

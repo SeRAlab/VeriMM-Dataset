@@ -1,0 +1,15 @@
+Design a write-back (WB) stage for a register file in a processor architecture. It receives a clock signal and a reset signal, and upon a write-enable trigger, it determines the destination register address based on the `reg_we_dst` input, selecting from bits of the instruction provided. The value to store in the register is taken from the `mem_result` input. The module outputs a write-enable signal, the computed register address for the write operation, and the data to be written, thus facilitating the final stage of data processing after an arithmetic or memory operation in the pipeline.
+module top_module(
+    input clk,
+    input rst,
+
+    input [INST_DATA_WIDTH-1:0] inst,
+
+    input reg_we,
+    input [1:0] reg_we_dst,
+    input [DATA_DATA_WIDTH-1:0] mem_result,
+
+    output reg_we_o,
+    output [4:0] reg_addrw,
+    output [DATA_DATA_WIDTH-1:0] reg_dataw
+    );

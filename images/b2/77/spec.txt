@@ -1,0 +1,14 @@
+Design a circuit that functions as a combination of a shift register and a multiplexer. The module can load a 100-bit input data on a clock edge when activated; otherwise, it can perform left or right rotation based on the 'ena' signals. It selects between six different 4-bit input data sources, controlled by a 3-bit 'sel' input, then generates an 8-bit output. Depending on the 'ena' input, the output is either the selected multiplexer output, a duplicate of its lower half, or various combinations of its bits to provide flexibility in data presentation.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    input [2:0] sel, 
+    input [3:0] data0,
+    input [3:0] data1,
+    input [3:0] data2,
+    input [3:0] data3,
+    input [3:0] data4,
+    input [3:0] data5,
+    output reg [7:0] out);

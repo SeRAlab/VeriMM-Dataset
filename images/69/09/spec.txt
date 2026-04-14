@@ -1,0 +1,8 @@
+Design a gated D flip-flop with an active-low asynchronous reset. The module captures the input data D on the rising edge of the enable signal G and permits resetting to a low state when the active-low signal SN is asserted. When SN is active, the output Q is set to 0, and QN is set to 1. If SN is inactive, the output Q will follow the input D, while QN will always be the complement of Q, providing both direct and inverted outputs based on the input conditions and control signals.
+module top_module(
+  input D,
+  input G,
+  input SN,
+  output reg Q,    // Changed to output reg
+  output reg QN    // Changed to output reg
+);

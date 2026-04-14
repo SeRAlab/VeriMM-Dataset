@@ -1,0 +1,12 @@
+Design a circuit that combines a 6-to-1 multiplexer and a 4-bit priority encoder to produce an 8-bit output. The multiplexer, controlled by a 3-bit select signal, routes one of six 4-bit data inputs to the output, while the priority encoder processes a 4-bit input to produce a 2-bit encoded output based on the highest order bit set. The final 8-bit output combines the 2-bit encoded result and a fixed 4-bit zero value with the selected 4-bit data input from the multiplexer by performing an addition operation.
+module top_module(
+    input [2:0] sel, // input for multiplexer select
+    input [3:0] data0, // data inputs for multiplexer
+    input [3:0] data1,
+    input [3:0] data2,
+    input [3:0] data3,
+    input [3:0] data4,
+    input [3:0] data5,
+    input [3:0] in, // input for priority encoder
+    output [7:0] q  // 8-bit output from the functional module
+);

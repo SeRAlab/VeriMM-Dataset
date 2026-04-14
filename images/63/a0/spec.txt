@@ -1,0 +1,16 @@
+Design a Verilog module for a water heater controller using one-hot encoding. The controller should have an asynchronous active-high reset and be positive clock/clk edge triggered.
+
+States and their corresponding outputs:
+1. state Off (heating = 1'b0)
+2. state On (heating = 1'b1)
+
+State transitions:
+1. From state Off: If temp_below_threshold = 1, then transition to state On. If temp_below_threshold = 0, then transition to state Off.
+2. From state On: If temp_above_threshold = 1, then transition to state Off. If temp_above_threshold = 0, then transition to state On.
+
+module top_module (
+        input clk,
+        input areset,
+        input temp_below_threshold,
+        input temp_above_threshold,
+        output reg heating);

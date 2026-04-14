@@ -1,0 +1,8 @@
+Design a pulse width detector that operates based on an input signal `a` and a clock signal `clk`. When `a` is HIGH, the module increments a counter until it reaches a predefined threshold of 50 clock cycles, at which point it asserts a `pulse` signal as HIGH, indicating that the pulse width has been detected. If the counter does not reach the threshold while `a` is HIGH, it maintains a `no_pulse` signal as HIGH, indicating a lack of sufficient pulse width. If `a` is LOW, the counter resets, and both `pulse` and `no_pulse` are driven LOW. The module effectively differentiates between short and long pulses based on the specified threshold, making it useful for applications requiring pulse width modulation detection.
+module top_module(
+  input               clk,
+  input               rst_n,
+  input               a,
+  output reg          pulse,
+  output reg          no_pulse
+);

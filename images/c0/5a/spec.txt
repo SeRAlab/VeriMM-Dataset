@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform binary addition of two 8-bit inputs, `A` and `B`, along with an input carry bit `Ci`. It outputs a 9-bit result `Out` that includes the sum of `A` and `B` plus the carry-in, and it also provides an overflow indicator `OV` to signal when the addition results in an overflow beyond the capacity of an 8-bit number. The `Valid` output indicates when the module's output is valid, which is directly controlled by the enable signal `En`. This module can be utilized in arithmetic logic units (ALUs) within microprocessors, specifically tailored for operations requiring binary addition with carry and overflow detection, such as arithmetic operations in a 65C02 microprocessor environment.
+
+Module name:  
+	M65C02_BIN
+
+Input ports:
+	En (1bit): Enable signal for the module. When high, the module performs the addition and updates the outputs; when low, the outputs are reset.
+	A (8bit): The first operand of the binary addition.
+	B (8bit): The second operand of the binary addition.
+	Ci (1bit): Carryin bit for the addition, allowing for chained additions.
+Output ports:
+	Out (9bit): The result of the binary addition, including the carryout bit as the MSB, making it a 9bit output to accommodate sums exceeding 8 bits.
+	OV (1bit): Overflow flag, set high if the addition results in an overflow, indicating that the sum exceeded the range representable by an 8bit number.
+	Valid (1bit): Indicates when the output data is valid. It mirrors the En input signal, signifying that the output is valid when the module is enabled.
+
+
+Implementation:
+The M65C02_BIN module is designed to perform binary addition on two 8-bit inputs, A and B, along with an input carry bit Ci. The module outputs a 9-bit result Out, an overflow flag OV, and a validity flag Valid to indicate whether the output is valid based on the enable signal En.
+
+Give me the complete code.
+

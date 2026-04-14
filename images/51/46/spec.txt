@@ -1,0 +1,6 @@
+Design a synchronous read-only memory (ROM) module that outputs an 8-bit data word based on a 4-bit input address. On each positive clock edge, the module checks the `addrIn` input and assigns a predefined 8-bit value to `dataOut`. If the `addrIn` corresponds to one of the defined cases (from 0 to 4), it outputs specific data values; for any other address, it defaults to outputting zero.
+module top_module(
+    input clk,
+    input [3:0] addrIn,
+    output reg [7:0] dataOut = 0
+    );

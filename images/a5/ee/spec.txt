@@ -1,0 +1,9 @@
+Design a finite state machine (FSM) that controls a counting operation based on input signals. The module transitions through various states—initially waiting for a data signal (S), performing state-dependent counting logic, and eventually outputting a count value while transitioning through states like B0 to B3 for capturing data. It counts up to 999, handles a delay function, and indicates when the counting is active through the `counting` output. The `done` output signals when the counting process is complete, and an acknowledgment signal (ack) allows the module to reset and prepare for the next counting cycle. The sequence is synchronized to a clock signal and can be reset externally.
+module top_module(
+    input clk,
+    input reset,      
+    input data,
+    output [3:0] count,
+    output counting,
+    output done,
+    input ack );

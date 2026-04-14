@@ -1,0 +1,9 @@
+Design a circuit that utilizes two 4-bit inputs, a and b, to perform various operations based on a select input. When select is high, the circuit outputs the bitwise XOR of a and b, a logical XOR, and the bitwise NOT of both inputs concatenated together. If select is low, all outputs are driven to zero. This module effectively functions as a multi-functional logic unit, capable of performing bitwise operations and conditional output based on the select signal.
+module top_module( 
+    input [3:0] a,
+    input [3:0] b,
+    input select,     // Select input to choose between different outputs
+    output [3:0] out_xor_bitwise,
+    output out_xor_logical,
+    output [7:0] out_not
+);

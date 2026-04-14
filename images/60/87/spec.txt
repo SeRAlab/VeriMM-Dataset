@@ -1,0 +1,17 @@
+Design a control module for a secondary cache tag system that directly transfers input signals related to cache operations to their corresponding outputs. This module accepts input signals including cache data set, way selection, column offset, read/write control, word enables, and flags indicating cache hits and read operations. It forwards these signals unchanged to the outputs, effectively acting as a pass-through interface for cache control signals.
+module top_module(
+   input [9:0] scdata_set_c2,
+   input [11:0] scdata_way_sel_c2,
+   input [3:0] scdata_col_offset_c2,
+   input scdata_rd_wr_c2,
+   input [15:0] scdata_word_en_c2,
+   input scdata_fbrd_c3,
+   input scdata_fb_hit_c3,
+   output [9:0] sctag_scdata_set_c2,
+   output [11:0] sctag_scdata_way_sel_c2,
+   output [3:0] sctag_scdata_col_offset_c2,
+   output sctag_scdata_rd_wr_c2,
+   output [15:0] sctag_scdata_word_en_c2,
+   output sctag_scdata_fbrd_c3,
+   output sctag_scdata_fb_hit_c3
+);

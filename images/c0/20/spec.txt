@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module to interface with a rotary encoder, a common input device used in various electronic systems. Its primary functions include:
+
+Detecting Rotary Movement: It determines the direction of rotation (left or right) of the rotary encoder.
+Generating Rotary Event Signal: It outputs a signal when a rotary movement event is detected, indicating that the encoder has been rotated.
+Button Press Detection: It detects a button press event associated with the rotary encoder (often, rotary encoders come with an integrated push-button).
+Debouncing: Implements a simple form of debouncing for the button press to avoid false triggering due to mechanical noise.
+
+This module plays a crucial role in user interface systems where rotary encoders are used for navigation, selection, and input purposes, providing a reliable and responsive mechanism for interpreting the encoder's signals.
+
+Module name:  
+	rotary
+
+Input ports:
+	clk: Clock input signal (type: input). It synchronizes the module's operations.
+	reset: Reset input signal (type: input). When asserted, it initializes the module's internal states.
+	rot[2:0]: 3bit input signal from the rotary encoder (type: input). rot[1:0] represents the encoder's quadrature encoded output, and rot[2] represents the button state.
+Output ports:
+	rot_btn: Indicates a button press event (type: output reg). It is asserted when the button on the rotary encoder is pressed.
+	rot_event: Indicates a rotary movement event (type: output reg). It is asserted for one clock cycle when a rotation is detected.
+	rot_left: Indicates the direction of rotation (type: output reg). It is asserted if the rotation is to the left; otherwise, it indicates a right rotation.
+
+
+Implementation:
+The Verilog module named rotary is designed to interface with a rotary encoder, a device commonly used in human-machine interfaces to detect rotation and button presses. The module processes signals from the rotary encoder to generate events indicating rotation direction, button presses, and rotational movement. The module operates on the rising edge of a clock signal and can be reset asynchronously. The logic within the module can be divided into three main functional blocks:
+
+Give me the complete code.
+

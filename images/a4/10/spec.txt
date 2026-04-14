@@ -1,0 +1,32 @@
+Design a register path decoding module that interfaces between a local register interface and two different types of peripheral registers: core and UDP. When a register request is received, the module decodes the address to determine whether to route the transaction to the core registers or the UDP registers based on the address's higher bits. It handles read and write operations, acknowledging requests and returning data as needed. Upon reset, it initializes all outputs to zero. The module utilizes a clock and reset signal to synchronize operations and ensure proper register state transitions.
+module top_module(
+   input                reg_req,
+   input                reg_rd_wr_L,
+   input [31:0]         reg_addr,
+   input [31:0]         reg_wr_data,
+   
+   output reg           reg_ack,
+   output reg [31:0]    reg_rd_data,
+
+   
+   output reg           core_reg_req,
+   output reg           core_reg_rd_wr_L,
+   output reg [31:0]    core_reg_addr,
+   output reg [31:0]    core_reg_wr_data,
+
+   input                core_reg_ack,
+   input [31:0]         core_reg_rd_data,
+
+   
+   output reg           udp_reg_req,
+   output reg           udp_reg_rd_wr_L,
+   output reg [31:0]    udp_reg_addr,
+   output reg [31:0]    udp_reg_wr_data,
+
+   input                udp_reg_ack,
+   input [31:0]         udp_reg_rd_data,
+
+
+   input                clk,
+   input                reset
+);

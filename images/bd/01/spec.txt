@@ -1,0 +1,9 @@
+This module implements a combinational logic circuit that outputs a single bit (Y) based on a series of conditional evaluations. It takes two single-bit inputs (A1 and A2), two 2-bit inputs (B1 and B2), and one additional single-bit input (C1). The logic follows a hierarchy of conditions: if A1 is high, the output Y is set to high; if A2 is high (and A1 is low), the output is set to low; otherwise, it checks the values of B1 and B2—outputting high if B1 is greater than B2, low if B1 is less than B2, and finally checking C1 to determine the output if B1 equals B2. Thus, this module serves as a multi-level decision-making logic gate that evaluates inputs to produce a single output.
+module top_module(
+    input A1,
+    input A2,
+    input [1:0] B1,
+    input [1:0] B2,
+    input C1,
+    output Y
+);

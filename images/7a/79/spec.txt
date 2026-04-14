@@ -1,0 +1,9 @@
+Design a checksum calculator that computes the one's complement of the sum of a series of 8-bit input data values (`din`) on the rising edge of the clock signal (`clk`). The module includes a reset functionality via the `clear` signal, which resets the checksum registers. The `gate` signal enables the accumulation of the input data into the checksum, while the module also outputs a flag (`all_ones`) that indicates if the calculated checksum is all ones (i.e., if all bits are set to 1).
+module top_module(
+	input clk,
+	input clear,
+	input gate,
+	input [7:0] din,
+	output [7:0] sum,
+	output all_ones
+);

@@ -1,0 +1,9 @@
+Design a digital vending machine controller that manages product dispensing based on coin input. It features a state machine with three states: IDLE, COIN_INSERTED, and DISPENSING. The machine accepts a maximum of 10 products, each costing 20 units, and tracks the total coin input. When sufficient coins are inserted and the dispense signal is activated, it reduces the product count and updates the coin total accordingly. The output includes a flag indicating when a product is dispensed and the remaining product count. The system resets its state and registers when the reset signal is asserted.
+module top_module(
+  input clk,
+  input reset,
+  input dispense,
+  input [1:0] coin_in,
+  output reg product_dispensed,
+  output reg [3:0] product_count
+);

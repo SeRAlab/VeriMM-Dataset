@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform a specific function based on the binary input `b`. It generates two output signals, `n0` and `n1`, which are determined by the specific combination of the bits in the input signal `b`. The primary function of this module to decode a particular 3-bit input pattern into two distinct output signals. This module can be utilized in a larger digital system where decoding of specific bit patterns to generate control signals or flags is required. It could serve as a part of a control unit in a microprocessor, a custom logic block in an FPGA, or any digital system requiring specific pattern detection and response.
+
+Module name:  
+	mul_negen
+
+Input ports:
+	b [2:0]: A 3bit wide input port. This is the primary input to the module, which is decoded to generate the outputs. The bits of b are used in combination to determine the state of the output signals. The input is of type input indicating it is read by the module to perform its operation.
+Output ports:
+	n0: A singlebit output signal. It is asserted (1) when the input b has the pattern 110 (binary), indicating that the two most significant bits are 1 and the least significant bit is 0. Otherwise, n0 is deasserted (0). This output is of type output, indicating it is driven by the module.
+	n1: A singlebit output signal. It is asserted (1) when the input b has the pattern 111 (binary), indicating that all bits of b are 1. Otherwise, n1 is deasserted (0). This output is also of type output, indicating it is driven by the module.
+
+
+Implementation:
+The RTL module mul_negen is a simple combinational logic circuit designed to evaluate specific conditions based on a 3-bit input b. The module does not incorporate any sequential logic elements, such as flip-flops or latches, meaning its output is purely a function of its current input without any dependency on previous states. This design choice ensures that the module's outputs, n0 and n1, are determined instantaneously with changes in the input signal b, adhering to the principles of combinational logic.
+The module evaluates two conditions based on the input b, which is a 3-bit vector. The conditions are as follows:
+Condition for n0: The output n0 is asserted (set to 1) when the most significant bit (b[2]) and the middle bit (b[1]) of the input are both 1, and the least significant bit (b[0]) is 0. This condition can be interpreted as the module checking if the input b represents a binary number greater than or equal to 6 but less than 7 (i.e., exactly 6 in a 3-bit representation).
+Condition for n1: The output n1 is asserted when all three bits of the input b are 1. This condition checks if the input b represents the binary number 7.
+Both outputs are generated through simple AND and NOT gates, reflecting the direct relationship between the input bits and the outputs. There are no intermediate signals or complex logic operations involved, making the module highly efficient and straightforward to understand.
+
+Give me the complete code.
+

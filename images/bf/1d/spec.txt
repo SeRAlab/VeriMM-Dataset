@@ -1,0 +1,8 @@
+Design a four-bit barrel shifter that allows for both left and right shifting of the input data based on control signals. The module accepts a 4-bit input (D) and a 2-bit shift amount (S), alongside a control signal (shift_right) that indicates the direction of the shift. When shifting right, the design shifts the bits of D to the right according to the value of S, filling vacated positions with zeros. Conversely, when shifting left, it shifts the bits to the left, wrapping around bits from the end of the input to the beginning as specified by S. The output is generated in a register to capture the shifted result on the rising edge of the clock.
+module top_module(
+    input [3:0] D,
+    input [1:0] S,
+    input shift_right,
+    input clk,         // Added clk input
+    output reg [3:0] Q
+);

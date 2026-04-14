@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+
+Implement a module of a 8-bit register with load and clear functionality. The register should load a new value when the `LOAD` signal is high. The register should clear to 0 when the `CLR` signal is high. When neither `LOAD` nor `CLR` is high, the register holds its current value.
+
+Module name:
+    register
+
+Input ports:
+    CLK: Clock input
+    CLR: Active high clear signal
+    LOAD: Signal to load new value
+    DATA_IN: 8-bit input data to be loaded into the register
+
+Output ports:
+    DATA_OUT: 8-bit output representing the current value of the register
+
+Implementation:
+The register module uses an always block to update the value of the register based on the clock signal, clear signal, and load signal. The always block triggers on the positive edge of the clock signal (posedge CLK) or the positive edge of the clear signal (posedge CLR). It checks if the clear signal is active and sets the register value (DATA_OUT) to 0. If the load signal is high, it loads the new value from the input data (DATA_IN) into the register. Otherwise, it holds the current value of the register.
+
+Give me the complete code.

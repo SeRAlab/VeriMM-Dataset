@@ -1,0 +1,8 @@
+Design a pipelined multiplier capable of multiplying two 32-bit unsigned integers, A and B, producing a 64-bit product C. The module utilizes a three-stage pipeline: the first stage generates partial products based on the binary multiplication of A with each bit of B, the second stage sums these partial products, and the third stage combines the summed partial products into the final 64-bit result. The multiplication process is clocked and can be reset, ensuring that all registers are initialized to zero on the rising edge of the reset signal. This design allows for efficient multiplications with increased throughput by leveraging pipelining.
+module top_module(
+  input [31:0] A,
+  input [31:0] B,
+  input clk,
+  input rst,
+  output reg [63:0] C
+);

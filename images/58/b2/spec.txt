@@ -1,0 +1,14 @@
+Design a 32-bit wide FIFO (First-In-First-Out) memory buffer capable of holding up to 32 kilobytes of data. The module provides separate read and write clock signals, allowing for asynchronous writing and reading of data. It manages data flow through the use of control signals for writing and reading, indicating when the buffer is full or empty. The internal memory is organized as a circular buffer with pointers to track the write and read positions. Additionally, it keeps track of the number of items in the buffer with output signals for both read and write counts, enhancing control and awareness of buffer status during operation.
+module top_module(
+    input rst,
+    input wr_clk,
+    input rd_clk,
+    input [31:0] din,
+    input wr_en,
+    input rd_en,
+    output [31:0] dout,
+    output full,
+    output empty,
+    output reg [2:0] rd_data_count,
+    output reg [1:0] wr_data_count
+);

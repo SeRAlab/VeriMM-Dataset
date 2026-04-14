@@ -1,0 +1,8 @@
+Design a serial communication interface for a parallel port that handles both reading and writing operations. The module outputs a 32-bit data word to the parallel port (parport_o) and provides an 8-bit data output (data_o) based on the selected address from a 2-bit address input. It utilizes control signals (writestrobe_i and readstrobe_i) to manage write and read operations. On a write operation, it stores incoming data into specific registers based on the address and also indicates when data is written to the parallel port via a write strobe output (parport_writestrobe_o). Upon a read request, it allows data retrieval from selected input registers, reflecting the results in the data output and providing a read strobe output (parport_readstrobe_o) when applicable. This module effectively facilitates communication between the processor and the parallel port by converting serial control signals into parallel data flows.
+module top_module( 
+		  
+		  
+		  parport_o, data_o, parport_readstrobe_o,parport_writestrobe_o,
+		  
+		  clk_i, rst_i, parport_i, writestrobe_i, readstrobe_i,data_i, address_i
+		  );

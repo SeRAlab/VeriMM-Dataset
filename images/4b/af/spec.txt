@@ -1,0 +1,10 @@
+Design a synchronous FIFO (First-In, First-Out) buffer for data storage. This module allows data to be read and written in synchronization with a clock signal. It features an 8-bit wide data output and manages the read and write operations via the `fifo_rd` input and an internal reset signal. The FIFO maintains status flags for empty (`fifo_EF`), full (`rfifo_full`), and the count of used entries (`rfifo_used`). Upon reset, all internal pointers and counters initialize to zero. The FIFO accommodates a specified depth of 64 entries, facilitating efficient data flow in applications where buffered data processing is needed.
+module top_module(
+  input clk,
+  input fifo_rd,
+  input rst_n,
+  output fifo_EF,
+  output reg [7:0] fifo_rdata,
+  output rfifo_full,
+  output reg [5:0] rfifo_used
+);

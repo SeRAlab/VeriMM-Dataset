@@ -1,0 +1,8 @@
+Design a circuit that performs a simple encryption operation using a XOR gate and a shift register. The module takes an 8-bit input data and a 16-bit key, applies an XOR operation to the least significant byte of the key for encryption, and shifts the resulting value through an 8-bit shift register on each clock cycle. The output is the current state of the shift register, which progressively stores the encrypted values. The operation is resettable with a reset signal, clearing both the shift register and the output.
+module top_module(
+    input wire clk,
+    input wire rst,
+    input wire [7:0] data_in,
+    input wire [15:0] key,
+    output reg [7:0] data_out  // Changed wire to reg
+);

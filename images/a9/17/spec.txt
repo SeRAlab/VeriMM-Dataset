@@ -1,0 +1,8 @@
+Develop a clock-gated D flip-flop with an enable and test functionality. The module captures the least significant bit of a 32-bit input (DATA_IN) and holds it in the output (DATA_OUT) upon a positive edge of a gated clock signal (ENCLK), which is activated by the enable (EN) and test (TE) control signals. When both EN and TE are high, the internal flag (d_ff_en) is set, allowing the capture of the input. If either signal is low, the flip-flop holds its previous state.
+module top_module(
+  input CLK,
+  input EN,
+  input TE,
+  input [31:0] DATA_IN,
+  output reg DATA_OUT
+);

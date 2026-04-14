@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+    
+Implement a module to monitor the status of a connection and detect resume events in a digital communication system. Its primary functions include:
+
+Connection State Monitoring: It tracks changes in the connection state, which is represented by a 2-bit input signal. Any change in this state triggers a connection event.
+Resume Detection: It detects resume events, which are indicated by a transition in the resume detection signal. A resume event is flagged when the signal transitions from low to high.
+
+This module plays a crucial role in managing the status of a communication link, enabling the system to respond to changes in connection status and resume events, which are essential for maintaining effective communication protocols.
+
+Module name:  
+	rxStatusMonitor
+
+Input ports:
+	connectStateIn [1:0]: A 2bit input signal representing the current state of the connection. Changes in this signal indicate a change in the connection status.
+	resumeDetectedIn: A singlebit input signal that indicates a resume event when transitioning from low to high.
+	clk: The clock input signal for the module. It synchronizes the internal operations of the module.
+	rst: The reset input signal. When asserted high, it initializes the internal state of the module.
+Output ports:
+	connectionEventOut: A singlebit output signal that indicates a connection event. It is asserted high when a change in the connection state is detected.
+	connectStateOut [1:0]: A 2bit output signal that mirrors the current connection state input. It provides an external interface to the current connection state.
+	resumeIntOut: A singlebit output signal that indicates a resume event. It is asserted high when a resume event is detected (i.e., when resumeDetectedIn transitions from low to high).
+
+
+Implementation:
+The RTL module rxStatusMonitor is designed to monitor the status of a connection and detect resume events in a digital communication system. It processes inputs to generate outputs that indicate changes in connection state and the detection of resume events. The module operates under the control of a clock (clk) and can be reset (rst).
+
+Give me the complete code.
+

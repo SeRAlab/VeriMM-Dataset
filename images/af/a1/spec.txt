@@ -1,0 +1,7 @@
+Design a next program counter (NPC) module that computes the next instruction address based on the input control signal NPCsrc. When NPCsrc is high, the module creates a new address by concatenating the upper four bits of PC4 with the lower 26 bits of I26 and appending two zeros. When NPCsrc is low, it calculates the next address by adding PC4 to a sign-extended version of the lower 16 bits of I26, shifted left by two bits. This functionality supports branch address calculation and jump instruction handling in a processor.
+module top_module(
+    input NPCsrc,
+    input [31:0] PC4,
+    input [25:0] I26,
+    output [31:0] NPC
+    );

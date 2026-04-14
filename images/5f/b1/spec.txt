@@ -1,0 +1,8 @@
+Design a 4-bit shift register with an asynchronous active-high reset, which can either load data from an input or perform a shift operation. When the `areset` signal is asserted, the output and internal stages are reset to zero. If the `load` signal is active, the shift register loads the 4-bit `data` input directly into the output `q`. If `ena` is asserted, the register shifts the current contents of `q` towards the least significant bit, with new bits coming from the internal stages, effectively enabling data propagation through the register.
+module top_module(
+    input clk,
+    input areset,  // async active-high reset to zero
+    input load,
+    input ena,
+    input [3:0] data,
+    output reg [3:0] q);

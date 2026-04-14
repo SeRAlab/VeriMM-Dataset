@@ -1,0 +1,27 @@
+
+
+You are tasked to design a Verilog module that implements a 4:1 multiplexer. The module should have four input signals, `in0`, `in1`, `in2`, and `in3`, and two select signals, `sel0` and `sel1`. The output signal, `out`, should be equal to one of the input signals based on the values of the select signals. The truth table for the 4:1 multiplexer is as follows:
+
+| sel1 | sel0 | out |
+|------|------|-----|
+|  0   |  0   | in0 |
+|  0   |  1   | in1 |
+|  1   |  0   | in2 |
+|  1   |  1   | in3 |
+
+You should implement this module using only one module within 200 lines of Verilog code. Your module should be named `mux4to1` and should have the following interface:
+
+```
+module mux4to1 (
+    input in0,
+    input in1,
+    input in2,
+    input in3,
+    input sel0,
+    input sel1,
+    output reg out
+);
+```
+
+Note that the `out` signal should be a registered output. You may assume that the input signals are stable at the rising edge of the clock signal.
+

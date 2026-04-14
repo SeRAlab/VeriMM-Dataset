@@ -1,0 +1,8 @@
+Design a 4-bit circular shift register with load and reset functionality. On a reset signal, the register initializes to zero. When the load signal is high, it captures the value on the input bus (din). Otherwise, on each clock pulse, it performs a circular right shift of the stored data, where the most significant bit wraps around to the least significant bit position. The current value of the shift register is continuously available at the output (dout).
+module top_module(
+  input clk,
+  input reset,
+  input load,
+  input [3:0] din,
+  output [3:0] dout
+);

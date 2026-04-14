@@ -1,0 +1,8 @@
+Design a state machine for a default slave interface in an AHB-Lite system. This module monitors the input signal DEFSLAVEDATASEL and transitions between IDLE and HRESPEXTEND states to control the output signals DEFSLAVEDATAREADY and HRESP_DEFAULT. In the IDLE state, if DEFSLAVEDATASEL is asserted, it indicates a readiness to respond and transitions to HRESPEXTEND; otherwise, it remains in the IDLE state. In the HRESPEXTEND state, it asserts HRESP_DEFAULT to signal a response and returns to the IDLE state. The module is synchronous to the HCLK clock and reset conditions are managed through HRESETN for initializing the state.
+module top_module(
+input						HCLK,
+input						HRESETN,
+input						DEFSLAVEDATASEL,
+output	reg					DEFSLAVEDATAREADY,
+output	reg					HRESP_DEFAULT
+);

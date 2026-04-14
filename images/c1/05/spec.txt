@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+    
+Implement a module to compute the CRC (Cyclic Redundancy Check) for USB (Universal Serial Bus) data packets. CRC is a popular error-detecting code used to detect accidental changes to raw data in digital networks and storage devices. Specifically, this module calculates a 16-bit CRC code based on the input data and a previous CRC value. The primary function of this module to ensure data integrity during USB communication by providing a mechanism to detect errors in data packets. It plays a crucial role in the USB host controller, where it is used to verify the integrity of data received from or sent to USB devices.
+
+Module name:  
+	usbh_crc16
+
+Input ports:
+	crc_i [15:0]: A 16bit input representing the initial or previous CRC value. This value is used as the starting point for the CRC calculation for the current data packet.
+	data_i [7:0]: An 8bit input data packet for which the CRC is to be calculated. This represents a byte of data from the USB data packet.
+Output ports:
+	crc_o [15:0]: A 16bit output that represents the calculated CRC value based on the input data (data_i) and the previous CRC value (crc_i). This new CRC value can be used for subsequent CRC calculations or for error checking in USB communication.
+
+
+Implementation:
+The usbh_crc16 module is designed to compute the CRC (Cyclic Redundancy Check) for USB (Universal Serial Bus) transactions. CRC is a method used to detect errors in digital data. The module takes a 16-bit CRC input (crc_i) and an 8-bit data input (data_i), and outputs a 16-bit CRC (crc_o). The computation is based on a specific polynomial used in USB CRC16 calculations, which is not explicitly mentioned but inferred from the logic operations.
+The module is purely combinational, meaning it does not contain any sequential logic elements like flip-flops or latches. The output at any given time is directly determined by the current inputs, with no internal state being maintained. The computation is achieved through a series of XOR (exclusive OR) operations that follow the CRC calculation rules.
+Each bit of the output CRC (crc_o) is computed by XORing specific bits of the input data (data_i) and the input CRC (crc_i). The XOR operation is chosen because it is the basis of CRC computation, effectively implementing the division by a generator polynomial in a binary field. The specific bits involved in each XOR operation for each output bit are determined by the polynomial and the CRC algorithm's requirements.
+For example, crc_o[15] is computed by XORing all bits of data_i with several bits of crc_i, following the pattern dictated by the CRC polynomial. This pattern is replicated with variations across all bits of crc_o to ensure the entire CRC is computed according to the algorithm.
+
+Give me the complete code.
+

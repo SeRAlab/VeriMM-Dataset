@@ -1,0 +1,10 @@
+Design a SPI (Serial Peripheral Interface) slave module that receives and transmits data through a serial communication protocol managed by clock (sck), master out slave in (mosi), and slave select (ssel) signals. The module operates on the rising and falling edges of the clock, detecting these transitions to manage data shifting and status signaling. On active select (ssel), it receives and stores incoming data bits, sending the most significant bit (MSB) out on the miso line while updating the next byte to be sent. It maintains the state of data transfer with a bit counter and signals successful data reception through a dedicated output. The design is intended for interfacing with a master device for rapid data exchange, making it suitable for applications in microcontrollers and embedded systems.
+module top_module(
+    input clk,
+    input rst_n,
+    input sck,
+    input mosi,
+    input ssel,
+    output recived_status,
+    output reg miso
+);

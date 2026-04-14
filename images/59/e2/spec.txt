@@ -1,0 +1,7 @@
+Design a request-granting circuit that arbitrates between three input request lines (req_a, req_b, req_c). The module grants access by outputting a HIGH signal when one or two requests are active, provided the third request is inactive. If all requests are inactive or if all three requests are active, it outputs a LOW signal. This behavior allows for tri-state management where multiple sources can signal for access, but only certain combinations will receive the grant.
+module top_module(
+    input req_a,
+    input req_b,
+    input req_c,
+    output reg grant
+);

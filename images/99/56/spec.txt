@@ -1,0 +1,16 @@
+Design a module that selects and routes input signals for an ALU. It takes in two source registers (rsd and rtd), data to write back (WrtBackData), an extended immediate value (extImm), and a shift amount (shamt). It uses forward signals (fwRs and fwRt) to determine whether to use the write-back data or the original source register values. Additionally, it employs selection signals (sel_shamt and sel_imm) to choose between the shift amount and forwarded data for busA, and the extended immediate or forwarded data for busB, effectively preparing the proper inputs for the ALU operations.
+module top_module(
+            input [31:0] rsd, 
+            input [31:0] rtd, 
+            input [31:0] WrtBackData, 
+            input [31:0] extImm,
+            input [4:0]  shamt,
+            input fwRs, 
+            input fwRt, 
+            input sel_shamt, 
+            input sel_imm,
+            output [31:0] busA, 
+            output [31:0] busB,
+            output [31:0] FwRsd,
+            output [31:0] FwRtd
+);

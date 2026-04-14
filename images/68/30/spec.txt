@@ -1,0 +1,7 @@
+Design a clock gating circuit that produces an output clock signal (ENCLK) based on enable inputs. The circuit generates a gated clock where the output is the input clock (CLK) when the enable signal (EN) is high; otherwise, the output is low. Additionally, it incorporates a latch that holds the output signal, with the latch's enable and set/clear inputs controlled by the EN and TE signals, respectively. This design helps in reducing dynamic power consumption by selectively enabling clock signals in various sections of a digital system.
+module top_module(
+  input CLK,
+  input EN,
+  input TE,
+  output reg ENCLK
+);

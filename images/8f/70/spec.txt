@@ -1,0 +1,30 @@
+Please act as a professional Verilog designer.
+
+Implement a 16-bit shift register with a parallel load feature.
+
+Module name:  
+    shift_register               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal to initialize the register.
+    load: Signal to load a specific value into the shift register.
+    load_value: 16-bit value to load into the register when the load signal is high.
+Output port:
+    Q: 16-bit register representing the current value of the shift register.
+
+Implementation:
+On every rising edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the shift register value is updated.
+If the reset signal (rst_n) is low, indicating a reset condition, the shift register value (Q) is set to 0.
+If the load signal is high, the shift register value (Q) is set to the load_value.
+Otherwise, the shift register shifts left by 1 bit.
+
+Give me the complete code.
+
+module shift_register(
+   input                clk ,
+   input                rst_n,
+   input                load,
+   input [15:0]         load_value,
+ 
+   output reg [15:0]    Q
+);

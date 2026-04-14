@@ -1,0 +1,6 @@
+Design a circuit that functions as an 8-bit priority encoder with an enable signal. When the enable signal (EN) is high, the module captures the input (I) and determines the highest priority active bit among the 8 inputs. The output (Y) encodes the position of this active input (from 0 to 7) in a three-bit format. Additionally, the module has the capability to indicate whether any inputs are active using the second bit of Y, while the third bit signals if all inputs are inactive. If no bits are set, Y will reflect a state indicating that all inputs are low.
+module top_module(
+    input [7:0] I,
+    input EN,
+    output reg [2:0] Y
+);

@@ -1,0 +1,10 @@
+Design a 32-entry register file for a digital system that supports read and write operations. It accepts two 5-bit inputs for selecting registers to read from (Ra and Rb), one 5-bit input for selecting a register to write to (Rw), and a 32-bit input (Bw) for the data to be written. The module operates on the rising edge of a clock signal (clk) and incorporates an active-low reset feature that clears all registers to zero when activated. If Regwr is high and Rw is not zero, the designated register is updated with the new data. The outputs (Ba and Bb) reflect the contents of the registers specified by Ra and Rb, respectively, allowing simultaneous read access.
+module top_module(input [4:0]Ra, 
+					input [4:0]Rb, 
+					input [4:0]Rw, 
+					input [31:0]Bw,
+					input clk,     
+					input Regwr,   
+					output reg [31:0]Ba,
+					output reg [31:0]Bb,
+					input reset);

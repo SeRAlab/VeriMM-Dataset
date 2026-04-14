@@ -1,0 +1,6 @@
+Design a circuit that computes the two's complement of a 4-bit signed input. The module takes a 4-bit input and produces a 5-bit output, which represents either the original value (with a sign extension) or its two's complement based on the sign bit of the input. If the highest bit of the input is 1 (indicating a negative number), the output will be the two's complement of the input; otherwise, it will directly represent the input value with an added sign bit of 0. This design incorporates sequential logic triggered by a clock, allowing it to handle the input reliably in a synchronously clocked environment.
+module top_module(
+    input [3:0] in,
+    input clk,          // Adding clk input to resolve binding errors
+    output reg [4:0] out
+);

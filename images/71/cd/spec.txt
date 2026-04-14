@@ -1,0 +1,10 @@
+Design a 4-bit barrel shifter that allows for left and right shifting of its input. The module has inputs for a 4-bit data vector (A), a load signal to load the input into the output (Q), and a reset signal to clear the output. Based on the 2-bit shift control signal, the module supports no shift, a logical left shift, and a logical right shift. Additionally, it is designed to handle circular shifting, where the data wraps around, based on a defined shift direction. The output is updated on the positive edge of a clock signal.
+module top_module(
+    input [3:0] A,
+    input load,
+    input reset,
+    input clk,       // Added clk input
+    input shift_dir, // Added shift_dir input
+    input [1:0] shift,
+    output reg [3:0] Q
+);

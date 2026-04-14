@@ -1,0 +1,20 @@
+Implement the Verilog module based on the following description.
+Consider a state machine with the following states and their corresponding outputs:
+1. state Q (output 1).
+2. state R (output 0).
+3. state S (output 1).
+
+State transitions:
+1. From state Q: If l = 1, then transition to state R. If l = 0, then transition to state S.
+2. From state R: If l = 1, then transition to state S. If l = 0, then transition to state Q.
+3. From state S: If l = 1, then transition to state Q. If l = 0, then transition to state R.
+
+Assume that a one-hot code is used with the state assignment d[2:0] = 001(Q), 010(R), 100(S)
+
+Write a Verilog for the signal D0, which is the input of state flip-flop d[0], for the signal D1, which is the input of state flip-flop d[1]. Derive the Verilog by inspection assuming a one-hot encoding.
+
+module top_module (
+        input [2:0] d,
+        input l,
+        output reg D0,
+        output reg D1);

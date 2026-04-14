@@ -1,0 +1,9 @@
+Design a rotary encoder decoder circuit that interprets signals from a rotary encoder. It tracks the rotation direction by monitoring transitions on the rotary_A input relative to the rotary_B input. On the positive clock edge, if a change is detected in rotary_A (indicated by a rising edge), it asserts a rotary_event output signal and sets the rotary_left output to the value of rotary_B, indicating the direction of rotation (left if rotary_B is HIGH). The module includes an asynchronous reset to clear outputs and the previous state.
+module top_module(
+    input clk,
+    input rst,
+    input rotary_A,
+    input rotary_B,
+    output reg rotary_event,
+    output reg rotary_left
+);

@@ -1,0 +1,8 @@
+Design a binary converter that translates four 4-bit Binary-Coded Decimal (BCD) inputs, `bcd1`, `bcd2`, `bcd3`, and `bcd4`, into an 8-bit binary output. The output, designated as `bin`, consists of the lower 4 bits representing the value of `bcd1`, and the next 4 bits representing `bcd2`. However, there seems to be a mismatch since the overall width of `bin` is declared as 8 bits but attempts to assign values from four separate BCD inputs, which may be intended to represent a larger binary value. The module will default to outputting zero for any invalid BCD input outside the range 0 to 9.
+module top_module(
+  input [3:0] bcd1,
+  input [3:0] bcd2,
+  input [3:0] bcd3,
+  input [3:0] bcd4,
+  output reg [7:0] bin
+);

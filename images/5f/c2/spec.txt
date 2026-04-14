@@ -1,0 +1,8 @@
+Design a single cell for a Conway's Game of Life simulator. The module determines the state of the cell based on its current value and the state of its eight neighboring cells at each clock edge. If the cell is in a live state and has a specific number of live neighbors (as defined by the LIVE_STATE parameter), it remains alive; conversely, if it enters a dead state (as defined by the DIE_STATE parameter) with a certain number of live neighbors, it will die. The cell state can be reset synchronously with a reset signal, initializing its value to the input `i_val`.
+module top_module(
+    input i_clk,
+    input i_reset,
+    input i_val,
+    input [7:0] i_neighbours,
+    output reg o_val
+);

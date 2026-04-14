@@ -1,0 +1,7 @@
+Design a circuit that processes an 8-bit input vector based on a clock signal and a select control input. The module features a bit-reversal operation utilizing a shift register to reverse the order of the input bits. Additionally, it includes a 3-bit shift register that can shift in the most significant bit of the input while generating an output that is zero-padded. Depending on the state of the select input, the final 8-bit output can either be the reversed bit order or the result of a bitwise AND operation between the reversed output and the shifted output. This module effectively functions as a configurable data processor capable of performing bit manipulation based on user selection.
+module top_module(
+    input clk,                  // Clock signal
+    input [7:0] in,             // 8-bit input vector
+    input select,               // Select input to choose between module outputs
+    output [7:0] out            // 8-bit final output
+);

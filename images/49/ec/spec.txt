@@ -1,0 +1,15 @@
+The module implements a key generation mechanism for processing metadata based on input signals. It takes a clock signal and a reset signal to manage its operations. When the `p2k_valid` signal is asserted, the module generates output metadata (`k2m_metadata`) depending on the current mode (indicated by the `mode` input) and the `p2k_ingress` value. In mode 1, the output metadata is constructed differently based on whether `p2k_ingress` is zero or not, while in the alternate mode, it uses the `p2k_eid_dst` source. The generated metadata is accompanied by a validity signal (`k2m_metadata_valid`), which indicates whether the output metadata is currently valid. The design essentially serves as a metadata formatter or encoder driven by input criteria, facilitating the generation of contextualized keys or identifiers for further processing.
+module top_module(
+clk,
+reset,
+p2k_valid,
+p2k_ingress,
+p2k_rloc_src,
+p2k_eid_dst,
+p2k_metadata,
+
+mode, 
+
+k2m_metadata_valid,
+k2m_metadata
+);

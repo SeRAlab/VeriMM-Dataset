@@ -1,0 +1,27 @@
+Please act as a professional Verilog designer.
+
+Implement a module for a 4-bit shift register with parallel load and shift left operation. The register shifts its contents to the left on the rising edge of the clock signal and can load parallel data based on the load signal.
+
+Module name:  
+    shift_register
+
+Input ports:
+    CLK: Clock input
+    RST: Active high reset signal
+    LOAD: Load signal
+    D: 4-bit data input
+
+Output ports:
+    Q: 4-bit data output
+
+Implementation:
+The shift register module uses an always block to shift or load data based on the clock signal, reset signal, and load signal.
+The always block triggers on the positive edge of the clock signal (posedge CLK). It checks if the reset signal is active (RST) and sets the output (Q) to 0. If the reset signal is not active and the load signal is active (LOAD), it loads the input data (D) into the output (Q). Otherwise, it shifts the output (Q) to the left by one bit.
+
+Give me the complete code.
+
+module shift_register(CLK, RST, LOAD, D, Q);
+input CLK, RST, LOAD;
+input [3:0] D;
+output [3:0] Q;
+reg [3:0] Q;

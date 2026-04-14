@@ -1,0 +1,8 @@
+Design a 100-bit wide circular (rotating) shift register. The module supports loading initial data and performing left or right rotations based on the enable signals. The `load` input initializes the shift register with the `data`, while the `ena` input determines the rotation direction: `ena = 2'b01` for a left rotation and `ena = 2'b10` for a right rotation, each updating the shift amount accordingly. The outputs `q` and `q_out` provide the current state of the shift register, with `q_out` reflecting the result of the most recent rotation.
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output reg [99:0] q,
+    output reg [99:0] q_out);

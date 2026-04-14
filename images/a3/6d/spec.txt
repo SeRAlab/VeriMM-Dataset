@@ -1,0 +1,10 @@
+This Verilog module implements a state machine designed to control a counting and shifting operation based on input signals. The machine transitions through a series of states in response to the input `data`, a clock signal (`clk`), a reset condition, and acknowledgment signals (`ack` and `done_counting`). Specifically, it enables a shifting mechanism during states B0 to B3, indicates when it is in a counting state, and asserts a `done` signal when it reaches a holding state. The design effectively manages a finite state machine that reacts to specific input conditions while maintaining a clear structure for state transitions and outputs.
+module top_module(
+    input clk,
+    input reset,      
+    input data,
+    output shift_ena,
+    output counting,
+    input done_counting,
+    output done,
+    input ack );

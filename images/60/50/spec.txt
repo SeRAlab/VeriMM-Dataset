@@ -1,0 +1,4 @@
+Construct a circuit that generates four 8-bit wide output vectors (w, x, y, z) by concatenating specific bits from six 5-bit input vectors (a, b, c, d, e, f). The outputs are formed as follows: w combines the full 5 bits of a with the top 3 bits of b; x combines the lowest 2 bits of b with all 5 bits of c and the top bit of d; y concatenates the lower 4 bits of d with the upper 4 bits of e; and z assembles the least significant bit of e with all 5 bits of f followed by two fixed bits set to '11'.
+module top_module(
+    input [4:0] a, b, c, d, e, f,
+    output [7:0] w, x, y, z );

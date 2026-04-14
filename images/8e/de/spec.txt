@@ -1,0 +1,7 @@
+Design a module that implements a shift register combined with a multiplexer and an XOR functionality. The module takes a 16-bit input and, upon each clock cycle, shifts the least significant bit into a 16-bit shift register. The output is derived from a multiplexer that selects one of 16 different 8-bit inputs, depending on a 4-bit selection signal sourced from the shift register. Each selected input is XOR'ed with the least significant 8 bits of the shift register, producing an 8-bit output. The design ensures that both the shift operation and selection control can be reset synchronously, ensuring proper initialization of the state.
+module top_module(
+    input clk,
+    input reset,            // Synchronous reset
+    input [15:0] in,       // 16-bit input to the multiplexer
+    output reg [7:0] q      // 8-bit output of the final module
+);

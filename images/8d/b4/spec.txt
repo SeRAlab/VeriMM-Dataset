@@ -1,0 +1,12 @@
+Design a clock generation module that provides a divided output clock and marks its edges. It takes a system clock input and uses a 32-bit divider to control the output frequency, producing `clk_out` with a duty cycle based on the `enable` signal. The module can be reset, and it generates pulse signals `pos_edge` and `neg_edge` to indicate the positive and negative transitions of the output clock, respectively. This functionality is essential for synchronous communication protocols such as SPI, where precise clock signals are critical for data transfers.
+module top_module(
+  input                           clk_in,   // input clock (system clock)
+  input                           rst,      // reset
+  input                           enable,   // clock enable
+  input                           go,       // start transfer
+  input                           last_clk, // last clock
+  input     [31:0]                divider,  // clock divider (output clock is divided by this value)
+  output  reg                     clk_out,  // output clock
+  output  reg                     pos_edge, // pulse marking positive edge of clk_out
+  output  reg                     neg_edge  // pulse marking negative edge of clk_out
+);

@@ -1,0 +1,13 @@
+Design a configurable flip-flop module that can operate as multiple types of flip-flops, including D, JK, T, and SR. The module utilizes a clock and reset signal for synchronization and initialization. Depending on the combination of inputs (j, k, t, s, r), the flip-flop functionality is selected: a D flip-flop captures the data input (d), while the JK flip-flop toggles or retains its state based on j and k inputs. The T flip-flop toggles its output when t is asserted, and the SR flip-flop sets or resets the output depending on s and r signals. The output q is complemented by qn, providing both the normal and inverted output states.
+module top_module(
+  input clk,
+  input reset,
+  input d,
+  input j,
+  input k,
+  input t,
+  input s,
+  input r,
+  output reg q,
+  output reg qn
+);

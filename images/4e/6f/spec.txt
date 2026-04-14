@@ -1,0 +1,10 @@
+Design a serial transmitter module that operates at a specified baud rate, taking an 8-bit input data (`dat`) and transmitting it serially over a single output (`TXD`). The module synchronizes transmission using a clock signal (`clk`) and includes control signals to manage start, data, and stop bits. When the `st` signal is asserted, it initiates the transmission; the `TXD` output first sends a start bit (logic LOW), followed by each bit of the data, and concludes with a stop bit (logic HIGH). Additional signals provide status for transmission readiness and control timing for each bit transmitted, ensuring smooth and accurate data communication.
+module top_module( input clk, 			output wire TXD, 
+					input[7:0]dat, 	output wire ce_tact, 
+					input st, 			output reg en_tx_byte=0, 
+											output reg [3:0] cb_bit=0,
+											output wire T_start, 
+											output wire T_dat, 
+											output wire T_stop, 
+											output wire ce_stop, 
+											output reg [7:0] sr_dat=0 );

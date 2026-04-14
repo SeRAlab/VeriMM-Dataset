@@ -1,0 +1,16 @@
+
+Design a 2-channel DMA controller that manages the transfer of data from two different sources to a common destination. The controller should have the following inputs and outputs:
+- Inputs:
+  - `clk`: Clock signal
+  - `reset`: Reset signal
+  - `req_a`: Request signal from channel A
+  - `req_b`: Request signal from channel B
+  - `ack_a`: Acknowledge signal for channel A
+  - `ack_b`: Acknowledge signal for channel B
+  - `data_in_a`: Data input from channel A
+  - `data_in_b`: Data input from channel B
+- Outputs:
+  - `data_out`: Data output to the destination
+  - `active_channel`: Indicates which channel is currently active (0 for A, 1 for B)
+
+The DMA controller should prioritize channel A when both channels request data simultaneously.

@@ -1,0 +1,11 @@
+Design a single-port RAM module with an 8-bit address space and 16-bit data width, capable of storing up to 256 entries. The module features a clock input for synchronous operations, a reset input to initialize the address register, and control signals for chip enable (ce), write enable (we), and output enable (oe). When the chip is enabled and the write enable is active, data can be written to the specified address. If output enable is asserted, the data from the addressed location is driven to the output; otherwise, the output is in a high-impedance state. The design includes a dedicated address register to manage RAM addressing.
+module top_module(
+	input clk,
+	input rst,
+	input ce,
+	input we,
+	input oe,
+	input [7:0] addr,
+	input [15:0] di,
+	output reg [15:0] doq
+);

@@ -1,0 +1,12 @@
+Design a dual-port register file with two read ports and one write port for a 32-bit wide data bus. The module supports asynchronous resets and allows for the writing of data to a specified register during a clock cycle if the write enable signal is active. The read ports provide the ability to access two registers simultaneously; if the read address matches the write address, the most recent written data is returned, while a zero output is provided when reading from register address 0. This structure is useful in digital designs requiring fast data storage and retrieval, such as CPUs and FPGAs.
+module top_module(
+	input			[4:0]		ra,
+	input			[4:0]		rb,
+	input			[4:0]		wa,
+	input	 		[31:0]  	wdata,
+	input          		wen,
+	input          		clk,
+	input       	   	rst,
+	output 		[31:0] 	radata,
+	output 		[31:0] 	rbdata
+	);

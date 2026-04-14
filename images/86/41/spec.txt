@@ -1,0 +1,10 @@
+Design a 4-bit month counter that increments or decrements based on control inputs. This module operates on a clock signal, where it resets to 0 on a reset signal or when the count reaches 12 (representing 12 months). When enabled (EN = 2'd1), the counter can increment if the 'aumento' input is high, and decrement if the 'disminuye' input is high, ensuring that it does not go below 0. This module effectively manages the counting of months in a cyclic manner.
+module top_module(    
+	 input clk,				 
+	 input rst,				 
+	 input [1:0]EN,
+    input aumento,	    
+    input disminuye,	 
+    output reg [3:0] cont_mes 
+	 
+	);

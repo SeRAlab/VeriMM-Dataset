@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Implement a 3-bit Up/Down Counter with synchronous reset. The counter increments or decrements its value based on the mode input.
+
+Module name:
+    up_down_counter
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Synchronous reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    mode: Mode signal. Defined as 1 for up count and 0 for down count.
+
+Output ports:
+    count: 3-bit output representing the counter value.
+
+Implementation:
+The module implements a 3-bit up/down counter using a register and an always block. The counter increments its value by 1 if the mode signal is high, otherwise it decrements its value by 1 on each positive edge of the clock signal. If the reset signal is high, the counter is reset to zero.
+
+Give me the complete code.
+
+module up_down_counter(
+    input clk,
+    input rst,
+    input mode,
+
+    output [2:0] count
+);

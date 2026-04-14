@@ -1,0 +1,9 @@
+Design a digital circuit that functions as a configurable state storage system, featuring both a register and a set of D flip-flops. The system takes an 8-bit input and outputs either the register's current value or the values from the D flip-flops based on a select signal. Upon receiving a reset signal, the register initializes to a predefined value, while the D flip-flops load an initial value and shift their contents on each clock cycle. Additionally, the circuit includes a counter to track the completion of loading all D flip-flops, with a 'done' signal indicating when this operation has completed, thus ensuring proper timing and synchronization across the circuit.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input [7:0] d, // 8-bit input for the register
+    input select, // Select input to choose between register and D flip-flops
+    output reg [7:0] q, // 8-bit output from the active module
+    output reg done // Signal indicating when all D flip-flops have finished loading their initial values
+);

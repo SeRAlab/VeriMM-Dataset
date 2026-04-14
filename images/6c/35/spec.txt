@@ -1,0 +1,6 @@
+Design a module to compute the two's complement of a 4-bit signed input. The module first sign-extends the 4-bit input to an 8-bit representation, preserving the sign. On the rising edge of the clock, it calculates the two's complement by inverting the sign-extended value and adding one. The final 4-bit output is derived from the least significant bits of the computed two's complement, providing the negative representation of the original input if applicable.
+module top_module(
+    input [3:0] in,
+    input clk,                  // Added clk input
+    output reg [3:0] out
+);

@@ -1,0 +1,25 @@
+The provided Verilog code defines a clock generation module that synchronizes and distributes various clock signals and reset signals for a digital system. It takes a main system clock input and an asynchronous active-low reset signal, generating several outputs including a Wishbone clock and reset, a DDR2 interface clock and reset, and also managing an asynchronous reset signal. The design uses a Digital Clock Manager (DCM) to derive different clock frequencies and synchronize the reset signals based on the lock status of the DCM. The module ensures that all downstream components receive properly synchronized clock and reset signals, contributing to the overall stability and timing control of the circuit.
+module top_module(
+	// Main clocks in, depending on board
+	input  sys_clk_pad_i,
+	// Asynchronous, active low reset in
+	input  rst_n_pad_i,
+	// Input reset - through a buffer, asynchronous
+	output async_rst_o,
+
+	// Wishbone clock and reset out
+	output wb_clk_o,
+	output wb_rst_o,
+
+	// JTAG clock
+	// input  tck_pad_i,
+	// output dbg_tck_o,
+
+	// VGA CLK
+	// output dvi_clk_o,
+
+	// Main memory clocks
+	output ddr2_if_clk_o,
+	output ddr2_if_rst_o
+	// output clk100_o
+);

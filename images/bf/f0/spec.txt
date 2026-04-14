@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to select one of three input clocks based on a selection signal and an enable signal. It outputs a single clock signal that is derived from one of the three input clocks. This module is crucial in systems where multiple clock domains exist, and there is a need to switch between these domains dynamically, based on operational requirements or power-saving strategies. The module also incorporates synchronization and reset functionality for each clock input to ensure stable switching and to prevent glitches or metastability in the output clock signal.
+
+Module name:  
+	clock_switch3_basic
+
+Input ports:
+	rst0_i, rst1_i, rst2_i (Input, Single Bit): Reset signals for each of the three input clocks. When asserted (1), these signals reset the synchronization registers associated with their respective clocks.
+	clk0_i, clk1_i, clk2_i (Input, Single Bit): The three input clock signals. One of these clocks is selected to be passed to the output based on the select and enable signals.
+	enable (Input, Single Bit): An enable signal for the clock switching functionality. When 0, the module does not select any of the input clocks, effectively disabling the output clock.
+	select (Input, 2 Bits): A 2bit selection signal that determines which of the three input clocks is selected. The encoding is as follows: 00 selects clk0_i, 01 selects clk1_i, 10 and 11 select clk2_i.
+Output ports:
+	clk_o (Output, Single Bit): The output clock signal. This is the clock signal selected from one of the three input clocks, based on the select and enable signals.
+
+
+Implementation:
+The clock_switch3_basic module is designed to select one of three input clocks (clk0_i, clk1_i, clk2_i) based on a 2-bit selection input (select) and an enable signal (enable). The selected clock is then output as clk_o. This module incorporates both combinational and sequential logic to achieve its functionality, including synchronization mechanisms to mitigate the risk of metastability when switching between clock domains.
+
+Give me the complete code.
+

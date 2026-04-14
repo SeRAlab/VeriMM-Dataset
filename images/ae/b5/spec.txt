@@ -1,0 +1,9 @@
+Design a 4-bit shift register with the capability for parallel loading, left shifting, and right shifting. The module features an asynchronous reset that clears the register, while the parallel load allows the input data to be directly loaded into the register. When shifting left, the bits are rotated such that the most significant bit wraps around to the least significant bit position, and similarly when shifting right. The output reflects the current state of the shift register, providing a dynamic way to manipulate and store binary data.
+module top_module(
+    input parallel_load,
+    input reset,
+    input shift_left_clk,
+    input shift_right_clk,
+    input [3:0] data_in,
+    output reg [3:0] data_out
+);

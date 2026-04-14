@@ -1,0 +1,7 @@
+Design a circuit that functions as a conditional data source selector for an Arithmetic Logic Unit (ALU). It takes a 32-bit input (RD2_outE) and a 16-bit sign-extended value (extend_out), and based on the ALUSrcE control signal, it outputs a 32-bit value (SrcBE). When ALUSrcE is low, the least significant 16 bits of SrcBE are sourced from the least significant bits of RD2_outE, while the most significant 16 bits are directly taken from RD2_outE. Conversely, when ALUSrcE is high, the least significant 16 bits are sourced from extend_out, and the most significant 16 bits are filled with either zeros or ones, depending on the sign of the extended value (if the most significant bit of extend_out is 0, fill with zeros; if it is 1, fill with ones).
+module top_module(
+   input [31:0]RD2_outE,
+	input [15:0]extend_out,
+	input ALUSrcE,
+	output [31:0]SrcBE
+    );

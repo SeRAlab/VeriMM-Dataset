@@ -1,0 +1,12 @@
+Design a power-good indicator circuit that outputs a signal (X) indicating the operational status based on input signals. It integrates an AND gate to check the status of two inputs (B1 and B2), and a NOR gate to evaluate the state of inverted signals (A1_N and A2_N). The circuit then combines the outputs of these gates using an OR gate. Finally, it processes the result through a power-good UDP (user-defined primitive) to ensure reliable operation under varying power conditions (VPWR, VGND) and buffers the final output. This module is useful in power management applications to determine if the system is in a stable state.
+module top_module(
+    X   ,
+    A1_N,
+    A2_N,
+    B1  ,
+    B2  ,
+    VPWR,
+    VGND,
+    VPB ,
+    VNB
+);

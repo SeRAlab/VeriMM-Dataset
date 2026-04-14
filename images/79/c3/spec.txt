@@ -1,0 +1,9 @@
+Design a synchronous FIFO (First-In-First-Out) memory buffer with a depth of 16, capable of handling 8-bit wide data. The module features input signals for clock, reset, write enable, and read enable, controlling the storage and retrieval of data. On writing, if not full, it stores incoming data at the current head position and updates the head index, while also monitoring full and empty status. On reading, if not empty, it outputs data from the current tail position and updates the tail index accordingly, ensuring correct management of the buffer's contents and status flags.
+module top_module(
+    input clk,
+    input rst,
+    input wr_en,
+    input rd_en,
+    input [7:0] data_in,
+    output reg [7:0] data_out  // Changed to reg type
+);

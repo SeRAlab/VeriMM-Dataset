@@ -1,0 +1,12 @@
+Design a small first-in, first-out (FIFO) memory queue with 16 32-bit wide storage locations for buffering data. The module utilizes a clock signal to control writing and reading operations, where data is written upon receiving a write request (wreq) if the FIFO is not full and read upon a read request (rreq) if the FIFO is not empty. It has control signals to indicate when the FIFO is empty or full, and provides a mechanism for clearing the FIFO contents. Additionally, it tracks the number of used entries in the FIFO, allowing easy management of the FIFO's storage status for external elements in a digital design.
+module top_module( 
+    input clock,
+    input [31:0] data,
+    output empty,
+    output full,
+    output reg [31:0] q, // Changed to reg since q is assigned in always block
+    input rreq,
+    input sclr,
+    output reg [4:0] usedw, // Changed to reg since usedw is assigned in always block
+    input wreq
+    );

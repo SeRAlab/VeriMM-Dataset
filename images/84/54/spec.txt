@@ -1,0 +1,8 @@
+Design a pipeline edge detector that identifies rising and falling edges of a digital input signal 'a'. The module captures the input 'a' on each clock cycle and retains its current and previous states in a shift register. It computes the differences between successive states to detect transitions: a rising edge is signaled when the input changes from LOW to HIGH, while a falling edge is indicated by a transition from HIGH to LOW. The outputs 'rise' and 'down' signal the detected edges, and the circuit initializes outputs to LOW when reset.
+module top_module(
+  input               clk,
+  input               rst_n,
+  input               a,
+  output reg          rise,
+  output reg          down
+);

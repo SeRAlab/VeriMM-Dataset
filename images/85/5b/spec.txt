@@ -1,0 +1,13 @@
+Design a timer module with a 10 nanosecond resolution capable of counting up to a predefined limit, specified through control signals. The module can be started, stopped, and cleared via finite state machine (FSM) controls. It includes inputs for clock and reset, as well as status indicators for timer activity and elapsed time. The timer counts until it reaches its limit and asserts a "timer_elapsed" output. Configuration input allows for dynamic limit adjustments based on write operations. Overall, this module serves as an event tracking mechanism suitable for timing applications in digital systems.
+module top_module(
+  input  wire        clk,
+  input  wire        reset,
+  input  wire        wrenb,
+  input  wire        wraddr,
+  input  wire [31:0] config_data,
+  input  wire        update_timers,
+  input  wire        fsm_start_timer,
+  input  wire        fsm_clear_timer,
+  input  wire        fsm_stop_timer,
+  output reg         timer_elapsed
+);

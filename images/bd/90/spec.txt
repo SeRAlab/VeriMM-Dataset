@@ -1,0 +1,11 @@
+Design a banking switch controller that manages read and write operations to two banks based on input signals. The module detects rising edges of `vin_vs` and `vout_vs` signals to increment or decrement the respective read and write bank indices (`wr_bank` and `rd_bank`). When reset is activated, both indices are initialized to zero. The architecture uses edge detection to determine when to update the bank indices, making it suitable for applications requiring sequential access to memory or data storage blocks.
+module top_module(
+	input				clk,
+	input				rst_n,
+	
+	input  vin_vs,
+	input  vout_vs,
+	
+	output	reg	[1:0]	wr_bank,
+	output	reg	[1:0]	rd_bank
+);

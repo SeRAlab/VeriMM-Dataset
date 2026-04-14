@@ -1,0 +1,7 @@
+Design a 16-bit barrel shifter that allows for both logical left and right shifting of input data A based on a 4-bit shift amount S, controlled by a clock signal C. On each positive edge of C, the circuit captures the input A, computes the left shift of A by S and stores it in a temporary register, as well as computes the right shift of A by S and stores that in another temporary register. The output B will reflect the left-shifted value when C is low and the right-shifted value when C is high, effectively functioning as a dynamic shifting mechanism based on the clock's state.
+module top_module(
+    input [15:0] A,
+    input [3:0] S,
+    input C,
+    output reg [15:0] B
+);

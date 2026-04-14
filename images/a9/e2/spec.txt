@@ -1,0 +1,14 @@
+Design a memory control interface that manages read and write operations for an external memory module. The circuit accepts control signals for read, write, and chip enable (CE), as well as a 7-bit address input to specify memory locations. It provides an 8-bit data bus for data transfer and generates control signals to manage memory access: a constant chip enable signal (ceh_n), a second enable signal (ce2), and control signals for write (we_n) and output enable (oe_n). The module effectively routes data between the memory and the data bus based on the operational mode, ensuring proper read and write functionality while maintaining tri-state bus conditions when not in use.
+module top_module(
+    input             read_n,
+                      write_n,
+                      ce_n,
+    input      [6:0]  address_bus,
+    inout      [7:0]  data_bus,
+
+	inout      [7:0]  mem_data,
+	output     [16:0] mem_address,
+    output wire       ceh_n,
+                      ce2,
+                      we_n,
+                      oe_n);

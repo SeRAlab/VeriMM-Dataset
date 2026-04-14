@@ -1,0 +1,6 @@
+Design a module that performs a bitwise shift operation on a 6-bit input, `x`, based on a 4-bit shift control signal. The most significant 2 bits of the 12-bit output are hardcoded to `10`, while the next 4 bits are set to an unknown value. The actual shift amount is derived from the bits 3 to 1 of the `shift` input, allowing for left or right shifts depending on the least significant bit of `shift`. When `shift[0]` is 0, the module performs a left shift on `x`, and when it is 1, the module performs a right shift.
+module top_module(
+	input [5:0] x,
+   input [3:0] shift,
+   output reg [11:0] out
+   );

@@ -1,0 +1,14 @@
+Design a dual-port line buffer module that implements a video filter. The module features two line buffers capable of storing pixel data, each with a specified address range and data width. The buffer supports separate read and write operations controlled by address, chip enable, and write enable signals. On each clock cycle, if the reset signal is low, the module updates the current addresses and computes a new pixel value based on the average of neighboring pixels from the buffers to create a smoothed output. The output pixel values can be accessed independently through the designated outputs for each buffer.
+module top_module(
+    reset,
+    clk,
+    address0,
+    ce0,
+    we0,
+    d0,
+    q0,
+    address1,
+    ce1,
+    we1,
+    d1,
+    q1);

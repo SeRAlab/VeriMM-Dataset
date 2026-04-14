@@ -1,0 +1,8 @@
+Design a circuit that performs signed multiplication of a 32-bit input `a` and a 16-bit input `b`, generating a 32-bit output `p`. The circuit operates synchronously on a clock signal, and multiplication is executed in a multi-step state machine that uses the `ce` signal to control operation execution. Initially, input values are loaded into registers, followed by computation of their product that is stored in a register, and finally, the product is output when the state machine indicates completion.
+module top_module(
+    input clk,
+    input ce,
+    input signed [31:0] a,
+    input signed [15:0] b,
+    output signed [31:0] p
+);

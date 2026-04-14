@@ -1,0 +1,8 @@
+Develop a 4-bit Booth multiplier that performs multiplication on two 4-bit inputs, A and B, producing an 8-bit output P. The module leverages a sequential process controlled by a clock and a reset signal. Upon reset, it initializes registers for the operands and the product. During the multiplication operation, it utilizes Booth's algorithm—an efficient method that combines addition and subtraction based on the least significant bit of B, while progressively shifting the operands. The final product is outputted after the completion of the algorithm's cycles.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] A,
+    input [3:0] B,
+    output reg [7:0] P
+);

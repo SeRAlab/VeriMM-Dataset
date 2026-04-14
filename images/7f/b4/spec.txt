@@ -1,0 +1,19 @@
+Design a register to hold and transfer data between the memory stage (MEM) and the write-back stage (WB) of a processor's pipeline. This module captures the relevant signals such as register write enable, register address, data from the ALU, data from memory, and the program counter during the clock's rising edge. It incorporates a reset functionality that initializes all outputs to zero when activated. Essentially, this module serves to latch and forward data, making it crucial for maintaining the integrity of state information as instructions progress through the pipeline.
+module top_module(
+    input clk,
+    input rst,
+
+    input MEM_RegWrite,
+    input[4:0] MEM_WriteReg,
+    input[1:0] MEM_RegSrc,
+    input[31:0] MEM_aluResult,
+    input[31:0] MEM_dmOut,
+    input[31:0] MEM_PC,
+
+    output reg WB_RegWrite,
+    output reg[4:0] WB_WriteReg,
+    output reg[1:0] WB_RegSrc,
+    output reg[31:0] WB_aluResult,
+    output reg[31:0] WB_dmOut,
+    output reg[31:0] WB_PC
+);

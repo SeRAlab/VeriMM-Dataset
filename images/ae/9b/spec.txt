@@ -1,0 +1,23 @@
+Design a pixel buffer module that interfaces with a SRAM device. It handles read and write operations based on control signals while processing an 18-bit address input. The module captures write data and generates appropriate control signals for the SRAM, such as address, byte enables, chip enable, output enable, and write enable, ensuring that the correct bytes are accessed during read and write cycles. The read data is driven onto the output when a read operation is valid, and the readdata valid signal indicates when valid data is available. The reset functionality clears all registers and signals, initializing the buffer for operation.
+module top_module(
+    input clk,
+    input reset,
+
+    input [17:0] address,
+    input [1:0] byteenable,
+    input read,
+    input write,
+    input [15:0] writedata,
+
+    inout [15:0] SRAM_DQ,
+
+    output reg [15:0] readdata,
+    output reg readdatavalid,
+
+    output reg [17:0] SRAM_ADDR,
+    output reg SRAM_LB_N,
+    output reg SRAM_UB_N,
+    output reg SRAM_CE_N,
+    output reg SRAM_OE_N,
+    output reg SRAM_WE_N
+);

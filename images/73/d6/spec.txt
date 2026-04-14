@@ -1,0 +1,9 @@
+Design a synchronous circuit that performs a bitwise AND operation on two 8-bit input signals, `a` and `b`. On each positive edge of the clock, if the reset signal (`rst`) is high, the output (`out`) is set to zero, and the `valid` signal is low, indicating no valid operation. When not in reset, the module computes the AND of the inputs and sets the `valid` signal high, indicating that the output is ready and valid.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] a,
+  input [7:0] b,
+  output reg [7:0] out,
+  output reg valid
+);

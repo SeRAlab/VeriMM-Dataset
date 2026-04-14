@@ -1,0 +1,4 @@
+Design a write pointer and full flag management circuit for a memory or FIFO buffer. The module tracks the write address and pointer based on the write enable signal and updates its state on the rising edge of the write clock. When reset, it initializes all outputs to zero. It assesses the full condition by comparing the current write pointer with the read pointer, indicating when the buffer is full. The write address is derived from a 3-bit count, while the write pointer utilizes a combination of bit operations to ensure proper incrementing and looping through available storage locations.
+module top_module(output reg full, output reg [2:0]wr_addr,output reg [3:0]wr_ptr, 
+input wr_en,wr_rst,wr_clk, 
+input [3:0]wq2_rptr);

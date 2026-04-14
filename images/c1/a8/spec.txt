@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module to generate a phase value based on the input frequency number (`fnumber`), block identifier (`block`), and a multiplication factor (`multiple`). It operates in a synchronous digital system, utilizing a clock signal (`clk`) and a reset signal (`reset_n`). The module's primary function to accumulate a phase count that is modifiable by the input parameters, which can be used in applications such as phase-locked loops (PLLs), digital frequency synthesis, or any system requiring phase adjustment or generation based on dynamic inputs. The output phase is a subset of the internal count, allowing for a wide range of phase adjustments.
+
+Module name:  
+	sq_pg
+
+Input ports:
+	clk: Clock input (1bit). The rising edge of clk triggers the module's operations.
+	reset_n: Active low reset input (1bit). When asserted (0), it resets the internal count to 0.
+	fnumber: Frequency number input (11bit). Represents a base frequency or phase increment value.
+	block: Block identifier input (3bit). Used to scale the fnumber by a factor of 2 to the power of (block1).
+	multiple: Multiplication factor (4bit). Scales the frequency number further, allowing for fine adjustment of the phase increment. A value of 0 results in halving the effective frequency number.
+	ce_n: Chip enable, active low (1bit). When low, it allows the count to increment; otherwise, the count holds its value.
+Output ports:
+	phase: Phase output (10bit). Represents the upper 10 bits of the internal 20bit count, effectively providing a phase value based on the accumulated count.
+
+
+Implementation:
+The Verilog module sq_pg is designed to generate a phase value based on the input frequency number (fnumber), block size (block), and a multiplier (multiple). It operates on a clock signal (clk) and can be reset asynchronously using the reset_n signal. The module also includes a chip enable signal (ce_n) to control the update of its internal state. The core functionality revolves around the manipulation and accumulation of a phase value, which is derived from the input parameters and updated every clock cycle when enabled.
+Combinational Logic:
+Frequency Multiplier Calculation (fmult): The fmult wire is calculated by left-shifting the fnumber by (block 1). This operation effectively multiplies the fnumber by 2 to the power of (block 1), adjusting the frequency number based on the block input. This is a combinational logic operation that updates immediately with changes to fnumber or block.
+Phase Update Logic: The logic to update the count register involves a conditional check on the multiple input. If multiple is zero, the fmult value is right-shifted by 1 (halved) before being added to count. Otherwise, fmult is multiplied by multiple. This decision-making process allows for dynamic adjustment of the phase increment based on the multiple input.
+Sequential Logic:
+Count Register Update: The count register is updated on the rising edge of clk or on the falling edge of reset_n. If reset_n is low (active low reset), count is reset to 0. If the chip enable (ce_n) is low (active low), indicating the module is enabled, count is updated based on the logic described above. If ce_n is high, count remains unchanged, effectively pausing the phase accumulation.
+Phase Output Calculation: The phase output is directly derived from the most significant bits (MSBs) of the count register, specifically bits [19:10]. This operation does not involve any clocked logic and is a simple bit-slicing of the count register.
+
+Give me the complete code.
+

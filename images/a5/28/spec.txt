@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+
+Design an 8-bit shift register with parallel load and shift left/right capabilities. The shift register should have a control signal to select between shifting left, shifting right, and loading new parallel data. The shifting should occur on the rising edge of the clock.
+
+Module name:
+    shift_reg_8bit
+
+Input ports:
+    clk: Clock signal.
+    rst: Reset signal.
+    load: Parallel load enable signal.
+    shift_ctrl: 2-bit control signal to select shift direction (00: no shift, 01: shift left, 10: shift right).
+    data_in: 8-bit input data for parallel load.
+
+Output ports:
+    data_out: 8-bit output data.
+
+Implementation:
+The module uses an always block triggered by the clock and reset signals. If the reset signal is active, the shift register is cleared to 0. If the load signal is active, the input data is loaded into the shift register. If the shift control signal is 01, the register shifts left. If the shift control signal is 10, the register shifts right.
+
+Give me the complete code.
+
+module shift_reg_8bit(
+    input wire clk,
+    input wire rst,
+    input wire load,
+    input wire [1:0] shift_ctrl,
+    input wire [7:0] data_in,
+    output reg [7:0] data_out
+    );

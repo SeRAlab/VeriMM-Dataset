@@ -1,0 +1,9 @@
+Design a 10-bit shift register with an enable signal and asynchronous reset. On the rising edge of the clock, if reset is low, it initializes the register with the value 10'b10_0000_0000. When the enable signal is high, the most significant bit is shifted out, and a new bit is inserted at the least significant position, effectively shifting the data to the right. The output provides the current value of the least significant bit of the shift register.
+module top_module(
+    input            clock,
+    input            reset_n,
+    input            in,
+    input            enable,
+    output           out,
+    output reg [9:0] data
+);

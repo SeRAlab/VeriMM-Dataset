@@ -1,0 +1,18 @@
+Please act as a professional verilog designer.
+
+Implement a module of an 8-bit synchronous up/down counter with enable and direction signals. The counter increments by 1 when the direction signal is high and decrements by 1 when the direction signal is low, but only when the enable signal is high. The counter resets to 0 when the reset signal (rst) is active.
+
+Module name:
+    up_down_counter_8
+Input ports:
+    rst: Reset signal (active high)
+    clk: Clock signal
+    enable: Signal to enable counting (1 for enable, 0 for disable)
+    direction: Signal to determine counting direction (1 for up, 0 for down)
+Output ports:
+    count: 8-bit output representing the current count value
+
+Implementation:
+If the reset signal is active (rst), the counter is reset to 0 by assigning the value 8'b00000000 to the output register (count). If enable is high, the counter increments or decrements based on the direction signal on each positive clock edge.
+
+Give me the complete code.

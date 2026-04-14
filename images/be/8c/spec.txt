@@ -1,0 +1,8 @@
+Design a 4-bit register with asynchronous set and reset features. On the rising edge of the clock signal (CLK), if the SET input is high and RESET is low, the register outputs will be set to all ones (1111). Conversely, if RESET is high and SET is low, the output will be cleared to all zeros (0000). If both SET and RESET are low, the register will load the value from the input D. This module is typically used in digital systems for temporary data storage while providing control for initializing the register state.
+module top_module(
+    input CLK,
+    input SET,
+    input RESET,
+    input [3:0] D,
+    output reg [3:0] Q
+);

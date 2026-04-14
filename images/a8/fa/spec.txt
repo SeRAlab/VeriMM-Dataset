@@ -1,0 +1,7 @@
+Design a module that produces a 1-bit PWM output signal at a frequency of 100Hz with a 50% duty cycle and indicates the highest priority input from a 4-bit encoded signal. The module performs binary to Gray code conversion for the encoded input, determines the highest priority bit in the Gray coded representation, and outputs a 2-bit positional value corresponding to the highest priority input. It incorporates synchronous active-high reset functionality and maintains an internal counter for PWM generation.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    output reg pwm,   // 1-bit PWM output
+    input [3:0] encoder_out,
+    output reg [1:0] pos  );

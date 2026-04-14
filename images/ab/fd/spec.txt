@@ -1,0 +1,6 @@
+Design a circuit that implements an asynchronous reset mechanism for a digital output. The module synchronizes the input reset signal with the clock and latches the output state based on the reset condition. When the reset (rst) is asserted, the output (out) is set to LOW and the latch (out_latch) is cleared. Once the reset is de-asserted, the output can follow the state of the latch, maintaining its last value until the next reset occurs. This design ensures that the output is set to a known state on reset while preserving the last known state afterward, effectively combining synchronization and asynchronous reset functionality.
+module top_module(
+  input rst,
+  input clk,
+  output reg out
+);

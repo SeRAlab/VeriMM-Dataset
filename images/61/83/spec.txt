@@ -1,0 +1,12 @@
+Design a memory-mapped I/O controller that interacts with a 4-word memory, enabling both read and write operations based on the input address and control signals. The module has inputs for chip select, clock, and reset, with additional support for writing data to memory and managing an interrupt request (IRQ) mask. On a read operation, it outputs data from specific memory locations or the IRQ mask based on the provided address. Additionally, when the chip is selected and a write operation is indicated, it updates the memory or the IRQ mask accordingly. The IRQ output indicates if any interrupt conditions are met by evaluating the input port against the IRQ mask.
+module top_module(
+  input [1:0] address,
+  input chipselect,
+  input clk,
+  input in_port,
+  input reset_n,
+  input write_n,
+  input [31:0] writedata,
+  output irq,
+  output [31:0] readdata
+);

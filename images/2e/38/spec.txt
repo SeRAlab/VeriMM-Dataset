@@ -1,0 +1,17 @@
+
+Design a DVFS controller that manages the voltage and frequency levels of a processing unit based on the current workload. The controller should have the following inputs:
+- `load`: an 8-bit input representing the current workload (0-255).
+- `clk`: a clock signal.
+- `reset`: an active-high reset signal.
+
+The controller should output:
+- `voltage`: a 2-bit output representing the voltage level (00: 1V, 01: 1.5V, 10: 2V, 11: 2.5V).
+- `frequency`: a 2-bit output representing the frequency level (00: 100MHz, 01: 200MHz, 10: 300MHz, 11: 400MHz).
+
+The output voltage and frequency should change based on the workload as follows:
+- Load < 64: voltage = 00, frequency = 00
+- Load < 128: voltage = 01, frequency = 01
+- Load < 192: voltage = 10, frequency = 10
+- Load >= 192: voltage = 11, frequency = 11
+
+The outputs should be registered on the rising edge of the clock.

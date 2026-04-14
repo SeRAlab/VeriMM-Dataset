@@ -1,0 +1,16 @@
+Design a FIFO (First-In, First-Out) status monitoring module that tracks the read and write pointer states to determine the conditions of a FIFO buffer. It outputs signals indicating when the FIFO is full, empty, or reaches a specified threshold, as well as overflow and underflow conditions. The module counts the number of entries in the FIFO, updating on clock edges while considering reset conditions, and evaluates full/empty states based on the write and read operations performed.
+module top_module(
+    wr,
+    rd,
+    fifo_we,
+    fifo_rd,
+    wptr,
+    rptr,
+    fifo_full,
+    fifo_empty,
+    fifo_threshold,
+    fifo_overflow,
+    fifo_underflow,
+    clk,
+    rst_n
+);

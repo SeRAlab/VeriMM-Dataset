@@ -1,0 +1,10 @@
+Design a 32-bit left shift unit that takes two signed 32-bit inputs, `a` and `b`. The circuit performs a left shift on the input `a` by the number of bits specified in the lower 5 bits of the input `b` (i.e., `b[4:0]`). The output `result` provides the shifted value, while the `valid` output always indicates that the result is valid, without considering any conditions like reset or new data.
+module top_module(
+   input wire 		clk,
+   input wire 		reset,
+   input wire signed [31:0] 	a,
+   input wire signed [31:0] 	b,
+   input wire 		nd,
+   output wire signed [31:0] result,
+   output wire 		valid
+   );

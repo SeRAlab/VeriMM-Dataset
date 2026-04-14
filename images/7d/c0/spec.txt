@@ -1,0 +1,6 @@
+Develop a 2-to-1 multiplexer for controlling the next program counter (PC) value in a processor design. The module takes two 32-bit input instructions: `Multiplexer_Instruction` and `Jump_Instruction`, and a select control signal `Jump_Control`. When `Jump_Control` is 0, the output `New_PC` is set to `Multiplexer_Instruction`; when `Jump_Control` is 1, the output is set to `Jump_Instruction`.
+module top_module( input [31:0] Multiplexer_Instruction, 
+							 input [31:0] Jump_Instruction,
+							 input Jump_Control,
+							 output [31:0] New_PC
+							 );

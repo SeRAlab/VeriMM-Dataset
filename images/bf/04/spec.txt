@@ -1,0 +1,9 @@
+Design a circuit that functions as a non-faulty counter with adjustable incrementing or decrementing behavior based on specific input signals. The module monitors two inputs—`cfg_err_cpl_timeout_n`, which indicates a configuration error state, and `decr_nfl`, which determines whether to decrement the counter. Depending on the combination of these inputs, the circuit generates control signals to either increment or decrement the internal counter `reg_nfl_num`. The counter updates on the rising edge of the clock or when reset, and it provides an output `nfl_num` representing the current count value, along with an output `inc_dec_b` indicating the current operation (increment or decrement).
+module top_module(
+  output nfl_num,
+  output inc_dec_b,
+  input cfg_err_cpl_timeout_n,
+  input decr_nfl,
+  input rst,
+  input clk
+);

@@ -1,0 +1,9 @@
+Design a module that performs division of two 32-bit unsigned integers and outputs either the quotient or the remainder based on a 2-bit select signal. The module uses a fixed-point division algorithm that shifts the dividend and divisor, calculating the quotient and remainder as it processes each bit. Additionally, it analyzes a 4-bit input to determine the position of the highest active bit in the input, outputting this position through a 2-bit signal. Thus, the overall purpose is to provide both the result of a division operation and the highest bit position from a specified input.
+module top_module(
+    input [31:0] a,
+    input [31:0] b,
+    input [1:0] select,
+    input [3:0] in,
+    output reg [31:0] result,
+    output reg [1:0] pos
+);

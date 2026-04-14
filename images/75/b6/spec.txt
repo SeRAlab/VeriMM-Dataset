@@ -1,0 +1,6 @@
+Design a clock buffer with a programmable delay. This module takes an input clock signal and produces a delayed output clock according to a specified delay parameter, which is defined in terms of the number of clock cycles. The delay is implemented by counting cycles of the input clock until it reaches the specified delay value. The output clock is asserted only after the counter has counted up to the calculated delay cycles, effectively introducing a hold before the output clock signal either reflects the input clock or remains low.
+module top_module(
+  input input_clk,
+  input [31:0] delay,
+  output output_clk
+);

@@ -1,0 +1,11 @@
+Implement the Verilog module based on the following description.
+You are given a 18-bit input vector in[17:0]. We want to know some relationships between each bit and its neighbour: 
+// (1) out_left: Each bit of this output vector should indicate whether both the corresponding input bit and its neighbour to the left are '1'. For example, out_left[16] should indicate if in[16] and in[17] are both 1. Since in[17] has no neighbour to the left, the answer is obvious so we don't need to know out_left[17]. 
+// (2) out_right: Each bit of this output vector should indicate whether any of the corresponding input bit and its neighbour to the right are '1'. For example, out_right[2] should indicate if either in[2] or in[1] are 1. Since in[0] has no neighbour to the right, the answer is obvious so we don't need to know out_right[0]. 
+// (3) out_xor: Each bit of this output vector should indicate whether the corresponding input bit is different from its neighbour to the left. For example, out_xor[16] should indicate if in[16] is different from in[17]. For this part, treat the vector as wrapping around, so in[17]'s neighbour to the left is in[0].
+
+module top_module (
+	input [17:0] in,
+	output [16:0] out_left,
+	output [17:1] out_right,
+	output [17:0] out_xor);

@@ -1,0 +1,7 @@
+Design a synchronized digital circuit that captures a multi-bit input signal, with the ability to reset and clock the signal through two stages of registers. When the reset is active low (out_resetn = 0), the output registers are cleared. On each rising edge of the output clock (out_clk), the circuit samples the input signal (in) into the first register (out_m1), which is then propagated to the second register (out_m2) on the subsequent clock cycle. The final output (out) is determined by the CLK_ASYNC parameter: if CLK_ASYNC is set, the output reflects the value from the second register; otherwise, it directly outputs the input signal. This design effectively ensures temporal synchronization of the input signal while providing reset and configurable output behavior.
+module top_module(
+	input [NUM_BITS-1:0] in,
+	input out_resetn,
+	input out_clk,
+	output [NUM_BITS-1:0] out
+);

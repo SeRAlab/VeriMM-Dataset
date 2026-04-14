@@ -1,0 +1,30 @@
+Please act as a professional Verilog designer.
+
+Design a Verilog module to implement an 8-bit shift register. The shift register should shift its contents to the right on each positive edge of the clock signal. The register should include a synchronous reset signal to reset the register to 0.
+
+Module name:  
+    shift_register
+
+Input ports:
+	clk: Clock signal for synchronous operations.
+	reset: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+	shift_in: 1-bit input to be shifted into the register.
+
+Output ports:
+    out: 8-bit output representing the current state of the shift register.
+
+Implementation:
+Shift Register:
+The module includes an 8-bit register to store the current state of the shift register. On each positive edge of the clock signal, the contents of the register are shifted to the right, with the shift_in bit being shifted into the most significant bit (MSB) position.
+Output Assignment:
+The output port out is assigned the value of the 8-bit register.
+
+Give me the complete code.
+
+module shift_register(
+    input           clk,
+    input           reset,
+    input           shift_in,
+
+    output reg [7:0] out
+);

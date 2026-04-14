@@ -1,0 +1,7 @@
+Design a controlled address reader circuit. The module captures a 16-bit address from `addr_in` on the negative edge of the `send_addr` signal, provided that `send_addr` is low. Additionally, it generates an active-low read signal (`rd`), which is the inverse of the input `rd_in`. This functionality allows for selective address retrieval while managing the read operation's timing.
+module top_module(
+    input [15:0] addr_in,
+    input rd_in, send_addr,
+    output reg [15:0] addr,
+    output rd
+    );

@@ -1,0 +1,9 @@
+Design a circuit that performs bitwise operations on two 8-bit inputs, `a` and `b`. It computes the bitwise XOR and AND of inputs `a` and `b`, and uses the select signal to determine the output for `out_xor` and `out_and`. When `select` is low, `out_xor` outputs the result of the XOR operation while `out_and` outputs the AND result; when `select` is high, these outputs are swapped. Additionally, the circuit computes the bitwise NOT of input `b`, which is provided as output `out_not` in a 8-bit format combined with zero padding.
+module top_module(
+    input [7:0] a,
+    input [7:0] b,
+    input select,
+    output [7:0] out_xor,
+    output [7:0] out_and,
+    output [7:0] out_not
+);

@@ -1,0 +1,9 @@
+Design a hardware module that implements the HMAC (Hash-based Message Authentication Code) algorithm using a SHA-256 hash function. This module takes a clock signal, a reset signal, a key, a message, and an expected HMAC value as inputs, and it outputs the computed HMAC value. Upon receiving a reset signal, it initializes the output HMAC to zero. On every clock cycle, it computes the HMAC from the provided key and message, storing the result, while also checking if the computed HMAC matches the supplied expected HMAC, thereby verifying the authenticity and integrity of the message. The parameters define the bit-widths for the key, message, and HMAC, ensuring the module accommodates standard sizes used in cryptographic applications.
+module top_module(
+  input clk,
+  input rst,
+  input [k-1:0] key,
+  input [l-1:0] message,
+  input [h-1:0] expected_hmac,
+  output reg [h-1:0] hmac
+);

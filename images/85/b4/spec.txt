@@ -1,0 +1,12 @@
+Design a simple memory-mapped input/output (I/O) latency module that reads data from a specified input port based on a 2-bit address. The module uses a clock signal to latch the input data when the reset is not asserted. When the address is 00, it forwards the 16-bit input data to the output; otherwise, the output is held at zero. This effectively creates a scenario where the module can selectively read from a single input port depending on the address, serving as a basic I/O interface in a larger system.
+module top_module(
+                     // inputs:
+                      address,
+                      clk,
+                      in_port,
+                      reset_n,
+
+                     // outputs:
+                      readdata
+                   )
+;

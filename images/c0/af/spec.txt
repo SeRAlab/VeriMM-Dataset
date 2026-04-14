@@ -1,0 +1,31 @@
+Please act as a professional verilog designer.
+    
+Implement a module to compare two single-bit inputs and determine which one is larger, which one is smaller, or if they are equal. It also handles control signals that dictate whether the comparison should be performed or halted, and whether the results of the comparison should influence other control signals. The module's primary functions include:
+
+Comparing two single-bit inputs.
+Determining and outputting the larger and smaller of the two bits.
+Handling run and swap control signals to manage the comparison operation and its impact on the outputs.
+
+This module could be part of a larger system where bit-level comparisons are necessary, such as in sorting algorithms, digital signal processing, or other applications requiring dynamic control over bit-level operations.
+
+Module name:  
+	bitsplit
+
+Input ports:
+	clk: Clock signal (input, single bit). This is the clock input for the module, driving the sequential logic.
+	bit1_i: First bit to compare (input, single bit).
+	bit2_i: Second bit to compare (input, single bit).
+	swap_i: Swap control signal (input, single bit). Determines whether the comparison result should affect the swap output.
+	run_i: Run control signal (input, single bit). Enables or disables the comparison operation.
+Output ports:
+	largebit_o: Output for the larger bit (output, single bit). This signal represents the larger of the two input bits after comparison.
+	smallbit_o: Output for the smaller bit (output, single bit). This signal represents the smaller of the two input bits after comparison.
+	swap_o: Swap status output (output, single bit). Indicates whether a swap has occurred based on the comparison and the swap input signal.
+	run_o: Run status output (output, single bit). Reflects the status of the run input signal with a oneclockcycle delay.
+
+
+Implementation:
+The bitsplit module is designed to compare two input bits (bit1_i and bit2_i), determine their relative magnitude, and output them as largebit_o and smallbit_o based on their values. Additionally, the module tracks whether a swap has occurred and whether it is in a "run" state, outputting these states as swap_o and run_o, respectively. The module operates synchronously with a clock signal (clk) and incorporates logic to handle the swap_i and run_i control signals.
+
+Give me the complete code.
+

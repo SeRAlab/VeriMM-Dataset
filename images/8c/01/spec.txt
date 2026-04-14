@@ -1,0 +1,8 @@
+Design a finite state machine (FSM) with four states (S0, S1, S2, S3) that processes an input signal to control state transitions and generate an output signal. Upon reset, the FSM initializes to state S0 and produces a LOW output. As the input signal toggles, the FSM transitions through its states: it moves from S0 to S1 when the input is HIGH, transitions from S1 to S2 when the input goes LOW while generating a HIGH output, and then alternates between S2 and S3 based on the input, maintaining a HIGH output, before returning to S0 when the input becomes LOW in state S3. This design is suitable for applications requiring specific logical state transitions based on input conditions.
+module top_module(
+  input clk,
+  input reset,
+  input in_signal,
+  output reg [1:0] state,
+  output reg out_signal  // Changed output to reg
+);

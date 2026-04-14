@@ -1,0 +1,6 @@
+Construct a circuit that computes the running average of the last eight 8-bit input values. The module uses a shift register to store the incoming data and, on each clock cycle, shifts the new value in while maintaining the previous values. It calculates the sum of the values in the shift register, and then calculates the average by right-shifting the sum by three bits, effectively dividing it by eight. The computed average is then output as an 8-bit value.
+module top_module(
+    input clk,
+    input [7:0] d,
+    output reg [7:0] average
+);

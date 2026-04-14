@@ -1,0 +1,6 @@
+Implement a seven-segment display decoder that converts a 4-bit binary input (DATA_IN) representing decimal digits (0-9) into the corresponding 7-segment output (SEVEN_SEG_OUT) signals. The module features a pipeline of three registers that capture the input data and ensure synchrony with the clock edges. Depending on the value present in the last pipeline register, the module outputs the appropriate binary code to illuminate the segments of the display, allowing for visualization of the input digit. If the input value exceeds the valid range of 0-9, it outputs a default code that indicates an error state.
+module top_module(
+    input clk,                  // Added clk input
+    input [3:0] DATA_IN,
+    output reg [6:0] SEVEN_SEG_OUT
+);

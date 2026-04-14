@@ -1,0 +1,7 @@
+Design a logic circuit that serves to increment a write pointer for a FIFO (First In, First Out) buffer based on the current conditions of buffer availability and transaction count. The module takes inputs indicating buffer space status (`free2` and `free3`) and a two-bit transaction count (`tm_count`). Depending on the values of these inputs, it generates a four-bit increment value (`fifowp_inc`), specifically setting it to 3, 2, 1, or 0, thereby indicating how much the write pointer should be incremented under various conditions of buffer occupancy and capacity.
+module top_module(
+    input free2,
+    input free3,
+    input [1:0] tm_count,
+    output reg [3:0] fifowp_inc
+);

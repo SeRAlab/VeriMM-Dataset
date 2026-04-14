@@ -1,0 +1,7 @@
+Design a 16-bit barrel shifter that takes a 16-bit input and a 4-bit shift amount to perform a logical left shift operation based on the specified amount. The module outputs two separate 8-bit results: the higher 8 bits (out_hi) and the lower 8 bits (out_lo) of the shifted value. When the shift amount is applied, the bits are shifted left, with zero-padding introduced on the right, effectively splitting the shifted output into two 8-bit segments for further processing or analysis.
+module top_module(
+    input wire [15:0] in,
+    input wire [3:0] shift_amt,
+    output wire [7:0] out_hi,
+    output wire [7:0] out_lo
+);

@@ -1,0 +1,7 @@
+Design a circuit that implements a step generator based on various audio synthesis parameters. It accepts a 3-bit state input to determine the current phase of an envelope generator (such as ATTACK, DECAY, HOLD, and RELEASE), a 6-bit rate input to set modulation rates, and a 3-bit counter to select specific bits from an internal step index. The module outputs a single bit, step_V, that corresponds to specific steps derived from the step index based on the combinations of the state and rate inputs. This design is suitable for controlling audio effects or synthesizer behaviors by generating step signals over time depending on the envelope shape defined by the inputs.
+module top_module(
+	input [2:0] state_V,
+	input [5:0] rate_V,
+	input [2:0] cnt_V,
+	output reg step_V
+);

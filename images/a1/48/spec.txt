@@ -1,0 +1,24 @@
+Design a module that acts as a multi-channel selector based on an 8-bit input signal. The module receives 19 enable signals and outputs one of these signals on `en_out` according to the value of the `channel` input. For example, if `channel` is 0, then `en_out` will match `en1`; if `channel` is 1, it will match `en2`, and so on up to `channel` 18 for `en19`. If `channel` is outside this range, `en_out` defaults to LOW. This design essentially functions as a decoder that chooses among multiple input signals based on the specified channel.
+module top_module(
+						input [7:0]channel,
+						input en1,
+						input en2,
+						input en3,
+						input en4,
+						input en5,
+						input en6,
+						input en7,
+						input en8,
+						input en9,
+						input en10,
+						input en11,
+						input en12,
+						input en13,
+						input en14,
+						input en15,
+						input en16,
+						input en17,
+						input en18,
+						input en19,
+						output reg en_out
+					);

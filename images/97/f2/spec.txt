@@ -1,0 +1,8 @@
+Design a 16-bit wide subtractor module that performs subtraction of two 16-bit inputs (a and b) and outputs the result along with two status flags: carry and overflow. The output 'sub' represents the difference between 'a' and 'b', while 'carry' indicates if there was a borrow during the subtraction (set to 1 if 'a' is less than 'b'). The 'overflow' flag is set if the result exceeds the range of signed 16-bit integers, determined by checking the sign bit of the inputs and output. To ensure the result remains valid in cases of underflow, the design adds 65536 (2^16) to 'sub' if 'a' is less than 'b'.
+module top_module(
+    input [15:0] a,
+    input [15:0] b,
+    output reg [15:0] sub,
+    output reg carry,
+    output reg overflow
+);

@@ -1,0 +1,7 @@
+Design a bus hold circuit that captures and retains an n-bit input bus signal. On the rising edge of the clock, if the reset signal is active, the output is set to zero; otherwise, it updates to reflect the current bus input. The output, bus_out, will provide the most recent stored value of the bus signal unless reset to zero. This module serves to store and maintain the last valid bus value until another value is captured or a reset occurs.
+module top_module(
+  input [n-1:0] bus_in,
+  input clk,
+  input reset,
+  output [n-1:0] bus_out
+);

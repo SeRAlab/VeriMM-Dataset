@@ -1,0 +1,8 @@
+Design a clock-gated D flip-flop that only updates its output when both the flip-flop enable signal and the clock enable signal are active. The module uses a gated clock derived from the input clock, gated by the enable signal, to control its operation. The flip-flop captures the 32-bit input data only on the rising edge of the gated clock when the enable flag (`en_ff`) is asserted, ensuring power efficiency by reducing unwanted toggling when the clock is not enabled.
+module top_module(
+    input clk,
+    input en,
+    input en_ff,
+    input [31:0] data,
+    output reg q
+);

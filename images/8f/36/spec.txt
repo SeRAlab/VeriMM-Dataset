@@ -1,0 +1,11 @@
+Design a register file with 32 entries, each 32 bits wide, that supports read and write operations. On each rising edge of the clock, the module reads the values from two specified registers (`readReg1` and `readReg2`) and outputs them as `readData1` and `readData2`, respectively. Additionally, if the `regWrite` signal is asserted, it writes incoming `writeData` to the register specified by `writeReg`. This functionality is typical in processor architectures for managing register-based data storage and manipulation.
+module top_module(
+    input clock_in,
+    input regWrite,
+    input [4:0] readReg1,
+    input [4:0] readReg2,
+    input [4:0] writeReg,
+    input [31:0] writeData,
+    output reg [31:0] readData1,
+    output reg [31:0] readData2
+);

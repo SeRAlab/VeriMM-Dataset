@@ -1,0 +1,15 @@
+Design a dual-port synchronous memory module capable of simultaneous read and write operations. The module has two independent ports, each with its own read and write addresses, data input, and control signals, allowing for the storage and retrieval of 16-bit wide data. When a write enable (wren) signal is active, data can be written to the specified address; when a read enable (rden) signal is active, the data corresponding to the read address is output from each port. If rden is low, the output is set to zero, providing control over data access for two separate addresses.
+module top_module(
+  input clock,
+  input [15:0] data,
+  input [7:0] rdaddress1,
+  input rden1,
+  input [7:0] wraddress1,
+  input wren1,
+  input [7:0] rdaddress2,
+  input rden2,
+  input [7:0] wraddress2,
+  input wren2,
+  output reg [15:0] q1,
+  output reg [15:0] q2
+);

@@ -1,0 +1,17 @@
+Design a dual-port memory module that supports read and write operations for core and bus interfaces. The module features a 4096 x 4-bit array of registers (ISPM) that can be accessed using two separate sets of I/O signals: one for core read/write operations and another for bus communication. The core interface allows reading from and writing to specific addresses when enabled, outputting 32-bit data that aligns with 8 separate banks of data, each handling 4 bits per address. The bus interface is prepared to handle transactions, although it is currently set to indicate that it is not ready for bus operations. The design is suitable for applications requiring concurrent access to a small data store from different system components.
+module top_module(input clk,
+    input [11:0] io_core_r_addr,
+    input  io_core_r_enable,
+    output[31:0] io_core_r_data_out,
+    input [11:0] io_core_rw_addr,
+    input  io_core_rw_enable,
+    output[31:0] io_core_rw_data_out,
+    input  io_core_rw_write,
+    input [31:0] io_core_rw_data_in,
+    input [11:0] io_bus_addr,
+    input  io_bus_enable,
+    output [31:0] io_bus_data_out,
+    input  io_bus_write,
+    input [31:0] io_bus_data_in,
+    output io_bus_ready
+);

@@ -1,0 +1,4 @@
+Design a custom floating-point addition (or subtraction) operation module. It processes two input mantissas, each 27 bits wide, along with their corresponding signs and a common exponent, producing a resulting mantissa (28 bits), exponent (9 bits), and sign. The module includes control signals for enabling operations, managing stalls, and validating inputs. Upon a clock edge, if reset is inactive and enabled, it computes the result based on whether to add or subtract the mantissas, providing an output that indicates whether the operation was valid. The functionality allows for flexible handling of arithmetic operations in floating-point representation, suitable for high-capacity applications.
+module top_module(	clock, resetn, left_mantissa, right_mantissa, left_sign, right_sign, common_exponent,
+										resulting_mantissa, resulting_exponent, resulting_sign,
+										valid_in, valid_out, stall_in, stall_out, enable);

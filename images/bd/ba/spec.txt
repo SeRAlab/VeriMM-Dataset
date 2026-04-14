@@ -1,0 +1,7 @@
+Design a fixed-point multiplier and adder circuit that operates on four 16-bit inputs (A, B, C, and D) to produce a 32-bit output (O). The circuit includes a configuration for optional registers for all inputs, allows for signed or unsigned operations based on parameters, and incorporates a multiplier stage that computes partial products of the inputs. The results from the multiplier stage can then be conditioned by a configurable adder stage that sums the partial product results and potentially adds input C or A, depending on the ENABLE_DSP signal. The design is structured to allow for future enhancements, such as signed arithmetic, as indicated by the currently unused output carry signal.
+module top_module(
+    input CLK,
+    input [15:0] A, B, C, D,
+    output [31:0] O,
+    output CO // Currently unused, left in case we want to support signed operations in the future.
+);

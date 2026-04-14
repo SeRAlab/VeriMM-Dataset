@@ -1,0 +1,5 @@
+Design a ROM module that outputs a 24-bit word based on a 4-bit address input. The module captures a clock signal and utilizes a synchronous process to set the output data from predefined values corresponding to each address (0 through 15). The output is held in a register until the next positive clock edge, where the data values represent a look-up table for various applications, such as signal processing in a FIR filter bank. If the address is outside the defined range, the output defaults to zero.
+module top_module(
+    input wire clk,
+    input wire [3:0] addr,
+    output wire [23:0] data);

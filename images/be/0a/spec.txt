@@ -1,0 +1,7 @@
+Design a circuit that combines a 256-to-1 multiplexer and a 50-input majority gate. The multiplexer selects one of the 256 input bits based on an 8-bit select signal, while the majority gate outputs a high signal if more than 25 of its 50 input bits are high. The final output is the logical OR of the selected multiplexer output and the majority gate output, effectively generating a single output that reflects both the selected input and the majority condition.
+module top_module(
+    input [255:0] in, // 256-bit input vector for the multiplexer
+    input [7:0] sel, // 8-bit select input for the multiplexer
+    input [49:0] in_maj, // 50-bit input vector for the majority gate
+    output out // 1-bit output from the functional module
+);

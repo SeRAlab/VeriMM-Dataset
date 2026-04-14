@@ -1,0 +1,14 @@
+module top_module(
+    input clk,
+    input rst,
+    input enable,
+    output reg [31:0] count
+);always @(posedge clk) begin
+    if (rst) begin
+        count <= 0;
+    end else if (enable) begin
+        count <= count + 1;
+    end
+end
+
+endmodule

@@ -1,0 +1,11 @@
+Design a clocked flip-flop with asynchronous set and reset capabilities, featuring a shift-enable control. This module captures and stores the input data (D) on the rising edge of the clock (CK) unless the reset (RST) or set (SET) signals are active. If RST is asserted, the output (Q) is set to LOW, and if SET is asserted, the output is set to HIGH. Additionally, when the shift-enable (SE) signal is active, the output takes the value of the serial input (SI), enabling the flip-flop to function as a shift register. The complementary output (QN) is also provided.
+module top_module(
+  input SET, 
+  input RST, 
+  input CK, 
+  input SE, 
+  input D, 
+  input SI, 
+  output Q, 
+  output QN 
+);

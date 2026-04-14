@@ -1,0 +1,7 @@
+Develop a synchronous RAM module that supports both read and write operations. It accepts a memory address input (addr), a data input (din), and a write enable signal (we). Based on the value of the write enable signal, the module writes the data to the specified address in memory when we=1; when we=0, it reads the data from the specified address and outputs it through dout. The module is parameterized to allow for configurable address width (n), data width (m), and total memory size.
+module top_module(
+  input [n-1:0] addr,
+  input [m-1:0] din,
+  input we,
+  output reg [m-1:0] dout // Change output to reg type
+);

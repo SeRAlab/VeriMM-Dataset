@@ -1,0 +1,7 @@
+Design a clock domain crossing (CDC) synchronizer that captures an input signal (data_in) and synchronizes it to a slower output clock while also generating a divided clock output (clk_out). This module utilizes a clock divider with a configurable ratio to generate a new clock signal, effectively reducing the frequency of the input clock (clk_in). It employs a dual flip-flop to safely transfer the input data into the new clock domain, providing a synchronized data output (data_out) that ensures reliable data transfer across different clock domains.
+module top_module(
+  input data_in,
+  input clk_in,
+  output reg data_out,    // Change output to reg
+  output reg clk_out      // Change output to reg
+);

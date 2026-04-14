@@ -1,0 +1,15 @@
+Design a reset signal distribution module that generates various reset signals for different components in a system based on two input reset conditions: `rst_all` and `rst_dev`. The module outputs specific reset signals for the MAC, ADC, two FIFOs, and connections between these components. Specifically, `rst_mac` and several other signals are driven by `rst_all`, while `rst_adc`, `rst_fifod`, and `rst_adc2fifod` are controlled by `rst_dev`, enabling flexible and hierarchical reset functionality across the system.
+module top_module(
+    input rst_all,
+    input rst_dev,
+
+    output rst_mac,
+    output rst_adc,
+    output rst_fifod,
+    output rst_fifoc,
+    output rst_eth2mac,
+    output rst_mac2fifoc,
+    output rst_fifoc2cs,
+    output rst_adc2fifod,
+    output rst_fifod2mac
+);

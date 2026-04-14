@@ -1,0 +1,9 @@
+Design a finite state machine (FSM) for a vending machine. The circuit manages three states: IDLE, ACCEPT, and DISPENSE. In the IDLE state, it waits for a quarter input; upon receiving a quarter, it transitions to the ACCEPT state. If another quarter is given while in the ACCEPT state, it moves to the DISPENSE state, where it checks if a candy bar is available to dispense. If a candy bar is available, it outputs a dispense signal and returns to the IDLE state. The FSM resets to the IDLE state upon a reset signal. The state of the machine is output as a 2-bit signal.
+module top_module(
+  input clk,
+  input reset,
+  input quarter,
+  input candy_bar_left,
+  output reg [1:0] state,
+  output reg dispense
+);

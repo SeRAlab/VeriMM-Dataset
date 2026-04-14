@@ -1,0 +1,7 @@
+Design a module for memory compression and decompression. This circuit facilitates the storage of data in a memory block of 1024 words, each n bits wide, optimizing space by compressing input data during write operations (controlled by a write enable signal) and decompressing it during read operations (controlled by a read enable signal). The module uses defined algorithms for both compression and decompression, ensuring that high integrity of the original data is maintained when it is accessed from memory.
+module top_module(
+  input [n-1:0] data_in,
+  input we,
+  input re,
+  output reg [n-1:0] data_out // Changed to reg to allow output assignment
+);

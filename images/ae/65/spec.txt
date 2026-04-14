@@ -1,0 +1,8 @@
+Design a Newton-Raphson iterative approximation circuit for finding the square root of a 16-bit input value `a`. Upon receiving a high `ready` signal, the module initializes the approximation, then iteratively updates the estimate for a specified number of iterations. The output includes a `valid` signal indicating when the calculation is complete and a `result` that holds the final approximation of the square root. The iterative process involves calculating the next estimate based on the current estimate and the input value, representing a numerical computing function typically used in digital signal processing or arithmetic units.
+module top_module(
+    input [15:0] a,
+    input ready,
+    input [1:0] iterations,
+    output reg valid,
+    output reg [15:0] result
+);

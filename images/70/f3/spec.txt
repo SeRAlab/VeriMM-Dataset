@@ -1,0 +1,11 @@
+Design a 32-bit Arithmetic Logic Unit (ALU) that performs various operations based on a 4-bit operation code (op) input. This module includes functions such as bitwise AND, OR, XOR, addition, subtraction, and shifts (logical and arithmetic). It also compares two inputs to determine if one is less than the other. The ALU outputs the result of the operation, a zero flag that indicates if the result is zero, and an overflow flag that identifies if an overflow condition has occurred during addition or subtraction. The circuit operates synchronously with a clock signal and includes a reset functionality to initialize the outputs.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] op,
+    input [31:0] input1,
+    input [31:0] input2,
+    output reg [31:0] result,
+    output reg zero,
+    output reg overflow
+);

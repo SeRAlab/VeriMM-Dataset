@@ -1,0 +1,28 @@
+Please act as a professional Verilog designer.
+
+Implement a 3-bit Gray Code Counter module that generates a sequence of Gray codes. The counter should have a reset feature to clear the count to 0.
+
+Module name:  
+    gray_code_counter
+                 
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+
+Output ports:
+    gray_code: 3-bit output signal representing the current Gray code.
+
+Implementation:
+The module includes a 3-bit register, count, which represents the current count.
+The Gray code is derived from the count using the formula gray_code = count ^ (count >> 1).
+The count register is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the count register is cleared to 0.
+The counter increments by 1 on each clock cycle, and the Gray code is updated accordingly.
+
+Give me the complete code.
+
+module gray_code_counter(
+  input clk,
+  input rst_n,
+  output reg [2:0] gray_code
+);

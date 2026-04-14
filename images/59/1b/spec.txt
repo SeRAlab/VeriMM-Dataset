@@ -1,0 +1,8 @@
+Design a circuit that functions as a signed multiplier and accumulator. It takes two 16-bit signed inputs, multiplies them to produce a 32-bit signed output, sign-extends the lower half of the result to maintain correct sign representation, and accumulates this result over time whenever the enable signal is active. The final output is a 32-bit signed value that reflects the accumulated results, updated on each rising edge of the clock.
+module top_module(
+  input clk,
+  input signed [15:0] data_in_a,
+  input signed [15:0] data_in_b,
+  input enable,
+  output signed [31:0] result
+);

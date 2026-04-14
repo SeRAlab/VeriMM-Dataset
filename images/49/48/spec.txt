@@ -1,0 +1,10 @@
+Design a memory controller that manages read and write operations on an addressable memory array. The module operates with a clock and reset signal, supports a configurable address width of 16 bits, and a data width of 8 bits. It includes an internal state machine with three states: IDLE, READ, and WRITE. When prompted by the read enable signal, it transitions to the READ state to retrieve data from the specified memory address, while the write enable signal triggers a transition to the WRITE state to store data into memory. The controller ensures that read and write operations are correctly sequenced, resetting its state upon reset or completing operations by returning to the IDLE state.
+module top_module(
+  input clk,
+  input rst,
+  input [addr_width-1:0] addr,
+  input wr_en,
+  input [data_width-1:0] wr_data,
+  input rd_en,
+  output reg [data_width-1:0] rd_data
+);

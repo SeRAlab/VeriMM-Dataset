@@ -1,0 +1,26 @@
+
+
+You have been tasked with designing a clock gate module that will take in a clock signal, an enable signal, and a test enable signal, and output an enable clock signal. The module should only allow the clock signal to pass through when both the enable signal and the test enable signal are high. You are given a code snippet to use as a starting point:
+
+```
+module SNPS_CLOCK_GATE_HIGH_RegisterAdd_W31_0_3 ( CLK, EN, ENCLK, TE );
+  input CLK, EN, TE;
+  output ENCLK;
+
+
+  TLATNTSCAX2TS latch ( .E(EN), .SE(TE), .CK(CLK), .ECK(ENCLK) );
+initial $sdf_annotate("FPU_Interface2_ASIC_fpu_syn_constraints_clk10.tcl_GATED_KOA_2STAGE_syn.sdf"); 
+ endmodule
+```
+
+Your task is to complete the module so that it meets the following requirements:
+
+1. When the enable signal and the test enable signal are both low, the output enable clock signal should be low.
+2. When the enable signal is high and the test enable signal is low, the output enable clock signal should be low.
+3. When the enable signal is low and the test enable signal is high, the output enable clock signal should be low.
+4. When both the enable signal and the test enable signal are high, the output enable clock signal should be the same as the input clock signal.
+
+You may assume that the input signals are valid and will not change more than once per clock cycle.
+
+Write the Verilog code for the completed module. Your solution should be within 200 lines of code.
+

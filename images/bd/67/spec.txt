@@ -1,0 +1,8 @@
+Design a 4-to-16 decoder that takes four 4-bit inputs (A, B, C, D) and produces a single 16-bit output (Y) with only one bit set high corresponding to the binary value represented by the concatenated input values. If the inputs range from 0000 to 1111, the output Y will indicate the specific line activated by setting the corresponding bit; if the input is outside this range, the output will be set to zero. This module effectively selects one of 16 output lines based on the input combination, serving to decode a 4-bit address into a wider output space.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [3:0] C,
+    input [3:0] D,
+    output reg [15:0] Y
+);

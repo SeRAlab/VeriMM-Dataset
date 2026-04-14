@@ -1,0 +1,21 @@
+Design a bus request driver module that manages read and write requests based on control signals and system readiness. The module operates in two states: IDLE and REQ. In the IDLE state, it monitors for any incoming requests (read, write, or input) while ready. When a request is detected, it captures the appropriate control signals and transitions to the REQ state, asserting a general-purpose output signal. Once a response is acknowledged through an additional signal, it resets to the IDLE state. The outputs reflect the control signals generated during the request, conditioning them based on the state of the zw signal, allowing for selective data output depending on the ongoing operations.
+module top_module(
+	input clk_sys,
+	input ready,
+	input r,
+	input w,
+	input in,
+	input [0:7] a1,
+	input [0:15] a2,
+	input [0:15] a3,
+	input zw,
+	output reg zg,
+	input ans_any,
+	output dw,
+	output dr,
+	output din,
+	output dpn,
+	output [0:3] dnb,
+	output [0:15] dad,
+	output [0:15] ddt
+);

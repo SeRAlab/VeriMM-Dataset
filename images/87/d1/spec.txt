@@ -1,0 +1,11 @@
+Design a forwarding unit for a pipelined processor architecture that resolves data hazards. The module takes input addresses from the instruction decode/execution (IDEX) stage and the register addresses used in the execution/memory (EXMEM) and memory/write-back (MEMWB) stages. It generates forwarding control signals (forwardA and forwardB) that indicate whether the data should be sourced from the memory stage or the execution stage to prevent incorrect data being used in subsequent operations. Thus, it ensures correct operation of the pipeline by allowing the necessary values to be forwarded to avoid stalls due to data dependencies.
+module top_module(
+  input [4:0] rt_addr_IDEX,
+  input [4:0] rs_addr_IDEX,
+  input [4:0] rd_addr_EXMEM,
+  input [4:0] rd_addr_MEMWB,
+  input regwrite_EXMEM,
+  input regwrite_MEMWB,
+  output [1:0] forwardA,
+  output [1:0] forwardB
+);

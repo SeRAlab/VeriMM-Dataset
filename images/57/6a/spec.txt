@@ -1,0 +1,9 @@
+Design a 4K x 16 bits RAM module that operates on the rising edge of the clock (clka). The module allows for read and write operations controlled by input signals: ena (enable) activates the module, wea (write enable) determines if data should be written to or read from the memory. If ena is high and wea is high, the data input (dina) is stored at the address specified by addra. If ena is high and wea is low, the data at the specified address is output to douta. This design serves as a simple synchronous static RAM with a depth of 4096 (2^12) addresses, suitable for various memory storage applications in digital logic systems.
+module top_module(
+  input clka,
+  input ena,
+  input wea,
+  input [11:0] addra,
+  input [15:0] dina,
+  output reg [15:0] douta  // Changed to output reg
+);

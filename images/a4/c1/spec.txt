@@ -1,0 +1,13 @@
+Design a data generator for a ping-pong FIFO interface that handles writing operations. This module outputs to two channels based on the readiness signal, where it generates write activity indicators and data on a clock signal. When enabled, it monitors the readiness of the write channels; if any channel is available, it starts writing data incrementally until the number of written data reaches the specified size. It also implements a reset functionality that clears the internal states and outputs. Overall, this module facilitates controlled data generation for two independent write paths in a FIFO structure.
+module top_module(
+  input               clk,
+  input               rst,
+  input               i_enable,
+
+  //Ping Pong FIFO Interface
+  input       [1:0]   i_wr_rdy,
+  output  reg [1:0]   o_wr_act,
+  input       [23:0]  i_wr_size,
+  output  reg         o_wr_stb,
+  output  reg [31:0]  o_wr_data
+);

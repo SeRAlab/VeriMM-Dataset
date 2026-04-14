@@ -1,0 +1,8 @@
+Design a circuit for a 32-bit adder/subtractor that operates based on a clock signal. This module takes two inputs, A and Amax, and performs either an addition or subtraction with a constant value of 1, determined by the ADD_SUB parameter. When the operation is an addition, it adjusts the output if the result exceeds Amax, while in subtraction mode, it handles underflow by wrapping the result with Amax if the output is negative. The output is only updated when the Clock Enable (CE) signal is high, otherwise, it outputs zero. This functionality is suitable for applications requiring conditional arithmetic operations with overflow management.
+module top_module(
+  clk,
+  A,
+  Amax,
+  out,
+  CE
+);

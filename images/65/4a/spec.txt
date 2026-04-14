@@ -1,0 +1,7 @@
+Design a 3-to-8 line decoder that generates one of eight outputs based on a 3-bit input (ABC) when the enable (EN) signal is HIGH. The module uses two pipeline registers to hold intermediate values, ensuring that the output (Y) is updated on the rising edge of a clock signal. When EN is LOW, all outputs are forced to zero, while when EN is HIGH, the specific output corresponding to the binary value of ABC is set to HIGH, with all other outputs remaining LOW. This design is useful for applications requiring address decoding or for activating specific lines in a digital circuit based on input values.
+module top_module(
+    input [2:0] ABC,
+    input EN,
+    input clk,  // Added clk as an input
+    output reg [7:0] Y
+);

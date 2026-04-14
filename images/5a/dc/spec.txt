@@ -1,0 +1,9 @@
+Design a 4-bit adder circuit with a carry input and a functional control signal. The module utilizes a control signal to determine its operation; when the control is asserted, it performs a bitwise XOR between inputs A and B, while in the alternative mode, it executes an addition operation. The circuit also calculates the carry-out signal based on the results of the operation, enabling it to handle overflow scenarios appropriately. The output comprises a 4-bit sum as well as a single carry-out bit, thereby providing both the resultant value and an indication of an overflow condition.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input Cin,
+    input Control,
+    output [3:0] Sum,
+    output Cout
+);

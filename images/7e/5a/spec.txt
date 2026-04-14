@@ -1,0 +1,5 @@
+Design a clock generator that produces a secondary clock signal, genclk, which toggles on every alternate clock cycle of the input clk. The module maintains an 8-bit counter, cyc, which increments on the rising edge of clk and is used to determine when to change the output genclk. When cyc is odd, genclk is asserted high; otherwise, it is low. Upon every new rising edge of genclk, the counter is reset to zero, thereby creating a clock signal with a period that is double that of the input clock while maintaining synchronization.
+module top_module(
+   input clk,
+   output reg genclk
+);

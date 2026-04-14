@@ -1,0 +1,8 @@
+Design a 16-bit wide synchronous register with load and reset capabilities. When the reset input is high, the register outputs zero regardless of the clock. When the load input is activated, the register captures the value from the input `d` on the rising edge of the clock. If neither reset nor load is active, the register retains its previous value. The current value of the register is available at the output `q`.
+module top_module(
+ input [15:0] d,
+ input load,
+ input reset,
+ input clk,
+ output [15:0] q
+);

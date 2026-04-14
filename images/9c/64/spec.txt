@@ -1,0 +1,13 @@
+Design a circuit that implements a complex multiply-accumulate (MAC) operation. It takes two signed 16-bit complex numbers as input, represented by their real and imaginary parts, and computes their product. The output consists of the resulting real and imaginary parts, each extended to 32 bits. The operation is triggered by a start signal, and a reset signal initializes the outputs. The module indicates when the computation is complete via a 'done' signal, which is set high during the operation and resets after the result is read. The multiplication of the complex numbers involves both the standard complex multiplication formula and bit-shifting for scaling.
+module top_module(
+    input clk,
+    input reset,
+    input start,
+    input signed [15:0] a_real,
+    input signed [15:0] a_imag,
+    input signed [15:0] b_real,
+    input signed [15:0] b_imag,
+    output reg signed [31:0] result_real,
+    output reg signed [31:0] result_imag,
+    output reg done
+    );

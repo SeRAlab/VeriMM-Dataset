@@ -1,0 +1,21 @@
+Implement the Verilog module based on the following behavior description. Consider the signals to be positive clock/clk edge triggered unless otherwise mentioned.
+This circuit is sequential. Use the given waveform to infer the circuit functionality and then implement it.
+
+Time 0ns: clock = 0, y = 0, p = x, q = x.
+Time 5ns: clock = 1, y = 1, p = x, q = x.
+Time 10ns: clock = 0, y = 0, p = 1, q = x.
+Time 15ns: clock = 1, y = 1, p = 1, q = x.
+Time 20ns: clock = 1, y = 0, p = 1, q = 1.
+Time 25ns: clock = 0, y = 1, p = 1, q = 1.
+Time 30ns: clock = 0, y = 0, p = 0, q = 1.
+Time 35ns: clock = 1, y = 1, p = 0, q = 1.
+Time 40ns: clock = 0, y = 0, p = 1, q = 0.
+Time 45ns: clock = 1, y = 1, p = 1, q = 0.
+Time 50ns: clock = 0, y = 0, p = 0, q = 1.
+Time 55ns: clock = 1, y = 1, p = 0, q = 1.
+
+module top_module (
+	input clock,
+	input y, 
+	output reg p,
+	output reg q);

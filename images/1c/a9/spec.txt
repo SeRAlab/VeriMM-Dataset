@@ -1,0 +1,7 @@
+
+Design a Verilog module that implements a simple state machine for controlling an SD card interface. The state machine should have the following states: IDLE, READ, WRITE. The module should transition between states based on input signals, and it should output the current state on a 2-bit output signal. The transitions are as follows:
+- From IDLE, if 'start_read' is high, transition to READ.
+- From IDLE, if 'start_write' is high, transition to WRITE.
+- From READ, if 'complete' is high, return to IDLE.
+- From WRITE, if 'complete' is high, return to IDLE.
+- In IDLE state, if both 'start_read' and 'start_write' are high, prioritize READ.

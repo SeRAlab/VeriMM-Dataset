@@ -1,0 +1,29 @@
+Please act as a professional Verilog designer.
+
+Implement a module for a 2-bit binary adder. The adder takes two 2-bit binary numbers and a carry-in bit and produces a 2-bit sum and a carry-out bit.
+
+Module name:  
+    binary_adder
+
+Input ports:
+    A: 2-bit binary input
+    B: 2-bit binary input
+    CIN: Carry-in input
+
+Output ports:
+    SUM: 2-bit binary sum output
+    COUT: Carry-out output
+
+Implementation:
+The binary adder module uses a combinational always block to compute the sum and carry-out based on the input binary numbers and the carry-in signal.
+The always block triggers on any change in the inputs (A, B, CIN). It calculates the sum and carry-out using the full-adder logic.
+
+Give me the complete code.
+
+module binary_adder(A, B, CIN, SUM, COUT);
+input [1:0] A, B;
+input CIN;
+output [1:0] SUM;
+output COUT;
+reg [1:0] SUM;
+reg COUT;

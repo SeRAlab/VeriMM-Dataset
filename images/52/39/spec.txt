@@ -1,0 +1,13 @@
+Design a two-port read address multiplexer for a virtual general-purpose register (VGPR) system. The module selects the read address from one of two input ports based on the enable signals, `port0_rd_en` and `port1_rd_en`. When `port0_rd_en` is asserted, it outputs the address from `port0_rd_addr`, and when `port1_rd_en` is asserted, it outputs the address from `port1_rd_addr`. If neither port is enabled, the read address outputs an undefined state. Additionally, the module outputs the read data directly from the input `rd_data` to `port_rd_data`, allowing seamless data retrieval through the selected address.
+module top_module(
+  port0_rd_en,
+  port0_rd_addr,
+
+  port1_rd_en,
+  port1_rd_addr,
+
+  port_rd_data,
+
+  rd_addr,
+  rd_data
+);

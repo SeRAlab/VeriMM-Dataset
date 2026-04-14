@@ -1,0 +1,18 @@
+
+You are tasked with designing a Verilog module for a synchronous D flip-flop with asynchronous set and clear. The module should have the following inputs and outputs:
+Inputs:
+- `CLK`: a clock signal
+- `D`: a data input
+- `SET`: an asynchronous set input
+- `CLR`: an asynchronous clear input
+Outputs:
+- `Q`: a data output
+- `Q_bar`: the complement of the data output
+
+The module should operate as follows:
+- When `SET` is asserted, `Q` and `Q_bar` should both be set to 1, regardless of the values of `CLK` and `D`.
+- When `CLR` is asserted, `Q` and `Q_bar` should both be set to 0, regardless of the values of `CLK` and `D`.
+- When neither `SET` nor `CLR` is asserted, the module should behave as a standard D flip-flop, with the output `Q` taking on the value of `D` on the rising edge of `CLK`.
+
+You should implement the module within 200 lines of Verilog code.
+

@@ -1,0 +1,6 @@
+Design a finite state machine (FSM) that sequentially transitions through a series of defined states: IDLE, SEND, WAIT1, UPDATE1, WAIT2, and UPDATE2. This FSM operates based on a clock input and can be reset asynchronously. When reset, it initializes to the IDLE state. The state transitions follow a pre-defined order, moving from IDLE to SEND, then to WAIT1, proceeding to UPDATE1, followed by WAIT2, and finally cycling back to IDLE after UPDATE2. This structure is suitable for applications that require controlled sequential operations, such as data transmission or processing flows.
+module top_module(
+    input clk,
+    input rst_,
+    output reg [2:0] state_r
+);

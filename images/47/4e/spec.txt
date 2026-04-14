@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+
+Implement an Up Counter module that counts up from 0 to 15 on every clock cycle. The counter value is stored in a 4-bit register named "count". The counter resets to 0 when it reaches 15 and on reset.
+
+Module name:  
+    up_counter
+                 
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+
+Output ports:
+    count: 4-bit output counter value representing the current count.
+
+Implementation:
+State and Counter Generation:
+The module includes a register, count, with a width of 4 bits, which represents the current count value.
+The count register is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the count register is cleared to 0.
+The counter increments the count register by 1 on every clock cycle. When the count reaches 15, it resets to 0.
+
+Give me the complete code.
+
+module up_counter(
+  input clk,
+  input rst_n,
+  output reg [3:0] count
+);

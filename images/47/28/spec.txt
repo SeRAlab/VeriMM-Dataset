@@ -1,0 +1,6 @@
+Implement a UART receiver module that captures an 8-bit data stream from a serial input (RX) signal. The module uses a clock (CLK) to sample the RX line reliably, detecting the start of data reception when the RX signal transitions low. It stores the received bits in a data register and indicates the validity of the received data with a 'valid' output signal. The module incorporates a timing mechanism to manage the bit sampling process and transitions the 'valid' signal appropriately once an entire byte is received.
+module top_module(
+  input RX, 
+  input CLK,
+  output [7:0] data,
+  output valid);

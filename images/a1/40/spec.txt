@@ -1,0 +1,7 @@
+Design a FIFO (First-In-First-Out) synchronizer using dual clock domains, facilitating data transfer between a write clock and a read clock. The module accepts a 12-bit input data signal (D) for writing and a 12-bit input data signal (I1) for reading. On the rising edge of the write clock (wr_clk), it captures the value of D into an internal 12-bit register (Q_reg). On the rising edge of the read clock (rd_clk) or when a reset signal (I3) is asserted, it either resets Q_reg to zero or updates it with the value of I1. The output Q reflects the current value of Q_reg, effectively allowing synchronization and data integrity between independent clock domains.
+module top_module(Q,
+    I1,
+    rd_clk,
+    I3,
+    wr_clk,
+    D);

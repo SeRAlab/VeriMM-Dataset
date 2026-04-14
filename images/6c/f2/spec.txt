@@ -1,0 +1,6 @@
+Design a circuit that computes the parity of a 4-bit input data. The module captures the input data on the rising edge of the clock and utilizes two stages of processing. In the first stage, it holds the current and previous data values. The second stage computes the bitwise XOR of the two captured data values to produce a 2-bit intermediate result. The output parity signal is then derived from the XOR of the two bits in this intermediate result, effectively indicating whether the number of set bits in the original input data is odd or even.
+module top_module(
+  input [3:0] data,
+  input clk,          // Added clk input
+  output reg parity
+);

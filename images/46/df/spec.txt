@@ -1,0 +1,6 @@
+Design a clock phase shifter that outputs a delayed version of the input clock signal. The module takes a clock input and an 8-bit delay value, generating a delayed clock output based on the specified delay. It utilizes a counter to track the number of clock cycles and sets an internal signal high only after the specified delay has elapsed, subsequently driving the output clock signal high on the next rising edge of this internal delayed signal. This functionality is useful in applications requiring precise timing adjustments in clock signals, such as in synchronous digital circuits.
+module top_module(
+  input clk_in,
+  input [7:0] delay,
+  output reg clk_out      // Changed clk_out to reg type
+);

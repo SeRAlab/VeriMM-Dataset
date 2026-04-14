@@ -1,0 +1,11 @@
+Design a memory controller that manages a simple 4KB SRAM. It handles read and write requests based on a clock signal and provides outputs indicating the data read from memory and the valid status of that data. When a read request is made, the module reads from the specified address in memory and sets the valid output high. Conversely, for a write request, it stores the provided data into the specified memory location. The outputs include the read data and a validity flag that indicates whether the last operation was successful. Additionally, the module has a reset functionality that clears the valid output.
+module top_module(
+  input clk,
+  input reset,
+  input request,
+  input [31:0] address,
+  input rw,
+  input [31:0] data_in,
+  output [31:0] data_out,
+  output valid
+);

@@ -1,0 +1,7 @@
+Design a clock gating module that controls the enabling of a clock signal based on input enable (EN) and test enable (TE) signals. The module has three states: IDLE, ENABLED, and TEST ENABLED, which dictate when the output clock enable (ENCLK) is asserted. When EN is high, the module transitions to the ENABLED state, allowing the clock signal to be propagated as ENCLK. If TE is activated while in the ENABLED state, it transitions to TEST ENABLED. When both EN and TE are deactivated, the module returns to the IDLE state, effectively disabling the clock output. This design efficiently manages clock signals to reduce power consumption during idle or testing states.
+module top_module(
+  input CLK,
+  input EN,
+  input TE,
+  output reg ENCLK // Changed from wire to reg
+);

@@ -1,0 +1,5 @@
+Design a finite state machine (FSM) that controls the output signal `shift_ena` based on the current state and a reset condition. The FSM has five states (A, B, C, D, E) and transitions between them in response to a reset signal or clock edge. When in state A, `shift_ena` is low; in all other states (B, C, D, E), `shift_ena` is high. The state transitions provide a reset path to state B, ensuring the FSM defaults to a specific state upon reset while enabling continuous operation during normal conditions.
+module top_module(
+    input clk,
+    input reset,      
+    output shift_ena);

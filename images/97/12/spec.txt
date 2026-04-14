@@ -1,0 +1,5 @@
+Design a data conversion module that takes a 32-bit input and produces a 16-bit output based on the two most significant bits (MSBs) of the input. If the MSBs are 01, output the lower 16 bits; if they are 10, output the upper 16 bits; if they are 11, output the bitwise negation of the upper 16 bits; and for MSBs 00, output the bitwise negation of the lower 16 bits. This module effectively acts as a conditional data selector and inverter based on the input's MSBs.
+module top_module(
+    input [31:0] data_in,
+    output [15:0] data_out
+);

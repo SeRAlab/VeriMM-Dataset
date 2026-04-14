@@ -1,0 +1,16 @@
+Design a finite state machine (FSM) to manage the write sequence of an AXI (Advanced eXtensible Interface) protocol. This module takes a clock signal and controls the write operation in three distinct stages: address writing (DO_ADDR), data writing (DO_DATA), and response reading (DO_RESP). It generates control signals (aw_control_enable, w_control_enable, b_control_enable) to enable respective operations based on the current state. The FSM transitions between states based on the completion of each operation, indicated by input signals (aw_control_done, w_control_done, b_control_done). The design ensures proper sequencing of AXI write transactions, maintaining synchronization with the clock input.
+module top_module(
+    input   wire        clock,
+
+    
+    output  reg         aw_control_enable,
+    input   wire        aw_control_done,
+
+    
+    output  reg         w_control_enable,
+    input   wire        w_control_done,
+
+    
+    output  reg         b_control_enable,
+    input   wire        b_control_done
+);

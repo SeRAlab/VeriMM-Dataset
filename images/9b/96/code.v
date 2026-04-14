@@ -1,0 +1,20 @@
+module top_module(nrst, clk, din, level, edge_sel, trig_out);input nrst;
+    input clk;
+    input [7:0] din;
+    input [7:0] level;
+    input edge_sel;
+    output trig_out;
+    
+    reg trig_out;
+    wire edge_cap;
+    
+    assign edge_cap = edge_sel ^ (din < level);
+    
+    always @(posedge clk or negedge nrst) begin
+        if (~nrst) begin
+            trig_out <= 1'b0;
+        end else if (trig_out ^ edge_cap) begin
+            trig_out <= edge_cap;
+        end
+    end
+endmodule

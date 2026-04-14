@@ -1,0 +1,11 @@
+Design a 32-bit wide FIFO (First-In, First-Out) memory buffer with a capacity of 16KB, facilitating asynchronous read and write operations. The module utilizes separate write and read clocks (wr_clk and rd_clk) to manage data input and output, respectively. When the write enable signal (wr_en) is asserted, it stores incoming 32-bit data (wr_data) in the buffer if it is not full, tracking the write pointer (wr_ptr). Conversely, when the read enable signal (rd_en) is asserted, it outputs data from the buffer to rd_data as long as it is not empty, updating the read pointer (rd_ptr). Additionally, it provides signals to indicate empty and full conditions, ensuring reliable data flow management in applications requiring temporary storage of data streams.
+module top_module(
+    input wr_clk,
+    input wr_en,
+    input [31:0] wr_data,
+    input rd_clk,
+    input rd_en,
+    output reg [31:0] rd_data, // Make rd_data a reg since it will be assigned in an always block
+    output wire empty,
+    output wire full
+);

@@ -1,0 +1,9 @@
+Design a synchronous FIFO (First-In-First-Out) memory buffer with an 8-deep storage capacity for 8-bit wide data. The module processes write requests, storing incoming data from `wr_data` when `wr_req` is asserted, while generating a write acknowledgment signal (`wr_ack`). The FIFO allows reading data out via `rd_data` upon receiving a read request (`rd_req`), maintaining the order of data retrieval. The design includes tracking pointers for both writing and reading operations, as well as a counter to manage the current number of stored entries. This ensures proper flow control and prevents overflow or underflow conditions.
+module top_module(
+    input clk,
+    input wr_req,
+    input [7:0] wr_data,
+    input rd_req,
+    output reg [7:0] rd_data,  // Changed to reg
+    output reg wr_ack
+);

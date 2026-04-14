@@ -1,0 +1,7 @@
+Design a clock generation module that produces two output clocks, `clk_2f` and `clk_f`, from an input clock signal `clk_8f`. The module includes a reset input (`rst`) to initialize the counters and outputs, and an enable input (`enb`) to control the clock generation. When enabled and after two clock cycles of `clk_8f`, it toggles `clk_2f`, which operates at a frequency derived from `clk_8f`, specifically half its frequency. Additionally, `clk_f` toggles at the same time as `clk_2f`, resulting in a clock signal with a frequency quarter of `clk_8f` whenever `enb` is asserted. This module effectively implements clock division and synchronization functionalities suitable for generating structured timing signals in digital circuits.
+module top_module(
+				input			clk_8f,
+				input			rst,
+				input			enb,
+				output reg		clk_2f,
+				output reg		clk_f	 );

@@ -1,0 +1,9 @@
+Design a dual-edge-triggered shift register with reset and left/right shifting capabilities. The module takes an 8-bit input data (`data_in`) and uses a clock (`clk`) to store or modify the contents of an internal 8-bit register. When the reset signal is active, the register is initialized to zero. On the rising edge of the clock, if `shift_left` is asserted, the contents of the register are shifted left, with the most significant bit wrapping to the least significant bit position. Conversely, if `shift_right` is asserted, the contents shift right with the least significant bit wrapping to the most significant position. The output `data_out` continuously reflects the current value of the register. Additionally, the module includes an AND operation between the register and `data_in`, although the result is unused in the output context; this may have been intended for further processing.
+module top_module(
+  input clk,
+  input reset,
+  input shift_left,
+  input shift_right,
+  input [7:0] data_in,
+  output reg [7:0] data_out  // Changed to reg since it's assigned in always block
+);

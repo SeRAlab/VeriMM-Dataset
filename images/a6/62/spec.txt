@@ -1,0 +1,13 @@
+Design a synchronous memory controller module that manages a 16-entry, 64-bit memory array. It utilizes dual pointers for read and write operations: when the enable signals (ENA_I for writing and ENB_I for reading) are active, data is either written to the memory array from the input Q or read from it to output D, respectively. The module includes an asynchronous reset mechanism (controlled by POR_B) to initialize the read and write pointers to zero. Additionally, it outputs a status signal, p_20_out, potentially indicative of a certain condition in the connected block memory interface. This module serves as a versatile memory interface for digital systems needing controlled access to stored data.
+module top_module(
+  input aclk,
+  input s_dclk_o,
+  input ENB_I,
+  input ENA_I,
+  input POR_B,
+  input [3:0] RD_PNTR,
+  input [3:0] WR_PNTR,
+  input [63:0] Q,
+  output reg [63:0] D,
+  output reg p_20_out
+);

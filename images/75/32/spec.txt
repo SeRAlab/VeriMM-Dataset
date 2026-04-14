@@ -1,0 +1,7 @@
+Design a digital Finite Impulse Response (FIR) filter that processes incoming signals in fixed-point arithmetic. The module takes an n-bit input signal and operates on it with a specified number of filter taps (k) and fractional bits for precision. The filter shifts incoming samples into a register array, multiplies them with predefined coefficients, and sums the results to produce the output. Upon reset, the filter initializes its internal registers to zero. The output is a scaled version of the summed products, effectively implementing the filtering operation to smooth or modify the input signal based on the defined filter coefficients.
+module top_module(
+  input [n-1:0] in,
+  input clk,
+  input rst,
+  output reg out
+);

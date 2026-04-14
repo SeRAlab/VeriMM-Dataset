@@ -1,0 +1,7 @@
+Design a circuit that detects transitions from 0 to 1 in a 32-bit input signal. On each rising edge of the clock, if the reset signal is activated, both the output and the previous input are set to zero. Otherwise, the circuit captures the current input and produces an output where each bit indicates a change from 0 to 1 by performing a bitwise AND operation between the current input and the negation of the previous input. This effectively generates a signal representing the locations of the transitions in the input data.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] in,
+    output reg [31:0] out
+);

@@ -1,0 +1,7 @@
+Design a D latch with asynchronous set and active low sleep functionality. The latch captures the input D on the falling edge of an asynchronous SET signal, updating the output Q accordingly. If the SLEEP_B signal is low, the output Q is set to zero, effectively putting the latch in a sleep state. This design allows for temporary control over the output based on the state of SET_ASYNC and SLEEP_B, making it suitable for low-power applications where the output must be disabled.
+module top_module(
+    input D,
+    input SET_ASYNC,
+    input SLEEP_B,
+    output reg Q
+);

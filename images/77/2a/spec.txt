@@ -1,0 +1,11 @@
+Design a quadrature decoder that interprets signals from two input channels (quadA and quadB) to determine the direction and count of a rotary encoder. This module counts pulses based on the state of the quadrature signals, outputting the count and direction of movement while also providing an error signal if unexpected changes in input are detected. It has three states: IDLE, FORWARD, and REVERSE, allowing it to track the encoder position and output corresponding signals when enabled. The count can increment or decrement based on the direction of the rotation, and it also resets on a specific control signal.
+module top_module(
+  input clk,
+  input enable_i,
+  input reset_i,
+  input quadA_i,
+  input quadB_i,
+  output reg direction_o,
+  output reg count_pulse_o,
+  output reg error_o
+);

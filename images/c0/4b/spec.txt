@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module appears to function as a Branch Prediction and Control Unit (BPCU) for a processor, likely part of an embedded microprocessor architecture. Its primary role to manage the program counter (PC) updates based on various conditions, including conditional branches, unconditional jumps, and subroutine calls and returns. This module is crucial for the processor's control flow, determining the next instruction to execute based on current conditions and instructions.
+
+Module name:  
+	aeMB_bpcu
+
+Input ports:
+	gclk (input): Global clock signal. Synchronizes the operations of the module.
+	grst (input): Global reset signal. Resets the module's internal states to initial values.
+	gena (input): Global enable signal. Allows the module to update its state on the rising edge of gclk when asserted.
+	rMXALT (input [1:0]): Select signal for multiplexing between rDWBDI, rRESULT, and rREGA.
+	rOPC (input [5:0]): Operation code. Determines the type of operation or branch condition.
+	rRD, rRA (input [4:0]): Destination and source register identifiers, used in branch conditions.
+	rRESULT (input [31:0]): Result from the execution unit, potentially used for branch address calculation.
+	rDWBDI (input [31:0]): Data from the data memory or I/O, potentially used for branch address calculation.
+	rREGA (input [31:0]): Another source of data, potentially used for branch address calculation.
+Output ports:
+	iwb_adr_o (output [IW1:2]): Instruction Wishbone address output, derived from the internal program counter (rIPC).
+	rPC, rPCLNK (output [31:2]): Current program counter and link register outputs, used for storing return addresses in subroutine calls.
+	rBRA (output): Branch taken flag, indicates whether a branch has been taken.
+	rDLY (output): Delay slot indicator, signals whether the current instruction is executing in a delay slot.
+
+
+Implementation:
+The aeMB_bpcu module appears to be a branch prediction and control unit (BPCU) for a microprocessor, likely part of an embedded system given its interface and functionality. The module is designed to manage instruction flow control, specifically handling branch instructions, direct jumps, and conditional execution based on the results of previous operations. The design employs a mix of combinational and sequential logic to achieve its objectives, with a focus on determining the next instruction address (iwb_adr_o) and managing internal states that reflect the processor's execution path.
+
+Give me the complete code.
+

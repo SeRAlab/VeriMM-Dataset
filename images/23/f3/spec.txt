@@ -1,0 +1,9 @@
+
+You are to design a 4-channel Direct Memory Access (DMA) controller. The controller should manage requests from four different channels for data transfers. Each channel can initiate a request and must be serviced in a round-robin fashion. The controller will have the following inputs:
+- `request`: A 4-bit input indicating which channels have active requests (1 = active, 0 = inactive).
+- `clk`: Clock signal.
+- `reset`: Active high reset signal.
+
+The controller will output which channel is being serviced as a 2-bit output `service_channel`. The service_channel should cycle through the channels in order when they are active, and should indicate which channel is currently being serviced.
+
+When `reset` is asserted, the `service_channel` should be set to 00. The controller should maintain its state across clock cycles and proceed to the next channel as requests are being serviced.

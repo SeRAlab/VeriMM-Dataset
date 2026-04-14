@@ -1,0 +1,12 @@
+Design a control circuit that manages error signals and a program counter based on interrupt requests and clock cycles. When an interrupt request or a reset signal is received, the circuit resets the error signals (ErrorRlM and ErrorOvM) and the program counter (PCM) to zero. Otherwise, it updates the error signals with the incoming error inputs (ErrorRlE and ErrorOvE) and stores the program counter value (PCE) to the output (PCM).
+module top_module(
+	 input InterruptRequest,
+    input clk,
+    input reset,
+    input ErrorOvE,
+    output reg ErrorOvM = 0,
+	 input ErrorRlE,
+	 output reg ErrorRlM = 0,
+    input [31:0] PCE,
+    output reg [31:0] PCM = 0
+    );

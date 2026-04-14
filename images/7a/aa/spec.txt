@@ -1,0 +1,14 @@
+Design a data processing module that transforms an incoming data stream by selectively modifying color information. The module checks if the input data matches a predefined color value; if so, it replaces the alpha component with a specified value while retaining the original color data. It interfaces with input and output signal control flags, ensuring that data is only sent when the output is ready. On a clock edge, if the reset is asserted, the output signals are initialized to zero; otherwise, the output registers are updated with the processed data, maintaining packet markers and validity based on the input's state. This module effectively acts as an alpha channel modifier within a streaming data pipeline.
+module top_module(
+    input clk, reset,
+    input [39:0] stream_in_data,
+    input stream_in_startofpacket,
+    input stream_in_endofpacket,
+    input stream_in_valid,
+    output stream_in_ready,
+    input stream_out_ready,
+    output reg [39:0] stream_out_data,
+    output reg stream_out_startofpacket,
+    output reg stream_out_endofpacket,
+    output reg stream_out_valid
+);

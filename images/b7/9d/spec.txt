@@ -1,0 +1,8 @@
+Design an eight-bit arithmetic logic unit (ALU) that performs various operations based on a 2-bit select signal. When sel is 00, it adds two signed 8-bit inputs (a and b) and sets an overflow flag if the addition results in overflow. For sel values of 01 through 101, it performs bitwise negation, AND, OR, and left/right shifts on input a, respectively. For sel 110 and 111, it generates zero and sets a branch signal based on equality or inequality of inputs a and b. The ALU also includes overflow detection logic to indicate potential errors during addition operations.
+module top_module(
+	input signed[7:0] a,
+	input signed[7:0] b,
+	input [1:0] sel,
+	output reg signed [7:0] f,
+	output reg ovf,
+	output reg take_branch);

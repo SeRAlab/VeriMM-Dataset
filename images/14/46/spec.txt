@@ -1,0 +1,16 @@
+
+Design a PCIe endpoint controller that interfaces with a simple state machine. The controller should have the following states:
+- IDLE: Wait for a start signal.
+- ACTIVE: Process data on receiving a data request.
+- ERROR: Go to error state if data processing fails.
+
+Inputs:
+- clk: Clock signal
+- rst: Reset signal
+- start: Start processing signal
+- data_request: Signal to indicate data processing
+- data_valid: Signal to indicate data is valid
+
+Outputs:
+- state: Current state of the controller (IDLE, ACTIVE, ERROR)
+- error: Error flag indicating a processing error

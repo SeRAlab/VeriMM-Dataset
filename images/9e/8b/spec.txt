@@ -1,0 +1,8 @@
+Design a memory encryption module that offers basic data encryption and decryption functionality using a fixed secret key. The module accepts a 32-bit input address and data, alongside an 'encrypt' control signal. When the 'encrypt' signal is high, it outputs the encrypted version of the input data by performing an XOR operation with the secret key. Conversely, when the 'encrypt' signal is low, it decrypts the input data, also via XOR with the same key. The module sets a 'valid' output signal high to indicate that the processed output data is ready for use.
+module top_module(
+  input [31:0] addr,
+  input [31:0] data_in,
+  input encrypt,
+  output reg [31:0] data_out,  // Change to reg type
+  output reg valid              // Change to reg type
+);

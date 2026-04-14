@@ -1,0 +1,12 @@
+Design a data transfer module that manages the flow of data between input and output interfaces while ensuring synchronization with a clock signal. The module receives a data input alongside validity and readiness signals, and on a valid input combined with an output readiness signal, it stores the data in a register and drives the output data and valid signals accordingly. If there is a mismatch between the expected data and the actual input during transfer, it generates an error signal. The module includes asynchronous reset functionality to initialize all outputs and internal registers to a known state.
+module top_module(
+    input clk,
+    input reset_n,
+    input in_data,
+    input in_valid,
+    input in_ready,
+    output reg out_data,
+    output reg out_valid,
+    output reg out_ready,
+    output reg out_error
+);

@@ -1,0 +1,9 @@
+Design a circuit that combines two 4-bit inputs, a and b, by adding them together to generate a 5-bit sum. The module selects a specific bit from the sum based on a 2-bit input, c, which serves as an index for bit selection. This selected bit can be inverted if an additional input, d, is HIGH. The final output, x, is determined by the state of another input, e: if e is HIGH, output the selected (and possibly inverted) bit; if e is LOW, output the state of d.
+module top_module(
+    input [3:0] a,
+    input [3:0] b,
+    input [1:0] c,
+    input d,
+    input e,
+    output reg x
+);

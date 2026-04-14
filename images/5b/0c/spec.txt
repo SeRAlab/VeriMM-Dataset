@@ -1,0 +1,22 @@
+Please act as a professional Verilog designer.
+
+Implement a 16-bit binary counter with a synchronous load and asynchronous reset. The counter should increment its value by 1 on each positive clock edge. If the load signal is high, the counter should load the input value. If the reset signal is high, the counter should reset to 0 immediately, regardless of the clock signal.
+
+Module name:
+    binary_counter_load
+
+Input ports:
+    clk: Clock signal used for synchronous operations.
+    rst: Active-high reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    load: Active-high load signal for loading the input value.
+    load_val: 16-bit input value to be loaded into the counter.
+
+Output ports:
+    count: Output 16-bit binary counter value.
+
+Implementation:
+Counter Logic:
+The module includes a 16-bit register, count, to store the current counter value.
+On the positive edge of the clock signal (clk), the module increments the counter value by 1. If the load signal (load) is high, the counter value is set to the input value (load_val). If the reset signal (rst) is high, indicating a reset condition, the counter value is set to 16'b0000000000000000 immediately.
+
+Give me the complete code.

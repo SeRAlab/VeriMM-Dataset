@@ -1,0 +1,8 @@
+Design a 2-to-4 decoder with an enable signal and multi-stage selection logic. The module takes a 2-bit MODE input and a 2-bit SEL input, and it drives a 4-bit output Y based on the values of these inputs, while being governed by an enable signal EN. When EN is HIGH, the output Y is forced to zero. If EN is LOW, the output is determined by the MODE value: for MODE 00, Y reflects the negation and direct values of SEL; for MODE 01, Y incorporates a specific bitwise operation based on the delayed SEL values; and for MODE 10, Y results from a different bitwise operation also based on delayed SEL values, allowing for dynamic stateful responses based on input changes.
+module top_module(
+    input clk,         // Added clk input
+    input [1:0] MODE,
+    input [1:0] SEL,
+    input EN,
+    output reg [3:0] Y
+);

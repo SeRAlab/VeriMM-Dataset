@@ -1,0 +1,11 @@
+Design a bus interface controller that decodes a 32-bit input address and enables specific control signals based on the input parameters. When the enable and select signals are active, it determines whether to enable transmission or reception (outputting `o_Tx_En` and `o_Rx_En` respectively) based on the two-bit address derived from the highest bits of the input address, and whether the operation is a read or write (controlled by `i_Pwrite`). It also generates separate control signals for store (`o_Stw_En`) and retrieve (`o_Str_En`) operations within a designated state, allowing the module to facilitate communication and data transfer within a larger system.
+module top_module(
+  input [31:0]  i_Paddr,
+  input         i_Penable,
+  input         i_Psel,
+  input         i_Pwrite,
+  output        o_Tx_En,
+  output        o_Rx_En,
+  output        o_Stw_En,
+  output        o_Str_En
+  );

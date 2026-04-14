@@ -1,0 +1,9 @@
+Design a circuit for a CRC (Cyclic Redundancy Check) calculation module that processes an input data word and generates a CRC code for error detection. The module takes an input data of a specified width (default 8 bits) and utilizes a defined polynomial for the CRC computation. It features reset and enable functionalities to control the state of the CRC calculation. When enabled, the module updates the internal CRC register and generates a CRC code based on the input data, while also allowing the output of the original data. The module outputs an error signal indicating whether the generated CRC matches the CRC output.
+module top_module(
+  input [width-1:0] data_in,
+  input reset,
+  input enable,
+  output [width-1:0] data_out,
+  output error,
+  output reg [width-1:0] crc_out
+);

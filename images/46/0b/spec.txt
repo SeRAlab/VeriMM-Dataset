@@ -1,0 +1,7 @@
+Design a circuit that masks specific bits of a 15-bit input based on a provided position value. The module captures a 15-bit input signal on the rising edge of a clock and reverses its order before processing. Depending on the value of the position input, it selectively clears bits in the reversed input signal using a bitwise AND operation to generate a masked output. The resulting output retains certain bits while setting others to zero, effectively creating a configurable bit-masking functionality.
+module top_module(
+    input clk,
+    input [14:0] data_in,
+    input [5:0] lz_pos,
+    output [14:0] data_out
+    );

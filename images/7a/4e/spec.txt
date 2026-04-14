@@ -1,0 +1,11 @@
+Design a 512-entry asynchronous FIFO (First-In-First-Out) memory buffer that operates based on read and write requests. The module provides inputs for asynchronous clear, clock, data to write, and signals for read and write requests, while outputting a status flag indicating if the FIFO is empty, the data currently at the head of the queue, and the number of elements currently stored (`usedw`). The FIFO tracks its head and tail pointers, allowing for efficient enqueue and dequeue operations, shifting the head pointer when data is read and the tail pointer when new data is written, and ensuring that storage capacity does not exceed 512 entries.
+module top_module(
+    aclr,
+    clock,
+    data,
+    rdreq,
+    wrreq,
+    empty,
+    q,
+    usedw
+);

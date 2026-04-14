@@ -1,0 +1,12 @@
+Design a dual-port RAM module that allows simultaneous read and write operations. It has two independent write enable signals and two address inputs, enabling users to write data into memory at two different addresses or read data from those addresses concurrently. Each memory entry is 8 bits wide, and the memory can hold up to 16 entries. The design utilizes a clock input to synchronize write operations, ensuring data integrity during writes while allowing immediate reading of data from the specified addresses.
+module top_module(
+  input clk,
+  input wr_en1,
+  input wr_en2,
+  input [ADDR_WIDTH-1:0] addr1,
+  input [ADDR_WIDTH-1:0] addr2,
+  input [width-1:0] data_in1,
+  input [width-1:0] data_in2,
+  output [width-1:0] data_out1,
+  output [width-1:0] data_out2
+);

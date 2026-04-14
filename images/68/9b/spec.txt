@@ -1,0 +1,5 @@
+Design a sign-extension module that adjusts a 32-bit input offset into a 64-bit output based on specific criteria. The module examines the most significant bits of the offset to determine how to extend it: for an offset starting with the binary pattern `000101`, it utilizes the lower 26 bits for construction; for the pattern `10110100`, it takes the 20 bits from a different range; otherwise, it processes a smaller segment of 10 bits. The extended value is filled with sign bits to preserve the sign of the original value, thereby allowing for proper representation in a wider bit field for subsequent processing in a wider data path.
+module top_module(
+    offset,
+    signExtend_offset
+    );

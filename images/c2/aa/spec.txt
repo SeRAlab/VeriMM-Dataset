@@ -1,0 +1,12 @@
+
+
+You are tasked with designing a Verilog module that implements a clock gating circuit. The module should have four input ports: `CLK`, `EN`, `TE`, and `RESET`, and one output port: `ENCLK`. The `CLK` input is the system clock, `EN` is the enable signal, `TE` is the transparent enable signal, and `RESET` is the reset signal. The `ENCLK` output is the gated clock signal.
+
+The clock gating circuit should operate as follows:
+- When `EN` is low, `ENCLK` should be low.
+- When `EN` is high and `RESET` is low, `ENCLK` should be the same as `CLK`.
+- When `EN` is high, `RESET` is high, and `TE` is low, `ENCLK` should be low.
+- When `EN` is high, `RESET` is high, and `TE` is high, `ENCLK` should be the inverted value of `CLK`.
+
+Your Verilog module should be named `ClockGating` and should be designed such that it can be used in a larger Verilog design.
+

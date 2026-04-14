@@ -1,0 +1,34 @@
+Implement the Verilog module based on the following description.
+Given the following Mealy state machine with 1 input (start) and 2 outputs (ready, done). Unless otherwise stated in the diagram below, assume outputs are 0 and inputs are don't cares.
+
+The state machine has the following states and their corresponding outputs: 
+1. state Idle (ready=1, done=0).
+2. state Processing (ready=0, done=0).
+3. state Done (ready=0, done=1).
+
+State transitions:
+1. From state Idle: If start = 1, then transition to state Processing. If start = 0, then remain in state Idle.
+2. From state Processing: If start = 0, then transition to state Done. If start = 1, then remain in state Processing.
+3. From state Done: If start = 1, then transition to state Idle. If start = 0, then remain in state Done.
+
+At reset, the state machine starts in state "Idle". Derive next-state logic equations and output logic equations by inspection assuming the following one-hot encoding is used: (Idle, Processing, Done) = (3'b001, 3'b010, 3'b100)
+
+Derive state transition and output logic equations by inspection assuming a one-hot encoding. Implement only the state transition logic and output logic (the combinational logic portion) for this state machine.
+
+Write code that generates the following equations:
+
+- Idle_next -- next-state logic for state Idle
+- Processing_next
+- Done_next
+- ready -- output logic
+- done -- output logic
+
+module top_module(
+    input start,
+    input [2:0] state,    // 3-bit one-hot current state
+    output reg Idle_next,
+    output reg Processing_next,
+    output reg Done_next,
+    output reg ready,
+    output reg done
+ );

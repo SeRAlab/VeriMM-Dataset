@@ -1,0 +1,9 @@
+Design a binary counter that counts either up or down based on the `count_dir` signal, with synchronization to a clock input (`clk`). The counter resets to zero when the `reset` signal is activated. It compares its next value against the `max_count` input; if the count exceeds `max_count`, it resets to zero and sets the `overflow` output high to indicate an overflow condition. The current count value is available at the `count` output, providing a 32-bit wide representation of the counter state.
+module top_module(
+  input clk,
+  input reset,
+  input count_dir,
+  input [31:0] max_count,
+  output [31:0] count,
+  output reg overflow  // Change here: 'overflow' is now declared as a reg
+);

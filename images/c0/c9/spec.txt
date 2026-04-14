@@ -1,0 +1,42 @@
+Please act as a professional verilog designer.
+    
+Implement a module functions as a raw First-In-First-Out (FIFO) memory buffer, designed to store and manage data in a sequential manner. Its primary objectives include:
+
+Data Storage: Temporarily holding a series of data items in a buffer, with a parameterizable width (`WIDTH`) and depth (`DEPTH`), which is determined by the `RANGEE` parameter.
+Data Management: Providing mechanisms for writing to and reading from the FIFO, including write strobe and read enable controls.
+Status Indication: Offering status outputs such as `o_full` and `o_empty` to indicate when the FIFO is full or empty, respectively, and `o_dnum` to indicate the number of data items currently stored (though it's statically assigned to 'd0 in this implementation).
+Data Matching: Checking if a specific address/data (`i_check_address`) exists within the FIFO and indicating a hit through the `o_hit` output.
+
+This module is intended for use in systems requiring temporary storage and sequential access to data, with the added capability of checking for the existence of specific data within the buffer.
+
+Module name:  
+	fm_raw_fifo
+
+Input ports:
+	clk_core: Clock input for synchronizing the FIFO operations.
+	rst_x: Active low reset signal to initialize the FIFO state.
+	i_check_address: Data input used for matching against the contents of the FIFO.
+	i_wstrobe: Write strobe signal to control when data (i_dt) is written into the FIFO.
+	i_dt: Data input to be written into the FIFO when i_wstrobe is asserted.
+	i_renable: Read enable signal to control the reading of data from the FIFO.
+Output ports:
+	o_hit: Indicates whether the i_check_address matches any data currently stored in the FIFO.
+	o_full: Indicates that the FIFO is full and cannot accept more data.
+	o_empty: Indicates that the FIFO is empty and contains no data to read.
+	o_dt: Data output, presenting the data read from the FIFO.
+	o_dnum: Indicates the number of data items currently stored in the FIFO (statically assigned to 'd0 in this implementation).
+
+
+Implementation:
+The RTL module presented, fm_raw_fifo, is designed as a FIFO (First-In-First-Out) memory buffer with additional features for checking the presence of specific data within the buffer. The module is parameterized to allow flexibility in its data width (WIDTH) and depth (RANGEE), with the depth being a power of two. This design enables the FIFO to be easily scaled for different applications. The module operates on a single clock domain (clk_core) and uses an active-low reset signal (rst_x).
+Combinational Logic:
+Full and Empty Flags: The FIFO uses the rs_valid register array to track which slots in the rs_data_buffer are valid (i.e., contain data). The o_full flag is asserted when all slots are valid, and the o_empty flag is asserted when no slots are valid. This is achieved through bitwise AND and OR operations on the rs_valid bits, respectively.
+Data Output (o_dt): The data output is directly connected to the rs_data_buffer at the position of the rs_read_counter. This ensures that the oldest data (first in) is read out first.
+Write Enable (w_we) and Read Enable (w_re): These signals are derived from the input strobes (i_wstrobe for writing, i_renable for reading) and the full/empty status of the FIFO. They ensure that writes only occur when the FIFO is not full, and reads only occur when the FIFO is not empty.
+Hit Detection (o_hit): The module can check for the presence of a specific data value (i_check_address) within the FIFO. This is done by comparing the input value against all valid data entries in the FIFO and aggregating the results with a bitwise OR operation.
+Sequential Logic:
+Write and Read Counters: The rs_write_counter and rs_read_counter are used to track the positions for the next write and read operations, respectively. They are incremented upon each write or read operation, wrapping around due to the modulo nature of their implementation (implied by their bit width).
+Data Buffer and Validity Tracking: On a write operation, the input data (i_dt) is stored in the rs_data_buffer at the position indicated by the rs_write_counter, and the corresponding bit in rs_valid is set. On a read operation, the bit in rs_valid corresponding to the rs_read_counter position is cleared. This mechanism maintains the FIFO's state, tracking which slots are filled and ensuring data integrity.
+
+Give me the complete code.
+

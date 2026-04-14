@@ -1,0 +1,8 @@
+Design a 16-bit wide register with write enable functionality. On a rising clock edge, if the reset signal is low, the register outputs reset to zero. If the reset is high and the write enable signal is asserted, the register captures and outputs the incoming 16-bit data. If the write enable signal is not asserted, the register retains its previous value, effectively holding its state.
+module top_module(
+
+  input clk, rst, w_en,
+  input [15:0] data_in,
+
+  output reg [15:0] data_out
+);

@@ -1,0 +1,10 @@
+Design a 16-bit register that can conditionally load data based on control signals. The register captures data from a 16-bit input (d) on the rising edge of the clock (clk) when the enable signal (en) is active. It features separate control signals for loading the lower byte (byte_lo) and upper byte (byte_hi) of the register. When reset is asserted, the register is cleared to zero. With this design, the register can selectively update its lower and/or upper bytes based on the given inputs.
+module top_module(
+  input clk,
+  input reset,
+  input en,
+  input byte_lo,
+  input byte_hi,
+  input [15:0] d,
+  output reg [15:0] q
+);

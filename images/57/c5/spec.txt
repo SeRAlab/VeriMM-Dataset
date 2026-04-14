@@ -1,0 +1,8 @@
+Design a circuit that implements an 8-bit shift register with the ability to shift in new data on each clock cycle while allowing for a reset function. When the shift input is activated, the register captures the incoming 8-bit data at the current pointer position and increments the pointer, wrapping around to the beginning after reaching the fourth element. The output continually reflects the contents of the shift register, allowing access to the stored data in a circular manner based on the current pointer position.
+module top_module(
+    input clk,
+    input reset,
+    input shift,
+    input [7:0] data_in,
+    output [7:0] data_out
+);

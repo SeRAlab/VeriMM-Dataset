@@ -1,0 +1,12 @@
+Design a finite state machine (FSM) for a Direct Memory Access (DMA) controller that manages a data transfer process. The module receives control signals such as clock, enable, and data availability, and facilitates reading and writing operations between peripheral devices and memory. The output signals include a 16-bit address, an 8-bit data output, and control signals for memory read/write operations. The FSM progresses through states to handle initialization, memory access requests, and data transfers based on the status of the enable signal and data availability, effectively managing the flow of data in DMA operations.
+module top_module( 
+		input 			clk_i,
+		input 			enable_i,	
+		input 			d_avail_i,	
+		input [7:0]		data_i,
+		output [15:0] 	adr_o,		
+		output [7:0]	data_o,
+		output 			wr_o,			
+		output			rd_o,			
+		output			n_reset_o	
+	);

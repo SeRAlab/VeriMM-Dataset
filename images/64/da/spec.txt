@@ -1,0 +1,8 @@
+Design a 4-bit shift register that can shift data either left or right based on control signals. When the clock signal triggers a positive edge, if the reset signal is active, the register is cleared to zero. If the reset is not active, the module shifts its contents left when the shift_left signal is asserted, inserting the most recent input data into the least significant bit position. Conversely, if the shift_left signal is low, the contents are shifted right, with new data being fed into the most significant bit position. The output reflects the current state of the shift register.
+module top_module(
+    input [3:0] data_in,
+    input shift_left,
+    input clock,
+    input reset,
+    output [3:0] data_out
+);

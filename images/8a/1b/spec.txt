@@ -1,0 +1,17 @@
+Design a circuit that functions as a 6-to-1 multiplexer, selecting one of six 4-bit data inputs based on a 3-bit select signal. The selected data is output through `out_mux`. The circuit also provides the select signal directly as `out_3bit` and its individual bits as `o2`, `o1`, and `o0`. Additionally, it performs an addition operation between the selected 4-bit data and the 3-bit select signal, generating a 7-bit result labeled `final_out`, which includes a carry bit from the addition.
+module top_module( 
+    input wire clk,
+    input wire [2:0] sel, 
+    input wire [3:0] data0,
+    input wire [3:0] data1,
+    input wire [3:0] data2,
+    input wire [3:0] data3,
+    input wire [3:0] data4,
+    input wire [3:0] data5,
+    output wire [3:0] out_mux,
+    output wire [2:0] out_3bit,
+    output wire o2,
+    output wire o1,
+    output wire o0,
+    output wire [6:0] final_out
+);

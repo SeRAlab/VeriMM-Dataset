@@ -1,0 +1,17 @@
+Implement a Verilog module based on the following description.
+The following diagram is a Moore machine implementation of an alarm system controller. Implement in Verilog using one-hot encoding. Resets into state Alarm_Off and reset is asynchronous active-high.
+
+The state machine has the following states and their corresponding outputs:
+1. state Alarm_Off (alarm_on = 0).
+2. state Alarm_On (alarm_on = 1).
+
+State transitions:
+1. From state Alarm_Off: If trigger_alarm = 1, then transition to state Alarm_On. If trigger_alarm = 0, then transition to state Alarm_Off.
+2. From state Alarm_On: If reset_alarm = 1, then transition to state Alarm_Off. If reset_alarm = 0, then transition to state Alarm_On.
+
+module top_module (
+        input clk,
+        input areset,
+        input trigger_alarm,
+        input reset_alarm,
+        output reg alarm_on);

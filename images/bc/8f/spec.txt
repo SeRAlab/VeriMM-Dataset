@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+
+Implement a 7-bit binary counter module that counts up to a given value and then resets.
+
+Module name:
+    binary_counter_7bit_max
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    max_value: 7-bit input representing the maximum count value.
+
+Output ports:
+    count: 7-bit output representing the current binary count value.
+
+Implementation:
+The module includes a 7-bit register, count, which is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the count register is cleared to 0.
+On every rising edge of the clock, the count is incremented by 1. When the count reaches max_value, it resets to 0.
+
+Give me the complete code.

@@ -1,0 +1,32 @@
+Please act as a professional verilog designer.
+    
+Implement a module to manage and track various counters related to Ethernet frame transmission. Its primary functions include counting the number of nibbles and bytes transmitted during different states of frame transmission, determining when the minimum and maximum frame lengths are reached, and handling special conditions such as excessive deferment and delayed CRC (Cyclic Redundancy Check) calculations. This module plays a crucial role in ensuring that Ethernet frames are transmitted according to the specified standards and protocols, facilitating error checking, and optimizing transmission efficiency within an Ethernet communication system.
+
+Module name:  
+	eth_txcounters
+
+Input ports:
+	MTxClk: The main transmission clock signal.
+	Reset: Activehigh reset signal.
+	StatePreamble, StateIPG, StateData, StatePAD, StateFCS, StateJam, StateBackOff, StateDefer, StateIdle, StateSFD: Boolean signals indicating the current state of the Ethernet frame transmission process.
+	StartDefer, StartIPG, StartFCS, StartJam, StartBackoff: Signals to initiate specific states in the transmission process.
+	TxStartFrm: Signal indicating the start of frame transmission.
+	MinFL, MaxFL: 16bit inputs specifying the minimum and maximum frame lengths, respectively.
+	HugEn: Enable signal for oversized frames.
+	ExDfrEn: Enable signal for handling excessive deferment.
+	PacketFinished_q: Signal indicating the completion of packet transmission.
+	DlyCrcEn: Enable signal for delayed CRC calculation.
+Output ports:
+	ByteCnt, NibCnt: 16bit counters for tracking the number of bytes and nibbles transmitted.
+	ExcessiveDefer: Signal indicating an excessive deferment condition.
+	NibCntEq7, NibCntEq15: Signals indicating when the nibble count equals 7 or 15, respectively.
+	MaxFrame: Signal indicating that the maximum frame length has been reached.
+	NibbleMinFl: Signal indicating that the minimum frame length in terms of nibbles has been reached.
+	DlyCrcCnt: 3bit counter for delayed CRC calculation.
+
+
+Implementation:
+The eth_txcounters module is designed to manage various counters and flags associated with the transmission process of an Ethernet frame. It operates based on the state of the frame transmission and specific control signals, adjusting counters for bytes, nibbles (half-bytes), and a delay CRC counter as necessary. The module's logic is divided into combinational and sequential parts, with the combinational logic determining when to increment or reset counters based on the current state and control signals, and the sequential logic updating the counters on the rising edge of the MTxClk or when a reset occurs.
+
+Give me the complete code.
+

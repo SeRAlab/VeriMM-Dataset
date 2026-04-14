@@ -1,0 +1,9 @@
+Design a basic 8-bit calculator that performs addition, subtraction, multiplication, and division of two 8-bit inputs, `a` and `b`, based on a 2-bit operation selector `op`. The calculator has clock synchronization, updating the `result` on rising clock edges while also checking for overflow conditions, particularly during division. If division by zero occurs or the result exceeds the 8-bit range, it sets the `overflow` flag and outputs zero.
+module top_module(
+    input [7:0] a,
+    input [7:0] b,
+    input [1:0] op,
+    input clk,
+    output reg [7:0] result,
+    output reg overflow
+);

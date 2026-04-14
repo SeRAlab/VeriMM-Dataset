@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit synchronous counter with enable and reset signals. The counter increments its value on each clock cycle if the enable signal is high. If the reset signal is high, the counter resets to zero regardless of the enable signal.
+
+Module name:
+    sync_counter_4bit
+
+Input ports:
+    clk: Clock signal.
+    reset: Reset signal.
+    enable: Enable signal.
+
+Output ports:
+    count: 4-bit count value.
+
+Implementation:
+The module uses an always block triggered by the positive edge of the clock signal. Inside the always block, if the reset signal is high, the counter is set to zero. Otherwise, if the enable signal is high, the counter is incremented by one.
+
+Give me the complete code.
+
+module sync_counter_4bit(
+    input wire clk,
+    input wire reset,
+    input wire enable,
+    output wire [3:0] count
+    );

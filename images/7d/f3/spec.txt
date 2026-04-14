@@ -1,0 +1,6 @@
+Design a signed absolute value calculator that takes a signed input and outputs its absolute value while detecting overflow conditions. The module checks if the input is negative; if so, it negates the input by taking its two's complement to produce the absolute value. It also detects and signals an overflow condition specifically when the input is the most negative value representable in the given width. The output is provided in a register format, and there is a safety mechanism in place to ensure that the width parameter is valid during initialization.
+module top_module(
+  input signed [lpm_width-1:0] data,
+  output reg signed [lpm_width-1:0] result,
+  output reg overflow
+);

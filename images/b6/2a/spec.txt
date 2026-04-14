@@ -1,0 +1,15 @@
+Design a Verilog module that implements a D Flip-Flop with asynchronous reset. When the reset is active, the output 'q' is set to 0. Otherwise, 'q' follows the input 'd' on the rising edge of the clock.
+
+Initial state: q = 0
+Time 0ns: clock = 0, reset = 0, d = 0, q = 0.
+Time 10ns: clock = 1, reset = 0, d = 1, q = 0.
+Time 20ns: clock = 0, reset = 0, d = 1, q = 1.
+Time 30ns: clock = 1, reset = 1, d = 0, q = 1.
+Time 40ns: clock = 0, reset = 0, d = 0, q = 0.
+Time 50ns: clock = 1, reset = 0, d = 1, q = 0.
+
+module d_flip_flop (
+	input clock,
+	input reset,
+	input d,
+	output reg q);

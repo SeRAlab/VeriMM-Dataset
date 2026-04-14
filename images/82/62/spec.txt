@@ -1,0 +1,5 @@
+Design a circuit that functions as a pulse-controlled output generator with a counter. It begins counting on the rising edge of the STARTPULSE input. The module has eight output lines (DTROUT7 to DTROUT0), which are activated based on the counter's value: when the counter reaches 0, all outputs from DTROUT0 to DTROUT4 are set high; when it reaches 1, DTROUT5 is set high; at 2, DTROUT6 is activated; and finally, at 3, DTROUT7 goes high, while all other outputs are reset to low. This design is useful for generating specific output patterns based on pulse input timing.
+module top_module(
+    input STARTPULSE,
+    output reg DTROUT7, DTROUT6, DTROUT5, DTROUT4, DTROUT3, DTROUT2, DTROUT1, DTROUT0
+);

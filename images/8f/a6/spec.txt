@@ -1,0 +1,8 @@
+Develop a synchronous scratchpad memory module that features a configurable data width of 8 bits and an address width of 6 bits, allowing for the storage of 64 memory locations. The module supports both write and read operations controlled by a clock signal. On the rising edge of the clock, if the write enable (we) signal is asserted, data from the data input (data_in) is stored in the specified address location (addr). Conversely, if the write enable signal is deasserted, the content at the specified address is outputted to the data output (data_out). This design enables efficient temporary data storage and retrieval.
+module top_module(
+  input clk,
+  input we,
+  input [addr_width-1:0] addr,
+  input [data_width-1:0] data_in,
+  output reg [data_width-1:0] data_out
+);

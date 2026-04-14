@@ -1,0 +1,13 @@
+Design a data accumulation and BCD (Binary-Coded Decimal) conversion module that processes 8-bit input data. The module uses a clock and reset signal, managing input validity and readiness through a handshake protocol. It accumulates incoming data until a specified threshold is met, at which point it converts the accumulated binary value into a BCD representation. The module outputs the accumulated binary data and the corresponding BCD value while maintaining valid and ready signals for synchronization. Upon reset, all internal registers and outputs are initialized to zero, ensuring robust operation in data processing applications.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] data_in,
+  input valid_a,
+  output ready_a,
+  input ready_b,
+  input [2:0] threshold,
+  output reg valid_b,
+  output reg [11:0] data_out_binary,
+  output reg [3:0] data_out_bcd
+);

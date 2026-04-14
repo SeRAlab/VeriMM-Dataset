@@ -1,0 +1,7 @@
+Design a delay-locked loop (DLL) that synchronizes an input data signal with a clock signal by dynamically adjusting the delay of the input signal. The module uses a series of delay elements to store and shift the input data, calculates the phase difference between the current and delayed data, and generates control signals to modify the delay. The system aim is to achieve a stable output and indicate when the desired lock state is reached. The output provides the synchronized data, while the `locked` signal indicates whether the DLL has achieved the necessary phase alignment.
+module top_module(
+  input clk,
+  input data,
+  output reg locked,
+  output reg out
+);

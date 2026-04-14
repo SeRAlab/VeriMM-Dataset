@@ -1,0 +1,12 @@
+Design a level-sensitive D flip-flop with additional enable functionality, where the output Q and its complement Q_N are driven high only when the power supply conditions are met. The functionality includes a data input D and an enable input DE that, when asserted, allows data to be latched on the rising edge of the clock signal CLK. The behavior is further influenced by power input conditions, with Q and Q_N outputting high impedance states when not properly powered. This module is designed for use in low-power CMOS applications, focusing on maintaining functionality in scenarios where voltage levels may vary.
+module top_module(
+    input D,
+    input DE,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB,
+    output Q,
+    output Q_N,
+    input CLK
+);

@@ -1,0 +1,7 @@
+Design a synchronous 8-bit adder circuit that computes the sum of two 8-bit inputs, A and B, producing a 16-bit output C. The module incorporates a clock input to synchronize operations. Upon each positive edge of the clock, it first calculates the sum of A and B and stores it in a delayed register (C_delayed). If both inputs remain unchanged compared to their previous clock cycle values, the module outputs the delayed sum; otherwise, it computes and outputs the sum of the current inputs directly. This design allows for controlled output updating based on input stability, enhancing reliability in data paths.
+module top_module(
+   input clk,
+   input [7:0] A,
+   input [7:0] B,
+   output reg [15:0] C
+);

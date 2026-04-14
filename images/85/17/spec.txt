@@ -1,0 +1,8 @@
+Design a 32-bit Arithmetic Logic Unit (ALU) that performs basic arithmetic and comparison operations. It takes two 32-bit input operands and a 4-bit control signal to determine the operation. When reset is low, the ALU output is cleared to zero; otherwise, it performs addition, subtraction, or a less-than comparison based on the control signal. Additionally, it produces a zero output signal that indicates whether the result is zero. If the control signal does not match any predefined operation, the ALU output is set to zero.
+module top_module(
+input rst,
+input[3:0] alu_ct,
+input[31:0] alu_src1,alu_src2,
+output alu_zero,
+output reg [31:0] alu_res
+    );

@@ -1,0 +1,10 @@
+Design a 32-bit barrel shifter that performs left and right bit shifts based on the input amount while supporting a load and enable functionality. The circuit utilizes a clock signal for synchronization and can be reset to zero. When the load signal is active, it loads the input data into the output register. If enabled and a shift amount is specified, the module will shift the data according to the defined amount, effectively allowing for dynamic manipulation of the bit positions within the 32-bit input.
+module top_module(
+  input clk,
+  input reset,
+  input [31:0] data,
+  input load,
+  input ena,
+  input [4:0] amount,
+  output reg [31:0] q
+);

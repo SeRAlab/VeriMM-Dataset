@@ -1,0 +1,16 @@
+Design a multi-channel programmable counter module that can be controlled through external clock signals and reset functionality. The module includes three individual 33-bit counters (counter0, counter1, and counter2) with specific control logic for each channel. It can load preset values into the counters and decrement them based on selected control signals. The outputs indicate the state of the most significant bit of each counter, while the lower 32 bits of counter0 are accessible as an output. The reset signal clears the counters, and the counter write enable (counter_we) allows the loading of values based on the specified channel select input (counter_ch).
+module top_module(input clk,
+					input rst,
+					input clk0,
+					input clk1,
+					input clk2,
+					input counter_we,
+					input [31:0] counter_val,
+					input [1:0] counter_ch,				
+
+					output counter0_OUT,
+					output counter1_OUT,
+					output counter2_OUT,
+					output [31:0] counter_out
+					
+					);

@@ -1,0 +1,14 @@
+Design a 4-bit magnitude comparator with a multi-input selection feature. This module takes two primary 4-bit inputs, 'a' and 'b', and a 3-bit select signal to choose from six different 4-bit data inputs ('data0' to 'data5'). Depending on the select signal, it compares 'a' with either the chosen data input or its complemented version, using a half adder as part of the logic. The output flag indicates if 'a' is greater than 'b'. The flag is updated on the positive clock edge, allowing for synchronous comparison operations. This design facilitates flexible comparison of multiple data sources while also providing control over whether to use the original or negated input for the comparisons.
+module top_module(
+    input [3:0] a,                 // 4-bit input a
+    input [3:0] b,                 // 4-bit input b
+    input [2:0] sel,               // Select input to choose 4-bit input
+    input [3:0] data0,             // 4-bit input 0
+    input [3:0] data1,             // 4-bit input 1
+    input [3:0] data2,             // 4-bit input 2
+    input [3:0] data3,             // 4-bit input 3
+    input [3:0] data4,             // 4-bit input 4
+    input [3:0] data5,             // 4-bit input 5
+    input clk,                     // Clock input for flag update
+    output reg flag                // Flag indicating if a > b
+);

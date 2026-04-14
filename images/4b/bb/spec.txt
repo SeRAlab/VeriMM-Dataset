@@ -1,0 +1,7 @@
+Design a transition counter that detects the number of rising edges in a 32-bit input signal. On each positive clock edge, if the reset signal is asserted, the counter and previous input are reset to zero. Otherwise, the module checks for transitions from LOW to HIGH on the least significant bit of the input. Each detected rising edge increments a 4-bit transition count, which is output as `count`. This design is useful for applications requiring edge detection or event counting based on specific input signals.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] in,
+    output reg [3:0] count
+);

@@ -1,0 +1,8 @@
+Design a sequential circuit that functions as a temporary memory buffer. It captures a 64-bit input value (C) upon the rising edge of a clock signal (CLK) when the 'start' signal is activated, storing it in an internal register (mem_buffer). Additionally, it outputs the value of this buffer (Cminus1) and initializes both the output and the buffer to zero upon reset (RST). This module effectively delays the input value for one clock cycle before making it available at the output.
+module top_module(
+  input				CLK		,
+  input 			RST		,
+  input 			start	,
+  input  	 [63:0] C		,
+  output reg [63:0] Cminus1
+);

@@ -1,0 +1,19 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit shift register with serial input and parallel output. The shift register shifts its contents to the right on each clock cycle and captures the new serial input.
+
+Module name:
+    shift_register
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high synchronous reset signal. Defined as 1 for reset and 0 for reset signal inactive.
+    serial_in: Serial input data to be shifted into the register.
+
+Output ports:
+    parallel_out: 4-bit parallel output representing the contents of the shift register.
+
+Implementation:
+The shift register is triggered on the positive edge of the clock signal (posedge clk).
+If the reset signal is asserted (rst == 1), the shift register is reset to 0.
+On each clock cycle, the contents of the shift register are shifted to the right, and the new serial input is captured.

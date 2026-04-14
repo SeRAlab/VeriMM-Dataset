@@ -1,0 +1,23 @@
+Implement the Verilog module based on the following description.
+The following is the state transition table for a Moore state machine with one input, one output, and five states. Use the following state encoding: S0=3'b000, S1=3'b001, S2=3'b010, S3=3'b011, S4=3'b100. Implement only the state transition logic and output logic (the combinational logic portion) for this state machine. Given the current state (state), compute the next_state and output (out) based on the state transition table.
+
+The state machine has the following states and their corresponding outputs:
+1. state S0 (out = 0).
+2. state S1 (out = 0).
+3. state S2 (out = 1).
+4. state S3 (out = 0).
+5. state S4 (out = 1).
+
+State transitions:
+1. From state S0: If in = 0, then transition to state S1. If in = 1, then transition to state S2.
+2. From state S1: If in = 0, then transition to state S3. If in = 1, then transition to state S4.
+3. From state S2: If in = 0, then transition to state S0. If in = 1, then transition to state S3.
+4. From state S3: If in = 0, then transition to state S4. If in = 1, then transition to state S0.
+5. From state S4: If in = 0, then transition to state S1. If in = 1, then transition to state S2.
+
+module top_module (
+  input in,
+  input [2:0] state,
+  output reg [2:0] next_state,
+  output reg out
+);

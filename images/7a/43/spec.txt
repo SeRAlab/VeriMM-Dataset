@@ -1,0 +1,11 @@
+Design a 6-to-1 multiplexer with a pipelined structure. It takes a 3-bit selection input (`sel`) and six 4-bit data inputs (`data0` to `data5`). The module processes the data in four stages, increasingly narrowing down the selected data based on the value of `sel`. At each stage, it combines pairs of inputs into intermediate outputs, ultimately producing a single 4-bit output that corresponds to the selected data input based on the value of `sel`. This design allows for improved timing and performance by breaking down the selection process into multiple stages.
+module top_module(
+    input [2:0] sel,
+    input [3:0] data0,
+    input [3:0] data1,
+    input [3:0] data2,
+    input [3:0] data3,
+    input [3:0] data4,
+    input [3:0] data5,
+    output reg [3:0] out
+);

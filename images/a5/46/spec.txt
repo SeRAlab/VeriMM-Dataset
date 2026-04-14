@@ -1,0 +1,7 @@
+Design a synchronizer circuit that converts an asynchronous input signal into a synchronized output signal with respect to a given clock. The module uses a chain of three flip-flops to sample the asynchronous input and mitigates the risk of metastability by synchronizing it with the clock signal. Upon reset, both the flip-flop chain and the output are set to LOW, ensuring a clean start. The final output provides a stable version of the asynchronous input after being clocked through the synchronizing stages.
+module top_module(
+  input async_in,
+  input clk_sync,
+  input rst_sync,
+  output sync_out
+);

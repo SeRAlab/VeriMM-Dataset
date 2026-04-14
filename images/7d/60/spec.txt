@@ -1,0 +1,10 @@
+Design a register stage for a pipelined processor that captures and holds output values from the execution stage (EX) to pass to the write-back stage (WB). This module includes a clock and reset input, and processes 8-bit ALU output, source data, register destination address, and control signals for write operations. It ensures that data is stored and forwarded correctly on the rising edge of the clock, while also resetting all outputs to zero when the reset signal is low.
+module top_module(input clock,input reset,
+  input [7:0] ALU_out,
+  input [7:0] EX_WB_Rsdata_in,
+  input [2:0] EX_WB_Rd_in,
+  input EX_WB_write_mux_in,EX_WB_regWrite_in, 
+  output reg [7:0] ALU_WB_out,
+  output reg [7:0] EX_WB_Rsdata_out,
+  output reg [2:0] EX_WB_Rd_out,
+  output reg EX_WB_write_mux_out,EX_WB_regWrite_out);

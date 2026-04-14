@@ -1,0 +1,15 @@
+Design a rule scheduler module that manages two write operations and corresponding read operations while coordinating a register for intermediate storage. The module employs a clock and reset mechanism to control state updates and provides outputs based on enable signals. It allows writing to a register "ehr_r" with a value selected from inputs, and reads from it based on specific conditions. The module indicates readiness for reads and writes, ensuring data flows efficiently based on control signals. This design facilitates a structured approach to manage data rules, enabling smooth operation within a larger digital system.
+module top_module(
+  input CLK,
+  input RST_N,
+  input [31:0] r1__write_1,
+  input [31:0] r2__write_1, // Added missing r2__write_1 input
+  input EN_r1__write,
+  input EN_r2__write,
+  output reg [31:0] r1__read,
+  output reg [31:0] r2__read,
+  output reg RDY_r1__read,
+  output reg RDY_r1__write,
+  output reg RDY_r2__read,
+  output reg RDY_r2__write
+);

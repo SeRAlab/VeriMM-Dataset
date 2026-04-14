@@ -1,0 +1,12 @@
+Design a 5-stage pipelined adder circuit that takes two 64-bit input values (i_a and i_b) and produces their sum as output (o_res). The module accepts a clock signal (ck) and an ID identifier (i_htId) along with a validity signal (i_vld) to effectively manage data flow through the stages. It utilizes a series of registers to store intermediate results, which are propagated through five clock cycles, ensuring that the output is valid (o_vld) only after the full computation is completed. The design facilitates high throughput by allowing subsequent inputs to be processed while previous ones are still being calculated.
+module top_module(
+input		ck,
+
+input	[63:0]	i_a, i_b,
+input   [6:0]   i_htId,
+input           i_vld,
+
+output	[63:0]	o_res,
+output  [6:0]   o_htId,
+output          o_vld
+);

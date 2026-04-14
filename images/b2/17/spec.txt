@@ -1,0 +1,5 @@
+Design a clock gating circuit that controls the propagation of a clock signal based on enable (EN) and test enable (TE) signals. When EN is asserted, if TE is also asserted, the output ENCLK follows the input CLK; otherwise, ENCLK is set to logic high. If EN is deasserted, ENCLK is forced to logic low, effectively disabling the clock output. This design helps in reducing dynamic power consumption by selectively enabling the clock signal only when necessary.
+module top_module(
+    input CLK, EN, TE,
+    output reg ENCLK
+);

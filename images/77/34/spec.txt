@@ -1,0 +1,13 @@
+Design a simple encryption module that performs XOR-based encryption on an 8-bit input data stream. The module takes an 8-bit data input and an 8-bit key, producing an 8-bit encrypted output. Upon the rising edge of the clock signal, if the acknowledgment signal (Ack) is asserted, the module resets the 'Ready' signal to LOW, indicating it is not ready to output data. Conversely, when Ack is not asserted, the module computes the encryption by XORing the input data with the key, updates the output with the encrypted data, and sets the 'Ready' signal to HIGH, indicating that the encryption is complete and output is available.
+module top_module(
+	input 			 Clk,
+	input 			 Ack,
+	
+	input 	  [7:0]DataIn,
+	
+	input 	  [7:0]key,
+	
+	output reg [7:0]DataOut,
+	output reg      Ready	
+									
+);

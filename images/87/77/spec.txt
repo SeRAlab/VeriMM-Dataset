@@ -1,0 +1,9 @@
+Design a pipelined 2-to-1 multiplexer with an enable functionality. The module takes two inputs, a and b, and two selection signals, sel_b1 and sel_b2. On the rising edge of the clock, it captures the selection signals into two pipeline registers. The output, out_always, is determined by the values of these selection signals: if both sel_b1 and sel_b2 are asserted (logic high), the output will be b; otherwise, it will default to a. This design allows for synchronized selection control through a pipelined approach, enabling efficient data handling in a clocked system.
+module top_module(
+    input a,
+    input b,
+    input sel_b1,
+    input sel_b2,
+    input clk,          // Added clk input
+    output reg out_always
+);

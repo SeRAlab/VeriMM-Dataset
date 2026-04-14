@@ -1,0 +1,26 @@
+Please act as a professional Verilog designer.
+
+Implement a 8-bit parallel-in serial-out (PISO) shift register. The register loads data in parallel on a load signal and shifts right on each positive edge of the clock signal. The register resets to 8'b00000000 when the reset signal is active.
+
+Module name:
+    piso_shift_register
+
+Input ports:
+    CLK: Clock signal
+    RST: Reset signal
+    LOAD: Load signal
+    D: 8-bit parallel data input
+
+Output ports:
+    Q: Serial output
+
+Implementation:
+On every positive edge of CLK or RST, if RST is active, Q is set to 8'b00000000. If LOAD is active, Q is loaded with parallel data D. Otherwise, Q shifts right by one position.
+
+Give me the complete code.
+
+module piso_shift_register (CLK, RST, LOAD, D, Q);
+input CLK, RST, LOAD;
+input [7:0] D;
+output reg Q;
+reg [7:0] shift_reg;

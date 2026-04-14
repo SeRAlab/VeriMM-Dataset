@@ -1,0 +1,10 @@
+Design a data generator module that outputs a 10-bit wide signal based on the mode of operation. In normal operation, the module reads data from an ADC databus, while in test mode, it produces a repeating pattern of incrementing values from 0 to 1023. The output is determined by a control signal, `testModeFlag`, which selects between the ADC data and the generated test data. The module features synchronization with a clock and is resettable via an active-low reset signal, ensuring proper initialization of output data registers on reset.
+module top_module(
+	input nReset,
+	input clock,
+	input [9:0] adc_databus,
+	input testModeFlag,
+	
+	// Outputs
+	output [9:0] dataOut
+);

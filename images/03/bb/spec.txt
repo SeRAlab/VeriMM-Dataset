@@ -1,0 +1,10 @@
+
+Design a 4-channel Direct Memory Access (DMA) controller that allows one of four channels to gain access to a shared memory. The DMA controller will have the following inputs and outputs:
+Inputs:
+- clk: Clock signal
+- rst: Reset signal
+- req[3:0]: Request signals from each of the four channels (active high)
+Outputs:
+- grant[3:0]: Grant signals indicating which channel is granted access to the memory (active high)
+
+The DMA controller should prioritize requests in the order of channel 0 to channel 3. If multiple requests are received simultaneously, grant channel 0 first, then channel 1, and so on. When a channel is granted access, it should remain granted until the request is deasserted.

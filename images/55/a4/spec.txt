@@ -1,0 +1,7 @@
+Design a sequential circuit that includes a 2-bit counter and an output that performs a combinational XOR operation. On every positive edge of the clock, the 2-bit counter increments its value, which is assigned to the output `out_counter`. The output `out_comb_ff` reflects the result of an XOR operation between the input `a` and the current value of `out_comb_ff`, updated asynchronously whenever `a` changes. This module effectively combines counting functionality with an ongoing XOR operation, allowing for both sequential counting and continuous logical computation.
+module top_module(
+    input clk,
+    input a,
+    output reg out_comb_ff,
+    output reg [1:0] out_counter
+);

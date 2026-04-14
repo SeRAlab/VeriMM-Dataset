@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+    
+Implement a module implements a synchronous FIFO (First-In-First-Out) buffer. Its primary functions include:
+
+Data Storage: Temporarily storing data in a sequential manner, allowing data to be written into and read from the FIFO buffer.
+Flow Control: Indicating when the FIFO is full or empty, thus preventing data overflow (writing to a full FIFO) or underflow (reading from an empty FIFO).
+Synchronization: Operating in sync with a system clock, ensuring that data writes and reads are performed in a controlled, predictable manner.
+
+This module plays a crucial role in systems requiring temporary storage and smooth data transfer between components operating at different speeds or requiring data alignment before processing.
+
+Module name:  
+	sync_fifo
+
+Input ports:
+	clk (input): The system clock signal. All operations within the FIFO are synchronized to the rising edge of this clock.
+	reset_n (input): Activelow reset signal. When asserted (low), it initializes the FIFO's pointers and status flags.
+	wr_en (input): Write enable signal. When high, and the FIFO is not full, data on wr_data is written into the FIFO on the next clock edge.
+	wr_data [W1 : 0] (input): Write data bus. The data to be written into the FIFO when wr_en is high.
+	rd_en (input): Read enable signal. When high, and the FIFO is not empty, data is read from the FIFO on the next clock edge.
+Output ports:
+	full (output): Indicates that the FIFO is full. When high, no more data can be written into the FIFO until some data is read out.
+	empty (output): Indicates that the FIFO is empty. When high, no data can be read from the FIFO until new data is written in.
+	rd_data [W1 : 0] (output): Read data bus. The data read from the FIFO when rd_en is high.
+
+
+Implementation:
+The RTL module presented is a synchronous FIFO (First-In-First-Out) memory buffer, designed to operate in digital systems that require temporary storage and retrieval of data in a sequential manner. The FIFO is parameterizable, allowing adjustments in data width (W) and depth (D), making it versatile for various application needs. The core logic of the FIFO is built upon combinational and sequential circuits that manage data storage, read and write operations, and status flag updates (full and empty conditions).
+
+Give me the complete code.
+

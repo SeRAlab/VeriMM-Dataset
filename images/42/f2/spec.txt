@@ -1,0 +1,15 @@
+Design a VGA color driver that manages the output of RGB color signals based on VGA synchronization and blanking signals. When the VGA signal is active (not blanking and synchronous), the module outputs the RGB values (R, G, B) provided as inputs. If the VGA output is blanked, the module sends zero values for the RGB channels, effectively disabling color output.
+module top_module(
+	
+	input		VGA_SYNC,
+	input		VGA_BLANK,
+	
+	
+	input [7:0] RGB_VR_o,
+	input [7:0] RGB_VG_o,
+	input [7:0] RGB_VB_o,
+	
+	output  	[7:0] AD_R_o,
+	output  	[7:0] AD_G_o,
+	output  	[7:0] AD_B_o
+);

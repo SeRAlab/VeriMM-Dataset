@@ -1,0 +1,9 @@
+Design a D flip-flop with asynchronous reset and preset features. The circuit captures the input data (D) on the rising edge of the clock (CLK) when neither the RESET nor PRESET signals are active. If RESET is asserted, the output (Q) is set to LOW and its complementary output (Q_N) to HIGH. If PRESET is asserted, Q is set to HIGH and Q_N to LOW. This functionality allows the flip-flop to be initialized to a known state regardless of the clock operation, making it suitable for synchronous circuits requiring reset and preset capabilities.
+module top_module(
+    input CLK,
+    input D,
+    input RESET,
+    input PRESET,
+    output reg Q,    // Changed to output reg
+    output reg Q_N   // Changed to output reg
+);

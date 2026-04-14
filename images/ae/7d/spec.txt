@@ -1,0 +1,14 @@
+Develop a 4-bit shift register with four independent outputs. The module supports loading data into the shift registers from four input ports (D0 to D3) when the LOAD signal is asserted, and it resets all registers to zero when the RESET signal is active. On each rising edge of the clock, data is shifted through the registers, effectively propagating the input data through each register, with outputs Q0 to Q3 reflecting the current state of each register. This design enables storage and sequential shifting of 4-bit data values in a controlled manner.
+module top_module(
+    input [3:0] D0,
+    input [3:0] D1,
+    input [3:0] D2,
+    input [3:0] D3,
+    input LOAD,
+    input RESET,
+    input CLK, // Added CLK input here
+    output reg [3:0] Q0,
+    output reg [3:0] Q1,
+    output reg [3:0] Q2,
+    output reg [3:0] Q3
+);

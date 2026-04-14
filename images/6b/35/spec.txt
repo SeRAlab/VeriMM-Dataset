@@ -1,0 +1,9 @@
+Design a dual-input, 2-to-1 multiplexer with enable functionality and reset capability. The module takes two 8-bit inputs, 'a' and 'b,' and selectively forwards one to the output 'out' based on the enable signal 'en.' If 'en' is asserted and 'a' is non-zero, 'a' is sent to the output; if 'a' is zero, 'b' is forwarded instead. If 'en' is deasserted, the output is set to zero. Additionally, the module is reset synchronously to zero upon a reset signal being asserted low.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] a,
+  input [7:0] b,
+  input en,
+  output reg [7:0] out
+);

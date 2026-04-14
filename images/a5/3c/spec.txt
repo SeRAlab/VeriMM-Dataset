@@ -1,0 +1,9 @@
+Design a pulse generator that produces a pulse signal when a rising edge of the input data is detected, indicating a transition from LOW to HIGH. The width of the generated pulse is controlled by the pulse_width input parameter. The module outputs a flag signal, which is HIGH during the active pulse period. The pulse and flag outputs are reset to LOW when the reset signal is asserted. The internal counter ensures that the pulse remains high for the specified duration before transitioning back to LOW.
+module top_module(
+  input clk,
+  input reset,
+  input data,
+  input pulse_width,
+  output reg pulse,
+  output reg flag
+);

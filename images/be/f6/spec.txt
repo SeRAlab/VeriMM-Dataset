@@ -1,0 +1,7 @@
+Design a branch control unit that determines a comparison condition based on a 4-bit function code, a less-than signal, and a carry-out signal. The output will be set to high (1) under two specific conditions: if the least significant three bits of the function code are '000' and the carry-out signal is asserted, or if the least significant three bits of the function code are '100' and the less-than signal is asserted. In all other cases, the output will be low (0). This module is essential for decision-making in control flow following arithmetic or logical operations in a processor.
+module top_module(
+	input [3:0] Funct,
+	input less,
+	input  CarryOut,
+	output reg comp
+);

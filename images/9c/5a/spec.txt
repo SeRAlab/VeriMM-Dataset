@@ -1,0 +1,10 @@
+Design a forwarding logic circuit for a pipelined processor. The module determines whether to forward data from the write-back stage (WB) to the execute stage (EX) for two registers (ra1 and ra2). The outputs, forwardA and forwardB, are asserted if the write address (wa_WB) matches the register addresses being read (ra1_EX or ra2_EX), the register write signal (regwrite_WB) is active, and the write address is not zero. This helps to resolve data hazards by allowing the processor to use the most recent data without waiting for it to be written back to the register file.
+module top_module(
+input wire		regwrite_WB,
+input wire [4:0] wa_WB,
+input wire [4:0]ra1_EX,
+input wire [4:0]ra2_EX,
+	
+output wire forwardA,forwardB
+
+);

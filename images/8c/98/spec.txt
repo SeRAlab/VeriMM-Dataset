@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a 4-bit counter that counts from 0 to 15. The module counts up by 1 on each rising edge of the clock and resets to 0 when the reset signal is asserted.
+
+Module name:
+    counter_4bit
+
+Input ports:
+    clk: Clock signal used for synchronous counting.
+    reset: Active-high reset signal to reset the counter to 0.
+
+Output ports:
+    count: Output signal representing the current count value.
+
+Implementation:
+The counter is defined as reg [3:0] count and initialized to 0 using the initial statement. On each rising edge of the clock, if reset is high, the counter resets to 0. Otherwise, the counter increments by 1.
+
+Give me the complete code.
+
+module counter_4bit(clk, reset, count);
+
+    input clk;
+    input reset;
+    output [3:0] count;

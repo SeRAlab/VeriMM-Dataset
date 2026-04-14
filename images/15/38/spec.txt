@@ -1,0 +1,6 @@
+
+Design a simple PCIe-like interface protocol state machine that manages the state transitions between Idle, Request, and Acknowledge states. The state machine should change states based on the inputs: `req` (request signal) and `ack` (acknowledge signal). The state transitions are defined as follows:
+- Idle state transitions to Request state on `req` signal being high.
+- Request state transitions to Acknowledge state on `ack` signal being high.
+- Acknowledge state transitions back to Idle state after sending acknowledgment.
+The state machine should also have a `clk` for clocking the transitions and `rst` for resetting the state.

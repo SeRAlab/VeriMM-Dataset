@@ -1,0 +1,8 @@
+Design a 4-bit counter with specific shifting capabilities controlled by a selection input. The counter increments or decrements its output based on the `sel` input while operating on the rising edge of the clock. When `rst` is active low, the output resets to zero. The `en` input enables or disables the counting logic, allowing for conditional operation based on the status of the enable signal. The four possible cases specified by `sel` dictate how the bits are shifted either left or adjusted during counting based on the most significant bits' states, enabling complex counting patterns.
+module top_module(
+    input clk,
+    input rst,
+    input en,
+    input [1:0] sel,
+    output reg [3:0] out
+);

@@ -1,0 +1,9 @@
+The module implements a dual-port register file with synchronous read and write capabilities, designed for a computer datapath. It features two banks of registers (SYNC_RAM0 and SYNC_RAM1), both 16 bits wide and capable of storing multiple entries, determined by the parameter DR_WIDTH. The register file supports control signals that determine the read/write operations: when RW is asserted, data from the D_bus_in is written to the specified address in both register banks, while the output data, ADDR_bus_out and B_data_out, is retrieved from the corresponding read addresses specified by the control signals (AA and BA). The module also includes a reset functionality that clears both register banks when RST is asserted.
+module top_module(
+	output reg [WORD_WIDTH-1:0] ADDR_bus_out,
+	output reg [WORD_WIDTH-1:0] B_data_out,
+	input [CNTRL_WIDTH-1:0] CNTRL_bus_in,
+	input [WORD_WIDTH-1:0] D_bus_in,
+	input CLK,
+	input RST
+	);

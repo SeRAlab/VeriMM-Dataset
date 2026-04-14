@@ -1,0 +1,22 @@
+Implement the Verilog module based on the following description.
+Consider the state machine shown below:
+
+The state machine has the following states and their corresponding outputs: 
+1. state A (output 0).
+2. state B (output 0).
+3. state C (output 0).
+4. state D (output 0).
+5. state E (output 1).
+6. state F (output 1).
+
+State transitions:
+1. From state A: If x = 0, then transition to state B. If x = 1, then transition to state A.
+2. From state B: If x = 0, then transition to state C. If x = 1, then transition to state D.
+3. From state C: If x = 0, then transition to state E. If x = 1, then transition to state D.
+4. From state D: If x = 0, then transition to state F. If x = 1, then transition to state A.
+5. From state E: If x = 0, then transition to state E. If x = 1, then transition to state D.
+6. From state F: If x = 0, then transition to state C. If x = 1, then transition to state D.
+
+Resets into state A. For this part, assume that a one-hot code is used with the state assignment y[6:1] = 000001, 000010, 000100, 001000, 010000, 100000 for states A, B,..., F, respectively.
+
+Write Verilog for the next-state signals Y3 and Y5 corresponding to signal y[3] and y[5]. Derive the logic equations by inspection assuming a one-hot encoding.

@@ -1,0 +1,10 @@
+Design a synchronous circuit that functions as both a shift register and a 16-bit adder. The module supports loading a 16-bit input into a shift register, which can shift its contents left or right based on a two-bit enable signal. Additionally, it provides a selection feature to either output the result of adding a fixed value (16) to the input or the contents of the shift register. The circuit incorporates a synchronous reset to initialize its state and enables seamless toggling between shifting and addition functionalities.
+module top_module(
+    input clk,
+    input reset, // Synchronous active-high reset
+    input load,
+    input [1:0] ena,
+    input [15:0] in,
+    input select,
+    output [15:0] q
+);

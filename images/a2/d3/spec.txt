@@ -1,0 +1,12 @@
+Design a circuit to perform a sequential arithmetic operation, specifically multiplying two 8-bit inputs and then adding the result to a modified sum of two other 8-bit inputs. The module accepts control signals and allows for the inversion of the inputs based on selection signals. It integrates a multiplication core and two adder blocks, with the first adder generating intermediate results that are fed into the second adder. The final outputs include an 8-bit result and 16-bit minimum and maximum values, with operational control facilitated through clock and reset signals for synchronization.
+module top_module(
+    input CLK,
+    input RESET_X,
+    input INPUT_EN,
+    input [7:0] A_IN,
+    input [7:0] B_IN,
+    output OUTPUT_EN,
+    output [7:0] C_OUT,
+    // Add other necessary ports as per your design
+    output wire MLC_GAGB // Assuming this is an output
+);

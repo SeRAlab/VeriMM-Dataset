@@ -1,0 +1,9 @@
+Design a parallel-load shift register that operates with an 8-bit wide data input. The module supports a reset function that clears the shift register when the reset signal is asserted. If the load_data signal is high, the module loads the data_in value into the register; otherwise, it performs a circular left shift on the current contents of the register. The outputs include the full 8-bit content of the shift register, as well as the least significant bit, q, providing a simple interface for both direct observation of the stored data and access to the shifted result.
+module top_module(
+  input clk,
+  input rst,
+  input load_data,
+  input [7:0] data_in,
+  output [7:0] q_parallel,
+  output q
+);

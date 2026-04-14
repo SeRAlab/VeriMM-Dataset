@@ -1,0 +1,11 @@
+Design a transformation module that computes transformed coordinates for blocks in video processing, specifically for intra-coding in a chroma format. The module takes in chroma or luma coordinates (`xCtb`, `yCtb`) and relative transform block positions (`xTb_rela`, `yTb_rela`), along with a specified transform unit size (`i_tuSize`). It outputs modified coordinates (`xTb`, `yTb`) based on the input values, incorporating bit-shifting and conditional adjustments that cater to chroma-specific processing. The calculated transform unit size is also adjusted based on chroma conditions. Overall, this module aids in accurately determining the position of transform blocks during video encoding or decoding.
+module top_module(
+	xCtb,
+	yCtb,
+	xTb_rela,
+	yTb_rela,
+	i_tuSize,
+	xTb,
+	yTb,
+	tuSize
+);

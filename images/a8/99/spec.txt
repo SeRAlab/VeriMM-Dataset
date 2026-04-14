@@ -1,0 +1,19 @@
+Design a neural network computation module that implements a simple feedforward architecture with two layers. The module takes two 16-bit input vectors, `inputA` and `inputB`, along with several weight coefficients and biases to compute the output values. It utilizes a sigmoid activation function for non-linearity, applied to the weighted sums of the inputs and biases to generate intermediate neuron outputs (`n1` and `n2`). These neuron outputs serve as inputs to the second layer, producing final outputs `out1` and `out2`. This architecture facilitates basic neural network functionality, enabling the processing of input data through multiple weighted connections and nonlinear transformations.
+module top_module(
+    input [16:1] inputA,
+    input [16:1] inputB,
+    input [16:1] c111,
+    input [16:1] c112,
+    input [16:1] c121,
+    input [16:1] c122,
+    input [16:1] c211,
+    input [16:1] c212,
+    input [16:1] c221,
+    input [16:1] c222,
+    input [16:1] b11,
+    input [16:1] b12,
+    input [16:1] b21,
+    input [16:1] b22,
+    output reg [16:1] out1,
+    output reg [16:1] out2
+);

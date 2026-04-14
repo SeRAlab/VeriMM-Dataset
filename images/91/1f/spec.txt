@@ -1,0 +1,10 @@
+Design a circuit that implements a Fletcher checksum algorithm. The module takes an 8-bit input data and produces a 16-bit checksum, which is updated on every valid input. It accumulates the input data and compares the resulting checksum against a provided reference checksum. The module includes reset functionality and indicates when the computed checksum matches the provided one via a valid output signal. It operates on the rising edge of the clock and processes up to ten valid inputs, handling overflow by summing the computed checksum and input data.
+module top_module(
+  input clk,
+  input rst,
+  input [7:0] data_in,
+  input valid_in,
+  input [15:0] checksum_in,
+  output [15:0] checksum,
+  output valid_out
+);

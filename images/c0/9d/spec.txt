@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to stabilize the input signal `d_i` by eliminating any noise or glitches that may occur due to mechanical or other transient phenomena. This module is particularly useful in digital systems where inputs come from mechanical switches or sensors that can produce erratic signals when toggled. The debouncer ensures that the output signal `d_o` reflects a stable and clean transition, thereby preventing the downstream logic from reacting to false triggers.
+
+In a broader system context, the `debouncer` module acts as a critical intermediary between raw input interfaces and the core logic of digital circuits, ensuring that the system responds only to genuine input changes.
+
+Module name:  
+	debouncer
+
+Input ports:
+	clk (input): This is the clock input to the module. It is a singlebit signal (input clk) that drives the internal timing and state transitions of the debouncer. The entire operation of the debouncer is synchronized to the rising edge of this clock signal.
+	d_i (input): This is the raw input signal to be debounced. It is a singlebit signal (input d_i) representing the potentially noisy or glitchy input from an external source, such as a mechanical switch.
+Output ports:
+	d_o (output reg): This is the debounced output signal. It is a singlebit registered output (output reg d_o) that represents the clean, stable state of the input signal after debouncing. The output changes only when the debouncer has confidently detected a genuine transition in the input signal.
+
+
+Implementation:
+The Verilog module presented is designed to function as a debouncer. In digital circuits, a debouncer is crucial for stabilizing the input signal, particularly in scenarios where mechanical switches or buttons are involved. These mechanical elements are prone to bouncing a phenomenon where the signal rapidly toggles between high and low states before settling. This behavior can lead to multiple unintended triggers within a digital system. The debouncer module mitigates this by ensuring that only a stable, bounce-free signal is passed as output.
+
+Give me the complete code.
+

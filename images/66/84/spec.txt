@@ -1,0 +1,13 @@
+Design a data transmission module that operates on a clock signal to send an 8-bit data input in two cycles: first transmitting the least significant nibble (4 bits) followed by the most significant nibble. It manages the transmission process through a state machine with four states: Idle, sending the LSB, sending the MSB, and Done. The module uses an address counter to track the byte count and enables output during transmission. The `done` signal indicates the completion of the data transfer, which resets when the transmission is restarted. This design ensures control over data flow and timing for effective communication in a digital system.
+module top_module(
+    input clk,
+
+    input start,
+    output reg done,
+    input [10:0] count,
+    input [7:0] data_in,
+
+    output reg [10:0] address,
+    output reg enable,
+    output reg [3:0] data_out
+);

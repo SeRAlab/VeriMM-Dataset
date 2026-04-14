@@ -1,0 +1,7 @@
+Design a synchronizer circuit that converts an asynchronous input signal into a synchronous output. This module captures the state of the async_input on the rising edge of a clock signal (clk), storing the value in a flip-flop (sync_ff). Additionally, it incorporates a reset functionality, where asserting the reset sets sync_ff to LOW. The final output (sync_output) is then updated on each clock cycle with the value of sync_ff, ensuring that the output remains synchronized to the clock while providing robustness against metastability issues inherent in asynchronous inputs.
+module top_module(
+    input async_input,
+    input clk,
+    input reset,
+    output reg sync_output
+);

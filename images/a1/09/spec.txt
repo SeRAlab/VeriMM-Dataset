@@ -1,0 +1,22 @@
+Design a Verilog module for a Moore state machine with two inputs, one output, and five states using the following state encoding: M=5'b00001, N=5'b00010, O=5'b00100, P=5'b01000, Q=5'b10000. The state machine should use the following state transition and output logic.
+
+State transitions:
+1. From state M: If in1 = 0 and in2 = 0, then transition to state N. If in1 = 1, then transition to state O.
+2. From state N: If in1 = 0 and in2 = 1, then transition to state P. If in1 = 1, then transition to state M.
+3. From state O: If in2 = 0, then transition to state Q. If in2 = 1, then transition to state N.
+4. From state P: If in1 = 1, then transition to state Q. If in2 = 1, then transition to state O.
+5. From state Q: If in1 = 0, then transition to state M. If in2 = 1, then transition to state P.
+
+Output logic:
+1. state M (out = 0).
+2. state N (out = 1).
+3. state O (out = 0).
+4. state P (out = 1).
+5. state Q (out = 0).
+
+module moore_machine_12 (
+  input in1,
+  input in2,
+  input [4:0] state,
+  output reg [4:0] next_state,
+  output reg out);

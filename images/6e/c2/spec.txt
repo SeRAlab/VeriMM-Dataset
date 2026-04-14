@@ -1,0 +1,9 @@
+Design a 4-bit shift register capable of shifting data either left or right based on control signals. When the reset signal is active, the output is initialized to zero. If the shift_left signal is high, the register shifts its contents to the left and inputs the least significant bit from data_in. Conversely, if the shift_right signal is activated, the most significant bit is replaced by data_in while the register shifts to the right.
+module top_module(
+    input clk,
+    input reset,
+    input shift_left,
+    input shift_right,
+    input [3:0] data_in,
+    output reg [3:0] data_out
+);

@@ -1,0 +1,6 @@
+Design a 13-bit linear feedback shift register (LFSR) that generates pseudo-random sequences. The LFSR is clock-driven and can be reset asynchronously. It employs a feedback mechanism based on XORing specific bits of the internal state to produce the next state. The output is available as a 13-bit wide signal, and the counter tracks the number of clock cycles, resetting after 13 cycles. The design captures the current state to provide the generated random value once the counter reaches the reset condition, effectively generating random numbers.
+module top_module(
+    input clk,
+    input rst_n,
+    output [12:0] out
+    );

@@ -1,0 +1,7 @@
+Design a 4-bit binary adder that computes the sum of two 4-bit inputs, A and B. The module uses clocked registers to store intermediate sums, ensuring that the calculation is synchronized to the positive edge of the clock. If the resulting sum exceeds the maximum value of 15 (i.e., 4 bits), the output S is assigned the lower 4 bits of the sum, potentially simulating a wrapping behavior. This module can be used in digital systems requiring basic arithmetic operations with overflow handling.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input clk,          // Added clock input
+    output reg [3:0] S
+);

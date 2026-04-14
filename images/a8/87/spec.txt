@@ -1,0 +1,6 @@
+Design a one-to-multiple demultiplexer (DEMUX) that takes a single input signal and routes it to one of several outputs based on a given selection line. Specifically, for a parameterized output size of 'm' (defaulting to 4), the module produces a one-hot output that corresponds to the value of the selection input. When 'sel' specifies an active output, the input signal 'in' is passed to that output while the other outputs remain low. This functionality allows for efficient signal distribution to multiple destinations based on control logic.
+module top_module(
+  input in,
+  input [log2(m)-1:0] sel,
+  output [m-1:0] out
+);

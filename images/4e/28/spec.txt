@@ -1,0 +1,6 @@
+Design a multi-channel interrupt controller that manages four interrupt request signals. It prioritizes incoming IRQ signals and maintains a pending status for each one. Upon the acknowledgment signal being received, the controller sends a corresponding vector code (ranging from 1 to 4) to the processor based on the highest priority pending interrupt. The vector code indicates which interrupt has been serviced, and the respective interrupt request is cleared to prevent it from being acknowledged again until it is reasserted. If no interrupts are pending, it outputs a zero vector, indicating no active interrupts.
+module top_module(
+  input [n-1:0] irq,
+  input ack,
+  output reg [7:0] vec // Change output to reg type
+);

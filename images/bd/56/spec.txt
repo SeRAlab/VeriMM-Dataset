@@ -1,0 +1,7 @@
+Design a top-level module that incorporates a Johnson counter and a Binary-Coded Decimal (BCD) counter, with synchronous and asynchronous reset capabilities. The Johnson counter generates a sequence of states based on the clock, and when the Johnson counter reaches a specific state, it drives a BCD decoder to produce a corresponding 4-bit output. The BCD counter increments on each clock cycle and produces a 4-bit BCD value. The module also generates enable signals for three upper digits based on the most significant bits of the BCD value. This design is suited for applications requiring synchronized counting and state representation, such as digital displays or other counting devices.
+module top_module(
+    input clk,
+    input sync_reset, // Synchronous active-high reset
+    input async_reset, // Asynchronous active-high reset
+    output [3:1] ena,
+    output [15:0] q);

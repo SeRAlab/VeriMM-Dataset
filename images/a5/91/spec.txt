@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+
+Implement a module for a 2-to-4 binary decoder. The decoder takes a 2-bit binary input and decodes it into a 4-bit one-hot output. The rst_n signal resets the output to 0.
+
+Module name:  
+    binary_decoder
+
+Input ports：
+    binary_in: 2-bit binary input signal.
+    rst_n: Reset signal (active low).
+
+Output ports：
+    one_hot_out: 4-bit one-hot output signal.
+
+Implementation:
+Declare the module binary_decoder with input and output ports as specified in the ports statement.
+Declare a 4-bit register to hold the one-hot output.
+Inside an always block, sensitive to the binary_in signal and the negative edge of the rst_n signal, implement the logic for decoding.
+In the reset condition (~rst_n), set the one_hot_out register to 0. On any change of binary_in, set the corresponding bit in one_hot_out to 1 based on the value of binary_in.
+
+Give me the complete code.

@@ -1,0 +1,7 @@
+Design a circuit for a quad-phase demodulator that processes an input signal based on a local oscillator. The module features phase control through a state machine with three phases. In phase 0, the local oscillator increments its value. In phase 1, the module captures the current input and performs modulation by multiplying it with the local oscillator. In phase 2, it captures another input and performs modulation with the inverted local oscillator. The final output is calculated as the difference between the demodulated signals derived from both modulation operations, effectively decoding the original signal from the modulation process.
+module top_module(
+  input in,
+  input clk,
+  input reset,
+  output out
+);

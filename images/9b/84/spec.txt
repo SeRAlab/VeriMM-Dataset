@@ -1,0 +1,15 @@
+Design a module that implements four types of flip-flops: D, JK, T, and SR. The D flip-flop captures the input 'd' on the rising edge of the clock, with a reset option that clears the output to 0. The JK flip-flop toggles its output when both 'j' and 'k' are high, or it holds its state when both are low, also with a reset feature. The T flip-flop toggles its output on each clock cycle when 't' is asserted, similarly resettable. The SR flip-flop sets its output to 1 when 's' is high and 'r' is low, clears it to 0 when 'r' is high and 's' is low, and has a reset capability to zero the output. This module is suitable for use in digital systems requiring various types of memory elements.
+module top_module(
+  input clk,
+  input d,
+  input j,
+  input k,
+  input t,
+  input s,
+  input r,
+  input rst,
+  output reg q_d,
+  output reg q_jk,
+  output reg q_t,
+  output reg q_sr
+);

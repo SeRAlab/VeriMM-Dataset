@@ -1,0 +1,5 @@
+Design a circuit for infrared communication that decodes a signal into an 8-bit command. The module utilizes a state machine to process incoming IR signals by transitioning through states: IDLE, START_BIT, DATA_BIT, and STOP_BIT. It detects the start bit, captures each bit of data, and recognizes a stop condition to complete the decoding process. The output register stores the received 8-bit command once decoding is finalized. Timing parameters ensure accurate bit interpretation, allowing the module to handle data receptions reliably.
+module top_module(
+  input ir_signal,
+  output reg [7:0] command
+);

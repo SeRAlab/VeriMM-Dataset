@@ -1,0 +1,9 @@
+Design a 4-bit register with both synchronous and asynchronous control features. The register is clocked, and upon a positive edge of the clock, it can be reset to zero synchronously when the reset signal is low. It can also be set to all ones asynchronously when the set signal is high, regardless of the clock. Additionally, the register supports parallel loading of a 4-bit input when the load input is not zero. The module includes an inverted output that provides the bitwise negation of the register's current state.
+module top_module(
+  input clk, // clock input
+  input rst, // synchronous reset input
+  input set, // asynchronous set input
+  input [3:0] load, // parallel load input
+  output reg [3:0] Q, // 4-bit register output
+  output reg [3:0] Qn // inverted output
+);

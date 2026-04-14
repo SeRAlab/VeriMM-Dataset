@@ -1,0 +1,30 @@
+Please act as a professional verilog designer.
+    
+Implement a module to arbitrate between two SPI (Serial Peripheral Interface) master devices attempting to communicate with a shared SPI slave device. Its primary functions include:
+
+Arbitration: Deciding which master device (A or B) gets access to the SPI bus based on predefined conditions.
+Signal Routing: Forwarding the SPI signals (clock and MOSI Master Out Slave In) from the selected master to the slave, and controlling the chip select signals for each master to indicate bus ownership.
+Ownership Indication: Providing an output signal that indicates which master currently owns the SPI bus.
+
+This module plays a critical role in systems where multiple master devices need to share a single SPI bus to communicate with a slave device, ensuring that bus access is managed efficiently and without conflict.
+
+Module name:  
+	spiarbiter
+
+Input ports:
+	i_clk: Input clock signal. Type: input. The clock signal that synchronizes the operation of the arbiter.
+	i_cs_a_n, i_cs_b_n: Chip select signals for master A and B, respectively. Type: input. Active low signals that indicate a request to access the SPI bus by pulling them low.
+	i_ck_a, i_ck_b: SPI clock signals from master A and B, respectively. Type: input. These signals are used to clock data transmission when their respective master is granted bus access.
+	i_mosi_a, i_mosi_b: Master Out Slave In signals from master A and B, respectively. Type: input. These signals carry the data to be transmitted to the slave device from the active master.
+Output ports:
+	o_cs_a_n, o_cs_b_n: Chip select output signals for master A and B, respectively. Type: output wire. These signals indicate to the respective master devices whether they have been granted access to the SPI bus.
+	o_ck: Output SPI clock signal. Type: output wire. This signal is routed from the active master to the slave device.
+	o_mosi: Output MOSI signal. Type: output wire. This signal carries the data from the active master to the slave device.
+	o_grant: Bus grant signal. Type: output wire. Indicates which master currently owns the bus (active low for master B).
+
+
+Implementation:
+The RTL module presented is designed to arbitrate between two SPI (Serial Peripheral Interface) devices, referred to as Device A and Device B, attempting to communicate with a shared SPI master. The module ensures that at any given time, only one device is actively communicating with the master, thereby preventing data collision and ensuring the integrity of the communication channel. The arbitration logic is based on a simple priority scheme where Device A has priority over Device B in case both request access simultaneously.
+
+Give me the complete code.
+

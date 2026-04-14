@@ -1,0 +1,18 @@
+Design a memory interface module for a processor that facilitates the reading and writing of data from/to memory. The module takes inputs for control signals, data to be written, and addresses, and provides outputs that determine whether to write back a register and what data or address to use based on these control signals. Specifically, it implements functionality to select between ALU output and memory data for writing to a register, manage writing to memory, and generate the appropriate write data and address signals while passing control signals to the next stage in the processor.
+module top_module(
+    
+    RegWriteM,
+    MemtoRegM,
+    MemWriteM,
+    ALUDataM,
+    WriteDataM,
+    WriteRegM,
+    mem_data_i,
+    
+    RegWriteM_o,
+    WriteRegData,
+    WriteRegAddr,
+    mem_addr,
+    mem_we,
+    mem_wd
+);

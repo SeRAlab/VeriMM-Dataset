@@ -1,0 +1,5 @@
+Design a 3-to-1 multiplexer that takes a 9-bit input signal and outputs a 3-bit result. The output is determined based on the least significant 3 bits of the input (`doutb[2:0]`), which serve as the select lines. If the select value is `000`, the output is taken from bits `[8:6]` of the input; if `001`, it takes from bits `[5:3]`; if `010`, it selects bits `[2:0]`. For any other select value, the output defaults to `000`.
+module top_module(
+    input [8:0] doutb,
+    output reg [2:0] mux_out
+);

@@ -1,0 +1,8 @@
+Design a UART (Universal Asynchronous Receiver-Transmitter) receiver module that captures incoming serial data on the RX line. The module utilizes a state machine to sample the RX signal and assemble received bits into an 8-bit output when a low signal is detected, indicating the start of a transmission. It includes control signals such as "busy" to indicate when data reception is in progress, and it handles reset conditions to clear its internal registers. The module processes data through a 10-bit register for framing and ensures data validity by monitoring the RX line. Upon completion of receiving one byte, it outputs the data and resets for the next byte reception while managing sampling to accurately capture signal transitions.
+module top_module(
+  input clk,            
+  input rst,            
+  input RX,             
+  output reg busy,      
+  output reg [7:0] data 
+);

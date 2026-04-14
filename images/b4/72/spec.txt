@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+
+Create an 8-bit shift register with a parallel load capability.
+
+Module name:  
+    shift_reg      
+
+Input ports:
+    CLK: Input clock signal
+    RST: Reset signal
+    LOAD: Load signal
+    DATA_IN: 8-bit data input
+    SHIFT_IN: Serial input for shifting
+
+Output ports:
+    Q: 8-bit data output
+
+Implementation:
+The shift register should be able to load 8-bit data in parallel when the load signal is active. When the load signal is inactive, it should shift the data left on every positive edge of the clock, with the serial input SHIFT_IN being shifted into the least significant bit.
+
+Give me the complete code.
+
+module shift_reg (CLK, RST, LOAD, DATA_IN, SHIFT_IN, Q);
+input CLK, RST, LOAD;
+input [7:0] DATA_IN;
+input SHIFT_IN;
+output reg [7:0] Q;

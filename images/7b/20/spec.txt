@@ -1,0 +1,10 @@
+Design a memory write-back module that captures and outputs signals on the rising edge of the clock. It takes the ALU output, memory data, destination register address, and write-back control signals as inputs, then holds and provides these values as outputs. This module is essential for the write-back stage of a pipeline in a processor, facilitating the transfer of computed results and memory values to the appropriate registers based on control signals.
+module top_module(
+	input Clock,
+	input [31:0] saidaALU, dataMEM,
+	input [4:0] registradorDestinoData,
+	input [1:0] WB,
+	output reg [31:0]	saidaALUwb, saidaMEM,
+	output reg [4:0] saidaDestinoData,
+	output reg [1:0] regWB
+);

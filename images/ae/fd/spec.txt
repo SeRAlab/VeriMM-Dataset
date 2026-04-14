@@ -1,0 +1,7 @@
+Design a dual-output signal processing module that captures incoming 8-bit data from an external source and stores it in a 16-bit register across two clock cycles. The module uses a counter to track whether the data being captured is on the first or second cycle, setting the `valid_o` signal high when both 8-bit segments are acquired, indicating that valid 16-bit data is ready. Additionally, the `done_o` output reflects the status of an external completion signal, `out_done`, on the rising edge of the clock. This module is suited for applications requiring sequential data retrieval and validation from a stream of inputs.
+module top_module(
+   
+   data_o, valid_o, done_o,
+   
+   clk, rst, out_valid, out_done, out_data
+   );

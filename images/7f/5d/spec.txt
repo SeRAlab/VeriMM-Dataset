@@ -1,0 +1,17 @@
+Develop a General Purpose Input/Output (GPIO) module that interfaces with a bus for read and write operations. This module allows external devices to communicate with an internal array of registers, which control the state of GPIO pins. It features a 4-register array for LED control, where the state can be modified via write requests on the bus, and a read operation retrieves either the LED states or the current GPIO input status. The module acknowledges bus requests and manages responses according to read/write operations, ensuring proper reset functionality and enabling asynchronous data exchange with external devices.
+module top_module(
+	input [0:0] clk_i
+	, input [0:0] rst_i
+	
+	, input  [0:0] 	bus_req
+	, input  [0:0] 	bus_we
+	, input  [31:0] bus_addr
+	, input  [3:0] 	bus_be
+	, input  [31:0] bus_wdata
+	, output [0:0] 	bus_ack
+	, output reg [0:0] 	bus_resp
+	, output reg [31:0]	bus_rdata
+
+	, input  [15:0]	gpio_bi
+	, output [15:0]	gpio_bo
+);

@@ -1,0 +1,11 @@
+Design a pipeline register for the Instruction Fetch (IF) to Instruction Decode (ID) stage in a processor. This module captures the instruction and program counter (PC) values upon the rising edge of the clock, while handling control signals for stalling and flushing. When the flush signal is activated, the module resets the stored instruction output and updates the PC output. If there is no stall or memory stall, it stores the incoming instruction and PC values; otherwise, it holds the previous values. This functionality is crucial for maintaining data integrity and flow in pipelined architecture during various execution scenarios.
+module top_module(
+    clk_i,
+    instr_i,
+    stall_i,
+    flush_i,
+    PC_i,
+    MemStall_i,
+    IF_ID_o,
+    PC_o
+);

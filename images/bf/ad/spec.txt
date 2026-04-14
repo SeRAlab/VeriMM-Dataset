@@ -1,0 +1,5 @@
+Design a control unit that manages a three-cycle process based on an enable signal, clock, and reset. The module features an output signal, enable_DP, which activates after two cycles when the enable input is asserted, transitioning it to HIGH, and then resets to LOW otherwise. The internal state, represented by a 3-bit counter, increments with each clock cycle when enable is HIGH and wraps back to the beginning after reaching the specified end cycle. A reset condition clears the counter and ensures the output remains disabled.
+module top_module(
+  output reg	enable_DP,
+  input		enable, clk, rst
+);

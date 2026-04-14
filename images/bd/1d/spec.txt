@@ -1,0 +1,11 @@
+Design a synchronous FIFO buffer capable of storing 16 bytes of data, with an 8-bit data width. The module features read and write control signals allowing data input and output while providing status flags indicating whether the buffer is empty or full. The buffer operates under a clock signal and resets to its initial state upon receiving a reset signal, ensuring robust management of concurrent data transactions while preventing overflow and underflow conditions.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] data_in,
+    input write,
+    output reg [7:0] data_out,  // Changed from wire to reg
+    input read,
+    output empty,
+    output full
+);

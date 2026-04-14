@@ -1,0 +1,8 @@
+Design an 8-bit arithmetic and logic unit (ALU) that performs two operations based on the value of the `alu_op` control signal. When `alu_op` is 0, the module outputs the sum of the two 8-bit inputs `i0` and `i1`. When `alu_op` is 1, it performs a left shift operation on `i0` by the number of positions specified by the value of `i1`. The operations are synchronized with the rising edge of the clock signal.
+module top_module(
+    input clk,
+    input [7:0] i0,
+    input [7:0] i1,
+    input alu_op,
+    output reg [7:0] o
+);

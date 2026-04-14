@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform accumulation and conditional output formatting of input signals, primarily in the context of audio or signal processing applications. Its primary functions include:
+
+Accumulation: It accumulates input signals over time, allowing for the summation of sequential data points, which is a common requirement in digital signal processing, especially in audio applications.
+Conditional Formatting: Based on the accumulated value's range, it conditionally formats the output to either pass through the accumulated value (if within a certain range) or to saturate at maximum or minimum values. This is crucial for preventing overflow and underflow in fixed-point arithmetic operations, maintaining signal integrity.
+
+Module name:  
+	jt51_sum_op
+
+Input ports:
+	clk (input): The clock signal driving the module's operation. It is essential for synchronizing the accumulation and output formatting processes.
+	zero (input): A control signal that, when asserted (1), initializes the accumulation process or sets the conditions for output formatting based on the en_ch signal.
+	en_ch (input): An enable signal that, when high (1), allows the module to accumulate the op_out input or to initialize the sum based on the zero signal state.
+	op_out (input, signed [13:0]): The operand output, a 14bit signed input signal representing the data to be accumulated or processed.
+Output ports:
+	out (output reg, signed [15:0]): The output signal, a 16bit signed value that represents the accumulated sum formatted according to the module's internal logic.
+
+
+Implementation:
+The jt51_sum_op module is designed to perform a summation operation on a series of signed 14-bit inputs (op_out), accumulating the result into a signed 16-bit output (out). The module operates synchronously with a clock signal (clk) and incorporates control signals for resetting the accumulator (zero) and enabling the addition of new inputs (en_ch). The core functionality is encapsulated within a clock-triggered always block, ensuring that operations are performed in a sequential manner, in line with the rising edge of the clock.
+
+Give me the complete code.
+

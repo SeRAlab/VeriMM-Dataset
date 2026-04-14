@@ -1,0 +1,10 @@
+Develop a circuit featuring an 8-bit shift register with parallel loading capabilities and a 2-bit comparator. The module allows the loading of an 8-bit input when the load signal is high; otherwise, it performs a right shift by one bit on the stored data. The 2-bit comparator compares two 2-bit inputs and produces output based on the comparison result: when the first input is greater, the output includes the contents of the shift register; when the first input is less, the output concatenates a registered value with the shift register data. The design effectively combines both shifting and comparison functionalities into a single modular unit.
+module top_module(
+    input clk,
+    input load,
+    input [7:0] data_in,
+    input [1:0] in_0,
+    input [1:0] in_1,
+    output reg [7:0] data_out,  // Changed from wire to reg
+    output reg [1:0] out
+);

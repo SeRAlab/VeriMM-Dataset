@@ -1,0 +1,28 @@
+Design a two-way multiplexer for data, addresses, and control signals used in a memory interface. The module takes a selection input to decide which of the two sets of inputs (address, data, and control signals) to output for memory operations. Specifically, it outputs either Read and Write addresses, Data to and from memory, and Read and Write enables based on the value of the selection signal, thereby allowing flexible access to two different memory resources.
+module top_module(
+	input		Select,
+	
+	input [9:0]		ReadAddressIn0,
+	input [9:0]		ReadAddressIn1,
+	output[9:0]		ReadAddressOut,
+	
+	input [9:0]		WriteAddressIn0,
+	input [9:0]		WriteAddressIn1,
+	output[9:0]		WriteAddressOut,
+	
+	input [35:0]	DataToMemoryIn0,
+	input [35:0]	DataToMemoryIn1,
+	output[35:0]	DataToMemoryOut,
+	
+	input [35:0]	DataFromMemoryIn0,
+	input [35:0]	DataFromMemoryIn1,
+	output[35:0]	DataFromMemoryOut,
+	
+	input			ReadEnable0,
+	input			ReadEnable1,
+	output			ReadEnable,
+	
+	input			WriteEnable0,
+	input			WriteEnable1,
+	output			WriteEnable
+	);

@@ -1,0 +1,26 @@
+Please act as a professional verilog designer.
+    
+Implement a module to calculate a 5-bit Cyclic Redundancy Check (CRC) value based on an 8-bit input data stream. This module plays a crucial role in error-detection mechanisms within digital communication systems or storage devices, where ensuring data integrity is paramount. The module supports the initiation of a new CRC calculation or the continuation of an ongoing calculation, allowing for flexibility in processing data chunks of varying lengths. It also provides a mechanism to reset the CRC calculation process and indicates when it is ready to accept new data or when a calculation is complete.
+
+Module name:  
+	updateCRC5
+
+Input ports:
+	rstCRC (1bit): A reset input specific to the CRC calculation. When asserted (1), it initializes the CRC calculation process.
+	CRCEn (1bit): Enables the CRC calculation when asserted (1). The module starts processing the input data upon this signal's assertion.
+	CRC5_8BitIn (1bit): Determines the length of the input data for the CRC calculation. When high (1), it indicates an 8bit input; otherwise, a shorter length is assumed.
+	dataIn (8bit): The input data on which the CRC is to be calculated. The module processes this data based on the CRC5_8BitIn signal.
+	clk (1bit): The clock signal driving the module's operation. All state transitions occur on the rising edge of this clock.
+	rst (1bit): A global reset signal. When asserted (1), it initializes the module, including the CRC calculation process and readiness indication.
+Output ports:
+	CRCResult (5bit): The output CRC value resulting from the calculation process. This value is updated upon the completion of a CRC calculation cycle.
+	ready (1bit): Indicates the module's readiness to accept new data for CRC calculation. It is high (1) when the module is ready to start a new calculation or has completed the current calculation.
+
+
+Implementation:
+The Verilog module updateCRC5 is designed to calculate a 5-bit CRC (Cyclic Redundancy Check) based on an 8-bit input data stream. The module operates synchronously with a clock signal (clk) and supports reset functionality through two inputs: a general reset (rst) and a CRC-specific reset (rstCRC). The module can be enabled to start the CRC calculation via the CRCEn signal and can process either an 8-bit or a 3-bit input based on the CRC5_8BitIn signal. The core functionality is encapsulated within a clocked always block, ensuring that the operations are performed in sync with the rising edge of the clock.
+Upon reset (rst or rstCRC being high), the module initializes the CRC result to 5'h1F, indicates it's ready for new data by setting ready high, and prepares internal control signals for a new operation. When not in reset, the module checks if it's not currently updating the CRC (doUpdateCRC is low) and if a new CRC calculation is requested (CRCEn is high). If so, it captures the input data (dataIn), determines the loop end based on the input data size (CRC5_8BitIn), and initiates the CRC update process by setting doUpdateCRC high and ready low.
+The CRC calculation iterates over each bit of the input data, starting from the least significant bit. For each bit, it conditionally updates the CRC result based on the XOR of the current bit of the input data and the least significant bit of the current CRC result. If the XOR result is 1, the CRC result is shifted right by one bit and XORed with a predefined polynomial (5'h14); otherwise, it is simply shifted right. This process repeats until all bits specified by loopEnd have been processed, at which point the module signals completion by setting ready high and doUpdateCRC low, and reinitializes control variables for the next operation.
+
+Give me the complete code.
+

@@ -1,0 +1,9 @@
+Design a simple vending machine controller that operates based on user inputs and internal state transitions. The module uses a finite state machine with three states: IDLE, SELECTING, and DISPENSING. In the IDLE state, the machine waits for a coin input; upon receiving a coin, it transitions to the SELECTING state, where it indicates selection readiness. If the coin input is no longer detected, it moves to the DISPENSING state, where it activates a dispense signal while displaying the dispensing status. After dispensing, it returns to the IDLE state. The display signal provides visual feedback about the machine's current state to the user.
+module top_module(
+  input clk,
+  input reset,
+  input coin,
+  output reg [1:0] display,
+  output reg product_select,
+  output reg dispense
+);

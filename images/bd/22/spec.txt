@@ -1,0 +1,10 @@
+Design a status monitoring circuit for a slave device that tracks connection states and detects resume events. The module takes a two-bit connection state input, a signal indicating a resume event, a clock, and a reset signal. On a clock edge, if the reset is active, it initializes the outputs: the reset event signal is cleared, the output connection state reflects the input, and the resume internal signal is reset. If the connection state changes between clock cycles, the reset event output is asserted. Additionally, it sets the resume internal signal if a resume event is detected and it was not previously asserted. This functionality is essential for managing and signaling state transitions in response to connection status changes and resuming operations.
+module top_module(
+  input [1:0] connectStateIn,
+  input resumeDetectedIn,
+  input clk,
+  input rst,
+  output reg resetEventOut,
+  output reg [1:0] connectStateOut,
+  output reg resumeIntOut
+);

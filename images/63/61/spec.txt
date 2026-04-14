@@ -1,0 +1,7 @@
+Design a baud rate generator that produces a serial clock output used for UART communication. The module takes a clock input and a reset signal, along with a configurable baud rate. It counts using the system clock and adjusts the output clock frequency to match the specified baud rate. When the restart signal is active, the counter resets to zero, and the module calculates the necessary increments based on the clock frequency and desired baud rate, producing a toggling serial clock output (ser_clk) that can be used to synchronize serial data transmission.
+module top_module(
+  input wire clk,
+  input wire resetq,
+  input wire [31:0] baud,
+  input wire restart,
+  output wire ser_clk);

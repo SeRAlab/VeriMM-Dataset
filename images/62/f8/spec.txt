@@ -1,0 +1,9 @@
+Design a position counter module that increments or decrements a value based on control signals. The module receives a clock, reset, max limit, and enable signals, along with up and down controls to determine the counting direction. When enabled, if the up signal is active and the current count is less than the maximum, the count increases by one; if the down signal is active and the current count is greater than zero, the count decreases by one. The counter resets to zero when the reset signal is asserted. The output is an 8-bit value representing the current count.
+module top_module(
+	input 				clk,
+	input 				reset,
+	input			[7:0]	max,
+	input					up,
+	input					down,
+	input					en,
+	output reg 	[7:0]	q);

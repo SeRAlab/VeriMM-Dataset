@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a 12-bit gray code counter with an active-low synchronous reset.
+
+Module name:  
+    gray_counter_12               
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low synchronous reset signal to initialize the counter.
+Output port:
+    Q: 12-bit register representing the current gray code value.
+
+Implementation:
+On every rising edge of the clock signal (clk), the counter value is incremented, and then converted to gray code.
+If the reset signal (rst_n) is low, indicating a reset condition, the counter value (Q) is synchronously reset to 12'b0.
+
+Give me the complete code.
+
+module gray_counter_12(
+   input                clk,
+   input                rst_n,
+ 
+   output reg [11:0]    Q  
+);

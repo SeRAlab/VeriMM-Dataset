@@ -1,0 +1,12 @@
+Design a FIFO (First In, First Out) queue with a depth of 8 entries, capable of accepting 32-bit data words for enqueuing and dequeuing operations. The module includes control signals to indicate readiness for data input and output, handling conditions when the queue is full or empty. The FIFO maintains pointers for both writing and reading, along with a count of the current number of entries, ensuring proper data flow based on the provided clock signal and an active low reset. When enqueuing, data is written to memory, and when dequeuing is enabled, the data at the front is made available for output.
+module top_module(
+    input CLK,
+    input nRST,
+    input in_enq__ENA,
+    input [31:0] in_enq_v,
+    output in_enq__RDY,
+    input out_deq__ENA,
+    output out_deq__RDY,
+    output reg [31:0] out_first,  // Change from wire to reg
+    output out_first__RDY
+);

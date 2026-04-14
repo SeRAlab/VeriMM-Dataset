@@ -1,0 +1,11 @@
+Design a dual-port RAM module that allows simultaneous read and write operations. The module has a 40-bit wide data input and output with a 5-bit address space, accommodating up to 32 entries. It features two separate clocks for read and write operations: when the read clock (rdclock) edge triggers, it outputs the data stored at the address specified by the rdaddress, and if the reset signal is asserted, it initializes the output to zero. Conversely, on the rising edge of the write clock (wrclock), if the write enable (wren) is active, it updates the memory array at the wraddress with the provided data input.
+module top_module(
+  input [39:0] data,
+  input [4:0] rdaddress,
+  input rdclock,
+  input [4:0] wraddress,
+  input wrclock,
+  input wren,
+  input reset,
+  output [39:0] q
+);

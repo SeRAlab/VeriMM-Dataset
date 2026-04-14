@@ -1,0 +1,21 @@
+Design a memory arbiter that manages read and write operations between a SRAM and various request sources. The module takes in signals for data input and output, control inputs for read and write requests, and an address for accessing memory. It determines whether to forward write data or memory data based on the active request, controls write enable signals for SRAM, and outputs the appropriate data alongside acknowledgement signals. This architecture facilitates communication between a SRAM memory and external devices, ensuring that read and write requests are correctly prioritized and executed.
+module top_module(
+    input clk,
+    input rst,
+    input [31:0] sram_din,
+    input [31:0] mdin,
+    input [31:0] wdin,
+    input sram_re,
+    input mwe,
+    input mreq,
+    input wwe,
+    input wreq,
+    input [SSRAM_HADR:0] sram_adr,
+    input [SSRAM_HADR:0] madr,
+    input [SSRAM_HADR:0] wadr,
+    output reg [31:0] sram_dout,
+    output reg sram_we,
+    output reg mdout,
+    output reg [31:0] wdout,
+    output reg wack
+);

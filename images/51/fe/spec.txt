@@ -1,0 +1,9 @@
+Design a VGA synchronization controller that generates horizontal and vertical sync signals (HS and VS) for a VGA display. The module counts clock cycles to keep track of pixel positions in a raster scan display with horizontal counts ranging from 0 to 1343 and vertical counts from 0 to 805. It initializes the counters and sync signals upon reset, increments the pixel count in the horizontal direction, and manages transitions for the HS signal at specific counts (1047 and 1143) while handling the VS signal at vertical counts (770 and 772), effectively controlling the timing for displaying video output.
+module top_module(
+  input clk,                
+  input rst,
+  output reg HS,            
+  output reg VS,            
+  output reg [10:0] countX, 
+  output reg [9:0] countY   
+);

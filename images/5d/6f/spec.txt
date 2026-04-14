@@ -1,0 +1,9 @@
+Design a single-port track buffer memory module with 256 one-bit memory cells. The module allows data to be written to a memory location specified by the i_wr_ptr pointer when the i_wr_en signal is active. On each rising edge of the clock (i_clk), if a write operation is enabled, the input data (i_data) is stored in the specified memory location. The output (o_data) continuously provides the data stored at the memory location indicated by the i_rd_ptr pointer, facilitating read operations from the buffer.
+module top_module(
+input i_clk,
+input i_data,
+input [7:0] i_wr_ptr,
+input [7:0] i_rd_ptr,
+input i_wr_en,
+output o_data
+);

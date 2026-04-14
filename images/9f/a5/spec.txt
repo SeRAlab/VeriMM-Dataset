@@ -1,0 +1,12 @@
+Design a sequential logic circuit that computes a value based on input logarithmic parameters and a scaling factor upon receiving a start signal. The module takes in three 64-bit inputs—log_lambda_up, log_lambda_down, and K_over_S—to calculate their difference, scales the result, and outputs the lower 64 bits as v_ex. Additionally, it provides a constant write address and an enable signal (wren) for writing the result. The module operates synchronously, resetting all outputs when nrst is asserted and performing the calculations on the rising edge of the clock when start is high.
+module top_module(
+    input clk,
+    input nrst,
+    input start,
+    input [63:0] log_lambda_up,
+    input [63:0] log_lambda_down,
+    input [63:0] K_over_S,
+    output reg [63:0] v_ex,
+    output reg [12:0] wraddr,
+    output reg wren
+);

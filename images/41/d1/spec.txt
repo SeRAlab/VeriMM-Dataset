@@ -1,0 +1,11 @@
+Design a reset management circuit for a processor system that generates various reset signals based on external and internal conditions. This module monitors inputs such as external reset signals, auxiliary resets, and debug signals, as well as ensuring the Digital Clock Manager (DCM) is locked. Based on these conditions, it asserts the main reset signal (mb_reset), which in turn controls bus structure reset, peripheral reset, and interconnect reset outputs. The circuit operates synchronously with the slowest synchronization clock and ensures proper reset behavior across the system components, aiding in system integrity and state management during initialization and fault-handling scenarios.
+module top_module(aux_reset_in,
+     bus_struct_reset,
+     dcm_locked,
+     ext_reset_in,
+     interconnect_aresetn,
+     mb_debug_sys_rst,
+     mb_reset,
+     peripheral_aresetn,
+     peripheral_reset,
+     slowest_sync_clk);

@@ -1,0 +1,12 @@
+Design a circuit that functions as a binary-coded decimal (BCD) converter for an 8-bit input count. When the 'calculate' signal is high, the module processes the count to convert it into BCD digits, updating the outputs for hundreds, tens, and units places, represented by the 'centenas', 'decenas', and 'unidades' registers, respectively. Additionally, it generates carry flags (C, De, U) to indicate whether any of the BCD digits exceed their maximum acceptable values. The circuit is clock-driven, resetting the outputs to zero when 'calculate' is low.
+module top_module(
+    input clk,
+    input [7:0] count,
+    input calculate,
+    output reg [3:0] centenas,
+    output reg [3:0] decenas,
+    output reg [3:0] unidades,
+    output reg C,
+    output reg De,
+    output reg U
+);

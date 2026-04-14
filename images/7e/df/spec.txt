@@ -1,0 +1,6 @@
+Design a module that performs address extension by combining a given 12-bit address with the upper 3 bits of a 16-bit program counter (PC) increment. The output is a 16-bit extended address where the least significant bit is always set to 0, the next 3 bits come from the upper bits of the PC increment, and the remaining 12 bits come directly from the input address.
+module top_module(
+    input [15:0] pc_inc,
+    input [11:0] address,
+    output reg [15:0] extended
+    );

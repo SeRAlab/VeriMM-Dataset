@@ -1,0 +1,11 @@
+Design a multi-functional circuit that serves as a 6-to-1 multiplexer with additional logic capabilities. It accepts a 3-bit select signal to choose between six 4-bit input data lines. If the selected input corresponds to the first three lines, the circuit performs an XOR operation with a constant value (0b1010) on the selected data and uses the result in a Binary Decision Diagram (BDD) function to produce a 2-bit output. If the selected input corresponds to the last three lines, it conducts an AND operation with another constant value (0b0101) before processing through the BDD function. The final output is derived based on the results of these operations.
+module top_module(
+    input [2:0] select,
+    input [3:0] data0,
+    input [3:0] data1,
+    input [3:0] data2,
+    input [3:0] data3,
+    input [3:0] data4,
+    input [3:0] data5,
+    output reg [3:0] out
+);

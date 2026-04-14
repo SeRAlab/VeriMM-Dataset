@@ -1,0 +1,8 @@
+Design a circuit that implements a 32-bit cyclic redundancy check (CRC) generator. This module calculates the CRC value based on the incoming data, utilizing a specific polynomial for error detection. The circuit is clock-driven and resets upon receiving a low signal on the 'rst_n' input. When valid data is input, the module updates the CRC value in accordance with the defined polynomial, handling reflected input and output if specified. The final CRC value is obtained by XORing the computed CRC with a given constant after potentially reflecting the output. This design enables effective error checking in digital communication systems.
+module top_module(
+  input clk,
+  input rst_n,
+  input data_in,
+  input data_valid,
+  output reg [31:0] crc_out
+);

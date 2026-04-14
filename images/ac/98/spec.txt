@@ -1,0 +1,7 @@
+Design a circuit for a battery-operated device that monitors voltage levels and manages a brown-out reset condition. The module activates a reset signal, `bor_reset`, when the input `voltage` drops below a specified `threshold`. It also releases the reset condition when the voltage rises back above the threshold after previously being low. Additionally, the module incorporates an external `reset` input that forces the `bor_reset` signal high when activated, ensuring the system can be manually reset regardless of voltage conditions. This functionality makes it suitable for protecting sensitive electronics from low voltage states.
+module top_module(
+  input voltage,
+  input reset,
+  input threshold,
+  output reg bor_reset
+);

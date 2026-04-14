@@ -1,0 +1,9 @@
+Design a signed 4-bit magnitude comparator that evaluates the relative sizes of two input values, A and B. The module outputs three signals: `equal`, `greater_than`, and `less_than`, indicating whether A equals, is greater than, or is less than B, respectively. The design employs a two-stage pipeline mechanism to minimize latency, updating the comparison results on each clock edge, thus enhancing performance and allowing for synchronous operation.
+module top_module(
+    input signed [3:0] A,
+    input signed [3:0] B,
+    input clk,                       // Added clk input
+    output equal,
+    output greater_than,
+    output less_than
+);

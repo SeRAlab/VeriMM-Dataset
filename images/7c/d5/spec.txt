@@ -1,0 +1,8 @@
+Design a circuit for an alpha blending operation that selects color data from either a foreground or background source based on the most significant bit of the foreground data. If the MSB of the foreground data is 1, it outputs the RGB components from the foreground; otherwise, it outputs the RGB components from the background. The resultant RGB values are 10 bits wide each for red, green, and blue, allowing for a rich color representation.
+module top_module(
+    input [29:0] background_data,
+    input [39:0] foreground_data,
+    output reg [9:0] new_red,
+    output reg [9:0] new_green,
+    output reg [9:0] new_blue
+);

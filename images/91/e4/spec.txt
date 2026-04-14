@@ -1,0 +1,10 @@
+Design a 3-to-1 multiplexer with additional asynchronous set and clear functionality. The module selects one of the three input signals (in0, in1, in2) based on a 2-bit selection signal (sel). If sel is '00', '01', or '10', the corresponding input is output; if sel is '11', the output is forced LOW. Additionally, the output can be set to HIGH via a positive edge on the set signal or cleared to LOW via a positive edge on the clr signal, allowing for controlled output states beyond standard multiplexer operation.
+module top_module(
+    input in0,
+    input in1,
+    input in2,
+    input [1:0] sel,
+    input clr,
+    input set,
+    output reg out
+);

@@ -1,0 +1,8 @@
+Design a D flip-flop with asynchronous reset capabilities. This module captures the value of the input D on the rising edge of the CLK signal and outputs it as Q. Additionally, it includes a reset functionality that sets Q to LOW when the VPWR signal becomes active and also during power-on reset conditions when VGND goes low, ensuring a known starting state.
+module top_module(
+    input D,
+    output reg Q,  // Changed to reg type to allow assignment in always block
+    input CLK,
+    input VPWR,
+    input VGND
+);

@@ -1,0 +1,14 @@
+Design a control unit's instruction fetch unit (IFU) that determines branch or jump actions based on various conditions. It takes inputs representing different jump conditions (like zero, not equal, carry, overflow, jump, branch, and return) and combines them with specific status bits from a processor status register (PSR). The module generates outputs to signal jumps (`ifu_jmp`), branches (`ifu_bsr`), and returns (`ifu_ret`) according to the provided conditions and status flags, specifically evaluating logical conditions for executing branch instructions in a control flow context.
+module top_module(
+	jze,
+	jne,
+	jcy,
+	jov,
+	jmp,
+	bsr,
+	ret,
+	psr,
+	ifu_jmp,
+	ifu_bsr,
+	ifu_ret
+);

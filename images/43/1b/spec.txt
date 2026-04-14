@@ -1,0 +1,13 @@
+Design a clock management module that generates various clock signals from a primary 24 MHz clock input. This module includes a clock inverter to produce a 24 MB clock output, a series of flip-flops with asynchronous reset functionality to manage state transitions, and an XOR gate to derive a carry output signal. It also implements a 2-bit counter that cycles through states to selectively enable outputs corresponding to different frequency signals: 6 MHz, 12 MHz, and a logic level indicator based on the counter value. Additionally, combinational logic is employed to generate a 1.5 MHz signal through an inverter, and an AND gate to provide an 8 MHz output based on the flip-flop states. The entire operation is synchronized to the 24 MHz input clock, ensuring consistent timing across all outputs.
+module top_module(
+    input CLK_24M,
+    input RESETP,
+    output CLK_24MB,
+    output LSPC_12M,
+    output LSPC_8M,
+    output LSPC_6M,
+    output LSPC_4M,
+    output LSPC_3M,
+    output LSPC_1_5M,
+    output Q53_CO
+);

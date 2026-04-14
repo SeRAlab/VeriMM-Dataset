@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+
+Implement a T flip-flop module with synchronous reset. The flip-flop should toggle the output value on the rising edge of the clock and reset to 0 when the reset signal is high.
+
+Module name:
+    t_ff_sync_reset
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    reset: Synchronous reset signal. Defined as 1 for reset and 0 for normal operation.
+    t: Toggle control input signal.
+
+Output ports:
+    q: Output representing the toggled value.
+
+Implementation:
+The module includes a register, q, which is updated in the always block, triggered on the positive edge of the clock signal (posedge clk).
+On reset, indicated by reset being high, q is cleared to 0.
+On every rising edge of the clock, if reset is not high and t is high, q toggles its value.
+
+Give me the complete code.

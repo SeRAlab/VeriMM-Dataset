@@ -1,0 +1,8 @@
+Design a finite state machine (FSM) that controls the enabling of an analog power output based on command inputs and output enable signals. The module operates with two states: POWER_OFF and POWER_ON. The analog power is enabled when OutputEnable is active and the current state is POWER_ON. The state transitions occur on the clock edge, with a reset option to return to the POWER_OFF state. The FSM transitions from POWER_OFF to POWER_ON upon receiving a specific command (Cmd equal to 80) when OutputEnable is active, and it transitions back to POWER_OFF when receiving another command (Cmd equal to 112) or when OutputEnable is deactivated.
+module top_module(
+    input Clock,
+    input Reset,
+    input [7:0] Cmd,
+    input OutputEnable,
+    output AnalogPowerEnable
+    );

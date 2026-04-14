@@ -1,0 +1,8 @@
+Design a synchronous counter that increments on each clock pulse and has a state machine that produces different waveform outputs based on the value of an 8-bit counter. The counter resets to zero on a reset signal and operates in three defined states: in state 0, it generates a repetitive waveform signal based on the most significant bit of the counter until it reaches 127, transitioning to state 1; in state 1, it generates a waveform based on the lower three bits of the counter shifted left by five positions until reaching 191, transitioning to state 2; in state 2, a different waveform pattern is generated until the counter reaches 255, at which point an interrupt event flag is set. The module incorporates a state register to manage waveform generation and control signal outputs effectively.
+module top_module(
+    input clk,
+    input reset,
+    output reg [7:0] counter,
+    output reg [7:0] waveforms,
+    output reg interrupt_event
+);

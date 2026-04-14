@@ -1,0 +1,7 @@
+Design a 16-bit wide RAM module with a capacity of 16K words. The module supports both read and write operations, where data is written into memory at a specified address when the write enable signal (we) is high on the rising edge of the clock. The data at the specified read address is continuously output to the output port q, allowing for data retrieval.
+module top_module(
+    output reg [15:0] q,
+    input [15:0] d,
+    input [12:0] write_address, read_address,
+    input we, clk
+);

@@ -1,0 +1,13 @@
+The module implements a 4-input NAND function, providing two outputs (Y1 and Y2) based on the combination of its four inputs (A, B, C, D). The design utilizes multiple 2-input NAND gates to generate the outputs, with an additional series of NAND gates utilized to incorporate ground references and enhance signal integrity. Specifically, Y1 is derived from a NAND operation involving the results of the inputs A and B, as well as C and D, while Y2 is generated from the combination of the NAND operations and ground signals. This circuit is designed to function within a specified power supply framework, reinforcing its capability for integration into larger digital systems requiring basic logic operations.
+module top_module(
+    Y1,
+    Y2,
+    A,
+    B,
+    C,
+    D,
+    VPWR,
+    VGND,
+    VPB,
+    VNB
+);

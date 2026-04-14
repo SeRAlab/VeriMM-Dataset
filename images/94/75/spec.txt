@@ -1,0 +1,10 @@
+Design a 4-bit arithmetic unit capable of performing addition or subtraction based on control signals. When the enable signal is active, the module either computes the sum of inputs A and B or the difference A minus B, depending on the value of the subtraction control signal. The module also detects overflow conditions for both operations, resetting the outputs to zero in response to a reset signal. This functionality allows for flexible arithmetic operations while ensuring proper overflow management.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input en,
+    input sub,
+    input rst,
+    output reg [3:0] sum,
+    output reg overflow
+);

@@ -1,0 +1,7 @@
+Design a parameterized synchronous memory module with read and write capabilities. This dual-port memory allows external data to be written to specific addresses indicated by the `addr` input when the corresponding write enable signals in `wen` are asserted. The output `dout` reflects the value stored at the specified address when the module is enabled (`en`). The memory organization is defined by address width (AW) and data width (DW), supporting multiple bytes depending on the width enabled by `WED`. The module is structured to ensure data is read at the rising edge of the clock, with simultaneous write operations being handled for each byte of the specified data input.
+module top_module(
+   
+   dout,
+   
+   clk, en, wen, addr, din
+   );

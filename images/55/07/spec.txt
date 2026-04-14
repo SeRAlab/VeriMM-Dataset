@@ -1,0 +1,9 @@
+Design a data packing module that takes an 8-bit input and combines it into a 32-bit output over four cycles. The module operates based on a clock signal and includes a synchronization signal to manage data validity. When valid data is received, the module shifts the incoming data into a register. Once four sets of data have been collected, it outputs the packed 32-bit value and asserts a valid output signal. This functionality is crucial for efficient data handling in systems where multiple smaller data streams need to be aggregated into a larger format.
+module top_module(
+	sysclk,
+	sync_n,
+	data_in,
+	data_in_valid,
+	data_out,
+	data_out_valid
+);

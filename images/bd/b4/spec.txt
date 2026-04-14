@@ -1,0 +1,8 @@
+Design a block memory module capable of reading and writing 10-bit wide data values based on a 13-bit address input. The module utilizes a clock signal to synchronize operations, allowing for data input when the write enable signal is active. The output data is updated on the rising edge of the clock. If a specific condition related to a separate output signal occurs, the module zeroes the most significant bit of the output, otherwise, it directly outputs the data from the memory. This effectively interfaces with a memory block, providing controlled read-write access to stored data.
+module top_module(
+    input clk,
+    input [12:0] addr,
+    input [9:0] din,
+    input we,
+    output reg [9:0] dout
+);

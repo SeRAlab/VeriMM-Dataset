@@ -1,0 +1,6 @@
+Design a flash analog-to-digital converter (ADC) that compares an input analog voltage, Vin, to a set of evenly spaced reference voltages and generates an 8-bit digital output, Dout. The module continuously evaluates the input voltage against these references, producing comparator outputs that reflect whether Vin exceeds those voltages. On each rising edge of the clock signal, Dout captures the state of the comparator outputs, effectively representing the quantized digital equivalent of the input voltage. This design is useful for rapidly converting analog signals into digital format for further processing in digital systems.
+module top_module(
+  input [9:0] Vin, // analog input voltage
+  input clk, // clock signal
+  output reg [7:0] Dout // digital output
+);

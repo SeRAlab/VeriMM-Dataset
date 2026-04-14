@@ -1,0 +1,11 @@
+Design a branch control logic module for a processor that determines the next program counter (PC) based on branching conditions. The module evaluates if a branch should be taken by checking the status of the NZP (Negative, Zero, Positive) flags against the instruction type (given by insn_11_9) and the control instruction signal. If the conditions for branching are met, the output next_pc will be set to the specified branch target; otherwise, it defaults to the incremented program counter value. Additionally, the output branch_taken indicates whether a branch was executed.
+module top_module(
+	input [15:0] branch_tgt,
+	input [15:0] pc_plus_one,
+	input [2:0] insn_11_9,
+	input [2:0]	nzp,
+	input		is_branch,
+	input		is_control_insn,
+	output [15:0] next_pc,
+	output		branch_taken
+    );

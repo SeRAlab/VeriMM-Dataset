@@ -1,0 +1,44 @@
+Design a memory management module that processes read and write operations based on control signals and clock events. The module takes inputs for a clock, reset, and operation flags like "nop" (no operation) and "lw" (load word). It uses an address derived from the lower 12 bits of the `cal_result` signal for accessing memory content. The `value` output will deliver either the `mem_content` on a load operation or the `cal_result` otherwise. Control signals are also outputted for write enable (`out_we`), read destination (`out_rd`), and the no operation state (`out_nop`), ensuring that memory operations are conducted appropriately while managing state transitions based on the input signals.
+module top_module(
+
+
+
+
+
+clock, reset,
+
+
+
+nop,
+
+
+mem_content,
+
+
+
+
+cal_result,   
+
+
+rd,
+
+we, wren,
+
+
+
+address_dmem,
+
+
+
+out_wren,
+
+out_nop,
+out_rd,
+out_we,
+
+value,
+
+lw
+
+
+);

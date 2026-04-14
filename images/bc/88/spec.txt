@@ -1,0 +1,15 @@
+Design a 4-bit up/down counter with integrated shift register functionality. The module allows for counting in both directions based on the `up_down` control signal and can load a specified value when `load_data` is non-zero. It features parallel loading of data into a shifting register, controlled by `parallel_load`, and provides left or right shifting of the current register contents based on `shift_left` and `shift_right` signals. The final output can be selected to either show the result of the XOR operation between the count and the shifted register or simply the shifted register itself, determined by the `select` signal.
+module top_module(
+    input clk,
+    input rst_n,
+    input up_down,
+    input [3:0] load_data,
+    input shift_left,
+    input shift_right,
+    input parallel_load,
+    input [3:0] data_in,
+    input select,
+    output reg [3:0] count,
+    output reg [3:0] shift_out,  // Changed this to reg
+    output reg [3:0] final_output // Changed this to reg
+);

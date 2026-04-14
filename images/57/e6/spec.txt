@@ -1,0 +1,12 @@
+Design a circuit implementing an 8-bit shift register with Gray code functionality. This module has capabilities to load an 8-bit input data, perform shifting operations, and generate outputs in Gray code format. It incorporates a counter that outputs Gray code corresponding to its current state. The design allows for a reset functionality, and based on a select condition, it can output either the Gray-coded value of the shift register or the Gray-coded value of the counter. The module utilizes clocking for operational synchronization, making it suitable for digital systems requiring Gray code generation and shift register operations.
+module top_module(
+    input CLK,
+    input RST,
+    input [7:0] data_in,
+    input shift,
+    input load,
+    input select,           // Added select input declaration
+    output reg [7:0] shift_reg_out,
+    output reg [7:0] counter_out,
+    output reg [7:0] final_output
+);

@@ -1,0 +1,11 @@
+Design a Verilog module that implements a 16-bit parallel load shift register with an asynchronous reset. The register should shift left on each positive clock edge when the shift signal is high. When the load signal is high, the register should load the parallel input data. The asynchronous reset (areset) should set the register to zero.
+
+module shift_register
+(
+    input clk,
+    input areset,
+    input shift,
+    input load,
+    input [15:0] data_in,
+    output reg [15:0] q
+);

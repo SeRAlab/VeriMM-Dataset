@@ -1,0 +1,13 @@
+Design a dual-port RAM module that allows simultaneous read and write operations on two separate addressable locations. Each port has its own clock and control signals, enabling independent access; when `ena` is asserted, data can be written to `addra` with `dina` if `wea` is also high, or read from `addra` into `douta`. Similarly, when `enb` is asserted, data can be written to or read from `addrb` into `doutb`. This configuration supports efficient, parallel data access in applications such as digital signal processing or video processing where multiple data streams are handled concurrently.
+module top_module(
+    input [13:0] addra,
+    input [13:0] addrb,
+    input [7:0] dina,
+    input [0:0] wea,
+    input ena,
+    input enb,
+    input clka,
+    input clkb,
+    output reg [7:0] douta,
+    output reg [7:0] doutb
+);

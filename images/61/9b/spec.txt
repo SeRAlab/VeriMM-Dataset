@@ -1,0 +1,8 @@
+Design a rounding decision circuit that generates a rounding flag based on specific combinations of input signals. The module takes a clock signal, a 2-bit data input, a 2-bit rounding type input, and a sign indicator as inputs. It evaluates these inputs through a combinational logic statement, asserting the output rounding flag when particular bit patterns appear in the concatenation of the sign, rounding type, and data inputs. If the combination matches any of the defined cases for rounding, the flag is set high; otherwise, it remains low.
+module top_module(
+    input wire clk,
+    input wire [1:0] Data_i,
+    input wire [1:0] Round_Type_i,
+    input wire Sign_Result_i,
+    output reg Round_Flag_o
+    );

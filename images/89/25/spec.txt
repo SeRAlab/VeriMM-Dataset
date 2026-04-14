@@ -1,0 +1,12 @@
+Design a FIFO (First-In, First-Out) buffer capable of storing up to 16 entries. The buffer includes a write clock input (wr_clk) to synchronize data writes and an enable signal (wr_en) to facilitate write operations. It utilizes two pointers: a write pointer (wr_ptr) for tracking the location of the most recent entry and a read pointer (rd_ptr) for managing data retrieval. The output flags include a 'full' indicator to show when the buffer is at capacity and an 'E' signal that tracks when the buffer is empty. The design features reset conditions (rst_d2 and rst_full_gen_i) to initialize or clear the pointers and status flags, ensuring proper operation during resets. The buffer's memory is implemented using a RAM array to store elements as they are written and read.
+module top_module(
+        input wr_clk,
+        input wr_en,
+        input rst_d2,
+        input rst_full_gen_i,
+        input [4:0] v1_reg,
+        input [3:0] v1_reg_0,
+        input [0:0] I1,
+        output reg full,
+        output reg [0:0] E
+    );

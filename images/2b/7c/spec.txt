@@ -1,0 +1,8 @@
+
+Design a WiFi module controller in Verilog that manages the connection states of the WiFi module. The module should have the following states: IDLE, CONNECTING, CONNECTED, DISCONNECTED. The module transitions between states based on the input signals: `start`, `connected`, and `disconnect`. The next state logic is as follows:
+- IDLE: If `start` is high, go to CONNECTING.
+- CONNECTING: If `connected` is high, go to CONNECTED. If `disconnect` is high, stay in CONNECTING.
+- CONNECTED: If `disconnect` is high, go to DISCONNECTED.
+- DISCONNECTED: If `start` is high, go to CONNECTING.
+
+The output should indicate the current state of the WiFi module.

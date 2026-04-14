@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+
+Design a 2-to-4 binary decoder with an enable signal. The decoder should produce a one-hot output based on the 2-bit input when the enable signal is high. If the enable signal is low, the output should be 0.
+
+Module name:
+    decoder_2to4
+
+Input ports:
+    enable: Enable signal.
+    binary_in: 2-bit binary input.
+
+Output ports:
+    one_hot_out: 4-bit one-hot output.
+
+Implementation:
+The module uses an always block triggered by changes in the enable signal or the binary input. If the enable signal is high, the output is set to a one-hot value based on the binary input. If the enable signal is low, the output is set to 0.
+
+Give me the complete code.
+
+module decoder_2to4(
+    input wire enable,
+    input wire [1:0] binary_in,
+    output reg [3:0] one_hot_out
+    );

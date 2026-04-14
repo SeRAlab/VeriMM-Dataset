@@ -1,0 +1,6 @@
+Design a circuit that controls the dimming level of lights based on ambient light sensor (ALS) input. The module takes a 12-bit ALS input and a 2-bit user interface (UI) input to determine the output dimming level. If the ALS value is below a predefined low threshold (1000), the circuit sets the dimming level to 75%. Conversely, if the ALS value exceeds a high threshold (2000), the lights are turned off. For ALS values within the threshold range, the dimming level is set according to the UI input. The output is a 2-bit signal representing the light's dimming level.
+module top_module(
+  input [11:0] als,
+  input [1:0] ui,
+  output [1:0] dl
+);

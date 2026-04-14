@@ -1,0 +1,7 @@
+Design a digital potentiometer that adjusts output resistance based on an input value. The module takes a n-bit wide input signal, `din`, which is loaded into a register on the rising edge of the clock when the enable signal, `en`, is active. The output, `dout`, reflects the computed resistance, which is determined by the value stored in the shift register; specifically, if the input is zero, the resistance is zero, otherwise, the resistance corresponds to a power of two derived from the stored value (shifted appropriately). This functionality allows for precise control of resistance values based on digital input.
+module top_module(
+  input [n-1:0] din,
+  input clk,
+  input en,
+  output [n-1:0] dout
+);

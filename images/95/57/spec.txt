@@ -1,0 +1,8 @@
+Design a multiply-accumulate (MAC) module that receives two 16-bit inputs, A and B, and generates a 36-bit output C. Upon detecting the start of a frame signal (sof), it initializes the accumulation by multiplying A and B and storing the result in an accumulator. Subsequently, during each clock cycle, if sof is not active, the module continues to add the product of A and B to the accumulator, ultimately updating C to hold the accumulated value left-shifted by 4 bits. This module is suitable for applications requiring multiple inputs to be processed and accumulated in real-time.
+module top_module(
+    input clk, 
+    input sof, 
+    input [15:0] A, 
+    input [15:0] B, 
+    output reg [35:0] C
+);

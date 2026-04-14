@@ -1,0 +1,8 @@
+Design a 4-bit shift register with selectable load and reset functionalities. On a positive edge of the clock, if the reset signal is activated, the output will clear to zero. If the load signal is asserted, the register will take the input data and store it in the output. Otherwise, it will perform a circular shift operation, where the most significant bit shifts to the least significant position while the remaining bits shift to the left.
+module top_module(
+  input clk,
+  input reset,
+  input load,
+  input [3:0] data_in,
+  output reg [3:0] shift_out
+);

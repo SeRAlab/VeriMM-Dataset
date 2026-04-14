@@ -1,0 +1,10 @@
+Design a flow control module that manages the storage and state of data packets, represented as 175-bit flits. It features a clock (clk) input for synchronous operation and a reset (rst) input to initialize or clear the storage. The module captures incoming flits when the valid signal (v_d_flits_m) is asserted and the current state (d_m_cstate) is inactive. It will also reset the stored flits and state if either the reset signal is active or a memory access has been completed. The current state transitions to active when valid flits are received and resets to inactive when the stored flits are cleared. Ultimately, this module outputs the stored flits while also indicating its active state through `d_m_cstate`. 
+module top_module(
+    input clk,
+    input rst,
+    input mem_done_access,
+    input v_d_flits_m,
+    input [174:0] d_flits_m,
+    output reg d_m_cstate,
+    output reg [174:0] d_m_areg_flits
+);

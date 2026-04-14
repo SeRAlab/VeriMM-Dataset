@@ -1,0 +1,9 @@
+The module implements a memory switch that routes a 12-bit gray input value to two different outputs based on the frame count signal. It takes a 12-bit input (`iGray`), a frame count signal (`iFrameCount`), and a data valid signal (`iDVAL`), and produces two outputs (`oGray1` and `oGray2`), which reflect the input gray value depending on the state of the frame count. When `iFrameCount` is high, `oGray1` receives the gray input while `oGray2` is unused. Conversely, when `iFrameCount` is low, the roles reverse, allowing `oGray2` to receive the gray input. The module also outputs a valid data signal `oDVAL1` or `oDVAL2` depending on the state of `iFrameCount`, enabling data valid indication. This design serves as a simple dual-path switch for gray data, facilitating frame-based switching logic in a broader digital system.
+module top_module(iGray,
+						iFrameCount,
+						iDVAL,
+						oGray1,
+						oGray2,
+						oDVAL1,
+						oDVAL2
+						);

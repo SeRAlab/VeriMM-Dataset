@@ -1,0 +1,9 @@
+Design a clock divider module that generates multiple clock signals from a single input clock. The module includes a clear input to reset states. It produces a divided clock output `dclk` at a frequency determined by the input clock divided by 2, and a segment clock signal `segclk` that toggles based on the 17th bit of a counter. Additionally, it creates two output clocks, `clk_player` and `clk_moving_obs`, which are enabled at specific intervals (every 50 million and 250 million cycles of the input clock, respectively). These outputs are useful for timing controls in applications such as a game or animation, where varying clock rates are needed for different components.
+module top_module(
+	input wire clk,		
+	input wire clr,		
+	output wire dclk,		
+	output wire segclk,	
+	output reg clk_player,
+	output reg clk_moving_obs
+	);

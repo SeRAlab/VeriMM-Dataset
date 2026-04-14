@@ -1,0 +1,8 @@
+Design a circuit that detects rising and falling edges of a single input signal `a`. On a rising edge (transition from LOW to HIGH), the output `rise` is set to HIGH for a clock cycle, and `down` remains LOW. Conversely, on a falling edge (transition from HIGH to LOW), the output `down` is set to HIGH, while `rise` is LOW. The circuit is reset by an active-low `rst_n` signal, which initializes the outputs and internal states. This design is implemented using a finite state machine with two main states to handle the edge detection and ensure proper signal processing.
+module top_module(
+  input               clk,
+  input               rst_n,
+  input               a,
+  output reg          rise,
+  output reg          down
+);

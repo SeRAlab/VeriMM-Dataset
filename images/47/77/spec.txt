@@ -1,0 +1,8 @@
+Design a synchronous counter with an adjustable data width, which increments its output on each rising edge of the clock (`clk`) when enabled (`en`). The counter resets to zero when the reset signal (`rst`) is low. It also includes a terminal count signal (`tc`) that asserts high when the counter reaches its maximum value, prompting it to reset to zero on the next increment. The maximum count value is determined by the parameter `DATA_WIDTH`, allowing flexibility in the size of the counter.
+module top_module(
+    input clk,
+    input rst,
+    input en,
+    output reg [DATA_WIDTH-1:0] data,
+    output wire tc
+);

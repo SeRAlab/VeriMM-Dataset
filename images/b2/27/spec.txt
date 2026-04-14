@@ -1,0 +1,4 @@
+Design a step execution add unit that performs an addition operation on two 8-bit input values (r0_dout and r1_dout) when enabled. The module generates a ready signal (rdy_) which indicates whether the addition operation is complete. Upon the rising edge of the clock and when the reset signal (rst_) is low, the module will reset its internal state. If the enable signal (ena_) is low, the module computes the sum and prepares it for writing to an output (r0_din) while keeping a write enable signal (r0_we_) active to indicate readiness for data storage. The design incorporates state management to control the flow of operations and ensure that the output is valid only when the addition is completed.
+module top_module(clk, rst_, ena_, rdy_,
+    r0_dout, r1_dout,
+    r0_din, r0_we_);

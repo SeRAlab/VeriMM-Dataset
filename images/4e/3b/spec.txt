@@ -1,0 +1,26 @@
+Design a control module for a memory copy operation that manages read and write commands based on a command request signal. The module operates in various states including idle, read preparation, reading, writing preparation, and writing, controlled synchronously with a clock and reset signal. It generates control signals for initiating read and write operations and handles command readiness and completion. Outputs include starting flags for read and write actions, addresses, and counts, while maintaining internal registers for source and destination addresses and length of data to be transferred. This module effectively coordinates data movement between memory locations in response to incoming commands.
+module top_module(
+	input			RST_N,
+	input			CLK,
+
+	input			CMD_REQ,
+	output			CMD_READY,
+	output			CMD_DONE,
+	input [31:0]	CMD_DST,
+	input [31:0]	CMD_SRC,
+	input [31:0]	CMD_LEN,
+
+	input			CMD_CLK,
+
+	output			WR_START,
+	output [31:0]	WR_ADRS,
+	output [31:0]	WR_COUNT,
+	input			WR_READY,
+
+	output			RD_START,
+	output [31:0]	RD_ADRS,
+	output [31:0]	RD_COUNT,
+	input			RD_READY,
+
+	output			FIFO_RST
+);

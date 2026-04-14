@@ -1,0 +1,4 @@
+Design a functional unit that decodes ALU control signals based on the operation specified by the `aluop` and `func` inputs. This module determines the appropriate ALU operation code (`alucn`) for various arithmetic and logic operations. When `aluop` is set to 00 or 01, it produces fixed ALU commands. If `aluop` is set to a default state, it further decodes the 6-bit `func` input to generate specific ALU operation codes: addition, subtraction, AND, OR, and comparison, facilitating control logic for an Arithmetic Logic Unit (ALU) in a processor design.
+module top_module( input [5:0] func,				
+					input [1:0] aluop,			
+					output reg[ 2:0] alucn);

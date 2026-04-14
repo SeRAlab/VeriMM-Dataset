@@ -1,0 +1,14 @@
+Design a time-keeping circuit with a 64-bit second counter and a 32-bit nanosecond counter capable of counting time intervals accurately. The module accepts external inputs to set (load) specific time values and control the counting process. When enabled, the nanosecond counter increments on each clock cycle, and it resets or loads new values upon receiving specified signals. Additionally, when a pulse-per-second (pps) signal is detected, the second counter increments, also responding to loading inputs. A clear input allows for resetting both counters. This functionality supports high-precision timing applications, ensuring accurate time representation in both seconds and nanoseconds.
+module top_module(
+input	[63:0]		sec_data_in,	
+input	[31:0]		nanosec_data_in,
+input				pps_in, 		
+input				clk_in, 		
+input				cnt_ena_in, 	
+input				pps_bypass_in,	
+input				clr_n_in, 		
+input				load_sec_in,	
+input				load_nanosec_in,
+output	[63:0]		sec_data_out,	
+output	[31:0]		nanosec_data_out
+);

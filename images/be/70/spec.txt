@@ -1,0 +1,7 @@
+Design a simple game controller circuit that utilizes a clock signal to manage game state transitions. When the run_game signal is asserted, the circuit increments a 3-bit counter on each clock cycle while maintaining a hold state. Once the counter reaches a value of five (binary 101), it activates the compute output for one clock cycle and resets the counter to zero. If run_game is deasserted, the counter resets, and both compute and hold signals are cleared. This design effectively monitors game timing and enables a compute condition based on a specific frequency of clock cycles.
+module top_module(
+    input clk,
+    input run_game,
+    output compute,
+	 output hold
+    );

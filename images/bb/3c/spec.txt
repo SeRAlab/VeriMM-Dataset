@@ -1,0 +1,17 @@
+Design a 32 x 2-bit register-based RAM module that allows simultaneous read and write operations. The memory contains four sets of input and output ports (DOA, DOB, DOC, DOD and DIA, DIB, DIC, DID), each associated with dedicated address lines (ADDRA, ADDRB, ADDRC, ADDRD). Data can be written to the memory locations at the rising edge of the write clock (WCLK) when the write enable (WE) signal is active. The output ports reflect either the written data or zero, depending on the write enable status, allowing for non-destructive reads while enabling masked writes. The initial values of the first four memory locations are set through parameters, providing a configurable start state.
+module top_module(
+    output reg [1:0] DOA,
+    output reg [1:0] DOB,
+    output reg [1:0] DOC,
+    output reg [1:0] DOD,
+    input [4:0] ADDRA,
+    input [4:0] ADDRB,
+    input [4:0] ADDRC,
+    input [4:0] ADDRD,
+    input [1:0] DIA,
+    input [1:0] DIB,
+    input [1:0] DIC,
+    input [1:0] DID,
+    input WCLK,
+    input WE
+);

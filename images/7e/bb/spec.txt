@@ -1,0 +1,12 @@
+Create a synchronous interface module that acts as a pass-through for data and control signals. It takes input clock and reset signals along with data and control inputs (DAT_I, WE_I, STB_I, CYC_I) and directly mirrors these signals to the corresponding output ports (DAT_O, WE_O, STB_O, CYC_O). The module also forwards the acknowledgment signal (ACK_I) to the output (ACK_O), effectively allowing for a simple handshaking mechanism in a larger system design.
+module top_module(
+   input 			CLK_I, RST_I,
+	input [31:0] 	DAT_I,					
+	input 			WE_I, STB_I, CYC_I,
+	output			ACK_O,
+	
+	output [31:0]	DAT_O,				
+	output			CYC_O, STB_O,
+	output 			WE_O,
+	input				ACK_I	
+    );

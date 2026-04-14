@@ -1,0 +1,32 @@
+Implement a Verilog module with the following description: Data cache module with bus.
+module top_module(
+		
+		input wire iCLOCK,
+		input wire inRESET,
+		
+		input wire iREMOVE,
+		
+		
+		input wire iRD_REQ,
+		output wire oRD_BUSY,		
+		input wire [31:0] iRD_ADDR,		
+		
+		output wire oRD_VALID,
+		output wire oRD_HIT,
+		input wire iRD_BUSY,		
+		output wire [31:0] oRD_DATA,
+		output wire [13:0] oRD_MMU_FLAGS,
+		
+		input wire iUP_REQ,
+		output wire oUP_BUSY,
+		input wire [1:0] iUP_ORDER,
+		input wire [3:0] iUP_MASK,
+		input wire [31:0] iUP_ADDR,				
+		input wire [31:0] iUP_DATA,
+		
+		input wire iWR_REQ,
+		output wire oWR_BUSY,
+		input wire [31:0] iWR_ADDR,	
+		input wire [511:0] iWR_DATA,
+		input wire [255:0] iWR_MMU_FLAGS
+	);

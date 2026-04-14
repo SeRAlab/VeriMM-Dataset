@@ -1,0 +1,8 @@
+Design a configurable audio codec that processes audio samples for encoding or decoding based on a control signal. The module takes in `n` audio samples and produces `m` output samples per clock cycle, supporting popular formats like MP3, AAC, or WMA. The `ctrl_in` signal determines whether the module operates in encoding mode, where it prepares the audio for storage or transmission, or in decoding mode, where it reconstructs audio for playback. The output control signal `ctrl_out` indicates the current mode of operation.
+module top_module(
+  input clk, // Added clk input signal
+  input [n-1:0] in,
+  input ctrl_in,
+  output reg [m-1:0] out, // Changed output to reg type
+  output reg ctrl_out // Changed output to reg type
+);

@@ -1,0 +1,6 @@
+Design a pipelined priority encoder that processes a 4-bit input to determine the position of the highest-priority active signal. The module accommodates multiple clock cycles, capturing the input in stages through three registers while updating the output position based on the relative priority of the input bits. The highest weight bit (bit 3) is checked first, followed by bit 2, and then bit 1, with the output reflecting the highest active bit's position in a 2-bit format. This design allows for reducing combinational logic delays by utilizing a pipeline, enabling higher operating frequencies.
+module top_module(
+    input clk,               // Added clk input
+    input [3:0] in,
+    output reg [1:0] pos
+);

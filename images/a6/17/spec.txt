@@ -1,0 +1,3 @@
+Design a forwarding unit for a pipeline processor to prevent data hazards. This module takes two source registers, regRd0 and regRd1, and a forwarding value regFw. It also receives indices for the source registers (regIndex0 and regIndex1) and an index for the write operation (regIndexWr) along with a write enable signal (wrEn). The outputs reg0 and reg1 provide the appropriate data: if the current register's index matches the index of the register being written to and a write operation is enabled, it forwards regFw; otherwise, it outputs the original value of regRd0 or regRd1, respectively.
+module top_module(reg0, reg1, regRd0, regRd1, regFw, regIndex0, regIndex1,
+                        regIndexWr, wrEn);

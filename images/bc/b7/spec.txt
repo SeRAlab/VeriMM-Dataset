@@ -1,0 +1,8 @@
+Design a communication block that facilitates data transmission and reception using a specified protocol (e.g., NEC or RC5). The module supports two modes of operation: transmit and receive. In transmit mode, it prepares data for transmission, while in receive mode, it captures incoming data and outputs it. The circuit utilizes registers to store both transmitted and received data, controlled by a clock signal and a reset input to ensure proper initialization and operation. The parameters n and m define the bit-width for the transmitted and received data, respectively.
+module top_module(
+  input [n-1:0] data_in,
+  input clk,
+  input rst,
+  input mode,
+  output reg [m-1:0] data_out // Change to reg type
+);

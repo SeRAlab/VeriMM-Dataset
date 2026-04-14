@@ -1,0 +1,9 @@
+Design a binary adder that performs the addition of two 8-bit inputs, A and B, on the rising edge of a clock signal, clk. This module initializes the output result and overflow flag to zero when the reset signal, rst, is inactive (low). The result is a 9-bit output to accommodate any potential carry from the addition. The overflow output is asserted to indicate that the result exceeds the maximum value representable by 8 bits (255).
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] A,
+    input [7:0] B,
+    output reg [8:0] result,
+    output reg overflow
+);

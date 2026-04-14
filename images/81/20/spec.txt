@@ -1,0 +1,12 @@
+Design a module that combines the functionality of a specific logic gate with additional power supply inputs. The module utilizes a sky130 standard cell named "a211o" for processing inputs A1, A2, B1, and C1 to produce an internal output X_sky130. Additionally, it features a combinational block that explicitly sets output X to HIGH only when A1, A2, and B1 are all HIGH while C1 is LOW; otherwise, X is set to LOW. The design is intended for integration into a larger digital circuit, leveraging both cell functionality and custom logic for flexible operation.
+module top_module(
+    input A1,
+    input A2,
+    input B1,
+    input C1,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB,
+    output reg X  // Change output to reg type to match assignment in always block
+);

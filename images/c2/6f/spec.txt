@@ -1,0 +1,18 @@
+
+
+You are tasked with designing a module that takes in two inputs, `data_in` and `mask_in`, and generates an output `data_out`. The module should be able to perform the following operations:
+- When `mask_in` is 0, `data_out` should be the same as `data_in`.
+- When `mask_in` is 1, the upper 4 bits of `data_in` should be set to 0, and the lower 4 bits of `data_in` should be set to the value of `data_in`'s upper 4 bits.
+- When `mask_in` is 2, the lower 4 bits of `data_in` should be set to 0, and the upper 4 bits of `data_in` should be set to the value of `data_in`'s lower 4 bits.
+- When `mask_in` is 3, `data_out` should be the bitwise AND of `data_in` and `0xF0`.
+
+Write a Verilog module that implements the above functionality. The module should have the following interface:
+
+```
+module data_mask(
+  input [7:0] data_in,
+  input [1:0] mask_in,
+  output reg [7:0] data_out
+);
+```
+

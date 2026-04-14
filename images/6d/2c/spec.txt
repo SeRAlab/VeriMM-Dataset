@@ -1,0 +1,8 @@
+Design a circuit that converts a 4-bit Gray code input to its equivalent binary representation. The module operates synchronously with a clock signal and includes a reset function to set the binary output to zero when asserted. When the enable signal is active, the conversion from Gray code to binary occurs through a combinatorial process where each bit of the binary output is derived by applying XOR operations to the appropriate Gray code bits and previously computed binary bits.
+module top_module(
+    input clk,
+    input rst,
+    input ena,
+    input [3:0] gray,
+    output reg [3:0] binary
+);

@@ -1,0 +1,17 @@
+Design a circuit that acts as an interface between an ADC (Analog-to-Digital Converter) source and a FIFO (First In, First Out) buffer. It captures the enable, valid, and data signals from the source ADC on a clock edge, and then outputs them to destination signals while also providing a status register that holds a constant identifier (RP_ID). The module thus serves to facilitate data flow from the source ADC to downstream components, ensuring synchronization and control over the data transfer process.
+module top_module(
+  clk,
+
+  // control ports
+  control,
+  status,
+
+  // FIFO interface
+  src_adc_enable,
+  src_adc_valid,
+  src_adc_data,
+
+  dst_adc_enable,
+  dst_adc_valid,
+  dst_adc_data
+);

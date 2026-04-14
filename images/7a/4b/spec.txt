@@ -1,0 +1,21 @@
+Design a pipeline register stage named EX_MEM, intended for a processor's execution pipeline. This module captures and holds various control signals and data during the execution phase. It includes inputs for a clock, reset, and flush signals, which manage the timing and state. The module stores a combination of control signals, the execution result, zero flag, data from memory, memory address, jump address, and an operand register. On the rising edge of the clock, if the reset or flush is triggered, it clears the stored values; otherwise, it updates the register with the incoming signals. This module effectively facilitates the transfer of data and control signals to the subsequent pipeline stage, ensuring smooth operation within a multi-stage instruction pipeline.
+module top_module(
+input Clk,
+input Reset,
+input Flush,
+input[4:0]ControlsIn,
+input[15:0]ResultIn,
+input ZeroIn,
+input[15:0]DataIn,
+input[15:0]MemAddrIn,
+input[15:0]JEQAddrIn,
+input[2:0]Reg1In,
+
+output[4:0]ControlsOut,
+output[15:0]ResultOut,
+output ZeroOut,
+output[15:0]DataOut,
+output[15:0]MemAddrOut,
+output[15:0]JEQAddrOut,
+output[2:0]Reg1Out
+);

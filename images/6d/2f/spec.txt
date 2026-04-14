@@ -1,0 +1,6 @@
+Design a flowing light circuit that controls an 8-bit LED output based on a clock signal and a reset input. The circuit utilizes a counter to track the clock cycles, and every fourth clock cycle, it shifts an active bit position to the left, producing a cascading light effect across the LEDs. When the counter reaches a maximum of 3 (in binary), the light shifts from the most significant bit (8'h80) back to the least significant bit (8'h01), allowing for a continuous loop of lighting the LEDs. The LED output resets to 8'h01 when the reset signal is activated.
+module top_module(
+    input clock,
+    input reset,
+    output [7 : 0] led
+    );

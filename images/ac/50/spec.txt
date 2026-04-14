@@ -1,0 +1,9 @@
+Design a simple digital vending machine that accepts coins and dispenses a product when a sufficient amount is inserted. The machine operates on a clock signal and can be reset. It accumulates the total value of inserted coins, checks if the total is at least 50 units, and upon requesting a dispense, outputs a product signal while calculating and providing change based on the excess amount. The change is given in increments of 1, 5, or 15 units, with no change given if the remaining balance is zero.
+module top_module(
+  input clk,
+  input rst,
+  input [1:0] coin,
+  input dispense,
+  output reg product,
+  output reg [1:0] change
+);

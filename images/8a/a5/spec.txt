@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+
+Implement the design of a 32-bit linear feedback shift register (LFSR) with a Galois configuration and an active-low reset signal. It utilizes a clock signal (clk), an enable signal (en), and a reset signal (rst_n).
+
+Module name:
+    lfsr_32bit
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for register reset and 1 for normal operation.
+    en: Enable signal that allows shifting when asserted.
+
+Output ports:
+    lfsr_out: LFSR output signal with a data width of 32 bits.
+
+Implementation:
+The module includes a shift register (shift_reg) to store the current state of the LFSR.
+On the positive edge of the clock signal, if the reset signal is active (low), the shift register is reset to a non-zero seed value.
+If the enable signal is active and the reset signal is inactive, the shift register shifts right by one bit and a new bit is generated based on the XOR of certain tap positions in the LFSR.
+The output lfsr_out is assigned the value of the shift register.
+
+Give me the complete code.

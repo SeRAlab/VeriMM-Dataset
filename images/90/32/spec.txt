@@ -1,0 +1,8 @@
+Design a finite state machine (FSM) that operates based on clock and reset signals, tracking a counter and transitioning through four states: A, S0, S1, and S2. The FSM enters state S0 when the input 's' is high from state A, subsequently transitioning to S1, then S2, and cycling back to S0. The counter increments by input 'w' when in states S1 and S2, resetting when in state A or on reset. The output 'z' is asserted true when the FSM is in state S0, with the counter exactly equal to 2. This design is suitable for applications requiring state-dependent counting and control logic.
+module top_module(
+    input clk,
+    input reset,   
+    input s,
+    input w,
+    output z
+);

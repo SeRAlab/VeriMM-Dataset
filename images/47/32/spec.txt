@@ -1,0 +1,10 @@
+Design a UART (Universal Asynchronous Receiver-Transmitter) transmitter module that serializes an 8-bit input data when enabled. The module manages several states: IDLE, START, DATA, and STOP, controlling the transmission of data bits over the 'tx' output line. It ensures that transmission starts with a LOW signal, sends each bit of the data at a defined interval, and finally indicates completion with the 'done' output once all data is transmitted. The 'busy' output signals whether the module is currently processing a transmission. This design effectively facilitates asynchronous serial communication by encoding data in a suitable format for transmission.
+module top_module(
+    input enable,
+    input clk_in,
+    input reset,
+    input wire [7:0] din,
+    output busy,
+    output reg done,
+    output reg tx
+);

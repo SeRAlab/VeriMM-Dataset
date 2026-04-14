@@ -1,0 +1,8 @@
+Design a 4-bit modulo 16 adder with reset functionality. The module takes two 4-bit inputs, `a` and `b`, and computes their sum modulo 16 on the positive edge of the clock, outputting the result as `out`. If the reset signal is asserted, the output is set to zero. This design ensures the output wraps around, remaining within the range of 0 to 15, effectively implementing a circular addition operation.
+module top_module(
+    input logic [3:0] a,
+    input logic [3:0] b,
+    input logic rst,
+    input logic clk,  // Added clk input
+    output logic [3:0] out
+);

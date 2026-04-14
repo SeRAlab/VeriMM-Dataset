@@ -1,0 +1,6 @@
+Design a signed and unsigned multiplier circuit that performs multiplication of two input operands (ax and ay) based on configurable widths and signedness. The module supports two operation modes: "M9x9" for multiplying two 9-bit inputs resulting in an 18-bit output, and "M18x18" for multiplying two 18-bit inputs. The output (resulta) can also be formatted as an unsigned value, ensuring compatibility with varying sizes by zero-padding or truncating as necessary. The module handles signed input scaling and also provides logic for managing the results of signed and unsigned calculations.
+module top_module(
+  input [ax_width-1:0] ax,
+  input [ay_scan_in_width-1:0] ay,
+  output reg [result_a_width-1:0] resulta  // Change to reg to hold the result
+);

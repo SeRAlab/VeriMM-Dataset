@@ -1,0 +1,12 @@
+Design a module for image processing that modifies framebuffer data based on the input object coordinates and the incoming image data. The module calculates the origin of an object in a 640-pixel wide frame using the provided OBJ_X and OBJ_Y inputs. It then checks if the current framebuffer address corresponds to one of eight positions based on the object's origin, generating an "overwrite" signal for each position. If any of these signals are active, it outputs a constant value (zero). Otherwise, it allows the input image data (IM_DATA) to be output as framebuffer data (FB_DATA). This effectively facilitates a simple mechanism for overlaying an object onto a predefined area in the framebuffer.
+module top_module(
+  input CLOCK_50,
+  input RESET,
+  
+  input [7:0] IM_DATA, 
+  input [9:0] OBJ_X, OBJ_Y,
+  input [18:0] FB_ADDR,
+  
+  output [7:0] FB_DATA
+  
+  );

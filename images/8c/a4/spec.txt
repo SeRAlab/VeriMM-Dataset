@@ -1,0 +1,7 @@
+Design a circuit that functions as a configurable divider. The module takes a clock signal and a select signal indicating the division factor, processing the input data accordingly. Based on the value of the 3-bit input 'i_TC', the circuit divides the 14-bit input 'i_DATA' by either 1, 2, 4, or 8, shifting the data right by 0, 1, 2, or 3 bits respectively. The output is a 14-bit wide result, stored in a register and updated on the rising edge of the clock.
+module top_module(
+    input i_CLK,
+    input [2:0] i_TC,
+    input [13:0] i_DATA,
+    output [13:0] o_OUT
+    );

@@ -1,0 +1,11 @@
+Design a sequential logic module that functions as a shifting register and a finite state machine. On the rising edge of the clock, if the asynchronous reset (areset) is asserted, both the shift register output (shift_q) and a secondary output (jc_q) are reset to zero. If load is active, the shift register is loaded with the input data. When enabled (ena), the shift register shifts left, inserting a zero on the least significant bit. The jc_q output updates through a series of bitwise XOR operations among its own bits, effectively implementing a linear feedback shift register (LFSR) behavior. Additionally, an output xor_output is generated as the XOR of specific bit pairs from shift_q and jc_q, producing an 8-bit output.
+module top_module(
+  input clk,
+  input areset,  // async active-high reset to zero
+  input load,
+  input ena,
+  input [3:0] data,
+  output reg [3:0] shift_q,
+  output reg [15:0] jc_q,
+  output reg [7:0] xor_output
+);

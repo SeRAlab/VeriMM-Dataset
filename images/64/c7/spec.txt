@@ -1,0 +1,8 @@
+Design a 32-bit shifter circuit that performs arithmetic or logical shifting based on control signals. The module takes a 32-bit input (`datain`) and a 5-bit shift amount (`shftamt`). When the `shift_ren` control signal is active, it right shifts the input; when the `shift_len` control signal is active, it left shifts the input, with the result assigned to the output (`data_out`). The output is initially set to zero before any shifting operation, ensuring a defined state when no shifts are requested.
+module top_module(
+input [31:0] datain,
+input [4:0] shftamt,
+output reg[31:0] data_out,
+input shift_len,
+input shift_ren
+);

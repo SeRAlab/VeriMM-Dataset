@@ -1,0 +1,7 @@
+Design a pipelined register module that operates on an 8-bit input. On a negative reset, the pipeline is initialized with the value 0x5A across all pipeline stages. With each rising edge of the clock, the input data is shifted through eight registers in series. The output `q` reflects the value stored in the last register, effectively creating a delay line where the input signal is held and propagated through the pipeline. This design is suitable for applications requiring staged data processing or synchronization with a clock signal.
+module top_module(
+    input clk,
+    input reset,
+    input [7:0] d,
+    output [7:0] q
+);

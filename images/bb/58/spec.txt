@@ -1,0 +1,19 @@
+Implement the Verilog module based on the following description.
+We want to create a module that:
+
+// (1) receives a 4-bit binary number,
+// (2) checks if the number is even,
+// (3) determines if the number is a perfect square,
+// (4) calculates the sum of the digits,
+// (5) provides a reset mechanism to reset all outputs.
+
+// The input binary number is available on the input signal 'binary_num'. The output 'is_even' should be set to 1 if the number is even and 0 otherwise. The perfect square determination should set the output 'is_perfect_square' to 1 if the number is a perfect square and 0 otherwise. The sum of the digits should be output on 'digit_sum[3:0]'. The reset signal is active high synchronous.
+
+module top_module(
+    input wire clk,
+    input wire reset,
+    input wire [3:0] binary_num,
+    output reg is_even,
+    output reg is_perfect_square,
+    output reg [3:0] digit_sum
+);

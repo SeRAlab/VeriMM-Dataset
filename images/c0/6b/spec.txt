@@ -1,0 +1,37 @@
+Please act as a professional verilog designer.
+    
+Implement a module to interface with SPI (Serial Peripheral Interface) devices. Its primary functions include:
+
+Serial Data Transmission and Reception: It manages the serial transmission of data to an SPI device through the MOSI (Master Out Slave In) line and receives data from the SPI device through the MISO (Master In Slave Out) line.
+Clock Generation: It generates the SCK (Serial Clock) signal required for SPI communication, with configurable polarity and phase.
+Slave Select Management: It controls the SS (Slave Select) signal to select the SPI device for communication.
+Data Framing and Control: It handles the framing of data packets, including loading transmit data and capturing received data, with support for LSB-first or MSB-first data ordering.
+Rate Control: It allows for configurable data transfer rates.
+FIFO Read/Write Enable Signals: It generates signals (`FRE` and `FWE`) to indicate the availability of data for reading from or writing to FIFO buffers.
+
+Module name:  
+	SPIxIF
+
+Input ports:
+	Rst: Reset signal (active high) for initializing the module.
+	Clk: System clock signal.
+	LSB: Selects LSBfirst (1) or MSBfirst (0) data ordering.
+	Mode: SPI mode selection (2 bits) to configure clock polarity and phase.
+	Rate: Data transfer rate control (3 bits).
+	DAV: Data Available signal indicating new data is ready for transmission.
+	TD: Transmit Data (9 bits) to be sent over SPI.
+	MISO: Master In Slave Out signal for receiving data from the SPI device.
+Output ports:
+	FRE: FIFO Read Enable signal indicating data is available to be read.
+	FWE: FIFO Write Enable signal indicating new data has been received and is ready to be written.
+	RD: Received Data (8 bits) from the SPI device.
+	SS: Slave Select signal for selecting the SPI device.
+	SCK: Serial Clock signal for SPI communication.
+	MOSI: Master Out Slave In signal for sending data to the SPI device.
+
+
+Implementation:
+This RTL module implements a Serial Peripheral Interface (SPI) communication protocol interface, which is widely used for short-distance communication primarily in embedded systems. The SPI protocol is characterized by its simplicity and efficiency, utilizing a master-slave architecture. This module appears to be designed to function either as a master or a slave device, given the presence of both input and output shift registers and the ability to control the clock (SCK) and slave select (SS) signals.
+
+Give me the complete code.
+

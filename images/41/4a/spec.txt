@@ -1,0 +1,8 @@
+Design a synchronous FIFO (First-In-First-Out) image filter that operates on digital data. The module takes a clock signal and input data, allows for controlled entry of new data using a chip enable (ce) signal, and supports address-based readout of the stored data. The implementation utilizes a shift register structure, where new data is shifted into the register on the rising edge of the clock when ce is high, while existing data is shifted forward, effectively managing up to 3 data samples. When ce is low, the oldest data is discarded, and the last position is filled with zero. The output provides access to data at a specified address, enabling retrieval of previously stored image processing data.
+module top_module(
+    clk,
+    data,
+    ce,
+    a,
+    shift,
+    q);

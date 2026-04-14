@@ -1,0 +1,15 @@
+Design a parallel I/O (PIO) interface module that enables data writing and reading operations based on chip select and address inputs. The module utilizes a single address line for selecting the data register and implements a write mechanism that updates the internal data storage on a clock edge, provided a valid chip select and active write signal. It simultaneously drives an output port with the internal data and produces read data from the selected register based on the address, effectively acting as a simple register file for an I/O operation within a larger system. When reset, the stored data is cleared, ensuring proper initialization of the module.
+module top_module(
+                       // inputs:
+                        address,
+                        chipselect,
+                        clk,
+                        reset_n,
+                        write_n,
+                        writedata,
+
+                       // outputs:
+                        out_port,
+                        readdata
+                     )
+;

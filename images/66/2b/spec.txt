@@ -1,0 +1,6 @@
+Implement an edge detector that identifies rising edges in an 8-bit input signal. The module samples the input on the rising edge of a clock, storing the current and previous states of the input. It utilizes XOR logic to determine where changes have occurred and ANDs the result with a mask to ensure only rising edges are detected. The output signifies the presence of any rising edges across the 8 input bits, providing an 8-bit wide signal that indicates which bits have transitioned from LOW to HIGH during the clock cycle.
+module top_module(
+    input clk,
+    input [7:0] in,
+    output [7:0] anyedge
+);

@@ -1,0 +1,11 @@
+Design a 4-bit barrel shifter capable of performing various shifting and rotating operations based on control signals. The module accepts a 4-bit input data and utilizes 2-bit control signals to determine the operation to perform: it can shift data left or right, or rotate it left or right. The resulting value is then captured on a clock edge and made available as the output. This functionality allows for efficient manipulation of bit positions within fixed-width data for applications such as digital signal processing or data serialization.
+module top_module(
+    input [3:0] data,
+    input [1:0] shift,
+    input shift_right,
+    input shift_left,
+    input rotate_right,
+    input rotate_left,
+    input clk,  // Added clk input declaration
+    output reg [3:0] result
+);

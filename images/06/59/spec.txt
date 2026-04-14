@@ -1,0 +1,7 @@
+
+Create a simple Ethernet MAC controller state machine with the following states: IDLE, RECEIVE, TRANSMIT. The controller should transition based on the signal inputs for packet reception and transmission. The state transitions are as follows:
+- From IDLE, if a packet is received (input signal `pkt_rx` is high), transition to RECEIVE.
+- From RECEIVE, if the packet is processed (input signal `pkt_done` is high), transition back to IDLE.
+- From RECEIVE, if a transmission is requested (input signal `pkt_tx` is high), transition to TRANSMIT.
+- From TRANSMIT, if the packet is transmitted (input signal `pkt_done` is high), transition back to IDLE.
+The output should be the current state encoded as a 2-bit value.

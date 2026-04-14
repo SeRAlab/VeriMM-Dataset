@@ -1,0 +1,9 @@
+Design a module that integrates a 2-to-1 multiplexer and a priority encoder. The multiplexer selects either input `a` or `b` based on the values of `sel_b1` and `sel_b2`, and assigns this selection to the least significant bits (LSBs) of the `final_output`. Meanwhile, the priority encoder examines an 8-bit input `in`, identifying the highest indexed bit that is set to 1, and encodes its position into the two most significant bits (MSBs) of `final_output`. This combined functionality allows the module to output a 4-bit result with multiplexed data and encoded priority information.
+module top_module(
+    input a,
+    input b,
+    input sel_b1,
+    input sel_b2,
+    input [7:0] in,
+    output reg [3:0] final_output
+);

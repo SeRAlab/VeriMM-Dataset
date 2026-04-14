@@ -1,0 +1,7 @@
+Design a circuit that implements a Booth multiplier for signed 4-bit integers A and B, producing an 8-bit signed output P. This module uses a sequential process controlled by a clock signal to perform the multiplication through iterative addition or subtraction based on the current state of the multiplicand. The circuit initializes the values of A and B on the rising edge of the clock and uses a count register to track the number of iterations, effectively managing the multiplicative logic while handling signed numbers correctly. The output is updated as the multiplication progresses.
+module top_module(
+    input clk,
+    input signed [3:0] A,
+    input signed [3:0] B,
+    output reg signed [7:0] P
+);

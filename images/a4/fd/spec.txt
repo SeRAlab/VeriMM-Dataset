@@ -1,0 +1,25 @@
+Please act as a professional Verilog designer.
+
+Implement an 8-bit shift register with parallel load capability.
+
+Module name:
+    shift_register_8bit
+
+Input ports:
+    D: 8-bit parallel input data
+    CLK: 1-bit clock input
+    LOAD: 1-bit load signal
+    SHIFT: 1-bit shift direction signal (0 for left, 1 for right)
+
+Output ports:
+    Q: 8-bit output signal
+
+Implementation:
+The output Q should be loaded with the value of D when LOAD is asserted. Otherwise, Q should shift left or right based on the value of the SHIFT signal on each rising edge of the CLK.
+
+Give me the complete code.
+
+module shift_register_8bit (D, CLK, LOAD, SHIFT, Q);
+input [7:0] D;
+input CLK, LOAD, SHIFT;
+output reg [7:0] Q;

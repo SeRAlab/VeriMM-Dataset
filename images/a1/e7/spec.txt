@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+
+Implement a module of a 12-bit synchronous up counter with enable signal and load capability. The counter increments by 1 only when the enable signal is high. The counter resets to 0 when the reset signal (rst) is active. If the load signal (load) is high, the counter loads the value from the input port (data) into the counter register.
+
+Module name:
+    up_counter_12_with_load
+Input ports:
+    rst: Reset signal (active high)
+    clk: Clock signal
+    enable: Signal to enable counting (1 for enable, 0 for disable)
+    load: Signal to load the counter with a specific value
+    data: 12-bit input value to load into the counter when load is high
+Output ports:
+    count: 12-bit output representing the current count value
+
+Implementation:
+If the reset signal is active (rst), the counter is reset to 0 by assigning the value 12'b000000000000 to the output register (count). If load is high, the counter is loaded with the value from the data input. If enable is high, the counter increments by 1 on each positive clock edge.
+
+Give me the complete code.

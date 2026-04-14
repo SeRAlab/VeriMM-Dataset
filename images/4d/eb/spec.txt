@@ -1,0 +1,10 @@
+Design a 16-bit barrel shifter circuit that performs left logical shifts based on a specified shift amount. The circuit has synchronous reset and load capabilities, allowing it to reset the output to zero or load new data into the shifting register when activated. When the load signal is not asserted and the enable (ena) signal is active, the module will shift the current data left by the number of bits defined by the 4-bit shift_amount input, effectively adjusting the contents of the output register (q) according to the shifting operation.
+module top_module(
+  input clk,
+  input reset,
+  input [15:0] data,
+  input [3:0] shift_amount,
+  input load,
+  input ena,
+  output reg [15:0] q
+);

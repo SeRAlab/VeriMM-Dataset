@@ -1,0 +1,10 @@
+module johnson_counter(
+    input clk,
+    input reset,
+    output reg [2:0] q);always @(posedge clk)
+    if (reset)
+        q <= 3'b000;
+    else
+        q <= {~q[0], q[2:1]};
+        
+endmodule

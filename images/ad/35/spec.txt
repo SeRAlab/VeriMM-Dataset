@@ -1,0 +1,55 @@
+Design a trigger control module that manages multiple asynchronous and synchronous sources based on various selection inputs. The module processes input signals like `src_async`, `src_sync`, and others, gating them based on control signals (`sel_async`, `sel_sync`, etc.) to create combined output signals. It outputs the resulting signals as `dst_tbm`, `dst_sync`, and `dst_dir`, which can be used in digital control systems. Additionally, it includes handling for direct synchronization and signal chaining to ensure proper control flow. This module functions effectively as a selective multiplexer for directing different control signals to appropriate destinations.
+module top_module(
+	input  clk,
+	input  sync,
+	input  reset,
+
+	
+	input sel_async,      
+	input sel_sync,       
+	input sel_single,     
+	input sel_gen,        
+	input sel_pg,         
+
+	input sel_dir_async,  
+	input sel_dir_sync,   
+	input sel_dir_single, 
+	input sel_dir_gen,    
+	input sel_dir_pg,     
+
+	input sel_chain,      
+	input sel_sync_out,   
+
+	
+	
+	
+	input  [4:0]src_async,  
+	input  [3:0]src_async_pos,
+
+	
+	input  [4:0]src_sync, 
+	input  src_sync_direct,
+
+	
+	input  [4:0]src_single, 
+
+	
+	input  [4:0]src_gen, 
+
+	
+	input  [4:0]src_pg, 
+
+
+	
+
+	
+	output [4:0]dst_tbm, 
+	output [3:0]dst_tbm_pos,
+	
+	
+	output [4:0]dst_sync, 
+	output dst_sync_direct,
+	
+	
+	output [4:0]dst_dir  
+);

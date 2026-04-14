@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform a specific combinational logic function known as an "AND-OR-INVERT" (AOI) operation. This particular module implements a triple 2-input AND gates followed by a 3-input OR gate and an inverter at the output. The primary function of this module to compute the negation of the OR operation among three pairs of AND operations. This type of logic gate combination is commonly used in digital circuits for its efficiency in terms of gate count and delay, especially in the implementation of complex logic functions and optimization of the logic gate levels in digital integrated circuits. It plays a crucial role in reducing power consumption and improving the speed of digital systems by minimizing the number of transitions and the overall gate count in the logic design.
+
+Module name:  
+	bw_u1_aoi222_1x
+
+Input ports:
+	a1, a2: These input ports are part of the first AND operation. Both are of type input. The AND operation is performed on these two inputs, contributing to one of the inputs of the OR operation.
+	b1, b2: These input ports are part of the second AND operation. Both are of type input. Similar to a1 and a2, the AND operation on these inputs contributes to another input of the OR operation.
+	c1, c2: These input ports are part of the third AND operation. Both are of type input. The result of the AND operation on these inputs serves as the final input to the OR operation.
+Output ports:
+	z: This is the single output port of the module. It is of type output and represents the result of the ANDORINVERT operation. The output is a logical negation of the OR operation among the three AND operations performed on the input pairs.
+
+
+Implementation:
+The provided RTL module, named bw_u1_aoi222_1x, implements a combinational logic circuit known as an "AND-OR-INVERT" (AOI) gate. Specifically, this module represents a triple 2-input AND gate followed by a 3-input OR gate, with the output of the OR gate being inverted. This type of logic gate is commonly used in digital circuits for its efficiency in terms of gate count and delay, especially in implementing complex logic functions and optimizing the overall area and power consumption of the circuit.
+The module does not contain any sequential logic elements (like flip-flops or latches), meaning its output is purely a function of its current inputs, with no internal state or memory of past inputs. The operation of the module can be described by the following logical equation:
+\[ z = 
+eg ((a1 \land a2) \lor (b1 \land b2) \lor (c1 \land c2)) \]
+Where:
+\land represents the logical AND operation.
+\lor represents the logical OR operation.
+
+eg represents the logical NOT operation.
+This equation succinctly captures the essence of the module's functionality: it computes the AND of each pair of inputs (a1 with a2, b1 with b2, and c1 with c2), then ORs these results together, and finally inverts the outcome to produce the output z.
+
+Give me the complete code.
+

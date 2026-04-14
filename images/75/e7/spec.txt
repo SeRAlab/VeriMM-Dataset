@@ -1,0 +1,15 @@
+Design a VGA output module that interfaces with RGB color data and synchronization signals to drive a VGA display. The module takes a 9-bit input representing the combined RGB values and two synchronization signals: horizontal and vertical sync. It generates individual output signals for each color channel (Red, Green, and Blue) in a 3-bit format, enabling or disabling them based on the active status derived from the sync signals. When both sync signals are asserted, the corresponding color bits are routed to the VGA output pins, allowing for proper pixel rendering on the display during its active period.
+module top_module(
+  input [8:0] RrrGggBbb,
+  input i_VGA_HSync,
+  input i_VGA_VSync,
+  output o_VGA_Red_0,
+  output o_VGA_Red_1,
+  output o_VGA_Red_2,
+  output o_VGA_Grn_0,
+  output o_VGA_Grn_1,
+  output o_VGA_Grn_2,
+  output o_VGA_Blu_0,
+  output o_VGA_Blu_1,
+  output o_VGA_Blu_2
+  );

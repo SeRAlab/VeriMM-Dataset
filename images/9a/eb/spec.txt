@@ -1,0 +1,9 @@
+Design a D flip-flop with asynchronous reset and enable functionality. The module captures the input state on the rising edge of the clock, allowing the output to be initialized to a specified value when reset is active. When the reset signal is low, the flip-flop's output is set to the initial value provided by the io_init input. If the reset is high and the io_enable signal is asserted, the flip-flop updates its output based on the input io_in; otherwise, it retains its current state. The module operates smoothly by ensuring that the output (io_out) reflects the stored state within the flip-flop, contingent on the control signals.
+module top_module(
+  input   clock,
+  input   reset,
+  input   io_in,
+  input   io_init,
+  output  io_out,
+  input   io_enable
+);

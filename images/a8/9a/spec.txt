@@ -1,0 +1,6 @@
+Implement a combinational logic circuit that determines the output Y2 based on the input values x and a 3-bit signal y. The output Y2 is assigned based on a case statement that defines specific conditions for each value of y. When y matches 3'b000, 3'b010, or 3'b101, Y2 mirrors the value of x; for 3'b001, Y2 is set to 0; for 3'b011 and 3'b100, Y2 is fixed at 1. For any other values of y, Y2 defaults to 0. This design can be useful in state machine implementations where the next state is influenced by current inputs.
+module top_module(
+  input x,
+  input [2:0] y,
+  output reg Y2 // Changed output to reg type
+);

@@ -1,0 +1,7 @@
+Design a floating-point adder that takes two 32-bit IEEE 754 formatted inputs and produces their sum as a 32-bit output, along with an overflow flag. The module extracts the sign, exponent, and mantissa from both input numbers, aligns the smaller exponent's mantissa by shifting it, and then adds or subtracts the mantissas based on their signs. The adder detects overflow conditions, adjusts the resulting exponent accordingly, normalizes the mantissa if needed, and outputs the final sum in the same IEEE 754 format.
+module top_module(
+    input [31:0] a,
+    input [31:0] b,
+    output [31:0] sum,
+    output overflow
+);

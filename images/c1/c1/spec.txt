@@ -1,0 +1,41 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as a crucial component in the pipeline architecture of a processor, specifically positioned between the Instruction Fetch (IF) stage and the Instruction Decode (ID) stage. Its primary functions include:
+
+Instruction and PC Handling: It transfers the instruction fetched from memory (IF_Instruction) and the corresponding program counter value (IF_PC and IF_PCAdd4) from the IF stage to the ID stage.
+Pipeline Control: It implements pipeline control mechanisms such as stalls (pausing the pipeline), flushes (clearing the pipeline of current instructions), and handling branch delay slots (indicating an instruction executes in the delay slot of a branch).
+Restart Mechanism: It provides a mechanism to restart execution from a specific program counter (PC) address in case of events like branch predictions gone wrong or exceptions.
+
+Module name:  
+	IFID_Stage
+
+Input ports:
+	clock: A clock signal (input) that triggers the sequential logic in the module.
+	reset: A reset signal (input) that initializes or resets the pipeline stage.
+	IF_Flush: A signal (input) indicating that the current instruction should be flushed from the pipeline.
+	IF_Stall: A signal (input) indicating that the IF stage should be stalled.
+	ID_Stall: A signal (input) indicating that the ID stage should be stalled.
+	IF_Instruction: A 32bit instruction (input) fetched from memory in the IF stage.
+	IF_PCAdd4: A 32bit value (input) representing the program counter (PC) value plus 4, indicating the address of the next sequential instruction.
+	IF_PC: A 32bit value (input) representing the current program counter (PC) value.
+	IF_IsBDS: A signal (input) indicating whether the current instruction is in the branch delay slot.
+Output ports:
+	ID_Instruction: A 32bit instruction (output) to be decoded in the ID stage.
+	ID_PCAdd4: A 32bit value (output) representing the PC value plus 4 for the instruction being decoded.
+	ID_RestartPC: A 32bit value (output) indicating the PC address from which to restart execution if needed.
+	ID_IsBDS: A signal (output) indicating whether the instruction being decoded is in the branch delay slot.
+	ID_IsFlushed: A signal (output) indicating whether the instruction being decoded was flushed.
+
+
+Implementation:
+The IFID_Stage module is a critical component of a pipelined processor architecture, specifically designed to manage the transition of data between the Instruction Fetch (IF) stage and the Instruction Decode (ID) stage. This module is responsible for handling instruction flow control, including stalls, flushes, and branch delay slots, ensuring correct instruction execution sequencing. The module operates on the rising edge of the clock signal and responds to reset conditions, instruction stalls, flushes, and branch delay slot indications.
+Sequential Logic:
+Clock-Driven Updates: The core of the module's functionality is encapsulated within an always @(posedge clock) block, indicating that updates to its outputs occur synchronously with the rising edge of the clock signal. This design choice is fundamental to maintaining the pipeline's timing and ensuring that data moves through the stages in a controlled manner.
+Reset Behavior: Upon a reset signal, the module clears its outputs (ID_Instruction, ID_PCAdd4, ID_RestartPC, ID_IsBDS, and ID_IsFlushed) to ensure a known starting state. This is crucial for initializing the pipeline or recovering from errors.
+Stall and Flush Handling: The module intelligently responds to stall and flush signals (IF_Stall, ID_Stall, IF_Flush) by either maintaining the current state (in the case of a stall) or clearing specific outputs (in the case of a flush). This functionality is essential for controlling the flow of instructions through the pipeline, particularly in scenarios where hazards or branch mispredictions occur.
+Branch Delay Slot and Restart PC: The module tracks whether the current instruction is in a branch delay slot (IF_IsBDS) and the program counter (PC) value to restart execution from (IF_PC). This information is used to manage branch execution and ensure correct program flow, especially in architectures that support branch delay slots.
+Combinational Logic:
+The decision-making regarding output updates is based on a combination of the current state (as indicated by the input signals) and the operational requirements (e.g., handling stalls and flushes). This involves conditional assignments that determine the next state of the module's outputs based on the inputs and the reset condition.
+
+Give me the complete code.
+

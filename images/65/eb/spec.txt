@@ -1,0 +1,8 @@
+Design a 16-bit barrel shifter that performs left shifting of input A based on a 4-bit SHIFT value. The output will be the result of shifting A left by the number of positions indicated by SHIFT, with the possibility of conditional retrieval of a right-shifted value from input B when the most significant bit of SHIFT is set. The module captures the shifted output on the positive edge of a clock signal, effectively enabling a flexible shifting operation.
+module top_module(
+    input [15:0] A,
+    input [15:0] B,
+    input [3:0] SHIFT,
+    input clk,           // Added clk input
+    output reg [15:0] S
+);

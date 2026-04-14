@@ -1,0 +1,7 @@
+Design a control module for a mesh access system that provides access management based on read and write conditions. When the input signal `mesh_fifo_read` is high and `mesh_write_out` is low, the output `mesh_access_out` is set to high to grant access. If either condition is not met, `mesh_access_out` is set low, thus preventing access. The module effectively acts as a state controller, ensuring that mesh access is permitted only under specific conditions.
+module top_module(
+    input mesh_fifo_read,
+    input fifo_read,
+    input mesh_write_out,
+    output reg mesh_access_out
+);

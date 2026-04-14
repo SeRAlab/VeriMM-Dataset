@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as a programmable countdown timer within a digital system. Its primary function to count down from a specified value to zero, upon which it signals completion through its output. This module can be utilized in various applications such as generating precise delays, controlling execution timing in digital circuits, or serving as a basic timer in more complex state machines. The ability to dynamically load the countdown value allows for flexible timing adjustments, making it suitable for systems requiring variable delay intervals.
+
+Module name:  
+	delay_counter
+
+Input ports:
+	clk (input): The clock input signal. This signal drives the operation of the counter, with the counter value being decremented on each rising edge of the clock.
+	reset (input): The reset input signal. This signal is intended to reset the internal state of the module, but it's not connected in the provided code, indicating a potential oversight or future functionality placeholder.
+	count (input, [counter_width1:0]): The initial count value. This bus allows for loading a specific countdown value into the counter. The width of this bus is parameterizable, allowing for flexibility in the range of countdown values.
+	load (input): The load signal. When asserted, this signal triggers the loading of the count value into the counter, initiating the countdown process.
+Output ports:
+	done (output): The done signal. This signal indicates the completion of the countdown, asserting when the counter reaches zero. It serves as a trigger for other components in the system that may rely on the timing provided by the delay_counter.
+
+
+Implementation:
+The RTL module presented, named delay_counter, is designed to function as a countdown timer that can be dynamically loaded with a specific count value and then decrements this value each clock cycle until it reaches zero, at which point it signals completion. The module is parameterized with a counter_width parameter, allowing for customization of the counter's bit width to suit various timing requirements. This flexibility makes the module versatile for different applications where timing and delays are critical.
+
+Give me the complete code.
+

@@ -1,0 +1,7 @@
+Design a Serial-In Parallel-Out (SIPO) shift register. This module captures a serial data input (i_SDI) and shifts it into an 8-bit register (i) on the rising edge of a derived clock signal (Y1), which is generated every 2^23 clock cycles based on a counter. The module also includes a reset functionality (i_RST) that loads the data into the shift register, shifting the contents left by one bit on each clock pulse, while the 8-bit output (o_LED) represents the current state of the shift register.
+module top_module(
+input i_SDI,
+input i_RST,
+input i_CLK,
+output  [7:0] o_LED
+    );

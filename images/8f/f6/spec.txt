@@ -1,0 +1,6 @@
+Design a circuit that functions as a signal level slicer. It takes a signed 18-bit input signal and a reference level, producing a 2-bit output based on the comparison between the input signal and the reference. The output indicates whether the input is above a specific threshold, within a defined positive range, within a defined negative range, or below both, thereby categorizing the input signal into four distinct states. This module operates on the rising edge of a clock signal, ensuring synchronized output changes.
+module top_module(
+	input clk,
+    input signed [17:0] slicer_in, ref_level,
+    output reg [1:0] slicer_out
+);

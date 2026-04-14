@@ -1,0 +1,9 @@
+Design a scratchpad memory module with 1024 locations, each 8 bits wide. This module operates synchronously on the rising edge of the clock. When enabled (`en`), it allows data output from the specified address (`addr`). If the write signal (`wr`) is high, it writes the input data (`din`) to the corresponding memory location. This design serves as a simple memory interface for temporary data storage and retrieval, suitable for applications where a small and efficient memory solution is needed.
+module top_module(
+  input clk,
+  input en,
+  input wr,
+  input [addr_width-1:0] addr,
+  input [width-1:0] din,
+  output reg [width-1:0] dout // Changed from wire to reg
+);

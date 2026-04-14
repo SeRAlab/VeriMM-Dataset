@@ -1,0 +1,11 @@
+Design a four-bit up/down counter with a shifting capability. The circuit counts up when the UP input is asserted and DOWN input is not active; it counts down when the DOWN input is active and UP is not. The counter can be reset to zero using the RST input. Additionally, when the SHIFT input is asserted, the current counter value is left-shifted by the number of positions specified in the four-bit input B, effectively allowing for both counting and shifting operations. The current counter state is output on the Q signal, while the shifted or non-shifted result is presented on the RESULT output.
+module top_module(
+    input CLK,
+    input UP,
+    input DOWN,
+    input SHIFT,
+    input RST,
+    input [3:0] B,
+    output reg [3:0] Q,
+    output reg [3:0] RESULT
+);

@@ -1,0 +1,7 @@
+
+Design a simple Bluetooth state machine that manages connection states. The Bluetooth module should have the following states: IDLE, CONNECTING, CONNECTED, and DISCONNECTED. The module should have inputs for a connect signal and a disconnect signal. The state transitions are as follows: 
+- From IDLE, on connect signal = 1, it goes to CONNECTING.
+- From CONNECTING, if the connection is successful, it goes to CONNECTED; otherwise, it goes back to IDLE if a disconnect signal is received.
+- From CONNECTED, on disconnect signal = 1, it goes to DISCONNECTED.
+- From DISCONNECTED, if connect signal = 1, it goes back to CONNECTING.
+- If in any state, if no signals are active, it stays in the current state.

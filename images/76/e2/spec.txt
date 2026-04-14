@@ -1,0 +1,10 @@
+Design a control-driven flip-flop with asynchronous reset and set capabilities. The circuit has inputs for data (D), clock (CLK), reset (RESET_B), set (SET_B), and a control signal (CTRL). On the rising edge of the clock or falling edge of CTRL, if CTRL is high, the flip-flop captures the data input D and produces outputs Q and Q_N, with Q_N as the complement of Q. Additionally, the flip-flop responds to asynchronous reset and set signals; RESET_B sets Q to 0 and Q_N to 1 when active low, while SET_B sets Q to 1 and Q_N to 0 when active low, allowing for flexible operation in digital applications.
+module top_module(
+    input CLK,
+    input D,
+    input RESET_B,
+    input SET_B,
+    input CTRL,
+    output reg Q,
+    output reg Q_N
+);

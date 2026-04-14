@@ -1,0 +1,5 @@
+Implement a 5-to-16 decoder that takes a 5-bit input and outputs a 16-bit value. The output value represents a binary-encoded number where the number of set bits corresponds to the decimal value of the input; for instance, if the input is 5'b0001, the output will be 16'b0000_0000_0000_0001, indicating that one bit (the least significant bit) is set. Each successive input value increases the number of leading ones in the output by one, effectively counting the number of active bits up to the input value. If the input exceeds the defined range (0 to 15), it defaults to a full set of bits (16'b1111_1111_1111_1111).
+module top_module(
+    input [4:0] num,
+    output reg [15:0] i
+    );

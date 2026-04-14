@@ -1,0 +1,6 @@
+Design a forwarding unit for a processor to handle data hazards. The module takes as input the instruction source register addresses and the destination register addresses from memory and write-back stages, along with signals indicating whether these registers are being written to. It generates two outputs, `forward_a` and `forward_b`, which indicate the source of the values that should be forwarded to the execution stage. Specifically, if a source register matches a register being written in memory, it outputs a forwarding signal of 1; if it matches a register in the write-back stage, it outputs a signal of 2. This mechanism helps prevent the use of stale data during instruction execution.
+module top_module(rs1_addr_ex, rs2_addr_ex,
+                      rd_addr_mem, reg_write_mem,
+                      rd_addr_wb, reg_write_wb,
+                      
+                      forward_a, forward_b);

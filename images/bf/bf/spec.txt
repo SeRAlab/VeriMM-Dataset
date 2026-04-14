@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform shift operations on binary data. It is a key component in arithmetic logic units (ALUs) and digital signal processing (DSP) systems, where efficient bit manipulation is crucial. The module can handle both left and right shifts, making it versatile for various applications. The ability to shift data efficiently is fundamental in operations such as multiplication, division, and data alignment in digital systems.
+
+Module name:  
+	alu_barrel_shifter
+
+Input ports:
+	x [SHIFTER_WIDTH  1 : 0]: The primary binary data input to be shifted. It is a vector with a width defined by the parameter SHIFTER_WIDTH.
+	y [SHIFTER_WIDTH  1 : 0]: The shift amount input, specifying how many positions the data in x should be shifted.
+	direction: A binary input that determines the shift direction. A value of 0 indicates a right shift, while a value of 1 indicates a left shift.
+Output ports:
+	z [SHIFTER_WIDTH  1 : 0]: The shifted output data. Its width matches that of the input x.
+	c: A carryout bit that captures the bit shifted out during the operation. It serves as an overflow indicator for certain applications.
+
+
+Implementation:
+The RTL module presented is designed to function as an Arithmetic Logic Unit (ALU) with a specific focus on barrel shifting capabilities. The module takes two 8-bit inputs, x and y, and based on the direction input, it either shifts x to the left or right by a number of positions specified by y. The result of this shift operation is outputted through z, and the carry-out of the shift operation is outputted through c. The module is parameterized with SHIFTER_WIDTH to allow for easy scaling of the input and output bit widths.
+
+Give me the complete code.
+

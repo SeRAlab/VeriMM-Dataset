@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that counts consecutive ones from a binary input signal. The module transitions between two states: IDLE and COUNTING. In the IDLE state, it waits for the first '1' in the data input to transition to the COUNTING state, where it increments the count output for each consecutive '1' detected. If a '0' is encountered while in the COUNTING state, the FSM returns to the IDLE state, preserving the count until reset. The operation is synchronized with the clock signal, and the count is reset to zero upon a reset signal.
+module top_module(
+  input clk,
+  input reset,
+  input data,
+  output reg count
+);

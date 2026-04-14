@@ -1,0 +1,8 @@
+Design a 3-bit shift register with load and shift capabilities. On the rising edge of the clock, if the load signal is high, input data_in is loaded into the first register (reg1), with subsequent registers (reg2, reg3) updated in order. If the load signal is low and the shift_left signal is high, the content of each register is shifted left, with reg3 retaining its value in reg3. The output data_out continuously provides the value of reg1, allowing for flexible data manipulation through loading and shifting operations.
+module top_module(
+    input clk,
+    input data_in,
+    input shift_left,
+    input load,
+    output reg [2:0] data_out
+);

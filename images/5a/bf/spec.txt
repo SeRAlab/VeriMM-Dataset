@@ -1,0 +1,11 @@
+Design a synchronous 1-read 1-write Byte-Enable Static Random Access Memory (SRAM) module. The circuit allows selective writing to individual bytes of a memory address when enabled, utilizing a clock signal for synchronized operations. It features a specified address space and data width, enabling byte-wise data input through a write enable signal and an address input. Additionally, it permits reading of data from specific memory addresses, providing the resulting data on the output line. The design incorporates parameters for address size and data size, catering to a configurable memory capacity of 512 bytes.
+module top_module(
+    input clk,
+    input write_en,
+    input [DATA_SZ_BYTES-1:0] write_bytes,
+    input [ADDR_SZ-1:0] write_addr,
+    input [(DATA_SZ_BYTES*8)-1:0] write_data,
+    input read_en,
+    input [ADDR_SZ-1:0] read_addr,
+    output [(DATA_SZ_BYTES*8)-1:0] read_data
+);

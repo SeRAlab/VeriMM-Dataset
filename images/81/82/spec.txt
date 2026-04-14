@@ -1,0 +1,9 @@
+Design a JTAG test access port (TAP) interface for programming and debugging purposes, specifically tailored for a Spartan-6 FPGA. The module outputs the test clock (tck) and test data input (tdi), while receiving test data output (tdo). It includes control signals for shifting (shift) and updating (update) circuit states, which are enabled based on the selection signal (sel). The implementation utilizes a BSCAN_SPARTAN6 block to manage JTAG operations such as capturing data, shifting in test data, and updating the state based on the provided reset signal.
+module top_module(
+    output tck,
+    output tdi,
+    input tdo,
+    output shift,
+    output update,
+    output reset
+);

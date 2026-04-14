@@ -1,0 +1,24 @@
+Please act as a professional Verilog designer.
+
+Implement a 2-bit priority encoder. The module takes a 4-bit input and encodes it into a 2-bit output, giving priority to the highest-order bit that is set.
+
+Module name:
+    priority_encoder
+
+Input ports:
+    in: 4-bit binary input.
+
+Output ports:
+    out: 2-bit encoded output.
+    valid: Indicates if there is a valid input.
+
+Implementation:
+The output out is defined as reg [1:0] out, and valid is defined as reg valid. Using the always block, out and valid are assigned based on the value of in using a priority-based if-else statement.
+
+Give me the complete code.
+
+module priority_encoder(in, out, valid);
+
+    input [3:0] in;
+    output [1:0] out;
+    output valid;

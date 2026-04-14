@@ -1,0 +1,19 @@
+Design a Verilog module for a Moore state machine with one input, one output, and four states. Use the following one-hot state encoding: M=4'b0001, N=4'b0010, O=4'b0100, P=4'b1000. Derive state transition and output logic equations by inspection assuming a one-hot encoding. Implement only the state transition logic and output logic (the combinational logic portion) for this state machine.
+
+The state machine has the following states and their corresponding outputs:
+1. state M (out = 1).
+2. state N (out = 0).
+3. state O (out = 1).
+4. state P (out = 0).
+
+State transitions:
+1. From state M: If in = 0, then transition to state N. If in = 1, then transition to state O.
+2. From state N: If in = 0, then transition to state P. If in = 1, then transition to state M.
+3. From state O: If in = 0, then transition to state M. If in = 1, then transition to state P.
+4. From state P: If in = 0, then transition to state O. If in = 1, then transition to state N.
+
+module moore_machine_18 (
+  input in,
+  input [3:0] state,
+  output reg [3:0] next_state,
+  output reg out);

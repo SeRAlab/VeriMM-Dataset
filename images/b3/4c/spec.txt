@@ -1,0 +1,9 @@
+Design a synchronous one-bit delay element with enable and reset functionality. The module takes a single input bit 'd', an enable signal 'en', a reset signal 'rst', and outputs the delayed value 'q'. It operates based on a clock input 'clk' and includes a clear signal 'clr'. When 'clr' or 'rst' is asserted, the output resets to LOW. If 'en' is active, the output takes the value of 'd' at the rising edge of the clock. This module can be utilized in applications requiring controlled signal timing or stabilization in digital circuits.
+module top_module(
+  input [(1 - 1):0] d,
+  input [(1 - 1):0] en,
+  input [(1 - 1):0] rst,
+  output [(1 - 1):0] q,
+  input clk,
+  input ce,
+  input clr);

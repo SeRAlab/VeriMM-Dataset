@@ -1,0 +1,11 @@
+Design a data reader module that monitors incoming data from a host. The module is activated by an enable signal; when enabled, it compares incoming data with an internal counter. If the incoming data does not match the expected value (the counter), it generates an error signal. The internal counter resets when the enable signal transitions from low to high, ensuring it tracks expected data correctly. The module also includes a reset functionality to clear state and errors.
+module top_module(
+    input           clk,
+    input           rst,
+
+    input           enable,
+    output  reg     error,
+
+    input           hd_read_from_host,
+    input   [31:0]  hd_data_from_host
+);

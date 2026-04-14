@@ -1,0 +1,7 @@
+Design a direction control module that determines the movement of an elevator based on input signals. The module takes a clock signal, an input representing button presses (bts), and the current floor (curFlr) as inputs. It produces an output, dir, indicating the elevator's direction of travel. The module first evaluates the button presses to derive the target floor (pbts) and, on each clock cycle, compares this target with the current floor to set the direction: if the target floor is above the current floor, the direction signal is set high, indicating an upward movement; otherwise, it indicates downward movement. The implementation uses combinational logic with a case statement to handle various combinations of button presses effectively.
+module top_module(
+input			clk,
+input	[3:0]	bts,
+input	[3:0]	curFlr,
+output			dir
+);

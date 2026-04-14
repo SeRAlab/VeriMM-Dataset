@@ -1,0 +1,19 @@
+Design a data transfer module for an ADC (Analog-to-Digital Converter) interface that operates synchronously with a clock input. The module receives control signals and data from a source ADC and transmits these signals, as well as the corresponding data, to a destination ADC. It includes overflow handling through the `src_adc_dovf` and `dst_adc_dovf` signals. The `status` output communicates a fixed RP_ID value, indicating the module’s identity, while enabling seamless data flow and synchronization between the source and destination components.
+module top_module(
+  clk,
+
+  
+  control,
+  status,
+
+  
+  src_adc_dwr,
+  src_adc_dsync,
+  src_adc_ddata,
+  src_adc_dovf,
+
+  dst_adc_dwr,
+  dst_adc_dsync,
+  dst_adc_ddata,
+  dst_adc_dovf
+);

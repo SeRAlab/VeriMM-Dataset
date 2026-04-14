@@ -1,0 +1,9 @@
+Design a sequential logic module that processes a 4-bit input along with two control signals (a and b) to compute a final output based on various logical operations. The module performs bitwise AND, OR, and XOR operations on pairs of the input bits, generating intermediate results. It combines these results with the output of an XOR gate defined by the control signals. The final output is updated on the rising edge of the clock signal and is reset to LOW when the reset signal is asserted. This design effectively integrates combinational logic with sequential behavior to produce a complex output based on the input state and control signals.
+module top_module(
+    input [3:0] in,
+    input a,
+    input b,
+    input clk,
+    input reset,
+    output reg final_out
+);

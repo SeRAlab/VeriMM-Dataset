@@ -1,0 +1,10 @@
+Design a module that processes the least significant bits (LSBs) of a register (Areg) with capabilities for both single and double precision formats in IEEE representation. The module selects between two sets of LSBs based on a selection signal, integrating inputs for overflow detection. It also computes a "sticky" bit through a logical OR operation on the LSBs, which indicates if any of the LSBs have been set during the computation. The output provides both the selected LSB and the computed sticky bit, effectively facilitating the handling of floating-point representation requirements in digital signal processing applications.
+module top_module(
+    AregSticky,
+    AregLSBSN,
+    AregLSBDB,
+    AregFPMSBP1,
+    SNnotDB,
+    TrueIEEEAregLSB,
+    StickyForSR1
+);

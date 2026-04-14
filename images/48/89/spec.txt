@@ -1,0 +1,8 @@
+Design an 8-bit arithmetic circuit capable of performing both addition and subtraction. The circuit takes two 8-bit inputs, `a` and `b`, a mode control signal where `mode = 0` selects addition and `mode = 1` selects subtraction, and produces an 8-bit output result. The operation alternates in staged execution; in the first stage, it computes both the sum and difference, in the second stage, it outputs the result based on the mode, and in the third stage, it resets the result to zero before returning to the initial stage for a new operation.
+module top_module(
+    input [7:0] a,
+    input [7:0] b,
+    input mode,
+    input clk,              // Added clk input
+    output reg [7:0] result
+);

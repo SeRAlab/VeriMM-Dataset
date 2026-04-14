@@ -1,0 +1,6 @@
+Design a SPI (Serial Peripheral Interface) slave module that communicates data in response to a clock signal (SCK) and chip select signal (CS). The module outputs a serial data bit (MISO) based on a 32-bit input value (sum), sending one bit at a time when CS is low. It utilizes a 5-bit counter (i) to track which bit to send, decrementing with each rising edge of SCK. The module resets its state and the counter when the reset signal (rst_n) is asserted or when the CS signal is active.
+module top_module(
+    input rst_n, sck, cs,
+    input [31:0] sum,
+    output reg miso
+);

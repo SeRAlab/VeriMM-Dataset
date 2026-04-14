@@ -1,0 +1,8 @@
+Design a circuit that integrates a synchronous shift register and a 4-digit binary-coded decimal (BCD) counter. The shift register is initialized to 0x5A and shifts in bits from the input on the rising edge of the clock, with a synchronous active-high reset capability. The BCD counter counts from 0 to 9 and generates specific enable signals to indicate certain counts, resetting back to 0 after reaching 9. The final output is obtained by adding the current values of the shift register and the BCD counter, effectively combining their functionalities for further processing or display.
+module top_module(
+    input clk,
+    input reset,   // Synchronous active-high reset
+    input [7:0] shift_reg_out, // Output from the shift register
+    output reg [3:1] ena, // Enable signals for the upper three digits of the BCD counter
+    output reg [7:0] final_output // Final output from the functional module
+);

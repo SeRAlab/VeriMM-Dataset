@@ -1,0 +1,7 @@
+Design a synchronous Johnson decade counter with an active-low asynchronous reset. The module features a 4-bit output that serves as a sum of two counters: a Johnson counter that increments on every clock cycle and a decade counter that increments only when the slowena control signal is active. The output, `q`, updates based on the sum of the Johnson and decade counters. Additionally, the design incorporates control logic to manage the counting behavior, allowing for the counting to be enabled or disabled with the slowena signal. Overall, this module implements a combined counting mechanism for tracking and displaying a summed value in binary form.
+module top_module(
+    input clk,
+    input reset,   // Asynchronous active-low reset
+    input slowena, // Control signal to enable/disable counting
+    output reg [3:0] q // 4-bit output in binary form
+);

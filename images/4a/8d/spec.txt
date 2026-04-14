@@ -1,0 +1,9 @@
+Design a character storage module that outputs an ASCII character when a load signal is activated. The module captures a 7-bit ASCII input and stores it in the output register "Char" upon receiving a rising edge of the "Clock" signal and when "LoadChar" is asserted. If "Reset" is activated, the module initializes "Char" to zero and sets the "New" output to indicate no new character has been loaded. The "New" output signifies whether a new character has been stored in "Char."
+module top_module(
+    input Clock,
+    input Reset,
+    input LoadChar,
+    input [6:0]Ascii,
+    output reg New,
+    output reg [6:0] Char
+);

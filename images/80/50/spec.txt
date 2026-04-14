@@ -1,0 +1,7 @@
+Design a memory protection block that manages access to a memory space with an 8-bit address (parameterized by `n`). This module allows read operations at all times while selectively permitting write operations based on defined protection rules. Specifically, it protects memory addresses ranging from 0xA0 to 0xAF and 0x30 to 0x3F, disallowing writes to these addresses. If the `we` (write enable) signal is asserted, writes are permitted only if the address is not within these protected ranges, thus ensuring that critical memory regions remain safe from unintended modifications.
+module top_module(
+  input [n-1:0] addr,
+  input we,
+  output rd,
+  output wr
+);

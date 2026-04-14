@@ -1,0 +1,9 @@
+Design a binary multiplier that performs the multiplication of two 3-bit inputs, 'multiplier' and 'multiplicand', triggered by a 'start' signal. The multiplication process is clock-driven, utilizing shift-and-add methodology, and generates a 6-bit output 'p' representing the product. The module also signals completion with a 'done' output after fully computing the product, with operation controlled via a state machine embedded in the always block responding to the clock's positive edge.
+module top_module(
+    input start,
+    input clk,
+    input [2:0] multiplier,
+    input [2:0] multiplicand,
+    output reg [5:0] p,
+    output reg done
+);

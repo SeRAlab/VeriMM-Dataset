@@ -1,0 +1,14 @@
+
+Design a data forwarding unit for a processor that takes as input the following signals:
+1. `src1`, `src2`: two source register identifiers (5 bits each).
+2. `dst1`, `dst2`: two destination register identifiers (5 bits each).
+3. `write_enable`: a signal to indicate whether a register write operation is enabled (1 bit).
+4. `data_in`: the data to be written to the destination register (32 bits).
+
+The forwarding unit should output a signal `forwardA` and `forwardB` that indicates whether data from the destination register should be forwarded to the source registers `src1` and `src2` respectively. The output should be 2 bits for each forward signal, indicating the source of the forwarded data:
+- 00: No forwarding
+- 01: Forward from the first destination
+- 10: Forward from the second destination
+- 11: Forward from both destinations (this case should be treated as invalid for simplicity).
+
+Forwarding should occur only if `write_enable` is asserted.

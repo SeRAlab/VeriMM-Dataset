@@ -1,0 +1,6 @@
+Design a 2-channel DMA controller that allows two devices to transfer data to/from memory. The controller should have two channels (channel_a and channel_b) with the following inputs: 
+- `request_a` and `request_b`: Signals indicating that channel A or B wants to transfer data.
+- `ack_a` and `ack_b`: Acknowledgment signals from the DMA controller for channels A and B.
+- `data_a` and `data_b`: Data to be transferred from channels A and B respectively.
+
+The output should be `mem_data` indicating the data being transferred to/from memory. The controller should prioritize channel A over channel B when both requests are active.

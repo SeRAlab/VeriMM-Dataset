@@ -1,0 +1,17 @@
+Design a state machine module for handling communication requests in a control system. The module operates based on a clock and reset signal, managing the internal state of request processing through a finite state machine with four states: NO_REQ, WAIT, W_ACK, and W_DATA. The module monitors incoming request signals and acknowledgment signals, coordinating data transfer from a slave device while maintaining output status through the 'req_stat' register and controlling the 'slave_out' signal based on the state transitions. This design provides structured communication management between a master and a slave in a reactive system, ensuring proper request handling and data synchronization.
+module top_module(
+	input clk,
+	input reset,
+	
+	input req, 
+	input slave_in, 
+	input c, 
+	
+	
+	
+	input ack_in, 
+	input req_sent,  
+	input data_read, 
+	output reg [1:0] req_stat, 
+	output reg slave_out
+    );

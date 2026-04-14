@@ -1,0 +1,9 @@
+Design a 16-bit shift and subtract divider module that computes the quotient and remainder of two 16-bit input values: a dividend and a divisor. The module operates synchronously with a clock and has a reset functionality that initializes its internal registers for dividend, divisor, quotient, and remainder. During each clock cycle, if not resetting, the algorithm performs bitwise shifts and subtraction in a loop, effectively implementing a division operation by repeatedly shifting the dividend left and adjusting the remainder and quotient based on the comparison with the divisor. The outputs for the quotient and remainder become valid once the division process completes, indicated by a count reaching 16.
+module top_module(
+    input clk,
+    input reset,
+    input [15:0] dividend,
+    input [15:0] divisor,
+    output reg [15:0] quotient,
+    output reg [15:0] remainder
+);

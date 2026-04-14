@@ -1,0 +1,8 @@
+Design a 4-bit register that can be loaded with new data or reset asynchronously. The register has four bits of output (Q) and takes a clock (CLK) input for synchronization, along with a 4-bit data input (D) and control signals for loading (LD) and resetting (RST). When LD is high, the data from D is loaded into the register on the next clock edge; when low, the register retains its current state. The asynchronous reset clears the register output (Q) to zero when RST is high. The design utilizes a 4-to-1 multiplexer to facilitate data selection and incorporates individual flip-flops for each bit of the register.
+module top_module(
+    CLK,
+    D,
+    LD,
+    RST,
+    Q
+);

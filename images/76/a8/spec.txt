@@ -1,0 +1,5 @@
+Design a circuit that functions as a handshaking mechanism for an asynchronous FIFO read operation. The module monitors the input signals `ram_valid_i` and the FIFO output `Q`. On each rising edge of the clock signal, it captures the state of `Q` and `ram_valid_i`. The output `valid` is asserted when both the captured FIFO output and the RAM valid signal are high, indicating that the FIFO data is valid for reading. This ensures proper synchronization between the FIFO and the reading operation.
+module top_module(valid,
+    ram_valid_i,
+    clk,
+    Q);

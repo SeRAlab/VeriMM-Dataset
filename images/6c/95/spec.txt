@@ -1,0 +1,7 @@
+Design a circuit that computes the parity of an 8-bit input and outputs the result alongside the original input. The module utilizes a two-stage pipeline approach, where in the first stage, it registers the input and calculates the parity bit, and in the second stage, it outputs the 9-bit result that consists of the computed parity followed by the original 8-bit input. The design incorporates a synchronous reset mechanism to initialize the state.
+module top_module(
+    input clk,           // Added clk input
+    input reset,        // Added reset input
+    input [7:0] in,
+    output reg [8:0] out // Changed output to reg, to hold value in always block
+);

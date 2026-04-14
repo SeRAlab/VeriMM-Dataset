@@ -1,0 +1,11 @@
+Implement a 4-to-2 priority encoder with a reset functionality. The module takes four input signals and outputs a two-bit binary representation of the highest-priority active input, where lower bit locations have higher priority. When the reset signal is active, the outputs are set to zero. Additionally, the module indicates whether any of the inputs are active through a valid signal.
+module top_module(
+  input clk,
+  input reset,
+  input in0,
+  input in1,
+  input in2,
+  input in3,
+  output reg [1:0] out,  // Changed to 2 bits wide
+  output reg valid
+);

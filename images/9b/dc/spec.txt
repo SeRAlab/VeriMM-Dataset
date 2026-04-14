@@ -1,0 +1,12 @@
+Design a synchronous 64-entry FIFO (First In, First Out) buffer for data storage and retrieval. This module utilizes a clock signal to facilitate writing and reading of 8-bit data words, with additional control inputs for clearing the FIFO and indicating write operations. The circuit monitors its status with output signals for full and empty conditions, along with a count of the currently used entries. When the FIFO is cleared, it resets its internal pointers and the used count, while allowing data to be written only if it is not full and read only if it is not empty, enabling efficient data handling in various digital applications.
+module top_module(
+  input clk,
+  input fifo_clear,
+  input [7:0] fifo_wdata,
+  input fifo_wr,
+  input rd_wfifo,
+  output fifo_FF,
+  output [7:0] r_dat,
+  output wfifo_empty,
+  output [5:0] wfifo_used
+);

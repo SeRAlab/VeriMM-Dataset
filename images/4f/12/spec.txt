@@ -1,0 +1,12 @@
+Design a combined arithmetic and comparison circuit that can perform addition or subtraction on two 4-bit inputs based on a mode signal. The module outputs the result as well as flags indicating if the result is equal to zero, greater than zero, or less than zero. The final output is determined by the comparison results, adjusting the arithmetic result accordingly. An asynchronous reset allows the circuit to clear outputs reliably.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] in0,
+    input [3:0] in1,
+    input mode,
+    output reg eq,
+    output reg gt,
+    output reg lt,
+    output reg [3:0] final_output
+);

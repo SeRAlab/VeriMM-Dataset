@@ -1,0 +1,7 @@
+Design a pipeline register capable of storing and transferring a data signal of configurable width, defaulted to 8 bits. The module captures input data on the rising edge of the clock signal and outputs it on the same clock's rising edge. Additionally, it resets the output to zero upon a rising edge of the reset signal. However, the code incorrectly attempts to assign the `data_in` signal on the falling edge of the clock, which would not function as intended in typical pipeline register usage. The design primarily aims to facilitate data storage and management within synchronous systems, like in digital signal processing.
+module top_module(
+  input wire clk,
+  input wire reset,
+  input wire [width-1:0] data_in,
+  output reg [width-1:0] data_out
+);

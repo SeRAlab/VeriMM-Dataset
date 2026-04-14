@@ -1,0 +1,11 @@
+Design a FIFO (First-In, First-Out) memory buffer using RAM where data can be written and read at different clock domains. The module features write and read enable signals, along with full and empty flags to manage data flow. It includes a reset capability to initialize the pointers and counters. When writing, if not full, data is stored into memory, and the write pointer and count are updated accordingly. When reading, if not empty, data is retrieved from memory, updating the read pointer and count. The 8-bit wide data inputs and outputs, combined with a configurable depth of 256 entries, provide flexibility for various application needs.
+module top_module(wr_rst_busy,
+    empty,
+    full,
+    dout,
+    wr_en,
+    wr_clk,
+    rd_clk,
+    din,
+    rst,
+    rd_en);

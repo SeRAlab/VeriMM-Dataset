@@ -1,0 +1,13 @@
+Design a 16-bit up/down counter with asynchronous reset and preset capabilities. The counter increments or decrements based on the Enable signal and Direction input. It supports resetting to zero or setting a specific preset value. Overflow and zero detection outputs are provided: Overflow_o indicates when the count exceeds its maximum or minimum value, while Zero_o indicates when the count reaches zero. The module is triggered by the positive edge of the clock, ensuring synchronized operation.
+module top_module(
+  input Reset_n_i,
+  input Clk_i,
+  input ResetSig_i,
+  input Preset_i,
+  input Enable_i,
+  input Direction_i,
+  input [15:0] PresetVal_i,
+  output reg [15:0] D_o,
+  output reg Overflow_o,
+  output reg Zero_o
+);

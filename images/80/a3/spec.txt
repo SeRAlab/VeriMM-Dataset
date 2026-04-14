@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+
+Implement a 4-bit synchronous loadable up counter with enable, load, and reset signals.
+
+Module name:
+    loadable_up_counter_4bit
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal.
+    enable: Enable signal for the counter.
+    load: Load signal for the counter.
+    data: 4-bit data input for loading the counter.
+
+Output ports:
+    count: 4-bit output signal representing the current count.
+
+Operation:
+On the positive edge of the clock signal (clk) or the falling edge of the reset signal (rst_n), the module performs the counting operation.
+If the reset signal (rst_n) is low, the count is set to 0.
+If the load signal is high, the count is loaded with the input data.
+If the enable signal is high and load is low, the count is incremented by 1.
+If the count reaches its maximum value (1111), it wraps around to 0.
+
+Give me the complete code.

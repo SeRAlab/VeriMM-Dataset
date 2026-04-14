@@ -1,0 +1,8 @@
+Design a simple 8-bit calculator that supports addition, subtraction, multiplication, and division based on a 2-bit operation selector. The calculator takes two 8-bit inputs and determines the operation to perform through the `op` input. It checks for overflow in addition and multiplication, outputting a fixed maximum value of 255 if an overflow occurs. For subtraction and division, it indicates an overflow by monitoring the sign bit of the temporary result. The final result is presented as an 8-bit output along with an overflow flag.
+module top_module(
+    input [7:0] num1,
+    input [7:0] num2,
+    input [1:0] op,
+    output reg [7:0] result,
+    output reg overflow
+);

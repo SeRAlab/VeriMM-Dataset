@@ -1,0 +1,9 @@
+Design a digital module for audio signal processing that applies a gain factor to a PCM (Pulse Code Modulation) input. The module takes an 8-bit gain value (`tl`) and a signed 16-bit PCM input (`pcm_in`), multiplies the PCM input by the gain factor (derived from `tl`), and outputs a modified PCM value (`pcm_out`). The output is updated on the rising edge of the clock if the `cen55` enable signal is active, passing the processed data as a 16-bit signed output truncated from a 32-bit multiplication result. This module functions as a gain adjustment unit in an audio processing pipeline.
+module top_module(
+    input                    rst_n,
+    input                    clk,        
+    input                    cen55,
+    input             [ 7:0] tl,         
+    input      signed [15:0] pcm_in,
+    output reg signed [15:0] pcm_out
+);

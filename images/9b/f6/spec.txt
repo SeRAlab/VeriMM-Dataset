@@ -1,0 +1,6 @@
+Design a circuit that performs a controlled bitwise AND operation on the two most significant bits of a 4-bit input. Specifically, it computes the AND of `data_in[3]` and `data_in[2]`, yielding a two-bit output. The first bit of the output (`data_out[1]`) reflects the standard AND result, while the second bit (`data_out[0]`) conditionally inverts this result based on the value of the control signal `ctrl`. If `ctrl` is high, it outputs the inverted AND result; if low, it outputs the direct AND result.
+module top_module(
+    input [3:0] data_in,
+    input ctrl,
+    output [1:0] data_out
+);

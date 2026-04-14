@@ -1,0 +1,11 @@
+Design a four-bit arithmetic and logic unit (ALU) that performs different operations based on a two-bit select input (Sel). The ALU can execute addition, subtraction, bitwise AND, or bitwise OR operations on two four-bit inputs, A and B, while considering a carry-in input (Cin) for arithmetic operations. The result of each operation is output as either a sum (Sum) with a carry-out (Cout) for addition and subtraction or as a result (Z) for the logical operations. The operations are synchronized to the rising edge of a clock signal, making the design suitable for integration into a larger digital system.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input Cin,
+    input [1:0] Sel,
+    input clk,
+    output reg [3:0] Sum,  // Change output to reg
+    output reg Cout,       // Change output to reg
+    output reg [3:0] Z     // Change output to reg
+    );

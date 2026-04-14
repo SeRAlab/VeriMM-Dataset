@@ -1,0 +1,11 @@
+Design a 32-bit wide data RAM with four separate 8-bit memory banks. The module supports read and write operations controlled by a clock signal. When the chip enable (ce) signal is low, the output data is reset to zero. In write mode (we high), data input is selectively written to the corresponding memory bank based on the 4-bit select input (sel), which specifies which 8 bits of the 32-bit data input (data_i) each bank will store. In read mode (we low), the module outputs the concatenated data from the selected memory banks to the output (data_o). Additionally, a 'check' output provides a combined view of the first memory byte from each bank. This functionality allows flexible access to a small RAM organized in a segmented manner, which can be efficiently used in various digital systems requiring memory operations.
+module top_module(
+  input wire clk,
+  input wire ce,
+  input wire we,
+  input wire[7:0] addr,
+  input wire[3:0] sel,
+  input wire[31:0] data_i,
+  output reg[31:0] data_o,
+  output wire[31:0] check
+);

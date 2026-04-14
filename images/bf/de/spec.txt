@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+    
+Implement a module to simulate the behavior of a single-port synchronous RAM with a write buffer mechanism. Its primary functions include reading from and writing to a block RAM (BRAM) based memory array. The module is intended for use within larger digital systems where temporary data storage and retrieval are necessary, such as in processors, digital signal processing (DSP) systems, or any application requiring temporary data storage with fast access times.
+
+Key objectives of the module:
+To provide a simple interface for reading and writing data to a memory array.
+To simulate the behavior of synchronous RAM in a digital system.
+To initialize the memory contents with random values for simulation purposes.
+
+Module name:  
+	fasm_spsram_wbr
+
+Input ports:
+	dat_i [DW1:0]: Data input port. This 32bit wide input is used to write data into the memory array when a write operation is initiated.
+	adr_i [AW1:0]: Address input port. This 8bit wide input specifies the memory address for both read and write operations.
+	wre_i: Write enable input. This signal, when high, indicates that the current operation is a write operation. When low, the operation is considered a read operation.
+	stb_i: Strobe input. This signal enables the memory operation (read or write) when high.
+	rst_i: Reset input. This activehigh signal resets the internal address register rA to an undefined state.
+	clk_i: Clock input. The rising edge of this signal triggers the memory operation based on the values of other input signals.
+Output ports:
+	dat_o [DW1:0]: Data output port. This 32bit wide output returns the data read from the memory array at the address specified by the internal address register rA.
+
+
+Implementation:
+The RTL module presented, named fasm_spsram_wbr, is designed to simulate a simple port synchronous RAM with a write buffer mechanism, using Verilog. This module is parameterized to allow flexibility in its address width (AW) and data width (DW), making it adaptable for various memory sizes and data types. The core functionality revolves around reading from and writing to a block RAM (BRAM) based on the input signals.
+
+Give me the complete code.
+

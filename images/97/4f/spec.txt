@@ -1,0 +1,13 @@
+Design a combinational logic circuit that performs a specific logical operation using two cascade stages of a 2-input XOR gate. The circuit takes five inputs (A1, A2, B1, C1, and D1, where D1 is a don't care condition) and produces a single output (Y). The output Y is derived from first calculating an intermediate XOR result (xor1_out) from inputs A1, A2, and B1, and then uses that intermediate result along with input B1 and C1 to calculate the final output Y through a second XOR operation. The module also includes power and ground connections for the sky130 standard cell library components, ensuring that the circuit operates within specified voltage levels.
+module top_module(
+    input A1,
+    input A2,
+    input B1,
+    input C1,
+    input D1,
+    output Y,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB
+);

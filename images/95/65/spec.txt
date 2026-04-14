@@ -1,0 +1,12 @@
+Develop a 64-bit counter module that increments its value on the rising edge of the clock unless reset. It features configurable behavior through multiple control signals allowing for both reset and configuration of the counter value. The module has dedicated inputs for enabling configuration, writing a new count, and a data mask to selectively update the lower and upper halves of the counter. It outputs the current counter value and a status signal indicating whether the counter is actively working. When in reset, the counter is initialized to zero, and it allows for updating of its values based on external inputs during operation.
+module top_module(
+    input wire iCLOCK,
+    input wire inRESET,
+    input wire iCONF_WRITE,
+    input wire iCONF_ENA,
+    input wire iCOUNT_WRITE,
+    input wire [1:0] inCOUNT_DQM,
+    input wire [63:0] iCOUNT_COUNTER,
+    output wire oWORKING,
+    output wire [63:0] oCOUNTER
+);

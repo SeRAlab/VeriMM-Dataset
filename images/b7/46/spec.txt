@@ -1,0 +1,7 @@
+Design a clock gating mechanism that enables or disables the clock signal based on two control inputs, EN and TE. When EN is high, the module captures the clock signal at each positive edge and stores it in a register D. If TE becomes high, the output ENCLK is updated with the value of D, effectively controlling the flow of the clock signal to downstream circuits based on the enable conditions. This design helps in power management by selectively enabling parts of a digital system.
+module top_module(
+    input CLK,
+    input EN,
+    input TE,
+    output reg ENCLK
+);

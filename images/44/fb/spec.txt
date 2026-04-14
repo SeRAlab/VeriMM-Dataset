@@ -1,0 +1,11 @@
+Design a simple AXI4-Lite memory interface. The module reads data from a memory array based on the provided address when the read address valid signal is active. It outputs the corresponding data and a valid signal to indicate that the data is ready for the requester. The memory supports a size of 1024 entries, and the data is reset to zero when the reset signal is activated. The design ensures readiness for read operations continuously while allowing for synchronous data retrieval on positive clock edges.
+module top_module(
+  input clk,
+  input rst,
+  input [31:0] axi_araddr,
+  input axi_arvalid,
+  output axi_arready,
+  output [31:0] axi_rdata,
+  output axi_rvalid,
+  input axi_rready
+);

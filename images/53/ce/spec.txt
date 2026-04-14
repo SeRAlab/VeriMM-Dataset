@@ -1,0 +1,10 @@
+Design a 4-bit shift register with a loading capability. When the `load` signal is high, the register loads inputs A, B, C, and D into its internal registers Q1, Q2, Q3, and Q4, respectively. On the rising edge of the clock when `load` is low, the data in the registers shifts sequentially: Q1 takes the value of Q2, Q2 takes the value of Q3, Q3 takes the value of Q4, and Q4 gets the value from the output Q. The output Q reflects the value held in Q1, effectively implementing a shift register that can either load new data or shift previously stored data.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input [3:0] C,
+    input [3:0] D,
+    input load,
+    input clk,
+    output reg [3:0] Q
+);

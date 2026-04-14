@@ -1,0 +1,12 @@
+
+Design a simple Ethernet MAC controller that handles incoming frames. The controller should have the following specifications:
+- Inputs:
+  - `clk`: Clock signal
+  - `rst`: Reset signal (active high)
+  - `data_in`: 8-bit data input representing the incoming frame
+  - `frame_valid`: Signal indicating if the incoming frame is valid
+- Outputs:
+  - `data_out`: 8-bit data output representing processed data from the frame
+  - `frame_ready`: Signal indicating if the frame has been processed and is ready for output
+
+The controller should process incoming frames when `frame_valid` is asserted. On reset, it should clear its internal state. The `data_out` should reflect the incoming data after processing (for simplicity, let’s just implement a simple pass-through logic).

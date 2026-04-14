@@ -1,0 +1,8 @@
+Design a circuit that performs signed addition or subtraction of two 16-bit numbers based on a control signal. The module takes two 16-bit signed inputs, `a` and `b`, and a `sub` input to determine the operation: if `sub` is high, it subtracts `b` from `a`; otherwise, it adds them. It also detects and outputs overflow conditions for both operations, ensuring correct flags are set when the result exceeds the representable range for signed 16-bit integers.
+module top_module(
+    input signed [15:0] a,
+    input signed [15:0] b,
+    input sub,
+    output reg signed [15:0] result,
+    output reg overflow
+);

@@ -1,0 +1,6 @@
+Design a 4-to-2 priority encoder with pipelined processing. The module captures a 4-bit input and, on each rising edge of the clock, updates its output to represent the position of the highest priority active input bit, with the highest priority assigned to the most significant bit. The output will indicate the position of the first active input, where '00' corresponds to the least significant bit (input 0) and '11' to the most significant bit (input 3). The design incorporates two registers for pipelining, allowing the output to reflect the input status two clock cycles after it is sampled.
+module top_module(
+    input clk,           // Added the clk input
+    input [3:0] in,
+    output reg [1:0] pos
+);

@@ -1,0 +1,6 @@
+Design a sign extension circuit that takes a 16-bit immediate value (imm16) and an extension control signal (extcon) as inputs. If extcon is asserted (true), the most significant bit (MSB) of imm16 is used to fill the upper 16 bits of the 32-bit output (extout); otherwise, the upper bits are filled with zeros. This allows the handling of signed values during data processing.
+module top_module(
+    input [15:0] imm16,
+    input extcon,
+    output [31:0] extout
+    );

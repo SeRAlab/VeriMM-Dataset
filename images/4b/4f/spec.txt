@@ -1,0 +1,27 @@
+Please act as a professional Verilog designer.
+
+Design a module that implements a simple D flip-flop with asynchronous reset. The D flip-flop captures the value of the D input on the rising edge of the clock. If the reset signal is high, the output q is reset to 0.
+
+Module name:
+    d_flip_flop
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    reset: Asynchronous reset signal.
+    d: Input signal to be captured by the flip-flop.
+
+Output ports:
+    q: Output signal representing the state of the flip-flop.
+
+Implementation:
+The output q is defined as reg q and initialized to 0 using the initial statement. The value of q is updated to the value of d on the rising edge of the clock: q <= d.
+If the reset signal is high, q is reset to 0: if (reset) q <= 0.
+
+Give me the complete code.
+
+module d_flip_flop(clk, reset, d, q);
+
+    input clk;
+    input reset;
+    input d;
+    output q;

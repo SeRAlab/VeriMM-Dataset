@@ -1,0 +1,8 @@
+Design a sequential circuit that processes a signed 32-bit input value on each rising edge of the clock. Upon receiving a reset signal, it clears the output data and validity flag. If the input data is non-negative, it increments the value by one; otherwise, it decrements it by one. The valid output indicates that valid data is available after processing the input.
+module top_module(
+  input clk,
+  input reset,
+  input signed [31:0] input_data,
+  output reg signed [31:0] output_data,
+  output reg valid
+);

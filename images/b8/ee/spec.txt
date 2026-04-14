@@ -1,0 +1,8 @@
+Design a module that outputs a predefined version number (7) as a 16-bit value when a read enable signal is active. If the read enable signal is high, the version number is stored and the output is presented; otherwise, the output is zero. The module also features a reset functionality that initializes the data output to zero and indicates that the read operation is not complete when the reset is activated.
+module top_module(
+    input wire clk,
+    input wire rst_n,
+
+    input wire read_en,
+    output wire [15:0] data_out
+    );

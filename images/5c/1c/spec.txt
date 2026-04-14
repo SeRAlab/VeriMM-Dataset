@@ -1,0 +1,25 @@
+Design a digital module for serial data transmission and reception, supporting three independent 8-bit input data streams for transmission. The module processes incoming data signals (tx1DataIn, tx2DataIn, tx3DataIn) based on the corresponding write enable signals (tx1DataWEn, tx2DataWEn, tx3DataWEn), outputting the last written data onto txDataOut while indicating the status of data fullness through the txDataFull signal. It also provides functionality to clear this fullness status. On the receive side, it manages an 8-bit data input (rxDataIn), outputting this data when rxDataRdySet is asserted and allowing the readiness flag (rxDataRdy) to be cleared via specified conditions. The overall architecture incorporates clock and reset signals for synchronous operation.
+module top_module(
+  clk,
+  rst,
+
+  tx1DataIn,
+  tx2DataIn,
+  tx3DataIn,
+  tx1DataWEn,
+  tx2DataWEn,
+  tx3DataWEn,
+
+  txDataOut,
+  txDataFull,
+  txDataFullClr,
+
+  rx1DataRdyClr,
+  rx2DataRdyClr,
+  rx3DataRdyClr,
+
+  rxDataIn,
+  rxDataOut,
+  rxDataRdy,
+  rxDataRdySet
+);

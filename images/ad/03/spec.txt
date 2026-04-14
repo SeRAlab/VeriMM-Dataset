@@ -1,0 +1,7 @@
+Design a circuit that performs a sign extension for a 16-bit input to produce a 32-bit output. When the input, `reg_in`, is received, if the most significant bit (sign bit) is high (indicating a negative value), the output, `reg_out`, will be filled with 16 ones followed by the 16-bit input. If the sign bit is low (indicating a positive value), the output will be filled with 16 zeros followed by the input. The module operates on the rising edge of the `clk` signal and can be reset asynchronously, which sets the output to zero.
+module top_module(
+    input [15:0] reg_in,
+    output reg [31:0] reg_out,
+    input clk,
+    input reset
+);

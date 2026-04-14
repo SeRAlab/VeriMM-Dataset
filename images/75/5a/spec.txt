@@ -1,0 +1,9 @@
+Design a performance monitoring module for a CPU that tracks instruction count and cycle count, calculating instructions per cycle (IPC) and cycles per instruction (CPI). The module increments counts on each clock cycle, handling reset conditions, and adjusts the counts based on stall signals. It outputs the IPC and CPI values reflecting the efficiency of the CPU's instruction execution relative to its clock cycles, accounting for any stalled cycles.
+module top_module(
+    input clk,
+    input reset,
+    input [31:0] inst,
+    input stall,
+    output reg [31:0] ipc,
+    output reg [31:0] cpi
+);

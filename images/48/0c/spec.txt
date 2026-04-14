@@ -1,0 +1,11 @@
+Develop a shift register combination circuit that utilizes two 4-bit shift registers. The first register, `reg1`, is synchronous; it loads data from the input `D1` on a positive clock edge when `PL1` is asserted or shifts left on each clock cycle, unless it is cleared by `CLR1`. The second register, `reg2`, is asynchronous; it shifts data in from `D2` on the negative clock edge when `EN2` is asserted. The 8-bit output `Q` combines the current states of both registers.
+module top_module(
+    input CLK,
+    input PL1,
+    input CLR1,
+    input PL2,
+    input EN2,
+    input [3:0] D1,
+    input [3:0] D2,
+    output reg [7:0] Q
+);

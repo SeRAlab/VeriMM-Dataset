@@ -1,0 +1,18 @@
+module priority_encoder_4bit (
+    input [3:0] in,
+    output reg [1:0] out,
+    output reg valid
+);
+
+always @(*) begin
+    valid = (in != 4'b0000);
+    casez (in)
+        4'b1???: out = 2'b11;
+        4'b01??: out = 2'b10;
+        4'b001?: out = 2'b01;
+        4'b0001: out = 2'b00;
+        default: out = 2'b00;
+    endcase
+end
+
+endmodule

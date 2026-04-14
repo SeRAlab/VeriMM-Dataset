@@ -1,0 +1,18 @@
+Design a dual-port memory module that supports simultaneous read and write operations. The module features two independent clock inputs and reset signals, allowing separate control for each port. Each port can write 8 bits to any byte location within a 32-bit word based on a 4-bit write enable signal. The module outputs the stored data at each port on the rising edge of the respective clock, facilitating data retrieval for both input addresses. Overall, it serves as a small-sized RAM with 2048 locations, optimized for dual access.
+module top_module(
+    
+     input           clk0_i
+    ,input           rst0_i
+    ,input  [ 10:0]  addr0_i
+    ,input  [ 31:0]  data0_i
+    ,input  [  3:0]  wr0_i
+    ,input           clk1_i
+    ,input           rst1_i
+    ,input  [ 10:0]  addr1_i
+    ,input  [ 31:0]  data1_i
+    ,input  [  3:0]  wr1_i
+
+    
+    ,output [ 31:0]  data0_o
+    ,output [ 31:0]  data1_o
+);

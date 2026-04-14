@@ -1,0 +1,16 @@
+Design a dual-port RAM module with a capacity of 16,384 locations, each storing 36 bits of data. It allows simultaneous read and write operations for two independent ports (a and b). Each port supports active-high write and read enable signals, along with reset functionality. When the reset signals (rst_a or rst_b) are activated, the corresponding output registers (q_a or q_b) are set to zero. When the read enable signals are asserted (re_a or re_b), the module outputs the data stored at the specified addresses (addr_a or addr_b). If the write enable signals (we_a or we_b) are active, the incoming data (data_a or data_b) is stored in the designated memory location.
+module top_module(
+    input clk,
+    input rst_a,
+    input rst_b,
+    input [13:0] addr_a,
+    input [13:0] addr_b,
+    input [35:0] data_a,
+    input [35:0] data_b,
+    input we_a,
+    input we_b,
+    input re_a,
+    input re_b,
+    output reg [35:0] q_a,
+    output reg [35:0] q_b
+);

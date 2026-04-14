@@ -1,0 +1,10 @@
+Design a hazard detection unit for a pipelined processor that identifies data hazards during instruction processing. The module detects if the current instruction requires writing to a register that is read by a subsequent instruction while a memory read operation is in progress. If a hazard is detected, it disables the instruction fetch (by controlling PC_Write) and prevents writing to the instruction register (by controlling IF_ID_Write) in the pipeline. Additionally, it sets the control_mux signal, which can be used to select alternative data paths to resolve the hazard, ensuring correct execution of instructions.
+module top_module(
+    input ID_EX_MemRead,
+    input [3:0]ID_EX_RegisterRt,
+    input [3:0]IF_ID_RegisterRs,
+    input [3:0]IF_ID_RegisterRt,
+    output reg IF_ID_Write,
+    output reg PC_Write,
+    output reg control_mux
+);

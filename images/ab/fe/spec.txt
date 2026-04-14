@@ -1,0 +1,11 @@
+Design a circuit that functions as a data acknowledge (Dtack) signal generator. The output, DtackOut_L, will be low when the address select input (AS_L) is low. If AS_L is low and either the DramSelect_H is high or the CanBusSelect_H is high, the output will reflect the value of the corresponding data acknowledgment signals (DramDtack_L or CanBusDtack_L). This module effectively manages the acknowledgment responses based on the selection of either the DRAM or CAN bus, allowing for proper synchronization in data transfer operations.
+module top_module(
+		input AS_L,						
+		input DramSelect_H,			
+	   input DramDtack_L,			
+		input CanBusSelect_H,		
+		input CanBusDtack_L, 		
+
+	   output reg DtackOut_L 		
+
+	);

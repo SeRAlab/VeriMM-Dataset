@@ -1,0 +1,12 @@
+Design a circuit that combines logical operations and a barrel shifter for processing a 100-bit input. This module performs bitwise AND, OR, and XOR operations on the input signals, producing corresponding output signals for each operation. Additionally, it includes a barrel shifter that can rotate the input data left or right based on control signals, allowing for flexible data manipulation. The outputs include the results from the AND operation combined with the rotator output, while the barrel shifter state can be loaded and reset based on external control signals. The overall design is suitable for applications requiring both logical processing and data shifting capabilities.
+module top_module(
+    input clk,
+    input reset,
+    input load,
+    input [1:0] ena,
+    input [99:0] in,
+    output out_and,
+    output out_or,
+    output out_xor,
+    output reg [99:0] q
+);

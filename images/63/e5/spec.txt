@@ -1,0 +1,7 @@
+Design a priority encoder for an 8-bit input. The module reads an 8-bit binary input and outputs a 3-bit binary code representing the highest-priority active input bit, with priority given to the higher indices. The output `EN` indicates whether any input bit is active (non-zero). The output code is registered and updated on the rising edge of the clock, allowing for synchronized operation.
+module top_module(
+    input [7:0] I,
+    input clk,          // Added clk input
+    output reg EN,
+    output reg [2:0] OUT // Changed the size to [2:0] to use 3 bits correctly
+);

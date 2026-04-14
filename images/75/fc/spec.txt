@@ -1,0 +1,9 @@
+Design a circuit that implements a program counter (PC) for a RISC-V microprocessor. The PC updates on the rising edge of the clock and can be reset to zero. The next PC value is determined by a multiplexer controlled by the `selpc` signal: when `selpc` is low, it increments the PC by 4; when high, it loads a value from an external source (`d_mux_1`). The output includes both the current PC and the value of the PC incremented by 4, both in a 15-bit format.
+module top_module(
+	clk,
+	reset,
+	selpc,
+	d_mux_1,
+	pc_4,
+	pc_out
+);

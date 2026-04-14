@@ -1,0 +1,11 @@
+Design a color output module that converts 4-bit color intensity inputs for red, green, and blue components into 10-bit voltage outputs. The module uses a clock signal for synchronization and includes a reset functionality to initialize outputs to zero. Upon each clock cycle, if reset is not activated, it scales the intensity values by a factor of 64 to compute the corresponding voltage levels, allowing for a simple method to represent color intensities in a more precise voltage format suitable for further processing or display.
+module top_module(
+  input clk,
+  input reset,
+  input [3:0] red_intensity,
+  input [3:0] green_intensity,
+  input [3:0] blue_intensity,
+  output reg [9:0] red_voltage,
+  output reg [9:0] green_voltage,
+  output reg [9:0] blue_voltage
+);

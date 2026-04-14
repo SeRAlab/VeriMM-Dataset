@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+
+Design a module to detect a sequence of "101" on a 1-bit input signal "data_in". The module should output a 1-bit signal "data_out" which is 1 if the sequence "101" is detected, and 0 otherwise. The detection should be based on the rising edge of the clock signal "clk".
+
+Module name:  
+    sequence_detect
+
+Input ports：
+    clk: Clock signal.
+    rst_n: Reset signal (active low).
+    data_in: One-bit input signal.
+
+Output ports：
+    data_out: Output signal indicating the presence of the "101" sequence.
+
+Implementation:
+Declare the module sequence_detect with input and output ports as specified in the ports statement.
+Declare a register state to keep track of the current state of the sequence detection process.
+Inside an always block, sensitive to the positive edge of the clk signal and the negative edge of the rst_n signal, implement the logic for sequence detection and output generation.
+In the reset condition (~rst_n), set the state register to the initial state and set the data_out output to 0, indicating no sequence detected. Continue the detection process for the remaining states. For each state, check the value of data_in and transition to the next state accordingly. If the current state satisfies the last state of the sequence "101", set data_out to 1, indicating the sequence is detected. Otherwise, set data_out to 0.
+
+Give me the complete code.
+
+module sequence_detect(
+    input clk,
+    input rst_n,
+    input data_in,
+    output reg data_out
+);

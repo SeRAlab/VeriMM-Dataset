@@ -1,0 +1,8 @@
+Design a circuit that implements a serial transmission protocol with parity checking. The module operates in several states, including IDLE, DATA transmission, PARITY, and STOP. When enabled, it sends an 8-bit input data along with a parity bit (odd or even) based on the specified mode. The transmission completes when the data and parity bit are sent, indicating a busy status while processing. The output line, `tx`, carries the transmitted data or parity, and the `done` signal indicates the completion of the operation.
+module top_module(input enable, 
+                            input wire [7:0] din, 
+                            input parity,
+                            output busy,
+                            output reg done,
+                            input wire clk_div, 
+                            output reg tx);

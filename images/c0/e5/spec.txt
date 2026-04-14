@@ -1,0 +1,25 @@
+Please act as a professional verilog designer.
+    
+Implement a module to invert the input signal. It serves as a fundamental digital logic component that can be used in various applications within a digital integrated circuit (IC) design. Its role can range from signal manipulation, implementing logical negation in complex logic functions, to serving as a building block in larger combinational or sequential circuits. The simplicity of its function belies its importance in ensuring correct logical operations across a wide array of digital systems, from simple logic gates arrangements to more complex digital signal processing units.
+
+Module name:  
+	INVBLOCK
+
+Input ports:
+	GIN: This is a singlebit input signal to the module. It represents the digital signal that is to be inverted. The data type of GIN is binary (1'b0 or 1'b1), and it plays a crucial role in determining the output of the module based on its inversion logic.
+	PHI: Although present as an input port, PHI is not utilized within the current implementation of the INVBLOCK module. It is likely intended for future use or for synchronization purposes in a broader system context where the inversion operation might need to be aligned with a clock or a control signal.
+Output ports:
+	GOUT: This is a singlebit output signal of the module. It represents the inverted state of the input signal GIN. The data type of GOUT is binary, and it directly depends on the state of GIN, showcasing the module's primary function of signal inversion.
+
+
+Implementation:
+The RTL module presented, named INVBLOCK, is a simple yet fundamental digital logic design that implements an inverter logic. This module takes a single input signal, GIN, and produces an output signal, GOUT, which is the logical NOT of the input. The operation of this module is purely combinational, meaning its output is directly determined by its current inputs without any dependency on previous input states (i.e., it does not store or remember past inputs, making it non-sequential).
+The core logic of the INVBLOCK module is encapsulated within a single line of Verilog code:
+verilog
+assign GOUT = ~GIN;
+
+This line of code employs the bitwise NOT operator (~) on the input signal GIN to produce the output GOUT. The bitwise NOT operator inverts each bit of its operand. Since GIN is a single-bit input in this context, the operation results in inverting this bit to produce the output. If GIN is logic high (1), GOUT will be logic low (0), and vice versa.
+The module also includes an additional input, PHI, which, intriguingly, is not utilized within the module's logic. The presence of PHI in the module's interface but its absence in the logic implementation suggests that it might be reserved for future use or might be a part of a larger design where PHI plays a role in other modules or logic blocks.
+
+Give me the complete code.
+

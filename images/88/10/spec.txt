@@ -1,0 +1,11 @@
+Design a module that functions as a binary counter combined with an input splitter. The module takes a clock signal and a reset input to increment an 8-bit counter every clock cycle, resetting to zero when the reset is activated. When the input 'in' equals 255, the counter is set to its maximum value, 255. Additionally, it outputs a 3-bit vector 'vec' and separates its individual bits into separate output signals (o2, o1, and o0). The final output concatenates the counter value with the 3-bit vector, producing an 11-bit output that encapsulates both the current count and the vector.
+module top_module( 
+    input wire clk,
+    input wire reset,
+    input wire [254:0] in,
+    input wire [2:0] vec,
+    output wire [10:0] out,
+    output wire [2:0] outv,
+    output wire o2,
+    output wire o1,
+    output wire o0 );

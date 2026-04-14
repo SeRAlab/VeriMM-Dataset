@@ -1,0 +1,27 @@
+Implement a Verilog module with the following description: Memory stage module with registers.
+module top_module(
+                   input             clk, 
+                   input             rst,
+                   input             mem_read, 
+                   input             mem_write,
+                   input [31:0]      alu_result, 
+                   input [31:0]      B,
+                   input [4:0]       dst_reg,
+                   input             wb_reg_write,
+                   input             wb_mem_to_reg,
+                   
+                   input pstop_i,
+                   
+                   output reg [4:0]  MEM_WB_dst_reg,
+                   output reg        MEM_WB_reg_write,
+                   output reg        MEM_WB_mem_to_reg,
+                   output reg [31:0] MEM_WB_mem_out,
+                   output reg [31:0] MEM_WB_alu_out,
+
+                   
+                   output            d_read_en,
+                   output            d_write_en,
+                   output [31:0]     d_addr,
+                   output [31:0]     d_write_data,
+                   input [31:0]      d_data_in                   
+   );

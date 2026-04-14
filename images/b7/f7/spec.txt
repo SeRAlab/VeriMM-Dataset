@@ -1,0 +1,13 @@
+This Verilog module implements a digital sampler capable of capturing and outputting data based on an external clock or an internal clock sampling mode. The module utilizes a divider and a counter to manage the timing of when data becomes valid; when the external clock mode is enabled, it passes data directly through, while in internal mode, it samples data based on a configurable divider. The outputs include a valid signal and the sampled data alongside a 50% duty cycle signal indicating readiness for the next sample. The design is effectively a controlled data acquisition unit that supports a variety of operational modes for flexibility in sampling external digital signals.
+module top_module(
+  input wire clk,
+  input wire rst,
+  input wire extClock_mode,
+  input wire wrDivider,
+  input wire [23:0] config_data,
+  input wire sti_valid,
+  input wire [31:0] sti_data,
+  output reg sto_valid,
+  output reg [31:0] sto_data,
+  output reg ready50
+);

@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to decode keyboard inputs, specifically handling alphabetic and numeric key inputs with considerations for shift and control modifiers. Its primary function to interpret the incoming 7-bit keyboard input signal and modify it based on the states of the shift and control keys, producing a 7-bit output that reflects the decoded character or digit. This module plays a crucial role in input processing within a system that requires keyboard interaction, enabling the system to understand and react to modified key inputs, such as capitalization of letters or special functions triggered by the control key.
+
+Module name:  
+	ag_reg_decoder
+
+Input ports:
+	keyb_in [6:0]: A 7bit input signal representing the keyboard input. The encoding of this signal determines the specific key pressed.
+	shift: A binary input signal indicating whether the shift key is pressed (1) or not (0).
+	ctrl: A binary input signal indicating whether the control key is pressed (1) or not (0).
+Output ports:
+	keyb_out [6:0]: A 7bit output signal representing the decoded keyboard input. The modification of the input signal is based on the states of the shift and control keys.
+
+
+Implementation:
+The RTL module ag_reg_decoder is designed to decode keyboard inputs based on the conditions of two modifier keys: Shift and Control (Ctrl). The module takes a 7-bit input keyb_in, which represents the encoded keyboard input, and two single-bit inputs, shift and ctrl, which indicate whether the Shift or Control keys are pressed, respectively. The output keyb_out is a 7-bit signal that represents the decoded keyboard output based on the input conditions.
+The module employs purely combinational logic to decode the input signal. There are no sequential elements (like flip-flops or latches), indicating that the output is directly dependent on the current inputs without any memory of previous states. The decoding logic is based on the categorization of the input signal into alphabetic and digit characters, which is determined by specific bits within the keyb_in signal.
+
+Give me the complete code.
+

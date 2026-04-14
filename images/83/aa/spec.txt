@@ -1,0 +1,7 @@
+Design a 4-bit up/down counter that increments or decrements its output based on control signals. The counter operates on a clock signal and has two inputs: Up and Down. When Up is high and Down is low, the counter increments the current value, wrapping around to zero upon reaching the maximum value of 15 (4'b1111). Conversely, when Up is low and Down is high, the counter decrements the value, wrapping around to 15 when it reaches zero (4'b0000). If both Up and Down are low, the counter holds its current value. The design ensures reliable state updating using a two-stage register approach for stability against clock edge transitions.
+module top_module(
+    input clk,
+    input Up,
+    input Down,
+    output reg [3:0] Q
+);

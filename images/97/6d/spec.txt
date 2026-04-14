@@ -1,0 +1,8 @@
+Develop a clock generator that produces a toggled output clock signal, `clk_0`, based on a control input `en` and a defined limit. When `en` is asserted, the module compares a currently stored count (`ndCount`) to an input `count`. If the latter exceeds `ndCount`, `ndCount` is updated by adding a `limit` to `count`, and `clk_0` is toggled to its opposite state, effectively generating a periodic clock signal. If `count` does not exceed `ndCount`, the values remain unchanged. When `en` is deasserted, `ndCount` is reset to `count + limit`, and `clk_0` is forced to LOW, disabling the clock output.
+module top_module(
+    input clk,
+    input en,
+    input [31:0] limit,
+    input [31:0] count,
+    output reg clk_0
+    );

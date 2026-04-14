@@ -1,0 +1,10 @@
+Design a simple 8-depth FIFO (First-In-First-Out) buffer that allows data writing and reading operations. The module features an 8-bit data input for writing (`fifo_wdata`), a write enable signal (`fifo_wr`), and provides status outputs indicating if the buffer is full (`fifo_FF`), empty (`wfifo_empty`), and how many entries are currently used (`wfifo_used`). The clock signal (`clk`) triggers the operations: data is written to the buffer on the rising edge of the clock if it is not full, and data is read from the buffer if it is not empty. The read pointer (`rd_ptr`) and write pointer (`wr_ptr`) manage the locations for reading and writing data, while a counter (`used`) keeps track of the number of occupied slots in the buffer.
+module top_module(
+  input clk,
+  input [7:0] fifo_wdata,
+  input fifo_wr,
+  output fifo_FF,
+  output reg [7:0] r_dat, // Changed wire to reg
+  output wfifo_empty,
+  output [5:0] wfifo_used
+);

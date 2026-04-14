@@ -1,0 +1,9 @@
+Design a synchronous memory module with read and write capabilities. The module has a data input (A1DATA) and an address input (A1ADDR) for writing data into a memory cell when the enable signal (A1EN) is asserted. It also features a clock signal (CLK1) that triggers the write operation on the rising edge. The module outputs the data stored at an address specified by B1ADDR continuously. The use of `specify` blocks indicates specific timing constraints for setup times and propagation delays, ensuring proper functionality across different FPGA families (Cyclone V, Arria V, and Cyclone 10 GX).
+module top_module(
+    input [4:0] A1ADDR,
+    input A1DATA,
+    input A1EN,
+    input CLK1,
+    input [4:0] B1ADDR,
+    output reg B1DATA
+);

@@ -1,0 +1,5 @@
+Design a 16-entry register file with 8-bit wide registers, enabling reads and writes controlled by a clock signal. The module allows two simultaneous read operations from specified register addresses (readadr1 and readadr2) and a write operation to a specified address (writeadr) on a rising clock edge when the write enable (we) signal is active. The first register (registerfile[0]) is always set to zero, ensuring it remains non-writable, which is common in register file designs to establish a base or default value.
+module top_module(input clk,we,
+output [7:0] dataout1 , dataout2,
+input [3:0] readadr1,readadr2,writeadr,
+input [7:0] datain);

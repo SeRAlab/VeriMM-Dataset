@@ -1,0 +1,7 @@
+Design a delay block that samples an input signal and provides a delayed output based on a specified delay value. The module includes a clock input to synchronize operations, a reset mechanism using the input signal as a trigger, and an 8-bit counter to keep track of delays. When the input changes, the counter resets, and the output is set to LOW. Once the counter reaches the predefined delay, the module outputs the current input value. This functionality enables the implementation of timing-dependent applications, such as signal synchronization or pulse stretching.
+module top_module(
+  input clk,
+  input in,
+  input [7:0] delay,
+  output reg out
+);

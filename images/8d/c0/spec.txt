@@ -1,0 +1,9 @@
+Design a block of on-chip synchronous SRAM that supports read and write operations based on the input control signals. The module features an enable signal (EN) to activate memory access, a write enable signal (WE) to determine if data should be written to the memory or read from it, an address input (ADDR) to select the specific memory location, and data inputs/outputs (DI and DO) for writing and reading. The design incorporates pipelining option for the output, allowing deeper operation stages; when enabled, it presents the data output (DO) in a delayed manner compared to the raw read operation, optimizing performance.
+module top_module(
+    input CLK,
+    input EN,
+    input WE,
+    input [ADDR_WIDTH-1:0] ADDR,
+    input [DATA_WIDTH-1:0] DI,
+    output [DATA_WIDTH-1:0] DO
+);

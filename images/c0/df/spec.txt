@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform a specific logic function, which is an OR-AND-Invert (OAI) operation with three OR inputs and one AND input, followed by an inversion. This module is a fundamental building block in digital integrated circuit design, often used in creating complex logic functions, timing circuits, or as part of larger combinational or sequential logic systems. Its primary function to output a logical `0` when any of the OR inputs (`b1`, `b2`, `b3`) is `1` while the AND input (`a`) is also `1`, and to output `1` otherwise. This behavior is crucial in scenarios where a conditional inversion is needed based on multiple input conditions.
+
+Module name:  
+	bw_u1_oai31_2x
+
+Input ports:
+	b1, b2, b3: These are input ports of the module, each accepting a singlebit binary input. They represent the three inputs to the OR part of the OAI31 operation. The logical presence (1) of any of these inputs contributes to the OR operation's outcome, which is then used in conjunction with the a input for the AND operation.
+	a: This is also an input port of the module, accepting a singlebit binary input. It represents the single input to the AND part of the OAI31 operation. The value of a is logically ANDed with the result of the OR operation involving b1, b2, and b3.
+Output ports:
+	z: This is the single output port of the module. It is of type output and carries the result of the ORANDInvert operation. The data type is a singlebit binary, representing the logical outcome of the module's operation.
+
+
+Implementation:
+The RTL module presented, bw_u1_oai31_2x, implements a specific type of combinational logic circuit known as an OR-AND-Invert (OAI) gate, more specifically, a three-input OR gate followed by an AND gate with one input, and then an inverter at the output. This particular configuration is often referred to as an OAI31 gate, indicating one OR gate with three inputs (b1, b2, b3), one AND gate with a single input (a), and a single inverter at the output (z). The module is designed to operate without any internal state, meaning it does not utilize any form of sequential logic (e.g., flip-flops or latches) and thus its output is solely dependent on its current input values.
+The logical operation performed by the module can be described by the Boolean expression z = ~((b1 | b2 | b3) & a). This expression first computes the OR operation among the three inputs b1, b2, and b3. The result of this OR operation is then ANDed with the input a. Finally, the result of this AND operation is inverted to produce the output z. The inversion at the end is what characterizes the gate as an OAI gate. The purpose of such a configuration is to provide a logic function that is commonly required in digital circuits, especially in situations where the inversion of a combined logical condition is needed.
+
+Give me the complete code.
+

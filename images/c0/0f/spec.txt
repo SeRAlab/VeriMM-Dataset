@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+    
+Implement a module to convert a 32-bit floating-point number (following the IEEE 754 standard for single-precision floating-point format) into a custom 22-bit floating-point format. This custom format is not a standard IEEE format but is designed for specific applications that require reduced data size for storage or processing efficiency, possibly in graphics processing, signal processing, or other domains where high precision may not be critical. The module serves as a critical component in systems where bandwidth or storage efficiency is paramount, and a balance between precision and resource utilization must be struck.
+
+Module name:  
+	fm_3d_fcnv
+
+Input ports:
+	i_f32 (Input, 32 bits): This is the input port that accepts the 32bit floatingpoint number in IEEE 754 singleprecision format. The input number is expected to have 1 sign bit, 8 exponent bits, and 23 mantissa bits.
+Output ports:
+	o_f22 (Output, 22 bits): This port outputs the converted floatingpoint number in the custom 22bit format. The output format consists of 1 sign bit, 5 exponent bits, 1 implicit bit, and 15 mantissa bits.
+
+
+Implementation:
+The RTL module fm_3d_fcnv is designed to convert a 32-bit floating-point number (following the IEEE 754 standard for single-precision floating-point format) into a custom 22-bit floating-point format. This conversion process involves manipulating the sign bit, exponent, and mantissa of the input floating-point number to fit into the constraints of the target format. The module operates purely on combinational logic, meaning the output is directly determined by the current input without any internal state or memory.
+The conversion process can be broken down into several key steps:
+1. Extraction of Components: The input 32-bit floating-point number (i_f32) is decomposed into its constituent parts: the sign bit (s), the 8-bit exponent (e8), and the 23-bit mantissa (m23). This decomposition is straightforward, with each component directly mapped from specific bit ranges of the input.
+2. Zero Flag (zf) Calculation: A zero flag (zf) is calculated to determine if the exponent is zero, which indicates either a zero or a denormalized number in the input. This flag influences how the exponent is adjusted in later steps.
+3. Mantissa Reduction and Rounding: The 23-bit mantissa is reduced to 15 bits (m15). This reduction involves right-shifting the mantissa and adding the least significant bit of the shifted-out portion to the result to account for rounding. A carry bit (carry) is generated during this process and is used to adjust the exponent.
+4. Exponent Adjustment: The 8-bit exponent is adjusted to fit into a 5-bit field (e5) for the target format. This adjustment involves subtracting a bias (112) from the original exponent and adding the carry bit from the mantissa rounding step. An overflow detection mechanism is implemented to set the exponent to zero if it underflows or overflows after adjustment.
+5. Output Assembly: The final 22-bit floating-point number is assembled from the sign bit, the adjusted 5-bit exponent, a flag indicating whether the number is not zero or denormalized, and the 15-bit mantissa.
+
+Give me the complete code.
+

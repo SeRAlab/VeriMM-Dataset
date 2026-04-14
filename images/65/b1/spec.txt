@@ -1,0 +1,9 @@
+Design a 4-bit shift register with load and shift capabilities. When the load signal is active, the module captures the 4-bit input data_in into the register. If the shift signal is asserted, the contents of the register are shifted right by one bit, and a zero is introduced at the most significant bit (MSB) position. The register is synchronous to the clock and can be reset asynchronously using the rst signal, which clears the register to zero. The current value of the register is available at the data_out output.
+module top_module(
+  input [3:0] data_in,
+  input shift,
+  input load,
+  input clk,
+  input rst,
+  output [3:0] data_out
+);

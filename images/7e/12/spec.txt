@@ -1,0 +1,8 @@
+Design a finite state machine (FSM) for a CPU control unit that manages different states based on a 3-bit current state input (cs) and an additional input (extra) for conditional transitions. The module outputs signals for fetching and executing instructions (EXEC1, EXEC2, FETCH) based on combinational logic derived from the current state and additional control signals. The next state output (NS) directs transitions considering a pipeline option, effectively allowing for enhanced control in a pipelined architecture while maintaining specific state conditions for fetching and executing operations.
+module top_module(
+	input[2:0] cs,
+	input extra,
+	output EXEC1, EXEC2 , FETCH,
+	output [2:0] NS,
+	input pipeline_enabled
+);

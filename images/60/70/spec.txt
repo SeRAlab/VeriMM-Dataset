@@ -1,0 +1,26 @@
+Design a module for a video graphics array (VGA) subsystem that performs color data conversion and buffering. It takes in RGB data streams, processes them on a clock cycle, and provides output streams suitable for further video processing. The module handles synchronization signals such as "start of packet" and "end of packet" while managing data readiness through appropriate input and output signals. The internal logic converts incoming data, assigning a fixed alpha value and replicating the incoming data into Red, Green, and Blue channels, resulting in a formatted output ready for display or further processing.
+module top_module(
+	
+	clk,
+	reset,
+
+	stream_in_data,
+	stream_in_startofpacket,
+	stream_in_endofpacket,
+	stream_in_empty,
+	stream_in_valid,
+
+	stream_out_ready,
+	
+	
+
+	
+	stream_in_ready,
+
+
+	stream_out_data,
+	stream_out_startofpacket,
+	stream_out_endofpacket,
+	stream_out_empty,
+	stream_out_valid
+);

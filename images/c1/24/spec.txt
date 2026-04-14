@@ -1,0 +1,22 @@
+Please act as a professional verilog designer.
+    
+Implement a module to simulate an 8K x 8-bit static RAM (Random Access Memory) block. Its primary functions include reading from and writing to a memory array of 8192 locations, each storing 8 bits of data. This module is integral to systems requiring temporary data storage during operation, such as processors, digital signal processors, or any digital system requiring a small, fast memory block for intermediate computations, data buffering, or temporary data storage.
+
+Module name:  
+	RAM8kx8
+
+Input ports:
+	CLK (input): The clock input. It is a digital signal that synchronizes the data read/write operations of the memory. The operations are triggered on the rising edge of this clock signal.
+	AB (input[12:0]): Address Bus. A 13bit input signal that specifies the memory location (from 0 to 8191) to be accessed for read or write operations.
+	CS (input): Chip Select. A digital signal that enables the RAM module. When CS is high, the module performs read or write operations based on the READ signal; otherwise, the data output (DO) is in a highimpedance state.
+	READ (input): Read/Write Control. A digital signal that determines the operation mode. When high, the module performs a read operation; when low, a write operation is executed.
+	DI (input[7:0]): Data Input. An 8bit input bus that provides the data to be written into the memory location specified by AB during write operations.
+Output ports:
+	DO (output[7:0]): Data Output. An 8bit output bus that presents the data read from the memory location specified by AB during read operations. When CS is low, DO is in a highimpedance state to avoid driving the bus.
+
+
+Implementation:
+The RTL module presented is designed to function as an 8k x 8-bit Random Access Memory (RAM) with a synchronous interface. The module is structured to perform read and write operations based on the input control signals, utilizing both combinational and sequential logic to manage data storage and retrieval. The core components of the module's logic are detailed below:
+
+Give me the complete code.
+

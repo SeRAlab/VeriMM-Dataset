@@ -1,0 +1,9 @@
+Design a synchronous memory module that operates on a rising clock edge, enabling both read and write operations. When the write enable (wr_en) signal is high, data input (data_in) is stored at the specified address (addr) in the 8192-entry memory array. Conversely, when the read enable (rd_en) signal is high, the data stored at the specified address is output (data_out). The module provides a way to manage memory access for a 16-bit data word across 13 address lines.
+module top_module(
+    input clk,
+    input wr_en,
+    input rd_en,
+    input [12:0] addr,
+    input [15:0] data_in,
+    output reg [15:0] data_out // Change wire to reg
+);

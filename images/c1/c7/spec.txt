@@ -1,0 +1,31 @@
+Please act as a professional verilog designer.
+    
+Implement a module to extract color data from a given memory input based on the specified color depth and a least significant bit (LSB) indicator. This module plays a crucial role in graphics processing systems where it is necessary to adapt the color data extracted from memory to match the requirements of different display or processing units that operate at various color depths. The module dynamically adjusts the size and portion of the memory data it outputs as color information, depending on the color depth and LSB position specified. This flexibility allows for a versatile application in systems requiring real-time adjustments in color data representation.
+
+Module name:  
+	memory_to_color
+
+Input ports:
+	color_depth_i [1:0]: A 2bit input specifying the color depth. The color depth determines how many bits are used to represent color information. Different values of this input select different amounts of data from the memory input to be used as color data.
+	mem_i [31:0]: A 32bit input representing memory data. This input is the source of the color data to be extracted based on the color depth and LSB position.
+	mem_lsb_i [1:0]: A 2bit input indicating the least significant bit (LSB) position for extracting color data from the memory input. This input helps in selecting the correct portion of the memory data based on the specified color depth.
+Output ports:
+	color_o [31:0]: A 32bit output that carries the extracted color data. The size and value of this output depend on the color depth and LSB position specified by the inputs.
+	sel_o [3:0]: A 4bit output that indicates the selection or activation pattern based on the color depth. This output can be used to signal other parts of the system about the current color depth configuration.
+
+
+Implementation:
+The RTL module memory_to_color is designed to extract color data from a 32-bit memory input (mem_i) based on the specified color depth (color_depth_i) and a least significant bit indicator (mem_lsb_i). The module outputs the extracted color data through color_o and a selection signal sel_o that indicates the width of the color data being output. This module does not contain any sequential logic elements (like flip-flops or latches) and operates purely on combinational logic, meaning its outputs are directly determined by its current inputs without any internal state.
+The module supports three color depths, which are encoded in the 2-bit input color_depth_i:
+2'b00: 8-bit color depth
+2'b01: 16-bit color depth
+2'b10 or 2'b11: 32-bit color depth
+Based on the color depth, the module selects a portion of the mem_i input to output as color_o. The selection is further refined by the mem_lsb_i input, which helps in pinpointing the exact part of mem_i to be used for color data in the case of 8-bit and 16-bit color depths.
+The sel_o output signal indicates the width of the color data being output:
+For 8-bit color depth (color_depth_i = 2'b00), it outputs 4'b0001.
+For 16-bit color depth (color_depth_i = 2'b01), it outputs 4'b0011.
+For 32-bit color depth (color_depth_i = 2'b10 or 2'b11), it outputs 4'b1111.
+The color_o output signal is determined by a series of conditional assignments based on both color_depth_i and mem_lsb_i. For 8-bit and 16-bit color depths, the module extracts the relevant bits from mem_i based on mem_lsb_i. For 32-bit color depth, the entire mem_i is output as color_o.
+
+Give me the complete code.
+

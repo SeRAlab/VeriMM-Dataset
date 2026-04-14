@@ -1,0 +1,13 @@
+Design a circuit that functions as a 50-bit rotator with load, reset, and enable control features. It utilizes two enable signals to determine the operation mode: a left or right rotation of the 50-bit shift register, with an additional load capability for initializing the register with input data. The output is the current state of the shift register, while an output signal is generated that is the inverted logical AND of three input signals.
+module top_module(
+   input clk,
+   input reset,
+   input load,
+   input [1:0] ena,
+   input [49:0] data,
+   input a,
+   input b,
+   input c,
+   output reg [49:0] q,
+   output out
+);

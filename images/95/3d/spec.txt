@@ -1,0 +1,10 @@
+Design a register that stores a 32-bit value with the ability to reset and write data based on two separate enable signals. The module accepts clock and reset inputs, where a negative edge on reset will clear the register. When the clock signal experiences a negative edge, if `hilo_w_en_2` is asserted, the register will be updated with `hilo_w_data_2`; otherwise, if `hilo_w_en_1` is asserted, the register will be updated with `hilo_w_data_1`. The current value of the register is continuously outputted as `hilo_r_data`. This design serves as a data storage element in a digital system, enabling selective data loading based on control signals.
+module top_module(
+	input clk,
+	input reset,
+	input hilo_w_en_1,
+	input hilo_w_en_2,
+	input [31:0] hilo_w_data_1,
+	input [31:0] hilo_w_data_2,
+	output [31:0] hilo_r_data
+    );

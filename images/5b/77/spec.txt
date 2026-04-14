@@ -1,0 +1,12 @@
+Design a memory interface block that manages communication between a processor and a memory device. It includes address pipelining and supports burst transfers, allowing for efficient data access. The module takes inputs for clock, reset, address, write enable, write data, read enable, burst length, and burst type, generating appropriate control signals for memory operations while maintaining data integrity. The output provides read data from the memory in response to read requests, handling both single and burst access modes effectively.
+module top_module(
+  input clk,
+  input rst,
+  input [31:0] addr,
+  input we,
+  input [31:0] wd,
+  input rd_en,
+  input [3:0] burst_len,
+  input [1:0] burst_type,
+  output reg [31:0] rd_data
+);

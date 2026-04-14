@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that detects three consecutive '1's in the least significant bit of a 10-bit input data signal. The FSM progresses through four states: starting from the initial state, it transitions to subsequent states upon detecting consecutive '1's. When it successfully identifies three consecutive '1's, the output signal 'match' is asserted high. The machine is reset to its initial state when the reset signal is active. The primary purpose is to provide a mechanism for pattern recognition in a digital system.
+module top_module(
+  input clk,
+  input reset,
+  input [9:0] data,
+  output reg match
+);

@@ -1,0 +1,12 @@
+Design a dual-port RAM module that interfaces with an external bus, featuring a 32-bit address space to read and write 16-bit data, while supporting both byte-level and word-level access. The module utilizes two 512-byte memory banks for storing data, which can operate synchronously based on a clock signal. It generates an acknowledgment signal (`tg68_dtack`) to confirm data transactions and outputs the data read from memory (`tg68_dat_in`) upon a valid read operation. Write operations can occur in either the upper or lower byte of the chosen memory bank depending on control signals, accommodating data handling for various bus configurations.
+module top_module(
+  input  wire           clk,
+  input  wire           tg68_as,
+  input  wire [ 32-1:0] tg68_adr,
+  input  wire           tg68_rw,
+  input  wire           tg68_lds,
+  input  wire           tg68_uds,
+  input  wire [ 16-1:0] tg68_dat_out,
+  output wire [ 16-1:0] tg68_dat_in,
+  output wire           tg68_dtack
+);

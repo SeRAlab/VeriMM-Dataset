@@ -1,0 +1,8 @@
+Design a module for receiving and processing data bytes from a serial input. The module captures incoming data bytes on the positive edge of a clock signal and counts the number of received bytes. Once 10 bytes have been received, it extracts and outputs a specific 8-bit segment (the fifth byte in the sequence) as a 16-bit value. The module includes asynchronous reset functionality to initialize the internal registers.
+module top_module(
+ input clk,rst_n,
+ input [7:0] data_Byte,
+ input Rx_done,
+ output reg [15:0]tiwen
+ 
+    );

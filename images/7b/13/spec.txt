@@ -1,0 +1,10 @@
+Design a synchronous RAM module with a 6-bit data width that supports both reading and writing operations. The module has a reset feature that initializes the memory contents to zero when activated. It utilizes a write address to determine where to store incoming data and a separate read address to retrieve data from memory. The write enable signal controls whether data is written to the RAM; if deactivated, the current RAM contents are preserved. Data output is updated based on the specified read address, providing access to the currently stored values in the RAM.
+module top_module(
+    input clk,
+    input datain,
+    input write_reset,
+    input [2:0] waddr,
+    input [2:0] raddr,
+    input we,
+    output reg dataout
+);

@@ -1,0 +1,4 @@
+Design a 64-entry data memory (RAM) that operates on 32-bit words. The module allows for reading and writing operations based on a clock signal. When the write enable (we) signal is high on the rising edge of the clock, it writes the 32-bit input data (wd) into the memory location specified by the address input (a), which is interpreted as a word address by using the upper address bits (a[31:2]). The output (rd) provides the 32-bit data stored at the given memory address, facilitating single-cycle read and write operations.
+module top_module(input clk, we,
+input [31:0] a, wd,
+output [31:0] rd);

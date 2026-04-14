@@ -1,0 +1,7 @@
+Design a 64-bit wide Johnson counter with an 8-bit internal state shift register. The counter provides two operational modes controlled by a 'direction' input: it can increment or decrement the internal state on each clock cycle. An asynchronous active-low reset sets the state and output to zero. The module maps specific states of the internal shift register to a 64-bit output that represents a pattern of consecutive '1's based on the current state, effectively creating a cyclic sequence of values. This functionality makes the Johnson counter suitable for applications requiring pattern generation or specific counting sequences.
+module top_module(
+  input                clk,        // Clock input
+  input                rst_n,      // Asynchronous active-low reset input
+  input                direction,  // Direction control input
+  output reg  [63:0]   Q           // 64-bit output
+);

@@ -1,0 +1,13 @@
+Design a register file stage that captures and holds data from a memory write-back process in a pipelined architecture. The module, MEM_WB_Reg, consists of several D flip-flops that store control signals, data from memory, and ALU results, all controlled by a clock signal. Additionally, it includes logic to handle reset conditions and ensures that specific inputs are only captured when not in a reset state. The output consists of the stored control signals, memory data, ALU data, and register file address, allowing for organized data transfer between the different stages of a processor pipeline.
+module top_module(
+    clk, 
+    rst, 
+    controls_in, 
+    from_mem_data_in, 
+    from_alu_data_in, 
+    regfile_addr_in, 
+    controls_out, 
+    from_mem_data_out, 
+    from_alu_data_out, 
+    regfile_addr_out
+);

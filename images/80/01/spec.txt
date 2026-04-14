@@ -1,0 +1,9 @@
+Design a finite state machine (FSM) that manages the state transitions for a FIFO input control mechanism, with three states: NORMAL, HOLDING, and ONLY_EE. The FSM operates under a clock, with a reset functionality that initializes the state to NORMAL. In the NORMAL state, it transitions to the HOLDING state when the hold signal is asserted. In the HOLDING state, if the hold signal remains asserted and the ep signal is high, it transitions to ONLY_EE; otherwise, it reverts to NORMAL if the hold signal is deactivated. In the ONLY_EE state, the FSM stays in ONLY_EE as long as the hold signal is active, but can transition back to NORMAL upon detecting the ee signal when hold is not asserted. The output veto is asserted when in the ONLY_EE state and the ee input is low, indicating a veto condition.
+module top_module(
+    input reset,
+    input clock,
+    input ee,
+    input ep,
+    input hold,
+    output veto
+    );

@@ -1,0 +1,11 @@
+Design a FIFO (First-In, First-Out) memory buffer capable of storing up to 16 eight-bit data words. The module features inputs for read and write operations, where the `wr` signal enables data to be written to the buffer when it is not full, and the `rd` signal allows data to be read from the buffer when it is not empty. It includes status outputs to indicate whether the buffer is empty or full. The design is clock-driven, with asynchronous reset functionality to initialize the buffer and its pointers, ensuring proper operation across reads and writes.
+module top_module(
+    input rd,
+    input wr,
+    input [7:0] din,
+    output [7:0] dout,
+    output empty,
+    output full,
+    input clock,
+    input reset
+);

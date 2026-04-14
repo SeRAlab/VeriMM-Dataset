@@ -1,0 +1,17 @@
+Design a register file multiplexer that selectively outputs data based on control signals. The module takes inputs for forwarding conditions and HI/LO status, along with registers containing data from two read operations, HI data, LO data, and an ALU output. Depending on the forwarding signals, it chooses between ALU output and read data for the first and second comparators. Additionally, it resolves which data (HI or LO) to output based on the HI/LO control signal, enabling the selection of either specific register outputs or ALU results, facilitating efficient data forwarding and register management in a processor architecture.
+module top_module(
+
+	input	logic 			forward_one_decode,
+	input	logic			forward_two_decode,
+	input	logic			using_HI_LO,
+	input	logic [31:0]	read_data_1_reg,
+	input	logic [31:0] 	read_data_2_reg,
+	input	logic [31:0]	HI_data_reg,
+	input	logic [31:0] 	LO_data_reg,
+	input	logic [31:0]	ALU_output_memory,
+
+	output	logic [31:0]	comparator_1,
+	output	logic [31:0]	comparator_2,
+	output	logic [31:0]	resolved_reg_file_output_one,
+	output	logic [31:0]	resolved_reg_file_output_two
+);

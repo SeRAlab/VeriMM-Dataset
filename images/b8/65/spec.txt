@@ -1,0 +1,8 @@
+Design a data converter circuit that processes an 8-bit input based on a selection signal and outputs a 16-bit result. On reset, the output is initialized to zero. When the select signal is high, the circuit extends the input by padding the most significant bits with zeros, resulting in the format of 8 bits followed by 8 zeros. Conversely, when the select signal is low, it prepends the input with 8 zeros, yielding a format of 8 zeros followed by the 8-bit input. This functionality allows for easy transitions between different data formats for downstream processing.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] in,
+  input select,
+  output [15:0] out
+);

@@ -1,0 +1,9 @@
+Design a dual-function 64-bit D Flip-Flop module. It can be initialized with a specified value and supports asynchronous reset. When enabled, it captures and outputs the input data on the clock's rising edge. Additionally, it interfaces with another flip-flop instance (FFType_24) to utilize its output conditionally when not enabled. The circuit provides flexibility to either utilize the internally held state or the output from the connected flip-flop based on the enable signal.
+module top_module(
+  input         clock,
+  input         reset,
+  input  [63:0] io_in,
+  input  [63:0] io_init,
+  output [63:0] io_out,
+  input         io_enable
+);

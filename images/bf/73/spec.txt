@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+
+Implement the design of an 8-bit Johnson counter with an active-high reset signal. It utilizes a clock signal (clk) and a reset signal (rst).
+
+Module name:
+    johnson_counter_8bit
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high reset signal. Defined as 1 for counter reset and 0 for normal operation.
+
+Output ports:
+    count: Counter output signal with a data width of 8 bits.
+
+Implementation:
+The module includes a shift register (shift_reg) to store the current state of the counter.
+On the positive edge of the clock signal, if the reset signal is active, the shift register is reset to 8'b11111111.
+If the reset signal is inactive, the shift register shifts right by one bit and the complement of the most significant bit is shifted into the least significant bit.
+The output count is assigned the value of the shift register.
+
+Give me the complete code.

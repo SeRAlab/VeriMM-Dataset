@@ -1,0 +1,8 @@
+Design a circuit that generates a "halt" signal based on the value of the program counter (pcout). When reset (rst) is active, the halt signal is set to LOW. If pcout equals zero (32'h00000000), the halt signal is asserted HIGH, indicating a halt condition. Otherwise, the halt signal retains its previous state. This functionality is typically used in control logic to manage processor execution flow based on specific conditions.
+module top_module(
+  input logic [31:0] pcout,
+  input logic [3:0] state,
+  input logic clk,
+  input logic rst,
+  output logic halt
+);

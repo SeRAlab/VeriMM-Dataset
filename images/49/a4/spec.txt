@@ -1,0 +1,18 @@
+Implement the Verilog module based on the following description.
+Module G implements the boolean function q = a | b.
+
+// Module H can be described by the following simulation waveform: 
+
+If a = 1, b = 0, then q = 1.
+If a = 0, b = 1, then q = 1.
+If a = 0, b = 0, then q = 0.
+If a = 1, b = 1, then q = 1.
+
+// Now consider a top-level that uses two G submodules and two H submodules. The first input of all four submodules is connected to input 'a', and the second input of all four submodules is connected to 'b'. The output of the first G submodule is connected to a two-input XOR, along with the output of the first H submodule. The second pair of G and H submodules is similarly connected to a NAND gate. The output of the XOR and the NAND is connected to an AND, whose output is 'q'.
+
+// Implement this circuit in Verilog.
+
+module top_module(
+    input a,
+    input b,
+    output q);

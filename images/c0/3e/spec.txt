@@ -1,0 +1,35 @@
+Please act as a professional verilog designer.
+    
+Implement a module primarily functions as an interface for managing data transactions, specifically tailored for read and write operations. It acts as a bridge between a core logic (or processing unit) and a memory or peripheral interface, facilitating the transfer of data, control signals, and handshaking between these components. The module to handle requests, acknowledge them, and manage data buffering with control over data width, address length, and burst lengths. It plays a crucial role in systems where efficient and reliable data transfer between a core and external interfaces is paramount, ensuring data integrity and synchronization through its control and data path mechanisms.
+
+Module name:  
+	fm_cmn_if_ff_out
+
+Input ports:
+	clk_core: Clock input. Synchronizes the module's operations.
+	rst_x: Active low reset signal. Resets the module's internal registers.
+	i_req: Input request signal. Indicates a new read or write request.
+	i_wr: Write enable signal. Distinguishes between read (0) and write (1) operations.
+	i_adrs: Address input. Specifies the memory address for the read/write operation.
+	i_len: Burst length. Indicates the number of data words in a burst transaction.
+	i_strw: Start write signal. Indicates the beginning of a write operation.
+	i_be: Byte enable signals. Specifies which bytes in the data word are valid for write operations.
+	i_dbw: Data bus for write operations. Contains the data to be written.
+	i_ack: Acknowledge signal from the memory or peripheral interface.
+	i_ackw: Write acknowledge signal. Indicates completion of a write operation.
+	i_strr: Start read signal. Indicates the beginning of a read operation.
+	i_dbr: Data bus for read operations. Contains the data read from memory or peripheral.
+Output ports:
+	o_ack: Acknowledge output signal. Indicates that the request has been accepted and processed.
+	o_ackw: Write acknowledge output signal. Mirrors i_ackw to indicate completion of a write operation.
+	o_strr: Start read output signal. Mirrors i_strr to indicate the beginning of a read operation.
+	o_dbr: Data bus for read operations output. Mirrors i_dbr to provide read data.
+	o_req, o_wr, o_adrs, o_len: Output signals (o_req for request, o_wr for write enable, o_adrs for address, and o_len for length) that mirror their respective inputs, facilitating the transfer of control information to the next stage.
+	o_strw, o_be, o_dbw: Output signals for start write, byte enable, and data bus for write operations, respectively, facilitating data transfer and control for write operations.
+
+
+Implementation:
+The RTL module fm_cmn_if_ff_out is designed to interface with a communication protocol, handling requests and acknowledgments for data transactions. It operates in a synchronous digital system, clocked by clk_core and asynchronously reset by rst_x. The module's primary function is to manage read and write requests, including data buffering and status signaling. The logic is divided into combinational and sequential parts, ensuring proper synchronization and data integrity throughout the transaction process.
+
+Give me the complete code.
+

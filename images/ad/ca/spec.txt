@@ -1,0 +1,6 @@
+Design a mode selector circuit that produces a 4-bit output based on a 2-bit mode input. It has four distinct operations: when mode is 00, it shifts the input left by one bit with a zero fill; when mode is 01, it shifts the input right by one bit with a zero fill; when mode is 10, it outputs the bitwise complement of the input; and when mode is 11, it passes the input directly to the output. In cases where the mode does not match any defined operation, the output defaults to zero.
+module top_module(
+    input wire [1:0] mode,
+    input wire [3:0] in,
+    output reg [3:0] out
+);

@@ -1,0 +1,9 @@
+Implement a n-bit wide up/down counter that increments or decrements its count based on the direction input. When enabled, the counter will count up if the direction is high (dir=1) and wrap around to zero upon reaching the maximum value, or count down if the direction is low (dir=0) and wrap to the maximum value upon reaching zero. The counter can be reset to zero when the rst signal is asserted. If not enabled, the current output will reflect a preset input value. The design is parameterized by n, allowing for a configurable bit-width for the counter.
+module top_module(
+  input clk,
+  input rst,
+  input en,
+  input dir,
+  input [n-1:0] count_in,
+  output reg [n-1:0] count_out
+);

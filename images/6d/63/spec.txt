@@ -1,0 +1,7 @@
+Design a 16-bit barrel shifter that allows for left shifting of the input data by a specified number of positions, controlled by a 4-bit shift_amount signal. The module outputs the shifted data and also includes an overflow output that indicates if the shift_amount exceeds the valid range, which is determined by a shift amount greater than 15. The shifting mechanism is implemented using a combinatorial logic block that directly maps the shift_amount value to the appropriate shifted output.
+module top_module(
+    input [15:0] data_in,
+    input [3:0] shift_amount,
+    output reg [15:0] data_out, // Changed wire to reg to store the output in always block
+    output overflow
+);

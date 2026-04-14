@@ -1,0 +1,10 @@
+Design a sequential circuit featuring a D flip-flop driven by a clock and a synchronous active-high reset, along with two combinational logic components: an XOR gate and an AND gate. The flip-flop captures the input data `d` on the rising edge of the clock, outputting the result as `q`, while resetting to 0 when `reset` is high. The XOR gate outputs a high signal when inputs `a` and `b` differ. This signal is then used in conjunction with the flip-flop output `q` in an AND gate to determine the final output. The combined functionality allows for state retention and external input comparison, useful in digital systems for controlling and monitoring logic states.
+module top_module(
+    input clk,    // Clocks are used in sequential circuits
+    input reset,  // Synchronous active-high reset
+    input d,
+    output reg q,
+    input a,
+    input b,
+    output reg out  // Changed from wire to reg
+);

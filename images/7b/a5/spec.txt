@@ -1,0 +1,28 @@
+Please act as a professional verilog designer.
+
+Implement a Square Wave signal generator module that generates a waveform by toggling a 1-bit signal named "wave". The waveform toggles between 0 and 1 every clock cycle.
+
+Module name:  
+    square_wave_generator 
+                 
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+
+Output ports:
+    wave: 1-bit output waveform signal representing the generated waveform.
+
+Implementation:
+State and Waveform Generation:
+The module includes a register, wave, with a width of 1 bit, which represents the generated waveform.
+The wave register is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the wave register is cleared to 0.
+The waveform generation is controlled by toggling the wave register every clock cycle.
+
+Give me the complete code.
+
+module square_wave_generator(
+  input clk,
+  input rst_n,
+  output reg wave
+);

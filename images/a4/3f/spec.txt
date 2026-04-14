@@ -1,0 +1,7 @@
+Design a sequence detector that recognizes the specific 4-bit sequence "1100" in a continuous stream of input bits. The module utilizes a shift register to capture and evaluate the latest bits of input data. Upon detecting the sequence, the output driver activates a specific 7-segment display pattern to represent the result. If the sequence is found, it outputs a code to display "1"; otherwise, it displays "0". The circuit includes a reset functionality which initializes the detection state and output indicators.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] in,
+    output reg [6:0] seg_out
+);

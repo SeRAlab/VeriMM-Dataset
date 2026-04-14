@@ -1,0 +1,18 @@
+Design a register module for a Nios II processor's debug and monitoring interface that handles various control signals and settings. The module features a 2-register address space, allowing writes to control single-step execution and interrupt masking. It updates outputs based on the write operations conditioned on debug access. The module includes logic to reset its state on a reset signal and respond to clock edges, effectively managing the operational settings related to debugging, while providing data on demand through designated output signals based on selected addresses.
+module top_module(
+    input [8:0] address,
+    input clk,
+    input debugaccess,
+    input monitor_error,
+    input monitor_go,
+    input monitor_ready,
+    input reset_n,
+    input write,
+    input [31:0] writedata,
+    output reg [31:0] oci_ienable,          // Change to reg
+    output reg [31:0] oci_reg_readdata,     // Change to reg
+    output reg oci_single_step_mode,         // Change to reg
+    output reg ocireg_ers,
+    output reg ocireg_mrs,
+    output take_action_ocireg
+);

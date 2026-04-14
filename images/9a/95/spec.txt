@@ -1,0 +1,11 @@
+Design a digital module that combines a synchronous 4-bit binary counter with a 4-to-16 decoder. The counter increments on each clock cycle, can be reset or loaded with external data, while the decoder converts a 4-bit input A into a corresponding one-hot 16-bit output, which is then inverted to generate output Y. Additionally, the module computes a final output by summing the current counter value with the input A, enabling flexible data manipulation in a digital circuit.
+module top_module(
+    input clk,
+    input reset,   // Synchronous active high reset
+    input load,    // Synchronous load
+    input [3:0] data_in,
+    input [3:0] A,
+    output [15:0] Y,
+    output reg [3:0] count,
+    output reg [3:0] final_output // Changed to reg to be able to assign in always block
+);

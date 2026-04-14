@@ -1,0 +1,9 @@
+Design a circuit that incorporates a 2-to-1 multiplexer and a bitwise AND operation. The multiplexer outputs either input `a` or `b`, based on the combined selection signals `sel_b1` and `sel_b2`. The eight-bit input `in` undergoes a bitwise AND operation with the constant `8'b11100011`, resulting in `and_out`. The final output, `out`, is determined by whether the multiplexer output matches input `a`: if it does, `out` is set to the original input `in`; otherwise, it takes the value of `and_out`.
+module top_module(
+    input a,
+    input b,
+    input sel_b1,
+    input sel_b2,
+    input [7:0] in,
+    output [7:0] out
+);

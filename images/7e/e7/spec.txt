@@ -1,0 +1,8 @@
+Implement a pipelined edge detector that identifies rising and falling edges of a binary input signal. The module outputs a high signal for `rise` when a transition from low to high is detected and a high signal for `down` when a transition from high to low occurs. It operates synchronously with a clock signal and includes an active-low reset to initialize its internal state and outputs. The design revolves around three states: IDLE, RISING_EDGE, and FALLING_EDGE, effectively allowing it to capture and signal the state changes of the input signal.
+module top_module(
+  input               clk,
+  input               rst_n,
+  input               a,
+  output reg          rise,
+  output reg          down
+);

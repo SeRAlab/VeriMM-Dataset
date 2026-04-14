@@ -1,0 +1,15 @@
+The module implements a VGA (Video Graphics Array) driver, which generates horizontal and vertical synchronization signals along with RGB pixel data for display on a VGA monitor. It uses counters to track the current position of the pixel in the horizontal and vertical directions, producing sync signals as prescribed by the VGA standard. The output signals adjust the pixel colors based on a provided 15-bit color input and allow for optional border handling, rendering a white border at the edges of the display when the border input is asserted. The module is designed to ensure proper timing and coordinate signaling for a 640x480 resolution display, thus facilitating accurate pixel rendering on a VGA-compatible monitor.
+module top_module(
+  input clk,
+  input [14:0] pixel,
+  input sync,
+  input border,
+  output reg vga_h,
+  output reg vga_v,
+  output reg [3:0] vga_r,
+  output reg [3:0] vga_g,
+  output reg [3:0] vga_b,
+  output reg [9:0] vga_hcounter,
+  output reg [9:0] vga_vcounter,
+  output reg [9:0] next_pixel_x
+);

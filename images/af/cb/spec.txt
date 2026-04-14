@@ -1,0 +1,12 @@
+Design a combined counting and summing circuit that operates on a 4-bit value. This module features two counters, `counter1` and `counter2`, which can be individually loaded with an input value, reset to zero, and incremented or decremented based on the `up_down` signal. The circuit includes a selection mechanism to choose between the outputs of the two counters or their sum, controlled by the `select_counter` and `select_output` signals. On each clock cycle, if active, it updates the counters based on the selected direction and computes the sum of `counter1` and `counter2`. The output is either the value of the selected counter or the sum, depending on the state of the selection inputs.
+module top_module(
+    input clk,
+    input reset,
+    input load,
+    input up_down,
+    input [3:0] data_in,
+    input select_counter,
+    input select_output,
+    output reg [3:0] count_out,
+    output reg [3:0] sum_out
+);

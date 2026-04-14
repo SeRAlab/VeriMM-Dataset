@@ -1,0 +1,11 @@
+Design a module for color image processing that modifies the RGB color channels of an input image based on specific arithmetic operations. Upon receiving clock and reset signals, the module resets the internal registers for the red, green, and blue channels to zero. When not in reset, it adjusts the input red channel by subtracting 10, increases the green channel by 15, and doubles the blue channel. The processed color values are then outputted as the modified RGB components.
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] r_in,
+    input [7:0] g_in,
+    input [7:0] b_in,
+    output [7:0] r_out,
+    output [7:0] g_out,
+    output [7:0] b_out
+);

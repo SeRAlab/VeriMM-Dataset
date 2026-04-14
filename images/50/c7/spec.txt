@@ -1,0 +1,23 @@
+Please act as a professional verilog designer.
+
+Design a D flip-flop with asynchronous reset and enable. The flip-flop should capture the input value on the rising edge of the clock when the enable signal is active. If the reset signal is active, the output should be reset to zero.
+
+Module name:  
+    DFF               
+Input ports:
+    clk: Clock signal for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+    en: Enable signal to allow capturing the input value.
+    d: Input value to be captured.
+
+Output ports:
+    q: Output representing the captured value.
+
+Implementation:
+D Flip-Flop:
+The module includes a register q to hold the captured value.
+The always block triggers on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by !rst_n, the q register is cleared to 0.
+If the enable signal is active, the q register is assigned the value of d on the rising edge of the clock.
+
+Give me the complete code.

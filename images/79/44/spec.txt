@@ -1,0 +1,9 @@
+Implement a register bank that allows for the reading and writing of 32-bit data words. The design features two sets of address inputs: one for reading (rdaddress) and one for writing (wraddress). Data is written to the memory on a rising clock edge when the write enable (wren) signal is active. The module also provides the capability to output the data stored at the read address. This register bank utilizes a synchronous RAM structure to manage simultaneous read and write operations, facilitating efficient data handling for applications like CPUs or microcontrollers.
+module top_module(
+  input clock,
+  input [31:0] data,
+  input [4:0] rdaddress,
+  input [4:0] wraddress,
+  input wren,
+  output reg [31:0] q
+);

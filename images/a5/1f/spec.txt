@@ -1,0 +1,8 @@
+Develop a register stage for a CPU pipeline that captures the fetched instruction and program counter values on the rising edge of the clock. The module takes two 32-bit inputs, `instruction_fetch` and `PC_fetch`, and outputs them as `instruction_decode` and `PC_decode`, respectively, effectively transferring data from the instruction fetch stage to the decode stage of the pipeline.
+module top_module(
+	input wire [31:0] instruction_fetch,
+	input wire [31:0] PC_fetch,
+	input wire clock,
+	
+	output reg [31:0] instruction_decode,
+	output reg [31:0] PC_decode);

@@ -1,0 +1,8 @@
+Design a 4-bit barrel shifter that can either pass the input A directly to the output or perform a left shift operation based on the value of the shift input. When the shift signal is low (0), the output equals the input A. When the shift signal is high (1), the output shifts the bits of A to the left by the number of positions specified in input B. The module captures inputs on the rising edge of the clock to synchronize operations.
+module top_module(
+    input [3:0] A,
+    input [3:0] B,
+    input shift,
+    input clk,          // Added clk input
+    output [3:0] result
+);

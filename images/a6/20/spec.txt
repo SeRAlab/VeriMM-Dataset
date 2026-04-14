@@ -1,0 +1,8 @@
+Design a shift register counter that captures an input signal and provides a delayed version of that signal based on a specified delay in clock cycles. The module includes a 4-bit shift register that shifts the input signal in on each clock cycle and retains the last four samples. Additionally, it features a 4-bit counter that increments on each clock cycle, resetting when the reset signal is activated. The final output is a 4-bit wide result that is the bitwise OR of the delayed input and the current counter value, allowing for combined functionality of signal processing and counting.
+module top_module(
+    input clk,
+    input reset,      // Synchronous active-high reset
+    input in,         // Input signal to be delayed
+    input [3:0] delay, // Number of clock cycles to delay the input signal
+    output [3:0] q    // 4-bit output from the functional module
+);

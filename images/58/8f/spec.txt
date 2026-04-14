@@ -1,0 +1,13 @@
+Design a memory controller module that interfaces with a data storage array and a read-only input. It takes a clock signal, reset, write control, data input, address input, and select signal for operation. The module contains an 8-entry memory array (16 bits each) and concatenates these entries into a 128-bit data output. Depending on the address specified, it selectively outputs either data from the memory array or from the provided read-only data when appropriate. The module provides a mechanism to store incoming data into the memory when the write control signal is active, all while supporting reset functionality and monitoring the select signal.
+module top_module(
+        input         clk,
+        input         rst,
+        input         hwrite,
+        input [31:0]  hwdata,
+        input [31:0]  haddr,
+        input         hsel,
+        output reg[31:0]  hrdata,
+
+        output[127:0] data,
+        input [127:0] ro_data
+);

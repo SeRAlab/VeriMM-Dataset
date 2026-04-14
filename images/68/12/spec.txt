@@ -1,0 +1,18 @@
+Please act as a professional Verilog designer.
+
+Implement an 8-bit LFSR (Linear Feedback Shift Register) with a polynomial x^8 + x^6 + x^5 + x + 1. The module generates pseudo-random sequences.
+
+Module name:
+    lfsr
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Synchronous reset signal to initialize the LFSR to 8'b00000001.
+
+Output ports:
+    q: Output signal representing the current LFSR value.
+
+Implementation:
+The LFSR is defined as reg [7:0] q and initialized to 8'b00000001. On each rising edge of the clock, if rst is asserted, q is reset to 8'b00000001. Otherwise, q is updated to {q[6] ^ q[5] ^ q[0], q[7:1]}.
+
+Give me the complete code.

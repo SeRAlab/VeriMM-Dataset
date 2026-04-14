@@ -1,0 +1,9 @@
+Design a Hamming code generator and error detector that takes a 7-bit input data and produces a 16-bit output codeword, which includes parity bits for error correction. The module calculates four parity bits based on specified bits of the input data and appends them to the front of the data to form the output codeword. It operates synchronously with a clock and has reset and enable controls. When enabled, it checks for single-bit and multiple-bit errors in the Hamming code; if a single-bit error is detected, it corrects it, while indicating any errors found through the error output signal.
+module top_module(
+  input [6:0] data_in,
+  input clk,
+  input rst,
+  input enable,
+  output reg [15:0] code_out,
+  output reg error
+);

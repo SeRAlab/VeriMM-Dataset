@@ -1,0 +1,8 @@
+Develop a pixel generator module for a VGA display that outputs RGB color values based on the horizontal pixel count (`h_cnt`). When `valid` is low, the output colors are set to black (all color components zero). For specific ranges of `h_cnt`, the module generates different colors: black for the first 128 pixels, blue for the next 128 pixels, red for the following 128 pixels, green for the next 128 pixels, and white for the 128 pixels after that, resetting to black for values beyond 640 pixels. This design creates a simple visual pattern across the screen.
+module top_module(
+  input [9:0] h_cnt,
+  input valid,
+  output reg [3:0] vgaRed,
+  output reg [3:0] vgaGreen,
+  output reg [3:0] vgaBlue
+);

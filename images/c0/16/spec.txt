@@ -1,0 +1,19 @@
+Please act as a professional verilog designer.
+    
+Implement a module to divide the frequency of an input clock signal by 2. This module takes an input clock signal and generates an output clock signal that has half the frequency of the input. It is a fundamental component in digital circuits, especially in clock management systems where different parts of a digital system require clock signals of various frequencies. The module also includes a synchronous reset functionality, which allows the output clock to be reset to a known state under specific conditions.
+
+Module name:  
+	CLK_DIV2_Wrapper
+
+Input ports:
+	Reset: A synchronous reset input signal. It is a singlebit (1'b1) signal that, when high (1), forces the output clock signal to a known state (0). This input is essential for initializing the state of the output clock or bringing the system to a known state during or after an error condition.
+	IN: The input clock signal. It is a singlebit signal that serves as the source clock which the module will divide. The rising edge of this signal triggers the division operation.
+Output ports:
+	OUT: The output clock signal. It is a singlebit signal that represents the divided clock, having half the frequency of the IN clock signal. This output is the result of toggling the internal state on each rising edge of the IN signal.
+
+
+Implementation:
+The CLK_DIV2_Wrapper module is designed to divide the frequency of an input clock signal (IN) by 2, outputting the result on the OUT signal. This module operates based on the edge-triggered behavior of digital logic, specifically responding to the rising edges of the input clock signal and a synchronous reset signal (Reset).
+
+Give me the complete code.
+

@@ -1,0 +1,20 @@
+Please act as a professional verilog designer.
+
+Implement a 5-bit Fibonacci LFSR (Linear Feedback Shift Register) module. The LFSR should shift and generate pseudo-random values on every rising edge of the clock signal.
+
+Module name:
+    fibonacci_lfsr
+
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst_n: Active-low reset signal. Defined as 0 for reset and 1 for reset signal inactive.
+
+Output ports:
+    lfsr: 5-bit output representing the current LFSR value.
+
+Implementation:
+The module includes a 5-bit register, lfsr, which is updated in the always block, triggered on the positive edge of the clock signal (posedge clk) or the negative edge of the reset signal (negedge rst_n).
+On reset, indicated by ~rst_n, the lfsr register is set to a non-zero seed value (e.g., 5'b00001).
+On every rising edge of the clock, the LFSR shifts left by one bit, and the new bit is the XOR of bits 4 and 2.
+
+Give me the complete code.

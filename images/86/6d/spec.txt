@@ -1,0 +1,8 @@
+Design a simple arithmetic calculator that performs basic operations on two 8-bit inputs, num1 and num2. The operations include addition, subtraction, multiplication, and division, selected by a 2-bit control signal (ctrl). The module handles a divide-by-zero condition by outputting zero in the event of an attempt to divide by zero. Additionally, the output can be reset to zero upon the positive edge of the reset signal, ensuring reliable initial states.
+module top_module(
+    input [7:0] num1,
+    input [7:0] num2,
+    input [1:0] ctrl,
+    input reset,
+    output reg [7:0] res
+);

@@ -1,0 +1,8 @@
+Design a 4-bit shift register with parallel load capability. On a positive clock edge, if the reset signal is active, the output q is set to zero. If the parallel load signal (pl) is asserted, the module loads the input data (d) into the output q. Otherwise, the shift register performs a left shift, where the most significant bit (q[3]) is moved to the least significant position (q[0]).
+module top_module(
+  input clk,
+  input reset,
+  input pl,
+  input [3:0] d,
+  output reg [3:0] q
+);

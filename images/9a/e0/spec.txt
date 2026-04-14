@@ -1,0 +1,8 @@
+Design a circuit that detects the longest sequence of consecutive '1's in a 16-bit input data stream. The module outputs the length of this longest sequence and its starting index when the input data is all '1's (i.e., 16'hFFFF). It tracks the current sequence length and updates the maximum length and corresponding starting index whenever a longer sequence is found. The logic resets upon receiving a reset signal and updates the current sequence based on incoming data bits, indicating transitions from '1' to '0' or vice versa.
+module top_module(
+  input clk,
+  input reset,
+  input [15:0] data,
+  output reg [3:0] length,
+  output reg [3:0] start_index
+);

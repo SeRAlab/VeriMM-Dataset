@@ -1,0 +1,10 @@
+Implement a circuit comprising a 3-bit shift register and a 4-bit shift register working in conjunction with control signals. The 3-bit shift register, composed of D flip-flops, shifts in data from a 3-bit input (d3) on each clock cycle while it can be asynchronously reset. The 4-bit shift register can be loaded with a 4-bit input (d4) when prompted by the load signal and also shifts its contents when enabled by the ena signal. The final output is a 7-bit signal that sums the least significant bit of the 3-bit shift register with the 4-bit shift register's value, thereby providing a combined output reflecting the status of both registers.
+module top_module(
+    input clk,
+    input areset, // async active-high reset to zero
+    input load,
+    input ena,
+    input [2:0] d3, // 3-bit input for the 3-bit shift register
+    input [3:0] d4, // 4-bit input for the 4-bit shift register
+    output reg [6:0] q // 7-bit output from the functional module
+);

@@ -1,0 +1,40 @@
+Please act as a professional verilog designer.
+    
+Implement a module to fetch instruction data from memory in anticipation of its execution by a processor. It serves as an intermediary between the processor core and the memory subsystem, aiming to reduce instruction fetch latency and improve overall system performance. The module interfaces with a Wishbone-compliant bus system for memory access, indicating its utility in systems adhering to the Wishbone bus specification. Its primary functions include:
+
+Generating memory fetch requests based on the program counter (`i_pc`) input.
+Handling responses from the memory subsystem, including data (`i_wb_data`) and error signals (`i_wb_err`).
+Managing the Wishbone bus cycle (`o_wb_cyc`) and strobe signals (`o_wb_stb`) for memory access.
+Outputting the fetched instruction (`o_i`), the corresponding program counter value (`o_pc`), auxiliary data (`o_aux`), and status flags (`o_valid`, `o_illegal`) to indicate the validity and legality of the fetched instruction.
+
+Module name:  
+	prefetch
+
+Input ports:
+	i_clk: Clock input. Synchronizes the module's operations.
+	i_rst: Reset input. Asynchronously resets the module to an initial state.
+	i_ce: Clock enable. Controls the module's operation on a given clock cycle.
+	i_stalled_n: Stall signal (active low). Indicates whether the processor is stalled.
+	i_pc: Program counter. Specifies the memory address of the instruction to be fetched.
+	i_aux: Auxiliary input data. Can be used for additional control or metadata.
+	i_wb_ack: Wishbone acknowledge. Indicates a successful memory transaction.
+	i_wb_stall: Wishbone stall. Indicates the memory subsystem cannot currently service a request.
+	i_wb_err: Wishbone error. Indicates an error occurred during the memory transaction.
+	i_wb_data: Wishbone data input. The instruction data fetched from memory.
+Output ports:
+	o_i: Fetched instruction. The instruction data retrieved from memory.
+	o_pc: Program counter output. Mirrors the i_pc input when a valid instruction is fetched.
+	o_aux: Auxiliary output data. Mirrors the i_aux input upon a successful fetch.
+	o_valid: Valid signal. Indicates a valid instruction has been fetched.
+	o_illegal: Illegal instruction signal. Indicates an error or illegal instruction was fetched.
+	o_wb_cyc, o_wb_stb: Wishbone cycle and strobe signals. Control the memory transaction cycle.
+	o_wb_we: Wishbone write enable. Fixed to 0, indicating readonly operations.
+	o_wb_addr: Wishbone address. Specifies the memory address for the fetch operation.
+	o_wb_data: Wishbone data output. Fixed to 0, as the module only performs read operations.
+
+
+Implementation:
+This Verilog module, named prefetch, is designed to interface with a memory system, specifically for prefetching instructions in a processor design. It operates within a larger system that likely includes a CPU core and a memory subsystem, communicating over a simplified Wishbone-like bus interface. The module's primary function is to fetch instruction data from memory at addresses specified by the i_pc (program counter) input, and to manage the control signals for initiating and acknowledging memory transactions.
+
+Give me the complete code.
+

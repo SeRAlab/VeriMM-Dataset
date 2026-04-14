@@ -1,0 +1,31 @@
+
+
+You are tasked with designing a parameterized Verilog module that adds two 26-bit numbers using registers. The module should have the following inputs and outputs:
+
+Inputs:
+- `CLK`: a clock signal
+- `A`: a 26-bit input number
+- `B`: a 26-bit input number
+- `RESET`: a reset signal
+
+Outputs:
+- `SUM`: a 26-bit output representing the sum of `A` and `B`
+
+The module should use registers to store the input values and the intermediate sum. The module should only output the sum when the `RESET` signal is low and the clock signal is rising edge.
+
+Use the following module declaration as a starting point:
+
+```
+module RegisterAdd #(parameter WIDTH=26) (
+    input CLK,
+    input RESET,
+    input [WIDTH-1:0] A,
+    input [WIDTH-1:0] B,
+    output reg [WIDTH-1:0] SUM
+    );
+
+    // Your code here
+
+endmodule
+```
+

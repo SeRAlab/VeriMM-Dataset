@@ -1,0 +1,10 @@
+Design a D-type flip-flop with additional asynchronous set, reset, and preset controls. On the rising edge of the clock, the module will output the value of the input data (d) into q, while q_bar represents the logical inverse of q. If the reset signal is active, q will be cleared to 0, and q_bar set to 1. If the set or preset signals are active, q will be set to 1, and q_bar will be set to 0, overriding the d input. This design is useful for sequential circuits requiring controlling states with both synchronous and asynchronous signals.
+module top_module(
+    input clk,
+    input d,
+    input set,
+    input reset,
+    input preset,
+    output reg q,
+    output reg q_bar
+    );

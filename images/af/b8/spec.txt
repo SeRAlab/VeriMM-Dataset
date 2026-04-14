@@ -1,0 +1,10 @@
+Design a register file with three 8-bit output registers (opa, opb, opc) and a single 8-bit write input (idata). On each rising edge of the clock, the module outputs the selected register's value based on a 2-bit address input (addr). If reset is activated, it initializes all outputs to known states, setting odata to 0 and all registers to 255. When the write enable (we_n) signal is low, the module allows writing of new data into the specified register indicated by addr while also supporting bit manipulation for the 'opc' register when addr is 3.
+module top_module(
+    input clk, reset, we_n,
+    input [1:0] addr,
+    input [7:0] idata,
+    output reg [7:0] odata,
+    output reg [7:0] opa,
+    output reg [7:0] opb,
+    output reg [7:0] opc
+);

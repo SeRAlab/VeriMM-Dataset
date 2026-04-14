@@ -1,0 +1,6 @@
+Design a circuit that processes a 100-bit input vector, producing three outputs based on logical operations. The output `out_any` is a 99-bit vector that indicates which bits of the input are set in either the upper 99 bits or the lower 99 bits, utilizing a bitwise OR operation. The output `out_both` is a 98-bit vector that reflects which bits are set in both the upper and lower segments of the input, realized through a bitwise AND operation. Finally, the output `out_different` is a 100-bit vector that highlights the bits in the input that differ when comparing the least significant bit with the upper 99 bits, achieved via a bitwise XOR operation.
+module top_module( 
+    input [99:0] in,
+    output [98:0] out_both,
+    output [99:1] out_any,
+    output [99:0] out_different );

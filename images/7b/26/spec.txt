@@ -1,0 +1,6 @@
+Design a 4-to-7 line encoder with a control select input. The module takes a 4-bit input `a` and encodes it into a 7-bit output `b`, depending on the value of `select`. The output `b` reflects the logical XOR combinations of the input bits, while also inverting these values when `select` is high. The specific output bits `b[0]`, `b[1]`, and `b[3]` are derived from the intermediate XOR results, while the remaining bits directly represent the values from input `a`. This functionality can be used in applications where a compact representation of active inputs is required.
+module top_module(
+    input select,
+    input [3:0] a,
+    output  reg [6:0]b
+    );

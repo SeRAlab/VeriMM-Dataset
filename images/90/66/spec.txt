@@ -1,0 +1,7 @@
+Design a double-register stage circuit that captures and transfers an input data signal with synchronization to a clock. This module has an 8-bit wide input (source_data) that is registered on the rising edge of the clock (dest_clk) while being reset to zero when dest_resetn is low. The two internal registers (dest_data_i1 and dest_data_i2) operate in tandem to implement a two-stage pipeline, ensuring stable output (dest_data) that reflects the input data in a clocked manner, thereby improving data integrity and timing margins.
+module top_module(
+  dest_clk,
+  dest_resetn,
+  source_data,
+  dest_data
+  );

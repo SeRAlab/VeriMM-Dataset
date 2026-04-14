@@ -1,0 +1,29 @@
+
+
+You have been tasked with designing a Verilog module for a 4-bit binary-to-Gray code converter. The module should have a 4-bit input (binary) and a 4-bit output (Gray code). The output should be updated whenever there is a change in the input. The module should be implemented within 200 lines of Verilog code.
+
+A Gray code is a binary numeral system where two successive values differ in only one bit. For example, the binary representation of 6 is 110, whereas its Gray code representation is 100. The conversion from binary to Gray code can be done using the following algorithm:
+
+1. The most significant bit (MSB) of the Gray code is the same as the MSB of the binary code.
+2. For each bit starting from the second most significant bit (2nd MSB), the Gray code bit is the XOR of the current binary bit and the previous Gray code bit.
+
+For example, to convert the binary number 0110 to Gray code, we follow the algorithm as follows:
+
+1. The MSB of the Gray code is the same as the MSB of the binary code, which is 0.
+2. The 2nd MSB of the Gray code is the XOR of the 2nd MSB of the binary code (1) and the previous Gray code bit (0), which gives 1.
+3. The 3rd MSB of the Gray code is the XOR of the 3rd MSB of the binary code (1) and the previous Gray code bit (1), which gives 0.
+4. The 4th MSB of the Gray code is the XOR of the 4th MSB of the binary code (0) and the previous Gray code bit (0), which gives 0.
+
+Therefore, the Gray code representation of 0110 is 1000.
+
+Implement a Verilog module that takes a 4-bit binary input and produces a 4-bit Gray code output, using the algorithm described above. Your module should be named "bin2gray" and should have the following interface:
+
+```
+module bin2gray (
+    input [3:0] binary,
+    output [3:0] gray
+);
+```
+
+The module should be implemented within 200 lines of Verilog code.
+

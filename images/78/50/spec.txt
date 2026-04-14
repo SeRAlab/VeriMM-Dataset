@@ -1,0 +1,7 @@
+Design a circuit that performs rounding and saturation on a signed integer input. The module takes a signed n-bit input, rounds it to the nearest integer, and then ensures the output remains within a specified range defined by minimum and maximum bounds. If the rounded value exceeds the maximum, the output is set to the maximum; if it falls below the minimum, the output is set to the minimum; otherwise, the output is simply the rounded value.
+module top_module(
+  input signed [n-1:0] in,
+  input signed [n-1:0] min,
+  input signed [n-1:0] max,
+  output reg signed [n-1:0] out // Changed to 'reg' to allow assignment
+);

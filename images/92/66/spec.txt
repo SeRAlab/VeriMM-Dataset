@@ -1,0 +1,13 @@
+Design a synchronous first-in-first-out (FIFO) buffer with both read and write capabilities for 8-bit data. The module includes a clock input for synchronization, a write enable signal to control data entry, and manages the status of the FIFO including fullness and emptiness indicators. When the write signal is asserted and the FIFO is not full, data from the input is stored into an internal memory array. The read operation checks if any data is available, returning the first entry if present and indicating whether the FIFO is empty. Additional outputs reflect the number of used entries and whether the FIFO is full, assisting in flow control for connected components.
+module top_module(
+  // inputs:
+  clk,
+  fifo_wdata,
+  fifo_wr,
+
+  // outputs:
+  fifo_FF,
+  r_dat,
+  wfifo_empty,
+  wfifo_used
+);

@@ -1,0 +1,13 @@
+Design a module that combines a Johnson counter with a 4-to-1 multiplexer. The Johnson counter generates a specific sequence stored in a register, outputting a selected value from a predefined RAM based on the current state of the counter. The multiplexer selects one of four 8-bit input signals (input1 to input4) to create a 16-bit output (mux_out) based on the control signals sel_b1 and sel_b2. The module resets the internal registers and outputs on a low reset signal, ensuring reliable operation on clock edges. The overall purpose is to produce a unique output from both the Johnson counter and the multiplexer in a synchronous manner.
+module top_module(
+    input clk,
+    input rst_n,
+    input [7:0] input1,
+    input [7:0] input2,
+    input [7:0] input3,
+    input [7:0] input4,
+    input sel_b1,
+    input sel_b2,
+    output [15:0] Johnson_out,
+    output reg [15:0] mux_out
+);

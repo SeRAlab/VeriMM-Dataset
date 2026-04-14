@@ -1,0 +1,12 @@
+Design a random number generator utilizing a 10-bit linear feedback shift register (LFSR) that produces a pseudo-random sequence based on a specific feedback polynomial. The module initializes its state to zero upon reset and updates its state on the clock edge. It generates a random number influenced by the RetryCnt input, selectively outputting bits from the LFSR based on the count of retries. Additionally, the generator latches the random number when the StateJam signal is asserted and the previous state was inactive. Finally, it provides outputs indicating whether the latched random number equals zero and whether it matches a value based on the ByteCnt and NibCnt inputs.
+module top_module(
+  input MTxClk,
+  input Reset,
+  input StateJam,
+  input StateJam_q,
+  input [3:0] RetryCnt,
+  input [15:0] NibCnt,
+  input [9:0] ByteCnt,
+  output RandomEq0,
+  output RandomEqByteCnt
+);

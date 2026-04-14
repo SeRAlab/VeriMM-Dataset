@@ -1,0 +1,8 @@
+Design a barrel shifter capable of performing circular shifts on an 8-bit input based on a 2-bit shift amount and a select signal for direction. The module first determines the outcome of a circular shift through a combinational logic block, then, on the rising edge of the clock, either left or right shifts this intermediate result according to the select signal. Finally, it produces an output that is the bitwise XOR of the original input and the shifted result, effectively altering the data based on the specified shift operation.
+module top_module(
+    input [7:0] data_in,
+    input [1:0] shift_amount,
+    input select,
+    input clk, // Added clk input
+    output reg [7:0] data_out // Changed to reg to match assignment in always block
+);

@@ -1,0 +1,1 @@
+module top_module(output G);assign G = 0;endmodule

@@ -1,0 +1,4 @@
+Design a control logic module for a fetch stage in a CPU. The module takes a branch signal, an enable fetch signal, and a 4-bit opcode as inputs. It determines two outputs: `pc_sel`, which decides whether to select the branching operation based on the `branch` signal, and `pc0`, which indicates whether the program counter should be active (set to 1) or inactive (set to 0). The outputs are enabled when the fetch is allowed and the opcode is not equal to a specific value, ensuring control of the instruction fetch sequence based on the CPU's operational state.
+module top_module(
+    input branch, en_fetch, input [3:0] opcode,
+    output reg pc_sel, pc0);

@@ -1,0 +1,11 @@
+Develop an arithmetic and logic unit (ALU) capable of executing a variety of operations based on a 3-bit select input. The ALU supports addition, subtraction, logical AND, logical OR, bitwise NOT, and bitwise XOR operations on two 6-bit inputs. It generates outputs that include the result of the operation, carry flag, overflow flag, and zero flag, ensuring that flags are updated accordingly with each clock cycle. The zero flag indicates if the output is zero. Use the select input to determine the specific operation to perform, allowing for versatile integration into larger digital systems.
+module top_module(
+    input clk, 
+    input [2:0]s,
+    input [5:0]a,
+    input [5:0]b,
+    output reg cf, 
+    output reg of,
+    output reg zf,
+    output reg[5:0]y 
+);

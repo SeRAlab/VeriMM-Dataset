@@ -1,0 +1,7 @@
+Design a binary to binary-coded decimal (BCD) converter that takes a 5-bit binary input and produces two 4-bit BCD outputs. The first output (BCD0) represents the least significant digit while the second output (BCD1) corresponds to the most significant digit. The conversion process involves shifting the binary input left, adjusting the BCD digits accordingly if any of them exceed 9, and performing necessary modifications to maintain valid BCD representation. The module operates synchronously, updating the BCD outputs on the positive edge of the clock signal.
+module top_module(
+    input [4:0] BIN,
+    input clk,           // added clk input
+    output reg [3:0] BCD0,
+    output reg [3:0] BCD1
+);

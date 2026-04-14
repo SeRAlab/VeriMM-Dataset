@@ -1,0 +1,3 @@
+Design a mixed-function decoder module that interprets four status request inputs (`sb_ireq1`, `sb_ireq2`, `sb_ireq3`, `sb_ireq4`) to produce specific output values for four 12-bit wide registers: `sav_ac`, `sav_io`, `sav_pc`, and `sav_jmp`. If the `sbs_model` parameter is set to "SBS", fixed values are assigned to the outputs. Otherwise, the outputs are determined based on the combination of the input requests, utilizing a case statement to update the registers to predefined address values corresponding to the active request. This module effectively decodes input conditions into register values for system control or data routing.
+module top_module(sb_ireq1, sb_ireq2, sb_ireq3, sb_ireq4,
+			sav_ac, sav_io, sav_pc, sav_jmp);

@@ -1,0 +1,12 @@
+Develop a circuit that combines a 4-bit counter and a 100-bit data rotator, where the counter can be asynchronously reset or loaded with a specified value, starting from an initial value of 8. The counter increments with each clock cycle unless loaded, while the rotator can perform either no rotation, a right rotation, or a left rotation based on the two-bit enable input. The outputs include the current value of the counter, the modified data following the specified rotation, and a final 104-bit output that represents the sum of the counter and rotator outputs.
+module top_module(
+    input clk,
+    input reset,      // Asynchronous active-high reset
+    input load,       // Active-high parallel load input
+    input [3:0] load_value, // 4-bit load value
+    input [1:0] ena, // Left/right enable inputs for the rotator
+    input [99:0] data, // Input for the rotator
+    output [3:0] counter_out, // 4-bit output from the counter
+    output [99:0] rotator_out, // 100-bit output from the rotator
+    output [103:0] final_out // Sum of counter and rotator outputs
+);

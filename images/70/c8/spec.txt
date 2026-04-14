@@ -1,0 +1,8 @@
+Design a simple arithmetic calculator capable of performing basic operations such as addition, subtraction, multiplication, and division on two 8-bit inputs, `in1` and `in2`. The module includes a reset functionality that clears the output and intermediate result. Based on a 4-bit `opcode`, it selects the appropriate operation and computes the result, which is then output as an 8-bit value. Additionally, the design tracks whether the computed result is negative, providing a negation flag output. This structure effectively functions as an arithmetic logic unit (ALU) for basic arithmetic operations.
+module top_module(
+    input clk, reset,
+    input [7:0] in1, in2,
+    input [3:0] opcode,
+    output reg [7:0] out,
+    output reg negative
+);

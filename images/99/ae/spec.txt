@@ -1,0 +1,9 @@
+Design a circuit that functions as an address multiplexer. It selects between three different sources for generating an output address: if `reg_addr` is high, it uses the least significant 8 bits of the `alu_result`; if `stack_command` is high, it outputs the `stack_pointer`; otherwise, it outputs the `addr` input. The final output is an 8-bit wide `true_addr`, based on the conditions specified.
+module top_module(
+        input reg_addr, 
+        input stack_command,
+        input [7:0] stack_pointer,
+        input [7:0] addr,
+        input [15:0] alu_result,
+        output reg [7:0] true_addr
+    );

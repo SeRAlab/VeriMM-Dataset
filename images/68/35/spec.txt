@@ -1,0 +1,11 @@
+Design a hazard detection unit for a pipelined processor that handles load-use hazards. This module generates a stall signal to prevent data hazards by monitoring memory read signals from the execution (EX) and memory (MEM) stages. It checks if the destination registers of the EX and MEM stages are being used as source registers (ID_rs and ID_rt) in the instruction decode (ID) stage. When a conflict is detected, indicated by a match between the register reads and memory writes, the module outputs a stall signal, which pauses the pipeline until the data hazard is resolved. The unit also accounts for jump registers, helping to maintain the correct execution flow in the pipeline.
+module top_module(
+    input MEM_MemRead,
+    input EX_MemRead,
+    input [4:0] MEM_rd,
+    input [4:0] EX_rd,
+    input [4:0] ID_rs,
+    input [4:0] ID_rt,
+    input IS_JR,
+    output Stall
+    );

@@ -1,0 +1,12 @@
+Design a memory module that operates as a small register file with 16 32-bit registers. The module features a reset signal to clear all registers and a write-enable signal to allow data input to specified addresses. It outputs the data from the register at address 0 to expose it for driving an LED output, while the selected register's value can be read via the address input. When the reset is activated, all registers are set to zero, and during normal operation, data can be written to a specific register based on the address provided.
+module top_module(
+
+	input clk,
+	input rst,
+	input wea,
+	input [3:0] addra,
+	input [31:0] dina,
+	output reg [31:0] douta,
+	output [7:0] led
+
+	);

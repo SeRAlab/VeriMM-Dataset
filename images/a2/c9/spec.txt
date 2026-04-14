@@ -1,0 +1,9 @@
+Design a dual-port memory module that stores 16-bit wide data. The module features a reset function that initializes the memory to zero upon activation. It allows writing 16 bits of data into memory using a 10-bit address space (effectively addressing 1024 memory locations). On a positive clock edge, if 'we' (write enable) is high, the module splits the 16-bit input data into two 8-bit values and writes them to consecutive memory locations. The module also outputs the 16 bits of data located at the specified address when called.
+module top_module(
+    input wire clk,
+    input wire rst_n,
+    input wire [15:0] addr,
+    input wire [15:0] data_in,
+    input wire we,
+    output wire [15:0] data_out
+);

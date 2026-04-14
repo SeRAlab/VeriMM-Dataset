@@ -1,0 +1,8 @@
+Implement a digital circuit that performs multiplication of two 6-bit numbers using a sequential algorithm. The module takes a clock signal and a reset input, initializes the intermediate registers for processing the multiplicand and multiplier, and utilizes an iterative shifting and addition technique to compute the 11-bit product. It shifts the multiplicand and updates the multiplier in each clock cycle, accumulating the results until the iteration count reaches 6, at which point the product is finalized. This design effectively mimics the long multiplication method commonly used in arithmetic.
+module top_module(
+  input clk,
+  input reset,
+  input [5:0] multiplicand,
+  input [5:0] multiplier,
+  output reg [10:0] product
+);

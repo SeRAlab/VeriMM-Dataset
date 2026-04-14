@@ -1,0 +1,9 @@
+Design a 4-bit up/down counter that can be loaded with an external value or count up and down depending on the clock input. The counter resets to zero when the reset input is high and increments or decrements its value based on the `ena` (enable) signal. When the `ld` (load) signal is activated, it loads a specified 4-bit value from the `data` input. The counter wraps around when reaching its maximum (15) or minimum (0) values, allowing smooth counting in both directions while maintaining the ability to reset or load new values as needed.
+module top_module(
+    input clk,
+    input rst,
+    input ena,
+    input ld,
+    input [3:0] data,
+    output reg [3:0] q
+);

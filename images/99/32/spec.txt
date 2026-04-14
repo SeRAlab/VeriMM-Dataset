@@ -1,0 +1,15 @@
+Implement the Verilog module based on the following description.
+Create an 8-bit register with enable and asynchronous reset. The register loads data when enabled and resets to zero when the reset signal is high.
+
+// Signals are defined as below:
+// (1) reset: Asynchronously resets the register to zero. Active high.
+// (2) clk: The clock signal.
+// (3) ena: Enables loading of data. Active high.
+// (4) data: The 8-bit data input to be loaded.
+// (5) q: The 8-bit output of the register.
+module register(
+    input clk,
+    input reset,
+    input ena,
+    input [7:0] data,
+    output reg [7:0] q);

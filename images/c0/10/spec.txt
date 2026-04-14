@@ -1,0 +1,40 @@
+Please act as a professional verilog designer.
+    
+Implement a module to interface with a memory subsystem, facilitating operations such as read and write. It serves as a bridge between a processor or another control unit and the memory, handling the necessary signaling and protocol to perform memory operations. The module supports distinguishing between global and local memory spaces, potentially allowing for different handling or prioritization of memory accesses based on their target address space. It also includes functionality to handle locking mechanisms, which can be crucial in multi-threaded or multi-processor environments to ensure data consistency and prevent race conditions.
+
+Module name:  
+	memops
+
+Input ports:
+	i_clk: Clock input. The module operates on the rising edge of this clock.
+	i_rst: Reset input. A high signal on this input resets the module's internal state.
+	i_stb: Strobe input. Indicates when a new operation is being requested.
+	i_lock: Lock input. Used to indicate that the current operation should lock the memory bus.
+	i_op: Operation input. Specifies the type of memory operation (e.g., read or write).
+	i_addr: Address input. Specifies the memory address for the operation.
+	i_data: Data input. Contains the data to be written to memory in write operations.
+	i_oreg: Output register input. Specifies the destination register for read data.
+	i_wb_ack: Wishbone acknowledge input. Indicates that the memory operation has been completed.
+	i_wb_stall: Wishbone stall input. Indicates that the memory subsystem is not ready to complete the current operation.
+	i_wb_err: Wishbone error input. Indicates an error occurred during the memory operation.
+	i_wb_data: Wishbone data input. Contains the data read from memory.
+Output ports:
+	o_busy: Busy output. Indicates that the module is currently performing a memory operation.
+	o_valid: Valid output. Indicates that the read operation has completed successfully and the data is valid.
+	o_err: Error output. Indicates that an error occurred during the memory operation.
+	o_wreg: Write register output. Specifies the destination register for read data.
+	o_result: Result output. Contains the data read from memory.
+	o_wb_cyc_gbl: Wishbone cycle global output. Indicates an active memory operation targeting the global address space.
+	o_wb_cyc_lcl: Wishbone cycle local output. Indicates an active memory operation targeting the local address space.
+	o_wb_stb_gbl: Wishbone strobe global output. Indicates a request to the global memory space.
+	o_wb_stb_lcl: Wishbone strobe local output. Indicates a request to the local memory space.
+	o_wb_we: Wishbone write enable output. Indicates a write operation.
+	o_wb_addr: Wishbone address output. Specifies the target memory address for the operation.
+	o_wb_data: Wishbone data output. Contains the data to be written to memory.
+
+
+Implementation:
+This RTL module, named memops, is designed to interface with a memory subsystem, potentially as part of a larger system-on-chip (SoC) design. It handles memory operations by generating requests to a Wishbone bus, a popular bus architecture used in embedded systems for interconnecting components. The module supports both global and local memory accesses, distinguished by the address space, and can handle read and write operations. The design incorporates optional locking functionality to support atomic operations or to ensure sequence integrity in multi-step operations.
+
+Give me the complete code.
+

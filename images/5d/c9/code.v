@@ -1,0 +1,1 @@
+module top_module(input clk, output led);assign led = clk;endmodule

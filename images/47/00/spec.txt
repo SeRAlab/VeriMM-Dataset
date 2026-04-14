@@ -1,0 +1,10 @@
+This Verilog code implements a state machine for a vending machine controller. The system takes inputs for a clock, reset, a coin insertion signal (N), a dollar input (D), and a product request signal (Q). It maintains two outputs: `vend`, which indicates whether a product is dispensed, and `change`, which indicates if change should be returned to the user. The controller operates through three states: in STATE0, it waits for a valid product request; in STATE1, it handles ongoing requests while dispensing the product; and in STATE2, it handles the situation where change needs to be given. The transitions among these states depend on the inputs, enabling the system to manage vending operations effectively.
+module top_module(
+    input clk,
+    input reset,
+    input N,
+    input D,
+    input Q,
+    output reg vend,
+    output reg change
+);

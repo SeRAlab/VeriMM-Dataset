@@ -1,0 +1,4 @@
+Design a PCI configuration space register that outputs a 256-bit wide configuration vector, CFG. This module statically assigns specific bits within the CFG output to represent essential PCI device information such as the Device ID, Vendor ID, Class Code, Revision ID, and Base Address Registers (BARs) for memory-mapped I/O. It includes configurations for maximum latency, minimum grant, and various capabilities relevant to PCI operation, enabling specific features like interrupt handling and bus speed settings. The module sets many bits to predetermined values that comply with the PCI standard for device configuration.
+module top_module(
+    output reg [255:0] CFG
+);

@@ -1,0 +1,9 @@
+This Verilog module implements a 32-bit Arithmetic Logic Unit (ALU) capable of performing a variety of operations based on the specified control signal. The ALU can execute bitwise AND, OR, addition, subtraction, bitwise NOR, set less than, right shift, and bitwise XOR operations on two 32-bit inputs, A and B. The module calculates the result of the selected operation and outputs it, while also determining if the result equals zero and tracking overflow conditions for addition and subtraction. The design allows for flexible operation selection through a 3-bit control signal, making it suitable for integration in broader digital systems, such as microprocessors and computational units.
+module top_module(
+	input [31:0] A,
+	input [31:0] B,
+	input [2:0] ALU_operation,
+	output [31:0] res,
+	output zero,
+	output reg overflow
+    );

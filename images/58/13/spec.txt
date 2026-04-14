@@ -1,0 +1,9 @@
+Design a 4-bit wide arithmetic calculator module that performs addition, subtraction, multiplication, and division based on a 2-bit operation selector (Op). The calculator takes two 4-bit inputs (A and B) and computes the result, which is an 8-bit output. It includes a reset functionality that sets the result and overflow indicators to zero when activated. Overflow detection is implemented for addition, subtraction, and multiplication to ensure that the result does not exceed 8 bits. An edge case for division is handled to avoid division by zero, returning default values in such scenarios.
+module top_module(
+  input [3:0] A,
+  input [3:0] B,
+  input [1:0] Op,
+  input RST,
+  output reg [7:0] Result,
+  output reg Overflow
+);

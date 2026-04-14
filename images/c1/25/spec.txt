@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+    
+Implement a module primarily functions as a bidirectional data switch with masking capabilities. It to facilitate controlled data transfer between two buses, `db_down` and `db_up`, based on enable signals and a masking option. This module finds its utility in systems requiring dynamic data routing and masking, such as in data processing units, communication interfaces, or complex digital systems where conditional data manipulation and routing are necessary.
+
+Key functionalities include:
+Bidirectional data transfer between `db_down` and `db_up` buses.
+Conditional masking of specific bits during the data transfer process.
+Enable-controlled operation for both upward and downward data transfers.
+
+Module name:  
+	data_switch_mask
+
+Input ports:
+	sw_up_en (input wire): Enable signal for transferring data from db_down to db_up. When high, data is allowed to flow upwards.
+	sw_down_en (input wire): Enable signal for transferring data from db_up to db_down. When high, data is allowed to flow downwards.
+	sw_mask543_en (input wire): Enable signal for masking bits 5, 4, and 3 during the data transfer. When high, these bits are not transferred.
+Output ports:
+	db_down (inout wire [7:0]): Bidirectional 8bit data bus for downward data transfer. When sw_down_en is high, data from db_up is conditionally transferred to this bus based on the masking and enable signals.
+	db_up (inout wire [7:0]): Bidirectional 8bit data bus for upward data transfer. When sw_up_en is high, data from db_down is transferred to this bus.
+
+
+Implementation:
+The data_switch_mask module is designed to facilitate bidirectional data transfer between two buses, db_down and db_up, with additional control and masking capabilities. The module operates based on the states of three input signals: sw_up_en, sw_down_en, and sw_mask543_en. These signals control the direction of data flow and the application of a mask to certain bits of the data being transferred. The module primarily employs combinational logic to achieve its functionality, with no explicit sequential elements (like flip-flops or latches) defined within.
+Data Transfer Logic: The module allows for bidirectional data transfer between db_down and db_up. The direction of the transfer is controlled by sw_up_en and sw_down_en. When sw_up_en is asserted (high), data is transferred from db_down to db_up. Conversely, when sw_down_en is asserted, data flows from db_up to db_down. If neither control signal is asserted, the corresponding bus lines are placed in a high-impedance state (Z), effectively disconnecting them.
+Masking Logic: The sw_mask543_en signal controls the masking of certain bits during the data transfer. Specifically, when sw_mask543_en is asserted, bits [5:3] are not transferred and are instead left in a high-impedance state. This is achieved by directly assigning these bits to 1'bz when sw_down_en is asserted, indicating a transfer from db_up to db_down. The masking logic does not apply when data is transferred in the opposite direction (from db_down to db_up).
+Bitwise AND Masking for Specific Bits: For bits [7:6] and [2:0], an additional layer of masking is applied when transferring data from db_up to db_down. This masking is controlled by the inverse of sw_mask543_en (SYNTHESIZED_WIRE_4). When sw_mask543_en is deasserted, these bits are ANDed with a mask before being transferred, effectively allowing selective bit clearing based on the mask.
+
+Give me the complete code.
+

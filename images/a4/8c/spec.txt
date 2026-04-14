@@ -1,0 +1,13 @@
+Design a dual-port RAM module that allows simultaneous read and write operations with a 2-to-1 multiplexer for input selection. This module features an active-low reset input to initialize the RAM contents to zero and includes functionality for writing data to specified addresses using either of the two 4-bit input signals based on a select line. Additionally, the module supports reading data from specified addresses, applying a logical AND operation with a constant value of 4'b1100 to the retrieved data before outputting. This design is suitable for applications requiring concurrent memory access and data manipulation.
+module top_module(
+  input clk,
+  input rst_n, // Active-low reset input
+  input write_en, // Write enable signal
+  input [7:0] write_addr, // Address input for write port
+  input [3:0] in1, // First 4-bit input for the 2-to-1 multiplexer
+  input [3:0] in2, // Second 4-bit input for the 2-to-1 multiplexer
+  input select, // Select input for the 2-to-1 multiplexer
+  input read_en, // Read enable signal
+  input [7:0] read_addr, // Address input for read port
+  output reg [3:0] read_data // 4-bit output from the read port
+);

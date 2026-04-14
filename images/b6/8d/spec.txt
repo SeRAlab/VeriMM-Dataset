@@ -1,0 +1,9 @@
+Design a power management circuit that controls the outputs VCC and VDD based on the status of the inputs VPB, VPWR, and VNB. When VPB is LOW, both VCC and VDD are set to LOW. If VPB is HIGH and VPWR is also HIGH, VCC is set to HIGH while VDD remains LOW. Alternatively, if VPB is HIGH and VNB is HIGH, VCC is set to LOW and VDD is set to HIGH. In all other conditions, both outputs remain LOW. This module effectively manages power supply states based on input signals, ensuring proper operation of connected circuitry.
+module top_module(
+    input VPB,
+    input VPWR,
+    input VGND,
+    input VNB,
+    output reg VCC,
+    output reg VDD
+);

@@ -1,0 +1,10 @@
+Design a display module that visualizes a 16-bit register value as a grid of pixels on a VGA screen. It determines the pixel color based on the register's bits, where each bit corresponds to a specific pixel in a 5x5 grid layout, and is activated when the current pixel coordinates fall within a defined area on the screen. The background color can be set via an input, and the display turns on or off depending on whether the pixel coordinates are within the designated region. The module uses the clock signal to update its state, ensuring synchronization with the VGA timing.
+module top_module(
+    input clk,               // the system clock
+    input [15:0] data_in,    // the value of the register to show
+    input [10:0] vga_h,      // the current vertical pixel count being displayed
+    input [10:0] vga_v,      // the current horizontal pixel count being displayed
+    input [2:0] bg,          // the colour of the background pixel
+    output [2:0] pixel_out,  // The requested  pixel value at vga_h x vga_v
+    output display_on        // whether the screen should be displaying this
+ );

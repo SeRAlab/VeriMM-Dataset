@@ -1,0 +1,18 @@
+Implement the Verilog module based on the following description.
+Module V implements the boolean function z = (x | ~y).
+
+// Module W can be described by the following simulation waveform: 
+
+If x = 1, y = 1, then z = 1.
+If x = 0, y = 1, then z = 0.
+If x = 0, y = 0, then z = 1.
+If x = 1, y = 0, then z = 1.
+
+// Now consider a top-level that uses two V submodules and two W submodules. The first input of all four submodules is connect to input 'x', and the second input of all four submodules is connected to 'y'. The output of the first V submodule is connected to a two-input AND gate, along with the output of the first W submodule. The second pair of V and W submodules is similarly connected to an XOR gate. The output of the AND and the XOR is connected to an OR, whose output is 'z'.
+
+// Implement this circuit in Verilog.
+
+module top_module(
+    input x,
+    input y,
+    output z);

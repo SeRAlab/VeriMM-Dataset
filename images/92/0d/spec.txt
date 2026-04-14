@@ -1,0 +1,7 @@
+Design a sequential circuit that utilizes shift register functionality for bit storage and retrieval. The module is clock-driven, with an 8-bit register (Q) that shifts data through its bits on every rising edge of the clock when enabled. The module accepts three input control signals (A, B, C) to create a 3-bit index (temp), which is used to select and output one of the stored bits from the register as the output (Z). The input S is loaded into the first bit of the register when enabled, while subsequent bits are updated to reflect the previous bit values, effectively creating a delay line for the input signal.
+module top_module(
+    input clk,
+    input enable,
+    input S,
+    input A, B, C,
+    output Z );

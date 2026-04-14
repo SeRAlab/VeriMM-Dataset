@@ -1,0 +1,18 @@
+Implement the Verilog module based on the following description.
+Module E implements the boolean function u = x ~^ y.
+
+// Module F can be described by the following simulation waveform: 
+
+If x = 1, y = 1, then u = 1.
+If x = 0, y = 1, then u = 0.
+If x = 0, y = 0, then u = 1.
+If x = 1, y = 0, then u = 0.
+
+// Now consider a top-level that uses two E submodules and two F submodules. The first input of all four submodules is connect to input 'x', and the second input of all four submodules is connected to 'y'. The output of the first E submodule is connected to a two-input XOR, along with the output of the first F submodule. The second pair of E and F submodules is similarly connected to an OR gate. The output of the XOR and the OR is connected to a NOR, whose output is 'u'.
+
+// Implement this circuit in Verilog.
+
+module top_module(
+    input x,
+    input y,
+    output u);

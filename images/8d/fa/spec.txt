@@ -1,0 +1,9 @@
+Design a memory controller for a digital system featuring both read and write functionalities. The module supports a configurable address space with `n` address lines and `m` data lines, allowing for connection to an array of memory storage. When the `read` signal is active and `write` is inactive, the controller outputs the data stored at the specified address; if the read signal is inactive, the output defaults to zero. Conversely, when the `write` signal is active and `read` is not, data can be written to the specified memory address. The memory is organized as a multi-dimensional array, effectively creating a simple RAM-like structure for storing and retrieving data.
+module top_module(
+  input clk,            // Added clock input
+  input read,
+  input write,
+  input [n-1:0] address,
+  input [m-1:0] data_in,
+  output [m-1:0] data_out
+);

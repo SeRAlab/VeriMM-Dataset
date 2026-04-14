@@ -1,0 +1,12 @@
+Design a circuit with multiple functionalities controlled by a single select signal (s). When s=0, the module performs arithmetic operations: it outputs the sum of inputs a and b on o1, and the difference of a and b on o2. When s=1, it outputs a fixed zero on o1, the value of a on o2, the sum of inputs c and d on o3 setting a constant output for d, and the difference of c and d on o4, allowing conditional computation based on the select signal.
+module top_module(
+    input [8:0] a,
+    input [8:0] b,
+    output [8:0] o1,
+    output [2:0] o2,
+    input [2:0] c,
+    input [2:0] d,
+    output [2:0] o3,
+    output [2:0] o4,
+    input s
+);

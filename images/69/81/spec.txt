@@ -1,0 +1,9 @@
+Design a serial peripheral interface (SPI) shift module that facilitates both transmitting and receiving data in a configurable bit-length communication protocol. The module operates based on a clock signal and includes features to handle the data shift operations based on the specified character length, while accommodating both least and most significant bit first data transmission. It maintains a count of bits transmitted, generates clock signals for both receiving and transmitting sides, and manages the state of the transmission and reception through control signals such as `go` and various edge detections. The `s_out` output provides the currently transmitted bit, and `p_out` reflects the processed output data shifted from `p_in`. Overall, the module supports asynchronous data transfer while ensuring synchronization through clock management.
+module top_module(
+  input clk, rst, go, pos_edge, neg_edge, rx_negedge, tx_negedge, lsb, s_clk, 
+  input [17:0] p_in,
+  input [7:0] len,
+  output reg tip, last,
+  output reg [17:0] p_out, // Changed from wire to reg
+  output reg s_out
+);

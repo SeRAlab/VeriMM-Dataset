@@ -1,0 +1,10 @@
+Design a synchronous RAM module with a depth of 1024 words and a width of 8 bits. The module uses a clock input to control write operations; when the write enable (we) signal is active, it stores the input data (din) at the specified address (addr). The output (dout) provides the data stored at the current address after a write operation. Additionally, the module supports reading from a different address (read_addr) asynchronously, outputting this data on q. This design serves as a basic memory element for storing and retrieving byte-sized data in digital systems.
+module top_module(
+  input clk,
+  input we,
+  input [9:0] addr,
+  input [7:0] din,
+  input [9:0] read_addr,
+  output reg [7:0] dout,
+  output reg [7:0] q
+);

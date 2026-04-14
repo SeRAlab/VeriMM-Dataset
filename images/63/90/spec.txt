@@ -1,0 +1,9 @@
+Design a state machine for a vending machine that processes coin insertion, item selection, and dispensing both the item and change. The system operates with a clock and reset signal, managing its states through an IDLE state, transitioning to COIN_INSERTED upon detecting a coin, then to ITEM_SELECTED after adequate coins are gathered. If items are available, it moves to DISPENSING, asserting the dispense signal, followed by CHANGE_DISPENSING to signal change processing before returning to the IDLE state. The module also keeps track of the number of items and ensures a maximum of 10 items can be offered for sale, reinforcing the financial transactions based on item cost and coin value parameters.
+module top_module(
+    input clk,
+    input reset,
+    input coin,
+    input item,
+    output reg dispense,  // Changed to reg
+    output reg change     // Changed to reg
+);

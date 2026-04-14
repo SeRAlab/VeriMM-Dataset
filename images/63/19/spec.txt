@@ -1,0 +1,9 @@
+Develop a signed 8-bit adder that detects overflow conditions during addition. The module takes two signed 8-bit inputs, a and b, along with a clock and reset signal. It extends the inputs to 9 bits to accommodate potential carries during addition. On each clock cycle, if the reset is activated, the output sum and overflow flag are reset to zero. Otherwise, it computes the sum of the extended inputs and stores the result in an 8-bit output, while also evaluating an overflow condition based on the signs of the inputs and the resulting sum. The overflow flag indicates whether the addition resulted in an incorrect sign representation.
+module top_module(
+  input clk,
+  input reset,
+  input signed [7:0] a,
+  input signed [7:0] b,
+  output reg signed [7:0] s,
+  output reg overflow
+);

@@ -1,0 +1,6 @@
+Design a 3-to-8 line decoder that outputs an active LOW signal. The decoder takes a 3-bit input (A) and produces 8 output lines (nY[0] to nY[7]), which are activated based on the binary value of A when the enable signals (nE1, nE2, and E3) are correctly set. The outputs will remain HIGH unless both enable inputs are deactivated (nE1 and nE2 are LOW) and E3 is HIGH, in which case only one of the outputs will go LOW corresponding to the input value of A.
+module top_module(
+    input wire nE1, nE2, E3,
+    input wire [2 : 0] A,
+    output wire [7 : 0] nY
+    );

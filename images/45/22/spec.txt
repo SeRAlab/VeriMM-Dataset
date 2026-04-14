@@ -1,0 +1,9 @@
+Design a signed integer divider module that computes the quotient and remainder of two 32-bit signed integers (dividend and divisor) when enabled. The module operates in three states: Idle, Start, and Done. In the Idle state, it waits for the enable signal to load the dividend and divisor. In the Start state, it checks for a zero divisor to avoid division by zero; if the divisor is zero, it sets the quotient and remainder to zero and moves to the Done state. If the divisor is valid, it performs the division operation, updates the quotient and remainder, and transitions to the Done state. In the Done state, it asserts the done signal and outputs the calculated quotient and remainder while returning to the Idle state for the next operation.
+module top_module(
+  input enable,
+  input signed [31:0] dividend,
+  input signed [31:0] divisor,
+  output reg done,
+  output reg signed [31:0] quotient,   // Changed from wire to reg
+  output reg signed [31:0] remainder   // Changed from wire to reg
+);

@@ -1,0 +1,9 @@
+Design a module that computes an effective address based on a given instruction and two potential input values. The module takes a 11-bit instruction (IR) and two 16-bit inputs (Ra and PC) and produces a 16-bit output (eabOut). The output is determined by selecting an operand (opA) based on the value of selEAB2, which determines the sign-extension and bit selection from the instruction. The second operand (opB) is selected based on selEAB1, which chooses between the program counter (PC) and register Ra. The final effective address is the sum of opA and opB.
+module top_module(
+    input [10:0] IR,
+    input [15:0] Ra,
+    input [15:0] PC,
+    input selEAB1,
+    input [1:0] selEAB2,
+    output [15:0] eabOut
+    );

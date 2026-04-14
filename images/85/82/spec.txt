@@ -1,0 +1,7 @@
+Design a circuit that implements a state-machine style LED driver. The module takes a clock input and a reset signal, where the reset initializes the LED output to a low state. Depending on the 3-bit switch input, the module sets the 4-bit LED output to indicate a particular pattern corresponding to switch values from 0 to 3. For all other switch values, the LED output turns to a default high state. Additionally, the LED's state is inverted on each positive clock edge, introducing a toggling effect on the output.
+module top_module(
+    input CLOCK_IN,
+    input RESET,
+    input [2:0] SWITCH,
+    output reg [3:0] LED
+);

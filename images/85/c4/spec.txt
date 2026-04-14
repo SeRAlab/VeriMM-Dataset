@@ -1,0 +1,13 @@
+Design a memory module that implements a 16-bit wide RAM with a capacity of 32 megawords. The module supports both read and write operations. A write operation is triggered on the rising edge of the `wrclock` signal when the `wren` input is high, storing the input `data` at the specified `wraddress`. The read operation can be enabled asynchronously using the `rdclken` signal, allowing the module to output the data stored at `rdaddress` on `q`. The design effectively functions as a synchronous dual-port RAM supporting simultaneous read and write capabilities.
+module top_module(
+  // inputs:
+  data,
+  rdaddress,
+  rdclken,
+  wraddress,
+  wrclock,
+  wren,
+
+  // outputs:
+  q
+);

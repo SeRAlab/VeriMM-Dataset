@@ -1,0 +1,10 @@
+Design a synchronous calculator that accepts two 8-bit inputs (num1 and num2) and performs arithmetic operations based on a state machine. The circuit operates on a clock and reset signal, executing a series of operations: addition, subtraction, multiplication, and division, in a sequential manner. The results of the operations are stored in an output register (result) and accompanied by a valid signal to indicate when the operation has been completed. The calculator transitions through four distinct states to facilitate these operations, utilizing a temporary register to handle multiplication and division.
+module top_module(
+    input clk,
+    input rst,
+    input [7:0] num1,
+    input [7:0] num2,
+    input [1:0] op,
+    output reg [7:0] result,
+    output reg valid
+);

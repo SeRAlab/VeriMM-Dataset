@@ -1,0 +1,7 @@
+Design a D flip-flop with an asynchronous reset and a two-stage delay. When the reset input is asserted low, the output q and internal delay registers are set to zero. On the rising edge of the clock, the module captures the data input, delaying it through two internal stages. The output q is set high only when there is a transition from low to high on the delayed data input (indicating a rising edge), otherwise, it remains low. This design effectively creates a pulse detector that responds to specific transitions in the data input while ensuring proper reset functionality.
+module top_module(
+  input wire data,   
+  input wire clk,    
+  input wire reset,  
+  output reg q       
+);

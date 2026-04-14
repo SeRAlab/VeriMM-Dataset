@@ -1,0 +1,6 @@
+Design a VGA interface module that converts an 8-bit input signal into a 16-bit RGB output. The circuit samples the input data on the positive edge of a clock signal and sets the red, green, and blue color components based on specific input values: 8'hFF for white, 8'hF0 for red, 8'h0F for green, and 8'h00 for blue. If the input does not match any defined color, it defaults to black. The resulting RGB values are then combined and output as a single 16-bit signal.
+module top_module(
+  input pclk,
+  input [7:0] data,
+  output reg [15:0] rgb
+);

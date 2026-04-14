@@ -1,0 +1,7 @@
+Design a data shifter that operates on an 8-bit input. The module allows shifting the input data either left or right based on a directional control signal. The amount and specific type of shift are determined by a 3-bit shift control input, which specifies whether to perform a 1, 2, or 4-bit shift. When shifting left, the most significant bits are filled with the least significant bits from the original input, and vice versa for right shifts. If no shift is indicated, the output remains the same as the input.
+module top_module(
+    input [7:0] in,
+    output reg [7:0] out,
+    input direction,
+    input [2:0] shift
+    );

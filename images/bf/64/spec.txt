@@ -1,0 +1,9 @@
+Design a Serial Peripheral Interface (SPI) module that facilitates data transmission. The module takes an 8-bit data input and transmits it serially on the `spi_out` line when `write_enable` is asserted. The transmission is synchronized with the provided clock signal, generating a clock signal (`spi_clk`) that indicates data is being sent. The `write_done` output signals the completion of the data transfer. The module manages the state of the transfer through a simple counter, ensuring that each bit of the input data is sent serially, while providing control signals for synchronization and status feedback.
+module top_module(
+    input [7 : 0] data_in,
+    input clk,
+    input write_enable,
+    output reg spi_out = 0,
+    output reg spi_clk = 0,
+    output reg write_done = 0
+    );

@@ -1,0 +1,9 @@
+Design a state machine for managing the phase alignment and synchronization of a serial communication system, specifically for use in a GTP (Gigabit Transceiver) context. The module operates on a clock signal and features a reset functionality, along with an input to indicate whether the PLL (Phase-Locked Loop) is locked. It sequentially processes states to enable phase alignment, monitor PLL stability, and synchronize the transmission. The outputs, TXENPMAPHASEALIGN and TXPMASETPHASE, control the phase alignment circuitry, while SYNC_DONE indicates when the system is ready for operation. The design incorporates counters to manage timing cycles for both PLL stabilization and synchronization completion.
+module top_module(
+    input wire clk,
+    input wire reset,
+    input wire pll_locked,
+    output reg TXENPMAPHASEALIGN,
+    output reg TXPMASETPHASE,
+    output reg SYNC_DONE
+);

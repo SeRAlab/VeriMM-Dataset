@@ -1,0 +1,31 @@
+Design a digital circuit that interfaces with a 125MHz clock for synchronizing input signals from five push-button GPIOs and controlling five corresponding output LEDs. The module captures the state of the buttons and updates the LED states accordingly upon clock edges, allowing each LED to reflect the status of the buttons. Additionally, the design includes a UART communication interface, which transmits received data when the UART RX line is active. The circuit is structured to reset the states upon receiving a synchronous reset signal, ensuring reliable operation.
+module top_module(
+    /*
+     * Clock: 125MHz
+     * Reset: Synchronous
+     */
+    input  wire       clk_125mhz,
+    input  wire       rst_125mhz,
+    /*
+     * GPIO
+     */
+    input  wire       btnu,
+    input  wire       btnl,
+    input  wire       btnd,
+    input  wire       btnr,
+    input  wire       btnc,
+    input  wire [7:0] sw,
+    output wire       ledu,
+    output wire       ledl,
+    output wire       ledd,
+    output wire       ledr,
+    output wire       ledc,
+    output wire [7:0] led,
+    /*
+     * UART: 115200 bps, 8N1
+     */
+    output wire       uart_rxd,
+    input  wire       uart_txd,
+    input  wire       uart_rts,
+    output wire       uart_cts
+);

@@ -1,0 +1,17 @@
+Implement a Verilog module based on the following description.
+The following diagram is a Moore machine implementation of a heater controller. Implement in Verilog using one-hot encoding. Resets into state Off and reset is asynchronous active-high.
+
+The state machine has the following states and their corresponding outputs: 
+1. state Off (heater_on = 0).
+2. state On (heater_on = 1).
+
+State transitions:
+1. From state Off: If temperature_low = 1, then transition to state On. If temperature_low = 0, then transition to state Off.
+2. From state On: If temperature_high = 1, then transition to state Off. If temperature_high = 0, then transition to state On.
+
+module heater_controller (
+        input clk,
+        input areset,
+        input temperature_low,
+        input temperature_high,
+        output reg heater_on);

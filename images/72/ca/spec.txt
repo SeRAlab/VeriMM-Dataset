@@ -1,0 +1,8 @@
+Design a circuit that combines a multiplier and a magnitude comparator to produce an 8-bit output based on the comparison of two 4-bit inputs, A and B. The module first calculates the product of A and B using a multiplier. Then, it compares the two inputs to determine their equality, greater than, or less than relationship. The final output, `result`, is assigned as the product if the inputs are equal; if A is greater than B, it outputs the maximum value with leading zeros; and if A is less than B, it outputs the minimum value with leading zeros.
+module top_module(
+    input clk,
+    input reset,
+    input [3:0] A,
+    input [3:0] B,
+    output reg [7:0] product
+);

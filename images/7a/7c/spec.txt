@@ -1,0 +1,11 @@
+Develop a 4-bit arithmetic unit capable of performing both addition and subtraction based on the `sub` control signal. The module takes two 4-bit inputs, `a` and `b`, alongside a carry-in `cin`. It produces a 4-bit output `sum`, a carry-out signal `cout`, and an overflow flag. The arithmetic operation (add or subtract) is determined by the `sub` input; when `sub` is high, it performs subtraction, otherwise, it performs addition. The module also checks for overflow conditions for the results, which would indicate whether the output has exceeded the valid range for a 4-bit signed number.
+module top_module(
+    input clk,
+    input [3:0] a,
+    input [3:0] b,
+    input sub,
+    input cin,
+    output reg cout,
+    output reg overflow,
+    output reg [3:0] sum
+);

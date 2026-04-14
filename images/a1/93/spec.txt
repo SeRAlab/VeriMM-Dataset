@@ -1,0 +1,6 @@
+Design a clock generator module that produces a divided output clock (clk_out) based on a specified divider value. The module, which is responsive to an input clock (clk_in) and controlled by reset (rst), enable, and go signals, toggles the output clock when a counter reaches zero. Additionally, it generates positive (pos_edge) and negative (neg_edge) edge signals to indicate transitions of the output clock. When enabled and in the "go" state, the counter decrements based on the divider input; otherwise, it resets to a default count of 3. If reset is asserted, it initializes the internal state, ensuring reliable operation and controlled clock signal generation.
+module top_module(
+    input clk_in, rst, enable, go,
+    input [1:0] divider,
+    output reg clk_out, pos_edge, neg_edge
+);

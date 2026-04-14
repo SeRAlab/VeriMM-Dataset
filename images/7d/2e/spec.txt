@@ -1,0 +1,12 @@
+Design a state machine that generates a transmission signal (TX_SD) based on acquisition control signals (ACQ_EN and ACQ_WND). The module operates in four states, transitioning between them based on the inputs and clock signal. In state S0, TX_SD is LOW, and it transitions to S1 when ACQ_WND is asserted. In S1, TX_SD is HIGH and moves to S2 if ACQ_EN is asserted. S2 maintains TX_SD HIGH while asserting ACQ_EN; it transitions to S3 when ACQ_EN is deasserted. In S3, TX_SD returns to LOW, and the state goes back to S0 if ACQ_WND is no longer asserted. The module also includes a reset feature that initializes the state and TX_SD signal.
+module top_module(
+		
+	
+	input ACQ_EN,
+	input ACQ_WND,
+	
+	output reg TX_SD,
+	input RESET,
+	input ADC_CLK
+	
+);

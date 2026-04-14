@@ -1,0 +1,13 @@
+Design a circuit that functions as a dual-port RAM with a shift register. The module utilizes an 8-bit wide RAM array capable of storing 16 locations, which can be written to or read from based on control signals. With a clock input, it updates the RAM at the rising edge when enabled, allowing simultaneous reads from two different addresses. Additionally, it incorporates an 8-bit shift register that shifts in data with each clock cycle, initialized to zero upon reset.
+module top_module(
+  input clk,
+  input rst_n,
+  input write_en,
+  input [7:0] write_addr,
+  input [7:0] data_in,
+  input read_en1,
+  input [7:0] read_addr1,
+  input read_en2,
+  input [7:0] read_addr2,
+  output reg [7:0] data_out
+);

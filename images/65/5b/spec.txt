@@ -1,0 +1,6 @@
+Create a one-shot pulse generator that produces a single clock cycle pulse output (pb_1pulse) in response to a rising edge on a debounced push-button input (pb_debounced). When the reset signal (rst) is activated, the output and internal state are cleared. The module captures the transition from low to high on the debounced input, ensuring that the output pulse only occurs for one clock cycle, regardless of how long the button is pressed.
+module top_module(
+input wire rst,
+input wire clk,
+input wire pb_debounced,
+output reg pb_1pulse);

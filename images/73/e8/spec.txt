@@ -1,0 +1,10 @@
+Design a dual-port RAM module that operates with separate read and write capabilities. It allows writing 8-bit data to a specified address when the write enable signal is active. Concurrently, it supports reading 32-bit data from a different address when the read enable signal is asserted. The module uses a clock signal to coordinate its operations, ensuring that the output reflects the data read from the specified address. This design is useful for applications requiring simultaneous data access in systems like microcontrollers and digital signal processors, where efficient memory operations are critical.
+module top_module(
+    input clock,
+    input [7:0] data,
+    input [10:0] rdaddress,
+    input [11:0] wraddress,
+    input wren,
+    input rden_b,
+    output reg [31:0] q
+);

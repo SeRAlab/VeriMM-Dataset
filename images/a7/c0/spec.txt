@@ -1,0 +1,9 @@
+Design a synchronous 4-bit counter with a slow enable feature and selectable input signals. The counter increments on each clock pulse while enabled, resetting to zero either on a reset signal or after counting up to 9. Two select inputs, sel1 and sel2, control the 4-bit output to specify one of four fixed binary values (1, 2, 4, or 8) based on their combinations, but the output q is driven by the count value. When slowena is asserted, it allows the counting to proceed; otherwise, the counter remains static.
+module top_module(
+    input clk,
+    input slowena,
+    input reset,
+    input sel1,
+    input sel2,
+    output reg [3:0] q  // Changed 'output' to 'output reg'
+);

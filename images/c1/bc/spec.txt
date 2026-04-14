@@ -1,0 +1,46 @@
+Please act as a professional verilog designer.
+    
+Implement a module to decode and manage the state of a processor or a similar digital system, particularly focusing on instruction decoding, handling interrupts, and managing special operational modes. Its primary functions include:
+
+Decoding and setting the operational state based on instruction sets (e.g., CB, ED, IX, IY).
+Managing halt conditions and repeat operations.
+Handling interrupts and non-maskable interrupts (NMI).
+Controlling the use of index registers (IX/IY) and setting the appropriate flags for different instruction tables.
+
+This module plays a crucial role in the broader system by ensuring that the processor or digital system correctly interprets and executes instructions, responds to interrupts, and transitions between different operational states as required.
+
+Module name:  
+	decode_state
+
+Input ports:
+	ctl_state_iy_set: (wire) Controls setting the IY state.
+	ctl_state_ixiy_clr: (wire) Clears the IX/IY state.
+	ctl_state_ixiy_we: (wire) Write enable for IX/IY state.
+	ctl_state_halt_set: (wire) Controls setting the halt state.
+	ctl_state_tbl_ed_set: (wire) Controls setting the ED table state.
+	ctl_state_tbl_cb_set: (wire) Controls setting the CB table state.
+	ctl_state_alu: (wire) Indicates an ALU operation.
+	clk: (wire) System clock.
+	address_is_1: (wire) Indicates if the address is 1, used for repeat operations.
+	ctl_repeat_we: (wire) Write enable for repeat operations.
+	in_intr: (wire) Indicates an interrupt request.
+	in_nmi: (wire) Indicates a nonmaskable interrupt request.
+	nreset: (wire) Active low reset signal.
+	ctl_state_tbl_we: (wire) Write enable for table state.
+	nhold_clk_wait: (wire) Clock wait signal, used in conjunction with ctl_state_tbl_we.
+Output ports:
+	in_halt: (reg) Indicates the system is in halt state.
+	table_cb: (wire) Indicates the CB table is selected.
+	table_ed: (wire) Indicates the ED table is selected.
+	table_xx: (wire) Indicates neither CB nor ED table is selected.
+	use_ix: (wire) Indicates the IX register is in use.
+	use_ixiy: (wire) Indicates either IX or IY register is in use.
+	in_alu: (wire) Indicates an ALU operation is in progress.
+	repeat_en: (wire) Enables repeat operations.
+
+
+Implementation:
+The decode_state module is designed to manage various control states within a digital system, particularly focusing on instruction decoding, halt state management, and table selection for operations. The module operates based on the input signals it receives, which influence its internal state and output signals. The logic implemented within this module can be categorized into combinational and sequential parts, as detailed below:
+
+Give me the complete code.
+

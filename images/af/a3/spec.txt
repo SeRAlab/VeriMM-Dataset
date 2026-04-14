@@ -1,0 +1,7 @@
+Design a circuit that processes multiple inputs without a direct output. The circuit inverts a 4-bit input based on a control signal and utilizes an 8-bit and a 16-bit input for further processing: when the 8-bit input is 128 or greater, it applies a mask to the 16-bit input, retaining its lower 8 bits; otherwise, it sets the upper 8 bits to 1 while keeping the lower bits unchanged. Additionally, if the first input signal is high, the 4-bit input is shifted left by two bits after padding with zeros; if low, it simply outputs the inverted value. This module serves as a data manipulator for conditional processing based on input values.
+module top_module(
+    input input_1,
+    input [3:0] input_2,
+    input [7:0] input_3,
+    input [15:0] input_4
+);

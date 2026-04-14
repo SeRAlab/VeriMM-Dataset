@@ -1,0 +1,9 @@
+Implement a circuit that concatenates two 8-bit inputs, `a` and `b`, into a single 16-bit output based on the value of a control signal. The module is synchronous, operating on the positive edge of the clock, and has a reset feature that initializes the output to zero. When the control signal `ctrl` is high, the output will be the concatenation of `a` followed by `b`; when `ctrl` is low, the output will be `b` followed by `a`.
+module top_module(
+  input clk,
+  input reset,
+  input [7:0] a,
+  input [7:0] b,
+  input ctrl,
+  output [15:0] out
+);

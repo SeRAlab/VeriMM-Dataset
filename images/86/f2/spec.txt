@@ -1,0 +1,9 @@
+Design a UART receiver module capable of receiving serial data. It processes incoming data bits at a specified baud rate derived from a clock frequency, utilizing a shift register to construct 8-bit data packets. The module indicates when data reception is complete through an output signal, while also integrating an active state management system to monitor the reception status. When enabled, the module resets and clears its internal registers upon receiving a reset signal. Upon receiving a start bit (low signal), it begins to sample the subsequent bits, shifting them into the register until a complete byte is acquired, at which point it activates an acknowledgment signal to indicate that new data is available.
+module top_module(
+		 input rst,
+		 input clk,
+		 output[7:0] rx_data,
+		 output rx_avail,
+		 input rxd,
+		 input rx_enabled
+		 );

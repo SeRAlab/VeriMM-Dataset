@@ -1,0 +1,4 @@
+Design a register stage in a pipelined processor, specifically the Write-Back (WB) stage, which captures and stores results from the previous execution stage (EXMEM). On the rising edge of the clock, if the reset signal is asserted, all output registers are initialized to zero. Otherwise, the module transfers various inputs, including the results of the ALU operation, memory output, destination register, and control signals, from the EXMEM stage to the WB stage, preparing the data for writing back into the register file. This module facilitates efficient data flow and control within the processor pipeline, ensuring that the necessary data is available for subsequent instructions.
+module top_module(EXMEM_ALUresult, EXMEM_MEMout, EXMEM_Wreg, EXMEM_Wreg_en, EXMEM_instr_type, EXMEM_opcode, EXMEM_ppp,
+				WB_ALUresult, WB_MEMout, WB_Wreg, WB_Wreg_en, WB_instr_type, WB_opcode, WB_ppp,
+				clk, rst);

@@ -1,0 +1,9 @@
+Design a hardware module that implements a Hash-based Message Authentication Code (HMAC) generator. The module accepts an 8-bit message, an 8-bit key, and an 8-bit code to select the hash function (which can be SHA-256, SHA-512, or MD5) to create a secure HMAC. Based on a control flag, the module either generates a new HMAC by hashing the provided message and key or verifies the authenticity of the computed HMAC against the input. The outputs include the generated or checked HMAC and an authentication flag indicating whether the authentication passed or failed.
+module top_module(
+  input [7:0] msg,
+  input [7:0] key,
+  input [7:0] hash_func,
+  input gen_flag,
+  output [7:0] hmac,
+  output reg auth_flag // Change to 'reg' to allow assignments in always block
+);

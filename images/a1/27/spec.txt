@@ -1,0 +1,13 @@
+Design a 4-bit up/down counter with additional features for loading and comparing values. The counter increments or decrements based on the control signal (`ctrl`) when enabled (`ce`). It can be reset asynchronously and loaded with a preset value when the `load` signal is active. The module also provides a terminal count output (`tc`) which indicates when the counter reaches its maximum or minimum value, depending on the direction of counting, and a comparison output (`comp`) that goes high when the counter matches a specified value (`compare_val`).
+module top_module(
+    input clk,
+    input rst_n,
+    input ce,
+    input load,
+    input ctrl,
+    input [3:0] preset,
+    input [3:0] compare_val,
+    output reg [3:0] count,
+    output tc,
+    output comp
+);

@@ -1,0 +1,9 @@
+Design a 3-bit up/down counter with load capability. The counter increments or decrements its output based on the UP_DOWN signal; if UP_DOWN is high, it counts up, adding a carry-in value, and if low, it counts down, subtracting the carry-in. The counter can also be loaded with a specific value on the LOAD signal, which directly sets the output to LOAD_VAL when asserted. The operation is synchronized to the rising edge of the clock input (CLK).
+module top_module(
+    input CLK,
+    input LOAD,
+    input [2:0] LOAD_VAL,
+    input UP_DOWN,
+    input CARRY_IN,
+    output reg [2:0] Q
+);

@@ -1,0 +1,7 @@
+Design a finite state machine (FSM) that detects a specific bit sequence of four consecutive '1's in a serial data input stream. The FSM transitions through five states, where it advances on each '1' detected and resets upon receiving a '0'. Upon completing the sequence (reaching state 4), it asserts the output signal `sequence_detected` to indicate the successful detection. The FSM can be reset asynchronously, positioning it to the initial state.
+module top_module(
+  input clk,
+  input reset,
+  input data,
+  output reg sequence_detected
+);

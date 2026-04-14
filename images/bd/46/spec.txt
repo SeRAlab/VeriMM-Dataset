@@ -1,0 +1,7 @@
+Design a transition detector that monitors a 32-bit input signal for changes (transitions) between adjacent bits on each clock cycle. When a transition is detected in any bit position, the corresponding output bit is set high; if the input is equal to all 1s, the output is forcibly set to all 0s. The detector utilizes flip-flops to capture and hold the transition states, providing a real-time indication of any input bit changes while ensuring the outputs reset and reflect the most recent detected transitions.
+module top_module(
+    input clk,
+    input reset, // Added reset input
+    input [31:0] in,
+    output [31:0] out
+);

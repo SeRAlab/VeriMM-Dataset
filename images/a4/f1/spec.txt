@@ -1,0 +1,7 @@
+Design a reset synchronizer that takes an asynchronous reset signal and synchronizes it to a clock domain. The module uses a two-stage flip-flop configuration to reduce the risk of metastability by ensuring the output reset signal is aligned with the clock edges, thus producing a reliable synchronous reset output. When the asynchronous reset input is asserted, its state is sampled on the rising edge of the clock, propagating through the register stages to provide a clean, synchronized reset output.
+module top_module(
+  input reset,
+  input clk,
+  input async_reset,
+  output sync_reset
+);

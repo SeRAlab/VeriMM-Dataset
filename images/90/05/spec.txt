@@ -1,0 +1,11 @@
+Implement an 8-bit multiplier circuit that performs multiplication of two 8-bit inputs, A and B, producing a 16-bit product, P, and a 48-bit output, PCASC, along with zero detection functionality. The module is synchronous to a clock signal (CLK) and features an enable signal (CE) for operation and a synchronous clear signal (SCLR) for resetting the outputs. Upon a rising clock edge, if SCLR is asserted, it resets the outputs to zero; otherwise, if CE is active, it updates the product and cascade outputs from a multiplier component while also detecting the sign and zero conditions of the product, updating a two-bit ZERO_DETECT output accordingly.
+module top_module(
+    input CLK,
+    input [7:0] A,
+    input [7:0] B,
+    input CE,
+    input SCLR,
+    output reg [1:0] ZERO_DETECT,
+    output reg [15:0] P,
+    output reg [47:0] PCASC
+);

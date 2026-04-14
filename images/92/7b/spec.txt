@@ -1,0 +1,20 @@
+The `rx_control_data_rdy` module is designed to manage the readiness and error status of incoming control and data signals in a communication interface. It performs functions such as detecting errors in received data, generating signals that indicate when the circuit is ready to process control or data signals, and managing a counter to track the timing of received information. When the specified conditions are met, it asserts readiness for control or data, while simultaneously monitoring for errors and transitioning states based on the input signal's characteristics. Additionally, the module utilizes a reset condition to initialize its outputs and state, ensuring proper operation in response to incoming data streams.
+module top_module(
+    input posedge_clk,
+    input rx_resetn,
+
+    input rx_error_c,
+    input rx_error_d,
+
+    input [2:0] control,
+    input [2:0] control_l_r,
+
+    input is_control,
+    input [5:0] counter_neg,
+    input last_is_control,
+
+    output reg rx_error,
+    output reg ready_control_p_r,
+    output reg ready_data_p_r,
+    output reg rx_got_fct_fsm
+);

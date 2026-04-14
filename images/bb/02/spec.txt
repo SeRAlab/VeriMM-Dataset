@@ -1,0 +1,10 @@
+Design a basic arithmetic calculator capable of performing addition, subtraction, multiplication, and division on two 4-bit inputs (A and B). The operation to be performed is selected using a 2-bit input (op), where '00' corresponds to addition, '01' to subtraction, '10' to multiplication, and '11' to division. The calculator outputs the result of the chosen operation in the appropriate output registers for sum, diff, prod, and quot, while ensuring that only one result is valid per operation. In the case of division, it handles potential division by zero by outputting zero when the divisor (B) is zero.
+module top_module(
+   input [3:0] A,
+   input [3:0] B,
+   input [1:0] op,
+   output reg [3:0] sum,
+   output reg [3:0] diff,
+   output reg [3:0] prod,
+   output reg [3:0] quot
+);

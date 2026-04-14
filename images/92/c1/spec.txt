@@ -1,0 +1,16 @@
+Design a 4-bit ALU (Arithmetic Logic Unit) capable of executing addition or subtraction based on the `addsub_fn` control signal and combining inputs `in_a` and `in_b`. The module includes logic functions (XOR, AND, OR) selectable via the `logic_fn` input, producing results in the `fn_out` output. The ALU also checks for equality of the two inputs using `a_b_not_eq`, which indicates whether the values of `in_a` and `in_b` are different. The output of the arithmetic operation includes a carry bit in `carry_out` alongside the 4-bit result in `sum_out`. The design leverages a multiplexer for the two's complement operation when performing subtraction.
+module top_module(
+  input [3:0] in_a,
+  input [3:0] in_b,
+
+  input               in_c,      
+  input               addsub_fn, 
+  input [1:0]         logic_fn,  
+  input [1:0]         shift_fn,  
+  output [3:0]     sum_out,
+
+  output                   carry_out,  
+  output                   a_b_not_eq, 
+  output reg [3:0] fn_out
+
+);

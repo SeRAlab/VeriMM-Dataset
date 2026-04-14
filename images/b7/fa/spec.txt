@@ -1,0 +1,20 @@
+Design a control module that manages various interfaces based on input signals. The module generates an active low reset signal for an LM80 component, toggles a test LED based on a 6 Hz clock, and controls JTAG signaling depending on the selection input. It provides eight selectable SCL outputs based on an 8-bit I2C selector input, directly connecting the incoming SCL line to one of the outputs (scl0 to scl7) based on the current selection while tri-stating the others. This enables flexible communication with multiple I2C devices.
+module top_module(
+	rst_n,
+	clk_6hz,
+	jtag_sel,
+	iic_sel,
+	scl,
+	lm80_reset_n,
+	led_test0,
+	jtag_con,
+	jtag_sys,
+	scl0,
+	scl1,
+	scl2,
+	scl3,
+	scl4,
+	scl5,
+	scl6,
+	scl7
+);

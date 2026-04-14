@@ -1,0 +1,7 @@
+Design a jump multiplexer that selects the next program counter value based on a jump condition. If the input signal 'jump' is asserted, the module outputs the 'jump_address'; otherwise, it passes the 'from_mux_branch' address to the output 'to_pc'. This design is essential for controlling flow in a processor by determining the next instruction address during branch and jump operations.
+module top_module(
+    input [31:0] jump_address,
+    input [31:0] from_mux_branch,
+    input jump,
+    output reg [31:0] to_pc
+);

@@ -1,0 +1,22 @@
+
+
+You are tasked with designing a Verilog module that performs sign extension on a 16-bit input signal. Sign extension is a process that extends the most significant bit (MSB) of a signed binary number to all the additional bits to the left, creating a larger binary number with the same sign. For example, if the input signal is 0b1010 (decimal 10), and we want to extend it to 32 bits, the output signal should be 0xFFFFFFFA (decimal -6).
+
+Design a Verilog module called `sign_extend` that takes a 16-bit input signal `reg_in` and outputs a 32-bit signal `reg_out`. The module should have a clock input `clk` and a reset input `reset`. The module should perform sign extension on the input signal and output the result on `reg_out`. The module should also be able to handle the following cases:
+- If the input signal is positive, the output signal should be extended with zeros.
+- If the input signal is negative, the output signal should be extended with ones.
+- If the input signal is 0, the output signal should be 0.
+
+Test your `sign_extend` module by instantiating it in a testbench module called `sig_extend_tb`. The testbench should apply the following input signals to the `reg_in` signal:
+- 10
+- 15
+- -20
+- 50
+- -32768
+- 32767
+- 0
+- 1
+- -1
+
+The testbench should verify that the output signals `reg_out` are correct for each input signal.
+

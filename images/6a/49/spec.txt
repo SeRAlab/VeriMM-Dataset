@@ -1,0 +1,9 @@
+Design a master-slave flip-flop that captures input data based on clock edges and control signals. On a negative reset, the output is set to zero. When enable_1 is high and enable_2 is low, the module captures 'data_in' on the rising edge of the clock. If enable_1 is low and enable_2 is high, the output retains its previous state. If both enables are high, the output is reset to zero. This design integrates synchronization and control logic to ensure reliable data storage under specified conditions.
+module top_module(
+    input clk,
+    input reset,
+    input data_in,
+    input enable_1,
+    input enable_2,
+    output reg data_out
+);

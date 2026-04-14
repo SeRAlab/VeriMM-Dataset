@@ -1,0 +1,8 @@
+Design a circuit that functions as a dual-mode register system. It contains a 3-bit shift register and an 8-bit counter. The functionality is controlled by a select input: when the select is low, the output combines the current state of the shift register and the counter using a bitwise OR operation; when the select is high, the counter's current value is output directly. The shift register captures a 4-bit input sequentially on each clock cycle, while the counter increments its value upon receiving a clock pulse, with both circuits reset synchronously to zero on an active-high reset signal. The final output is an 8-bit wide value derived from either the counter or the OR operation, depending on the select line.
+module top_module(
+    input clk,
+    input reset,       // Synchronous active-high reset
+    input [3:0] d,     // Input for the shift register
+    input select,      // Select input to choose between shift register and counter
+    output [7:0] q     // Output from the active module
+);

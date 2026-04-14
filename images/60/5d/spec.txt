@@ -1,0 +1,9 @@
+Design a circuit that functions as a dual-purpose data processor, capable of operating either as a D Flip-Flop or a shift register based on a control select signal. When the `select` signal is low, the circuit captures the input `d1` in a D Flip-Flop, while maintaining the state of a shift register; when `select` is high, it shifts the contents of the shift register and stores the input `d2` into the least significant bit. Additionally, the module includes a parity checker that generates an error flag indicating data validity, determined by the parity of the XOR operation between `d1` and `d2`. The output `q` provides the current value based on the operational mode chosen by the `select` signal.
+module top_module(
+    input clk,
+    input [7:0] d1,
+    input [7:0] d2,
+    input select,
+    output reg [7:0] q,
+    output reg error_flag
+);

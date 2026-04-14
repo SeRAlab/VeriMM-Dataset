@@ -1,0 +1,9 @@
+Design a 4-bit up/down counter that increments or decrements its value based on the control input. The counter is clocked and can be reset asynchronously. When the counter reaches its maximum value (15) during an increment operation or its minimum value (0) during a decrement operation, it sets the max_min output high to indicate this condition. The enable input allows the counting operation to be activated or deactivated.
+module top_module(
+    input clk,
+    input reset,
+    input enable,
+    input control,
+    output reg max_min, // Changed to output reg
+    output reg [3:0] count
+);

@@ -1,0 +1,6 @@
+Design a pulse-width modulation (PWM) generator that modulates an output signal based on an 8-bit duty cycle provided as input. The module operates on a clock frequency of 50 MHz, generating a PWM signal at a frequency of 10 kHz. It utilizes an 8-bit resolution to determine the duty cycle, where the output signal (pwm_out) is high for a duration proportional to the duty cycle value and low for the remainder of the PWM period. The internal counter increments with each clock cycle, and a comparator evaluates whether the counter value is less than the calculated threshold for generating the high output signal.
+module top_module(
+  input clk,
+  input [7:0] data,
+  output pwm_out
+);

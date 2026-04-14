@@ -1,0 +1,38 @@
+Please act as a professional Verilog designer.
+
+Implement an 8-bit wide, 16-depth FIFO buffer with write and read enable signals.
+
+Module name:
+    fifo_buffer
+Input ports:
+    clk: Clock signal used for synchronous operation.
+    rst: Active-high reset signal to initialize the FIFO.
+    wr_en: Write enable signal to write data into the FIFO.
+    rd_en: Read enable signal to read data from the FIFO.
+    wr_data: 8-bit data input to write into the FIFO.
+Output ports:
+    rd_data: 8-bit data output read from the FIFO.
+    full: Signal indicating the FIFO is full.
+    empty: Signal indicating the FIFO is empty.
+
+Implementation:
+On every rising edge of the clock signal (clk), the FIFO buffer is updated.
+If the reset signal (rst) is high, the FIFO is initialized.
+If the write enable signal (wr_en) is high and the FIFO is not full, data is written into the FIFO.
+If the read enable signal (rd_en) is high and the FIFO is not empty, data is read from the FIFO.
+The full signal is asserted when the FIFO is full.
+The empty signal is asserted when the FIFO is empty.
+
+Give me the complete code.
+
+module fifo_buffer(
+   input                clk,
+   input                rst,
+   input                wr_en,
+   input                rd_en,
+   input [7:0]          wr_data,
+
+   output reg [7:0]     rd_data,
+   output reg           full,
+   output reg           empty
+);

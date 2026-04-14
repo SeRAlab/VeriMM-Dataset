@@ -1,0 +1,10 @@
+Design a phase-locked loop and delay-locked loop (PLL/DLL) system that generates synchronized output clock signals based on an input reference clock. The module accepts a reference clock (clk_ref) and an input clock (clk_in), with a reset function for initialization. Internally, it maintains counters for both PLL and DLL operation to handle frequency and phase adjustments, ensuring that the system locks to appropriate frequency ranges (10 MHz to 500 MHz) and phase tolerances (0 to 360 degrees). The outputs indicate whether the PLL and DLL are locked and provide a synchronized clock output (pll_out and dll_out) when both are locked.
+module top_module(
+  input clk_in,
+  input clk_ref,
+  input reset,
+  output pll_locked,
+  output pll_out,
+  output dll_locked,
+  output dll_out
+);

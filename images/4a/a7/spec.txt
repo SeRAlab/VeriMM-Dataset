@@ -1,0 +1,8 @@
+Design a module for multiplying two n-bit integers, where n is defined as 8 bits. This module supports both signed and unsigned multiplication, controlled by the 'mode' input signal. When 'mode' is 0, the multiplication is performed as unsigned; when 'mode' is 1, the inputs are treated as signed integers. The output is a 2n-bit wide product that accumulates the result of the multiplicand shifted left by the appropriate number of bits based on the active bits of the multiplier. The multiplication process is initiated on the positive edge of a clock signal.
+module top_module(
+  input [n-1:0] A,
+  input [n-1:0] B,
+  input mode,
+  input clk, // Added clk input
+  output reg [2*n-1:0] P
+);

@@ -1,0 +1,8 @@
+Design a 256-word by 48-bit memory module that supports both read and write operations. The module reads data from the specified address (addr) and outputs it on rline, while writing data from wline to the same address when the write control signal (rw) is set to 2'b10 on the rising edge of the clock (clk). The read operation occurs continuously, allowing simultaneous access to the stored data.
+module top_module(
+    input clk,
+    input [47:0] wline,
+    output [47:0] rline,
+    input [15:0] addr,
+    input [1:0] rw
+);

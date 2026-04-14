@@ -1,0 +1,29 @@
+Please act as a professional verilog designer.
+
+Implement a module for a 4-bit up/down counter. The counter increments its value by 1 on each positive edge of the clock signal clk when the up signal is asserted. When the down signal is asserted, the counter decrements its value by 1. The counter should have a synchronous reset signal rst, which sets the counter value to 0 when asserted.
+
+Module name:  
+    updown_counter      
+
+Input ports:
+    clk: Clock signal.
+    rst: Synchronous reset signal (active high).
+    up: Signal to increment the counter (active high).
+    down: Signal to decrement the counter (active high).
+
+Output ports:
+    count: 4-bit output representing the current count value.
+
+Implementation:
+The updown_counter module increments or decrements its count value by 1 on each positive edge of the clock signal clk, depending on the state of the up and down signals. When the reset signal rst is asserted, the count value is set to 0 on the next positive edge of clk. The count value is a 4-bit binary number.
+
+Give me the complete code.
+
+module updown_counter(
+	input clk,
+	input rst,
+	input up,
+	input down,
+	
+	output reg [3:0] count
+);

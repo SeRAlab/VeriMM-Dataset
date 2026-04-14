@@ -1,0 +1,7 @@
+Design a state machine that selects one of eight different 4-bit mode outputs based on the three most significant bits of a 9-bit control input. The module responds to a clock signal and has an asynchronous reset; when reset, it sets the output to a default value of 4'b0000. The specific output mode is determined by the value of the control input's bits [8:6], with each configuration corresponding to a unique 4-bit output.
+module top_module(
+  input clk,
+  input rst,
+  input [8:0] ctrl,
+  output reg [3:0] td_mode
+);

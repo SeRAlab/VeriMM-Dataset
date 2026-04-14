@@ -1,0 +1,6 @@
+Develop a serial-to-parallel converter that captures an 8-bit data byte from a serial input stream. The module begins in a waiting state for a start bit; upon detecting it, it transitions to reading data in a least significant bit (LSB) first manner until all eight bits are received. After capturing the data, it waits for a stop bit before outputting the assembled byte. The design also incorporates a reset functionality that clears the data and state registers, ensuring a clean start when needed.
+module top_module(
+    input wire serial_in,
+    input wire reset,
+    output reg [7:0] parallel_out
+);

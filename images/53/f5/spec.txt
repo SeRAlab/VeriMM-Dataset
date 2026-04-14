@@ -1,0 +1,11 @@
+Design a 3-input NOR gate circuit named `my_nor3`, which outputs a signal Y based on three input signals A, B, and C. The module utilizes three instances of a NOR gate from the sky130 standard cell library, combining the inputs in a hierarchical manner. The first gate processes inputs A and B, while the second gate combines the output of the first gate with input C. The final gate outputs Y as the NOR of the second gate's output and ground signals. This design includes power and ground pins to ensure proper operation in silicon.
+module top_module(
+    Y   ,
+    A   ,
+    B   ,
+    C   ,
+    VPWR,
+    VGND,
+    VPB ,
+    VNB
+);

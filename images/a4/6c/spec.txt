@@ -1,0 +1,11 @@
+Design a D flip-flop with asynchronous reset. The output Q follows the input D on the rising edge of the CLK_N signal, and it is reset to LOW when RESET_B is asserted (LOW). The module includes power and ground references, making it suitable for integration into larger digital systems in a low-power, standard cell library environment.
+module top_module(
+    output reg Q,  // Changed to reg since we use it in an always block
+    input CLK_N,
+    input D,
+    input RESET_B,
+    input VPWR,
+    input VGND,
+    input VPB,
+    input VNB
+);

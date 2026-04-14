@@ -1,0 +1,27 @@
+Please act as a professional verilog designer.
+    
+Implement a module to perform decompression operations on input data words based on predefined compression schemes. It is a critical component within a system that requires data decompression before further processing or analysis. The module's primary functions include:
+
+Decoding and Decompression: It decodes input words to determine whether they are compressed and applies the appropriate decompression algorithm based on the compression type.
+Address Calculation and Data Retrieval: For certain types of compressed data, the module calculates addresses and retrieves corresponding data from an internal compression table.
+Output Generation: It generates decompressed output words along with a strobe signal indicating the validity of the output data.
+
+This module plays a pivotal role in systems where bandwidth or storage efficiency is crucial, by allowing data to be stored or transmitted in a compressed format and decompressed on-the-fly for immediate use.
+
+Module name:  
+	wbudecompress
+
+Input ports:
+	i_clk (input): The clock signal. It synchronizes the module's operations.
+	i_stb (input): Input strobe signal. Indicates when a new input word (i_word) is valid and should be processed.
+	i_word (input, 36 bits): The input data word to be decompressed. The format and meaning of this word vary based on its content, which dictates the decompression process.
+Output ports:
+	o_stb (output, reg): Output strobe signal. Indicates when the output word (o_word) holds valid decompressed data.
+	o_word (output, reg, 36 bits): The decompressed output data word. Its content and format depend on the decompression process applied to i_word.
+
+
+Implementation:
+The Verilog module wbudecompress is designed to perform specific decompression tasks on input data words of 36 bits. The module operates synchronously with an input clock signal i_clk and processes input data i_word when the input strobe i_stb is active. The output of the module includes a 36-bit decompressed word o_word and an output strobe o_stb indicating the availability of valid output data. The module's logic can be dissected into several key components:
+
+Give me the complete code.
+

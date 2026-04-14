@@ -1,0 +1,5 @@
+Design a next program counter (NPC) module that generates the next instruction address based on multiple selection criteria. The module takes a 32-bit immediate value, a 3-bit selector input (nPC_sel), a zero flag indicating the result of a comparison, the current program counter (PC), a jump address, and a data bus input (BusA). Depending on the value of nPC_sel and the Zero flag, the module computes NPC by either branching to a target address, incrementing the current PC, or passing through a jump address or BusA. This functionality allows for conditional and unconditional control flow in a processor architecture, supporting various branching and jumping operations.
+module top_module(
+    Imm, nPC_sel, Zero, PC, JumpAddr, BusA,
+    NPC
+);

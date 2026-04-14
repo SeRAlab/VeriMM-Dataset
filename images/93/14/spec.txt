@@ -1,0 +1,11 @@
+Implement a 64-bit wide FIFO (First-In-First-Out) buffer that facilitates asynchronous read and write operations. The module consists of a memory array capable of holding 64 entries, with control signals to enable writing (`wr_en`) and reading (`rd_en`). It maintains a write pointer and a read pointer to track current positions for data storage and retrieval, respectively. It outputs indicators for the buffer's full and empty states. The design supports reset functionality, ensuring all pointers and the entry count can be initialized to zero on demand. Data is read from the buffer at the current read pointer when available, with automatic pointer updates and count management.
+module top_module(
+    input wire clk,
+    input wire rst,
+    input wire wr_en,
+    input wire rd_en,
+    input wire [8:0] din,
+    output wire [8:0] dout,
+    output wire full,
+    output wire empty
+);

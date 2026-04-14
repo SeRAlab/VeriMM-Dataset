@@ -1,0 +1,9 @@
+Design a PS/2 deserializer module that interprets serial input data from a PS/2 device. The module synchronizes with a clock signal and transitions through several states: IDLE, START, DATA, and PARITY. It captures an 8-bit data byte transmitted by the PS/2 device, checks for a valid start and stop condition, and ensures the integrity of the byte using parity verification. Upon receiving a complete frame of data, it outputs the 8-bit byte and sets a frame indicator high. The system is resettable to enable initialization of the output and internal registers.
+module top_module(
+    input wire ps2_d_i,
+    input wire ps2_c_i,
+    input wire reset_i,
+    input wire sys_clk_i,
+    output reg [7:0] d_o,
+    output reg frame_o
+);

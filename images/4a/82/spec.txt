@@ -1,0 +1,7 @@
+Design a digital circuit that serves as a dual-phase sample-and-hold mechanism for an 8-bit input. On the rising edge of the `pla_ph1` signal, upon reset conditions, the circuit captures the 8-bit input `padd` and latches it into a temporary register. On the rising edge of the `pla_ph2` signal, it outputs the latched value to `out2_r`, unless the `dsp_reset` signal is active, in which case both output and latch are cleared to zero. This module effectively syncs the input data with two distinct clock phases, enabling controlled data flow and reset capability.
+module top_module(
+   // Outputs
+   out2_r,
+   // Inputs
+   pla_ph1, pla_ph2, dsp_reset, padd
+   );

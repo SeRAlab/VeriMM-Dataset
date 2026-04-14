@@ -1,0 +1,9 @@
+Design a clock domain crossing enable signal generator. This module synchronizes an input enable signal (`in_en`) to the `out_clk`, providing a stable output enable signal (`out_en`) that is asserted when the input has been consistently high for two consecutive clock cycles, and de-asserted when there have been two consecutive low input states. The reset signal (`rst`) initializes the output and synchronization register. This design is critical for ensuring reliable data transfer across different clock domains.
+module top_module(
+  input         rst,
+  input         in_en,
+
+  input         out_clk,
+  output  reg   out_en
+
+);

@@ -1,0 +1,45 @@
+Please act as a professional verilog designer.
+    
+Implement a module serves as an interface between a Wishbone (WB) bus and an SDRAM controller. Its primary functions include:
+
+Handling Read and Write Requests: It translates WB read and write transactions into SDRAM read and write operations, respectively.
+Data Transfer: Facilitates the transfer of data between the WB bus and SDRAM, ensuring data integrity and proper timing.
+Address Mapping: Maps WB addresses to corresponding SDRAM addresses, allowing for seamless data access and storage.
+Signal Synchronization: Manages signal synchronization between the WB bus protocol and the SDRAM timing requirements.
+
+This module plays a crucial role in systems where an SDRAM is used for storage, acting as a bridge that allows a processor or any other WB-compliant master device to communicate with the SDRAM.
+
+Module name:  
+	tessera_sdram_wbif
+
+Input ports:
+	res: Reset signal. When asserted, it initializes the module's internal state.
+	clk: Clock signal. Synchronizes the module's operations.
+	wb_cyc_i: Wishbone cycle signal. Indicates an active WB transaction.
+	wb_stb_i: Wishbone strobe signal. Asserted to indicate a valid data transfer.
+	wb_adr_i[31:0]: Wishbone address bus. Specifies the memory address for read/write operations.
+	wb_sel_i[3:0]: Wishbone byte select signals. Indicates which bytes of the data bus are active during the transfer.
+	wb_we_i: Wishbone write enable signal. Distinguishes between read (0) and write (1) operations.
+	wb_dat_i[31:0]: Wishbone data input bus. Carries data to be written to SDRAM.
+	wb_cab_i: Wishbone consecutive address burst signal. Not used in this module.
+	write_ack: Acknowledgment signal for write operations.
+	read_ack: Acknowledgment signal for read operations.
+	read_data[31:0]: Data read from SDRAM.
+Output ports:
+	wb_dat_o[31:0]: Wishbone data output bus. Carries data read from SDRAM.
+	wb_ack_o: Wishbone acknowledge signal. Indicates the completion of a read or write operation.
+	wb_err_o: Wishbone error signal. Indicates an error in the transaction. Permanently tied to 0 in this module, implying no error reporting capability.
+	write_req: Write request signal to SDRAM.
+	write_byte[3:0]: Indicates which bytes to write during a write operation.
+	write_address[31:0]: Address for write operations to SDRAM.
+	write_data[31:0]: Data to be written to SDRAM.
+	read_req: Read request signal to SDRAM.
+	read_byte[3:0]: Indicates which bytes to read during a read operation.
+	read_address[31:0]: Address for read operations to SDRAM.
+
+
+Implementation:
+The RTL module tessera_sdram_wbif serves as an interface between a Wishbone bus and an SDRAM controller, facilitating data transactions between the two. The module is designed to handle both read and write requests, translating Wishbone transactions into SDRAM commands and vice versa. The core logic of the module is implemented using a combination of combinational and sequential logic elements, orchestrated through the use of Verilog's procedural blocks (always blocks) that are sensitive to the positive edge of the clock (clk) or a reset signal (res).
+
+Give me the complete code.
+

@@ -1,0 +1,6 @@
+Design a glitch filter that stabilizes an input signal `s_in` by ensuring that a change in its value is only reflected in the output `s_out` if the signal remains steady for a minimum of four consecutive clock cycles. The module employs a two-bit state machine with states for IDLE, HIGH, and LOW. When the input signal transitions to HIGH or LOW, it tracks the duration in which these states are held using counters. The output `s_out` will become HIGH only if `s_in` remains high for four or more clock cycles, and similarly will only become LOW if `s_in` is low for the same duration, thus effectively filtering out short glitches in the input signal.
+module top_module(
+    input clk,
+    input s_in,
+    output reg s_out
+);

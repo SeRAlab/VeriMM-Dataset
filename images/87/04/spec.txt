@@ -1,0 +1,8 @@
+Design a circuit that performs a logical left shift on a 32-bit input data. On each positive clock edge, if the reset signal is active, the shifted output is reset to zero. Otherwise, the circuit shifts the input data left by one bit, inserting a zero in the least significant bit position. Additionally, it checks if the original input data is zero and sets a zero flag accordingly; this flag indicates whether the input data was zero before the shift occurred.
+module top_module(
+  input clk,
+  input reset,
+  input [31:0] input_data,
+  output [31:0] shifted_data,
+  output zero_flag
+);

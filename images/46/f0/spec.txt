@@ -1,0 +1,9 @@
+Design a pulse generator circuit that produces a configurable pulse signal based on an external clock and control signals. The circuit has inputs for a clock signal, a transmit enable signal, a delay parameter, and an emitted pulse width. When the transmit enable signal is active, the generator waits for a specified delay before producing a pulse of defined width on the outputs TXP and TXN. The circuit manages the timing of pulse generation through counters, allowing it to control the duration and presence of the pulse, effectively enabling controlled data transmission.
+module top_module(
+  input         Transmit_CLK,                //100M            
+  input         RX_Gate,                    //Transmit Enable
+  input   [7:0] EmitDelay,                  //7th bit for Transmit Enable, 6:0 for Delay                   
+  input   [5:0] Emit_Width,                //Emit pulse width
+  output  reg   TXP,
+  output  reg   TXN
+  );

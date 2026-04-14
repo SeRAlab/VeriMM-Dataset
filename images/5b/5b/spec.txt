@@ -1,0 +1,10 @@
+Design a phase generator circuit that takes a 32-bit input frequency value and computes a corresponding phase value. The phase is derived by multiplying the frequency input by a constant factor (107), then right-shifting the result by 7 bits. The module includes a reset feature and outputs a valid phase signal on a constant basis. The final phase output is a 16-bit value derived from the computed phase, providing a means to interface with other components or systems that require phase information.
+module top_module(
+    input clk,
+    input rstn,
+    
+    input [31:0] f0,
+    
+    output[15:0] m_axis_phase_tdata,
+    output       m_axis_phase_tvalid
+    );

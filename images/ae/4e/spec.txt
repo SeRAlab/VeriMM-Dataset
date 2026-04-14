@@ -1,0 +1,10 @@
+Design a dual-bit receiver circuit that samples an incoming data signal based on a clock signal and a select signal while also integrating reset functionality. The module captures the input data `d` in synchronization with `rxClk` and detects phase changes between `d` and the select signal `s` to enable the storage of two distinct bits. The output, represented by `dq`, consists of the two samples, while `dqValid` indicates the validity of the captured data based on the detection of edges during the phase evaluation. This design is intended for scenarios where robust data reception is required, such as in digital communication systems.
+module top_module(
+	input		d,
+	input		s,
+	input		rxClk,
+	input		rxReset,
+
+	output	[1:0]	dq,
+	output		dqValid
+);

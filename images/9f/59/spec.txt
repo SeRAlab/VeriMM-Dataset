@@ -1,0 +1,8 @@
+Design a delay line circuit capable of providing a programmable delay feature for a 32-bit input data signal. This module uses a shift register approach to store incoming data and shifts the stored values each clock cycle. The depth of the delay can be adjusted using the `delay_cycles` input, which specifies how many clock cycles the input data should be delayed before being output. Upon reset, the module initializes the delay line with a specified default value. This functionality is useful in applications requiring signal synchronization or timing adjustments in digital systems.
+module top_module(
+  input clk,
+  input rst,
+  input [31:0] delay_cycles,
+  input [31:0] data_in,
+  output [31:0] data_out
+);

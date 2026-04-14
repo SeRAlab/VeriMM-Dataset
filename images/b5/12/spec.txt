@@ -1,0 +1,7 @@
+Design a 16-bit barrel shifter capable of performing variable left and right shifts based on the 4-bit SHIFT input and the 2-bit CTRL command. The CTRL signals dictate the type of shift operation: logical left, logical right, arithmetic right, and circular shift. The shifter processes the input DATA through multiple stages to generate the output, allowing efficient manipulation of the data in parallel, which is essential for operations in digital signal processing and computer arithmetic.
+module top_module(
+    input [15:0] DATA,
+    input [3:0] SHIFT,
+    input [1:0] CTRL,
+    output reg [15:0] out
+);

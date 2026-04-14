@@ -1,0 +1,12 @@
+Design a circuit that incorporates a 4-to-1 multiplexer and performs various bitwise operations on four 8-bit inputs. The multiplexer selects one of the inputs based on a 2-bit selection signal and outputs its inverted value as part of a 16-bit output. Additionally, the design computes the bitwise AND of the first two inputs, the bitwise XOR of the last two inputs, and the bitwise NOR of the first two inputs, producing three separate 8-bit outputs for these operations. This module effectively combines selection and logical processing functionalities for a comprehensive data handling unit.
+module top_module(
+    input [7:0] in0,
+    input [7:0] in1,
+    input [7:0] in2,
+    input [7:0] in3,
+    input [1:0] sel,
+    output [15:0] out_not,
+    output [7:0] out_and_bitwise,
+    output [7:0] out_xor_bitwise,
+    output [7:0] out_nor_bitwise
+);

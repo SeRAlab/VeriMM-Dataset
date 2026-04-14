@@ -1,0 +1,9 @@
+Design a RAM module that operates with an 8-bit data bus and supports both read and write operations. It has a clock input for synchronization. When the write enable signal is asserted, the module stores the data from `ram_wdata` into the specified address `ram_wadr`. Additionally, it outputs the data from the address specified by `ram_radr` onto `ram_rdata` on each positive clock edge, allowing concurrent read and write operations. The memory array is organized to hold 256 bytes of data.
+module top_module(
+	input clk,
+	input [7:0] ram_radr,
+	output [7:0] ram_rdata,
+	input [7:0] ram_wadr,
+	input [7:0] ram_wdata,
+	input ram_wen
+	);

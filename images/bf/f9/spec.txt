@@ -1,0 +1,21 @@
+Please act as a professional verilog designer.
+    
+Implement a module to interface with a set of switches (or potentially any 8-bit input data source) and provide a mechanism to read this input data synchronously with a clock signal. The module captures the 8-bit input data (`sw`) on the rising edge of the clock and outputs this data (`dout`) based on a read enable signal (`rd`). This module acts as a simple, yet crucial, data buffering and control mechanism, ensuring that data is only output when explicitly requested, thereby preventing unnecessary data propagation and potential data hazards in a larger digital system. It can be used in various applications, including but not limited to, user input processing, data acquisition systems, and control interfaces.
+
+Module name:  
+	sw_interface
+
+Input ports:
+	clk (1bit): The clock input. It is used to synchronize the data capture and output operations of the module.
+	rst (1bit): The reset input. Although it is present in the module's port list, it is not utilized within the provided code. Typically, a reset would be used to initialize or clear internal registers, but it seems to be a redundant input in this context.
+	rd (1bit): The read enable signal. When high (1), it allows the data captured from the sw input to be output on dout. When low (0), the output is cleared to 0.
+	sw (8bit): The switch input or any 8bit data input. This is the primary data input for the module, representing the data to be buffered and conditionally output.
+Output ports:
+	dout (8bit, reg): The data output. This port outputs the data captured from the sw input, but only when the rd signal is high. If rd is low, dout is cleared to 0.
+
+
+Implementation:
+The RTL module named sw_interface is designed to interface with an 8-bit switch input, sw, and produce an 8-bit output, dout, based on the state of the switch and a read signal, rd. The module operates synchronously with a clock signal, clk, and includes a reset signal, rst, although the reset functionality is not implemented in the provided code. The design leverages both combinational and sequential logic elements to achieve its functionality.
+
+Give me the complete code.
+

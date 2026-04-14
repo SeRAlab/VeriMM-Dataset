@@ -1,0 +1,7 @@
+Design a clock gating circuit that controls the propagation of a clock signal based on enable and test enable signals. When the test enable signal (TE) is high, the output gated clock (ENCLK) is always high regardless of the clock input. If TE is low and enable (EN) is high, the gated clock follows the clock input (CLK); otherwise, it outputs a low signal, effectively stopping the clock signal from propagating to subsequent logic. This design helps to reduce power consumption by disabling the clock to inactive components.
+module top_module(
+  input CLK, // clock signal
+  input EN, // enable signal
+  input TE, // test enable signal
+  output ENCLK // gated clock signal
+);

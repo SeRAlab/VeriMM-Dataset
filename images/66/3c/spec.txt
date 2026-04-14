@@ -1,0 +1,10 @@
+Design a data selector module that processes an 8-bit input based on a 3-bit select signal. This module includes functions such as passing through the input unchanged, inverting the input, left shifting the input by one bit, and right shifting the input by one bit. Additionally, it features a debug output that mirrors the input when a specific selection is made. The design utilizes a clock and reset signal to manage state changes and maintain synchronization, ensuring that the outputs update correctly according to the selected operation on each clock cycle.
+module top_module(
+    input [7:0] data_in,
+    input [2:0] select,
+    input clk,
+    input rst,
+    output reg [7:0] data_out,  // Changed to reg
+    output reg [2:0] output_sel, // Changed to reg
+    output reg [7:0] debug
+);

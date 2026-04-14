@@ -1,0 +1,10 @@
+Design a stack pointer circuit that manages a small memory stack with 8 entries. The circuit is controlled by a clock signal and is resettable. It has the capability to load data to the current stack pointer position when the load signal (LD) is active. The stack pointer can be incremented or decremented using the INCR and DECR signals, respectively, wrapping around upon reaching the stack boundaries. The current value at the stack pointer location is outputted as Q, allowing for both data loading and retrieval dynamically based on the control signals.
+module top_module(
+  input CLK,
+  input RST,
+  input DECR,
+  input INCR,
+  input [7:0] DATA,
+  input LD,
+  output reg [7:0] Q
+);

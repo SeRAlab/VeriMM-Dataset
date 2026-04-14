@@ -1,0 +1,31 @@
+
+
+You have been tasked with designing a module for a simple computer architecture. The module should be responsible for controlling access to memory and handling read/write operations. The memory is modeled as a 4K x 8-bit RAM, and the module should support both byte and word access (i.e., 8-bit and 16-bit data transfers).
+
+Your module should have the following inputs:
+
+- `clk`: a clock signal
+- `rst`: a synchronous reset signal
+- `addr`: a 12-bit address bus
+- `we`: a write enable signal
+- `din`: a 16-bit data input bus
+
+And the following outputs:
+
+- `dout`: a 16-bit data output bus
+- `ack`: an acknowledge signal indicating that the operation has been completed successfully
+
+The module should implement the following behavior:
+
+- On the rising edge of `clk`, if `rst` is high, the module should reset its internal state and output `ack` low.
+- If `we` is high, the module should write the data on `din` to the memory address specified by `addr`. The module should output `ack` high once the write operation is complete.
+- If `we` is low, the module should read the data from the memory address specified by `addr` and output it on `dout`. The module should output `ack` high once the read operation is complete.
+
+You should ensure that the module meets the following requirements:
+
+- The module should be synthesizable and meet timing requirements for a 50MHz clock.
+- The module should generate no latches or inferred memory.
+- The module should have a single always block for clocked behavior.
+- The module should not use any non-blocking assignments.
+- The module should be designed to minimize area and power consumption.
+

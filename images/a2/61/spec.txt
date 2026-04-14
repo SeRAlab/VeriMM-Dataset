@@ -1,0 +1,6 @@
+Design a circuit to convert a 5-bit binary input into a 6-bit Binary-Coded Decimal (BCD) representation. On each positive edge of the clock, the circuit initializes a two-bit most significant digit (MSB) and a four-bit least significant digit (LSB) to zero, then processes the binary input through a shift-and-add algorithm. This algorithm shifts the existing BCD digits left and adds a correction factor of 3 to the LSB whenever it is 5 or greater, ultimately producing a valid BCD output composed of the concatenated MSB and LSB.
+module top_module(
+  input wire[4:0] in,
+  output reg[5:0] out,  // Change from wire to reg
+  input wire clk
+);

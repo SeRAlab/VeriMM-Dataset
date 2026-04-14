@@ -1,0 +1,18 @@
+Implement a simulation module for a Debug Transaction Manager (DTM) that is currently configured to always output inactive (LOW) signals. The module handles incoming and outgoing debug requests and responses but does not engage in any communication, indicated by all outputs being set to zero. The `debug_req_valid` output signals that no requests are valid, and the `exit` output is also set to zero, suggesting that the module is in an idle state. This design may serve as a placeholder or template for further development of debugging functionalities in a system-on-chip environment.
+module top_module(
+  input clk,
+  input reset,
+
+  output        debug_req_valid,
+  input         debug_req_ready,
+  output [ 6:0] debug_req_bits_addr,
+  output [ 1:0] debug_req_bits_op,
+  output [31:0] debug_req_bits_data,
+
+  input         debug_resp_valid,
+  output        debug_resp_ready,
+  input  [ 1:0] debug_resp_bits_resp,
+  input  [31:0] debug_resp_bits_data,
+
+  output [31:0] exit
+);

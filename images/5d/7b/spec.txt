@@ -1,0 +1,9 @@
+Design a 3-bit addressable register file with eight 8-bit registers. The module allows data to be written to a specified register on the rising edge of the clock if the Reg_Write signal is asserted. It also initializes the registers with sequential binary values (0 to 7) when the Reset signal is asserted low. The module continuously provides the value of the register specified by the RD input as Read_Data.
+module top_module(
+    input [2:0] RD,
+    input [7:0] Write_Data,
+    output [7:0] Read_Data,
+    input Reg_Write,
+    input Clk,
+    input Reset
+    );

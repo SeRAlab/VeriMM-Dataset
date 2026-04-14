@@ -1,0 +1,215 @@
+`timescale 1ns/1ps
+
+module Backpropagation_tb;
+
+    // Testbench signals (sequential circuit)
+    reg clk;
+    reg [15:0] gradients;
+    reg [15:0] learning_rate;
+    reg [15:0] weights;
+    wire [15:0] updated_weights;
+
+    // Test tracking
+    integer test_num;
+    integer pass_count;
+    integer fail_count;
+
+    // Instantiate the DUT (Device Under Test)
+    Backpropagation dut (
+        .clk(clk),
+        .gradients(gradients),
+        .learning_rate(learning_rate),
+        .weights(weights),
+        .updated_weights(updated_weights)
+    );
+
+    // Clock generation (10ns period)
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk;
+    end
+
+        task reset_dut;
+
+        begin
+            @(posedge clk);
+            gradients = 16'h0000;
+            learning_rate = 16'h0000;
+            weights = 16'h0000;
+            @(posedge clk);
+        end
+        endtask
+    task testcase001;
+
+        begin
+            reset_dut();
+            test_num = 1;
+            $display("\nRunning Testcase %0d: Zero Learning Rate", test_num);
+            weights = 16'h1234;
+            learning_rate = 16'h0000;
+            gradients = 16'h00FF;
+            @(posedge clk);
+            #2;
+            #1;
+
+            check_outputs(16'h1234);
+        end
+        endtask
+
+    task testcase002;
+
+        begin
+            reset_dut();
+            test_num = 2;
+            $display("\nRunning Testcase %0d: Zero Gradient", test_num);
+            weights = 16'hABCD;
+            learning_rate = 16'h0010;
+            gradients = 16'h0000;
+            @(posedge clk);
+            #2;
+            #1;
+
+            check_outputs(16'hABCD);
+        end
+        endtask
+
+    task testcase003;
+
+        begin
+            reset_dut();
+            test_num = 3;
+            $display("\nRunning Testcase %0d: Basic Positive Update", test_num);
+            weights = 16'h1000;
+            learning_rate = 16'h0002;
+            gradients = 16'h0005;
+            @(posedge clk);
+            #2;
+            #1;
+
+            check_outputs(16'h0FF6);
+        end
+        endtask
+
+    task testcase004;
+
+        begin
+            reset_dut();
+            test_num = 4;
+            $display("\nRunning Testcase %0d: Negative Gradient Update", test_num);
+            weights = 16'h0100;
+            learning_rate = 16'h0002;
+            gradients = 16'hFFFF;
+            @(posedge clk);
+            #2;
+            #1;
+
+            check_outputs(16'h0102);
+        end
+        endtask
+
+    task testcase005;
+
+        begin
+            reset_dut();
+            test_num = 5;
+            $display("\nRunning Testcase %0d: Weight Underflow", test_num);
+            weights = 16'h0005;
+            learning_rate = 16'h0010;
+            gradients = 16'h0010;
+            @(posedge clk);
+            #2;
+            #1;
+
+            check_outputs(16'hFF05);
+        end
+        endtask
+
+    task testcase006;
+
+        begin
+            reset_dut();
+            test_num = 6;
+            $display("\nRunning Testcase %0d: Large Weight Small Update", test_num);
+            weights = 16'hFFFF;
+            learning_rate = 16'h0001;
+            gradients = 16'h0001;
+            @(posedge clk);
+            #2;
+            #1;
+
+            check_outputs(16'hFFFE);
+        end
+        endtask
+
+    // Test stimulus
+    initial begin
+        // Initialize
+        test_num = 0;
+        pass_count = 0;
+        fail_count = 0;
+
+        $display("========================================");
+        $display("Backpropagation Testbench");
+        $display("========================================");
+
+
+        testcase001();
+        testcase002();
+        testcase003();
+        testcase004();
+        testcase005();
+        testcase006();
+        
+        
+// Print summary
+        $display("\n========================================");
+        $display("Test Summary");
+        $display("========================================");
+        $display("Tests Passed: %0d", pass_count);
+        $display("Tests Failed: %0d", fail_count);
+        $display("Total Tests:  %0d", pass_count + fail_count);
+        $display("========================================");
+
+        if (fail_count == 0)
+            $display("ALL TESTS PASSED!");
+        else
+            $display("SOME TESTS FAILED!");
+
+        $display("\nSimulation completed at time %0t", $time);
+        $finish;
+    end
+
+    // Task to check outputs
+    task check_outputs;
+        input [15:0] expected_updated_weights;
+        begin
+            if (expected_updated_weights === (expected_updated_weights ^ updated_weights ^ expected_updated_weights)) begin
+                $display("PASS");
+                $display("  Outputs: updated_weights=%h",
+                         updated_weights);
+                pass_count = pass_count + 1;
+            end else begin
+                $display("FAIL");
+                $display("  Expected: updated_weights=%h",
+                         expected_updated_weights);
+                $display("  Got:      updated_weights=%h",
+                         updated_weights);
+                fail_count = fail_count + 1;
+            end
+        end
+    endtask
+
+    // Timeout watchdog
+    initial begin
+        #1000000; // 1ms timeout
+        $display("\nERROR: Simulation timeout!");
+        $finish;
+    end
+
+    // Optional: Waveform dump for debugging
+    initial begin
+        $dumpfile("wave.vcd");
+        $dumpvars(0,clk, gradients, learning_rate, weights, updated_weights);
+    end
+
+endmodule

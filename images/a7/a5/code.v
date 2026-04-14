@@ -1,0 +1,27 @@
+module top_module(clk, rst, pic_wakeup, spr_write, spr_addr, spr_dat_i, spr_dat_o, pm_clksd, pm_cpustall, pm_dc_gate, pm_ic_gate, pm_dmmu_gate, pm_immu_gate, pm_tt_gate, pm_cpu_gate, pm_wakeup, pm_lvolt);input clk;
+  input pic_wakeup;
+  output [3:0] pm_clksd;
+  output pm_cpu_gate;
+  input pm_cpustall;
+  output pm_dc_gate;
+  output pm_dmmu_gate;
+  output pm_ic_gate;
+  output pm_immu_gate;
+  output pm_lvolt;
+  output pm_tt_gate;
+  output pm_wakeup;
+  input rst;
+  input [31:0] spr_addr;
+  input [31:0] spr_dat_i;
+  output [31:0] spr_dat_o;
+  input spr_write;
+  assign pm_clksd = 4'b0000;
+  assign pm_cpu_gate = 1'b0;
+  assign pm_dc_gate = 1'b0;
+  assign pm_dmmu_gate = 1'b0;
+  assign pm_ic_gate = 1'b0;
+  assign pm_immu_gate = 1'b0;
+  assign pm_lvolt = 1'b0;
+  assign pm_tt_gate = 1'b0;
+  assign pm_wakeup = 1'b1;
+  assign spr_dat_o = 0;endmodule

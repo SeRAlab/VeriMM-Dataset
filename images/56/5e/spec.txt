@@ -1,0 +1,12 @@
+Design a register module that serves as a pipeline stage between the execution (EX) and memory (MEM) phases of a processor. This module captures the execution stage outputs, including the ALU result, memory write enable signal, memory write data, write-back enable signal, write-back destination, and a multiplexer selection signal, on the rising edge of the clock. It resets to zero upon receiving a reset signal. The collected information is packed into a 38-bit wide register, which is then output for use in the memory stage of the pipeline, effectively facilitating data transfer and control signal management in a streamlined manner.
+module top_module(
+  input clock,
+  input reset,
+  input [15:0] ex_alu_result,
+  input mem_write_en,
+  input[15:0] mem_write_data,
+  input write_back_en,
+  input [2:0] write_back_dest,
+  input write_back_result_mux,
+  output [37:0] RegExToMemOut
+);

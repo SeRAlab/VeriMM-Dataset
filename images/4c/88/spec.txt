@@ -1,0 +1,9 @@
+Design a 300-entry scene memory with dual-port access. The module allows writing to the memory at a specified address (addr_b) when the write enable signal (we_b) is asserted, using a 2-bit input data (data_b). Simultaneously, it provides read access from another address (addr_a), outputting the corresponding 2-bit value (q_a) from the memory. This structure supports simultaneous read and write operations in a clock-synchronized manner, facilitating efficient data storage and retrieval in applications like graphics or scene management.
+module top_module(
+	input clk,
+	input we_b,
+	input [8:0] addr_a,
+	input [8:0]	addr_b,
+	input [1:0] data_b,
+	output [1:0] q_a
+	);

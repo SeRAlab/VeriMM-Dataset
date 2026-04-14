@@ -1,0 +1,27 @@
+Implement a Wishbone protocol register slice that serves as an intermediary between a Wishbone slave and a Wishbone master. It captures signals from the slave interface, such as address, data, and control signals, then forwards this information to the master interface while managing acknowledgments and control signals. This module includes sequential logic to handle data transfer and acknowledgment signaling, ensuring that the slave can relinquish control when the master indicates readiness. The design effectively enables communication between two Wishbone-compliant devices, isolating them and simplifying their respective interfaces.
+module top_module(
+    input clk,
+    input rst,
+
+    // Wishbone slave interface
+    input      [19:1] wbs_adr_i,
+    input      [15:0] wbs_dat_i,
+    output reg [15:0] wbs_dat_o,
+    input      [ 1:0] wbs_sel_i,
+    input             wbs_tga_i,
+    input             wbs_stb_i,
+    input             wbs_cyc_i,
+    input             wbs_we_i,
+    output reg        wbs_ack_o,
+
+    // Wishbone master interface
+    output reg [19:1] wbm_adr_o,
+    output reg [15:0] wbm_dat_o,
+    input      [15:0] wbm_dat_i,
+    output reg [ 1:0] wbm_sel_o,
+    output reg        wbm_tga_o,
+    output reg        wbm_stb_o,
+    output reg        wbm_cyc_o,
+    output reg        wbm_we_o,
+    input             wbm_ack_i
+);

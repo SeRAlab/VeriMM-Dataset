@@ -1,0 +1,10 @@
+Design a 32-bit arbitrary counter that can count up or down based on the control signals. The counter takes two inputs, `cnt_max` and `cnt_min`, which define the maximum and minimum bounds of the counter, respectively. It resets to `cnt_min` when incrementing and clears when the `clr` signal is asserted. The `inc_dec` signal determines whether the counter increments (if high) or decrements (if low), while the `cnten` signal enables counting when asserted. The current counter value is output on `cnt_value`.
+module top_module(
+  input [31:0] cnt_max,
+  input [31:0] cnt_min,
+  output [31:0] cnt_value,
+  input clr,
+  input inc_dec,
+  input cnten,
+  input clk
+);

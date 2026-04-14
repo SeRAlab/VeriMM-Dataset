@@ -1,0 +1,9 @@
+Design a sequential circuit that functions as a conditional data latch with asynchronous reset. The module captures the input data `D` on the negative edge of a clock signal (`CLK_N`), but only when the SCD signal is low. If SCD is high, the output is set to zero regardless of the data. The circuit also includes a SCE signal that enables the output `Q` to follow the internal register `Q_reg` on the clock's rising edge, but only when SCE is high; otherwise, it holds the output state. The circuit has an active-low reset (`RESET_B`), which asynchronously clears the register to zero when asserted.
+module top_module(
+    Q      ,
+    CLK_N  ,
+    D      ,
+    SCD    ,
+    SCE    ,
+    RESET_B
+);

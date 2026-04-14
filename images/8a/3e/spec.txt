@@ -1,0 +1,8 @@
+Design a synchronous register circuit that stores a 16-bit score value. The module updates the score based on a write enable signal (`wescr`): when `wescr` is high, the current ALU output (`aluout`) replaces the stored score. On a positive clock edge, if the reset signal (`rst`) is asserted, the score resets to zero; otherwise, it reflects the updated or retained value. The current score is accessible on the output (`out`).
+module top_module(
+    input clk,
+    input rst,
+    input wescr,
+    input [15:0] aluout,
+    output reg [15:0] out
+  );

@@ -1,0 +1,12 @@
+Design a circuit that implements the quarterround function, commonly used in cryptographic algorithms like Salsa20 and ChaCha. The module takes four 64-bit input values (a, b, c, d) and computes four corresponding 64-bit output values (a_prim, b_prim, c_prim, d_prim) based on a series of arithmetic and bitwise operations. The functionality involves addition and exclusive OR (XOR) operations, as well as rotation of bits, ultimately producing a transformed set of outputs. This module plays a crucial role in achieving diffusion and mixing in encryption processes.
+module top_module(
+                 input wire [63 : 0]  a,
+                 input wire [63 : 0]  b,
+                 input wire [63 : 0]  c,
+                 input wire [63 : 0]  d,
+
+                 output wire [63 : 0] a_prim,
+                 output wire [63 : 0] b_prim,
+                 output wire [63 : 0] c_prim,
+                 output wire [63 : 0] d_prim
+                );

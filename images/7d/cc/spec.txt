@@ -1,0 +1,10 @@
+Design a module that functions as a two-input integrator. It accumulates the product of input values `a` and `dt` over time, controlled by a clock signal (`clk`). When the `rst` (reset) signal is asserted, it clears the accumulator and indicates that the module is not busy. If `enable` is active, the product of `a` and `dt` is added to the accumulator on each clock cycle, and the `busy` signal is asserted to indicate that the integration process is ongoing. The final result of the integration is output as a 32-bit value `v`.
+module top_module(
+  input [15:0] a,
+  input [15:0] dt,
+  input enable,
+  input rst,
+  input clk,
+  output reg [31:0] v,
+  output reg busy
+);

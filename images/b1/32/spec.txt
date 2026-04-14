@@ -1,0 +1,8 @@
+Design a module that performs a signed multiplication or division operation based on the value of the operation selector 'op'. When 'op' is 0, the module computes the product of inputs 'a' and 'b', and indicates the result is valid. When 'op' is 1, it performs division of 'a' by 'b', also asserting validity, but only if 'b' is non-zero; if 'b' is zero, it signals that the operation is invalid. The output 'result' holds the computed value, and 'valid' informs about the successful completion of the operation.
+module top_module(
+    input signed [31:0] a,
+    input signed [31:0] b,
+    input op,
+    output reg signed [31:0] result,
+    output reg valid
+);

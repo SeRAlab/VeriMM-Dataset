@@ -1,0 +1,6 @@
+Design a count-based selector control module that increments a 4-bit counter on each clock cycle, resetting to zero upon reaching a count of 6. The module generates a 2-bit output selection signal (`sel_sig`) based on the counter's value, wherein the output is defined by specific ranges: from counts 0-1 it outputs 0, 2-3 it outputs 1, and 4-5 it outputs 2. The external output provides the current counter value as a 3-bit signal (`cnt0_out`). This design effectively facilitates selection signal generation based on a defined counting sequence, useful in applications like timing control or state machine management.
+module top_module(
+    input clk,rst_n,
+    output reg [1:0] sel_sig,
+    output [2:0] cnt0_out
+  );
