@@ -96,4 +96,4 @@ print(f"Loaded {len(samples)} samples")
 
 ## License
 
-Please refer to the LICENSE file for usage terms.
+This dataset is released under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). You are free to use, share, and adapt this dataset for any purpose, provided you give appropriate credit.
