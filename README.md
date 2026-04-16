@@ -111,7 +111,3 @@ for i in range(1, 201):
 
 print(f"Loaded {len(samples)} samples")
 ```
-
-## License
-
-Please refer to the LICENSE file for usage terms.
