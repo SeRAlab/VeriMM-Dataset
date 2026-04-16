@@ -1,6 +1,6 @@
 # VeriMM-Dataset
 
-A large-scale Verilog dataset for multimodal hardware design understanding. The dataset contains **57,304** Verilog design samples with natural language descriptions, RTL code, testbenches, circuit metadata, and corresponding circuit diagram images (schematics, waveforms, and FSM diagrams).
+A large-scale Verilog dataset for multimodal hardware design understanding including the full automated construction pipeline. The dataset contains **57,304** Verilog design samples with natural language descriptions, RTL code, testbenches, circuit metadata, and corresponding circuit diagram images (schematics, waveforms, and FSM diagrams).
 
 ## Dataset Statistics
 
@@ -17,20 +17,38 @@ A large-scale Verilog dataset for multimodal hardware design understanding. The 
 
 ```
 VeriMM-Dataset/
-├── annotations/          # JSONL files with design annotations
+├── annotations/                # JSONL files with design annotations
 │   ├── chunk_1.jsonl
 │   ├── chunk_2.jsonl
-│   └── ...               # 200 chunk files, ~57K entries total
-├── images/               # Circuit diagram images
-│   ├── <hash_prefix>/    # Two-character hex prefix (00-c9)
-│   │   └── <sample_id>/  # Per-sample directory
-│   │       ├── code.v          # Verilog source code
-│   │       ├── testbench.v     # Testbench code
-│   │       ├── spec.txt        # Design specification
-│   │       ├── schematic.png   # Circuit schematic diagram
-│   │       ├── waveform.png    # Simulation waveform (if applicable)
-│   │       └── fsm.png         # FSM state diagram (if applicable)
+│   └── ...                     # 200 chunk files, ~57K entries total
+├── images/                     # Circuit diagram images
+│   ├── <hash_prefix>/          # Two-character hex prefix (00-c9)
+│   │   └── <sample_id>/        # Per-sample directory
+│   │       ├── code.v                # Verilog source code
+│   │       ├── testbench.v           # Testbench code
+│   │       ├── spec.txt              # Design specification
+│   │       ├── schematic.png         # Circuit schematic diagram
+│   │       ├── waveform.png          # Simulation waveform (if applicable)
+│   │       └── fsm.png               # FSM state diagram (if applicable)
 │   └── ...
+├── pipeline_scripts/           # Scripts used to build the dataset
+│   ├── data_preprocessing/     # Data cleaning and annotation
+│   │   ├── deduplicate.py            # Semantic deduplication using FAISS
+│   │   ├── syntax_check.py           # Verilog syntax validation (iverilog/Yosys)
+│   │   ├── tag_circuit_type.py       # Label circuits as sequential/combinational
+│   │   └── tag_hierarchy.py          # Compute module hierarchy depth via Yosys
+│   ├── image_generation/       # Circuit diagram rendering
+│   │   ├── fsm_generation.py         # FSM diagram generation using Verdi and Graphviz
+│   │   ├── schematic_generation1.py  # Schematic generation via netlist JSON to SVG
+│   │   ├── schematic_generation2.py  # Schematic generation via Yosys and Graphviz
+│   │   ├── timing_diagram_generation.py  # Waveform rendering from VCD simulation
+│   │   └── vcd2wavedrom.py           # VCD to WaveDrom JSON converter
+│   └── testbench_generation/   # Automated testbench creation
+│       ├── analyze_rtl.py            # RTL analysis using Yosys
+│       ├── coverage_gap_report.py    # Coverage gap reporting via URG
+│       ├── insert_testcases.py       # Insert generated testcases into testbench templates
+│       ├── tb_pipeline_iter.py       # Iterative coverage-driven testbench generation pipeline
+│       └── template_generation.py    # Testbench template generator
 └── README.md
 ```
 
